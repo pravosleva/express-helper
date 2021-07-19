@@ -39,6 +39,7 @@ import partnerApiTradeInPhotoStatus from './mws/partner_api/photo/status'
 import partnerApiTradeInPhotoUpload from './mws/partner_api/photo/upload'
 import partnerApiTradeInDecline from './mws/partner_api/tradein/decline'
 import partnerApiToolsFmsCode from './mws/partner_api/tools/fms/[code]'
+import otWebApiFizotLandingForm from './mws/ot-web/fizot-landing-form'
 
 // const formidable = require('cyberjon-express-formidable')
 
@@ -105,5 +106,8 @@ spApi.post('/partner_api/photo/status', partnerApiTradeInPhotoStatus)
 spApi.post('/partner_api/photo/upload', partnerApiTradeInPhotoUpload)
 spApi.post('/partner_api/tradein/decline', partnerApiTradeInDecline)
 spApi.get('/partner_api/tools/fms/:code', partnerApiToolsFmsCode)
+
+// 6. New OT landing
+spApi.post('/ot-web/fizot-landing-form', partnerApiTradeInDecline)
 
 export default spApi
