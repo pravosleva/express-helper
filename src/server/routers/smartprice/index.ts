@@ -108,6 +108,6 @@ spApi.post('/partner_api/tradein/decline', partnerApiTradeInDecline)
 spApi.get('/partner_api/tools/fms/:code', partnerApiToolsFmsCode)
 
 // 6. New OT landing
-spApi.post('/ot-web/fizot-landing-form', partnerApiTradeInDecline)
+spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)
 
 export default spApi
