@@ -12,6 +12,7 @@ import checkDiscountPromoRoute from './mws/api/check-discount'
 import warrantyPageRoute from './mws/api/warranty_claim_email'
 import crmTradeinsPickupHubsRoute from './mws/api/crm/tradeins/pickup_hubs'
 import crmPickupCreateAndSendBatchRoute from './mws/api/crm/pickup/create_and_send_batch'
+import crmProductsBuyoutBatchRoute from './mws/api/crm/crmproducts/buyout_batch'
 
 import md5Make from './mws/md5/make'
 
@@ -60,6 +61,7 @@ spApi.post('/api/check-discount', checkDiscountPromoRoute)
 spApi.post('/api/warranty_claim_email', jsonParser, warrantyPageRoute)
 spApi.get('/api/crm/tradeins/pickup_hubs', jsonParser, crmTradeinsPickupHubsRoute)
 spApi.post('/api/crm/pickup/create_and_send_batch', jsonParser, crmPickupCreateAndSendBatchRoute)
+spApi.post('/api/crm/crmproducts/buyout_batch', jsonParser, crmProductsBuyoutBatchRoute)
 
 // 2. Frontend API imitation (не совсем понятно, почему Гена так называет часть запросов из клиента)
 spApi.get('/fapi/get-catalog-data', catalogDataRoute)
