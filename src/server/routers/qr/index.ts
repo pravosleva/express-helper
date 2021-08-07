@@ -5,6 +5,7 @@ import { getLoggedMap } from './mws/tst.get-logged-map'
 import { generate } from './mws/generate'
 import { clearState } from './mws/reset-logged-map'
 import { swagger } from './mws/swagger'
+import { getQRByLoggedReqId } from './mws/get-qr-by-logged-req-id'
 
 import { EAccessCode, redirect } from '../auth/cfg'
 import redirectIfUnloggedMw from '../auth/mws/redirect-if-unlogged'
@@ -22,5 +23,6 @@ qrApi.use(
   redirectIfUnloggedMw(redirect[EAccessCode.QRSwagger].jwtSecret, EAccessCode.QRSwagger),
   swagger,
 )
+qrApi.get('/get-qr-by-logged-req-id', getQRByLoggedReqId)
 
 export { qrApi }
