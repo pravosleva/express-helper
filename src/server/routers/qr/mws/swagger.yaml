@@ -16,10 +16,10 @@ tags:
     externalDocs:
       description: 'Do anything'
       url: 'swagger.io'
-  - name: 'reset-logged-map'
-    description: 'Reset all logged keys from memory'
+  - name: 'logged-map'
+    description: 'Local state as JS object Map'
     externalDocs:
-      description: 'Сброс текущего стейта'
+      description: 'Local state as JS object Map'
 paths:
   /tst.generate:
     get:
@@ -48,10 +48,40 @@ paths:
               src:
                 type: string
                 required: true
-  /tst.get-logged-map:
+  /get-qr-by-logged-req-id:
     get:
       tags:
-        - 'tst'
+        - 'logged-map'
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: logged_req_id
+          required: true
+          type: string
+      summary: 'Returns QR data from state'
+      description: 'Вернет данные по сгенерированному QR, если они там все еще есть'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              src:
+                type: string
+                required: true
+              qrData:
+                schema:
+                $ref: '#/definitions/QRData'
+
+  /get-logged-map:
+    get:
+      tags:
+        - 'logged-map'
       produces:
         - application/json
       summary: 'Returns logged map data'
@@ -93,7 +123,6 @@ paths:
                     infoUrl:
                       type: string
                       required: true
-                    /tst.generate:
   /tst.try-auth-on-other-device:
     get:
       tags:
@@ -122,7 +151,7 @@ paths:
   /reset-logged-map:
     get:
       tags:
-        - 'reset-logged-map'
+        - 'logged-map'
       produces:
         - application/json
       summary: 'Returns success or not'
@@ -148,3 +177,29 @@ definitions:
         required: true
         type: string
         description: 'Your payload in QR'
+  QRData:
+    type: object
+    properties:
+      qr:
+        required: true
+        type: string
+        description: 'QR data:image'
+      hash:
+        required: true
+        type: string
+        description: 'Special auth key'
+      additionalLoggedCounter:
+        required: true
+        type: number
+        description: 'Logged state counter'
+      success_url:
+        required: true
+        type: string
+        description: 'Success logged redirect url'
+      fail_url:
+        required: true
+        type: string
+        description: 'Unlogged redirect url'
+      infoUrl:
+        required: true
+        type: string
