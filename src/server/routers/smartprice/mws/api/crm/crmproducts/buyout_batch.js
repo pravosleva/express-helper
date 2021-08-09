@@ -1,5 +1,5 @@
 /* eslint-disable prefer-destructuring */
-// const { getRandomInteger } = require('../../../../../../utils/getRandomInteger')
+const { getRandomInteger } = require('../../../../../../utils/getRandomInteger')
 const delay = require('../../../../../../utils/delay')
 
 // const { SUCCESS_ANYWAY } = process.env
@@ -16,7 +16,7 @@ dry_run - true если отправляем для предпросмотра, 
 const toClient = [
   {
     ok: false,
-    imei: ['Пример формата ошибки с бэка'],
+    imei: ['Пример формата ошибки с бэка со статусом 4xx'],
   },
   {
     ok: true,
@@ -29,9 +29,6 @@ const toClient = [
   },
 ]
 
-// NOTE: По идее нужно делать как при назначении вывоза, то есть обновлять список пикапов исходя из этих данных.
-// Тут id - это номер пикапа, cdek_dispatch_number - номер накладной сдэк
-
 module.exports = async (req, res) => {
   res.append('Content-Type', 'application/json')
 
@@ -39,21 +36,15 @@ module.exports = async (req, res) => {
     return res.send(500).send({ ok: false, message: 'Is not multipart/form-data' })
   }
 
-  // if (req.fields.dry_run !== true || req.fields.dry_run !== false) {
-  //   res.status(500).send({ ok: false, message: 'Обязательное поле: req.body.dry_run' })
-  // }
-
-  // const toBeOrNotToBe = SUCCESS_ANYWAY === '1' ? 1 : Boolean(getRandomInteger(0, 1))
-  const base = toClient[1]
-
+  const randIndex = getRandomInteger(0, 1)
+  const toBeOrNotToBe = !!randIndex
+  const base = toClient[randIndex]
   const response = {
     ...base,
-    _originalBody: { body: req.body, fields: req.fields },
+    _original: { body: req.body, fields: req.fields },
   }
-
-  // res.status(toBeOrNotToBe ? 200 : 400).send(response)
 
   await delay(3000)
 
-  return res.status(200).send(response)
+  return res.status(toBeOrNotToBe ? 200 : 400).send(response)
 }
