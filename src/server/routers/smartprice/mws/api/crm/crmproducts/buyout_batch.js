@@ -16,6 +16,7 @@ dry_run - true если отправляем для предпросмотра, 
 const toClient = [
   {
     ok: false,
+    imei: ['Пример формата ошибки с бэка'],
   },
   {
     ok: true,
