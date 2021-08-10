@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/extensions
+import { gcsUsersMap } from '../../utils/gcsUsersMap'
+
 const express = require('express')
 
 const gcsApi = express()
@@ -6,7 +9,7 @@ const addUserRoute = require('./mws/add-user').addUser
 const getUsersMapRoute = require('./mws/get-users-map').getUsersMap
 
 gcsApi.use((req, _res, next) => {
-  req.usersMap = new Map()
+  req.gcsUsersMapInstance = gcsUsersMap
   next()
 })
 gcsApi.use(bodyParser.urlencoded({ extended: false }))

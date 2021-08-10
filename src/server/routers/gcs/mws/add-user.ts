@@ -10,7 +10,7 @@ export const addUser = async (req: IRequest, res: IResponse) => {
   }
 
   // @ts-ignore
-  req.usersMap.set(userName, chatData)
+  req.gcsUsersMapInstance.addUser({ userName, chatData })
 
   return res.status(200).json({ success: true })
 }
