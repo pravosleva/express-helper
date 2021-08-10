@@ -1,6 +1,6 @@
 import { Request as IRequest, Response as IResponse } from 'express'
 
-export const generate = async (req: IRequest, res: IResponse) => {
+export const addUser = async (req: IRequest, res: IResponse) => {
   const { userName, chatData } = req.body
 
   if (!userName || !chatData) {

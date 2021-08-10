@@ -1,6 +1,4 @@
-import { Request as IRequest, Response as IResponse } from 'express'
-
-export const generate = async (req, res) => {
+export const getUsersMap = async (req, res) => {
   try {
     const state = {}
 
