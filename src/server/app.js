@@ -17,6 +17,7 @@ import reCAPTCHAV3Router from './routers/recaptcha-v3'
 import mainSwaggerRouter from './routers/swagger'
 import smartpriceRouter from './routers/smartprice'
 import imeiRouter from './routers/imei'
+import gcsApi from './routers/gcs'
 import { qrApi as qrRouter } from './routers/qr'
 import { addsDevicesLoggedState } from './utils/addsDevicesLoggedState'
 
@@ -51,6 +52,7 @@ app.use('/recaptcha-v3', reCAPTCHAV3Router)
 app.use('/swagger', mainSwaggerRouter)
 app.use('/smartprice', smartpriceRouter)
 app.use('/imei', imeiRouter)
+app.use('/gcs', gcsApi)
 app.use('/auth', authRouter)
 app.use('/qr', qrRouter)
 
