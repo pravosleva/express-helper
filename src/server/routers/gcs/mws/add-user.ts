@@ -16,7 +16,7 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
       .json({ ok: false, message: `Missing required parameter${_skipedParams.length > 1 ? 's' : ''}: ${_skipedParams.join(', ')}` })
   }
 
-  const uniqueKey = userName || String(chatData?.id) || 'no-data'
+  const uniqueKey: string = userName
   const staticData = getStaticJSONSync(req.gcsStorageFilePath)
   const ts = new Date().getTime()
   let myNewData: any = { ...chatData }

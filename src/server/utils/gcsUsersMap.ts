@@ -31,7 +31,7 @@ export class Singleton {
    * может быть выполнена на его экземпляре.
    */
   public addUser({ userName, data }: { userName: string, data: any }) {
-    const uniqueKey = userName || String(data?.id) || 'no-data'
+    const uniqueKey = userName
 
     this.state.set(uniqueKey, { ...data })
   }
