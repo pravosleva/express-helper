@@ -30,18 +30,10 @@ export class Singleton {
    * Наконец, любой одиночка должен содержать некоторую бизнес-логику, которая
    * может быть выполнена на его экземпляре.
    */
-  public addUser({ userName, chatData }: { userName: string, chatData: any }) {
-    const uniqueKey = userName || chatData?.id || 'no-data'
-    const oldData = this.state.get(uniqueKey)
-    const ts = new Date().getTime()
+  public addUser({ userName, data }: { userName: string, data: any }) {
+    const uniqueKey = userName || data?.id || 'no-data'
 
-    if (!!oldData) {
-      const count = oldData?.count || 1
-
-      this.state.set(uniqueKey, { ...chatData, count: count + 1, ts })
-    } else {
-      this.state.set(uniqueKey, { ...chatData, count: 1, ts })
-    }
+    this.state.set(uniqueKey, { ...data })
   }
   public getState() {
     const state = {}

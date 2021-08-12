@@ -16,10 +16,22 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
       .json({ ok: false, message: `Missing required parameter${_skipedParams.length > 1 ? 's' : ''}: ${_skipedParams.join(', ')}` })
   }
 
-  req.gcsUsersMapInstance.addUser({ userName, chatData })
+  const uniqueKey = userName || chatData?.id || 'no-data'
+  const oldData = req.gcsUsersMapInstance.state.get(uniqueKey)
+  const ts = new Date().getTime()
+  let modifiedData: any
+
+  if (!!oldData) {
+    const count = oldData?.count || 1
+    modifiedData = { ...chatData, count: count + 1, ts }
+  } else {
+    modifiedData = { ...chatData, count: 1, ts }
+  }
+
+  req.gcsUsersMapInstance.addUser({ userName, data: modifiedData })
 
   const json = getStaticJSONSync(req.gcsStorageFilePath)
-  json[userName] = chatData
+  json[userName] = modifiedData
   writeStaticJSONAsync(req.gcsStorageFilePath, json)
 
   return res.status(200).json({ success: true })
