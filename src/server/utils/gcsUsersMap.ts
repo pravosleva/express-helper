@@ -31,7 +31,17 @@ export class Singleton {
    * может быть выполнена на его экземпляре.
    */
   public addUser({ userName, chatData }: { userName: string, chatData: any }) {
-    this.state.set(userName, chatData)
+    const uniqueKey = userName || chatData?.id || 'no-data'
+    const oldData = this.state.get(uniqueKey)
+    const ts = new Date().getTime()
+
+    if (!!oldData) {
+      const count = oldData?.count || 1
+
+      this.state.set(uniqueKey, { ...chatData, count: count + 1, ts })
+    } else {
+      this.state.set(uniqueKey, { ...chatData, count: 1, ts })
+    }
   }
   public getState() {
     const state = {}
