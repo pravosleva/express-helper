@@ -80,3 +80,7 @@ routers/auth/pages/signin/*
 !routers/auth/pages/signin/.gitkeep
 server-dist/*
 !server-dist/.gitkeep
+
+# files
+storage/*
+!storage/.gitkeep
