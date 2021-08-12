@@ -13,8 +13,11 @@ export const getUsersMap = async (req: IRequest & { gcsUsersMapInstance: UsersMa
       success: true,
       usersMap: state,
       _pravosleva: {
-        'http://pravosleva.ru/express-helper/gcs/add-user': encode('http://pravosleva.ru/express-helper/gcs/add-user')
+        'http://pravosleva.ru/express-helper/gcs/add-user': encode('http://pravosleva.ru/express-helper/gcs/add-user'),
+        'http://pravosleva.ru/express-helper/gcs/add-user?from=gcs': encode('http://pravosleva.ru/express-helper/gcs/add-user?from=gcs'),
+        'http://pravosleva.ru/express-helper/gcs/add-user?from=pravosleva': encode('http://pravosleva.ru/express-helper/gcs/add-user?from=pravosleva'),
       },
+      _originalQuery: req.query,
       _staticData,
     })
   } catch (err) {
