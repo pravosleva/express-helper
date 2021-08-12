@@ -2,7 +2,7 @@
  * Класс Одиночка предоставляет метод getInstance, который позволяет клиентам
  * получить доступ к уникальному экземпляру одиночки.
  */
-class Singleton {
+export class Singleton {
   private static instance: Singleton;
    state: Map<string, { id: number, [key: string]: any }>;
 

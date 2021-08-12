@@ -21,4 +21,12 @@ module.exports = {
 
     return !!pattern.test(str)
   },
+  isValidJsonString(str) {
+    try {
+      JSON.parse(str)
+    } catch (_err) {
+      return false
+    }
+    return true
+  },
 }
