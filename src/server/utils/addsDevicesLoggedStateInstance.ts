@@ -9,7 +9,7 @@ type TSessionData = { reqId: string, payload: string, hash: string, infoUrl: str
 // TODO: Could be moved to envs
 const authOnOtherDevicesLimit = 1
 
-class Singleton {
+export class Singleton {
   private static instance: Singleton;
    state: Map<string, { qr: string, hash: string, additionalLoggedCounter: number, infoUrl: string, success_url: string, fail_url: string }>;
 
@@ -75,4 +75,4 @@ class Singleton {
   }
 }
 
-export const addsDevicesLoggedState = Singleton.getInstance()
+export const addsDevicesLoggedStateInstance = Singleton.getInstance()

@@ -2,7 +2,7 @@
 import { Request as IRequest, Response as IResponse } from 'express'
 import { encode } from 'js-base64'
 import { getStaticJSONSync } from '../../../utils/fs-tools'
-import { Singleton as UsersMapSingleton } from '../../../utils/gcsUsersMap'
+import { Singleton as UsersMapSingleton } from '../../../utils/gcsUsersMapInstance'
 
 export const getUsersMap = async (req: IRequest & { gcsUsersMapInstance: UsersMapSingleton, gcsStorageFilePath: string }, res: IResponse) => {
   try {

@@ -1,6 +1,6 @@
 import { Request as IRequest, Response as IResponse } from 'express'
 import { writeStaticJSONAsync, getStaticJSONSync } from '../../../utils/fs-tools'
-import { Singleton as UsersMapSingleton } from '../../../utils/gcsUsersMap'
+import { Singleton as UsersMapSingleton } from '../../../utils/gcsUsersMapInstance'
 
 export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSingleton, gcsStorageFilePath: string }, res: IResponse) => {
   const { userName, chatData } = req.body
@@ -16,15 +16,16 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
       .json({ success: false, message: `Missing required parameter${_skipedParams.length > 1 ? 's' : ''}: ${_skipedParams.join(', ')}` })
   }
 
+  // NOTE: Update local state
+  req.gcsUsersMapInstance.addUser({ userName, data: chatData })
+
   const uniqueKey: string = userName
   const staticData = getStaticJSONSync(req.gcsStorageFilePath)
   const ts = new Date().getTime()
   let myNewData: any = { ...chatData }
-  const myOldStaticData = staticData[uniqueKey]
+  const myOldData = staticData[uniqueKey]
 
-  if (!!myOldStaticData) {
-    myNewData = { ...myOldStaticData, ...chatData }
-  }
+  if (!!myOldData) myNewData = { ...myOldData, ...myNewData }
 
   if (myNewData?.count) {
     const count = myNewData?.count
@@ -34,9 +35,8 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
     myNewData = { ...myNewData, count: 1, ts }
   }
 
-  req.gcsUsersMapInstance.addUser({ userName, data: chatData })
-
   staticData[uniqueKey] = myNewData
+  // NOTE: Update global state
   writeStaticJSONAsync(req.gcsStorageFilePath, staticData)
 
   return res.status(200).json({ success: true })

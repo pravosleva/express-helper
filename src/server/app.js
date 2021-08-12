@@ -19,7 +19,7 @@ import smartpriceRouter from './routers/smartprice'
 import imeiRouter from './routers/imei'
 import gcsApi from './routers/gcs'
 import { qrApi as qrRouter } from './routers/qr'
-import { addsDevicesLoggedState } from './utils/addsDevicesLoggedState'
+import { addsDevicesLoggedStateInstance } from './utils/addsDevicesLoggedStateInstance'
 
 const app = express()
 
@@ -32,7 +32,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use((req, _res, next) => {
-  req.loggedMap = addsDevicesLoggedState
+  req.loggedMap = addsDevicesLoggedStateInstance
   next()
 })
 

@@ -46,4 +46,4 @@ export class Singleton {
   }
 }
 
-export const gcsUsersMap = Singleton.getInstance()
+export const gcsUsersMapInstance = Singleton.getInstance()

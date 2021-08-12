@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 import fs from 'fs'
 import path from 'path'
-import { gcsUsersMap } from '../../utils/gcsUsersMap'
+import { gcsUsersMapInstance } from '../../utils/gcsUsersMap'
 
 const express = require('express')
 
@@ -29,7 +29,7 @@ if (!isStorageFileExists) {
 // ---
 
 gcsApi.use((req, _res, next) => {
-  req.gcsUsersMapInstance = gcsUsersMap
+  req.gcsUsersMapInstance = gcsUsersMapInstance
   req.gcsStorageFilePath = storageFilePath
   next()
 })

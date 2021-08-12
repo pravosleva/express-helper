@@ -1,9 +1,9 @@
 import { Request as IRequest } from 'express'
-import { addsDevicesLoggedState } from './addsDevicesLoggedState'
+import { Singleton } from './addsDevicesLoggedStateInstance'
 
 export interface ICustomRequest extends IRequest {
   id: string;
-  loggedMap: typeof addsDevicesLoggedState
+  loggedMap: Singleton
   success_url?: string
   swaggerDoc?: any
   query: {
