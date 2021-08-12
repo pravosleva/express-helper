@@ -5,6 +5,8 @@ const { ApiError } = require('./api/ApiError')
 
 module.exports = {
   universalAxiosCatch: (err) => {
+    // eslint-disable-next-line no-console
+    // console.log(err)
     switch (true) {
       case err.isAxiosError:
         try {

@@ -1,5 +1,5 @@
 const axios = require('axios')
-// const { httpErrorHandler } = require('../../../../utils/errors/http/axios/httpErrorHandler')
+const { httpErrorHandler } = require('../../../../utils/errors/http/axios/httpErrorHandler')
 const { apiErrorHandler } = require('../../../../utils/errors/api/recaptcha-v3/apiErrorHandler')
 const { universalAxiosCatch } = require('../../../../utils/errors/universalCatch')
 
@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
 
   const byGoogle = await axios
     .post(`${RECAPTCHAV3_VERIFY_URL}?secret=${RECAPTCHAV3_SERVER_KEY}&response=${req.body.captcha}`)
-    // .then(httpErrorHandler)
+    .then(httpErrorHandler)
     .then(apiErrorHandler)
     .then((data) => ({
       isOk: true,
