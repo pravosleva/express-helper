@@ -1,15 +1,8 @@
 import { Request as IRequest, Response as IResponse } from 'express'
-import path from 'path'
 import { writeStaticJSONAsync, getStaticJSONSync } from '../../../utils/fs-tools'
 import { Singleton as UsersMapSingleton } from '../../../utils/gcsUsersMap'
 
-// --- NOTE: FS tools
-const projectRootDir = path.join(__dirname, '../../../../')
-const GCS_USERS_FILE_NAME = process.env.GCS_USERS_FILE_NAME || 'gcs-users.json'
-const storageFilePath = path.join(projectRootDir, '/storage', GCS_USERS_FILE_NAME)
-// ---
-
-export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSingleton }, res: IResponse) => {
+export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSingleton, gcsStorageFilePath: string }, res: IResponse) => {
   const { userName, chatData } = req.body
   const requiredParams: string[] = ['userName', 'chatData']
   const _skipedParams = []
@@ -25,9 +18,9 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
 
   req.gcsUsersMapInstance.addUser({ userName, chatData })
 
-  const json = getStaticJSONSync(storageFilePath)
+  const json = getStaticJSONSync(req.gcsStorageFilePath)
   json[userName] = chatData
-  writeStaticJSONAsync(storageFilePath, json)
+  writeStaticJSONAsync(req.gcsStorageFilePath, json)
 
   return res.status(200).json({ success: true })
 }

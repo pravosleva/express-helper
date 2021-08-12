@@ -30,6 +30,7 @@ if (!isStorageFileExists) {
 
 gcsApi.use((req, _res, next) => {
   req.gcsUsersMapInstance = gcsUsersMap
+  req.gcsStorageFilePath = storageFilePath
   next()
 })
 gcsApi.use(bodyParser.urlencoded({ extended: false }))
