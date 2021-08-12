@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 import fs from 'fs'
 import path from 'path'
-import { gcsUsersMapInstance } from '../../utils/gcsUsersMap'
+import { gcsUsersMapInstance } from '../../utils/gcsUsersMapInstance'
 
 const express = require('express')
 
