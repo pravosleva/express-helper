@@ -16,7 +16,7 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
       .json({ ok: false, message: `Missing required parameter${_skipedParams.length > 1 ? 's' : ''}: ${_skipedParams.join(', ')}` })
   }
 
-  const uniqueKey = userName || chatData?.id || 'no-data'
+  const uniqueKey = userName || String(chatData?.id) || 'no-data'
   const oldData = req.gcsUsersMapInstance.state.get(uniqueKey)
   const ts = new Date().getTime()
   let modifiedData: any
