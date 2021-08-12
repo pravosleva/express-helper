@@ -18,6 +18,7 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
 
   const uniqueKey = userName || String(chatData?.id) || 'no-data'
   const oldData = req.gcsUsersMapInstance.state.get(uniqueKey)
+  const staticData = getStaticJSONSync(req.gcsStorageFilePath)
   const ts = new Date().getTime()
   let modifiedData: any
 
@@ -28,11 +29,15 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
     modifiedData = { ...chatData, count: 1, ts }
   }
 
+  if (!!staticData[uniqueKey]) {
+    const count = staticData[uniqueKey].count || modifiedData.count
+    modifiedData = { ...modifiedData, count }
+  }
+
   req.gcsUsersMapInstance.addUser({ userName, data: modifiedData })
 
-  const json = getStaticJSONSync(req.gcsStorageFilePath)
-  json[userName] = modifiedData
-  writeStaticJSONAsync(req.gcsStorageFilePath, json)
+  staticData[uniqueKey] = modifiedData
+  writeStaticJSONAsync(req.gcsStorageFilePath, staticData)
 
   return res.status(200).json({ success: true })
 }
