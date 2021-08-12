@@ -3,7 +3,7 @@ import { Request as IRequest, Response as IResponse } from 'express'
 import { encode } from 'js-base64'
 import path from 'path'
 import { getStaticJSONSync } from '../../../utils/fs-tools'
-import { Singleton } from '../../../utils/gcsUsersMap'
+import { Singleton as UsersMapSingleton } from '../../../utils/gcsUsersMap'
 
 // --- NOTE: FS tools
 // TODO: storageFilePath пробрасывать в объект запроса?
@@ -12,7 +12,7 @@ const GCS_USERS_FILE_NAME = process.env.GCS_USERS_FILE_NAME || 'gcs-users.json'
 const storageFilePath = path.join(projectRootDir, '/storage', GCS_USERS_FILE_NAME)
 // ---
 
-export const getUsersMap = async (req: IRequest & { gcsUsersMapInstance: Singleton }, res: IResponse) => {
+export const getUsersMap = async (req: IRequest & { gcsUsersMapInstance: UsersMapSingleton }, res: IResponse) => {
   try {
     const state = req.gcsUsersMapInstance.getState()
 
