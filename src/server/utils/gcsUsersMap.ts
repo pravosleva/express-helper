@@ -21,11 +21,9 @@ export class Singleton {
    * только один экземпляр каждого подкласса.
    */
   public static getInstance(): Singleton {
-      if (!Singleton.instance) {
-          Singleton.instance = new Singleton();
-      }
+    if (!Singleton.instance) Singleton.instance = new Singleton();
 
-      return Singleton.instance;
+    return Singleton.instance;
   }
 
   /**

@@ -3,44 +3,26 @@ import { promisify } from 'es6-promisify'
 
 const genDataUrl: (payload: string) => Promise<string> = promisify(QRCode.toDataURL.bind(QRCode))
 
+type TSessionData = { reqId: string, payload: string, hash: string, infoUrl: string, success_url: string, fail_url: string }
+
 // NOTE: Несколько других устройств для аутентификации по QR коду:
 // TODO: Could be moved to envs
 const authOnOtherDevicesLimit = 1
 
-/**
- * Класс Одиночка предоставляет метод getInstance, который позволяет клиентам
- * получить доступ к уникальному экземпляру одиночки.
- */
 class Singleton {
   private static instance: Singleton;
    state: Map<string, { qr: string, hash: string, additionalLoggedCounter: number, infoUrl: string, success_url: string, fail_url: string }>;
 
-  /**
-   * Конструктор Одиночки всегда должен быть скрытым, чтобы предотвратить
-   * создание объекта через оператор new.
-   */
   private constructor() {
     this.state = new Map()
   }
 
-  /**
-   * Статический метод, управляющий доступом к экземпляру одиночки.
-   *
-   * Эта реализация позволяет вам расширять класс Одиночки, сохраняя повсюду
-   * только один экземпляр каждого подкласса.
-   */
   public static getInstance(): Singleton {
-      if (!Singleton.instance) {
-          Singleton.instance = new Singleton();
-      }
+    if (!Singleton.instance) Singleton.instance = new Singleton();
 
-      return Singleton.instance;
+    return Singleton.instance;
   }
 
-  /**
-   * Наконец, любой одиночка должен содержать некоторую бизнес-логику, которая
-   * может быть выполнена на его экземпляре.
-   */
   public async createQR(payload: string) {
     const dataUrl = await genDataUrl(payload)
 
@@ -53,7 +35,7 @@ class Singleton {
     hash,
     success_url,
     fail_url,
-  }: { reqId: string, payload: string, hash: string, infoUrl: string, success_url: string, fail_url: string }): Promise<string> {
+  }: TSessionData): Promise<string> {
     const qr = await this.createQR(payload)
 
     this.state.set(reqId, {
