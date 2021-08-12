@@ -4,6 +4,7 @@ import { Singleton as UsersMapSingleton } from '../../../utils/gcsUsersMapInstan
 
 export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSingleton, gcsStorageFilePath: string }, res: IResponse) => {
   const { userName, chatData } = req.body
+  const { from } = req.query
   const requiredParams: string[] = ['userName', 'chatData']
   const _skipedParams = []
 
@@ -36,8 +37,9 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
   }
 
   staticData[uniqueKey] = myNewData
+
   // NOTE: Update global state
-  writeStaticJSONAsync(req.gcsStorageFilePath, staticData)
+  if (from === 'gcs') writeStaticJSONAsync(req.gcsStorageFilePath, staticData)
 
   return res.status(200).json({ success: true })
 }
