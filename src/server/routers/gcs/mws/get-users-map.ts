@@ -12,7 +12,9 @@ export const getUsersMap = async (req: IRequest & { gcsUsersMapInstance: UsersMa
     return res.status(200).json({
       success: true,
       usersMap: state,
-      _pravosleva: encode('http://pravosleva.ru/express-helper/gcs/add-user'),
+      _pravosleva: {
+        'http://pravosleva.ru/express-helper/gcs/add-user': encode('http://pravosleva.ru/express-helper/gcs/add-user')
+      },
       _staticData,
     })
   } catch (err) {
