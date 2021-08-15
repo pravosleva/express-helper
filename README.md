@@ -268,16 +268,21 @@ server {
 ```
 EXPIRES_COOKIES_IN_DAYS=1
 
+## ACCESS:
 SP_SVYAZNOY_JWT_SECRET=<YOUR_STRING>
 SP_ACCESS_PASSWORD=<YOUR_PASSWORD>
 QR_SWAGGER_JWT_SECRET=<YOUR_QR_SWAGGER_JWT_SECRET>
 QR_SWAGGER_ACCESS_PASSWORD=<YOUR_QR_SWAGGER_ACCESS_PASSWORD>
 
-##  Prod:
-BASE_PROTOCOL_HOST=http://pravosleva.ru
+## RECATPCHA:
+RECAPTCHAV3_SERVER_KEY=<YOUR_RECAPTCHAV3_SERVER_KEY>
+RECAPTCHAV3_VERIFY_URL=https://www.google.com/recaptcha/api/siteverify
 
-## Optional:
-# EXTERNAL_ROUTING=/express-helper
+## PRODUCTION:
+BASE_PROTOCOL_HOST=http://pravosleva.ru
+EXTERNAL_ROUTING=/express-helper
+
+## OPTIONAL:
 # SUCCESS_ANYWAY=1
 ```
 
@@ -382,7 +387,7 @@ smartpriceApi.use(
       // 4.1.1 Access tool sample
       case EPartner.Svyaznoy:
         redirectIfUnloggedMw(redirect[EAccessCode.OTSvyaznoyV1].jwtSecret, EAccessCode.OTSvyaznoyV1)(req, res, next)
-        break;
+        break
       // TODO: Other partner...
       default:
         res.status(500).json({ ok: false, message: '🖕 SORRY 🖕', _originalBody: { params: req.params } })
