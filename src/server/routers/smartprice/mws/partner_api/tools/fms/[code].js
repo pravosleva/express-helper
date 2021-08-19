@@ -16,7 +16,7 @@ module.exports = (req, res) => {
   }
   const response = {
     ...base,
-    _originalBody: { params: req.params },
+    _originalParams: { params: req.params },
   }
 
   return res.status(200).send(response)
