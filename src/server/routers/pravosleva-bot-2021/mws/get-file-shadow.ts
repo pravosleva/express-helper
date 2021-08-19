@@ -7,7 +7,7 @@ const getTGPath = (fileName: string) => `https://api.telegram.org/file/bot${TG_B
 
 // https://api.telegram.org/file/bot962430073:AAGiTIIaB8yMUdV1_3ORDleWyh449QeIObc/documents/file_26.png
 
-export const getFileUrl = async (req, res) => {
+export const getFileShadow = async (req, res) => {
   const { file_name } = req.params
 
   if (!file_name) {
