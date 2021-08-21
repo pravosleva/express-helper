@@ -2,9 +2,9 @@ import request from 'request'
 
 const TG_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN_PRAVOSLEVA_2021
 
-const getTGPath = (fileName: string) => `https://api.telegram.org/file/bot${TG_BOT_TOKEN}/documents/${fileName}`
+const getTGPath = (fileName: string) => `https://api.telegram.org/file/bot${TG_BOT_TOKEN}/photos/${fileName}`
 
-export const getFileShadow = async (req, res) => {
+export const getFileShadowPhotos = async (req, res) => {
   const { file_name } = req.params
 
   if (!file_name) {
