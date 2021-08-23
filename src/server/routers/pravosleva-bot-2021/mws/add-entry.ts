@@ -1,8 +1,27 @@
+import { Request as IRequest, Response as IResponse, NextFunction as INextFunction } from 'express'
 import { writeStaticJSONAsync, getStaticJSONSync } from '../../../utils/fs-tools'
 
-// const TG_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN_PRAVOSLEVA_2021
+type TUserData = {
+  company: string
+  position: string
+  feedback: string
+  contact: {
+    [key: string]: any
+    user_id: number
+  }
+  files: {
+    [key: string]: {
+      fileUrl: string
+    }
+  }
+  ts?: number
+  count?: number
+}
+type TStaticData = {
+  [key: string]: TUserData
+}
 
-export const addEntryRoute = async (req, res, next) => {
+export const addEntryRoute = async (req: IRequest & { botStorageFilePath: string }, res: IResponse, next: INextFunction) => {
   const { userState } = req.body
 
   if (!userState) {
@@ -16,24 +35,15 @@ export const addEntryRoute = async (req, res, next) => {
     try {
       const { entryData: { contact: { user_id } } } = userState
   
-      const staticData = getStaticJSONSync(req.botStorageFilePath)
+      const staticData: TStaticData = getStaticJSONSync(req.botStorageFilePath)
       const ts = new Date().getTime()
-      let myNewData: any = { ...userState }
-      const myOldData = staticData[String(user_id)]
+      let myNewData: TUserData = { ...userState }
+      const myOldData: TUserData = staticData[String(user_id)]
 
       if (!!myOldData) myNewData = { ...myOldData, ...myNewData }
 
-      if (myNewData?.count) {
-        const count = myNewData?.count
-  
-        myNewData = { ...myNewData, count: count + 1, ts }
-      } else {
-        myNewData = { ...myNewData, count: 1, ts }
-      }
-
+      myNewData = { ...myNewData, count: myNewData?.count ? myNewData?.count + 1 : 1, ts }
       staticData[String(user_id)] = myNewData
-
-      console.log(staticData)
 
       writeStaticJSONAsync(req.botStorageFilePath, staticData)
 
