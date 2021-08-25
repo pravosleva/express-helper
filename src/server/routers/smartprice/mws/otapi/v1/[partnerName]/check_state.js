@@ -16,6 +16,8 @@ const toClient = [
         condition_limit_reason: 'case_defects',
         price: 1909,
         price_rub: 1909,
+        accepted_photos: 3,
+        need_to_send_photos: 5,
       },
     },
   },
