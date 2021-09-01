@@ -27,10 +27,23 @@ const toClient = [
     id: 777,
     photo: 'models/samsung/galaxy-s20-ultra/color_cosmic_black_01.jpg',
   },
+  {
+    ok: true,
+    imei: '868030034494821',
+    phone: {
+      vendor: 'Xiaomi',
+      model: 'MI 6',
+      memory: '128 GB',
+      color: 'black',
+      type: 'mobile_phone',
+    },
+    id: 777,
+    photo: 'models/samsung/galaxy-s20-ultra/color_cosmic_black_01.jpg',
+  },
 ]
 
 module.exports = (req, res) => {
-  const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
+  const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(1, 2)
 
   res.status(200).send({
     ...toClient[toBeOrNotToBe],
