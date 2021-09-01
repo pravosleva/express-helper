@@ -1,4 +1,4 @@
-const { getRandomInteger } = require('../../../../../../utils/getRandomInteger')
+const { getRandomInteger } = require('~/utils/getRandomInteger')
 
 const { SUCCESS_ANYWAY } = process.env
 

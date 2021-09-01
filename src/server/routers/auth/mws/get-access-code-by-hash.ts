@@ -1,12 +1,22 @@
 /* eslint-disable no-restricted-syntax */
-const { redirect } = require('../cfg')
+// const { redirect } = require('../cfg')
+import { redirect } from '~/routers/auth/cfg'
 
-module.exports = (req, res) => {
+type TResponse = {
+  message?: string
+  code?: string
+  _originalQuery: any
+  ok: boolean
+  accessCode?: any
+  uiName?: string
+}
+
+const getAccessCodeByHash = (req, res) => {
   // res.append('Content-Type', 'application/json')
 
   const { hash } = req.query
   let status = 500
-  const response = {
+  const response: TResponse = {
     _originalQuery: req.query,
     ok: false,
   }
@@ -43,3 +53,5 @@ module.exports = (req, res) => {
 
   return res.status(status).json(response)
 }
+
+export default getAccessCodeByHash
