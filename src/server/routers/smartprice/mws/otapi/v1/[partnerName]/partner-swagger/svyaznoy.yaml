@@ -11,24 +11,36 @@ basePath: /express-helper/smartprice/otapi/v1/svyaznoy
 schemes:
   - http
 tags:
-  - name: 'imei'
+  - name: step1
     description: 'Check your IMEI'
     externalDocs:
       description: 'Проверить IMEI'
       url: 'swagger.io'
-  - name: 'confirm_detection'
+  - name: step2
     description: 'Go on button'
     externalDocs:
       description: 'Кнопка Продолжить'
-  - name: accept_preprice
+  - name: step3
+    description: 'Кнопка Дефектов нет / Расчитать цену'
+    externalDocs:
+      description: '4 галочки (дефекты)'
+  - name: step4
     description: 'Accept preprice'
     externalDocs:
-      description: 'Кнопка Рассчитать цену'
+      description: 'Кнопка К Финальной скидке'
+  - name: step7
+    description: 'No descr'
+    externalDocs:
+      description: 'Кнопка Сделать новые фото'
+  - name: step8
+    description: 'Финальная скидка'
+    externalDocs:
+      description: 'Кнопки Отказаться / Подтвердить'
 paths:
   /imei:
     post:
       tags:
-        - 'imei'
+        - 'step1'
       summary: 'Returns specific OT data'
       description: 'Проверить IMEI'
       consumes:
@@ -88,7 +100,7 @@ paths:
   /confirm_detection:
     post:
       tags:
-        - 'confirm_detection'
+        - 'step2'
       consumes:
         - application/json
       produces:
@@ -113,10 +125,73 @@ paths:
                 required: true
             example:
               ok: true
+  /diagnostics:
+    post:
+      tags:
+        - 'step3'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/DiagnosticsRequestParams'
+      summary: 'Returns specific OT data'
+      description: 'Кнопка Дефектов нет / Расчитать цену'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              message:
+                type: string
+                required: false
+            example:
+              ok: true
+  /reupload_photos:
+    post:
+      tags:
+        - 'step7'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/ReuploadPhotosRequestParams'
+      summary: 'No summary'
+      description: 'Кнопка Загрузить новые фото'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              need_photos:
+                $ref: '#/definitions/NeedPhotos'
+            example:
+              ok: true
+              need_photos:
+                - 'front'
   /accept_preprice:
     post:
       tags:
-        - 'accept_preprice'
+        - 'step4'
       consumes:
         - application/json
       produces:
@@ -145,6 +220,58 @@ paths:
               extra: null
             required:
               - ok
+  /accept_price:
+    post:
+      tags:
+        - 'step8'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      summary: 'Returns price acception result'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/ReuploadPhotosRequestParams'
+      description: 'Кнопка Подтвердить'
+      responses:
+        200:
+          description: OK
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+            example:
+              ok: true
+  /decline_price:
+    post:
+      tags:
+        - 'step8'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      summary: 'Decline price'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/ReuploadPhotosRequestParams'
+      description: 'Кнопка Отказаться'
+      responses:
+        200:
+          description: OK
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+            example:
+              ok: true
 
 definitions:
   IMEIVerifyRequestParams:
@@ -192,6 +319,33 @@ definitions:
       turns_on:
         required: true
         type: boolean
+  DiagnosticsRequestParams:
+    type: object
+    properties:
+      device:
+        required: true
+        type: number
+      diag_case:
+        required: true
+        type: boolean
+      diag_display:
+        required: true
+        type: boolean
+      diag_display_broken:
+        required: true
+        type: boolean
+      diag_display_burnouts:
+        required: true
+        type: boolean
+      no_touch_id:
+        required: true
+        type: boolean
+  ReuploadPhotosRequestParams:
+    type: object
+    properties:
+      device:
+        required: true
+        type: number
   MemoryChoises:
     type: array
     items:
