@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+const moduleAlias = require('module-alias')
+
+moduleAlias()
+
 /**
  * Module dependencies.
  */

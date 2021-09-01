@@ -1,7 +1,10 @@
-const Imei = require('node-imei')
+/* eslint-disable import/extensions */
+import Imei from 'node-imei'
+// import { getRandomInteger } from '../../../utils/getRandomInteger'
+// import { getRandomInteger } from '@getRandomInteger'
+import { getRandomInteger } from '~/utils/getRandomInteger'
 
 const IMEI = new Imei()
-// const { getRandomInteger } = require('utils/getRandomInteger')
 
 module.exports = async (_req, res) => {
   res.append('Content-Type', 'application/json')
@@ -9,6 +12,7 @@ module.exports = async (_req, res) => {
   const response = {
     success: true,
     result: IMEI.random(),
+    _rand: getRandomInteger(1, 100),
   }
 
   res.status(200).send(response)

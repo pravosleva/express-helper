@@ -26,6 +26,10 @@
     "lint": "eslint --debug 'src/server/**/*.{js,jsx,ts,tsx}' 'bin/**/*'",
     "lint:fix": "eslint 'src/server/**/*.{js,jsx,ts,tsx}' 'bin/**/*' --fix"
   },
+  "_moduleAliases": {
+    "~": "./server-dist",
+    "@getRandomInteger": "./server-dist/utils/getRandomInteger.js"
+  },
   "lint-staged": {
     "src/server/**/*.{js, jsx, ts, tsx}": [
       "node_modules/.bin/eslint --max-warnings=0 --no-ignore",
@@ -55,6 +59,7 @@
     "js-base64": "^3.6.1",
     "jsonwebtoken": "^8.5.1",
     "md5-hash": "^1.0.1",
+    "module-alias": "^2.2.2",
     "morgan": "~1.9.0",
     "multer": "^1.4.2",
     "node-imei": "^1.0.8",

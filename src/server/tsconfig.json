@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ES3",
     "removeComments": true,
     "allowJs": true,
     "resolveJsonModule": true,
     "module": "commonjs",
     "outDir": "../../server-dist",
-    "baseUrl": "../../",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@getRandomInteger": ["./utils/getRandomInteger"]
+    },
     "sourceMap": true,
     "esModuleInterop": true,
   },
