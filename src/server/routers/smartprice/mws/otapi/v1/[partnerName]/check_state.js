@@ -1,9 +1,10 @@
-/* eslint-disable no-plusplus */
-// const { getRandomInteger } = require('../../../../../../utils/getRandomInteger')
-// const { SUCCESS_ANYWAY } = process.env
+const { getRandomInteger } = require('~/utils/getRandomInteger')
 
-const isEven = (n) => !(n % 2)
+const { SUCCESS_ANYWAY } = process.env
 
+// const isEven = (n) => !(n % 2)
+
+// --- Counter
 function* Counter(initVal = 0) {
   let count = initVal
   while (true) yield count++
@@ -11,6 +12,7 @@ function* Counter(initVal = 0) {
 const counter = Counter(1)
 
 // Usage: counter.next().value
+// ---
 
 const toClient = [
   {
@@ -46,8 +48,8 @@ const toClient = [
 module.exports = async (req, res) => {
   const count = counter.next().value
 
-  // const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(1, 2)
-  const toBeOrNotToBe = !isEven(count) ? 2 : 1
+  const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
+  // const toBeOrNotToBe = !isEven(count) ? 2 : 1
 
   setTimeout(() => {
     res.status(200).send({

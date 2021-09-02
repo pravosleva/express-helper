@@ -16,7 +16,8 @@
     "class-methods-use-this": "off",
     "no-fallthrough": "off",
     "strict": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "no-plusplus": "off"
   },
   "env": {
     "jest/globals": true
