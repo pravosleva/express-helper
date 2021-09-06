@@ -21,6 +21,7 @@ import gcsApi from './routers/gcs'
 import { qrApi as qrRouter } from './routers/qr'
 import { addsDevicesLoggedStateInstance } from './utils/addsDevicesLoggedStateInstance'
 import { pravoslevaBot2021Router } from './routers/pravosleva-bot-2021'
+import { systemRouter } from './routers/system'
 
 const app = express()
 
@@ -57,5 +58,6 @@ app.use('/gcs', gcsApi)
 app.use('/auth', authRouter)
 app.use('/qr', qrRouter)
 app.use('/pravosleva-bot-2021', pravoslevaBot2021Router)
+app.use('/system', systemRouter)
 
 module.exports = app
