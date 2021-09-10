@@ -14,17 +14,22 @@ const getUsersMapRoute = require('./mws/get-users-map').getUsersMap
 const projectRootDir = path.join(__dirname, '../../../')
 const GCS_USERS_FILE_NAME = process.env.GCS_USERS_FILE_NAME || 'gcs-users.json'
 const storageFilePath = path.join(projectRootDir, '/storage', GCS_USERS_FILE_NAME)
-const isStorageFileExists = fs.existsSync(storageFilePath)
 
-if (!isStorageFileExists) {
-  try {
-    fs.appendFileSync(storageFilePath, '{}', 'utf8')
-  } catch (err) {
-    // eslint-disable-next-line no-console
-    console.log(err)
-    throw err
+try {
+  const isStorageFileExists = fs.existsSync(storageFilePath)
+  if (!isStorageFileExists) {
+    try {
+      fs.appendFileSync(storageFilePath, '{}', 'utf8')
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.log(err)
+      throw err
+    }
+    // console.log(fs.existsSync(storageFilePath))
   }
-  // console.log(fs.existsSync(storageFilePath))
+} catch (err) {
+  // eslint-disable-next-line no-console
+  console.log(err)
 }
 // ---
 

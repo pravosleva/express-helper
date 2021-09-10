@@ -1,6 +1,4 @@
 import express from 'express'
-import { getFileShadowDocuments } from './mws/get-file-shadow-documents'
-import { getFileShadowPhotos } from './mws/get-file-shadow-photos'
 import { addEntryRoute } from './mws/add-entry'
 import { getEntriesMapRoute } from './mws/get-entries-map'
 import path from 'path'
@@ -36,8 +34,6 @@ botApi.use((req, _res, next) => {
 botApi.use(bodyParser.urlencoded({ extended: false }))
 botApi.use(bodyParser.json())
 
-botApi.get('/get-file-shadow-documents/:file_name', getFileShadowDocuments)
-botApi.get('/get-file-shadow-photos/:file_name', getFileShadowPhotos)
 botApi.post('/add-entry', addEntryRoute)
 botApi.get('/get-entries-map', getEntriesMapRoute)
 
