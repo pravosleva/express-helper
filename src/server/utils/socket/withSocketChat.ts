@@ -1,3 +1,4 @@
+import { instrument } from '@socket.io/admin-ui'
 import { Socket } from 'socket.io'
 import { addUser, getUser, deleteUser, getUsers } from './users'
 
@@ -25,5 +26,11 @@ export const withSocketChat = (io: Socket) => {
             io.in(user.room).emit('users', getUsers(user.room))
         }
     })
+  })
+
+  // @ts-ignore
+  instrument(io, {
+    auth: false,
+    // namespace: '/admin',
   })
 }

@@ -4,17 +4,18 @@
   "private": true,
   "scripts": {
     "deploy:prod:restart-helper": "yarn build:fresh-prod && deploy-app -d prod:restart-helper",
-
     "deploy:smartprice:restart-helper": "yarn build:fresh-prod && deploy-app -d smartprice:restart-helper",
     "deploy:prod:restart-all": "deploy-app -d prod:restart-all",
     "kill-5000": "fuser -k -n tcp 5000",
     "cleanup:server-dist": "rm -rf ./server-dist/* !./server-dist/.gitkeep",
     "transpile-server:watch": "tsc -p ./src/server -w",
+    "quaint-html-copy": "bash quaint-files-copy.sh src/server/ server-dist/ html",
+    "quaint-css-copy": "bash quaint-files-copy.sh src/server/ server-dist/ css",
     "quaint-yaml-copy": "bash quaint-files-copy.sh src/server/ server-dist/ yaml",
     "quaint-express-env-copy:dev": "cp .env.dev server-dist/.env",
     "quaint-express-env-copy:prod": "cp .env.prod server-dist/.env",
-    "quaint-copy:dev": "yarn quaint-yaml-copy && yarn quaint-express-env-copy:dev",
-    "quaint-copy:prod": "yarn quaint-yaml-copy && yarn quaint-express-env-copy:prod",
+    "quaint-copy:dev": "yarn quaint-yaml-copy && yarn quaint-css-copy && yarn quaint-html-copy && yarn quaint-express-env-copy:dev",
+    "quaint-copy:prod": "yarn quaint-yaml-copy && yarn quaint-css-copy && yarn quaint-html-copy && yarn quaint-express-env-copy:prod",
     "transpile-server:dev": "tsc -p ./src/server && yarn quaint-copy:dev",
     "transpile-server:prod": "tsc -p ./src/server && yarn quaint-copy:prod",
     "build:front.chat:dev": "yarn --cwd src/frontend.chat install && bash src/set-front.chat-env.sh dev && yarn --cwd src/frontend.chat build",
@@ -28,14 +29,14 @@
     "start:pm2": "pm2 start npm --name \"express-helper-5000\" -- start",
     "test": "jest",
     "lint": "eslint --debug 'src/server/**/*.{js,jsx,ts,tsx}' 'bin/**/*'",
-    "lint:fix": "eslint 'src/server/**/*.{js,jsx,ts,tsx}' 'bin/**/*' --fix"
+    "lint:fix": "eslint 'src/server/**/*.{js,jsx,ts,tsx}' '!src/server/routers/chat/@socket.io/**/*' 'bin/**/*' --fix"
   },
   "_moduleAliases": {
     "~": "./server-dist",
     "@getRandomInteger": "./server-dist/utils/getRandomInteger.js"
   },
   "lint-staged": {
-    "src/server/**/*.{js, jsx, ts, tsx}": [
+    "src/server/**/*.{js, jsx, ts, tsx} !src/server/routers/chat/@socket.io/**/*": [
       "node_modules/.bin/eslint --max-warnings=0 --no-ignore",
       "prettier --write"
     ]
@@ -46,6 +47,7 @@
     }
   },
   "dependencies": {
+    "@socket.io/admin-ui": "^0.2.0",
     "animate.css": "^4.1.1",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
