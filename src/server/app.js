@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import cors from 'cors'
 import authRouter from './routers/auth'
+import chatRouter from './routers/chat'
 
 import { EAccessCode, redirect } from './routers/auth/cfg'
 import redirectIfUnloggedMw from './routers/auth/mws/redirect-if-unlogged'
@@ -59,5 +60,6 @@ app.use('/auth', authRouter)
 app.use('/qr', qrRouter)
 app.use('/pravosleva-bot-2021', pravoslevaBot2021Router)
 app.use('/system', systemRouter)
+app.use('/chat', chatRouter)
 
 module.exports = app

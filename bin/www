@@ -49,6 +49,12 @@ app.set('port', port)
 const server = http.createServer(app)
 
 /**
+ * Chat.
+ */
+
+require('~/utils/socket/withSocketChat').withSocketChat(require('socket.io')(server))
+
+/**
  * Listen on provided port, on all network interfaces.
  */
 
