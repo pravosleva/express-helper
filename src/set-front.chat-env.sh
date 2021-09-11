@@ -6,8 +6,10 @@ then
   # NOTE: Билд CRA всегда происходит как для production.
   case $1 in
     "dev")
-      echo "REACT_APP_WS_API_URL=ws://localhost:5000
-PUBLIC_URL=/express-helper/chat" > src/frontend.chat/.env.production
+      echo "REACT_APP_WS_API_URL=http://localhost:5000
+PUBLIC_URL=/chat" > src/frontend.chat/.env.production &&
+      echo "REACT_APP_WS_API_URL=http://localhost:5000
+PUBLIC_URL=/chat" > src/frontend.chat/.env.development.local
     ;;
     "prod")
       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
