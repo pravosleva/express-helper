@@ -48,7 +48,9 @@ export const Chat = () => {
         setMessage('')
     }
     const handleKeyDown = (ev) => {
-        if (ev.keyCode === 13) handleSendMessage()
+        if (ev.keyCode === 13) {
+            if (!!message) handleSendMessage()
+        }
     }
     const handleChange = (ev) => {
         setMessage(ev.target.value)
