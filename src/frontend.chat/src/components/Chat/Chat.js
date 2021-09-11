@@ -43,10 +43,15 @@ export const Chat = () => {
         })
     }, [socket, toast])
 
-
     const handleSendMessage = () => {
         socket.emit('sendMessage', message, () => setMessage(''))
         setMessage('')
+    }
+    const handleKeyDown = (ev) => {
+        if (ev.keyCode === 13) handleSendMessage()
+    }
+    const handleChange = (ev) => {
+        setMessage(ev.target.value)
     }
 
     const logout = () => {
@@ -100,8 +105,8 @@ export const Chat = () => {
                 }
             </ScrollToBottom>
             <div className='form'>
-                <input type="text" placeholder='Enter Message' value={message} onChange={e => setMessage(e.target.value)} />
-                <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' ? true : false}>Send</IconButton>
+                <input type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} />
+                <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={!message}>Send</IconButton>
             </div>
         </Flex>
 
