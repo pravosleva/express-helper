@@ -24,7 +24,7 @@ export const Login = () => {
         }
         socket.on("users", sUListener)
         return () => {
-            socket.on("users", sUListener)
+            socket.off("users", sUListener)
         }
     }, [])
 
