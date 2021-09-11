@@ -16,6 +16,7 @@ const btnStyle = {
 
 function App() {
   const { onAcceptCookie, onDeclineCookie, isCookieAccepted } = useMainContext()
+
   return (
     <>
       <MainPage />

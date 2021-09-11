@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "downlevelIteration": true,
     "target": "ES3",
     "removeComments": true,
     "allowJs": true,

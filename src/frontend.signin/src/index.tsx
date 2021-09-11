@@ -14,25 +14,26 @@ import 'animate.css/animate.min.css'
 
 // const { REACT_APP_EXTERNAL_ROUTING } = process.env
 
+// @ts-ignore
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <GlobalCss />
-        <MainContextProvider>
-          <NotifsContextProvider>
-            <Switch>
-              <Route key='/' path='/' exact={true} component={App} />
-            </Switch>
-          </NotifsContextProvider>
-        </MainContextProvider>
-      </ThemeProvider>
-    </HashRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+      <HashRouter>
+        <ThemeProvider theme={theme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <GlobalCss />
+          <MainContextProvider>
+            <NotifsContextProvider>
+              <Switch>
+                <Route key='/' path='/' exact={true} component={App} />
+              </Switch>
+            </NotifsContextProvider>
+          </MainContextProvider>
+        </ThemeProvider>
+      </HashRouter>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

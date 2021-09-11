@@ -1,5 +1,6 @@
 export { useMainContext } from '~/common/context/MainContext'
 export { useNotifsContext } from '~/common/context/NotificationContext'
 export * from './useRouter'
+export * from './useSocket'
 export * from './useUrgentMsgFromCookies'
 export * from './useWindowSize'

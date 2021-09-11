@@ -15,7 +15,8 @@ import { TValues } from './interfaces'
 import { getErrors } from './getErrors'
 // import { useRouter } from '~/common/hooks'
 import queryString from 'query-string'
-import { useMainContext, useUrgentMsgFromCookies } from '~/common/hooks'
+import { useMainContext, useUrgentMsgFromCookies, EE } from '~/common/hooks'
+import { ChatRooms } from '~/common/components/ChatRooms'
 
 const { REACT_APP_API_URL } = process.env
 
@@ -50,7 +51,7 @@ export const MainPage = () => {
     setErrorMsg(null)
   }, [setErrorMsg]);
   // const [isAccepted, setIsAccepted] = useState<boolean>(false);
-  const { isCookieAccepted: isAccepted, toggler: setIsAccepted } = useMainContext()
+  const { isCookieAccepted: isAccepted, toggler: setIsAccepted, socket } = useMainContext()
   const handleCheckAccept = useCallback(
     (_event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
       setIsAccepted(checked);
@@ -311,6 +312,7 @@ export const MainPage = () => {
                 </Grid>
               )}
             </Grid>
+            <ChatRooms />
           </FormikForm>
         )}
       </Formik>

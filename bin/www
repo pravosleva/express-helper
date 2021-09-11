@@ -1,52 +1,47 @@
 #!/usr/bin/env node
 
-const moduleAlias = require('module-alias')
-
-moduleAlias()
+require('module-alias')()
 
 /**
  * Module dependencies.
  */
 
 const debug = require('debug')('url-metadata-helper:server')
-const http = require('http')
 const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '../server-dist/.env') })
 
-const app = require('../server-dist/app')
+const server = require('../server-dist/app')
+
+const { getNormalizedPort } = require('~/utils/getNormalizedPort')
 
 /**
  * Normalize a port into a number, string, or false.
  */
 
-function normalizePort(val) {
-  const port = parseInt(val, 10)
-
-  if (Number.isNaN(port)) {
-    // named pipe
-    return val
-  }
-
-  if (port >= 0) {
-    // port number
-    return port
-  }
-
-  return false
-}
-
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000')
-app.set('port', port)
+const port = getNormalizedPort(process.env.PORT, 3000)
 
 /**
  * Create HTTP server.
  */
 
-const server = http.createServer(app)
+// const server = http.createServer(app)
+
+/**
+ * SOCKET.IO: Add socket logic.
+ */
+
+// eslint-disable-next-line prefer-const
+// io = require('socket.io')(server)
+// require('~/utils/socket/withSocketChatRooms')(io)
+
+// app.use((req, _res, next) => {
+//   req.io = io
+//   next()
+// })
 
 /**
  * Listen on provided port, on all network interfaces.

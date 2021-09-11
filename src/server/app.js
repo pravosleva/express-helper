@@ -6,6 +6,8 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import cors from 'cors'
+import http from 'http'
+import { Server } from 'socket.io'
 import authRouter from './routers/auth'
 
 import { EAccessCode, redirect } from './routers/auth/cfg'
@@ -22,8 +24,24 @@ import { qrApi as qrRouter } from './routers/qr'
 import { addsDevicesLoggedStateInstance } from './utils/addsDevicesLoggedStateInstance'
 import { pravoslevaBot2021Router } from './routers/pravosleva-bot-2021'
 import { systemRouter } from './routers/system'
+import { getNormalizedPort } from '~/utils/getNormalizedPort'
+import { withSocketChatRooms } from '~/utils/socket/withSocketChatRooms'
 
 const app = express()
+
+app.set('port', getNormalizedPort(process.env.PORT, 3000))
+
+const server = http.createServer(app)
+const io = new Server(server)
+
+withSocketChatRooms(io)
+
+app.use((req, _res, next) => {
+  req.io = io
+  next()
+})
+
+// const app = express()
 
 const addRequestId = require('express-request-id')()
 
@@ -60,4 +78,4 @@ app.use('/qr', qrRouter)
 app.use('/pravosleva-bot-2021', pravoslevaBot2021Router)
 app.use('/system', systemRouter)
 
-module.exports = app
+module.exports = server

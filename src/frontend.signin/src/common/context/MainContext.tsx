@@ -1,11 +1,15 @@
 import React, { useState, createContext, useContext, useEffect } from 'react'
 import { Cookies } from 'react-cookie-consent'
+import { Socket } from 'socket.io'
+import { useSocket, TChatRooms } from '~/common/hooks'
 
 type TMainContext = {
   isCookieAccepted: boolean
   onAcceptCookie: () => void
   onDeclineCookie: () => void
   toggler: (value: boolean) => void
+  socket: Socket | any
+  chatRooms: TChatRooms | {}
 }
 
 export const MainContext = createContext<TMainContext>({
@@ -19,9 +23,12 @@ export const MainContext = createContext<TMainContext>({
   toggler: () => {
     throw new Error('toggler method should be implemented')
   },
+  socket: null,
+  chatRooms: {},
 })
 
-export const MainContextProvider = ({ children }: any) => {
+export const MainContextProvider = ({ children }: { children: React.ReactNode }) => {
+  const { socket, chatRooms } = useSocket()
   const [isCookieAccepted, setIsCookieAccepted] = useState<boolean>(false)
   const removeCookie = () => {
     Cookies.remove('is-cookie-confirmed')
@@ -64,6 +71,8 @@ export const MainContextProvider = ({ children }: any) => {
           onAcceptCookie: handleAcceptCookie,
           onDeclineCookie: handleDeclineCookie,
           toggler,
+          socket,
+          chatRooms,
         }}
       >
         {children}
