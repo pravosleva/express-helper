@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "deploy:prod:restart-helper": "yarn build:fresh-prod && deploy-app -d prod:restart-helper",
+
     "deploy:smartprice:restart-helper": "yarn build:fresh-prod && deploy-app -d smartprice:restart-helper",
     "deploy:prod:restart-all": "deploy-app -d prod:restart-all",
     "kill-5000": "fuser -k -n tcp 5000",
