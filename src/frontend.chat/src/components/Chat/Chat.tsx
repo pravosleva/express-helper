@@ -16,7 +16,7 @@ import { useTextCounter } from '../../hooks/useTextCounter'
 type TUser = { socketId: string, room: string, name: string }
 
 export const Chat = () => {
-    const { name, room, setName, setRoom } = useContext(MainContext)
+    const { name, room } = useContext(MainContext)
     // @ts-ignore
     const { socket } = useContext(SocketContext)
     const [message, setMessage] = useState('')
@@ -31,7 +31,8 @@ export const Chat = () => {
     const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 800 })
 
     const handleLogout = () => {
-        setName(''); setRoom('');
+        // setName('');
+        // setRoom('');
         history.push('/')
         history.go(0)
     }
@@ -126,7 +127,7 @@ export const Chat = () => {
                                     return (
                                         <MenuItem
                                             minH='40px'
-                                            key={user.socketId}
+                                            key={user.name}
                                             onClick={() => {
                                                 handleUserClick(user)
                                             }}

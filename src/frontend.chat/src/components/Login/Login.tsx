@@ -46,7 +46,7 @@ export const Login = () => {
     const countRef = useRef(0)
  
     useEffect(() => {
-        if (countRef.current === 0) {
+        if (!name && countRef.current === 0) {
             if (!!nameLSRef.current) {
                 setName(nameLSRef.current)
                 handleOpenModal()
@@ -54,7 +54,7 @@ export const Login = () => {
         } else {
             countRef.current += 1
         }
-    }, [handleOpenModal, setName, nameLS])
+    }, [handleOpenModal, setName, nameLS, name])
     // ---
 
     //Checks to see if there's a user already present
@@ -112,7 +112,7 @@ export const Login = () => {
                 <ModalHeader>Your name is</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    {nameLS}
+                    {nameLS}?
                 </ModalBody>
         
                 <ModalFooter>

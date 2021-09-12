@@ -26,7 +26,7 @@ export const withSocketChat = (io: Socket) => {
         console.log("User disconnected");
         const user = deleteUser(socket.id)
         if (user) {
-          io.in(user.room).emit('notification', { status: 'info', title: 'Someone just left', description: `${user.name} just left the room` })
+          io.in(user.room).emit('notification', { status: 'info', title: 'Someone disconnected', description: `${user.name} just disconnected` })
           io.in(user.room).emit('users', getUsers(user.room))
         }
     })
