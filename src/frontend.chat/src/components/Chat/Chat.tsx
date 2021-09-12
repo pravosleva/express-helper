@@ -8,7 +8,7 @@ import { BiMessageDetail } from 'react-icons/bi'
 import { RiSendPlaneFill } from 'react-icons/ri'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom';
-import { useToast } from "@chakra-ui/react"
+import { useToast, UseToastOptions } from "@chakra-ui/react"
 import './Chat.scss'
 import { UsersContext } from '../../usersContext'
 import { useTextCounter } from '../../hooks/useTextCounter'
@@ -45,13 +45,13 @@ export const Chat = () => {
                 // @ts-ignore
                 setMessages((messages: string[]) => [...messages, msg]);
             }
-            const notifListener = (notif: { title: string, description: string }) => {
+            const notifListener = (notif: { status: UseToastOptions["status"], title: string, description: string }) => {
                 toast({
                     position: "top",
                     title: notif?.title,
                     description: notif?.description,
-                    status: "success",
-                    duration: 5000,
+                    status: notif?.status || "info",
+                    duration: 7000,
                     isClosable: true,
                 })
             }

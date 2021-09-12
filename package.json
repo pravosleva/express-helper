@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "dev:chat": "bash run-dev.sh chat",
+    "dev:signin": "bash run-dev.sh signin",
+    "dev": "bash run-dev.sh",
     "deploy:prod:restart-helper": "yarn build:fresh-prod && deploy-app -d prod:restart-helper",
     "deploy:smartprice:restart-helper": "yarn build:fresh-prod && deploy-app -d smartprice:restart-helper",
     "deploy:prod:restart-all": "deploy-app -d prod:restart-all",
@@ -25,7 +28,6 @@
     "build:fresh-prod": "yarn cleanup:server-dist && yarn transpile-server:prod && yarn build:front.signin:prod && yarn build:front.chat:prod",
     "build:fresh-dev": "yarn cleanup:server-dist && yarn transpile-server:dev && yarn build:front.singin:dev && yarn build:front.chat:dev",
     "start": "PORT=5000 NODE_PATH=. node ./bin/www",
-    "dev": "bash run-dev.sh",
     "start:pm2": "pm2 start npm --name \"express-helper-5000\" -- start",
     "test": "jest",
     "lint": "eslint --debug 'src/server/**/*.{js,jsx,ts,tsx}' 'bin/**/*'",
