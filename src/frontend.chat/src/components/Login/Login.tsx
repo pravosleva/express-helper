@@ -5,7 +5,6 @@ import { SocketContext } from '../../socketContext'
 import { Flex, Heading, IconButton, Input } from "@chakra-ui/react"
 import { RiArrowRightLine } from "react-icons/ri"
 import { useToast } from "@chakra-ui/react"
-import { Socket } from 'socket.io-client'
 
 import {
     Modal,
