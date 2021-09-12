@@ -6,16 +6,18 @@ const UsersContext = createContext({})
 
 const UsersProvider = ({ children }: any) => {
     const [users, setUsers] = useState<any[]>([])
-    const socket: Socket | any = useContext(SocketContext)
+    const { socket } = useContext(SocketContext)
 
     useEffect(() => {
-        const sUListener = (users: any[]) => {
-            setUsers(users)
-        }
-        socket.on("users", sUListener)
-
-        return () => {
-            socket.off("users", sUListener)
+        if (!!socket) {
+            const sUListener = (users: any[]) => {
+                setUsers(users)
+            }
+            socket.on("users", sUListener)
+    
+            return () => {
+                socket.off("users", sUListener)
+            }
         }
     }, [setUsers, socket])
 

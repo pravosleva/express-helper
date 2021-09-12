@@ -1,6 +1,6 @@
 const users = []
 
-export const addUser = (id, name, room) => {
+export const addUser = ({ socketId, name, room }) => {
     const existingUser = users.find(user => user.name.trim().toLowerCase() === name.trim().toLowerCase())
 
     if (existingUser) return { error: "Username has already been taken" }
@@ -8,19 +8,19 @@ export const addUser = (id, name, room) => {
     if (!name) return { error: "Username is required" }
     if (!room) return { error: "Room is required" }
 
-    const user = { id, name, room }
+    const user = { socketId, name, room }
     users.push(user)
     return { user }
 }
 
-export const getUser = id => {
-    let user = users.find(user => user.id == id)
+export const getUser = (socketId: string) => {
+    let user = users.find(user => user.socketId == socketId)
     return user
 }
 
-export const deleteUser = (id) => {
-    const index = users.findIndex((user) => user.id === id);
+export const deleteUser = (socketId: string) => {
+    const index = users.findIndex((user) => user.socketId === socketId);
     if (index !== -1) return users.splice(index, 1)[0];
 }
 
-export const getUsers = (room) => users.filter(user => user.room === room)
+export const getUsers = (room: string) => users.filter(user => user.room === room)

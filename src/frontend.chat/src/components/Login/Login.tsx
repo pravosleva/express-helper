@@ -5,9 +5,10 @@ import { SocketContext } from '../../socketContext'
 import { Flex, Heading, IconButton, Input } from "@chakra-ui/react"
 import { RiArrowRightLine } from "react-icons/ri"
 import { useToast } from "@chakra-ui/react"
+import { Socket } from 'socket.io-client'
 
 export const Login = () => {
-    const socket = useContext(SocketContext)
+    const { socket } = useContext(SocketContext)
     const { name, setName, setNameLS, room, setRoom } = useContext(MainContext)
     const history = useHistory()
     const toast = useToast()
@@ -17,10 +18,9 @@ export const Login = () => {
     //Checks to see if there's a user already present
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search)
+        const openRoomName: string | null = queryParams.get('room')
 
-        if(!!queryParams.has('room')) {
-          const openRoomName = queryParams.get('room')
-
+        if(!!openRoomName) {
           setRoom(openRoomName)
           setIsRoomDisabled(true)
     
@@ -32,7 +32,7 @@ export const Login = () => {
     //Emits the login event and if successful redirects to chat and saves user data
     const handleClick = () => {
         setNameLS(name)
-        socket.emit('login', { name, room }, error => {
+        !!socket && socket.emit('login', { name, room }, (error: any) => {
             if (error) {
                 console.log(error)
                 return toast({
@@ -56,7 +56,7 @@ export const Login = () => {
         })
     }
 
-    const handleKeyDown = (ev) => {
+    const handleKeyDown = (ev: any) => {
         if (ev.keyCode === 13) {
             if (!!room) handleClick()
         }

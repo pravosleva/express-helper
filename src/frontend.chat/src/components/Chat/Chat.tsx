@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState, useCallback } from 'react'
+import React, { useContext, useEffect, useState, useCallback, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '../../mainContext'
 import { SocketContext } from '../../socketContext'
-import { Box, Flex, Heading, IconButton, Text, Menu, Button, MenuButton, MenuList, MenuItem } from "@chakra-ui/react"
+import { Box, Flex, Heading, IconButton, Text, Menu, Button, MenuButton, MenuList, MenuItem, Textarea } from "@chakra-ui/react"
 import { FiList } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
 import { RiSendPlaneFill } from 'react-icons/ri'
@@ -11,60 +11,78 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import { useToast } from "@chakra-ui/react"
 import './Chat.scss'
 import { UsersContext } from '../../usersContext'
-import { Socket } from 'socket.io'
+import { useTextCounter } from '../../hooks/useTextCounter'
 
-type TUser = { id: string, room: string, name: string }
+type TUser = { socketId: string, room: string, name: string }
 
 export const Chat = () => {
     const { name, room, setName, setRoom } = useContext(MainContext)
     // @ts-ignore
-    const socket: Socket = useContext(SocketContext)
+    const { socket } = useContext(SocketContext)
     const [message, setMessage] = useState('')
     const [messages, setMessages] = useState([])
     // @ts-ignore
     const { users } = useContext(UsersContext)
     const history = useHistory()
     const toast = useToast()
+    const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 800 })
 
     const handleLogout = () => {
         setName(''); setRoom('');
         history.push('/')
         history.go(0)
     }
+    // const textFieldRef = useRef<HTMLInputElement>(null)
+    const textFieldRef = useRef<HTMLTextAreaElement>(null)
 
     window.onpopstate = e => handleLogout()
     //Checks to see if there's a user present
     useEffect(() => { if (!name) return history.push('/') }, [history, name])
 
-
     useEffect(() => {
-        const msgListener = (msg: string) => {
-            // @ts-ignore
-            setMessages((messages: string[]) => [...messages, msg]);
-        }
-        const notifListener = (notif: { title: string, description: string }) => {
-            toast({
-                position: "top",
-                title: notif?.title,
-                description: notif?.description,
-                status: "success",
-                duration: 5000,
-                isClosable: true,
-            })
-        }
-
-        socket.on("message", msgListener)
-        socket.on("notification", notifListener)
-
-        return () => {
-            socket.off("message", msgListener)
-            socket.off("notification", notifListener)
+        if (!!socket) {
+            const msgListener = (msg: string) => {
+                // @ts-ignore
+                setMessages((messages: string[]) => [...messages, msg]);
+            }
+            const notifListener = (notif: { title: string, description: string }) => {
+                toast({
+                    position: "top",
+                    title: notif?.title,
+                    description: notif?.description,
+                    status: "success",
+                    duration: 5000,
+                    isClosable: true,
+                })
+            }
+    
+            socket.on("message", msgListener)
+            socket.on("notification", notifListener)
+    
+            return () => {
+                socket.off("message", msgListener)
+                socket.off("notification", notifListener)
+            }
         }
     }, [socket, toast])
 
     const handleSendMessage = () => {
-        socket.emit('sendMessage', message, () => setMessage(''))
-        setMessage('')
+        if (isMsgLimitReached) {
+            toast({
+                position: "top",
+                title: 'Sorry',
+                description: 'Cant send big msg',
+                status: "error",
+                duration: 7000,
+                isClosable: true,
+            })
+            return
+        }
+        const normalizedMsg = message.trim()
+        if (!!socket && !!normalizedMsg) {
+            socket.emit('sendMessage', normalizedMsg, () => setMessage(''))
+            setMessage('')
+        }
     }
     const handleKeyDown = (ev: any) => {
         if (ev.keyCode === 13) {
@@ -85,9 +103,8 @@ export const Chat = () => {
     const handleUserClick = (user: TUser) => {
         if (!hasUserInMessage(user)) {
             setMessage(`@${user.name}, ${message}`)
-        } else {
-            console.log('unnecessary')
         }
+        if (!!textFieldRef.current) textFieldRef.current.focus()
     }
 
     return (
@@ -102,7 +119,7 @@ export const Chat = () => {
                                     return (
                                         <MenuItem
                                             minH='40px'
-                                            key={user.id}
+                                            key={user.socketId}
                                             onClick={() => {
                                                 handleUserClick(user)
                                             }}
@@ -142,8 +159,10 @@ export const Chat = () => {
                 }
             </ScrollToBottom>
             <div className='form'>
-                <input type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} />
-                <IconButton aria-label='Users' colorScheme='green' isRound icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={!message}>Send</IconButton>
+                {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}
+                <Textarea id='msg' isInvalid={isMsgLimitReached} resize='none' ref={textFieldRef} placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} />
+                <label htmlFor='msg'>{left} left</label>
+                <IconButton aria-label='Users' colorScheme={isMsgLimitReached ? 'red' : 'blue'} isRound icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={!message}>Send</IconButton>
             </div>
         </Flex>
     )

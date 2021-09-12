@@ -1,15 +1,21 @@
 import { createContext } from 'react'
-import io from 'socket.io-client'
+import io, { Socket } from 'socket.io-client'
 
 const REACT_APP_WS_API_URL = process.env.REACT_APP_WS_API_URL || '/'
 
-const SocketContext = createContext({})
+interface ISocketContext {
+    socket: Socket | null
+  }
+
+const SocketContext = createContext<ISocketContext>({
+    socket: null
+})
 
 const SocketProvider = ({ children }: any) => {
-    const socket = io(REACT_APP_WS_API_URL, { transports: ['websocket', 'polling'] })
+    const socket: Socket = io(REACT_APP_WS_API_URL, { transports: ['websocket', 'polling'] })
 
     return (
-        <SocketContext.Provider value={socket}>
+        <SocketContext.Provider value={{ socket }}>
             {children}
         </SocketContext.Provider>
     )
