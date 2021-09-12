@@ -50,6 +50,8 @@
 
       }
       button{
+          user-select: none;
+          -webkit-tap-highlight-color: transparent;
           position: absolute;
           right: 1rem;
           top: 1rem;

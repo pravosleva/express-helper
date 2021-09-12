@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, useCallback } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '../../mainContext'
 import { SocketContext } from '../../socketContext'
@@ -11,12 +11,17 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import { useToast } from "@chakra-ui/react"
 import './Chat.scss'
 import { UsersContext } from '../../usersContext'
+import { Socket } from 'socket.io'
+
+type TUser = { id: string, room: string, name: string }
 
 export const Chat = () => {
     const { name, room, setName, setRoom } = useContext(MainContext)
-    const socket = useContext(SocketContext)
+    // @ts-ignore
+    const socket: Socket = useContext(SocketContext)
     const [message, setMessage] = useState('')
     const [messages, setMessages] = useState([])
+    // @ts-ignore
     const { users } = useContext(UsersContext)
     const history = useHistory()
     const toast = useToast()
@@ -27,11 +32,11 @@ export const Chat = () => {
 
 
     useEffect(() => {
-        socket.on("message", msg => {
-            setMessages(messages => [...messages, msg]);
-        })
-
-        socket.on("notification", notif => {
+        const msgListener = (msg: string) => {
+            // @ts-ignore
+            setMessages((messages: string[]) => [...messages, msg]);
+        }
+        const notifListener = (notif: { title: string, description: string }) => {
             toast({
                 position: "top",
                 title: notif?.title,
@@ -40,20 +45,43 @@ export const Chat = () => {
                 duration: 5000,
                 isClosable: true,
             })
-        })
+        }
+
+        socket.on("message", msgListener)
+        socket.on("notification", notifListener)
+
+        return () => {
+            socket.off("message", msgListener)
+            socket.off("notification", notifListener)
+        }
     }, [socket, toast])
 
     const handleSendMessage = () => {
         socket.emit('sendMessage', message, () => setMessage(''))
         setMessage('')
     }
-    const handleKeyDown = (ev) => {
+    const handleKeyDown = (ev: any) => {
         if (ev.keyCode === 13) {
             if (!!message) handleSendMessage()
         }
     }
-    const handleChange = (ev) => {
+    const handleChange = (ev: any) => {
         setMessage(ev.target.value)
+    }
+    const hasUserInMessage = useCallback((user: TUser) => {
+        let result = false
+        const template = `@${user.name}`
+
+        if (message.includes(template)) result = true
+
+        return result
+    }, [message])
+    const handleUserClick = (user: TUser) => {
+        if (!hasUserInMessage(user)) {
+            setMessage(`@${user.name}, ${message}`)
+        } else {
+            console.log('unnecessary')
+        }
     }
 
     const logout = () => {
@@ -70,9 +98,16 @@ export const Chat = () => {
                         <MenuButton as={IconButton} icon={<FiList />} isRound='true' bg='blue.300' color='white' />
                         <MenuList>
                             {
-                                users && users.map(user => {
+                                users && users.map((user: TUser) => {
                                     return (
-                                        <MenuItem minH='40px' key={user.id}>
+                                        <MenuItem
+                                            minH='40px'
+                                            key={user.id}
+                                            onClick={() => {
+                                                handleUserClick(user)
+                                            }}
+                                            isDisabled={name === user.name}
+                                        >
                                             <Text fontSize='sm'>{user.name}</Text>
                                         </MenuItem>
                                     )
@@ -91,7 +126,7 @@ export const Chat = () => {
 
             <ScrollToBottom className='messages' debug={false}>
                 {messages.length > 0 ?
-                    messages.map((msg, i) =>
+                    messages.map((msg: any, i) =>
                     (<Box key={i} className={`message ${msg.user === name ? "my-message" : ""}`} m=".2rem 0">
                         <Text fontSize='xs' opacity='.7' ml='5px' className='user'>{msg.user}</Text>
                         <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white'>{msg.text}</Text>
@@ -108,7 +143,7 @@ export const Chat = () => {
             </ScrollToBottom>
             <div className='form'>
                 <input type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} />
-                <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={!message}>Send</IconButton>
+                <IconButton aria-label='Users' colorScheme='green' isRound icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={!message}>Send</IconButton>
             </div>
         </Flex>
 

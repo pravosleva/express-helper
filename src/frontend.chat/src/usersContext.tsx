@@ -1,9 +1,23 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useContext, useEffect } from 'react'
+import { SocketContext } from './socketContext'
+import { Socket } from 'socket.io'
 
 const UsersContext = createContext({})
 
 const UsersProvider = ({ children }: any) => {
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState<any[]>([])
+    const socket: Socket | any = useContext(SocketContext)
+
+    useEffect(() => {
+        const sUListener = (users: any[]) => {
+            setUsers(users)
+        }
+        socket.on("users", sUListener)
+
+        return () => {
+            socket.off("users", sUListener)
+        }
+    }, [setUsers, socket])
 
     return (
         <UsersContext.Provider value={{ users, setUsers }}>

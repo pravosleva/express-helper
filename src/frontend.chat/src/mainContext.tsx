@@ -1,10 +1,26 @@
 import { useState, createContext } from 'react'
 
-const MainContext = createContext({})
+type TMainContext = {
+    name: string
+    room: string
+    setName: (name: string) => void,
+    setRoom: (room: string) => void,
+}
+
+const MainContext = createContext<TMainContext>({
+    name: '',
+    room: '',
+    setName: (name: string) => {
+        throw new Error('setName should be implemented')
+    },
+    setRoom: (room: string) => {
+        throw new Error('setRoom should be implemented')
+    },
+})
 
 const MainProvider = ({ children }: any) => {
-    const [name, setName] = useState('')
-    const [room, setRoom] = useState('')
+    const [name, setName] = useState<string>('')
+    const [room, setRoom] = useState<string>('')
 
     return (
         <MainContext.Provider value={{ name, room, setName, setRoom }}>

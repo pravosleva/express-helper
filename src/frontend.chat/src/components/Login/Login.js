@@ -5,29 +5,16 @@ import { SocketContext } from '../../socketContext'
 import { Flex, Heading, IconButton, Input } from "@chakra-ui/react"
 import { RiArrowRightLine } from "react-icons/ri"
 import { useToast } from "@chakra-ui/react"
-import { UsersContext } from '../../usersContext'
 
 export const Login = () => {
     const socket = useContext(SocketContext)
     const { name, setName, room, setRoom } = useContext(MainContext)
     const history = useHistory()
     const toast = useToast()
-    const { setUsers } = useContext(UsersContext)
     const location = useLocation()
     const [isRoomDisabled, setIsRoomDisabled] = useState(false)
 
     //Checks to see if there's a user already present
-
-    useEffect(() => {
-        const sUListener = users => {
-            setUsers(users)
-        }
-        socket.on("users", sUListener)
-        return () => {
-            socket.off("users", sUListener)
-        }
-    }, [])
-
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search)
 
@@ -40,7 +27,7 @@ export const Login = () => {
           queryParams.delete('room')
           history.replace({ search: queryParams.toString() })
         }
-      }, [location.search, history])
+      }, [location.search, history, setRoom])
 
     //Emits the login event and if successful redirects to chat and saves user data
     const handleClick = () => {

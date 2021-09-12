@@ -6,14 +6,14 @@ import { MainProvider } from './mainContext'
 import './App.css'
 import { ChakraProvider, Flex } from "@chakra-ui/react"
 import { UsersProvider } from './usersContext'
-import DefaultPage from './components/DefaultPage'
+import { DefaultPage } from './components/DefaultPage'
 
 function App() {
   return (
     <ChakraProvider>
-      <MainProvider>
-        <UsersProvider>
-          <SocketProvider>
+      <SocketProvider>
+        <MainProvider>
+          <UsersProvider>
             <Flex className="App" align='center' justifyContent='center'>
               <Router>
                 <Switch>
@@ -23,9 +23,9 @@ function App() {
                 </Switch>
               </Router>
             </Flex>
-          </SocketProvider>
-        </UsersProvider>
-      </MainProvider>
+          </UsersProvider>
+        </MainProvider>
+      </SocketProvider>
     </ChakraProvider>
   );
 }
