@@ -20,6 +20,9 @@ export const Chat = () => {
     // @ts-ignore
     const { socket } = useContext(SocketContext)
     const [message, setMessage] = useState('')
+    const resetMessage = () => {
+        setMessage('')
+    }
     const [messages, setMessages] = useState([])
     // @ts-ignore
     const { users } = useContext(UsersContext)
@@ -80,13 +83,17 @@ export const Chat = () => {
         }
         const normalizedMsg = message.trim()
         if (!!socket && !!normalizedMsg) {
-            socket.emit('sendMessage', normalizedMsg, () => setMessage(''))
-            setMessage('')
+            socket.emit('sendMessage', normalizedMsg)
+            resetMessage()
         }
     }
-    const handleKeyDown = (ev: any) => {
-        if (ev.keyCode === 13) {
-            if (!!message) handleSendMessage()
+    const handleKeyUp = (ev: any) => {
+        switch (true) {
+            case ev.keyCode === 13 && !ev.shiftKey:
+                if (!!message) handleSendMessage()
+                break;
+            default:
+                break;
         }
     }
     const handleChange = (ev: any) => {
@@ -160,7 +167,7 @@ export const Chat = () => {
             </ScrollToBottom>
             <div className='form'>
                 {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}
-                <Textarea id='msg' isInvalid={isMsgLimitReached} resize='none' ref={textFieldRef} placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} />
+                <Textarea id='msg' isInvalid={isMsgLimitReached} resize='none' ref={textFieldRef} placeholder='Enter Message' value={message} onChange={handleChange} onKeyUp={handleKeyUp} />
                 <label htmlFor='msg'>{left} left</label>
                 <IconButton aria-label='Users' colorScheme={isMsgLimitReached ? 'red' : 'blue'} isRound icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={!message}>Send</IconButton>
             </div>
