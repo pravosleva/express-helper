@@ -26,7 +26,13 @@ export const Chat = () => {
     const history = useHistory()
     const toast = useToast()
 
-    window.onpopstate = e => logout()
+    const handleLogout = () => {
+        setName(''); setRoom('');
+        history.push('/')
+        history.go(0)
+    }
+
+    window.onpopstate = e => handleLogout()
     //Checks to see if there's a user present
     useEffect(() => { if (!name) return history.push('/') }, [history, name])
 
@@ -84,12 +90,6 @@ export const Chat = () => {
         }
     }
 
-    const logout = () => {
-        setName(''); setRoom('');
-        history.push('/')
-        history.go(0)
-    }
-
     return (
         <Flex className='room' flexDirection='column' width={{ base: "100%", sm: '575px' }} height={{ base: "100%", sm: "auto" }}>
             <Heading className='heading' as='h4' bg='white' p='1rem 1.5rem' borderRadius='10px 10px 0 0'>
@@ -119,7 +119,7 @@ export const Chat = () => {
                         <Heading fontSize='lg'> {room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading>
                         <Flex alignItems='center'><Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >{name}</Text><Box h={2} w={2} borderRadius='100px' bg='green.300'></Box></Flex>
                     </Flex>
-                    <Button color='gray.500' fontSize='sm' onClick={logout}  >Logout</Button>
+                    <Button color='gray.500' fontSize='sm' onClick={handleLogout}>Logout</Button>
                 </Flex>
             </Heading>
 
@@ -146,6 +146,5 @@ export const Chat = () => {
                 <IconButton aria-label='Users' colorScheme='green' isRound icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={!message}>Send</IconButton>
             </div>
         </Flex>
-
     )
 }
