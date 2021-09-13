@@ -140,7 +140,7 @@ export const withSocketChat = (io: Socket) => {
 
         io.in(room).emit('message', { user: name, text: message, ts });
       } catch (err) {
-        socket.emit('notification', { status: 'error', title: 'ERR #1', description: err.message || 'Server error' })
+        socket.emit('notification', { status: 'error', title: 'ERR #1', description: err.message || 'Server error', _originalBody: { message, userName } })
       }
       // ---
     })

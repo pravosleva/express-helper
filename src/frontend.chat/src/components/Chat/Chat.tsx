@@ -21,7 +21,7 @@ type TMessage = { user: string, text: string, ts: number }
 export const Chat = () => {
     const { name, room, setRoom } = useContext(MainContext)
     // @ts-ignore
-    const { socket, roomData, setIsLogged, isLogged } = useContext(SocketContext)
+    const { socket, roomData, setIsLogged, isLogged, isConnected, setIsConnected } = useContext(SocketContext)
     const [message, setMessage] = useState('')
     const resetMessage = () => {
         setMessage('')
@@ -75,6 +75,7 @@ export const Chat = () => {
                 setMessages((messages: TMessage[]) => [...messages, msg]);
             }
             const notifListener = (notif: { status: UseToastOptions["status"], title: string, description: string }) => {
+                console.log(notif)
                 toast({
                     position: "top",
                     title: notif?.title,
@@ -84,9 +85,11 @@ export const Chat = () => {
                     isClosable: true,
                 })
             }
+            
     
             socket.on("message", msgListener)
             socket.on("notification", notifListener)
+            
     
             return () => {
                 socket.off("message", msgListener)
@@ -96,7 +99,7 @@ export const Chat = () => {
     }, [socket, toast])
 
     useEffect(() => {
-        if (!!socket && !!name && !!room) {
+        if (!!socket && !!name && !!room) {   
             socket.emit('setMeAgain', { name, room })
 
             return () => {
@@ -104,6 +107,41 @@ export const Chat = () => {
             }
         }
     }, [socket, toast, name, room])
+
+    useEffect(() => {
+        console.log('EFFECT: socket?.connected', socket?.connected)
+        if (!!socket) {
+            if (!!socket?.connected) {
+                socket.emit('setMeAgain', { name, room })
+                // setIsConnected(true)
+                // const connListener = () => {
+                //     console.log('CONNECT')
+                //     socket.emit('unsetMe', { name, room })
+                //     socket.emit('setMeAgain', { name, room })
+                    
+                // }
+                // socket.on("connection", connListener)
+    
+                // return () => {
+                //     socket.off("connection", connListener)
+                // }
+            } else {
+                socket.emit('unsetMe', { name, room })
+                // setIsConnected(false)
+                // const connListener = () => {
+                //     console.log('CONNECT')
+                //     socket.emit('unsetMe', { name, room })
+                //     socket.emit('setMeAgain', { name, room })
+                // }
+    
+                // socket.on("connection", connListener)
+    
+                // return () => {
+                //     socket.off("connection", connListener)
+                // }
+            }
+        }
+    }, [socket?.connected])
 
     const handleSendMessage = () => {
         if (isMsgLimitReached) {
@@ -177,9 +215,9 @@ export const Chat = () => {
                     </Menu>
                     <Flex alignItems='center' flexDirection='column' flex={{ base: "1", sm: "auto" }}>
                         <Heading fontSize='lg'> {room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading>
-                        <Flex alignItems='center'><Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >{name}</Text><Box h={2} w={2} borderRadius='100px' bg='green.300'></Box></Flex>
+                        <Flex alignItems='center'><Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >{name}</Text><Box h={2} w={2} borderRadius='100px' bg={isConnected ? 'green.300' : 'red.300'}></Box></Flex>
                     </Flex>
-                    <Button color='gray.500' fontSize='sm' onClick={handleLogout}>Logout</Button>
+                    <Button color='gray.500' fontSize='sm' onClick={handleLogout}>{isConnected ? 'Logout' : 'Reconnect'}</Button>
                 </Flex>
             </Heading>
 
@@ -190,7 +228,7 @@ export const Chat = () => {
                         const date = getNormalizedDateTime(ts)
 
                         return (
-                            <Box key={ts} className={clsx('message', { "my-message": isMyMessage, "oponent-message": !isMyMessage })} m=".2rem 0">
+                            <Box key={`${user}-${ts}`} className={clsx('message', { "my-message": isMyMessage, "oponent-message": !isMyMessage })} m=".2rem 0">
                                 <Text fontSize='xs' opacity='.7' ml='5px' className='from'><b>{user}</b> <span className='date'>{date}</span></Text>
                                 <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' color='white'>{text}</Text>
                             </Box>

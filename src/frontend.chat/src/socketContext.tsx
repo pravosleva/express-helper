@@ -17,13 +17,17 @@ interface ISocketContext {
     roomData: TRoomData
     isLogged: boolean
     setIsLogged: (val: boolean) => void
+    isConnected: boolean
+    setIsConnected: (val: boolean) => void
 }
 
 const SocketContext = createContext<ISocketContext>({
     socket: null,
     roomData: {},
     isLogged: false,
-    setIsLogged: () => {}
+    setIsLogged: () => {},
+    isConnected: false,
+    setIsConnected: () => {},
 })
 
 
@@ -35,6 +39,7 @@ const SocketProvider = memo(({ children }: any) => {
     const toast = useToast()
     const [roomData, setRoomData] = useState<TRoomData>({})
     const [isLogged, setIsLogged] = useState<boolean>(false)
+    const [isConnected, setIsConnected] = useState<boolean>(true)
 
     useEffect(() => {
         const disconnListener = () => {
@@ -46,23 +51,34 @@ const SocketProvider = memo(({ children }: any) => {
                 duration: 5000,
                 isClosable: true,
             })
+            setIsConnected(false)
         }
         const oldChatListener = (data: { roomData: TRoomData }) => {
             console.log(data.roomData)
             setRoomData(data.roomData)
         }
+        const connListener = () => {
+            setIsConnected(true)
+        }
+        const connErrListener = (reason: any) => {
+            console.log(reason)
+        }
 
         socket.on("oldChat", oldChatListener)
         socket.on('disconnect', disconnListener)
+        socket.on('connect', connListener)
+        socket.on('connect_error', connErrListener)
 
         return () => {
             socket.off("oldChat", oldChatListener)
             socket.off('disconnect', disconnListener)
+            socket.off('connect', connListener)
+            socket.off('connect_error', connErrListener)
         }
-    }, [socket, setRoomData])
+    }, [socket, socket?.connected, setRoomData, setIsConnected])
 
     return (
-        <SocketContext.Provider value={{ socket, roomData, isLogged, setIsLogged }}>
+        <SocketContext.Provider value={{ socket, roomData, isLogged, setIsLogged, isConnected, setIsConnected }}>
             {children}
         </SocketContext.Provider>
     )
