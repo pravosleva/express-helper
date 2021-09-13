@@ -1,6 +1,6 @@
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import { Login } from './components/Login'
-import { Chat } from './components/Chat/Chat'
+import { Chat } from './components/Chat'
 import { SocketProvider } from './socketContext'
 import { MainProvider } from './mainContext'
 import './App.css'

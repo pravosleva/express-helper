@@ -1,5 +1,5 @@
 // const { getRandomInteger } = require('utils/getRandomInteger')
-const fake = require('./fake')
+// const fake = require('./fake')
 
 module.exports = async (req, res) => {
   // const toBeOrNotToBe = getRandomInteger(0, 1)
@@ -19,12 +19,12 @@ module.exports = async (req, res) => {
   //     list: [],
   //   },
   // };
-  const result = fake
+  // const result = fake
 
   // result.itemsData.list.forEach((_item, i) => {
   //   result.itemsData.list[i].photo = result.itemsData.list[i].photo.replace('/static/', 'https://smartprice.ru/static/')
   // })
 
-  res.status(200).send(result)
+  res.status(200).send({})
   // res.status(toBeOrNotToBe ? 200 : 400).send({ ok: !!toBeOrNotToBe, _originalBody: req.body })
 }

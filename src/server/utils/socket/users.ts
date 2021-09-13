@@ -1,20 +1,26 @@
-const users = []
+export type TUser = {
+    socketId: string
+    name: string
+    room: string
+}
 
-export const addUser = ({ socketId, name, room }) => {
-    const existingUser = users.find(user => user.name.trim().toLowerCase() === name.trim().toLowerCase())
+const users: TUser[] = []
 
-    if (existingUser) return { error: "Username has already been taken" }
+export const addUser = ({ socketId, name, room }: TUser) => {
+    const existingUser: TUser | undefined = users.find(user => user.name.trim().toLowerCase() === name.trim().toLowerCase())
+
+    if (!!existingUser) return { error: "Username has already been taken" }
     if (!name && !room) return { error: "Username and room are required" }
     if (!name) return { error: "Username is required" }
     if (!room) return { error: "Room is required" }
 
-    const user = { socketId, name, room }
+    const user: TUser = { socketId, name, room }
     users.push(user)
     return { user }
 }
 
 export const getUser = (socketId: string) => {
-    let user = users.find(user => user.socketId == socketId)
+    let user: TUser | undefined = users.find(user => user.socketId == socketId)
     return user
 }
 

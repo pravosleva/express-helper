@@ -9,45 +9,70 @@ import { RiSendPlaneFill } from 'react-icons/ri'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { useToast, UseToastOptions } from "@chakra-ui/react"
+import clsx from 'clsx'
 import './Chat.scss'
 import { UsersContext } from '../../usersContext'
 import { useTextCounter } from '../../hooks/useTextCounter'
+import { getNormalizedDateTime } from '../../utils/timeConverter'
 
 type TUser = { socketId: string, room: string, name: string }
+type TMessage = { user: string, text: string, ts: number }
 
 export const Chat = () => {
-    const { name, room } = useContext(MainContext)
+    const { name, room, setRoom } = useContext(MainContext)
     // @ts-ignore
-    const { socket } = useContext(SocketContext)
+    const { socket, roomData, setIsLogged, isLogged } = useContext(SocketContext)
     const [message, setMessage] = useState('')
     const resetMessage = () => {
         setMessage('')
     }
-    const [messages, setMessages] = useState([])
+    const [messages, setMessages] = useState<TMessage[]>([])
     // @ts-ignore
     const { users } = useContext(UsersContext)
     const history = useHistory()
     const toast = useToast()
     const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 800 })
 
+    useEffect(() => {
+        const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
+        const messages: TMessage[] = Object.keys(roomData).reduce((acc, name) => {
+            // @ts-ignore
+            roomData[name].forEach(({ text, ts }: any) => {
+                // @ts-ignore
+                acc.push({ text, user: name, ts })
+            })
+            return acc
+        }, [])
+
+        setMessages(messages.sort(tsSortDEC))
+    }, [roomData])
+
     const handleLogout = () => {
         // setName('');
-        // setRoom('');
-        history.push('/')
-        history.go(0)
+        if (!!socket) socket.emit('logout', { name })
+        // setIsLogged(false)
+        // setRoom('')
+        // history.push('/')
+        setTimeout(() => {
+            console.log('GO /')
+            // history.go(0)
+            history.push('/')
+        }, 0)
     }
     // const textFieldRef = useRef<HTMLInputElement>(null)
     const textFieldRef = useRef<HTMLTextAreaElement>(null)
 
-    window.onpopstate = e => handleLogout()
+    // window.onpopstate = e => handleLogout()
     //Checks to see if there's a user present
-    useEffect(() => { if (!name) return history.push('/') }, [history, name])
+    // useEffect(() => {
+    //     if (!isLogged) history.push('/')
+    // }, [isLogged])
 
     useEffect(() => {
         if (!!socket) {
-            const msgListener = (msg: string) => {
+            const msgListener = (msg: TMessage) => {
                 // @ts-ignore
-                setMessages((messages: string[]) => [...messages, msg]);
+                setMessages((messages: TMessage[]) => [...messages, msg]);
             }
             const notifListener = (notif: { status: UseToastOptions["status"], title: string, description: string }) => {
                 toast({
@@ -70,6 +95,16 @@ export const Chat = () => {
         }
     }, [socket, toast])
 
+    useEffect(() => {
+        if (!!socket && !!name && !!room) {
+            socket.emit('setMeAgain', { name, room })
+
+            return () => {
+                socket.emit('unsetMe', { name, room })
+            }
+        }
+    }, [socket, toast, name, room])
+
     const handleSendMessage = () => {
         if (isMsgLimitReached) {
             toast({
@@ -84,7 +119,7 @@ export const Chat = () => {
         }
         const normalizedMsg = message.trim()
         if (!!socket && !!normalizedMsg) {
-            socket.emit('sendMessage', normalizedMsg)
+            socket.emit('sendMessage', { message: normalizedMsg, userName: name })
             resetMessage()
         }
     }
@@ -148,15 +183,19 @@ export const Chat = () => {
                 </Flex>
             </Heading>
 
-
             <ScrollToBottom className='messages' debug={false}>
                 {messages.length > 0 ?
-                    messages.map((msg: any, i) =>
-                    (<Box key={i} className={`message ${msg.user === name ? "my-message" : ""}`} m=".2rem 0">
-                        <Text fontSize='xs' opacity='.7' ml='5px' className='user'>{msg.user}</Text>
-                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white'>{msg.text}</Text>
-                    </Box>)
-                    )
+                    messages.map(({ user, text, ts }: TMessage, i) => {
+                        const isMyMessage = user === name
+                        const date = getNormalizedDateTime(ts)
+
+                        return (
+                            <Box key={ts} className={clsx('message', { "my-message": isMyMessage, "oponent-message": !isMyMessage })} m=".2rem 0">
+                                <Text fontSize='xs' opacity='.7' ml='5px' className='from'><b>{user}</b> <span className='date'>{date}</span></Text>
+                                <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' color='white'>{text}</Text>
+                            </Box>
+                        )
+                    })
                     :
                     <Flex alignItems='center' justifyContent='center' mt='.5rem' bg='#EAEAEA' opacity='.2' w='100%'>
                         <Box mr='2'>-----</Box>

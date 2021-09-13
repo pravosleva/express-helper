@@ -7,7 +7,7 @@ parallel_commands() {
     echo "Process \"$cmd\" started";
     $cmd & pid=$!
     PID_LIST+=" $pid";
-    sleep 10
+    sleep 5
   } done
 
   trap "kill $PID_LIST" SIGINT

@@ -19,7 +19,7 @@ import {
 import { useLocalStorage } from 'react-use'
 
 export const Login = () => {
-    const { socket } = useContext(SocketContext)
+    const { socket, setIsLogged, isLogged } = useContext(SocketContext)
     const { name, setName, room, setRoom } = useContext(MainContext)
     const history = useHistory()
     const toast = useToast()
@@ -70,6 +70,16 @@ export const Login = () => {
           history.replace({ search: queryParams.toString() })
         }
       }, [location.search, history, setRoom])
+    
+    // useEffect(() => {
+    //     if (isLogged) {
+    //         console.log(isLogged, 'GO TO /CHAT')
+    //         history.push('/chat')
+    //     } else {
+    //         console.log(isLogged, 'GO TO /')
+    //         history.push('/')
+    //     }
+    // }, [isLogged])
 
     //Emits the login event and if successful redirects to chat and saves user data
     const handleClick = () => {
@@ -86,8 +96,10 @@ export const Login = () => {
                     isClosable: true,
                 })
             }
-            history.push('/chat')
-            return toast({
+
+            setIsLogged(true)
+
+            toast({
                 position: "top",
                 title: "Hey there",
                 description: `Welcome to ${room}`,
@@ -95,6 +107,7 @@ export const Login = () => {
                 duration: 5000,
                 isClosable: true,
             })
+            history.push('/chat')
         })
     }
 
