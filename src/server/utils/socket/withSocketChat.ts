@@ -57,7 +57,6 @@ export const withSocketChat = (io: Socket) => {
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })))
     })
     socket.on('unsetMe', ({ name, room }) => {
-      console.log('-- unsetMe')
       const nameBySocketId = usersSocketMap.get(socket.id)
       if (!!nameBySocketId) {
         usersSocketMap.delete(socket.id)
@@ -68,9 +67,11 @@ export const withSocketChat = (io: Socket) => {
     })
 
     socket.on('login', ({ name, room }, cb) => {
-      console.log('-- login')
       // --- NEW WAY
-      if (usersMap.has(name)) cb(`Username ${name} already taken`)
+      if (usersMap.has(name)) {
+        cb(`Username ${name} already taken`)
+        return
+      }
 
       socket.join(room)
 
@@ -87,7 +88,7 @@ export const withSocketChat = (io: Socket) => {
       // console.log(usersMap.get(name))
       socket.emit('oldChat', { roomData: roomsMap.get(room) })
       
-      // io.in(room).emit('notification', { status: 'info', title: 'Someone\'s here', description: `${name} just entered the room`, users: [...usersMap.keys()].map((str: string) => ({ name: str, room })) })
+      io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room`, users: [...usersMap.keys()].map((str: string) => ({ name: str, room })) })
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })))
 
       // io.emit('notification', { status: 'info', description: 'Someone\'s here', users: [...usersMap.keys()].map((str: string) => ({ name: str, room })) })
@@ -109,6 +110,7 @@ export const withSocketChat = (io: Socket) => {
         if (!!userConnData?.room) {
           socket.leave(userConnData.room)
           io.in(userConnData.room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })))
+          io.in(userConnData.room).emit('notification', { status: 'info', description: `${name} just left the room`, _originalEvent: { name } })
         }
       }
     })
@@ -140,7 +142,7 @@ export const withSocketChat = (io: Socket) => {
 
         io.in(room).emit('message', { user: name, text: message, ts });
       } catch (err) {
-        socket.emit('notification', { status: 'error', title: 'ERR #1', description: err.message || 'Server error', _originalBody: { message, userName } })
+        socket.emit('notification', { status: 'error', title: 'ERR #1', description: err.message || 'Server error', _originalEvent: { message, userName } })
       }
       // ---
     })

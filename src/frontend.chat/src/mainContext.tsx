@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect } from 'react'
 
 type TMainContext = {
     name: string
@@ -20,11 +20,10 @@ const MainContext = createContext<TMainContext>({
 
 const MainProvider = ({ children }: any) => {
     const [name, setName] = useState<string>('')
-    const [room, setRoom] = useState<string>('')  
+    const [room, setRoom] = useState<string>('')
 
     return (
         <>
-            
             <MainContext.Provider
                 value={{
                     name,

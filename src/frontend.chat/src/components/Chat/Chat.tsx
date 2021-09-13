@@ -4,7 +4,7 @@ import { MainContext } from '../../mainContext'
 import { SocketContext } from '../../socketContext'
 import { Box, Flex, Heading, IconButton, Text, Menu, Button, MenuButton, MenuList, MenuItem, Textarea } from "@chakra-ui/react"
 import { FiList } from 'react-icons/fi'
-import { BiMessageDetail } from 'react-icons/bi'
+import { BiMessageDetail, BiLogOutCircle } from 'react-icons/bi'
 import { RiSendPlaneFill } from 'react-icons/ri'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom';
@@ -54,7 +54,6 @@ export const Chat = () => {
         // setRoom('')
         // history.push('/')
         setTimeout(() => {
-            console.log('GO /')
             // history.go(0)
             history.push('/')
         }, 0)
@@ -74,8 +73,11 @@ export const Chat = () => {
                 // @ts-ignore
                 setMessages((messages: TMessage[]) => [...messages, msg]);
             }
-            const notifListener = (notif: { status: UseToastOptions["status"], title: string, description: string }) => {
-                console.log(notif)
+            const notifListener = (notif: { status: UseToastOptions["status"], title: string, description: string, _originalEvent?: any }) => {
+                if (!!notif?._originalEvent) {
+                    console.log('-- notif._originalEvent')
+                    console.log(notif._originalEvent)
+                }
                 toast({
                     position: "top",
                     title: notif?.title,
