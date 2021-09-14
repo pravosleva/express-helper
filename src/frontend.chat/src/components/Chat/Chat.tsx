@@ -190,6 +190,12 @@ export const Chat = () => {
         if (!!textFieldRef.current) textFieldRef.current.focus()
     }
 
+    useEffect(() => {
+        if (!room || !name) {
+            history.push('/')
+        }
+    }, [])
+
     return (
         <Flex className='room' flexDirection='column' width={{ base: "100%", sm: '575px' }} height={{ base: "100%", sm: "auto" }}>
             <Heading className='heading' as='h4' bg='white' p='1rem 1.5rem' borderRadius='10px 10px 0 0'>
