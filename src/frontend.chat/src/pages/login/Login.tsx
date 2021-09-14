@@ -154,37 +154,39 @@ export const Login = () => {
                 </ModalFooter>
                 </ModalContent>
             </Modal>
-            <Flex className='login' flexDirection='column' mb='8'>
-                <Heading as="h1" size="3xl" textAlign='center' mb='8' fontFamily='Montserrat' fontWeight='600' letterSpacing='-2px'>Let's talk</Heading>
-                <Flex className="form" gap='1rem' flexDirection={{ base: "column", md: "row" }}>
-                    <Input
-                        autoFocus
-                        variant='filled'
-                        mr={{ base: "0", md: "4" }}
-                        mb={{ base: "4", md: "0" }}
-                        type="text"
-                        placeholder='User Name'
-                        value={name}
-                        onChange={e => {
-                            setName(e.target.value)
-                        }}
-                    />
-                    <Input
-                        disabled={isRoomDisabled}
-                        variant='filled'
-                        mr={{ base: "0", md: "4" }}
-                        mb={{ base: "4", md: "0" }}
-                        type="text"
-                        placeholder='Room Name'
-                        value={room}
-                        onChange={e => {
-                            setRoom(e.target.value)
-                        }}
-                        onKeyDown={handleKeyDown}
-                    />
-                    <IconButton colorScheme='blue' isRound aria-label="icon-btn" icon={<RiArrowRightLine />} onClick={handleClick}></IconButton>
+            <div style={{ height: '100vh', display: 'flex', alignItems: 'center' }}>
+                <Flex className='login' flexDirection='column' mb='8'>
+                    <Heading as="h1" size="3xl" textAlign='center' mb='8' fontFamily='Montserrat' fontWeight='600' letterSpacing='-2px'>Let's talk</Heading>
+                    <Flex className="form" gap='1rem' flexDirection={{ base: "column", md: "row" }}>
+                        <Input
+                            autoFocus
+                            variant='filled'
+                            mr={{ base: "0", md: "4" }}
+                            mb={{ base: "4", md: "0" }}
+                            type="text"
+                            placeholder='User Name'
+                            value={name}
+                            onChange={e => {
+                                setName(e.target.value)
+                            }}
+                        />
+                        <Input
+                            disabled={isRoomDisabled}
+                            variant='filled'
+                            mr={{ base: "0", md: "4" }}
+                            mb={{ base: "4", md: "0" }}
+                            type="text"
+                            placeholder='Room Name'
+                            value={room}
+                            onChange={e => {
+                                setRoom(e.target.value)
+                            }}
+                            onKeyDown={handleKeyDown}
+                        />
+                        <IconButton colorScheme='blue' isRound aria-label="icon-btn" icon={<RiArrowRightLine />} onClick={handleClick}></IconButton>
+                    </Flex>
                 </Flex>
-            </Flex>
+            </div>
         </>
     )
 }
