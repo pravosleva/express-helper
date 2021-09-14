@@ -1,10 +1,14 @@
 import { instrument } from '@socket.io/admin-ui'
 import { Socket } from 'socket.io'
-import {
-  // addUser, getUser, deleteUser, getUsers,
-  TUser,
-} from './users'
 
+const { CHAT_ADMIN_TOKEN } = process.env
+const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? token === CHAT_ADMIN_TOKEN : false
+
+type TUser = {
+  socketId: string
+  name: string
+  room: string
+}
 type TUserName = string
 type TConnectionData = Partial<TUser>
 type TRoomId = string
@@ -66,15 +70,15 @@ export const withSocketChat = (io: Socket) => {
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })))
     })
 
-    socket.on('login', ({ name, room }, cb) => {
+    socket.on('login', ({ name, room, token }, cb?: (rason?: string, isAdmin?: boolean) => void) => {
       if (!name || !room) {
-        cb('Room and Username are required')
+        if (!!cb) cb('Room and Username are required')
         return
       }
 
       // --- NEW WAY
       if (usersMap.has(name)) {
-        cb(`Username ${name} already taken`)
+        if (!!cb) cb(`Username ${name} already taken`)
         return
       }
 
@@ -94,11 +98,11 @@ export const withSocketChat = (io: Socket) => {
       socket.emit('oldChat', { roomData: roomsMap.get(room) })
       
       io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room`, users: [...usersMap.keys()].map((str: string) => ({ name: str, room })) })
-      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })))
+      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
 
       // io.emit('notification', { status: 'info', description: 'Someone\'s here', users: [...usersMap.keys()].map((str: string) => ({ name: str, room })) })
 
-      if (!!cb) cb()
+      if (!!cb) cb(null, isUserAdmin(token))
 
       // ---
 
@@ -114,10 +118,20 @@ export const withSocketChat = (io: Socket) => {
         usersMap.delete(name)
         if (!!userConnData?.room) {
           socket.leave(userConnData.room)
-          io.in(userConnData.room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })))
+          io.in(userConnData.room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room }) => room === userConnData.room))
           io.in(userConnData.room).emit('notification', { status: 'info', description: `${name} just left the room`, _originalEvent: { name } })
         }
       }
+    })
+
+    socket.on('getUsers', ({ room }) => {
+      // socket.join(room)
+      socket.emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room: r }) => room === r))
+    })
+
+    socket.on('getAllInfo', () => {
+      socket.emit('allUsers', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })))
+      socket.emit('allRooms', { roomsData: [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {}) })
     })
 
     socket.on('sendMessage', ({ message, userName }) => {
@@ -177,7 +191,9 @@ export const withSocketChat = (io: Socket) => {
 
           if (!!userConnData) {
             usersMap.delete(userName)
-            io.in(userConnData.room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: userConnData.room })))
+            if (!!userConnData?.room) {
+              io.in(userConnData.room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: userConnData.room })).filter(({ room }) => room === userConnData.room))
+            }
           }
         }
     })
@@ -186,6 +202,6 @@ export const withSocketChat = (io: Socket) => {
   // @ts-ignore
   instrument(io, {
     auth: false,
-    // namespace: '/admin',
+    namespace: '/admin',
   })
 }

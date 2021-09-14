@@ -20,7 +20,7 @@ import { useLocalStorage } from 'react-use'
 
 export const Login = () => {
     const { socket, setIsLogged, isLogged } = useContext(SocketContext)
-    const { name, setName, room, setRoom } = useContext(MainContext)
+    const { name, setName, room, setRoom, slugifiedRoom, setIsAdmin } = useContext(MainContext)
     const history = useHistory()
     const toast = useToast()
     const location = useLocation()
@@ -28,6 +28,8 @@ export const Login = () => {
 
     // --- LS
     const [nameLS, setNameLS, removeNameLS] = useLocalStorage<string>('chat.my-name', '')
+    const [tokenLS] = useLocalStorage<any>('chat.token')
+    console.log(tokenLS)
     const [isModalOpened, setIsModalOpened] = useState<boolean>(false)
     const handleOpenModal = useCallback(() => {
         setIsModalOpened(true)
@@ -82,9 +84,12 @@ export const Login = () => {
     // }, [isLogged])
 
     //Emits the login event and if successful redirects to chat and saves user data
-    const handleClick = () => {
+    
+    const handleClick = useCallback(() => {
         setNameLS(name)
-        if (!!socket) socket.emit('login', { name, room }, (error: any) => {
+        if (!!socket) socket.emit('login', { name, room: slugifiedRoom, token: String(tokenLS) }, (error: string, isAdmin?: boolean) => {
+            if (isAdmin) setIsAdmin(true)
+
             if (error) {
                 console.log(error)
                 return toast({
@@ -102,14 +107,14 @@ export const Login = () => {
             toast({
                 position: "top",
                 title: "Hey there",
-                description: `Welcome to ${room}`,
+                description: `Welcome to ${slugifiedRoom}`,
                 status: "success",
                 duration: 5000,
                 isClosable: true,
             })
             history.push('/chat')
         })
-    }
+    }, [slugifiedRoom, name, tokenLS])
 
     const handleKeyDown = (ev: any) => {
         if (ev.keyCode === 13) {

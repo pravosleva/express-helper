@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, memo } from 'react'
+import { createContext, useEffect, useState, memo, useContext } from 'react'
 import io, { Socket } from 'socket.io-client'
 import { useToast } from "@chakra-ui/react"
 
@@ -6,6 +6,7 @@ const REACT_APP_WS_API_URL = process.env.REACT_APP_WS_API_URL || '/'
 
 type TMessage = {
     text: string
+    user: string
     ts: number
 }
 type TRoomData = {
@@ -21,7 +22,7 @@ interface ISocketContext {
     setIsConnected: (val: boolean) => void
 }
 
-const SocketContext = createContext<ISocketContext>({
+export const SocketContext = createContext<ISocketContext>({
     socket: null,
     roomData: {},
     isLogged: false,
@@ -31,7 +32,7 @@ const SocketContext = createContext<ISocketContext>({
 })
 
 
-const SocketProvider = memo(({ children }: any) => {
+export const SocketProvider = memo(({ children }: any) => {
     const socket: Socket = io(REACT_APP_WS_API_URL, {
         reconnection: true,
         transports: ['websocket', 'polling'],
@@ -84,4 +85,4 @@ const SocketProvider = memo(({ children }: any) => {
     )
 }, () => true)
 
-export { SocketContext, SocketProvider }
+export const useSocketContext = () => useContext(SocketContext)

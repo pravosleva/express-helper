@@ -7,6 +7,7 @@ import './App.css'
 import { ChakraProvider, Flex } from "@chakra-ui/react"
 import { UsersProvider } from './usersContext'
 import { DefaultPage } from './components/DefaultPage'
+import { Admin } from './components/Admin'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Switch>
                   <Route exact path='/' component={Login} />
                   <Route path='/chat' component={Chat} />
+                  <Route path='/admin' component={Admin} />
                   <Route path='*' component={DefaultPage} />
                 </Switch>
               </Router>

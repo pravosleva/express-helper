@@ -1,26 +1,41 @@
-import { useState, createContext, useEffect } from 'react'
+import { useState, createContext, useEffect, useContext } from 'react'
+import slugify from 'slugify'
 
 type TMainContext = {
     name: string
     room: string
     setName: (name: string) => void,
     setRoom: (room: string) => void,
+    slugifiedRoom: string,
+    isAdmin: boolean
+    setIsAdmin: (room: boolean) => void,
 }
 
-const MainContext = createContext<TMainContext>({
+export const MainContext = createContext<TMainContext>({
     name: '',
     room: '',
-    setName: (name: string) => {
+    setName: (_name: string) => {
         throw new Error('setName should be implemented')
     },
-    setRoom: (room: string) => {
+    setRoom: (_room: string) => {
         throw new Error('setRoom should be implemented')
+    },
+    slugifiedRoom: '',
+    isAdmin: false,
+    setIsAdmin: (_val: boolean) => {
+        throw new Error('setIsAdmin should be implemented')
     },
 })
 
-const MainProvider = ({ children }: any) => {
+export const MainProvider = ({ children }: any) => {
     const [name, setName] = useState<string>('')
     const [room, setRoom] = useState<string>('')
+    const [slugifiedRoom, setNormalizedRoom] = useState<string>('')
+    const [isAdmin, setIsAdmin] = useState<boolean>(false)
+
+    useEffect(() => {
+        setNormalizedRoom(slugify(room.trim().toLowerCase()))
+    }, [room, setNormalizedRoom])
 
     return (
         <>
@@ -28,8 +43,11 @@ const MainProvider = ({ children }: any) => {
                 value={{
                     name,
                     room,
+                    slugifiedRoom,
                     setName,
                     setRoom,
+                    isAdmin,
+                    setIsAdmin,
                 }}
             >
                 {children}
@@ -38,4 +56,4 @@ const MainProvider = ({ children }: any) => {
     )
 }
 
-export { MainContext, MainProvider }
+export const useMainContext = () => useContext(MainContext)

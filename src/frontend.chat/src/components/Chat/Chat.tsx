@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback, useRef } from 'react'
+import React, { useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '../../mainContext'
 import { SocketContext } from '../../socketContext'
@@ -19,7 +19,7 @@ type TUser = { socketId: string, room: string, name: string }
 type TMessage = { user: string, text: string, ts: number }
 
 export const Chat = () => {
-    const { name, room, setRoom } = useContext(MainContext)
+    const { name, slugifiedRoom: room, isAdmin } = useContext(MainContext)
     // @ts-ignore
     const { socket, roomData, setIsLogged, isLogged, isConnected, setIsConnected } = useContext(SocketContext)
     const [message, setMessage] = useState('')
@@ -143,7 +143,7 @@ export const Chat = () => {
                 // }
             }
         }
-    }, [socket?.connected])
+    }, [socket?.connected, room])
 
     const handleSendMessage = () => {
         if (isMsgLimitReached) {
@@ -218,6 +218,19 @@ export const Chat = () => {
                                         </MenuItem>
                                     )
                                 })
+                            }
+                            {
+                                isAdmin && (
+                                    <MenuItem
+                                        minH='40px'
+                                        key='adm-btm'
+                                        onClick={() => {
+                                            history.push('/admin')
+                                        }}
+                                    >
+                                        <Text fontSize='sm'>Admin panel</Text>
+                                    </MenuItem>
+                                )
                             }
                         </MenuList>
                     </Menu>
