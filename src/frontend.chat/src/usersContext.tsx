@@ -1,7 +1,7 @@
 import { useState, createContext, useContext, useEffect, useCallback } from 'react'
-import { useMainContext } from './mainContext'
-import { SocketContext } from './socketContext'
-import { useDebouncedCallback } from './hooks/useDebouncedCallback'
+import { useMainContext } from '~/mainContext'
+import { SocketContext } from '~/socketContext'
+import { useDebouncedCallback } from '~/common/hooks/useDebouncedCallback'
 
 type TUser = { name: string, room: string, socketId: string }
 type TUsersContext = {

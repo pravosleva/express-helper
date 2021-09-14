@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useCallback, useRef } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { MainContext } from '../../mainContext'
-import { SocketContext } from '../../socketContext'
+import { MainContext } from '~/mainContext'
+import { SocketContext } from '~/socketContext'
 import { Flex, Heading, IconButton, Input } from "@chakra-ui/react"
 import { RiArrowRightLine } from "react-icons/ri"
 import { useToast } from "@chakra-ui/react"

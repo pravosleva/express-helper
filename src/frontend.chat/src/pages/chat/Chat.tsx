@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
-import { MainContext } from '../../mainContext'
-import { SocketContext } from '../../socketContext'
+import { MainContext } from '~/mainContext'
+import { SocketContext } from '~/socketContext'
 import { Box, Flex, Heading, IconButton, Text, Menu, Button, MenuButton, MenuList, MenuItem, Textarea } from "@chakra-ui/react"
 import { FiList } from 'react-icons/fi'
 import { BiMessageDetail, BiLogOutCircle } from 'react-icons/bi'
@@ -11,9 +11,9 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import { useToast, UseToastOptions } from "@chakra-ui/react"
 import clsx from 'clsx'
 import './Chat.scss'
-import { UsersContext } from '../../usersContext'
-import { useTextCounter } from '../../hooks/useTextCounter'
-import { getNormalizedDateTime } from '../../utils/timeConverter'
+import { UsersContext } from '~/usersContext'
+import { useTextCounter } from '~/common/hooks/useTextCounter'
+import { getNormalizedDateTime } from '~/utils/timeConverter'
 
 type TUser = { socketId: string, room: string, name: string }
 type TMessage = { user: string, text: string, ts: number }
