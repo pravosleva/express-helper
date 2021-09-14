@@ -146,7 +146,7 @@ export const Login = () => {
                 </ModalContent>
             </Modal>
             <Flex className='login' flexDirection='column' mb='8'>
-                <Heading as="h1" size="3xl" textAlign='center' mb='8' fontFamily='DM Sans' fontWeight='600' letterSpacing='-2px'>Let's talk</Heading>
+                <Heading as="h1" size="3xl" textAlign='center' mb='8' fontFamily='Montserrat' fontWeight='600' letterSpacing='-2px'>Let's talk</Heading>
                 <Flex className="form" gap='1rem' flexDirection={{ base: "column", md: "row" }}>
                     <Input
                         autoFocus

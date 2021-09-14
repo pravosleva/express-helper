@@ -67,6 +67,11 @@ export const withSocketChat = (io: Socket) => {
     })
 
     socket.on('login', ({ name, room }, cb) => {
+      if (!name || !room) {
+        cb('Room and Username are required')
+        return
+      }
+
       // --- NEW WAY
       if (usersMap.has(name)) {
         cb(`Username ${name} already taken`)

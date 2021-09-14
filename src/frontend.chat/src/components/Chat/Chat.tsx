@@ -157,7 +157,7 @@ export const Chat = () => {
             })
             return
         }
-        const normalizedMsg = message.trim()
+        const normalizedMsg = message.replace(/\s+/g, ' ').trim()
         if (!!socket && !!normalizedMsg) {
             socket.emit('sendMessage', { message: normalizedMsg, userName: name })
             resetMessage()
