@@ -6,6 +6,7 @@
     "dev:chat": "bash run-dev.sh chat",
     "dev:signin": "bash run-dev.sh signin",
     "dev": "bash run-dev.sh",
+    "deploy:prod:copy-chat-build": "bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build && deploy-app -d prod:copy-chat-build",
     "deploy:prod:restart-helper": "yarn build:fresh-prod && deploy-app -d prod:restart-helper",
     "deploy:smartprice:restart-helper": "yarn build:fresh-prod && deploy-app -d smartprice:restart-helper",
     "deploy:prod:restart-all": "deploy-app -d prod:restart-all",

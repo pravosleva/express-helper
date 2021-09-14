@@ -51,14 +51,14 @@
               background: #408EEA;
           }
       }
-      .my-message:last-child, .my-message:nth-last-child(2){
+      .my-message:last-child{
         .msg{
-          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
         }
     }
-      .oponent-message:last-child, .oponent-message:nth-last-child(2) {
+      .oponent-message:last-child{
         .msg{
-            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
           }
       }
   }
