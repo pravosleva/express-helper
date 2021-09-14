@@ -8,10 +8,11 @@ import { ChakraProvider, Flex } from "@chakra-ui/react"
 import { UsersProvider } from './usersContext'
 import { DefaultPage } from './components/DefaultPage'
 import { Admin } from './components/Admin'
+import { theme } from './chakra/theme'
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <SocketProvider>
         <MainProvider>
           <UsersProvider>
