@@ -124,7 +124,11 @@ export const Login = () => {
 
     return (
         <>
-            <Modal isOpen={isModalOpened} onClose={handleCloseModal}>
+            <Modal
+                isOpen={isModalOpened}
+                onClose={handleCloseModal}
+                size='xs'
+            >
                 <ModalOverlay />
                 <ModalContent>
                 <ModalHeader>Your name is</ModalHeader>

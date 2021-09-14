@@ -49,7 +49,9 @@ export const Admin = () => {
   }, [socket, toast, name, room])
 
   return (
-    <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }} style={{ maxHeight: '100vh', overflowY: 'auto', paddingBottom: '40px' }}>
+    <div
+      // maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }} style={{ maxHeight: '100vh', overflowY: 'auto', paddingBottom: '40px' }}
+    >
       <chakra.h1
         textAlign={'center'}
         fontSize={'sm'}
@@ -78,6 +80,6 @@ export const Admin = () => {
           )}
         />
       </SimpleGrid>
-    </Box>
+    </div>
   )
 }
