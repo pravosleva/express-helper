@@ -4,13 +4,15 @@ import { useUsersContext } from '~/usersContext'
 import { useSocketContext } from '~/socketContext'
 import { useToast, UseToastOptions } from "@chakra-ui/react"
 import { useHistory } from 'react-router-dom'
-
+import { Card } from '~/common/containers/Layout/Card'
 import {
   Box,
   chakra,
   SimpleGrid,
+  Button,
 } from '@chakra-ui/react';
 import { StatsCard } from './components'
+import { BsArrowLeft } from 'react-icons/bs'
 
 export const Admin = () => {
   const { slugifiedRoom, room, name } = useMainContext()
@@ -52,31 +54,29 @@ export const Admin = () => {
     <div
       // maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }} style={{ maxHeight: '100vh', overflowY: 'auto', paddingBottom: '40px' }}
     >
-      <chakra.h1
+      {/* <chakra.h1
         textAlign={'center'}
         fontSize={'sm'}
         py={10}
         fontWeight={'bold'}
       >
-        <button onClick={goChat}>goChat</button> <button onClick={handleClick}>getAllRooms</button>
-      </chakra.h1>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+        {slugifiedRoom}
+      </chakra.h1> */}
+      <SimpleGrid columns={{ base: 1, md: 8 }} spacing={{ base: 4, lg: 4 }} marginBottom={{ base: 4 }}>
+        <Button color='gray.500' leftIcon={<BsArrowLeft />} fontSize='sm' onClick={goChat}>Chat</Button>
+        <Button color='gray.500' backgroundColor='white' fontSize='sm' onClick={handleClick}>Get All Rooms</Button>
+      </SimpleGrid>
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 4, lg: 4 }}>
+        <Card title='allUsers'>
+          <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(allUsers, null, 2)}</pre>
+        </Card>
+        <Card title='roomsData'>
+          <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(roomsData, null, 2)}</pre>
+        </Card>
         <StatsCard
-          title={'allUsers'}
+          title='In progress'
           renderer={() => (
-            <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(allUsers, null, 2)}</pre>
-          )}
-        />
-        <StatsCard
-          title='roomsData'
-          renderer={() => (
-            <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(roomsData, null, 2)}</pre>
-          )}
-        />
-        <StatsCard
-          title='-'
-          renderer={() => (
-            <div>In progress</div>
+            <div>...</div>
           )}
         />
       </SimpleGrid>

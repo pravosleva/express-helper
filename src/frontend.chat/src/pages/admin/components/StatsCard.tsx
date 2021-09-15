@@ -18,10 +18,10 @@ export function StatsCard(props: StatsCardProps) {
       py={'5'}
       shadow={'xl'}
       border={'1px solid'}
-      borderColor={useColorModeValue('gray.800', 'gray.500')}
+      borderColor={useColorModeValue('gray.300', 'gray.500')}
       rounded={'lg'}
     >
-      <StatLabel fontWeight={'medium'} isTruncated>
+      <StatLabel fontWeight={'bold'} isTruncated>
         {title}
       </StatLabel>
       <StatNumber

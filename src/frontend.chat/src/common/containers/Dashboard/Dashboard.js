@@ -48,11 +48,9 @@ export default function Dashboard() {
         ]}
       >
         <SimpleGrid
-          // columns={{ xs: 1, sm: 1, md: 2, lg: 4 }}
           columns={{ md: 2, xl: 3 }}
           spacing={4}
-          // gridTemplateColumns='1fr 1fr'
-          // border='1px solid red'
+          marginBottom={{ base: 4 }}
         >
           <Card
             title="New Users"
