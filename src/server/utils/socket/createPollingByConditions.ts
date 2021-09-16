@@ -24,7 +24,7 @@ export function createPollingByConditions (props) {
     tryAnything({ cb })
       .then (
         result => {
-          console.log ('createPollingByConditions () is done.')
+          // console.log ('createPollingByConditions () is done.')
           callbackAsResolve(result)
           return myTimeoutPromise(interval)
         },

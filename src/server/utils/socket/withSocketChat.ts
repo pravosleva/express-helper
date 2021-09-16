@@ -6,6 +6,7 @@ import merge from 'merge-deep'
 import merge2 from 'deepmerge'
 import { createPollingByConditions } from './createPollingByConditions'
 import { Counter } from '~/utils/counter'
+import DeviceDetector from "device-detector-js"
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? token === CHAT_ADMIN_TOKEN : false
@@ -16,7 +17,7 @@ type TUser = {
   room: string
 }
 type TUserName = string
-type TConnectionData = Partial<TUser>
+type TConnectionData = Partial<TUser> & { userAgent: DeviceDetector.DeviceDetectorResult }
 type TRoomId = string
 type TMessage = {
   text: string
@@ -131,10 +132,11 @@ createPollingByConditions({
 })
 // ---
 
+const deviceDetector = new DeviceDetector()
+const getParsedUserAgent = (socket: any): DeviceDetector.DeviceDetectorResult => deviceDetector.parse(socket.handshake.headers['user-agent'])
+
 export const withSocketChat = (io: Socket) => {
   io.on('connection', (socket) => {
-    // socket.join('room13')
-
     const nameBySocketId = usersSocketMap.get(socket.id)
     if (!!nameBySocketId) {
       usersSocketMap.delete(socket.id)
@@ -148,12 +150,12 @@ export const withSocketChat = (io: Socket) => {
       usersSocketMap.set(socket.id, name)
 
       const existingUser = usersMap.get(name)
-      // console.log(existingUser)
+      const userAgent = getParsedUserAgent(socket) || null
 
       if (!!existingUser) {
-        usersMap.set(name, { ...existingUser, name, room, socketId: socket.id })
+        usersMap.set(name, { ...existingUser, name, room, socketId: socket.id, userAgent })
       } else {
-        usersMap.set(name, { name, room, socketId: socket.id })
+        usersMap.set(name, { name, room, socketId: socket.id, userAgent })
       }
 
       const roomData = roomsMap.get(room)
@@ -166,7 +168,7 @@ export const withSocketChat = (io: Socket) => {
         roomsMap.set(room, roomData)
       }
 
-      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })))
+      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
     socket.on('unsetMe', ({ name, room }) => {
       const nameBySocketId = usersSocketMap.get(socket.id)
@@ -175,7 +177,7 @@ export const withSocketChat = (io: Socket) => {
         usersMap.delete(nameBySocketId)
       }
 
-      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })))
+      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
 
     socket.on('login', ({ name, room, token }, cb?: (rason?: string, isAdmin?: boolean) => void) => {
@@ -205,10 +207,10 @@ export const withSocketChat = (io: Socket) => {
       // console.log(usersMap.get(name))
       socket.emit('oldChat', { roomData: roomsMap.get(room) })
       
-      io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room`, users: [...usersMap.keys()].map((str: string) => ({ name: str, room })) })
+      io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
 
-      // io.emit('notification', { status: 'info', description: 'Someone\'s here', users: [...usersMap.keys()].map((str: string) => ({ name: str, room })) })
+      // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
       if (!!cb) cb(null, isUserAdmin(token))
 
@@ -238,7 +240,7 @@ export const withSocketChat = (io: Socket) => {
     })
 
     socket.on('getAllInfo', () => {
-      socket.emit('allUsers', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })))
+      socket.emit('allUsers', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room, userAgent: usersMap.get(str).userAgent })))
       socket.emit('allRooms', { roomsData: [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {}) })
     })
 
