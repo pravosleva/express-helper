@@ -104,14 +104,14 @@ export const Login = () => {
 
             setIsLogged(true)
 
-            toast({
-                position: "top",
-                title: "Hey there",
-                description: `Welcome to ${slugifiedRoom}`,
-                status: "success",
-                duration: 5000,
-                isClosable: true,
-            })
+            // toast({
+            //     position: "top",
+            //     title: "Hey there",
+            //     description: `Welcome to ${slugifiedRoom}`,
+            //     status: "success",
+            //     duration: 5000,
+            //     isClosable: true,
+            // })
             history.push('/chat')
         })
     }, [slugifiedRoom, name, tokenLS])

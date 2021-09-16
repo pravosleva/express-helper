@@ -143,7 +143,11 @@ export const withSocketChat = (io: Socket) => {
       usersMap.delete(nameBySocketId)
     }
 
-    socket.on('setMeAgain', ({ name, room }) => {
+    socket.on('setMeAgain', ({ name, room }, cb) => {
+      if (!name || !room) {
+        cb('Попробуйте перезайти')
+        return
+      }
       console.log('-- setMeAgain')
 
       socket.join(room) // NOTE: Только для этого

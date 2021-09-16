@@ -102,45 +102,31 @@ export const Chat = () => {
 
     useEffect(() => {
         if (!!socket && !!name && !!room) {   
-            socket.emit('setMeAgain', { name, room })
+            socket.emit('setMeAgain', { name, room }, (err?: string) => {
+                if (!!err) {
+                    toast({ title: err, status: 'error', duration: 5000, isClosable: true })
+                    history.push('/')
+                }
+            })
 
             return () => {
                 socket.emit('unsetMe', { name, room })
             }
         }
-    }, [socket, toast, name, room])
+    }, [socket, toast, name, room, history])
 
     useEffect(() => {
         console.log('EFFECT: socket?.connected', socket?.connected)
         if (!!socket) {
             if (!!socket?.connected) {
-                socket.emit('setMeAgain', { name, room })
-                // setIsConnected(true)
-                // const connListener = () => {
-                //     console.log('CONNECT')
-                //     socket.emit('unsetMe', { name, room })
-                //     socket.emit('setMeAgain', { name, room })
-                    
-                // }
-                // socket.on("connection", connListener)
-    
-                // return () => {
-                //     socket.off("connection", connListener)
-                // }
+                socket.emit('setMeAgain', { name, room }, (err?: string) => {
+                    if (!!err) {
+                        toast({ title: err, status: 'error' })
+                        history.push('/')
+                    }
+                })
             } else {
                 socket.emit('unsetMe', { name, room })
-                // setIsConnected(false)
-                // const connListener = () => {
-                //     console.log('CONNECT')
-                //     socket.emit('unsetMe', { name, room })
-                //     socket.emit('setMeAgain', { name, room })
-                // }
-    
-                // socket.on("connection", connListener)
-    
-                // return () => {
-                //     socket.off("connection", connListener)
-                // }
             }
         }
     }, [socket?.connected, room])

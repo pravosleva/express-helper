@@ -33,12 +33,12 @@ export default function Dashboard() {
           }
         }}
         secondaryActions={[
-          {
-            content: "Second action",
-            onClick: () => {
-              alert("ok");
-            }
-          },
+          // {
+          //   content: "Second action",
+          //   onClick: () => {
+          //     alert("ok");
+          //   }
+          // },
           {
             content: "Third action",
             onClick: () => {
@@ -47,6 +47,16 @@ export default function Dashboard() {
           }
         ]}
       >
+        <SimpleGrid
+          columns={{ md: 1 }}
+          spacing={4}
+          // style={{
+          //   marginBottom: '300px'
+          // }}
+          marginBottom={4}
+        >
+          <Admin />
+        </SimpleGrid>
         <SimpleGrid
           columns={{ md: 2, xl: 3 }}
           spacing={4}
@@ -142,15 +152,6 @@ export default function Dashboard() {
               </Stat>
             </StatGroup>
           </Card>
-        </SimpleGrid>
-        <SimpleGrid
-          columns={{ md: 1 }}
-          spacing={4}
-          style={{
-            marginBottom: '300px'
-          }}
-        >
-          <Admin />
         </SimpleGrid>
       </PageContent>
       <Footer />

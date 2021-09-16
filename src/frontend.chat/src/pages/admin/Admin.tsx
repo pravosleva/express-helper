@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useMainContext } from '~/mainContext'
 import { useUsersContext } from '~/usersContext'
 import { useSocketContext } from '~/socketContext'
@@ -10,15 +10,29 @@ import {
   chakra,
   SimpleGrid,
   Button,
+  Grid,
+  GridItem,
+  Input,
 } from '@chakra-ui/react';
 import { StatsCard } from './components'
 import { BsArrowLeft } from 'react-icons/bs'
 import ReactJson from 'react-json-view'
 
+type TMessage = {
+  text: string
+  ts: number
+}
+type TRoomData = {
+  [userName: string]: TMessage[]
+}
+type TRoomsData = {
+  [roomName: string]: TRoomData
+}
+
 export const Admin = () => {
   const { slugifiedRoom, room, name } = useMainContext()
   const { allUsers } = useUsersContext()
-  const [roomsData, setRoomsData] = useState(null)
+  const [roomsData, setRoomsData] = useState<TRoomsData | null>(null)
   const { socket } = useSocketContext()
   const toast = useToast()
   const history = useHistory()
@@ -43,13 +57,30 @@ export const Admin = () => {
 
   useEffect(() => {
     if (!!socket && !!name && !!room) {   
-        socket.emit('setMeAgain', { name, room })
+        socket.emit('setMeAgain', { name, room }, (err?: string) => {
+          if (!!err) {
+            toast({ title: err })
+            history.push('/')
+          }
+        })
 
         return () => {
             socket.emit('unsetMe', { name, room })
         }
     }
-  }, [socket, toast, name, room])
+  }, [socket, toast, name, room, history])
+  const [searchRoom, setSearchRoom] = useState<string>('')
+  const [searchUser, setSearchUser] = useState<string>('')
+  const usersFiltered = useMemo(() => !!searchUser ? allUsers.filter(({ name }) => name.toLowerCase().includes(searchUser.toLowerCase())) : allUsers, [searchUser, allUsers])
+  const roomsFiltered = useMemo(() => (!!roomsData && !!searchRoom)
+    ? Object.keys(roomsData).reduce((acc, roomName) => {
+      if (roomName.toLowerCase().includes(searchRoom.toLowerCase())) {
+        // @ts-ignore
+        acc[roomName] = roomsData[roomName];
+      }
+      return acc;
+    }, {})
+    : roomsData || null, [searchRoom, roomsData])
 
   return (
     <div
@@ -66,21 +97,32 @@ export const Admin = () => {
       <SimpleGrid columns={{ base: 1, md: 8 }} spacing={{ base: 4, lg: 4 }} marginBottom={{ base: 4 }}>
         <Button color='gray.500' leftIcon={<BsArrowLeft />} fontSize='sm' onClick={goChat}>Chat</Button>
         <Button color='gray.500' backgroundColor='white' fontSize='sm' onClick={handleClick}>Get All Rooms</Button>
+        <Input placeholder="Search room" value={searchRoom} onChange={(e) => {
+          setSearchRoom(e.target.value)
+        }} />
+        <Input placeholder="Search user" value={searchUser} onChange={(e) => {
+          setSearchUser(e.target.value)
+        }} />
       </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 4, lg: 4 }}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 4, lg: 4 }} marginBottom={{ base: 4 }}>
         <Card title='allUsers'>
-          {!!allUsers ? <ReactJson src={allUsers} /> : <div>No data</div>}
+          {!!usersFiltered ? <ReactJson src={usersFiltered} /> : <div>No data</div>}
         </Card>
         <Card title='roomsData'>
-          {!!roomsData ? <ReactJson src={roomsData} /> : <div>No data</div>}
+          {!!roomsFiltered ? <ReactJson src={roomsFiltered} /> : <div>No data</div>}
         </Card>
-        <StatsCard
-          title='In progress'
-          renderer={() => (
-            <div>...</div>
-          )}
-        />
       </SimpleGrid>
+      <Grid
+        h="200px"
+        templateRows="repeat(2, 1fr)"
+        templateColumns="repeat(5, 1fr)"
+        gap={4}
+      >
+        <GridItem rowSpan={2} colSpan={1} bg="tomato"></GridItem>
+        <GridItem colSpan={2} bg="papayawhip" />
+        <GridItem colSpan={2} bg="papayawhip" />
+        <GridItem colSpan={4} bg="tomato" />
+      </Grid>
     </div>
   )
 }
