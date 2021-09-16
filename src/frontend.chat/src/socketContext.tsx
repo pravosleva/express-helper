@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState, memo, useContext } from 'react'
 import io, { Socket } from 'socket.io-client'
-import { useToast } from "@chakra-ui/react"
+// import { useToast } from "@chakra-ui/react"
 
 const REACT_APP_WS_API_URL = process.env.REACT_APP_WS_API_URL || '/'
 
@@ -37,21 +37,21 @@ export const SocketProvider = memo(({ children }: any) => {
         reconnection: true,
         transports: ['websocket', 'polling'],
     })
-    const toast = useToast()
+    // const toast = useToast()
     const [roomData, setRoomData] = useState<TRoomData>({})
     const [isLogged, setIsLogged] = useState<boolean>(false)
     const [isConnected, setIsConnected] = useState<boolean>(true)
 
     useEffect(() => {
         const disconnListener = () => {
-            toast({
-                position: "top",
-                // title: 'Connection lost...',
-                description: 'Connection lost...',
-                status: "error",
-                duration: 5000,
-                isClosable: true,
-            })
+            // toast({
+            //     position: "top",
+            //     // title: 'Connection lost...',
+            //     description: 'Connection lost...',
+            //     status: "error",
+            //     duration: 5000,
+            //     isClosable: true,
+            // })
             setIsConnected(false)
         }
         const oldChatListener = (data: { roomData: TRoomData }) => {

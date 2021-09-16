@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { StatsCard } from './components'
 import { BsArrowLeft } from 'react-icons/bs'
+import ReactJson from 'react-json-view'
 
 export const Admin = () => {
   const { slugifiedRoom, room, name } = useMainContext()
@@ -68,10 +69,10 @@ export const Admin = () => {
       </SimpleGrid>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 4, lg: 4 }}>
         <Card title='allUsers'>
-          <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(allUsers, null, 2)}</pre>
+          {!!allUsers ? <ReactJson src={allUsers} /> : <div>No data</div>}
         </Card>
         <Card title='roomsData'>
-          <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(roomsData, null, 2)}</pre>
+          {!!roomsData ? <ReactJson src={roomsData} /> : <div>No data</div>}
         </Card>
         <StatsCard
           title='In progress'
