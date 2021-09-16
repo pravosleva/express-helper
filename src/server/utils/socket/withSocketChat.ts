@@ -207,8 +207,6 @@ export const withSocketChat = (io: Socket) => {
         
         roomsMap.set(room, roomData)
       }
-      // console.log('-- usersMap:', usersMap.size)
-      // console.log(usersMap.get(name))
       socket.emit('oldChat', { roomData: roomsMap.get(room) })
       
       io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
@@ -219,9 +217,6 @@ export const withSocketChat = (io: Socket) => {
       if (!!cb) cb(null, isUserAdmin(token))
 
       // ---
-
-      // const { user, error } = addUser({ socketId: socket.id, name, room })
-      // if (error) return callback(error)
     })
     socket.on('logout', ({ name }) => {
       const userConnData = usersMap.get(name)
@@ -239,7 +234,6 @@ export const withSocketChat = (io: Socket) => {
     })
 
     socket.on('getUsers', ({ room }) => {
-      // socket.join(room)
       socket.emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room: r }) => room === r))
     })
 
@@ -252,26 +246,12 @@ export const withSocketChat = (io: Socket) => {
       // --- NEW WAY
       const ts = Date.now()
       try {
-        // console.log(usersMap.size, userName, usersMap.get(userName))
         const { room, name } = usersMap.get(userName)
-
-        // console.log('-- sendSMessage, userData:')
-        // console.log(usersMap.get(userName))
-
         const newRoomData = roomsMap.get(room)
-
-        // console.log('-- newRoomData before')
-        // console.log(newRoomData)
 
         newRoomData[name].push({ text: message, ts })
 
-        // console.log('-- newRoomData after')
-        // console.log(newRoomData)
-
         roomsMap.set(room, newRoomData)
-
-        // console.log('-- roomsMap after')
-        // console.log(roomsMap.get(room))
 
         io.in(room).emit('message', { user: name, text: message, ts });
       } catch (err) {
