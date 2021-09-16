@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { isValidJsonString } from '../validator'
 
-export const getStaticJSONSync = (storageFilePath: string) => {
+export const getStaticJSONSync = (storageFilePath: string): any => {
   let text: string = ''
 
   try {

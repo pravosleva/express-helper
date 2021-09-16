@@ -1,5 +1,11 @@
 import { instrument } from '@socket.io/admin-ui'
 import { Socket } from 'socket.io'
+import path from 'path'
+import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
+import merge from 'merge-deep'
+import merge2 from 'deepmerge'
+import { createPollingByConditions } from './createPollingByConditions'
+import { Counter } from '~/utils/counter'
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? token === CHAT_ADMIN_TOKEN : false
@@ -24,6 +30,107 @@ const usersSocketMap = new Map<TSocketId, TUserName>()
 const usersMap = new Map<TUserName, TConnectionData>()
 const roomsMap = new Map<TRoomId, TRoomData>()
 
+// -- TODO: Refactor?
+const projectRootDir = path.join(__dirname, '../../../')
+// const CHAT_USERS_STATE_FILE_NAME = process.env.CHAT_USERS_STATE_FILE_NAME || 'chat.users.json'
+const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
+
+// const storageUsersFilePath = path.join(projectRootDir, '/storage', CHAT_USERS_STATE_FILE_NAME)
+const storageRoomsFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_STATE_FILE_NAME)
+// const counter1 = Counter()
+const counter2 = Counter()
+
+// const syncUsersMap = () => {
+//   const isFirstScriptRun = counter1.next().value === 0
+
+//   try {
+//     if (!!storageUsersFilePath) {
+//       let oldStatic: { data: { [key: string]: TConnectionData }, ts: number }
+//       try {
+//         oldStatic = getStaticJSONSync(storageUsersFilePath)
+//         if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_101.2: incorrect static data')
+//       } catch (err) {
+//         // TODO: Сделать нормальные логи
+//         console.log('ERR#CHAT.SOCKET_101.1')
+//         console.log(err)
+//         oldStatic = { data: {}, ts: 0 }
+//       }
+//       const staticData = oldStatic.data
+//       const ts = new Date().getTime()
+
+//       if (isFirstScriptRun) {
+//         // NOTE: Sync with old state:
+//         Object.keys(staticData).forEach((name: string) => {
+//           usersMap.set(name, staticData[name])
+//         })
+//       }
+
+//       const currentUsersState: { [key: string]: TConnectionData } = [...usersMap.keys()].reduce((acc, str: string) => { acc[str] = usersMap.get(str); return acc }, {})
+//       const newStaticData = merge(staticData, currentUsersState)
+
+//       writeStaticJSONAsync(storageUsersFilePath, { data: newStaticData, ts })
+//     } else {
+//       throw new Error(`ERR#CHAT.SOCKET_102: файл не найден: ${storageUsersFilePath}`)
+//     }
+//   } catch (err) {
+//     // TODO: Сделать нормальные логи
+//     console.log(err)
+//   }
+// }
+
+const overwriteMerge = (_target, source, _options) => source
+const syncRoomsMap = () => {
+  const isFirstScriptRun = counter2.next().value === 0
+
+  try {
+    if (!!storageRoomsFilePath) {
+      let oldStatic: { data: { [roomName: string]: TRoomData }, ts: number }
+      try {
+        oldStatic = getStaticJSONSync(storageRoomsFilePath)
+        if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_111.2: incorrect static data')
+      } catch (err) {
+        // TODO: Сделать нормальные логи
+        console.log('ERR#CHAT.SOCKET_111.1')
+        console.log(err)
+        oldStatic = { data: {}, ts: 0 }
+      }
+      const staticData = oldStatic.data
+      const ts = new Date().getTime()
+
+      if (isFirstScriptRun) {
+        // NOTE: Sync with old state:
+        Object.keys(staticData).forEach((roomName: string) => {
+          roomsMap.set(roomName, staticData[roomName])
+        })
+      }
+
+      const currentRoomsState = [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {})
+      const newStaticData = merge2(staticData, currentRoomsState, { arrayMerge: overwriteMerge })
+
+      writeStaticJSONAsync(storageRoomsFilePath, { data: newStaticData, ts })
+    }
+  } catch (err) {
+    // TODO: Сделать нормальные логи
+    console.log(err)
+  }
+}
+// NOTE: Start polling
+createPollingByConditions({
+  cb: () => {
+    console.log('cb called')
+  },
+  interval: 5000,
+  callbackAsResolve: () => {
+    // syncUsersMap();
+    syncRoomsMap();
+  },
+  toBeOrNotToBe: () => true, // Need to retry again
+  callbackAsReject: () => {
+    console.log('NOWHERE')
+  },
+})
+// ---
+
 export const withSocketChat = (io: Socket) => {
   io.on('connection', (socket) => {
     // socket.join('room13')
@@ -36,6 +143,7 @@ export const withSocketChat = (io: Socket) => {
 
     socket.on('setMeAgain', ({ name, room }) => {
       console.log('-- setMeAgain')
+
       socket.join(room) // NOTE: Только для этого
       usersSocketMap.set(socket.id, name)
 

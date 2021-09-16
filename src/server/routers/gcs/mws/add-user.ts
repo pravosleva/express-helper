@@ -1,6 +1,6 @@
 import { Request as IRequest, Response as IResponse } from 'express'
-import { writeStaticJSONAsync, getStaticJSONSync } from '../../../utils/fs-tools'
-import { Singleton as UsersMapSingleton } from '../../../utils/gcsUsersMapInstance'
+import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
+import { Singleton as UsersMapSingleton } from '~/utils/gcsUsersMapInstance'
 
 export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSingleton, gcsStorageFilePath: string }, res: IResponse) => {
   const { userName, chatData } = req.body
