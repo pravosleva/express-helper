@@ -14,8 +14,6 @@ import {
     FormControl,
     Input,
     ModalFooter,
-    
-
 } from "@chakra-ui/react"
 import { FiList } from 'react-icons/fi'
 import { BiMessageDetail, BiLogOutCircle } from 'react-icons/bi'
@@ -200,10 +198,19 @@ export const Chat = () => {
     const [editedMessage, setEditedMessage] = useState<{ text: string, ts: number }>({ text: '', ts: 0 })
     const initialRef = useRef(null)
     const handleChangeEditedMessage = (e: any) => {
-
         setEditedMessage((state) => ({ ...state, text: e.target.value }))
     }
     const handleSaveEditedMessage = () => {
+        if (!editedMessage?.text) {
+            toast({
+                position: "top",
+                // title: 'Sorry',
+                description: 'Should not be empty',
+                status: "error",
+                duration: 3000,
+            })
+            return
+        }
         if (!!socket)
             socket.emit('editMessage', { newMessage: editedMessage.text, ts: editedMessage.ts, room, name }, (errMsg: string) => {
                 if (!!errMsg) {
@@ -274,7 +281,7 @@ export const Chat = () => {
                     </FormControl> */}
                     <FormControl mt={4}>
                         <FormLabel>Text</FormLabel>
-                        <Input placeholder="Message" ref={initialRef} onKeyDown={handleKeyDownEditedMessage} value={editedMessage.text} onChange={handleChangeEditedMessage} />
+                        <Textarea isInvalid={!editedMessage?.text} resize='none' placeholder="Message" ref={initialRef} onKeyDown={handleKeyDownEditedMessage} value={editedMessage.text} onChange={handleChangeEditedMessage} />
                     </FormControl>
                 </ModalBody>
 
