@@ -7,6 +7,7 @@ import merge2 from 'deepmerge'
 import { createPollingByConditions } from './createPollingByConditions'
 import { Counter } from '~/utils/counter'
 import DeviceDetector from "device-detector-js"
+import { cd } from 'shelljs'
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? token === CHAT_ADMIN_TOKEN : false
@@ -258,6 +259,62 @@ export const withSocketChat = (io: Socket) => {
         socket.emit('notification', { status: 'error', title: 'ERR #1', description: err.message || 'Server error', _originalEvent: { message, userName } })
       }
       // ---
+    })
+
+    socket.on('editMessage', ({ room, name, ts, newMessage }, cb) => {
+      const roomData = roomsMap.get(room)
+
+      if (!roomData) {
+        if (cb) cb('roomData not found')
+        return
+      } else {
+        const userMessages = roomData[name]
+
+        if (!userMessages) {
+          if (cb) cb('roomData[name] not found')
+          return
+        } else {
+          const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
+
+          if (theMessageIndex === -1) {
+            if (cb) cb('theMessage not found')
+            return
+          } else {
+            userMessages[theMessageIndex].text = newMessage
+            roomData[name] = userMessages
+            roomsMap.set(room, roomData)
+            io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+          }
+        }
+      }
+    })
+    socket.on('deleteMessage', ({ room, name, ts }, cb) => {
+      const roomData = roomsMap.get(room)
+
+      if (!roomData) {
+        if (cb) cb('roomData not found')
+        return
+      } else {
+        const userMessages = roomData[name]
+
+        if (!userMessages) {
+          if (cb) cb('roomData[name] not found')
+          return
+        } else {
+          const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
+
+          if (theMessageIndex === -1) {
+            if (cb) cb('theMessage not found')
+            return
+          } else {
+            // userMessages[theMessageIndex].text = newMessage
+            const newUserMessages = userMessages.filter(({ ts: t }) => t !== ts)
+            roomData[name] = newUserMessages
+            roomsMap.set(room, roomData)
+            io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+          }
+        }
+      }
     })
 
     socket.on("disconnect", () => {

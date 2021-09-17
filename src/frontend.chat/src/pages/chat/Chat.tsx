@@ -2,10 +2,24 @@ import React, { useContext, useEffect, useState, useCallback, useRef, useMemo } 
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
 import { SocketContext } from '~/socketContext'
-import { Box, Flex, Heading, IconButton, Text, Menu, Button, MenuButton, MenuList, MenuItem, Textarea } from "@chakra-ui/react"
+import {
+    Box, Flex, Heading, IconButton, Text, Menu, Button, MenuButton, MenuList, MenuItem, Textarea,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalCloseButton,
+    FormLabel,
+    FormControl,
+    Input,
+    ModalFooter,
+    
+
+} from "@chakra-ui/react"
 import { FiList } from 'react-icons/fi'
 import { BiMessageDetail, BiLogOutCircle } from 'react-icons/bi'
-import { RiSendPlaneFill } from 'react-icons/ri'
+import { RiSendPlaneFill, RiEdit2Fill } from 'react-icons/ri'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { useToast, UseToastOptions } from "@chakra-ui/react"
@@ -14,6 +28,8 @@ import './Chat.scss'
 import { UsersContext } from '~/usersContext'
 import { useTextCounter } from '~/common/hooks/useTextCounter'
 import { getNormalizedDateTime } from '~/utils/timeConverter'
+import { useDisclosure } from "@chakra-ui/react"
+import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from "react-contextmenu"
 
 type TUser = { socketId: string, room: string, name: string }
 type TMessage = { user: string, text: string, ts: number }
@@ -87,11 +103,9 @@ export const Chat = () => {
                     isClosable: true,
                 })
             }
-            
     
             socket.on("message", msgListener)
             socket.on("notification", notifListener)
-            
     
             return () => {
                 socket.off("message", msgListener)
@@ -182,82 +196,190 @@ export const Chat = () => {
         }
     }, [])
 
+    const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
+    const [editedMessage, setEditedMessage] = useState<{ text: string, ts: number }>({ text: '', ts: 0 })
+    const initialRef = useRef(null)
+    const handleChangeEditedMessage = (e: any) => {
+
+        setEditedMessage((state) => ({ ...state, text: e.target.value }))
+    }
+    const handleSaveEditedMessage = () => {
+        if (!!socket)
+            socket.emit('editMessage', { newMessage: editedMessage.text, ts: editedMessage.ts, room, name }, (errMsg: string) => {
+                if (!!errMsg) {
+                    toast({
+                        position: "top",
+                        // title: 'Sorry',
+                        description: errMsg,
+                        status: "error",
+                        duration: 7000,
+                        isClosable: true,
+                    })
+                } else {
+                    console.log('CLOSE')
+                }
+            })
+        handleEditModalClose()
+    }
+    const handleKeyDownEditedMessage = (ev: any) => {
+        console.log('DOWN')
+        if (ev.keyCode === 13) {
+            if (!!room) handleSaveEditedMessage()
+        }
+    }
+    const handleDeleteMessage = (ts: number) => {
+        if (!!socket)
+            socket.emit('deleteMessage', { ts: editedMessage.ts, room, name }, (errMsg: string) => {
+                if (!!errMsg) {
+                    toast({
+                        position: "top",
+                        // title: 'Sorry',
+                        description: errMsg,
+                        status: "error",
+                        duration: 7000,
+                        isClosable: true,
+                    })
+                }
+            })
+    }
+
     return (
-        <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto', width: '100%' }}>
-            <Flex className='room' flexDirection='column' width={{ base: "100%", sm: '450px', md: '550px' }} height={{ base: "100%", sm: "auto" }}>
-                <Heading className='heading' as='h4' bg='white' p='1rem 1.5rem' borderRadius='10px 10px 0 0'>
-                    <Flex alignItems='center' justifyContent='space-between'>
-                        <Menu >
-                            <MenuButton as={IconButton} icon={<FiList />} isRound='true' bg='blue.300' color='white' />
-                            <MenuList>
-                                {
-                                    users && users.map((user: TUser) => {
-                                        return (
+        <>
+            <ContextMenu id="same_unique_identifier">
+                <CtxMenuItem data={{ foo: 'bar' }} onClick={handleEditModalOpen}>
+                    Edit
+                </CtxMenuItem>
+                <CtxMenuItem data={{ foo: 'bar' }} onClick={handleDeleteMessage}>
+                    Delete
+                </CtxMenuItem>
+            </ContextMenu>
+            <Modal
+                size='xs'
+                initialFocusRef={initialRef}
+                finalFocusRef={textFieldRef}
+                isOpen={isEditModalOpen}
+                onClose={handleEditModalClose}
+            >
+                <ModalOverlay />
+                <ModalContent>
+                <ModalHeader>Edit your msg</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody pb={6}>
+                    {/* <FormControl>
+                        <FormLabel>ts</FormLabel>
+                        <Input
+                            placeholder="ts"
+                            value={editedMessage.ts}
+                            isDisabled
+                        />
+                    </FormControl> */}
+                    <FormControl mt={4}>
+                        <FormLabel>Text</FormLabel>
+                        <Input placeholder="Message" ref={initialRef} onKeyDown={handleKeyDownEditedMessage} value={editedMessage.text} onChange={handleChangeEditedMessage} />
+                    </FormControl>
+                </ModalBody>
+
+                <ModalFooter>
+                    <Button colorScheme="blue" mr={3} onClick={handleSaveEditedMessage}>
+                    Save
+                    </Button>
+                    <Button onClick={handleEditModalClose}>Cancel</Button>
+                </ModalFooter>
+                </ModalContent>
+            </Modal>
+            <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto', width: '100%' }}>
+                <Flex className='room' flexDirection='column' width={{ base: "100%", sm: '450px', md: '550px' }} height={{ base: "100%", sm: "auto" }}>
+                    <Heading className='heading' as='h4' bg='white' p='1rem 1.5rem' borderRadius='10px 10px 0 0'>
+                        <Flex alignItems='center' justifyContent='space-between'>
+                            <Menu >
+                                <MenuButton as={IconButton} icon={<FiList />} isRound='true' bg='blue.300' color='white' />
+                                <MenuList>
+                                    {
+                                        users && users.map((user: TUser) => {
+                                            return (
+                                                <MenuItem
+                                                    minH='40px'
+                                                    key={user.name}
+                                                    onClick={() => {
+                                                        handleUserClick(user)
+                                                    }}
+                                                    isDisabled={name === user.name}
+                                                >
+                                                    <Text fontSize='sm'>{user.name}</Text>
+                                                </MenuItem>
+                                            )
+                                        })
+                                    }
+                                    {
+                                        isAdmin && (
                                             <MenuItem
                                                 minH='40px'
-                                                key={user.name}
+                                                key='adm-btm'
                                                 onClick={() => {
-                                                    handleUserClick(user)
+                                                    history.push('/admin')
                                                 }}
-                                                isDisabled={name === user.name}
                                             >
-                                                <Text fontSize='sm'>{user.name}</Text>
+                                                <Text fontSize='sm'>Admin panel</Text>
                                             </MenuItem>
                                         )
-                                    })
-                                }
-                                {
-                                    isAdmin && (
-                                        <MenuItem
-                                            minH='40px'
-                                            key='adm-btm'
-                                            onClick={() => {
-                                                history.push('/admin')
-                                            }}
-                                        >
-                                            <Text fontSize='sm'>Admin panel</Text>
-                                        </MenuItem>
-                                    )
-                                }
-                            </MenuList>
-                        </Menu>
-                        <Flex alignItems='center' flexDirection='column' flex={{ base: "1", sm: "auto" }}>
-                            <Heading fontSize='lg'> {room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading>
-                            <Flex alignItems='center'><Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >{name}</Text><Box h={2} w={2} borderRadius='100px' bg={isConnected ? 'green.300' : 'red.300'}></Box></Flex>
+                                    }
+                                </MenuList>
+                            </Menu>
+                            <Flex alignItems='center' flexDirection='column' flex={{ base: "1", sm: "auto" }}>
+                                <Heading fontSize='lg'> {room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading>
+                                <Flex alignItems='center'><Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >{name}</Text><Box h={2} w={2} borderRadius='100px' bg={isConnected ? 'green.300' : 'red.300'}></Box></Flex>
+                            </Flex>
+                            <Button color='gray.500' fontSize='sm' onClick={handleLogout}>{isConnected ? 'Logout' : 'Reconnect'}</Button>
                         </Flex>
-                        <Button color='gray.500' fontSize='sm' onClick={handleLogout}>{isConnected ? 'Logout' : 'Reconnect'}</Button>
-                    </Flex>
-                </Heading>
+                    </Heading>
 
-                <ScrollToBottom className='messages' debug={false}>
-                    {messages.length > 0 ?
-                        messages.map(({ user, text, ts }: TMessage, i) => {
-                            const isMyMessage = user === name
-                            const date = getNormalizedDateTime(ts)
+                    <ScrollToBottom className='messages' debug={false}>
+                        {messages.length > 0 ?
+                            messages.map(({ user, text, ts }: TMessage, i) => {
+                                const isMyMessage = user === name
+                                const date = getNormalizedDateTime(ts)
 
-                            return (
-                                <Box key={`${user}-${ts}`} className={clsx('message', { "my-message": isMyMessage, "oponent-message": !isMyMessage })} m=".2rem 0">
-                                    <Text fontSize='xs' opacity='.7' ml='5px' className='from'><b>{user}</b> <span className='date'>{date}</span></Text>
-                                    <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' color='white'>{text}</Text>
-                                </Box>
-                            )
-                        })
-                        :
-                        <Flex alignItems='center' justifyContent='center' mt='.5rem' bg='#EAEAEA' opacity='.2' w='100%'>
-                            <Box mr='2'>-----</Box>
-                            <BiMessageDetail fontSize='1rem' />
-                            <Text ml='1' fontWeight='400'>No messages</Text>
-                            <Box ml='2'>-----</Box>
-                        </Flex>
-                    }
-                </ScrollToBottom>
-                <div className='form'>
-                    {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}
-                    <Textarea id='msg' isInvalid={isMsgLimitReached} resize='none' ref={textFieldRef} placeholder='Enter Message' value={message} onChange={handleChange} onKeyUp={handleKeyUp} />
-                    <label htmlFor='msg'>{left} left</label>
-                    <IconButton aria-label='Users' colorScheme={isMsgLimitReached ? 'red' : 'blue'} isRound icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={!message}>Send</IconButton>
-                </div>
-            </Flex>
-        </div>
+                                return (
+                                    <Box key={`${user}-${ts}`} className={clsx('message', { "my-message": isMyMessage, "oponent-message": !isMyMessage })} m=".2rem 0">
+                                        <Text fontSize='xs' opacity='.7' ml='5px' className='from'><b>{user}</b> <span className='date'>{date}</span></Text>
+                                        {
+                                            isMyMessage ? (
+                                                <ContextMenuTrigger id="same_unique_identifier">
+                                                    <Text
+                                                        fontSize='sm' className='msg' p=".4rem .8rem" bg='white' color='white'
+                                                        onContextMenu={() => {
+                                                            console.log('ctx')
+                                                            setEditedMessage({ ts, text })
+                                                        }}
+                                                    >
+                                                        {text}
+                                                        {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
+                                                    </Text>
+                                                </ContextMenuTrigger>
+                                            ) : (
+                                                <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' color='white'>{text}</Text>
+                                            )
+                                        }
+                                    </Box>
+                                )
+                            })
+                            :
+                            <Flex alignItems='center' justifyContent='center' mt='.5rem' bg='#EAEAEA' opacity='.2' w='100%'>
+                                <Box mr='2'>-----</Box>
+                                <BiMessageDetail fontSize='1rem' />
+                                <Text ml='1' fontWeight='400'>No messages</Text>
+                                <Box ml='2'>-----</Box>
+                            </Flex>
+                        }
+                    </ScrollToBottom>
+                    <div className='form'>
+                        {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}
+                        <Textarea id='msg' isInvalid={isMsgLimitReached} resize='none' ref={textFieldRef} placeholder='Enter Message' value={message} onChange={handleChange} onKeyUp={handleKeyUp} />
+                        <label htmlFor='msg'>{left} left</label>
+                        <IconButton aria-label='Users' colorScheme={isMsgLimitReached ? 'red' : 'blue'} isRound icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={!message}>Send</IconButton>
+                    </div>
+                </Flex>
+            </div>
+        </>
     )
 }

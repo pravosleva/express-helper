@@ -1,0 +1,29 @@
+.react-contextmenu--visible{
+  z-index: 1;
+  border-radius: var(--chakra-radii-md);
+
+  > .react-contextmenu-item:first-child{
+    border-top-left-radius: var(--chakra-radii-md) !important;
+    border-top-right-radius: var(--chakra-radii-md) !important;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom: 1px solid var(--chakra-colors-gray-300);
+  }
+  > .react-contextmenu-item:last-child{
+    border-radius: 0 0 var(--chakra-radii-md) var(--chakra-radii-md);
+  }
+
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.react-contextmenu-item{
+  cursor: pointer;
+  background-color: var(--chakra-colors-gray-100);
+  color: var(--chakra-colors-gray-500);
+  padding: 0.5em 1em;
+  
+}
+.react-contextmenu-item:hover{
+  background-color: var(--chakra-colors-gray-200);
+  color: var(--chakra-colors-gray-500);
+}
