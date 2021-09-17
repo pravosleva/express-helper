@@ -23,6 +23,7 @@ type TRoomId = string
 type TMessage = {
   text: string
   ts: number
+  editTs?: number
 }
 type TRoomData = {
   [userName: string]: TMessage[]
@@ -281,6 +282,7 @@ export const withSocketChat = (io: Socket) => {
             return
           } else {
             userMessages[theMessageIndex].text = newMessage
+            userMessages[theMessageIndex].editTs = new Date().getTime()
             roomData[name] = userMessages
             roomsMap.set(room, roomData)
             io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });

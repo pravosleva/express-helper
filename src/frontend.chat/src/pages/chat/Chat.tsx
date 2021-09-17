@@ -32,7 +32,7 @@ import { useDisclosure } from "@chakra-ui/react"
 import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from "react-contextmenu"
 
 type TUser = { socketId: string, room: string, name: string }
-type TMessage = { user: string, text: string, ts: number }
+type TMessage = { user: string, text: string, ts: number, editTs?: number }
 
 export const Chat = () => {
     const { name, slugifiedRoom: room, isAdmin } = useContext(MainContext)
@@ -53,9 +53,9 @@ export const Chat = () => {
         const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
         const messages: TMessage[] = Object.keys(roomData).reduce((acc, name) => {
             // @ts-ignore
-            roomData[name].forEach(({ text, ts }: any) => {
+            roomData[name].forEach(({ text, ts, ...rest }: any) => {
                 // @ts-ignore
-                acc.push({ text, user: name, ts })
+                acc.push({ text, user: name, ts, ...rest })
             })
             return acc
         }, [])
@@ -222,7 +222,6 @@ export const Chat = () => {
         handleEditModalClose()
     }
     const handleKeyDownEditedMessage = (ev: any) => {
-        console.log('DOWN')
         if (ev.keyCode === 13) {
             if (!!room) handleSaveEditedMessage()
         }
@@ -335,20 +334,20 @@ export const Chat = () => {
 
                     <ScrollToBottom className='messages' debug={false}>
                         {messages.length > 0 ?
-                            messages.map(({ user, text, ts }: TMessage, i) => {
+                            messages.map(({ user, text, ts, editTs }: TMessage, i) => {
                                 const isMyMessage = user === name
                                 const date = getNormalizedDateTime(ts)
+                                const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
 
                                 return (
-                                    <Box key={`${user}-${ts}`} className={clsx('message', { "my-message": isMyMessage, "oponent-message": !isMyMessage })} m=".2rem 0">
-                                        <Text fontSize='xs' opacity='.7' ml='5px' className='from'><b>{user}</b> <span className='date'>{date}</span></Text>
+                                    <Box key={`${user}-${ts}-${editTs || ''}`} className={clsx('message', { "my-message": isMyMessage, "oponent-message": !isMyMessage })} m=".2rem 0">
+                                        <Text fontSize='xs' opacity='.8' ml='5px' className='from'><b>{user}</b> <span className='date'>{date}{!!editDate && <b>{' '}Edited</b>}</span></Text>
                                         {
                                             isMyMessage ? (
                                                 <ContextMenuTrigger id="same_unique_identifier">
                                                     <Text
                                                         fontSize='sm' className='msg' p=".4rem .8rem" bg='white' color='white'
                                                         onContextMenu={() => {
-                                                            console.log('ctx')
                                                             setEditedMessage({ ts, text })
                                                         }}
                                                     >

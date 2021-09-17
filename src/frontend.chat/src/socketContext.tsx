@@ -55,7 +55,6 @@ export const SocketProvider = memo(({ children }: any) => {
             setIsConnected(false)
         }
         const oldChatListener = (data: { roomData: TRoomData }) => {
-            console.log(data.roomData)
             setRoomData(data.roomData)
         }
         const connListener = () => {
