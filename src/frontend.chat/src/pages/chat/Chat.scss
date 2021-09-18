@@ -26,6 +26,9 @@
       background:#EAEAEA;
       
       .message{
+        @media (max-width: #{$sm}px) {
+          user-select: none;
+        }
         max-width: 100%;
         white-space: pre-wrap;
         .msg{
