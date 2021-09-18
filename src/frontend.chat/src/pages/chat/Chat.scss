@@ -12,7 +12,7 @@
   }
   .heading{
       font-family: 'DM Sans';
-      color: rgb(70, 70, 70);
+      // color: rgb(70, 70, 70);
       font-size: 2rem;
       font-weight: 500;
       z-index: 1000;
@@ -23,8 +23,8 @@
   }
 
   .messages{
-      background:#EAEAEA;
-      
+      background: var(--chakra-colors-gray-100);
+
       .message{
         @media (max-width: #{$sm}px) {
           user-select: none;
@@ -38,7 +38,7 @@
             transition: all 0.5s linear;
         }
         .from{
-            color: rgba(0,0,0,.4);
+            // color: rgba(0,0,0,.4);
             .date{
                 color: rgba(0,0,0,.2);
             }
@@ -90,6 +90,9 @@
   .form{
       position: relative;
       z-index: 1000;
+      @media (min-width: #{$sm + 1}px) {
+        border-radius: 0px 0px 10px 10px;
+      }
       input{
           width: 100%;
           padding: 1.5rem 4rem 1.5rem 1.5rem;
@@ -110,7 +113,7 @@
                 border-radius: 0px 0px 10px 10px;
               }
 
-            background-color: #fff;
+            // background-color: #fff;
             padding-right: 4rem;
       }
       button{
@@ -121,7 +124,7 @@
           right: 1rem;
           top: 1rem;
       }
-      label{
+      label.absolute-label{
         user-select: none;
         -webkit-tap-highlight-color: transparent;
         position: absolute;
@@ -129,14 +132,13 @@
         right: 1rem;
         bottom: 0.5rem;
         font-size: 0.65rem;
-        opacity: 0.3;
       }
   }
 }
 
-::placeholder {
-  opacity: .5; 
-}
+// ::placeholder {
+//   opacity: .5; 
+// }
 
 @media(max-width : 30em){
   .room{

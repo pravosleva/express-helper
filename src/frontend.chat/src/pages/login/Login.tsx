@@ -2,9 +2,9 @@ import React, { useContext, useState, useEffect, useCallback, useRef } from 'rea
 import { useHistory, useLocation } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
 import { SocketContext } from '~/socketContext'
-import { Flex, Heading, IconButton, Input } from '@chakra-ui/react'
+import { Flex, FormControl, FormLabel, Heading, IconButton, Input, Textarea } from '@chakra-ui/react'
 import { RiArrowRightLine } from 'react-icons/ri'
-import { useToast } from '@chakra-ui/react'
+import { useToast, useDisclosure } from '@chakra-ui/react'
 
 import {
   Modal,
@@ -85,6 +85,7 @@ export const Login = () => {
 
   //Emits the login event and if successful redirects to chat and saves user data
 
+  const { isOpen: isPasswordModalOpen, onOpen: handlePasswordModalOpen, onClose: handlePasswordModalClose } = useDisclosure()
   const handleClick = useCallback(() => {
     setNameLS(name)
     if (!!socket)
@@ -94,9 +95,12 @@ export const Login = () => {
         (error: string, isAdmin?: boolean) => {
           if (isAdmin) setIsAdmin(true)
 
-          if (error) {
-            console.log(error)
-            return toast({
+          if (!!error) {
+            if (error === 'FRONT:LOG/PAS') {
+              handlePasswordModalOpen()
+              return
+            }
+            toast({
               position: 'top',
               title: 'Error',
               description: error,
@@ -104,18 +108,10 @@ export const Login = () => {
               duration: 5000,
               isClosable: true,
             })
+            return
           }
 
           setIsLogged(true)
-
-          // toast({
-          //     position: "top",
-          //     title: "Hey there",
-          //     description: `Welcome to ${slugifiedRoom}`,
-          //     status: "success",
-          //     duration: 5000,
-          //     isClosable: true,
-          // })
           history.push('/chat')
         }
       )
@@ -127,8 +123,81 @@ export const Login = () => {
     }
   }
 
+  const [myPassword, setMyPassword] = useState<{ password: string }>({ password: '' })
+  const handleTryLoginWidthPassword = () => {
+    if (!!socket) {
+      socket.emit('login.password', { password: myPassword.password, token: tokenLS, name, room }, (err: string) => {
+        if (!!err) {
+          toast({
+            position: 'top',
+            description: err,
+            status: 'error',
+            duration: 2000,
+            isClosable: true,
+          })
+          return
+        } else {
+          setIsLogged(true)
+          toast({
+              position: "top",
+              title: "Hey there",
+              description: `Hello, ${name}`,
+              status: "success",
+              duration: 3000,
+              isClosable: true,
+          })
+          history.push('/chat')
+        }
+      })
+    }
+  }
+  const handleKeyDownPassword = (ev: any) => {
+    if (ev.keyCode === 13) {
+      if (!!room) handleTryLoginWidthPassword()
+    }
+  }
+  const handleChangePassword = (e: any) => {
+    setMyPassword((state) => ({ ...state, password: e.target.value }))
+  }
+  const passwordRef = useRef(null)
+
   return (
     <>
+      <Modal
+        size="xs"
+        initialFocusRef={passwordRef}
+        // finalFocusRef={textFieldRef}
+        isOpen={isPasswordModalOpen}
+        onClose={handlePasswordModalClose}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Need password</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            <FormControl mt={4}>
+              <FormLabel>Password</FormLabel>
+              <Input
+                isInvalid={!myPassword.password}
+                resize="none"
+                placeholder="Password"
+                // ref={initialRef}
+                onKeyDown={handleKeyDownPassword}
+                value={myPassword.password}
+                onChange={handleChangePassword}
+                ref={passwordRef}
+              />
+            </FormControl>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={handleTryLoginWidthPassword}>
+              Submit
+            </Button>
+            <Button onClick={handlePasswordModalClose}>Cancel</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
       <Modal isOpen={isModalOpened} onClose={handleCloseModal} size="xs">
         <ModalOverlay />
         <ModalContent>

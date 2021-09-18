@@ -2,6 +2,41 @@ import { theme as defaultTheme } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 
 export const theme = extendTheme({
+  styles: {
+    global: (props: any) => ({
+      "html, body": {
+        fontSize: "sm",
+        background: props.colorMode === "dark" ? "gray.700" : "gray.200",
+        color: props.colorMode === "dark" ? "gray.400" : "gray.600",
+        lineHeight: "tall",
+      },
+      a: {
+        color: props.colorMode === "dark" ? "teal.300" : "teal.500",
+      },
+      '& .room > .heading, & .form': {
+        color: props.colorMode === "dark" ? "white" : "gray.600",
+        background: props.colorMode === "dark" ? "gray.600" : "gray.300",
+      },
+      '& .form .absolute-label': {
+        color: props.colorMode === "dark" ? "white" : "gray.500",
+      },
+      '& .form': {
+        background: 'transparent',
+        '& input, & textarea': {
+          background: props.colorMode === "dark" ? "gray.600" : "gray.300",
+        },
+        // color: props.colorMode === "dark" ? "white" : "white",
+        '& button': {
+          color: props.colorMode === "dark" ? "gray.600" : "white",
+          background: props.colorMode === "dark" ? "yellow.300" : "blue.400",
+        },
+        '& button:disabled': {
+          background: props.colorMode === "dark" ? "gray.500" : "gray.500",
+          color: props.colorMode === "dark" ? "white" : "white", // props.colorMode === "dark" ? "white" : "gray.500",
+        },
+      },
+    }),
+  },
   sizes: {
     xs: '320px',
     sm: '620px',
@@ -48,4 +83,23 @@ export const theme = extendTheme({
     lg: '1024px',
     xl: '1280px',
   },
+  Button: {
+    variants: {
+      outline: (props: any) => ({
+        bg: props.colorMode === "dark" ? "red.300" : "red.500",
+        color: props.colorMode === "dark" ? "white" : "gray.500",
+      }),
+    },
+  },
+  MenuList: {
+    
+    bg: 'gray.300',
+    // background: props.colorMode === "dark" ? "red.300" : "red.500",
+    
+  },
+  MenuItem: {
+    border: '1px solid red',
+    color: 'white',
+    bg: 'gray.300',
+  }
 })

@@ -38,6 +38,7 @@ import { useTextCounter } from '~/common/hooks/useTextCounter'
 import { getNormalizedDateTime } from '~/utils/timeConverter'
 import { useDisclosure } from '@chakra-ui/react'
 import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from 'react-contextmenu'
+import { ColorModeSwitcher } from '~/common/components/ColorModeSwitcher'
 
 type TUser = { socketId: string; room: string; name: string }
 type TMessage = { user: string; text: string; ts: number; editTs?: number }
@@ -339,15 +340,26 @@ export const Chat = () => {
           width={{ base: '100%', sm: '450px', md: '550px' }}
           height={{ base: '100%', sm: 'auto' }}
         >
-          <Heading className="heading" as="h4" bg="white" p="1rem 1.5rem" borderRadius="10px 10px 0 0">
+          <Heading className="heading" as="h4" p="1rem 1.5rem" borderRadius="10px 10px 0 0">
             <Flex alignItems="center" justifyContent="space-between">
               <Menu>
-                <MenuButton as={IconButton} icon={<FiList />} isRound="true" bg="blue.300" color="white" />
-                <MenuList>
+                <div>
+                  <MenuButton as={IconButton} icon={<FiList />} isRound="true" />
+                  <ColorModeSwitcher justifySelf="flex-end" mr={2} />
+                </div>
+                <MenuList
+                  _dark={{ bg: "gray.600" }}
+                  // _hover={{ bg: "gray.500", color: 'white' }}
+                  // _expanded={{ bg: "gray.800" }}
+                  // _focus={{ boxShadow: "outline" }}
+                >
                   {users &&
                     users.map((user: TUser) => {
                       return (
                         <MenuItem
+                          // _first={{ bg: "gray.200" }}
+                          _hover={{ bg: "gray.400", color: 'white' }}
+                          _focus={{ bg: "gray.400", color: 'white' }}
                           minH="40px"
                           key={user.name}
                           onClick={() => {
@@ -361,6 +373,8 @@ export const Chat = () => {
                     })}
                   {isAdmin && (
                     <MenuItem
+                      _hover={{ bg: "gray.400", color: 'white' }}
+                      _focus={{ bg: "gray.400", color: 'white' }}
                       minH="40px"
                       key="adm-btm"
                       onClick={() => {
@@ -381,7 +395,7 @@ export const Chat = () => {
                   <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
                 </Flex>
               </Flex>
-              <Button color="gray.500" fontSize="sm" onClick={handleLogout}>
+              <Button fontSize="sm" onClick={handleLogout} variant='outline'>
                 {isConnected ? 'Logout' : 'Reconnect'}
               </Button>
             </Flex>
@@ -432,7 +446,7 @@ export const Chat = () => {
                 )
               })
             ) : (
-              <Flex alignItems="center" justifyContent="center" mt=".5rem" bg="#EAEAEA" opacity=".2" w="100%">
+              <Flex alignItems="center" justifyContent="center" mt=".5rem" opacity=".2" w="100%">
                 <Box mr="2">-----</Box>
                 <BiMessageDetail fontSize="1rem" />
                 <Text ml="1" fontWeight="400">
@@ -454,10 +468,10 @@ export const Chat = () => {
               onChange={handleChange}
               onKeyUp={handleKeyUp}
             />
-            <label htmlFor="msg">{left} left</label>
+            <label htmlFor="msg" className='absolute-label'>{left} left</label>
             <IconButton
-              aria-label="Users"
-              colorScheme={isMsgLimitReached ? 'red' : 'blue'}
+              aria-label="Send"
+              // colorScheme={isMsgLimitReached ? 'red' : 'gray'}
               isRound
               icon={<RiSendPlaneFill />}
               onClick={handleSendMessage}

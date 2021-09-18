@@ -2,12 +2,12 @@ import { instrument } from '@socket.io/admin-ui'
 import { Socket } from 'socket.io'
 import path from 'path'
 import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
-import merge from 'merge-deep'
+// import merge from 'merge-deep'
 import merge2 from 'deepmerge'
 import { createPollingByConditions } from './createPollingByConditions'
 import { Counter } from '~/utils/counter'
 import DeviceDetector from "device-detector-js"
-import { cd } from 'shelljs'
+import bcrypt from 'bcryptjs'
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? token === CHAT_ADMIN_TOKEN : false
@@ -31,7 +31,14 @@ type TRoomData = {
 type TSocketId = string
 const usersSocketMap = new Map<TSocketId, TUserName>()
 const usersMap = new Map<TUserName, TConnectionData>()
+const registeredUsersMap = new Map<TUserName, { passwordHash: string }>()
 const roomsMap = new Map<TRoomId, TRoomData>()
+
+// NOTE: For example
+// const salt = bcrypt.genSaltSync(3);
+// const hash = bcrypt.hashSync("1", salt)
+// console.log(hash)
+registeredUsersMap.set('Den', { passwordHash: '$2a$04$XlLY/M5OtNAmGKuLJ14j6e3PcpwfkccMBIpJlXufTHmVdgUXW6NY6' }) // 1
 
 // -- TODO: Refactor?
 const projectRootDir = path.join(__dirname, '../../../')
@@ -186,6 +193,43 @@ export const withSocketChat = (io: Socket) => {
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
 
+    socket.on('login.password', ({ password, name, room, token }, cb) => {
+      if (!name || !room) {
+        if (!!cb) cb('Room and Username are required')
+        return
+      }
+
+      if (!registeredUsersMap.has(name)) {
+        if (!!cb) cb('User not fount')
+        return
+      }
+
+      const { passwordHash } = registeredUsersMap.get(name)
+      if (!bcrypt.compareSync(password, passwordHash)) {
+        if (!!cb) cb('Incorrect password')
+        return
+      }
+
+      socket.join(room)
+      const roomData = roomsMap.get(room)
+      if (!roomData) {
+        roomsMap.set(room, { [name]: [] })
+      } else {
+        let newUserRoomData = roomData[name]
+        if (!newUserRoomData) roomData[name] = []
+        
+        roomsMap.set(room, roomData)
+      }
+      socket.emit('oldChat', { roomData: roomsMap.get(room) })
+      
+      io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
+      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+
+      // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
+
+      if (!!cb) cb(null, isUserAdmin(token))
+    })
+
     socket.on('login', ({ name, room, token }, cb?: (rason?: string, isAdmin?: boolean) => void) => {
       if (!name || !room) {
         if (!!cb) cb('Room and Username are required')
@@ -195,6 +239,12 @@ export const withSocketChat = (io: Socket) => {
       // --- NEW WAY
       if (usersMap.has(name)) {
         if (!!cb) cb(`Username ${name} already taken`)
+        return
+      }
+
+      if (registeredUsersMap.has(name)) {
+        // NOTE: Need to login with password
+        if (!!cb) cb('FRONT:LOG/PAS')
         return
       }
 
