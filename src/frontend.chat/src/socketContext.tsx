@@ -5,37 +5,37 @@ import io, { Socket } from 'socket.io-client'
 const REACT_APP_WS_API_URL = process.env.REACT_APP_WS_API_URL || '/'
 
 type TMessage = {
-    text: string
-    user: string
-    ts: number
+  text: string
+  user: string
+  ts: number
 }
 type TRoomData = {
-    [userName: string]: TMessage[]
+  [userName: string]: TMessage[]
 }
 
 interface ISocketContext {
-    socket: Socket | null
-    roomData: TRoomData
-    isLogged: boolean
-    setIsLogged: (val: boolean) => void
-    isConnected: boolean
-    setIsConnected: (val: boolean) => void
+  socket: Socket | null
+  roomData: TRoomData
+  isLogged: boolean
+  setIsLogged: (val: boolean) => void
+  isConnected: boolean
+  setIsConnected: (val: boolean) => void
 }
 
 export const SocketContext = createContext<ISocketContext>({
-    socket: null,
-    roomData: {},
-    isLogged: false,
-    setIsLogged: () => {},
-    isConnected: false,
-    setIsConnected: () => {},
+  socket: null,
+  roomData: {},
+  isLogged: false,
+  setIsLogged: () => {},
+  isConnected: false,
+  setIsConnected: () => {},
 })
 
-
-export const SocketProvider = memo(({ children }: any) => {
+export const SocketProvider = memo(
+  ({ children }: any) => {
     const socket: Socket = io(REACT_APP_WS_API_URL, {
-        reconnection: true,
-        transports: ['websocket', 'polling'],
+      reconnection: true,
+      transports: ['websocket', 'polling'],
     })
     // const toast = useToast()
     const [roomData, setRoomData] = useState<TRoomData>({})
@@ -43,45 +43,47 @@ export const SocketProvider = memo(({ children }: any) => {
     const [isConnected, setIsConnected] = useState<boolean>(true)
 
     useEffect(() => {
-        const disconnListener = () => {
-            // toast({
-            //     position: "top",
-            //     // title: 'Connection lost...',
-            //     description: 'Connection lost...',
-            //     status: "error",
-            //     duration: 5000,
-            //     isClosable: true,
-            // })
-            setIsConnected(false)
-        }
-        const oldChatListener = (data: { roomData: TRoomData }) => {
-            setRoomData(data.roomData)
-        }
-        const connListener = () => {
-            setIsConnected(true)
-        }
-        const connErrListener = (reason: any) => {
-            console.log(reason)
-        }
+      const disconnListener = () => {
+        // toast({
+        //     position: "top",
+        //     // title: 'Connection lost...',
+        //     description: 'Connection lost...',
+        //     status: "error",
+        //     duration: 5000,
+        //     isClosable: true,
+        // })
+        setIsConnected(false)
+      }
+      const oldChatListener = (data: { roomData: TRoomData }) => {
+        setRoomData(data.roomData)
+      }
+      const connListener = () => {
+        setIsConnected(true)
+      }
+      const connErrListener = (reason: any) => {
+        console.log(reason)
+      }
 
-        socket.on("oldChat", oldChatListener)
-        socket.on('disconnect', disconnListener)
-        socket.on('connect', connListener)
-        socket.on('connect_error', connErrListener)
+      socket.on('oldChat', oldChatListener)
+      socket.on('disconnect', disconnListener)
+      socket.on('connect', connListener)
+      socket.on('connect_error', connErrListener)
 
-        return () => {
-            socket.off("oldChat", oldChatListener)
-            socket.off('disconnect', disconnListener)
-            socket.off('connect', connListener)
-            socket.off('connect_error', connErrListener)
-        }
+      return () => {
+        socket.off('oldChat', oldChatListener)
+        socket.off('disconnect', disconnListener)
+        socket.off('connect', connListener)
+        socket.off('connect_error', connErrListener)
+      }
     }, [socket, socket?.connected, setRoomData, setIsConnected])
 
     return (
-        <SocketContext.Provider value={{ socket, roomData, isLogged, setIsLogged, isConnected, setIsConnected }}>
-            {children}
-        </SocketContext.Provider>
+      <SocketContext.Provider value={{ socket, roomData, isLogged, setIsLogged, isConnected, setIsConnected }}>
+        {children}
+      </SocketContext.Provider>
     )
-}, () => true)
+  },
+  () => true
+)
 
 export const useSocketContext = () => useContext(SocketContext)

@@ -1,17 +1,12 @@
-import {
-  Stat,
-  StatLabel,
-  StatNumber,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Stat, StatLabel, StatNumber, useColorModeValue } from '@chakra-ui/react'
 
 interface StatsCardProps {
-  title: string;
-  renderer: React.FC<any>;
+  title: string
+  renderer: React.FC<any>
 }
 
 export function StatsCard(props: StatsCardProps) {
-  const { title, renderer } = props;
+  const { title, renderer } = props
   return (
     <Stat
       px={{ base: 4, md: 8 }}
@@ -35,5 +30,5 @@ export function StatsCard(props: StatsCardProps) {
         {renderer({})}
       </StatNumber>
     </Stat>
-  );
+  )
 }

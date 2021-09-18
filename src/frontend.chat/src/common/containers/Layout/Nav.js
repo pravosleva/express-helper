@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   Flex,
   Container,
@@ -13,28 +13,18 @@ import {
   MenuDivider,
   MenuGroup,
   MenuList,
-  MenuButton
-} from "@chakra-ui/react";
+  MenuButton,
+} from '@chakra-ui/react'
 
-import { FaCog, FaChevronDown } from "react-icons/fa";
+import { FaCog, FaChevronDown } from 'react-icons/fa'
 
-import "./Layout.scss";
+import './Layout.scss'
 
 export default function Nav() {
   return (
-    <Flex
-      position={{ md: "fixed" }}
-      bg="#ffffff"
-      minH="4rem"
-      w="100%"
-      marginTop={{ md: "-4rem" }}
-      zIndex="99"
-    >
+    <Flex position={{ md: 'fixed' }} bg="#ffffff" minH="4rem" w="100%" marginTop={{ md: '-4rem' }} zIndex="99">
       <Container maxW="lg" paddingTop="5px">
-        <Stack
-          direction={["column", "row"]}
-          alignItems={["flex-end", "center"]}
-        >
+        <Stack direction={['column', 'row']} alignItems={['flex-end', 'center']}>
           <Image
             boxSize="54px"
             fallbackSrc="https://user-images.githubusercontent.com/10295466/95871054-e472de00-0d75-11eb-93f4-2593ce275869.png"
@@ -42,7 +32,7 @@ export default function Nav() {
           <Text fontSize="xl" fontWeight="500">
             Awesome app
           </Text>
-          <Stack direction={["column", "row"]} style={{ marginLeft: "5rem" }}>
+          <Stack direction={['column', 'row']} style={{ marginLeft: '5rem' }}>
             <Button colorScheme="navItem" variant="ghost">
               Dashboard
             </Button>
@@ -62,7 +52,7 @@ export default function Nav() {
               </MenuList>
             </Menu>
           </Stack>
-          <Stack direction={["column", "row"]} style={{ marginLeft: "auto" }}>
+          <Stack direction={['column', 'row']} style={{ marginLeft: 'auto' }}>
             <Menu>
               <MenuButton
                 as={Button}
@@ -88,5 +78,5 @@ export default function Nav() {
         </Stack>
       </Container>
     </Flex>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   SimpleGrid,
   Stat,
@@ -11,26 +11,26 @@ import {
   Text,
   Flex,
   Icon,
-  Badge
-} from "@chakra-ui/react"
-import { FaChevronUp, FaChevronDown } from "react-icons/fa"
-import { PageContainer, PageContent, Nav, Footer, Card } from "../Layout"
+  Badge,
+} from '@chakra-ui/react'
+import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
+import { PageContainer, PageContent, Nav, Footer, Card } from '../Layout'
 // import "./Dashboard.scss"
 import { Admin } from '~/pages/admin'
 
 export default function Dashboard() {
   return (
     <PageContainer
-      // isFixedNav
+    // isFixedNav
     >
       {/* <Nav /> */}
       <PageContent
         title="Dashboard"
         primaryAction={{
-          content: "Create report",
+          content: 'Create report',
           onClick: () => {
-            alert("ok");
-          }
+            alert('ok')
+          },
         }}
         secondaryActions={[
           // {
@@ -40,11 +40,11 @@ export default function Dashboard() {
           //   }
           // },
           {
-            content: "Third action",
+            content: 'Third action',
             onClick: () => {
-              alert("ok");
-            }
-          }
+              alert('ok')
+            },
+          },
         ]}
       >
         <SimpleGrid
@@ -57,28 +57,24 @@ export default function Dashboard() {
         >
           <Admin />
         </SimpleGrid>
-        <SimpleGrid
-          columns={{ md: 2, xl: 3 }}
-          spacing={4}
-          marginBottom={{ base: 4 }}
-        >
+        <SimpleGrid columns={{ md: 2, xl: 3 }} spacing={4} marginBottom={{ base: 4 }}>
           <Card
             title="New Users"
             bg="main.500"
             color="white"
             filterActions={[
               {
-                default: "2_weeks",
+                default: '2_weeks',
                 items: {
-                  "1_week": "Last week",
-                  "2_weeks": "Last 14 days",
-                  "30_days": "30 Days"
+                  '1_week': 'Last week',
+                  '2_weeks': 'Last 14 days',
+                  '30_days': '30 Days',
                 },
 
                 onChange: () => {
-                  alert("ok");
-                }
-              }
+                  alert('ok')
+                },
+              },
             ]}
           >
             <Flex alignItems="center" justifyContent="space-between">
@@ -106,18 +102,18 @@ export default function Dashboard() {
             title="Card Title"
             subtitle="Card subtitle"
             primaryAction={{
-              content: "Create report",
+              content: 'Create report',
               onClick: () => {
-                alert("ok");
-              }
+                alert('ok')
+              },
             }}
             secondaryActions={[
               {
-                content: "Second action",
+                content: 'Second action',
                 onClick: () => {
-                  alert("ok");
-                }
-              }
+                  alert('ok')
+                },
+              },
             ]}
           >
             Card Content

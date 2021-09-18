@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import {
   Box,
   Checkbox,
@@ -10,35 +10,33 @@ import {
   Button,
   Stack,
   Heading,
-  Select
-} from "@chakra-ui/react";
+  Select,
+} from '@chakra-ui/react'
 
-import { FaEllipsisV } from "react-icons/fa";
+import { FaEllipsisV } from 'react-icons/fa'
 
-import "./Table.scss";
+import './Table.scss'
 
 export default function Table({
   headers = [],
   items = [],
   selected = [],
   selectable = false,
-  bg = "secondary.card",
-  color = "gray.800"
+  bg = 'secondary.card',
+  color = 'gray.800',
 }) {
-  let itemsIds = items.map((item) => item.id);
-  let [localSelected, setLocalSelected] = useState(selected);
+  let itemsIds = items.map((item) => item.id)
+  let [localSelected, setLocalSelected] = useState(selected)
   const setCheckedItems = (isChecked) => {
-    setLocalSelected([]);
+    setLocalSelected([])
     if (isChecked === true) {
-      setLocalSelected(itemsIds);
+      setLocalSelected(itemsIds)
     }
-  };
+  }
 
   const setCheckedItem = (item, isChecked) => {
-    isChecked
-      ? setLocalSelected([...localSelected, item])
-      : setLocalSelected(localSelected.filter((i) => i !== item));
-  };
+    isChecked ? setLocalSelected([...localSelected, item]) : setLocalSelected(localSelected.filter((i) => i !== item))
+  }
   return (
     <Box width="100%" bg={bg} color={color} rounded="lg" p={5}>
       <table className="chakra-ui-table">
@@ -52,7 +50,7 @@ export default function Table({
                 />
               </th>
             ) : (
-              ""
+              ''
             )}
 
             {headers.map((head, i) => (
@@ -75,7 +73,7 @@ export default function Table({
                   />
                 </td>
               ) : (
-                ""
+                ''
               )}
 
               {Object.keys(item).map((column, c) => (
@@ -85,10 +83,7 @@ export default function Table({
               ))}
               <td data-column="item-actions">
                 <Menu>
-                  <MenuButton
-                    as={IconButton}
-                    icon={<FaEllipsisV />}
-                  ></MenuButton>
+                  <MenuButton as={IconButton} icon={<FaEllipsisV />}></MenuButton>
                   <MenuList>
                     <MenuItem>Edit</MenuItem>
                     <MenuItem>Delete</MenuItem>
@@ -100,5 +95,5 @@ export default function Table({
         </tbody>
       </table>
     </Box>
-  );
+  )
 }

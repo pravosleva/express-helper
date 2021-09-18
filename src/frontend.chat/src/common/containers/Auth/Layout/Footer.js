@@ -1,7 +1,7 @@
-import React from "react";
-import { Stack, Link, Text } from "@chakra-ui/react";
+import React from 'react'
+import { Stack, Link, Text } from '@chakra-ui/react'
 
-import "./Layout.scss";
+import './Layout.scss'
 
 export default function Footer() {
   return (
@@ -25,5 +25,5 @@ export default function Footer() {
         <Text color="secondary.link">&mdash; All rights reserved</Text>
       </Stack>
     </>
-  );
+  )
 }

@@ -17,8 +17,5 @@ export const useTextCounter = ({ text, limit }: TProps): [left: number, isLimitR
     setLeft(diff)
   }, [text, limit])
 
-  return [
-    left,
-    isLimitReached 
-  ]
+  return [left, isLimitReached]
 }

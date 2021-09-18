@@ -1,7 +1,7 @@
-import React from "react";
-import { Flex } from "@chakra-ui/react";
+import React from 'react'
+import { Flex } from '@chakra-ui/react'
 
-import "./Layout.scss";
+import './Layout.scss'
 
 export default function PageContainer(props) {
   return (
@@ -15,5 +15,5 @@ export default function PageContainer(props) {
     >
       {props.children}
     </Flex>
-  );
+  )
 }

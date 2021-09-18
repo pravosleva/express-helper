@@ -1,21 +1,12 @@
-import React from "react";
-import { Container, Stack, Link, Text } from "@chakra-ui/react";
+import React from 'react'
+import { Container, Stack, Link, Text } from '@chakra-ui/react'
 
-import "./Layout.scss";
+import './Layout.scss'
 
 export default function Footer() {
   return (
-    <Container
-      maxW="lg"
-      marginTop="auto"
-      paddingTop="1.5rem"
-      paddingBottom="1.5rem"
-    >
-      <Stack
-        flexDirection={["column", "column", "row"]}
-        alignItems="center"
-        justifyContent="space-between"
-      >
+    <Container maxW="lg" marginTop="auto" paddingTop="1.5rem" paddingBottom="1.5rem">
+      <Stack flexDirection={['column', 'column', 'row']} alignItems="center" justifyContent="space-between">
         <Stack isInline fontWeight="500" fontSize="sm">
           <Text color="secondary.link">&copy; 2020</Text>
           <Link href="#" color="secondary.link" fontWeight="bold">
@@ -36,5 +27,5 @@ export default function Footer() {
         </Stack>
       </Stack>
     </Container>
-  );
+  )
 }
