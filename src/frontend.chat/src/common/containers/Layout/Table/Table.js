@@ -7,10 +7,10 @@ import {
   MenuItem,
   MenuButton,
   IconButton,
-  Button,
-  Stack,
-  Heading,
-  Select,
+  // Button,
+  // Stack,
+  // Heading,
+  // Select,
 } from '@chakra-ui/react'
 
 import { FaEllipsisV } from 'react-icons/fa'

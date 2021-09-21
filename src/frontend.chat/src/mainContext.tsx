@@ -9,6 +9,7 @@ type TMainContext = {
   slugifiedRoom: string
   isAdmin: boolean
   setIsAdmin: (room: boolean) => void
+  
 }
 
 export const MainContext = createContext<TMainContext>({

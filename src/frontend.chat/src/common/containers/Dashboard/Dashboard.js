@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   SimpleGrid,
   Stat,
@@ -14,7 +13,7 @@ import {
   Badge,
 } from '@chakra-ui/react'
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
-import { PageContainer, PageContent, Nav, Footer, Card } from '../Layout'
+import { PageContainer, PageContent, Footer, Card } from '../Layout'
 // import "./Dashboard.scss"
 import { Admin } from '~/pages/admin'
 

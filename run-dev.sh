@@ -24,7 +24,7 @@ if [ $# -eq 1 ]
 then
   case $1 in
     "chat")
-    parallel_commands "yarn build:fresh-dev:chat-only" "yarn --cwd src/frontend.chat start" "yarn start"
+    parallel_commands "yarn start" "yarn --cwd src/frontend.chat start"
     ;;
     *)
     echo "☠️ SCRIPT: run-dev.sh | Undefined param value" &&

@@ -48,7 +48,7 @@ export const UsersProvider = ({ children }: any) => {
   })
   useEffect(() => {
     handleDebouncedGetUsers()
-  }, [slugifiedRoom])
+  }, [slugifiedRoom, handleDebouncedGetUsers])
 
   return <UsersContext.Provider value={{ users, setUsers, allUsers }}>{children}</UsersContext.Provider>
 }

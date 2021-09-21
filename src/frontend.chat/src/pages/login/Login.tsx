@@ -1,11 +1,9 @@
-import React, { useContext, useState, useEffect, useCallback, useRef } from 'react'
+import { useContext, useState, useEffect, useCallback, useRef } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
 import { SocketContext } from '~/socketContext'
-import { Flex, FormControl, FormLabel, Heading, IconButton, Input, Textarea } from '@chakra-ui/react'
+import { Flex, FormControl, FormLabel, Heading, IconButton, Input } from '@chakra-ui/react'
 import { RiArrowRightLine } from 'react-icons/ri'
-import { useToast, useDisclosure } from '@chakra-ui/react'
-
 import {
   Modal,
   ModalOverlay,
@@ -15,11 +13,15 @@ import {
   ModalBody,
   ModalCloseButton,
   Button,
+
+  useToast,
+  useDisclosure,
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'react-use'
+// import { useForm } from '~/common/hooks/useForm'
 
 export const Login = () => {
-  const { socket, setIsLogged, isLogged } = useContext(SocketContext)
+  const { socket, setIsLogged } = useContext(SocketContext)
   const { name, setName, room, setRoom, slugifiedRoom, setIsAdmin } = useContext(MainContext)
   const history = useHistory()
   const toast = useToast()
@@ -29,7 +31,6 @@ export const Login = () => {
   // --- LS
   const [nameLS, setNameLS, removeNameLS] = useLocalStorage<string>('chat.my-name', '')
   const [tokenLS] = useLocalStorage<any>('chat.token')
-  console.log(tokenLS)
   const [isModalOpened, setIsModalOpened] = useState<boolean>(false)
   const handleOpenModal = useCallback(() => {
     setIsModalOpened(true)
@@ -86,15 +87,18 @@ export const Login = () => {
   //Emits the login event and if successful redirects to chat and saves user data
 
   const { isOpen: isPasswordModalOpen, onOpen: handlePasswordModalOpen, onClose: handlePasswordModalClose } = useDisclosure()
-  const handleClick = useCallback(() => {
+  const [isLoading1, setIsLoading1] = useState<boolean>(false)
+  const [isLoading2, setIsLoading2] = useState<boolean>(false)
+
+  const handleLogin = useCallback(() => {
     setNameLS(name)
     if (!!socket)
+      setIsLoading1(true)
+      // @ts-ignore
       socket.emit(
         'login',
         { name, room: slugifiedRoom, token: String(tokenLS) },
         (error: string, isAdmin?: boolean) => {
-          if (isAdmin) setIsAdmin(true)
-
           if (!!error) {
             if (error === 'FRONT:LOG/PAS') {
               handlePasswordModalOpen()
@@ -110,8 +114,10 @@ export const Login = () => {
             })
             return
           }
+          if (isAdmin) setIsAdmin(true)
 
           setIsLogged(true)
+          setIsLoading1(false)
           history.push('/chat')
         }
       )
@@ -119,14 +125,16 @@ export const Login = () => {
 
   const handleKeyDown = (ev: any) => {
     if (ev.keyCode === 13) {
-      if (!!room) handleClick()
+      if (!!room) handleLogin()
     }
   }
 
   const [myPassword, setMyPassword] = useState<{ password: string }>({ password: '' })
   const handleTryLoginWidthPassword = () => {
     if (!!socket) {
-      socket.emit('login.password', { password: myPassword.password, token: tokenLS, name, room }, (err: string) => {
+      setIsLoading2(true)
+      console.log(tokenLS)
+      socket.emit('login.password', { password: myPassword.password, token: tokenLS, name, room }, (err?: string, isAdmin?: boolean) => {
         if (!!err) {
           toast({
             position: 'top',
@@ -137,7 +145,9 @@ export const Login = () => {
           })
           return
         } else {
+          if (isAdmin) setIsAdmin(true)
           setIsLogged(true)
+          setIsLoading2(false)
           toast({
               position: "top",
               title: "Hey there",
@@ -176,6 +186,15 @@ export const Login = () => {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl mt={4}>
+              <FormLabel>Login</FormLabel>
+              <Input
+                type='login'
+                placeholder="Login"
+                isDisabled
+                value={name}
+              />
+            </FormControl>
+            <FormControl mt={4}>
               <FormLabel>Password</FormLabel>
               <Input
                 isInvalid={!myPassword.password}
@@ -186,12 +205,13 @@ export const Login = () => {
                 value={myPassword.password}
                 onChange={handleChangePassword}
                 ref={passwordRef}
+                type='password'
               />
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={handleTryLoginWidthPassword}>
+            <Button colorScheme="blue" mr={3} onClick={handleTryLoginWidthPassword} isLoading={isLoading2}>
               Submit
             </Button>
             <Button onClick={handlePasswordModalClose}>Cancel</Button>
@@ -229,9 +249,10 @@ export const Login = () => {
             size="3xl"
             textAlign="center"
             mb="8"
-            fontFamily="Montserrat"
-            fontWeight="600"
-            letterSpacing="-2px"
+            fontFamily="Wallpoet"
+            className='project-name'
+            // fontWeight="600"
+            // letterSpacing="-2px"
           >
             Let's talk
           </Heading>
@@ -266,7 +287,8 @@ export const Login = () => {
               isRound
               aria-label="icon-btn"
               icon={<RiArrowRightLine />}
-              onClick={handleClick}
+              isLoading={isLoading1}
+              onClick={handleLogin}
             ></IconButton>
           </Flex>
         </Flex>

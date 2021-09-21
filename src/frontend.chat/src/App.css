@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-
-.App{
-    font-family: 'Montserrat';
-    
-    /* background: #D0E0EF; */
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap&family=Russo+One&display=swap&family=Wallpoet&display=swap');
 
 *{
     outline: none !important;
     font-family: 'Montserrat';
+}
+.project-name {
+    font-family: 'Wallpoet';
+}
+
+.messages .msg {
+    font-family: 'Russo One';
+    /* font-weight: bold; */
+    font-size: 13px;
 }

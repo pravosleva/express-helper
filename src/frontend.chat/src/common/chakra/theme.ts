@@ -1,7 +1,7 @@
-import { theme as defaultTheme } from '@chakra-ui/react'
+import { theme as defaultChakraTheme } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 
-export const theme = extendTheme({
+const defaultTheme = {
   styles: {
     global: (props: any) => ({
       "html, body": {
@@ -42,10 +42,10 @@ export const theme = extendTheme({
     sm: '620px',
     md: '960px',
     lg: '1280px',
-    // xl: '1920px',
+    xl: '1920px',
   },
   colors: {
-    ...defaultTheme.colors,
+    ...defaultChakraTheme.colors,
     brand: {
       100: '#f7fafc',
       // ...
@@ -102,4 +102,22 @@ export const theme = extendTheme({
     color: 'white',
     bg: 'gray.300',
   }
-})
+}
+
+const {
+  sizes: {
+    xs: xs0,
+    sm: sm0,
+    md: md0,
+    lg: lg0,
+    xl: xl0
+  }
+} = defaultTheme
+
+export const xs = Number(xs0.split('px')[0])
+export const sm = Number(sm0.split('px')[0])
+export const md = Number(md0.split('px')[0])
+export const lg = Number(lg0.split('px')[0])
+export const xl = Number(xl0.split('px')[0])
+
+export const theme = extendTheme(defaultTheme)

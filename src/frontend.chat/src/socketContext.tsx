@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, memo, useContext } from 'react'
+import { createContext, useEffect, useState, useContext } from 'react'
 import io, { Socket } from 'socket.io-client'
 // import { useToast } from "@chakra-ui/react"
 
@@ -20,6 +20,8 @@ interface ISocketContext {
   setIsLogged: (val: boolean) => void
   isConnected: boolean
   setIsConnected: (val: boolean) => void
+  // regData: { registryLevel: number } | null
+  // setRegData: (val: { registryLevel: number } | null) => void
 }
 
 export const SocketContext = createContext<ISocketContext>({
@@ -29,9 +31,13 @@ export const SocketContext = createContext<ISocketContext>({
   setIsLogged: () => {},
   isConnected: false,
   setIsConnected: () => {},
+  // regData: null,
+  // setRegData: (_val: { registryLevel: number } | null) => {
+  //   throw new Error('setRegData should be implemented')
+  // },
 })
 
-export const SocketProvider = memo(
+export const SocketProvider =
   ({ children }: any) => {
     const socket: Socket = io(REACT_APP_WS_API_URL, {
       reconnection: true,
@@ -75,15 +81,15 @@ export const SocketProvider = memo(
         socket.off('connect', connListener)
         socket.off('connect_error', connErrListener)
       }
-    }, [socket, socket?.connected, setRoomData, setIsConnected])
+    }, [socket, setRoomData, setIsConnected])
 
     return (
-      <SocketContext.Provider value={{ socket, roomData, isLogged, setIsLogged, isConnected, setIsConnected }}>
+      <SocketContext.Provider value={{
+        socket, roomData, isLogged, setIsLogged, isConnected, setIsConnected,
+      }}>
         {children}
       </SocketContext.Provider>
     )
-  },
-  () => true
-)
+  }
 
 export const useSocketContext = () => useContext(SocketContext)

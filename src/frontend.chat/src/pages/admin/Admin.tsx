@@ -2,11 +2,12 @@ import { useEffect, useMemo, useState } from 'react'
 import { useMainContext } from '~/mainContext'
 import { useUsersContext } from '~/usersContext'
 import { useSocketContext } from '~/socketContext'
-import { useToast, UseToastOptions } from '@chakra-ui/react'
+import { useToast,
+  // UseToastOptions,
+} from '@chakra-ui/react'
 import { useHistory } from 'react-router-dom'
 import { Card } from '~/common/containers/Layout/Card'
-import { Box, chakra, SimpleGrid, Button, Grid, GridItem, Input } from '@chakra-ui/react'
-import { StatsCard } from './components'
+import { SimpleGrid, Button, Grid, GridItem, Input } from '@chakra-ui/react'
 import { BsArrowLeft } from 'react-icons/bs'
 import ReactJson from 'react-json-view'
 
@@ -22,7 +23,7 @@ type TRoomsData = {
 }
 
 export const Admin = () => {
-  const { slugifiedRoom, room, name } = useMainContext()
+  const { room, name } = useMainContext()
   const { allUsers } = useUsersContext()
   const [roomsData, setRoomsData] = useState<TRoomsData | null>(null)
   const { socket } = useSocketContext()

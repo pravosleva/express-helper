@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
+import { useContext, useEffect, useState, useCallback, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
-import { SocketContext } from '~/socketContext'
+import { useSocketContext } from '~/socketContext'
 import {
   Box,
   Flex,
@@ -24,10 +24,17 @@ import {
   FormControl,
   Input,
   ModalFooter,
+  MenuOptionGroup,
+  // MenuItemOption,
+  MenuDivider,
+
+  useDisclosure,
+  useBreakpointValue,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { FiList } from 'react-icons/fi'
-import { BiMessageDetail, BiLogOutCircle } from 'react-icons/bi'
-import { RiSendPlaneFill, RiEdit2Fill } from 'react-icons/ri'
+import { BiMessageDetail } from 'react-icons/bi'
+import { RiSendPlaneFill } from 'react-icons/ri'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom'
 import { useToast, UseToastOptions } from '@chakra-ui/react'
@@ -36,9 +43,11 @@ import './Chat.scss'
 import { UsersContext } from '~/usersContext'
 import { useTextCounter } from '~/common/hooks/useTextCounter'
 import { getNormalizedDateTime } from '~/utils/timeConverter'
-import { useDisclosure } from '@chakra-ui/react'
 import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from 'react-contextmenu'
 import { ColorModeSwitcher } from '~/common/components/ColorModeSwitcher'
+import { SetPasswordModal } from './components/SetPasswordModal'
+import { MyInfoModal } from './components/MyInfoModal'
+import { xs, sm, md, lg, xl } from '~/common/chakra/theme'
 
 type TUser = { socketId: string; room: string; name: string }
 type TMessage = { user: string; text: string; ts: number; editTs?: number }
@@ -46,7 +55,7 @@ type TMessage = { user: string; text: string; ts: number; editTs?: number }
 export const Chat = () => {
   const { name, slugifiedRoom: room, isAdmin } = useContext(MainContext)
   // @ts-ignore
-  const { socket, roomData, setIsLogged, isLogged, isConnected, setIsConnected } = useContext(SocketContext)
+  const { socket, roomData, isConnected } = useSocketContext()
   const [message, setMessage] = useState('')
   const resetMessage = () => {
     setMessage('')
@@ -92,6 +101,8 @@ export const Chat = () => {
   //     if (!isLogged) history.push('/')
   // }, [isLogged])
 
+  const [regData, setRegData] = useState<any>(null)
+
   useEffect(() => {
     if (!!socket) {
       const msgListener = (msg: TMessage) => {
@@ -117,13 +128,18 @@ export const Chat = () => {
           isClosable: true,
         })
       }
+      const myUserDataListener = (regData: any) => {
+        setRegData(regData)
+      }
 
       socket.on('message', msgListener)
       socket.on('notification', notifListener)
+      socket.on('my.user-data', myUserDataListener)
 
       return () => {
         socket.off('message', msgListener)
         socket.off('notification', notifListener)
+        socket.off('my.user-data', myUserDataListener)
       }
     }
   }, [socket, toast])
@@ -157,8 +173,9 @@ export const Chat = () => {
         socket.emit('unsetMe', { name, room })
       }
     }
-  }, [socket?.connected, room])
+  }, [socket?.connected, room, history])
 
+  const [isSending, setIsSending] = useState<boolean>(false)
   const handleSendMessage = () => {
     if (isMsgLimitReached) {
       toast({
@@ -171,9 +188,13 @@ export const Chat = () => {
       })
       return
     }
-    const normalizedMsg = message.replace(/\s+/g, ' ').trim()
+    // const normalizedMsg = message.replace(/\s+/g, ' ').trim()
+    const normalizedMsg = message.trim().replace(/\n+/g, '\n')
     if (!!socket && !!normalizedMsg) {
-      socket.emit('sendMessage', { message: normalizedMsg, userName: name })
+      setIsSending(true)
+      socket.emit('sendMessage', { message: normalizedMsg, userName: name }, () => {
+        setIsSending(false)
+      })
       resetMessage()
     }
   }
@@ -208,9 +229,7 @@ export const Chat = () => {
   }
 
   useEffect(() => {
-    if (!room || !name) {
-      history.push('/')
-    }
+    if (!room || !name) history.push('/')
   }, [])
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
@@ -272,8 +291,42 @@ export const Chat = () => {
       })
   }
 
+  // --- Set my password
+  const [isSetPasswordModalOpened, setIsSetPasswordModalOpened] = useState<boolean>(false)
+  const handleSetPasswordModalOpen = () => {
+    setIsSetPasswordModalOpened(true)
+  }
+  const handleSetPasswordModalClose = () => {
+    setIsSetPasswordModalOpened(false)
+  }
+  // ---
+  // --- My info:
+  const [isMyInfoModalOpened, setIsMyInfoModalOpened] = useState<boolean>(false)
+  const handleMyInfoModalOpen = () => {
+    setIsMyInfoModalOpened(true)
+  }
+  const handleMyInfoModalClose = () => {
+    setIsMyInfoModalOpened(false)
+  }
+  // ---
+
+  // const heighlLimitParentClass = useBreakpointValue({ md: "height-limited-md", base: "height-limited-sm" })
+  const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
+  const [upToSm] = useMediaQuery(`(min-width: ${md + 1}px)`)
+
   return (
     <>
+      <MyInfoModal
+        isOpened={isMyInfoModalOpened}
+        onClose={handleMyInfoModalClose}
+        data={regData}
+      />
+
+      <SetPasswordModal
+        isOpened={isSetPasswordModalOpened}
+        onClose={handleSetPasswordModalClose}
+      />
+
       <ContextMenu id="same_unique_identifier">
         <CtxMenuItem data={{ foo: 'bar' }} onClick={handleEditModalOpen}>
           Edit
@@ -294,14 +347,6 @@ export const Chat = () => {
           <ModalHeader>Edit your msg</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            {/* <FormControl>
-                        <FormLabel>ts</FormLabel>
-                        <Input
-                            placeholder="ts"
-                            value={editedMessage.ts}
-                            isDisabled
-                        />
-                    </FormControl> */}
             <FormControl mt={4}>
               <FormLabel>Text</FormLabel>
               <Textarea
@@ -340,7 +385,7 @@ export const Chat = () => {
           width={{ base: '100%', sm: '450px', md: '550px' }}
           height={{ base: '100%', sm: 'auto' }}
         >
-          <Heading className="heading" as="h4" p="1rem 1.5rem" borderRadius="10px 10px 0 0">
+          <Heading className="heading" as="h4" p={[4, 4]} borderRadius="8px 8px 0 0">
             <Flex alignItems="center" justifyContent="space-between">
               <Menu>
                 <div>
@@ -353,6 +398,7 @@ export const Chat = () => {
                   // _expanded={{ bg: "gray.800" }}
                   // _focus={{ boxShadow: "outline" }}
                 >
+                  <MenuOptionGroup defaultValue="asc" title="Users">
                   {users &&
                     users.map((user: TUser) => {
                       return (
@@ -371,12 +417,14 @@ export const Chat = () => {
                         </MenuItem>
                       )
                     })}
+                  </MenuOptionGroup>
+                  <MenuDivider />
                   {isAdmin && (
                     <MenuItem
                       _hover={{ bg: "gray.400", color: 'white' }}
                       _focus={{ bg: "gray.400", color: 'white' }}
                       minH="40px"
-                      key="adm-btm"
+                      key="adm-btn"
                       onClick={() => {
                         history.push('/admin')
                       }}
@@ -384,10 +432,32 @@ export const Chat = () => {
                       <Text fontSize="sm">Admin panel</Text>
                     </MenuItem>
                   )}
+                  <MenuItem
+                    _hover={{ bg: "gray.400", color: 'white' }}
+                    _focus={{ bg: "gray.400", color: 'white' }}
+                    minH="40px"
+                    key="set-passwd-btn"
+                    onClick={() => {
+                      handleSetPasswordModalOpen()
+                    }}
+                  >
+                    <Text fontSize="sm">Set my password</Text>
+                  </MenuItem>
+                  <MenuItem
+                    _hover={{ bg: "gray.400", color: 'white' }}
+                    _focus={{ bg: "gray.400", color: 'white' }}
+                    minH="40px"
+                    key="my-info-btn"
+                    onClick={() => {
+                      handleMyInfoModalOpen()
+                    }}
+                  >
+                    <Text fontSize="sm">My info</Text>
+                  </MenuItem>
                 </MenuList>
               </Menu>
-              <Flex alignItems="center" flexDirection="column" flex={{ base: '1', sm: 'auto' }}>
-                <Heading fontSize="lg"> {room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading>
+              <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }}>
+                <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading>
                 <Flex alignItems="center">
                   <Text mr="1" fontWeight="400" fontSize="md" opacity=".7" letterSpacing="0">
                     {name}
@@ -401,12 +471,22 @@ export const Chat = () => {
             </Flex>
           </Heading>
 
-          <ScrollToBottom className="messages" debug={false}>
+          <ScrollToBottom
+            className={
+              clsx(
+                "messages",
+                // "height-limited-md",
+                { "height-limited-md": upToSm, "height-full-auto-sm": downToSm }
+              )}
+            debug={false}
+          >
             {messages.length > 0 ? (
               messages.map(({ user, text, ts, editTs }: TMessage, i) => {
                 const isMyMessage = user === name
                 const date = getNormalizedDateTime(ts)
                 const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
+                const isLast = i === messages.length - 1
+                const showElm = false // text.length >= 15
 
                 return (
                   <Box
@@ -442,6 +522,7 @@ export const Chat = () => {
                         {text}
                       </Text>
                     )}
+                    {isLast && showElm && <div className='abs-tail'><div className='wrapped' /></div>}
                   </Box>
                 )
               })
@@ -467,6 +548,8 @@ export const Chat = () => {
               value={message}
               onChange={handleChange}
               onKeyUp={handleKeyUp}
+              variant='unstyled'
+              pl={4}
             />
             <label htmlFor="msg" className='absolute-label'>{left} left</label>
             <IconButton
@@ -476,6 +559,7 @@ export const Chat = () => {
               icon={<RiSendPlaneFill />}
               onClick={handleSendMessage}
               disabled={!message}
+              isLoading={isSending}
             >
               Send
             </IconButton>

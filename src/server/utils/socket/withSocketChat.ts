@@ -2,15 +2,16 @@ import { instrument } from '@socket.io/admin-ui'
 import { Socket } from 'socket.io'
 import path from 'path'
 import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
-// import merge from 'merge-deep'
+import merge from 'merge-deep'
 import merge2 from 'deepmerge'
 import { createPollingByConditions } from './createPollingByConditions'
 import { Counter } from '~/utils/counter'
 import DeviceDetector from "device-detector-js"
 import bcrypt from 'bcryptjs'
+import { binarySearchTsIndex } from '~/utils/binarySearch'
 
 const { CHAT_ADMIN_TOKEN } = process.env
-const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? token === CHAT_ADMIN_TOKEN : false
+const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? String(token) === CHAT_ADMIN_TOKEN : false
 
 type TUser = {
   socketId: string
@@ -18,12 +19,21 @@ type TUser = {
   room: string
 }
 type TUserName = string
+enum ERegistryLevel {
+  Guest = 0,
+  Logged = 1,
+  TGUser = 2
+}
 type TConnectionData = Partial<TUser> & { userAgent: DeviceDetector.DeviceDetectorResult }
 type TRoomId = string
-type TMessage = {
+
+export type TMessage = {
   text: string
   ts: number
   editTs?: number
+  rl?: ERegistryLevel
+
+  registryLevel?: ERegistryLevel
 }
 type TRoomData = {
   [userName: string]: TMessage[]
@@ -31,24 +41,65 @@ type TRoomData = {
 type TSocketId = string
 const usersSocketMap = new Map<TSocketId, TUserName>()
 const usersMap = new Map<TUserName, TConnectionData>()
-const registeredUsersMap = new Map<TUserName, { passwordHash: string }>()
+const registeredUsersMap = new Map<TUserName, { passwordHash: string, registryLevel?: ERegistryLevel }>()
 const roomsMap = new Map<TRoomId, TRoomData>()
 
 // NOTE: For example
 // const salt = bcrypt.genSaltSync(3);
 // const hash = bcrypt.hashSync("1", salt)
 // console.log(hash)
-registeredUsersMap.set('Den', { passwordHash: '$2a$04$XlLY/M5OtNAmGKuLJ14j6e3PcpwfkccMBIpJlXufTHmVdgUXW6NY6' }) // 1
+// registeredUsersMap.set('Den', { passwordHash: '$2a$04$XlLY/M5OtNAmGKuLJ14j6e3PcpwfkccMBIpJlXufTHmVdgUXW6NY6', registryLevel: ERegistryLevel.Logged }) // 1
 
 // -- TODO: Refactor?
 const projectRootDir = path.join(__dirname, '../../../')
 // const CHAT_USERS_STATE_FILE_NAME = process.env.CHAT_USERS_STATE_FILE_NAME || 'chat.users.json'
 const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
+const CHAT_PASSWORD_HASHES_MAP_FILE_NAME = process.env.CHAT_PASSWORD_HASHES_MAP_FILE_NAME || 'chat.passwd-hashes.json'
 
 // const storageUsersFilePath = path.join(projectRootDir, '/storage', CHAT_USERS_STATE_FILE_NAME)
 const storageRoomsFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_STATE_FILE_NAME)
+const storageRegistryMapFilePath = path.join(projectRootDir, '/storage', CHAT_PASSWORD_HASHES_MAP_FILE_NAME)
 // const counter1 = Counter()
 const counter2 = Counter()
+const counter3 = Counter()
+
+const syncRegistryMap = () => {
+  const isFirstScriptRun = counter3.next().value === 0
+
+  try {
+    if (!!storageRegistryMapFilePath) {
+      let oldStatic: { data: { [key: string]: { passwordHash: string, registryLevel?: ERegistryLevel } }, ts: number }
+      try {
+        oldStatic = getStaticJSONSync(storageRegistryMapFilePath)
+        if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_121.2: incorrect static data')
+      } catch (err) {
+        // TODO: Сделать нормальные логи
+        console.log('ERR#CHAT.SOCKET_121.1')
+        console.log(err)
+        oldStatic = { data: {}, ts: 0 }
+      }
+      const staticData = oldStatic.data
+      const ts = new Date().getTime()
+
+      if (isFirstScriptRun) {
+        // NOTE: Sync with old state:
+        Object.keys(staticData).forEach((name: string) => {
+          registeredUsersMap.set(name, staticData[name])
+        })
+      }
+
+      const currentRegistryMapState: { [key: string]: TConnectionData } = [...registeredUsersMap.keys()].reduce((acc, userName: string) => { acc[userName] = registeredUsersMap.get(userName); return acc }, {})
+      const newStaticData = merge(staticData, currentRegistryMapState)
+
+      writeStaticJSONAsync(storageRegistryMapFilePath, { data: newStaticData, ts })
+    } else {
+      throw new Error(`ERR#CHAT.SOCKET_122: файл не найден: ${storageRegistryMapFilePath}`)
+    }
+  } catch (err) {
+    // TODO: Сделать нормальные логи
+    console.log(err)
+  }
+}
 
 // const syncUsersMap = () => {
 //   const isFirstScriptRun = counter1.next().value === 0
@@ -114,7 +165,19 @@ const syncRoomsMap = () => {
         })
       }
 
-      const currentRoomsState = [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {})
+      const currentRoomsState = [...roomsMap.keys()]
+        .reduce((acc, roomName) => {
+          acc[roomName] = roomsMap.get(roomName);
+          // -- tmp
+          // Object.keys(acc[roomName]).forEach((key) => {
+          //   acc[roomName][key].forEach(({ text, ts, registryLevel }: TMessage, i: number) => {
+          //     acc[roomName][key][i] = { text, ts }
+          //     if (!!registryLevel) acc[roomName][key][i].rl = registryLevel
+          //   })
+          // })
+          // --
+          return acc
+        }, {})
       const newStaticData = merge2(staticData, currentRoomsState, { arrayMerge: overwriteMerge })
 
       writeStaticJSONAsync(storageRoomsFilePath, { data: newStaticData, ts })
@@ -131,8 +194,9 @@ createPollingByConditions({
   },
   interval: 5000,
   callbackAsResolve: () => {
-    // syncUsersMap();
-    syncRoomsMap();
+    // syncUsersMap()
+    syncRoomsMap()
+    syncRegistryMap()
   },
   toBeOrNotToBe: () => true, // Need to retry again
   callbackAsReject: () => {
@@ -153,6 +217,10 @@ export const withSocketChat = (io: Socket) => {
     }
 
     socket.on('setMeAgain', ({ name, room }, cb) => {
+      // ---
+      const myRegData = registeredUsersMap.get(name)
+      socket.emit('my.user-data', myRegData || null)
+      // ---
       if (!name || !room) {
         cb('Попробуйте перезайти')
         return
@@ -193,7 +261,38 @@ export const withSocketChat = (io: Socket) => {
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
 
-    socket.on('login.password', ({ password, name, room, token }, cb) => {
+    socket.on('login.set-pas-level-1', ({ password, name }, cb: (errMsg?: string) => void) => {
+      if (!name || !password) {
+        if (!!cb) cb('Username & Password are required')
+        return
+      }
+
+      if (!!registeredUsersMap.has(name)) {
+        const regData = registeredUsersMap.get(name)
+        switch (true) {
+          case regData.registryLevel === ERegistryLevel.Guest || regData.registryLevel === ERegistryLevel.Logged:
+            const hash = bcrypt.hashSync(password)
+
+            regData.passwordHash = hash
+            regData.registryLevel = ERegistryLevel.Logged
+            registeredUsersMap.set(name, regData)
+            if (!!cb) cb()
+            break
+          default:
+            if (!!cb) cb('Вы можете сбросить пароль только через TG бот')
+        }
+        socket.emit('my.user-data', regData)
+      } else {
+        const hash = bcrypt.hashSync(password)
+
+        const regData: any = { passwordHash: hash, registryLevel: ERegistryLevel.Logged }
+        registeredUsersMap.set(name, regData)
+        if (!!cb) cb()
+        socket.emit('my.user-data', regData)
+      }
+    })
+
+    socket.on('login.password', ({ password, name, room, token }, cb?: (reason?: string, isAdmin?: boolean) => void) => {
       if (!name || !room) {
         if (!!cb) cb('Room and Username are required')
         return
@@ -204,7 +303,7 @@ export const withSocketChat = (io: Socket) => {
         return
       }
 
-      const { passwordHash } = registeredUsersMap.get(name)
+      const { passwordHash, registryLevel, ...rest } = registeredUsersMap.get(name)
       if (!bcrypt.compareSync(password, passwordHash)) {
         if (!!cb) cb('Incorrect password')
         return
@@ -230,7 +329,7 @@ export const withSocketChat = (io: Socket) => {
       if (!!cb) cb(null, isUserAdmin(token))
     })
 
-    socket.on('login', ({ name, room, token }, cb?: (rason?: string, isAdmin?: boolean) => void) => {
+    socket.on('login', ({ name, room, token }, cb?: (reason?: string, isAdmin?: boolean) => void) => {
       if (!name || !room) {
         if (!!cb) cb('Room and Username are required')
         return
@@ -294,18 +393,26 @@ export const withSocketChat = (io: Socket) => {
       socket.emit('allRooms', { roomsData: [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {}) })
     })
 
-    socket.on('sendMessage', ({ message, userName }) => {
+    socket.on('sendMessage', ({ message, userName }, cb) => {
       // --- NEW WAY
       const ts = Date.now()
       try {
         const { room, name } = usersMap.get(userName)
         const newRoomData = roomsMap.get(room)
 
-        newRoomData[name].push({ text: message, ts })
+        let registryLevel = 0
+        const regData = registeredUsersMap.get(userName)
+        if (registeredUsersMap.has(userName)) {
+          registryLevel = 1
+          if (!!regData.registryLevel) registryLevel = regData.registryLevel
+        }
+        
+        newRoomData[name].push({ text: message, ts, rl: registryLevel })
 
         roomsMap.set(room, newRoomData)
 
-        io.in(room).emit('message', { user: name, text: message, ts });
+        io.in(room).emit('message', { user: name, text: message, ts, rl: registryLevel });
+        if (!!cb) cb()
       } catch (err) {
         socket.emit('notification', { status: 'error', title: 'ERR #1', description: err.message || 'Server error', _originalEvent: { message, userName } })
       }
@@ -325,7 +432,11 @@ export const withSocketChat = (io: Socket) => {
           if (cb) cb('roomData[name] not found')
           return
         } else {
-          const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
+          // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
+          const theMessageIndex = binarySearchTsIndex({
+            messages: userMessages,
+            targetTs: ts
+          })
 
           if (theMessageIndex === -1) {
             if (cb) cb('theMessage not found')

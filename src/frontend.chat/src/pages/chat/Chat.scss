@@ -1,31 +1,60 @@
 @import '~/common/scss-vars/monitors.scss';
 
 .room{
-  box-shadow: 1px 1px 10px rgba(0,0,0,.1);
-
   @media (max-width: #{$sm}px) {
     border-radius: 0px;
     
     }
   @media (min-width: #{$sm + 1}px) {
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.1);
   }
   .heading{
-      font-family: 'DM Sans';
+      // font-family: 'DM Sans';
       // color: rgb(70, 70, 70);
       font-size: 2rem;
       font-weight: 500;
       z-index: 1000;
 
+      white-space: nowrap;
+      width: 100%; // IE6 needs any width
+      overflow: hidden; // "overflow" value must be different from  visible"
+      // -o-text-overflow: 'ellipsis // Opera < 11
+      text-overflow: ellipsis; // IE, Safari (WebKit), Opera >= 11, FF > 6
+      & h2 {
+        white-space: nowrap;
+        overflow: hidden; // "overflow" value must be different from  visible"
+        // -o-text-overflow: 'ellipsis // Opera < 11
+        text-overflow: ellipsis; // IE, Safari (WebKit), Opera >= 11, FF > 6
+      }
+
       @media (max-width: #{$sm}px) {
         border-radius: 0px;
+
+        & h2 {
+          width: 100%; // IE6 needs any width
+          max-width: 150px;
         }
+      }
+      @media (min-width: #{$sm + 1}px) {
+        & h2 {
+          width: 100%; // IE6 needs any width
+          max-width: 250px;
+        }
+      }
+      @media (min-width: #{$md + 1}px) {
+        & h2 {
+          width: 100%; // IE6 needs any width
+          max-width: 350px;
+        }
+      }
   }
 
   .messages{
       background: var(--chakra-colors-gray-100);
 
       .message{
+        position: relative;
         @media (max-width: #{$sm}px) {
           user-select: none;
         }
@@ -33,16 +62,16 @@
         white-space: pre-wrap;
         .msg{
             color: rgba(0,0,0,.7);
-            border-radius: 15px;
-            font-size: 13px;
+            border-radius: 8px;
+            // font-size: 1em;
             transition: all 0.5s linear;
         }
-        .from{
-            // color: rgba(0,0,0,.4);
-            .date{
-                color: rgba(0,0,0,.2);
-            }
-        }
+        // .from{
+        //     // color: rgba(0,0,0,.4);
+        //     .date{
+        //         color: rgba(0,0,0,.2);
+        //     }
+        // }
       }
       .my-message{
           align-self: flex-end;
@@ -63,16 +92,47 @@
           //   border: 1px solid white;
           //   background-color: gray;
           // }
+          & > .abs-tail {
+            position: absolute;
+            // width: 10px;
+            // height: 10px;
+            bottom: calc(-10px);
+            right: calc(50px);
+            transform: rotate(12deg);
+            & > .wrapped {
+              background: #408EEA;
+              width: 10px;
+              height: 10px;
+              transform: skew(50deg) scale(5, 0.9) translateY(-50%);
+            }
+          }
       }
       .my-message:last-child{
         .msg{
           border-bottom-right-radius: 0px;
         }
-    }
+      }
+
+      .oponent-message{
+        & > .abs-tail {
+          position: absolute;
+          // width: 10px;
+          // height: 10px;
+          bottom: calc(-10px);
+          left: calc(50px);
+          transform: rotate(-12deg);
+          & > .wrapped {
+            background: #FFF;
+            width: 10px;
+            height: 10px;
+            transform: skew(-50deg) scale(5, 0.9) translateY(-50%);
+          }
+        }
+      }
       .oponent-message:last-child{
         .msg{
-            border-bottom-left-radius: 0px;
-          }
+          border-bottom-left-radius: 0px;
+        }
       }
   }
 
@@ -82,21 +142,28 @@
       flex-direction: column;
       width: auto !important;
       overflow:auto;
-      min-height:400px;
-      max-height:400px;
+      
       padding: 1rem;
+  }
+  .height-full-auto-sm > div {
+    min-height:300px;
+    max-height: calc(100vh - 65px - 85px);
+  }
+  .height-limited-md > div {
+    min-height:400px;
+    max-height:400px;
   }
   
   .form{
       position: relative;
       z-index: 1000;
       @media (min-width: #{$sm + 1}px) {
-        border-radius: 0px 0px 10px 10px;
+        border-radius: 0px 0px 8px 8px;
       }
       input{
           width: 100%;
           padding: 1.5rem 4rem 1.5rem 1.5rem;
-          border-radius: 0px 0px 10px 10px;
+          border-radius: 0px 0px 8px 8px;
       }
       textarea{
             width: 100%;
@@ -110,7 +177,7 @@
                 
                 }
               @media (min-width: #{$sm + 1}px) {
-                border-radius: 0px 0px 10px 10px;
+                border-radius: 0px 0px 8px 8px;
               }
 
             // background-color: #fff;
