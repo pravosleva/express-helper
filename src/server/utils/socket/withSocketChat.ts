@@ -464,7 +464,11 @@ export const withSocketChat = (io: Socket) => {
           if (cb) cb('roomData[name] not found')
           return
         } else {
-          const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
+          // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
+          const theMessageIndex = binarySearchTsIndex({
+            messages: userMessages,
+            targetTs: ts
+          })
 
           if (theMessageIndex === -1) {
             if (cb) cb('theMessage not found')
