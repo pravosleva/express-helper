@@ -23,12 +23,17 @@ type TRoomsData = {
 }
 
 export const Admin = () => {
-  const { room, name } = useMainContext()
+  const { room, name, isAdmin } = useMainContext()
+
   const { allUsers } = useUsersContext()
   const [roomsData, setRoomsData] = useState<TRoomsData | null>(null)
   const { socket } = useSocketContext()
   const toast = useToast()
   const history = useHistory()
+
+  useEffect(() => {
+    if (!isAdmin) history.push('/') 
+  }, [history, isAdmin])
 
   const handleClick = () => {
     if (!!socket) socket.emit('getAllInfo', { a: 1 })

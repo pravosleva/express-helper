@@ -60,7 +60,6 @@ export const Login = () => {
   }, [handleOpenModal, setName, nameLS, name])
   // ---
 
-  //Checks to see if there's a user already present
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search)
     const openRoomName: string | null = queryParams.get('room')
@@ -73,18 +72,6 @@ export const Login = () => {
       history.replace({ search: queryParams.toString() })
     }
   }, [location.search, history, setRoom])
-
-  // useEffect(() => {
-  //     if (isLogged) {
-  //         console.log(isLogged, 'GO TO /CHAT')
-  //         history.push('/chat')
-  //     } else {
-  //         console.log(isLogged, 'GO TO /')
-  //         history.push('/')
-  //     }
-  // }, [isLogged])
-
-  //Emits the login event and if successful redirects to chat and saves user data
 
   const { isOpen: isPasswordModalOpen, onOpen: handlePasswordModalOpen, onClose: handlePasswordModalClose } = useDisclosure()
   const [isLoading1, setIsLoading1] = useState<boolean>(false)
@@ -112,6 +99,7 @@ export const Login = () => {
               duration: 5000,
               isClosable: true,
             })
+            setIsLoading1(false)
             return
           }
           if (isAdmin) setIsAdmin(true)
@@ -143,6 +131,7 @@ export const Login = () => {
             duration: 2000,
             isClosable: true,
           })
+          setIsLoading2(false)
           return
         } else {
           if (isAdmin) setIsAdmin(true)
@@ -250,9 +239,6 @@ export const Login = () => {
             textAlign="center"
             mb="8"
             fontFamily="Wallpoet"
-            className='project-name'
-            // fontWeight="600"
-            // letterSpacing="-2px"
           >
             Let's talk
           </Heading>
@@ -289,6 +275,7 @@ export const Login = () => {
               icon={<RiArrowRightLine />}
               isLoading={isLoading1}
               onClick={handleLogin}
+              isDisabled={!name || !room}
             ></IconButton>
           </Flex>
         </Flex>

@@ -62,9 +62,7 @@ export const SetPasswordModal = ({ isOpened, onClose }: TProps) => {
         initialFocusRef={initialSetPasswdRef}
         // finalFocusRef={textFieldRef}
         isOpen={isOpened}
-        onClose={() => {
-          onClose()
-        }}
+        onClose={onClose}
       >
         <ModalOverlay />
         <ModalContent>
@@ -101,9 +99,7 @@ export const SetPasswordModal = ({ isOpened, onClose }: TProps) => {
             }}>
               Save
             </Button>
-            <Button onClick={() => {
-              onClose()
-            }}>Cancel</Button>
+            <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

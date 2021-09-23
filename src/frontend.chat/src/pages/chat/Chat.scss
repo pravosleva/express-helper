@@ -1,5 +1,14 @@
 @import '~/common/scss-vars/monitors.scss';
 
+.main-wrapper{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .room{
   @media (max-width: #{$sm}px) {
     border-radius: 0px;
@@ -15,6 +24,7 @@
       font-size: 2rem;
       font-weight: 500;
       z-index: 1000;
+      height: 69px;
 
       white-space: nowrap;
       width: 100%; // IE6 needs any width
@@ -147,7 +157,7 @@
   }
   .height-full-auto-sm > div {
     min-height:300px;
-    max-height: calc(100vh - 65px - 85px);
+    max-height: calc(100vh - 69px - 80px);
   }
   .height-limited-md > div {
     min-height:400px;

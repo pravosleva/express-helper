@@ -62,5 +62,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- <script>
+      const bChildrenHTMLCollection = document.body.children
+      const bcArr = Array.from(bChildrenHTMLCollection)
+
+      bcArr.forEach((c, i) => {
+        switch(c.tagName) {
+          case 'DIV':
+          case 'SECTION':
+            alert(c.tagName)
+            if (c.id !== 'root') {
+              
+              alert('Лишний элемент')
+              document.body.removeChild(c)
+            }
+            break;
+          default:
+            break;
+        }
+      })
+    </script> -->
   </body>
 </html>

@@ -22,14 +22,14 @@ import {
   ModalCloseButton,
   FormLabel,
   FormControl,
-  Input,
+  // Input,
   ModalFooter,
   MenuOptionGroup,
   // MenuItemOption,
   MenuDivider,
 
   useDisclosure,
-  useBreakpointValue,
+  // useBreakpointValue,
   useMediaQuery,
 } from '@chakra-ui/react'
 import { FiList } from 'react-icons/fi'
@@ -263,8 +263,6 @@ export const Chat = () => {
               duration: 7000,
               isClosable: true,
             })
-          } else {
-            console.log('CLOSE')
           }
         }
       )
@@ -369,16 +367,7 @@ export const Chat = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          margin: '0 auto',
-          width: '100%',
-        }}
-      >
+      <div className='main-wrapper'>
         <Flex
           className="room"
           flexDirection="column"
@@ -437,9 +426,7 @@ export const Chat = () => {
                     _focus={{ bg: "gray.400", color: 'white' }}
                     minH="40px"
                     key="set-passwd-btn"
-                    onClick={() => {
-                      handleSetPasswordModalOpen()
-                    }}
+                    onClick={handleSetPasswordModalOpen}
                   >
                     <Text fontSize="sm">Set my password</Text>
                   </MenuItem>
@@ -448,18 +435,17 @@ export const Chat = () => {
                     _focus={{ bg: "gray.400", color: 'white' }}
                     minH="40px"
                     key="my-info-btn"
-                    onClick={() => {
-                      handleMyInfoModalOpen()
-                    }}
+                    onClick={handleMyInfoModalOpen}
                   >
                     <Text fontSize="sm">My info</Text>
                   </MenuItem>
                 </MenuList>
               </Menu>
               <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }}>
-                <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading>
+                {/* <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading> */}
+                <Heading fontSize='lg' fontFamily='Jura'>{room}</Heading>
                 <Flex alignItems="center">
-                  <Text mr="1" fontWeight="400" fontSize="md" opacity=".7" letterSpacing="0">
+                  <Text mr="2" fontWeight="400" fontSize="md" letterSpacing="0">
                     {name}
                   </Text>
                   <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
@@ -490,7 +476,7 @@ export const Chat = () => {
 
                 return (
                   <Box
-                    key={`${user}-${ts}-${editTs || ''}`}
+                    key={`${user}-${ts}-${editTs || 'original'}`}
                     className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
                     m=".2rem 0"
                   >
