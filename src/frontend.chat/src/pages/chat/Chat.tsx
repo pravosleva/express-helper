@@ -47,6 +47,7 @@ import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from 'react-
 import { ColorModeSwitcher } from '~/common/components/ColorModeSwitcher'
 import { SetPasswordModal } from './components/SetPasswordModal'
 import { MyInfoModal } from './components/MyInfoModal'
+import { TasklistModal } from './components/TasklistModal/TasklistModal'
 import { xs, sm, md, lg, xl } from '~/common/chakra/theme'
 
 type TUser = { socketId: string; room: string; name: string }
@@ -62,7 +63,7 @@ export const Chat = () => {
   }
   const [messages, setMessages] = useState<TMessage[]>([])
   // @ts-ignore
-  const { users } = useContext(UsersContext)
+  const { users, tasklist } = useContext(UsersContext)
   const history = useHistory()
   const toast = useToast()
   const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 800 })
@@ -307,6 +308,15 @@ export const Chat = () => {
     setIsMyInfoModalOpened(false)
   }
   // ---
+  // --- Tasklist:
+  const [isTasklistModalOpened, setTasklistModalOpened] = useState<boolean>(false)
+  const handleTasklistModalOpen = () => {
+    setTasklistModalOpened(true)
+  }
+  const handleTasklistModalClose = () => {
+    setTasklistModalOpened(false)
+  }
+  // ---
 
   // const heighlLimitParentClass = useBreakpointValue({ md: "height-limited-md", base: "height-limited-sm" })
   const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
@@ -314,6 +324,12 @@ export const Chat = () => {
 
   return (
     <>
+      <TasklistModal
+        isOpened={isTasklistModalOpened}
+        onClose={handleTasklistModalClose}
+        data={tasklist}
+      />
+
       <MyInfoModal
         isOpened={isMyInfoModalOpened}
         onClose={handleMyInfoModalClose}
@@ -387,6 +403,16 @@ export const Chat = () => {
                   // _expanded={{ bg: "gray.800" }}
                   // _focus={{ boxShadow: "outline" }}
                 >
+                  <MenuItem
+                    _hover={{ bg: "gray.400", color: 'white' }}
+                    _focus={{ bg: "gray.400", color: 'white' }}
+                    minH="40px"
+                    key="tasklist-btn"
+                    onClick={handleTasklistModalOpen}
+                  >
+                    <Text fontSize="sm">Tasklist ({tasklist.length})</Text>
+                  </MenuItem>
+                  <MenuDivider />
                   <MenuOptionGroup defaultValue="asc" title="Users">
                   {users &&
                     users.map((user: TUser) => {

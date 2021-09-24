@@ -1,7 +1,7 @@
-import { TMessage } from './socket/withSocketChat'
+import { TMessage, TRoomTask } from './socket/withSocketChat'
 
 type TProps = {
-  messages: TMessage[]
+  messages: TMessage[] | TRoomTask[]
   targetTs: number
 }
 

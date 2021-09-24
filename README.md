@@ -263,7 +263,7 @@ server {
 
 ### frontend-signin
 
-⭕ 1. `./.env.dev` & `./.env.prod` _(**You can change this files in project root dir**, they will be copied to `./server-dist/.env`)_
+⭕ 1. `./.env.dev` & `./.env.prod` _(**You can change this files in project root dir**, will be copied to `./server-dist/.env`)_
 
 ```
 EXPIRES_COOKIES_IN_DAYS=1
@@ -284,6 +284,12 @@ EXTERNAL_ROUTING=/express-helper
 
 ## OPTIONAL:
 # SUCCESS_ANYWAY=1
+
+## CHAT:
+CHAT_ADMIN_TOKEN=128256512
+CHAT_ROOMS_STATE_FILE_NAME=chat.rooms.json
+CHAT_PASSWORD_HASHES_MAP_FILE_NAME=chat.passwd-hashes.json
+CHAT_ROOMS_TASKLIST_MAP_FILE_NAME=chat.rooms-tasklist.json
 ```
 
 ✅ 2. `./frontend.signin/.env` _(**Don't worry**, Will be updated by `yarn build:front:prod` script)_

@@ -11,10 +11,12 @@ const projectRootDir = path.join(__dirname, '../../../')
 const CHAT_USERS_STATE_FILE_NAME = process.env.CHAT_USERS_STATE_FILE_NAME || 'chat.users.json'
 const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
 const CHAT_PASSWORD_HASHES_MAP_FILE_NAME = process.env.CHAT_PASSWORD_HASHES_MAP_FILE_NAME || 'chat.passwd-hashes.json'
+const CHAT_ROOMS_TASKLIST_MAP_FILE_NAME = process.env.CHAT_ROOMS_TASKLIST_MAP_FILE_NAME || 'chat.rooms-tasklist.json'
 
 const storageUsersFilePath = path.join(projectRootDir, '/storage', CHAT_USERS_STATE_FILE_NAME)
 const storageRoomsFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_STATE_FILE_NAME)
 const storageRegistryMapFilePath = path.join(projectRootDir, '/storage', CHAT_PASSWORD_HASHES_MAP_FILE_NAME)
+const storageRoomsTasklistMapFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_TASKLIST_MAP_FILE_NAME)
 
 const createFileIfNecessary = (storageUsersFilePath: string): void => {
   const ts = new Date().getTime()
@@ -31,10 +33,12 @@ try {
   const isStorageFileExists = fs.existsSync(storageUsersFilePath)
   const isStorageRoomsFileExists = fs.existsSync(storageUsersFilePath)
   const isStorageRgistryMapFileExists = fs.existsSync(storageRegistryMapFilePath)
+  const isStorageRoomsTasklistMapFilePath = fs.existsSync(storageRoomsTasklistMapFilePath)
 
   if (!isStorageFileExists) createFileIfNecessary(storageUsersFilePath)
   if (!isStorageRoomsFileExists) createFileIfNecessary(storageRoomsFilePath)
   if (!isStorageRgistryMapFileExists) createFileIfNecessary(storageRegistryMapFilePath)
+  if (!isStorageRoomsTasklistMapFilePath) createFileIfNecessary(storageRoomsTasklistMapFilePath)
 } catch (err) {
   // eslint-disable-next-line no-console
   console.log(err)

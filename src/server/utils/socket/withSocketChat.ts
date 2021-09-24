@@ -35,6 +35,14 @@ export type TMessage = {
 
   registryLevel?: ERegistryLevel
 }
+export type TRoomTask = {
+  title: string
+  description?: string
+  isCompleted: boolean
+  ts: number
+  editTs?: number
+}
+type TRoomTasklist = TRoomTask[]
 type TRoomData = {
   [userName: string]: TMessage[]
 }
@@ -43,6 +51,7 @@ const usersSocketMap = new Map<TSocketId, TUserName>()
 const usersMap = new Map<TUserName, TConnectionData>()
 const registeredUsersMap = new Map<TUserName, { passwordHash: string, registryLevel?: ERegistryLevel }>()
 const roomsMap = new Map<TRoomId, TRoomData>()
+const roomsTasklistMap = new Map<TRoomId, TRoomTasklist>()
 
 // NOTE: For example
 // const salt = bcrypt.genSaltSync(3);
@@ -55,13 +64,16 @@ const projectRootDir = path.join(__dirname, '../../../')
 // const CHAT_USERS_STATE_FILE_NAME = process.env.CHAT_USERS_STATE_FILE_NAME || 'chat.users.json'
 const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
 const CHAT_PASSWORD_HASHES_MAP_FILE_NAME = process.env.CHAT_PASSWORD_HASHES_MAP_FILE_NAME || 'chat.passwd-hashes.json'
+const CHAT_ROOMS_TASKLIST_MAP_FILE_NAME = process.env.CHAT_ROOMS_TASKLIST_MAP_FILE_NAME || 'chat.rooms-tasklist.json'
 
 // const storageUsersFilePath = path.join(projectRootDir, '/storage', CHAT_USERS_STATE_FILE_NAME)
 const storageRoomsFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_STATE_FILE_NAME)
 const storageRegistryMapFilePath = path.join(projectRootDir, '/storage', CHAT_PASSWORD_HASHES_MAP_FILE_NAME)
+const storageRoomsTasklistMapFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_TASKLIST_MAP_FILE_NAME)
 // const counter1 = Counter()
 const counter2 = Counter()
 const counter3 = Counter()
+const counter4 = Counter()
 
 const syncRegistryMap = () => {
   const isFirstScriptRun = counter3.next().value === 0
@@ -94,6 +106,46 @@ const syncRegistryMap = () => {
       writeStaticJSONAsync(storageRegistryMapFilePath, { data: newStaticData, ts })
     } else {
       throw new Error(`ERR#CHAT.SOCKET_122: файл не найден: ${storageRegistryMapFilePath}`)
+    }
+  } catch (err) {
+    // TODO: Сделать нормальные логи
+    console.log(err)
+  }
+}
+
+const overwriteMerge = (_target, source, _options) => source
+
+const syncRoomsTasklistMap = () => {
+  const isFirstScriptRun = counter4.next().value === 0
+
+  try {
+    if (!!storageRoomsTasklistMapFilePath) {
+      let oldStatic: { data: { [roomName: string]: TRoomTasklist }, ts: number }
+      try {
+        oldStatic = getStaticJSONSync(storageRoomsTasklistMapFilePath)
+        if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_131.2: incorrect static data')
+      } catch (err) {
+        // TODO: Сделать нормальные логи
+        console.log('ERR#CHAT.SOCKET_131.1')
+        console.log(err)
+        oldStatic = { data: {}, ts: 0 }
+      }
+      const staticData = oldStatic.data
+      const ts = new Date().getTime()
+
+      if (isFirstScriptRun) {
+        // NOTE: Sync with old state:
+        Object.keys(staticData).forEach((roomName: string) => {
+          roomsTasklistMap.set(roomName, staticData[roomName])
+        })
+      }
+
+      const currentRoomsTasklistMapState: { [key: string]: any } = [...roomsTasklistMap.keys()].reduce((acc, userName: string) => { acc[userName] = roomsTasklistMap.get(userName); return acc }, {})
+      const newStaticData = merge2(staticData, currentRoomsTasklistMapState, { arrayMerge: overwriteMerge })
+
+      writeStaticJSONAsync(storageRoomsTasklistMapFilePath, { data: newStaticData, ts })
+    } else {
+      throw new Error(`ERR#CHAT.SOCKET_132: файл не найден: ${storageRoomsTasklistMapFilePath}`)
     }
   } catch (err) {
     // TODO: Сделать нормальные логи
@@ -139,7 +191,6 @@ const syncRegistryMap = () => {
 //   }
 // }
 
-const overwriteMerge = (_target, source, _options) => source
 const syncRoomsMap = () => {
   const isFirstScriptRun = counter2.next().value === 0
 
@@ -197,6 +248,7 @@ createPollingByConditions({
     // syncUsersMap()
     syncRoomsMap()
     syncRegistryMap()
+    syncRoomsTasklistMap()
   },
   toBeOrNotToBe: () => true, // Need to retry again
   callbackAsReject: () => {
@@ -483,6 +535,101 @@ export const withSocketChat = (io: Socket) => {
         }
       }
     })
+
+    // --- NOTE: TASKLIST
+    socket.on("createTask", ({ room, title, description }: Partial<TRoomTask> & { room: string }, cb?: (errMsg?: string) => void) => {
+      if (!room || !title) {
+        if (!!cb) cb('ERR: title & room are required')
+        return
+      }
+
+      let roomTasklist = roomsTasklistMap.get(room)
+      const ts = Date.now()
+      const newTask = { ts, title, description, isCompleted: false }
+
+      if (!!roomTasklist && Array.isArray(roomTasklist)) {
+        roomTasklist.push(newTask)
+      } else {
+        roomTasklist = [newTask]
+      }
+      roomsTasklistMap.set(room, roomTasklist)
+      io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
+      if (!!cb) cb()
+    })
+    socket.on("updateTask", ({ room, ts, title, description, isCompleted }: Partial<TRoomTask> & { room: string }, cb?: (errMsg?: string) => void) => {
+      if (!ts) {
+        if (!!cb) cb('ERR: ts param is required')
+        return
+      }
+
+      let roomTasklist: TRoomTask[] | undefined = roomsTasklistMap.get(room)
+      let newTask: TRoomTask
+
+      if (!!roomTasklist && Array.isArray(roomTasklist)) {
+        const theTaskIndex = binarySearchTsIndex({
+          messages: roomTasklist,
+          targetTs: ts
+        })
+        const editTs = Date.now()
+
+        if (theTaskIndex !== -1) {
+          newTask = roomTasklist[theTaskIndex]
+          if (!!title) newTask.title = title
+          if (!!description) newTask.description = description
+          if (isCompleted === true || isCompleted === false) newTask.isCompleted = isCompleted
+          newTask.editTs = editTs
+
+          roomTasklist[theTaskIndex] = newTask
+          roomsTasklistMap.set(room, roomTasklist)
+
+          io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
+        } else {
+          if (!!title || !!description) cb('ERR: theTaskIndex NOT FOUND: title & description param are required')
+          return
+        }
+      } else {
+        if (!!title || !!description) {
+          cb('ERR: roomTasklist NOT FOUND: title & description param are required')
+          return
+        } else {
+          const ts = Date.now()
+          newTask = { title, description, ts, isCompleted: isCompleted || false }
+          roomsTasklistMap.set(room, [newTask])
+          io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
+          if (!!cb) cb()
+        }
+      }
+    })
+    socket.on("deleteTask", ({ room, ts }: Partial<TRoomTask> & { room: string }, cb?: (errMsg?: string) => void) => {
+      if (!ts) {
+        if (!!cb) cb('ERR: ts param is required')
+        return
+      } else {
+        let roomTasklist: TRoomTask[] | undefined = roomsTasklistMap.get(room)
+
+        if (!!roomTasklist && Array.isArray(roomTasklist)) {
+          const theTaskIndex = binarySearchTsIndex({
+            messages: roomTasklist,
+            targetTs: ts
+          })
+          if (theTaskIndex !== -1) {
+            const newTasklist = roomTasklist.filter(({ ts: t }) => t !== ts)
+            roomsTasklistMap.set(room, newTasklist)
+            io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
+          } else {
+            if (cb) cb('ERR: theTask not found')
+            return
+          }
+        } else {
+          if (cb) cb('ERR: roomTasklist not found')
+          return
+        }
+      }
+    })
+    socket.on('getTasklist', ({ room }: { room: string }) => {
+      socket.emit('tasklist', { tasklist: roomsTasklistMap.get(room) || [] })
+    })
+    // ---
 
     socket.on("disconnect", () => {
         // console.log(usersMap)
