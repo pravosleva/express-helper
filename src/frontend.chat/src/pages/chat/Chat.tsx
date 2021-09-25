@@ -51,6 +51,7 @@ import { MyInfoModal } from './components/MyInfoModal'
 import { TasklistModal } from './components/TasklistModal/TasklistModal'
 import { xs, sm, md, lg, xl } from '~/common/chakra/theme'
 import { IoMdLogOut } from 'react-icons/io'
+import { useLocalStorage } from 'react-use'
 
 type TUser = { socketId: string; room: string; name: string }
 type TMessage = { user: string; text: string; ts: number; editTs?: number }
@@ -84,9 +85,10 @@ export const Chat = () => {
     setMessages(messages.sort(tsSortDEC))
   }, [roomData])
 
+  const [tokenLS] = useLocalStorage<any>('chat.token')
   const handleLogout = () => {
     // setName('');
-    if (!!socket) socket.emit('logout', { name })
+    if (!!socket) socket.emit('logout', { name, token: String(tokenLS) })
     // setIsLogged(false)
     // setRoom('')
     // history.push('/')

@@ -9,6 +9,7 @@ import { Counter } from '~/utils/counter'
 import DeviceDetector from "device-detector-js"
 import bcrypt from 'bcryptjs'
 import { binarySearchTsIndex } from '~/utils/binarySearch'
+import { getRandomString } from '~/utils/getRandomString'
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? String(token) === CHAT_ADMIN_TOKEN : false
@@ -32,8 +33,6 @@ export type TMessage = {
   ts: number
   editTs?: number
   rl?: ERegistryLevel
-
-  registryLevel?: ERegistryLevel
 }
 export type TRoomTask = {
   title: string
@@ -49,7 +48,12 @@ type TRoomData = {
 type TSocketId = string
 const usersSocketMap = new Map<TSocketId, TUserName>()
 const usersMap = new Map<TUserName, TConnectionData>()
-const registeredUsersMap = new Map<TUserName, { passwordHash: string, registryLevel?: ERegistryLevel }>()
+type TRegistryData = {
+  passwordHash: string
+  registryLevel?: ERegistryLevel
+  token?: string
+}
+const registeredUsersMap = new Map<TUserName, TRegistryData>()
 const roomsMap = new Map<TRoomId, TRoomData>()
 const roomsTasklistMap = new Map<TRoomId, TRoomTasklist>()
 
@@ -344,7 +348,7 @@ export const withSocketChat = (io: Socket) => {
       }
     })
 
-    socket.on('login.password', ({ password, name, room, token }, cb?: (reason?: string, isAdmin?: boolean) => void) => {
+    socket.on('login.password', ({ password, name, room, token }, cb?: (reason?: string, isAdmin?: boolean, token?: string) => void) => {
       if (!name || !room) {
         if (!!cb) cb('Room and Username are required')
         return
@@ -356,6 +360,7 @@ export const withSocketChat = (io: Socket) => {
       }
 
       const { passwordHash, registryLevel, ...rest } = registeredUsersMap.get(name)
+      let newToken: string = getRandomString(7)
       if (!bcrypt.compareSync(password, passwordHash)) {
         if (!!cb) cb('Incorrect password')
         return
@@ -363,6 +368,13 @@ export const withSocketChat = (io: Socket) => {
 
       socket.join(room)
       const roomData = roomsMap.get(room)
+      
+      // -- Set new token
+      const regData = registeredUsersMap.get(name)
+
+      if (!!regData) registeredUsersMap.set(name, { ...regData, token: newToken })
+      // --
+
       if (!roomData) {
         roomsMap.set(room, { [name]: [] })
       } else {
@@ -378,7 +390,7 @@ export const withSocketChat = (io: Socket) => {
 
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
-      if (!!cb) cb(null, isUserAdmin(token))
+      if (!!cb) cb(null, isUserAdmin(token), newToken)
     })
 
     socket.on('login', ({ name, room, token }, cb?: (reason?: string, isAdmin?: boolean) => void) => {
@@ -393,10 +405,29 @@ export const withSocketChat = (io: Socket) => {
         return
       }
 
-      if (registeredUsersMap.has(name)) {
-        // NOTE: Need to login with password
-        if (!!cb) cb('FRONT:LOG/PAS')
-        return
+      if (!!token) {
+        const regData = registeredUsersMap.get(name)
+
+        if (!!regData && !!regData.token) {
+          if (regData.token === token) {
+            // Go on...
+          } else {
+            if (registeredUsersMap.has(name)) {
+              if (!!cb) cb('FRONT:LOG/PAS')
+              return
+            }
+          }
+        } else {
+          if (registeredUsersMap.has(name)) {
+            if (!!cb) cb('FRONT:LOG/PAS')
+            return
+          }
+        }
+      } else {
+        if (registeredUsersMap.has(name)) {
+          if (!!cb) cb('FRONT:LOG/PAS')
+          return
+        }
       }
 
       socket.join(room)
@@ -421,10 +452,17 @@ export const withSocketChat = (io: Socket) => {
 
       // ---
     })
-    socket.on('logout', ({ name }) => {
+    socket.on('logout', ({ name, token }) => {
       const userConnData = usersMap.get(name)
       // io.emit('notification', { status: 'info', description: 'Someone disconnected' })
       usersSocketMap.delete(socket.id)
+
+      // NOTE: Remove token if necessary?
+      // const regData = registeredUsersMap.get(name)
+      // if (!!regData && !!regData.token && !!token && token === regData.token) {
+      //   const { token, ...rest } = regData
+      //   registeredUsersMap.set(name, rest)
+      // }
 
       if (!!userConnData) {
         usersMap.delete(name)
@@ -466,7 +504,7 @@ export const withSocketChat = (io: Socket) => {
         io.in(room).emit('message', { user: name, text: message, ts, rl: registryLevel });
         if (!!cb) cb()
       } catch (err) {
-        socket.emit('notification', { status: 'error', title: 'ERR #1', description: err.message || 'Server error', _originalEvent: { message, userName } })
+        socket.emit('notification', { status: 'error', title: 'ERR #1', description: !!err.message ? `Попробуйте перезайти, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error', _originalEvent: { message, userName } })
       }
       // ---
     })

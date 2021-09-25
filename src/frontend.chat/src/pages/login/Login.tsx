@@ -30,7 +30,7 @@ export const Login = () => {
 
   // --- LS
   const [nameLS, setNameLS, removeNameLS] = useLocalStorage<string>('chat.my-name', '')
-  const [tokenLS] = useLocalStorage<any>('chat.token')
+  const [tokenLS, setTokenLS] = useLocalStorage<any>('chat.token')
   const [isModalOpened, setIsModalOpened] = useState<boolean>(false)
   const handleOpenModal = useCallback(() => {
     setIsModalOpened(true)
@@ -121,8 +121,7 @@ export const Login = () => {
   const handleTryLoginWidthPassword = () => {
     if (!!socket) {
       setIsLoading2(true)
-      console.log(tokenLS)
-      socket.emit('login.password', { password: myPassword.password, token: tokenLS, name, room }, (err?: string, isAdmin?: boolean) => {
+      socket.emit('login.password', { password: myPassword.password, token: String(tokenLS), name, room }, (err?: string, isAdmin?: boolean, token?: string) => {
         if (!!err) {
           toast({
             position: 'top',
@@ -134,6 +133,7 @@ export const Login = () => {
           setIsLoading2(false)
           return
         } else {
+          if (!!token) setTokenLS(token)
           if (isAdmin) setIsAdmin(true)
           setIsLogged(true)
           setIsLoading2(false)
@@ -207,6 +207,7 @@ export const Login = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+
       <Modal isOpen={isModalOpened} onClose={handleCloseModal} size="xs">
         <ModalOverlay />
         <ModalContent>
@@ -231,6 +232,7 @@ export const Login = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+
       <div style={{ height: '100vh', display: 'flex', alignItems: 'center' }}>
         <Flex className="login" flexDirection="column" mb="8">
           <Heading
