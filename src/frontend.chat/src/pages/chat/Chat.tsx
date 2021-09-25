@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useCallback, useRef } from 'react'
+import { useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
 import { useSocketContext } from '~/socketContext'
@@ -31,6 +31,7 @@ import {
   useDisclosure,
   // useBreakpointValue,
   useMediaQuery,
+  Progress,
 } from '@chakra-ui/react'
 import { FiList } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
@@ -49,6 +50,7 @@ import { SetPasswordModal } from './components/SetPasswordModal'
 import { MyInfoModal } from './components/MyInfoModal'
 import { TasklistModal } from './components/TasklistModal/TasklistModal'
 import { xs, sm, md, lg, xl } from '~/common/chakra/theme'
+import { IoMdLogOut } from 'react-icons/io'
 
 type TUser = { socketId: string; room: string; name: string }
 type TMessage = { user: string; text: string; ts: number; editTs?: number }
@@ -321,6 +323,14 @@ export const Chat = () => {
   // const heighlLimitParentClass = useBreakpointValue({ md: "height-limited-md", base: "height-limited-sm" })
   const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
   const [upToSm] = useMediaQuery(`(min-width: ${md + 1}px)`)
+  const percentage = useMemo(() => {
+    if (tasklist.length === 0) return 0
+
+    const all = tasklist.length
+    const completed = tasklist.filter(({ isCompleted }: any) => isCompleted).length
+
+    return Math.round(completed * 100 / all)
+  }, [tasklist])
 
   return (
     <>
@@ -349,6 +359,7 @@ export const Chat = () => {
           Delete
         </CtxMenuItem>
       </ContextMenu>
+
       <Modal
         size="xs"
         initialFocusRef={initialRef}
@@ -383,6 +394,7 @@ export const Chat = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+
       <div className='main-wrapper'>
         <Flex
           className="room"
@@ -391,12 +403,12 @@ export const Chat = () => {
           height={{ base: '100%', sm: 'auto' }}
         >
           <Heading className="heading" as="h4" p={[4, 4]} borderRadius="8px 8px 0 0">
-            <Flex alignItems="center" justifyContent="space-between">
+            <Flex alignItems="center" justifyContent="flex-start">
               <Menu>
-                <div>
-                  <MenuButton as={IconButton} icon={<FiList />} isRound="true" />
+                <>
+                  <MenuButton as={IconButton} icon={<FiList size={18} />} isRound="true" />
                   <ColorModeSwitcher justifySelf="flex-end" mr={2} />
-                </div>
+                </>
                 <MenuList
                   _dark={{ bg: "gray.600" }}
                   // _hover={{ bg: "gray.500", color: 'white' }}
@@ -410,10 +422,10 @@ export const Chat = () => {
                     key="tasklist-btn"
                     onClick={handleTasklistModalOpen}
                   >
-                    <Text fontSize="sm">Tasklist ({tasklist.length})</Text>
+                    <Text fontSize="md">Tasklist{tasklist.length > 0 ? ` (${tasklist.length}) ${percentage}%` : ''}</Text>
                   </MenuItem>
                   <MenuDivider />
-                  <MenuOptionGroup defaultValue="asc" title="Users">
+                  <MenuOptionGroup defaultValue="asc" title={`Users (${users.length})`}>
                   {users &&
                     users.map((user: TUser) => {
                       return (
@@ -428,7 +440,7 @@ export const Chat = () => {
                           }}
                           isDisabled={name === user.name}
                         >
-                          <Text fontSize="sm">{user.name}</Text>
+                          <Text fontSize="md">{user.name}</Text>
                         </MenuItem>
                       )
                     })}
@@ -444,7 +456,7 @@ export const Chat = () => {
                         history.push('/admin')
                       }}
                     >
-                      <Text fontSize="sm">Admin panel</Text>
+                      <Text fontSize="md">Admin panel</Text>
                     </MenuItem>
                   )}
                   <MenuItem
@@ -454,7 +466,7 @@ export const Chat = () => {
                     key="set-passwd-btn"
                     onClick={handleSetPasswordModalOpen}
                   >
-                    <Text fontSize="sm">Set my password</Text>
+                    <Text fontSize="md">Set my password</Text>
                   </MenuItem>
                   <MenuItem
                     _hover={{ bg: "gray.400", color: 'white' }}
@@ -463,13 +475,15 @@ export const Chat = () => {
                     key="my-info-btn"
                     onClick={handleMyInfoModalOpen}
                   >
-                    <Text fontSize="sm">My info</Text>
+                    <Text fontSize="md">My info</Text>
                   </MenuItem>
                 </MenuList>
               </Menu>
               <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }}>
                 {/* <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading> */}
-                <Heading fontSize='lg' fontFamily='Jura'>{room}</Heading>
+                <Heading fontSize='lg' fontFamily='Jura'>
+                  {room}
+                </Heading>
                 <Flex alignItems="center">
                   <Text mr="2" fontWeight="400" fontSize="md" letterSpacing="0">
                     {name}
@@ -477,11 +491,26 @@ export const Chat = () => {
                   <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
                 </Flex>
               </Flex>
-              <Button fontSize="sm" onClick={handleLogout} variant='outline'>
+              <IconButton
+                aria-label="Logout"
+                // colorScheme={isMsgLimitReached ? 'red' : 'gray'}
+                isRound
+                icon={<IoMdLogOut size={18} />}
+                onClick={handleLogout}
+                // disabled={!message}
+                // isLoading={isSending}
+              >
+                Logout
+              </IconButton>
+              {/* <Button fontSize="sm" onClick={handleLogout} variant='outline'>
                 {isConnected ? 'Logout' : 'Reconnect'}
-              </Button>
+              </Button> */}
             </Flex>
           </Heading>
+
+          <Box w='100%' h={1} m={[0, 0]}>
+            {tasklist.length > 0 && <Progress value={percentage} size="xs" colorScheme="green" />}
+          </Box>
 
           <ScrollToBottom
             className={
@@ -562,13 +591,14 @@ export const Chat = () => {
               onKeyUp={handleKeyUp}
               variant='unstyled'
               pl={4}
+              fontWeight='md'
             />
             <label htmlFor="msg" className='absolute-label'>{left} left</label>
             <IconButton
               aria-label="Send"
               // colorScheme={isMsgLimitReached ? 'red' : 'gray'}
               isRound
-              icon={<RiSendPlaneFill />}
+              icon={<RiSendPlaneFill size={15} />}
               onClick={handleSendMessage}
               disabled={!message}
               isLoading={isSending}

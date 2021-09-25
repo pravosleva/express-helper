@@ -13,7 +13,7 @@
   @media (max-width: #{$sm}px) {
     border-radius: 0px;
     
-    }
+  }
   @media (min-width: #{$sm + 1}px) {
     border-radius: 8px;
     box-shadow: 1px 1px 10px rgba(0,0,0,.1);
@@ -157,7 +157,7 @@
   }
   .height-full-auto-sm > div {
     min-height:300px;
-    max-height: calc(100vh - 69px - 80px);
+    max-height: calc(100vh - 69px - 80px - 4px);
   }
   .height-limited-md > div {
     min-height:400px;
@@ -165,6 +165,7 @@
   }
   
   .form{
+      font-family: 'Russo One';
       position: relative;
       z-index: 1000;
       @media (min-width: #{$sm + 1}px) {
@@ -208,7 +209,8 @@
         z-index: 1;
         right: 1rem;
         bottom: 0.5rem;
-        font-size: 0.65rem;
+        font-size: 0.7rem;
+        font-family: 'Russo One';
       }
   }
 }
