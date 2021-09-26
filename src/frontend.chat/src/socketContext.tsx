@@ -22,6 +22,7 @@ interface ISocketContext {
   setIsConnected: (val: boolean) => void
   // regData: { registryLevel: number } | null
   // setRegData: (val: { registryLevel: number } | null) => void
+  resetRoomData: () => void
 }
 
 export const SocketContext = createContext<ISocketContext>({
@@ -35,6 +36,7 @@ export const SocketContext = createContext<ISocketContext>({
   // setRegData: (_val: { registryLevel: number } | null) => {
   //   throw new Error('setRegData should be implemented')
   // },
+  resetRoomData: () => {}
 })
 
 export const SocketProvider =
@@ -45,6 +47,9 @@ export const SocketProvider =
     })
     // const toast = useToast()
     const [roomData, setRoomData] = useState<TRoomData>({})
+    const resetRoomData = () => {
+      setRoomData({})
+    }
     const [isLogged, setIsLogged] = useState<boolean>(false)
     const [isConnected, setIsConnected] = useState<boolean>(true)
 
@@ -86,6 +91,7 @@ export const SocketProvider =
     return (
       <SocketContext.Provider value={{
         socket, roomData, isLogged, setIsLogged, isConnected, setIsConnected,
+        resetRoomData,
       }}>
         {children}
       </SocketContext.Provider>

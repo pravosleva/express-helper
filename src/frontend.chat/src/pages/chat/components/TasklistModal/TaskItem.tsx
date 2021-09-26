@@ -1,5 +1,5 @@
-import { Td, Tr, Button, Input, Editable, EditablePreview, EditableInput, IconButton } from "@chakra-ui/react"
-import { useRef, useState } from "react"
+import { Td, Tr, Editable, EditablePreview, EditableInput, IconButton } from "@chakra-ui/react"
+import { useRef } from "react"
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 import { FaRegTrashAlt } from 'react-icons/fa'
 

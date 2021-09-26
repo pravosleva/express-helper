@@ -19,9 +19,10 @@ import {
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'react-use'
 // import { useForm } from '~/common/hooks/useForm'
+import { RoomlistModal } from './components'
 
 export const Login = () => {
-  const { socket, setIsLogged } = useContext(SocketContext)
+  const { socket, setIsLogged, resetRoomData } = useContext(SocketContext)
   const { name, setName, room, setRoom, slugifiedRoom, setIsAdmin } = useContext(MainContext)
   const history = useHistory()
   const toast = useToast()
@@ -31,6 +32,7 @@ export const Login = () => {
   // --- LS
   const [nameLS, setNameLS, removeNameLS] = useLocalStorage<string>('chat.my-name', '')
   const [tokenLS, setTokenLS] = useLocalStorage<any>('chat.token')
+  const [roomlistLS, setRoomlistLS] = useLocalStorage<any>('chat.roomlist', [])
   const [isModalOpened, setIsModalOpened] = useState<boolean>(false)
   const handleOpenModal = useCallback(() => {
     setIsModalOpened(true)
@@ -106,10 +108,11 @@ export const Login = () => {
 
           setIsLogged(true)
           setIsLoading1(false)
+          setRoomlistLS([...new Set([...roomlistLS, room])])
           history.push('/chat')
         }
       )
-  }, [slugifiedRoom, name, tokenLS])
+  }, [slugifiedRoom, name, tokenLS, room, history, roomlistLS, setIsAdmin, setIsLogged, setNameLS, setRoomlistLS, handlePasswordModalOpen, socket])
 
   const handleKeyDown = (ev: any) => {
     if (ev.keyCode === 13) {
@@ -160,8 +163,35 @@ export const Login = () => {
   }
   const passwordRef = useRef(null)
 
+  // --- Roomlist:
+  const [isRoomlistModalOpened, setRoomlistModalOpened] = useState<boolean>(false)
+  const handleRoomlistModalOpen = () => {
+    setRoomlistModalOpened(true)
+  }
+  const handleRoomlistModalClose = () => {
+    setRoomlistModalOpened(false)
+  }
+  const handleDeleteRoomFromLS = (roomName: string) => {
+    setRoomlistLS([...new Set(roomlistLS.filter((room: string) => room !== roomName))])
+    handleRoomlistModalClose()
+  }
+  const handleSelectRoom = (roomName: string) => {
+    // resetRoomData()
+    setRoom(roomName)
+    handleRoomlistModalClose()
+  }
+  // ---
+
   return (
     <>
+      <RoomlistModal
+        roomlist={roomlistLS}
+        isOpened={isRoomlistModalOpened}
+        onDelete={handleDeleteRoomFromLS}
+        onClose={handleRoomlistModalClose}
+        onSelectRoom={handleSelectRoom}
+      />
+
       <Modal
         size="xs"
         initialFocusRef={passwordRef}
@@ -280,6 +310,14 @@ export const Login = () => {
               isDisabled={!name || !room}
             ></IconButton>
           </Flex>
+          <Button
+            colorScheme="gray"
+            variant='ghost'
+            mt={3}
+            onClick={handleRoomlistModalOpen}
+          >
+            My Rooms
+          </Button>
         </Flex>
       </div>
     </>
