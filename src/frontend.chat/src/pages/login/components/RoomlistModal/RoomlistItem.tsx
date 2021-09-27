@@ -1,7 +1,8 @@
 import { Td, Tr, Button, Input, Editable, EditablePreview, EditableInput, IconButton, Tag } from "@chakra-ui/react"
 import { useRef, useState } from "react"
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
-import { FaRegTrashAlt } from 'react-icons/fa'
+// import { FaRegTrashAlt } from 'react-icons/fa'
+import { IoMdClose } from 'react-icons/io'
 
 type TProps = {
   roomName: string
@@ -24,7 +25,7 @@ export const RoomlistItem = ({ roomName, onDelete, onClick }: TProps) => {
         <IconButton
           aria-label="DEL"
           isRound
-          icon={<FaRegTrashAlt size={15} />}
+          icon={<IoMdClose size={15} />}
           onClick={() => {
             onDelete(roomName)
           }}

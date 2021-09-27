@@ -325,14 +325,15 @@ export const Chat = () => {
   // const heighlLimitParentClass = useBreakpointValue({ md: "height-limited-md", base: "height-limited-sm" })
   const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
   const [upToSm] = useMediaQuery(`(min-width: ${md + 1}px)`)
+  const completedTasksLen = useMemo(() => tasklist.filter(({ isCompleted }: any) => isCompleted).length, [JSON.stringify(tasklist)])
   const percentage = useMemo(() => {
     if (tasklist.length === 0) return 0
 
     const all = tasklist.length
-    const completed = tasklist.filter(({ isCompleted }: any) => isCompleted).length
+    const completed = completedTasksLen
 
     return Math.round(completed * 100 / all)
-  }, [tasklist])
+  }, [tasklist, completedTasksLen])
 
   return (
     <>
@@ -424,10 +425,10 @@ export const Chat = () => {
                     key="tasklist-btn"
                     onClick={handleTasklistModalOpen}
                   >
-                    <Text fontSize="md">Tasklist{tasklist.length > 0 ? ` (${tasklist.length}) ${percentage}%` : ''}</Text>
+                    <Text fontSize="md" fontWeight='bold'>Tasklist{tasklist.length > 0 ? ` ${percentage}% (${completedTasksLen} of ${tasklist.length})` : ''}</Text>
                   </MenuItem>
                   <MenuDivider />
-                  <MenuOptionGroup defaultValue="asc" title={`Users (${users.length})`}>
+                  <MenuOptionGroup defaultValue="asc" title={`Users online: ${users.length}`}>
                   {users &&
                     users.map((user: TUser) => {
                       return (

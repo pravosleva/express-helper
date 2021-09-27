@@ -1,6 +1,6 @@
 {
   "name": "express-helper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev:chat": "yarn build:fresh-dev:chat-only && bash run-dev.sh chat",

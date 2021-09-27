@@ -1,7 +1,13 @@
-import { Td, Tr, Editable, EditablePreview, EditableInput, IconButton } from "@chakra-ui/react"
+import {
+  Td, Tr, Editable, EditablePreview, EditableInput,
+  IconButton,
+  // useEditableControls, ButtonGroup, Flex, Button,
+} from "@chakra-ui/react"
 import { useRef } from "react"
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 import { FaRegTrashAlt } from 'react-icons/fa'
+// import { IoMdAdd, IoMdClose } from 'react-icons/io'
+// import { MdModeEdit } from 'react-icons/md'
 
 type TTask = {
   title: string
@@ -17,34 +23,76 @@ type TProps = {
 }
 
 export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit }: TProps) => {
-  const { title, isCompleted } = data
-  // const [isEditModeEnabled, setIsEditModeEnabled] = useState<boolean>(false)
-  // const handleEditOpen = () => {
-  //   setIsEditModeEnabled(true)
-  // }
-  // const handleEditClose = () => {
-  //   setIsEditModeEnabled(false)
-  // }
-  // const [titleEdited, setTitleEdited] = useState<string>(data.title)
+  const {
+    title,
+    // description,
+    isCompleted,
+  } = data
   const titleEditedRef = useRef<string>(data.title)
+  // const descriptionEditedRef = useRef<string | undefined>(data.description || 'No descr')
 
+  // function EditableControls() {
+  //   const {
+  //     isEditing,
+  //     getSubmitButtonProps,
+  //     getCancelButtonProps,
+  //     getEditButtonProps,
+  //   } = useEditableControls()
+
+  //   return isEditing ? (
+  //     <ButtonGroup justifyContent="flex-start" size="sm">
+  //       <IconButton aria-label='Check' icon={<ImCheckboxChecked />} {...getSubmitButtonProps()} />
+  //       <IconButton aria-label='Close' icon={<IoMdClose />} {...getCancelButtonProps()} />
+  //     </ButtonGroup>
+  //   ) : (
+  //     <Flex justifyContent="flex-start">
+  //       <Button
+  //         aria-label='Edit'
+  //         size="sm"
+  //         // </Flex>leftIcon={<MdModeEdit />}
+  //         {...getEditButtonProps()}
+  //       >Set description</Button>
+  //     </Flex>
+  //   )
+  // }
+  
   return (
     <Tr>
-      <Td color='green.500' onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Td>
-      <Td>
-        <Editable
-          size='sm'
-          defaultValue={title}
-          onChange={(nextVal: string) => {
-            titleEditedRef.current = nextVal
-          }}
-          onSubmit={() => {
-            onEdit({ ...data, title: titleEditedRef.current })
-          }}
-        >
-          <EditablePreview />
-          <EditableInput />
-        </Editable>
+      <Td
+        color='green.500'
+        onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}
+      </Td>
+      <Td fontWeight='bold'>
+        <div>
+          <Editable
+            defaultValue={title}
+            onChange={(nextVal: string) => {
+              titleEditedRef.current = nextVal
+            }}
+            onSubmit={() => {
+              onEdit({ ...data, title: titleEditedRef.current })
+            }}
+          >
+            <EditablePreview />
+            <EditableInput />
+          </Editable>
+        </div>
+        {/* <div>
+          <Editable
+            defaultValue={description}
+            onChange={(nextVal: string) => {
+              descriptionEditedRef.current = nextVal
+            }}
+            onSubmit={() => {
+              onEdit({ ...data, description: descriptionEditedRef.current })
+            }}
+            // isPreviewFocusable={false}
+          >
+            {!!description && <EditablePreview />}
+            <EditableInput />
+            {!description && <EditableControls />}
+          </Editable>
+        </div> */}
       </Td>
       <Td isNumeric>
         <IconButton
@@ -55,7 +103,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit }: TProps) =
           // disabled={!message}
           // isLoading={isSending}
         >
-          Send
+          DEL
         </IconButton>
         {/* <Button onClick={handleEditOpen}>EDIT</Button> */}
       </Td>
