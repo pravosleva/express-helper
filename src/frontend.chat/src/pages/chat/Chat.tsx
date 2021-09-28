@@ -136,22 +136,27 @@ export const Chat = () => {
       const myUserDataListener = (regData: any) => {
         setRegData(regData)
       }
+      const logoutFromServerListener = () => {
+        history.push('/')
+      }
 
       socket.on('message', msgListener)
       socket.on('notification', notifListener)
       socket.on('my.user-data', myUserDataListener)
+      socket.on('FRONT:LOGOUT', logoutFromServerListener)
 
       return () => {
         socket.off('message', msgListener)
         socket.off('notification', notifListener)
         socket.off('my.user-data', myUserDataListener)
+        socket.off('FRONT:LOGOUT', logoutFromServerListener)
       }
     }
   }, [socket, toast])
 
   useEffect(() => {
     if (!!socket && !!name && !!room) {
-      socket.emit('setMeAgain', { name, room }, (err?: string) => {
+      socket.emit('setMeAgain', { name, room, token: String(tokenLS) }, (err?: string) => {
         if (!!err) {
           toast({ title: err, status: 'error', duration: 5000, isClosable: true })
           history.push('/')

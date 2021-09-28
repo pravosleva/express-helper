@@ -19,6 +19,7 @@ export const RoomlistItem = ({ roomName, onDelete, onClick }: TProps) => {
           style={{
             cursor: 'pointer'
           }}
+          size='lg'
         >{roomName}</Tag>
       </Td>
       <Td isNumeric>

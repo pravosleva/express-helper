@@ -19,7 +19,7 @@ import {
   Tbody,
   Text,
 } from '@chakra-ui/react'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useSocketContext } from '~/socketContext'
 import { useMainContext } from '~/mainContext'
 import { useForm } from '~/common/hooks/useForm'
@@ -84,6 +84,16 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
     }
   }
 
+  const completedTasksLen = useMemo(() => data.filter(({ isCompleted }: any) => isCompleted).length, [JSON.stringify(data)])
+  const percentage = useMemo(() => {
+    if (data.length === 0) return 0
+
+    const all = data.length
+    const completed = completedTasksLen
+
+    return Math.round(completed * 100 / all)
+  }, [data, completedTasksLen])
+
   return (
     <Modal
       size="sm"
@@ -93,7 +103,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Tasklist</ModalHeader>
+        <ModalHeader>Tasklist{data.length > 0 ? ` ${percentage}% (${completedTasksLen} of ${data.length})` : ''}</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
           {isCreateTaskFormOpened && (

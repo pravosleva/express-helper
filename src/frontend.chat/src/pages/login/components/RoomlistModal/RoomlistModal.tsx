@@ -7,20 +7,13 @@ import {
   ModalBody,
   ModalCloseButton,
   ModalFooter,
-  FormControl,
   Input,
-  FormLabel,
-  useToast,
-  List,
   Table,
-  TableCaption,
-  Thead,
-  Tr,
-  Th,
   Tbody,
-  Text,
   InputGroup,
   InputLeftElement,
+  Heading,
+  Text,
 } from '@chakra-ui/react'
 import { useForm } from '~/common/hooks/useForm'
 // import { useSocketContext } from '~/socketContext'
@@ -28,6 +21,7 @@ import { useForm } from '~/common/hooks/useForm'
 import { RoomlistItem } from './RoomlistItem'
 import { FiSearch } from 'react-icons/fi'
 import { useMemo } from 'react'
+import { getABSortedObj } from '~/utils/sort/getABSortedObj'
 
 type TProps = {
   isOpened: boolean
@@ -46,6 +40,10 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
     onSelectRoom(formData.search.trim())
     // resetForm()
   }
+  const roomlistAsObj = useMemo(() => getABSortedObj(roomlist), [roomlist])
+  // const roomsKeys = useMemo(() => Object.keys(roomlistAsObj), [roomlistAsObj])
+  const displayedObj = useMemo(() => !!formData.search ? getABSortedObj(roomlist, formData.search) : roomlistAsObj, [roomlistAsObj, formData.search])
+  const displayedRoomsKeys = useMemo(() => Object.keys(displayedObj), [displayedObj])
 
   return (
     <Modal
@@ -56,10 +54,9 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>My rooms</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody pb={6}>
-          <InputGroup mb={4}>
+        <ModalHeader>
+          <Text mb={4}>My rooms</Text>
+          <InputGroup>
             <InputLeftElement
               pointerEvents="none"
 
@@ -76,38 +73,39 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
               onChange={handleInputChange}
             />
           </InputGroup>
+        </ModalHeader>
+        <ModalCloseButton />
+        <ModalBody pb={6}>
+          
           {
-            displayedRooms.length > 0 ? (
-              <Table variant="simple" size='md'>
-                {/* <TableCaption>Imperial to metric conversion factors</TableCaption> */}
-                {/* <Thead>
-                  <Tr>
-                    <Th>Room</Th>
-                    <Th isNumeric>Action</Th>
-                  </Tr>
-                </Thead> */}
-                <Tbody>
+            displayedRoomsKeys.length > 0 && (
+              displayedRoomsKeys.map((key: string) => (
+                <>
+                  <Heading fontFamily='Russo One' as="h2" size="md" isTruncated>{key.toUpperCase()}</Heading>
+                  <Table variant="simple" size='sm' mb={4}>
+                    <Tbody>
+                      {roomlistAsObj[key].map((roomName: string) => {
+                        const handleDel = () => {
+                          onDelete(roomName)
+                        }
+                        const handleClick = () => {
+                          onSelectRoom(roomName)
+                        }
 
-                  {displayedRooms.map((roomName: string) => {
-                    const handleDel = () => {
-                      onDelete(roomName)
-                    }
-                    const handleClick = () => {
-                      onSelectRoom(roomName)
-                    }
-
-                    return (
-                      <RoomlistItem
-                        key={roomName}
-                        roomName={roomName}
-                        onDelete={handleDel}
-                        onClick={handleClick}
-                      />
-                    )
-                  })}
-                </Tbody>
-              </Table>
-            ) : <Text fontWeight='md'>No rooms yet...</Text>
+                        return (
+                          <RoomlistItem
+                            key={roomName}
+                            roomName={roomName}
+                            onDelete={handleDel}
+                            onClick={handleClick}
+                          />
+                        )
+                      })}
+                    </Tbody>
+                  </Table>
+                </>
+              ))
+            )
           }
         </ModalBody>
         <ModalFooter>

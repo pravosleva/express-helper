@@ -20,6 +20,7 @@ import {
 import { useLocalStorage } from 'react-use'
 // import { useForm } from '~/common/hooks/useForm'
 import { RoomlistModal } from './components'
+import slugify from 'slugify'
 
 export const Login = () => {
   const { socket, setIsLogged, resetRoomData } = useContext(SocketContext)
@@ -67,7 +68,7 @@ export const Login = () => {
     const openRoomName: string | null = queryParams.get('room')
 
     if (!!openRoomName) {
-      setRoom(openRoomName)
+      setRoom(slugify(openRoomName))
       setIsRoomDisabled(true)
 
       queryParams.delete('room')
@@ -108,7 +109,7 @@ export const Login = () => {
 
           setIsLogged(true)
           setIsLoading1(false)
-          setRoomlistLS([...new Set([...roomlistLS, room])])
+          setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
           history.push('/chat')
         }
       )
@@ -124,7 +125,7 @@ export const Login = () => {
   const handleTryLoginWidthPassword = () => {
     if (!!socket) {
       setIsLoading2(true)
-      socket.emit('login.password', { password: myPassword.password, token: String(tokenLS), name, room }, (err?: string, isAdmin?: boolean, token?: string) => {
+      socket.emit('login.password', { password: myPassword.password, token: String(tokenLS), name, room: slugifiedRoom }, (err?: string, isAdmin?: boolean, token?: string) => {
         if (!!err) {
           toast({
             position: 'top',

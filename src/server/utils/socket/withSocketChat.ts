@@ -272,16 +272,26 @@ export const withSocketChat = (io: Socket) => {
       usersMap.delete(nameBySocketId)
     }
 
-    socket.on('setMeAgain', ({ name, room }, cb) => {
+    socket.on('setMeAgain', ({ name, room, token }, cb) => {
       // ---
       const myRegData = registeredUsersMap.get(name)
+
+      // -- NOTE: Logout if logged already?
+      // if (!!myRegData?.token && token) {
+      //   if (myRegData.token !== token) {
+      //     socket.emit('notification', { status: 'error', title: 'TOKEN is wrong', description: 'EXP: Вы зашли с другого устройства?' })
+      //     socket.emit('FRONT:LOGOUT')
+      //     return
+      //   }
+      // }
+      // --
+
       socket.emit('my.user-data', myRegData || null)
       // ---
       if (!name || !room) {
         cb('Попробуйте перезайти')
         return
       }
-      console.log('-- setMeAgain')
 
       socket.join(room) // NOTE: Только для этого
       usersSocketMap.set(socket.id, name)
@@ -504,7 +514,8 @@ export const withSocketChat = (io: Socket) => {
         io.in(room).emit('message', { user: name, text: message, ts, rl: registryLevel });
         if (!!cb) cb()
       } catch (err) {
-        socket.emit('notification', { status: 'error', title: 'ERR #1', description: !!err.message ? `Попробуйте перезайти, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error', _originalEvent: { message, userName } })
+        socket.emit('notification', { status: 'error', title: 'ERR #2', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error', _originalEvent: { message, userName } })
+        socket.emit('FRONT:LOGOUT')
       }
       // ---
     })
@@ -512,65 +523,74 @@ export const withSocketChat = (io: Socket) => {
     socket.on('editMessage', ({ room, name, ts, newMessage }, cb) => {
       const roomData = roomsMap.get(room)
 
-      if (!roomData) {
-        if (cb) cb('roomData not found')
-        return
-      } else {
-        const userMessages = roomData[name]
-
-        if (!userMessages) {
-          if (cb) cb('roomData[name] not found')
+      try {
+        if (!roomData) {
+          if (cb) cb('roomData not found')
           return
         } else {
-          // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
-          const theMessageIndex = binarySearchTsIndex({
-            messages: userMessages,
-            targetTs: ts
-          })
+          const userMessages = roomData[name]
 
-          if (theMessageIndex === -1) {
-            if (cb) cb('theMessage not found')
+          if (!userMessages) {
+            if (cb) cb('roomData[name] not found')
             return
           } else {
-            userMessages[theMessageIndex].text = newMessage
-            userMessages[theMessageIndex].editTs = new Date().getTime()
-            roomData[name] = userMessages
-            roomsMap.set(room, roomData)
-            io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+            // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
+            const theMessageIndex = binarySearchTsIndex({
+              messages: userMessages,
+              targetTs: ts
+            })
+
+            if (theMessageIndex === -1) {
+              if (cb) cb('theMessage not found')
+              return
+            } else {
+              userMessages[theMessageIndex].text = newMessage
+              userMessages[theMessageIndex].editTs = new Date().getTime()
+              roomData[name] = userMessages
+              roomsMap.set(room, roomData)
+              io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+            }
           }
         }
+      } catch(err) {
+        socket.emit('notification', { status: 'error', title: 'ERR #1', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error' })
+        socket.emit('FRONT:LOGOUT')
       }
     })
     socket.on('deleteMessage', ({ room, name, ts }, cb) => {
       const roomData = roomsMap.get(room)
-
-      if (!roomData) {
-        if (cb) cb('roomData not found')
-        return
-      } else {
-        const userMessages = roomData[name]
-
-        if (!userMessages) {
-          if (cb) cb('roomData[name] not found')
+      try {
+        if (!roomData) {
+          if (cb) cb('roomData not found')
           return
         } else {
-          // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
-          const theMessageIndex = binarySearchTsIndex({
-            messages: userMessages,
-            targetTs: ts
-          })
-
-          if (theMessageIndex === -1) {
-            if (cb) cb('theMessage not found')
+          const userMessages = roomData[name]
+  
+          if (!userMessages) {
+            if (cb) cb('roomData[name] not found')
             return
           } else {
-            // userMessages[theMessageIndex].text = newMessage
-            const newUserMessages = userMessages.filter(({ ts: t }) => t !== ts)
-            roomData[name] = newUserMessages
-            roomsMap.set(room, roomData)
-            io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+            // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
+            const theMessageIndex = binarySearchTsIndex({
+              messages: userMessages,
+              targetTs: ts
+            })
+  
+            if (theMessageIndex === -1) {
+              if (cb) cb('theMessage not found')
+              return
+            } else {
+              // userMessages[theMessageIndex].text = newMessage
+              const newUserMessages = userMessages.filter(({ ts: t }) => t !== ts)
+              roomData[name] = newUserMessages
+              roomsMap.set(room, roomData)
+              io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+            }
           }
         }
+      } catch (err) {
+        socket.emit('notification', { status: 'error', title: 'ERR #3', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error' })
+        socket.emit('FRONT:LOGOUT')
       }
     })
 
