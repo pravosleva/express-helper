@@ -12,8 +12,9 @@ export const binarySearchTsIndex = ({ messages, targetTs }: TProps) => {
   let mid: number
 
   while (left <= right) {
-    mid = Math.round((right - left)/2) + left
-
+    // mid = Math.round((right - left)/2) + left
+    mid = Math.round((right + left)/2)
+    
     if (targetTs === messages[mid].ts) {
       result = mid
       return result

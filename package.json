@@ -25,7 +25,7 @@
     "quaint-copy:prod": "yarn quaint-yaml-copy && yarn quaint-css-copy && yarn quaint-html-copy && yarn quaint-express-env-copy:prod",
     "transpile-server:dev": "tsc -p ./src/server && yarn quaint-copy:dev",
     "transpile-server:prod": "tsc -p ./src/server && yarn quaint-copy:prod",
-    "build:front.chat:dev": "yarn --cwd src/frontend.chat install && bash src/set-front.chat-env.sh dev && yarn --cwd src/frontend.chat build",
+    "build:front.chat:dev": "bash src/set-front.chat-env.sh dev && yarn --cwd src/frontend.chat build",
     "build:front.chat:prod": "yarn --cwd src/frontend.chat install && bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build",
     "build:front.singin:dev": "yarn --cwd src/frontend.signin install && bash src/set-front.signin-env.sh dev && yarn --cwd src/frontend.signin build",
     "build:front.signin:prod": "yarn --cwd src/frontend.signin install && bash src/set-front.signin-env.sh prod && yarn --cwd src/frontend.signin build",

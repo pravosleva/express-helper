@@ -21,6 +21,7 @@ import { useLocalStorage } from 'react-use'
 // import { useForm } from '~/common/hooks/useForm'
 import { RoomlistModal } from './components'
 import slugify from 'slugify'
+import { FocusableElement } from "@chakra-ui/utils"
 
 export const Login = () => {
   const { socket, setIsLogged, resetRoomData } = useContext(SocketContext)
@@ -163,6 +164,7 @@ export const Login = () => {
     setMyPassword((state) => ({ ...state, password: e.target.value }))
   }
   const passwordRef = useRef(null)
+  const loginBtnRef = useRef(null)
 
   // --- Roomlist:
   const [isRoomlistModalOpened, setRoomlistModalOpened] = useState<boolean>(false)
@@ -196,7 +198,7 @@ export const Login = () => {
       <Modal
         size="xs"
         initialFocusRef={passwordRef}
-        // finalFocusRef={textFieldRef}
+        finalFocusRef={loginBtnRef}
         isOpen={isPasswordModalOpen}
         onClose={handlePasswordModalClose}
       >
@@ -271,11 +273,11 @@ export const Login = () => {
             size="3xl"
             textAlign="center"
             mb="8"
-            fontFamily="Wallpoet"
+            fontFamily="Bahiana"
           >
-            Let's talk
+            Anchous chat
           </Heading>
-          <Flex className="form" gap="1rem" flexDirection={{ base: 'column', md: 'row' }}>
+          <Flex className="form" gap="1rem" flexDirection={{ base: 'column', md: 'row' }} mb={4}>
             <Input
               autoFocus
               variant="filled"
@@ -302,6 +304,7 @@ export const Login = () => {
               onKeyDown={handleKeyDown}
             />
             <IconButton
+              ref={loginBtnRef}
               colorScheme="blue"
               isRound
               aria-label="icon-btn"
@@ -309,12 +312,12 @@ export const Login = () => {
               isLoading={isLoading1}
               onClick={handleLogin}
               isDisabled={!name || !room}
-            ></IconButton>
+            />
           </Flex>
           <Button
+            tabIndex={10}
             colorScheme="gray"
             variant='ghost'
-            mt={3}
             onClick={handleRoomlistModalOpen}
           >
             My Rooms

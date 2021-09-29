@@ -543,7 +543,12 @@ export const Chat = () => {
                     className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
                     m=".2rem 0"
                   >
-                    <Text fontSize="xs" opacity=".8" ml="5px" className="from">
+                    <Text
+                      fontSize="sm"
+                      // opacity=".8"
+                      mb={1}
+                      className="from"
+                    >
                       <b>{user}</b>{' '}
                       <span className="date">
                         {date}

@@ -71,20 +71,20 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
               value={formData.search}
               // autoFocus
               onChange={handleInputChange}
+              tabIndex={2}
             />
           </InputGroup>
         </ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton tabIndex={1} />
         <ModalBody pb={6}>
-          
           {
             displayedRoomsKeys.length > 0 && (
               displayedRoomsKeys.map((key: string) => (
                 <>
-                  <Heading fontFamily='Russo One' as="h2" size="md" isTruncated>{key.toUpperCase()}</Heading>
-                  <Table variant="simple" size='sm' mb={4}>
+                  <Heading fontFamily='Russo One' as="h2" size="md" isTruncated>&#8212; {key.toUpperCase()}</Heading>
+                  <Table variant="simple" size='sm' mb={2}>
                     <Tbody>
-                      {roomlistAsObj[key].map((roomName: string) => {
+                      {displayedObj[key].map((roomName: string) => {
                         const handleDel = () => {
                           onDelete(roomName)
                         }
