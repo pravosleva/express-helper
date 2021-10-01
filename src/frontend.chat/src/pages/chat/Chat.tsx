@@ -278,11 +278,11 @@ export const Chat = () => {
       )
     handleEditModalClose()
   }
-  const handleKeyDownEditedMessage = (ev: any) => {
-    if (ev.keyCode === 13) {
-      if (!!room) handleSaveEditedMessage()
-    }
-  }
+  // const handleKeyDownEditedMessage = (ev: any) => {
+  //   if (ev.keyCode === 13) {
+  //     if (!!room) handleSaveEditedMessage()
+  //   }
+  // }
   const handleDeleteMessage = (ts: number) => {
     if (!!socket)
       socket.emit('deleteMessage', { ts: editedMessage.ts, room, name }, (errMsg: string) => {
@@ -387,7 +387,7 @@ export const Chat = () => {
                 resize="none"
                 placeholder="Message"
                 ref={initialRef}
-                onKeyDown={handleKeyDownEditedMessage}
+                // onKeyDown={handleKeyDownEditedMessage}
                 value={editedMessage.text}
                 onChange={handleChangeEditedMessage}
               />

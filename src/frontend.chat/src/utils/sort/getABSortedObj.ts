@@ -37,7 +37,7 @@ export const getABSortedObj0 = (arr: string[], substr?: string): TRes => {
   return res
 }
 
-export const getABSortedObj1 = (arr: string[], substr?: string): TRes => {
+export const getABSortedObj = (arr: string[], substr?: string): TRes => {
   const res: TRes = {}
 
   arr.forEach((str: string) => {
@@ -70,7 +70,7 @@ export const getABSortedObj1 = (arr: string[], substr?: string): TRes => {
   return res
 }
 
-export const getABSortedObj = (arr: string[], substr?: string): TRes => {
+export const getABSortedObj2 = (arr: string[], substr?: string): TRes => {
   const res: TRes = {}
   const possibleChars = '0123456789abcdefghijklmnopqrstuvwxyz'.split('')
 

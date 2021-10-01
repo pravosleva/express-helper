@@ -1,0 +1,6 @@
+.btns-box {
+  display: flex;
+  & > button:not(:last-child) {
+    margin-right: var(--chakra-space-2);
+  }
+}

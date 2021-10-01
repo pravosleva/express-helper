@@ -22,6 +22,9 @@ import { RoomlistItem } from './RoomlistItem'
 import { FiSearch } from 'react-icons/fi'
 import { useMemo } from 'react'
 import { getABSortedObj } from '~/utils/sort/getABSortedObj'
+import './RoomlistModal.scss'
+import { IoMdAdd, IoMdClose } from 'react-icons/io'
+import { BsArrowLeft } from 'react-icons/bs'
 
 type TProps = {
   isOpened: boolean
@@ -35,6 +38,9 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
   const { formData, handleInputChange, resetForm } = useForm({
     search: '',
   })
+  const handleClear = () => {
+    resetForm()
+  }
   const displayedRooms = useMemo(() => !!formData.search ? roomlist.filter((roomName: string) => roomName.includes(formData.search)): roomlist, [roomlist, formData.search])
   const handleSubmit = () => {
     onSelectRoom(formData.search.trim())
@@ -43,7 +49,7 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
   const roomlistAsObj = useMemo(() => getABSortedObj(roomlist), [roomlist])
   // const roomsKeys = useMemo(() => Object.keys(roomlistAsObj), [roomlistAsObj])
   const displayedObj = useMemo(() => !!formData.search ? getABSortedObj(roomlist, formData.search) : roomlistAsObj, [roomlistAsObj, formData.search])
-  const displayedRoomsKeys = useMemo(() => Object.keys(displayedObj), [displayedObj])
+  const displayedRoomsKeys = useMemo(() => Object.keys(displayedObj).sort(), [displayedObj])
 
   return (
     <Modal
@@ -108,8 +114,9 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
             )
           }
         </ModalBody>
-        <ModalFooter>
-          {displayedRooms.length === 0 && !!formData.search.trim() && <Button onClick={handleSubmit} color='green.500' variant='solid'>Go there</Button>}
+        <ModalFooter className='btns-box'>
+          {displayedRooms.length === 0 && !!formData.search.trim() && <Button onClick={handleSubmit} color='green.500' variant='solid' leftIcon={<IoMdAdd />}>Go there</Button>}
+          {!!formData.search.trim() && <Button rounded='base' onClick={handleClear} variant='ghost' leftIcon={<IoMdClose />}>Clear</Button>}
           <Button rounded='base' onClick={onClose} variant='ghost'>Close</Button>
         </ModalFooter>
       </ModalContent>
