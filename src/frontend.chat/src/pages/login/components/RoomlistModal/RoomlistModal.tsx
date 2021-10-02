@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import {
   Button,
   Modal,
@@ -24,7 +25,7 @@ import { useMemo } from 'react'
 import { getABSortedObj } from '~/utils/sort/getABSortedObj'
 import './RoomlistModal.scss'
 import { IoMdAdd, IoMdClose } from 'react-icons/io'
-import { BsArrowLeft } from 'react-icons/bs'
+// import { BsArrowLeft } from 'react-icons/bs'
 
 type TProps = {
   isOpened: boolean
@@ -86,7 +87,7 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
           {
             displayedRoomsKeys.length > 0 && (
               displayedRoomsKeys.map((key: string) => (
-                <>
+                <Fragment key={key}>
                   <Heading fontFamily='Russo One' as="h2" size="md" isTruncated>&#8212; {key.toUpperCase()}</Heading>
                   <Table variant="simple" size='sm' mb={2}>
                     <Tbody>
@@ -109,7 +110,7 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
                       })}
                     </Tbody>
                   </Table>
-                </>
+                </Fragment>
               ))
             )
           }

@@ -70,6 +70,7 @@ export const Chat = () => {
   const history = useHistory()
   const toast = useToast()
   const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 800 })
+  // const [controlTs, setControlTs] = useState<number>(Date.now())
 
   useEffect(() => {
     const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts

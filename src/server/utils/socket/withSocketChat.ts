@@ -1,32 +1,21 @@
 import { instrument } from '@socket.io/admin-ui'
 import { Socket } from 'socket.io'
-import path from 'path'
-import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
-import merge from 'merge-deep'
-import merge2 from 'deepmerge'
-import { createPollingByConditions } from './createPollingByConditions'
-import { Counter } from '~/utils/counter'
-import DeviceDetector from "device-detector-js"
 import bcrypt from 'bcryptjs'
 import { binarySearchTsIndex } from '~/utils/binarySearch'
 import { getRandomString } from '~/utils/getRandomString'
+import {
+  roomsMapInstance as roomsMap,
+  registeredUsersMapInstance as registeredUsersMap,
+  usersSocketMapInstance as usersSocketMap,
+  usersMapInstance as usersMap,
+  ERegistryLevel,
+  roomsTasklistMapInstance as roomsTasklistMap,
+  TRoomTask,
+} from './state'
+import DeviceDetector from 'device-detector-js'
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? String(token) === CHAT_ADMIN_TOKEN : false
-
-type TUser = {
-  socketId: string
-  name: string
-  room: string
-}
-type TUserName = string
-enum ERegistryLevel {
-  Guest = 0,
-  Logged = 1,
-  TGUser = 2
-}
-type TConnectionData = Partial<TUser> & { userAgent: DeviceDetector.DeviceDetectorResult }
-type TRoomId = string
 
 export type TMessage = {
   text: string
@@ -34,232 +23,6 @@ export type TMessage = {
   editTs?: number
   rl?: ERegistryLevel
 }
-export type TRoomTask = {
-  title: string
-  description?: string
-  isCompleted: boolean
-  ts: number
-  editTs?: number
-}
-type TRoomTasklist = TRoomTask[]
-type TRoomData = {
-  [userName: string]: TMessage[]
-}
-type TSocketId = string
-const usersSocketMap = new Map<TSocketId, TUserName>()
-const usersMap = new Map<TUserName, TConnectionData>()
-type TRegistryData = {
-  passwordHash: string
-  registryLevel?: ERegistryLevel
-  token?: string
-}
-const registeredUsersMap = new Map<TUserName, TRegistryData>()
-const roomsMap = new Map<TRoomId, TRoomData>()
-const roomsTasklistMap = new Map<TRoomId, TRoomTasklist>()
-
-// NOTE: For example
-// const salt = bcrypt.genSaltSync(3);
-// const hash = bcrypt.hashSync("1", salt)
-// console.log(hash)
-// registeredUsersMap.set('Den', { passwordHash: '$2a$04$XlLY/M5OtNAmGKuLJ14j6e3PcpwfkccMBIpJlXufTHmVdgUXW6NY6', registryLevel: ERegistryLevel.Logged }) // 1
-
-// -- TODO: Refactor?
-const projectRootDir = path.join(__dirname, '../../../')
-// const CHAT_USERS_STATE_FILE_NAME = process.env.CHAT_USERS_STATE_FILE_NAME || 'chat.users.json'
-const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
-const CHAT_PASSWORD_HASHES_MAP_FILE_NAME = process.env.CHAT_PASSWORD_HASHES_MAP_FILE_NAME || 'chat.passwd-hashes.json'
-const CHAT_ROOMS_TASKLIST_MAP_FILE_NAME = process.env.CHAT_ROOMS_TASKLIST_MAP_FILE_NAME || 'chat.rooms-tasklist.json'
-
-// const storageUsersFilePath = path.join(projectRootDir, '/storage', CHAT_USERS_STATE_FILE_NAME)
-const storageRoomsFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_STATE_FILE_NAME)
-const storageRegistryMapFilePath = path.join(projectRootDir, '/storage', CHAT_PASSWORD_HASHES_MAP_FILE_NAME)
-const storageRoomsTasklistMapFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_TASKLIST_MAP_FILE_NAME)
-// const counter1 = Counter()
-const counter2 = Counter()
-const counter3 = Counter()
-const counter4 = Counter()
-
-const syncRegistryMap = () => {
-  const isFirstScriptRun = counter3.next().value === 0
-
-  try {
-    if (!!storageRegistryMapFilePath) {
-      let oldStatic: { data: { [key: string]: { passwordHash: string, registryLevel?: ERegistryLevel } }, ts: number }
-      try {
-        oldStatic = getStaticJSONSync(storageRegistryMapFilePath)
-        if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_121.2: incorrect static data')
-      } catch (err) {
-        // TODO: Сделать нормальные логи
-        console.log('ERR#CHAT.SOCKET_121.1')
-        console.log(err)
-        oldStatic = { data: {}, ts: 0 }
-      }
-      const staticData = oldStatic.data
-      const ts = new Date().getTime()
-
-      if (isFirstScriptRun) {
-        // NOTE: Sync with old state:
-        Object.keys(staticData).forEach((name: string) => {
-          registeredUsersMap.set(name, staticData[name])
-        })
-      }
-
-      const currentRegistryMapState: { [key: string]: TConnectionData } = [...registeredUsersMap.keys()].reduce((acc, userName: string) => { acc[userName] = registeredUsersMap.get(userName); return acc }, {})
-      const newStaticData = merge(staticData, currentRegistryMapState)
-
-      writeStaticJSONAsync(storageRegistryMapFilePath, { data: newStaticData, ts })
-    } else {
-      throw new Error(`ERR#CHAT.SOCKET_122: файл не найден: ${storageRegistryMapFilePath}`)
-    }
-  } catch (err) {
-    // TODO: Сделать нормальные логи
-    console.log(err)
-  }
-}
-
-const overwriteMerge = (_target, source, _options) => source
-
-const syncRoomsTasklistMap = () => {
-  const isFirstScriptRun = counter4.next().value === 0
-
-  try {
-    if (!!storageRoomsTasklistMapFilePath) {
-      let oldStatic: { data: { [roomName: string]: TRoomTasklist }, ts: number }
-      try {
-        oldStatic = getStaticJSONSync(storageRoomsTasklistMapFilePath)
-        if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_131.2: incorrect static data')
-      } catch (err) {
-        // TODO: Сделать нормальные логи
-        console.log('ERR#CHAT.SOCKET_131.1')
-        console.log(err)
-        oldStatic = { data: {}, ts: 0 }
-      }
-      const staticData = oldStatic.data
-      const ts = new Date().getTime()
-
-      if (isFirstScriptRun) {
-        // NOTE: Sync with old state:
-        Object.keys(staticData).forEach((roomName: string) => {
-          roomsTasklistMap.set(roomName, staticData[roomName])
-        })
-      }
-
-      const currentRoomsTasklistMapState: { [key: string]: any } = [...roomsTasklistMap.keys()].reduce((acc, userName: string) => { acc[userName] = roomsTasklistMap.get(userName); return acc }, {})
-      const newStaticData = merge2(staticData, currentRoomsTasklistMapState, { arrayMerge: overwriteMerge })
-
-      writeStaticJSONAsync(storageRoomsTasklistMapFilePath, { data: newStaticData, ts })
-    } else {
-      throw new Error(`ERR#CHAT.SOCKET_132: файл не найден: ${storageRoomsTasklistMapFilePath}`)
-    }
-  } catch (err) {
-    // TODO: Сделать нормальные логи
-    console.log(err)
-  }
-}
-
-// const syncUsersMap = () => {
-//   const isFirstScriptRun = counter1.next().value === 0
-
-//   try {
-//     if (!!storageUsersFilePath) {
-//       let oldStatic: { data: { [key: string]: TConnectionData }, ts: number }
-//       try {
-//         oldStatic = getStaticJSONSync(storageUsersFilePath)
-//         if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_101.2: incorrect static data')
-//       } catch (err) {
-//         // TODO: Сделать нормальные логи
-//         console.log('ERR#CHAT.SOCKET_101.1')
-//         console.log(err)
-//         oldStatic = { data: {}, ts: 0 }
-//       }
-//       const staticData = oldStatic.data
-//       const ts = new Date().getTime()
-
-//       if (isFirstScriptRun) {
-//         // NOTE: Sync with old state:
-//         Object.keys(staticData).forEach((name: string) => {
-//           usersMap.set(name, staticData[name])
-//         })
-//       }
-
-//       const currentUsersState: { [key: string]: TConnectionData } = [...usersMap.keys()].reduce((acc, str: string) => { acc[str] = usersMap.get(str); return acc }, {})
-//       const newStaticData = merge(staticData, currentUsersState)
-
-//       writeStaticJSONAsync(storageUsersFilePath, { data: newStaticData, ts })
-//     } else {
-//       throw new Error(`ERR#CHAT.SOCKET_102: файл не найден: ${storageUsersFilePath}`)
-//     }
-//   } catch (err) {
-//     // TODO: Сделать нормальные логи
-//     console.log(err)
-//   }
-// }
-
-const syncRoomsMap = () => {
-  const isFirstScriptRun = counter2.next().value === 0
-
-  try {
-    if (!!storageRoomsFilePath) {
-      let oldStatic: { data: { [roomName: string]: TRoomData }, ts: number }
-      try {
-        oldStatic = getStaticJSONSync(storageRoomsFilePath)
-        if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_111.2: incorrect static data')
-      } catch (err) {
-        // TODO: Сделать нормальные логи
-        console.log('ERR#CHAT.SOCKET_111.1')
-        console.log(err)
-        oldStatic = { data: {}, ts: 0 }
-      }
-      const staticData = oldStatic.data
-      const ts = new Date().getTime()
-
-      if (isFirstScriptRun) {
-        // NOTE: Sync with old state:
-        Object.keys(staticData).forEach((roomName: string) => {
-          roomsMap.set(roomName, staticData[roomName])
-        })
-      }
-
-      const currentRoomsState = [...roomsMap.keys()]
-        .reduce((acc, roomName) => {
-          acc[roomName] = roomsMap.get(roomName);
-          // -- tmp
-          // Object.keys(acc[roomName]).forEach((key) => {
-          //   acc[roomName][key].forEach(({ text, ts, registryLevel }: TMessage, i: number) => {
-          //     acc[roomName][key][i] = { text, ts }
-          //     if (!!registryLevel) acc[roomName][key][i].rl = registryLevel
-          //   })
-          // })
-          // --
-          return acc
-        }, {})
-      const newStaticData = merge2(staticData, currentRoomsState, { arrayMerge: overwriteMerge })
-
-      writeStaticJSONAsync(storageRoomsFilePath, { data: newStaticData, ts })
-    }
-  } catch (err) {
-    // TODO: Сделать нормальные логи
-    console.log(err)
-  }
-}
-// NOTE: Start polling
-createPollingByConditions({
-  cb: () => {
-    console.log('cb called')
-  },
-  interval: 5000,
-  callbackAsResolve: () => {
-    // syncUsersMap()
-    syncRoomsMap()
-    syncRegistryMap()
-    syncRoomsTasklistMap()
-  },
-  toBeOrNotToBe: () => true, // Need to retry again
-  callbackAsReject: () => {
-    console.log('NOWHERE')
-  },
-})
-// ---
 
 const deviceDetector = new DeviceDetector()
 const getParsedUserAgent = (socket: any): DeviceDetector.DeviceDetectorResult => deviceDetector.parse(socket.handshake.headers['user-agent'])
@@ -394,6 +157,11 @@ export const withSocketChat = (io: Socket) => {
         roomsMap.set(room, roomData)
       }
       socket.emit('oldChat', { roomData: roomsMap.get(room) })
+      // --- TODO:
+      // socket.emit('oldChat', {
+      //   roomData: roomsMap.getSomeDay(room, Date.now()).roomData
+      // })
+      // ---
       
       io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))

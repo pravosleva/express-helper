@@ -1,4 +1,4 @@
-import { TMessage, TRoomTask } from './socket/withSocketChat'
+import { TMessage, TRoomTask } from './socket/state/types'
 
 type TProps = {
   messages: TMessage[] | TRoomTask[]
