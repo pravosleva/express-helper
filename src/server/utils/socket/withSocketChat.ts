@@ -22,6 +22,7 @@ export type TMessage = {
   ts: number
   editTs?: number
   rl?: ERegistryLevel
+  user: string
 }
 
 const deviceDetector = new DeviceDetector()
@@ -70,12 +71,7 @@ export const withSocketChat = (io: Socket) => {
 
       const roomData = roomsMap.get(room)
       if (!roomData) {
-        roomsMap.set(room, { [name]: [] })
-      } else {
-        const newUserRoomData = roomData[name]
-        if (!newUserRoomData) roomData[name] = []
-        
-        roomsMap.set(room, roomData)
+        roomsMap.set(room, [])
       }
 
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
@@ -148,14 +144,7 @@ export const withSocketChat = (io: Socket) => {
       if (!!regData) registeredUsersMap.set(name, { ...regData, token: newToken })
       // --
 
-      if (!roomData) {
-        roomsMap.set(room, { [name]: [] })
-      } else {
-        let newUserRoomData = roomData[name]
-        if (!newUserRoomData) roomData[name] = []
-        
-        roomsMap.set(room, roomData)
-      }
+      if (!roomData) roomsMap.set(room, [])
       socket.emit('oldChat', { roomData: roomsMap.get(room) })
       // --- TODO:
       // socket.emit('oldChat', {
@@ -211,19 +200,12 @@ export const withSocketChat = (io: Socket) => {
       socket.join(room)
 
       const roomData = roomsMap.get(room)
-      if (!roomData) {
-        roomsMap.set(room, { [name]: [] })
-      } else {
-        let newUserRoomData = roomData[name]
-        if (!newUserRoomData) roomData[name] = []
-        
-        roomsMap.set(room, roomData)
-      }
+
+      if (!roomData) roomsMap.set(room, [])
       socket.emit('oldChat', { roomData: roomsMap.get(room) })
       
       io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
-
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
       if (!!cb) cb(null, isUserAdmin(token))
@@ -266,7 +248,7 @@ export const withSocketChat = (io: Socket) => {
       const ts = Date.now()
       try {
         const { room, name } = usersMap.get(userName)
-        const newRoomData = roomsMap.get(room)
+        const newRoomData: TMessage[] = roomsMap.get(room)
 
         let registryLevel = 0
         const regData = registeredUsersMap.get(userName)
@@ -275,7 +257,7 @@ export const withSocketChat = (io: Socket) => {
           if (!!regData.registryLevel) registryLevel = regData.registryLevel
         }
         
-        newRoomData[name].push({ text: message, ts, rl: registryLevel })
+        newRoomData.push({ text: message, ts, rl: registryLevel, user: name })
 
         roomsMap.set(room, newRoomData)
 
@@ -289,14 +271,14 @@ export const withSocketChat = (io: Socket) => {
     })
 
     socket.on('editMessage', ({ room, name, ts, newMessage }, cb) => {
-      const roomData = roomsMap.get(room)
+      let roomData = roomsMap.get(room)
 
       try {
         if (!roomData) {
           if (cb) cb('roomData not found')
           return
         } else {
-          const userMessages = roomData[name]
+          const userMessages = roomData
 
           if (!userMessages) {
             if (cb) cb('roomData[name] not found')
@@ -314,7 +296,7 @@ export const withSocketChat = (io: Socket) => {
             } else {
               userMessages[theMessageIndex].text = newMessage
               userMessages[theMessageIndex].editTs = new Date().getTime()
-              roomData[name] = userMessages
+              roomData = userMessages
               roomsMap.set(room, roomData)
               io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
             }
@@ -326,13 +308,13 @@ export const withSocketChat = (io: Socket) => {
       }
     })
     socket.on('deleteMessage', ({ room, name, ts }, cb) => {
-      const roomData = roomsMap.get(room)
+      let roomData = roomsMap.get(room)
       try {
         if (!roomData) {
           if (cb) cb('roomData not found')
           return
         } else {
-          const userMessages = roomData[name]
+          const userMessages = roomData
   
           if (!userMessages) {
             if (cb) cb('roomData[name] not found')
@@ -350,7 +332,7 @@ export const withSocketChat = (io: Socket) => {
             } else {
               // userMessages[theMessageIndex].text = newMessage
               const newUserMessages = userMessages.filter(({ ts: t }) => t !== ts)
-              roomData[name] = newUserMessages
+              roomData = newUserMessages
               roomsMap.set(room, roomData)
               io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
             }

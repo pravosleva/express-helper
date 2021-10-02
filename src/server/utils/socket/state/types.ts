@@ -11,11 +11,12 @@ export type TMessage = {
   ts: number
   editTs?: number
   rl?: ERegistryLevel
+  user: string
 }
-export type TRoomData = {
-  [userName: string]: TMessage[]
-}
-
+// export type TRoomData = {
+//   [userName: string]: TMessage[]
+// }
+export type TRoomData = TMessage[]
 export type TRegistryData = {
   passwordHash: string
   registryLevel?: ERegistryLevel

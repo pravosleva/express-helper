@@ -17,23 +17,23 @@ const counter = Counter()
 
 const overwriteMerge = (_target, source, _options) => source
 
-const getDaysRange = ({ roomState, toDate, fromDate }: { roomState: TRoomData, toDate: Date, fromDate: Date }): TRoomData => {
-  const keys = Object.keys(roomState)
-  const result: TRoomData = {}
-  const toTs: number = new Date(toDate).getTime()
-  const fromTs: number = new Date(fromDate).getTime()
+// const getDaysRange = ({ roomState, toDate, fromDate }: { roomState: TRoomData, toDate: Date, fromDate: Date }): TRoomData => {
+//   const keys = Object.keys(roomState)
+//   const result: TRoomData = {}
+//   const toTs: number = new Date(toDate).getTime()
+//   const fromTs: number = new Date(fromDate).getTime()
 
-  keys.forEach((name: string) => {
-    if (!result[name]) result[name] = []
-    roomState[name].forEach((msgData: TMessage) => {
-      const { ts } = msgData
+//   keys.forEach((name: string) => {
+//     if (!result[name]) result[name] = []
+//     roomState[name].forEach((msgData: TMessage) => {
+//       const { ts } = msgData
 
-      if (ts > fromTs && ts <= toTs) result[name].push(msgData)
-    })
-  })
+//       if (ts > fromTs && ts <= toTs) result[name].push(msgData)
+//     })
+//   })
 
-  return result
-}
+//   return result
+// }
 
 class Singleton {
   private static instance: Singleton;
@@ -58,15 +58,14 @@ class Singleton {
   public get(key: string): TRoomData {
     return this.state.get(key)
   }
-  public getSomeDay(key: string, lastDayTs: number): { roomData: TRoomData, newToDayTs: number } {
-    const roomState: TRoomData = this.state.get(key)
-    const toDate = new Date(lastDayTs)
-    const fromDate = new Date(toDate.getDate() - 1)
+  // public getSomeDay(key: string, lastDayTs: number): { roomData: TRoomData, newToDayTs: number } {
+  //   const roomState: TRoomData = this.state.get(key)
+  //   const toDate = new Date(lastDayTs)
+  //   const fromDate = new Date(toDate.getDate() - 1)
+  //   const result = getDaysRange({ roomState, toDate, fromDate })
 
-    const result = getDaysRange({ roomState, toDate, fromDate })
-
-    return { roomData: result, newToDayTs: fromDate.getTime() }
-  }
+  //   return { roomData: result, newToDayTs: fromDate.getTime() }
+  // }
   public delete(key: string) {
     return this.state.delete(key)
   }
@@ -79,11 +78,10 @@ class Singleton {
 }
 
 export const roomsMapInstance = Singleton.getInstance()
+const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 
 const syncRoomsMap = () => {
   const isFirstScriptRun = counter.next().value === 0
-
-  console.log(roomsMapInstance.size)
 
   try {
     if (!!storageRoomsFilePath) {
@@ -103,7 +101,20 @@ const syncRoomsMap = () => {
       if (isFirstScriptRun) {
         // NOTE: Sync with old state:
         Object.keys(staticData).forEach((roomName: string) => {
-          roomsMapInstance.set(roomName, staticData[roomName])
+          // -- OLD format transform
+          /*
+            {"data":{"ux-test":{"Den":[{"text":"tst2","ts":1633145946256,"rl":1},{"text":"tst","ts":1633146080967,"rl":1}]}},"ts":1633146858011}
+          */
+          if (!Array.isArray(staticData[roomName])) {
+            let newFormat = []
+            Object.keys(staticData[roomName]).forEach((name: string) => {
+              newFormat = [...newFormat, ...staticData[roomName][name].map(origin => ({ ...origin, user: name }))]
+            })
+            roomsMapInstance.set(roomName, newFormat.sort(tsSortDEC))
+          } else {
+            roomsMapInstance.set(roomName, staticData[roomName])
+          }
+          // --
         })
       }
 

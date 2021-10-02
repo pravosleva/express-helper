@@ -8,10 +8,10 @@ type TMessage = {
   text: string
   user: string
   ts: number
+  editTs?: number
+  name: string
 }
-type TRoomData = {
-  [userName: string]: TMessage[]
-}
+type TRoomData = TMessage[]
 
 interface ISocketContext {
   socket: Socket | null
@@ -27,7 +27,7 @@ interface ISocketContext {
 
 export const SocketContext = createContext<ISocketContext>({
   socket: null,
-  roomData: {},
+  roomData: [],
   isLogged: false,
   setIsLogged: () => {},
   isConnected: false,
@@ -46,9 +46,9 @@ export const SocketProvider =
       transports: ['websocket', 'polling'],
     })
     // const toast = useToast()
-    const [roomData, setRoomData] = useState<TRoomData>({})
+    const [roomData, setRoomData] = useState<TRoomData>([])
     const resetRoomData = () => {
-      setRoomData({})
+      setRoomData([])
     }
     const [isLogged, setIsLogged] = useState<boolean>(false)
     const [isConnected, setIsConnected] = useState<boolean>(true)

@@ -31,9 +31,9 @@ export const Admin = () => {
   const toast = useToast()
   const history = useHistory()
 
-  useEffect(() => {
-    if (!isAdmin) history.push('/') 
-  }, [history, isAdmin])
+  // useEffect(() => {
+  //   if (!isAdmin) history.push('/') 
+  // }, [history, isAdmin])
 
   const handleClick = () => {
     if (!!socket) socket.emit('getAllInfo', { a: 1 })

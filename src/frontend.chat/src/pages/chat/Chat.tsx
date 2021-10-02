@@ -54,7 +54,7 @@ import { IoMdLogOut } from 'react-icons/io'
 import { useLocalStorage } from 'react-use'
 
 type TUser = { socketId: string; room: string; name: string }
-type TMessage = { user: string; text: string; ts: number; editTs?: number }
+type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string }
 
 export const Chat = () => {
   const { name, slugifiedRoom: room, isAdmin } = useContext(MainContext)
@@ -72,18 +72,22 @@ export const Chat = () => {
   const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 800 })
   // const [controlTs, setControlTs] = useState<number>(Date.now())
 
-  useEffect(() => {
-    const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
-    const messages: TMessage[] = Object.keys(roomData).reduce((acc, name) => {
-      // @ts-ignore
-      roomData[name].forEach(({ text, ts, ...rest }: any) => {
-        // @ts-ignore
-        acc.push({ text, user: name, ts, ...rest })
-      })
-      return acc
-    }, [])
+  // useEffect(() => {
+  //   const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
+  //   const messages: TMessage[] = Object.keys(roomData).reduce((acc, name) => {
+  //     // @ts-ignore
+  //     roomData[name].forEach(({ text, ts, ...rest }: any) => {
+  //       // @ts-ignore
+  //       acc.push({ text, user: name, ts, ...rest })
+  //     })
+  //     return acc
+  //   }, [])
 
-    setMessages(messages.sort(tsSortDEC))
+  //   setMessages(messages.sort(tsSortDEC))
+  // }, [roomData])
+
+  useEffect(() => {
+    setMessages(roomData)
   }, [roomData])
 
   const [tokenLS] = useLocalStorage<any>('chat.token')
