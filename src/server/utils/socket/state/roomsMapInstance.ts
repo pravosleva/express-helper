@@ -17,24 +17,6 @@ const counter = Counter()
 
 const overwriteMerge = (_target, source, _options) => source
 
-// const getDaysRange = ({ roomState, toDate, fromDate }: { roomState: TRoomData, toDate: Date, fromDate: Date }): TRoomData => {
-//   const keys = Object.keys(roomState)
-//   const result: TRoomData = {}
-//   const toTs: number = new Date(toDate).getTime()
-//   const fromTs: number = new Date(fromDate).getTime()
-
-//   keys.forEach((name: string) => {
-//     if (!result[name]) result[name] = []
-//     roomState[name].forEach((msgData: TMessage) => {
-//       const { ts } = msgData
-
-//       if (ts > fromTs && ts <= toTs) result[name].push(msgData)
-//     })
-//   })
-
-//   return result
-// }
-
 class Singleton {
   private static instance: Singleton;
    state: Map<TRoomId, TRoomData>;
@@ -58,14 +40,6 @@ class Singleton {
   public get(key: string): TRoomData {
     return this.state.get(key)
   }
-  // public getSomeDay(key: string, lastDayTs: number): { roomData: TRoomData, newToDayTs: number } {
-  //   const roomState: TRoomData = this.state.get(key)
-  //   const toDate = new Date(lastDayTs)
-  //   const fromDate = new Date(toDate.getDate() - 1)
-  //   const result = getDaysRange({ roomState, toDate, fromDate })
-
-  //   return { roomData: result, newToDayTs: fromDate.getTime() }
-  // }
   public delete(key: string) {
     return this.state.delete(key)
   }
@@ -74,6 +48,33 @@ class Singleton {
   }
   public get size(): number {
     return this.state.size
+  }
+  public getPartial({ tsPoint, room }: { tsPoint: number, room: string }): { result: TRoomData, errorMsg?: string, nextTsPoint: number | null, isDone: boolean } {
+    const roomData = this.state.get(room)
+    const result = []
+    let nextTsPoint = null
+    let counter = 1
+    let isDone = false
+
+    if (!roomData) return { result: [], errorMsg: `Condition: !roomData for ${room}`, nextTsPoint: 0, isDone: true }
+
+    const limit = 1
+
+    for (let i = roomData.length - 1; i > -1; i--) {
+      const isLast = i === 0
+
+      if (counter <= limit && roomData[i].ts <= tsPoint) {
+        
+        result.unshift(roomData[i])
+        counter += 1
+        nextTsPoint = isLast ? null : roomData[i - 1].ts
+        // console.log(`--- ${i}`, nextTsPoint, `!!nextTsPoint= ${!!nextTsPoint}`, nextTsPoint < tsPoint)
+        // console.log(roomData[i])
+        isDone = isLast
+      }
+    }
+
+    return { result, nextTsPoint, isDone }
   }
 }
 
@@ -112,7 +113,7 @@ const syncRoomsMap = () => {
             })
             roomsMapInstance.set(roomName, newFormat.sort(tsSortDEC))
           } else {
-            roomsMapInstance.set(roomName, staticData[roomName])
+            roomsMapInstance.set(roomName, staticData[roomName].sort(tsSortDEC))
           }
           // --
         })

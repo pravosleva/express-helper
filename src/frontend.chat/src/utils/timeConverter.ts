@@ -1,6 +1,6 @@
 //See also: https://github.com/pravosleva/pravosleva-blog-frontend-nextjs/blob/master/utils/timeConverter.js
 
-// 09.11.2020 в 18:15
+// 18:15
 const getHoursMinutesBySeconds = (date: string | number) => {
   // const dt = new Date(sec * 10 ** 3)
   const dt = new Date(date)
@@ -9,6 +9,8 @@ const getHoursMinutesBySeconds = (date: string | number) => {
 
   return `${hr}:${min}`
 }
+
+// 09.11.2020 в 18:15
 export const getNormalizedDateTime = (date: string | number) => {
   // const dt = new Date(sec * 10 ** 3)
   const dt = new Date(date)
@@ -20,7 +22,8 @@ export const getNormalizedDateTime = (date: string | number) => {
   return `${dateIndex}.${monthNames[monthIndex]}.${year} в ${getHoursMinutesBySeconds(date)}`
 }
 
-export const getNormalizedDate = (date: string) => {
+// 09.11.2020
+export const getNormalizedDate = (date: string | number) => {
   // const dt = new Date(sec * 10 ** 3)
   const dt = new Date(date)
   const monthNames = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
@@ -29,4 +32,13 @@ export const getNormalizedDate = (date: string) => {
   const year = dt.getFullYear() // String(dt.getFullYear()).substring(2, 4)
 
   return `${dateIndex}.${monthNames[monthIndex]}.${year}`
+}
+
+// 09.11.2020 18:15:45
+export const getNormalizedDateTime2 = (date: string | number) => {
+  // const dt = new Date(sec * 10 ** 3)
+  const dt = new Date(date)
+  const seconds = dt.getSeconds()
+
+  return `${getNormalizedDate(date)} ${getHoursMinutesBySeconds(date)}:${seconds}`
 }

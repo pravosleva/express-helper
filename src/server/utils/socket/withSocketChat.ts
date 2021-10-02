@@ -145,7 +145,7 @@ export const withSocketChat = (io: Socket) => {
       // --
 
       if (!roomData) roomsMap.set(room, [])
-      socket.emit('oldChat', { roomData: roomsMap.get(room) })
+      // socket.emit('oldChat', { roomData: roomsMap.get(room) })
       // --- TODO:
       // socket.emit('oldChat', {
       //   roomData: roomsMap.getSomeDay(room, Date.now()).roomData
@@ -202,7 +202,7 @@ export const withSocketChat = (io: Socket) => {
       const roomData = roomsMap.get(room)
 
       if (!roomData) roomsMap.set(room, [])
-      socket.emit('oldChat', { roomData: roomsMap.get(room) })
+      // socket.emit('oldChat', { roomData: roomsMap.get(room) })
       
       io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
@@ -270,6 +270,22 @@ export const withSocketChat = (io: Socket) => {
       // ---
     })
 
+    socket.on('getPartialOldChat', ({ tsPoint, room }: { tsPoint: number, room: string }, cb) => {
+      if (!room) {
+        socket.emit('notification', { status: 'error', title: 'ERR #4.1', description: 'Params wrong' })
+        return
+      }
+
+      const { result, nextTsPoint, isDone, errorMsg } = roomsMap.getPartial({ tsPoint, room })
+
+      if (!!errorMsg) {
+        socket.emit('notification', { status: 'error', title: 'ERR #4.2', description: errorMsg })
+        return
+      }
+      socket.emit('partialOldChat', { result, nextTsPoint, isDone })
+      if (!!cb) cb()
+    })
+
     socket.on('editMessage', ({ room, name, ts, newMessage }, cb) => {
       let roomData = roomsMap.get(room)
 
@@ -298,7 +314,8 @@ export const withSocketChat = (io: Socket) => {
               userMessages[theMessageIndex].editTs = new Date().getTime()
               roomData = userMessages
               roomsMap.set(room, roomData)
-              io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+              // io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+              io.in(room).emit('message.update', userMessages[theMessageIndex]);
             }
           }
         }
@@ -334,7 +351,8 @@ export const withSocketChat = (io: Socket) => {
               const newUserMessages = userMessages.filter(({ ts: t }) => t !== ts)
               roomData = newUserMessages
               roomsMap.set(room, roomData)
-              io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+              // io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+              io.in(room).emit('message.delete', { ts });
             }
           }
         }

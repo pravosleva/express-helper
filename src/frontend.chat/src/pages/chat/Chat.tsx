@@ -32,6 +32,7 @@ import {
   // useBreakpointValue,
   useMediaQuery,
   Progress,
+  Spinner,
 } from '@chakra-ui/react'
 import { FiList } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
@@ -43,7 +44,7 @@ import clsx from 'clsx'
 import './Chat.scss'
 import { UsersContext } from '~/usersContext'
 import { useTextCounter } from '~/common/hooks/useTextCounter'
-import { getNormalizedDateTime } from '~/utils/timeConverter'
+import { getNormalizedDateTime, getNormalizedDateTime2 } from '~/utils/timeConverter'
 import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from 'react-contextmenu'
 import { ColorModeSwitcher } from '~/common/components/ColorModeSwitcher'
 import { SetPasswordModal } from './components/SetPasswordModal'
@@ -52,6 +53,13 @@ import { TasklistModal } from './components/TasklistModal/TasklistModal'
 import { xs, sm, md, lg, xl } from '~/common/chakra/theme'
 import { IoMdLogOut } from 'react-icons/io'
 import { useLocalStorage } from 'react-use'
+// import merge2 from 'deepmerge'
+import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
+import { useInView } from 'react-intersection-observer'
+
+// @ts-ignore
+// const overwriteMerge = (destinationArray, sourceArray, _options) => [, ...sourceArray]
+const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 
 type TUser = { socketId: string; room: string; name: string }
 type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string }
@@ -112,6 +120,9 @@ export const Chat = () => {
   // }, [isLogged])
 
   const [regData, setRegData] = useState<any>(null)
+  const [tsPoint, setTsPoint] = useState<number | null>(Date.now())
+  const [fullChatReceived, setFullChatReceived] = useState<boolean>(false)
+  const [isChatLoading, setIsChatLoading] = useState<boolean>(false)
 
   useEffect(() => {
     if (!!socket) {
@@ -144,20 +155,79 @@ export const Chat = () => {
       const logoutFromServerListener = () => {
         history.push('/')
       }
+      const partialOldChatListener = ({ result, nextTsPoint, isDone  }: { result: TMessage[], nextTsPoint: number, isDone: boolean }) => {
+        setMessages((ms: TMessage[]) => {
+          const key = 'ts'
+          const arrayUniqueByKey = [...new Map([...result, ...ms].map((item: TMessage) =>
+          [item[key], item])).values()]
+
+          return arrayUniqueByKey.sort(tsSortDEC)
+        })
+        setTsPoint(nextTsPoint)
+        setFullChatReceived(isDone)
+      }
+      const updMsgListener = ({ text, ts, editTs }: { text: string, ts: number, editTs: number }) => {
+        setMessages((ms: TMessage[]) => {
+          const newArr = [...ms]
+          const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
+          
+          if (targetIndex !== -1) {
+            newArr[targetIndex].text = text
+            newArr[targetIndex].editTs = editTs
+          }
+          return newArr
+        })
+      }
+      const delMsgListener = ({ ts }: { ts: number }) => {
+        setMessages((ms: TMessage[]) => {
+          const newArr = [...ms]
+          const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
+          
+          if (targetIndex !== -1) newArr.splice(targetIndex, 1)
+          return newArr
+        })
+      }
 
       socket.on('message', msgListener)
+      socket.on('message.update', updMsgListener)
+      socket.on('message.delete', delMsgListener)
       socket.on('notification', notifListener)
       socket.on('my.user-data', myUserDataListener)
       socket.on('FRONT:LOGOUT', logoutFromServerListener)
+      socket.on('partialOldChat', partialOldChatListener)
 
       return () => {
         socket.off('message', msgListener)
+        socket.off('message.update', updMsgListener)
+        socket.off('message.delete', delMsgListener)
         socket.off('notification', notifListener)
         socket.off('my.user-data', myUserDataListener)
         socket.off('FRONT:LOGOUT', logoutFromServerListener)
+        socket.off('partialOldChat', partialOldChatListener)
       }
     }
   }, [socket, toast])
+
+  // useEffect(() => {
+  //   if (!!socket && !!tsPoint) {
+  //     setIsChatLoading(true)
+  //     setTimeout(() => {
+  //       socket.emit('getPartialOldChat', { tsPoint, room })
+  //       setIsChatLoading(false)
+  //     }, 500)
+  //   }
+  // }, [tsPoint, room, socket])
+
+  const getPieceOfChat = useCallback(() => {
+    if (!!socket && !!tsPoint) {
+      setIsChatLoading(true)
+      setTimeout(() => {
+        socket.emit('getPartialOldChat', { tsPoint, room }, () => {
+          setIsChatLoading(false)
+        })
+      }, 500)
+    }
+  }, [tsPoint, room, socket])
 
   useEffect(() => {
     if (!!socket && !!name && !!room) {
@@ -184,6 +254,8 @@ export const Chat = () => {
             history.push('/')
           }
         })
+        setFullChatReceived(false)
+        setTsPoint(Date.now())
       } else {
         socket.emit('unsetMe', { name, room })
       }
@@ -345,6 +417,14 @@ export const Chat = () => {
     return Math.round(completed * 100 / all)
   }, [tasklist, completedTasksLen])
 
+  const [inViewRef, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0,
+  })
+  useEffect(() => {
+    if (inView) getPieceOfChat()
+  }, [inView, getPieceOfChat])
+
   return (
     <>
       <TasklistModal
@@ -495,7 +575,9 @@ export const Chat = () => {
               <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }}>
                 {/* <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading> */}
                 <Heading fontSize='lg' fontFamily='Jura'>
-                  {room}
+                  {room} {isChatLoading && !!tsPoint && (
+                    <Spinner size='xs' />
+                  )}
                 </Heading>
                 <Flex alignItems="center">
                   <Text mr="2" fontWeight="400" fontSize="md" letterSpacing="0">
@@ -533,9 +615,30 @@ export const Chat = () => {
                 { "height-limited-md": upToSm, "height-full-auto-sm": downToSm }
               )}
             debug={false}
+            // debounce={1000}
           >
-            {messages.length > 0 ? (
-              messages.map(({ user, text, ts, editTs }: TMessage, i) => {
+            <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".2" mb={4}>
+              <Box>---</Box>
+              {!!tsPoint && <Spinner ml="2" fontSize="1rem" />}
+              <Text ml={2} fontWeight="400">
+                {!!tsPoint
+                  ? `Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`
+                  : 'Больше ничего нет'
+                }
+              </Text>
+              <Box ml="2">---</Box>
+            </Flex>
+            {!isChatLoading && messages.length === 0 && (
+              <Flex alignItems="center" justifyContent="center" mt=".5rem" opacity=".2" w="100%">
+              <Box mr="2">---</Box>
+              <BiMessageDetail fontSize="1rem" />
+              <Text ml="1" fontWeight="400">
+                No messages
+              </Text>
+              <Box ml="2">---</Box>
+            </Flex>
+            )}
+            {messages.map(({ user, text, ts, editTs }: TMessage, i) => {
                 const isMyMessage = user === name
                 const date = getNormalizedDateTime(ts)
                 const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
@@ -585,16 +688,7 @@ export const Chat = () => {
                   </Box>
                 )
               })
-            ) : (
-              <Flex alignItems="center" justifyContent="center" mt=".5rem" opacity=".2" w="100%">
-                <Box mr="2">-----</Box>
-                <BiMessageDetail fontSize="1rem" />
-                <Text ml="1" fontWeight="400">
-                  No messages
-                </Text>
-                <Box ml="2">-----</Box>
-              </Flex>
-            )}
+            }
           </ScrollToBottom>
           <div className="form">
             {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}
