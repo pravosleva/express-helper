@@ -56,6 +56,7 @@ import { useLocalStorage } from 'react-use'
 // import merge2 from 'deepmerge'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 import { useInView } from 'react-intersection-observer'
+// import { useSpring, animated } from 'react-spring'
 
 // @ts-ignore
 // const overwriteMerge = (destinationArray, sourceArray, _options) => [, ...sourceArray]
@@ -94,9 +95,9 @@ export const Chat = () => {
   //   setMessages(messages.sort(tsSortDEC))
   // }, [roomData])
 
-  useEffect(() => {
-    setMessages(roomData)
-  }, [roomData])
+  // useEffect(() => {
+  //   setMessages(roomData)
+  // }, [roomData])
 
   const [tokenLS] = useLocalStorage<any>('chat.token')
   const handleLogout = () => {
@@ -425,6 +426,42 @@ export const Chat = () => {
     if (inView) getPieceOfChat()
   }, [inView, getPieceOfChat])
 
+  const rendCounter = useRef<number>(0)
+  useEffect(() => {
+    if (isConnected) rendCounter.current += 1
+    const isFirstRender = rendCounter.current === 1
+    if (isFirstRender) return
+    // setFullChatReceived(false)
+    // setTsPoint(Date.now())
+    // if (isConnected) getPieceOfChat()
+    if (isConnected) {
+      // NOTE: При реконнекте нужно обнновить контент - проще всего очистить и начать загружать заново
+      setMessages([])
+      // toast({
+      //   position: 'top',
+      //   description: `Connect ${rendCounter.current}`,
+      //   status: 'info',
+      //   duration: 10000,
+      //   isClosable: true,
+      // })
+    }
+  }, [isConnected])
+
+  // const transform = useSpring({
+  //   from: {
+  //     opacity: 0,
+  //     // transform: 'scale(0.95)',
+  //     margin: ".2rem 0",
+  //     // height: '0',
+  //   },
+  //   to: {
+  //     opacity: 1,
+  //     // transform: 'scale(1)',
+  //     margin: ".2rem 0",
+  //     // height: 'auto',
+  //   },
+  // })
+
   return (
     <>
       <TasklistModal
@@ -617,9 +654,9 @@ export const Chat = () => {
             debug={false}
             // debounce={1000}
           >
-            <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".2" mb={4}>
-              <Box>---</Box>
-              {!!tsPoint && <Spinner ml="2" fontSize="1rem" />}
+            <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
+              <Box mr="2">---</Box>
+              {!!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" />}
               <Text ml={2} fontWeight="400">
                 {!!tsPoint
                   ? `Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`
@@ -628,67 +665,57 @@ export const Chat = () => {
               </Text>
               <Box ml="2">---</Box>
             </Flex>
-            {!isChatLoading && messages.length === 0 && (
-              <Flex alignItems="center" justifyContent="center" mt=".5rem" opacity=".2" w="100%">
-              <Box mr="2">---</Box>
-              <BiMessageDetail fontSize="1rem" />
-              <Text ml="1" fontWeight="400">
-                No messages
-              </Text>
-              <Box ml="2">---</Box>
-            </Flex>
-            )}
             {messages.map(({ user, text, ts, editTs }: TMessage, i) => {
-                const isMyMessage = user === name
-                const date = getNormalizedDateTime(ts)
-                const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
-                const isLast = i === messages.length - 1
-                const showElm = false // text.length >= 15
+              const isMyMessage = user === name
+              const date = getNormalizedDateTime(ts)
+              const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
+              const isLast = i === messages.length - 1
+              const showElm = false // text.length >= 15
 
-                return (
-                  <Box
-                    key={`${user}-${ts}-${editTs || 'original'}`}
-                    className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
-                    m=".2rem 0"
+              return (
+                <Box
+                  key={`${user}-${ts}-${editTs || 'original'}`}
+                  className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
+                  // style={transform}
+                  m=".2rem 0"
+                >
+                  <Text
+                    fontSize="sm"
+                    // opacity=".8"
+                    mb={1}
+                    className="from"
                   >
-                    <Text
-                      fontSize="sm"
-                      // opacity=".8"
-                      mb={1}
-                      className="from"
-                    >
-                      <b>{user}</b>{' '}
-                      <span className="date">
-                        {date}
-                        {!!editDate && <b> Edited</b>}
-                      </span>
-                    </Text>
-                    {isMyMessage ? (
-                      <ContextMenuTrigger id="same_unique_identifier">
-                        <Text
-                          fontSize="sm"
-                          className="msg"
-                          p=".4rem .8rem"
-                          bg="white"
-                          color="white"
-                          onContextMenu={() => {
-                            setEditedMessage({ ts, text })
-                          }}
-                        >
-                          {text}
-                          {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
-                        </Text>
-                      </ContextMenuTrigger>
-                    ) : (
-                      <Text fontSize="sm" className="msg" p=".4rem .8rem" bg="white" color="white">
+                    <b>{user}</b>{' '}
+                    <span className="date">
+                      {date}
+                      {!!editDate && <b> Edited</b>}
+                    </span>
+                  </Text>
+                  {isMyMessage ? (
+                    <ContextMenuTrigger id="same_unique_identifier">
+                      <Text
+                        fontSize="md"
+                        className="msg"
+                        p=".4rem .8rem"
+                        bg="white"
+                        color="white"
+                        onContextMenu={() => {
+                          setEditedMessage({ ts, text })
+                        }}
+                      >
                         {text}
+                        {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
                       </Text>
-                    )}
-                    {isLast && showElm && <div className='abs-tail'><div className='wrapped' /></div>}
-                  </Box>
-                )
-              })
-            }
+                    </ContextMenuTrigger>
+                  ) : (
+                    <Text fontSize="sm" className="msg" p=".4rem .8rem" bg="white" color="white">
+                      {text}
+                    </Text>
+                  )}
+                  {isLast && showElm && <div className='abs-tail'><div className='wrapped' /></div>}
+                </Box>
+              )
+            })}
           </ScrollToBottom>
           <div className="form">
             {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}

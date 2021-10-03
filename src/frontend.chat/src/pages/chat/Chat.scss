@@ -8,30 +8,18 @@
     opacity: 1;
   }
 }
-@keyframes slideFromLeft {
-  0% {
-    transform: translateX(-100px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-@keyframes slideFromRight {
-  0% {
-    transform: translateX(100px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
+// @keyframes slideFromLeft {
+//   0% { transform: translateX(-100px); }
+//   100% { transform: translateX(0px); }
+// }
+// @keyframes slideFromRight {
+//   0% { transform: translateX(100px); }
+//   100% { transform: translateX(0px); }
+// }
+// @keyframes slideDown {
+//   0% { transform: translateY(-100%); }
+//   100% { transform: translateY(0px); }
+// }
 
 .main-wrapper{
   height: 100vh;
@@ -121,7 +109,7 @@
         // }
       }
       .my-message{
-          animation: slideFromRight 0.5s;
+          // animation: fadeIn 0.8s, slideFromRight 0.5s;
           align-self: flex-end;
           .from{
               display: none;
@@ -162,7 +150,7 @@
       }
 
       .oponent-message{
-        animation: slideDown 0.5s;
+        // animation: fadeIn 0.8s, slideDown 0.5s;
         & > .abs-tail {
           position: absolute;
           // width: 10px;

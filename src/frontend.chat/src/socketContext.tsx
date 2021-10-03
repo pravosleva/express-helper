@@ -65,9 +65,9 @@ export const SocketProvider =
         // })
         setIsConnected(false)
       }
-      const oldChatListener = (data: { roomData: TRoomData }) => {
-        setRoomData(data.roomData)
-      }
+      // const oldChatListener = (data: { roomData: TRoomData }) => {
+      //   setRoomData(data.roomData)
+      // }
       const connListener = () => {
         setIsConnected(true)
       }
@@ -75,13 +75,13 @@ export const SocketProvider =
         console.log(reason)
       }
 
-      socket.on('oldChat', oldChatListener)
+      // socket.on('oldChat', oldChatListener)
       socket.on('disconnect', disconnListener)
       socket.on('connect', connListener)
       socket.on('connect_error', connErrListener)
 
       return () => {
-        socket.off('oldChat', oldChatListener)
+        // socket.off('oldChat', oldChatListener)
         socket.off('disconnect', disconnListener)
         socket.off('connect', connListener)
         socket.off('connect_error', connErrListener)

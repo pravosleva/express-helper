@@ -57,7 +57,7 @@ export const UsersProvider = ({ children }: any) => {
   useEffect(() => {
     getUsers()
     getTasklist()
-  }, [socket, socket?.connected])
+  }, [socket, socket?.connected, slugifiedRoom])
 
   return <UsersContext.Provider value={{ tasklist, users, setUsers, allUsers }}>{children}</UsersContext.Provider>
 }

@@ -82,6 +82,7 @@
     "react-refresh": "^0.8.3",
     "react-router-dom": "^5.3.0",
     "react-scroll-to-bottom": "^4.1.2",
+    "react-spring": "^9.2.4",
     "react-use": "^17.3.1",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
