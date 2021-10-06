@@ -28,6 +28,10 @@ tags:
     description: 'Accept preprice'
     externalDocs:
       description: 'Кнопка К Финальной скидке'
+  - name: step6
+    description: 'Upload photo'
+    externalDocs:
+      description: 'Загрузка фото'
   - name: step7
     description: 'No descr'
     externalDocs:
@@ -196,7 +200,14 @@ paths:
         - application/json
       produces:
         - application/json
-      summary: 'Returns success after accept preprice'
+      parameters:
+        - in: query
+          name: odd_success
+          schema:
+            type: integer
+          required: false
+          description: Через сколько неудачных запросов будет отправлен удачный результат
+      summary: 'Подтверждение предварительной скидки'
       description: 'Кнопка Рассчитать цену'
       responses:
         200:
@@ -218,6 +229,77 @@ paths:
               code: some text
               message: Message
               extra: null
+            required:
+              - ok
+  /photo_upload:
+    post:
+      tags:
+        - 'step6'
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: odd_success
+          schema:
+            type: integer
+          required: false
+          description: Через сколько неудачных запросов будет отправлен удачный результат
+        - in: formData
+          name: file
+          type: file
+          description: The file to upload.
+      summary: 'Uploads a file'
+      description: 'Загрузка фото'
+      responses:
+        200:
+          description: OK
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+              need_photos:
+                $ref: '#/definitions/NeedPhotos'
+              additionalProperties:
+                type: object
+            example:
+              ok: true
+            required:
+              - ok
+  /check_state:
+    post:
+      tags:
+        - 'step6'
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: odd_success
+          schema:
+            type: integer
+          required: false
+          description: Через сколько неудачных запросов будет отправлен удачный результат
+      summary: 'Check state polling'
+      description: 'Polling'
+      responses:
+        200:
+          description: OK
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+            example:
+              ok: true
+              devices:
+                '777':
+                  state: 'ok'
+                  condition_limit: 'works'
+                  condition_limit_reason: 'case_defects'
+                  price: 1909
+                  price_rub: 1909
             required:
               - ok
   /accept_price:
@@ -298,6 +380,36 @@ definitions:
         - ceramic_black
         - blue
         - black
+  CheckStateDeviceItem:
+    type: object
+    required:
+      - status
+      - condition_limit
+      - condition_limit_reason
+      - price
+      - price_rub
+    properties:
+      status:
+        type: 'string'
+        description: 'Статус устройства'
+        enum:
+          - 'ok'
+          - 'fake'
+          - 'bad_quality'
+          - 'in_progress'
+          - 'need_photos'
+      condition_limit:
+        type: 'string'
+        enum:
+          - 'works'
+      condition_limit_reason:
+        type: 'string'
+        enum:
+          - 'case_defects'
+      price:
+        type: number
+      price_rub:
+        type: number
   ConfirmDetectionRequestParams:
     type: object
     properties:

@@ -1,4 +1,5 @@
-const { getRandomInteger } = require('~/utils/getRandomInteger')
+/* eslint-disable camelcase */
+import { getRandomInteger } from '~/utils/getRandomInteger'
 
 const { SUCCESS_ANYWAY } = process.env
 
@@ -45,19 +46,31 @@ const toClient = [
   },
 ]
 
-module.exports = async (req, res) => {
-  const count = counter.next().value
+export default async (req, res) => {
+  const { odd_success } = req.query
 
   const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
   // const toBeOrNotToBe = !isEven(count) ? 2 : 1
 
-  setTimeout(() => {
-    res.status(200).send({
-      ...toClient[toBeOrNotToBe],
-      _originalBody: req.body,
-      _service: {
-        count,
-      },
-    })
-  }, 500)
+  if (odd_success) {
+    const count = counter.next().value
+    const isSuccess = count % odd_success === 0
+    const message = `Остаток [${count} от ${odd_success} (${typeof odd_success})]: ${count % odd_success}`
+
+    setTimeout(() => {
+      res.status(isSuccess ? 200 : 500).send({
+        ...toClient[Number(isSuccess)],
+        message,
+        _originalBody: req.body,
+        _originalQuery: req.query,
+      })
+    }, 500)
+  } else {
+    setTimeout(() => {
+      res.status(200).send({
+        ...toClient[toBeOrNotToBe],
+        _originalBody: req.body,
+      })
+    }, 1000)
+  }
 }
