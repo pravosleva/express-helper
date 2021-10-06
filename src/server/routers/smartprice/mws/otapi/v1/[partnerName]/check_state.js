@@ -48,7 +48,6 @@ const toClient = [
 
 export default async (req, res) => {
   const { odd_success } = req.query
-
   const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
   // const toBeOrNotToBe = !isEven(count) ? 2 : 1
 
