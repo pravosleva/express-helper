@@ -57,7 +57,9 @@ export default async (req, res) => {
     const message = `Остаток [${count} от ${odd_success} (${typeof odd_success})]: ${count % odd_success}`
 
     setTimeout(() => {
-      res.status(isSuccess ? 200 : 500).send({
+      const status = 200 // isSuccess ? 200 : 500
+
+      res.status(status).send({
         ...toClient[Number(isSuccess)],
         message,
         _originalBody: req.body,
