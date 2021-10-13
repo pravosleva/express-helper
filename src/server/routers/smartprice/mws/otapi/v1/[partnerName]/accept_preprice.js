@@ -13,12 +13,7 @@ const toClient = [
   },
   {
     ok: true,
-    need_photos: [
-      'back',
-      // 'front',
-      // 'screen_off',
-      // 'burnouts',
-    ],
+    need_photos: ['back', 'front', 'screen_off', 'burnouts'],
     _testField: {
       fromStepName: 'accept_preprice',
     },
