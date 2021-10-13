@@ -7,7 +7,9 @@ import {
   TRoomId,
   TRoomData,
   TMessage,
+  EMessageType,
 } from './types'
+import { binarySearchTsIndex } from '~/utils/binarySearch'
 
 const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
 const projectRootDir = path.join(__dirname, '../../../../')
@@ -76,6 +78,76 @@ class Singleton {
 
     return { result, nextTsPoint, isDone }
   }
+  public editMessage(
+    { room, name, ts, newData }: {
+      room: string,
+      name: string,
+      ts: number,
+      newData: { text: string, type?: EMessageType }
+    }
+  ): {
+    isOk: boolean,
+    errMsgData?: { title?: string, description?: string | null },
+    isPrivateSocketCb: boolean,
+    shouldLogout: boolean,
+    targetMessage: TMessage
+  } {
+    let roomData = this.state.get(room)
+    let isOk: boolean = false
+    let errMsgData: { title?: string, description?: string } = {
+      title: undefined,
+      description: undefined
+    }
+    let isPrivateSocketCb = false
+    let shouldLogout = false
+    let targetMessage
+
+    try {
+      if (!roomData) {
+        throw new Error('roomData not found')
+      } else {
+        const roomMessages = roomData
+        // const theMessageIndex = roomMessages.findIndex(({ ts: t }) => t === ts)
+        const theMessageIndex = binarySearchTsIndex({
+          messages: roomMessages,
+          targetTs: ts
+        })
+
+        if (theMessageIndex === -1) {
+          shouldLogout = true
+          throw new Error('theMessage not found; Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств;')
+        } else {
+          roomMessages[theMessageIndex].text = newData.text
+          roomMessages[theMessageIndex].editTs = new Date().getTime()
+          if (!!newData.type) roomMessages[theMessageIndex].type = newData.type
+          roomData = roomMessages
+          this.state.set(room, roomData)
+
+          isOk = true
+          targetMessage = roomMessages[theMessageIndex]
+
+          // io.in(room).emit('message.update', roomMessages[theMessageIndex]);
+        }
+      }
+    } catch(err) {
+      isOk = false
+      isPrivateSocketCb = true
+      errMsgData.description = err.message
+      errMsgData.title = 'SERVER ERR #1: EDIT MESSAGE'
+
+      // socket.emit('notification', { status: 'error', title: 'ERR #1', description: !!err.message ? `Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error' })
+      // socket.emit('FRONT:LOGOUT')
+    }
+
+    return {
+      isOk,
+      errMsgData,
+      isPrivateSocketCb,
+      shouldLogout,
+      targetMessage,
+    }
+  }
+  // public setMsgType({}: ) {}
 }
 
 export const roomsMapInstance = Singleton.getInstance()
@@ -147,7 +219,7 @@ createPollingByConditions({
   cb: () => {
     console.log('cb called')
   },
-  interval: 5000,
+  interval: 10000,
   callbackAsResolve: () => {
     syncRoomsMap()
   },

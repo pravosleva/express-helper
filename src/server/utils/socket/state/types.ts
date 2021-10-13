@@ -1,5 +1,11 @@
 import DeviceDetector from 'device-detector-js'
 
+export enum EMessageType {
+  Info = 'info',
+  Warn = 'warning',
+  Danger = 'danger'
+}
+
 export type TRoomId = string
 export enum ERegistryLevel {
   Guest = 0,
@@ -12,6 +18,7 @@ export type TMessage = {
   editTs?: number
   rl?: ERegistryLevel
   user: string
+  type?: EMessageType
 }
 // export type TRoomData = {
 //   [userName: string]: TMessage[]

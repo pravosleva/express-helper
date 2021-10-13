@@ -11,6 +11,7 @@ import {
   ERegistryLevel,
   roomsTasklistMapInstance as roomsTasklistMap,
   TRoomTask,
+  EMessageType,
 } from './state'
 import DeviceDetector from 'device-detector-js'
 
@@ -286,42 +287,19 @@ export const withSocketChat = (io: Socket) => {
       if (!!cb) cb()
     })
 
-    socket.on('editMessage', ({ room, name, ts, newMessage }, cb) => {
-      let roomData = roomsMap.get(room)
+    socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: { text: string, type?: EMessageType } }, cb) => {
+      const result = roomsMap.editMessage({
+        room, name, ts, newData
+      })
 
-      try {
-        if (!roomData) {
-          if (cb) cb('roomData not found')
-          return
-        } else {
-          const userMessages = roomData
-
-          if (!userMessages) {
-            if (cb) cb('roomData[name] not found')
-            return
-          } else {
-            // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
-            const theMessageIndex = binarySearchTsIndex({
-              messages: userMessages,
-              targetTs: ts
-            })
-
-            if (theMessageIndex === -1) {
-              if (cb) cb('theMessage not found')
-              return
-            } else {
-              userMessages[theMessageIndex].text = newMessage
-              userMessages[theMessageIndex].editTs = new Date().getTime()
-              roomData = userMessages
-              roomsMap.set(room, roomData)
-              // io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
-              io.in(room).emit('message.update', userMessages[theMessageIndex]);
-            }
-          }
+      if (!result.isOk) {
+        if (result.isPrivateSocketCb) {
+          // if (!!cb && !!result.errMsgData) cb(result.errMsgData.description)
+          socket.emit('notification', { status: 'error', title: result.errMsgData.title, description: result.errMsgData.description })
+          if (result.shouldLogout) socket.emit('FRONT:LOGOUT')
         }
-      } catch(err) {
-        socket.emit('notification', { status: 'error', title: 'ERR #1', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error' })
-        socket.emit('FRONT:LOGOUT')
+      } else {
+        io.in(room).emit('message.update', result.targetMessage);
       }
     })
     socket.on('deleteMessage', ({ room, name, ts }, cb) => {

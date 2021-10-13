@@ -340,7 +340,7 @@ export const Chat = () => {
     if (!!socket)
       socket.emit(
         'editMessage',
-        { newMessage: editedMessage.text, ts: editedMessage.ts, room, name },
+        { newData: { text: editedMessage.text }, ts: editedMessage.ts, room, name },
         (errMsg: string) => {
           if (!!errMsg) {
             toast({
