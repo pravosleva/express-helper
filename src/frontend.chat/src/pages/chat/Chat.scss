@@ -112,12 +112,31 @@
           // animation: fadeIn 0.8s, slideFromRight 0.5s;
           align-self: flex-end;
           .from{
-              display: none;
+            display: none;
           }
           .msg{
-              color: white;
-              background: #408EEA;
+            background: var(--chakra-colors-gray-400);
           }
+
+          // -- STATUSES:
+          .info {
+            background: #408EEA;
+            color: #FFF;
+          }
+          .warning {
+            background: #FFDE68;
+            // color: #000;
+          }
+          .success {
+            background: #31EAB7;
+            // color: #000;
+          }
+          .danger {
+            background: #FF9177;
+            // color: #000;
+          }
+          // --
+
           // .abs-edit-btn{
           //   position: absolute;
           //   top: 0;
@@ -136,7 +155,7 @@
             right: calc(50px);
             transform: rotate(12deg);
             & > .wrapped {
-              background: #408EEA;
+              // background: #408EEA;
               width: 10px;
               height: 10px;
               transform: skew(50deg) scale(5, 0.9) translateY(-50%);
@@ -172,6 +191,7 @@
         }
       }
   }
+  
 
   .messages > div{
       display: flex;

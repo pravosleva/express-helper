@@ -119,7 +119,11 @@ class Singleton {
         } else {
           roomMessages[theMessageIndex].text = newData.text
           roomMessages[theMessageIndex].editTs = new Date().getTime()
-          if (!!newData.type) roomMessages[theMessageIndex].type = newData.type
+          if (!!newData.type) {
+            roomMessages[theMessageIndex].type = newData.type
+          } else {
+            if (!!roomMessages[theMessageIndex].type) delete roomMessages[theMessageIndex].type
+          }
           roomData = roomMessages
           this.state.set(room, roomData)
 

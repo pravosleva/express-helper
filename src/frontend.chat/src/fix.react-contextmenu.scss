@@ -7,10 +7,48 @@
     border-top-right-radius: var(--chakra-radii-md) !important;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+  }
+  > .react-contextmenu-item:not(:last-child){
     border-bottom: 1px solid var(--chakra-colors-gray-300);
   }
   > .react-contextmenu-item:last-child{
     border-radius: 0 0 var(--chakra-radii-md) var(--chakra-radii-md);
+  }
+
+  > .info {
+    background: #6FACF4;
+    color: #FFF;
+  }
+  > .info:hover {
+    background: #408EEA;
+  }
+  > .warning {
+    background: #FFDE68;
+    color: #000;
+  }
+  > .warning:hover {
+    background: #FFD335;
+  }
+  > .success {
+    background: #63F5CC;
+    color: #000;
+  }
+  > .success:hover {
+    background: #31EAB7;
+  }
+  > .danger {
+    background: #FF9177;
+    color: #000;
+  }
+  > .danger:hover {
+    background: #FF6D4A;
+  }
+  > .unset-status {
+    background: #AFAFAF;
+    color: #000;
+  }
+  > .danger:hover {
+    background: #959595;
   }
 
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
@@ -23,7 +61,7 @@
   padding: 0.5em 1.5em;
   
 }
-.react-contextmenu-item:hover{
-  background-color: var(--chakra-colors-gray-200);
-  color: var(--chakra-colors-gray-500);
-}
+// .react-contextmenu-item:hover{
+//   background-color: var(--chakra-colors-gray-200);
+//   color: var(--chakra-colors-gray-500);
+// }

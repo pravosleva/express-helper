@@ -58,12 +58,19 @@ import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 import { useInView } from 'react-intersection-observer'
 // import { useSpring, animated } from 'react-spring'
 
+enum EMessageType {
+  Info = 'info',
+  Success = 'success',
+  Warn = 'warning',
+  Danger = 'danger'
+}
+
 // @ts-ignore
 // const overwriteMerge = (destinationArray, sourceArray, _options) => [, ...sourceArray]
 const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 
 type TUser = { socketId: string; room: string; name: string }
-type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string }
+type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, type: EMessageType }
 
 export const Chat = () => {
   const { name, slugifiedRoom: room, isAdmin } = useContext(MainContext)
@@ -167,14 +174,20 @@ export const Chat = () => {
         setTsPoint(nextTsPoint)
         setFullChatReceived(isDone)
       }
-      const updMsgListener = ({ text, ts, editTs }: { text: string, ts: number, editTs: number }) => {
+      const updMsgListener = ({ text, ts, editTs, type }: { text: string, editTs?: number, type?: EMessageType, ts: number }) => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
           
           if (targetIndex !== -1) {
             newArr[targetIndex].text = text
-            newArr[targetIndex].editTs = editTs
+            if (!!editTs) newArr[targetIndex].editTs = editTs
+            if (!!type) {
+              newArr[targetIndex].type = type
+            } else {
+              // @ts-ignore
+              if (!!newArr[targetIndex].type) delete newArr[targetIndex].type
+            }
           }
           return newArr
         })
@@ -321,7 +334,7 @@ export const Chat = () => {
   }, [])
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
-  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number }>({ text: '', ts: 0 })
+  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; type?: EMessageType }>({ text: '', ts: 0 })
   const initialRef = useRef(null)
   const handleChangeEditedMessage = (e: any) => {
     setEditedMessage((state) => ({ ...state, text: e.target.value }))
@@ -337,10 +350,12 @@ export const Chat = () => {
       })
       return
     }
-    if (!!socket)
+    if (!!socket) {
+      const newData: Partial<TMessage> = { text: editedMessage.text }
+      if (!!editedMessage.type) newData.type = editedMessage.type
       socket.emit(
         'editMessage',
-        { newData: { text: editedMessage.text }, ts: editedMessage.ts, room, name },
+        { newData, ts: editedMessage.ts, room, name },
         (errMsg: string) => {
           if (!!errMsg) {
             toast({
@@ -354,6 +369,7 @@ export const Chat = () => {
           }
         }
       )
+    }
     handleEditModalClose()
   }
   // const handleKeyDownEditedMessage = (ev: any) => {
@@ -375,6 +391,22 @@ export const Chat = () => {
           })
         }
       })
+  }
+  const handleSetStatus = (type: EMessageType) => {
+    if (!!socket) {
+      socket.emit(
+        'editMessage',
+        { newData: { text: editedMessage.text, type }, ts: editedMessage.ts, room, name }
+      )
+    }
+  }
+  const handleUnsetStatus = () => {
+    if (!!socket) {
+      socket.emit(
+        'editMessage',
+        { newData: { text: editedMessage.text }, ts: editedMessage.ts, room, name }
+      )
+    }
   }
 
   // --- Set my password
@@ -482,6 +514,39 @@ export const Chat = () => {
       />
 
       <ContextMenu id="same_unique_identifier">
+        {
+          editedMessage.type !== EMessageType.Info && (
+            <CtxMenuItem className={EMessageType.Info} data={{ foo: 'bar' }} onClick={() => handleSetStatus(EMessageType.Info)}>
+              Set type <b>Info</b>
+            </CtxMenuItem>
+          )
+        }
+        {
+          editedMessage.type !== EMessageType.Success && (
+            <CtxMenuItem className={EMessageType.Success} data={{ foo: 'bar' }} onClick={() => handleSetStatus(EMessageType.Success)}>
+              Set type <b>Success</b>
+            </CtxMenuItem>
+          )
+        }
+        {
+          editedMessage.type !== EMessageType.Warn && (
+            <CtxMenuItem className={EMessageType.Warn} data={{ foo: 'bar' }} onClick={() => handleSetStatus(EMessageType.Warn)}>
+              Set type <b>Warn</b>
+            </CtxMenuItem>
+          )
+        }
+        {
+          editedMessage.type !== EMessageType.Danger && (
+            <CtxMenuItem className={EMessageType.Danger} data={{ foo: 'bar' }} onClick={() => handleSetStatus(EMessageType.Danger)}>
+              Set type <b>Danger</b>
+            </CtxMenuItem>
+          )
+        }
+        {!!editedMessage.type && (
+          <CtxMenuItem className='unset-status' data={{ foo: 'bar' }} onClick={() => handleUnsetStatus()}>
+            Unset status
+          </CtxMenuItem>
+        )}
         <CtxMenuItem data={{ foo: 'bar' }} onClick={handleEditModalOpen}>
           Edit
         </CtxMenuItem>
@@ -665,7 +730,8 @@ export const Chat = () => {
               </Text>
               <Box ml="2">---</Box>
             </Flex>
-            {messages.map(({ user, text, ts, editTs }: TMessage, i) => {
+            {messages.map((message: TMessage, i) => {
+              const { user, text, ts, editTs, type } = message
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
@@ -674,7 +740,7 @@ export const Chat = () => {
 
               return (
                 <Box
-                  key={`${user}-${ts}-${editTs || 'original'}`}
+                  key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}
                   className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
                   // style={transform}
                   m=".2rem 0"
@@ -688,19 +754,19 @@ export const Chat = () => {
                     <b>{user}</b>{' '}
                     <span className="date">
                       {date}
-                      {!!editDate && <b> Edited</b>}
+                      {!!editDate && <b>{' '}Edited</b>}
                     </span>
                   </Text>
                   {isMyMessage ? (
-                    <ContextMenuTrigger id="same_unique_identifier">
+                    <ContextMenuTrigger id="same_unique_identifier" key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}>
                       <Text
                         fontSize="md"
-                        className="msg"
+                        className={clsx("msg", { [type]: !!type })}
                         p=".4rem .8rem"
-                        bg="white"
+                        // bg="white"
                         color="white"
                         onContextMenu={() => {
-                          setEditedMessage({ ts, text })
+                          setEditedMessage(message)
                         }}
                       >
                         {text}

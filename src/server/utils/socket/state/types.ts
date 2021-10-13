@@ -2,6 +2,7 @@ import DeviceDetector from 'device-detector-js'
 
 export enum EMessageType {
   Info = 'info',
+  Success = 'success',
   Warn = 'warning',
   Danger = 'danger'
 }
