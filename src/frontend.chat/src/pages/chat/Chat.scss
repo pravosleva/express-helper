@@ -87,55 +87,17 @@
         overflow-x: hidden;
       }
 
-      .message{
-        animation: fadeIn 1s;
-        position: relative;
-        @media (max-width: #{$sm}px) {
-          user-select: none;
+      .my-message:not(:last-child) {
+        .from{
+          display: none;
         }
-        max-width: 100%;
-        white-space: pre-wrap;
-        .msg{
-            color: rgba(0,0,0,.7);
-            border-radius: 8px;
-            // font-size: 1em;
-            transition: all 0.5s linear;
-        }
-        // .from{
-        //     // color: rgba(0,0,0,.4);
-        //     .date{
-        //         color: rgba(0,0,0,.2);
-        //     }
-        // }
       }
       .my-message{
           // animation: fadeIn 0.8s, slideFromRight 0.5s;
           align-self: flex-end;
-          .from{
-            display: none;
-          }
           .msg{
             background: var(--chakra-colors-gray-400);
           }
-
-          // -- STATUSES:
-          .info {
-            background: #408EEA;
-            color: #FFF;
-          }
-          .warning {
-            background: #FFDE68;
-            // color: #000;
-          }
-          .success {
-            background: #31EAB7;
-            // color: #000;
-          }
-          .danger {
-            background: #FF9177;
-            // color: #000;
-          }
-          // --
 
           // .abs-edit-btn{
           //   position: absolute;
@@ -166,6 +128,42 @@
         .msg{
           border-bottom-right-radius: 0px;
         }
+      }
+
+      .message{
+        animation: fadeIn 1s;
+        position: relative;
+        @media (max-width: #{$sm}px) {
+          user-select: none;
+        }
+        max-width: 100%;
+        white-space: pre-wrap;
+        .msg{
+          background: var(--chakra-colors-gray-100);
+          color: rgba(0,0,0,.7);
+          border-radius: 8px;
+          // font-size: 1em;
+          transition: all 0.5s linear;
+        }
+
+        // -- STATUSES:
+        .info {
+          background: #408EEA;
+          color: #FFF;
+        }
+        .warning {
+          background: #FFDE68;
+          // color: #000;
+        }
+        .success {
+          background: #31EAB7;
+          // color: #000;
+        }
+        .danger {
+          background: #FF9177;
+          // color: #000;
+        }
+        // --
       }
 
       .oponent-message{

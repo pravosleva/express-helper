@@ -764,7 +764,7 @@ export const Chat = () => {
                         className={clsx("msg", { [type]: !!type })}
                         p=".4rem .8rem"
                         // bg="white"
-                        color="white"
+                        // color="white"
                         onContextMenu={() => {
                           setEditedMessage(message)
                         }}
@@ -774,7 +774,7 @@ export const Chat = () => {
                       </Text>
                     </ContextMenuTrigger>
                   ) : (
-                    <Text fontSize="sm" className="msg" p=".4rem .8rem" bg="white" color="white">
+                    <Text fontSize="sm" className={clsx("msg", { [type]: !!type })} p=".4rem .8rem">
                       {text}
                     </Text>
                   )}
