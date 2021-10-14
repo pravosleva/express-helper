@@ -43,6 +43,8 @@ import partnerApiTradeInDecline from './mws/partner_api/tradein/decline'
 import partnerApiToolsFmsCode from './mws/partner_api/tools/fms/[code]'
 import otWebApiFizotLandingForm from './mws/ot-web/fizot-landing-form'
 
+import { reportAddAPI, reportGetStateAPI } from './mws/report'
+
 // const formidable = require('cyberjon-express-formidable')
 
 const jsonParser = bodyParser.json()
@@ -113,5 +115,9 @@ spApi.get('/partner_api/tools/fms/:code', partnerApiToolsFmsCode)
 
 // 6. New OT landing
 spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)
+
+// 7. Report
+spApi.post('/report/add', reportAddAPI)
+spApi.get('/report/get-state', reportGetStateAPI)
 
 export default spApi
