@@ -37,6 +37,7 @@ import {
 import { FiList } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
 import { RiSendPlaneFill } from 'react-icons/ri'
+import { FaCheckCircle } from 'react-icons/fa'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom'
 import { useToast, UseToastOptions } from '@chakra-ui/react'
@@ -62,7 +63,9 @@ enum EMessageType {
   Info = 'info',
   Success = 'success',
   Warn = 'warning',
-  Danger = 'danger'
+  Danger = 'danger',
+  Dead = 'dead',
+  Done = 'done',
 }
 
 // @ts-ignore
@@ -515,32 +518,14 @@ export const Chat = () => {
 
       <ContextMenu id="same_unique_identifier">
         {
-          editedMessage.type !== EMessageType.Info && (
-            <CtxMenuItem className={EMessageType.Info} data={{ foo: 'bar' }} onClick={() => handleSetStatus(EMessageType.Info)}>
-              Set type <b>Info</b>
-            </CtxMenuItem>
-          )
-        }
-        {
-          editedMessage.type !== EMessageType.Success && (
-            <CtxMenuItem className={EMessageType.Success} data={{ foo: 'bar' }} onClick={() => handleSetStatus(EMessageType.Success)}>
-              Set type <b>Success</b>
-            </CtxMenuItem>
-          )
-        }
-        {
-          editedMessage.type !== EMessageType.Warn && (
-            <CtxMenuItem className={EMessageType.Warn} data={{ foo: 'bar' }} onClick={() => handleSetStatus(EMessageType.Warn)}>
-              Set type <b>Warn</b>
-            </CtxMenuItem>
-          )
-        }
-        {
-          editedMessage.type !== EMessageType.Danger && (
-            <CtxMenuItem className={EMessageType.Danger} data={{ foo: 'bar' }} onClick={() => handleSetStatus(EMessageType.Danger)}>
-              Set type <b>Danger</b>
-            </CtxMenuItem>
-          )
+          Object.values(EMessageType).map((statusCode: EMessageType) => {
+            if (editedMessage.type === statusCode) return null
+            return (
+              <CtxMenuItem key={statusCode} className={statusCode} data={{ foo: 'bar' }} onClick={() => handleSetStatus(statusCode)}>
+                Set type <b>{statusCode}</b>
+              </CtxMenuItem>
+            )
+          })
         }
         {!!editedMessage.type && (
           <CtxMenuItem className='unset-status' data={{ foo: 'bar' }} onClick={() => handleUnsetStatus()}>
@@ -735,8 +720,8 @@ export const Chat = () => {
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
-              const isLast = i === messages.length - 1
-              const showElm = false // text.length >= 15
+              // const isLast = i === messages.length - 1
+              const showElm = type === EMessageType.Done
 
               return (
                 <Box
@@ -778,7 +763,7 @@ export const Chat = () => {
                       {text}
                     </Text>
                   )}
-                  {isLast && showElm && <div className='abs-tail'><div className='wrapped' /></div>}
+                  {showElm && <div className='abs-tail'><FaCheckCircle size={15} /></div>}
                 </Box>
               )
             })}

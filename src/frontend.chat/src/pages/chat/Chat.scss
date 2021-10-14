@@ -111,17 +111,15 @@
           // }
           & > .abs-tail {
             position: absolute;
-            // width: 10px;
-            // height: 10px;
-            bottom: calc(-10px);
-            right: calc(50px);
-            transform: rotate(12deg);
-            & > .wrapped {
-              // background: #408EEA;
-              width: 10px;
-              height: 10px;
-              transform: skew(50deg) scale(5, 0.9) translateY(-50%);
-            }
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            bottom: -2px;
+            right: -5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
           }
       }
       .my-message:last-child{
@@ -139,7 +137,7 @@
         max-width: 100%;
         white-space: pre-wrap;
         .msg{
-          background: var(--chakra-colors-gray-100);
+          background: #FFF; // var(--chakra-colors-gray-100);
           color: rgba(0,0,0,.7);
           border-radius: 8px;
           // font-size: 1em;
@@ -163,24 +161,32 @@
           background: #FF9177;
           // color: #000;
         }
+        .dead {
+          background: #000;
+          color: #FFF;
+        }
+        .done {
+          background: var(--chakra-colors-gray-500);
+          color: #FFF;
+          // opacity: 0.3;
+        }
         // --
       }
 
       .oponent-message{
         // animation: fadeIn 0.8s, slideDown 0.5s;
+        // position: relative;
         & > .abs-tail {
           position: absolute;
-          // width: 10px;
-          // height: 10px;
-          bottom: calc(-10px);
-          left: calc(50px);
-          transform: rotate(-12deg);
-          & > .wrapped {
-            background: #FFF;
-            width: 10px;
-            height: 10px;
-            transform: skew(-50deg) scale(5, 0.9) translateY(-50%);
-          }
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          bottom: -2px;
+          left: -5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff;
         }
       }
       .oponent-message:last-child{

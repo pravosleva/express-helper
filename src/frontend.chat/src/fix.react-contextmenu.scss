@@ -1,18 +1,19 @@
 .react-contextmenu--visible{
   z-index: 1001;
-  border-radius: var(--chakra-radii-md);
+  border-radius: 8px; // var(--chakra-radii-md);
+  border: 2px solid #FFF;
 
   > .react-contextmenu-item:first-child{
-    border-top-left-radius: var(--chakra-radii-md) !important;
-    border-top-right-radius: var(--chakra-radii-md) !important;
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
   > .react-contextmenu-item:not(:last-child){
-    border-bottom: 1px solid var(--chakra-colors-gray-300);
+    border-bottom: 2px solid #FFF; // var(--chakra-colors-gray-100);
   }
   > .react-contextmenu-item:last-child{
-    border-radius: 0 0 var(--chakra-radii-md) var(--chakra-radii-md);
+    border-radius: 0 0 5px 5px;
   }
 
   > .info {
@@ -45,10 +46,24 @@
   }
   > .unset-status {
     background: #AFAFAF;
-    color: #000;
+    color: #FFF;
   }
-  > .danger:hover {
+  > .unset-status:hover {
     background: #959595;
+  }
+  > .dead {
+    background: gray;
+    color: #FFF;
+  }
+  > .dead:hover {
+    background: #000;
+  }
+  > .done {
+    background: var(--chakra-colors-gray-400);
+    color: #FFF;
+  }
+  > .done:hover {
+    background: var(--chakra-colors-gray-500);
   }
 
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);

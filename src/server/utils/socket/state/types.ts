@@ -4,7 +4,9 @@ export enum EMessageType {
   Info = 'info',
   Success = 'success',
   Warn = 'warning',
-  Danger = 'danger'
+  Danger = 'danger',
+  Dead = 'dead',
+  Done = 'done',
 }
 
 export type TRoomId = string
