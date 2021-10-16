@@ -87,47 +87,6 @@
         overflow-x: hidden;
       }
 
-      .my-message:not(:last-child) {
-        .from{
-          display: none;
-        }
-      }
-      .my-message{
-          // animation: fadeIn 0.8s, slideFromRight 0.5s;
-          align-self: flex-end;
-          .msg{
-            background: var(--chakra-colors-gray-400);
-          }
-
-          // .abs-edit-btn{
-          //   position: absolute;
-          //   top: 0;
-          //   right: 0;
-          //   width: 20px;
-          //   height: 20px;
-          //   border-radius: 50%;
-          //   border: 1px solid white;
-          //   background-color: gray;
-          // }
-          & > .abs-tail {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            bottom: -2px;
-            right: -5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #fff;
-          }
-      }
-      .my-message:last-child{
-        .msg{
-          border-bottom-right-radius: 0px;
-        }
-      }
-
       .message{
         animation: fadeIn 1s;
         position: relative;
@@ -136,12 +95,16 @@
         }
         max-width: 100%;
         white-space: pre-wrap;
+        display: flex;
+        flex-direction: column;
         .msg{
           background: #FFF; // var(--chakra-colors-gray-100);
           color: rgba(0,0,0,.7);
           border-radius: 8px;
           // font-size: 1em;
           transition: all 0.5s linear;
+          border: 2px solid transparent;
+          align-self: flex-start;
         }
 
         // -- STATUSES:
@@ -159,18 +122,50 @@
         }
         .danger {
           background: #FF9177;
-          // color: #000;
+          // color: #FFF;
         }
         .dead {
           background: #000;
-          color: #FFF;
+          color: #FFDE68;
         }
         .done {
           background: var(--chakra-colors-gray-500);
           color: #FFF;
           // opacity: 0.3;
         }
+        .edited-message {
+          border: 2px solid #FFF;
+        }
         // --
+      }
+
+      .my-message:not(:last-child) {
+        .from{
+          display: none;
+        }
+      }
+      .my-message{
+          // animation: fadeIn 0.8s, slideFromRight 0.5s;
+          align-self: flex-end;
+          align-items: flex-end;
+
+          & > .abs-tail {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            bottom: -2px;
+            right: -5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+          }
+      }
+      .my-message:last-child{
+        .msg{
+          border-top-right-radius: 0px;
+        }
       }
 
       .oponent-message{
@@ -191,7 +186,7 @@
       }
       .oponent-message:last-child{
         .msg{
-          border-bottom-left-radius: 0px;
+          border-top-left-radius: 0px;
         }
       }
   }

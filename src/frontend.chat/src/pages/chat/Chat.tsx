@@ -337,7 +337,18 @@ export const Chat = () => {
   }, [])
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
-  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; type?: EMessageType }>({ text: '', ts: 0 })
+  const initialEditedMessageState = { text: '', ts: 0 }
+  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; type?: EMessageType }>(initialEditedMessageState)
+  const [isCtxMenuOpened, setIsCtxMenuOpened] = useState<boolean>(false)
+  // const resetEditedMessage = () => {
+  //   setEditedMessage(initialEditedMessageState)
+  // }
+  const handleShowCtxMenu = () => {
+    setIsCtxMenuOpened(true)
+  }
+  const handleHideCtxMenu = () => {
+    setIsCtxMenuOpened(false)
+  }
   const initialRef = useRef(null)
   const handleChangeEditedMessage = (e: any) => {
     setEditedMessage((state) => ({ ...state, text: e.target.value }))
@@ -516,7 +527,11 @@ export const Chat = () => {
         onClose={handleSetPasswordModalClose}
       />
 
-      <ContextMenu id="same_unique_identifier">
+      <ContextMenu
+        id="same_unique_identifier"
+        onShow={handleShowCtxMenu}
+        onHide={handleHideCtxMenu}
+      >
         {
           Object.values(EMessageType).map((statusCode: EMessageType) => {
             if (editedMessage.type === statusCode) return null
@@ -735,6 +750,7 @@ export const Chat = () => {
                     // opacity=".8"
                     mb={1}
                     className="from"
+                    // textAlign={isMyMessage ? 'right' : 'left'}
                   >
                     <b>{user}</b>{' '}
                     <span className="date">
@@ -746,8 +762,9 @@ export const Chat = () => {
                     <ContextMenuTrigger id="same_unique_identifier" key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}>
                       <Text
                         fontSize="md"
-                        className={clsx("msg", { [type]: !!type })}
-                        p=".4rem .8rem"
+                        className={clsx("msg", { [type]: !!type, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}
+                        p=".3rem .7rem"
+                        display="inline-block"
                         // bg="white"
                         // color="white"
                         onContextMenu={() => {
@@ -759,7 +776,7 @@ export const Chat = () => {
                       </Text>
                     </ContextMenuTrigger>
                   ) : (
-                    <Text fontSize="sm" className={clsx("msg", { [type]: !!type })} p=".4rem .8rem">
+                    <Text display="inline-block" fontSize="sm" className={clsx("msg", { [type]: !!type })} p=".3rem .7rem">
                       {text}
                     </Text>
                   )}
