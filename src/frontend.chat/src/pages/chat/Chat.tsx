@@ -34,10 +34,11 @@ import {
   Progress,
   Spinner,
 } from '@chakra-ui/react'
-import { FiList } from 'react-icons/fi'
+import { FiList, FiActivity } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
-import { RiSendPlaneFill } from 'react-icons/ri'
+import { RiSendPlaneFill, RiErrorWarningFill } from 'react-icons/ri'
 import { FaCheckCircle } from 'react-icons/fa'
+import { GiDeathSkull } from 'react-icons/gi'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom'
 import { useToast, UseToastOptions } from '@chakra-ui/react'
@@ -74,6 +75,21 @@ const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 
 type TUser = { socketId: string; room: string; name: string }
 type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, type: EMessageType }
+
+const statusMap: {
+  [key: string]: any
+} = {
+  [EMessageType.Done]: <FaCheckCircle size={15} />,
+  [EMessageType.Dead]: <GiDeathSkull size={15} color='#000' />,
+  [EMessageType.Warn]: <FiActivity size={15} color='#000' />,
+  [EMessageType.Danger]: <RiErrorWarningFill size={17} color='#000' />
+}
+const getIconByStatus = (status: EMessageType) => {
+  switch (true) {
+    case !!statusMap[status]: return <div className='abs-tail'>{statusMap[status]}</div>
+    default: return null
+  }
+}
 
 export const Chat = () => {
   const { name, slugifiedRoom: room, isAdmin } = useContext(MainContext)
@@ -736,7 +752,6 @@ export const Chat = () => {
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
               // const isLast = i === messages.length - 1
-              const showElm = type === EMessageType.Done
 
               return (
                 <Box
@@ -763,7 +778,7 @@ export const Chat = () => {
                       <Text
                         fontSize="md"
                         className={clsx("msg", { [type]: !!type, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}
-                        p=".3rem .7rem"
+                        p=".3rem .9rem"
                         display="inline-block"
                         // bg="white"
                         // color="white"
@@ -776,11 +791,11 @@ export const Chat = () => {
                       </Text>
                     </ContextMenuTrigger>
                   ) : (
-                    <Text display="inline-block" fontSize="sm" className={clsx("msg", { [type]: !!type })} p=".3rem .7rem">
+                    <Text display="inline-block" fontSize="sm" className={clsx("msg", { [type]: !!type })} p=".3rem .9rem">
                       {text}
                     </Text>
                   )}
-                  {showElm && <div className='abs-tail'><FaCheckCircle size={15} /></div>}
+                  {getIconByStatus(type)}
                 </Box>
               )
             })}
