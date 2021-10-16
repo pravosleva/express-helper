@@ -59,6 +59,7 @@ import { useLocalStorage } from 'react-use'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 import { useInView } from 'react-intersection-observer'
 // import { useSpring, animated } from 'react-spring'
+import { Logic } from './MessagesLogic'
 
 enum EMessageType {
   Info = 'info',
@@ -100,31 +101,12 @@ export const Chat = () => {
     setMessage('')
   }
   const [messages, setMessages] = useState<TMessage[]>([])
+  const logic = useMemo<Logic>(() => new Logic(messages), [messages])
   // @ts-ignore
   const { users, tasklist } = useContext(UsersContext)
   const history = useHistory()
   const toast = useToast()
   const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 800 })
-  // const [controlTs, setControlTs] = useState<number>(Date.now())
-
-  // useEffect(() => {
-  //   const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
-  //   const messages: TMessage[] = Object.keys(roomData).reduce((acc, name) => {
-  //     // @ts-ignore
-  //     roomData[name].forEach(({ text, ts, ...rest }: any) => {
-  //       // @ts-ignore
-  //       acc.push({ text, user: name, ts, ...rest })
-  //     })
-  //     return acc
-  //   }, [])
-
-  //   setMessages(messages.sort(tsSortDEC))
-  // }, [roomData])
-
-  // useEffect(() => {
-  //   setMessages(roomData)
-  // }, [roomData])
-
   const [tokenLS] = useLocalStorage<any>('chat.token')
   const handleLogout = () => {
     // setName('');
@@ -523,6 +505,7 @@ export const Chat = () => {
   //     // height: 'auto',
   //   },
   // })
+  const [filter, setFilter] = useState<EMessageType | null>(null)
 
   return (
     <>
@@ -621,11 +604,48 @@ export const Chat = () => {
                   <ColorModeSwitcher justifySelf="flex-end" mr={2} />
                 </>
                 <MenuList
+                  zIndex={1001}
                   _dark={{ bg: "gray.600" }}
                   // _hover={{ bg: "gray.500", color: 'white' }}
                   // _expanded={{ bg: "gray.800" }}
                   // _focus={{ boxShadow: "outline" }}
                 >
+                  <MenuOptionGroup defaultValue="asc" title='Filters'></MenuOptionGroup>
+                  <div
+                    style={{
+                      maxHeight: '120px',
+                      overflowY: 'auto',
+                    }}
+                  >
+                  {
+                    Object.values(EMessageType).map((type) => {
+                      return (
+                        <MenuItem
+                          _hover={{ bg: "gray.400", color: 'white' }}
+                          _focus={{ bg: "gray.400", color: 'white' }}
+                          minH="40px"
+                          key={type}
+                          onClick={() => setFilter(type)}
+                        >
+                          <Text fontSize="md" fontWeight='bold'>{type} ({logic.getCountByFilter(type)})</Text>
+                        </MenuItem>
+                      )
+                    })
+                  }
+                  {
+                    !!filter && (
+                      <MenuItem
+                        _hover={{ bg: "gray.400", color: 'white' }}
+                        _focus={{ bg: "gray.400", color: 'white' }}
+                        minH="40px"
+                        onClick={() => setFilter(null)}
+                      >
+                        <Text fontSize="md" fontWeight='bold'>Unset filter</Text>
+                      </MenuItem>
+                    )
+                  }
+                  </div>
+                  <MenuDivider />
                   <MenuItem
                     _hover={{ bg: "gray.400", color: 'white' }}
                     _focus={{ bg: "gray.400", color: 'white' }}
@@ -637,24 +657,31 @@ export const Chat = () => {
                   </MenuItem>
                   <MenuDivider />
                   <MenuOptionGroup defaultValue="asc" title={`Users online: ${users.length}`}>
-                  {users &&
-                    users.map((user: TUser) => {
-                      return (
-                        <MenuItem
-                          // _first={{ bg: "gray.200" }}
-                          _hover={{ bg: "gray.400", color: 'white' }}
-                          _focus={{ bg: "gray.400", color: 'white' }}
-                          minH="40px"
-                          key={user.name}
-                          onClick={() => {
-                            handleUserClick(user)
-                          }}
-                          isDisabled={name === user.name}
-                        >
-                          <Text fontSize="md">{user.name}</Text>
-                        </MenuItem>
-                      )
-                    })}
+                  <div
+                    style={{
+                      maxHeight: '120px',
+                      overflowY: 'auto',
+                    }}
+                  >
+                    {users &&
+                      users.map((user: TUser) => {
+                        return (
+                          <MenuItem
+                            // _first={{ bg: "gray.200" }}
+                            _hover={{ bg: "gray.400", color: 'white' }}
+                            _focus={{ bg: "gray.400", color: 'white' }}
+                            minH="40px"
+                            key={user.name}
+                            onClick={() => {
+                              handleUserClick(user)
+                            }}
+                            isDisabled={name === user.name}
+                          >
+                            <Text fontSize="md">{user.name}</Text>
+                          </MenuItem>
+                        )
+                      })}
+                  </div>
                   </MenuOptionGroup>
                   <MenuDivider />
                   {isAdmin && (
@@ -746,7 +773,7 @@ export const Chat = () => {
               </Text>
               <Box ml="2">---</Box>
             </Flex>
-            {messages.map((message: TMessage, i) => {
+            {logic.getFiltered(filter).map((message: TMessage, i) => {
               const { user, text, ts, editTs, type } = message
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
