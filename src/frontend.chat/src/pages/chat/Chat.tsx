@@ -632,6 +632,7 @@ export const Chat = () => {
                       )
                     })
                   }
+                  </div>
                   {
                     !!filter && (
                       <MenuItem
@@ -644,7 +645,6 @@ export const Chat = () => {
                       </MenuItem>
                     )
                   }
-                  </div>
                   <MenuDivider />
                   <MenuItem
                     _hover={{ bg: "gray.400", color: 'white' }}
@@ -683,38 +683,44 @@ export const Chat = () => {
                       })}
                   </div>
                   </MenuOptionGroup>
-                  <MenuDivider />
-                  {isAdmin && (
-                    <MenuItem
-                      _hover={{ bg: "gray.400", color: 'white' }}
-                      _focus={{ bg: "gray.400", color: 'white' }}
-                      minH="40px"
-                      key="adm-btn"
-                      onClick={() => {
-                        history.push('/admin')
-                      }}
-                    >
-                      <Text fontSize="md">Admin panel</Text>
-                    </MenuItem>
-                  )}
-                  <MenuItem
-                    _hover={{ bg: "gray.400", color: 'white' }}
-                    _focus={{ bg: "gray.400", color: 'white' }}
-                    minH="40px"
-                    key="set-passwd-btn"
-                    onClick={handleSetPasswordModalOpen}
-                  >
-                    <Text fontSize="md">Set my password</Text>
-                  </MenuItem>
-                  <MenuItem
-                    _hover={{ bg: "gray.400", color: 'white' }}
-                    _focus={{ bg: "gray.400", color: 'white' }}
-                    minH="40px"
-                    key="my-info-btn"
-                    onClick={handleMyInfoModalOpen}
-                  >
-                    <Text fontSize="md">My info</Text>
-                  </MenuItem>
+                  {
+                    !filter && (
+                      <>
+                        <MenuDivider />
+                        {isAdmin && (
+                          <MenuItem
+                            _hover={{ bg: "gray.400", color: 'white' }}
+                            _focus={{ bg: "gray.400", color: 'white' }}
+                            minH="40px"
+                            key="adm-btn"
+                            onClick={() => {
+                              history.push('/admin')
+                            }}
+                          >
+                            <Text fontSize="md">Admin panel</Text>
+                          </MenuItem>
+                        )}
+                        <MenuItem
+                          _hover={{ bg: "gray.400", color: 'white' }}
+                          _focus={{ bg: "gray.400", color: 'white' }}
+                          minH="40px"
+                          key="set-passwd-btn"
+                          onClick={handleSetPasswordModalOpen}
+                        >
+                          <Text fontSize="md">Set my password</Text>
+                        </MenuItem>
+                        <MenuItem
+                          _hover={{ bg: "gray.400", color: 'white' }}
+                          _focus={{ bg: "gray.400", color: 'white' }}
+                          minH="40px"
+                          key="my-info-btn"
+                          onClick={handleMyInfoModalOpen}
+                        >
+                          <Text fontSize="md">My info</Text>
+                        </MenuItem>
+                      </>
+                    )
+                  }
                 </MenuList>
               </Menu>
               <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }}>
