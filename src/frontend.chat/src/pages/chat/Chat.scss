@@ -139,10 +139,13 @@
         // --
       }
 
-      .my-message:not(:last-child) {
-        .from{
-          display: none;
-        }
+      // .my-message:not(:last-child) {
+      //   .from{
+      //     display: none;
+      //   }
+      // }
+      .is-hidden{
+        display: none;
       }
       .my-message{
           // animation: fadeIn 0.8s, slideFromRight 0.5s;

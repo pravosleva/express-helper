@@ -42,3 +42,11 @@ export const getNormalizedDateTime2 = (date: string | number) => {
 
   return `${getNormalizedDate(date)} ${getHoursMinutesBySeconds(date)}:${seconds}`
 }
+
+// 09.11.2020 18:15
+export const getNormalizedDateTime3 = (date: string | number) => {
+  // const dt = new Date(sec * 10 ** 3)
+  const dt = new Date(date)
+
+  return `${getNormalizedDate(date)} ${getHoursMinutesBySeconds(date)}`
+}

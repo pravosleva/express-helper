@@ -34,7 +34,7 @@ import {
   Progress,
   Spinner,
 } from '@chakra-ui/react'
-import { FiList, FiActivity } from 'react-icons/fi'
+import { FiList, FiActivity, FiFilter } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
 import { RiSendPlaneFill, RiErrorWarningFill } from 'react-icons/ri'
 import { FaCheckCircle } from 'react-icons/fa'
@@ -46,7 +46,7 @@ import clsx from 'clsx'
 import './Chat.scss'
 import { UsersContext } from '~/usersContext'
 import { useTextCounter } from '~/common/hooks/useTextCounter'
-import { getNormalizedDateTime, getNormalizedDateTime2 } from '~/utils/timeConverter'
+import { getNormalizedDateTime, getNormalizedDateTime2, getNormalizedDateTime3 } from '~/utils/timeConverter'
 import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from 'react-contextmenu'
 import { ColorModeSwitcher } from '~/common/components/ColorModeSwitcher'
 import { SetPasswordModal } from './components/SetPasswordModal'
@@ -81,9 +81,9 @@ const statusMap: {
   [key: string]: any
 } = {
   [EMessageType.Done]: <FaCheckCircle size={15} />,
-  [EMessageType.Dead]: <GiDeathSkull size={15} color='#000' />,
-  [EMessageType.Warn]: <FiActivity size={15} color='#000' />,
-  [EMessageType.Danger]: <RiErrorWarningFill size={17} color='#000' />
+  [EMessageType.Dead]: <GiDeathSkull size={15} /*color='#000'*/ />,
+  [EMessageType.Warn]: <FiActivity size={15} /*color='#000'*/ />,
+  [EMessageType.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />
 }
 const getIconByStatus = (status: EMessageType) => {
   switch (true) {
@@ -91,6 +91,37 @@ const getIconByStatus = (status: EMessageType) => {
     default: return null
   }
 }
+function capitalizeFirstLetter(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+// const bgColorsMap: { [key: string]: string } = {
+//   [EMessageType.Done]: 'var(--chakra-colors-gray-500)',
+//   [EMessageType.Dead]: '#000',
+//   [EMessageType.Warn]: '#FFDE68',
+//   [EMessageType.Danger]: '#FF9177',
+//   [EMessageType.Info]: '#408EEA',
+//   [EMessageType.Success]: '#31EAB7',
+// }
+// const colorsMap: { [key: string]: string } = {
+//   [EMessageType.Done]: '#FFF',
+//   [EMessageType.Dead]: '#FFDE68',
+//   [EMessageType.Warn]: 'rgba(0,0,0,.7)',
+//   [EMessageType.Danger]: 'rgba(0,0,0,.7)',
+//   [EMessageType.Info]: '#FFF',
+//   [EMessageType.Success]: 'rgba(0,0,0,.7)',
+// }
+// const getBgColorByStatus = (s: EMessageType) => {
+//   switch (true) {
+//     case !!bgColorsMap[s]: return bgColorsMap[s]
+//     default: return null
+//   }
+// }
+// const getColorByStatus = (s: EMessageType) => {
+//   switch (true) {
+//     case !!colorsMap[s]: return colorsMap[s]
+//     default: return null
+//   }
+// }
 
 export const Chat = () => {
   const { name, slugifiedRoom: room, isAdmin } = useContext(MainContext)
@@ -536,7 +567,7 @@ export const Chat = () => {
             if (editedMessage.type === statusCode) return null
             return (
               <CtxMenuItem key={statusCode} className={statusCode} data={{ foo: 'bar' }} onClick={() => handleSetStatus(statusCode)}>
-                Set type <b>{statusCode}</b>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>{!!getIconByStatus(statusCode) && <div style={{ marginRight: '8px' }}>{getIconByStatus(statusCode)}</div>}<div>Status <b>{capitalizeFirstLetter(statusCode)}</b></div></div>
               </CtxMenuItem>
             )
           })
@@ -598,11 +629,9 @@ export const Chat = () => {
         >
           <Heading className="heading" as="h4" p={[4, 4]} borderRadius="8px 8px 0 0">
             <Flex alignItems="center" justifyContent="flex-start">
+
               <Menu>
-                <>
-                  <MenuButton as={IconButton} icon={<FiList size={18} />} isRound="true" />
-                  <ColorModeSwitcher justifySelf="flex-end" mr={2} />
-                </>
+                <MenuButton as={IconButton} icon={<FiList size={18} />} isRound="true" mr={2} />
                 <MenuList
                   zIndex={1001}
                   _dark={{ bg: "gray.600" }}
@@ -610,42 +639,6 @@ export const Chat = () => {
                   // _expanded={{ bg: "gray.800" }}
                   // _focus={{ boxShadow: "outline" }}
                 >
-                  <MenuOptionGroup defaultValue="asc" title='Filters'></MenuOptionGroup>
-                  <div
-                    style={{
-                      maxHeight: '120px',
-                      overflowY: 'auto',
-                    }}
-                  >
-                  {
-                    Object.values(EMessageType).map((type) => {
-                      return (
-                        <MenuItem
-                          _hover={{ bg: "gray.400", color: 'white' }}
-                          _focus={{ bg: "gray.400", color: 'white' }}
-                          minH="40px"
-                          key={type}
-                          onClick={() => setFilter(type)}
-                        >
-                          <Text fontSize="md" fontWeight='bold'>{type} ({logic.getCountByFilter(type)})</Text>
-                        </MenuItem>
-                      )
-                    })
-                  }
-                  </div>
-                  {
-                    !!filter && (
-                      <MenuItem
-                        _hover={{ bg: "gray.400", color: 'white' }}
-                        _focus={{ bg: "gray.400", color: 'white' }}
-                        minH="40px"
-                        onClick={() => setFilter(null)}
-                      >
-                        <Text fontSize="md" fontWeight='bold'>Unset filter</Text>
-                      </MenuItem>
-                    )
-                  }
-                  <MenuDivider />
                   <MenuItem
                     _hover={{ bg: "gray.400", color: 'white' }}
                     _focus={{ bg: "gray.400", color: 'white' }}
@@ -683,46 +676,103 @@ export const Chat = () => {
                       })}
                   </div>
                   </MenuOptionGroup>
+                  <MenuDivider />
+                    {isAdmin && (
+                      <MenuItem
+                        _hover={{ bg: "gray.400", color: 'white' }}
+                        _focus={{ bg: "gray.400", color: 'white' }}
+                        minH="40px"
+                        key="adm-btn"
+                        onClick={() => {
+                          history.push('/admin')
+                        }}
+                      >
+                        <Text fontSize="md" fontWeight='bold'>Admin panel</Text>
+                      </MenuItem>
+                    )}
+                    <MenuItem
+                      _hover={{ bg: "gray.400", color: 'white' }}
+                      _focus={{ bg: "gray.400", color: 'white' }}
+                      minH="40px"
+                      key="set-passwd-btn"
+                      onClick={handleSetPasswordModalOpen}
+                    >
+                      <Text fontSize="md" fontWeight='bold'>Set my password</Text>
+                    </MenuItem>
+                    <MenuItem
+                      _hover={{ bg: "gray.400", color: 'white' }}
+                      _focus={{ bg: "gray.400", color: 'white' }}
+                      minH="40px"
+                      key="my-info-btn"
+                      onClick={handleMyInfoModalOpen}
+                    >
+                      <Text fontSize="md" fontWeight='bold'>My info</Text>
+                    </MenuItem>
+                </MenuList>
+              </Menu>
+
+              <Menu>
+                <MenuButton
+                  mr={2}
+                  as={IconButton}
+                  icon={<FiFilter size={18} />}
+                  isRound="true"
+                  // color={!!filter ? (getColorByStatus(filter) || 'current') : 'current'}
+                  // bg={!!filter ? (getBgColorByStatus(filter) || 'inherit') : 'inherit'}
+                  // _active={{
+                  //   background: 'current',
+                  //   color: 'current'
+                  // }}
+                  // _hover={{
+                  //   background: 'current',
+                  //   color: 'current'
+                  // }}
+                />
+                <MenuList
+                  zIndex={1001}
+                  _dark={{ bg: "gray.600" }}
+                >
+                  <MenuOptionGroup defaultValue="asc" title={`Filters${!!tsPoint ? ` / ${getNormalizedDateTime3(tsPoint)}` : ''}`}></MenuOptionGroup>
+                  <div
+                    // style={{
+                    //   maxHeight: '120px',
+                    //   overflowY: 'auto',
+                    // }}
+                  >
                   {
-                    !filter && (
-                      <>
-                        <MenuDivider />
-                        {isAdmin && (
-                          <MenuItem
-                            _hover={{ bg: "gray.400", color: 'white' }}
-                            _focus={{ bg: "gray.400", color: 'white' }}
-                            minH="40px"
-                            key="adm-btn"
-                            onClick={() => {
-                              history.push('/admin')
-                            }}
-                          >
-                            <Text fontSize="md">Admin panel</Text>
-                          </MenuItem>
-                        )}
+                    Object.values(EMessageType).map((type) => {
+                      const Icon = !!getIconByStatus(type) ? <span style={{ marginRight: '8px' }}>{getIconByStatus(type)}</span> : null
+
+                      if (type === filter) return null
+                      return (
                         <MenuItem
                           _hover={{ bg: "gray.400", color: 'white' }}
                           _focus={{ bg: "gray.400", color: 'white' }}
                           minH="40px"
-                          key="set-passwd-btn"
-                          onClick={handleSetPasswordModalOpen}
+                          key={type}
+                          onClick={() => setFilter(type)}
                         >
-                          <Text fontSize="md">Set my password</Text>
+                          <Text fontSize="md" fontWeight='bold' display='flex'>{Icon}{capitalizeFirstLetter(type)} ({logic.getCountByFilter(type)})</Text>
                         </MenuItem>
-                        <MenuItem
-                          _hover={{ bg: "gray.400", color: 'white' }}
-                          _focus={{ bg: "gray.400", color: 'white' }}
-                          minH="40px"
-                          key="my-info-btn"
-                          onClick={handleMyInfoModalOpen}
-                        >
-                          <Text fontSize="md">My info</Text>
-                        </MenuItem>
-                      </>
+                      )
+                    })
+                  }
+                  </div>
+                  {
+                    !!filter && (
+                      <MenuItem
+                        _hover={{ bg: "gray.400", color: 'white' }}
+                        _focus={{ bg: "gray.400", color: 'white' }}
+                        minH="40px"
+                        onClick={() => setFilter(null)}
+                      >
+                        <Text fontSize="md" fontWeight='bold'>Unset filter</Text>
+                      </MenuItem>
                     )
                   }
                 </MenuList>
               </Menu>
+
               <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }}>
                 {/* <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading> */}
                 <Heading fontSize='lg' fontFamily='Jura'>
@@ -737,6 +787,7 @@ export const Chat = () => {
                   <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
                 </Flex>
               </Flex>
+              <ColorModeSwitcher justifySelf="flex-end" mr={2} />
               <IconButton
                 aria-label="Logout"
                 // colorScheme={isMsgLimitReached ? 'red' : 'gray'}
@@ -784,7 +835,7 @@ export const Chat = () => {
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
-              // const isLast = i === messages.length - 1
+              const isLast = i === messages.length - 1
 
               return (
                 <Box
@@ -797,7 +848,7 @@ export const Chat = () => {
                     fontSize="sm"
                     // opacity=".8"
                     mb={1}
-                    className="from"
+                    className={clsx("from", { 'is-hidden': (isMyMessage && !isLast && !filter) })}
                     // textAlign={isMyMessage ? 'right' : 'left'}
                   >
                     <b>{user}</b>{' '}
