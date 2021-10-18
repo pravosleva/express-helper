@@ -82,22 +82,36 @@
   }
 
   .messages{
+      max-width: 100%;
+      width: 100%;
       overflow-x: hidden;
       & > * {
         overflow-x: hidden;
       }
 
       .message{
+        
         animation: fadeIn 1s;
-        position: relative;
+        
         @media (max-width: #{$sm}px) {
           user-select: none;
         }
+        width: auto;
         max-width: 100%;
+
+        // word-break: break-all;
+        hyphens: auto;
         white-space: pre-wrap;
+        
+        word-wrap: break-word;
+        // overflow-wrap: normal;
+
         display: flex;
         flex-direction: column;
         .msg{
+          position: relative;
+          padding: .3rem .9rem;
+          font-weight: bold;
           background: #FFF; // var(--chakra-colors-gray-100);
           color: rgba(0,0,0,.7);
           border-radius: 8px;
@@ -152,7 +166,7 @@
           align-self: flex-end;
           align-items: flex-end;
 
-          & > .abs-tail {
+          & .abs-tail {
             position: absolute;
             width: 17px;
             height: 17px;
@@ -165,7 +179,12 @@
             background-color: #fff;
           }
       }
-      .my-message:last-child{
+      // .my-message:last-child{
+      //   .msg{
+      //     border-top-right-radius: 0px;
+      //   }
+      // }
+      .my-message{
         .msg{
           border-top-right-radius: 0px;
         }
@@ -174,7 +193,7 @@
       .oponent-message{
         // animation: fadeIn 0.8s, slideDown 0.5s;
         // position: relative;
-        & > .abs-tail {
+        & .abs-tail {
           position: absolute;
           width: 17px;
           height: 17px;
@@ -187,7 +206,12 @@
           background-color: #fff;
         }
       }
-      .oponent-message:last-child{
+      // .oponent-message:last-child{
+      //   .msg{
+      //     border-top-left-radius: 0px;
+      //   }
+      // }
+      .oponent-message{
         .msg{
           border-top-left-radius: 0px;
         }

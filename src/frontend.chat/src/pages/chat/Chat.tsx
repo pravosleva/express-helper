@@ -44,7 +44,7 @@ import ScrollToBottom from 'react-scroll-to-bottom'
 import { useToast, UseToastOptions } from '@chakra-ui/react'
 import clsx from 'clsx'
 import './Chat.scss'
-import { UsersContext } from '~/usersContext'
+import { UsersContext, useUsersContext } from '~/usersContext'
 import { useTextCounter } from '~/common/hooks/useTextCounter'
 import { getNormalizedDateTime, getNormalizedDateTime2, getNormalizedDateTime3 } from '~/utils/timeConverter'
 import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from 'react-contextmenu'
@@ -81,27 +81,27 @@ const statusMap: {
   [key: string]: any
 } = {
   [EMessageType.Done]: <FaCheckCircle size={15} />,
-  [EMessageType.Dead]: <GiDeathSkull size={15} /*color='#000'*/ />,
+  [EMessageType.Dead]: <GiDeathSkull size={14} /*color='#000'*/ />,
   [EMessageType.Warn]: <FiActivity size={15} /*color='#000'*/ />,
   [EMessageType.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />
 }
-const getIconByStatus = (status: EMessageType) => {
+const getIconByStatus = (status: EMessageType, isColored: boolean) => {
   switch (true) {
-    case !!statusMap[status]: return <div className='abs-tail'>{statusMap[status]}</div>
+    case !!statusMap[status]: return <div className='abs-tail' style={{ width: '17px', backgroundColor: isColored ? getBgColorByStatus(status) : 'inherit' }}>{statusMap[status]}</div>
     default: return null
   }
 }
 function capitalizeFirstLetter(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
-// const bgColorsMap: { [key: string]: string } = {
-//   [EMessageType.Done]: 'var(--chakra-colors-gray-500)',
-//   [EMessageType.Dead]: '#000',
-//   [EMessageType.Warn]: '#FFDE68',
-//   [EMessageType.Danger]: '#FF9177',
-//   [EMessageType.Info]: '#408EEA',
-//   [EMessageType.Success]: '#31EAB7',
-// }
+const bgColorsMap: { [key: string]: string } = {
+  [EMessageType.Done]: 'var(--chakra-colors-gray-500)',
+  [EMessageType.Dead]: '#000',
+  [EMessageType.Warn]: '#FFDE68',
+  [EMessageType.Danger]: '#FF9177',
+  [EMessageType.Info]: '#408EEA',
+  [EMessageType.Success]: '#31EAB7',
+}
 // const colorsMap: { [key: string]: string } = {
 //   [EMessageType.Done]: '#FFF',
 //   [EMessageType.Dead]: '#FFDE68',
@@ -110,12 +110,12 @@ function capitalizeFirstLetter(str: string): string {
 //   [EMessageType.Info]: '#FFF',
 //   [EMessageType.Success]: 'rgba(0,0,0,.7)',
 // }
-// const getBgColorByStatus = (s: EMessageType) => {
-//   switch (true) {
-//     case !!bgColorsMap[s]: return bgColorsMap[s]
-//     default: return null
-//   }
-// }
+const getBgColorByStatus = (s: EMessageType) => {
+  switch (true) {
+    case !!bgColorsMap[s]: return bgColorsMap[s]
+    default: return 'current'
+  }
+}
 // const getColorByStatus = (s: EMessageType) => {
 //   switch (true) {
 //     case !!colorsMap[s]: return colorsMap[s]
@@ -567,7 +567,7 @@ export const Chat = () => {
             if (editedMessage.type === statusCode) return null
             return (
               <CtxMenuItem key={statusCode} className={statusCode} data={{ foo: 'bar' }} onClick={() => handleSetStatus(statusCode)}>
-                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>{!!getIconByStatus(statusCode) && <div style={{ marginRight: '8px' }}>{getIconByStatus(statusCode)}</div>}<div>Status <b>{capitalizeFirstLetter(statusCode)}</b></div></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>{!!getIconByStatus(statusCode, false) && <div style={{ marginRight: '8px' }}>{getIconByStatus(statusCode, false)}</div>}<div>Status <b>{capitalizeFirstLetter(statusCode)}</b></div></div>
               </CtxMenuItem>
             )
           })
@@ -741,7 +741,7 @@ export const Chat = () => {
                   >
                   {
                     Object.values(EMessageType).map((type) => {
-                      const Icon = !!getIconByStatus(type) ? <span style={{ marginRight: '8px' }}>{getIconByStatus(type)}</span> : null
+                      const Icon = !!getIconByStatus(type, false) ? <div style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(type, false)}</div> : null
 
                       if (type === filter) return null
                       return (
@@ -836,13 +836,14 @@ export const Chat = () => {
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
               const isLast = i === messages.length - 1
+              const shortNick = user.split(' ').filter((w: string, i: number) => i < 2).map((word: string) => word[0].toUpperCase()).join('')
 
               return (
                 <Box
                   key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}
                   className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
                   // style={transform}
-                  m=".2rem 0"
+                  m=".3rem 0"
                 >
                   <Text
                     fontSize="sm"
@@ -857,29 +858,69 @@ export const Chat = () => {
                       {!!editDate && <b>{' '}Edited</b>}
                     </span>
                   </Text>
-                  {isMyMessage ? (
-                    <ContextMenuTrigger id="same_unique_identifier" key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}>
-                      <Text
-                        fontSize="md"
-                        className={clsx("msg", { [type]: !!type, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}
-                        p=".3rem .9rem"
-                        display="inline-block"
-                        // bg="white"
-                        // color="white"
-                        onContextMenu={() => {
-                          setEditedMessage(message)
-                        }}
-                      >
-                        {text}
-                        {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
-                      </Text>
-                    </ContextMenuTrigger>
-                  ) : (
-                    <Text display="inline-block" fontSize="sm" className={clsx("msg", { [type]: !!type })} p=".3rem .9rem">
-                      {text}
-                    </Text>
-                  )}
-                  {getIconByStatus(type)}
+                  <div
+                    style={{
+                      display: 'flex',
+                      // position: 'relative'
+                    }}
+                    className='opponent-ava-wrapper'
+                  >
+                    {
+                      !isMyMessage && (
+                        <div
+                          style={{
+                            marginRight: '.5rem',
+                            // order: isMyMessage ? 2 : 1,
+                          }}
+                        >
+                          <div
+                            style={{
+                              borderRadius: '50%',
+                              width: '33px',
+                              height: '33px',
+                              display: 'flex',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              backgroundColor: 'var(--chakra-colors-gray-500)',
+                              color: '#FFF',
+                            }}
+                          >
+                            {shortNick}
+                          </div>
+                        </div>
+                      )
+                    }
+                    <div className={clsx("msg", { [type]: !!type, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}>
+                      {isMyMessage ? (
+                        <ContextMenuTrigger id="same_unique_identifier" key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}>
+                          <Text
+                            fontSize="md"
+                            
+                            // p=".3rem .9rem"
+                            display="inline-block"
+                            // bg="white"
+                            // color="white"
+                            onContextMenu={() => {
+                              setEditedMessage(message)
+                            }}
+                            // order={isMyMessage ? 1 : 2}
+                          >
+                            {text}
+                            {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
+                          </Text>
+
+                        </ContextMenuTrigger>
+                      ) : (
+                        <Text display="inline-block" fontSize="md" className={clsx({ [type]: !!type })}
+                          // p=".3rem .9rem"
+                        >
+                          {text}
+                        </Text>
+                      )}
+                      {getIconByStatus(type, true)}
+                    </div>
+                    
+                  </div>
                 </Box>
               )
             })}

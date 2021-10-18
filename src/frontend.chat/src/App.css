@@ -12,7 +12,11 @@
     font-family: 'Bahiana';
 }
 
-.messages .msg {
+.opponent-ava-wrapper  {
+    max-width: 100%;
+}
+.messages .msg *, .opponent-ava-wrapper * {
+    max-width: 100%;
     /* font-family: 'Jura';
     font-weight: 500;
     font-size: 13px;
@@ -20,4 +24,5 @@
     font-family: 'Russo One';
     font-weight: 300;
     font-size: 13px;
+    /* border: 1px solid red; */
 }
