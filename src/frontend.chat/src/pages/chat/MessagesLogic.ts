@@ -15,8 +15,19 @@ export class Logic {
     this.messages = messages;
   }
 
-  getFiltered(filter: EMessageType | null): TMessage[] {
+  getFiltered(filter: EMessageType | null, searchText?: string): TMessage[] {
     switch (true) {
+      case !!searchText:
+        const words = searchText?.split(' ').filter((str: string) => !!str)
+
+        if (!!filter) {
+          // @ts-ignore
+          // return this.messages.filter(({ type, text }) => type === filter && new RegExp(substrings.join("|")).test(string) text.toLowerCase().includes(searchText.toLowerCase()))
+          return this.messages.filter(({ type, text }) => type === filter && new RegExp(words.join("|")).test(text))
+        } else {
+          // @ts-ignore
+          return this.messages.filter(({ text }) => new RegExp(words.join("|")).test(text))
+        }
       case !!filter: return this.messages.filter(({ type }) => type === filter)
       default: return this.messages
     }

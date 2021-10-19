@@ -22,7 +22,7 @@ import {
   ModalCloseButton,
   FormLabel,
   FormControl,
-  // Input,
+  Input,
   ModalFooter,
   MenuOptionGroup,
   // MenuItemOption,
@@ -33,6 +33,15 @@ import {
   useMediaQuery,
   Progress,
   Spinner,
+  Drawer,
+  DrawerOverlay,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  InputGroup,
+  DrawerFooter,
+  Stack,
 } from '@chakra-ui/react'
 import { FiList, FiActivity, FiFilter } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
@@ -44,7 +53,7 @@ import ScrollToBottom from 'react-scroll-to-bottom'
 import { useToast, UseToastOptions } from '@chakra-ui/react'
 import clsx from 'clsx'
 import './Chat.scss'
-import { UsersContext, useUsersContext } from '~/usersContext'
+import { UsersContext } from '~/usersContext'
 import { useTextCounter } from '~/common/hooks/useTextCounter'
 import { getNormalizedDateTime, getNormalizedDateTime2, getNormalizedDateTime3 } from '~/utils/timeConverter'
 import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from 'react-contextmenu'
@@ -54,12 +63,16 @@ import { MyInfoModal } from './components/MyInfoModal'
 import { TasklistModal } from './components/TasklistModal/TasklistModal'
 import { xs, sm, md, lg, xl } from '~/common/chakra/theme'
 import { IoMdLogOut } from 'react-icons/io'
+import { CgSearch } from 'react-icons/cg'
 import { useLocalStorage } from 'react-use'
 // import merge2 from 'deepmerge'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 import { useInView } from 'react-intersection-observer'
 // import { useSpring, animated } from 'react-spring'
 import { Logic } from './MessagesLogic'
+import { useForm } from '~/common/hooks/useForm'
+import { SearchInModal } from './components/SearchInModal'
+import { IoMdClose } from 'react-icons/io'
 
 enum EMessageType {
   Info = 'info',
@@ -537,6 +550,24 @@ export const Chat = () => {
   //   },
   // })
   const [filter, setFilter] = useState<EMessageType | null>(null)
+  const { formData, handleInputChange, resetForm } = useForm({
+    searchText: '',
+  })
+  const [isSearchModeEnabled, setIsSearchModeEnabled] = useState<boolean>(false)
+  const handleEnableSearch = () => {
+    setIsSearchModeEnabled(true)
+  }
+  const handleDisableSearch = () => {
+    setIsSearchModeEnabled(false)
+  }
+
+  const [isDrawerMenuOpened, setIsDrawerMenuOpened] = useState<boolean>(false)
+  const handleOpenDrawerMenu = () => {
+    setIsDrawerMenuOpened(true)
+  }
+  const handleCloseDrawerMenu = () => {
+    setIsDrawerMenuOpened(false)
+  }
 
   return (
     <>
@@ -629,87 +660,153 @@ export const Chat = () => {
         >
           <Heading className="heading" as="h4" p={[4, 4]} borderRadius="8px 8px 0 0">
             <Flex alignItems="center" justifyContent="flex-start">
+              <IconButton
+                colorScheme="gray"
+                aria-label="Menu"
+                icon={<FiList size={18} />}
+                // justifySelf="flex-end"
+                onClick={handleOpenDrawerMenu}
+                mr={2}
+              />
+              <Drawer
+                isOpen={isDrawerMenuOpened}
+                placement="left"
+                // initialFocusRef={firstField}
+                onClose={handleCloseDrawerMenu}
+              >
+                <DrawerOverlay />
+                <DrawerContent>
+                  <DrawerCloseButton />
+                  <DrawerHeader borderBottomWidth="1px">
+                    Menu
+                  </DrawerHeader>
 
-              <Menu>
-                <MenuButton as={IconButton} icon={<FiList size={18} />} isRound="true" mr={2} />
-                <MenuList
-                  zIndex={1001}
-                  _dark={{ bg: "gray.600" }}
-                  // _hover={{ bg: "gray.500", color: 'white' }}
-                  // _expanded={{ bg: "gray.800" }}
-                  // _focus={{ boxShadow: "outline" }}
-                >
-                  <MenuItem
-                    _hover={{ bg: "gray.400", color: 'white' }}
-                    _focus={{ bg: "gray.400", color: 'white' }}
-                    minH="40px"
-                    key="tasklist-btn"
-                    onClick={handleTasklistModalOpen}
-                  >
-                    <Text fontSize="md" fontWeight='bold'>Tasklist{tasklist.length > 0 ? ` ${percentage}% (${completedTasksLen} of ${tasklist.length})` : ''}</Text>
-                  </MenuItem>
-                  <MenuDivider />
-                  <MenuOptionGroup defaultValue="asc" title={`Users online: ${users.length}`}>
-                  <div
-                    style={{
-                      maxHeight: '120px',
-                      overflowY: 'auto',
-                    }}
-                  >
-                    {users &&
-                      users.map((user: TUser) => {
-                        return (
-                          <MenuItem
-                            // _first={{ bg: "gray.200" }}
-                            _hover={{ bg: "gray.400", color: 'white' }}
-                            _focus={{ bg: "gray.400", color: 'white' }}
-                            minH="40px"
-                            key={user.name}
-                            onClick={() => {
-                              handleUserClick(user)
-                            }}
-                            isDisabled={name === user.name}
+                  <DrawerBody>
+                    <Stack spacing="24px">
+                      {/* <Box>
+                        <FormLabel htmlFor="username">Search</FormLabel>
+                        <Input placeholder="Search" size='md' value={formData.searchText} name='searchText' onChange={handleInputChange} />
+                      </Box> */}
+
+                      <Box>
+                        <Menu>
+                          <MenuButton
+                            // as={IconButton}
+                            as={Button}
+                            // icon={<FiList size={18} />}
+                            isRound="true"
+                            mr={2}
                           >
-                            <Text fontSize="md">{user.name}</Text>
-                          </MenuItem>
-                        )
-                      })}
-                  </div>
-                  </MenuOptionGroup>
-                  <MenuDivider />
-                    {isAdmin && (
-                      <MenuItem
-                        _hover={{ bg: "gray.400", color: 'white' }}
-                        _focus={{ bg: "gray.400", color: 'white' }}
-                        minH="40px"
-                        key="adm-btn"
-                        onClick={() => {
-                          history.push('/admin')
-                        }}
-                      >
-                        <Text fontSize="md" fontWeight='bold'>Admin panel</Text>
-                      </MenuItem>
-                    )}
-                    <MenuItem
-                      _hover={{ bg: "gray.400", color: 'white' }}
-                      _focus={{ bg: "gray.400", color: 'white' }}
-                      minH="40px"
-                      key="set-passwd-btn"
-                      onClick={handleSetPasswordModalOpen}
-                    >
-                      <Text fontSize="md" fontWeight='bold'>Set my password</Text>
-                    </MenuItem>
-                    <MenuItem
-                      _hover={{ bg: "gray.400", color: 'white' }}
-                      _focus={{ bg: "gray.400", color: 'white' }}
-                      minH="40px"
-                      key="my-info-btn"
-                      onClick={handleMyInfoModalOpen}
-                    >
-                      <Text fontSize="md" fontWeight='bold'>My info</Text>
-                    </MenuItem>
-                </MenuList>
-              </Menu>
+                            Main
+                          </MenuButton>
+                          <MenuList
+                            zIndex={1001}
+                            _dark={{ bg: "gray.600" }}
+                            // _hover={{ bg: "gray.500", color: 'white' }}
+                            // _expanded={{ bg: "gray.800" }}
+                            // _focus={{ boxShadow: "outline" }}
+                          >
+                            <MenuItem
+                              _hover={{ bg: "gray.400", color: 'white' }}
+                              _focus={{ bg: "gray.400", color: 'white' }}
+                              minH="40px"
+                              key="tasklist-btn"
+                              onClick={handleTasklistModalOpen}
+                            >
+                              <Text fontSize="md" fontWeight='bold'>Tasklist{tasklist.length > 0 ? ` ${percentage}% (${completedTasksLen} of ${tasklist.length})` : ''}</Text>
+                            </MenuItem>
+                            <MenuDivider />
+                            <MenuOptionGroup defaultValue="asc" title={`Users online: ${users.length}`}>
+                            <div
+                              style={{
+                                maxHeight: '120px',
+                                overflowY: 'auto',
+                              }}
+                            >
+                              {users &&
+                                users.map((user: TUser) => {
+                                  return (
+                                    <MenuItem
+                                      // _first={{ bg: "gray.200" }}
+                                      _hover={{ bg: "gray.400", color: 'white' }}
+                                      _focus={{ bg: "gray.400", color: 'white' }}
+                                      minH="40px"
+                                      key={user.name}
+                                      onClick={() => {
+                                        handleUserClick(user)
+                                      }}
+                                      isDisabled={name === user.name}
+                                    >
+                                      <Text fontSize="md">{user.name}</Text>
+                                    </MenuItem>
+                                  )
+                                })}
+                            </div>
+                            </MenuOptionGroup>
+                            <MenuDivider />
+                              {isAdmin && (
+                                <MenuItem
+                                  _hover={{ bg: "gray.400", color: 'white' }}
+                                  _focus={{ bg: "gray.400", color: 'white' }}
+                                  minH="40px"
+                                  key="adm-btn"
+                                  onClick={() => {
+                                    history.push('/admin')
+                                  }}
+                                >
+                                  <Text fontSize="md" fontWeight='bold'>Admin panel</Text>
+                                </MenuItem>
+                              )}
+                              <MenuItem
+                                _hover={{ bg: "gray.400", color: 'white' }}
+                                _focus={{ bg: "gray.400", color: 'white' }}
+                                minH="40px"
+                                key="set-passwd-btn"
+                                onClick={handleSetPasswordModalOpen}
+                              >
+                                <Text fontSize="md" fontWeight='bold'>Set my password</Text>
+                              </MenuItem>
+                              <MenuItem
+                                _hover={{ bg: "gray.400", color: 'white' }}
+                                _focus={{ bg: "gray.400", color: 'white' }}
+                                minH="40px"
+                                key="my-info-btn"
+                                onClick={handleMyInfoModalOpen}
+                              >
+                                <Text fontSize="md" fontWeight='bold'>My info</Text>
+                              </MenuItem>
+                          </MenuList>
+                        </Menu>
+                      </Box>
+
+                      {/* <Box>
+                        <FormLabel htmlFor="owner">Select Owner</FormLabel>
+                        <Select id="owner" defaultValue="segun">
+                          <option value="segun">Segun Adebayo</option>
+                          <option value="kola">Kola Tioluwani</option>
+                        </Select>
+                      </Box> */}
+
+                      {/* <Box>
+                        <FormLabel htmlFor="desc">Description</FormLabel>
+                        <Textarea id="desc" />
+                      </Box>
+                      */}
+                    </Stack> 
+                  </DrawerBody>
+
+                  <DrawerFooter borderTopWidth="1px">
+                    <ColorModeSwitcher
+                      mr={2}
+                      colorScheme="gray"
+                    />
+                    <Button variant="outline" mr={1} onClick={handleCloseDrawerMenu}>
+                      Cancel
+                    </Button>
+                    {/* <Button colorScheme="blue">Submit</Button> */}
+                  </DrawerFooter>
+                </DrawerContent>
+              </Drawer>
 
               <Menu>
                 <MenuButton
@@ -727,12 +824,23 @@ export const Chat = () => {
                   //   background: 'current',
                   //   color: 'current'
                   // }}
+                  colorScheme={!!filter ? "blue": "gray"}
                 />
                 <MenuList
                   zIndex={1001}
                   _dark={{ bg: "gray.600" }}
                 >
                   <MenuOptionGroup defaultValue="asc" title={`Filters${!!tsPoint ? ` / ${getNormalizedDateTime3(tsPoint)}` : ''}`}></MenuOptionGroup>
+                  <SearchInModal
+                    isOpened={isSearchModeEnabled}
+                    text={formData.searchText}
+                    onClose={handleDisableSearch}
+                    onChange={handleInputChange}
+                    onClear={() => {
+                      resetForm()
+                      handleDisableSearch()
+                    }}
+                  />
                   <div
                     // style={{
                     //   maxHeight: '120px',
@@ -742,8 +850,9 @@ export const Chat = () => {
                   {
                     Object.values(EMessageType).map((type) => {
                       const Icon = !!getIconByStatus(type, false) ? <div style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(type, false)}</div> : null
+                      const counter = logic.getCountByFilter(type)
 
-                      if (type === filter) return null
+                      if (type === filter || !counter) return null
                       return (
                         <MenuItem
                           _hover={{ bg: "gray.400", color: 'white' }}
@@ -752,7 +861,7 @@ export const Chat = () => {
                           key={type}
                           onClick={() => setFilter(type)}
                         >
-                          <Text fontSize="md" fontWeight='bold' display='flex'>{Icon}{capitalizeFirstLetter(type)} ({logic.getCountByFilter(type)})</Text>
+                          <Text fontSize="md" fontWeight='bold' display='flex'>{Icon}{capitalizeFirstLetter(type)} ({counter})</Text>
                         </MenuItem>
                       )
                     })
@@ -765,15 +874,17 @@ export const Chat = () => {
                         _focus={{ bg: "gray.400", color: 'white' }}
                         minH="40px"
                         onClick={() => setFilter(null)}
+                        color='red.500'
+                        // icon={<IoMdClose size={17} />}
                       >
-                        <Text fontSize="md" fontWeight='bold'>Unset filter</Text>
+                        <Text fontSize="md" fontWeight='bold' display='flex'><span style={{ width: '17px', marginRight: '8px' }}><IoMdClose size={17} /></span><span>Unset filter</span></Text>
                       </MenuItem>
                     )
                   }
                 </MenuList>
               </Menu>
 
-              <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }}>
+              <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }} mr={2}>
                 {/* <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading> */}
                 <Heading fontSize='lg' fontFamily='Jura'>
                   {room} {isChatLoading && !!tsPoint && (
@@ -787,7 +898,16 @@ export const Chat = () => {
                   <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
                 </Flex>
               </Flex>
-              <ColorModeSwitcher justifySelf="flex-end" mr={2} />
+
+              <IconButton
+                colorScheme={!!formData.searchText ? "blue": "gray"}
+                aria-label="Search"
+                icon={<CgSearch size={18} />}
+                justifySelf="flex-end"
+                onClick={handleEnableSearch}
+                mr={2}
+              />
+
               <IconButton
                 aria-label="Logout"
                 // colorScheme={isMsgLimitReached ? 'red' : 'gray'}
@@ -830,7 +950,7 @@ export const Chat = () => {
               </Text>
               <Box ml="2">---</Box>
             </Flex>
-            {logic.getFiltered(filter).map((message: TMessage, i) => {
+            {logic.getFiltered(filter, formData.searchText).map((message: TMessage, i) => {
               const { user, text, ts, editTs, type } = message
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
@@ -849,7 +969,7 @@ export const Chat = () => {
                     fontSize="sm"
                     // opacity=".8"
                     mb={1}
-                    className={clsx("from", { 'is-hidden': (isMyMessage && !isLast && !filter) })}
+                    className={clsx("from", { 'is-hidden': (isMyMessage && ((!!formData.searchText || !!filter) ? false : !isLast)) })}
                     // textAlign={isMyMessage ? 'right' : 'left'}
                   >
                     <b>{user}</b>{' '}
