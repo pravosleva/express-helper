@@ -73,6 +73,7 @@ import { Logic } from './MessagesLogic'
 import { useForm } from '~/common/hooks/useForm'
 import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
+import { useDebounce } from 'react-use'
 
 enum EMessageType {
   Info = 'info',
@@ -553,6 +554,16 @@ export const Chat = () => {
   const { formData, handleInputChange, resetForm } = useForm({
     searchText: '',
   })
+  const [debouncedSearchText, setDebouncedSearchText] = useState('');
+  const [, _cancel] = useDebounce(
+    () => {
+      // setState('Typing stopped');
+      setDebouncedSearchText(formData.searchText);
+    },
+    1000,
+    [formData.searchText]
+  );
+
   const [isSearchModeEnabled, setIsSearchModeEnabled] = useState<boolean>(false)
   const handleEnableSearch = () => {
     setIsSearchModeEnabled(true)
@@ -950,7 +961,7 @@ export const Chat = () => {
               </Text>
               <Box ml="2">---</Box>
             </Flex>
-            {logic.getFiltered(filter, formData.searchText).map((message: TMessage, i) => {
+            {logic.getFiltered(filter, debouncedSearchText).map((message: TMessage, i) => {
               const { user, text, ts, editTs, type } = message
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
