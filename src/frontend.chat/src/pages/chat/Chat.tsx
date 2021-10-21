@@ -64,7 +64,6 @@ import { TasklistModal } from './components/TasklistModal/TasklistModal'
 import { xs, sm, md, lg, xl } from '~/common/chakra/theme'
 import { IoMdLogOut } from 'react-icons/io'
 import { CgSearch } from 'react-icons/cg'
-import { useLocalStorage } from 'react-use'
 // import merge2 from 'deepmerge'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 import { useInView } from 'react-intersection-observer'
@@ -73,7 +72,7 @@ import { Logic } from './MessagesLogic'
 import { useForm } from '~/common/hooks/useForm'
 import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
-import { useDebounce } from 'react-use'
+import { useDebounce, useLocalStorage } from 'react-use'
 
 enum EMessageType {
   Info = 'info',
@@ -138,7 +137,7 @@ const getBgColorByStatus = (s: EMessageType) => {
 // }
 
 export const Chat = () => {
-  const { name, slugifiedRoom: room, isAdmin } = useContext(MainContext)
+  const { name, slugifiedRoom: room, setRoom, isAdmin } = useContext(MainContext)
   // @ts-ignore
   const { socket, roomData, isConnected } = useSocketContext()
   const [message, setMessage] = useState('')
@@ -146,6 +145,9 @@ export const Chat = () => {
     setMessage('')
   }
   const [messages, setMessages] = useState<TMessage[]>([])
+  const resetMessages = () => {
+    setMessages([])
+  }
   const logic = useMemo<Logic>(() => new Logic(messages), [messages])
   // @ts-ignore
   const { users, tasklist } = useContext(UsersContext)
@@ -266,7 +268,7 @@ export const Chat = () => {
         socket.off('partialOldChat', partialOldChatListener)
       }
     }
-  }, [socket, toast])
+  }, [socket, toast, room])
 
   // useEffect(() => {
   //   if (!!socket && !!tsPoint) {
@@ -580,6 +582,10 @@ export const Chat = () => {
     setIsDrawerMenuOpened(false)
   }
 
+  // -- ROOMS SAMPLE
+  const [roomlistLS, setRoomlistLS] = useLocalStorage<any>('chat.roomlist', [])
+  // --
+
   return (
     <>
       <TasklistModal
@@ -699,13 +705,14 @@ export const Chat = () => {
                         <Input placeholder="Search" size='md' value={formData.searchText} name='searchText' onChange={handleInputChange} />
                       </Box> */}
 
+                      <Box><Text>Tools</Text></Box>
                       <Box>
                         <Menu>
                           <MenuButton
                             // as={IconButton}
                             as={Button}
                             // icon={<FiList size={18} />}
-                            isRound="true"
+                            // isRound="true"
                             mr={2}
                           >
                             Main
@@ -789,6 +796,35 @@ export const Chat = () => {
                           </MenuList>
                         </Menu>
                       </Box>
+                      
+                      {!!roomlistLS && (
+                        <>
+                          <Text>Rooms</Text>
+                          <Stack>
+                            {roomlistLS.map((r: string) => {
+                              return (
+                                <Button
+                                  colorScheme='blue'
+                                  disabled={r === room}
+                                  key={r}
+                                  // as={IconButton}
+                                  as={Button}
+                                  // icon={<FiList size={18} />}
+                                  isRound="true"
+                                  // mr={1}
+                                  onClick={() => {
+                                    setRoom(r)
+                                    resetMessages()
+                                    handleCloseDrawerMenu()
+                                  }}
+                                >
+                                  {r}
+                                </Button>
+                              )})
+                            }
+                          </Stack>
+                        </>
+                      )}
 
                       {/* <Box>
                         <FormLabel htmlFor="owner">Select Owner</FormLabel>

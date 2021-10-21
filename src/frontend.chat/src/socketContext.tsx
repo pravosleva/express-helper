@@ -86,7 +86,7 @@ export const SocketProvider =
         socket.off('connect', connListener)
         socket.off('connect_error', connErrListener)
       }
-    }, [socket, setRoomData, setIsConnected])
+    }, [socket, setIsConnected])
 
     return (
       <SocketContext.Provider value={{

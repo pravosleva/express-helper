@@ -142,8 +142,9 @@ export const Login = () => {
           if (isAdmin) setIsAdmin(true)
           setIsLogged(true)
           setIsLoading2(false)
+          setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
           toast({
-              position: "top",
+              position: "bottom",
               title: "Hey there",
               description: `Hello, ${name}`,
               status: "success",
