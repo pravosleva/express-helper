@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, useCallback, useRef } from 'react'
+import { useContext, useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
 import { SocketContext } from '~/socketContext'
@@ -23,7 +23,10 @@ import { RoomlistModal } from './components'
 import slugify from 'slugify'
 import { FocusableElement } from "@chakra-ui/utils"
 
-
+type TLocalRoomItem = {
+  name: string
+  ts: number
+}
 
 export const Login = () => {
   const { socket, setIsLogged, resetRoomData } = useContext(SocketContext)
@@ -36,7 +39,8 @@ export const Login = () => {
   // --- LS
   const [nameLS, setNameLS, removeNameLS] = useLocalStorage<string>('chat.my-name', '')
   const [tokenLS, setTokenLS] = useLocalStorage<any>('chat.token')
-  const [roomlistLS, setRoomlistLS] = useLocalStorage<any>('chat.roomlist', [])
+  const [roomlistLS, setRoomlistLS] = useLocalStorage<TLocalRoomItem[]>('chat.roomlist', [])
+  const roomNames = useMemo(() => !!roomlistLS ? roomlistLS.filter(({ name }) => !!name).map(({ name }) => name) : [], [roomlistLS])
   const [isModalOpened, setIsModalOpened] = useState<boolean>(false)
   const handleOpenModal = useCallback(() => {
     setIsModalOpened(true)
@@ -112,7 +116,29 @@ export const Login = () => {
 
           setIsLogged(true)
           setIsLoading1(false)
-          setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
+          // setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
+          // --
+          const rooms: any = {}
+          const nowTs = Date.now()
+
+          if (!!roomlistLS) {
+            roomlistLS.forEach(({ name, ts }) => {
+              if (!!name) {
+                rooms[name] = {
+                  name,
+                  ts: name === room ? nowTs : ts,
+                }
+              }
+            })
+            rooms[room] = {
+              name: room,
+              ts: nowTs
+            }
+            setRoomlistLS(Object.values(rooms))
+          } else {
+            setRoomlistLS([{ name: room, ts: nowTs }])
+          }
+          // --
           history.push('/chat')
         }
       )
@@ -144,7 +170,29 @@ export const Login = () => {
           if (isAdmin) setIsAdmin(true)
           setIsLogged(true)
           setIsLoading2(false)
-          setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
+          // setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
+          // --
+          const rooms: any = {}
+          const nowTs = Date.now()
+
+          if (!!roomlistLS) {
+            roomlistLS.forEach(({ name, ts }) => {
+              if (!!name) {
+                rooms[name] = {
+                  name,
+                  ts: name === room ? nowTs : ts,
+                }
+              }
+            })
+            rooms[room] = {
+              name: room,
+              ts: nowTs
+            }
+            setRoomlistLS(Object.values(rooms))
+          } else {
+            setRoomlistLS([{ name: room, ts: nowTs }])
+          }
+          // --
           toast({
               position: "bottom",
               title: "Hey there",
@@ -178,7 +226,7 @@ export const Login = () => {
     setRoomlistModalOpened(false)
   }
   const handleDeleteRoomFromLS = (roomName: string) => {
-    setRoomlistLS([...new Set(roomlistLS.filter((room: string) => room !== roomName))])
+    // setRoomlistLS([...new Set(roomlistLS.filter((room: TLocalRoomItem) => room.name !== roomName))])
     handleRoomlistModalClose()
   }
   const handleSelectRoom = (roomName: string) => {
@@ -191,7 +239,7 @@ export const Login = () => {
   return (
     <>
       <RoomlistModal
-        roomlist={roomlistLS}
+        roomlist={roomNames}
         isOpened={isRoomlistModalOpened}
         onDelete={handleDeleteRoomFromLS}
         onClose={handleRoomlistModalClose}
@@ -278,7 +326,7 @@ export const Login = () => {
             mb="8"
             fontFamily="Bahiana"
           >
-            Anchous chat
+            Anchous chat 2021
           </Heading>
           <Flex className="form" gap="1rem" flexDirection={{ base: 'column', md: 'row' }} mb={4}>
             <Input

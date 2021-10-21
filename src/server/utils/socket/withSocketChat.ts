@@ -77,6 +77,11 @@ export const withSocketChat = (io: Socket) => {
 
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
+    socket.on('getTsMap', ({ rooms }: { rooms: string[] }) => {
+      const tsMap = roomsMap.getTsMap(rooms)
+
+      socket.emit('tsMap', tsMap)
+    })
     socket.on('unsetMe', ({ name, room }) => {
       const nameBySocketId = usersSocketMap.get(socket.id)
       if (!!nameBySocketId) {

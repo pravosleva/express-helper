@@ -24,7 +24,7 @@ class Singleton {
    state: Map<TRoomId, TRoomData>;
 
   private constructor() {
-    this.state = new Map()
+    this.state = new Map<TRoomId, TRoomData>()
   }
 
   public static getInstance(): Singleton {
@@ -152,6 +152,21 @@ class Singleton {
     }
   }
   // public setMsgType({}: ) {}
+  public getTsMap(rooms: string[]) {
+    const res: {[key: string]: number} = {}
+
+    rooms.forEach((name: string) => {
+      const roomData = this.state.get(name)
+
+      if (!!roomData && Array.isArray(roomData)) {
+        const lastIndex = roomData.length > 0 ? roomData.length - 1 : -1
+
+        if (lastIndex !== -1) res[name] = !!roomData[lastIndex].editTs ? roomData[lastIndex].editTs : roomData[lastIndex].ts
+      }
+    })
+
+    return res
+  }
 }
 
 export const roomsMapInstance = Singleton.getInstance()

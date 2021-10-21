@@ -157,7 +157,7 @@ const getTruncated = (str: string, n: number = 16): string => {
 }
 
 export const Chat = () => {
-  const { name, slugifiedRoom: room, setRoom, isAdmin } = useContext(MainContext)
+  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap } = useContext(MainContext)
   // @ts-ignore
   const { socket, roomData, isConnected } = useSocketContext()
   const [message, setMessage] = useState('')
@@ -175,17 +175,6 @@ export const Chat = () => {
   const toast = useToast()
   const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 800 })
   const [tokenLS] = useLocalStorage<any>('chat.token')
-  const handleLogout = () => {
-    // setName('');
-    if (!!socket) socket.emit('logout', { name, token: String(tokenLS) })
-    // setIsLogged(false)
-    // setRoom('')
-    // history.push('/')
-    setTimeout(() => {
-      // history.go(0)
-      history.push('/')
-    }, 0)
-  }
   // const textFieldRef = useRef<HTMLInputElement>(null)
   const textFieldRef = useRef<HTMLTextAreaElement>(null)
 
@@ -606,7 +595,46 @@ export const Chat = () => {
   }
 
   // -- ROOMS SAMPLE
-  const [roomlistLS, setRoomlistLS] = useLocalStorage<any>('chat.roomlist', [])
+  const [roomlistLS, setRoomlistLS] = useLocalStorage<{ name: string, ts: number }[]>('chat.roomlist', [])
+  const roomNames = useMemo(() => !!roomlistLS ? [...new Set(roomlistLS.filter(({ name }) => !!name).map(({ name }) => name))] : [], [JSON.stringify(roomlistLS)])
+  const updateRoomTsInLS = (roomName: string) => {
+    if (!!window) {
+      let roomlistLS: any
+
+      try {
+        roomlistLS = JSON.parse(window.localStorage.getItem('chat.roomlist') || '[]')
+        // @ts-ignore
+        const rooms = !!roomlistLS ? roomlistLS.filter(({ name }) => !!name) : []
+        const newRooms: any[] = []
+
+        if (rooms.length > 0) {
+          rooms.forEach(({ name, ts }: any, i: number) => {
+            if (name === roomName) {
+              newRooms.push({ name, ts: Date.now() })
+            } else {
+              newRooms.push({ name, ts })
+            }
+          })
+        }
+
+        setRoomlistLS(newRooms)
+      } catch (err) {}
+    }
+  }
+  const handleLogout = () => {
+    // setName('');
+    if (!!socket) socket.emit('logout', { name, token: String(tokenLS) })
+    // setIsLogged(false)
+    // setRoom('')
+    // history.push('/')
+    // --
+    updateRoomTsInLS(room)
+    // --
+    setTimeout(() => {
+      // history.go(0)
+      history.push('/')
+    }, 0)
+  }
   // --
 
   return (
@@ -824,10 +852,13 @@ export const Chat = () => {
                         <>
                           <Text>Rooms</Text>
                           <Stack>
-                            {roomlistLS.map((r: string) => {
+                            {roomNames.map((r: string) => {
+                              const tsFromLS = roomlistLS.find(({ name }) => name === r)?.ts
+                              const isGreen = room !== r ? (!!tsFromLS && tsMap[r] > tsFromLS) : false
+
                               return (
                                 <Button
-                                  colorScheme='blue'
+                                  colorScheme={isGreen ? 'green' : 'blue'}
                                   disabled={r === room}
                                   key={r}
                                   // as={IconButton}
@@ -836,6 +867,7 @@ export const Chat = () => {
                                   isRound="true"
                                   // mr={1}
                                   onClick={() => {
+                                    updateRoomTsInLS(room)
                                     setRoom(r)
                                     resetMessages()
                                     handleCloseDrawerMenu()
@@ -848,6 +880,14 @@ export const Chat = () => {
                           </Stack>
                         </>
                       )}
+
+                      <pre
+                        style={{
+                          whiteSpace: 'pre-wrap'
+                        }}
+                      >
+                        {JSON.stringify(tsMap, null, 2)}
+                      </pre>
 
                       {/* <Box>
                         <FormLabel htmlFor="owner">Select Owner</FormLabel>
