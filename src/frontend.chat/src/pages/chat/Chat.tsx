@@ -46,7 +46,7 @@ import {
 import { FiList, FiActivity, FiFilter } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
 import { RiSendPlaneFill, RiErrorWarningFill } from 'react-icons/ri'
-import { FaCheckCircle } from 'react-icons/fa'
+import { FaCheckCircle, FaCheck } from 'react-icons/fa'
 import { GiDeathSkull } from 'react-icons/gi'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom'
@@ -96,11 +96,25 @@ const statusMap: {
   [EMessageType.Done]: <FaCheckCircle size={15} />,
   [EMessageType.Dead]: <GiDeathSkull size={14} /*color='#000'*/ />,
   [EMessageType.Warn]: <FiActivity size={15} /*color='#000'*/ />,
-  [EMessageType.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />
+  [EMessageType.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />,
+  [EMessageType.Success]: <FaCheck size={11} />
 }
 const getIconByStatus = (status: EMessageType, isColored: boolean) => {
   switch (true) {
     case !!statusMap[status]: return <div className='abs-tail' style={{ width: '17px', backgroundColor: isColored ? getBgColorByStatus(status) : 'inherit' }}>{statusMap[status]}</div>
+    default: return null
+  }
+}
+const getIconByStatuses = (statuses: EMessageType[], isColored: boolean) => {
+  switch (true) {
+    case statuses.length > 0:
+      const res: any[] = []
+      statuses.forEach((s) => {
+        if (!!getIconByStatus(s, false)) {
+          res.push(<div style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(s, false)}</div>)
+        }
+      })
+      return res
     default: return null
   }
 }
@@ -135,6 +149,12 @@ const getBgColorByStatus = (s: EMessageType) => {
 //     default: return null
 //   }
 // }
+const getTruncated = (str: string, n: number = 16): string => {
+  if (str.length > n) {
+    return `${str.slice(0, n)}...`
+  }
+  return str
+}
 
 export const Chat = () => {
   const { name, slugifiedRoom: room, setRoom, isAdmin } = useContext(MainContext)
@@ -552,7 +572,10 @@ export const Chat = () => {
   //     // height: 'auto',
   //   },
   // })
-  const [filter, setFilter] = useState<EMessageType | null>(null)
+  const [filters, setFilters] = useState<EMessageType[]>([])
+  const setFilter = (filter: EMessageType) => {
+    setFilters([filter])
+  }
   const { formData, handleInputChange, resetForm } = useForm({
     searchText: '',
   })
@@ -755,7 +778,7 @@ export const Chat = () => {
                                       }}
                                       isDisabled={name === user.name}
                                     >
-                                      <Text fontSize="md">{user.name}</Text>
+                                      <Text fontSize="md">{getTruncated(user.name)}</Text>
                                     </MenuItem>
                                   )
                                 })}
@@ -818,7 +841,7 @@ export const Chat = () => {
                                     handleCloseDrawerMenu()
                                   }}
                                 >
-                                  {r}
+                                  {getTruncated(r, 28)}
                                 </Button>
                               )})
                             }
@@ -855,7 +878,7 @@ export const Chat = () => {
                 </DrawerContent>
               </Drawer>
 
-              <Menu>
+              <Menu autoSelect={false}>
                 <MenuButton
                   mr={2}
                   as={IconButton}
@@ -871,7 +894,7 @@ export const Chat = () => {
                   //   background: 'current',
                   //   color: 'current'
                   // }}
-                  colorScheme={!!filter ? "blue": "gray"}
+                  colorScheme={filters.length > 0 ? "blue": "gray"}
                 />
                 <MenuList
                   zIndex={1001}
@@ -894,34 +917,42 @@ export const Chat = () => {
                     //   overflowY: 'auto',
                     // }}
                   >
-                  {
-                    Object.values(EMessageType).map((type) => {
-                      const Icon = !!getIconByStatus(type, false) ? <div style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(type, false)}</div> : null
-                      const counter = logic.getCountByFilter(type)
+                    {
+                      Object.values(EMessageType).map((type) => {
+                        const Icon = !!getIconByStatus(type, false) ? <div style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(type, false)}</div> : null
+                        const counter = logic.getCountByFilter(type)
 
-                      if (type === filter || !counter) return null
-                      return (
-                        <MenuItem
-                          _hover={{ bg: "gray.400", color: 'white' }}
-                          _focus={{ bg: "gray.400", color: 'white' }}
-                          minH="40px"
-                          key={type}
-                          onClick={() => setFilter(type)}
-                        >
-                          <Text fontSize="md" fontWeight='bold' display='flex'>{Icon}{capitalizeFirstLetter(type)} ({counter})</Text>
-                        </MenuItem>
-                      )
-                    })
-                  }
+                        // if (filters.includes(type) || !counter) return null
+                        return (
+                          <MenuItem
+                            _hover={{ bg: "gray.400", color: 'white' }}
+                            _focus={{ bg: "gray.400", color: 'white' }}
+                            minH="40px"
+                            key={type}
+                            onClick={() => setFilter(type)}
+                          >
+                            <Text fontSize="md" fontWeight='bold' display='flex'>{Icon}{capitalizeFirstLetter(type)} ({counter})</Text>
+                          </MenuItem>
+                        )
+                      })
+                    }
+                    <MenuItem
+                      _hover={{ bg: "gray.400", color: 'white' }}
+                      _focus={{ bg: "gray.400", color: 'white' }}
+                      minH="40px"
+                      onClick={() => setFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn])}
+                    >
+                      <Text fontSize="md" fontWeight='bold' display='flex'>{getIconByStatuses([EMessageType.Success, EMessageType.Danger, EMessageType.Warn], false)}In progress ({logic.getCountByFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn])})</Text>
+                    </MenuItem>
                   </div>
                   {
-                    !!filter && (
+                    filters.length > 0 && (
                       <MenuItem
                         _hover={{ bg: "gray.400", color: 'white' }}
                         _focus={{ bg: "gray.400", color: 'white' }}
                         minH="40px"
-                        onClick={() => setFilter(null)}
-                        color='red.500'
+                        onClick={() => setFilters([])}
+                        // color='red.500'
                         // icon={<IoMdClose size={17} />}
                       >
                         <Text fontSize="md" fontWeight='bold' display='flex'><span style={{ width: '17px', marginRight: '8px' }}><IoMdClose size={17} /></span><span>Unset filter</span></Text>
@@ -940,7 +971,7 @@ export const Chat = () => {
                 </Heading>
                 <Flex alignItems="center">
                   <Text mr="2" fontWeight="400" fontSize="md" letterSpacing="0">
-                    {name}
+                    {getTruncated(name)}
                   </Text>
                   <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
                 </Flex>
@@ -997,7 +1028,7 @@ export const Chat = () => {
               </Text>
               <Box ml="2">---</Box>
             </Flex>
-            {logic.getFiltered(filter, debouncedSearchText).map((message: TMessage, i) => {
+            {logic.getFiltered(filters, debouncedSearchText).map((message: TMessage, i) => {
               const { user, text, ts, editTs, type } = message
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
@@ -1016,7 +1047,7 @@ export const Chat = () => {
                     fontSize="sm"
                     // opacity=".8"
                     mb={1}
-                    className={clsx("from", { 'is-hidden': (isMyMessage && ((!!formData.searchText || !!filter) ? false : !isLast)) })}
+                    className={clsx("from", { 'is-hidden': (isMyMessage && ((!!formData.searchText || filters.length > 0) ? false : !isLast)) })}
                     // textAlign={isMyMessage ? 'right' : 'left'}
                   >
                     <b>{user}</b>{' '}

@@ -90,7 +90,6 @@
       }
 
       .message{
-        
         animation: fadeIn 1s;
         
         @media (max-width: #{$sm}px) {
@@ -171,7 +170,7 @@
             width: 17px;
             height: 17px;
             border-radius: 50%;
-            bottom: -3px;
+            bottom: -4px;
             right: -5px;
             display: flex;
             justify-content: center;
@@ -191,6 +190,10 @@
       }
 
       .oponent-message{
+        
+        .msg{
+          max-width: calc(100% - 33px - 0.5rem);
+        }
         // animation: fadeIn 0.8s, slideDown 0.5s;
         // position: relative;
         & .abs-tail {
@@ -198,7 +201,7 @@
           width: 17px;
           height: 17px;
           border-radius: 50%;
-          bottom: -3px;
+          bottom: -4px;
           left: -5px;
           display: flex;
           justify-content: center;

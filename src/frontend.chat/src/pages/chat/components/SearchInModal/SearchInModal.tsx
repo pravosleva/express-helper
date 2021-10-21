@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import {
   Button,
   Modal,
@@ -26,6 +27,7 @@ export const SearchInModal = ({ text, onChange, isOpened, onClose, onClear }: TP
       if (!!text) onClose()
     }
   }
+  const searchFieldRef = useRef(null)
 
   return (
     <Modal
@@ -33,13 +35,14 @@ export const SearchInModal = ({ text, onChange, isOpened, onClose, onClear }: TP
       isOpen={isOpened}
       onClose={onClose}
       scrollBehavior='inside'
+      initialFocusRef={searchFieldRef}
     >
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Search</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
-          <Input placeholder="Search" size='md' value={text} name='searchText' onChange={onChange} onKeyUp={handkeKeyUp} />
+          <Input ref={searchFieldRef} placeholder="Search" size='md' value={text} name='searchText' onChange={onChange} onKeyUp={handkeKeyUp} />
         </ModalBody>
         <ModalFooter
         className='modal-footer-btns-wrapper'

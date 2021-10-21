@@ -23,6 +23,8 @@ import { RoomlistModal } from './components'
 import slugify from 'slugify'
 import { FocusableElement } from "@chakra-ui/utils"
 
+
+
 export const Login = () => {
   const { socket, setIsLogged, resetRoomData } = useContext(SocketContext)
   const { name, setName, room, setRoom, slugifiedRoom, setIsAdmin } = useContext(MainContext)
