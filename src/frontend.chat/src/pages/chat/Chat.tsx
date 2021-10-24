@@ -72,6 +72,7 @@ import { Logic } from './MessagesLogic'
 import { useForm } from '~/common/hooks/useForm'
 import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
+import { FiMenu } from 'react-icons/fi'
 import { useDebounce, useLocalStorage } from 'react-use'
 
 enum EMessageType {
@@ -739,7 +740,7 @@ export const Chat = () => {
               <IconButton
                 colorScheme="gray"
                 aria-label="Menu"
-                icon={<FiList size={18} />}
+                icon={<FiMenu size={18} />}
                 // justifySelf="flex-end"
                 onClick={handleOpenDrawerMenu}
                 mr={2}
@@ -969,6 +970,7 @@ export const Chat = () => {
                       Object.values(EMessageType).map((type) => {
                         const Icon = !!getIconByStatus(type, false) ? <div style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(type, false)}</div> : null
                         const counter = logic.getCountByFilter(type)
+                        const isDisabed = counter === 0
 
                         // if (filters.includes(type) || !counter) return null
                         return (
@@ -978,6 +980,7 @@ export const Chat = () => {
                             minH="40px"
                             key={type}
                             onClick={() => setFilter(type)}
+                            isDisabled={isDisabed}
                           >
                             <Text fontSize="md" fontWeight='bold' display='flex'>{Icon}{capitalizeFirstLetter(type)} ({counter})</Text>
                           </MenuItem>
@@ -989,6 +992,7 @@ export const Chat = () => {
                       _focus={{ bg: "gray.400", color: 'white' }}
                       minH="40px"
                       onClick={() => setFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn])}
+                      isDisabled={logic.getCountByFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn]) === 0}
                     >
                       <Text fontSize="md" fontWeight='bold' display='flex'>{getIconByStatuses([EMessageType.Success, EMessageType.Danger, EMessageType.Warn], false)}In progress ({logic.getCountByFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn])})</Text>
                     </MenuItem>
@@ -1083,6 +1087,7 @@ export const Chat = () => {
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
               const isLast = i === messages.length - 1
               const shortNick = user.split(' ').filter((w: string, i: number) => i < 2).map((word: string) => word[0].toUpperCase()).join('')
+              const handleClickCtxMenu = () => setEditedMessage(message)
 
               return (
                 <Box
@@ -1146,15 +1151,12 @@ export const Chat = () => {
                             display="inline-block"
                             // bg="white"
                             // color="white"
-                            onContextMenu={() => {
-                              setEditedMessage(message)
-                            }}
+                            onContextMenu={handleClickCtxMenu}  
                             // order={isMyMessage ? 1 : 2}
                           >
                             {text}
                             {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
                           </Text>
-
                         </ContextMenuTrigger>
                       ) : (
                         <Text display="inline-block" fontSize="md" className={clsx({ [type]: !!type })}
