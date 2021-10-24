@@ -28,6 +28,8 @@ type TLocalRoomItem = {
   ts: number
 }
 
+const delay = (ms = 3000) => new Promise((res) => setTimeout(res, ms))
+
 export const Login = () => {
   const { socket, setIsLogged, resetRoomData } = useContext(SocketContext)
   const { name, setName, room, setRoom, slugifiedRoom, setIsAdmin } = useContext(MainContext)
@@ -87,14 +89,14 @@ export const Login = () => {
   const [isLoading1, setIsLoading1] = useState<boolean>(false)
   const [isLoading2, setIsLoading2] = useState<boolean>(false)
 
-  const handleLogin = useCallback(() => {
+  const handleLogin = useCallback((sR?: string) => {
     setNameLS(name)
     if (!!socket)
       setIsLoading1(true)
       // @ts-ignore
       socket.emit(
         'login',
-        { name, room: slugifiedRoom, token: String(tokenLS) },
+        { name, room: sR || slugifiedRoom, token: String(tokenLS) },
         (error: string, isAdmin?: boolean) => {
           if (!!error) {
             if (error === 'FRONT:LOG/PAS') {
@@ -130,8 +132,10 @@ export const Login = () => {
                 }
               }
             })
-            rooms[room] = {
-              name: room,
+
+            const newRoom = sR || slugifiedRoom
+            rooms[newRoom] = {
+              name: newRoom,
               ts: nowTs
             }
             setRoomlistLS(Object.values(rooms))
@@ -164,12 +168,14 @@ export const Login = () => {
             isClosable: true,
           })
           setIsLoading2(false)
+          setIsLoading1(false)
           return
         } else {
           if (!!token) setTokenLS(token)
           if (isAdmin) setIsAdmin(true)
           setIsLogged(true)
           setIsLoading2(false)
+          setIsLoading1(false)
           // setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
           // --
           const rooms: any = {}
@@ -215,7 +221,7 @@ export const Login = () => {
     setMyPassword((state) => ({ ...state, password: e.target.value }))
   }
   const passwordRef = useRef(null)
-  const loginBtnRef = useRef(null)
+  const loginBtnRef = useRef<any>(null)
 
   // --- Roomlist:
   const [isRoomlistModalOpened, setRoomlistModalOpened] = useState<boolean>(false)
@@ -227,12 +233,21 @@ export const Login = () => {
   }
   const handleDeleteRoomFromLS = (roomName: string) => {
     // setRoomlistLS([...new Set(roomlistLS.filter((room: TLocalRoomItem) => room.name !== roomName))])
-    handleRoomlistModalClose()
+    if (!!roomlistLS) {
+      const newRoomList = roomlistLS.filter(({ name }: TLocalRoomItem) => name !== roomName)
+
+      setRoomlistLS(newRoomList)
+    }
+    // handleRoomlistModalClose()
   }
   const handleSelectRoom = (roomName: string) => {
     // resetRoomData()
     setRoom(roomName)
     handleRoomlistModalClose()
+    if (!!loginBtnRef.current) loginBtnRef.current.focus()
+    // setIsLoading1(true)
+    // setTimeout(handleLogin, 1000)
+    return Promise.resolve()
   }
   // ---
 
@@ -243,7 +258,18 @@ export const Login = () => {
         isOpened={isRoomlistModalOpened}
         onDelete={handleDeleteRoomFromLS}
         onClose={handleRoomlistModalClose}
-        onSelectRoom={handleSelectRoom}
+        onSelectRoom={(room: string) => {
+          handleSelectRoom(room)
+            .then(async () => {
+              setIsLoading1(true)
+              await delay(1000)
+              const sR = slugify(room.trim().toLowerCase())
+              handleLogin(sR)
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+        }}
       />
 
       <Modal
@@ -361,7 +387,9 @@ export const Login = () => {
               aria-label="icon-btn"
               icon={<RiArrowRightLine />}
               isLoading={isLoading1}
-              onClick={handleLogin}
+              onClick={() => {
+                handleLogin()
+              }}
               isDisabled={!name || !room}
             />
           </Flex>

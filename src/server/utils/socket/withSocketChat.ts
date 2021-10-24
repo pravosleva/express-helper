@@ -49,6 +49,11 @@ export const withSocketChat = (io: Socket) => {
       //     return
       //   }
       // }
+
+      // var rooms = io.sockets.adapter.sids[socket.id]
+      // for (let r in rooms) {
+      //   socket.leave(r)
+      // }
       // --
 
       socket.emit('my.user-data', myRegData || null)
@@ -83,7 +88,16 @@ export const withSocketChat = (io: Socket) => {
       socket.emit('tsMap', tsMap)
     })
     socket.on('unsetMe', ({ name, room }) => {
+      // ---
+      try {
+        socket.leave(room)
+      } catch (err) {
+        console.log(err)
+      }
+      // ---
+
       const nameBySocketId = usersSocketMap.get(socket.id)
+
       if (!!nameBySocketId) {
         usersSocketMap.delete(socket.id)
         usersMap.delete(nameBySocketId)

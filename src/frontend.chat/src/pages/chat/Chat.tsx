@@ -300,7 +300,15 @@ export const Chat = () => {
     }
   }, [tsPoint, room, socket])
 
+  const prevRoom = useRef<string | null>(null)
+
   useEffect(() => {
+    // NOTE: Отписаться при смене комнаты
+    if (!!socket && !!prevRoom.current) {
+      socket.emit('unsetMe', { name, room: prevRoom.current })
+    }
+    if (!!room) prevRoom.current = room
+
     if (!!socket && !!name && !!room) {
       socket.emit('setMeAgain', { name, room, token: String(tokenLS) }, (err?: string) => {
         if (!!err) {
@@ -858,7 +866,7 @@ export const Chat = () => {
 
                               return (
                                 <Button
-                                  colorScheme={isGreen ? 'green' : 'blue'}
+                                  colorScheme={isGreen ? 'green' : 'gray'}
                                   disabled={r === room}
                                   key={r}
                                   // as={IconButton}
@@ -881,13 +889,13 @@ export const Chat = () => {
                         </>
                       )}
 
-                      <pre
+                      {/* <pre
                         style={{
                           whiteSpace: 'pre-wrap'
                         }}
                       >
                         {JSON.stringify(tsMap, null, 2)}
-                      </pre>
+                      </pre> */}
 
                       {/* <Box>
                         <FormLabel htmlFor="owner">Select Owner</FormLabel>

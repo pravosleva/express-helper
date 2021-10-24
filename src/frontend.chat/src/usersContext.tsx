@@ -30,7 +30,7 @@ export const UsersProvider = ({ children }: any) => {
   const [users, setUsers] = useState<TUser[]>([])
   const [allUsers, setAllUsers] = useState<TUser[]>([])
   const { socket } = useContext(SocketContext)
-  const { slugifiedRoom, setTsMap } = useMainContext()
+  const { slugifiedRoom, setTsMap, room, name } = useMainContext()
   const [tasklist, setTasklist] = useState<any[]>([])
 
   useEffect(() => {
@@ -47,6 +47,7 @@ export const UsersProvider = ({ children }: any) => {
       // console.log(data)
       setTsMap(data)
     }
+
     if (!!socket) socket.on('users', sUListener)
     if (!!socket) socket.on('tasklist', tlListener)
     if (!!socket) socket.on('allUsers', aUListener)
@@ -58,7 +59,7 @@ export const UsersProvider = ({ children }: any) => {
       if (!!socket) socket.off('allUsers', aUListener)
       if (!!socket) socket.off('tsMap', tsMapListener)
     }
-  }, [setUsers, setAllUsers, socket, socket?.connected])
+  }, [setUsers, setAllUsers, socket, socket?.connected, room])
 
   const getUsers = useCallback(() => {
     if (!!socket) socket.emit('getUsers', { room: slugifiedRoom })
