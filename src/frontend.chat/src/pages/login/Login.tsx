@@ -393,14 +393,18 @@ export const Login = () => {
               isDisabled={!name || !room}
             />
           </Flex>
-          <Button
-            tabIndex={10}
-            colorScheme="gray"
-            variant='ghost'
-            onClick={handleRoomlistModalOpen}
-          >
-            My Rooms
-          </Button>
+          {
+            !!roomlistLS && roomlistLS.length > 0 && (
+              <Button
+                tabIndex={10}
+                colorScheme="gray"
+                variant='ghost'
+                onClick={handleRoomlistModalOpen}
+              >
+                My Rooms
+              </Button>
+            )
+          }
         </Flex>
       </div>
     </>
