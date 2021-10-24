@@ -131,7 +131,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
                 {/* <TableCaption>Imperial to metric conversion factors</TableCaption> */}
                 <Thead>
                   <Tr>
-                    <Th>Status</Th>
+                    <Th>St.</Th>
                     <Th>Title</Th>
                     <Th isNumeric>Action</Th>
                   </Tr>
