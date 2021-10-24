@@ -7,9 +7,10 @@ type TRes = {
 export const getABSortedObj0 = (arr: string[], substr?: string): TRes => {
   const res: TRes = {}
   const possibleChars = '0123456789abcdefghijklmnopqrstuvwxyz'.split('')
+  const lowerCaseArr = arr.map((w) => w.toLowerCase())
 
   possibleChars.forEach((char: string) => {
-    arr.forEach((str: string) => {
+    lowerCaseArr.forEach((str: string) => {
       const firstChar = str[0].toLowerCase()
 
       if (firstChar === char) {
@@ -39,12 +40,13 @@ export const getABSortedObj0 = (arr: string[], substr?: string): TRes => {
 
 export const getABSortedObj = (arr: string[], substr?: string): TRes => {
   const res: TRes = {}
+  const lowerCaseArr = arr.map((w) => w.toLowerCase())
 
-  arr.forEach((str: string) => {
+  lowerCaseArr.forEach((str: string) => {
     const firstChar = str[0].toLowerCase()
 
     if (!!substr) {
-      if (str.includes(substr)) {
+      if (str.includes(substr.toLowerCase())) {
         if (!res[firstChar]) {
           res[firstChar] = [str]
         } else {
