@@ -318,7 +318,7 @@ export const Login = () => {
         </ModalContent>
       </Modal>
 
-      <Modal isOpen={isModalOpened} onClose={handleCloseModal} size="xs">
+      <Modal isOpen={isModalOpened} onClose={handleCloseModal} size="xs" autoFocus={false} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Your name is</ModalHeader>
@@ -330,7 +330,7 @@ export const Login = () => {
               No
             </Button>
             <Button
-              autoFocus
+              // autoFocus
               colorScheme="blue"
               onClick={() => {
                 setName(nameLSRef.current)
