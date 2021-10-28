@@ -1,5 +1,6 @@
 # NOTE: Все директории относительно project root dir
-echo "SKIP_PREFLIGHT_CHECK=true" > src/frontend.signin/.env
+echo "SKIP_PREFLIGHT_CHECK=true
+GENERATE_SOURCEMAP=false" > src/frontend.signin/.env
 
 if [ $# -eq 1 ]
 then

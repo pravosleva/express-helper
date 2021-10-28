@@ -12,12 +12,13 @@ import {
   FormLabel,
   useToast,
   Table,
-  // TableCaption,
+  TableCaption,
   Thead,
   Tr,
   Th,
   Tbody,
   Text,
+  Box,
 } from '@chakra-ui/react'
 import { useMemo, useState } from 'react'
 import { useSocketContext } from '~/socketContext'
@@ -26,6 +27,7 @@ import { useForm } from '~/common/hooks/useForm'
 import './TasklistModal.scss'
 import { TaskItem } from './TaskItem'
 import { IoMdAdd, IoMdClose } from 'react-icons/io'
+import { AiOutlineFire } from 'react-icons/ai'
 
 type TProps = {
   isOpened: boolean
@@ -105,10 +107,10 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
       <ModalContent>
         <ModalHeader>Tasklist{data.length > 0 ? ` ${percentage}% (${completedTasksLen} of ${data.length})` : ''}</ModalHeader>
         <ModalCloseButton />
-        <ModalBody pb={6}>
+        <ModalBody pb={6} pl={1} pr={1}>
           {isCreateTaskFormOpened && (
-            <>
-              <FormControl mt={4} mb={4}>
+            <Box pl={5} pr={5} pb={5}>
+              <FormControl>
                 <FormLabel>Title</FormLabel>
                 <Input
                   autoFocus
@@ -123,23 +125,26 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
                   onKeyUp={handkeKeyUp}
                 />
               </FormControl>
-            </>
+            </Box>
           )}
           {
             data.length > 0 ? (
               <Table variant="simple" size='md'>
-                {/* <TableCaption>Imperial to metric conversion factors</TableCaption> */}
-                <Thead>
+                <TableCaption>При включенной опции <span>IS&nbsp;LOOPED</span> задача будет отмечена через фиксированный временной промежуток от создания до первого выполнения. Для сброса интервала выберите в меню <span>RESET&nbsp;LOOPER</span> и дайте новое время до выполнения</TableCaption>
+                {/* <Thead>
                   <Tr>
                     <Th>St.</Th>
                     <Th>Title</Th>
-                    <Th isNumeric>Action</Th>
+                    <Th isNumeric></Th>
                   </Tr>
-                </Thead>
+                </Thead> */}
                 <Tbody>
                   {data.map((data: any) => {
                     const handleCompleteToggle = () => {
                       handleTaskUpdate({ ...data, isCompleted: !data.isCompleted })
+                    }
+                    const handleTaskLoopToggler = () => {
+                      handleTaskUpdate({ ...data, isLooped: !data.isLooped })
                     }
 
                     return (
@@ -149,12 +154,13 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
                         onCompleteToggle={handleCompleteToggle}
                         onDelete={handleTaskDelete}
                         onEdit={handleTaskEdit}
+                        onLoopSwitch={handleTaskLoopToggler}
                       />
                     )
                   })}
                 </Tbody>
               </Table>
-            ) : <Text fontWeight='md'>No tasks yet...</Text>
+            ) : <Text fontWeight='md' p={5}>No tasks yet...</Text>
           }
           {/* <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(data || {}, null, 2)}</pre> */}
         </ModalBody>

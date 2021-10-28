@@ -38,6 +38,11 @@ type TRoomTask = {
   isCompleted: boolean
   ts: number
   editTs?: number
+
+  // NOTE: New feature - auto uncheck looper
+  // isLooped?: boolean
+  // checkTsList?: number[]
+  // uncheckTsList?: number[]
 }
 type TProps = {
   messages: TMessage[] | TRoomTask[]

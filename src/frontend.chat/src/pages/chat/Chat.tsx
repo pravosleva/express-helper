@@ -774,6 +774,8 @@ export const Chat = () => {
                             // icon={<FiList size={18} />}
                             // isRound="true"
                             mr={2}
+                            colorScheme="blue"
+                            variant="outline"
                           >
                             Main
                           </MenuButton>

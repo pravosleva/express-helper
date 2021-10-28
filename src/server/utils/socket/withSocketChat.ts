@@ -368,7 +368,13 @@ export const withSocketChat = (io: Socket) => {
 
       let roomTasklist = roomsTasklistMap.get(room)
       const ts = Date.now()
-      const newTask = { ts, title, description, isCompleted: false }
+      const newTask = {
+        ts,
+        title,
+        description,
+        isCompleted: false,
+        uncheckTsList: [ts],
+      }
 
       if (!!roomTasklist && Array.isArray(roomTasklist)) {
         roomTasklist.push(newTask)
@@ -379,7 +385,17 @@ export const withSocketChat = (io: Socket) => {
       io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
       if (!!cb) cb()
     })
-    socket.on("updateTask", ({ room, ts, title, description, isCompleted }: Partial<TRoomTask> & { room: string }, cb?: (errMsg?: string) => void) => {
+    socket.on("updateTask", ({
+      room,
+      ts,
+      title,
+      description,
+      isCompleted,
+      isLooped,
+      checkTsList,
+      uncheckTsList,
+      resetLooper,
+    }: Partial<TRoomTask> & { room: string, resetLooper?: boolean }, cb?: (errMsg?: string) => void) => {
       if (!ts) {
         if (!!cb) cb('ERR: ts param is required')
         return
@@ -397,9 +413,72 @@ export const withSocketChat = (io: Socket) => {
 
         if (theTaskIndex !== -1) {
           newTask = roomTasklist[theTaskIndex]
+
+          const oldIsCompleted = newTask.isCompleted
+
           if (!!title) newTask.title = title
           if (!!description) newTask.description = description
-          if (isCompleted === true || isCompleted === false) newTask.isCompleted = isCompleted
+          if (!!checkTsList && Array.isArray(checkTsList) && checkTsList.every((e) => Number.isInteger(e))) newTask.checkTsList = checkTsList
+          if (!!uncheckTsList && Array.isArray(uncheckTsList) && uncheckTsList.every((e) => Number.isInteger(e))) newTask.uncheckTsList = uncheckTsList
+          if (isLooped === true || isLooped === false) newTask.isLooped = isLooped
+
+          if (isCompleted === true || isCompleted === false) {
+            newTask.isCompleted = isCompleted
+
+            const newTs = Date.now()
+
+            if (resetLooper) {
+              // 1.
+              if (!!newTask.fixedDiff) delete newTask.fixedDiff
+              newTask.uncheckTsList = [newTs]
+              newTask.isCompleted = false
+              if (!!newTask.uncheckTsList) delete newTask.checkTsList
+            } else {
+              if (oldIsCompleted !== isCompleted) {
+                // NOTE: Update timestamps
+                const targetField = isCompleted ? 'checkTsList' : 'uncheckTsList'
+                // const tsList = newTask[targetField]
+                
+                const isChecked = isCompleted
+  
+                // V1:
+                // const limit = 2
+                // if (!!tsList && Array.isArray(tsList) && tsList.every((e) => Number.isInteger(e)) && tsList.length <= limit) {
+                //   if (tsList.length < limit) {
+                //     newTask[targetField].push(newTs)
+                //   } else {
+                //     newTask[targetField].shift()
+                //     newTask[targetField].push(newTs)
+                //   }
+                // } else {
+                //   newTask[targetField] = [newTs]
+                // }
+  
+                // V2:
+                // 2.1.
+                if (isChecked) {
+                  // 2.1.1 Update check point:
+                  newTask[targetField] = [newTs]
+                  if (!newTask.fixedDiff) {
+                    newTask.fixedDiff = newTs - newTask.uncheckTsList[0]
+                  } else {
+                    // 2.1.2 Update uncheck point:
+                    newTask.uncheckTsList = [newTask.checkTsList[0] - newTask.fixedDiff]
+                  }
+                }
+                // 2.2.
+                if (!isChecked) {
+                  newTask[targetField] = [newTs]
+                  if (!!checkTsList && Array.isArray(checkTsList)) {
+                    if (!!newTask.fixedDiff) {
+                      newTask.checkTsList = [newTask.uncheckTsList[0] + newTask.fixedDiff]
+                    }
+                  }
+                }
+              }
+            }
+          }
+
           newTask.editTs = editTs
 
           roomTasklist[theTaskIndex] = newTask

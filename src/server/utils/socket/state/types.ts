@@ -49,5 +49,11 @@ export type TRoomTask = {
   isCompleted: boolean
   ts: number
   editTs?: number
+
+  // NOTE: New feature - auto uncheck looper
+  isLooped?: boolean
+  checkTsList?: number[]
+  uncheckTsList?: number[]
+  fixedDiff?: number
 }
 export type TRoomTasklist = TRoomTask[]
