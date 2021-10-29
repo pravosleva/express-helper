@@ -2,7 +2,6 @@ import {
   Td, Tr, Editable, EditablePreview, EditableInput,
   IconButton,
   // useEditableControls, ButtonGroup, Flex,
-  Button,
   Menu,
   MenuButton,
   MenuList,
@@ -10,12 +9,10 @@ import {
   Text,
   MenuDivider,
   MenuOptionGroup,
-  FormControl,
-  FormLabel,
-  Switch,
   Flex,
+  Tooltip,
 } from "@chakra-ui/react"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 import { GoGear } from 'react-icons/go'
 // import { IoMdAdd, IoMdClose } from 'react-icons/io'
@@ -24,21 +21,13 @@ import { TiArrowLoop } from 'react-icons/ti'
 
 import { useDiffTime } from '~/common/hooks/useDiffTime'
 import { AiOutlineFire } from 'react-icons/ai'
-import { MdTimer, MdTimerOff } from 'react-icons/md'
+import { MdTimer, MdTimerOff, MdAttachMoney, MdMoneyOff } from 'react-icons/md'
 import { GiDynamite } from 'react-icons/gi'
+import { FaTrashAlt } from 'react-icons/fa'
+import { PriceModal } from './components'
+import { TTask } from './types'
+import { getPrettyPrice } from '~/utils/getPrettyPrice'
 
-type TTask = {
-  title: string
-  description?: string
-  ts: number
-  isCompleted: boolean
-
-  // NOTE: New feature - auto uncheck looper
-  isLooped?: boolean
-  checkTsList?: number[]
-  uncheckTsList?: number[]
-  fixedDiff?: number
-}
 type TProps = {
   data: TTask
   onCompleteToggle: () => void
@@ -57,6 +46,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
     uncheckTsList,
     ts,
     fixedDiff,
+    price,
   } = data
   const titleEditedRef = useRef<string>(data.title)
   
@@ -71,108 +61,180 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
   const showTimer = isLooped && (!checkTsList || (Array.isArray(checkTsList) && checkTsList.length === 0))
   const showTimerOff = isLooped && (!!checkTsList && Array.isArray(checkTsList) && checkTsList.length > 0) && !showFire && !percentageInProgress
 
+  // --
+  const [isPriceModalOpened, setIsPriceModalOpened] = useState<boolean>(false)
+  const handleOpenPriceModal = () => {
+    setIsPriceModalOpened(true)
+  }
+  const handleClosePriceModal = () => {
+    setIsPriceModalOpened(false)
+  }
+  const handlePriceModalSubmit = (price: number) => {
+    if (Number.isInteger(price)) onEdit({ ...data, price: price })
+  }
+  const handleResetExpenses = () => {
+    onEdit({ ...data, price: 0 })
+  }
+  // --
+
   return (
-    <Tr>
-      <Td
-        onClick={onCompleteToggle}
-      >
-        <Flex display="flex" alignItems="center">
-          <Text color='green.500' fontSize="md" mr={2}>{isCompleted ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
-          {showFire && <Text color="red.300"><AiOutlineFire size={18} /></Text>}
-          {percentageInProgress && <Text color={diff.inDays < 2 ? "green.300" : "gray.300"}><GiDynamite size={18} /></Text>}
-          {showTimer && <Text color="gray.300"><MdTimer size={18} /></Text>}
-          {showTimerOff && <Text color="gray.300"><MdTimerOff size={18} /></Text>}
-        </Flex>
-      </Td>
-      <Td fontWeight='bold'>
-        <div>
-          <Editable
-            defaultValue={title}
-            onChange={(nextVal: string) => {
-              titleEditedRef.current = nextVal
-            }}
-            onSubmit={() => {
-              onEdit({ ...data, title: titleEditedRef.current })
-            }}
-          >
-            <EditablePreview />
-            <EditableInput />
-          </Editable>
-          {/* percentageInProgress ? <Text fontSize="sm">{percentage.toFixed(0)} %</Text> : null */}
-        </div>
-      </Td>
-      <Td isNumeric>
-        {/* <IconButton
-          aria-label="DEL"
-          isRound
-          icon={<FaRegTrashAlt size={15} />}
-          onClick={() => onDelete(data.ts)}
-        >
-          DEL
-        </IconButton> */}
-        {/* <Button onClick={handleEditOpen}>EDIT</Button> */}
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            colorScheme={isLooped ? "blue" : "gray"}
-            icon={isLooped ? <TiArrowLoop size={19} /> : <GoGear size={18} />}
-            isRound="true"
-            mr={2}
-          >
-            Main
-          </MenuButton>
-          <MenuList
-            zIndex={1001}
-            _dark={{ bg: "gray.600" }}
-            // _hover={{ bg: "gray.500", color: 'white' }}
-            // _expanded={{ bg: "gray.800" }}
-            // _focus={{ boxShadow: "outline" }}
-          >
-            <MenuItem
-              // _hover={{ bg: "gray.400", color: 'white' }}
-              // _focus={{ bg: "gray.400", color: 'white' }}
-              minH="40px"
-              key="tasklist-btn.task-item.is-looped"
-              onClick={onLoopSwitch}
-              closeOnSelect={false}
+    <>
+      <PriceModal
+        isOpened={isPriceModalOpened}
+        onClose={handleClosePriceModal}
+        onSubmit={handlePriceModalSubmit}
+        initialPrice={price || 0}
+      />
+      <Tr>
+        <Td>
+          <Flex display="flex" alignItems="center">
+            <Text color={showTimer ? 'gray.300' : 'green.500'} fontSize="md" mr={2} onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
+            {showFire && (
+              <Tooltip label="Таймер сработал" aria-label="A tooltip0" placement="top-start">
+                <Text color="red.300"><AiOutlineFire size={18} /></Text>
+              </Tooltip>
+            )}
+            {percentageInProgress && (
+              <Tooltip label="Работает таймер" aria-label="A tooltip1" placement="top-start">
+                <Text color={diff.inDays < 2 ? "green.500" : "gray.300"}><GiDynamite size={18} /></Text>
+              </Tooltip>
+            )}
+            {showTimer && (
+              <Tooltip label="Отслеживается первый цикл" aria-label="A tooltip2" placement="top-start">
+                <Text color="gray.300"><MdTimer size={18} /></Text>
+              </Tooltip>
+            )}
+            {showTimerOff && (
+              <Tooltip label="Используется интервал" aria-label="A tooltip3" placement="top-start">
+                <Text color="gray.300"><MdTimerOff size={18} /></Text>
+              </Tooltip>
+            )}
+          </Flex>
+        </Td>
+        <Td fontWeight='bold'>
+          <div>
+            <Editable
+              defaultValue={title}
+              onChange={(nextVal: string) => {
+                titleEditedRef.current = nextVal
+              }}
+              onSubmit={() => {
+                onEdit({ ...data, title: titleEditedRef.current })
+              }}
             >
-              <Flex display="flex" alignItems="center">
-                <Text fontSize="md" fontWeight='bold' mr={4}>{isLooped ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
-                <Text fontSize="md" fontWeight='bold'>Is looped?</Text>
-              </Flex>
-            </MenuItem>
-            <MenuDivider />
-            <MenuOptionGroup defaultValue="asc" title='Controls'>
-              {!!fixedDiff && (
-                <MenuItem
-                  // _first={{ bg: "gray.200" }}
-                  // _hover={{ bg: "gray.400", color: 'white' }}
-                  // _focus={{ bg: "gray.400", color: 'white' }}
-                  minH="40px"
-                  onClick={() => onEdit({ ...data, resetLooper: true})}
-                  // isDisabled={}
-                  // bgColor='green.300'
-                  // color='#fff'
-                >
-                  <Text fontSize="md" fontWeight='bold'>Reset Looper</Text>
-                </MenuItem>
-              )}
+              <EditablePreview />
+              <EditableInput />
+            </Editable>
+
+            {/* percentageInProgress ? <Text fontSize="sm">{percentage.toFixed(0)} %</Text> : null */}
+            {/* <Button
+              size='sm'
+              onClick={() => {
+                console.log('SET PRICE')
+              }}
+            >
+              Set Price
+            </Button> */}
+            {!!price && <Text fontSize="lg" fontWeight='bold'>={getPrettyPrice(price)}</Text>}
+          </div>
+        </Td>
+        <Td isNumeric>
+          {/* <IconButton
+            aria-label="DEL"
+            isRound
+            icon={<FaRegTrashAlt size={15} />}
+            onClick={() => onDelete(data.ts)}
+          >
+            DEL
+          </IconButton> */}
+          {/* <Button onClick={handleEditOpen}>EDIT</Button> */}
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              colorScheme={isLooped ? "blue" : "gray"}
+              icon={isLooped ? <TiArrowLoop size={19} /> : <GoGear size={18} />}
+              isRound="true"
+              mr={2}
+            >
+              Main
+            </MenuButton>
+            <MenuList
+              zIndex={1001}
+              _dark={{ bg: "gray.600" }}
+              // _hover={{ bg: "gray.500", color: 'white' }}
+              // _expanded={{ bg: "gray.800" }}
+              // _focus={{ boxShadow: "outline" }}
+            >
               <MenuItem
-                // _first={{ bg: "gray.200" }}
                 // _hover={{ bg: "gray.400", color: 'white' }}
                 // _focus={{ bg: "gray.400", color: 'white' }}
                 minH="40px"
-                onClick={() => onDelete(data.ts)}
-                // isDisabled={}
-                bgColor='red.300'
-                color='#fff'
+                key="tasklist-btn.task-item.is-looped"
+                onClick={onLoopSwitch}
+                closeOnSelect={false}
               >
-                <Text fontSize="md" fontWeight='bold'>DELETE</Text>
+                <Flex display="flex" alignItems="center">
+                  <Text fontSize="md" fontWeight='bold' mr={4}>{isLooped ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
+                  <Text fontSize="md" fontWeight='bold'>Is looped?</Text>
+                </Flex>
               </MenuItem>
-            </MenuOptionGroup>
-          </MenuList>
-        </Menu>
-      </Td>
-    </Tr>
+              <MenuDivider />
+              <MenuOptionGroup defaultValue="asc" title='Controls'>
+                {!!fixedDiff && (
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => onEdit({ ...data, resetLooper: true})}
+                    // isDisabled={}
+                    // bgColor='green.300'
+                    // color='#fff'
+                  >
+                    <Flex display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                      <Text fontSize="md" fontWeight='bold'>Reset Looper</Text>
+                    </Flex>
+                  </MenuItem>
+                )}
+                <MenuItem
+                  minH="40px"
+                  onClick={handleOpenPriceModal}
+                >
+                  <Flex display="flex" alignItems="center">
+                    <Text fontSize="md" fontWeight='bold' mr={4}><MdAttachMoney size={18} /></Text>
+                    <Text fontSize="md" fontWeight='bold'>Set Expenses</Text>
+                  </Flex>
+                </MenuItem>
+                {
+                  !!price && (
+                    <MenuItem
+                      minH="40px"
+                      onClick={handleResetExpenses}
+                    >
+                      <Flex display="flex" alignItems="center">
+                        <Text fontSize="md" fontWeight='bold' mr={4}><MdMoneyOff size={18} /></Text>
+                        <Text fontSize="md" fontWeight='bold'>Reset Expenses</Text>
+                      </Flex>
+                    </MenuItem>
+                  )
+                }
+                <MenuItem
+                  minH="40px"
+                  onClick={() => onDelete(data.ts)}
+                  bgColor='red.300'
+                  color='#fff'
+                  // _first={{ bg: "red.400" }}
+                  _hover={{ bg: "red.400", color: 'white' }}
+                  _focus={{ bg: "red.400", color: 'white' }}
+                >
+                  <Flex display="flex" alignItems="center">
+                    <Text fontSize="md" fontWeight='bold' mr={4}><FaTrashAlt size={18} /></Text>
+                    <Text fontSize="md" fontWeight='bold'>Delete</Text>
+                  </Flex>
+                </MenuItem>
+              </MenuOptionGroup>
+            </MenuList>
+          </Menu>
+        </Td>
+      </Tr>
+    </>
   )
 }

@@ -13,12 +13,10 @@ import {
   useToast,
   Table,
   TableCaption,
-  Thead,
-  Tr,
-  Th,
   Tbody,
   Text,
   Box,
+  Stack,
 } from '@chakra-ui/react'
 import { useMemo, useState } from 'react'
 import { useSocketContext } from '~/socketContext'
@@ -27,7 +25,9 @@ import { useForm } from '~/common/hooks/useForm'
 import './TasklistModal.scss'
 import { TaskItem } from './TaskItem'
 import { IoMdAdd, IoMdClose } from 'react-icons/io'
-import { AiOutlineFire } from 'react-icons/ai'
+// import { Logic } from './Logic'
+import { getPrettyPrice } from '~/utils/getPrettyPrice'
+import { useTasklistInRange } from '~/common/hooks/useTasklistInRange'
 
 type TProps = {
   isOpened: boolean
@@ -96,6 +96,12 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
     return Math.round(completed * 100 / all)
   }, [data, completedTasksLen])
 
+  // const logic: Logic | null = useMemo(() => !!data ? new Logic(data) : null, [data])
+  // const fullSum: number = useMemo(() => logic?.fullSum || 0, [logic])
+  // const useDiffTime
+
+  const [rangeSum] = useTasklistInRange({ tasklist: data })
+
   return (
     <Modal
       size="sm"
@@ -107,7 +113,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
       <ModalContent>
         <ModalHeader>Tasklist{data.length > 0 ? ` ${percentage}% (${completedTasksLen} of ${data.length})` : ''}</ModalHeader>
         <ModalCloseButton />
-        <ModalBody pb={6} pl={1} pr={1}>
+        <ModalBody pb={1} pl={1} pr={1}>
           {isCreateTaskFormOpened && (
             <Box pl={5} pr={5} pb={5}>
               <FormControl>
@@ -130,7 +136,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
           {
             data.length > 0 ? (
               <Table variant="simple" size='md'>
-                <TableCaption>При включенной опции <span>IS&nbsp;LOOPED</span> задача будет отмечена через фиксированный временной промежуток от создания до первого выполнения. Для сброса интервала выберите в меню <span>RESET&nbsp;LOOPER</span> и дайте новое время до выполнения</TableCaption>
+                <TableCaption textAlign='left'>При включенной опции <span>IS&nbsp;LOOPED</span> задача начнет "гореть" через фиксированное время от создания до первого выполнения. Для сброса интервала выберите в меню <span>RESET&nbsp;LOOPER</span> и дайте новое время до выполнения.{!!rangeSum.month1 ? ` Ниже слева планируемые расходы на ближайшие месяцы` : ''}</TableCaption>
                 {/* <Thead>
                   <Tr>
                     <Th>St.</Th>
@@ -167,6 +173,22 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
         <ModalFooter
           className='modal-footer-btns-wrapper'
         >
+          {/* !!fullSum && (
+            <Text marginRight='auto' fontSize="lg" fontWeight='bold'>={getPrettyPrice(fullSum)}</Text>
+          ) */}
+          {
+            <Stack marginRight='auto'>
+              {!!rangeSum.month1 && (
+                <Text fontSize="sm" fontWeight='bold'>1m ={getPrettyPrice(rangeSum.month1)}</Text>
+              )}
+              {!!rangeSum.month3 && (
+                <Text fontSize="sm" fontWeight='bold'>3m ={getPrettyPrice(rangeSum.month3)}</Text>
+              )}
+              {!!rangeSum.month6 && (
+                <Text fontSize="sm" fontWeight='bold'>6m ={getPrettyPrice(rangeSum.month6)}</Text>
+              )}
+            </Stack>
+          }
           {!isCreateTaskFormOpened && <Button onClick={handleCreateFormOpen} leftIcon={<IoMdAdd />}>Add task</Button>}
           {isCreateTaskFormOpened && <Button onClick={handleCreateFormClose} leftIcon={<IoMdClose />}>Cancel</Button>}
           {isCreateTaskFormOpened && !!formData.title && <Button onClick={handleCreateSubmit} color='green.500' variant='solid'>Create</Button>}

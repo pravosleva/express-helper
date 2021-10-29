@@ -389,12 +389,13 @@ export const withSocketChat = (io: Socket) => {
       room,
       ts,
       title,
-      description,
+      description = '',
       isCompleted,
       isLooped,
       checkTsList,
       uncheckTsList,
       resetLooper,
+      price,
     }: Partial<TRoomTask> & { room: string, resetLooper?: boolean }, cb?: (errMsg?: string) => void) => {
       if (!ts) {
         if (!!cb) cb('ERR: ts param is required')
@@ -421,6 +422,7 @@ export const withSocketChat = (io: Socket) => {
           if (!!checkTsList && Array.isArray(checkTsList) && checkTsList.every((e) => Number.isInteger(e))) newTask.checkTsList = checkTsList
           if (!!uncheckTsList && Array.isArray(uncheckTsList) && uncheckTsList.every((e) => Number.isInteger(e))) newTask.uncheckTsList = uncheckTsList
           if (isLooped === true || isLooped === false) newTask.isLooped = isLooped
+          if (Number.isInteger(price)) newTask.price = price
 
           if (isCompleted === true || isCompleted === false) {
             newTask.isCompleted = isCompleted
@@ -486,12 +488,12 @@ export const withSocketChat = (io: Socket) => {
 
           io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
         } else {
-          if (!!title || !!description) cb('ERR: theTaskIndex NOT FOUND: title & description param are required')
+          if (!!title || !!description) cb('ERR: theTaskIndex NOT FOUND')
           return
         }
       } else {
-        if (!!title || !!description) {
-          cb('ERR: roomTasklist NOT FOUND: title & description param are required')
+        if (!!title) {
+          cb('ERR: roomTasklist NOT FOUND: title param are required')
           return
         } else {
           const ts = Date.now()

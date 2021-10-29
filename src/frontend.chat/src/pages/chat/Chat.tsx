@@ -760,11 +760,6 @@ export const Chat = () => {
 
                   <DrawerBody>
                     <Stack spacing="24px">
-                      {/* <Box>
-                        <FormLabel htmlFor="username">Search</FormLabel>
-                        <Input placeholder="Search" size='md' value={formData.searchText} name='searchText' onChange={handleInputChange} />
-                      </Box> */}
-
                       <Box><Text>Tools</Text></Box>
                       <Box>
                         <Menu>
@@ -891,28 +886,6 @@ export const Chat = () => {
                           </Stack>
                         </>
                       )}
-
-                      {/* <pre
-                        style={{
-                          whiteSpace: 'pre-wrap'
-                        }}
-                      >
-                        {JSON.stringify(tsMap, null, 2)}
-                      </pre> */}
-
-                      {/* <Box>
-                        <FormLabel htmlFor="owner">Select Owner</FormLabel>
-                        <Select id="owner" defaultValue="segun">
-                          <option value="segun">Segun Adebayo</option>
-                          <option value="kola">Kola Tioluwani</option>
-                        </Select>
-                      </Box> */}
-
-                      {/* <Box>
-                        <FormLabel htmlFor="desc">Description</FormLabel>
-                        <Textarea id="desc" />
-                      </Box>
-                      */}
                     </Stack> 
                   </DrawerBody>
 
@@ -935,16 +908,6 @@ export const Chat = () => {
                   as={IconButton}
                   icon={<FiFilter size={18} />}
                   isRound="true"
-                  // color={!!filter ? (getColorByStatus(filter) || 'current') : 'current'}
-                  // bg={!!filter ? (getBgColorByStatus(filter) || 'inherit') : 'inherit'}
-                  // _active={{
-                  //   background: 'current',
-                  //   color: 'current'
-                  // }}
-                  // _hover={{
-                  //   background: 'current',
-                  //   color: 'current'
-                  // }}
                   colorScheme={filters.length > 0 ? "blue": "gray"}
                 />
                 <MenuList
@@ -963,10 +926,7 @@ export const Chat = () => {
                     }}
                   />
                   <div
-                    // style={{
-                    //   maxHeight: '120px',
-                    //   overflowY: 'auto',
-                    // }}
+                    // style={{ maxHeight: '120px', overflowY: 'auto' }}
                   >
                     {
                       Object.values(EMessageType).map((type) => {
@@ -1051,9 +1011,6 @@ export const Chat = () => {
               >
                 Logout
               </IconButton>
-              {/* <Button fontSize="sm" onClick={handleLogout} variant='outline'>
-                {isConnected ? 'Logout' : 'Reconnect'}
-              </Button> */}
             </Flex>
           </Heading>
 

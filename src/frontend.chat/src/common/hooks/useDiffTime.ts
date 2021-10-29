@@ -1,6 +1,9 @@
 import { useEffect, useState, useRef, useCallback, useMemo } from 'react'
-import { getCurrentPercentage } from '~/utils/getCurrentPercentage'
+// import { getCurrentPercentage } from '~/utils/getCurrentPercentage'
 import { DateDiff } from '~/utils/DateDiff'
+
+const PUBLIC_URL = process.env.PUBLIC_URL || '.'
+const worker = new Worker(`${PUBLIC_URL}/web-worker/main.js`)
 
 type TProps = {
   targetDateTs: number
@@ -14,19 +17,29 @@ type TResult = [number, {
 }]
 
 export const useDiffTime = ({ targetDateTs, startDateTs }: TProps): TResult => {
-  const [value, setValue] = useState(
-    getCurrentPercentage({
-      targetDateTs,
-      startDateTs,
-    }),
+  const [value, setValue] = useState<number>(
+    // getCurrentPercentage({ targetDateTs, startDateTs }),
+    0
   )
+
+  useEffect(() => {
+    worker.onmessage = ($event) => {
+      if (!!$event?.data) {
+        switch ($event.data.actionCode) {
+          case 'getCurrentPercentage':
+            setValue($event.data.currentPercentage)
+            break;
+          default: break;
+        }
+      }
+    }
+  }, [])
+
   const timeout = useRef<any>()
   const updateValue = useCallback(() => {
-    const newVal = getCurrentPercentage({
-      targetDateTs,
-      startDateTs,
-    })
-    setValue(newVal)
+    // const newVal = getCurrentPercentage({ targetDateTs, startDateTs })
+    // setValue(newVal)
+    worker.postMessage({ action: 'getCurrentPercentage', targetDateTs, startDateTs  });
   }, [targetDateTs, startDateTs])
 
   useEffect(() => {

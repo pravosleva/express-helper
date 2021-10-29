@@ -55,5 +55,6 @@ export type TRoomTask = {
   checkTsList?: number[]
   uncheckTsList?: number[]
   fixedDiff?: number
+  price?: number
 }
 export type TRoomTasklist = TRoomTask[]
