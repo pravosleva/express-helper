@@ -17,7 +17,7 @@ function App() {
       <SocketProvider>
         <MainProvider>
           <UsersProvider>
-            <Flex className="App" align="center" justifyContent="center">
+            <div className="App" style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
               <Router>
                 <Switch>
                   <Route exact path="/" component={Login} />
@@ -26,7 +26,7 @@ function App() {
                   <Route path="*" component={DefaultPage} />
                 </Switch>
               </Router>
-            </Flex>
+            </div>
           </UsersProvider>
         </MainProvider>
       </SocketProvider>

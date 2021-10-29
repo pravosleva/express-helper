@@ -96,7 +96,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
             )}
             {percentageInProgress && (
               <Tooltip label="Работает таймер" aria-label="A tooltip1" placement="top-start">
-                <Text color={diff.inDays < 2 ? "green.500" : "gray.300"}><GiDynamite size={18} /></Text>
+                <Text color={diff.inDays > -2 ? "green.500" : "gray.300"}><GiDynamite size={18} /></Text>
               </Tooltip>
             )}
             {showTimer && (
@@ -125,8 +125,9 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
               <EditablePreview />
               <EditableInput />
             </Editable>
-
-            {/* percentageInProgress ? <Text fontSize="sm">{percentage.toFixed(0)} %</Text> : null */}
+            
+            {/* <p>{diff.inDays}</p> */}
+            {/* percentageInProgress && <Text fontSize="sm">{percentage.toFixed(0)} %</Text> */}
             {/* <Button
               size='sm'
               onClick={() => {
@@ -153,7 +154,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
               as={IconButton}
               colorScheme={isLooped ? "blue" : "gray"}
               icon={isLooped ? <TiArrowLoop size={19} /> : <GoGear size={18} />}
-              isRound="true"
+              isRound
               mr={2}
             >
               Main
@@ -166,8 +167,8 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
               // _focus={{ boxShadow: "outline" }}
             >
               <MenuItem
-                // _hover={{ bg: "gray.400", color: 'white' }}
-                // _focus={{ bg: "gray.400", color: 'white' }}
+                _hover={{ bg: "gray.500", color: 'white' }}
+                _focus={{ bg: "gray.500", color: 'white' }}
                 minH="40px"
                 key="tasklist-btn.task-item.is-looped"
                 onClick={onLoopSwitch}

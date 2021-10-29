@@ -43,11 +43,13 @@ import {
   DrawerFooter,
   Stack,
 } from '@chakra-ui/react'
-import { FiList, FiActivity, FiFilter } from 'react-icons/fi'
+import { FiList, FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
+import { AiOutlineUnorderedList } from 'react-icons/ai'
 import { RiSendPlaneFill, RiErrorWarningFill } from 'react-icons/ri'
-import { FaCheckCircle, FaCheck } from 'react-icons/fa'
+import { FaCheckCircle, FaCheck, FaListUl } from 'react-icons/fa'
 import { GiDeathSkull } from 'react-icons/gi'
+import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom'
 import { useToast, UseToastOptions } from '@chakra-ui/react'
@@ -72,7 +74,6 @@ import { Logic } from './MessagesLogic'
 import { useForm } from '~/common/hooks/useForm'
 import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
-import { FiMenu } from 'react-icons/fi'
 import { useDebounce, useLocalStorage } from 'react-use'
 
 enum EMessageType {
@@ -102,7 +103,7 @@ const statusMap: {
 }
 const getIconByStatus = (status: EMessageType, isColored: boolean) => {
   switch (true) {
-    case !!statusMap[status]: return <div className='abs-tail' style={{ width: '17px', backgroundColor: isColored ? getBgColorByStatus(status) : 'inherit' }}>{statusMap[status]}</div>
+    case !!statusMap[status]: return <span className='abs-tail' style={{ width: '17px', backgroundColor: isColored ? getBgColorByStatus(status) : 'inherit' }}>{statusMap[status]}</span>
     default: return null
   }
 }
@@ -111,8 +112,9 @@ const getIconByStatuses = (statuses: EMessageType[], isColored: boolean) => {
     case statuses.length > 0:
       const res: any[] = []
       statuses.forEach((s) => {
-        if (!!getIconByStatus(s, false)) {
-          res.push(<div style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(s, false)}</div>)
+        const icon = getIconByStatus(s, false)
+        if (!!icon) {
+          res.push(<span key={s} style={{ marginRight: '8px', alignSelf: 'center' }}>{icon}</span>)
         }
       })
       return res
@@ -742,6 +744,7 @@ export const Chat = () => {
                 aria-label="Menu"
                 icon={<FiMenu size={18} />}
                 // justifySelf="flex-end"
+                isRound
                 onClick={handleOpenDrawerMenu}
                 mr={2}
               />
@@ -762,7 +765,7 @@ export const Chat = () => {
                     <Stack spacing="24px">
                       <Box><Text>Tools</Text></Box>
                       <Box>
-                        <Menu>
+                        <Menu autoSelect={false}>
                           <MenuButton
                             // as={IconButton}
                             as={Button}
@@ -771,8 +774,9 @@ export const Chat = () => {
                             mr={2}
                             colorScheme="blue"
                             variant="outline"
+                            leftIcon={<HiOutlineMenuAlt2 size={18}/>}
                           >
-                            Main
+                            Main Submenu
                           </MenuButton>
                           <MenuList
                             zIndex={1001}
@@ -782,8 +786,8 @@ export const Chat = () => {
                             // _focus={{ boxShadow: "outline" }}
                           >
                             <MenuItem
-                              _hover={{ bg: "gray.400", color: 'white' }}
-                              _focus={{ bg: "gray.400", color: 'white' }}
+                              _hover={{ bg: "gray.500", color: 'white' }}
+                              _focus={{ bg: "gray.500", color: 'white' }}
                               minH="40px"
                               key="tasklist-btn"
                               onClick={handleTasklistModalOpen}
@@ -803,8 +807,8 @@ export const Chat = () => {
                                   return (
                                     <MenuItem
                                       // _first={{ bg: "gray.200" }}
-                                      _hover={{ bg: "gray.400", color: 'white' }}
-                                      _focus={{ bg: "gray.400", color: 'white' }}
+                                      _hover={{ bg: "gray.500", color: 'white' }}
+                                      _focus={{ bg: "gray.500", color: 'white' }}
                                       minH="40px"
                                       key={user.name}
                                       onClick={() => {
@@ -821,8 +825,8 @@ export const Chat = () => {
                             <MenuDivider />
                               {isAdmin && (
                                 <MenuItem
-                                  _hover={{ bg: "gray.400", color: 'white' }}
-                                  _focus={{ bg: "gray.400", color: 'white' }}
+                                  _hover={{ bg: "gray.500", color: 'white' }}
+                                  _focus={{ bg: "gray.500", color: 'white' }}
                                   minH="40px"
                                   key="adm-btn"
                                   onClick={() => {
@@ -833,8 +837,8 @@ export const Chat = () => {
                                 </MenuItem>
                               )}
                               <MenuItem
-                                _hover={{ bg: "gray.400", color: 'white' }}
-                                _focus={{ bg: "gray.400", color: 'white' }}
+                                _hover={{ bg: "gray.500", color: 'white' }}
+                                _focus={{ bg: "gray.500", color: 'white' }}
                                 minH="40px"
                                 key="set-passwd-btn"
                                 onClick={handleSetPasswordModalOpen}
@@ -842,8 +846,8 @@ export const Chat = () => {
                                 <Text fontSize="md" fontWeight='bold'>Set my password</Text>
                               </MenuItem>
                               <MenuItem
-                                _hover={{ bg: "gray.400", color: 'white' }}
-                                _focus={{ bg: "gray.400", color: 'white' }}
+                                _hover={{ bg: "gray.500", color: 'white' }}
+                                _focus={{ bg: "gray.500", color: 'white' }}
                                 minH="40px"
                                 key="my-info-btn"
                                 onClick={handleMyInfoModalOpen}
@@ -870,7 +874,7 @@ export const Chat = () => {
                                   // as={IconButton}
                                   as={Button}
                                   // icon={<FiList size={18} />}
-                                  isRound="true"
+                                  // isRound="true"
                                   // mr={1}
                                   onClick={() => {
                                     updateRoomTsInLS(room)
@@ -895,7 +899,7 @@ export const Chat = () => {
                       colorScheme="gray"
                     />
                     <Button variant="outline" mr={1} onClick={handleCloseDrawerMenu}>
-                      Cancel
+                      Close
                     </Button>
                     {/* <Button colorScheme="blue">Submit</Button> */}
                   </DrawerFooter>
@@ -907,7 +911,7 @@ export const Chat = () => {
                   mr={2}
                   as={IconButton}
                   icon={<FiFilter size={18} />}
-                  isRound="true"
+                  // isRound
                   colorScheme={filters.length > 0 ? "blue": "gray"}
                 />
                 <MenuList
@@ -930,15 +934,15 @@ export const Chat = () => {
                   >
                     {
                       Object.values(EMessageType).map((type) => {
-                        const Icon = !!getIconByStatus(type, false) ? <div style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(type, false)}</div> : null
+                        const Icon = !!getIconByStatus(type, false) ? <span style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(type, false)}</span> : null
                         const counter = logic.getCountByFilter(type)
                         const isDisabed = counter === 0
 
                         // if (filters.includes(type) || !counter) return null
                         return (
                           <MenuItem
-                            _hover={{ bg: "gray.400", color: 'white' }}
-                            _focus={{ bg: "gray.400", color: 'white' }}
+                            _hover={{ bg: "gray.500", color: 'white' }}
+                            _focus={{ bg: "gray.500", color: 'white' }}
                             minH="40px"
                             key={type}
                             onClick={() => setFilter(type)}
@@ -950,8 +954,8 @@ export const Chat = () => {
                       })
                     }
                     <MenuItem
-                      _hover={{ bg: "gray.400", color: 'white' }}
-                      _focus={{ bg: "gray.400", color: 'white' }}
+                      _hover={{ bg: "gray.500", color: 'white' }}
+                      _focus={{ bg: "gray.500", color: 'white' }}
                       minH="40px"
                       onClick={() => setFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn])}
                       isDisabled={logic.getCountByFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn]) === 0}
@@ -962,8 +966,8 @@ export const Chat = () => {
                   {
                     filters.length > 0 && (
                       <MenuItem
-                        _hover={{ bg: "gray.400", color: 'white' }}
-                        _focus={{ bg: "gray.400", color: 'white' }}
+                        _hover={{ bg: "gray.500", color: 'white' }}
+                        _focus={{ bg: "gray.500", color: 'white' }}
                         minH="40px"
                         onClick={() => setFilters([])}
                         // color='red.500'
