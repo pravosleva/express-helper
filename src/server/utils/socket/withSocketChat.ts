@@ -396,7 +396,8 @@ export const withSocketChat = (io: Socket) => {
       uncheckTsList,
       resetLooper,
       price,
-    }: Partial<TRoomTask> & { room: string, resetLooper?: boolean }, cb?: (errMsg?: string) => void) => {
+      newFixedDiffTs,
+    }: Partial<TRoomTask> & { room: string, resetLooper?: boolean, newFixedDiffTs?: number }, cb?: (errMsg?: string) => void) => {
       if (!ts) {
         if (!!cb) cb('ERR: ts param is required')
         return
@@ -411,6 +412,7 @@ export const withSocketChat = (io: Socket) => {
           targetTs: ts
         })
         const editTs = Date.now()
+        const newTs = Date.now()
 
         if (theTaskIndex !== -1) {
           newTask = roomTasklist[theTaskIndex]
@@ -424,10 +426,24 @@ export const withSocketChat = (io: Socket) => {
           if (isLooped === true || isLooped === false) newTask.isLooped = isLooped
           if (Number.isInteger(price)) newTask.price = price
 
+          if (!!newFixedDiffTs) {
+            newTask.fixedDiff = newFixedDiffTs
+            if (!!checkTsList && Array.isArray(checkTsList) && checkTsList.every((e) => Number.isInteger(e))) {
+              // newTask.checkTsList = [newTask.uncheckTsList[0] + ]
+
+              if (newTask.isCompleted) {
+                newTask.uncheckTsList = [newTs - newTask.fixedDiff]
+                newTask.checkTsList = [newTs]
+              } else {
+                newTask.uncheckTsList = [newTs]
+                newTask.checkTsList = [newTask.uncheckTsList[0] + newTask.fixedDiff]
+              }
+
+            }
+          }
+
           if (isCompleted === true || isCompleted === false) {
             newTask.isCompleted = isCompleted
-
-            const newTs = Date.now()
 
             if (resetLooper) {
               // 1.

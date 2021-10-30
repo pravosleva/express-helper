@@ -1,11 +1,34 @@
 type TDateDiffMethod = (d1: Date, d2: Date) => number
 
 export const DateDiff: {
-    inDays: TDateDiffMethod
-    inWeeks: TDateDiffMethod
-    inMonths: TDateDiffMethod
-    inYears: TDateDiffMethod
+  inSeconds: TDateDiffMethod
+  inMinutes: TDateDiffMethod
+  inHours: TDateDiffMethod
+  inDays: TDateDiffMethod
+  inWeeks: TDateDiffMethod
+  inMonths: TDateDiffMethod
+  inYears: TDateDiffMethod
 } = {
+  inSeconds: function(d1, d2) {
+    const t2 = d2.getTime();
+    const t1 = d1.getTime();
+
+    return (t2 - t1) / 1000
+  },
+
+  inMinutes: function(d1, d2) {
+    const t2 = d2.getTime();
+    const t1 = d1.getTime();
+
+    return (t2 - t1) / (60 * 1000)
+  },
+
+  inHours: function(d1, d2) {
+    const t2 = d2.getTime();
+    const t1 = d1.getTime();
+
+    return (t2 - t1) / (3600 * 1000)
+  },
 
   inDays: function(d1, d2) {
     const t2 = d2.getTime();

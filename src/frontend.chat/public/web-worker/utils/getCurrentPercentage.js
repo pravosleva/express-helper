@@ -18,14 +18,19 @@ const linear = ({
 */
 
 var getCurrentPercentage = ({ startDateTs: t0, targetDateTs: t100 }) => {
-  const nowDate = Date.now();
-  const xDate = t100 + (t100 - t0);
+  const nowDate = Date.now()
+  const xDate = t100 + (t100 - t0)
+
+  /*
+    t100 --- nowDate --- xDate
+    [ ] ->   now ->      [v] + delta
+  */
 
   return linear({
-    x1: t0,
+    x1: t100,
     y1: 0,
     x2: xDate,
     y2: 100,
     x: nowDate,
-  });
+  })
 };
