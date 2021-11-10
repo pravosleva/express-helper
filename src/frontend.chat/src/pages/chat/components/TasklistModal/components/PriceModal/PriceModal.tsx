@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import React, { useRef, useState, useCallback } from 'react'
 import {
   Button,
   Modal,
@@ -23,11 +23,11 @@ type TProps = {
 export const PriceModal = ({ isOpened, onClose, onSubmit, initialPrice }: TProps) => {
   const inputRef = useRef(null)
   const [price, setPrice] = useState<number>(initialPrice)
-  const handleInputChange = (e: any) => {
+  const handleInputChange = useCallback((e: any) => {
     try {
       setPrice(Number(e.target.value))
     } catch (_err) {} 
-  }
+  }, [setPrice])
   // const handleCancel = () => {
   //   setPrice(0)
   //   onClose()

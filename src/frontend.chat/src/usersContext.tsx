@@ -1,8 +1,10 @@
-import { useState, createContext, useContext, useEffect, useCallback, useMemo } from 'react'
+import React, { useState, createContext, useContext, useEffect, useCallback, useMemo } from 'react'
 import { useMainContext } from '~/mainContext'
 import { SocketContext } from '~/socketContext'
 import { PollingComponent } from '~/common/components/PollingComponent'
 import { useLocalStorage } from 'react-use'
+import { TTask } from './pages/chat/components/TasklistModal/types'
+import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 
 type TUser = { name: string; room: string; socketId: string }
 type TUsersContext = {
@@ -43,6 +45,33 @@ export const UsersProvider = ({ children }: any) => {
     const tlListener = ({ tasklist }: any) => {
       setTasklist(tasklist)
     }
+    const tlAIListener = ({ task }: { task: TTask }) => {
+      setTasklist(tl => [...tl, task])
+    }
+    const tlUIListener = ({ task }: { task: TTask }) => {
+      setTasklist(tl => {
+        const targetIndex = binarySearchTsIndex({ messages: tl, targetTs: task.ts })
+
+        if (targetIndex !== -1) {
+          const newTl = [...tl]
+
+          newTl[targetIndex] = task
+
+          return newTl
+        } else {
+          return [...tl, task]
+        }
+      })
+    }
+    const tlDIListener = ({ ts }: { ts: number }) => {
+      setTasklist(tl => {
+        const newArr = [...tl]
+        const targetIndex = binarySearchTsIndex({ messages: tl, targetTs: ts })
+
+        if (targetIndex !== -1) newArr.splice(targetIndex, 1)
+        return newArr
+      })
+    }
     const tsMapListener = (data: {[key: string]: number}) => {
       // console.log(data)
       setTsMap(data)
@@ -50,12 +79,18 @@ export const UsersProvider = ({ children }: any) => {
 
     if (!!socket) socket.on('users', sUListener)
     if (!!socket) socket.on('tasklist', tlListener)
+    if (!!socket) socket.on('tasklist.update-item', tlUIListener)
+    if (!!socket) socket.on('tasklist.delete-item', tlDIListener)
+    if (!!socket) socket.on('tasklist.add-item', tlAIListener)
     if (!!socket) socket.on('allUsers', aUListener)
     if (!!socket) socket.on('tsMap', tsMapListener)
 
     return () => {
       if (!!socket) socket.off('users', sUListener)
       if (!!socket) socket.off('tasklist', tlListener)
+      if (!!socket) socket.off('tasklist.update-item', tlUIListener)
+      if (!!socket) socket.off('tasklist.delete-item', tlDIListener)
+      if (!!socket) socket.off('tasklist.add-item', tlAIListener)
       if (!!socket) socket.off('allUsers', aUListener)
       if (!!socket) socket.off('tsMap', tsMapListener)
     }

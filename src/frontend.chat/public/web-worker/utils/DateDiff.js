@@ -1,23 +1,4 @@
-type TDateDiffMethod = (d1: Date, d2: Date) => number
-
-export const DateDiff: {
-  inSeconds: TDateDiffMethod
-  inMinutes: TDateDiffMethod
-  inHours: TDateDiffMethod
-  inDays: TDateDiffMethod
-  inWeeks: TDateDiffMethod
-  inMonths: TDateDiffMethod
-  inYears: TDateDiffMethod
-  all: (d1: Date, d2: Date) => ({
-    inSeconds: number
-    inMinutes: number
-    inHours: number
-    inDays: number
-    inWeeks: number
-    inMonths: number
-    inYears: number
-  })
-} = {
+var DateDiff = {
   all: function(d1, d2) {
     const t2 = d2.getTime()
     const t1 = d1.getTime()

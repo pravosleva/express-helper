@@ -1,5 +1,6 @@
 importScripts('./utils/getCurrentPercentage.js');
 importScripts('./utils/getSumLastMonths.js');
+importScripts('./utils/DateDiff.js');
 
 var window = self;
 
@@ -16,12 +17,26 @@ self.onmessage = ($event) => {
         startDateTs: data.startDateTs,
         targetDateTs: data.targetDateTs,
       })
+      const nowDate = new Date()
+      const targetDate = new Date(data.targetDateTs + (data.targetDateTs - data.startDateTs))
+      const allResults = DateDiff.all(nowDate, targetDate)
 
       result = {
-        currentPercentage,
+        info: {
+          currentPercentage,
+          diff: allResults
+        },
         actionCode: 'getCurrentPercentage',
+        taskTs: data.taskTs
       };
     break;
+    case !!data && data.action === 'perf.transferToLocalRef':
+      result = {
+        taskTs: data.task.ts,
+        fullData: data.task,
+        actionCode: 'perf.transferToLocalRef',
+      }
+      break;
     case !!data && data.action === 'getSumLastMonths':
       const currDate = new Date();
       const sum = {};

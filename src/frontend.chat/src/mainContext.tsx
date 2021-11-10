@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect, useContext } from 'react'
+import React, { useState, createContext, useEffect, useContext } from 'react'
 import slugify from 'slugify'
 
 type TMainContext = {

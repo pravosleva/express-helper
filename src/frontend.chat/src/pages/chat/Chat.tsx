@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
+import React, { useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
 import { useSocketContext } from '~/socketContext'
@@ -43,9 +43,8 @@ import {
   DrawerFooter,
   Stack,
 } from '@chakra-ui/react'
-import { FiList, FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
+import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
-import { AiOutlineUnorderedList } from 'react-icons/ai'
 import { RiSendPlaneFill, RiErrorWarningFill } from 'react-icons/ri'
 import { FaCheckCircle, FaCheck, FaListUl } from 'react-icons/fa'
 import { GiDeathSkull } from 'react-icons/gi'
@@ -63,7 +62,7 @@ import { ColorModeSwitcher } from '~/common/components/ColorModeSwitcher'
 import { SetPasswordModal } from './components/SetPasswordModal'
 import { MyInfoModal } from './components/MyInfoModal'
 import { TasklistModal } from './components/TasklistModal/TasklistModal'
-import { xs, sm, md, lg, xl } from '~/common/chakra/theme'
+import { md } from '~/common/chakra/theme'
 import { IoMdLogOut } from 'react-icons/io'
 import { CgSearch } from 'react-icons/cg'
 // import merge2 from 'deepmerge'
@@ -776,7 +775,7 @@ export const Chat = () => {
                             variant="outline"
                             leftIcon={<HiOutlineMenuAlt2 size={18}/>}
                           >
-                            Main Submenu
+                            Main
                           </MenuButton>
                           <MenuList
                             zIndex={1001}
@@ -786,8 +785,8 @@ export const Chat = () => {
                             // _focus={{ boxShadow: "outline" }}
                           >
                             <MenuItem
-                              _hover={{ bg: "gray.500", color: 'white' }}
-                              _focus={{ bg: "gray.500", color: 'white' }}
+                              // _hover={{ bg: "gray.500", color: 'white' }}
+                              // _focus={{ bg: "gray.500", color: 'white' }}
                               minH="40px"
                               key="tasklist-btn"
                               onClick={handleTasklistModalOpen}
@@ -807,8 +806,6 @@ export const Chat = () => {
                                   return (
                                     <MenuItem
                                       // _first={{ bg: "gray.200" }}
-                                      _hover={{ bg: "gray.500", color: 'white' }}
-                                      _focus={{ bg: "gray.500", color: 'white' }}
                                       minH="40px"
                                       key={user.name}
                                       onClick={() => {
@@ -825,8 +822,6 @@ export const Chat = () => {
                             <MenuDivider />
                               {isAdmin && (
                                 <MenuItem
-                                  _hover={{ bg: "gray.500", color: 'white' }}
-                                  _focus={{ bg: "gray.500", color: 'white' }}
                                   minH="40px"
                                   key="adm-btn"
                                   onClick={() => {
@@ -837,8 +832,6 @@ export const Chat = () => {
                                 </MenuItem>
                               )}
                               <MenuItem
-                                _hover={{ bg: "gray.500", color: 'white' }}
-                                _focus={{ bg: "gray.500", color: 'white' }}
                                 minH="40px"
                                 key="set-passwd-btn"
                                 onClick={handleSetPasswordModalOpen}
@@ -846,8 +839,6 @@ export const Chat = () => {
                                 <Text fontSize="md" fontWeight='bold'>Set my password</Text>
                               </MenuItem>
                               <MenuItem
-                                _hover={{ bg: "gray.500", color: 'white' }}
-                                _focus={{ bg: "gray.500", color: 'white' }}
                                 minH="40px"
                                 key="my-info-btn"
                                 onClick={handleMyInfoModalOpen}
@@ -936,13 +927,12 @@ export const Chat = () => {
                       Object.values(EMessageType).map((type) => {
                         const Icon = !!getIconByStatus(type, false) ? <span style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(type, false)}</span> : null
                         const counter = logic.getCountByFilter(type)
-                        const isDisabed = counter === 0
+                        const isFilterEnabled = filters.includes(type)
+                        const isDisabed = counter === 0 || isFilterEnabled
 
                         // if (filters.includes(type) || !counter) return null
                         return (
                           <MenuItem
-                            _hover={{ bg: "gray.500", color: 'white' }}
-                            _focus={{ bg: "gray.500", color: 'white' }}
                             minH="40px"
                             key={type}
                             onClick={() => setFilter(type)}
@@ -954,11 +944,9 @@ export const Chat = () => {
                       })
                     }
                     <MenuItem
-                      _hover={{ bg: "gray.500", color: 'white' }}
-                      _focus={{ bg: "gray.500", color: 'white' }}
                       minH="40px"
                       onClick={() => setFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn])}
-                      isDisabled={logic.getCountByFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn]) === 0}
+                      isDisabled={logic.getCountByFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn]) === 0 || filters.join(',') === [EMessageType.Success, EMessageType.Danger, EMessageType.Warn].join(',')}
                     >
                       <Text fontSize="md" fontWeight='bold' display='flex'>{getIconByStatuses([EMessageType.Success, EMessageType.Danger, EMessageType.Warn], false)}In progress ({logic.getCountByFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn])})</Text>
                     </MenuItem>
@@ -966,8 +954,6 @@ export const Chat = () => {
                   {
                     filters.length > 0 && (
                       <MenuItem
-                        _hover={{ bg: "gray.500", color: 'white' }}
-                        _focus={{ bg: "gray.500", color: 'white' }}
                         minH="40px"
                         onClick={() => setFilters([])}
                         // color='red.500'

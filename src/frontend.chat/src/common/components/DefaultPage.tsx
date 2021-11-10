@@ -1,3 +1,4 @@
+import React from 'react'
 import { IconButton } from '@chakra-ui/react'
 import { BiArrowBack } from 'react-icons/bi'
 import { useHistory } from 'react-router-dom'

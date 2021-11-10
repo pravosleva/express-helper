@@ -378,11 +378,14 @@ export const withSocketChat = (io: Socket) => {
 
       if (!!roomTasklist && Array.isArray(roomTasklist)) {
         roomTasklist.push(newTask)
+        io.in(room).emit('tasklist.add-item', { task: newTask })
       } else {
         roomTasklist = [newTask]
+        io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) })
       }
       roomsTasklistMap.set(room, roomTasklist)
-      io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
+      // io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) })
+      
       if (!!cb) cb()
     })
     socket.on("updateTask", ({
@@ -502,14 +505,15 @@ export const withSocketChat = (io: Socket) => {
           roomTasklist[theTaskIndex] = newTask
           roomsTasklistMap.set(room, roomTasklist)
 
-          io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
+          // io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) })
+          io.in(room).emit('tasklist.update-item', { task: newTask })
         } else {
           if (!!title || !!description) cb('ERR: theTaskIndex NOT FOUND')
           return
         }
       } else {
-        if (!!title) {
-          cb('ERR: roomTasklist NOT FOUND: title param are required')
+        if (!title) {
+          cb('ERR: roomTasklist NOT FOUND; title param are required')
           return
         } else {
           const ts = Date.now()
@@ -535,7 +539,8 @@ export const withSocketChat = (io: Socket) => {
           if (theTaskIndex !== -1) {
             const newTasklist = roomTasklist.filter(({ ts: t }) => t !== ts)
             roomsTasklistMap.set(room, newTasklist)
-            io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
+            // io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) });
+            io.in(room).emit('tasklist.delete-item', { ts })
           } else {
             if (cb) cb('ERR: theTask not found')
             return

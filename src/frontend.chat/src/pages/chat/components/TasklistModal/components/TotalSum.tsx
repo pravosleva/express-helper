@@ -1,0 +1,67 @@
+import { useState, useCallback, useRef, useEffect, useContext } from 'react'
+import {
+  Text,
+  Stack,
+} from '@chakra-ui/react'
+import { getPrettyPrice } from '~/utils/getPrettyPrice'
+import { UsersContext } from '~/usersContext'
+
+const PUBLIC_URL = process.env.PUBLIC_URL || '.'
+const worker = new Worker(`${PUBLIC_URL}/web-worker/main.js`)
+
+export const TotalSum = () => {
+  const { tasklist } = useContext(UsersContext)
+  const initialMothSum = {
+    month1: 0,
+    month3: 0,
+    month6: 0,
+  }
+  const [sum, setSum] = useState<{[key: string]: number}>(initialMothSum)
+  // Новый хук Реакт 18 useTransition
+  // const [startTransition, _isPending] = useTransition({
+  //   timeoutMs: 500 // Время, отведенное на переход
+  // });
+  useEffect(() => {
+    worker.onmessage = ($event) => {
+      const { data } = $event
+
+      if (!!data) {
+        switch (data.actionCode) {
+          case 'getSumLastMonths':
+            // startTransition(() => {
+            //   setSum($event.data.sum)
+            // })
+            setSum($event.data.sum)
+            break;
+          default: break;
+        }
+      }
+    }
+  }, [])
+  const updateSum = useCallback(() => {
+    worker.postMessage({ action: 'getSumLastMonths', tasklist });
+  }, [tasklist])
+  const timeout = useRef<any>()
+
+  useEffect(() => {
+    timeout.current = setTimeout(updateSum, 1000)
+
+    return () => {
+      if (!!timeout.current) clearTimeout(timeout.current)
+    }
+  }, [sum])
+
+  return (
+    <Stack marginRight='auto'>
+      {!!sum.month1 && (
+        <Text fontSize="sm" fontWeight='bold'>1m ={getPrettyPrice(sum.month1)}</Text>
+      )}
+      {!!sum.month3 && (
+        <Text fontSize="sm" fontWeight='bold'>3m ={getPrettyPrice(sum.month3)}</Text>
+      )}
+      {/*!!sum.month6 && (
+        <Text fontSize="sm" fontWeight='bold'>6m ={getPrettyPrice(sum.month6)}</Text>
+      )*/}
+    </Stack>
+  )
+}

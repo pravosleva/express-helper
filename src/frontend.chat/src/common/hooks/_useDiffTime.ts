@@ -48,7 +48,7 @@ export const useDiffTime = ({ targetDateTs, startDateTs }: TProps): TResult => {
   }, [targetDateTs, startDateTs])
 
   useEffect(() => {
-    timeout.current = setTimeout(updateValue, 1000)
+    timeout.current = setTimeout(updateValue, 2000)
 
     return () => {
       if (!!timeout.current) clearTimeout(timeout.current)
@@ -58,16 +58,9 @@ export const useDiffTime = ({ targetDateTs, startDateTs }: TProps): TResult => {
   const diffsToNow = useMemo(() => {
     const nowDate = new Date()
     const targetDate = new Date(targetDateTs + (targetDateTs - startDateTs))
+    const allResults = DateDiff.all(nowDate, targetDate)
 
-    return {
-      inSeconds: DateDiff.inSeconds(nowDate, targetDate),
-      inMinutes: DateDiff.inMinutes(nowDate, targetDate),
-      inHours: DateDiff.inHours(nowDate, targetDate),
-      inDays: DateDiff.inDays(nowDate, targetDate),
-      inWeeks: DateDiff.inWeeks(nowDate, targetDate),
-      inMonths: DateDiff.inMonths(nowDate, targetDate),
-      inYears: DateDiff.inYears(nowDate, targetDate)
-    }
+    return allResults
   }, [value])
 
   return [value, diffsToNow]

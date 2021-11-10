@@ -1,3 +1,5 @@
+// @ts-ignore
+import React, { useMemo, useState, useCallback } from 'react'
 import {
   Button,
   Modal,
@@ -16,18 +18,14 @@ import {
   Tbody,
   Text,
   Box,
-  Stack,
 } from '@chakra-ui/react'
-import { useMemo, useState } from 'react'
 import { useSocketContext } from '~/socketContext'
 import { useMainContext } from '~/mainContext'
 import { useForm } from '~/common/hooks/useForm'
 import './TasklistModal.scss'
 import { TaskItem } from './TaskItem'
 import { IoMdAdd, IoMdClose } from 'react-icons/io'
-// import { Logic } from './Logic'
-import { getPrettyPrice } from '~/utils/getPrettyPrice'
-import { useTasklistInRange } from '~/common/hooks/useTasklistInRange'
+import { TotalSum } from './components/TotalSum'
 
 type TProps = {
   isOpened: boolean
@@ -36,6 +34,7 @@ type TProps = {
 }
 
 export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
+  // const [isPending, startTransition] = useTransition();
   const [isCreateTaskFormOpened, setIsCreateTaskFormOpened] = useState<boolean>(false)
   const handleCreateFormOpen = () => {
     setIsCreateTaskFormOpened(true)
@@ -49,7 +48,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
   const { socket } = useSocketContext()
   const { room } = useMainContext()
   const toast = useToast()
-  const handleCreateSubmit = () => {
+  const handleCreateSubmit = useCallback(() => {
     if (!!socket) socket?.emit('createTask', { room, title: formData.title }, (errMsg?: string) => {
       if (!!errMsg) {
         toast({ title: errMsg, status: 'error', duration: 5000, isClosable: true })
@@ -58,28 +57,28 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
         handleCreateFormClose()
       }
     })
-  }
-  const handleTaskUpdate = (newData: any) => {
+  }, [room, formData.title, resetForm, handleCreateFormClose])
+  const handleTaskUpdate = useCallback((newData: any) => {
     if (!!socket) socket?.emit('updateTask', { room, ...newData }, (errMsg?: string) => {
       if (!!errMsg) {
         toast({ title: errMsg, status: 'error', duration: 5000, isClosable: true })
       }
     })
-  }
-  const handleTaskDelete = (ts: number) => {
+  }, [socket, room])
+  const handleTaskDelete = useCallback((ts: number) => {
     if (!!socket) socket?.emit('deleteTask', { room, ts }, (errMsg?: string) => {
       if (!!errMsg) {
         toast({ title: errMsg, status: 'error', duration: 5000, isClosable: true })
       }
     })
-  }
-  const handleTaskEdit = (newData: any) => {
+  }, [socket, room])
+  const handleTaskEdit = useCallback((newData: any) => {
     if (!!socket) socket?.emit('updateTask', { room, ...newData }, (errMsg?: string) => {
       if (!!errMsg) {
         toast({ title: errMsg, status: 'error', duration: 5000, isClosable: true })
       }
     })
-  }
+  }, [socket, room])
   const handkeKeyUp = (ev: any) => {
     if (ev.keyCode === 13) {
       if (!!room) handleCreateSubmit()
@@ -96,11 +95,12 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
     return Math.round(completed * 100 / all)
   }, [data, completedTasksLen])
 
-  // const logic: Logic | null = useMemo(() => !!data ? new Logic(data) : null, [data])
-  // const fullSum: number = useMemo(() => logic?.fullSum || 0, [logic])
-  // const useDiffTime
-
-  const [rangeSum] = useTasklistInRange({ tasklist: data })
+  const handleCompleteToggle = useCallback((data: any) => {
+    handleTaskUpdate({ ...data, isCompleted: !data.isCompleted })
+  }, [handleTaskUpdate])
+  const handleTaskLoopToggler = useCallback((data: any) => {
+    handleTaskUpdate({ ...data, isLooped: !data.isLooped })
+  }, [handleTaskUpdate])
 
   return (
     <Modal
@@ -136,7 +136,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
           {
             data.length > 0 ? (
               <Table variant="simple" size='md'>
-                <TableCaption textAlign='left'>При включенной опции <span>IS&nbsp;LOOPED</span> задача начнет "гореть" через фиксированное время от создания до первого выполнения. Для сброса интервала выберите в меню <span>RESET&nbsp;LOOPER</span> и дайте новое время до выполнения.{!!rangeSum.month1 ? ` Ниже слева планируемые расходы на ближайшие месяцы` : ''}</TableCaption>
+                <TableCaption mt={5} mb={5} textAlign='left'>При включенной опции <b>IS&nbsp;LOOPED</b> задача начнет "гореть" через фиксированное время от создания до первого выполнения. Для сброса интервала выберите в меню <b>RESET&nbsp;LOOPER</b> и дайте новое время до выполнения</TableCaption>
                 {/* <Thead>
                   <Tr>
                     <Th>St.</Th>
@@ -146,21 +146,18 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
                 </Thead> */}
                 <Tbody>
                   {data.map((data: any) => {
-                    const handleCompleteToggle = () => {
-                      handleTaskUpdate({ ...data, isCompleted: !data.isCompleted })
-                    }
-                    const handleTaskLoopToggler = () => {
-                      handleTaskUpdate({ ...data, isLooped: !data.isLooped })
-                    }
-
                     return (
                       <TaskItem
                         key={data.editTs || data.ts}
                         data={data}
-                        onCompleteToggle={handleCompleteToggle}
+                        onCompleteToggle={() => {
+                          handleCompleteToggle(data)
+                        }}
                         onDelete={handleTaskDelete}
                         onEdit={handleTaskEdit}
-                        onLoopSwitch={handleTaskLoopToggler}
+                        onLoopSwitch={() => {
+                          handleTaskLoopToggler(data)
+                        }}
                       />
                     )
                   })}
@@ -177,19 +174,9 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
             <Text marginRight='auto' fontSize="lg" fontWeight='bold'>={getPrettyPrice(fullSum)}</Text>
           ) */}
           {
-            <Stack marginRight='auto'>
-              {!!rangeSum.month1 && (
-                <Text fontSize="sm" fontWeight='bold'>1m ={getPrettyPrice(rangeSum.month1)}</Text>
-              )}
-              {!!rangeSum.month3 && (
-                <Text fontSize="sm" fontWeight='bold'>3m ={getPrettyPrice(rangeSum.month3)}</Text>
-              )}
-              {!!rangeSum.month6 && (
-                <Text fontSize="sm" fontWeight='bold'>6m ={getPrettyPrice(rangeSum.month6)}</Text>
-              )}
-            </Stack>
+            !isCreateTaskFormOpened && <TotalSum />
           }
-          {!isCreateTaskFormOpened && <Button onClick={handleCreateFormOpen} leftIcon={<IoMdAdd />}>Add task</Button>}
+          {!isCreateTaskFormOpened && <Button onClick={handleCreateFormOpen} leftIcon={<IoMdAdd />}>New</Button>}
           {isCreateTaskFormOpened && <Button onClick={handleCreateFormClose} leftIcon={<IoMdClose />}>Cancel</Button>}
           {isCreateTaskFormOpened && !!formData.title && <Button onClick={handleCreateSubmit} color='green.500' variant='solid'>Create</Button>}
           <Button onClick={onClose} variant='ghost' color='red.500'>Close</Button>

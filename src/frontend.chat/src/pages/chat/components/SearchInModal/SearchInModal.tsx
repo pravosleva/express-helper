@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 import {
   Button,
   Modal,
@@ -31,7 +31,7 @@ export const SearchInModal = ({ text, onChange, isOpened, onClose, onClear }: TP
 
   return (
     <Modal
-      size="sm"
+      size="xs"
       isOpen={isOpened}
       onClose={onClose}
       scrollBehavior='inside'
