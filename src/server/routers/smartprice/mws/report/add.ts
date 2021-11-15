@@ -21,8 +21,9 @@ export const reportAddAPI =async (req, res) => {
   } else if (!json) {
     errs.push('Missed param: req.body.json')
   } else {
-    // TODO: set to state
-    reportMapInstance.set(spuid, json)
+    const ts = Date.now()
+
+    reportMapInstance.set(spuid, { ...json, ts })
     result.ok = true
   }
 
