@@ -38,6 +38,23 @@ class Singleton {
 
     return state
   }
+  public getStateTSRange({ from, to }: { from: number, to: number }) {
+    const state = {}
+
+    for (const [key, value] of this.state) {
+      if (!!from && !!value.ts) {
+        if (!!from && !!to) {
+          if (value.ts >= from && value.ts <= to) state[key] = value
+        } else {
+          if (value.ts <= to) state[key] = value
+        }
+      } else {
+        state[key] = value
+      }
+    }
+
+    return state
+  }
 }
 
 export const reportMapInstance = Singleton.getInstance()

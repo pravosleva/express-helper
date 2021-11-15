@@ -10,6 +10,7 @@
     "deploy2:prod:copy-chat-build": "bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build && bash deploy2.pravosleva.chat.front.sh",
     "deploy:prod:copy-chat-build": "bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build && deploy-app -d prod:copy-chat-build",
     "deploy:prod:copy-helper": "deploy-app -d prod:copy-helper",
+    "deploy2:prod": "yarn build:fresh-prod && bash deploy2.pravosleva.prod.sh",
     "deploy:prod:restart-helper": "yarn build:fresh-prod && deploy-app -d prod:restart-helper",
 
     "deploy2:smartprice": "yarn build:fresh-prod && bash deploy2.smartprice.prod.sh",

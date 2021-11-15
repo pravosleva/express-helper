@@ -7,7 +7,7 @@ type TResult = {
 }
 
 export const reportGetStateAPI = async (req, res) => {
-  const { spuid } = req.query
+  const { spuid, from, to } = req.query
   const result: TResult = {
     ok: false,
     state: null
@@ -21,11 +21,10 @@ export const reportGetStateAPI = async (req, res) => {
       if (!!theState) {
         result.state = theState
       } else {
-        errs.push('State not found')
+        errs.push(`State not found for spuid ${spuid}`)
       }
     } else {
-      // TODO: set to state
-      result.state = reportMapInstance.getState()
+      result.state = reportMapInstance.getStateTSRange({ from: Number(from), to: Number(to) })
     }
     
     result.ok = true
@@ -37,6 +36,6 @@ export const reportGetStateAPI = async (req, res) => {
 
   res.status(200).send({
     ...result,
-    _originalBody: req.body,
+    _originalQuery: req.query,
   })
 }
