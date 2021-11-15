@@ -1037,6 +1037,11 @@ export const Chat = () => {
               const isLast = i === messages.length - 1
               const shortNick = user.split(' ').filter((w: string, i: number) => i < 2).map((word: string) => word[0].toUpperCase()).join('')
               const handleClickCtxMenu = () => setEditedMessage(message)
+              let contextTriggerRef: any = null;
+              const toggleMenu = (e: any) => {
+                // @ts-ignore
+                  if(!!contextTriggerRef) contextTriggerRef.handleContextClick(e);
+              }
 
               return (
                 <Box
@@ -1092,7 +1097,11 @@ export const Chat = () => {
                     }
                     <div className={clsx("msg", { [type]: !!type, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}>
                       {isMyMessage ? (
-                        <ContextMenuTrigger id="same_unique_identifier" key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}>
+                        <ContextMenuTrigger
+                          id="same_unique_identifier"
+                          key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}
+                          ref={c => contextTriggerRef = c}
+                        >
                           <Text
                             fontSize="md"
                             
@@ -1100,7 +1109,15 @@ export const Chat = () => {
                             display="inline-block"
                             // bg="white"
                             // color="white"
-                            onContextMenu={handleClickCtxMenu}  
+                            // onContextMenu={handleClickCtxMenu}
+                            onContextMenu={(e) => {
+                              // e.preventDefault()
+                              handleClickCtxMenu()
+                            }}
+                            onClick={(e) => {
+                              handleClickCtxMenu()
+                              toggleMenu(e)
+                            }}
                             // order={isMyMessage ? 1 : 2}
                           >
                             {text}
