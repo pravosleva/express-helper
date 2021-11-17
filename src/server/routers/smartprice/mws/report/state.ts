@@ -2,7 +2,7 @@ export type TSPUID = string
 
 class Singleton {
   private static instance: Singleton;
-   state: Map<TSPUID, any>;
+   state: Map<TSPUID, any[]>;
 
   private constructor() {
     this.state = new Map()
@@ -17,8 +17,21 @@ class Singleton {
   public keys() {
     return this.state.keys()
   }
-  public set(key: string, value: any) {
-    this.state.set(key, value)
+  // public set(key: string, value: any) {
+  //   this.state.set(key, value)
+  // }
+  public add(key: string, value: any) {
+    if (!this.state.has(key)) {
+      this.state.set(key, [value])
+    } else {
+      const oldState = this.state.get(key)
+
+      if (Array.isArray(oldState)) {
+        this.state.set(key, [...oldState, value])
+      } else {
+        this.state.set(key, [value])
+      }
+    }
   }
   public get(key: string) {
     return this.state.get(key)
@@ -44,15 +57,49 @@ class Singleton {
   public getStateTSRange({ from, to }: { from: number, to: number }) {
     const state = {}
 
-    for (const [key, value] of this.state) {
-      if (!!from && !!value.ts) {
-        if (!!from && !!to) {
-          if (value.ts >= from && value.ts <= to) state[key] = value
-        } else {
-          if (value.ts <= to) state[key] = value
-        }
-      } else {
-        state[key] = value
+    // V1:
+    // for (const [key, value] of this.state) {
+    //   if (!!from && !!value.ts) {
+    //     if (!!from && !!to) {
+    //       if (value.ts >= from && value.ts <= to) state[key] = value
+    //     } else {
+    //       if (value.ts <= to) state[key] = value
+    //     }
+    //   } else {
+    //     state[key] = value
+    //   }
+    // }
+
+    // V2:
+    for (const [key, arr] of this.state) {
+      if (Array.isArray(arr)) {
+        arr.forEach((report) => {
+          if (!!from && !!report.ts) {
+            if (!!from && !!to) {
+              if (report.ts >= from && report.ts <= to) {
+                if (!state[key]) {
+                  state[key] = []
+                }
+
+                state[key].push(report)
+              }
+            } else {
+              if (report.ts <= to) {
+                if (!state[key]) {
+                  state[key] = []
+                }
+
+                state[key].push(report)
+              }
+            }
+          } else {
+            if (!state[key]) {
+              state[key] = []
+            }
+
+            state[key].push(report)
+          }
+        })
       }
     }
 

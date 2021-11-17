@@ -23,7 +23,7 @@ export const reportAddAPI =async (req, res) => {
   } else {
     const ts = Date.now()
 
-    reportMapInstance.set(spuid, { ...json, ts })
+    reportMapInstance.add(spuid, { ...json, ts })
     result.ok = true
   }
 
