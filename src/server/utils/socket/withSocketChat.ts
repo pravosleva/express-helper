@@ -11,7 +11,7 @@ import {
   ERegistryLevel,
   roomsTasklistMapInstance as roomsTasklistMap,
   TRoomTask,
-  EMessageType,
+  EMessageStatus,
 } from './state'
 import DeviceDetector from 'device-detector-js'
 
@@ -306,7 +306,7 @@ export const withSocketChat = (io: Socket) => {
       if (!!cb) cb()
     })
 
-    socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: { text: string, type?: EMessageType } }, cb) => {
+    socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: { text: string, status?: EMessageStatus } }, cb) => {
       const result = roomsMap.editMessage({
         room, name, ts, newData
       })

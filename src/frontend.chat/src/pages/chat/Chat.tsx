@@ -75,7 +75,7 @@ import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
 import { useDebounce, useLocalStorage } from 'react-use'
 
-enum EMessageType {
+enum EMessageStatus {
   Info = 'info',
   Success = 'success',
   Warn = 'warning',
@@ -89,24 +89,24 @@ enum EMessageType {
 const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 
 type TUser = { socketId: string; room: string; name: string }
-type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, type: EMessageType }
+type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, status: EMessageStatus }
 
 const statusMap: {
   [key: string]: any
 } = {
-  [EMessageType.Done]: <FaCheckCircle size={15} />,
-  [EMessageType.Dead]: <GiDeathSkull size={14} /*color='#000'*/ />,
-  [EMessageType.Warn]: <FiActivity size={15} /*color='#000'*/ />,
-  [EMessageType.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />,
-  [EMessageType.Success]: <FaCheck size={11} />
+  [EMessageStatus.Done]: <FaCheckCircle size={15} />,
+  [EMessageStatus.Dead]: <GiDeathSkull size={14} /*color='#000'*/ />,
+  [EMessageStatus.Warn]: <FiActivity size={15} /*color='#000'*/ />,
+  [EMessageStatus.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />,
+  [EMessageStatus.Success]: <FaCheck size={11} />
 }
-const getIconByStatus = (status: EMessageType, isColored: boolean) => {
+const getIconByStatus = (status: EMessageStatus, isColored: boolean) => {
   switch (true) {
     case !!statusMap[status]: return <span className='abs-tail' style={{ width: '17px', backgroundColor: isColored ? getBgColorByStatus(status) : 'inherit' }}>{statusMap[status]}</span>
     default: return null
   }
 }
-const getIconByStatuses = (statuses: EMessageType[], isColored: boolean) => {
+const getIconByStatuses = (statuses: EMessageStatus[], isColored: boolean) => {
   switch (true) {
     case statuses.length > 0:
       const res: any[] = []
@@ -124,28 +124,28 @@ function capitalizeFirstLetter(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 const bgColorsMap: { [key: string]: string } = {
-  [EMessageType.Done]: 'var(--chakra-colors-gray-500)',
-  [EMessageType.Dead]: '#000',
-  [EMessageType.Warn]: '#FFDE68',
-  [EMessageType.Danger]: '#FF9177',
-  [EMessageType.Info]: '#408EEA',
-  [EMessageType.Success]: '#31EAB7',
+  [EMessageStatus.Done]: 'var(--chakra-colors-gray-500)',
+  [EMessageStatus.Dead]: '#000',
+  [EMessageStatus.Warn]: '#FFDE68',
+  [EMessageStatus.Danger]: '#FF9177',
+  [EMessageStatus.Info]: '#408EEA',
+  [EMessageStatus.Success]: '#31EAB7',
 }
 // const colorsMap: { [key: string]: string } = {
-//   [EMessageType.Done]: '#FFF',
-//   [EMessageType.Dead]: '#FFDE68',
-//   [EMessageType.Warn]: 'rgba(0,0,0,.7)',
-//   [EMessageType.Danger]: 'rgba(0,0,0,.7)',
-//   [EMessageType.Info]: '#FFF',
-//   [EMessageType.Success]: 'rgba(0,0,0,.7)',
+//   [EMessageStatus.Done]: '#FFF',
+//   [EMessageStatus.Dead]: '#FFDE68',
+//   [EMessageStatus.Warn]: 'rgba(0,0,0,.7)',
+//   [EMessageStatus.Danger]: 'rgba(0,0,0,.7)',
+//   [EMessageStatus.Info]: '#FFF',
+//   [EMessageStatus.Success]: 'rgba(0,0,0,.7)',
 // }
-const getBgColorByStatus = (s: EMessageType) => {
+const getBgColorByStatus = (s: EMessageStatus) => {
   switch (true) {
     case !!bgColorsMap[s]: return bgColorsMap[s]
     default: return 'current'
   }
 }
-// const getColorByStatus = (s: EMessageType) => {
+// const getColorByStatus = (s: EMessageStatus) => {
 //   switch (true) {
 //     case !!colorsMap[s]: return colorsMap[s]
 //     default: return null
@@ -233,7 +233,7 @@ export const Chat = () => {
         setTsPoint(nextTsPoint)
         setFullChatReceived(isDone)
       }
-      const updMsgListener = ({ text, ts, editTs, type }: { text: string, editTs?: number, type?: EMessageType, ts: number }) => {
+      const updMsgListener = ({ text, ts, editTs, status }: { text: string, editTs?: number, status?: EMessageStatus, ts: number }) => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
@@ -241,11 +241,11 @@ export const Chat = () => {
           if (targetIndex !== -1) {
             newArr[targetIndex].text = text
             if (!!editTs) newArr[targetIndex].editTs = editTs
-            if (!!type) {
-              newArr[targetIndex].type = type
+            if (!!status) {
+              newArr[targetIndex].status = status
             } else {
               // @ts-ignore
-              if (!!newArr[targetIndex].type) delete newArr[targetIndex].type
+              if (!!newArr[targetIndex].status) delete newArr[targetIndex].status
             }
           }
           return newArr
@@ -402,7 +402,7 @@ export const Chat = () => {
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
   const initialEditedMessageState = { text: '', ts: 0 }
-  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; type?: EMessageType }>(initialEditedMessageState)
+  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus }>(initialEditedMessageState)
   const [isCtxMenuOpened, setIsCtxMenuOpened] = useState<boolean>(false)
   // const resetEditedMessage = () => {
   //   setEditedMessage(initialEditedMessageState)
@@ -430,7 +430,7 @@ export const Chat = () => {
     }
     if (!!socket) {
       const newData: Partial<TMessage> = { text: editedMessage.text }
-      if (!!editedMessage.type) newData.type = editedMessage.type
+      if (!!editedMessage.status) newData.status = editedMessage.status
       socket.emit(
         'editMessage',
         { newData, ts: editedMessage.ts, room, name },
@@ -470,11 +470,11 @@ export const Chat = () => {
         }
       })
   }
-  const handleSetStatus = (type: EMessageType) => {
+  const handleSetStatus = (status: EMessageStatus) => {
     if (!!socket) {
       socket.emit(
         'editMessage',
-        { newData: { text: editedMessage.text, type }, ts: editedMessage.ts, room, name }
+        { newData: { text: editedMessage.text, status }, ts: editedMessage.ts, room, name }
       )
     }
   }
@@ -571,8 +571,8 @@ export const Chat = () => {
   //     // height: 'auto',
   //   },
   // })
-  const [filters, setFilters] = useState<EMessageType[]>([])
-  const setFilter = (filter: EMessageType) => {
+  const [filters, setFilters] = useState<EMessageStatus[]>([])
+  const setFilter = (filter: EMessageStatus) => {
     setFilters([filter])
   }
   const { formData, handleInputChange, resetForm } = useForm({
@@ -672,8 +672,8 @@ export const Chat = () => {
         onHide={handleHideCtxMenu}
       >
         {
-          Object.values(EMessageType).map((statusCode: EMessageType) => {
-            if (editedMessage.type === statusCode) return null
+          Object.values(EMessageStatus).map((statusCode: EMessageStatus) => {
+            if (editedMessage.status === statusCode) return null
             return (
               <CtxMenuItem key={statusCode} className={statusCode} data={{ foo: 'bar' }} onClick={() => handleSetStatus(statusCode)}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>{!!getIconByStatus(statusCode, false) && <div style={{ marginRight: '8px' }}>{getIconByStatus(statusCode, false)}</div>}<div>Status <b>{capitalizeFirstLetter(statusCode)}</b></div></div>
@@ -681,7 +681,7 @@ export const Chat = () => {
             )
           })
         }
-        {!!editedMessage.type && (
+        {!!editedMessage.status && (
           <CtxMenuItem className='unset-status' data={{ foo: 'bar' }} onClick={() => handleUnsetStatus()}>
             Unset status
           </CtxMenuItem>
@@ -924,31 +924,31 @@ export const Chat = () => {
                     // style={{ maxHeight: '120px', overflowY: 'auto' }}
                   >
                     {
-                      Object.values(EMessageType).map((type) => {
-                        const Icon = !!getIconByStatus(type, false) ? <span style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(type, false)}</span> : null
-                        const counter = logic.getCountByFilter(type)
-                        const isFilterEnabled = filters.includes(type)
+                      Object.values(EMessageStatus).map((status) => {
+                        const Icon = !!getIconByStatus(status, false) ? <span style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(status, false)}</span> : null
+                        const counter = logic.getCountByFilter(status)
+                        const isFilterEnabled = filters.includes(status)
                         const isDisabed = counter === 0 || isFilterEnabled
 
-                        // if (filters.includes(type) || !counter) return null
+                        // if (filters.includes(status) || !counter) return null
                         return (
                           <MenuItem
                             minH="40px"
-                            key={type}
-                            onClick={() => setFilter(type)}
+                            key={status}
+                            onClick={() => setFilter(status)}
                             isDisabled={isDisabed}
                           >
-                            <Text fontSize="md" fontWeight='bold' display='flex'>{Icon}{capitalizeFirstLetter(type)} ({counter})</Text>
+                            <Text fontSize="md" fontWeight='bold' display='flex'>{Icon}{capitalizeFirstLetter(status)} ({counter})</Text>
                           </MenuItem>
                         )
                       })
                     }
                     <MenuItem
                       minH="40px"
-                      onClick={() => setFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn])}
-                      isDisabled={logic.getCountByFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn]) === 0 || filters.join(',') === [EMessageType.Success, EMessageType.Danger, EMessageType.Warn].join(',')}
+                      onClick={() => setFilters([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn])}
+                      isDisabled={logic.getCountByFilters([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn]) === 0 || filters.join(',') === [EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn].join(',')}
                     >
-                      <Text fontSize="md" fontWeight='bold' display='flex'>{getIconByStatuses([EMessageType.Success, EMessageType.Danger, EMessageType.Warn], false)}In progress ({logic.getCountByFilters([EMessageType.Success, EMessageType.Danger, EMessageType.Warn])})</Text>
+                      <Text fontSize="md" fontWeight='bold' display='flex'>{getIconByStatuses([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn], false)}In progress ({logic.getCountByFilters([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn])})</Text>
                     </MenuItem>
                   </div>
                   {
@@ -1030,7 +1030,7 @@ export const Chat = () => {
               <Box ml="2">---</Box>
             </Flex>
             {logic.getFiltered(filters, debouncedSearchText).map((message: TMessage, i) => {
-              const { user, text, ts, editTs, type } = message
+              const { user, text, ts, editTs, status } = message
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
@@ -1045,7 +1045,7 @@ export const Chat = () => {
 
               return (
                 <Box
-                  key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}
+                  key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
                   className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
                   // style={transform}
                   m=".3rem 0"
@@ -1095,11 +1095,11 @@ export const Chat = () => {
                         </div>
                       )
                     }
-                    <div className={clsx("msg", { [type]: !!type, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}>
+                    <div className={clsx("msg", { [status]: !!status, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}>
                       {isMyMessage ? (
                         <ContextMenuTrigger
                           id="same_unique_identifier"
-                          key={`${user}-${ts}-${editTs || 'original'}-${type || 'no-type'}`}
+                          key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
                           ref={c => contextTriggerRef = c}
                         >
                           <Text
@@ -1125,13 +1125,13 @@ export const Chat = () => {
                           </Text>
                         </ContextMenuTrigger>
                       ) : (
-                        <Text display="inline-block" fontSize="md" className={clsx({ [type]: !!type })}
+                        <Text display="inline-block" fontSize="md" className={clsx({ [status]: !!status })}
                           // p=".3rem .9rem"
                         >
                           {text}
                         </Text>
                       )}
-                      {getIconByStatus(type, true)}
+                      {getIconByStatus(status, true)}
                     </div>
                     
                   </div>

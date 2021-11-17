@@ -2,7 +2,8 @@ import { reportMapInstance } from './state'
 
 type TResult = {
   ok: boolean;
-  message?: string
+  message?: string;
+  total?: number;
   [key: string]: any;
 }
 
@@ -33,6 +34,8 @@ export const reportGetStateAPI = async (req, res) => {
   }
 
   if (errs.length > 0) result.message = errs.join('; ')
+
+  result.total = reportMapInstance.size
 
   res.status(200).send({
     ...result,

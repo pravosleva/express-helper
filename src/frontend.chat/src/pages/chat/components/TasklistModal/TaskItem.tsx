@@ -105,7 +105,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
           />
         </Text>
       ) : null}
-      {!!price && <Text fontSize="lg" fontWeight='bold'>={getPrettyPrice(price)}</Text>}
+      {!!price && <Text fontSize="md" fontWeight='bold'>={getPrettyPrice(price)}</Text>}
     </>
   ) // !!diff ? <TimeTag diff={diff} isCompleted={isCompleted} /> : null
   const MemoizedMenu = useMemo(() => (
@@ -315,6 +315,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
         <Td fontWeight='bold' pl={0} pr={0}>
           <Stack>
             <Editable
+              size="md"
               defaultValue={title}
               onChange={(nextVal: string) => {
                 titleEditedRef.current = nextVal

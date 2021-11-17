@@ -29,6 +29,9 @@ class Singleton {
   public has(key: string) {
     return this.state.has(key)
   }
+  public get size() {
+    return this.state.size
+  }
   public getState() {
     const state = {}
     

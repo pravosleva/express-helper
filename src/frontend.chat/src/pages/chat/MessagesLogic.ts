@@ -1,4 +1,4 @@
-enum EMessageType {
+enum EMessageStatus {
   Info = 'info',
   Success = 'success',
   Warn = 'warning',
@@ -6,7 +6,7 @@ enum EMessageType {
   Dead = 'dead',
   Done = 'done',
 }
-type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, type: EMessageType }
+type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, status: EMessageStatus }
 
 export class Logic {
   messages: TMessage[];
@@ -15,7 +15,7 @@ export class Logic {
     this.messages = messages;
   }
 
-  getFiltered(filters: EMessageType[], searchText?: string): TMessage[] {
+  getFiltered(filters: EMessageStatus[], searchText?: string): TMessage[] {
     switch (true) {
       case !!searchText:
         const words = searchText?.split(' ').filter((str: string) => !!str)
@@ -28,19 +28,19 @@ export class Logic {
           // @ts-ignore
           return this.messages.filter(({ text }) => new RegExp(words.join("|")).test(text))
         }
-      case filters.length > 0: return this.messages.filter(({ type }) => filters.length > 0 ? filters.includes(type) : true)
+      case filters.length > 0: return this.messages.filter(({ status }) => filters.length > 0 ? filters.includes(status) : true)
       default: return this.messages
     }
   }
-  getCountByFilter(filter: EMessageType | null): number {
+  getCountByFilter(filter: EMessageStatus | null): number {
     switch (true) {
-      case !!filter: return this.messages.filter(({ type }) => type === filter).length
+      case !!filter: return this.messages.filter(({ status }) => status === filter).length
       default: return this.messages.length
     }
   }
-  getCountByFilters(filters: EMessageType[]): number {
+  getCountByFilters(filters: EMessageStatus[]): number {
     switch (true) {
-      case filters.length > 0: return this.messages.filter(({ type }) => filters.includes(type)).length
+      case filters.length > 0: return this.messages.filter(({ status }) => filters.includes(status)).length
       default: return this.messages.length
     }
   }

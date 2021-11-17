@@ -7,7 +7,7 @@ import {
   TRoomId,
   TRoomData,
   TMessage,
-  EMessageType,
+  EMessageStatus,
 } from './types'
 import { binarySearchTsIndex } from '~/utils/binarySearch'
 
@@ -83,7 +83,7 @@ class Singleton {
       room: string,
       name: string,
       ts: number,
-      newData: { text: string, type?: EMessageType }
+      newData: { text: string, status?: EMessageStatus }
     }
   ): {
     isOk: boolean,
@@ -119,10 +119,10 @@ class Singleton {
         } else {
           roomMessages[theMessageIndex].text = newData.text
           roomMessages[theMessageIndex].editTs = new Date().getTime()
-          if (!!newData.type) {
-            roomMessages[theMessageIndex].type = newData.type
+          if (!!newData.status) {
+            roomMessages[theMessageIndex].status = newData.status
           } else {
-            if (!!roomMessages[theMessageIndex].type) delete roomMessages[theMessageIndex].type
+            if (!!roomMessages[theMessageIndex].status) delete roomMessages[theMessageIndex].status
           }
           roomData = roomMessages
           this.state.set(room, roomData)
@@ -170,7 +170,7 @@ class Singleton {
 }
 
 export const roomsMapInstance = Singleton.getInstance()
-const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
+// const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 
 const syncRoomsMap = () => {
   const isFirstScriptRun = counter.next().value === 0
@@ -194,17 +194,32 @@ const syncRoomsMap = () => {
         // NOTE: Sync with old state:
         Object.keys(staticData).forEach((roomName: string) => {
           // -- OLD format transform
+          // 1.
           /*
             {"data":{"ux-test":{"Den":[{"text":"tst2","ts":1633145946256,"rl":1},{"text":"tst","ts":1633146080967,"rl":1}]}},"ts":1633146858011}
           */
-          if (!Array.isArray(staticData[roomName])) {
-            let newFormat = []
-            Object.keys(staticData[roomName]).forEach((name: string) => {
-              newFormat = [...newFormat, ...staticData[roomName][name].map(origin => ({ ...origin, user: name }))]
-            })
-            roomsMapInstance.set(roomName, newFormat.sort(tsSortDEC))
-          } else {
-            roomsMapInstance.set(roomName, staticData[roomName].sort(tsSortDEC))
+          // if (!Array.isArray(staticData[roomName])) {
+          //   let newFormat = []
+          //   Object.keys(staticData[roomName]).forEach((name: string) => {
+          //     newFormat = [...newFormat, ...staticData[roomName][name].map(origin => ({ ...origin, user: name }))]
+          //   })
+          //   roomsMapInstance.set(roomName, newFormat.sort(tsSortDEC))
+          // } else {
+          //   roomsMapInstance.set(roomName, staticData[roomName].sort(tsSortDEC))
+          // }
+
+          // 2: Rename msg prop type -> status
+          const newMsgs = []
+          for(const msg of staticData[roomName]) {
+            // @ts-ignore
+            if (!!msg.type) {
+              // @ts-ignore
+              msg.status = msg.type
+              // @ts-ignore
+              delete msg.type
+            }
+            newMsgs.push(msg)
+            roomsMapInstance.set(roomName, newMsgs)
           }
           // --
         })
