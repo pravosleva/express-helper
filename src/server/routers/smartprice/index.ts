@@ -43,7 +43,7 @@ import partnerApiTradeInDecline from './mws/partner_api/tradein/decline'
 import partnerApiToolsFmsCode from './mws/partner_api/tools/fms/[code]'
 import otWebApiFizotLandingForm from './mws/ot-web/fizot-landing-form'
 
-import { reportAddAPI, reportGetStateAPI } from './mws/report'
+import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
 
 // const formidable = require('cyberjon-express-formidable')
 
@@ -119,5 +119,6 @@ spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)
 // 7. Report
 spApi.post('/report/add', reportAddAPI)
 spApi.get('/report/get-state', reportGetStateAPI)
+spApi.get('/report/resolve-issue', reportResolveIssueAPI)
 
 export default spApi

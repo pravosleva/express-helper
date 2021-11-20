@@ -38,6 +38,9 @@ class Singleton {
   public get(key: string) {
     return this.state.get(key)
   }
+  public set(key: string, value: any) {
+    return this.state.set(key, value)
+  }
   public delete(key: string) {
     return this.state.delete(key)
   }
@@ -49,30 +52,26 @@ class Singleton {
   }
   public getState() {
     const state = {}
+    const count = {
+      eventsFound: 0,
+      totalClients: this.size,
+    }
     
     this.state.forEach((value, key) => {
       state[key] = value
+      if (Array.isArray(value) && value.length > 0) count.eventsFound += value.length
     })
 
-    return state
+    return { state, count }
   }
-  public getStateTSRange({ from, to }: { from: number, to: number }) {
+  public getStateTSRange({ from, to }: { from?: number, to?: number }) {
     const state = {}
+    const count = {
+      eventsFound: 0,
+      totalClients: this.size,
+      clientsFound: 0,
+    }
 
-    // V1:
-    // for (const [key, value] of this.state) {
-    //   if (!!from && !!value.ts) {
-    //     if (!!from && !!to) {
-    //       if (value.ts >= from && value.ts <= to) state[key] = value
-    //     } else {
-    //       if (value.ts <= to) state[key] = value
-    //     }
-    //   } else {
-    //     state[key] = value
-    //   }
-    // }
-
-    // V2:
     for (const [key, arr] of this.state) {
       if (Array.isArray(arr)) {
         arr.forEach((report) => {
@@ -81,31 +80,37 @@ class Singleton {
               if (report.ts >= from && report.ts <= to) {
                 if (!state[key]) {
                   state[key] = []
+                  count.clientsFound += 1
                 }
 
                 state[key].push(report)
+                count.eventsFound += 1
               }
             } else {
               if (report.ts <= to) {
                 if (!state[key]) {
                   state[key] = []
+                  count.clientsFound += 1
                 }
 
                 state[key].push(report)
+                count.eventsFound += 1
               }
             }
           } else {
             if (!state[key]) {
               state[key] = []
+              count.clientsFound += 1
             }
 
             state[key].push(report)
+            count.eventsFound += 1
           }
         })
       }
     }
 
-    return state
+    return { state, count }
   }
 }
 

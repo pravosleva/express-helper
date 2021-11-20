@@ -26,7 +26,19 @@ export const reportGetStateAPI = async (req, res) => {
         errs.push(`State not found for spuid ${spuid}`)
       }
     } else {
-      result.state = reportMapInstance.getStateTSRange({ from: Number(from), to: Number(to) })
+      try {
+        if (!!from || !!to) {
+          const { state, count } = reportMapInstance.getStateTSRange({ from: Number(from), to: Number(to) })
+          result.state = state
+          result.count = count
+        } else {
+          const { state, count } = reportMapInstance.getState()
+          result.state = state
+          result.count = count
+        }
+      } catch (err) {
+        throw err
+      }
     }
     
     result.ok = true
@@ -35,8 +47,6 @@ export const reportGetStateAPI = async (req, res) => {
   }
 
   if (errs.length > 0) result.message = errs.join('; ')
-
-  result.total = reportMapInstance.size
 
   res.status(200).send({
     ...result,

@@ -14,8 +14,7 @@ export const reportAddAPI =async (req, res) => {
     ok: false
   };
   const startupDate = new Date(reportMapInstance.startTs).toISOString()
-
-  let errs: string[] = []
+  const errs: string[] = []
 
   if (!spuid) {
     errs.push('Missed param: req.body.spuid')
