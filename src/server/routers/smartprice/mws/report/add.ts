@@ -13,6 +13,7 @@ export const reportAddAPI =async (req, res) => {
   const result: TResult = {
     ok: false
   };
+  const startupDate = new Date(reportMapInstance.startTs).toISOString()
 
   let errs: string[] = []
 
@@ -23,7 +24,7 @@ export const reportAddAPI =async (req, res) => {
   } else {
     const ts = Date.now()
 
-    reportMapInstance.add(spuid, { ...json, ts })
+    reportMapInstance.add(spuid, { report: json, ts })
     result.ok = true
   }
 
@@ -32,5 +33,6 @@ export const reportAddAPI =async (req, res) => {
   res.status(200).send({
     ...result,
     _originalBody: req.body,
+    startupDate,
   })
 }

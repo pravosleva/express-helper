@@ -14,6 +14,7 @@ export const reportGetStateAPI = async (req, res) => {
     state: null
   };
   let errs: string[] = []
+  const startupDate = new Date(reportMapInstance.startTs).toISOString()
 
   try {
     if (!!spuid) {
@@ -40,5 +41,6 @@ export const reportGetStateAPI = async (req, res) => {
   res.status(200).send({
     ...result,
     _originalQuery: req.query,
+    startupDate,
   })
 }

@@ -21,7 +21,9 @@ import { useLocalStorage } from 'react-use'
 // import { useForm } from '~/common/hooks/useForm'
 import { RoomlistModal } from './components'
 import slugify from 'slugify'
-import { FocusableElement } from "@chakra-ui/utils"
+// import { FocusableElement } from "@chakra-ui/utils"
+
+const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'Anchous chat 2021'
 
 type TLocalRoomItem = {
   name: string
@@ -352,7 +354,7 @@ export const Login = () => {
             mb="8"
             fontFamily="Bahiana"
           >
-            Anchous chat 2021
+            {REACT_APP_CHAT_NAME}
           </Heading>
           <Flex className="form" gap="1rem" flexDirection={{ base: 'column', md: 'row' }} mb={4}>
             <Input

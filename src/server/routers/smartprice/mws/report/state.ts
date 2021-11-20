@@ -2,10 +2,12 @@ export type TSPUID = string
 
 class Singleton {
   private static instance: Singleton;
-   state: Map<TSPUID, any[]>;
+  state: Map<TSPUID, any[]>;
+  public startTs: number;
 
   private constructor() {
     this.state = new Map()
+    this.startTs = Date.now()
   }
 
   public static getInstance(): Singleton {
