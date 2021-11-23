@@ -9,7 +9,7 @@ type TResult = {
 // NOTE: spuid should be taken from cookies
 
 export const reportAddAPI =async (req, res) => {
-  const { spuid, json } = req.body
+  const { spuid, json , metrics } = req.body
   const result: TResult = {
     ok: false
   };
@@ -22,8 +22,11 @@ export const reportAddAPI =async (req, res) => {
     errs.push('Missed param: req.body.json')
   } else {
     const ts = Date.now()
+    const newData: any = { report: json, ts }
 
-    reportMapInstance.add(spuid, { report: json, ts })
+    if (!!metrics) newData.metrics = metrics
+
+    reportMapInstance.add(spuid, newData)
     result.ok = true
   }
 

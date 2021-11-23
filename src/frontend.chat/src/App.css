@@ -26,3 +26,90 @@
     font-size: 13px;
     /* border: 1px solid red; */
 }
+
+input[type="file"] {
+    display: none;
+}
+.special-btn {
+    transition: all 0.2s linear;
+    border: 2px solid var(--chakra-colors-gray-400);
+
+    display: inline-block;
+    
+    cursor: pointer;
+    font-weight: bold;
+}
+.special-btn:hover {
+    /* border: 2px solid var(--chakra-colors-gray-500); */
+    border: 2px solid #FFF;
+    background: var(--chakra-colors-whiteAlpha-300);
+    color: #FFF;
+}
+.special-btn-md {
+    border-radius: 20px;
+    padding: 6px 12px;
+}
+.special-btn-sm {
+    border-radius: 8px;
+    padding: 3px 6px;
+}
+
+.abs-img-service-btns {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.abs-img-service-btns > *:not(:last-child) {
+    margin-right: var(--chakra-space-1);
+}
+.abs-img-caption {
+    transition: all 0.2s linear;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 5px 10px;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #FFF;
+    border-radius: 0 0 10px 10px;
+
+    /* max-height: 150px;
+    --max-lines: 3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+.abs-img-caption:hover {
+    background: rgba(0,0,0,0.8);
+}
+.truncate-overflow {
+    --max-lines: 3;
+    /* max-height: calc(var(--lh) * var(--max-lines)); */
+    /* max-height: calc(100% - var(--max-lines) * 1.1em); */
+    max-height: 50px;
+    overflow: hidden;
+}
+.truncate-overflow::before {
+    content: "...";
+    position: absolute;
+    bottom: 5px;
+    right: 2px;
+}
+.truncate-overflow::after {
+    content: "";
+    position: absolute;
+    right: 0; /* note: not using bottom */
+    width: 1rem;
+    height: 1rem;
+    /* background: white; */
+  }
+.dark-btn {
+    background: rgba(0,0,0,0.7);
+    color: #FFF;
+}
+.dark-btn:hover {
+    border: 2px solid #FFF;
+    background: rgba(0,0,0,0.8);
+    color: #FFF;
+}

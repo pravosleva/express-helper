@@ -14,14 +14,16 @@ PUBLIC_URL=/chat" > src/frontend.chat/.env.development.local
     ;;
     "prod")
 ## PRAVOSLEVA.RU
-#       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
-# PUBLIC_URL=/express-helper/chat
-# REACT_APP_CHAT_NAME=\"ANCHOUS CHAT 2021\"" > src/frontend.chat/.env.production
+      echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
+PUBLIC_URL=/express-helper/chat
+REACT_APP_CHAT_NAME=\"ANCHOUS CHAT 2021\"
+REACT_APP_CHAT_UPLOADS_URL=/express-helper/chat/storage/uploads" > src/frontend.chat/.env.production
 
 ## SMARTPRICE beta2
-      echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
-PUBLIC_URL=http://104.248.201.86:5000/chat
-REACT_APP_CHAT_NAME=\"Open Chat 2021\"" > src/frontend.chat/.env.production
+#       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
+# PUBLIC_URL=http://104.248.201.86:5000/chat
+# REACT_APP_CHAT_NAME=\"Open Chat 2021\"
+# REACT_APP_CHAT_UPLOADS_URL=http://pravosleva.ru/express-helper/chat/storage/uploads" > src/frontend.chat/.env.production
     ;;
     *)
     echo "☠️ SCRIPT: unknown param $1" &&

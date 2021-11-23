@@ -6,6 +6,7 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import cors from 'cors'
+import siofu from 'socketio-file-upload'
 import authRouter from './routers/auth'
 import chatRouter from './routers/chat'
 
@@ -38,6 +39,9 @@ app.use((req, _res, next) => {
   req.loggedMap = addsDevicesLoggedStateInstance
   next()
 })
+// -- Uploader init (part 1/2)
+app.use(siofu.router)
+// --
 
 // NOTE: Пути до "публичной" статики (та что в ./public/*) указываем относительно <PROJECT_ROOT_DIR>/server-dist
 // (transpiling destination dir) ...или ./bin/www, откуда будет запуск?

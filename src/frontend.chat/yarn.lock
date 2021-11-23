@@ -2645,6 +2645,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-inner-image-zoom@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-inner-image-zoom/-/react-inner-image-zoom-2.0.1.tgz#4b723d44c5529d64b11b569fc3dcf1b3db51b9fc"
+  integrity sha512-pADorue3ZydfJOEpe3FJUs2Tc4iz5RByQ+H+N0IRLUYtUWOJ5TyfujJJiXU5xdHyD0GruqBl7fRev6cWJWkZeA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-router-dom@^5.1.8":
   version "5.1.8"
   resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-5.1.8.tgz#bf3e1c8149b3d62eaa206d58599de82df0241192"
@@ -6221,6 +6228,11 @@ focus-lock@^0.8.1:
   integrity sha512-/LFZOIo82WDsyyv7h7oc0MJF9ACOvDRdx9rWPZ2pgMfNWu/z8hQDBtOchuB/0BVLmuFOZjV02YwUVzNsWx/EzA==
   dependencies:
     tslib "^1.9.3"
+
+focus-options-polyfill@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/focus-options-polyfill/-/focus-options-polyfill-1.2.0.tgz#9800ffb230bc9db63eea6d27694a62ac2e355946"
+  integrity sha512-4sgXxV/zU4WHM2IHWpjUmEWazbF6ie+M93/uo8ipfAbQ1GHopn+/V+Ca+PR0ndxswNQbisCNrjbnvWEq14MkTA==
 
 follow-redirects@^1.0.0:
   version "1.13.2"
@@ -10667,6 +10679,11 @@ react-icons@^4.2.0:
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
   integrity sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==
 
+react-inner-image-zoom@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-inner-image-zoom/-/react-inner-image-zoom-2.1.0.tgz#d799f9be79ea25f42627ecd0f66b58c82af55c14"
+  integrity sha512-LT3hxk4LZDJakUBAtpNsoVFGScyZXrRnerXZ7hgWOaUTKkRB88LI5cWmNukf9iEI0fnYLl6gybjzE+N9rvC2pQ==
+
 react-intersection-observer@^8.32.1:
   version "8.32.1"
   resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.32.1.tgz#9b949871eb35eb1fc730732bbf8fcfaaaf3f5b02"
@@ -10696,6 +10713,15 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-medium-image-zoom@^4.3.5:
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-4.3.5.tgz#9ed82faf73a68ba4ce76d8f94c022fc555eec4e4"
+  integrity sha512-feYHG+8McStfQ+mvFJTlmD1GQaYWiVlMf/Rv1MSRcd6UBBj+X8yj5OySw/Xau5PYFPCms7FbpCkt6437iRW47w==
+  dependencies:
+    focus-options-polyfill "1.2.0"
+    react-use "^17.2.1"
+    tslib "^2.1.0"
 
 react-refresh@^0.8.3:
   version "0.8.3"
@@ -10798,7 +10824,7 @@ react-universal-interface@^0.6.2:
   resolved "https://registry.yarnpkg.com/react-universal-interface/-/react-universal-interface-0.6.2.tgz#5e8d438a01729a4dbbcbeeceb0b86be146fe2b3b"
   integrity sha512-dg8yXdcQmvgR13RIlZbTRQOoUrDciFVoSBZILwjE2LFISxZZ8loVJKAkuzswl5js8BHda79bIb2b84ehU8IjXw==
 
-react-use@^17.3.1:
+react-use@^17.2.1, react-use@^17.3.1:
   version "17.3.1"
   resolved "https://registry.yarnpkg.com/react-use/-/react-use-17.3.1.tgz#12b248555775519aa2b900b22f1928d029bf99d1"
   integrity sha512-hs7+tS4rRm1QLHPfanLCqXIi632tP4V7Sai1ENUP2WTufU6am++tU9uSw9YrNCFqbABiEv0ndKU1XCUcfu2tXA==
@@ -11712,6 +11738,11 @@ socket.io-parser@~4.0.4:
     "@types/component-emitter" "^1.2.10"
     component-emitter "~1.3.0"
     debug "~4.3.1"
+
+socketio-file-upload@^0.7.3:
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/socketio-file-upload/-/socketio-file-upload-0.7.3.tgz#fb71599a4cab3f27d1bf7dbbbfd6149170ad44e2"
+  integrity sha512-JUvzi8Vvp2+GBfQtOehPSfecetZOo4g1JTl6+zmKhPiljn+z09lLL8zYeX4AJVSNpmRkGJnypbHkiPjPSkk5UA==
 
 sockjs-client@^1.5.0:
   version "1.5.0"

@@ -28,6 +28,8 @@
   align-items: center;
   margin: 0 auto;
   width: 100%;
+
+  overscroll-behavior: none
 }
 
 .room{
@@ -88,6 +90,59 @@
       & > * {
         overflow-x: hidden;
       }
+
+      .msg-as-image--wrapper {
+        position: relative;
+        max-height: 200px;
+        // border: 1px solid red;
+        & img {
+          border-radius: 10px;
+          max-height: 330px;
+          min-height: 115px;
+          // border: 1px solid red;
+
+          // padding:0px;
+          // border:0px;
+          // margin:-2px;
+        }
+        // & .iiz__btn.iiz__hint {
+        //   border-radius: 8px;
+        //   width: 35px;
+        //   height: 35px;
+        // }
+        // & .iiz__btn {
+        //   background: rgba(0,0,0,0.7);
+        //   border: 2px solid var(--chakra-colors-gray-400);
+        // }
+        // & .iiz__btn:hover {
+        //   border: 2px solid #FFF;
+        //   background: var(--chakra-colors-whiteAlpha-300);
+        //   color: #FFF;
+        // }
+        // & .iiz__hint::before {
+        //   width: 15px;
+        //   height: 15px;
+        //   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19.9 19.9'%3E%3Cpath d='M13.9 7.4C13.9 3.8 11 .9 7.4.9S.9 3.8.9 7.4s2.9 6.5 6.5 6.5 6.5-2.9 6.5-6.5zm5.3 12.5l-6.7-7.2c-1.4 1.3-3.2 2.1-5.1 2.1-4.1 0-7.4-3.3-7.4-7.4S3.3 0 7.4 0s7.4 3.3 7.4 7.4c0 1.7-.6 3.4-1.7 4.7l6.8 7.2-.7.6z' fill='%23FFFFFF'/%3E%3C/svg%3E") !important;
+        // }
+        // & .iiz__hint {
+        //   bottom: 5px;
+        //   right: 5px;
+        //   background: rgba(0, 0, 0, 0.8);
+        // }
+      }
+      // .msg-as-image {
+      //   transition: all 0.2s linear;
+      //   border-radius: 10px;
+      //   object-fit: contain;
+      //   object-position: 50% 50%;
+      //   max-height: 200px;
+      //   min-width: 150px;
+      //   min-height: 150px;
+      //   border: 2px solid var(--chakra-colors-gray-400);
+      // }
+      // .msg-as-image:hover {
+      //   border: 2px solid #FFF;
+      // }
 
       .message{
         animation: fadeIn 1s;
@@ -300,5 +355,17 @@
       .messages{
           flex: 1;
       }
+  }
+}
+
+.service-flex-row {
+  margin: 1rem 0 .3rem 0;
+  display: flex;
+  align-items: center;
+  & > * {
+    margin: .3rem 0;
+  }
+  & > *:not(:last-child) {
+    margin-right: var(--chakra-space-2);
   }
 }

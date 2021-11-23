@@ -12,11 +12,24 @@ import {
   roomsTasklistMapInstance as roomsTasklistMap,
   TRoomTask,
   EMessageStatus,
+  TConnectionData,
 } from './state'
 import DeviceDetector from 'device-detector-js'
+import siofu from 'socketio-file-upload'
+import path from 'path'
+import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
+import { removeFileIfNecessary } from '~/utils/fs-tools/removeFileIfNecessary'
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? String(token) === CHAT_ADMIN_TOKEN : false
+const CHAT_UPLOADS_DIR_NAME = process.env.CHAT_UPLOADS_DIR_NAME || 'uploads'
+
+// -- Create uploads dir if necessary
+const projectRootDir = path.join(__dirname, '../../../')
+const uploadsPath = path.join(projectRootDir, `/storage/${CHAT_UPLOADS_DIR_NAME}`)
+
+createDirIfNecessary(uploadsPath)
+// --
 
 export type TMessage = {
   text: string
@@ -24,10 +37,27 @@ export type TMessage = {
   editTs?: number
   rl?: ERegistryLevel
   user: string
+  fileName?: string
 }
 
 const deviceDetector = new DeviceDetector()
 const getParsedUserAgent = (socket: any): DeviceDetector.DeviceDetectorResult => deviceDetector.parse(socket.handshake.headers['user-agent'])
+
+type TUploadFileEvent = {
+  file: {
+    name: string // 'broken-screen-hor-inv-x1920-x-1080.jpg',
+    mtime: string // 2020-07-25T17:14:33.606Z,
+    encoding: string // 'octet',
+    clientDetail: any // {},
+    meta: any // {},
+    id: number // 0,
+    size: number // 835009,
+    bytesLoaded: number // 0,
+    success: boolean // true
+  }
+}
+
+const uploadProgressMap = new Map<string, { connData: TConnectionData, status: string, event: any, ts: number }>()
 
 export const withSocketChat = (io: Socket) => {
   io.on('connection', (socket) => {
@@ -36,6 +66,108 @@ export const withSocketChat = (io: Socket) => {
       usersSocketMap.delete(socket.id)
       usersMap.delete(nameBySocketId)
     }
+
+    // -- Uploader init (part 2/2)
+    const uploader = new siofu()
+    uploader.dir = uploadsPath
+    const LIMIT_UPLOAD_FILE_SIZE_MB = 10
+    uploader.maxFileSize = LIMIT_UPLOAD_FILE_SIZE_MB * 1024 * 1024;
+    uploader.listen(socket)
+    uploader.on("start", function(event: TUploadFileEvent){
+      if (/\.exe$/.test(event.file.name)) {
+        uploader.abort(event.file.id, socket)
+      } else if (event.file.size > LIMIT_UPLOAD_FILE_SIZE_MB * 1024 * 1024) {
+        uploader.abort(event.file.id, socket)
+        socket.emit('upload:error', { message: `Limit ${LIMIT_UPLOAD_FILE_SIZE_MB} MB; You gonna load ${(event.file.size / (1024 * 1024)).toFixed(0)} MB` })
+      } else {
+        try {
+          const ext = event.file.name.split('.').reverse()[0]
+          const ts = Date.now()
+          // const nowDate = new Date(ts)
+          const getUserNameBySocketId = (socketId: string) => {
+            let connData: TConnectionData | null = null
+            const result: any = {}
+
+            for(const [_key, value] of usersMap.state) {
+              const { socketId: _socketId } = value
+              
+              if (socketId === _socketId) connData = value
+            }
+
+            result.isOk = !!connData
+            if (!!connData) {
+              result.connData = connData
+            } else {
+              result.message = 'Use conn data not found in state: Try relogin'
+            }
+
+            return result
+          }
+          const detected = getUserNameBySocketId(socket.id)
+          if (detected.isOk) {
+            const newName = `${ts}.${ext}`
+
+            event.file.name = newName
+
+            uploadProgressMap.set(newName, {
+              connData: detected.connData,
+              status: 'strated',
+              event,
+              ts,
+            })
+            socket.emit('upload:started')
+          } else {
+            throw new Error('ERR#707: FUCKUP')
+          }
+        } catch (err) {
+          console.log(err)
+          uploader.abort(event.file.id, socket)
+        }
+      }
+    });
+    uploader.on("progress", function(ev){
+      const { file: { id, size, bytesLoaded } } = ev
+      socket.emit('upload:progress', { id: id, percentage: (bytesLoaded / size) * 100 })
+    })
+    uploader.on("saved", function(event){
+      const progressData = uploadProgressMap.get(event.file.name)
+
+      if (!!progressData) {
+        // -- Create msg -> send all
+        try {
+          const { connData: { room, name } } = progressData
+          const newRoomData: TMessage[] = roomsMap.get(room)
+
+          let registryLevel = 0
+          const regData = registeredUsersMap.get(name)
+          if (registeredUsersMap.has(name)) {
+            registryLevel = 1
+            if (!!regData.registryLevel) registryLevel = regData.registryLevel
+          }
+          
+          const msg = ''
+          newRoomData.push({ text: msg, ts: progressData.ts, rl: registryLevel, user: name, fileName: event.file.name })
+
+          roomsMap.set(room, newRoomData)
+
+          io.in(room).emit('message', { user: name, text: msg, ts: progressData.ts, rl: registryLevel, fileName: event.file.name });
+        } catch (err) {
+          // socket.emit('notification', { status: 'error', title: 'ERR #2', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error', _originalEvent: { message, userName } })
+          socket.emit('FRONT:LOGOUT')
+        }
+        // --
+
+        uploadProgressMap.delete(event.file.name)
+      }
+
+      event.file.clientDetail.base = event.file.base
+      socket.emit('upload:saved')
+    });
+    uploader.on("error", function(ev){
+      const msgs = [ev.error.message || 'No error message in event', `Limit ${LIMIT_UPLOAD_FILE_SIZE_MB} MB`] 
+      socket.emit('upload:error', { message: msgs.join('; '), event: ev })
+    });
+    // --
 
     socket.on('setMeAgain', ({ name, room, token }, cb) => {
       // ---
@@ -328,7 +460,7 @@ export const withSocketChat = (io: Socket) => {
           if (cb) cb('roomData not found')
           return
         } else {
-          const userMessages = roomData
+          const userMessages: TMessage[] = roomData
   
           if (!userMessages) {
             if (cb) cb('roomData[name] not found')
@@ -341,15 +473,25 @@ export const withSocketChat = (io: Socket) => {
             })
   
             if (theMessageIndex === -1) {
-              if (cb) cb('theMessage not found')
+              if (cb) cb(`theMessage not found: ts ${ts}`)
               return
             } else {
+              const targetMessage = userMessages[theMessageIndex]
+
               // userMessages[theMessageIndex].text = newMessage
               const newUserMessages = userMessages.filter(({ ts: t }) => t !== ts)
               roomData = newUserMessages
               roomsMap.set(room, roomData)
               // io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
               io.in(room).emit('message.delete', { ts });
+
+              // -- NOTE: DELETE FILE!
+              if (!!targetMessage.fileName) {
+                const storagePath = uploadsPath
+
+                removeFileIfNecessary(path.join(storagePath, targetMessage.fileName))
+              }
+              // --
             }
           }
         }

@@ -74,6 +74,16 @@ import { useForm } from '~/common/hooks/useForm'
 import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
 import { useDebounce, useLocalStorage } from 'react-use'
+import { UploadInput } from './components/UploadInput'
+// V2:
+// import InnerImageZoom from 'react-inner-image-zoom'
+// import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
+// V3:
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+// import { AiFillEdit } from 'react-icons/ai'
+
+const REACT_APP_CHAT_UPLOADS_URL = process.env.REACT_APP_CHAT_UPLOADS_URL || '/chat/storage/uploads' // '/chat/storage-proxy/uploads'
 
 enum EMessageStatus {
   Info = 'info',
@@ -84,12 +94,30 @@ enum EMessageStatus {
   Done = 'done',
 }
 
+/* -- NOTE: Socket upload file evs
+// Sample 1 (12.3 kB)
+<- siofu_start { name: 'coca-cola.png', mtime: 1619100476733, meta: {}, size: 12302, encoding: 'octet', id: 0 }
+-> siofu_ready { id: 0, name: '1637615139703' }
+<- siofu_progress { id: 0, size: 12302, start: 0, end: 12302, content: { _placeholder: true, num: 0 }, base64: false }
+<- [FILE]
+<- siofu_done { id: 0 }
+-> siofu_chunk { id: 0 }
+-> siofu_complete { id: 0, succes: true, detail: { base: '1637615139703' } }
+
+-> siofu_error?
+
+// Sample 2 (10.3 MB)
+// ...
+<- siofu_progress { size: 10312296, start: 10240000, end: 10291000, content: { _placeholder: true, num: 0 }, base64 true }
+<- siofu_progress { size: 10312296, start: 10291000, end: 10312296, content: { _placeholder: true, num: 0 }, base64 true }
+-- */
+
 // @ts-ignore
 // const overwriteMerge = (destinationArray, sourceArray, _options) => [, ...sourceArray]
 const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 
 type TUser = { socketId: string; room: string; name: string }
-type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, status: EMessageStatus }
+type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, status: EMessageStatus, fileName?: string }
 
 const statusMap: {
   [key: string]: any
@@ -190,6 +218,12 @@ export const Chat = () => {
   const [tsPoint, setTsPoint] = useState<number | null>(Date.now())
   const [fullChatReceived, setFullChatReceived] = useState<boolean>(false)
   const [isChatLoading, setIsChatLoading] = useState<boolean>(false)
+  const [isFileUploading, setIsFileUploading] = useState<boolean>(false)
+  const [uploadErrorMsg, setUploadErrorMsg] = useState<null | string>(null)
+  const resetUploadErrorMsg = () => {
+    setUploadErrorMsg(null)
+  }
+  const uploadPercentageRef = useRef<number>(0)
 
   useEffect(() => {
     if (!!socket) {
@@ -260,6 +294,24 @@ export const Chat = () => {
           return newArr
         })
       }
+      const uploadStartedListener = () => {
+        setIsFileUploading(true)
+        uploadPercentageRef.current = 0
+      }
+      const uploadProgressListener = ({ percentage }: { percentage: number }) => {
+        uploadPercentageRef.current = Number(percentage.toFixed(0))
+      }
+      const uploadSavedListener = (data: any) => {
+        console.log('-- COMPLETE')
+        console.log(data)
+        setIsFileUploading(false)
+      }
+      const uploadErrorListener = (data: { message: string, [key: string]: any }) => {
+        console.log('-- ERROR')
+        console.log(data)
+        setIsFileUploading(false)
+        if (!!data?.message) setUploadErrorMsg(data.message)
+      }
 
       socket.on('message', msgListener)
       socket.on('message.update', updMsgListener)
@@ -268,6 +320,11 @@ export const Chat = () => {
       socket.on('my.user-data', myUserDataListener)
       socket.on('FRONT:LOGOUT', logoutFromServerListener)
       socket.on('partialOldChat', partialOldChatListener)
+      // Upload
+      socket.on('upload:started', uploadStartedListener)
+      socket.on('upload:progress', uploadProgressListener)
+      socket.on('upload:saved', uploadSavedListener)
+      socket.on('upload:error', uploadErrorListener)
 
       return () => {
         socket.off('message', msgListener)
@@ -277,6 +334,11 @@ export const Chat = () => {
         socket.off('my.user-data', myUserDataListener)
         socket.off('FRONT:LOGOUT', logoutFromServerListener)
         socket.off('partialOldChat', partialOldChatListener)
+        // Upload
+        socket.off('upload:started', uploadStartedListener)
+        socket.off('upload:progress', uploadProgressListener)
+        socket.off('upload:saved', uploadSavedListener)
+        socket.off('upload:error', uploadErrorListener)
       }
     }
   }, [socket, toast, room])
@@ -402,7 +464,7 @@ export const Chat = () => {
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
   const initialEditedMessageState = { text: '', ts: 0 }
-  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus }>(initialEditedMessageState)
+  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus; fileName?: string }>(initialEditedMessageState)
   const [isCtxMenuOpened, setIsCtxMenuOpened] = useState<boolean>(false)
   // const resetEditedMessage = () => {
   //   setEditedMessage(initialEditedMessageState)
@@ -418,11 +480,21 @@ export const Chat = () => {
     setEditedMessage((state) => ({ ...state, text: e.target.value }))
   }
   const handleSaveEditedMessage = () => {
-    if (!editedMessage?.text) {
+    if (!editedMessage?.text && !editedMessage.fileName) {
       toast({
         position: 'top',
         // title: 'Sorry',
         description: 'Should not be empty',
+        status: 'error',
+        duration: 3000,
+      })
+      return
+    }
+    if (editedMessage?.text.length > 800) {
+      toast({
+        position: 'top',
+        // title: 'Sorry',
+        description: 'Too big! 800 chars, not more',
         status: 'error',
         duration: 3000,
       })
@@ -456,8 +528,10 @@ export const Chat = () => {
   //   }
   // }
   const handleDeleteMessage = (ts: number) => {
-    if (!!socket)
-      socket.emit('deleteMessage', { ts: editedMessage.ts, room, name }, (errMsg: string) => {
+    if (!!socket) {
+      const targetTs = (!!ts && Number.isInteger(ts)) ? ts : editedMessage.ts
+
+      socket.emit('deleteMessage', { ts: targetTs, room, name }, (errMsg: string) => {
         if (!!errMsg) {
           toast({
             position: 'top',
@@ -469,6 +543,7 @@ export const Chat = () => {
           })
         }
       })
+    }
   }
   const handleSetStatus = (status: EMessageStatus) => {
     if (!!socket) {
@@ -1030,7 +1105,7 @@ export const Chat = () => {
               <Box ml="2">---</Box>
             </Flex>
             {logic.getFiltered(filters, debouncedSearchText).map((message: TMessage, i) => {
-              const { user, text, ts, editTs, status } = message
+              const { user, text, ts, editTs, status, fileName } = message
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
@@ -1041,6 +1116,90 @@ export const Chat = () => {
               const toggleMenu = (e: any) => {
                 // @ts-ignore
                   if(!!contextTriggerRef) contextTriggerRef.handleContextClick(e);
+              }
+
+              if (!!fileName) {
+                return (
+                  <Box
+                    key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
+                    className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
+                    // style={transform}
+                    m=".3rem 0"
+                  >
+                    <Text
+                      fontSize="sm"
+                      // opacity=".8"
+                      mb={1}
+                      className={clsx("from")}
+                      // textAlign={isMyMessage ? 'right' : 'left'}
+                    >
+                      <b>{user}</b>{' '}
+                      <span className="date">
+                        {date}
+                        {!!editTs && (
+                          // <>{' '}/{' '}<b>Edited</b>{' '}{getNormalizedDateTime(editTs)}</>
+                          <>{' '}<b>Edited</b></>
+                        )}
+                      </span>
+                    </Text>
+                    {/* <div className='msg-as-image--wrapper'>
+ 
+                      <img
+                        className='msg-as-image'
+                        src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
+                        alt='img'
+                        title={`${user}: ${date}`}
+                      />
+                      {isMyMessage && (
+                        <div className='abs-img-service-btns' style={{ marginTop: '5px' }}>
+                          <button className='special-btn special-btn-sm' onClick={() => { handleDeleteMessage(ts) }}>DEL</button>
+                        </div>
+                      )}
+                    </div> */}
+                    {/* V2: react-inner-image-zoom */}
+                    {/* <div className='msg-as-image--wrapper'>
+                      <InnerImageZoom
+                        src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
+                        zoomSrc={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
+                        fullscreenOnMobile={true}
+                        moveType="drag"
+                      />
+                      {isMyMessage && (
+                        <div className='abs-img-service-btns'>
+                          <button className='special-btn special-btn-sm' onClick={() => { handleDeleteMessage(ts) }}>DEL</button>
+                        </div>
+                      )}
+                    </div> */}
+                    {/* V3: react-medium-image-zoom */}
+                    <div className='msg-as-image--wrapper'>
+                      <Zoom
+                        overlayBgColorStart='transparent'
+                        // overlayBgColorEnd='var(--chakra-colors-gray-700)'
+                        overlayBgColorEnd='rgba(0,0,0,0.85)'
+                      >
+                        <img
+                          alt={text}
+                          src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
+                          style={{ width: '100%'}}
+                        />
+                      </Zoom>
+                      {isMyMessage && (
+                        <div className='abs-img-service-btns'>
+                          <button className='special-btn special-btn-sm dark-btn' onClick={() => { handleDeleteMessage(ts) }}>Del</button>
+                          <button className='special-btn special-btn-sm dark-btn' onClick={() => {
+                            handleClickCtxMenu()
+                            handleEditModalOpen()
+                          }}>Edit</button>
+                        </div>
+                      )}
+                      {!!text && (
+                        <div className='abs-img-caption truncate-overflow' onClick={() => { alert(text) }}>
+                          {text}
+                        </div>
+                      )}
+                    </div>
+                  </Box>
+                )
               }
 
               return (
@@ -1133,11 +1292,24 @@ export const Chat = () => {
                       )}
                       {getIconByStatus(status, true)}
                     </div>
-                    
                   </div>
                 </Box>
               )
             })}
+            {!!uploadErrorMsg && (
+              <div className='service-flex-row'>
+                <div><button className='special-btn special-btn-md dark-btn' onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} /></span></span></button></div>
+                <div style={{ color: 'var(--chakra-colors-red-300)' }}>Upload Error: {uploadErrorMsg}</div>
+              </div>
+            )}
+            {regData?.registryLevel === 1 && !uploadErrorMsg && (
+              <div className='service-flex-row'>
+                <UploadInput id='siofu_input' label='Add file' />
+                {isFileUploading && (
+                  <div>Uploading: {uploadPercentageRef.current} %</div>
+                )}
+              </div>
+            )}
           </ScrollToBottom>
           <div className="form">
             {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}
