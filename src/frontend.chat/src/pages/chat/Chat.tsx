@@ -186,8 +186,6 @@ const getTruncated = (str: string, n: number = 16): string => {
   return str
 }
 
-let c = 0
-
 export const Chat = () => {
   const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap } = useContext(MainContext)
   // @ts-ignore

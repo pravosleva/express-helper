@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect, useContext } from 'react'
+import React, { useState, createContext, useEffect, useContext , useRef, MutableRefObject} from 'react'
 import slugify from 'slugify'
 
 type TMainContext = {
@@ -11,6 +11,7 @@ type TMainContext = {
   setIsAdmin: (room: boolean) => void
   tsMap: {[key: string]: number},
   setTsMap: (_val: {[key: string]: number}) => void
+  tsMapRef: MutableRefObject<{[key: string]: number}>
 }
 
 export const MainContext = createContext<TMainContext>({
@@ -31,6 +32,7 @@ export const MainContext = createContext<TMainContext>({
   setTsMap: (_val: {[key: string]: number}) => {
     throw new Error('setTsMap should be implemented')
   },
+  tsMapRef: { current: {} }
 })
 
 export const MainProvider = ({ children }: any) => {
@@ -39,6 +41,12 @@ export const MainProvider = ({ children }: any) => {
   const [slugifiedRoom, setNormalizedRoom] = useState<string>('')
   const [isAdmin, setIsAdmin] = useState<boolean>(false)
   const [tsMap, setTsMap] = useState<{[key: string]: number}>({})
+  const tsMapRef = useRef<{[key: string]: number}>({})
+  
+  useEffect(() => {
+    // NOTE: Императивный доступ для сравнения в эффекте без лишней зависимости
+    tsMapRef.current = tsMap
+  }, [tsMap])
 
   useEffect(() => {
     setNormalizedRoom(slugify(room.trim().toLowerCase()))
@@ -57,6 +65,7 @@ export const MainProvider = ({ children }: any) => {
           setIsAdmin,
           tsMap,
           setTsMap,
+          tsMapRef,
         }}
       >
         {children}

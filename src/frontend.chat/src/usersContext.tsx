@@ -32,7 +32,7 @@ export const UsersProvider = ({ children }: any) => {
   const [users, setUsers] = useState<TUser[]>([])
   const [allUsers, setAllUsers] = useState<TUser[]>([])
   const { socket } = useContext(SocketContext)
-  const { slugifiedRoom, setTsMap, room, name } = useMainContext()
+  const { slugifiedRoom, setTsMap, room, name, tsMapRef } = useMainContext()
   const [tasklist, setTasklist] = useState<any[]>([])
 
   useEffect(() => {
@@ -73,8 +73,9 @@ export const UsersProvider = ({ children }: any) => {
       })
     }
     const tsMapListener = (data: {[key: string]: number}) => {
-      // console.log(data)
-      setTsMap(data)
+      if (JSON.stringify(tsMapRef.current) !== JSON.stringify(data)) {
+        setTsMap(data)
+      }
     }
 
     if (!!socket) socket.on('users', sUListener)
