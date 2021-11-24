@@ -72,6 +72,8 @@ input[type="file"] {
     bottom: 0px;
     right: 0px;
     padding: 5px 10px;
+    font-weight: 500;
+    font-size: var(--chakra-fontSizes-sm);
     width: 100%;
     background: rgba(0,0,0,0.7);
     color: #FFF;
@@ -90,13 +92,13 @@ input[type="file"] {
     --max-lines: 3;
     /* max-height: calc(var(--lh) * var(--max-lines)); */
     /* max-height: calc(100% - var(--max-lines) * 1.1em); */
-    max-height: 50px;
+    max-height: 49px;
     overflow: hidden;
 }
 .truncate-overflow::before {
     content: "...";
     position: absolute;
-    bottom: 5px;
+    bottom: 4px;
     right: 2px;
 }
 .truncate-overflow::after {
