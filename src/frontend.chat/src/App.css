@@ -54,6 +54,9 @@ input[type="file"] {
     padding: 3px 6px;
 }
 
+[data-rmiz-wrap="visible"], [data-rmiz-wrap="hidden"] {
+    display: block;
+}
 .abs-img-service-btns {
     position: absolute;
     top: 5px;

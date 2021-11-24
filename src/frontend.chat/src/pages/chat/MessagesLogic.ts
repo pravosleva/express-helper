@@ -18,7 +18,7 @@ export class Logic {
   getFiltered(filters: EMessageStatus[], searchText?: string): TMessage[] {
     switch (true) {
       case !!searchText:
-        const words = searchText?.split(' ').filter((str: string) => !!str)
+        const words = searchText?.toLowerCase().split(' ').filter((str: string) => !!str)
 
         if (filters.length > 0) {
           // @ts-ignore
@@ -26,7 +26,7 @@ export class Logic {
           return this.messages.filter(({ type, text }) => filters.includes(type) && new RegExp(words.join("|")).test(text))
         } else {
           // @ts-ignore
-          return this.messages.filter(({ text }) => new RegExp(words.join("|")).test(text))
+          return this.messages.filter(({ text }) => new RegExp(words.join("|")).test(text.toLowerCase()))
         }
       case filters.length > 0: return this.messages.filter(({ status }) => filters.length > 0 ? filters.includes(status) : true)
       default: return this.messages

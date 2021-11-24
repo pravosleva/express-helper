@@ -15,6 +15,7 @@ export const TotalSum = () => {
     month1: 0,
     month3: 0,
     month6: 0,
+    'month0.5': 0,
   }
   const [sum, setSum] = useState<{[key: string]: number}>(initialMothSum)
   // Новый хук Реакт 18 useTransition
@@ -53,8 +54,8 @@ export const TotalSum = () => {
 
   return (
     <Stack marginRight='auto'>
-      {!!sum.month1 && (
-        <Text fontSize="sm" fontWeight='bold'>1m ={getPrettyPrice(sum.month1)}</Text>
+      {!!sum['month0.5'] && (
+        <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
       )}
       {!!sum.month3 && (
         <Text fontSize="sm" fontWeight='bold'>3m ={getPrettyPrice(sum.month3)}</Text>

@@ -33,7 +33,11 @@ type TLocalRoomItem = {
 const delay = (ms = 3000) => new Promise((res) => setTimeout(res, ms))
 
 export const Login = () => {
-  const { socket, setIsLogged, resetRoomData } = useContext(SocketContext)
+  const {
+    socket,
+    setIsLogged,
+    // resetRoomData,
+  } = useContext(SocketContext)
   const { name, setName, room, setRoom, slugifiedRoom, setIsAdmin } = useContext(MainContext)
   const history = useHistory()
   const toast = useToast()
@@ -369,19 +373,23 @@ export const Login = () => {
                 setName(e.target.value)
               }}
             />
-            <Input
-              disabled={isRoomDisabled}
-              variant="filled"
-              mr={{ base: '0', md: '4' }}
-              mb={{ base: '4', md: '0' }}
-              type="text"
-              placeholder="Room Name"
-              value={room}
-              onChange={(e) => {
-                setRoom(e.target.value)
-              }}
-              onKeyDown={handleKeyDown}
-            />
+            {
+              !isRoomDisabled && (
+                <Input
+                  disabled={isRoomDisabled}
+                  variant="filled"
+                  mr={{ base: '0', md: '4' }}
+                  mb={{ base: '4', md: '0' }}
+                  type="text"
+                  placeholder="Room Name"
+                  value={room}
+                  onChange={(e) => {
+                    setRoom(e.target.value)
+                  }}
+                  onKeyDown={handleKeyDown}
+                />
+              )
+            }
             <IconButton
               ref={loginBtnRef}
               colorScheme="blue"

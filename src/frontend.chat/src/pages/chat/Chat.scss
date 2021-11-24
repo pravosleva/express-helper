@@ -93,11 +93,11 @@
 
       .msg-as-image--wrapper {
         position: relative;
-        max-height: 200px;
+        max-height: 310px;
         // border: 1px solid red;
         & img {
           border-radius: 10px;
-          max-height: 330px;
+          max-height: 310px;
           min-height: 115px;
           // border: 1px solid red;
 
@@ -291,8 +291,8 @@
     max-height: calc(100vh - 69px - 80px - 4px);
   }
   .height-limited-md > div {
-    min-height:400px;
-    max-height:400px;
+    min-height:500px;
+    max-height:500px;
   }
   
   .form{
@@ -359,7 +359,7 @@
 }
 
 .service-flex-row {
-  margin: 1rem 0 .3rem 0;
+  margin: calc(1rem - .3rem) 0 .3rem 0;
   display: flex;
   align-items: center;
   & > * {
