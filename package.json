@@ -3,9 +3,9 @@
   "version": "0.0.3",
   "private": true,
   "scripts": {
-    "deploy2:smartprice:copy-chat-build": "bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build && bash deploy2.smartprice.chat.front.sh",
+    "deploy2:smartprice:copy-chat-build": "bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build && bash deploy2.chat.front.sh server-dist/routers/chat/spa.build/ root@104.248.201.86:/home/projects/express-helper/server-dist/routers/chat/spa.build",
     "deploy2:smartprice": "yarn build:fresh-prod && bash deploy2.smartprice.prod.sh",
-    "deploy2:prod:copy-chat-build": "bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build && bash deploy2.pravosleva.chat.front.sh",
+    "deploy2:prod:copy-chat-build": "bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build && bash deploy2.chat.front.sh server-dist/routers/chat/spa.build/ root@pravosleva.ru:/home/projects/pravosleva-blog/express-helper/server-dist/routers/chat/spa.build",
     "deploy2:prod": "yarn build:fresh-prod && bash deploy2.pravosleva.prod.sh",
     "dev:chat": "yarn build:fresh-dev:chat-only && bash run-dev.sh chat",
     "dev:signin": "bash run-dev.sh signin",
