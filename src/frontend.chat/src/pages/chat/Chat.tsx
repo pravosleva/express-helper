@@ -186,6 +186,8 @@ const getTruncated = (str: string, n: number = 16): string => {
   return str
 }
 
+let c = 0
+
 export const Chat = () => {
   const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap } = useContext(MainContext)
   // @ts-ignore
@@ -1304,7 +1306,7 @@ export const Chat = () => {
             )}
             {regData?.registryLevel === 1 && !uploadErrorMsg && (
               <div className='service-flex-row'>
-                <UploadInput id='siofu_input' label='Add file' />
+                <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
                 {isFileUploading && (
                   <div>Uploading: {uploadPercentageRef.current} %</div>
                 )}

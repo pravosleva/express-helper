@@ -30,6 +30,10 @@
 input[type="file"] {
     display: none;
 }
+input[type="file"]:disabled + label {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
 .special-btn {
     transition: all 0.2s linear;
     border: 2px solid var(--chakra-colors-gray-400);
