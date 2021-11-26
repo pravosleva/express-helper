@@ -35,7 +35,7 @@ export type TRoomData = TMessage[]
 export type TRegistryData = {
   passwordHash: string
   registryLevel?: ERegistryLevel
-  token?: string
+  tokens?: string[]
 }
 export type TUserName = string
 

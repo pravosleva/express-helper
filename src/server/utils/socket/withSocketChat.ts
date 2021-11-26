@@ -60,6 +60,11 @@ type TUploadFileEvent = {
 const uploadProgressMap = new Map<string, { connData: TConnectionData, status: string, event: any, ts: number }>()
 
 export const withSocketChat = (io: Socket) => {
+  // -- NOTE: Logout on front
+  const logoutOld = (socketId: string) => {
+    io.to(socketId).emit('FRONT:LOGOUT')
+  }
+  // --
   io.on('connection', (socket) => {
     const nameBySocketId = usersSocketMap.get(socket.id)
     if (!!nameBySocketId) {
@@ -285,6 +290,15 @@ export const withSocketChat = (io: Socket) => {
       if (!bcrypt.compareSync(password, passwordHash)) {
         if (!!cb) cb('Incorrect password')
         return
+      } else {
+        // -- LOGOUT OLD
+        const existingUser = usersMap.get(name)
+        if (!!existingUser) {
+          const oldSocketId = existingUser.socketId
+
+          if (oldSocketId !== socket.id) logoutOld(oldSocketId)
+        }
+        // --
       }
 
       socket.join(room)
@@ -293,7 +307,13 @@ export const withSocketChat = (io: Socket) => {
       // -- Set new token
       const regData = registeredUsersMap.get(name)
 
-      if (!!regData) registeredUsersMap.set(name, { ...regData, token: newToken })
+      if (!!regData) {
+        let newTokens = [newToken]
+        if (!!regData.tokens && Array.isArray(regData.tokens)) {
+          newTokens = [newToken, ...regData.tokens]
+        }
+        registeredUsersMap.set(name, { ...regData, tokens: [...new Set(newTokens)] })
+      }
       // --
 
       if (!roomData) roomsMap.set(room, [])
@@ -304,8 +324,9 @@ export const withSocketChat = (io: Socket) => {
       // })
       // ---
       
-      io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
+      // io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      socket.emit('my.user-data', registeredUsersMap.get(name) || null)
 
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
@@ -319,7 +340,7 @@ export const withSocketChat = (io: Socket) => {
       }
 
       // --- NEW WAY
-      if (usersMap.has(name)) {
+      if (usersMap.has(name) && !token) {
         if (!!cb) cb(`Username ${name} already taken`)
         return
       }
@@ -327,9 +348,17 @@ export const withSocketChat = (io: Socket) => {
       if (!!token) {
         const regData = registeredUsersMap.get(name)
 
-        if (!!regData && !!regData.token) {
-          if (regData.token === token) {
+        if (!!regData && !!regData.tokens) {
+          if (regData.tokens.includes(token)) {
             // Go on...
+            // -- LOGOUT OLD
+            const existingUser = usersMap.get(name)
+            if (!!existingUser) {
+              const oldSocketId = existingUser.socketId
+
+              if (oldSocketId !== socket.id) logoutOld(oldSocketId)
+            }
+            // --
           } else {
             if (registeredUsersMap.has(name)) {
               if (!!cb) cb('FRONT:LOG/PAS')
@@ -356,7 +385,7 @@ export const withSocketChat = (io: Socket) => {
       if (!roomData) roomsMap.set(room, [])
       // socket.emit('oldChat', { roomData: roomsMap.get(room) })
       
-      io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
+      // io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
       io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
@@ -381,7 +410,7 @@ export const withSocketChat = (io: Socket) => {
         if (!!userConnData?.room) {
           socket.leave(userConnData.room)
           io.in(userConnData.room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room }) => room === userConnData.room))
-          io.in(userConnData.room).emit('notification', { status: 'info', description: `${name} just left the room`, _originalEvent: { name } })
+          // io.in(userConnData.room).emit('notification', { status: 'info', description: `${name} just left the room`, _originalEvent: { name } })
         }
       }
     })

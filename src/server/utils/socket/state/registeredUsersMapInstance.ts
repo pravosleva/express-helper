@@ -53,7 +53,7 @@ const syncRegistryMap = () => {
 
   try {
     if (!!storageRegistryMapFilePath) {
-      let oldStatic: { data: { [key: string]: { passwordHash: string, registryLevel?: ERegistryLevel } }, ts: number }
+      let oldStatic: { data: { [key: string]: { passwordHash: string, registryLevel?: ERegistryLevel, tokens?: string[] } }, ts: number }
       try {
         oldStatic = getStaticJSONSync(storageRegistryMapFilePath)
         if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_121.2: incorrect static data')
@@ -69,7 +69,16 @@ const syncRegistryMap = () => {
       if (isFirstScriptRun) {
         // NOTE: Sync with old state:
         Object.keys(staticData).forEach((name: string) => {
-          registeredUsersMapInstance.set(name, staticData[name])
+          const modifiedState = staticData[name]
+          // @ts-ignore
+          if (!!modifiedState.token) {
+            // @ts-ignore
+            modifiedState.tokens = [modifiedState.token]
+            // @ts-ignore
+            delete modifiedState.token
+          }
+          
+          registeredUsersMapInstance.set(name, modifiedState)
         })
       }
 
