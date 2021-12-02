@@ -1,5 +1,5 @@
 // @ts-ignore
-import { getRandomInteger } from '../../../../../utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/getRandomInteger'
 
 const { SUCCESS_ANYWAY } = process.env
 

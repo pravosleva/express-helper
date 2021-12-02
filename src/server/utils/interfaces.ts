@@ -10,3 +10,15 @@ export interface ICustomRequest extends IRequest {
     [key: string]: any
   }
 }
+
+export type THelp = {
+  params: {
+    body: {
+      [key: string]: {
+        type: string
+        descr: string
+        required: boolean
+      }
+    }
+  }
+}

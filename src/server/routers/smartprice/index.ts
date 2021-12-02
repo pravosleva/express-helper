@@ -44,6 +44,7 @@ import partnerApiToolsFmsCode from './mws/partner_api/tools/fms/[code]'
 import otWebApiFizotLandingForm from './mws/ot-web/fizot-landing-form'
 import { sendSMSCode } from './mws/partner_api/tradein/buyout_doc/send_sms_code'
 import { signBySMSCode } from './mws/partner_api/tradein/buyout_doc/sign_by_sms_code'
+import { clientData } from './mws/partner_api/tradein/client/data'
 
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
 
@@ -116,6 +117,7 @@ spApi.post('/partner_api/tradein/decline', partnerApiTradeInDecline)
 spApi.get('/partner_api/tools/fms/:code', partnerApiToolsFmsCode)
 spApi.post('/partner_api/tradein/buyout_doc/send_sms_code', sendSMSCode)
 spApi.post('/partner_api/tradein/buyout_doc/sign_by_sms_code', signBySMSCode)
+spApi.post('/partner_api/tradein/client/data', clientData)
 
 // 6. New OT landing
 spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)
