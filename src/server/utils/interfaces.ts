@@ -21,4 +21,7 @@ export type THelp = {
       }
     }
   }
+  res?: {
+    [key: string]: any
+  }
 }
