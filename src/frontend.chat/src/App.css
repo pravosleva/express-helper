@@ -34,6 +34,16 @@ input[type="file"]:disabled + label {
     opacity: 0.3;
     cursor: not-allowed;
 }
+
+.centered-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+    margin-top: 10px;
+  }
+
 .special-btn {
     transition: all 0.2s linear;
     border: 2px solid var(--chakra-colors-gray-400);

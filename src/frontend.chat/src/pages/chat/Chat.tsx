@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
+import React, { Fragment, useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
 import { useSocketContext } from '~/socketContext'
@@ -646,9 +646,21 @@ export const Chat = () => {
   //     // height: 'auto',
   //   },
   // })
+  const [additionalTsToShow, setAdditionalTsToShow] = useState<number[]>([])
+
+  const addAdditionalTsToShow = (ts: number) => {
+    setAdditionalTsToShow((arr) => [...arr, ts])
+  }
+  const resetAdditionalTsToShow = useCallback(() => {
+    setAdditionalTsToShow([])
+  }, [setAdditionalTsToShow])
+
   const [filters, setFilters] = useState<EMessageStatus[]>([])
   const setFilter = (filter: EMessageStatus) => {
     setFilters([filter])
+  }
+  const resetFilters = () => {
+    setFilters([])
   }
   const { formData, handleInputChange, resetForm } = useForm({
     searchText: '',
@@ -662,6 +674,16 @@ export const Chat = () => {
     1000,
     [formData.searchText]
   );
+  // useEffect(() => {
+  //   if (!formData.searchText && filters.length === 0) resetAdditionalTsToShow()
+  // }, [formData.searchText, filters.length, resetAdditionalTsToShow])
+  useEffect(() => {
+    // if (!formData.searchText)
+    resetAdditionalTsToShow()
+  }, [formData.searchText, filters.length, resetAdditionalTsToShow])
+  // useEffect(() => {
+  //   resetAdditionalTsToShow()
+  // }, [filters.length, resetAdditionalTsToShow])
 
   const [isSearchModeEnabled, setIsSearchModeEnabled] = useState<boolean>(false)
   const handleEnableSearch = () => {
@@ -1030,7 +1052,7 @@ export const Chat = () => {
                     filters.length > 0 && (
                       <MenuItem
                         minH="40px"
-                        onClick={() => setFilters([])}
+                        onClick={resetFilters}
                         // color='red.500'
                         // icon={<IoMdClose size={17} />}
                       >
@@ -1104,12 +1126,14 @@ export const Chat = () => {
               </Text>
               <Box ml="2">---</Box>
             </Flex>
-            {logic.getFiltered(filters, debouncedSearchText).map((message: TMessage, i) => {
-              const { user, text, ts, editTs, status, fileName } = message
+            {logic.getFiltered({ filters, searchText: debouncedSearchText, additionalTsToShow }).map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, arr) => {
+              const { user, text, ts, editTs, status, fileName, _next } = message
+              // const isLastOfFiltered = i === arr.length -1
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
               const isLast = i === messages.length - 1
+              const isNextOneBtnEnabled = _next?.isHidden
               const shortNick = user.split(' ').filter((w: string, i: number) => i < 2).map((word: string) => word[0].toUpperCase()).join('')
               const handleClickCtxMenu = () => setEditedMessage(message)
               let contextTriggerRef: any = null;
@@ -1120,8 +1144,93 @@ export const Chat = () => {
 
               if (!!fileName) {
                 return (
+                  <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
+                    <Box
+                      className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
+                      // style={transform}
+                      m=".3rem 0"
+                    >
+                      <Text
+                        fontSize="sm"
+                        // opacity=".8"
+                        mb={1}
+                        className={clsx("from")}
+                        // textAlign={isMyMessage ? 'right' : 'left'}
+                      >
+                        <b>{user}</b>{' '}
+                        <span className="date">
+                          {date}
+                          {!!editTs && (
+                            // <>{' '}/{' '}<b>Edited</b>{' '}{getNormalizedDateTime(editTs)}</>
+                            <>{' '}<b>Edited</b></>
+                          )}
+                        </span>
+                      </Text>
+                      {/* <div className='msg-as-image--wrapper'>
+  
+                        <img
+                          className='msg-as-image'
+                          src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
+                          alt='img'
+                          title={`${user}: ${date}`}
+                        />
+                        {isMyMessage && (
+                          <div className='abs-img-service-btns' style={{ marginTop: '5px' }}>
+                            <button className='special-btn special-btn-sm' onClick={() => { handleDeleteMessage(ts) }}>DEL</button>
+                          </div>
+                        )}
+                      </div> */}
+                      {/* V2: react-inner-image-zoom */}
+                      {/* <div className='msg-as-image--wrapper'>
+                        <InnerImageZoom
+                          src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
+                          zoomSrc={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
+                          fullscreenOnMobile={true}
+                          moveType="drag"
+                        />
+                        {isMyMessage && (
+                          <div className='abs-img-service-btns'>
+                            <button className='special-btn special-btn-sm' onClick={() => { handleDeleteMessage(ts) }}>DEL</button>
+                          </div>
+                        )}
+                      </div> */}
+                      {/* V3: react-medium-image-zoom */}
+                      <div className='msg-as-image--wrapper'>
+                        <Zoom
+                          overlayBgColorStart='transparent'
+                          // overlayBgColorEnd='var(--chakra-colors-gray-700)'
+                          overlayBgColorEnd='rgba(0,0,0,0.85)'
+                        >
+                          <img
+                            alt={text}
+                            src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
+                            style={{ width: '100%'}}
+                          />
+                        </Zoom>
+                        {isMyMessage && (
+                          <div className='abs-img-service-btns'>
+                            <button className='special-btn special-btn-sm dark-btn' onClick={() => { handleDeleteMessage(ts) }}>Del</button>
+                            <button className='special-btn special-btn-sm dark-btn' onClick={() => {
+                              handleClickCtxMenu()
+                              handleEditModalOpen()
+                            }}>Edit</button>
+                          </div>
+                        )}
+                        {!!text && (
+                          <div className='abs-img-caption truncate-overflow' onClick={() => { alert(text) }}>
+                            {text}
+                          </div>
+                        )}
+                      </div>
+                    </Box>
+                    {isNextOneBtnEnabled && <div className='centered-box'><button className='special-btn special-btn-sm dark-btn' onClick={() => { addAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
+                  </Fragment>
+                )
+              }
+
+              return (
+                <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
                   <Box
-                    key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
                     className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
                     // style={transform}
                     m=".3rem 0"
@@ -1130,170 +1239,89 @@ export const Chat = () => {
                       fontSize="sm"
                       // opacity=".8"
                       mb={1}
-                      className={clsx("from")}
+                      className={clsx("from", { 'is-hidden': (isMyMessage && ((!!formData.searchText || filters.length > 0) ? false : !isLast)) })}
                       // textAlign={isMyMessage ? 'right' : 'left'}
                     >
                       <b>{user}</b>{' '}
                       <span className="date">
                         {date}
-                        {!!editTs && (
-                          // <>{' '}/{' '}<b>Edited</b>{' '}{getNormalizedDateTime(editTs)}</>
-                          <>{' '}<b>Edited</b></>
-                        )}
+                        {!!editDate && <b>{' '}Edited</b>}
                       </span>
                     </Text>
-                    {/* <div className='msg-as-image--wrapper'>
- 
-                      <img
-                        className='msg-as-image'
-                        src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
-                        alt='img'
-                        title={`${user}: ${date}`}
-                      />
-                      {isMyMessage && (
-                        <div className='abs-img-service-btns' style={{ marginTop: '5px' }}>
-                          <button className='special-btn special-btn-sm' onClick={() => { handleDeleteMessage(ts) }}>DEL</button>
-                        </div>
-                      )}
-                    </div> */}
-                    {/* V2: react-inner-image-zoom */}
-                    {/* <div className='msg-as-image--wrapper'>
-                      <InnerImageZoom
-                        src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
-                        zoomSrc={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
-                        fullscreenOnMobile={true}
-                        moveType="drag"
-                      />
-                      {isMyMessage && (
-                        <div className='abs-img-service-btns'>
-                          <button className='special-btn special-btn-sm' onClick={() => { handleDeleteMessage(ts) }}>DEL</button>
-                        </div>
-                      )}
-                    </div> */}
-                    {/* V3: react-medium-image-zoom */}
-                    <div className='msg-as-image--wrapper'>
-                      <Zoom
-                        overlayBgColorStart='transparent'
-                        // overlayBgColorEnd='var(--chakra-colors-gray-700)'
-                        overlayBgColorEnd='rgba(0,0,0,0.85)'
-                      >
-                        <img
-                          alt={text}
-                          src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
-                          style={{ width: '100%'}}
-                        />
-                      </Zoom>
-                      {isMyMessage && (
-                        <div className='abs-img-service-btns'>
-                          <button className='special-btn special-btn-sm dark-btn' onClick={() => { handleDeleteMessage(ts) }}>Del</button>
-                          <button className='special-btn special-btn-sm dark-btn' onClick={() => {
-                            handleClickCtxMenu()
-                            handleEditModalOpen()
-                          }}>Edit</button>
-                        </div>
-                      )}
-                      {!!text && (
-                        <div className='abs-img-caption truncate-overflow' onClick={() => { alert(text) }}>
-                          {text}
-                        </div>
-                      )}
-                    </div>
-                  </Box>
-                )
-              }
-
-              return (
-                <Box
-                  key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
-                  className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
-                  // style={transform}
-                  m=".3rem 0"
-                >
-                  <Text
-                    fontSize="sm"
-                    // opacity=".8"
-                    mb={1}
-                    className={clsx("from", { 'is-hidden': (isMyMessage && ((!!formData.searchText || filters.length > 0) ? false : !isLast)) })}
-                    // textAlign={isMyMessage ? 'right' : 'left'}
-                  >
-                    <b>{user}</b>{' '}
-                    <span className="date">
-                      {date}
-                      {!!editDate && <b>{' '}Edited</b>}
-                    </span>
-                  </Text>
-                  <div
-                    style={{
-                      display: 'flex',
-                      // position: 'relative'
-                    }}
-                    className='opponent-ava-wrapper'
-                  >
-                    {
-                      !isMyMessage && (
-                        <div
-                          style={{
-                            marginRight: '.5rem',
-                            // order: isMyMessage ? 2 : 1,
-                          }}
-                        >
+                    <div
+                      style={{
+                        display: 'flex',
+                        // position: 'relative'
+                      }}
+                      className='opponent-ava-wrapper'
+                    >
+                      {
+                        !isMyMessage && (
                           <div
                             style={{
-                              borderRadius: '50%',
-                              width: '33px',
-                              height: '33px',
-                              display: 'flex',
-                              justifyContent: 'center',
-                              alignItems: 'center',
-                              backgroundColor: 'var(--chakra-colors-gray-500)',
-                              color: '#FFF',
+                              marginRight: '.5rem',
+                              // order: isMyMessage ? 2 : 1,
                             }}
                           >
-                            {shortNick}
+                            <div
+                              style={{
+                                borderRadius: '50%',
+                                width: '33px',
+                                height: '33px',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                backgroundColor: 'var(--chakra-colors-gray-500)',
+                                color: '#FFF',
+                              }}
+                            >
+                              {shortNick}
+                            </div>
                           </div>
-                        </div>
-                      )
-                    }
-                    <div className={clsx("msg", { [status]: !!status, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}>
-                      {isMyMessage ? (
-                        <ContextMenuTrigger
-                          id="same_unique_identifier"
-                          key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
-                          ref={c => contextTriggerRef = c}
-                        >
-                          <Text
-                            fontSize="md"
-                            
+                        )
+                      }
+                      <div className={clsx("msg", { [status]: !!status, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}>
+                        {isMyMessage ? (
+                          <ContextMenuTrigger
+                            id="same_unique_identifier"
+                            key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
+                            ref={c => contextTriggerRef = c}
+                          >
+                            <Text
+                              fontSize="md"
+                              
+                              // p=".3rem .9rem"
+                              display="inline-block"
+                              // bg="white"
+                              // color="white"
+                              // onContextMenu={handleClickCtxMenu}
+                              onContextMenu={(e) => {
+                                // e.preventDefault()
+                                handleClickCtxMenu()
+                              }}
+                              onClick={(e) => {
+                                handleClickCtxMenu()
+                                toggleMenu(e)
+                              }}
+                              // order={isMyMessage ? 1 : 2}
+                            >
+                              {text}
+                              {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
+                            </Text>
+                          </ContextMenuTrigger>
+                        ) : (
+                          <Text display="inline-block" fontSize="md" className={clsx({ [status]: !!status })}
                             // p=".3rem .9rem"
-                            display="inline-block"
-                            // bg="white"
-                            // color="white"
-                            // onContextMenu={handleClickCtxMenu}
-                            onContextMenu={(e) => {
-                              // e.preventDefault()
-                              handleClickCtxMenu()
-                            }}
-                            onClick={(e) => {
-                              handleClickCtxMenu()
-                              toggleMenu(e)
-                            }}
-                            // order={isMyMessage ? 1 : 2}
                           >
                             {text}
-                            {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
                           </Text>
-                        </ContextMenuTrigger>
-                      ) : (
-                        <Text display="inline-block" fontSize="md" className={clsx({ [status]: !!status })}
-                          // p=".3rem .9rem"
-                        >
-                          {text}
-                        </Text>
-                      )}
-                      {getIconByStatus(status, true)}
+                        )}
+                        {getIconByStatus(status, true)}
+                      </div>
                     </div>
-                  </div>
-                </Box>
+                  </Box>
+                  {isNextOneBtnEnabled && <div className='centered-box'><button className='special-btn special-btn-sm dark-btn'  onClick={() => { addAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
+                </Fragment>
               )
             })}
             {!!uploadErrorMsg && (
@@ -1302,7 +1330,7 @@ export const Chat = () => {
                 <div style={{ color: 'var(--chakra-colors-red-300)' }}>Upload Error: {uploadErrorMsg}</div>
               </div>
             )}
-            {regData?.registryLevel === 1 && !uploadErrorMsg && (
+            {filters.length === 0 && !formData.searchText && regData?.registryLevel === 1 && !uploadErrorMsg && (
               <div className='service-flex-row'>
                 <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
                 {isFileUploading && (

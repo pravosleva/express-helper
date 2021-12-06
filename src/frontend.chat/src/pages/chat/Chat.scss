@@ -291,8 +291,8 @@
     max-height: calc(100vh - 69px - 80px - 4px);
   }
   .height-limited-md > div {
-    min-height:500px;
-    max-height:500px;
+    min-height:calc(100vh - 200px);
+    max-height:calc(100vh - 200px);
   }
   
   .form{
