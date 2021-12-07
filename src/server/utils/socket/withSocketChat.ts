@@ -343,9 +343,7 @@ export const withSocketChat = (io: Socket) => {
       if (!roomData) roomsMap.set(room, [])
       // socket.emit('oldChat', { roomData: roomsMap.get(room) })
       // --- TODO:
-      // socket.emit('oldChat', {
-      //   roomData: roomsMap.getSomeDay(room, Date.now()).roomData
-      // })
+      // socket.emit('oldChat', { roomData: roomsMap.getSomeDay(room, Date.now()).roomData })
       // ---
       
       // io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })

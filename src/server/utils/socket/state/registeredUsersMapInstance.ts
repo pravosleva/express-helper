@@ -71,7 +71,7 @@ const syncRegistryMap = () => {
         Object.keys(staticData).forEach((name: string) => {
           const modifiedState = staticData[name]
 
-          // -- NOTE: Ограницения хранимых токенов
+          // -- NOTE: Ограничения по количеству хранимых токенов
           if (!!modifiedState.tokens && Array.isArray(modifiedState.tokens) && modifiedState.tokens.length > 5) {
             const numberToRemove = 5 - modifiedState.tokens.length
             modifiedState.tokens = modifiedState.tokens.splice(0, numberToRemove)

@@ -1266,6 +1266,7 @@ export const Chat = () => {
                             }}
                           >
                             <div
+                              className='ava'
                               style={{
                                 borderRadius: '50%',
                                 width: '33px',
@@ -1276,7 +1277,7 @@ export const Chat = () => {
                                 // backgroundColor: 'var(--chakra-colors-gray-500)',
                                 // color: '#FFF',
                                 backgroundColor: personalColor,
-                                color: invert(personalColor, true),
+                                color: invert(personalColor), // invert(personalColor, true),
                               }}
                             >
                               {shortNick}
