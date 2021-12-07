@@ -193,7 +193,7 @@
           // color: #FFF;
         }
         .dead {
-          background: #000;
+          background: var(--chakra-colors-gray-800);
           color: #FFDE68;
         }
         .done {

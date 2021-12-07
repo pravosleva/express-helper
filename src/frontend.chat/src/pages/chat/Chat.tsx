@@ -116,6 +116,7 @@ enum EMessageStatus {
 // @ts-ignore
 // const overwriteMerge = (destinationArray, sourceArray, _options) => [, ...sourceArray]
 const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
+const charsLimit = 2000
 
 type TUser = { socketId: string; room: string; name: string }
 type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, status: EMessageStatus, fileName?: string }
@@ -154,7 +155,7 @@ function capitalizeFirstLetter(str: string): string {
 }
 const bgColorsMap: { [key: string]: string } = {
   [EMessageStatus.Done]: 'var(--chakra-colors-gray-500)',
-  [EMessageStatus.Dead]: '#000',
+  [EMessageStatus.Dead]: 'var(--chakra-colors-gray-800)',
   [EMessageStatus.Warn]: '#FFDE68',
   [EMessageStatus.Danger]: '#FF9177',
   [EMessageStatus.Info]: '#408EEA',
@@ -204,7 +205,7 @@ export const Chat = () => {
   const { users, tasklist } = useContext(UsersContext)
   const history = useHistory()
   const toast = useToast()
-  const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 800 })
+  const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 2000 })
   const [tokenLS] = useLocalStorage<any>('chat.token')
   // const textFieldRef = useRef<HTMLInputElement>(null)
   const textFieldRef = useRef<HTMLTextAreaElement>(null)
@@ -491,11 +492,11 @@ export const Chat = () => {
       })
       return
     }
-    if (editedMessage?.text.length > 800) {
+    if (editedMessage?.text.length > charsLimit) {
       toast({
         position: 'top',
         // title: 'Sorry',
-        description: 'Too big! 800 chars, not more',
+        description: `Too big! ${charsLimit} chars, not more`,
         status: 'error',
         duration: 3000,
       })
@@ -1206,7 +1207,7 @@ export const Chat = () => {
                           <img
                             alt={text}
                             src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
-                            style={{ width: '100%'}}
+                            style={{ width: '100%', minWidth: '100px' }}
                           />
                         </Zoom>
                         {isMyMessage && (
