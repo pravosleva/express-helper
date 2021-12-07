@@ -209,15 +209,24 @@ const syncRoomsMap = () => {
           // }
 
           // 2: Rename msg prop type -> status
+          // const newMsgs = []
+          // for(const msg of staticData[roomName]) {
+          //   // @ts-ignore
+          //   if (!!msg.type) {
+          //     // @ts-ignore
+          //     msg.status = msg.type
+          //     // @ts-ignore
+          //     delete msg.type
+          //   }
+          //   newMsgs.push(msg)
+          //   roomsMapInstance.set(roomName, newMsgs)
+          // }
+
+          // 3. Rename Den author to pravosleva
           const newMsgs = []
           for(const msg of staticData[roomName]) {
-            // @ts-ignore
-            if (!!msg.type) {
-              // @ts-ignore
-              msg.status = msg.type
-              // @ts-ignore
-              delete msg.type
-            }
+            if (msg.user === 'Den') msg.user = 'pravosleva' 
+
             newMsgs.push(msg)
             roomsMapInstance.set(roomName, newMsgs)
           }

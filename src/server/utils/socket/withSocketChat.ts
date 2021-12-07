@@ -19,6 +19,7 @@ import siofu from 'socketio-file-upload'
 import path from 'path'
 import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
 import { removeFileIfNecessary } from '~/utils/fs-tools/removeFileIfNecessary'
+import slugify from 'slugify'
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? String(token) === CHAT_ADMIN_TOKEN : false
@@ -58,6 +59,22 @@ type TUploadFileEvent = {
 }
 
 const uploadProgressMap = new Map<string, { connData: TConnectionData, status: string, event: any, ts: number }>()
+const getToken = (userName: string): string => {
+  let token = getRandomString(7)
+
+  // -- NOTE: Более информативный токен
+  const connectionData = usersMap.get(userName)
+
+  let uaInfo = []
+  if (!!connectionData?.userAgent?.client?.name) uaInfo.push(slugify(connectionData.userAgent.client.name))
+  if (!!connectionData?.userAgent?.device?.type) uaInfo.push(slugify(connectionData.userAgent.device.type))
+  if (!!connectionData?.userAgent?.os?.name) uaInfo.push(slugify(connectionData.userAgent.os.name))
+
+  if (!!uaInfo) token = `${uaInfo.join('-')}.${token}`
+  // --
+
+  return token
+}
 
 export const withSocketChat = (io: Socket) => {
   // -- NOTE: Logout on front
@@ -286,7 +303,8 @@ export const withSocketChat = (io: Socket) => {
       }
 
       const { passwordHash, registryLevel, ...rest } = registeredUsersMap.get(name)
-      let newToken: string = getRandomString(7)
+      const newToken: string = getToken(name)
+
       if (!bcrypt.compareSync(password, passwordHash)) {
         if (!!cb) cb('Incorrect password')
         return
@@ -312,6 +330,12 @@ export const withSocketChat = (io: Socket) => {
         if (!!regData.tokens && Array.isArray(regData.tokens)) {
           newTokens = [newToken, ...regData.tokens]
         }
+        // -- NOTE: Убрать старые токены
+        if (newTokens.length > 5) {
+          const numberToRemove = 5 - newTokens.length
+          newTokens = newTokens.splice(0, numberToRemove)
+        } 
+        // --
         registeredUsersMap.set(name, { ...regData, tokens: [...new Set(newTokens)] })
       }
       // --

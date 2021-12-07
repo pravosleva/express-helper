@@ -70,13 +70,13 @@ const syncRegistryMap = () => {
         // NOTE: Sync with old state:
         Object.keys(staticData).forEach((name: string) => {
           const modifiedState = staticData[name]
-          // @ts-ignore
-          if (!!modifiedState.token) {
-            // @ts-ignore
-            modifiedState.tokens = [modifiedState.token]
-            // @ts-ignore
-            delete modifiedState.token
+
+          // -- NOTE: Ограницения хранимых токенов
+          if (modifiedState.tokens.length > 5) {
+            const numberToRemove = 5 - modifiedState.tokens.length
+            modifiedState.tokens = modifiedState.tokens.splice(0, numberToRemove)
           }
+          // --
           
           registeredUsersMapInstance.set(name, modifiedState)
         })

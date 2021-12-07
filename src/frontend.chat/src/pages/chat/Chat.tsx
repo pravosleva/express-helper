@@ -81,7 +81,8 @@ import { UploadInput } from './components/UploadInput'
 // V3:
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-// import { AiFillEdit } from 'react-icons/ai'
+import stc from 'string-to-color'
+import invert, { BlackWhite } from 'invert-color'
 
 const REACT_APP_CHAT_UPLOADS_URL = process.env.REACT_APP_CHAT_UPLOADS_URL || '/chat/storage/uploads' // '/chat/storage-proxy/uploads'
 
@@ -1141,6 +1142,7 @@ export const Chat = () => {
                 // @ts-ignore
                   if(!!contextTriggerRef) contextTriggerRef.handleContextClick(e);
               }
+              const personalColor = stc(user)
 
               if (!!fileName) {
                 return (
@@ -1271,8 +1273,10 @@ export const Chat = () => {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                backgroundColor: 'var(--chakra-colors-gray-500)',
-                                color: '#FFF',
+                                // backgroundColor: 'var(--chakra-colors-gray-500)',
+                                // color: '#FFF',
+                                backgroundColor: personalColor,
+                                color: invert(personalColor, true),
                               }}
                             >
                               {shortNick}
