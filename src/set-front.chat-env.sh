@@ -16,7 +16,7 @@ PUBLIC_URL=/chat" > src/frontend.chat/.env.development.local
 ## PRAVOSLEVA.RU
       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
 PUBLIC_URL=/express-helper/chat
-REACT_APP_CHAT_NAME=\"EXP 2021\"
+REACT_APP_CHAT_NAME=\"PUB 2021\"
 REACT_APP_CHAT_UPLOADS_URL=/express-helper/chat/storage/uploads" > src/frontend.chat/.env.production
 
 ## SMARTPRICE beta2

@@ -1,6 +1,6 @@
 import { getRandomInteger } from '~/utils/getRandomInteger'
 
-const SUCCESS_ANYWAY = process.env.SUCCESS_ANYWAY === '1'
+// const SUCCESS_ANYWAY = process.env.SUCCESS_ANYWAY === '1'
 
 const toClient = [
   {
@@ -29,8 +29,10 @@ export const signBySMSCode = (req, res) => {
   // const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 2)
   const toBeOrNotToBe = 2
 
-  return res.status(200).send({
-    ...toClient[toBeOrNotToBe],
-    _originalBody: req.body,
-  })
+  return setTimeout(() => {
+    res.status(200).send({
+      ...toClient[toBeOrNotToBe],
+      _originalBody: req.body,
+    })
+  }, 3000)
 }

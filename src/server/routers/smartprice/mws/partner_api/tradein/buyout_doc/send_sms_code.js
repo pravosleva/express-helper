@@ -24,8 +24,10 @@ export const sendSMSCode = (req, res) => {
 
   const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
 
-  return res.status(200).send({
-    ...toClient[toBeOrNotToBe],
-    _originalBody: req.body,
-  })
+  return setTimeout(() => {
+    res.status(200).send({
+      ...toClient[toBeOrNotToBe],
+      _originalBody: req.body,
+    })
+  }, 3000)
 }
