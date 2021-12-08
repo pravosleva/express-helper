@@ -65,35 +65,19 @@ import { TasklistModal } from './components/TasklistModal/TasklistModal'
 import { md } from '~/common/chakra/theme'
 import { IoMdLogOut } from 'react-icons/io'
 import { CgSearch } from 'react-icons/cg'
-// import merge2 from 'deepmerge'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 import { useInView } from 'react-intersection-observer'
-// import { useSpring, animated } from 'react-spring'
 import { Logic } from './MessagesLogic'
 import { useForm } from '~/common/hooks/useForm'
 import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
 import { useDebounce, useLocalStorage } from 'react-use'
 import { UploadInput } from './components/UploadInput'
-// V2:
-// import InnerImageZoom from 'react-inner-image-zoom'
-// import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
-// V3:
-import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import stc from 'string-to-color'
-import invert, { BlackWhite } from 'invert-color'
-
-const REACT_APP_CHAT_UPLOADS_URL = process.env.REACT_APP_CHAT_UPLOADS_URL || '/chat/storage/uploads' // '/chat/storage-proxy/uploads'
-
-enum EMessageStatus {
-  Info = 'info',
-  Success = 'success',
-  Warn = 'warning',
-  Danger = 'danger',
-  Dead = 'dead',
-  Done = 'done',
-}
+import invert from 'invert-color'
+import { EMessageStatus, TMessage } from '~/utils/interfaces'
+import { Image } from './components/chat-msg'
 
 /* -- NOTE: Socket upload file evs
 // Sample 1 (12.3 kB)
@@ -119,7 +103,6 @@ const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 const charsLimit = 2000
 
 type TUser = { socketId: string; room: string; name: string }
-type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, status: EMessageStatus, fileName?: string }
 
 const statusMap: {
   [key: string]: any
@@ -1147,87 +1130,14 @@ export const Chat = () => {
 
               if (!!fileName) {
                 return (
-                  <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
-                    <Box
-                      className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
-                      // style={transform}
-                      m=".3rem 0"
-                    >
-                      <Text
-                        fontSize="sm"
-                        // opacity=".8"
-                        mb={1}
-                        className={clsx("from")}
-                        // textAlign={isMyMessage ? 'right' : 'left'}
-                      >
-                        <b>{user}</b>{' '}
-                        <span className="date">
-                          {date}
-                          {!!editTs && (
-                            // <>{' '}/{' '}<b>Edited</b>{' '}{getNormalizedDateTime(editTs)}</>
-                            <>{' '}<b>Edited</b></>
-                          )}
-                        </span>
-                      </Text>
-                      {/* <div className='msg-as-image--wrapper'>
-  
-                        <img
-                          className='msg-as-image'
-                          src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
-                          alt='img'
-                          title={`${user}: ${date}`}
-                        />
-                        {isMyMessage && (
-                          <div className='abs-img-service-btns' style={{ marginTop: '5px' }}>
-                            <button className='special-btn special-btn-sm' onClick={() => { handleDeleteMessage(ts) }}>DEL</button>
-                          </div>
-                        )}
-                      </div> */}
-                      {/* V2: react-inner-image-zoom */}
-                      {/* <div className='msg-as-image--wrapper'>
-                        <InnerImageZoom
-                          src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
-                          zoomSrc={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
-                          fullscreenOnMobile={true}
-                          moveType="drag"
-                        />
-                        {isMyMessage && (
-                          <div className='abs-img-service-btns'>
-                            <button className='special-btn special-btn-sm' onClick={() => { handleDeleteMessage(ts) }}>DEL</button>
-                          </div>
-                        )}
-                      </div> */}
-                      {/* V3: react-medium-image-zoom */}
-                      <div className='msg-as-image--wrapper'>
-                        <Zoom
-                          overlayBgColorStart='transparent'
-                          // overlayBgColorEnd='var(--chakra-colors-gray-700)'
-                          overlayBgColorEnd='rgba(0,0,0,0.85)'
-                        >
-                          <img
-                            alt={text}
-                            src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
-                            style={{ width: '100%', minWidth: '100px' }}
-                          />
-                        </Zoom>
-                        {isMyMessage && (
-                          <div className='abs-img-service-btns'>
-                            <button className='special-btn special-btn-sm dark-btn' onClick={() => { handleDeleteMessage(ts) }}>Del</button>
-                            <button className='special-btn special-btn-sm dark-btn' onClick={() => {
-                              handleClickCtxMenu()
-                              handleEditModalOpen()
-                            }}>Edit</button>
-                          </div>
-                        )}
-                        {!!text && (
-                          <div className='abs-img-caption truncate-overflow' onClick={() => { alert(text) }}>
-                            {text}
-                          </div>
-                        )}
-                      </div>
-                    </Box>
-                    {isNextOneBtnEnabled && <div className='centered-box'><button className='special-btn special-btn-sm dark-btn' onClick={() => { addAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
-                  </Fragment>
+                  <Image
+                    key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
+                    message={message}
+                    setEditedMessage={setEditedMessage}
+                    onEditModalOpen={handleEditModalOpen}
+                    onDeleteMessage={handleDeleteMessage}
+                    onAddAdditionalTsToShow={addAdditionalTsToShow}
+                  />
                 )
               }
 
