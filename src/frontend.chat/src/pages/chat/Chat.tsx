@@ -78,6 +78,7 @@ import stc from 'string-to-color'
 import invert from 'invert-color'
 import { EMessageStatus, TMessage } from '~/utils/interfaces'
 import { Image } from './components/chat-msg'
+import { GalleryModal } from './components/GalleryModal'
 
 /* -- NOTE: Socket upload file evs
 // Sample 1 (12.3 kB)
@@ -728,9 +729,26 @@ export const Chat = () => {
     }, 0)
   }
   // --
+  const filteredMessages = useMemo(() => logic.getFiltered({ filters, searchText: debouncedSearchText, additionalTsToShow }), [logic, filters, debouncedSearchText, additionalTsToShow])
+  const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
+  const [clickedImageSrc, setClickedImageSrc]= useState<string | null>(null)
+  const handleOpenGallery = useCallback((src: string) => {
+    setIsGalleryOpened(true)
+    setClickedImageSrc(src)
+  }, [setIsGalleryOpened, setClickedImageSrc])
+  const handleCloseGallery = useCallback(() => {
+    setIsGalleryOpened(false)
+  }, [setIsGalleryOpened])
 
   return (
     <>
+      <GalleryModal
+        isOpened={isGalleryOpened}
+        onClose={handleCloseGallery}
+        defaultSrc={clickedImageSrc}
+        messages={messages}
+      />
+
       <TasklistModal
         isOpened={isTasklistModalOpened}
         onClose={handleTasklistModalClose}
@@ -1111,7 +1129,7 @@ export const Chat = () => {
               </Text>
               <Box ml="2">---</Box>
             </Flex>
-            {logic.getFiltered({ filters, searchText: debouncedSearchText, additionalTsToShow }).map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, arr) => {
+            {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, arr) => {
               const { user, text, ts, editTs, status, fileName, _next } = message
               // const isLastOfFiltered = i === arr.length -1
               const isMyMessage = user === name
@@ -1137,6 +1155,7 @@ export const Chat = () => {
                     onEditModalOpen={handleEditModalOpen}
                     onDeleteMessage={handleDeleteMessage}
                     onAddAdditionalTsToShow={addAdditionalTsToShow}
+                    onOpenGallery={handleOpenGallery}
                   />
                 )
               }

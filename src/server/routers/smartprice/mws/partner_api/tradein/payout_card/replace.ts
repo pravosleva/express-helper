@@ -53,7 +53,7 @@ const _help: THelp = {
   },
 }
 
-export const retryAddPayoutCard = (req: any, res: any) => {
+export const replaceAddPayoutCard = (req: any, res: any) => {
   const errs: string[] = []
 
   for (const key in _help.params.body) {

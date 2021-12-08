@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './App'
 // import reportWebVitals from './reportWebVitals'
 import '~/fix.react-contextmenu.scss'
+import '~/fix.simple-react-lightbox.scss'
 
 ReactDOM.render(
   <>

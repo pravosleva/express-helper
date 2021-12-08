@@ -1,12 +1,10 @@
-enum EMessageStatus {
-  Info = 'info',
-  Success = 'success',
-  Warn = 'warning',
-  Danger = 'danger',
-  Dead = 'dead',
-  Done = 'done',
-}
-type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, status: EMessageStatus }
+import {
+  TMessage,
+  EMessageStatus,
+  TImageLightboxFormat,
+} from '~/utils/interfaces'
+
+const REACT_APP_CHAT_UPLOADS_URL = process.env.REACT_APP_CHAT_UPLOADS_URL || '/chat/storage/uploads'
 
 export class Logic {
   messages: TMessage[];
@@ -103,5 +101,17 @@ export class Logic {
       case filters.length > 0: return this.messages.filter(({ status }) => filters.includes(status)).length
       default: return this.messages.length
     }
+  }
+  getAllImagesMessages(): TMessage[] {
+    return this.messages.filter(({ fileName }) => !!fileName)
+  }
+  getAllImagesLightboxFormat(): TImageLightboxFormat[] {
+    const result: { src: string, alt: string }[] = []
+
+    this.messages.forEach(({ fileName, text }) => {
+      if (!!fileName) result.push({ src: `${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`, alt: text })
+    })
+
+    return result
   }
 }

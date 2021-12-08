@@ -46,8 +46,9 @@ import { sendSMSCode } from './mws/partner_api/tradein/buyout_doc/send_sms_code'
 import { signBySMSCode } from './mws/partner_api/tradein/buyout_doc/sign_by_sms_code'
 import { clientData } from './mws/partner_api/tradein/client/data'
 import { addPayoutCard } from './mws/partner_api/tradein/payout_card/add'
-import { retryAddPayoutCard } from './mws/partner_api/tradein/payout_card/retry'
+import { replaceAddPayoutCard } from './mws/partner_api/tradein/payout_card/replace'
 import { addingPayoutCardStatus } from './mws/partner_api/tradein/payout_card/status'
+import { payoutCardSendIframeSMS } from './mws/partner_api/tradein/payout_card/send_iframe_sms'
 
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
 
@@ -122,8 +123,9 @@ spApi.post('/partner_api/tradein/buyout_doc/send_sms_code', sendSMSCode)
 spApi.post('/partner_api/tradein/buyout_doc/sign_by_sms_code', signBySMSCode)
 spApi.post('/partner_api/tradein/client/data', clientData)
 spApi.post('/partner_api/tradein/payout_card/add', addPayoutCard)
-spApi.post('/partner_api/tradein/payout_card/retry', retryAddPayoutCard)
+spApi.post('/partner_api/tradein/payout_card/replace', replaceAddPayoutCard)
 spApi.post('/partner_api/tradein/payout_card/status', addingPayoutCardStatus)
+spApi.post('/partner_api/tradein/payout_card/send_iframe_sms', payoutCardSendIframeSMS)
 
 // 6. New OT landing
 spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)

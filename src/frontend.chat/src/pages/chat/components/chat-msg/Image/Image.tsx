@@ -15,6 +15,7 @@ type TProps = {
   onEditModalOpen: () => void
   onDeleteMessage: (ts: number) => void
   onAddAdditionalTsToShow: (ts: number) => void
+  onOpenGallery: (src: string) => void
 }
 
 const REACT_APP_CHAT_UPLOADS_URL = process.env.REACT_APP_CHAT_UPLOADS_URL || '/chat/storage/uploads' // '/chat/storage-proxy/uploads'
@@ -25,6 +26,7 @@ export const Image = ({
   onEditModalOpen,
   onDeleteMessage,
   onAddAdditionalTsToShow,
+  onOpenGallery,
 }: TProps) => {
   const { user, text, ts, editTs, status, fileName, _next } = message
   const { name } = useContext(MainContext)
@@ -33,6 +35,7 @@ export const Image = ({
   const date = getNormalizedDateTime(ts)
   const isNextOneBtnEnabled = _next?.isHidden
   const handleClickCtxMenu = () => setEditedMessage(message)
+  const src = `${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`
 
   return (
     <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
@@ -62,7 +65,7 @@ export const Image = ({
           >
             <img
               alt={text}
-              src={`${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`}
+              src={src}
               style={{ width: '100%', minWidth: '100px' }}
             />
           </Zoom>
@@ -73,6 +76,7 @@ export const Image = ({
                 handleClickCtxMenu()
                 onEditModalOpen()
               }}>Edit</button>
+              <button className='special-btn special-btn-sm dark-btn' onClick={() => { onOpenGallery(src)} }>Open Gallery</button>
             </div>
           )}
           {!!text && (

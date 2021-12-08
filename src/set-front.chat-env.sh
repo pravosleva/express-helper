@@ -10,7 +10,8 @@ then
       echo "REACT_APP_WS_API_URL=http://localhost:5000
 PUBLIC_URL=/chat" > src/frontend.chat/.env.production &&
       echo "REACT_APP_WS_API_URL=http://localhost:5000
-PUBLIC_URL=/chat" > src/frontend.chat/.env.development.local
+PUBLIC_URL=/chat
+REACT_APP_CHAT_UPLOADS_URL=http://localhost:5000/chat/storage/uploads" > src/frontend.chat/.env.development.local
     ;;
     "prod")
 ## PRAVOSLEVA.RU

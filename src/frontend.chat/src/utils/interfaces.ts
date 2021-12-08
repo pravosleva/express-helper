@@ -8,3 +8,5 @@ export enum EMessageStatus {
 }
 
 export type TMessage = { user: string; text: string; ts: number; editTs?: number; name: string, status: EMessageStatus, fileName?: string }
+
+export type TImageLightboxFormat = { src: string, alt: string | undefined }
