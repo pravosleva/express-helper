@@ -73,7 +73,7 @@ import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
 import { useDebounce, useLocalStorage } from 'react-use'
 import { UploadInput } from './components/UploadInput'
-import 'react-medium-image-zoom/dist/styles.css'
+// import 'react-medium-image-zoom/dist/styles.css'
 import stc from 'string-to-color'
 import invert from 'invert-color'
 import { EMessageStatus, TMessage } from '~/utils/interfaces'
@@ -1109,12 +1109,11 @@ export const Chat = () => {
           </Box>
 
           <ScrollToBottom
-            className={
-              clsx(
-                "messages",
-                // "height-limited-md",
-                { "height-limited-md": upToSm, "height-full-auto-sm": downToSm }
-              )}
+            className={clsx(
+              "messages",
+              // "height-limited-md",
+              { "height-limited-md": upToSm, "height-full-auto-sm": downToSm }
+            )}
             debug={false}
             // debounce={1000}
           >
@@ -1261,8 +1260,8 @@ export const Chat = () => {
             })}
             {!!uploadErrorMsg && (
               <div className='service-flex-row'>
-                <div><button className='special-btn special-btn-md dark-btn' onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} /></span></span></button></div>
-                <div style={{ color: 'var(--chakra-colors-red-300)' }}>Upload Error: {uploadErrorMsg}</div>
+                <div><button className='special-btn special-btn-md dark-btn green' onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} color='var(--chakra-colors-green-300)' /></span></span></button></div>
+                <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Error: {uploadErrorMsg}</div>
               </div>
             )}
             {filters.length === 0 && !formData.searchText && regData?.registryLevel === 1 && !uploadErrorMsg && (

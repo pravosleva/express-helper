@@ -32,6 +32,15 @@
   overscroll-behavior: none
 }
 
+// TODO:
+.mobile-fixed-wrapper-top {
+  @media (max-width: #{$sm}px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
 .room{
   @media (max-width: #{$sm}px) {
     border-radius: 0px;
@@ -41,46 +50,47 @@
     border-radius: 8px;
     box-shadow: 1px 1px 10px rgba(0,0,0,.1);
   }
+  
   .heading{
-      // font-family: 'DM Sans';
-      // color: rgb(70, 70, 70);
-      font-size: 2rem;
-      font-weight: 500;
-      z-index: 1000;
-      height: 69px;
+    // font-family: 'DM Sans';
+    // color: rgb(70, 70, 70);
+    font-size: 2rem;
+    font-weight: 500;
+    z-index: 1000;
+    height: 69px;
 
+    white-space: nowrap;
+    width: 100%; // IE6 needs any width
+    overflow: hidden; // "overflow" value must be different from  visible"
+    // -o-text-overflow: 'ellipsis // Opera < 11
+    text-overflow: ellipsis; // IE, Safari (WebKit), Opera >= 11, FF > 6
+    & h2 {
       white-space: nowrap;
-      width: 100%; // IE6 needs any width
       overflow: hidden; // "overflow" value must be different from  visible"
       // -o-text-overflow: 'ellipsis // Opera < 11
       text-overflow: ellipsis; // IE, Safari (WebKit), Opera >= 11, FF > 6
+    }
+
+    @media (max-width: #{$sm}px) {
+      border-radius: 0px;
+
       & h2 {
-        white-space: nowrap;
-        overflow: hidden; // "overflow" value must be different from  visible"
-        // -o-text-overflow: 'ellipsis // Opera < 11
-        text-overflow: ellipsis; // IE, Safari (WebKit), Opera >= 11, FF > 6
+        width: 100%; // IE6 needs any width
+        max-width: 150px;
       }
-
-      @media (max-width: #{$sm}px) {
-        border-radius: 0px;
-
-        & h2 {
-          width: 100%; // IE6 needs any width
-          max-width: 150px;
-        }
+    }
+    @media (min-width: #{$sm + 1}px) {
+      & h2 {
+        width: 100%; // IE6 needs any width
+        max-width: 250px;
       }
-      @media (min-width: #{$sm + 1}px) {
-        & h2 {
-          width: 100%; // IE6 needs any width
-          max-width: 250px;
-        }
+    }
+    @media (min-width: #{$md + 1}px) {
+      & h2 {
+        width: 100%; // IE6 needs any width
+        max-width: 350px;
       }
-      @media (min-width: #{$md + 1}px) {
-        & h2 {
-          width: 100%; // IE6 needs any width
-          max-width: 350px;
-        }
-      }
+    }
   }
 
   .messages{
@@ -89,17 +99,20 @@
       overflow-x: hidden;
       & > * {
         overflow-x: hidden;
+        box-sizing: border-box;
       }
 
       .msg-as-image--wrapper {
         position: relative;
         max-height: 310px;
+        min-height: 117px;
+        
         // border: 1px solid red;
         & img {
           border-radius: 10px;
           max-height: 310px;
-          min-height: 115px;
-          // border: 1px solid red;
+          min-height: 117px;
+          height: 100%;
 
           // padding:0px;
           // border:0px;
@@ -294,55 +307,54 @@
     min-height:calc(100vh - 200px);
     max-height:calc(100vh - 200px);
   }
-  
   .form{
-      font-family: 'Russo One';
-      position: relative;
-      z-index: 1;
-      @media (min-width: #{$sm + 1}px) {
+    font-family: 'Russo One';
+    position: relative;
+    z-index: 1;
+    @media (min-width: #{$sm + 1}px) {
+      border-radius: 0px 0px 8px 8px;
+    }
+    input{
+        width: 100%;
+        padding: 1.5rem 4rem 1.5rem 1.5rem;
         border-radius: 0px 0px 8px 8px;
-      }
-      input{
+    }
+    textarea{
           width: 100%;
-          padding: 1.5rem 4rem 1.5rem 1.5rem;
-          border-radius: 0px 0px 8px 8px;
-      }
-      textarea{
-            width: 100%;
-            // padding: 1.5rem 4rem 1.5rem 1.5rem;
+          // padding: 1.5rem 4rem 1.5rem 1.5rem;
 
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            
-            @media (max-width: #{$sm}px) {
-                border-radius: 0px;
-                
-                }
-              @media (min-width: #{$sm + 1}px) {
-                border-radius: 0px 0px 8px 8px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          
+          @media (max-width: #{$sm}px) {
+              border-radius: 0px;
+              
               }
+            @media (min-width: #{$sm + 1}px) {
+              border-radius: 0px 0px 8px 8px;
+            }
 
-            // background-color: #fff;
-            padding-right: 4rem;
-      }
-      button{
-          user-select: none;
-          -webkit-tap-highlight-color: transparent;
-          position: absolute;
-          z-index: 1;
-          right: 1rem;
-          top: 1rem;
-      }
-      label.absolute-label{
+          // background-color: #fff;
+          padding-right: 4rem;
+    }
+    button{
         user-select: none;
         -webkit-tap-highlight-color: transparent;
         position: absolute;
         z-index: 1;
         right: 1rem;
-        bottom: 0.5rem;
-        font-size: 0.7rem;
-        font-family: 'Russo One';
-      }
+        top: 1rem;
+    }
+    label.absolute-label{
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      position: absolute;
+      z-index: 1;
+      right: 1rem;
+      bottom: 0.5rem;
+      font-size: 0.7rem;
+      font-family: 'Russo One';
+    }
   }
 }
 
@@ -369,3 +381,11 @@
     margin-right: var(--chakra-space-2);
   }
 }
+
+// @media (max-width: #{$sm}px) {
+//   .room { margin-bottom: 80px; }
+// }
+
+// .mobile-fixed-wrapper-bottom {
+//   position: fixed; bottom: 0; left: 0; right: 0;
+// }

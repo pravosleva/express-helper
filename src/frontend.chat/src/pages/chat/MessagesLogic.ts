@@ -112,6 +112,6 @@ export class Logic {
       if (!!fileName) result.push({ src: `${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`, alt: text })
     })
 
-    return result
+    return result.reverse()
   }
 }

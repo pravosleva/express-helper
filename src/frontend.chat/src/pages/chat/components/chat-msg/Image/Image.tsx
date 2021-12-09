@@ -1,4 +1,4 @@
-import { Fragment, useContext } from 'react'
+import { Fragment, useContext, useCallback } from 'react'
 import { TMessage } from '~/utils/interfaces'
 import { getNormalizedDateTime } from '~/utils/timeConverter'
 import {
@@ -6,8 +6,11 @@ import {
   Text,
 } from '@chakra-ui/react'
 import clsx from 'clsx'
-import Zoom from 'react-medium-image-zoom'
+// import Zoom from 'react-medium-image-zoom'
 import { MainContext } from '~/mainContext'
+// import { FcGallery } from 'react-icons/fc'
+import Img from '@lxsmnsyc/react-image'
+import { Loader } from '~/common/components/Loader'
 
 type TProps = {
   message: TMessage & { _next?: { ts: number, isHidden: boolean } }
@@ -36,6 +39,9 @@ export const Image = ({
   const isNextOneBtnEnabled = _next?.isHidden
   const handleClickCtxMenu = () => setEditedMessage(message)
   const src = `${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`
+  const handleImageClick = useCallback(() => {
+    onOpenGallery(src)
+  }, [onOpenGallery])
 
   return (
     <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
@@ -58,27 +64,42 @@ export const Image = ({
           </span>
         </Text>
         <div className='msg-as-image--wrapper'>
-          <Zoom
-            overlayBgColorStart='transparent'
-            // overlayBgColorEnd='var(--chakra-colors-gray-700)'
-            overlayBgColorEnd='rgba(0,0,0,0.85)'
-          >
-            <img
-              alt={text}
-              src={src}
-              style={{ width: '100%', minWidth: '100px' }}
-            />
-          </Zoom>
-          {isMyMessage && (
-            <div className='abs-img-service-btns'>
-              <button className='special-btn special-btn-sm dark-btn' onClick={() => { onDeleteMessage(ts) }}>Del</button>
+          {/* <img alt={text} src={src} style={{ width: '100%', minWidth: 'var(--msg-img-min-with)' }} /> */}
+            
+          <Img
+            style={{ width: '100%', minWidth: 'var(--msg-img-min-with)' }}
+            src={src}
+            alt={text}
+            loading='lazy'
+            fallback={<Loader />}
+            onClick={handleImageClick}
+            // @ts-ignore
+            // containerRef={containerRef}
+            // sources={[ { source: 'portrait.jpg', media: '(orientation: portrait)' }, { source: 'landscape.jpg', media: '(orientation: landscape)' }, ]}
+          />
+          <div className='abs-img-service-btns top-left'>
+            {isMyMessage && (
+              <button className='special-btn special-btn-sm dark-btn red'
+                onClick={() => {
+                  const toBe = window.confirm('Delete this image?');
+                  if (toBe) onDeleteMessage(ts);
+                }}
+              >Del</button>
+            )}
+          </div>
+          <div className='abs-img-service-btns top-right'>
+            {isMyMessage && (
               <button className='special-btn special-btn-sm dark-btn' onClick={() => {
                 handleClickCtxMenu()
                 onEditModalOpen()
               }}>Edit</button>
-              <button className='special-btn special-btn-sm dark-btn' onClick={() => { onOpenGallery(src)} }>Open Gallery</button>
-            </div>
-          )}
+            )}
+            {/*
+            <button className='special-btn special-btn-sm yellow-btn' onClick={handleImageClick}>
+              <span style={{ display: 'flex', alignItems: 'center' }}><span style={{ marginRight: '5px' }}>Gallery</span><FcGallery color='#FFF' size={17} /></span>
+            </button> */}
+          </div>
+          
           {!!text && (
             <div className='abs-img-caption truncate-overflow' onClick={() => { alert(text) }}>
               {text}

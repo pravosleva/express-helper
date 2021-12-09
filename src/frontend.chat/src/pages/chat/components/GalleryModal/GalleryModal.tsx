@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react'
+import React, { useRef, useMemo, useEffect } from 'react'
 import {
   Button,
   Modal,
@@ -27,6 +27,8 @@ import slugify from 'slugify'
 import clsx from 'clsx'
 // import { Logic } from './MessagesLogic'
 import { Logic } from '~/pages/chat/MessagesLogic'
+import Img from '@lxsmnsyc/react-image'
+import { Loader } from '~/common/components/Loader'
 
 type TProps = {
   isOpened: boolean
@@ -43,6 +45,38 @@ export const GalleryModal = ({
 }: TProps) => {
   const logic = useMemo<Logic>(() => new Logic(messages), [messages])
   const allImagesMessagesLightboxFormat = useMemo(() => logic.getAllImagesLightboxFormat(), [logic])
+  // const containerRef = useRef(null)
+  const activeItemRef = useRef<undefined | HTMLAnchorElement>(undefined)
+  useEffect(() => {
+    const scrollToImg = () => {
+      if (!!activeItemRef.current) activeItemRef.current.scrollIntoView({ block: 'end', /* ibehavior: 'smooth', nline: 'center', */ })
+    }
+    // const clickImg = () => { if (!!activeItemRef.current) activeItemRef.current.click() }
+    // setTimeout(clickImg, 50)
+    setTimeout(scrollToImg, 200)
+  }, [defaultSrc])
+  // useEffect(() => {
+  //   const disableLinkClick = (ev: any) => {
+  //     if (isOpened) {
+  //       switch (ev.target.tagName) {
+  //         case 'A':
+  //         case 'IMG':
+  //           console.log('CLICKED', ev.target.tagName)
+  //           console.log(typeof ev.preventDefault);
+  //           ev.preventDefault();
+  //           ev.stopPropagation();
+  //           break;
+  //         default:
+  //           break;
+  //       }
+  //     }
+  //   }
+  //   document.addEventListener('click', disableLinkClick)
+    
+  //   return () => {
+  //     document.removeEventListener('click', disableLinkClick)
+  //   }
+  // }, [isOpened])
 
   return (
     <Modal
@@ -53,12 +87,14 @@ export const GalleryModal = ({
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>In progress...</ModalHeader>
+        <ModalHeader>Gallery</ModalHeader>
         <ModalCloseButton />
-        <ModalBody pb={1} pl={1} pr={1}>
+        <ModalBody
+          // pb={1} pl={1} pr={1}
+        >
           
           <SimpleReactLightbox>
-            <div className='srLWrapperLayout'>
+            <div className='srLWrapperLayout bigFirst'>
               <SRLWrapper
                 options={{
                   settings: {
@@ -111,11 +147,32 @@ export const GalleryModal = ({
                     // const { large, medium, thumbnail, small } = photoData
                     // const src = !!large ? `${apiUrl}${large.url}` : medium ? `${apiUrl}${medium.url}` : !!small ? `${apiUrl}${small.url}` : `${apiUrl}${thumbnail.url}`
                     // const thumbnailSrc = !!thumbnail ? `${apiUrl}${thumbnail.url}` : src
+                    const isActive = src === defaultSrc 
 
                     return (
-                      <div className='grid-item' key={`${src}_${slugify(alt || 'no-comment')}`}>
-                        <a href={src} className={clsx({ 'active': src === defaultSrc })}>
-                          <img src={src} alt={alt} />
+                      <div
+                        className={clsx('grid-item', { ['active-grid-item']: isActive })}
+                        key={`${src}_${slugify(alt || 'no-comment')}`}
+                      >
+                        <a
+                          href={src}
+                          className={clsx({ 'active': isActive })}
+                        >
+                          {/* <img src={src} alt={alt} /> */}
+                          <Img
+                            // @ts-ignore
+                            ref={isActive ? activeItemRef : undefined}
+                            src={src}
+                            alt={alt || ''}
+                            loading='lazy'
+                            fallback={<Loader />}
+                            // @ts-ignore
+                            // containerRef={containerRef}
+                            // sources={[
+                            //   { source: 'portrait.jpg', media: '(orientation: portrait)' },
+                            //   { source: 'landscape.jpg', media: '(orientation: landscape)' },
+                            // ]}
+                          />
                         </a>
                       </div>
                     )

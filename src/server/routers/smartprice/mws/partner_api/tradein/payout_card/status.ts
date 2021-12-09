@@ -113,16 +113,22 @@ export const addingPayoutCardStatus = (req: any, res: any) => {
       if (!toBeOrNotToBe) result = toClient[4] // EStatus.Canceled
     }
 
-    return res.status(200).send({
-      ...result,
-      _serviceMsg,
-    })
+    return setTimeout(
+      () => res.status(200).send({
+        ...result,
+        _serviceMsg,
+      }),
+      3000
+    )
   }
 
-  return res.status(200).send({
-    ...toClient[0],
-    message: 'Добавьте параметры: odd_success: number, random_success: bool',
-    _originalBody: req.body,
-    _help,
-  })
+  return setTimeout(
+    () => res.status(200).send({
+      ...toClient[0],
+      message: 'Добавьте параметры: odd_success: number, random_success: bool',
+      _originalBody: req.body,
+      _help,
+    }),
+    3000
+  )
 }
