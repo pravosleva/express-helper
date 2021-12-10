@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect } from 'react'
+import React, { useRef, useMemo, useEffect, useCallback } from 'react'
 import {
   Button,
   Modal,
@@ -77,6 +77,9 @@ export const GalleryModal = ({
   //     document.removeEventListener('click', disableLinkClick)
   //   }
   // }, [isOpened])
+  const handleTextClick = useCallback((text: string) => {
+    window.alert(text)
+  }, [])
 
   return (
     <Modal
@@ -174,6 +177,7 @@ export const GalleryModal = ({
                             // ]}
                           />
                         </a>
+                        {!!alt && <div className='caption truncate-overflow-single-line' onClick={() => { handleTextClick(alt) }}>{alt}</div>}
                       </div>
                     )
                   })

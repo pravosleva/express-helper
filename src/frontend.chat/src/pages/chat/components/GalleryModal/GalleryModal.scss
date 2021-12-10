@@ -3,7 +3,8 @@
 :root {
   --grid-item-img-height-limit-mobile: 85px;
   --grid-item-img-height-limit-desktop: 120px;
-  --std-gap: 2px;
+  --std-gap: 10px;
+  --item-border-radius: 8px;
 }
 
 .srLWrapperLayout.bigFirst {
@@ -99,6 +100,30 @@
     }
     // grid-auto-flow: dense;
   }
+  & > div > div.grid-item {
+    
+    position: relative;
+    & > .caption {
+      cursor: pointer;
+      position: absolute;
+      bottom: 2px;
+      right: 50%;
+      transform: translateX(50%);
+      background: var(--chakra-colors-gray-600);
+      color: #FFF;
+      padding: 3px 10px;
+      font-weight: bold;
+
+      width: calc(100% - 2px * 2);
+      border-radius: 0 0 calc(var(--item-border-radius) - 2px) calc(var(--item-border-radius) - 2px);
+      text-align: center;
+    }
+    & > .caption:hover,
+    & > .caption:active,
+    & > .caption:focus {
+      background: var(--chakra-colors-blue-500);
+    }
+  }
   & > div > div.grid-item > a {
     & > span > span {
       display: unset !important;
@@ -125,6 +150,7 @@
     filter: grayscale(1) brightness(0.6);
     // border: 2px solid lightgray;
     border: 2px solid transparent;
+    border-radius: var(--item-border-radius);
   }
 
   & > div > div.grid-item:not(.active-grid-item) > a,

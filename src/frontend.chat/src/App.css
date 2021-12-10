@@ -55,6 +55,12 @@
     /* background: white; */
 }
 
+.truncate-overflow-single-line {
+    --max-lines: 1;
+    max-height: 27px;
+    overflow: hidden;
+}
+
 input[type="file"] {
     display: none;
 }
@@ -99,7 +105,7 @@ input[type="file"]:disabled + label {
     font-weight: 500;
     font-size: var(--chakra-fontSizes-sm);
     width: 100%;
-    background: rgba(0,0,0,0.7);
+    background: var(--chakra-colors-gray-600);
     color: #FFF;
     border-radius: 0 0 10px 10px;
 
@@ -111,8 +117,10 @@ input[type="file"]:disabled + label {
     text-overflow: ellipsis;
     */
 }
-.abs-img-caption:hover {
-    background: rgba(0,0,0,0.8);
+.abs-img-caption:hover,
+.abs-img-caption:active,
+.abs-img-caption:focus {
+    background: var(--chakra-colors-blue-500);
 }
 
 /* SERVICE BTNS WRAPPER */
