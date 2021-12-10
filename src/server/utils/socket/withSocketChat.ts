@@ -39,6 +39,7 @@ export type TMessage = {
   rl?: ERegistryLevel
   user: string
   fileName?: string
+  status?: EMessageStatus
 }
 
 const deviceDetector = new DeviceDetector()
@@ -446,7 +447,7 @@ export const withSocketChat = (io: Socket) => {
       socket.emit('allRooms', { roomsData: [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {}) })
     })
 
-    socket.on('sendMessage', ({ message, userName }, cb) => {
+    socket.on('sendMessage', ({ message, userName, status }: { message: string, userName: string, status: EMessageStatus }, cb) => {
       // --- NEW WAY
       const ts = Date.now()
       try {
@@ -459,12 +460,15 @@ export const withSocketChat = (io: Socket) => {
           registryLevel = 1
           if (!!regData.registryLevel) registryLevel = regData.registryLevel
         }
+
+        const newStuff: TMessage = { text: message, ts, rl: registryLevel, user: name }
+        if (!!status) newStuff.status = status
         
-        newRoomData.push({ text: message, ts, rl: registryLevel, user: name })
+        newRoomData.push(newStuff)
 
         roomsMap.set(room, newRoomData)
 
-        io.in(room).emit('message', { user: name, text: message, ts, rl: registryLevel });
+        io.in(room).emit('message', newStuff);
         if (!!cb) cb()
       } catch (err) {
         socket.emit('notification', { status: 'error', title: 'ERR #2', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error', _originalEvent: { message, userName } })

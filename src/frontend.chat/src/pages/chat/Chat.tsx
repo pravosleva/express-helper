@@ -389,8 +389,15 @@ export const Chat = () => {
     }
   }, [socket?.connected, room, history])
 
+  const [filters, setFilters] = useState<EMessageStatus[]>([])
+  const setFilter = (filter: EMessageStatus) => {
+    setFilters([filter])
+  }
+  const resetFilters = useCallback(() => {
+    setFilters([])
+  }, [setFilters])
   const [isSending, setIsSending] = useState<boolean>(false)
-  const handleSendMessage = () => {
+  const handleSendMessage = useCallback(() => {
     if (isMsgLimitReached) {
       toast({
         position: 'top',
@@ -402,16 +409,20 @@ export const Chat = () => {
       })
       return
     }
-    // const normalizedMsg = message.replace(/\s+/g, ' ').trim()
-    const normalizedMsg = message.trim().replace(/\n+/g, '\n')
+    const normalizedMsg = message.trim().replace(/\n+/g, '\n') // message.replace(/\s+/g, ' ').trim()
     if (!!socket && !!normalizedMsg) {
       setIsSending(true)
-      socket.emit('sendMessage', { message: normalizedMsg, userName: name }, () => {
+      
+      const newStuff: { message: string, userName: string, status?: EMessageStatus } = { message: normalizedMsg, userName: name }
+
+      if (filters.length === 1 && Object.values(EMessageStatus).includes(filters[0])) newStuff.status = filters[0]
+
+      socket.emit('sendMessage', { ...newStuff }, () => {
         setIsSending(false)
       })
       resetMessage()
     }
-  }
+  }, [toast, isMsgLimitReached, socket, setIsSending, resetMessage, filters, message])
   const handleKeyUp = (ev: any) => {
     switch (true) {
       case ev.keyCode === 13 && !ev.shiftKey:
@@ -639,13 +650,6 @@ export const Chat = () => {
     setAdditionalTsToShow([])
   }, [setAdditionalTsToShow])
 
-  const [filters, setFilters] = useState<EMessageStatus[]>([])
-  const setFilter = (filter: EMessageStatus) => {
-    setFilters([filter])
-  }
-  const resetFilters = useCallback(() => {
-    setFilters([])
-  }, [setFilters])
   const { formData, handleInputChange, resetForm } = useForm({
     searchText: '',
   })
