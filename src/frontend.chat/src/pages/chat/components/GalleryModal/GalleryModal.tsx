@@ -49,12 +49,12 @@ export const GalleryModal = ({
   const activeItemRef = useRef<undefined | HTMLAnchorElement>(undefined)
   useEffect(() => {
     const scrollToImg = () => {
-      if (!!activeItemRef.current) activeItemRef.current.scrollIntoView({ block: 'end', /* ibehavior: 'smooth', nline: 'center', */ })
+      if (!!activeItemRef.current && isOpened) activeItemRef.current.scrollIntoView({ block: 'end', /* ibehavior: 'smooth', nline: 'center', */ })
     }
     // const clickImg = () => { if (!!activeItemRef.current) activeItemRef.current.click() }
     // setTimeout(clickImg, 50)
-    setTimeout(scrollToImg, 200)
-  }, [defaultSrc])
+    setTimeout(scrollToImg, 100)
+  }, [defaultSrc, isOpened])
   // useEffect(() => {
   //   const disableLinkClick = (ev: any) => {
   //     if (isOpened) {

@@ -79,6 +79,10 @@ import invert from 'invert-color'
 import { EMessageStatus, TMessage } from '~/utils/interfaces'
 import { Image } from './components/chat-msg'
 import { GalleryModal } from './components/GalleryModal'
+import { getTruncated } from '~/utils/strings-ops'
+import { Roomlist } from './components/MenuBar/components'
+import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
+import { MakeLooper } from '~/utils/MakeLooper'
 
 /* -- NOTE: Socket upload file evs
 // Sample 1 (12.3 kB)
@@ -165,15 +169,9 @@ const getBgColorByStatus = (s: EMessageStatus) => {
 //     default: return null
 //   }
 // }
-const getTruncated = (str: string, n: number = 16): string => {
-  if (str.length > n) {
-    return `${str.slice(0, n)}...`
-  }
-  return str
-}
 
 export const Chat = () => {
-  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap } = useContext(MainContext)
+  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap, tsMapRef } = useContext(MainContext)
   // @ts-ignore
   const { socket, roomData, isConnected } = useSocketContext()
   const [message, setMessage] = useState('')
@@ -181,9 +179,9 @@ export const Chat = () => {
     setMessage('')
   }
   const [messages, setMessages] = useState<TMessage[]>([])
-  const resetMessages = () => {
+  const resetMessages = useCallback(() => {
     setMessages([])
-  }
+  }, [setMessages])
   const logic = useMemo<Logic>(() => new Logic(messages), [messages])
   // @ts-ignore
   const { users, tasklist } = useContext(UsersContext)
@@ -645,9 +643,9 @@ export const Chat = () => {
   const setFilter = (filter: EMessageStatus) => {
     setFilters([filter])
   }
-  const resetFilters = () => {
+  const resetFilters = useCallback(() => {
     setFilters([])
-  }
+  }, [setFilters])
   const { formData, handleInputChange, resetForm } = useForm({
     searchText: '',
   })
@@ -683,13 +681,13 @@ export const Chat = () => {
   const handleOpenDrawerMenu = () => {
     setIsDrawerMenuOpened(true)
   }
-  const handleCloseDrawerMenu = () => {
+  const handleCloseDrawerMenu = useCallback(() => {
     setIsDrawerMenuOpened(false)
-  }
+  }, [setIsDrawerMenuOpened])
 
   // -- ROOMS SAMPLE
   const [roomlistLS, setRoomlistLS] = useLocalStorage<{ name: string, ts: number }[]>('chat.roomlist', [])
-  const roomNames = useMemo(() => !!roomlistLS ? [...new Set(roomlistLS.filter(({ name }) => !!name).map(({ name }) => name))] : [], [JSON.stringify(roomlistLS)])
+  
   const updateRoomTsInLS = (roomName: string) => {
     if (!!window) {
       let roomlistLS: any
@@ -714,20 +712,18 @@ export const Chat = () => {
       } catch (err) {}
     }
   }
-  const handleLogout = () => {
-    // setName('');
+  const handleLogout = useCallback(() => {
     if (!!socket) socket.emit('logout', { name, token: String(tokenLS) })
-    // setIsLogged(false)
-    // setRoom('')
-    // history.push('/')
-    // --
     updateRoomTsInLS(room)
-    // --
     setTimeout(() => {
       // history.go(0)
       history.push('/')
     }, 0)
-  }
+  }, [updateRoomTsInLS, socket])
+  const handleRoomClick = useCallback((room) => {
+    console.log(room, 'CLICKED')
+    updateRoomTsInLS(room)
+  }, [updateRoomTsInLS])
   // --
   const filteredMessages = useMemo(() => logic.getFiltered({ filters, searchText: debouncedSearchText, additionalTsToShow }), [logic, filters, debouncedSearchText, additionalTsToShow])
   const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
@@ -739,6 +735,10 @@ export const Chat = () => {
   const handleCloseGallery = useCallback(() => {
     setIsGalleryOpened(false)
   }, [setIsGalleryOpened])
+
+  const hasNews: boolean = useMemo(() => {
+    return hasNewsInRoomlist(roomlistLS || [], tsMap, room)
+  }, [roomlistLS, tsMap, room])
 
   return (
     <>
@@ -839,13 +839,14 @@ export const Chat = () => {
           <Heading className="heading" as="h4" p={[4, 4]} borderRadius="8px 8px 0 0">
             <Flex alignItems="center" justifyContent="flex-start">
               <IconButton
-                colorScheme="gray"
+                // colorScheme="gray"
                 aria-label="Menu"
                 icon={<FiMenu size={18} />}
                 // justifySelf="flex-end"
                 isRound
                 onClick={handleOpenDrawerMenu}
                 mr={2}
+                colorScheme={hasNews ? "green": "gray"}
               />
               <Drawer
                 isOpen={isDrawerMenuOpened}
@@ -875,7 +876,7 @@ export const Chat = () => {
                             variant="outline"
                             leftIcon={<HiOutlineMenuAlt2 size={18}/>}
                           >
-                            Main
+                            Features
                           </MenuButton>
                           <MenuList
                             zIndex={1001}
@@ -948,39 +949,16 @@ export const Chat = () => {
                           </MenuList>
                         </Menu>
                       </Box>
-                      
-                      {!!roomlistLS && (
-                        <>
-                          <Text>Rooms</Text>
-                          <Stack>
-                            {roomNames.map((r: string) => {
-                              const tsFromLS = roomlistLS.find(({ name }) => name === r)?.ts
-                              const isGreen = room !== r ? (!!tsFromLS && tsMap[r] > tsFromLS) : false
 
-                              return (
-                                <Button
-                                  colorScheme={isGreen ? 'green' : 'gray'}
-                                  disabled={r === room}
-                                  key={r}
-                                  // as={IconButton}
-                                  as={Button}
-                                  // icon={<FiList size={18} />}
-                                  // isRound="true"
-                                  // mr={1}
-                                  onClick={() => {
-                                    updateRoomTsInLS(room)
-                                    setRoom(r)
-                                    resetMessages()
-                                    handleCloseDrawerMenu()
-                                  }}
-                                >
-                                  {getTruncated(r, 28)}
-                                </Button>
-                              )})
-                            }
-                          </Stack>
-                        </>
-                      )}
+                      <Roomlist
+                        resetMessages={resetMessages}
+                        onCloseMenuBar={() => {
+                          handleCloseDrawerMenu()
+                          updateRoomTsInLS(room)
+                        }}
+                        handleRoomClick={handleRoomClick}
+                      />
+                      
                     </Stack> 
                   </DrawerBody>
 
@@ -997,7 +975,10 @@ export const Chat = () => {
                 </DrawerContent>
               </Drawer>
 
-              <Menu autoSelect={false}>
+              <Menu
+                autoSelect={false}
+                onOpen={resetFilters}
+              >
                 <MenuButton
                   mr={2}
                   as={IconButton}
@@ -1051,7 +1032,7 @@ export const Chat = () => {
                       <Text fontSize="md" fontWeight='bold' display='flex'>{getIconByStatuses([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn], false)}In progress ({logic.getCountByFilters([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn])})</Text>
                     </MenuItem>
                   </div>
-                  {
+                  {/*
                     filters.length > 0 && (
                       <MenuItem
                         minH="40px"
@@ -1062,7 +1043,17 @@ export const Chat = () => {
                         <Text fontSize="md" fontWeight='bold' display='flex'><span style={{ width: '17px', marginRight: '8px' }}><IoMdClose size={17} /></span><span>Unset filter</span></Text>
                       </MenuItem>
                     )
-                  }
+                  */}
+                  <MenuItem
+                      minH="40px"
+                      // onClick={() => {}}
+                      color='red.500'
+                      // icon={<IoMdClose size={17} />}
+                    >
+                      <Text fontSize="md" fontWeight='bold' display='flex'>
+                        <span style={{ width: '17px', marginRight: '8px' }}><IoMdClose size={17} /></span><span>Close</span>
+                      </Text>
+                    </MenuItem>
                 </MenuList>
               </Menu>
 
