@@ -235,7 +235,7 @@ export const withSocketChat = (io: Socket) => {
         roomsMap.set(room, [])
       }
 
-      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
     socket.on('getTsMap', ({ rooms }: { rooms: string[] }) => {
       const tsMap = roomsMap.getTsMap(rooms)
@@ -258,7 +258,7 @@ export const withSocketChat = (io: Socket) => {
         usersMap.delete(nameBySocketId)
       }
 
-      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
 
     socket.on('login.set-pas-level-1', ({ password, name }, cb: (errMsg?: string) => void) => {
@@ -348,7 +348,7 @@ export const withSocketChat = (io: Socket) => {
       // ---
       
       // io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
-      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
       socket.emit('my.user-data', registeredUsersMap.get(name) || null)
 
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
@@ -409,7 +409,7 @@ export const withSocketChat = (io: Socket) => {
       // socket.emit('oldChat', { roomData: roomsMap.get(room) })
       
       // io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
-      io.in(room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
       if (!!cb) cb(null, isUserAdmin(token))
@@ -432,14 +432,14 @@ export const withSocketChat = (io: Socket) => {
         usersMap.delete(name)
         if (!!userConnData?.room) {
           socket.leave(userConnData.room)
-          io.in(userConnData.room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room }) => room === userConnData.room))
+          io.in(userConnData.room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room }) => room === userConnData.room))
           // io.in(userConnData.room).emit('notification', { status: 'info', description: `${name} just left the room`, _originalEvent: { name } })
         }
       }
     })
 
-    socket.on('getUsers', ({ room }) => {
-      socket.emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room: r }) => room === r))
+    socket.on('users.room', ({ room }) => {
+      socket.emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room: r }) => room === r))
     })
 
     socket.on('getAllInfo', () => {
@@ -779,7 +779,7 @@ export const withSocketChat = (io: Socket) => {
           if (!!userConnData) {
             usersMap.delete(userName)
             if (!!userConnData?.room) {
-              io.in(userConnData.room).emit('users', [...usersMap.keys()].map((str: string) => ({ name: str, room: userConnData.room })).filter(({ room }) => room === userConnData.room))
+              io.in(userConnData.room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: userConnData.room })).filter(({ room }) => room === userConnData.room))
             }
           }
         }

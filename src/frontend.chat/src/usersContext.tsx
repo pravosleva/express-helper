@@ -78,7 +78,7 @@ export const UsersProvider = ({ children }: any) => {
       }
     }
 
-    if (!!socket) socket.on('users', sUListener)
+    if (!!socket) socket.on('users:room', sUListener)
     if (!!socket) socket.on('tasklist', tlListener)
     if (!!socket) socket.on('tasklist.update-item', tlUIListener)
     if (!!socket) socket.on('tasklist.delete-item', tlDIListener)
@@ -87,7 +87,7 @@ export const UsersProvider = ({ children }: any) => {
     if (!!socket) socket.on('tsMap', tsMapListener)
 
     return () => {
-      if (!!socket) socket.off('users', sUListener)
+      if (!!socket) socket.off('users:room', sUListener)
       if (!!socket) socket.off('tasklist', tlListener)
       if (!!socket) socket.off('tasklist.update-item', tlUIListener)
       if (!!socket) socket.off('tasklist.delete-item', tlDIListener)
@@ -98,7 +98,7 @@ export const UsersProvider = ({ children }: any) => {
   }, [setUsers, setAllUsers, socket, socket?.connected, room])
 
   const getUsers = useCallback(() => {
-    if (!!socket) socket.emit('getUsers', { room: slugifiedRoom })
+    if (!!socket) socket.emit('users.room', { room: slugifiedRoom })
   }, [slugifiedRoom, socket])
   const getTasklist = useCallback(() => {
     if (!!socket) socket.emit('getTasklist', { room: slugifiedRoom })
