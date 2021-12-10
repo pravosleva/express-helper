@@ -102,6 +102,12 @@
   & > div > div.grid-item > a {
     & > span > span {
       display: unset !important;
+      > * {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
   & > div > div.grid-item > a img {
