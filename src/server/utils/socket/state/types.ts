@@ -28,6 +28,7 @@ export type TMessage = {
   status?: EMessageStatus
   // type?: EMessageType
   assignedTo?: string[]
+  assignedBy?: string
 }
 // export type TRoomData = {
 //   [userName: string]: TMessage[]

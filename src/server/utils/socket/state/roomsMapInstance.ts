@@ -127,6 +127,7 @@ class Singleton {
 
           if (!!newData.assignedTo && Array.isArray(newData.assignedTo) && newData.assignedTo.length > 0) {
             roomMessages[theMessageIndex].assignedTo = newData.assignedTo
+            roomMessages[theMessageIndex].assignedBy = name
           } else {
             if (!!roomMessages[theMessageIndex].assignedTo) delete roomMessages[theMessageIndex].assignedTo
           }

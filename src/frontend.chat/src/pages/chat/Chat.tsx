@@ -73,8 +73,6 @@ import { IoMdClose } from 'react-icons/io'
 import { useDebounce, useLocalStorage } from 'react-use'
 import { UploadInput } from './components/UploadInput'
 // import 'react-medium-image-zoom/dist/styles.css'
-import stc from 'string-to-color'
-import invert from 'invert-color'
 import { EMessageStatus, TMessage } from '~/utils/interfaces'
 import { Image } from './components/chat-msg'
 import { GalleryModal } from './components/GalleryModal'
@@ -242,7 +240,7 @@ export const Chat = () => {
         setTsPoint(nextTsPoint)
         setFullChatReceived(isDone)
       }
-      const updMsgListener = ({ text, ts, editTs, status, assignedTo }: { text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[] }) => {
+      const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy }: { text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string }) => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
@@ -256,8 +254,9 @@ export const Chat = () => {
               // @ts-ignore
               if (!!newArr[targetIndex].status) delete newArr[targetIndex].status
             }
-            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0) {
+            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 && assignedBy) {
               newArr[targetIndex].assignedTo = assignedTo
+              newArr[targetIndex].assignedBy = assignedBy
             } else {
               if (!!newArr[targetIndex].assignedTo) delete newArr[targetIndex].assignedTo
             }
@@ -455,7 +454,7 @@ export const Chat = () => {
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
   const initialEditedMessageState = { text: '', ts: 0 }
-  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus; fileName?: string, assignedTo?: string[] }>(initialEditedMessageState)
+  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus; fileName?: string, assignedTo?: string[], assignedBy?: string }>(initialEditedMessageState)
   const [isCtxMenuOpened, setIsCtxMenuOpened] = useState<boolean>(false)
   // const resetEditedMessage = () => {
   //   setEditedMessage(initialEditedMessageState)
@@ -1219,7 +1218,7 @@ export const Chat = () => {
               <Box ml="2">---</Box>
             </Flex>
             {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, arr) => {
-              const { user, text, ts, editTs, status, fileName, _next, assignedTo } = message
+              const { user, text, ts, editTs, status, fileName, _next, assignedTo, assignedBy } = message
               // const isLastOfFiltered = i === arr.length -1
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
@@ -1318,6 +1317,7 @@ export const Chat = () => {
                     <AssignedBox
                       isMyMessage={isMyMessage}
                       assignedTo={assignedTo}
+                      assignedBy={assignedBy || 'ERR'}
                       onUnassign={(userName: string) => {
                         handleUnassignFromUser(message, userName)
                       }}

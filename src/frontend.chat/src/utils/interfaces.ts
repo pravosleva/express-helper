@@ -16,6 +16,7 @@ export type TMessage = {
   status: EMessageStatus;
   fileName?: string;
   assignedTo?: string[];
+  assignedBy?: string;
 }
 
 export type TImageLightboxFormat = { src: string, alt: string | undefined }

@@ -107,7 +107,7 @@ export const SearchUserModal = ({
         <ModalCloseButton />
         <ModalBody pb={1} pl={1} pr={1}>
           <Table variant="simple" size='md'>
-            <TableCaption mt={5} mb={5} textAlign='left'>В этом поиске участвуют пользователи, указавшие пароль для своего ника:<br />Боковое меню &gt; Features &gt; Set my password</TableCaption>
+            <TableCaption mt={5} mb={5} textAlign='left'>В этом поиске участвуют пользователи, указавшие пароль для своего ника:<br />Боковое меню &gt; Tools &gt; Set my password</TableCaption>
             <Tbody>
               {users.map((name: string) => {
                 return (

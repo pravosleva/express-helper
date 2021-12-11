@@ -3,18 +3,25 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { UserAva } from '~/pages/chat/components/UserAva'
+import { useMainContext } from '~/mainContext'
 
 type TProps = {
   assignedTo: string[]
+  assignedBy: string
   onUnassign: (assignedUserName: string) => void
   isMyMessage: boolean
 }
 
 export const AssignedBox = ({
   assignedTo,
+  assignedBy,
   onUnassign,
   isMyMessage,
 }: TProps) => {
+  const { name } = useMainContext()
+  const isMeAssigner = name === assignedBy
+  const isAssignedToMe = name === assignedTo[0]
+
   return (
     <Box className='centered-box assigned-box'>
         <div
@@ -32,9 +39,9 @@ export const AssignedBox = ({
             justifyContent: 'center',
             minHeight: '48px',
           }}>
-            <div style={{ fontSize: 'var(--chakra-fontSizes-sm)' }}><b>{assignedTo[0]}</b></div>
+            <div style={{ fontSize: 'var(--chakra-fontSizes-sm)' }}><b>{assignedTo[0]}</b> (by {assignedBy})</div>
             {
-              isMyMessage && (
+              (isMyMessage || isMeAssigner || isAssignedToMe) && (
                 <div>
                   <Button size='sm' onClick={() => {
                     // handleUnassignFromUser(message, assignedTo[0])
