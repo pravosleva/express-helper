@@ -25,7 +25,13 @@ export const AssignedBox = ({
         >
           <div style={{ marginRight: '.5rem' }}>Assigned&nbsp;to&nbsp;👉</div>
           <UserAva size={33} name={assignedTo[0]} mr='.5rem' />
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '48px',
+          }}>
             <div style={{ fontSize: 'var(--chakra-fontSizes-sm)' }}><b>{assignedTo[0]}</b></div>
             {
               isMyMessage && (

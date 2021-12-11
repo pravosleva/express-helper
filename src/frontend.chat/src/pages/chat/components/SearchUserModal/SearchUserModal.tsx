@@ -14,6 +14,7 @@ import {
   FormLabel,
   useToast,
   Table,
+  TableCaption,
   Tbody,
   Text,
   Box,
@@ -88,7 +89,7 @@ export const SearchUserModal = ({
         <ModalHeader>
           <Box pl={0} pr={0} pb={0}>
             <FormControl>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Search by username</FormLabel>
               <Input
                 autoFocus
                 name='userName'
@@ -105,24 +106,22 @@ export const SearchUserModal = ({
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={1} pl={1} pr={1}>
-          {
-            users.length > 0 ? (
-              <Table variant="simple" size='md'>
-                <Tbody>
-                  {users.map((name: string) => {
-                    return (
-                      <TableItem
-                        key={name}
-                        userName={name}
-                        onSelectButtonClick={onSelectItem}
-                        selectButtonText='Assign'
-                      />
-                    )
-                  })}
-                </Tbody>
-              </Table>
-            ) : <Text fontWeight='md' p={5}>No users yet...</Text>
-          }
+          <Table variant="simple" size='md'>
+            <TableCaption mt={5} mb={5} textAlign='left'>В этом поиске участвуют пользователи, указавшие пароль для своего ника:<br />Боковое меню &gt; Features &gt; Set my password</TableCaption>
+            <Tbody>
+              {users.map((name: string) => {
+                return (
+                  <TableItem
+                    key={name}
+                    userName={name}
+                    onSelectButtonClick={onSelectItem}
+                    selectButtonText='Assign'
+                  />
+                )
+              })}
+
+            </Tbody>
+          </Table>
           {/* <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(users || {}, null, 2)}</pre> */}
         </ModalBody>
         <ModalFooter
