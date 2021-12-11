@@ -1,0 +1,5 @@
+.modal-footer-btns-wrapper{
+  & button:not(:last-child) {
+    margin-right: var(--chakra-space-2);
+  }
+}

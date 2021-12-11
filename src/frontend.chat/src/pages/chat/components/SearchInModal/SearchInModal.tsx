@@ -8,7 +8,6 @@ import {
   ModalBody,
   ModalCloseButton,
   ModalFooter,
-  FormControl,
   Input,
 } from '@chakra-ui/react'
 import { IoMdClose } from 'react-icons/io'

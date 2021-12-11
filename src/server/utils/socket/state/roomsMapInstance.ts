@@ -83,7 +83,7 @@ class Singleton {
       room: string,
       name: string,
       ts: number,
-      newData: { text: string, status?: EMessageStatus }
+      newData: { text: string, status?: EMessageStatus, assignedTo?: string[] }
     }
   ): {
     isOk: boolean,
@@ -124,6 +124,15 @@ class Singleton {
           } else {
             if (!!roomMessages[theMessageIndex].status) delete roomMessages[theMessageIndex].status
           }
+
+          if (!!newData.assignedTo && Array.isArray(newData.assignedTo) && newData.assignedTo.length > 0) {
+            roomMessages[theMessageIndex].assignedTo = newData.assignedTo
+          } else {
+            if (!!roomMessages[theMessageIndex].assignedTo) delete roomMessages[theMessageIndex].assignedTo
+          }
+
+          // console.log(roomMessages[theMessageIndex])
+
           roomData = roomMessages
           this.state.set(room, roomData)
 

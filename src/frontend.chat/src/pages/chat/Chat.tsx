@@ -22,7 +22,6 @@ import {
   ModalCloseButton,
   FormLabel,
   FormControl,
-  Input,
   ModalFooter,
   MenuOptionGroup,
   // MenuItemOption,
@@ -39,7 +38,6 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerBody,
-  InputGroup,
   DrawerFooter,
   Stack,
 } from '@chakra-ui/react'
@@ -64,7 +62,7 @@ import { MyInfoModal } from './components/MyInfoModal'
 import { TasklistModal } from './components/TasklistModal/TasklistModal'
 import { md } from '~/common/chakra/theme'
 import { IoMdLogOut } from 'react-icons/io'
-import { CgSearch } from 'react-icons/cg'
+import { CgSearch, CgAssign } from 'react-icons/cg'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 import { useInView } from 'react-intersection-observer'
 import { Logic } from './MessagesLogic'
@@ -82,7 +80,9 @@ import { GalleryModal } from './components/GalleryModal'
 import { getTruncated } from '~/utils/strings-ops'
 import { Roomlist } from './components/MenuBar/components'
 import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
-import { MakeLooper } from '~/utils/MakeLooper'
+import { SearchUserModal } from './components/SearchUserModal'
+import { UserAva } from '~/pages/chat/components/UserAva'
+import { AssignedBox } from './components/AssignedBox'
 
 /* -- NOTE: Socket upload file evs
 // Sample 1 (12.3 kB)
@@ -116,9 +116,10 @@ const statusMap: {
   [EMessageStatus.Dead]: <GiDeathSkull size={14} /*color='#000'*/ />,
   [EMessageStatus.Warn]: <FiActivity size={15} /*color='#000'*/ />,
   [EMessageStatus.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />,
-  [EMessageStatus.Success]: <FaCheck size={11} />
+  [EMessageStatus.Success]: <FaCheck size={11} />,
+  'assign': <CgAssign size={18}/>,
 }
-const getIconByStatus = (status: EMessageStatus, isColored: boolean) => {
+const getIconByStatus = (status: EMessageStatus | 'assign', isColored: boolean) => {
   switch (true) {
     case !!statusMap[status]: return <span className='abs-tail' style={{ width: '17px', backgroundColor: isColored ? getBgColorByStatus(status) : 'inherit' }}>{statusMap[status]}</span>
     default: return null
@@ -148,27 +149,14 @@ const bgColorsMap: { [key: string]: string } = {
   [EMessageStatus.Danger]: '#FF9177',
   [EMessageStatus.Info]: '#408EEA',
   [EMessageStatus.Success]: '#31EAB7',
+  'assign': '#FF9177',
 }
-// const colorsMap: { [key: string]: string } = {
-//   [EMessageStatus.Done]: '#FFF',
-//   [EMessageStatus.Dead]: '#FFDE68',
-//   [EMessageStatus.Warn]: 'rgba(0,0,0,.7)',
-//   [EMessageStatus.Danger]: 'rgba(0,0,0,.7)',
-//   [EMessageStatus.Info]: '#FFF',
-//   [EMessageStatus.Success]: 'rgba(0,0,0,.7)',
-// }
-const getBgColorByStatus = (s: EMessageStatus) => {
+const getBgColorByStatus = (s: EMessageStatus | 'assign') => {
   switch (true) {
     case !!bgColorsMap[s]: return bgColorsMap[s]
     default: return 'current'
   }
 }
-// const getColorByStatus = (s: EMessageStatus) => {
-//   switch (true) {
-//     case !!colorsMap[s]: return colorsMap[s]
-//     default: return null
-//   }
-// }
 
 export const Chat = () => {
   const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap, tsMapRef } = useContext(MainContext)
@@ -182,7 +170,9 @@ export const Chat = () => {
   const resetMessages = useCallback(() => {
     setMessages([])
   }, [setMessages])
-  const logic = useMemo<Logic>(() => new Logic(messages), [messages])
+  const logic = useMemo<Logic>(() => {
+    return new Logic(messages)
+  }, [JSON.stringify(messages)])
   // @ts-ignore
   const { users, tasklist } = useContext(UsersContext)
   const history = useHistory()
@@ -251,7 +241,7 @@ export const Chat = () => {
         setTsPoint(nextTsPoint)
         setFullChatReceived(isDone)
       }
-      const updMsgListener = ({ text, ts, editTs, status }: { text: string, editTs?: number, status?: EMessageStatus, ts: number }) => {
+      const updMsgListener = ({ text, ts, editTs, status, assignedTo }: { text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[] }) => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
@@ -264,6 +254,11 @@ export const Chat = () => {
             } else {
               // @ts-ignore
               if (!!newArr[targetIndex].status) delete newArr[targetIndex].status
+            }
+            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0) {
+              newArr[targetIndex].assignedTo = assignedTo
+            } else {
+              if (!!newArr[targetIndex].assignedTo) delete newArr[targetIndex].assignedTo
             }
           }
           return newArr
@@ -459,7 +454,7 @@ export const Chat = () => {
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
   const initialEditedMessageState = { text: '', ts: 0 }
-  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus; fileName?: string }>(initialEditedMessageState)
+  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus; fileName?: string, assignedTo?: string[] }>(initialEditedMessageState)
   const [isCtxMenuOpened, setIsCtxMenuOpened] = useState<boolean>(false)
   // const resetEditedMessage = () => {
   //   setEditedMessage(initialEditedMessageState)
@@ -474,7 +469,7 @@ export const Chat = () => {
   const handleChangeEditedMessage = (e: any) => {
     setEditedMessage((state) => ({ ...state, text: e.target.value }))
   }
-  const handleSaveEditedMessage = () => {
+  const handleSaveEditedMessage = ({ assignedTo }: { assignedTo?: string[] }, cb?: () => void) => {
     if (!editedMessage?.text && !editedMessage.fileName) {
       toast({
         position: 'top',
@@ -498,6 +493,8 @@ export const Chat = () => {
     if (!!socket) {
       const newData: Partial<TMessage> = { text: editedMessage.text }
       if (!!editedMessage.status) newData.status = editedMessage.status
+      if (!!editedMessage.assignedTo) newData.assignedTo = editedMessage.assignedTo
+      if (!!assignedTo) newData.assignedTo = assignedTo
       socket.emit(
         'editMessage',
         { newData, ts: editedMessage.ts, room, name },
@@ -515,6 +512,7 @@ export const Chat = () => {
         }
       )
     }
+    if (!!cb) cb()
     handleEditModalClose()
   }
   // const handleKeyDownEditedMessage = (ev: any) => {
@@ -584,6 +582,26 @@ export const Chat = () => {
     setTasklistModalOpened(false)
   }
   // ---
+  // --- Search user:
+  const [isSearchUserModalOpened, setSearchUserModalOpened] = useState<boolean>(false)
+  const handleSearchUserModalOpen = () => {
+    if (!!editedMessage.assignedTo) {
+      toast({
+        position: 'top',
+        title: 'Sorry',
+        description: `Already assigned to ${editedMessage.assignedTo.join(', ')}`,
+        status: 'warning',
+        duration: 7000,
+        isClosable: true,
+      })
+      return
+    }
+    setSearchUserModalOpened(true)
+  }
+  const handleSearchUserModalClose = () => {
+    setSearchUserModalOpened(false)
+  }
+  // ---
 
   // const heighlLimitParentClass = useBreakpointValue({ md: "height-limited-md", base: "height-limited-sm" })
   const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
@@ -598,7 +616,7 @@ export const Chat = () => {
     return Math.round(completed * 100 / all)
   }, [tasklist, completedTasksLen])
 
-  const [inViewRef, inView, entry] = useInView({
+  const [inViewRef, inView, _entry] = useInView({
     /* Optional options */
     threshold: 0,
   })
@@ -617,30 +635,10 @@ export const Chat = () => {
     if (isConnected) {
       // NOTE: При реконнекте нужно обнновить контент - проще всего очистить и начать загружать заново
       setMessages([])
-      // toast({
-      //   position: 'top',
-      //   description: `Connect ${rendCounter.current}`,
-      //   status: 'info',
-      //   duration: 10000,
-      //   isClosable: true,
-      // })
+      // toast({ position: 'top', description: `Connect ${rendCounter.current}`, status: 'info', duration: 10000, isClosable: true })
     }
   }, [isConnected])
 
-  // const transform = useSpring({
-  //   from: {
-  //     opacity: 0,
-  //     // transform: 'scale(0.95)',
-  //     margin: ".2rem 0",
-  //     // height: '0',
-  //   },
-  //   to: {
-  //     opacity: 1,
-  //     // transform: 'scale(1)',
-  //     margin: ".2rem 0",
-  //     // height: 'auto',
-  //   },
-  // })
   const [additionalTsToShow, setAdditionalTsToShow] = useState<number[]>([])
 
   const addAdditionalTsToShow = (ts: number) => {
@@ -725,7 +723,7 @@ export const Chat = () => {
     }, 0)
   }, [updateRoomTsInLS, socket])
   const handleRoomClick = useCallback((room) => {
-    console.log(room, 'CLICKED')
+    // console.log(room, 'CLICKED')
     updateRoomTsInLS(room)
   }, [updateRoomTsInLS])
   // --
@@ -744,8 +742,55 @@ export const Chat = () => {
     return hasNewsInRoomlist(roomlistLS || [], tsMap, room)
   }, [roomlistLS, tsMap, room])
 
+  const onUserAssign = (name: string) => {
+    if (!!editedMessage?.assignedTo && Array.isArray(editedMessage.assignedTo) && editedMessage.assignedTo.length > 0) {
+      toast({
+        position: 'top',
+        title: 'Sorry',
+        description: 'For one user only',
+        status: 'warning',
+        duration: 7000,
+        isClosable: true,
+      })
+      return
+    }
+    if (!!editedMessage) {
+      handleSaveEditedMessage({ assignedTo: [name] }, () => {
+        handleSearchUserModalClose()
+        toast({
+          position: 'top',
+          title: 'Assigned',
+          description: `to ${name}`,
+          status: 'success',
+          duration: 7000,
+          isClosable: true,
+        })
+      })
+    }
+  } // , [editedMessage, handleSearchUserModalClose, handleSaveEditedMessage])
+  const handleUnassignFromUser = (message: TMessage, unassignFromUserName: string) => {
+    if (!!socket) {
+      const { assignedTo, ...rest } = message
+      const newData: TMessage = { ...rest }
+
+      if (!!message.assignedTo && Array.isArray(message.assignedTo) && message.assignedTo.length > 0) {
+        const newAssignedArr = message.assignedTo.filter((un) => un !== unassignFromUserName)
+
+        if (newAssignedArr.length > 0) newData.assignedTo = newAssignedArr
+      }
+
+      socket.emit('editMessage', { newData, ts: message.ts, room, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top', description: errMsg, status: 'error', duration: 7000, isClosable: true }) })
+    }
+  }
+
   return (
     <>
+      <SearchUserModal
+        isOpened={isSearchUserModalOpened}
+        onClose={handleSearchUserModalClose}
+        onSelectItem={onUserAssign}
+      />
+
       <GalleryModal
         isOpened={isGalleryOpened}
         onClose={handleCloseGallery}
@@ -796,6 +841,9 @@ export const Chat = () => {
         <CtxMenuItem data={{ foo: 'bar' }} onClick={handleDeleteMessage}>
           Delete
         </CtxMenuItem>
+        <CtxMenuItem data={{ foo: 'bar' }} onClick={handleSearchUserModalOpen} className='assign'>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', background: 'inherit' }}>{!!getIconByStatus('assign', false) && <div style={{ marginRight: '8px' }}>{getIconByStatus('assign', false)}</div>}<div><b>Assign</b></div></div>
+        </CtxMenuItem>
       </ContextMenu>
 
       <Modal
@@ -825,7 +873,12 @@ export const Chat = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={handleSaveEditedMessage}>
+            <Button
+              colorScheme="blue"
+              mr={3}
+              // @ts-ignore
+              onClick={handleSaveEditedMessage}
+            >
               Save
             </Button>
             <Button onClick={handleEditModalClose}>Cancel</Button>
@@ -868,7 +921,7 @@ export const Chat = () => {
                   <DrawerBody>
                     <Stack spacing="24px">
                       <Box><Text>Tools</Text></Box>
-                      <Box>
+                      <Flex>
                         <Menu autoSelect={false}>
                           <MenuButton
                             // as={IconButton}
@@ -952,7 +1005,11 @@ export const Chat = () => {
                               </MenuItem>
                           </MenuList>
                         </Menu>
-                      </Box>
+                        {/*
+                        <Button onClick={handleSearchUserModalOpen} as={Button} mr={2} colorScheme="gray" variant="outline" leftIcon={<CgSearch size={18}/>}>
+                          Search user tst
+                        </Button> */}
+                      </Flex>
 
                       <Roomlist
                         resetMessages={resetMessages}
@@ -1124,21 +1181,19 @@ export const Chat = () => {
               <Box ml="2">---</Box>
             </Flex>
             {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, arr) => {
-              const { user, text, ts, editTs, status, fileName, _next } = message
+              const { user, text, ts, editTs, status, fileName, _next, assignedTo } = message
               // const isLastOfFiltered = i === arr.length -1
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
               const isLast = i === messages.length - 1
               const isNextOneBtnEnabled = _next?.isHidden
-              const shortNick = user.split(' ').filter((w: string, i: number) => i < 2).map((word: string) => word[0].toUpperCase()).join('')
               const handleClickCtxMenu = () => setEditedMessage(message)
               let contextTriggerRef: any = null;
               const toggleMenu = (e: any) => {
                 // @ts-ignore
                   if(!!contextTriggerRef) contextTriggerRef.handleContextClick(e);
               }
-              const personalColor = stc(user)
 
               if (!!fileName) {
                 return (
@@ -1155,7 +1210,7 @@ export const Chat = () => {
               }
 
               return (
-                <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
+                <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}-${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? assignedTo.join(',') : 'not_assigned'}`}>
                   <Box
                     className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
                     // style={transform}
@@ -1181,34 +1236,7 @@ export const Chat = () => {
                       }}
                       className='opponent-ava-wrapper'
                     >
-                      {
-                        !isMyMessage && (
-                          <div
-                            style={{
-                              marginRight: '.5rem',
-                              // order: isMyMessage ? 2 : 1,
-                            }}
-                          >
-                            <div
-                              className='ava'
-                              style={{
-                                borderRadius: '50%',
-                                width: '33px',
-                                height: '33px',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                // backgroundColor: 'var(--chakra-colors-gray-500)',
-                                // color: '#FFF',
-                                backgroundColor: personalColor,
-                                color: invert(personalColor), // invert(personalColor, true),
-                              }}
-                            >
-                              {shortNick}
-                            </div>
-                          </div>
-                        )
-                      }
+                      {!isMyMessage && <UserAva size={33} name={user} mr='.5rem' />}
                       <div className={clsx("msg", { [status]: !!status, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}>
                         {isMyMessage ? (
                           <ContextMenuTrigger
@@ -1218,7 +1246,6 @@ export const Chat = () => {
                           >
                             <Text
                               fontSize="md"
-                              
                               // p=".3rem .9rem"
                               display="inline-block"
                               // bg="white"
@@ -1249,7 +1276,25 @@ export const Chat = () => {
                       </div>
                     </div>
                   </Box>
-                  {isNextOneBtnEnabled && <div className='centered-box'><button className='special-btn special-btn-sm dark-btn'  onClick={() => { addAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
+                  {!!assignedTo && assignedTo.length > 0 && (
+                    <AssignedBox
+                      isMyMessage={isMyMessage}
+                      assignedTo={assignedTo}
+                      onUnassign={(userName: string) => {
+                        handleUnassignFromUser(message, userName)
+                      }}
+                    />
+                  )}
+                  {isNextOneBtnEnabled && (
+                    <Box className='centered-box'>
+                      <button
+                        className='special-btn special-btn-sm dark-btn'
+                        onClick={() => { addAdditionalTsToShow(_next.ts) }}
+                      >
+                        Next One
+                      </button>
+                    </Box>
+                  )}
                 </Fragment>
               )
             })}

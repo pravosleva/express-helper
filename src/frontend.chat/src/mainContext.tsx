@@ -1,5 +1,6 @@
 import React, { useState, createContext, useEffect, useContext , useRef, MutableRefObject} from 'react'
 import slugify from 'slugify'
+import { getNormalizedString } from '~/utils/strings-ops'
 
 type TMainContext = {
   name: string
@@ -36,8 +37,16 @@ export const MainContext = createContext<TMainContext>({
 })
 
 export const MainProvider = ({ children }: any) => {
-  const [name, setName] = useState<string>('')
-  const [room, setRoom] = useState<string>('')
+  const [name, _setName] = useState<string>('')
+  const setName = (s: string) => {
+    const normalized = getNormalizedString(s)
+    _setName(normalized)
+  }
+  const [room, _setRoom] = useState<string>('')
+  const setRoom = (s: string) => {
+    const normalized = getNormalizedString(s)
+    _setRoom(normalized)
+  }
   const [slugifiedRoom, setNormalizedRoom] = useState<string>('')
   const [isAdmin, setIsAdmin] = useState<boolean>(false)
   const [tsMap, setTsMap] = useState<{[key: string]: number}>({})

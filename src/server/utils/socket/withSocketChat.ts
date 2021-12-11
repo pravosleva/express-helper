@@ -442,6 +442,29 @@ export const withSocketChat = (io: Socket) => {
       socket.emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room: r }) => room === r))
     })
 
+    socket.on('users.search', ({ searchText }: { searchText: string }, cb: ({ users }: { users: string[], isErrored?: boolean, message?: string }) => void) => {
+      if (!!searchText) {
+        if (!!cb) cb({ users: registeredUsersMap.getUsers(searchText) })
+      } else {
+        if (!!cb) cb({ users: [], isErrored: true, message: 'searchText is empty!' })
+      }
+
+      // socket.emit('users:search', { users: [] })
+    })
+    // socket.on('messages.assign-to-user', ({ userName, room, msgState }) => {
+    //   const result = roomsMap.editMessage({ room, name: userName, ts: msgState.ts, newData: msgState })
+
+    //   if (!result.isOk) {
+    //     if (result.isPrivateSocketCb) {
+    //       // if (!!cb && !!result.errMsgData) cb(result.errMsgData.description)
+    //       socket.emit('notification', { status: 'error', title: result.errMsgData.title, description: result.errMsgData.description })
+    //       if (result.shouldLogout) socket.emit('FRONT:LOGOUT')
+    //     }
+    //   } else {
+    //     io.in(room).emit('message.update', result.targetMessage);
+    //   }
+    // })
+
     socket.on('getAllInfo', () => {
       socket.emit('allUsers', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room, userAgent: usersMap.get(str).userAgent })))
       socket.emit('allRooms', { roomsData: [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {}) })
@@ -493,10 +516,8 @@ export const withSocketChat = (io: Socket) => {
       if (!!cb) cb()
     })
 
-    socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: { text: string, status?: EMessageStatus } }, cb) => {
-      const result = roomsMap.editMessage({
-        room, name, ts, newData
-      })
+    socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: { text: string, status?: EMessageStatus, assignedTo?: string[] } }, cb) => {
+      const result = roomsMap.editMessage({ room, name, ts, newData })
 
       if (!result.isOk) {
         if (result.isPrivateSocketCb) {
@@ -507,6 +528,7 @@ export const withSocketChat = (io: Socket) => {
       } else {
         io.in(room).emit('message.update', result.targetMessage);
       }
+      if (!!cb) cb()
     })
     socket.on('deleteMessage', ({ room, name, ts }, cb) => {
       let roomData = roomsMap.get(room)

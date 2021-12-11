@@ -37,11 +37,11 @@
   > .success:hover {
     background: #31EAB7;
   }
-  > .danger {
+  > .danger, > .assign {
     background: #FF9177;
     color: #000;
   }
-  > .danger:hover {
+  > .danger:hover, > .assign:hover {
     background: #FF6D4A;
   }
   > .unset-status {

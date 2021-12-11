@@ -44,6 +44,31 @@ class Singleton {
   public has(key: string) {
     return this.state.has(key)
   }
+  public getUsers(searchText: string) {
+    const result = []
+
+    try {
+      const words = searchText?.toLowerCase().split(' ').filter((str: string) => !!str)
+
+      if (!!words) {
+        for (let [key, userData] of this.state) {
+          // console.log(key, userData)
+
+          if (
+            userData.registryLevel > 0
+            && new RegExp(words.join("|"), 'gi').test(key)
+          ) {
+            result.push(key)
+          }
+        }
+      }
+    } catch (err) {
+      console.log('-- ERR:')
+      console.log(err)
+    }
+
+    return result
+  }
 }
 
 export const registeredUsersMapInstance = Singleton.getInstance()

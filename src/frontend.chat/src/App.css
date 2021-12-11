@@ -28,7 +28,7 @@
 .messages .msg * {
     font-size: 14px;
 }
-.opponent-ava-wrapper * .ava {
+.ava {
     font-size: 17px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -76,6 +76,11 @@ input[type="file"]:disabled + label {
     width: 100%;
 
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+.centered-box.assigned-box {
+    margin-top: 0px;
+    justify-content: flex-end;
 }
 
 [data-rmiz-wrap="visible"], [data-rmiz-wrap="hidden"] {
