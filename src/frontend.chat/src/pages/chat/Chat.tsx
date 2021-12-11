@@ -40,6 +40,7 @@ import {
   DrawerBody,
   DrawerFooter,
   Stack,
+  Switch,
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
@@ -521,21 +522,27 @@ export const Chat = () => {
   //   }
   // }
   const handleDeleteMessage = (ts: number) => {
-    if (!!socket) {
-      const targetTs = (!!ts && Number.isInteger(ts)) ? ts : editedMessage.ts
+    const isConfirmed = window.confirm('Вы точно хотите удалить это сообщение?')
 
-      socket.emit('deleteMessage', { ts: targetTs, room, name }, (errMsg: string) => {
-        if (!!errMsg) {
-          toast({
-            position: 'top',
-            // title: 'Sorry',
-            description: errMsg,
-            status: 'error',
-            duration: 7000,
-            isClosable: true,
-          })
-        }
-      })
+    if (isConfirmed) {
+      if (!!socket) {
+        const targetTs = (!!ts && Number.isInteger(ts)) ? ts : editedMessage.ts
+  
+        socket.emit('deleteMessage', { ts: targetTs, room, name }, (errMsg: string) => {
+          if (!!errMsg) {
+            toast({
+              position: 'top',
+              // title: 'Sorry',
+              description: errMsg,
+              status: 'error',
+              duration: 7000,
+              isClosable: true,
+            })
+          }
+        })
+      } else {
+        window.alert('Похоже, проблема с соединением')
+      }
     }
   }
   const handleSetStatus = (status: EMessageStatus) => {
@@ -783,6 +790,24 @@ export const Chat = () => {
     }
   }
 
+  // -- Assignment feature switcher
+  const [afLS, setAfLS] = useLocalStorage<string>('chat.assignment-feature')
+  const [isAssignmentFeatureEnabled, setIsAssignmentFeatureEnabled] = useState<boolean>(afLS === '1')
+  const [isAssignmentDescrOpened, setIsAssignmentDescrOpened] = useState<boolean>(false)
+  const openAssignmentDescr = useCallback((e) => {
+    setIsAssignmentDescrOpened(true)
+  }, [setIsAssignmentDescrOpened])
+  const closeAssignmentDescr = useCallback((e) => {
+    setIsAssignmentDescrOpened(false)
+  }, [setIsAssignmentDescrOpened])
+
+  const toggleAssignmentFeature = useCallback((e) => {
+    console.log(e.target.checked)
+    setIsAssignmentFeatureEnabled(e.target.checked)
+    setAfLS(e.target.checked ? '1' : '0')
+  }, [setIsAssignmentFeatureEnabled])
+  // --
+
   return (
     <>
       <SearchUserModal
@@ -841,13 +866,17 @@ export const Chat = () => {
         <CtxMenuItem data={{ foo: 'bar' }} onClick={handleDeleteMessage}>
           Delete
         </CtxMenuItem>
-        <CtxMenuItem data={{ foo: 'bar' }} onClick={handleSearchUserModalOpen} className='assign'>
-          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', background: 'inherit' }}>{!!getIconByStatus('assign', false) && <div style={{ marginRight: '8px' }}>{getIconByStatus('assign', false)}</div>}<div><b>Assign</b></div></div>
-        </CtxMenuItem>
+        {
+          isAssignmentFeatureEnabled && (
+            <CtxMenuItem data={{ foo: 'bar' }} onClick={handleSearchUserModalOpen} className='assign'>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', background: 'inherit' }}>{!!getIconByStatus('assign', false) && <div style={{ marginRight: '8px' }}>{getIconByStatus('assign', false)}</div>}<div><b>Assign</b></div></div>
+            </CtxMenuItem>
+          )
+        }
       </ContextMenu>
 
       <Modal
-        size="xs"
+        size="sm"
         initialFocusRef={initialRef}
         finalFocusRef={textFieldRef}
         isOpen={isEditModalOpen}
@@ -862,7 +891,7 @@ export const Chat = () => {
               <FormLabel>Text</FormLabel>
               <Textarea
                 isInvalid={!editedMessage?.text}
-                resize="none"
+                resize="vertical"
                 placeholder="Message"
                 ref={initialRef}
                 // onKeyDown={handleKeyDownEditedMessage}
@@ -920,7 +949,7 @@ export const Chat = () => {
 
                   <DrawerBody>
                     <Stack spacing="24px">
-                      <Box><Text>Tools</Text></Box>
+                      <Box><Text>The room features</Text></Box>
                       <Flex>
                         <Menu autoSelect={false}>
                           <MenuButton
@@ -933,7 +962,7 @@ export const Chat = () => {
                             variant="outline"
                             leftIcon={<HiOutlineMenuAlt2 size={18}/>}
                           >
-                            Features
+                            Tools
                           </MenuButton>
                           <MenuList
                             zIndex={1001}
@@ -962,19 +991,12 @@ export const Chat = () => {
                               {users &&
                                 users.map((user: TUser) => {
                                   return (
-                                    <MenuItem
-                                      // _first={{ bg: "gray.200" }}
-                                      minH="40px"
-                                      key={user.name}
-                                      onClick={() => {
-                                        handleUserClick(user)
-                                      }}
-                                      isDisabled={name === user.name}
-                                    >
+                                    <MenuItem minH="40px" key={user.name} onClick={() => { handleUserClick(user) }} isDisabled={name === user.name}>
                                       <Text fontSize="md">{getTruncated(user.name)}</Text>
                                     </MenuItem>
                                   )
-                                })}
+                                })
+                              }
                             </div>
                             </MenuOptionGroup>
                             <MenuDivider />
@@ -1010,6 +1032,22 @@ export const Chat = () => {
                           Search user tst
                         </Button> */}
                       </Flex>
+
+                      <Box>
+                        <FormControl display='flex' alignItems='center'>
+                          <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} defaultChecked={isAssignmentFeatureEnabled} />
+                          <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
+                            Assignment feature
+                          </FormLabel>
+                        </FormControl>
+                        <Box mt={3} mb={3}>
+                        {isAssignmentDescrOpened ? (
+                          <span>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу<br /><Button size='sm' variant='link' onClick={closeAssignmentDescr} rounded='3xl'>Close</Button></span>
+                        ) : (
+                          <Button size='sm' variant='link' onClick={openAssignmentDescr} rounded='3xl'>What is it?</Button>
+                        )}
+                        </Box>
+                      </Box>
 
                       <Roomlist
                         resetMessages={resetMessages}
