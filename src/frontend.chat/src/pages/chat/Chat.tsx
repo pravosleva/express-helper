@@ -546,17 +546,29 @@ export const Chat = () => {
   }
   const handleSetStatus = (status: EMessageStatus) => {
     if (!!socket) {
+      const newData: Partial<TMessage> = { text: editedMessage.text, status }
+
+      if (!!editedMessage.assignedTo && !!editedMessage.assignedBy && status !== EMessageStatus.Done) {
+        newData.assignedTo = editedMessage.assignedTo
+        newData.assignedBy = editedMessage.assignedBy
+      }
       socket.emit(
         'editMessage',
-        { newData: { text: editedMessage.text, status }, ts: editedMessage.ts, room, name }
+        { newData, ts: editedMessage.ts, room, name }
       )
     }
   }
   const handleUnsetStatus = () => {
     if (!!socket) {
+      const newData: Partial<TMessage> = { text: editedMessage.text }
+
+      if (!!editedMessage.assignedTo && !!editedMessage.assignedBy) {
+        newData.assignedTo = editedMessage.assignedTo
+        newData.assignedBy = editedMessage.assignedBy
+      }
       socket.emit(
         'editMessage',
-        { newData: { text: editedMessage.text }, ts: editedMessage.ts, room, name }
+        { newData, ts: editedMessage.ts, room, name }
       )
     }
   }
@@ -1031,22 +1043,26 @@ export const Chat = () => {
                           Search user tst
                         </Button> */}
                       </Flex>
-
-                      <Box>
-                        <FormControl display='flex' alignItems='center'>
-                          <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} defaultChecked={isAssignmentFeatureEnabled} />
-                          <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
-                            Assignment feature
-                          </FormLabel>
-                        </FormControl>
-                        <Box mt={3} mb={3}>
-                        {isAssignmentDescrOpened ? (
-                          <span>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу<br /><Button size='sm' variant='link' onClick={closeAssignmentDescr} rounded='3xl'>Close</Button></span>
-                        ) : (
-                          <Button size='sm' variant='link' onClick={openAssignmentDescr} rounded='3xl'>What is it?</Button>
-                        )}
-                        </Box>
-                      </Box>
+                      
+                      {
+                        regData?.registryLevel === 1 && (
+                          <Box>
+                            <FormControl display='flex' alignItems='center'>
+                              <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} defaultChecked={isAssignmentFeatureEnabled} />
+                              <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
+                                Assignment feature
+                              </FormLabel>
+                            </FormControl>
+                            <Box mt={3} mb={3}>
+                            {isAssignmentDescrOpened ? (
+                              <span>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу<br /><Button size='sm' variant='link' onClick={closeAssignmentDescr} rounded='3xl'>Close</Button></span>
+                            ) : (
+                              <Button size='sm' variant='link' onClick={openAssignmentDescr} rounded='3xl'>What is it?</Button>
+                            )}
+                            </Box>
+                          </Box>
+                        )
+                      }
 
                       <Roomlist
                         resetMessages={resetMessages}
