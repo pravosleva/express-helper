@@ -31,19 +31,18 @@ export const AssignedBox = ({
           }}
         >
           <div style={{ marginRight: '.5rem' }}>Assigned&nbsp;to&nbsp;👉</div>
-          <UserAva size={33} name={assignedTo[0]} mr='.5rem' />
+          <UserAva size={20} name={assignedTo[0]} mr='.5rem' fontSize={10} />
           <div style={{
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'center',
-            minHeight: '48px',
           }}>
-            <div style={{ fontSize: 'var(--chakra-fontSizes-sm)' }}><b>{assignedTo[0]}</b> (by {assignedBy})</div>
+            <div style={{ fontSize: 'var(--chakra-fontSizes-sm)' }}><b>{assignedTo[0]}</b></div>
             {
               (isMyMessage || isMeAssigner || isAssignedToMe) && (
                 <div>
-                  <Button size='sm' onClick={() => {
+                  <Button ml={2} size='sm' variant='link' onClick={() => {
                     // handleUnassignFromUser(message, assignedTo[0])
                     onUnassign(assignedTo[0])
                   }} rounded='3xl'>Unassign</Button>
