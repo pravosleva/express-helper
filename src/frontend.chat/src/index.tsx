@@ -5,12 +5,10 @@ import App from './App'
 import '~/fix.react-contextmenu.scss'
 import '~/fix.simple-react-lightbox.scss'
 
-ReactDOM.render(
-  <>
-    <App />
-  </>,
-  document.getElementById('root')
-)
+// ReactDOM.render(<App />, document.getElementById('root'))
+
+// @ts-ignore
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

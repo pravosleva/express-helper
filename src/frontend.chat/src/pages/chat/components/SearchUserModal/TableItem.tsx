@@ -11,12 +11,14 @@ type TProps = {
   userName: string
   selectButtonText: string
   onSelectButtonClick: (name: string) => void
+  isAssigned?: boolean | undefined
 }
 
 export const TableItem = ({
   userName,
   selectButtonText,
   onSelectButtonClick,
+  isAssigned,
 }: TProps) => {
   return (
     <Tr>
@@ -26,7 +28,7 @@ export const TableItem = ({
         </Flex>
       </Td>
       <Td isNumeric>
-        <Button rounded='3xl' onClick={() => onSelectButtonClick(userName)}>{selectButtonText}</Button>
+        <Button rounded='3xl' isDisabled={isAssigned} colorScheme={isAssigned ? 'green' : 'gray'} onClick={() => onSelectButtonClick(userName)}>{selectButtonText}</Button>
       </Td>
     </Tr>
   )

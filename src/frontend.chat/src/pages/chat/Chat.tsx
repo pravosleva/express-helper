@@ -82,6 +82,7 @@ import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
 import { SearchUserModal } from './components/SearchUserModal'
 import { UserAva } from '~/pages/chat/components/UserAva'
 import { AssignedBox } from './components/AssignedBox'
+import { AssignmentCustomSettings } from './components/AssignmentCustomSettings'
 
 /* -- NOTE: Socket upload file evs
 // Sample 1 (12.3 kB)
@@ -391,6 +392,20 @@ export const Chat = () => {
   const resetFilters = useCallback(() => {
     setFilters([])
   }, [setFilters])
+  const [assignmentExecutorsFilters, setAssignmentExecutorsFilters] = useState<string[]>([])
+  const handleAddAssignedToFilter = useCallback((name: string) => {
+    console.log('add', name)
+    setAssignmentExecutorsFilters((state: string[]) => [...new Set([...state, name])])
+  }, [setAssignmentExecutorsFilters])
+  const handleRemoveAssignedToFilter = useCallback((name: string) => {
+    console.log('remove', name)
+    setAssignmentExecutorsFilters((state: string[]) => state.filter((n) => n !== name))
+  }, [setAssignmentExecutorsFilters])
+  const handleResetAssignmentFilters = useCallback(() => {
+    setAssignmentExecutorsFilters([])
+  }, [setAssignmentExecutorsFilters])
+
+
   const [isSending, setIsSending] = useState<boolean>(false)
   const handleSendMessage = useCallback(() => {
     if (isMsgLimitReached) {
@@ -745,7 +760,7 @@ export const Chat = () => {
     updateRoomTsInLS(room)
   }, [updateRoomTsInLS])
   // --
-  const filteredMessages = useMemo(() => logic.getFiltered({ filters, searchText: debouncedSearchText, additionalTsToShow }), [logic, filters, debouncedSearchText, additionalTsToShow])
+  const filteredMessages = useMemo(() => logic.getFiltered({ filters, searchText: debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters }), [logic, filters, debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters])
   const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
   const [clickedImageSrc, setClickedImageSrc]= useState<string | null>(null)
   const handleOpenGallery = useCallback((src: string) => {
@@ -825,6 +840,7 @@ export const Chat = () => {
         isOpened={isSearchUserModalOpened}
         onClose={handleSearchUserModalClose}
         onSelectItem={onUserAssign}
+        selectItemButtonText='Assign'
       />
 
       <GalleryModal
@@ -943,7 +959,7 @@ export const Chat = () => {
                 isRound
                 onClick={handleOpenDrawerMenu}
                 mr={2}
-                colorScheme={hasNews ? "green": "gray"}
+                colorScheme={assignmentExecutorsFilters.length > 0 ? 'blue' : hasNews ? 'green': 'gray'}
               />
               <Drawer
                 isOpen={isDrawerMenuOpened}
@@ -1046,32 +1062,47 @@ export const Chat = () => {
                       
                       {
                         regData?.registryLevel === 1 && (
-                          <Box>
-                            <FormControl display='flex' alignItems='center'>
-                              <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} defaultChecked={isAssignmentFeatureEnabled} />
-                              <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
-                                Assignment feature
-                              </FormLabel>
-                            </FormControl>
-                            <Box mt={3} mb={3}>
-                            {isAssignmentDescrOpened ? (
-                              <span>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу<br /><Button size='sm' variant='link' onClick={closeAssignmentDescr} rounded='3xl'>Close</Button></span>
-                            ) : (
-                              <Button size='sm' variant='link' onClick={openAssignmentDescr} rounded='3xl'>What is it?</Button>
-                            )}
+                          <>
+                            <Box>
+                              <FormControl display='flex' alignItems='center'>
+                                <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} defaultChecked={isAssignmentFeatureEnabled} />
+                                <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
+                                  Assignment feature
+                                </FormLabel>
+                              </FormControl>
+                              <Box mt={3} mb={0}>
+                              {isAssignmentDescrOpened ? (
+                                <span>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу<br /><Button size='sm' variant='link' onClick={closeAssignmentDescr} rounded='3xl'>Close</Button></span>
+                              ) : (
+                                <Button size='sm' variant='link' onClick={openAssignmentDescr} rounded='3xl'>What is it?</Button>
+                              )}
+                              </Box>
                             </Box>
-                          </Box>
+                            {
+                              isAssignmentFeatureEnabled && (
+                                <AssignmentCustomSettings
+                                  logic={logic}
+                                  onAddAssignedToFilters={handleAddAssignedToFilter}
+                                  onRemoveAssignedToFilters={handleRemoveAssignedToFilter}
+                                  assignmentExecutorsFilters={assignmentExecutorsFilters}
+                                  onResetFilters={handleResetAssignmentFilters}
+                                />
+                              )
+                            }
+                          </>
                         )
                       }
-
-                      <Roomlist
-                        resetMessages={resetMessages}
-                        onCloseMenuBar={() => {
-                          handleCloseDrawerMenu()
-                          updateRoomTsInLS(room)
-                        }}
-                        handleRoomClick={handleRoomClick}
-                      />
+                      <Box>
+                        <Text mb={6}>My Rooms</Text>
+                        <Roomlist
+                          resetMessages={resetMessages}
+                          onCloseMenuBar={() => {
+                            handleCloseDrawerMenu()
+                            updateRoomTsInLS(room)
+                          }}
+                          handleRoomClick={handleRoomClick}
+                        />
+                      </Box>
                       
                     </Stack> 
                   </DrawerBody>
@@ -1358,7 +1389,7 @@ export const Chat = () => {
                 <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Error: {uploadErrorMsg}</div>
               </div>
             )}
-            {filters.length === 0 && !formData.searchText && regData?.registryLevel === 1 && !uploadErrorMsg && (
+            {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && regData?.registryLevel === 1 && !uploadErrorMsg && (
               <div className='service-flex-row'>
                 <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
                 {isFileUploading && (

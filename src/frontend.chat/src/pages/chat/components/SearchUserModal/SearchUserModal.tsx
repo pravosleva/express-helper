@@ -31,12 +31,16 @@ type TProps = {
   isOpened: boolean
   onClose: () => void
   onSelectItem: (value: string) => void
+  selectItemButtonText: string
+  assignmentCountersMap?: {[key: string]: number}
 }
 
 export const SearchUserModal = ({
   isOpened,
   onClose,
   onSelectItem,
+  selectItemButtonText,
+  assignmentCountersMap,
 }: TProps) => {
   const { socket } = useSocketContext()
   const { formData, handleInputChange, resetForm } = useForm({
@@ -115,7 +119,8 @@ export const SearchUserModal = ({
                     key={name}
                     userName={name}
                     onSelectButtonClick={onSelectItem}
-                    selectButtonText='Assign'
+                    selectButtonText={selectItemButtonText}
+                    isAssigned={!!assignmentCountersMap ? !!assignmentCountersMap[name] : undefined}
                   />
                 )
               })}

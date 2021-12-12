@@ -108,175 +108,182 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
       {!!price && <Text fontSize="md" fontWeight='bold'>={getPrettyPrice(price)}</Text>}
     </>
   ) // !!diff ? <TimeTag diff={diff} isCompleted={isCompleted} /> : null
-  const MemoizedMenu = useMemo(() => (
-    <Menu>
-      <MenuButton
-        as={IconButton}
-        colorScheme={isLooped ? "blue" : "gray"}
-        icon={isLooped ? <TiArrowLoop size={19} /> : <GoGear size={18} />}
-        isRound
-        // mr={2}
-      >
-        Main
-      </MenuButton>
-      <MenuList
-        zIndex={1001}
-        _dark={{ bg: "gray.600" }}
-        // _hover={{ bg: "gray.500", color: 'white' }}
-        // _expanded={{ bg: "gray.800" }}
-        // _focus={{ boxShadow: "outline" }}
-      >
-        <MenuOptionGroup defaultValue="asc" title='Looper'>
-          <div
-            style={{
-              maxHeight: '120px',
-              overflowY: 'auto',
-            }}
-          >
-            <MenuItem
-              _hover={{ bg: "gray.500", color: 'white' }}
-              _focus={{ bg: "gray.500", color: 'white' }}
-              minH="40px"
-              key="tasklist-btn.task-item.is-looped"
-              onClick={onLoopSwitch}
-              closeOnSelect={false}
+  const MemoizedMenu = useMemo(() => {
+    // NOTE: !(all fields is ok)
+    const isFirstLoopRunning = !(!!data.checkTsList && Array.isArray(data.checkTsList) && data.checkTsList.length > 0
+      && !!data.uncheckTsList && Array.isArray(data.uncheckTsList) && data.uncheckTsList.length > 0
+    )
+
+    return (
+      <Menu>
+        <MenuButton
+          as={IconButton}
+          colorScheme={isLooped ? isFirstLoopRunning ? "green" : "blue" : "gray"}
+          icon={isLooped ? <TiArrowLoop size={19} /> : <GoGear size={18} />}
+          isRound
+          // mr={2}
+        >
+          Main
+        </MenuButton>
+        <MenuList
+          zIndex={1001}
+          _dark={{ bg: "gray.600" }}
+          // _hover={{ bg: "gray.500", color: 'white' }}
+          // _expanded={{ bg: "gray.800" }}
+          // _focus={{ boxShadow: "outline" }}
+        >
+          <MenuOptionGroup defaultValue="asc" title='Looper'>
+            <div
+              style={{
+                maxHeight: '120px',
+                overflowY: 'auto',
+              }}
             >
-              <Flex display="flex" alignItems="center">
-                <Text fontSize="md" fontWeight='bold' mr={4}>{isLooped ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
-                <Text fontSize="md" fontWeight='bold'>Is looped?</Text>
-              </Flex>
-            </MenuItem>
-            {!!fixedDiff && (
-              <>
-                <MenuItem
-                  minH="40px"
-                  onClick={() => onEdit({ ...data, resetLooper: true})}
-                  // isDisabled={}
-                  // bgColor='green.300'
-                  // color='#fff'
-                >
-                  <Flex display="flex" alignItems="center">
-                    <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                    <Text fontSize="md" fontWeight='bold'>Reset Looper</Text>
-                  </Flex>
-                </MenuItem>
-                
-                <MenuItem
-                  minH="40px"
-                  onClick={() => onEdit({ ...data, newFixedDiffTs: 1 * 60 * 60 * 1000 })}
-                  isDisabled={fixedDiff === 1 * 60 * 60 * 1000}
-                >
-                  <Flex display="flex" alignItems="center">
-                    <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                    <Text fontSize="md" fontWeight='bold'>Set 1 h</Text>
-                  </Flex>
-                </MenuItem>
-                <MenuItem
-                  minH="40px"
-                  onClick={() => onEdit({ ...data, newFixedDiffTs: constants.week })}
-                  isDisabled={fixedDiff === constants.week}
-                >
-                  <Flex display="flex" alignItems="center">
-                    <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                    <Text fontSize="md" fontWeight='bold'>Set 1 week</Text>
-                  </Flex>
-                </MenuItem>
-                <MenuItem
-                  minH="40px"
-                  onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month1 })}
-                  isDisabled={fixedDiff === constants.month1}
-                >
-                  <Flex display="flex" alignItems="center">
-                    <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                    <Text fontSize="md" fontWeight='bold'>Set 1 month</Text>
-                  </Flex>
-                </MenuItem>
-                <MenuItem
-                  minH="40px"
-                  onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month6 })}
-                  isDisabled={fixedDiff === constants.month6}
-                >
-                  <Flex display="flex" alignItems="center">
-                    <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                    <Text fontSize="md" fontWeight='bold'>Set 6 months</Text>
-                  </Flex>
-                </MenuItem>
-                <MenuItem
-                  minH="40px"
-                  onClick={() => onEdit({ ...data, newFixedDiffTs: constants.day1 })}
-                  isDisabled={fixedDiff === constants.day1}
-                >
-                  <Flex display="flex" alignItems="center">
-                    <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                    <Text fontSize="md" fontWeight='bold'>Set 1 day</Text>
-                  </Flex>
-                </MenuItem>
-                <MenuItem
-                  minH="40px"
-                  onClick={() => onEdit({ ...data, newFixedDiffTs: constants.day2 })}
-                  isDisabled={fixedDiff === constants.day2}
-                >
-                  <Flex display="flex" alignItems="center">
-                    <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                    <Text fontSize="md" fontWeight='bold'>Set 2 days</Text>
-                  </Flex>
-                </MenuItem>
-                <MenuItem
-                  minH="40px"
-                  onClick={() => onEdit({ ...data, newFixedDiffTs: constants.sec20 })}
-                  isDisabled={fixedDiff === constants.sec20}
-                >
-                  <Flex display="flex" alignItems="center">
-                    <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                    <Text fontSize="md" fontWeight='bold'>Set 20 s</Text>
-                  </Flex>
-                </MenuItem>
-              </>
-            )}
-          </div>
-        </MenuOptionGroup>
-        <MenuDivider />
-        <MenuOptionGroup defaultValue="asc" title='Controls'>
-          <MenuItem
-            minH="40px"
-            onClick={handleOpenPriceModal}
-          >
-            <Flex display="flex" alignItems="center">
-              <Text fontSize="md" fontWeight='bold' mr={4}><MdAttachMoney size={18} /></Text>
-              <Text fontSize="md" fontWeight='bold'>Set Expenses</Text>
-            </Flex>
-          </MenuItem>
-          {
-            !!price && (
               <MenuItem
+                _hover={{ bg: "gray.500", color: 'white' }}
+                _focus={{ bg: "gray.500", color: 'white' }}
                 minH="40px"
-                onClick={handleResetExpenses}
+                key="tasklist-btn.task-item.is-looped"
+                onClick={onLoopSwitch}
+                closeOnSelect={false}
               >
                 <Flex display="flex" alignItems="center">
-                  <Text fontSize="md" fontWeight='bold' mr={4}><MdMoneyOff size={18} /></Text>
-                  <Text fontSize="md" fontWeight='bold'>Reset Expenses</Text>
+                  <Text fontSize="md" fontWeight='bold' mr={4}>{isLooped ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
+                  <Text fontSize="md" fontWeight='bold'>Is looped?</Text>
                 </Flex>
               </MenuItem>
-            )
-          }
-          <MenuItem
-            minH="40px"
-            onClick={() => onDelete(data.ts)}
-            bgColor='red.300'
-            color='#fff'
-            // _first={{ bg: "red.400" }}
-            _hover={{ bg: "red.400", color: 'white' }}
-            _focus={{ bg: "red.400", color: 'white' }}
-          >
-            <Flex display="flex" alignItems="center">
-              <Text fontSize="md" fontWeight='bold' mr={4}><FaTrashAlt size={18} /></Text>
-              <Text fontSize="md" fontWeight='bold'>Delete</Text>
-            </Flex>
-          </MenuItem>
-        </MenuOptionGroup>
-      </MenuList>
-    </Menu>
-  ), [isLooped, onDelete, JSON.stringify(data), handleResetExpenses, handleOpenPriceModal, onEdit, onLoopSwitch, isLooped, fixedDiff])
+              {!!fixedDiff && (
+                <>
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => onEdit({ ...data, resetLooper: true})}
+                    // isDisabled={}
+                    // bgColor='green.300'
+                    // color='#fff'
+                  >
+                    <Flex display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                      <Text fontSize="md" fontWeight='bold'>Reset Looper</Text>
+                    </Flex>
+                  </MenuItem>
+                  
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => onEdit({ ...data, newFixedDiffTs: 1 * 60 * 60 * 1000 })}
+                    isDisabled={fixedDiff === 1 * 60 * 60 * 1000}
+                  >
+                    <Flex display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                      <Text fontSize="md" fontWeight='bold'>Set 1 h</Text>
+                    </Flex>
+                  </MenuItem>
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => onEdit({ ...data, newFixedDiffTs: constants.week })}
+                    isDisabled={fixedDiff === constants.week}
+                  >
+                    <Flex display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                      <Text fontSize="md" fontWeight='bold'>Set 1 week</Text>
+                    </Flex>
+                  </MenuItem>
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month1 })}
+                    isDisabled={fixedDiff === constants.month1}
+                  >
+                    <Flex display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                      <Text fontSize="md" fontWeight='bold'>Set 1 month</Text>
+                    </Flex>
+                  </MenuItem>
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month6 })}
+                    isDisabled={fixedDiff === constants.month6}
+                  >
+                    <Flex display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                      <Text fontSize="md" fontWeight='bold'>Set 6 months</Text>
+                    </Flex>
+                  </MenuItem>
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => onEdit({ ...data, newFixedDiffTs: constants.day1 })}
+                    isDisabled={fixedDiff === constants.day1}
+                  >
+                    <Flex display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                      <Text fontSize="md" fontWeight='bold'>Set 1 day</Text>
+                    </Flex>
+                  </MenuItem>
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => onEdit({ ...data, newFixedDiffTs: constants.day2 })}
+                    isDisabled={fixedDiff === constants.day2}
+                  >
+                    <Flex display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                      <Text fontSize="md" fontWeight='bold'>Set 2 days</Text>
+                    </Flex>
+                  </MenuItem>
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => onEdit({ ...data, newFixedDiffTs: constants.sec20 })}
+                    isDisabled={fixedDiff === constants.sec20}
+                  >
+                    <Flex display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                      <Text fontSize="md" fontWeight='bold'>Set 20 s</Text>
+                    </Flex>
+                  </MenuItem>
+                </>
+              )}
+            </div>
+          </MenuOptionGroup>
+          <MenuDivider />
+          <MenuOptionGroup defaultValue="asc" title='Controls'>
+            <MenuItem
+              minH="40px"
+              onClick={handleOpenPriceModal}
+            >
+              <Flex display="flex" alignItems="center">
+                <Text fontSize="md" fontWeight='bold' mr={4}><MdAttachMoney size={18} /></Text>
+                <Text fontSize="md" fontWeight='bold'>Set Expenses</Text>
+              </Flex>
+            </MenuItem>
+            {
+              !!price && (
+                <MenuItem
+                  minH="40px"
+                  onClick={handleResetExpenses}
+                >
+                  <Flex display="flex" alignItems="center">
+                    <Text fontSize="md" fontWeight='bold' mr={4}><MdMoneyOff size={18} /></Text>
+                    <Text fontSize="md" fontWeight='bold'>Reset Expenses</Text>
+                  </Flex>
+                </MenuItem>
+              )
+            }
+            <MenuItem
+              minH="40px"
+              onClick={() => onDelete(data.ts)}
+              bgColor='red.300'
+              color='#fff'
+              // _first={{ bg: "red.400" }}
+              _hover={{ bg: "red.400", color: 'white' }}
+              _focus={{ bg: "red.400", color: 'white' }}
+            >
+              <Flex display="flex" alignItems="center">
+                <Text fontSize="md" fontWeight='bold' mr={4}><FaTrashAlt size={18} /></Text>
+                <Text fontSize="md" fontWeight='bold'>Delete</Text>
+              </Flex>
+            </MenuItem>
+          </MenuOptionGroup>
+        </MenuList>
+      </Menu>
+    )
+  }, [isLooped, onDelete, JSON.stringify(data), handleResetExpenses, handleOpenPriceModal, onEdit, onLoopSwitch, isLooped, fixedDiff])
   const MemoizedPriceModal = useMemo(() => (
     <PriceModal
       isOpened={isPriceModalOpened}
