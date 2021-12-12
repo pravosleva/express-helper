@@ -32,7 +32,7 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
   }, [name])
 
   const MemoBtns = useMemo(() => {
-    console.log('room btns effect...', ++c)
+    // console.log('room btns effect...', ++c)
     if (!!roomlistLS && !!roomNames) {
       return <>{roomNames.map((r: string) => {
         const tsFromLS = roomlistLS.find(({ name }) => name === r)?.ts

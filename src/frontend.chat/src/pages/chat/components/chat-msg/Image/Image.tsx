@@ -80,10 +80,7 @@ export const Image = ({
           <div className='abs-img-service-btns top-left'>
             {isMyMessage && (
               <button className='special-btn special-btn-sm dark-btn red'
-                onClick={() => {
-                  const toBe = window.confirm('Delete this image?');
-                  if (toBe) onDeleteMessage(ts);
-                }}
+                onClick={() => { onDeleteMessage(ts) }}
               >Del</button>
             )}
           </div>

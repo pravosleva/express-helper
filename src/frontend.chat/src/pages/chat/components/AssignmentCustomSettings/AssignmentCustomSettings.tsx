@@ -10,12 +10,14 @@ import {
   Stack,
   Flex,
   Text,
+  Grid,
 } from '@chakra-ui/react'
 import { useDebounce, useLocalStorage } from 'react-use'
 import { SearchUserModal } from '~/pages/chat/components/SearchUserModal'
 import { CgSearch, CgAssign } from 'react-icons/cg'
 import { getTruncated } from '~/utils/strings-ops'
 import { IoMdClose } from 'react-icons/io'
+import { FaTrashAlt } from 'react-icons/fa'
 
 type TSetting = {
   name: string
@@ -26,7 +28,7 @@ type TProps = {
   onRemoveAssignedToFilters: (name: string) => void
   logic: any
   assignmentExecutorsFilters: string[]
-  onResetFilters?: () => void
+  onResetFilters: () => void
 }
 
 export const AssignmentCustomSettings = ({
@@ -54,6 +56,20 @@ export const AssignmentCustomSettings = ({
     setSettingsLS(newState)
     handleCloseSearchModal()
   }, [settingsLS, setSettingsLS, handleCloseSearchModal])
+  const handleRemoveUser = useCallback((name: string) => {
+    const isConfirmed = window.confirm(`Вы уверены? Пользователь ${name} будет удален из списка`)
+
+    if (!isConfirmed) return
+
+    if (assignmentExecutorsFilters.includes(name)) onRemoveAssignedToFilters(name)
+
+    const newState: {[key: string]: { name: string, ts: number }} = {}
+    for (const key in settingsLS) {
+      if (key !== name) newState[key] = settingsLS[key]
+    }
+
+    setSettingsLS(newState)
+  }, [assignmentExecutorsFilters, onRemoveAssignedToFilters, settingsLS])
 
   const users = useMemo(() => !!settingsLS ? Object.keys(settingsLS) : [], [settingsLS])
   const handleUserFilterClick = useCallback((name: string) => {
@@ -104,17 +120,22 @@ export const AssignmentCustomSettings = ({
             <Stack>
               <Flex alignItems="center">
                 <Button variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={18}/>}>Search</Button>
-                {hasEnabledFilters && <Button variant='outline' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear</Button>}
+                {hasEnabledFilters && <Button variant='outline' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
               </Flex>
               {users.map((name: string) => {
                 const isBlue = assignmentExecutorsFilters.includes(name)
                 return (
-                  <Button
-                    key={name}
-                    onClick={() => handleUserFilterClick(name)}
-                    colorScheme={isBlue ? 'blue' : 'gray'}
-                    isDisabled={!countersMap[name]}
-                  >{getTruncated(name)}{!!countersMap[name] ? ` (${countersMap[name]})` : ''}</Button>
+                  <Grid templateColumns='auto 50px' gap={2} key={name}>
+                    <Button
+                      onClick={() => handleUserFilterClick(name)}
+                      colorScheme={isBlue ? 'blue' : 'gray'}
+                      isDisabled={!countersMap[name]}
+                    >{getTruncated(name)}{!!countersMap[name] ? ` (${countersMap[name]})` : ''}</Button>
+                    <Button
+                      onClick={() => handleRemoveUser(name)}
+                      colorScheme='gray'
+                    ><FaTrashAlt size={14} /></Button>
+                  </Grid>
                 )
               })}
             </Stack>
