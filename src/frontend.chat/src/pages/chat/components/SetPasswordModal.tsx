@@ -23,12 +23,24 @@ type TProps = {
 
 export const SetPasswordModal = ({ isOpened, onClose }: TProps) => {
   const [newPasValue, setNewPasValue] = useState<string>('')
+  const [confPasValue, confNewPasValue] = useState<string>('')
   const initialSetPasswdRef = useRef(null)
   const { socket } = useSocketContext()
   const toast = useToast()
   const { name } = useMainContext()
 
   const handleSetMyPassword = ({ password }: { password: string }) => {
+    if (newPasValue !== confPasValue) {
+      toast({
+        position: 'bottom',
+        title: 'Sorry',
+        description: 'Пароли не совпадают',
+        status: 'error',
+        duration: 7000,
+        isClosable: true,
+      })
+      return
+    }
     if (!!socket) {
       socket.emit('login.set-pas-level-1', { password, name }, (errMsg?: string) => {
         if (!!errMsg) {
@@ -69,6 +81,7 @@ export const SetPasswordModal = ({ isOpened, onClose }: TProps) => {
           <ModalHeader>Create your password</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
+            {/*
             <FormControl mt={4}>
               <FormLabel>Login</FormLabel>
               <Input
@@ -78,7 +91,8 @@ export const SetPasswordModal = ({ isOpened, onClose }: TProps) => {
                 value={name}
               />
             </FormControl>
-            <FormControl mt={4}>
+            */}
+            <FormControl mb={4}>
               <FormLabel>Password</FormLabel>
               <Input
                 isInvalid={!newPasValue}
@@ -89,6 +103,19 @@ export const SetPasswordModal = ({ isOpened, onClose }: TProps) => {
                 value={newPasValue}
                 onChange={(e) => {
                   setNewPasValue(e.target.value)
+                }}
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Confirm password</FormLabel>
+              <Input
+                isInvalid={!confPasValue}
+                type='password'
+                placeholder="Confirm password"
+                // onKeyDown={handleKeyDownEditedMessage}
+                value={confPasValue}
+                onChange={(e) => {
+                  confNewPasValue(e.target.value)
                 }}
               />
             </FormControl>

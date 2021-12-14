@@ -3,7 +3,7 @@
 :root {
   --grid-item-img-height-limit-mobile: 85px;
   --grid-item-img-height-limit-desktop: 120px;
-  --std-gap: 10px;
+  --std-gap: var(--chakra-space-2);
   --item-border-radius: 8px;
 }
 

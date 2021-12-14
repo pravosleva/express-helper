@@ -41,6 +41,10 @@ import {
   DrawerFooter,
   Stack,
   Switch,
+  HStack,
+  TagCloseButton,
+  TagLabel,
+  Tag,
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
@@ -748,6 +752,10 @@ export const Chat = () => {
     }
   }
   const handleLogout = useCallback(() => {
+    const isConfirmed = window.confirm('Вы уверенны?')
+
+    if (!isConfirmed) return
+
     if (!!socket) socket.emit('logout', { name, token: String(tokenLS) })
     updateRoomTsInLS(room)
     setTimeout(() => {
@@ -833,6 +841,12 @@ export const Chat = () => {
     setAfLS(e.target.checked ? '1' : '0')
   }, [setIsAssignmentFeatureEnabled])
   // --
+
+  const resetSearchAndFiltersAndAssignmentFilters = useCallback(() => {
+    resetFilters()
+    resetForm()
+    handleResetAssignmentFilters()
+  }, [resetFilters, resetForm, handleResetAssignmentFilters])
 
   return (
     <>
@@ -1086,6 +1100,8 @@ export const Chat = () => {
                                   onRemoveAssignedToFilters={handleRemoveAssignedToFilter}
                                   assignmentExecutorsFilters={assignmentExecutorsFilters}
                                   onResetFilters={handleResetAssignmentFilters}
+                                  onSetFilters={setFilters}
+                                  activeFilters={filters}
                                 />
                               )
                             }
@@ -1122,7 +1138,7 @@ export const Chat = () => {
 
               <Menu
                 autoSelect={false}
-                onOpen={resetFilters}
+                // onOpen={resetFilters}
               >
                 <MenuButton
                   mr={2}
@@ -1177,7 +1193,7 @@ export const Chat = () => {
                       <Text fontSize="md" fontWeight='bold' display='flex'>{getIconByStatuses([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn], false)}In progress ({logic.getCountByFilters([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn])})</Text>
                     </MenuItem>
                   </div>
-                  {/*
+                  {
                     filters.length > 0 && (
                       <MenuItem
                         minH="40px"
@@ -1188,17 +1204,16 @@ export const Chat = () => {
                         <Text fontSize="md" fontWeight='bold' display='flex'><span style={{ width: '17px', marginRight: '8px' }}><IoMdClose size={17} /></span><span>Unset filter</span></Text>
                       </MenuItem>
                     )
-                  */}
+                  }
+                  {/*
                   <MenuItem
                       minH="40px"
-                      // onClick={() => {}}
                       color='red.500'
-                      // icon={<IoMdClose size={17} />}
                     >
                       <Text fontSize="md" fontWeight='bold' display='flex'>
                         <span style={{ width: '17px', marginRight: '8px' }}><IoMdClose size={17} /></span><span>Close</span>
                       </Text>
-                    </MenuItem>
+                    </MenuItem> */}
                 </MenuList>
               </Menu>
 
@@ -1243,6 +1258,31 @@ export const Chat = () => {
           <Box w='100%' h={1} m={[0, 0]}>
             {tasklist.length > 0 && <Progress value={percentage} size="xs" colorScheme="green" />}
           </Box>
+          
+          {downToSm && (filters.length > 0 || !!formData.searchText || assignmentExecutorsFilters.length > 0) && (
+            <div
+              style={{
+                position: 'fixed',
+                zIndex: 1000, // NOTE: Less than ctx menu: 1001
+                bottom: '85px', right: '50px', // right: '50%', transform: 'translateX(50%)',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <HStack spacing={4}>
+                <Tag
+                  size='md'
+                  borderRadius='full'
+                  variant='solid'
+                  colorScheme='blue'
+                >
+                  <TagLabel>Found {filteredMessages.length}</TagLabel>
+                  <TagCloseButton onClick={resetSearchAndFiltersAndAssignmentFilters} />
+                </Tag>
+              </HStack>
+            </div>
+          )}
 
           <ScrollToBottom
             className={clsx(
@@ -1270,7 +1310,7 @@ export const Chat = () => {
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
               const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
-              const isLast = i === messages.length - 1
+              // const isLast = i === messages.length - 1
               const isNextOneBtnEnabled = _next?.isHidden
               const handleClickCtxMenu = () => setEditedMessage(message)
               let contextTriggerRef: any = null;
@@ -1304,7 +1344,7 @@ export const Chat = () => {
                       fontSize="sm"
                       // opacity=".8"
                       mb={1}
-                      className={clsx("from", { 'is-hidden': (isMyMessage && ((!!formData.searchText || filters.length > 0) ? false : !isLast)) })}
+                      className={clsx("from", { 'is-hidden': /* (isMyMessage && ((!!formData.searchText || filters.length > 0) ? false : !isLast)) */ false })}
                       // textAlign={isMyMessage ? 'right' : 'left'}
                     >
                       <b>{user}</b>{' '}

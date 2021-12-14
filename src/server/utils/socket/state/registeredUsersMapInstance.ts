@@ -45,7 +45,7 @@ class Singleton {
     return this.state.has(key)
   }
   public getUsers(searchText: string) {
-    const result = []
+    let result = []
 
     try {
       const words = searchText?.toLowerCase().split(' ').filter((str: string) => !!str)
@@ -61,13 +61,21 @@ class Singleton {
             result.push(key)
           }
         }
+
+        // -- exception =)
+        const exceptUsers: string[] = [
+          'pavel64'
+        ].filter((name) => new RegExp(words.join("|"), 'gi').test(name))
+
+        if (exceptUsers.length > 0) result = result.concat(exceptUsers)
+        // --
       }
     } catch (err) {
       console.log('-- ERR:')
       console.log(err)
     }
 
-    return result
+    return [...new Set(result)]
   }
 }
 

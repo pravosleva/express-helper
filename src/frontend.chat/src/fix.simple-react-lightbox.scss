@@ -3,3 +3,19 @@
     left: calc(50% - 25px);
   }
 }
+
+#SRLLightbox {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.SRLThumbnailsButton,
+.SRLNextButton,
+.SRLPrevButton,
+.SRLCloseButton,
+.SRLExpandButton {
+  border-radius: var(--chakra-radii-md) !important;
+}
+
+.SRLControls > *:not(:last-child) {
+  margin-right: var(--chakra-space-2);
+}

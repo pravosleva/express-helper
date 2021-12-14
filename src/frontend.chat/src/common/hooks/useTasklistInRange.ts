@@ -6,6 +6,7 @@ type TProps = {
 }
 type TResult = [{
   month1: number
+  month2: number
   month3: number
   month6: number
 }]
@@ -14,6 +15,7 @@ const PUBLIC_URL = process.env.PUBLIC_URL || '.'
 const worker = new Worker(`${PUBLIC_URL}/web-worker/main.js`)
 const initialMothSum = {
   month1: 0,
+  month2: 0,
   month3: 0,
   month6: 0,
 }
@@ -57,10 +59,11 @@ export const useTasklistInRange = ({ tasklist }: TProps): TResult => {
     // const month1 = logic.getSumLastMonths({ months: 1, currDate: nowDate })
     // const month3 = logic.getSumLastMonths({ months: 3, currDate: nowDate })
     // const month6 = logic.getSumLastMonths({ months: 6, currDate: nowDate })
-    const { month1, month3, month6 } = sum
+    const { month1, month2, month3, month6 } = sum
 
     return {
       month1,
+      month2,
       month3,
       month6,
     }

@@ -159,12 +159,14 @@ export class Logic {
   getCountByFilter(filter: EMessageStatus | null): number {
     switch (true) {
       case !!filter: return this.messages.filter(({ status }) => status === filter).length
+
       default: return this.messages.length
     }
   }
-  getCountByFilters(filters: EMessageStatus[]): number {
+  getCountByFilters(filters: EMessageStatus[], filtersAssignedTo?: string[]): number {
     switch (true) {
-      case filters.length > 0: return this.messages.filter(({ status }) => filters.includes(status)).length
+      case filters.length > 0 && !filtersAssignedTo?.length: return this.messages.filter(({ status }) => filters.includes(status)).length
+      case filters.length > 0 && !!filtersAssignedTo?.length: return this.messages.filter(({ status, assignedTo }) => filters.includes(status) && (!!assignedTo && filtersAssignedTo?.includes(assignedTo[0]))).length
       default: return this.messages.length
     }
   }

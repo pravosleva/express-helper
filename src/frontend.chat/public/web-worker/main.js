@@ -40,7 +40,7 @@ self.onmessage = ($event) => {
     case !!data && data.action === 'getSumLastMonths':
       const currDate = new Date();
       const sum = {};
-      [1, 3, 6, 0.5].forEach(m => {
+      [1, 2, 3, 6, 0.5].forEach(m => {
         sum[`month${m}`] = getSumLastMonths({
           months: m,
           currDate,

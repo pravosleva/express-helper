@@ -102,6 +102,7 @@ export const GalleryModal = ({
                 options={{
                   settings: {
                     // overlayColor: "rgb(25, 136, 124)",
+                    // overlayColor: 'rgba(0, 0, 0, 0.75)',
                   },
                   caption: {
                     captionAlignment: 'start',
@@ -120,7 +121,8 @@ export const GalleryModal = ({
                     // backgroundColor: 'rgba(30,30,36,0.8)',
                     // backgroundColor: 'rgb(25, 136, 124)',
                     // backgroundColor: '#22577a',
-                    backgroundColor: '#f44336',
+                    // backgroundColor: '#f44336',
+                    backgroundColor: 'var(--chakra-colors-red-500)',
                     iconColor: 'rgba(255, 255, 255, 1)',
                     iconPadding: '10px',
                   },
