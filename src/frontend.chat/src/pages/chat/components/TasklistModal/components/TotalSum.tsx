@@ -2,17 +2,19 @@ import { useState, useCallback, useRef, useEffect, useContext } from 'react'
 import {
   Text,
   Stack,
+  Tag,
 } from '@chakra-ui/react'
 import { getPrettyPrice } from '~/utils/getPrettyPrice'
 import { UsersContext } from '~/usersContext'
 
 const PUBLIC_URL = process.env.PUBLIC_URL || '.'
-const worker = new Worker(`${PUBLIC_URL}/web-worker/main.js`)
+const worker: any = new Worker(`${PUBLIC_URL}/web-worker/main.js`)
 
 export const TotalSum = () => {
   const { tasklist } = useContext(UsersContext)
   const initialMothSum = {
     month1: 0,
+    month2: 0,
     month3: 0,
     month6: 0,
     'month0.5': 0,
@@ -23,7 +25,8 @@ export const TotalSum = () => {
   //   timeoutMs: 500 // Время, отведенное на переход
   // });
   useEffect(() => {
-    worker.onmessage = ($event) => {
+    console.log('=== EFFECT ===')
+    worker.onmessage = ($event: any) => {
       const { data } = $event
 
       if (!!data) {
@@ -45,7 +48,7 @@ export const TotalSum = () => {
   const timeout = useRef<any>()
 
   useEffect(() => {
-    timeout.current = setTimeout(updateSum, 1000)
+    timeout.current = setTimeout(updateSum, 2000)
 
     return () => {
       if (!!timeout.current) clearTimeout(timeout.current)
@@ -55,7 +58,8 @@ export const TotalSum = () => {
   return (
     <Stack marginRight='auto'>
       {!!sum['month0.5'] && (
-        <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
+        // <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
+        <Text fontSize="sm" fontWeight='bold'>✅&nbsp;<Tag colorScheme='green'>Ready</Tag>&nbsp;&&nbsp;Unchecked ={getPrettyPrice(sum['month0.5'])}</Text>
       )}
       {!!sum.month3 && (
         <Text fontSize="sm" fontWeight='bold'>3m ={getPrettyPrice(sum.month3)}</Text>

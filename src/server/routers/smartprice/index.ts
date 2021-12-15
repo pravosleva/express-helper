@@ -49,6 +49,7 @@ import { addPayoutCard } from './mws/partner_api/tradein/payout_card/add'
 import { replaceAddPayoutCard } from './mws/partner_api/tradein/payout_card/replace'
 import { addingPayoutCardStatus } from './mws/partner_api/tradein/payout_card/status'
 import { payoutCardSendIframeSMS } from './mws/partner_api/tradein/payout_card/send_iframe_sms'
+import { checkFMIP } from './mws/partner_api/tradein/check_fmip'
 
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
 
@@ -126,6 +127,7 @@ spApi.post('/partner_api/tradein/payout_card/add', addPayoutCard)
 spApi.post('/partner_api/tradein/payout_card/replace', replaceAddPayoutCard)
 spApi.post('/partner_api/tradein/payout_card/status', addingPayoutCardStatus)
 spApi.post('/partner_api/tradein/payout_card/send_iframe_sms', payoutCardSendIframeSMS)
+spApi.post('/partner_api/tradein/check_fmip', jsonParser, checkFMIP)
 
 // 6. New OT landing
 spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)

@@ -12,7 +12,9 @@
 .SRLNextButton,
 .SRLPrevButton,
 .SRLCloseButton,
-.SRLExpandButton {
+.SRLExpandButton,
+.SRLZoomInButton,
+.SRLZoomOutButton {
   border-radius: var(--chakra-radii-md) !important;
 }
 

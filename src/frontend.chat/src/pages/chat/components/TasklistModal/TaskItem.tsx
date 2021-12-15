@@ -39,6 +39,8 @@ type TProps = {
   onEdit: (newData: any) => void
   onLoopSwitch: () => void
   onOpenDatePicker: (oldData: any) => void
+  onPriceModalOpen: (data: any) => void
+  onResetExpenses: () => void
 }
 
 const constants = {
@@ -51,7 +53,7 @@ const constants = {
   sec20: 20 * 1000,
 }
 
-export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker }: TProps) => {
+export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker, onPriceModalOpen, onResetExpenses }: TProps) => {
   const {
     title,
     // description,
@@ -64,22 +66,6 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
     price,
   } = data
   const titleEditedRef = useRef<string>(data.title)
-
-  // --
-  const [isPriceModalOpened, setIsPriceModalOpened] = useState<boolean>(false)
-  const handleOpenPriceModal = useCallback(() => {
-    setIsPriceModalOpened(true)
-  }, [setIsPriceModalOpened])
-  const handleClosePriceModal = useCallback(() => {
-    setIsPriceModalOpened(false)
-  }, [setIsPriceModalOpened])
-  const handlePriceModalSubmit = useCallback((price: number) => {
-    if (Number.isInteger(price)) onEdit({ ...data, price: price })
-  }, [onEdit, price])
-  const handleResetExpenses = useCallback(() => {
-    onEdit({ ...data, price: 0 })
-  }, [onEdit])
-  // --
 
   const CountdownRenderer = ({ days, hours, minutes, seconds, completed }: any) => {
     const showFire = isLooped && isCompleted && completed
@@ -97,7 +83,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
       <Tag>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
     )
   }
-  const timeEnd = !!checkTsList && !!uncheckTsList && isCompleted && isLooped ? checkTsList[0] + (checkTsList[0] - uncheckTsList[0]) : null
+  const timeEnd: any = !!checkTsList && !!uncheckTsList && isCompleted && isLooped ? checkTsList[0] + (checkTsList[0] - uncheckTsList[0]) : null
   const timeSection = (
     <>
       {!!timeEnd ? (
@@ -176,7 +162,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
                         <Text fontSize="md" fontWeight='bold'>Reset Looper</Text>
                       </Flex>
                     </MenuItem>
-
+                    {/*
                     <MenuItem
                       minH="40px"
                       onClick={handleOpenDatepicker}
@@ -186,9 +172,9 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
                     >
                       <Flex display="flex" alignItems="center">
                         <Text fontSize="md" fontWeight='bold' mr={4}><BsFillCalendarFill size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set first date</Text>
+                        <Text fontSize="md" fontWeight='bold'>Set First Date</Text>
                       </Flex>
-                    </MenuItem>
+                    </MenuItem> */}
                     
                     <MenuItem
                       minH="40px"
@@ -278,7 +264,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
             <MenuOptionGroup defaultValue="asc" title='Controls'>
               <MenuItem
                 minH="40px"
-                onClick={handleOpenPriceModal}
+                onClick={() => onPriceModalOpen(data)}
               >
                 <Flex display="flex" alignItems="center">
                   <Text fontSize="md" fontWeight='bold' mr={4}><MdAttachMoney size={18} /></Text>
@@ -289,7 +275,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
                 !!price && (
                   <MenuItem
                     minH="40px"
-                    onClick={handleResetExpenses}
+                    onClick={onResetExpenses}
                   >
                     <Flex display="flex" alignItems="center">
                       <Text fontSize="md" fontWeight='bold' mr={4}><MdMoneyOff size={18} /></Text>
@@ -317,19 +303,11 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
         </Menu>
       </>
     )
-  }, [isLooped, onDelete, JSON.stringify(data), handleResetExpenses, handleOpenPriceModal, onEdit, onLoopSwitch, isLooped, fixedDiff])
-  const MemoizedPriceModal = useMemo(() => (
-    <PriceModal
-      isOpened={isPriceModalOpened}
-      onClose={handleClosePriceModal}
-      onSubmit={handlePriceModalSubmit}
-      initialPrice={price || 0}
-    />
-  ), [isPriceModalOpened, handleClosePriceModal, handlePriceModalSubmit, price])
+  }, [isLooped, onDelete, JSON.stringify(data), onResetExpenses, onPriceModalOpen, onEdit, onLoopSwitch, isLooped, fixedDiff])
+  
 
   return (
     <>
-      {MemoizedPriceModal}
       <Tr>
         <Td>
           <Flex display="flex" alignItems="center">

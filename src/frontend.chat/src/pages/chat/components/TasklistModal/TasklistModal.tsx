@@ -18,7 +18,6 @@ import {
   Tbody,
   Text,
   Box,
-  Switch,
   Stack,
   RadioGroup,
   Radio,
@@ -30,7 +29,9 @@ import './TasklistModal.scss'
 import { TaskItem } from './TaskItem'
 import { IoMdAdd, IoMdClose } from 'react-icons/io'
 import { TotalSum } from './components/TotalSum'
-import { DatepickerModal } from './components/DatepickerModal'
+// import { DatepickerModal } from './components/DatepickerModal'
+import { PriceModal } from './components'
+// import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 
 type TProps = {
   isOpened: boolean
@@ -114,21 +115,16 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
 
   const [radioValue, setRadioValue] = useState<string>('unchecked')
 
-  useEffect(() => {
-    console.log(radioValue)
-  }, [radioValue])
-
+  // -- NOTE: DATEPICKER MODAL
+  // TODO: IN PROGRESS
+  /*
   const [initialUncheckedTs, setInitialUncheckedTs] = useState<number>(0)
   const [isDatepickerOpened, setIsDatepickerOpened] = useState<boolean>(false)
-  const editedTask = useRef<any>({})
+  const editedTask = useRef<any>(null)
   const handleOpenDatePicker = useCallback((data: any) => {
-    setIsDatepickerOpened(true)
     editedTask.current = data
-    if (!!data.uncheckTsList[0]) {
-      setInitialUncheckedTs(data.uncheckTsList[0])
-    } else {
-      setInitialUncheckedTs(Date.now())
-    }
+    setInitialUncheckedTs(data.uncheckTsList[0])
+    setIsDatepickerOpened(true)
   }, [setIsDatepickerOpened, setInitialUncheckedTs])
   const handleCloseDatePicker = useCallback(() => {
     setIsDatepickerOpened(false)
@@ -136,45 +132,75 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
 
   const onUpdateFirstDate = (selectedTs: number) => {
     console.log('SELECTED DATE:', selectedTs)
-
-    if (!selectedTs) {
-      console.log('ERR#1')
-      console.log(selectedTs)
-      return
-    }
-
     console.log('BEFORE: editedTask.current.uncheckTsList[0]')
     console.log(editedTask.current.uncheckTsList[0])
+    const newData = { ...editedTask.current }
 
-    let newFixedDiffTs
-    switch (true) {
-      case !!editedTask.current:
-          if (!!editedTask.current.checkTsList) {
-            newFixedDiffTs = editedTask.current.checkTsList[0] - selectedTs
-          } else {
-            newFixedDiffTs = editedTask.current.checkTsList = [Date.now() - selectedTs]
-          }
-          
-          break;
-      default: break;
-    }
-    // editedTask.current.uncheckTsList = [selectedTs]
+    newData.uncheckTsList = [selectedTs]
+
+    if (!!newData.checkTsList) {
+      console.log('CASE 1')
+      newData.checkTsList = [newData.uncheckTsList[0] + editedTask.current.fixedDiffTs]
+    } else {}
 
     console.log('AFTER: editedTask.current.checkTsList[0]')
-    console.log(editedTask.current.checkTsList[0])
+    console.log(editedTask.current.uncheckTsList[0])
 
-    if (!newFixedDiffTs) {
-      console.log('ERR#2')
-      console.log(editedTask.current)
-      return
-    }
-
-    handleTaskUpdate({ ...editedTask.current, newFixedDiffTs })
+    handleTaskUpdate({ ...newData, updateFirstDateOnly: true })
   }
+  */
+  // --
+
+  // -- NOTE: PRICE MODAL
+  // const activeTaskRef = useRef<any>(null)
+  const [editedTask2, setEditedTask2] = useState<any>(null)
+  const [isPriceModalOpened, setIsPriceModalOpened] = useState<boolean>(false)
+  const handleOpenPriceModal = useCallback((data: any) => {
+    setEditedTask2(data) 
+    setIsPriceModalOpened(true)
+  }, [setIsPriceModalOpened, setEditedTask2])
+  const handleClosePriceModal = useCallback(() => {
+    setIsPriceModalOpened(false)
+  }, [setIsPriceModalOpened])
+  const handlePriceModalSubmit = useCallback((price: number) => {
+    if (!!editedTask2 && Number.isInteger(price)) {
+      handleTaskEdit({ ...editedTask2, price })
+      handleClosePriceModal()
+    } else {
+      toast({ title: 'ERR#1', description: 'FUCKUP COND: !!activeTaskRef.current && Number.isInteger(price)', status: 'error', duration: 5000, isClosable: true })
+    }
+  }, [handleTaskEdit, editedTask2])
+  const handleResetExpenses = useCallback(() => {
+    handleTaskEdit({ ...editedTask2, price: 0 })
+  }, [handleTaskEdit, editedTask2])
+  // --
+
+  const MemoCurrentShortStateByRadio = useMemo(() => {
+    switch(radioValue) {
+      case 'checked': return (
+        <span style={{ color: 'var(--chakra-colors-blue-400)' }}>Done: {completedTasksLen}</span>
+      )
+      case 'unchecked': return (
+        <span style={{ color: 'var(--chakra-colors-blue-400)' }}>In progress: {data.length - completedTasksLen}</span>
+      )
+      default: return ( // all
+        <span style={{ color: 'var(--chakra-colors-blue-400)' }}>Total: {data.length}</span>
+      )
+    }
+  }, [radioValue, completedTasksLen, data.length])
 
   return (
     <>
+      <PriceModal
+        key={editedTask2?.price || 'no-price'}
+        isOpened={isPriceModalOpened}
+        onClose={handleClosePriceModal}
+        onSubmit={handlePriceModalSubmit}
+        initialPrice={editedTask2?.price || 0}
+      />
+      {/*
       <DatepickerModal
+        // key={initialUncheckedTs}
         isOpened={isDatepickerOpened && !!initialUncheckedTs}
         onClose={handleCloseDatePicker}
         onSubmit={onUpdateFirstDate}
@@ -182,7 +208,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
         // content={() => (
         //   <pre>{JSON.stringify(editedTask.current, null, 2)}</pre>
         // )}
-      />
+      /> */}
       <Modal
         size="sm"
         isOpen={isOpened}
@@ -193,7 +219,9 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
         <ModalContent>
           <ModalHeader>
             <Stack>
-              <Box>Tasklist{data.length > 0 ? ` ${percentage}% (${completedTasksLen} of ${data.length})` : ''}</Box>
+              <Box>
+                {data.length > 0 ? <><span style={{ color: 'var(--chakra-colors-green-400)' }}>{percentage}%</span> ({completedTasksLen} of {data.length})</> : ''} {MemoCurrentShortStateByRadio}
+              </Box>
               {/* <Box>
                 <FormControl display='flex' alignItems='center'>
                   <Switch id='tasklist-unchecked-only-switcher' mr={3} onChange={toggleUncheckedSwitch} isChecked={isUncheckedOnlyEnabled} />
@@ -270,7 +298,11 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
                           onLoopSwitch={() => {
                             handleTaskLoopToggler(data)
                           }}
-                          onOpenDatePicker={handleOpenDatePicker}
+                          // onOpenDatePicker={handleOpenDatePicker}
+                          onOpenDatePicker={() => { console.log('Datepicker in progress...') }}
+
+                          onPriceModalOpen={handleOpenPriceModal}
+                          onResetExpenses={handleResetExpenses}
                         />
                       )
                     })}

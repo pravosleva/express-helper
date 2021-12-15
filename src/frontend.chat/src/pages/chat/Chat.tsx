@@ -643,7 +643,7 @@ export const Chat = () => {
   // const heighlLimitParentClass = useBreakpointValue({ md: "height-limited-md", base: "height-limited-sm" })
   const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
   const [upToSm] = useMediaQuery(`(min-width: ${md + 1}px)`)
-  const completedTasksLen = useMemo(() => tasklist.filter(({ isCompleted }: any) => isCompleted).length, [JSON.stringify(tasklist)])
+  const completedTasksLen = useMemo(() => !!tasklist ? tasklist.filter(({ isCompleted }: any) => isCompleted).length : 0, [JSON.stringify(tasklist)])
   const percentage = useMemo(() => {
     if (tasklist.length === 0) return 0
 
@@ -1406,7 +1406,8 @@ export const Chat = () => {
                       assignedTo={assignedTo}
                       assignedBy={assignedBy || 'ERR'}
                       onUnassign={(userName: string) => {
-                        handleUnassignFromUser(message, userName)
+                        const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${userName}?`) 
+                        if (isConFirmed) handleUnassignFromUser(message, userName)
                       }}
                     />
                   )}

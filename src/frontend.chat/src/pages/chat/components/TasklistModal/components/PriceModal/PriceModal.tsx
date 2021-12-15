@@ -46,8 +46,8 @@ export const PriceModal = ({ isOpened, onClose, onSubmit, initialPrice }: TProps
         <ModalHeader>Price</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
-          <NumberInput defaultValue={!!price ? price : ''}>
-            <NumberInputField value={price} ref={inputRef} onChange={handleInputChange} />
+          <NumberInput defaultValue={price || 0}>
+            <NumberInputField value={price || 0} ref={inputRef} onChange={handleInputChange} />
           </NumberInput>
           {/* <Input ref={inputRef} placeholder="Search" size='md' value={text} name='searchText' onChange={onChange} /> */}
         </ModalBody>
