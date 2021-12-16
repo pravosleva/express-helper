@@ -59,8 +59,8 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
     // description,
     isCompleted,
     isLooped,
-    checkTsList,
-    uncheckTsList,
+    checkTs,
+    uncheckTs,
     // ts,
     fixedDiff,
     price,
@@ -83,7 +83,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
       <Tag>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
     )
   }
-  const timeEnd: any = !!checkTsList && !!uncheckTsList && isCompleted && isLooped ? checkTsList[0] + (checkTsList[0] - uncheckTsList[0]) : null
+  const timeEnd: any = !!checkTs && !!uncheckTs && isCompleted && isLooped ? checkTs + (checkTs - uncheckTs) : null
   const timeSection = (
     <>
       {!!timeEnd ? (
@@ -98,15 +98,13 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
     </>
   ) // !!diff ? <TimeTag diff={diff} isCompleted={isCompleted} /> : null
 
-  const handleOpenDatepicker = () => {
-    onOpenDatePicker(data)
-  }
+  // const handleOpenDatepicker = () => {
+  //   onOpenDatePicker(data)
+  // }
 
   const MemoizedMenu = useMemo(() => {
     // NOTE: !(all fields is ok)
-    const isFirstLoopRunning = !(!!data.checkTsList && Array.isArray(data.checkTsList) && data.checkTsList.length > 0
-      && !!data.uncheckTsList && Array.isArray(data.uncheckTsList) && data.uncheckTsList.length > 0
-    )
+    const isFirstLoopRunning = !(!!data.checkTs && !!data.uncheckTs)
 
     return (
       <>

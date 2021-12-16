@@ -6,8 +6,8 @@ export type TTask = {
 
   // NOTE: New feature - auto uncheck looper
   isLooped?: boolean
-  checkTsList?: number[]
-  uncheckTsList?: number[]
+  checkTs?: number
+  uncheckTs?: number
   fixedDiff?: number
   price?: number
 }

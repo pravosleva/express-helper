@@ -587,12 +587,12 @@ export const withSocketChat = (io: Socket) => {
 
       let roomTasklist = roomsTasklistMap.get(room)
       const ts = Date.now()
-      const newTask = {
+      const newTask: TRoomTask = {
         ts,
         title,
         description,
         isCompleted: false,
-        uncheckTsList: [ts],
+        uncheckTs: ts,
       }
 
       if (!!roomTasklist && Array.isArray(roomTasklist)) {
@@ -614,8 +614,8 @@ export const withSocketChat = (io: Socket) => {
       description = '',
       isCompleted,
       isLooped,
-      checkTsList,
-      uncheckTsList,
+      checkTs,
+      uncheckTs,
       resetLooper,
       price,
       newFixedDiffTs,
@@ -643,22 +643,22 @@ export const withSocketChat = (io: Socket) => {
 
           if (!!title) newTask.title = title
           if (!!description) newTask.description = description
-          if (!!checkTsList && Array.isArray(checkTsList) && checkTsList.every((e) => Number.isInteger(e))) newTask.checkTsList = checkTsList
-          if (!!uncheckTsList && Array.isArray(uncheckTsList) && uncheckTsList.every((e) => Number.isInteger(e))) newTask.uncheckTsList = uncheckTsList
+          if (!!checkTs && typeof checkTs === 'number') newTask.checkTs = checkTs
+          if (!!uncheckTs && typeof uncheckTs === 'number') newTask.uncheckTs = uncheckTs
           if (isLooped === true || isLooped === false) newTask.isLooped = isLooped
           if (Number.isInteger(price)) newTask.price = price
 
           if (!!newFixedDiffTs) {
             newTask.fixedDiff = newFixedDiffTs
-            if (!!checkTsList && Array.isArray(checkTsList) && checkTsList.every((e) => Number.isInteger(e))) {
-              // newTask.checkTsList = [newTask.uncheckTsList[0] + ]
+            if (!!checkTs && typeof checkTs === 'number') {
+              // newTask.checkTs = [newTask.uncheckTs + ]
 
               if (newTask.isCompleted) {
-                newTask.uncheckTsList = [newTs - newTask.fixedDiff]
-                newTask.checkTsList = [newTs]
+                newTask.uncheckTs = newTs - newTask.fixedDiff
+                newTask.checkTs = newTs
               } else {
-                newTask.uncheckTsList = [newTs]
-                newTask.checkTsList = [newTask.uncheckTsList[0] + newTask.fixedDiff]
+                newTask.uncheckTs = newTs
+                newTask.checkTs = newTask.uncheckTs + newTask.fixedDiff
               }
 
             }
@@ -670,13 +670,13 @@ export const withSocketChat = (io: Socket) => {
             if (resetLooper) {
               // 1.
               if (!!newTask.fixedDiff) delete newTask.fixedDiff
-              newTask.uncheckTsList = [newTs]
+              newTask.uncheckTs = newTs
               newTask.isCompleted = false
-              if (!!newTask.uncheckTsList) delete newTask.checkTsList
+              if (!!newTask.uncheckTs) delete newTask.checkTs
             } else {
               if (oldIsCompleted !== isCompleted) {
                 // NOTE: Update timestamps
-                const targetField = isCompleted ? 'checkTsList' : 'uncheckTsList'
+                const targetField = isCompleted ? 'checkTs' : 'uncheckTs'
                 // const tsList = newTask[targetField]
                 
                 const isChecked = isCompleted
@@ -698,20 +698,20 @@ export const withSocketChat = (io: Socket) => {
                 // 2.1.
                 if (isChecked) {
                   // 2.1.1 Update check point:
-                  newTask[targetField] = [newTs]
+                  newTask[targetField] = newTs
                   if (!newTask.fixedDiff) {
-                    newTask.fixedDiff = newTs - newTask.uncheckTsList[0]
+                    newTask.fixedDiff = newTs - newTask.uncheckTs
                   } else {
                     // 2.1.2 Update uncheck point:
-                    newTask.uncheckTsList = [newTask.checkTsList[0] - newTask.fixedDiff]
+                    newTask.uncheckTs = newTask.checkTs - newTask.fixedDiff
                   }
                 }
                 // 2.2.
                 if (!isChecked) {
-                  newTask[targetField] = [newTs]
-                  if (!!checkTsList && Array.isArray(checkTsList)) {
+                  newTask[targetField] = newTs
+                  if (!!checkTs && typeof checkTs === 'number') {
                     if (!!newTask.fixedDiff) {
-                      newTask.checkTsList = [newTask.uncheckTsList[0] + newTask.fixedDiff]
+                      newTask.checkTs = newTask.uncheckTs + newTask.fixedDiff
                     }
                   }
                 }

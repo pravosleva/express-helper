@@ -67,7 +67,59 @@ const syncRoomsTasklistMap = () => {
       if (isFirstScriptRun) {
         // NOTE: Sync with old state:
         Object.keys(staticData).forEach((roomName: string) => {
-          roomsTasklistMapInstance.set(roomName, staticData[roomName])
+
+          // -- NOTE: migration#1 New tasklist format
+          const oldRoomTasklist = staticData[roomName]
+          const newRoomTasklist = []
+
+          console.log('BEFORE')
+          console.log(oldRoomTasklist)
+
+          if (!!oldRoomTasklist) {
+            for (const task of oldRoomTasklist) {
+
+              const newTask: any = {}
+
+              for (const key in task) {
+                switch (true) {
+                  case key === 'uncheckTsList':
+                  case key === 'checkTsList':
+                    if (!!task[key] && Array.isArray(task[key]) && task[key].length > 0) newTask[key] = task[key][0]
+                    break;
+                  default:
+                    newTask[key] = task[key]
+                    break;
+                }
+              }
+
+              for (const key in newTask) {
+                switch (true) {
+                  case key === 'uncheckTsList':
+                    newTask.uncheckTs = newTask[key]
+                    delete newTask.uncheckTsList
+                    break;
+                  case key === 'checkTsList':
+                    newTask.checkTs = newTask[key]
+                    delete newTask.uncheckTsList
+                    break;
+                  default:
+                    newTask[key] = newTask[key]
+                    break;
+                }
+              }
+
+              delete newTask.uncheckTsList
+              delete newTask.uncheckTsList
+
+              newRoomTasklist.push(newTask)
+            }
+          }
+
+          console.log('AFTE')
+          console.log(newRoomTasklist)
+          // --
+
+          roomsTasklistMapInstance.set(roomName, newRoomTasklist)
         })
       }
 

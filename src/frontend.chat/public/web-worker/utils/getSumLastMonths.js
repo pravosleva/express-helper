@@ -8,16 +8,16 @@ var getSumLastMonths = ({ months, currDate, tasklist }) => {
   const isTaskCounterDone = (task) => {
     let result = false
 
-    if (!!task.fixedDiff && !!task.uncheckTsList) {
-      // const targetDate = new Date(task.uncheckTsList[0] + task.fixedDiff) // (task.checkTsList[0] - task.uncheckTsList[0]))
+    if (!!task.fixedDiff && !!task.uncheckTs) {
+      // const targetDate = new Date(task.uncheckTs + task.fixedDiff) // (task.checkTs - task.uncheckTs))
       const title = `-${task.price}`
 
       // console.group(title)
-      const targetDate = new Date(task.uncheckTsList[0] + task.fixedDiff)
+      const targetDate = new Date(task.uncheckTs + task.fixedDiff)
       const targetDateTs = targetDate.getTime()
       const currStage = getCurrentPercentage({
         targetDateTs,
-        startDateTs: task.uncheckTsList[0]
+        startDateTs: task.uncheckTs
       })
 
       // console.log(currStage)
@@ -29,7 +29,7 @@ var getSumLastMonths = ({ months, currDate, tasklist }) => {
           result = true
 
           // -- TODO: isReady AND not more than <MONTHS>
-          // const hasDeadlineAchieved  = (task.uncheckTsList[0] - task.fixedDiff) - (targetDeadline - mTsDelta) < 0
+          // const hasDeadlineAchieved  = (task.uncheckTs - task.fixedDiff) - (targetDeadline - mTsDelta) < 0
 
           // console.log(hasDeadlineAchieved)
           // if (hasDeadlineAchieved) {
@@ -53,8 +53,8 @@ var getSumLastMonths = ({ months, currDate, tasklist }) => {
 
   return tasklist.reduce((acc, task) => {
     if (
-      !!task.uncheckTsList && Array.isArray(task.uncheckTsList) && task.uncheckTsList.length > 0
-      && !!task.checkTsList && Array.isArray(task.checkTsList) && task.checkTsList.length > 0
+      !!task.uncheckTs
+      && !!task.checkTs
 
       // 1. Base requirements:
       // && task.isLooped
@@ -62,11 +62,11 @@ var getSumLastMonths = ({ months, currDate, tasklist }) => {
 
       // 2. NOTE: Waiting time (not asap)
       // Counter is done OR incompleted:
-      && ((isTaskCounterDone(task) && task.isCompleted) || (!task.isCompleted))
+      && ((isTaskCounterDone(task) && task.isCompleted && task.isLooped) || (!task.isCompleted))
       // INCORRECT CONDITION: && !task.isCompleted // Task in progress
       
       // 3. Valid range:
-      // && task.checkTsList[0] <= targetDate // Global (montn 1, 2, 3, 6)
+      // && task.checkTs <= targetDate // Global (montn 1, 2, 3, 6)
     ) {
       return acc + (task.price || 0)
     }

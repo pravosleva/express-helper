@@ -48,7 +48,7 @@ export const TotalSum = () => {
   const timeout = useRef<any>()
 
   useEffect(() => {
-    timeout.current = setTimeout(updateSum, 2000)
+    timeout.current = setTimeout(updateSum, 1000)
 
     return () => {
       if (!!timeout.current) clearTimeout(timeout.current)

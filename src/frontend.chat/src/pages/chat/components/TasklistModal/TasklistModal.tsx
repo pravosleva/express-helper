@@ -123,7 +123,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
   const editedTask = useRef<any>(null)
   const handleOpenDatePicker = useCallback((data: any) => {
     editedTask.current = data
-    setInitialUncheckedTs(data.uncheckTsList[0])
+    setInitialUncheckedTs(data.uncheckTs)
     setIsDatepickerOpened(true)
   }, [setIsDatepickerOpened, setInitialUncheckedTs])
   const handleCloseDatePicker = useCallback(() => {
@@ -132,19 +132,19 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
 
   const onUpdateFirstDate = (selectedTs: number) => {
     console.log('SELECTED DATE:', selectedTs)
-    console.log('BEFORE: editedTask.current.uncheckTsList[0]')
-    console.log(editedTask.current.uncheckTsList[0])
+    console.log('BEFORE: editedTask.current.uncheckTs')
+    console.log(editedTask.current.uncheckTs)
     const newData = { ...editedTask.current }
 
-    newData.uncheckTsList = [selectedTs]
+    newData.uncheckTs = [selectedTs]
 
-    if (!!newData.checkTsList) {
+    if (!!newData.checkTs) {
       console.log('CASE 1')
-      newData.checkTsList = [newData.uncheckTsList[0] + editedTask.current.fixedDiffTs]
+      newData.checkTs = [newData.uncheckTs + editedTask.current.fixedDiffTs]
     } else {}
 
-    console.log('AFTER: editedTask.current.checkTsList[0]')
-    console.log(editedTask.current.uncheckTsList[0])
+    console.log('AFTER: editedTask.current.checkTs')
+    console.log(editedTask.current.uncheckTs)
 
     handleTaskUpdate({ ...newData, updateFirstDateOnly: true })
   }

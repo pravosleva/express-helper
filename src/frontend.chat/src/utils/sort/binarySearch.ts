@@ -41,8 +41,8 @@ type TRoomTask = {
 
   // NOTE: New feature - auto uncheck looper
   // isLooped?: boolean
-  // checkTsList?: number[]
-  // uncheckTsList?: number[]
+  // checkTs?: number[]
+  // uncheckTs?: number[]
 }
 type TProps = {
   messages: TMessage[] | TRoomTask[]
