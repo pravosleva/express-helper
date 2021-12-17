@@ -29,6 +29,7 @@ export type TMessage = {
   // type?: EMessageType
   assignedTo?: string[]
   assignedBy?: string
+  fileName?: string
 }
 // export type TRoomData = {
 //   [userName: string]: TMessage[]
@@ -65,3 +66,25 @@ export type TRoomTask = {
   price?: number
 }
 export type TRoomTasklist = TRoomTask[]
+
+export type TOperstionResult = {
+  isOk: boolean
+  isPrivateSocketCb: boolean
+  shouldLogout: boolean
+  targetMessage: TMessage
+  errMsgData?: { title?: string, description?: string }
+}
+
+export type TUploadFileEvent = {
+  file: {
+    name: string // 'broken-screen-hor-inv-x1920-x-1080.jpg',
+    mtime: string // 2020-07-25T17:14:33.606Z,
+    encoding: string // 'octet',
+    clientDetail: any // {},
+    meta: any // {},
+    id: number // 0,
+    size: number // 835009,
+    bytesLoaded: number // 0,
+    success: boolean // true
+  }
+}

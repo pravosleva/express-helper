@@ -2,7 +2,6 @@ import { instrument } from '@socket.io/admin-ui'
 import { Socket } from 'socket.io'
 import bcrypt from 'bcryptjs'
 import { binarySearchTsIndex } from '~/utils/binarySearch'
-import { getRandomString } from '~/utils/getRandomString'
 import {
   roomsMapInstance as roomsMap,
   registeredUsersMapInstance as registeredUsersMap,
@@ -13,13 +12,14 @@ import {
   TRoomTask,
   EMessageStatus,
   TConnectionData,
+  TMessage,
+  TUploadFileEvent,
 } from './state'
-import DeviceDetector from 'device-detector-js'
 import siofu from 'socketio-file-upload'
 import path from 'path'
 import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
 import { removeFileIfNecessary } from '~/utils/fs-tools/removeFileIfNecessary'
-import slugify from 'slugify'
+import { getParsedUserAgent, getToken, standardResultHandler } from './utils'
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? String(token) === CHAT_ADMIN_TOKEN : false
@@ -28,54 +28,10 @@ const CHAT_UPLOADS_DIR_NAME = process.env.CHAT_UPLOADS_DIR_NAME || 'uploads'
 // -- Create uploads dir if necessary
 const projectRootDir = path.join(__dirname, '../../../')
 const uploadsPath = path.join(projectRootDir, `/storage/${CHAT_UPLOADS_DIR_NAME}`)
-
 createDirIfNecessary(uploadsPath)
 // --
 
-export type TMessage = {
-  text: string
-  ts: number
-  editTs?: number
-  rl?: ERegistryLevel
-  user: string
-  fileName?: string
-  status?: EMessageStatus
-}
-
-const deviceDetector = new DeviceDetector()
-const getParsedUserAgent = (socket: any): DeviceDetector.DeviceDetectorResult => deviceDetector.parse(socket.handshake.headers['user-agent'])
-
-type TUploadFileEvent = {
-  file: {
-    name: string // 'broken-screen-hor-inv-x1920-x-1080.jpg',
-    mtime: string // 2020-07-25T17:14:33.606Z,
-    encoding: string // 'octet',
-    clientDetail: any // {},
-    meta: any // {},
-    id: number // 0,
-    size: number // 835009,
-    bytesLoaded: number // 0,
-    success: boolean // true
-  }
-}
-
 const uploadProgressMap = new Map<string, { connData: TConnectionData, status: string, event: any, ts: number }>()
-const getToken = (userName: string): string => {
-  let token = getRandomString(7)
-
-  // -- NOTE: Более информативный токен
-  const connectionData = usersMap.get(userName)
-
-  let uaInfo = []
-  if (!!connectionData?.userAgent?.client?.name) uaInfo.push(slugify(connectionData.userAgent.client.name))
-  if (!!connectionData?.userAgent?.device?.type) uaInfo.push(slugify(connectionData.userAgent.device.type))
-  if (!!connectionData?.userAgent?.os?.name) uaInfo.push(slugify(connectionData.userAgent.os.name))
-
-  if (!!uaInfo) token = `${uaInfo.join('-')}.${token}`
-  // --
-
-  return token
-}
 
 export const withSocketChat = (io: Socket) => {
   // -- NOTE: Logout on front
@@ -516,66 +472,50 @@ export const withSocketChat = (io: Socket) => {
       if (!!cb) cb()
     })
 
-    socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: { text: string, status?: EMessageStatus, assignedTo?: string[] } }, cb) => {
+    socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: { text: string, status?: EMessageStatus, assignedTo?: string[] } }, cb?: () => void) => {
       const result = roomsMap.editMessage({ room, name, ts, newData })
 
-      if (!result.isOk) {
-        if (result.isPrivateSocketCb) {
-          // if (!!cb && !!result.errMsgData) cb(result.errMsgData.description)
-          socket.emit('notification', { status: 'error', title: result.errMsgData.title, description: result.errMsgData.description })
-          if (result.shouldLogout) socket.emit('FRONT:LOGOUT')
-        }
-      } else {
-        io.in(room).emit('message.update', result.targetMessage);
-      }
+      standardResultHandler({
+        result,
+        cbSuccess: ({ result }) => {
+          io.in(room).emit('message.update', result.targetMessage);
+        },
+        cbError: ({ result }) => {
+          if (result.isPrivateSocketCb) {
+            // if (!!cb && !!result.errMsgData) cb(result.errMsgData.description)
+            socket.emit('notification', { status: 'error', title: result.errMsgData.title, description: result.errMsgData.description })
+            if (result.shouldLogout) socket.emit('FRONT:LOGOUT')
+          }
+        },
+      })
       if (!!cb) cb()
     })
     socket.on('deleteMessage', ({ room, name, ts }, cb) => {
-      let roomData = roomsMap.get(room)
-      try {
-        if (!roomData) {
-          if (cb) cb('roomData not found')
-          return
-        } else {
-          const userMessages: TMessage[] = roomData
-  
-          if (!userMessages) {
-            if (cb) cb('roomData[name] not found')
-            return
-          } else {
-            // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
-            const theMessageIndex = binarySearchTsIndex({
-              messages: userMessages,
-              targetTs: ts
-            })
-  
-            if (theMessageIndex === -1) {
-              if (cb) cb(`theMessage not found: ts ${ts}`)
-              return
-            } else {
-              const targetMessage = userMessages[theMessageIndex]
+      const result = roomsMap.deleteMessage({ roomId: room, ts })
 
-              // userMessages[theMessageIndex].text = newMessage
-              const newUserMessages = userMessages.filter(({ ts: t }) => t !== ts)
-              roomData = newUserMessages
-              roomsMap.set(room, roomData)
-              // io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
-              io.in(room).emit('message.delete', { ts });
+      standardResultHandler({
+        result,
+        cbSuccess: ({ result }) => {
+          // io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+          io.in(room).emit('message.delete', { ts });
 
-              // -- NOTE: DELETE FILE!
-              if (!!targetMessage.fileName) {
-                const storagePath = uploadsPath
+          // -- NOTE: DELETE FILE!
+          if (!!result.targetMessage.fileName) {
+            const storagePath = uploadsPath
 
-                removeFileIfNecessary(path.join(storagePath, targetMessage.fileName))
-              }
-              // --
-            }
+            removeFileIfNecessary(path.join(storagePath, result.targetMessage.fileName))
           }
-        }
-      } catch (err) {
-        socket.emit('notification', { status: 'error', title: 'ERR #3', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error' })
-        socket.emit('FRONT:LOGOUT')
-      }
+          // --
+        },
+        cbError: ({ result }) => {
+          if (cb) cb(result.errMsgData?.description || 'ERR')
+
+          if (result.isPrivateSocketCb) {
+            socket.emit('notification', { status: 'error', title: result.errMsgData?.title || 'ERR #3', description: result.errMsgData?.description || 'Server error' })
+          }
+          if (result.shouldLogout) socket.emit('FRONT:LOGOUT')
+        },
+      })
     })
 
     // --- NOTE: TASKLIST
@@ -809,8 +749,5 @@ export const withSocketChat = (io: Socket) => {
   })
 
   // @ts-ignore
-  instrument(io, {
-    auth: false,
-    namespace: '/admin',
-  })
+  instrument(io, { auth: false, namespace: '/admin' })
 }

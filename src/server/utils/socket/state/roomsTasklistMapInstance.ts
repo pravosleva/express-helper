@@ -72,9 +72,6 @@ const syncRoomsTasklistMap = () => {
           const oldRoomTasklist = staticData[roomName]
           const newRoomTasklist = []
 
-          console.log('BEFORE')
-          console.log(oldRoomTasklist)
-
           if (!!oldRoomTasklist) {
             for (const task of oldRoomTasklist) {
 
@@ -114,9 +111,6 @@ const syncRoomsTasklistMap = () => {
               newRoomTasklist.push(newTask)
             }
           }
-
-          console.log('AFTE')
-          console.log(newRoomTasklist)
           // --
 
           roomsTasklistMapInstance.set(roomName, newRoomTasklist)

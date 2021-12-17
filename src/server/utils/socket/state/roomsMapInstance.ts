@@ -94,7 +94,7 @@ class Singleton {
   } {
     let roomData = this.state.get(room)
     let isOk: boolean = false
-    let errMsgData: { title?: string, description?: string } = {
+    const errMsgData: { title?: string, description?: string } = {
       title: undefined,
       description: undefined
     }
@@ -151,6 +151,72 @@ class Singleton {
 
       // socket.emit('notification', { status: 'error', title: 'ERR #1', description: !!err.message ? `Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error' })
       // socket.emit('FRONT:LOGOUT')
+    }
+
+    return {
+      isOk,
+      errMsgData,
+      isPrivateSocketCb,
+      shouldLogout,
+      targetMessage,
+    }
+  }
+  public deleteMessage({ roomId: room, ts }: { roomId: string, ts: number }) {
+    let roomData = this.state.get(room)
+    let isOk: boolean = false
+    const errMsgData: { title?: string, description?: string } = {
+      title: undefined,
+      description: undefined
+    }
+    let isPrivateSocketCb = false
+    let shouldLogout = false
+    let targetMessage
+
+    try {
+      if (!roomData) {
+        isOk = false
+        isPrivateSocketCb = true
+        errMsgData.description = 'roomData not found'
+        errMsgData.title = 'SERVER ERR #2021121800:32'
+      } else {
+        const roomMessages: TMessage[] = roomData
+
+        if (!roomMessages) {
+          isOk = false
+          isPrivateSocketCb = true
+          errMsgData.description = `roomMessages is ${typeof roomMessages} not found`
+          errMsgData.title = 'SERVER ERR #2021121800:32'
+        } else {
+          // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
+          const theMessageIndex = binarySearchTsIndex({
+            messages: roomMessages,
+            targetTs: ts
+          })
+
+          if (theMessageIndex === -1) {
+            
+            isOk = false
+            isPrivateSocketCb = true
+            errMsgData.description = `theMessage not found for ts ${ts}`
+            errMsgData.title = 'SERVER ERR #2021121800:32'
+          } else {
+            const _targetMessage = roomMessages[theMessageIndex]
+            const newUserMessages = roomMessages.filter(({ ts: t }) => t !== ts)
+
+            roomData = newUserMessages
+            this.state.set(room, roomData)
+            isOk = true
+            isPrivateSocketCb = false
+            targetMessage = _targetMessage
+          }
+        }
+      }
+    } catch (err) {
+      isOk = false
+      isPrivateSocketCb = true
+      errMsgData.description = !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error'
+      errMsgData.title = 'SERVER #ERR3'
+      shouldLogout = true
     }
 
     return {
