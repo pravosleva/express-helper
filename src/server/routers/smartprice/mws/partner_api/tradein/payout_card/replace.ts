@@ -12,7 +12,8 @@ const toClient = [
   },
   {
     ok: true,
-    add_card_iframe_url: 'https://google.com'
+    add_card_iframe_url: 'https://google.com',
+    wait_seconds: 5,
   },
 ]
 const _help: THelp = {
@@ -48,6 +49,11 @@ const _help: THelp = {
     message: {
       type: 'string',
       descr: 'Fail reason text for user',
+      required: false,
+    },
+    wait_seconds: {
+      type: 'number',
+      descr: 'Для кнопки Отправить SMS еще раз',
       required: false,
     },
   },
