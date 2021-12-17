@@ -65,7 +65,7 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
 
   return (
     !!roomlistLS ? (
-      <Stack>
+      <Stack pl={0} pr={0}>
         {MemoBtns}
       </Stack>
     ) : null

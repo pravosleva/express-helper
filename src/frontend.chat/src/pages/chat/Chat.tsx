@@ -86,7 +86,8 @@ import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
 import { SearchUserModal } from './components/SearchUserModal'
 import { UserAva } from '~/pages/chat/components/UserAva'
 import { AssignedBox } from './components/AssignedBox'
-import { AssignmentCustomSettings } from './components/AssignmentCustomSettings'
+import { AccordionSettings } from './components/AccordionSettings'
+import { FcGallery } from 'react-icons/fc'
 
 /* -- NOTE: Socket upload file evs
 // Sample 1 (12.3 kB)
@@ -848,6 +849,8 @@ export const Chat = () => {
     handleResetAssignmentFilters()
   }, [resetFilters, resetForm, handleResetAssignmentFilters])
 
+  const allImagesMessagesLightboxFormat = useMemo(() => logic.getAllImagesLightboxFormat(), [logic])
+
   return (
     <>
       <SearchUserModal
@@ -1072,6 +1075,16 @@ export const Chat = () => {
                         <Button onClick={handleSearchUserModalOpen} as={Button} mr={2} colorScheme="gray" variant="outline" leftIcon={<CgSearch size={18}/>}>
                           Search user tst
                         </Button> */}
+                        {
+                          !!allImagesMessagesLightboxFormat && allImagesMessagesLightboxFormat.length > 0 && (
+                            <Button
+                              colorScheme="gray"
+                              variant="outline"
+                              leftIcon={<FcGallery color='#FFF' size={18} />}
+                              onClick={() => { handleOpenGallery(allImagesMessagesLightboxFormat[0].src) }}
+                            >Photos</Button>
+                          )
+                        }
                       </Flex>
                       
                       {
@@ -1092,34 +1105,42 @@ export const Chat = () => {
                               )}
                               </Box>
                             </Box>
-                            {
-                              isAssignmentFeatureEnabled && (
-                                <AssignmentCustomSettings
-                                  logic={logic}
-                                  onAddAssignedToFilters={handleAddAssignedToFilter}
-                                  onRemoveAssignedToFilters={handleRemoveAssignedToFilter}
-                                  assignmentExecutorsFilters={assignmentExecutorsFilters}
-                                  onResetFilters={handleResetAssignmentFilters}
-                                  onSetFilters={setFilters}
-                                  activeFilters={filters}
-                                />
-                              )
-                            }
+                            <AccordionSettings
+                              isAssignmentFeatureEnabled={isAssignmentFeatureEnabled}
+                              logic={logic}
+                              onAddAssignedToFilters={handleAddAssignedToFilter}
+                              onRemoveAssignedToFilters={handleRemoveAssignedToFilter}
+                              assignmentExecutorsFilters={assignmentExecutorsFilters}
+                              onResetFilters={handleResetAssignmentFilters}
+                              onSetFilters={setFilters}
+                              activeFilters={filters}
+                              addsAccordionItems={[
+                                {
+                                  uniqueKey: 'roomlist',
+                                  accordionPanelContent: (
+                                    <Roomlist
+                                      resetMessages={resetMessages}
+                                      onCloseMenuBar={() => {
+                                        handleCloseDrawerMenu()
+                                        updateRoomTsInLS(room)
+                                      }}
+                                      handleRoomClick={handleRoomClick}
+                                    />
+                                  ),
+                                  accordionButtonContent: (
+                                    <Flex alignItems="center">
+                                      <Text fontWeight="400" fontSize="md" letterSpacing="0">
+                                        My Rooms
+                                      </Text>
+                                      {hasNews && <Box ml={2} h={2} w={2} borderRadius="100px" bg='green.300'></Box>}
+                                    </Flex>
+                                  ),
+                                },
+                              ]}
+                            />
                           </>
                         )
                       }
-                      <Box>
-                        <Text mb={6}>My Rooms</Text>
-                        <Roomlist
-                          resetMessages={resetMessages}
-                          onCloseMenuBar={() => {
-                            handleCloseDrawerMenu()
-                            updateRoomTsInLS(room)
-                          }}
-                          handleRoomClick={handleRoomClick}
-                        />
-                      </Box>
-                      
                     </Stack> 
                   </DrawerBody>
 

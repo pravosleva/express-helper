@@ -311,6 +311,7 @@ export const Login = () => {
                 onChange={handleChangePassword}
                 ref={passwordRef}
                 type='password'
+                autoComplete='false'
               />
             </FormControl>
           </ModalBody>

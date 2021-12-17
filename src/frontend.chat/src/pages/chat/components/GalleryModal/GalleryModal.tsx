@@ -17,7 +17,9 @@ import {
   // Tbody,
   // Text,
   // Box,
+  useMediaQuery,
 } from '@chakra-ui/react'
+import { md } from '~/common/chakra/theme'
 import {
   TImageLightboxFormat, TMessage,
 } from '~/utils/interfaces'
@@ -83,10 +85,12 @@ export const GalleryModal = ({
   const handleTextClick = useCallback((text: string) => {
     window.alert(text)
   }, [])
+  const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
+  // const [upToSm] = useMediaQuery(`(min-width: ${md + 1}px)`)
 
   return (
     <Modal
-      size="sm"
+      size={downToSm ? "full" : 'sm'}
       isOpen={isOpened}
       onClose={onClose}
       scrollBehavior='inside'

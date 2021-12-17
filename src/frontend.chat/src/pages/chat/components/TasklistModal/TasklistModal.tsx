@@ -21,7 +21,9 @@ import {
   Stack,
   RadioGroup,
   Radio,
+  useMediaQuery,
 } from '@chakra-ui/react'
+import { md } from '~/common/chakra/theme'
 import { useSocketContext } from '~/socketContext'
 import { useMainContext } from '~/mainContext'
 import { useForm } from '~/common/hooks/useForm'
@@ -188,6 +190,8 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
       )
     }
   }, [radioValue, completedTasksLen, data.length])
+  const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
+  // const [upToSm] = useMediaQuery(`(min-width: ${md + 1}px)`)
 
   return (
     <>
@@ -210,7 +214,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
         // )}
       /> */}
       <Modal
-        size="sm"
+        size={downToSm ? "full" : 'sm'}
         isOpen={isOpened}
         onClose={onClose}
         scrollBehavior='inside'
