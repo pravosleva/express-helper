@@ -826,8 +826,26 @@ export const Chat = () => {
   }
 
   // -- Assignment feature switcher
-  const [afLS, setAfLS] = useLocalStorage<string>('chat.assignment-feature')
-  const [isAssignmentFeatureEnabled, setIsAssignmentFeatureEnabled] = useState<boolean>(afLS === '1')
+  const [afLS, setAfLS] = useLocalStorage<{ [key: string]: number }>('chat.assignment-feature')
+  const setAFLSRoom = useCallback((val: number) => {
+    console.log(room, val)
+    setAfLS((oldState) => {
+      console.log(oldState)
+      console.log('->')
+      const newState: any = {}
+
+      // NOTE: #migration
+      for (const key in oldState) {
+        if (typeof key === 'string' && key !== '0') newState[key] = oldState[key]
+      }
+
+      newState[room] = val
+
+      console.log(newState)
+      return newState
+    })
+  }, [room, setAfLS])
+  const isAssignmentFeatureEnabled = useMemo(() => !!afLS?.[room], [afLS, room])
   const [isAssignmentDescrOpened, setIsAssignmentDescrOpened] = useState<boolean>(false)
   const openAssignmentDescr = useCallback((e) => {
     setIsAssignmentDescrOpened(true)
@@ -837,10 +855,8 @@ export const Chat = () => {
   }, [setIsAssignmentDescrOpened])
 
   const toggleAssignmentFeature = useCallback((e) => {
-    console.log(e.target.checked)
-    setIsAssignmentFeatureEnabled(e.target.checked)
-    setAfLS(e.target.checked ? '1' : '0')
-  }, [setIsAssignmentFeatureEnabled])
+    setAFLSRoom(e.target.checked ? 1 : 0)
+  }, [setAFLSRoom])
   // --
 
   const resetSearchAndFiltersAndAssignmentFilters = useCallback(() => {
@@ -1092,7 +1108,7 @@ export const Chat = () => {
                           <>
                             <Box>
                               <FormControl display='flex' alignItems='center'>
-                                <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} defaultChecked={isAssignmentFeatureEnabled} />
+                                <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} isChecked={isAssignmentFeatureEnabled} />
                                 <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
                                   Assignment feature
                                 </FormLabel>

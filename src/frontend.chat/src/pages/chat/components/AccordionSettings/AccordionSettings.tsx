@@ -21,6 +21,7 @@ import { FaTrashAlt, FaCheck } from 'react-icons/fa'
 import { AiOutlineFire } from 'react-icons/ai'
 import { FiActivity } from 'react-icons/fi'
 import { EMessageStatus, TMessage } from '~/utils/interfaces'
+import { useMainContext } from '~/mainContext'
 
 type TSetting = {
   name: string
@@ -54,7 +55,8 @@ export const AccordionSettings = ({
   activeFilters,
   addsAccordionItems,
 }: TProps) => {
-  const [settingsLS, setSettingsLS] = useLocalStorage<{ [key: string]: TSetting }>('chat.assignment-feature.custom-settings', {})
+  const { room } = useMainContext()
+  const [settingsLS, setSettingsLS] = useLocalStorage<{ [key: string]: { [key: string]: TSetting } }>('chat.assignment-feature.custom-settings', {})
   const [isUsersSearchModalOpened, setIsUsersSearchModalOpened] = useState<boolean>(false)
   const toggleSearchModal = useCallback(() => {
     setIsUsersSearchModalOpened((s) => !s)
@@ -64,10 +66,15 @@ export const AccordionSettings = ({
   }, [setIsUsersSearchModalOpened])
   const handleAddtUser = useCallback((userName: string) => {
     const newItem = { name: userName }
-    const newState = !!settingsLS ? { ...settingsLS } : {}
+    let newState = !!settingsLS ? { ...settingsLS } : {}
     const ts = Date.now()
+    
+    // -- NOTE: #migration
+    // @ts-ignore
+    if(!newState[room]) newState = { ...newState, [room]: {} }
+    // --
   
-    newState[newItem.name] = { name: userName, ts }
+    newState[room][newItem.name] = { name: userName, ts }
 
     setSettingsLS(newState)
     handleCloseSearchModal()
@@ -79,15 +86,23 @@ export const AccordionSettings = ({
 
     if (assignmentExecutorsFilters.includes(name)) onRemoveAssignedToFilters(name)
 
-    const newState: {[key: string]: { name: string, ts: number }} = {}
-    for (const key in settingsLS) {
-      if (key !== name) newState[key] = settingsLS[key]
+    let newState: {[key: string]: {[key: string]: { name: string, ts: number }}} = {}
+
+    for (const _room in settingsLS) {
+      if (_room === room) {
+        for (const key in settingsLS[room]) {
+          if (key !== name) {
+            if (!newState?.[room]) newState = { ...newState, [room]: {}}
+            newState[room][key] = settingsLS[room][key]
+          }
+        }
+      }
     }
 
     setSettingsLS(newState)
-  }, [assignmentExecutorsFilters, onRemoveAssignedToFilters, settingsLS])
+  }, [assignmentExecutorsFilters, onRemoveAssignedToFilters, settingsLS, setSettingsLS, room])
 
-  const users = useMemo(() => !!settingsLS ? Object.keys(settingsLS) : [], [settingsLS])
+  const users = useMemo(() => !!settingsLS?.[room] ? Object.keys(settingsLS[room]) : [], [settingsLS, room])
   const handleUserFilterClick = useCallback((name: string) => {
     console.log(name)
     if (assignmentExecutorsFilters.includes(name)) {
@@ -99,14 +114,18 @@ export const AccordionSettings = ({
   const countersMap = useMemo(() => {
     const res: {[key: string]: { total: number }} = {}
 
-    for (const key in settingsLS) {
-      res[key] = {
-        total: logic.getAssignmentCounterExecutor(key),
+    for (const _room in settingsLS) {
+      if (_room === room) {
+        for (const key in settingsLS[_room]) {
+          res[key] = {
+            total: logic.getAssignmentCounterExecutor(key),
+          }
+        }
       }
     }
 
     return res
-  }, [logic, settingsLS])
+  }, [logic, settingsLS, room])
   const hasEnabledFilters = assignmentExecutorsFilters.length > 0
   const dangerCounter = useMemo(() => logic.getCountByFilters([EMessageStatus.Danger], assignmentExecutorsFilters), [assignmentExecutorsFilters, logic])
   const warnCounter = useMemo(() => logic.getCountByFilters([EMessageStatus.Warn], assignmentExecutorsFilters), [assignmentExecutorsFilters, logic])
@@ -127,10 +146,12 @@ export const AccordionSettings = ({
             onClose={handleCloseSearchModal}
             onSelectItem={handleAddtUser}
             selectItemButtonText='Add'
-            assignmentCountersMap={countersMap}
+            // assignmentCountersMap={countersMap}
+            isDisabledItem={(userName: string) => !!countersMap ? (!!countersMap[userName]?.total || countersMap[userName]?.total === 0) : false}
           />
         )
       }
+      {/* <pre>{JSON.stringify(countersMap, null, 2)}</pre> */}
       <Accordion allowToggle defaultIndex={0}>
         {
           isAssignmentFeatureEnabled && (
