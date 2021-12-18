@@ -183,7 +183,7 @@ export const Chat = () => {
   const history = useHistory()
   const toast = useToast()
   const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 2000 })
-  const [tokenLS] = useLocalStorage<any>('chat.token')
+  const [tokenLS, _setTokenLS, removeTokenLS] = useLocalStorage<any>('chat.token')
   // const textFieldRef = useRef<HTMLInputElement>(null)
   const textFieldRef = useRef<HTMLTextAreaElement>(null)
 
@@ -762,11 +762,16 @@ export const Chat = () => {
 
     if (!!socket) socket.emit('logout', { name, token: String(tokenLS) })
     updateRoomTsInLS(room)
+
+    // -- NOTE: New
+    removeTokenLS()
+    // --
+
     setTimeout(() => {
       // history.go(0)
       history.push('/')
     }, 0)
-  }, [updateRoomTsInLS, socket])
+  }, [updateRoomTsInLS, socket, removeTokenLS, tokenLS])
   const handleRoomClick = useCallback((room) => {
     // console.log(room, 'CLICKED')
     updateRoomTsInLS(room)
@@ -1111,60 +1116,60 @@ export const Chat = () => {
                         }
                       </Flex>
                       
-                      {
-                        regData?.registryLevel === ERegistryLevel.TGUser && (
-                          <>
-                            <Box>
-                              <FormControl display='flex' alignItems='center'>
-                                <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} isChecked={isAssignmentFeatureEnabled} />
-                                <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
-                                  Assignment feature
-                                </FormLabel>
-                              </FormControl>
-                              <Box mt={3} mb={0}>
-                              {isAssignmentDescrOpened ? (
-                                <span>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу<br /><Button size='sm' variant='link' onClick={closeAssignmentDescr} rounded='3xl'>Close</Button></span>
-                              ) : (
-                                <Button size='sm' variant='link' onClick={openAssignmentDescr} rounded='3xl'>What is it?</Button>
-                              )}
-                              </Box>
+                      <>
+                        {regData?.registryLevel === ERegistryLevel.TGUser && (
+                          <Box>
+                            <FormControl display='flex' alignItems='center'>
+                              <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} isChecked={isAssignmentFeatureEnabled} />
+                              <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
+                                Assignment feature
+                              </FormLabel>
+                            </FormControl>
+                            <Box mt={3} mb={0}>
+                            {isAssignmentDescrOpened ? (
+                              <span>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу<br /><Button size='sm' variant='link' onClick={closeAssignmentDescr} rounded='3xl'>Close</Button></span>
+                            ) : (
+                              <Button size='sm' variant='link' onClick={openAssignmentDescr} rounded='3xl'>What is it?</Button>
+                            )}
                             </Box>
-                            <AccordionSettings
-                              isAssignmentFeatureEnabled={isAssignmentFeatureEnabled}
-                              logic={logic}
-                              onAddAssignedToFilters={handleAddAssignedToFilter}
-                              onRemoveAssignedToFilters={handleRemoveAssignedToFilter}
-                              assignmentExecutorsFilters={assignmentExecutorsFilters}
-                              onResetFilters={handleResetAssignmentFilters}
-                              onSetFilters={setFilters}
-                              activeFilters={filters}
-                              addsAccordionItems={[
-                                {
-                                  uniqueKey: 'roomlist',
-                                  accordionPanelContent: (
-                                    <Roomlist
-                                      resetMessages={resetMessages}
-                                      onCloseMenuBar={() => {
-                                        handleCloseDrawerMenu()
-                                        updateRoomTsInLS(room)
-                                      }}
-                                      handleRoomClick={handleRoomClick}
-                                    />
-                                  ),
-                                  accordionButtonContent: (
-                                    <Flex alignItems="center">
-                                      <Text fontWeight="400" fontSize="md" letterSpacing="0">
-                                        My Rooms
-                                      </Text>
-                                      {hasNews && <Box ml={2} h={2} w={2} borderRadius="100px" bg='green.300'></Box>}
-                                    </Flex>
-                                  ),
-                                },
-                              ]}
-                            />
-                          </>
-                        )
-                      }
+                          </Box>
+                        )}
+                        
+                        <AccordionSettings
+                          registryLevel={regData?.registryLevel}
+                          isAssignmentFeatureEnabled={isAssignmentFeatureEnabled}
+                          logic={logic}
+                          onAddAssignedToFilters={handleAddAssignedToFilter}
+                          onRemoveAssignedToFilters={handleRemoveAssignedToFilter}
+                          assignmentExecutorsFilters={assignmentExecutorsFilters}
+                          onResetFilters={handleResetAssignmentFilters}
+                          onSetFilters={setFilters}
+                          activeFilters={filters}
+                          defaultAccordionItems={[
+                            {
+                              uniqueKey: 'roomlist',
+                              accordionPanelContent: (
+                                <Roomlist
+                                  resetMessages={resetMessages}
+                                  onCloseMenuBar={() => {
+                                    handleCloseDrawerMenu()
+                                    updateRoomTsInLS(room)
+                                  }}
+                                  handleRoomClick={handleRoomClick}
+                                />
+                              ),
+                              accordionButtonContent: (
+                                <Flex alignItems="center">
+                                  <Text fontWeight="400" fontSize="md" letterSpacing="0">
+                                    My Rooms
+                                  </Text>
+                                  {hasNews && <Box ml={2} h={2} w={2} borderRadius="100px" bg='green.300'></Box>}
+                                </Flex>
+                              ),
+                            },
+                          ]}
+                        />
+                      </>
                     </Stack> 
                   </DrawerBody>
 

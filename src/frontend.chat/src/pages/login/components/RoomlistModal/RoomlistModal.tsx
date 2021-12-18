@@ -26,6 +26,7 @@ import { getABSortedObj } from '~/utils/sort/getABSortedObj'
 import './RoomlistModal.scss'
 import { IoMdAdd, IoMdClose } from 'react-icons/io'
 // import { BsArrowLeft } from 'react-icons/bs'
+import slugify from 'slugify'
 
 type TProps = {
   isOpened: boolean
@@ -93,7 +94,7 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
                     <Tbody>
                       {displayedObj[key].map((roomName: string) => {
                         const handleDel = () => {
-                          onDelete(roomName)
+                          onDelete(slugify(roomName))
                         }
                         const handleClick = () => {
                           onSelectRoom(roomName)

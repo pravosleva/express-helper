@@ -31,6 +31,8 @@ const uploadsPath = path.join(projectRootDir, `/storage/${CHAT_UPLOADS_DIR_NAME}
 createDirIfNecessary(uploadsPath)
 // --
 
+console.log('--- bcrypt.hash 1234', bcrypt.hashSync('1234'))
+
 const uploadProgressMap = new Map<string, { connData: TConnectionData, status: string, event: any, ts: number }>()
 
 export const withSocketChat = (io: Socket) => {

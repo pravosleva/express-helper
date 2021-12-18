@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useCallback, useRef, useMemo } 
 import { useHistory, useLocation } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
 import { SocketContext } from '~/socketContext'
-import { Flex, FormControl, FormLabel, Heading, IconButton, Input } from '@chakra-ui/react'
+import { Flex, FormControl, FormLabel, Heading, HStack, IconButton, Input, PinInput, PinInputField } from '@chakra-ui/react'
 import { RiArrowRightLine } from 'react-icons/ri'
 import {
   Modal,
@@ -13,6 +13,8 @@ import {
   ModalBody,
   ModalCloseButton,
   Button,
+  Text,
+  Box,
 
   useToast,
   useDisclosure,
@@ -102,7 +104,7 @@ export const Login = () => {
       // @ts-ignore
       socket.emit(
         'login',
-        { name, room: sR || slugifiedRoom, token: String(tokenLS) },
+        { name, room: !!sR ? slugify(sR) : slugifiedRoom, token: String(tokenLS) },
         (error: string, isAdmin?: boolean) => {
           if (!!error) {
             if (error === 'FRONT:LOG/PAS') {
@@ -132,7 +134,7 @@ export const Login = () => {
           if (!!roomlistLS) {
             roomlistLS.forEach(({ name, ts }) => {
               if (!!name) {
-                rooms[name] = {
+                rooms[slugify(name)] = {
                   name,
                   ts: name === room ? nowTs : ts,
                 }
@@ -161,10 +163,10 @@ export const Login = () => {
   }
 
   const [myPassword, setMyPassword] = useState<{ password: string }>({ password: '' })
-  const handleTryLoginWidthPassword = () => {
+  const handleTryLoginWidthPassword = (pas?: string) => {
     if (!!socket) {
       setIsLoading2(true)
-      socket.emit('login.password', { password: myPassword.password, token: String(tokenLS), name, room: slugifiedRoom }, (err?: string, isAdmin?: boolean, token?: string) => {
+      socket.emit('login.password', { password: pas || myPassword.password, token: String(tokenLS), name, room: slugifiedRoom }, (err?: string, isAdmin?: boolean, token?: string) => {
         if (!!err) {
           toast({
             position: 'top',
@@ -218,11 +220,11 @@ export const Login = () => {
       })
     }
   }
-  const handleKeyDownPassword = (ev: any) => {
-    if (ev.keyCode === 13) {
-      if (!!room) handleTryLoginWidthPassword()
-    }
-  }
+  // const handleKeyDownPassword = (ev: any) => {
+  //   if (ev.keyCode === 13) {
+  //     if (!!room) handleTryLoginWidthPassword()
+  //   }
+  // }
   const handleChangePassword = (e: any) => {
     setMyPassword((state) => ({ ...state, password: e.target.value }))
   }
@@ -240,7 +242,9 @@ export const Login = () => {
   const handleDeleteRoomFromLS = (roomName: string) => {
     // setRoomlistLS([...new Set(roomlistLS.filter((room: TLocalRoomItem) => room.name !== roomName))])
     if (!!roomlistLS) {
-      const newRoomList = roomlistLS.filter(({ name }: TLocalRoomItem) => name !== roomName)
+      const newRoomList = roomlistLS.filter(({ name }: TLocalRoomItem) => name !== roomName && (slugify(name.toLowerCase()) !== slugify(roomName.toLowerCase())))
+
+      console.log(newRoomList)
 
       setRoomlistLS(newRoomList)
     }
@@ -257,6 +261,8 @@ export const Login = () => {
   }
   // ---
 
+  const isSubmitDisabled = useMemo(() => !(!!name && myPassword.password.length === 4), [name, myPassword.password])
+
   return (
     <>
       <RoomlistModal
@@ -265,12 +271,12 @@ export const Login = () => {
         onDelete={handleDeleteRoomFromLS}
         onClose={handleRoomlistModalClose}
         onSelectRoom={(room: string) => {
-          handleSelectRoom(room)
+          const slugifiedRoom = slugify(room.trim().toLowerCase())
+          handleSelectRoom(slugifiedRoom)
             .then(async () => {
               setIsLoading1(true)
               await delay(1000)
-              const sR = slugify(room.trim().toLowerCase())
-              handleLogin(sR)
+              handleLogin(slugifiedRoom)
             })
             .catch((err) => {
               console.log(err)
@@ -295,10 +301,31 @@ export const Login = () => {
               <Input
                 type='login'
                 placeholder="Login"
-                isDisabled
+                // isDisabled
                 value={name}
+                readOnly
               />
             </FormControl>
+            <Box mt={4} style={{ display: 'flex', justifyContent: 'center' }}>
+              <HStack m='0 auto'>
+                <PinInput
+                  mask
+                  defaultValue=''
+                  onChange={(value: string) => {
+                    handleChangePassword({ target: { value } })
+                  }}
+                  onComplete={(value: string) => {
+                    if (!!name && !isLoading2 && !!room && value.length === 4) handleTryLoginWidthPassword(value)
+                  }}
+                >
+                  <PinInputField />
+                  <PinInputField />
+                  <PinInputField />
+                  <PinInputField />
+                </PinInput>
+              </HStack>
+            </Box>
+            {/*
             <FormControl mt={4}>
               <FormLabel>Password</FormLabel>
               <Input
@@ -314,10 +341,11 @@ export const Login = () => {
                 autoComplete='false'
               />
             </FormControl>
+            */}
           </ModalBody>
 
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={handleTryLoginWidthPassword} isLoading={isLoading2}>
+          <ModalFooter style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Button colorScheme="blue" mr={3} onClick={() => handleTryLoginWidthPassword()} isLoading={isLoading2} isDisabled={isSubmitDisabled}>
               Submit
             </Button>
             <Button onClick={handlePasswordModalClose}>Cancel</Button>
@@ -362,36 +390,47 @@ export const Login = () => {
             {REACT_APP_CHAT_NAME}
           </Heading>
           <Flex className="form" gap="1rem" flexDirection={{ base: 'column', md: 'row' }} mb={4}>
-            <Input
-              autoFocus
-              variant="filled"
+            <Box
               mr={{ base: '0', md: '4' }}
               mb={{ base: '4', md: '0' }}
-              type="text"
-              placeholder="User Name"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value)
-              }}
-            />
+            >
+              <Text mb={1}>Username</Text>
+              <Input
+                autoFocus
+                variant="filled"
+                
+                type="text"
+                placeholder="User Name"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value)
+                }}
+              />
+            </Box>
             {
               !isRoomDisabled && (
-                <Input
-                  disabled={isRoomDisabled}
-                  variant="filled"
+                <Box
                   mr={{ base: '0', md: '4' }}
                   mb={{ base: '4', md: '0' }}
-                  type="text"
-                  placeholder="Room Name"
-                  value={room}
-                  onChange={(e) => {
-                    setRoom(e.target.value)
-                  }}
-                  onKeyDown={handleKeyDown}
-                />
+                >
+                  <Text mb={1}>Room</Text>
+                  <Input
+                    disabled={isRoomDisabled}
+                    variant="filled"
+                    
+                    type="text"
+                    placeholder="Room Name"
+                    value={room}
+                    onChange={(e) => {
+                      setRoom(e.target.value)
+                    }}
+                    onKeyDown={handleKeyDown}
+                  />
+                </Box>
               )
             }
             <IconButton
+              mt='auto'
               ref={loginBtnRef}
               colorScheme="blue"
               isRound

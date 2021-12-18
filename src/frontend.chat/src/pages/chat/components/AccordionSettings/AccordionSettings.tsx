@@ -20,7 +20,7 @@ import { IoMdClose } from 'react-icons/io'
 import { FaTrashAlt, FaCheck } from 'react-icons/fa'
 import { AiOutlineFire } from 'react-icons/ai'
 import { FiActivity } from 'react-icons/fi'
-import { EMessageStatus, TMessage } from '~/utils/interfaces'
+import { EMessageStatus, TMessage, ERegistryLevel } from '~/utils/interfaces'
 import { useMainContext } from '~/mainContext'
 
 type TSetting = {
@@ -41,7 +41,8 @@ type TProps = {
   onResetFilters: () => void
   onSetFilters: (statuses: EMessageStatus[]) => void
   activeFilters: EMessageStatus[]
-  addsAccordionItems?: TAccordeonItem[]
+  defaultAccordionItems?: TAccordeonItem[]
+  registryLevel: ERegistryLevel
 }
 
 export const AccordionSettings = ({
@@ -53,7 +54,8 @@ export const AccordionSettings = ({
   onResetFilters,
   onSetFilters,
   activeFilters,
-  addsAccordionItems,
+  defaultAccordionItems,
+  registryLevel,
 }: TProps) => {
   const { room } = useMainContext()
   // --
@@ -179,7 +181,7 @@ export const AccordionSettings = ({
       {/* <pre>{JSON.stringify(countersMap, null, 2)}</pre> */}
       <Accordion allowToggle defaultIndex={(!!navbarMenuSettingsLS?.[room] || navbarMenuSettingsLS?.[room] === 0) ? navbarMenuSettingsLS?.[room] : -1} onChange={updateDefaultTabForTheRoom}>
         {
-          isAssignmentFeatureEnabled && (
+          registryLevel === ERegistryLevel.TGUser && isAssignmentFeatureEnabled && (
             <AccordionItem>
               <h2>
                 <AccordionButton>
@@ -253,8 +255,8 @@ export const AccordionSettings = ({
             </AccordionItem>
           )
         }
-        {!!addsAccordionItems && (
-          addsAccordionItems.map(({ uniqueKey, accordionPanelContent, accordionButtonContent }) => {
+        {!!defaultAccordionItems && (
+          defaultAccordionItems.map(({ uniqueKey, accordionPanelContent, accordionButtonContent }) => {
             return (
               <AccordionItem key={uniqueKey}>
                 <h2>
