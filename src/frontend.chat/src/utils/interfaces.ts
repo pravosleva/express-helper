@@ -1,3 +1,9 @@
+export enum ERegistryLevel {
+  Guest = 0,
+  Logged = 1,
+  TGUser = 2
+}
+
 export enum EMessageStatus {
   Info = 'info',
   Success = 'success',

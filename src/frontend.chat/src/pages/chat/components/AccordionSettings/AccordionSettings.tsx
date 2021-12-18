@@ -197,8 +197,8 @@ export const AccordionSettings = ({
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                 <Stack>
                   <Flex alignItems="center">
-                    <Button variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={18}/>}>Search</Button>
-                    {hasEnabledFilters && <Button variant='outline' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
+                    <Button variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={18}/>}>Find user</Button>
+                    {hasEnabledFilters && <Button variant='ghost' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
                   </Flex>
                   {/*
                   <Grid templateColumns='1fr 1fr 1fr 50px' gap={2}>

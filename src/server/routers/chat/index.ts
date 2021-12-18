@@ -3,6 +3,7 @@
 import express from 'express'
 import path from 'path'
 import fs from 'fs'
+import { chatExternalApi } from './mws/api'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -59,6 +60,7 @@ chatApi.use(
   '/admin-ui-prod',
   express.static(path.join(__dirname, './@socket.io/admin-ui/ui/dist-pravosleva'))
 )
+chatApi.use('/api', chatExternalApi)
 chatApi.use('/get-users-map', getUsersMapRoute)
 
 // if (isDev) {

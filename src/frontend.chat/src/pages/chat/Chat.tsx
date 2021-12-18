@@ -77,7 +77,7 @@ import { IoMdClose } from 'react-icons/io'
 import { useDebounce, useLocalStorage } from 'react-use'
 import { UploadInput } from './components/UploadInput'
 // import 'react-medium-image-zoom/dist/styles.css'
-import { EMessageStatus, TMessage } from '~/utils/interfaces'
+import { EMessageStatus, TMessage, ERegistryLevel } from '~/utils/interfaces'
 import { Image } from './components/chat-msg'
 import { GalleryModal } from './components/GalleryModal'
 import { getTruncated } from '~/utils/strings-ops'
@@ -1074,13 +1074,18 @@ export const Chat = () => {
                                   <Text fontSize="md" fontWeight='bold'>Admin panel</Text>
                                 </MenuItem>
                               )}
-                              <MenuItem
-                                minH="40px"
-                                key="set-passwd-btn"
-                                onClick={handleSetPasswordModalOpen}
-                              >
-                                <Text fontSize="md" fontWeight='bold'>Set my password</Text>
-                              </MenuItem>
+                              {
+                                regData?.registryLevel !== ERegistryLevel.TGUser && (
+                                  <MenuItem
+                                    minH="40px"
+                                    key="set-passwd-btn"
+                                    onClick={handleSetPasswordModalOpen}
+                                  >
+                                    <Text fontSize="md" fontWeight='bold'>Set my password</Text>
+                                  </MenuItem>
+                                )
+                              }
+
                               <MenuItem
                                 minH="40px"
                                 key="my-info-btn"
@@ -1107,7 +1112,7 @@ export const Chat = () => {
                       </Flex>
                       
                       {
-                        regData?.registryLevel === 1 && (
+                        regData?.registryLevel === ERegistryLevel.TGUser && (
                           <>
                             <Box>
                               <FormControl display='flex' alignItems='center'>
@@ -1470,7 +1475,7 @@ export const Chat = () => {
                 <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Error: {uploadErrorMsg}</div>
               </div>
             )}
-            {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && regData?.registryLevel === 1 && !uploadErrorMsg && (
+            {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
               <div className='service-flex-row'>
                 <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
                 {isFileUploading && (

@@ -39,6 +39,10 @@ export type TRegistryData = {
   passwordHash: string
   registryLevel?: ERegistryLevel
   tokens?: string[]
+  tg?: {
+    username: string
+    chat_id: number
+  }
 }
 export type TUserName = string
 

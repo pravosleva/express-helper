@@ -120,7 +120,7 @@ export const withSocketChat = (io: Socket) => {
           let registryLevel = 0
           const regData = registeredUsersMap.get(name)
           if (registeredUsersMap.has(name)) {
-            registryLevel = 1
+            registryLevel = regData.registryLevel || 0 // NOTE: Never? Input should be in render for tg user only
             if (!!regData.registryLevel) registryLevel = regData.registryLevel
           }
           
@@ -234,6 +234,9 @@ export const withSocketChat = (io: Socket) => {
             registeredUsersMap.set(name, regData)
             if (!!cb) cb()
             break
+
+          case regData.registryLevel === ERegistryLevel.TGUser:
+            // NOTE: In progress...
           default:
             if (!!cb) cb('Вы можете сбросить пароль только через TG бот')
         }
@@ -436,8 +439,7 @@ export const withSocketChat = (io: Socket) => {
         let registryLevel = 0
         const regData = registeredUsersMap.get(userName)
         if (registeredUsersMap.has(userName)) {
-          registryLevel = 1
-          if (!!regData.registryLevel) registryLevel = regData.registryLevel
+          registryLevel = regData?.registryLevel || 1 // NOTE: Как минимум, logged
         }
 
         const newStuff: TMessage = { text: message, ts, rl: registryLevel, user: name }
