@@ -398,6 +398,9 @@ export const Chat = () => {
     setFilters([])
   }, [setFilters])
   const [assignmentExecutorsFilters, setAssignmentExecutorsFilters] = useState<string[]>([])
+  useEffect(() => {
+    setAssignmentExecutorsFilters([])
+  }, [room])
   const handleAddAssignedToFilter = useCallback((name: string) => {
     console.log('add', name)
     setAssignmentExecutorsFilters((state: string[]) => [...new Set([...state, name])])

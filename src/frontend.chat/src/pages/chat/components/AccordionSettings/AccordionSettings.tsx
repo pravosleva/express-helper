@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, useEffect } from 'react'
 import {
   Accordion,
   AccordionItem,
@@ -56,7 +56,29 @@ export const AccordionSettings = ({
   addsAccordionItems,
 }: TProps) => {
   const { room } = useMainContext()
-  const [settingsLS, setSettingsLS] = useLocalStorage<{ [key: string]: { [key: string]: TSetting } }>('chat.assignment-feature.custom-settings', {})
+  // --
+  const [navbarMenuSettingsLS, setNavbarMenuSettingsLS] = useLocalStorage<{ [key: string]: number}>('chat.navbar-menu.default-index-tabs', {})
+  const updateDefaultTabForTheRoom = useCallback((tabIndex: number) => {
+    switch (true) {
+      case tabIndex !== -1:
+      default:
+        const newState: {[key: string]: number} = {}
+        for (const _room in navbarMenuSettingsLS) {
+          if (room !== _room) {
+            newState[_room] = navbarMenuSettingsLS[_room]
+          } else {
+            newState[_room] = tabIndex
+          }
+          
+        }
+        if (!newState[room]) newState[room] = tabIndex
+        setNavbarMenuSettingsLS(newState)
+        break;
+    }
+  }, [room, setNavbarMenuSettingsLS])
+  // --
+
+  const [assignmentSettingsLS, setAssignmentSettingsLS] = useLocalStorage<{ [key: string]: { [key: string]: TSetting } }>('chat.assignment-feature.custom-settings', {})
   const [isUsersSearchModalOpened, setIsUsersSearchModalOpened] = useState<boolean>(false)
   const toggleSearchModal = useCallback(() => {
     setIsUsersSearchModalOpened((s) => !s)
@@ -66,7 +88,7 @@ export const AccordionSettings = ({
   }, [setIsUsersSearchModalOpened])
   const handleAddtUser = useCallback((userName: string) => {
     const newItem = { name: userName }
-    let newState = !!settingsLS ? { ...settingsLS } : {}
+    let newState = !!assignmentSettingsLS ? { ...assignmentSettingsLS } : {}
     const ts = Date.now()
     
     // -- NOTE: #migration
@@ -76,9 +98,9 @@ export const AccordionSettings = ({
   
     newState[room][newItem.name] = { name: userName, ts }
 
-    setSettingsLS(newState)
+    setAssignmentSettingsLS(newState)
     handleCloseSearchModal()
-  }, [settingsLS, setSettingsLS, handleCloseSearchModal])
+  }, [assignmentSettingsLS, setAssignmentSettingsLS, handleCloseSearchModal])
   const handleRemoveUser = useCallback((name: string) => {
     const isConfirmed = window.confirm(`Вы уверены? Пользователь ${name} будет удален из списка`)
 
@@ -88,21 +110,21 @@ export const AccordionSettings = ({
 
     let newState: {[key: string]: {[key: string]: { name: string, ts: number }}} = {}
 
-    for (const _room in settingsLS) {
+    for (const _room in assignmentSettingsLS) {
       if (_room === room) {
-        for (const key in settingsLS[room]) {
+        for (const key in assignmentSettingsLS[room]) {
           if (key !== name) {
             if (!newState?.[room]) newState = { ...newState, [room]: {}}
-            newState[room][key] = settingsLS[room][key]
+            newState[room][key] = assignmentSettingsLS[room][key]
           }
         }
       }
     }
 
-    setSettingsLS(newState)
-  }, [assignmentExecutorsFilters, onRemoveAssignedToFilters, settingsLS, setSettingsLS, room])
+    setAssignmentSettingsLS(newState)
+  }, [assignmentExecutorsFilters, onRemoveAssignedToFilters, assignmentSettingsLS, setAssignmentSettingsLS, room])
 
-  const users = useMemo(() => !!settingsLS?.[room] ? Object.keys(settingsLS[room]) : [], [settingsLS, room])
+  const users = useMemo(() => !!assignmentSettingsLS?.[room] ? Object.keys(assignmentSettingsLS[room]) : [], [assignmentSettingsLS, room])
   const handleUserFilterClick = useCallback((name: string) => {
     console.log(name)
     if (assignmentExecutorsFilters.includes(name)) {
@@ -114,18 +136,21 @@ export const AccordionSettings = ({
   const countersMap = useMemo(() => {
     const res: {[key: string]: { total: number }} = {}
 
-    for (const _room in settingsLS) {
+    for (const _room in assignmentSettingsLS) {
       if (_room === room) {
-        for (const key in settingsLS[_room]) {
-          res[key] = {
-            total: logic.getAssignmentCounterExecutor(key),
+        for (const name in assignmentSettingsLS[_room]) {
+          res[name] = {
+            total: logic.getAssignmentCounterExecutor(name),
           }
         }
       }
     }
 
     return res
-  }, [logic, settingsLS, room])
+  }, [logic, assignmentSettingsLS, room])
+  useEffect(() => {
+    console.log(countersMap)
+  }, [countersMap])
   const hasEnabledFilters = assignmentExecutorsFilters.length > 0
   const dangerCounter = useMemo(() => logic.getCountByFilters([EMessageStatus.Danger], assignmentExecutorsFilters), [assignmentExecutorsFilters, logic])
   const warnCounter = useMemo(() => logic.getCountByFilters([EMessageStatus.Warn], assignmentExecutorsFilters), [assignmentExecutorsFilters, logic])
@@ -152,7 +177,7 @@ export const AccordionSettings = ({
         )
       }
       {/* <pre>{JSON.stringify(countersMap, null, 2)}</pre> */}
-      <Accordion allowToggle defaultIndex={0}>
+      <Accordion allowToggle defaultIndex={(!!navbarMenuSettingsLS?.[room] || navbarMenuSettingsLS?.[room] === 0) ? navbarMenuSettingsLS?.[room] : -1} onChange={updateDefaultTabForTheRoom}>
         {
           isAssignmentFeatureEnabled && (
             <AccordionItem>
