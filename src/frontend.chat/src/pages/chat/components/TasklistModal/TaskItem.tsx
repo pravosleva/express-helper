@@ -112,7 +112,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
         <Menu>
           <MenuButton
             as={IconButton}
-            colorScheme={isLooped ? isFirstLoopRunning ? "green" : "blue" : "gray"}
+            colorScheme={isLooped ? isFirstLoopRunning ? "yellow" : "blue" : "gray"}
             icon={isLooped ? <TiArrowLoop size={19} /> : <GoGear size={18} />}
             isRound
             // mr={2}
