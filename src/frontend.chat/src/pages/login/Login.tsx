@@ -309,6 +309,7 @@ export const Login = () => {
             <Box mt={4} style={{ display: 'flex', justifyContent: 'center' }}>
               <HStack m='0 auto'>
                 <PinInput
+                  autoFocus
                   mask
                   defaultValue=''
                   onChange={(value: string) => {
@@ -318,10 +319,10 @@ export const Login = () => {
                     if (!!name && !isLoading2 && !!room && value.length === 4) handleTryLoginWidthPassword(value)
                   }}
                 >
-                  <PinInputField />
-                  <PinInputField />
-                  <PinInputField />
-                  <PinInputField />
+                  <PinInputField autocomplete='off' />
+                  <PinInputField autocomplete='off' />
+                  <PinInputField autocomplete='off' />
+                  <PinInputField autocomplete='off' />
                 </PinInput>
               </HStack>
             </Box>
