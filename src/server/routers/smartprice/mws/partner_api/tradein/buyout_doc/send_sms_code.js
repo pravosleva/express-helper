@@ -9,7 +9,7 @@ const toClient = [
   },
   {
     ok: true,
-    wait_seconds: 15,
+    wait_seconds: 45,
   },
 ]
 

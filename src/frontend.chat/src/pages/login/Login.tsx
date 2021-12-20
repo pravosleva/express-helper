@@ -24,8 +24,10 @@ import { useLocalStorage } from 'react-use'
 import { RoomlistModal } from './components'
 import slugify from 'slugify'
 // import { FocusableElement } from "@chakra-ui/utils"
+import pkg from '../../../package.json'
 
 const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'Anchous chat 2021'
+const REACT_APP_BUILD_DATE = process.env.REACT_APP_BUILD_DATE || ''
 
 type TLocalRoomItem = {
   name: string
@@ -290,12 +292,11 @@ export const Login = () => {
         finalFocusRef={loginBtnRef}
         isOpen={isPasswordModalOpen}
         onClose={handlePasswordModalClose}
+        isCentered
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Need password</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody pb={6}>
+          <ModalHeader>
             <FormControl mt={4}>
               <FormLabel>Login</FormLabel>
               <Input
@@ -343,7 +344,11 @@ export const Login = () => {
               />
             </FormControl>
             */}
-          </ModalBody>
+          </ModalHeader>
+          <ModalCloseButton />
+          {/* <ModalBody pb={6}>
+            
+          </ModalBody> */}
 
           <ModalFooter style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Button colorScheme="blue" mr={3} onClick={() => handleTryLoginWidthPassword()} isLoading={isLoading2} isDisabled={isSubmitDisabled}>
@@ -456,6 +461,9 @@ export const Login = () => {
               </Button>
             )
           }
+          {!!REACT_APP_BUILD_DATE && (
+            <Flex justifyContent='center'>v{pkg.version} Last build {REACT_APP_BUILD_DATE.split(' ')[0]}</Flex>
+          )}
         </Flex>
       </div>
     </>

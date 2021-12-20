@@ -88,6 +88,7 @@ import { UserAva } from '~/pages/chat/components/UserAva'
 import { AssignedBox } from './components/AssignedBox'
 import { AccordionSettings } from './components/AccordionSettings'
 import { FcGallery } from 'react-icons/fc'
+import { EmojiPickerModal } from './components/EmojiPickerModal'
 
 /* -- NOTE: Socket upload file evs
 // Sample 1 (12.3 kB)
@@ -875,8 +876,22 @@ export const Chat = () => {
 
   const allImagesMessagesLightboxFormat = useMemo(() => logic.getAllImagesLightboxFormat(), [logic])
 
+  const [isEmojiOpened, setIsEmojiOpened] = useState<boolean>(false)
+  const handleOpenEmoji = useCallback(() => { setIsEmojiOpened(true) }, [setIsEmojiOpened])
+  const handleCloseEmoji = useCallback(() => { setIsEmojiOpened(false) }, [setIsEmojiOpened])
+  const handleSelectEmojies = useCallback((value: string) => {
+    setMessage((s) => `${s.trim()} ${value}`)
+  }, [setMessage])
+
   return (
     <>
+      {upToSm && (
+        <EmojiPickerModal
+          isOpened={isEmojiOpened}
+          onClose={handleCloseEmoji}
+          onSubmit={handleSelectEmojies}
+        />
+      )}
       <SearchUserModal
         isOpened={isSearchUserModalOpened}
         onClose={handleSearchUserModalClose}
@@ -1012,7 +1027,7 @@ export const Chat = () => {
                 <DrawerContent>
                   <DrawerCloseButton />
                   <DrawerHeader borderBottomWidth="1px">
-                    Menu
+                    {room}
                   </DrawerHeader>
 
                   <DrawerBody>
@@ -1410,7 +1425,7 @@ export const Chat = () => {
                       }}
                       className='opponent-ava-wrapper'
                     >
-                      {!isMyMessage && <UserAva size={33} name={user} mr='.5rem' />}
+                      {!isMyMessage && <UserAva size={30} name={user} mr='.5rem' />}
                       <div className={clsx("msg", { [status]: !!status, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}>
                         {isMyMessage ? (
                           <ContextMenuTrigger
@@ -1474,20 +1489,27 @@ export const Chat = () => {
                 </Fragment>
               )
             })}
-            {!!uploadErrorMsg && (
-              <div className='service-flex-row'>
-                <div><button className='special-btn special-btn-md dark-btn green' onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} color='var(--chakra-colors-green-300)' /></span></span></button></div>
-                <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Error: {uploadErrorMsg}</div>
-              </div>
-            )}
-            {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
-              <div className='service-flex-row'>
-                <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
-                {isFileUploading && (
-                  <div>Uploading: {uploadPercentageRef.current} %</div>
-                )}
-              </div>
-            )}
+            <div className='service-flex-row'>
+              {!!uploadErrorMsg && (
+                <>
+                  <div><button className='special-btn special-btn-md dark-btn green' onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} color='var(--chakra-colors-green-300)' /></span></span></button></div>
+                  <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Error: {uploadErrorMsg}</div>
+                </>
+              )}
+              {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
+                <>
+                  <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
+                  {isFileUploading && (
+                    <div>Uploading: {uploadPercentageRef.current} %</div>
+                  )}
+                </>
+              )}
+              {
+                upToSm && (
+                  <div><button className='special-btn special-btn-md dark-btn' onClick={handleOpenEmoji}>Emoji</button></div>
+                )
+              }
+            </div>
           </ScrollToBottom>
           <div className="form">
             {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}

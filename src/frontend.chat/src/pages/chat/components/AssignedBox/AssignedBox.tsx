@@ -31,7 +31,7 @@ export const AssignedBox = ({
         }}
       >
         <div style={{ marginRight: '.5rem' }}>Assigned&nbsp;to&nbsp;👉</div>
-        <UserAva size={20} name={assignedTo[0]} mr='.5rem' fontSize={10} />
+        <UserAva size={19} name={assignedTo[0]} mr='.5rem' fontSize={11} />
         <div style={{
           display: 'flex',
           flexDirection: 'row',

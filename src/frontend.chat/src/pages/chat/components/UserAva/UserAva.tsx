@@ -38,7 +38,7 @@ export const UserAva = ({ name, size, mr, ml, fontSize }: TProps) => {
           color: invert(personalColor), // invert(personalColor, true),
         }}
       >
-        {shortNick}
+        <span>{shortNick}</span>
       </span>
     </span>
   )

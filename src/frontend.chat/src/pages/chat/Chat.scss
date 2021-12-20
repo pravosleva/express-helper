@@ -177,7 +177,8 @@
         flex-direction: column;
         .msg{
           position: relative;
-          padding: .3rem .9rem;
+          // padding: .3rem .9rem;
+          padding: .1rem .5rem;
           font-weight: bold;
           background: #FFF; // var(--chakra-colors-gray-100);
           color: rgba(0,0,0,.7);
@@ -238,8 +239,9 @@
             width: 17px;
             height: 17px;
             border-radius: 50%;
-            bottom: -4px;
-            right: -5px;
+            bottom: 0px;
+            right: 0px;
+            transform: translateX(50%) translateY(50%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -268,8 +270,9 @@
           width: 17px;
           height: 17px;
           border-radius: 50%;
-          bottom: -4px;
-          left: -5px;
+          bottom: 0px;
+          left: 0px;
+          transform: translateX(-50%) translateY(50%);
           display: flex;
           justify-content: center;
           align-items: center;

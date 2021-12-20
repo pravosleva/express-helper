@@ -1,6 +1,6 @@
 {
   "name": "frontend.chat",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "private": true,
   "homepage": "./express-helper/chat",
   "proxy": "http://localhost:5000",
@@ -43,6 +43,7 @@
     "deepmerge": "^4.2.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
+    "emoji-picker-react": "^3.4.12",
     "eslint": "^7.11.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
@@ -129,6 +130,7 @@
     ]
   },
   "devDependencies": {
+    "@types/emoji-mart": "^3.0.8",
     "@types/react-inner-image-zoom": "^2.0.1",
     "@types/react-router-dom": "^5.1.8",
     "@types/simple-react-lightbox": "^3.6.1",

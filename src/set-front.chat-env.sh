@@ -1,3 +1,9 @@
+#!/bin/bash
+
+BUILD_DATE=$(date +"%Y-%m-%d %T") &&
+
+echo "$BUILD_DATE" &&
+
 # NOTE: Все директории относительно project root dir
 echo "SKIP_PREFLIGHT_CHECK=true
 GENERATE_SOURCEMAP=false" > src/frontend.signin/.env
@@ -18,7 +24,9 @@ REACT_APP_CHAT_UPLOADS_URL=http://localhost:5000/chat/storage/uploads" > src/fro
       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
 PUBLIC_URL=/express-helper/chat
 REACT_APP_CHAT_NAME=\"PUB 2021\"
-REACT_APP_CHAT_UPLOADS_URL=/express-helper/chat/storage/uploads" > src/frontend.chat/.env.production
+REACT_APP_CHAT_UPLOADS_URL=/express-helper/chat/storage/uploads
+REACT_APP_BUILD_DATE=\"$BUILD_DATE\"
+" > src/frontend.chat/.env.production
 
 ## SMARTPRICE beta2
 #       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru

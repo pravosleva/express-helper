@@ -4,6 +4,7 @@ import App from './App'
 // import reportWebVitals from './reportWebVitals'
 import '~/fix.react-contextmenu.scss'
 import '~/fix.simple-react-lightbox.scss'
+import '~/fix.emoji-picker-react.scss'
 
 // ReactDOM.render(<App />, document.getElementById('root'))
 

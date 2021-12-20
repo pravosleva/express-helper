@@ -193,3 +193,9 @@ input[type="file"]:disabled + label {
     color: var(--chakra-colors-gray-800);
     border: 2px solid #FFF;
 }
+
+
+/* ANIMATIONS EXPERIENCE
+https://codepen.io/desandro/pen/bMqZmr
+
+*/
