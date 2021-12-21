@@ -30,6 +30,9 @@ class Singleton {
   public keys() {
     return this.state.keys()
   }
+  public get size() {
+    return this.state.size
+  }
   public set(key: string, value: string) {
     this.state.set(key, value)
   }
@@ -41,6 +44,16 @@ class Singleton {
   }
   public has(key: string) {
     return this.state.has(key)
+  }
+
+  public getState() {
+    const state = {}
+    
+    this.state.forEach((value, key) => {
+      state[String(key)] = value
+    })
+
+    return state
   }
 }
 
