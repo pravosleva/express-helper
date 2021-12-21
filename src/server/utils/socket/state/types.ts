@@ -30,6 +30,7 @@ export type TMessage = {
   assignedTo?: string[]
   assignedBy?: string
   fileName?: string
+  filePath?: string
 }
 // export type TRoomData = {
 //   [userName: string]: TMessage[]

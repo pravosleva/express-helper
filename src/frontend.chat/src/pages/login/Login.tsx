@@ -462,7 +462,7 @@ export const Login = () => {
             )
           }
           {!!REACT_APP_BUILD_DATE && (
-            <Flex justifyContent='center'>v{pkg.version} Last build {REACT_APP_BUILD_DATE.split(' ')[0]}</Flex>
+            <Flex mt={1} justifyContent='center'>v{pkg.version} Last build {REACT_APP_BUILD_DATE.split(' ')[0]}</Flex>
           )}
         </Flex>
       </div>

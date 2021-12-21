@@ -20,6 +20,10 @@ import path from 'path'
 import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
 import { removeFileIfNecessary } from '~/utils/fs-tools/removeFileIfNecessary'
 import { getParsedUserAgent, getToken, standardResultHandler } from './utils'
+import { Log } from '~/utils/socket/utils/Log'
+
+const isDev = process.env.NODE_ENV === 'development'
+const log = new Log(isDev)
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? String(token) === CHAT_ADMIN_TOKEN : false
@@ -42,7 +46,10 @@ export const withSocketChat = (io: Socket) => {
   }
   // --
   io.on('connection', (socket) => {
+    log.socket('conn', socket)
+    
     const nameBySocketId = usersSocketMap.get(socket.id)
+
     if (!!nameBySocketId) {
       usersSocketMap.delete(socket.id)
       usersMap.delete(nameBySocketId)
@@ -67,7 +74,8 @@ export const withSocketChat = (io: Socket) => {
           // const nowDate = new Date(ts)
           const getUserNameBySocketId = (socketId: string) => {
             let connData: TConnectionData | null = null
-            const result: any = {}
+            // @ts-ignore
+            const result: { isOk: boolean, message?: string, connData: TConnectionData } = {}
 
             for(const [_key, value] of usersMap.state) {
               const { socketId: _socketId } = value
@@ -75,18 +83,22 @@ export const withSocketChat = (io: Socket) => {
               if (socketId === _socketId) connData = value
             }
 
-            result.isOk = !!connData
+            result.isOk = !!connData?.room
             if (!!connData) {
-              result.connData = connData
+              if (!!connData?.room) {
+                result.connData = connData
+              } else {
+                result.message = 'connData?.room not found in state: Try relogin'
+              }
             } else {
-              result.message = 'Use conn data not found in state: Try relogin'
+              result.message = 'User conn data not found in state: Try relogin'
             }
 
             return result
           }
           const detected = getUserNameBySocketId(socket.id)
           if (detected.isOk) {
-            const newName = `${ts}.${ext}`
+            const newName = `[${detected.connData.room}]${ts}.${ext}`
 
             event.file.name = newName
 
@@ -460,7 +472,7 @@ export const withSocketChat = (io: Socket) => {
       // ---
     })
 
-    socket.on('getPartialOldChat', ({ tsPoint, room }: { tsPoint: number, room: string }, cb) => {
+    socket.on('getPartialOldChat', ({ tsPoint, room }: { tsPoint: number, room: string }, cb: any) => {
       if (!room) {
         socket.emit('notification', { status: 'error', title: 'ERR #4.1', description: 'Params wrong' })
         return
@@ -472,8 +484,8 @@ export const withSocketChat = (io: Socket) => {
         socket.emit('notification', { status: 'error', title: 'ERR #4.2', description: errorMsg })
         return
       }
-      socket.emit('partialOldChat', { result, nextTsPoint, isDone })
-      if (!!cb) cb()
+      // socket.emit('partialOldChat', { result, nextTsPoint, isDone })
+      if (!!cb) cb({ result, nextTsPoint, isDone, targetRoom: room })
     })
 
     socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: { text: string, status?: EMessageStatus, assignedTo?: string[] } }, cb?: () => void) => {

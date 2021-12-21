@@ -236,17 +236,6 @@ export const Chat = () => {
       const logoutFromServerListener = () => {
         history.push('/')
       }
-      const partialOldChatListener = ({ result, nextTsPoint, isDone  }: { result: TMessage[], nextTsPoint: number, isDone: boolean }) => {
-        setMessages((ms: TMessage[]) => {
-          const key = 'ts'
-          const arrayUniqueByKey = [...new Map([...result, ...ms].map((item: TMessage) =>
-          [item[key], item])).values()]
-
-          return arrayUniqueByKey.sort(tsSortDEC)
-        })
-        setTsPoint(nextTsPoint)
-        setFullChatReceived(isDone)
-      }
       const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy }: { text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string }) => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
@@ -305,7 +294,6 @@ export const Chat = () => {
       socket.on('notification', notifListener)
       socket.on('my.user-data', myUserDataListener)
       socket.on('FRONT:LOGOUT', logoutFromServerListener)
-      socket.on('partialOldChat', partialOldChatListener)
       // Upload
       socket.on('upload:started', uploadStartedListener)
       socket.on('upload:progress', uploadProgressListener)
@@ -319,7 +307,6 @@ export const Chat = () => {
         socket.off('notification', notifListener)
         socket.off('my.user-data', myUserDataListener)
         socket.off('FRONT:LOGOUT', logoutFromServerListener)
-        socket.off('partialOldChat', partialOldChatListener)
         // Upload
         socket.off('upload:started', uploadStartedListener)
         socket.off('upload:progress', uploadProgressListener)
@@ -329,22 +316,39 @@ export const Chat = () => {
     }
   }, [socket, toast, room])
 
-  // useEffect(() => {
-  //   if (!!socket && !!tsPoint) {
-  //     setIsChatLoading(true)
-  //     setTimeout(() => {
-  //       socket.emit('getPartialOldChat', { tsPoint, room })
-  //       setIsChatLoading(false)
-  //     }, 500)
-  //   }
-  // }, [tsPoint, room, socket])
+  const partialOldChatListener = ({ result, nextTsPoint, isDone }: { result: TMessage[], nextTsPoint: number, isDone: boolean }) => {
+    setMessages((msgs: TMessage[]) => {
+      // NOTE: Merge & filter unique & sort
+      // -- TODO: refactoring?
+      const key = 'ts'
+      const arrayUniqueByKey = [...new Map([...result, ...msgs].map((item: TMessage) =>
+      [item[key], item])).values()]
+
+      return arrayUniqueByKey.sort(tsSortDEC)
+      // --
+    })
+    setTsPoint(nextTsPoint)
+    setFullChatReceived(isDone)
+  }
 
   const getPieceOfChat = useCallback(() => {
     if (!!socket && !!tsPoint) {
       setIsChatLoading(true)
       setTimeout(() => {
-        socket.emit('getPartialOldChat', { tsPoint, room }, () => {
+        // NOTE: (про параметр targetRoom)
+        // Пришлось подстраховаться, т.к. после смены комнаты все еще успевали приходить запрошенные сообщения
+        // Для пользователя выглядело необычно =)
+        socket.emit('getPartialOldChat', { tsPoint, room }, (res: any) => {
           setIsChatLoading(false)
+
+          try {
+            const { result, nextTsPoint, isDone, targetRoom } = res
+
+            if (!!result && targetRoom === room) partialOldChatListener({ result, nextTsPoint, isDone })
+          } catch (err) {
+            console.log(err)
+          }
+
         })
       }, 500)
     }

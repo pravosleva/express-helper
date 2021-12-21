@@ -10,6 +10,8 @@ import {
   EMessageStatus,
 } from './types'
 import { binarySearchTsIndex } from '~/utils/binarySearch'
+import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
+import { moveFile } from '~/utils/fs-tools/moveFile'
 
 const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
 const projectRootDir = path.join(__dirname, '../../../../')
@@ -299,13 +301,45 @@ const syncRoomsMap = () => {
           // }
 
           // 3. Rename Den author to pravosleva
+          // const newMsgs = []
+          // for(const msg of staticData[roomName]) {
+          //   if (msg.user === 'Den') msg.user = 'pravosleva' 
+
+          //   newMsgs.push(msg)
+          //   roomsMapInstance.set(roomName, newMsgs)
+          // }
+
+          // 4. move files from /storage/uploads/[roomName]/<fileName> to /storage/uploads/<[room]<fileName>>
+          /*
           const newMsgs = []
           for(const msg of staticData[roomName]) {
-            if (msg.user === 'Den') msg.user = 'pravosleva' 
+            if (!!msg.filePath) {
+              // msg.user = 'pravosleva'
+              // 1. move file
+              const oldPath = path.join(projectRootDir, '/storage/uploads', msg.filePath)
+              const fileName = msg.filePath.split('/').reverse()[0]
+              const newFileName = `[${roomName}]${fileName}`
+
+              // 2. mkdir ifNecessary
+              const newUploasDir = path.join(projectRootDir, '/storage/uploads')
+              // createDirIfNecessary(roomUploasDir)
+
+              // move file
+              const newPath = path.join(newUploasDir, newFileName)
+              moveFile(oldPath, newPath, (err) => {
+                console.log('ERR: Не удалось перенести файл', msg.filePath)
+                console.log(err)
+              })
+
+              // 3. update value
+              msg.fileName = newFileName
+              delete msg.filePath
+            }
 
             newMsgs.push(msg)
             roomsMapInstance.set(roomName, newMsgs)
           }
+          */
           // --
         })
       }
