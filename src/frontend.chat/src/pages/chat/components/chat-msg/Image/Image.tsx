@@ -31,14 +31,14 @@ export const Image = ({
   onAddAdditionalTsToShow,
   onOpenGallery,
 }: TProps) => {
-  const { user, text, ts, editTs, status, fileName, _next } = message
+  const { user, text, ts, editTs, status, fileName, _next, filePath } = message
   const { name } = useContext(MainContext)
   // const isLastOfFiltered = i === arr.length -1
   const isMyMessage = user === name
   const date = getNormalizedDateTime(ts)
   const isNextOneBtnEnabled = _next?.isHidden
   const handleClickCtxMenu = () => setEditedMessage(message)
-  const src = `${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`
+  const src = `${REACT_APP_CHAT_UPLOADS_URL}/${filePath || fileName}`
   const handleImageClick = useCallback(() => {
     onOpenGallery(src)
   }, [onOpenGallery])

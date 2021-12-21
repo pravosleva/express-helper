@@ -21,6 +21,7 @@ export type TMessage = {
   name: string;
   status: EMessageStatus;
   fileName?: string;
+  filePath?: string;
   assignedTo?: string[];
   assignedBy?: string;
 }

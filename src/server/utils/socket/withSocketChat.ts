@@ -21,6 +21,7 @@ import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
 import { removeFileIfNecessary } from '~/utils/fs-tools/removeFileIfNecessary'
 import { getParsedUserAgent, getToken, standardResultHandler } from './utils'
 import { Log } from '~/utils/socket/utils/Log'
+import { moveFile } from '~/utils/fs-tools/moveFile'
 
 const isDev = process.env.NODE_ENV === 'development'
 const log = new Log(isDev)
@@ -98,7 +99,8 @@ export const withSocketChat = (io: Socket) => {
           }
           const detected = getUserNameBySocketId(socket.id)
           if (detected.isOk) {
-            const newName = `[${detected.connData.room}]${ts}.${ext}`
+            // const newName = `[${detected.connData.room}]${ts}.${ext}`
+            const newName = `${ts}.${ext}`
 
             event.file.name = newName
 
@@ -131,19 +133,41 @@ export const withSocketChat = (io: Socket) => {
           const { connData: { room, name } } = progressData
           const newRoomData: TMessage[] = roomsMap.get(room)
 
-          let registryLevel = 0
-          const regData = registeredUsersMap.get(name)
-          if (registeredUsersMap.has(name)) {
-            registryLevel = regData.registryLevel || 0 // NOTE: Never? Input should be in render for tg user only
-            if (!!regData.registryLevel) registryLevel = regData.registryLevel
+          // -- NOTE: Move file to room dir
+          if (!!room) {
+            // 1. create room dir if necessary
+            const newRoomUploadsDir = path.join(uploadsPath, room)
+            createDirIfNecessary(newRoomUploadsDir)
+
+            // 2. move file
+            const _getFileRelPath = (fileName: string, room?: string) => !!room ? `${room}/${fileName}` : fileName
+            const oldFilePath = path.join(uploadsPath, event.file.name)
+            const newFilePath = path.join(uploadsPath, _getFileRelPath(event.file.name, room))
+            
+            moveFile(oldFilePath, newFilePath, (err) => {
+              if (err) {
+                console.log(err)
+                socket.emit('notification', { status: 'error', title: 'ERR #2', description: !!err.message ? err.messgae : 'Server error' })
+              } else {
+                let registryLevel = 0
+                // -
+                const regData = registeredUsersMap.get(name)
+                if (registeredUsersMap.has(name)) {
+                  registryLevel = regData.registryLevel || 0 // NOTE: Never? Input should be in render for tg user only
+                  if (!!regData.registryLevel) registryLevel = regData.registryLevel
+                }
+                
+                const msg = ''
+                newRoomData.push({ text: msg, ts: progressData.ts, rl: registryLevel, user: name, fileName: event.file.name, filePath: _getFileRelPath(event.file.name, room) })
+
+                roomsMap.set(room, newRoomData)
+
+                io.in(room).emit('message', { user: name, text: msg, ts: progressData.ts, rl: registryLevel, fileName: event.file.name, filePath: _getFileRelPath(event.file.name, room) });
+                // -
+              }
+            })
           }
-          
-          const msg = ''
-          newRoomData.push({ text: msg, ts: progressData.ts, rl: registryLevel, user: name, fileName: event.file.name })
-
-          roomsMap.set(room, newRoomData)
-
-          io.in(room).emit('message', { user: name, text: msg, ts: progressData.ts, rl: registryLevel, fileName: event.file.name });
+          // --
         } catch (err) {
           // socket.emit('notification', { status: 'error', title: 'ERR #2', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error', _originalEvent: { message, userName } })
           socket.emit('FRONT:LOGOUT')

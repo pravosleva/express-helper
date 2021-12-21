@@ -176,8 +176,8 @@ export class Logic {
   getAllImagesLightboxFormat(): TImageLightboxFormat[] {
     const result: { src: string, alt: string }[] = []
 
-    this.messages.forEach(({ fileName, text }) => {
-      if (!!fileName) result.push({ src: `${REACT_APP_CHAT_UPLOADS_URL}/${fileName}`, alt: text })
+    this.messages.forEach(({ fileName, filePath, text }) => {
+      if (!!fileName) result.push({ src: `${REACT_APP_CHAT_UPLOADS_URL}/${filePath || fileName}`, alt: text })
     })
 
     return result.reverse()
