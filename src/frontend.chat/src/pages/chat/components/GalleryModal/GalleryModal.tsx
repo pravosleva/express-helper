@@ -168,6 +168,7 @@ export const GalleryModal = ({
                       >
                         <a
                           href={src}
+                          target='_blank'
                           className={clsx({ 'active': isActive })}
                         >
                           {/* <img src={src} alt={alt} /> */}

@@ -543,7 +543,13 @@ export const withSocketChat = (io: Socket) => {
           if (!!result.targetMessage.fileName) {
             const storagePath = uploadsPath
 
-            removeFileIfNecessary(path.join(storagePath, result.targetMessage.fileName))
+            if (!!result.targetMessage.filePath) {
+              console.log('DELETED: filePath')
+              removeFileIfNecessary(path.join(storagePath, result.targetMessage.filePath))
+            } else if (!!result.targetMessage.fileName) {
+              console.log('DELETED: fileName')
+              removeFileIfNecessary(path.join(storagePath, result.targetMessage.fileName))
+            }
           }
           // --
         },

@@ -310,8 +310,10 @@ const syncRoomsMap = () => {
           // }
 
           // 4. move files from /storage/uploads/<[room]<fileName>> to /storage/uploads/[room]/<fileName>
+          
           const newMsgs = []
           for(const msg of staticData[roomName]) {
+            /*
             if (!!msg.fileName) {
               // console.log(`- ${msg.fileName}`)
               const hasBracketInName = new RegExp('\\[').test(msg.fileName)
@@ -381,6 +383,9 @@ const syncRoomsMap = () => {
             } else {
               // console.log('!msg.fileName')
             }
+            */
+
+            // Others...
 
             newMsgs.push(msg)
             roomsMapInstance.set(roomName, newMsgs)
