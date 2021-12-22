@@ -8,28 +8,27 @@ export class Log {
   constructor (isDev: boolean) {
     this.isDev = isDev
   }
-  socket(id: string, socket: Socket) {
-    if (this.isDev) {
-      try {
-        console.log(`--- ${id} ---`)
-        console.log(`- ${counter.next().value} socket.id -`)
-        console.log(socket.id)
+  log(descr: string, value: any) {
+    try {
+      if (this.isDev) {
+        console.log(`- ${counter.next().value} ${descr} -`)
+        console.log(value)
         console.log('-')
-        console.log(`- ${counter.next().value} socket.rooms -`)
-        console.log(socket.rooms)
-        console.log('-')
-        console.log(`- ${counter.next().value} socket.nsp -`)
-        console.log(socket.nsp)
-        console.log('-')
-        console.log(`- ${counter.next().value} socket.nsp.adapter.rooms.get(socket.id) -`)
-        // ALSO:
-        // socket.nsp.adapter.rooms.get('ux-test')
-        console.log(socket.nsp.adapter.rooms.get(socket.id))
-        console.log('-')
-        console.log('---')
-      } catch (err) {
-        console.log(err)
       }
+    } catch (err) {
+      console.log(err)
     }
+  }
+  socket(id: string, socket: Socket) {
+    console.log(`--- ${id} ---`)
+
+    this.log('socket.id', socket.id)
+    this.log('socket.rooms', socket.rooms)
+    this.log('socket.nsp', socket.nsp)
+    this.log('socket.nsp.adapter.rooms.get(socket.id)', socket.nsp.adapter.rooms.get(socket.id))
+    // ALSO:
+    // socket.nsp.adapter.rooms.get('ux-test')
+
+    console.log('---')
   }
 }
