@@ -1,12 +1,10 @@
 /* eslint-disable no-restricted-syntax */
 
 import buildUrl from 'build-url'
+import { getMsByDays } from '~/utils/auth/getMsByDays'
 
 const jwt = require('jsonwebtoken')
 const { redirect: cfg, hashedRedirectMap } = require('../cfg')
-
-// const getUsernameFromEmail = (email) => (email ? email.split('@')[0] : 'Noname')
-const getMsByDays = (days) => 1000 * 60 * 60 * 24 * days
 
 module.exports = (expiresCookiesTimeInDays) =>
   async function (req, res) {

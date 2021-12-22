@@ -4,9 +4,15 @@ import express from 'express'
 import path from 'path'
 import fs from 'fs'
 import { chatExternalApi } from './mws/api'
+import bodyParser from 'body-parser'
+import { redirectIfUnlogged } from './mws/api/auth/redirect-if-unlogged.middle' //  './auth/redirect-if-unlogged.middle'
+// chatExternalApi.use(redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT))
+import { ELoggedCookie } from '~/routers/chat/utils/types'
+
+const jwtSecret = 'tst'
 
 const isDev = process.env.NODE_ENV === 'development'
-
+const jsonParser = bodyParser.json()
 const getUsersMapRoute = require('./mws/get-users-map').getUsersMap
 
 // --- NOTE: Create storage file if necessary
@@ -60,7 +66,7 @@ chatApi.use(
   '/admin-ui-prod',
   express.static(path.join(__dirname, './@socket.io/admin-ui/ui/dist-pravosleva'))
 )
-chatApi.use('/api', chatExternalApi)
+chatApi.use('/api', jsonParser, chatExternalApi)
 chatApi.use('/get-users-map', getUsersMapRoute)
 
 // if (isDev) {
@@ -82,7 +88,9 @@ chatApi.use('/get-users-map', getUsersMapRoute)
 chatApi.use('/storage', express.static(path.join(__dirname, '../../../storage')))
 
 chatApi.use(
-  '/', express.static(path.join(__dirname, './spa.build'))
+  '/',
+  redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT),
+  express.static(path.join(__dirname, './spa.build')),
 )
 chatApi.use((req, _res, next) => {
   // @ts-ignore

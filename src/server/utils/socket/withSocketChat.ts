@@ -48,7 +48,7 @@ export const withSocketChat = (io: Socket) => {
   }
   // --
   io.on('connection', (socket) => {
-    log.socket('conn', socket)
+    // log.socket('conn', socket)
     
     const nameBySocketId = usersSocketMap.get(socket.id)
 
