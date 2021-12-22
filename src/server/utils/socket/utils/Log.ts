@@ -6,6 +6,7 @@ const counter = Counter()
 export class Log {
   isDev: boolean
   constructor (isDev: boolean) {
+    console.log('isDev', isDev)
     this.isDev = isDev
   }
   log(descr: string, value: any) {
@@ -14,6 +15,8 @@ export class Log {
         console.log(`- ${counter.next().value} ${descr} -`)
         console.log(value)
         console.log('-')
+      } else {
+        console.log('!isDev')
       }
     } catch (err) {
       console.log(err)

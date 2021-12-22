@@ -482,7 +482,7 @@ export const Chat = () => {
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
   const initialEditedMessageState = { text: '', ts: 0 }
-  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus; fileName?: string, assignedTo?: string[], assignedBy?: string }>(initialEditedMessageState)
+  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus; file?: {fileName: string, filePath?: string }, assignedTo?: string[], assignedBy?: string }>(initialEditedMessageState)
   const [isCtxMenuOpened, setIsCtxMenuOpened] = useState<boolean>(false)
   // const resetEditedMessage = () => {
   //   setEditedMessage(initialEditedMessageState)
@@ -498,7 +498,7 @@ export const Chat = () => {
     setEditedMessage((state) => ({ ...state, text: e.target.value }))
   }
   const handleSaveEditedMessage = ({ assignedTo }: { assignedTo?: string[] }, cb?: () => void) => {
-    if (!editedMessage?.text && !editedMessage.fileName) {
+    if (!editedMessage?.text && !editedMessage.file) {
       toast({
         position: 'top',
         // title: 'Sorry',
@@ -1374,7 +1374,7 @@ export const Chat = () => {
               <Box ml="2">---</Box>
             </Flex>
             {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, arr) => {
-              const { user, text, ts, editTs, status, fileName, _next, assignedTo, assignedBy } = message
+              const { user, text, ts, editTs, status, file, _next, assignedTo, assignedBy } = message
               // const isLastOfFiltered = i === arr.length -1
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
@@ -1388,7 +1388,7 @@ export const Chat = () => {
                   if(!!contextTriggerRef) contextTriggerRef.handleContextClick(e);
               }
 
-              if (!!fileName) {
+              if (!!file) {
                 return (
                   <Image
                     key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}

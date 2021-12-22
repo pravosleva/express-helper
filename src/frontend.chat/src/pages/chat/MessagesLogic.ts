@@ -171,13 +171,17 @@ export class Logic {
     }
   }
   getAllImagesMessages(): TMessage[] {
-    return this.messages.filter(({ fileName }) => !!fileName)
+    return this.messages.filter(({ file }) => !!file)
   }
   getAllImagesLightboxFormat(): TImageLightboxFormat[] {
     const result: { src: string, alt: string }[] = []
 
-    this.messages.forEach(({ fileName, filePath, text }) => {
-      if (!!fileName) result.push({ src: `${REACT_APP_CHAT_UPLOADS_URL}/${filePath || fileName}`, alt: text })
+    this.messages.forEach(({ file, text }) => {
+      if (!!file) {
+        const { fileName, filePath } = file
+
+        if (!!fileName) result.push({ src: `${REACT_APP_CHAT_UPLOADS_URL}/${filePath || fileName}`, alt: text })
+      }
     })
 
     return result.reverse()

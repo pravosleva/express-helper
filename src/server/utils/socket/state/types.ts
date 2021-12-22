@@ -29,8 +29,10 @@ export type TMessage = {
   // type?: EMessageType
   assignedTo?: string[]
   assignedBy?: string
-  fileName?: string
-  filePath?: string
+  file?: {
+    fileName: string
+    filePath: string
+  }
 }
 // export type TRoomData = {
 //   [userName: string]: TMessage[]

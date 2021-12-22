@@ -386,6 +386,21 @@ const syncRoomsMap = () => {
             */
 
             // Others...
+            /**/
+            // @ts-ignore
+            if (!!msg.filePath) {
+              msg.file = {
+                // @ts-ignore
+                filePath: msg.filePath,
+                // @ts-ignore
+                fileName: msg.fileName,
+              }
+              // @ts-ignore
+              delete msg.filePath
+              // @ts-ignore
+              delete msg.fileName
+            }
+            /**/
 
             newMsgs.push(msg)
             roomsMapInstance.set(roomName, newMsgs)

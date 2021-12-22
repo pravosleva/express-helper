@@ -24,6 +24,7 @@ import { Log } from '~/utils/socket/utils/Log'
 import { moveFile } from '~/utils/fs-tools/moveFile'
 
 const isDev = process.env.NODE_ENV === 'development'
+console.log(process.env.NODE_ENV)
 const log = new Log(isDev)
 
 const { CHAT_ADMIN_TOKEN } = process.env
@@ -158,11 +159,15 @@ export const withSocketChat = (io: Socket) => {
                 }
                 
                 const msg = ''
-                newRoomData.push({ text: msg, ts: progressData.ts, rl: registryLevel, user: name, fileName: event.file.name, filePath: _getFileRelPath(event.file.name, room) })
+                const file = {
+                  filePath: _getFileRelPath(event.file.name, room),
+                  fileName: event.file.name
+                }
+                newRoomData.push({ text: msg, ts: progressData.ts, rl: registryLevel, user: name, file })
 
                 roomsMap.set(room, newRoomData)
 
-                io.in(room).emit('message', { user: name, text: msg, ts: progressData.ts, rl: registryLevel, fileName: event.file.name, filePath: _getFileRelPath(event.file.name, room) });
+                io.in(room).emit('message', { user: name, text: msg, ts: progressData.ts, rl: registryLevel, file });
                 // -
               }
             })
@@ -540,15 +545,15 @@ export const withSocketChat = (io: Socket) => {
           io.in(room).emit('message.delete', { ts });
 
           // -- NOTE: DELETE FILE!
-          if (!!result.targetMessage.fileName) {
+          if (!!result.targetMessage.file?.fileName) {
             const storagePath = uploadsPath
 
-            if (!!result.targetMessage.filePath) {
+            if (!!result.targetMessage.file?.filePath) {
               console.log('DELETED: filePath')
-              removeFileIfNecessary(path.join(storagePath, result.targetMessage.filePath))
-            } else if (!!result.targetMessage.fileName) {
+              removeFileIfNecessary(path.join(storagePath, result.targetMessage.file?.filePath))
+            } else if (!!result.targetMessage.file?.fileName) {
               console.log('DELETED: fileName')
-              removeFileIfNecessary(path.join(storagePath, result.targetMessage.fileName))
+              removeFileIfNecessary(path.join(storagePath, result.targetMessage.file?.fileName))
             }
           }
           // --

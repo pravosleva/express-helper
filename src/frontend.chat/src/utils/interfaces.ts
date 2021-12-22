@@ -20,8 +20,10 @@ export type TMessage = {
   editTs?: number;
   name: string;
   status: EMessageStatus;
-  fileName?: string;
-  filePath?: string;
+  file?: {
+    fileName: string;
+    filePath: string;
+  };
   assignedTo?: string[];
   assignedBy?: string;
 }

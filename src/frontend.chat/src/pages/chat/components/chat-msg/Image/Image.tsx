@@ -31,7 +31,9 @@ export const Image = ({
   onAddAdditionalTsToShow,
   onOpenGallery,
 }: TProps) => {
-  const { user, text, ts, editTs, status, fileName, _next, filePath } = message
+  const { user, text, ts, editTs, status, file, _next } = message
+  const fileName = file?.fileName
+  const filePath = file?.filePath
   const { name } = useContext(MainContext)
   // const isLastOfFiltered = i === arr.length -1
   const isMyMessage = user === name
