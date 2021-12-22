@@ -6,7 +6,7 @@ import {
 } from '~/utils/socket/state' 
 import bcrypt from 'bcryptjs'
 import { getRandomInteger } from '~/utils/getRandomInteger'
-import { EAPICode } from './types'
+import { EAPIUserCode } from './types'
 
 export const createUser = (req, res) => {
   const { chatId, username } = req.body
@@ -15,7 +15,7 @@ export const createUser = (req, res) => {
     return res.status(400).send({
       ok: false,
       message: 'Params ERR: chatId, username are required',
-      code: EAPICode.IncorrecrParams,
+      code: EAPIUserCode.IncorrecrParams,
       _originalBody: req.body,
     })
   }
@@ -29,7 +29,7 @@ export const createUser = (req, res) => {
     return res.status(200).send({
       ok: false,
       message: `Пользователь ${username} уже существует.\n\nОпции в разработке:\n- Восстановление пароля\n- Удаление пользователя`,
-      code: EAPICode.UserExists,
+      code: EAPIUserCode.UserExists,
       _originalBody: req.body,
     })
   } else { */
@@ -65,10 +65,10 @@ export const createUser = (req, res) => {
       registeredTGChatIdsMapInstance.set(String(chatId), username)
 
       let messages = ['- Храним только хэш пароля']
-      let code = EAPICode.Created
+      let code = EAPIUserCode.Created
       if(!!oldTGChatIdData) {
         messages.push(`- Вы ранее были под ником ${oldTGChatIdData}; Имя перезаписано на ${username}`)
-        code = EAPICode.Updated
+        code = EAPIUserCode.Updated
       }
       messages.push('- Опция сброса пароля в разработке...')
 

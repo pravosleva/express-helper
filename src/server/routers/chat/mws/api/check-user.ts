@@ -6,7 +6,7 @@ import {
 } from '~/utils/socket/state' 
 // import bcrypt from 'bcryptjs'
 // import { getRandomInteger } from '~/utils/getRandomInteger'
-import { EAPICode } from './types'
+import { EAPIUserCode } from './types'
 
 export const checkUser = (req, res) => {
   const { chatId, username } = req.body
@@ -15,7 +15,7 @@ export const checkUser = (req, res) => {
     return res.status(400).send({
       ok: false,
       message: 'Params ERR: chatId, username are required',
-      code: EAPICode.IncorrecrParams,
+      code: EAPIUserCode.IncorrecrParams,
       _originalBody: req.body,
     })
   }
@@ -31,13 +31,13 @@ export const checkUser = (req, res) => {
         // Актуальный ник?
         return res.status(200).send({
           ok: true,
-          code: EAPICode.UserExists,
+          code: EAPIUserCode.UserExists,
           _originalBody: req.body,
         })
       } else {
         return res.status(200).send({
           ok: true,
-          code: EAPICode.IncorrectUserName,
+          code: EAPIUserCode.IncorrectUserName,
           oldUsername: registeredTGChatIdUsername,
           _originalBody: req.body,
         })
@@ -45,14 +45,14 @@ export const checkUser = (req, res) => {
     } else {
       return res.status(200).send({
         ok: true,
-        code: EAPICode.NotFound,
+        code: EAPIUserCode.NotFound,
         _originalBody: req.body,
       })
     }
   } else {
     return res.status(200).send({
       ok: true,
-      code: EAPICode.NotFound,
+      code: EAPIUserCode.NotFound,
       _originalBody: req.body,
     })
   }
