@@ -15,7 +15,7 @@ import {
   Button,
   Text,
   Box,
-
+  Grid,
   useToast,
   useDisclosure,
 } from '@chakra-ui/react'
@@ -25,10 +25,17 @@ import { RoomlistModal } from './components'
 import slugify from 'slugify'
 // import { FocusableElement } from "@chakra-ui/utils"
 import pkg from '../../../package.json'
+import { useCookies } from 'react-cookie'
+import axios from 'axios'
+import { FiArrowRight } from 'react-icons/fi'
+import { openExternalLink } from '~/utils/openExternalLink'
+// const handleOpenExternalLink = useCallback(openExternalLink, [])
+import debounce from 'lodash.debounce'
 
+const isDev = process.env.NODE_ENV === 'development'
 const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'Anchous chat 2021'
 const REACT_APP_BUILD_DATE = process.env.REACT_APP_BUILD_DATE || ''
-
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 type TLocalRoomItem = {
   name: string
   ts: number
@@ -37,6 +44,7 @@ type TLocalRoomItem = {
 const delay = (ms = 3000) => new Promise((res) => setTimeout(res, ms))
 
 export const Login = () => {
+  const [isVerified, setIsVerified] = useState<boolean>(false)
   const {
     socket,
     setIsLogged,
@@ -67,6 +75,7 @@ export const Login = () => {
     nameLSRef.current = ''
     removeNameLS()
     handleCloseModal()
+    setIsLoading1(false)
   }
   const countRef = useRef(0)
 
@@ -98,19 +107,55 @@ export const Login = () => {
   const { isOpen: isPasswordModalOpen, onOpen: handlePasswordModalOpen, onClose: handlePasswordModalClose } = useDisclosure()
   const [isLoading1, setIsLoading1] = useState<boolean>(false)
   const [isLoading2, setIsLoading2] = useState<boolean>(false)
+  const axiosCancelToken = useRef<any>(null)
+  const axiosCancelToken2 = useRef<any>(null)
 
-  const handleLogin = useCallback((sR?: string) => {
+  const _handleLogin = useCallback(async (sR?: string) => {
+    if (isDev || name === 'pravosleva') toast({
+      position: 'top',
+      title: 'check-jwt',
+      // description: error,
+      status: 'warning',
+      duration: 2000,
+    })
     setNameLS(name)
+
+    // -- NOTE: drop axios req
+    if (!!axiosCancelToken.current) axiosCancelToken2.current.cancel()
+    axiosCancelToken2.current = axios.CancelToken.source()
+    // --
+
+    // TODO: await check jwt
+    const jwtChecked = await axios(`${REACT_APP_API_URL}/api/auth/check-jwt`, {
+      method: 'POST',
+      cancelToken: axiosCancelToken.current,
+    })
+      .then((res) => res.data)
+      .catch((err) => err)
+    
+    const isLogged: boolean = jwtChecked?.ok && jwtChecked.code === 'logged'
+
     if (!!socket)
       setIsLoading1(true)
       // @ts-ignore
       socket.emit(
         'login',
-        { name, room: !!sR ? slugify(sR) : slugifiedRoom, token: String(tokenLS) },
+        {
+          name,
+          room: !!sR ? slugify(sR) : slugifiedRoom,
+          // token: String(tokenLS),
+          isLogged
+        },
         (error: string, isAdmin?: boolean) => {
+          // if (isDev) {
+          //   history.push('/chat')
+          //   return
+          // }
+
           if (!!error) {
             if (error === 'FRONT:LOG/PAS') {
               handlePasswordModalOpen()
+              setIsLoading1(false)
               return
             }
             toast({
@@ -157,6 +202,10 @@ export const Login = () => {
         }
       )
   }, [slugifiedRoom, name, tokenLS, room, history, roomlistLS, setIsAdmin, setIsLogged, setNameLS, setRoomlistLS, handlePasswordModalOpen, socket])
+  const handleLogin = useMemo(
+    () => debounce(_handleLogin, 1000), // { leading: true, trailing: false }
+    [_handleLogin]
+  );
 
   const handleKeyDown = (ev: any) => {
     if (ev.keyCode === 13) {
@@ -165,11 +214,61 @@ export const Login = () => {
   }
 
   const [myPassword, setMyPassword] = useState<{ password: string }>({ password: '' })
-  const handleTryLoginWidthPassword = (pas?: string) => {
+  const _handleTryLoginWidthPassword = async (pas?: string) => {
+    if (isDev || name === 'pravosleva') toast({
+      position: 'top',
+      title: 'login',
+      // description: error,
+      status: 'warning',
+      duration: 2000,
+    })
+    // console.log(pas)
+    const data: any = await axios.post(`${REACT_APP_API_URL}/api/auth/login`, {
+      username: name,
+      password: pas,
+      room,
+    })
+      .then((res) => {
+        // console.log(res.data)
+        return res.data
+      })
+      .catch((err) => {
+        console.log(err)
+        return err
+      })
+    
+    // console.log(data)
+    const isLogged = !!data?.ok && data.code === 'logged'
+    if (isLogged) {
+      toast({
+        position: "top",
+        title: "JWT received",
+        status: "success",
+        duration: 3000,
+      })
+    } else {
+      toast({
+        position: "top",
+        title: "Error",
+        description: data?.message || `Oops... Sorry: ${data?.code || 'No res.code'}`,
+        status: "error",
+        // duration: 3000,
+        // isClosable: true,
+      })
+      return
+    }
     if (!!socket) {
       setIsLoading2(true)
-      socket.emit('login.password', { password: pas || myPassword.password, token: String(tokenLS), name, room: slugifiedRoom }, (err?: string, isAdmin?: boolean, token?: string) => {
+      socket.emit('login.password', {
+        // password: pas || myPassword.password,
+        isLogged,
+        token: String(tokenLS),
+        name,
+        room: slugifiedRoom
+      }, (err?: string, isAdmin?: boolean, token?: string) => {
         if (!!err) {
+          console.log('- this case')
+          console.log(err)
           toast({
             position: 'top',
             description: err,
@@ -209,23 +308,18 @@ export const Login = () => {
             setRoomlistLS([{ name: room, ts: nowTs }])
           }
           // --
-          toast({
-              position: "bottom",
-              title: "Hey there",
-              description: `Hello, ${name}`,
-              status: "success",
-              duration: 3000,
-              isClosable: true,
-          })
+          // toast({ position: "bottom", title: "Hey there", description: `Hello, ${name}`, status: "success", duration: 3000, isClosable: true })
           history.push('/chat')
         }
       })
     }
   }
+  const handleTryLoginWidthPassword = useMemo(
+    () => debounce(_handleTryLoginWidthPassword, 1000, { leading: true, trailing: false }),
+    [_handleTryLoginWidthPassword]
+  );
   // const handleKeyDownPassword = (ev: any) => {
-  //   if (ev.keyCode === 13) {
-  //     if (!!room) handleTryLoginWidthPassword()
-  //   }
+  //   if (ev.keyCode === 13) { if (!!room) handleTryLoginWidthPassword() }
   // }
   const handleChangePassword = (e: any) => {
     setMyPassword((state) => ({ ...state, password: e.target.value }))
@@ -263,7 +357,8 @@ export const Login = () => {
   }
   // ---
 
-  const isSubmitDisabled = useMemo(() => !(!!name && myPassword.password.length === 4), [name, myPassword.password])
+  // const isSubmitDisabled = useMemo(() => !(!!name && myPassword.password.length === 4), [name, myPassword.password])
+  const handleOpenExternalLink = useCallback(openExternalLink, [])
 
   return (
     <>
@@ -297,17 +392,20 @@ export const Login = () => {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <FormControl mt={4}>
+            <Flex justifyContent='center'>
+            <FormControl mt={4} maxWidth={200}>
               <FormLabel>Login</FormLabel>
               <Input
                 type='login'
                 placeholder="Login"
+                variant='filled'
                 // isDisabled
-                value={name}
                 readOnly
+                value={name}
               />
             </FormControl>
-            <Box mt={4} style={{ display: 'flex', justifyContent: 'center' }}>
+            </Flex>
+            <Box mt={5} style={{ display: 'flex', justifyContent: 'center' }}>
               <HStack m='0 auto'>
                 <PinInput
                   autoFocus
@@ -320,10 +418,10 @@ export const Login = () => {
                     if (!!name && !isLoading2 && !!room && value.length === 4) handleTryLoginWidthPassword(value)
                   }}
                 >
-                  <PinInputField autocomplete='off' />
-                  <PinInputField autocomplete='off' />
-                  <PinInputField autocomplete='off' />
-                  <PinInputField autocomplete='off' />
+                  <PinInputField autoComplete='off' />
+                  <PinInputField autoComplete='off' />
+                  <PinInputField autoComplete='off' />
+                  <PinInputField autoComplete='off' />
                 </PinInput>
               </HStack>
             </Box>
@@ -351,10 +449,15 @@ export const Login = () => {
           </ModalBody> */}
 
           <ModalFooter style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button colorScheme="blue" mr={3} onClick={() => handleTryLoginWidthPassword()} isLoading={isLoading2} isDisabled={isSubmitDisabled}>
-              Submit
+            {/* <Grid templateColumns='2fr 2fr 1fr' gap={2}></Grid> */}
+
+            <Button mr={2} size='sm' variant='link' onClick={handleOpenExternalLink(`https://t.me/pravosleva_bot?start=invite-chat_${room}`)}>Регистрация</Button>
+            <Button size='sm' variant='link' onClick={handleOpenExternalLink(`https://t.me/pravosleva_bot?start=invite-chat_${room}`)}>Забыли пароль?</Button>
+            {/*
+            <Button size='xs' colorScheme="blue" onClick={() => handleTryLoginWidthPassword()} isLoading={isLoading2} isDisabled={isSubmitDisabled}>
+              <FiArrowRight size={18} />
             </Button>
-            <Button onClick={handlePasswordModalClose}>Cancel</Button>
+            */}
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -362,9 +465,9 @@ export const Login = () => {
       <Modal isOpen={isModalOpened} onClose={handleCloseModal} size="xs" autoFocus={false} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Your name is</ModalHeader>
+          <ModalHeader>Your name is<br />{nameLS}?</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>{nameLS}?</ModalBody>
+          {/* <ModalBody><Text size='lg'></Text></ModalBody> */}
 
           <ModalFooter>
             <Button variant="ghost" mr={3} onClick={handleClearName}>
@@ -461,6 +564,7 @@ export const Login = () => {
               </Button>
             )
           }
+          <Flex mt={1} justifyContent='center'>Все еще доступен режим Гостя под свободным ником</Flex>
           {!!REACT_APP_BUILD_DATE && (
             <Flex mt={1} justifyContent='center'>v{pkg.version} Last build {REACT_APP_BUILD_DATE.split(' ')[0]}</Flex>
           )}

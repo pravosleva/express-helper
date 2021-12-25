@@ -8,6 +8,9 @@ import bodyParser from 'body-parser'
 import { redirectIfUnlogged } from './mws/api/auth/redirect-if-unlogged.middle' //  './auth/redirect-if-unlogged.middle'
 // chatExternalApi.use(redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT))
 import { ELoggedCookie } from '~/routers/chat/utils/types'
+import { redirectIfIncorrectParams } from './mws/api/auth/redirect-if-incorrect-params.middle'
+import cookieParser from 'cookie-parser'
+import { setUsernameToCookieOrDelete } from './mws/api/auth/set-username-to-cookie-or-delete'
 
 const jwtSecret = 'tst'
 
@@ -58,6 +61,8 @@ try {
 
 const chatApi = express()
 
+chatApi.use(cookieParser())
+
 chatApi.use(
   '/admin-ui',
   express.static(path.join(__dirname, './@socket.io/admin-ui/ui/dist'))
@@ -69,27 +74,13 @@ chatApi.use(
 chatApi.use('/api', jsonParser, chatExternalApi)
 chatApi.use('/get-users-map', getUsersMapRoute)
 
-// if (isDev) {
-//   chatApi.use('/storage', express.static(path.join(__dirname, '../../../storage')))
-// } else {
-//   const staticProxySettings = {
-//     target: {
-//       'protocol' : 'http',
-//       'hostname' : 'pravosleva.ru',
-//       'pathname': '/storage'
-//     },
-//     changeOrigin: true,
-//     prependPath: true,
-//     regex: 'jpeg|gif|png|jpg'
-//   }
-
-//   chatApi.use(require('express-static-proxy')(staticProxySettings))
-// }
 chatApi.use('/storage', express.static(path.join(__dirname, '../../../storage')))
 
 chatApi.use(
   '/',
-  redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT),
+  setUsernameToCookieOrDelete(jwtSecret, ELoggedCookie.JWT),
+  // redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT),
+  // redirectIfIncorrectParams(jwtSecret, ELoggedCookie.JWT),
   express.static(path.join(__dirname, './spa.build')),
 )
 chatApi.use((req, _res, next) => {

@@ -2,7 +2,7 @@ import { Request as IRequest, Response as IResponse, NextFunction as INextFuncti
 import { TUser } from '~/routers/chat/utils/types'
 import jwt from 'jsonwebtoken'
 
-export const redirectIfLogged = (jwtSecret: string, cookieName: string) => (req: IRequest & { user?: TUser }, res: IResponse, next: INextFunction) => {
+export const mutateReqIfLogged = (jwtSecret: string, cookieName: string) => (req: IRequest & { user?: TUser }, res: IResponse, next: INextFunction) => {
   // --- NOTE: REDIRECT LOGGED CLIENT who has permission to work with the current agent
   if (!!req.cookies && !!req.cookies[cookieName]) {
     /*
@@ -11,18 +11,15 @@ export const redirectIfLogged = (jwtSecret: string, cookieName: string) => (req:
     * and this is saved in req.user object
     */
     try {
-      const jwtParsed = jwt.verify(req.cookies[cookieName], jwtSecret)
+      const jwtParsed: any = jwt.verify(req.cookies[cookieName], jwtSecret)
       console.log(jwtParsed)
-      // req.user = 
-      // if (req.user.id) {
-      //   return res.redirect('http://google.com')
-      // }
-      return res.status(500).json({ message: 'tst1', ok: false })
+      if (typeof jwtParsed?.username === 'string') req.user = jwtParsed?.username
+      // return res.status(500).json({ message: 'tst1', ok: false })
     } catch (err) {
       // NOTE: For example, JsonWebTokenError: invalid signature
       console.log('err #riu1')
       console.log(err)
-      return res.status(500).json({ message: 'tst2', ok: false })
+      // return res.status(500).json({ message: 'tst2', ok: false })
     }
     // --
   }

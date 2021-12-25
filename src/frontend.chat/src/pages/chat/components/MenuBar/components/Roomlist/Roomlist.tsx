@@ -41,6 +41,7 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
         return (
           <Button
             colorScheme={isGreen ? 'green' : 'gray'}
+            size='sm'
             disabled={r === room}
             key={r}
             // as={IconButton}

@@ -108,7 +108,7 @@
         min-height: 117px;
 
         & > span > span:nth-child(2) {
-          background: var(--chakra-colors-gray-600);
+          background: var(--chakra-colors-gray-500);
           border-radius: 10px;
         }
         
@@ -175,8 +175,11 @@
         hyphens: auto;
         white-space: pre-wrap;
         
-        word-wrap: break-word;
-        // overflow-wrap: normal;
+        // word-wrap: break-word;
+        overflow-wrap: normal !important;
+        & * {
+          overflow-wrap: normal !important;
+        }
 
         display: flex;
         flex-direction: column;
@@ -265,9 +268,9 @@
       }
 
       .oponent-message{
-        .msg{
-          max-width: calc(100% - 33px - 0.5rem);
-        }
+        align-self: flex-start;
+        align-items: flex-start;
+        // .msg{ max-width: calc(100% - 33px - 0.5rem); }
         // animation: fadeIn 0.8s, slideDown 0.5s;
         // position: relative;
         & .abs-tail {
@@ -322,35 +325,35 @@
       border-radius: 0px 0px 8px 8px;
     }
     input{
-        width: 100%;
-        padding: 1.5rem 4rem 1.5rem 1.5rem;
-        border-radius: 0px 0px 8px 8px;
+      width: 100%;
+      padding: 1.5rem 4rem 1.5rem 1.5rem;
+      border-radius: 0px 0px 8px 8px;
     }
     textarea{
-          width: 100%;
-          // padding: 1.5rem 4rem 1.5rem 1.5rem;
+      width: 100%;
+      // padding: 1.5rem 4rem 1.5rem 1.5rem;
 
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      
+      @media (max-width: #{$sm}px) {
+          border-radius: 0px;
           
-          @media (max-width: #{$sm}px) {
-              border-radius: 0px;
-              
-              }
-            @media (min-width: #{$sm + 1}px) {
-              border-radius: 0px 0px 8px 8px;
-            }
+          }
+        @media (min-width: #{$sm + 1}px) {
+          border-radius: 0px 0px 8px 8px;
+        }
 
-          // background-color: #fff;
-          padding-right: 4rem;
+      // background-color: #fff;
+      padding-right: 4rem;
     }
     button{
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        position: absolute;
-        z-index: 1;
-        right: 1rem;
-        top: 1rem;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      position: absolute;
+      z-index: 1;
+      right: 1rem;
+      top: 1rem;
     }
     label.absolute-label{
       user-select: none;

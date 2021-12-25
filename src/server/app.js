@@ -9,7 +9,7 @@ import cors from 'cors'
 import siofu from 'socketio-file-upload'
 import authRouter from './routers/auth'
 import chatRouter from './routers/chat'
-
+// import chatLogin from './routers/chat-login'
 import { EAccessCode, redirect } from './routers/auth/cfg'
 import redirectIfUnloggedMw from './routers/auth/mws/redirect-if-unlogged'
 import mainRouter from './routers/index'
@@ -65,5 +65,6 @@ app.use('/qr', qrRouter)
 app.use('/pravosleva-bot-2021', pravoslevaBot2021Router)
 app.use('/system', systemRouter)
 app.use('/chat', chatRouter)
+// app.use('/chat-login', chatLogin)
 
 module.exports = app

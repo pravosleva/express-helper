@@ -8,36 +8,39 @@ import { EAPILoginCode, ELoggedCookie } from '~/routers/chat/utils/types'
 import QRCode from 'qrcode'
 import { promisify } from 'es6-promisify'
 
-const genDataUrl: (payload: string) => Promise<string> = promisify(QRCode.toDataURL.bind(QRCode))
+const EXTERNAL_ROUTING = process.env.EXTERNAL_ROUTING || ''
 
-const getRoomLink = (room: string) => `http://pravosleva.ru/express-helper/chat/#/?room=${room}`
+const genDataUrl: (payload: string) => Promise<string> = promisify(QRCode.toDataURL.bind(QRCode))
+const getRoomLink = (room: string) => `${EXTERNAL_ROUTING}/chat/#/?room=${room}`
 
 export const login = (jwtSecret: string, expiresCookiesTimeInDays: number) => async (req: IRequest, res: IResponse) => {
-  const requiredParams = ['login', 'password', 'tg_chat_id', 'room']
+  const requiredParams = ['username', 'password', 'room']
   const errs = []
   for (const key of requiredParams) if (!req.body[key]) errs.push(key)
   if (errs.length > 0) return res
     .status(400)
-    .json({ message: `Неверные параметры запроса: ${errs.join(', ')}`, code: EAPILoginCode.IncorrectParams })
+    .json({ ok: false, message: `Неверные параметры запроса: ${errs.join(', ')}`, code: EAPILoginCode.IncorrectParams })
 
-  const userData = usersMap.get(String(req.body.chat_id))
+  const userData = usersMap.get(String(req.body.username))
   if (!userData) return res
     .status(404)
-    .json({ message: 'Пользователь не найден', code: EAPILoginCode.NotFound })
+    .json({ ok: false, message: 'Пользователь не найден', code: EAPILoginCode.NotFound })
   
   const passwordHash = userData.passwordHash
+  // console.log('eq.body.password)', req.body.password)
+  // console.log(req.body)
+  const tgChatId = userData.tg.chat_id
   if (!passwordHash) return res
     .status(404)
-    .json({ message: 'Server ERR: Хэш не найден, попробуйте восстановить пароль', code: EAPILoginCode.ServerError })
+    .json({ ok: false, message: 'Server ERR: Хэш не найден, попробуйте восстановить пароль', code: EAPILoginCode.ServerError })
   
   // 1. Compare hash
-  const testedHash = bcrypt.hashSync(req.body.password)
-  if (testedHash !== passwordHash) return res
+  if (!bcrypt.compareSync(req.body.password, passwordHash)) return res
     .status(200)
-    .json({ message: 'Неверный пароль', code: EAPILoginCode.IncorrectPassword })
+    .json({ ok: false, message: 'Неверный пароль', code: EAPILoginCode.IncorrectPassword })
 
   // 2. Password correct -> set jwt to cookie
-  const jwt4Cookie = jwt.sign({ room: req.body.room, user: req.body.login, tg_chat_id: req.body.tg_chat_id }, jwtSecret, {
+  const jwt4Cookie = jwt.sign({ username: req.body.username, tgChatId }, jwtSecret, {
     expiresIn: 60 * 60 * 24 * expiresCookiesTimeInDays,
   })
   const maxAge = getMsByDays(expiresCookiesTimeInDays)
@@ -50,5 +53,5 @@ export const login = (jwtSecret: string, expiresCookiesTimeInDays: number) => as
 
   res
     .status(200)
-    .json({ message: `Logges as ${req.body.login}; cookie ${ELoggedCookie.JWT} was set`, code: EAPILoginCode.Logged, QRDataUrl: dataUrl })
+    .json({ ok: true, message: `Logged as ${req.body.username}; cookie ${ELoggedCookie.JWT} was set`, code: EAPILoginCode.Logged, qrDataUrl: dataUrl, link: getRoomLink(req.body.room) })
 }

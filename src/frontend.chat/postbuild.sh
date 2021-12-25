@@ -2,7 +2,7 @@
 # set -e
 # set -x
 
-echo "🔨 POSTBUILD STARTED "
+echo "🔨 POSTBUILD STARTED: Chat"
 
 EXTERNAL_DIR_0=""$(dirname "$PWD")""
 EXTERNAL_DIR=""$(dirname "$EXTERNAL_DIR_0")""

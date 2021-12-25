@@ -24,8 +24,8 @@ import { Log } from '~/utils/socket/utils/Log'
 import { moveFile } from '~/utils/fs-tools/moveFile'
 
 const isDev = process.env.NODE_ENV === 'development'
-console.log(process.env.NODE_ENV)
-const log = new Log(isDev)
+// console.log(process.env.NODE_ENV)
+// const log = new Log(isDev)
 
 const { CHAT_ADMIN_TOKEN } = process.env
 const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? String(token) === CHAT_ADMIN_TOKEN : false
@@ -37,7 +37,7 @@ const uploadsPath = path.join(projectRootDir, `/storage/${CHAT_UPLOADS_DIR_NAME}
 createDirIfNecessary(uploadsPath)
 // --
 
-console.log('--- bcrypt.hash 1234', bcrypt.hashSync('1234'))
+// console.log('--- bcrypt.hash 1234', bcrypt.hashSync('1234'))
 
 const uploadProgressMap = new Map<string, { connData: TConnectionData, status: string, event: any, ts: number }>()
 
@@ -294,7 +294,13 @@ export const withSocketChat = (io: Socket) => {
       }
     })
 
-    socket.on('login.password', ({ password, name, room, token }, cb?: (reason?: string, isAdmin?: boolean, token?: string) => void) => {
+    socket.on('login.password', ({
+      password,
+      isLogged,
+      name,
+      room,
+      token
+    }, cb?: (reason?: string, isAdmin?: boolean, token?: string) => void) => {
       if (!name || !room) {
         if (!!cb) cb('Room and Username are required')
         return
@@ -308,11 +314,12 @@ export const withSocketChat = (io: Socket) => {
       const { passwordHash, registryLevel, ...rest } = registeredUsersMap.get(name)
       const newToken: string = getToken(name)
 
-      if (!bcrypt.compareSync(password, passwordHash)) {
-        if (!!cb) cb('Incorrect password')
-        return
-      } else {
-        // -- LOGOUT OLD
+      // console.log(password)
+      console.log('- isLogged', isLogged)
+      if (!isLogged) return cb('Fuck you')
+
+      if (isLogged) { // !bcrypt.compareSync(password, passwordHash)
+        // -- LOGOUT OLD f necessary
         const existingUser = usersMap.get(name)
         if (!!existingUser) {
           const oldSocketId = existingUser.socketId
@@ -358,44 +365,45 @@ export const withSocketChat = (io: Socket) => {
       if (!!cb) cb(null, isUserAdmin(token), newToken)
     })
 
-    socket.on('login', ({ name, room, token }, cb?: (reason?: string, isAdmin?: boolean) => void) => {
-      if (!name || !room) {
-        if (!!cb) cb('Room and Username are required')
-        return
-      }
+    socket.on('login', ({ isLogged, name, room, token }, cb?: (reason?: string, isAdmin?: boolean) => void) => {
+      // if (!name || !room) {
+      //   if (!!cb) cb('Room and Username are required')
+      //   return
+      // }
 
       // --- NEW WAY
-      if (usersMap.has(name) && !token) {
-        if (!!cb) cb(`Username ${name} already taken`)
-        return
-      }
+      // if (usersMap.has(name) && !token) {
+      //   if (!!cb) cb(`Username ${name} already taken`)
+      //   return
+      // }
 
-      if (!!token) {
-        const regData = registeredUsersMap.get(name)
+      if (isLogged) {
+        
+        // const regData = registeredUsersMap.get(name)
 
-        if (!!regData && !!regData.tokens) {
-          if (regData.tokens.includes(token)) {
-            // Go on...
-            // -- LOGOUT OLD
-            const existingUser = usersMap.get(name)
-            if (!!existingUser) {
-              const oldSocketId = existingUser.socketId
+        // if (!!regData && !!regData.tokens) {
+        //   if (regData.tokens.includes(token)) {
+        //     // Go on...
+        //     // -- LOGOUT OLD
+        //     const existingUser = usersMap.get(name)
+        //     if (!!existingUser) {
+        //       const oldSocketId = existingUser.socketId
 
-              if (oldSocketId !== socket.id) logoutOld(oldSocketId)
-            }
-            // --
-          } else {
-            if (registeredUsersMap.has(name)) {
-              if (!!cb) cb('FRONT:LOG/PAS')
-              return
-            }
-          }
-        } else {
-          if (registeredUsersMap.has(name)) {
-            if (!!cb) cb('FRONT:LOG/PAS')
-            return
-          }
-        }
+        //       if (oldSocketId !== socket.id) logoutOld(oldSocketId)
+        //     }
+        //     // --
+        //   } else {
+        //     if (registeredUsersMap.has(name)) {
+        //       if (!!cb) cb('FRONT:LOG/PAS')
+        //       return
+        //     }
+        //   }
+        // } else {
+        //   if (registeredUsersMap.has(name)) {
+        //     if (!!cb) cb('FRONT:LOG/PAS')
+        //     return
+        //   }
+        // }
       } else {
         if (registeredUsersMap.has(name)) {
           if (!!cb) cb('FRONT:LOG/PAS')

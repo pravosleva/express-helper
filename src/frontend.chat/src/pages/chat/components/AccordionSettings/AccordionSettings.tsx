@@ -199,8 +199,8 @@ export const AccordionSettings = ({
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                 <Stack>
                   <Flex alignItems="center">
-                    <Button variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={18}/>}>Find user</Button>
-                    {hasEnabledFilters && <Button variant='ghost' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
+                    <Button size='sm' variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={18}/>}>Find user</Button>
+                    {hasEnabledFilters && <Button size='sm' variant='ghost' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
                   </Flex>
                   {/*
                   <Grid templateColumns='1fr 1fr 1fr 50px' gap={2}>
@@ -211,27 +211,32 @@ export const AccordionSettings = ({
                   */}
                   <Grid templateColumns='1fr 1fr 1fr 50px' gap={2}>
                     <Button
+                      size='sm'
                       onClick={() => { toggleFilter(EMessageStatus.Danger) }}
                       colorScheme={activeFilters.includes(EMessageStatus.Danger) ? 'red' : 'gray'}
                       isDisabled={!dangerCounter}
                       leftIcon={<AiOutlineFire size={14} />}
                     >{dangerCounter}</Button>
                     <Button
+                      size='sm'
                       onClick={() => { toggleFilter(EMessageStatus.Warn) }}
                       colorScheme={activeFilters.includes(EMessageStatus.Warn) ? 'yellow' : 'gray'}
                       isDisabled={!warnCounter}
                       leftIcon={<FiActivity size={14} />}
                     >{warnCounter}</Button>
                     <Button
+                      size='sm'
                       onClick={() => { toggleFilter(EMessageStatus.Success) }}
                       colorScheme={activeFilters.includes(EMessageStatus.Success) ? 'green' : 'gray'}
                       isDisabled={!successCounter}
                       leftIcon={<FaCheck size={11} />}
                     >{successCounter}</Button>
                     <Button
+                      size='sm'
                       onClick={() => { onSetFilters([]) }}
                       colorScheme='gray'
                       isDisabled={activeFilters.length === 0}
+                      variant='outline'
                     ><IoMdClose size={17} /></Button>
                   </Grid>
                   {users.map((name: string) => {
@@ -239,13 +244,16 @@ export const AccordionSettings = ({
                     return (
                       <Grid templateColumns='auto 50px' gap={2} key={name}>
                         <Button
+                          size='sm'
                           onClick={() => handleUserFilterClick(name)}
                           colorScheme={isBlue ? 'blue' : 'gray'}
                           isDisabled={!countersMap[name].total}
                         >{getTruncated(name)}{!!countersMap[name].total ? ` (${countersMap[name].total})` : ''}</Button>
                         <Button
+                          size='sm'
                           onClick={() => handleRemoveUser(name)}
                           colorScheme='gray'
+                          variant='outline'
                         ><FaTrashAlt size={14} /></Button>
                       </Grid>
                     )

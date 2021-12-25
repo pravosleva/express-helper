@@ -45,6 +45,7 @@ import {
   TagCloseButton,
   TagLabel,
   Tag,
+  Grid,
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
@@ -89,6 +90,14 @@ import { AssignedBox } from './components/AssignedBox'
 import { AccordionSettings } from './components/AccordionSettings'
 import { FcGallery } from 'react-icons/fc'
 import { EmojiPickerModal } from './components/EmojiPickerModal'
+import axios from 'axios'
+import { openExternalLink } from '~/utils/openExternalLink'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+// import { FaFire } from 'react-icons/fa'
+import { ImFire } from 'react-icons/im'
+import { FaTelegramPlane } from 'react-icons/fa'
+
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
 /* -- NOTE: Socket upload file evs
 // Sample 1 (12.3 kB)
@@ -121,8 +130,10 @@ const statusMap: {
   [EMessageStatus.Done]: <FaCheckCircle size={15} />,
   [EMessageStatus.Dead]: <GiDeathSkull size={14} /*color='#000'*/ />,
   [EMessageStatus.Warn]: <FiActivity size={15} /*color='#000'*/ />,
-  [EMessageStatus.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />,
-  [EMessageStatus.Success]: <FaCheck size={11} />,
+  // [EMessageStatus.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />,
+  // [EMessageStatus.Danger]: <FaFire size={14} />,
+  [EMessageStatus.Danger]: <ImFire size={14} />,
+  [EMessageStatus.Success]: <FaCheck size={10} />,
   'assign': <CgAssign size={18}/>,
 }
 const getIconByStatus = (status: EMessageStatus | 'assign', isColored: boolean) => {
@@ -760,10 +771,17 @@ export const Chat = () => {
       } catch (err) {}
     }
   }
-  const handleLogout = useCallback(() => {
+  const handleLogout = useCallback(async () => {
     const isConfirmed = window.confirm('Вы уверенны?')
-
     if (!isConfirmed) return
+
+    const jwtLogout = await axios.post(`${REACT_APP_API_URL}/api/auth/logout`, {})
+      .then((res: any) => res.data)
+      .catch((err: any) => err)
+    
+    if (jwtLogout.ok) {
+      toast({ position: 'top', description: jwtLogout?.message || 'Unlogged', status: 'info', duration: 3000, isClosable: true })
+    }
 
     if (!!socket) socket.emit('logout', { name, token: String(tokenLS) })
     updateRoomTsInLS(room)
@@ -841,10 +859,10 @@ export const Chat = () => {
   // -- Assignment feature switcher
   const [afLS, setAfLS] = useLocalStorage<{ [key: string]: number }>('chat.assignment-feature')
   const setAFLSRoom = useCallback((val: number) => {
-    console.log(room, val)
+    // console.log(room, val)
     setAfLS((oldState) => {
-      console.log(oldState)
-      console.log('->')
+      // console.log(oldState)
+      // console.log('->')
       const newState: any = {}
 
       // NOTE: #migration
@@ -854,7 +872,7 @@ export const Chat = () => {
 
       newState[room] = val
 
-      console.log(newState)
+      // console.log(newState)
       return newState
     })
   }, [room, setAfLS])
@@ -886,6 +904,17 @@ export const Chat = () => {
   const handleSelectEmojies = useCallback((value: string) => {
     setMessage((s) => `${s.trim()} ${value}`)
   }, [setMessage])
+
+  const handleOpenExternalLink = useCallback(openExternalLink, [])
+  const handleSetQuickStruct = useCallback(() => {
+    setMessage(`┣ root
+┣ a
+┣ a1
+┃ ┣ a2
+┃ ┗ a2
+┣ b`)
+  }, [setMessage])
+  const isLogged = useMemo(() => regData?.registryLevel === 2, [regData?.registryLevel])
 
   return (
     <>
@@ -1035,19 +1064,20 @@ export const Chat = () => {
                   </DrawerHeader>
 
                   <DrawerBody>
-                    <Stack spacing="24px">
-                      <Box><Text>The room features</Text></Box>
-                      <Flex>
+                    <Stack spacing={4} mt={2}>
+                      {/* <Box><Text>The room features</Text></Box> */}
+                      <Grid templateColumns='repeat(3, 1fr)' gap={2}>
                         <Menu autoSelect={false}>
                           <MenuButton
                             // as={IconButton}
                             as={Button}
                             // icon={<FiList size={18} />}
                             // isRound="true"
-                            mr={2}
+                            // mr={4}
                             colorScheme="blue"
                             variant="outline"
                             leftIcon={<HiOutlineMenuAlt2 size={18}/>}
+                            size='sm'
                           >
                             Tools
                           </MenuButton>
@@ -1126,14 +1156,36 @@ export const Chat = () => {
                         {
                           !!allImagesMessagesLightboxFormat && allImagesMessagesLightboxFormat.length > 0 && (
                             <Button
+                              size='sm'
                               colorScheme="gray"
                               variant="outline"
                               leftIcon={<FcGallery color='#FFF' size={18} />}
                               onClick={() => { handleOpenGallery(allImagesMessagesLightboxFormat[0].src) }}
+                              // mr={2}
                             >Photos</Button>
                           )
                         }
-                      </Flex>
+                        <CopyToClipboard
+                          text={`http://pravosleva.ru/express-helper/chat/#/?room=${room}`}
+                          onCopy={() => {
+                            toast({
+                              position: 'top',
+                              title: 'Link copied',
+                              description: `http://pravosleva.ru/express-helper/chat/#/?room=${room}`,
+                              status: 'success',
+                              duration: 5000,
+                              isClosable: true,
+                            })
+                          }}
+                          >
+                          <Button
+                            size='sm'
+                            // mr={2}
+                            colorScheme="gray"
+                            variant="outline"
+                          >Copy Link</Button>
+                        </CopyToClipboard>
+                      </Grid>
                       
                       <>
                         {regData?.registryLevel === ERegistryLevel.TGUser && (
@@ -1509,40 +1561,59 @@ export const Chat = () => {
                 </>
               )}
               {
-                upToSm && (
+                upToSm && isLogged && (
                   <div><button className='special-btn special-btn-md dark-btn' onClick={handleOpenEmoji}>Emoji</button></div>
                 )
               }
+              { isLogged && (
+                <div><button className='special-btn special-btn-md dark-btn' onClick={handleSetQuickStruct}>┣ Struct</button></div>
+              )}
+              { isLogged && !!message && (
+                <div><button className='special-btn special-btn-md dark-btn' onClick={() => { setMessage('') }}>Clear</button></div>
+              )}
             </div>
           </ScrollToBottom>
-          <div className="form">
-            {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}
-            <Textarea
-              id="msg"
-              isInvalid={isMsgLimitReached}
-              resize="none"
-              ref={textFieldRef}
-              placeholder="Enter Message"
-              value={message}
-              onChange={handleChange}
-              onKeyUp={handleKeyUp}
-              variant='unstyled'
-              pl={4}
-              fontWeight='md'
-            />
-            <label htmlFor="msg" className='absolute-label'>{left} left</label>
-            <IconButton
-              aria-label="Send"
-              // colorScheme={isMsgLimitReached ? 'red' : 'gray'}
-              isRound
-              icon={<RiSendPlaneFill size={15} />}
-              onClick={handleSendMessage}
-              disabled={!message}
-              isLoading={isSending}
-            >
-              Send
-            </IconButton>
-          </div>
+          {
+            isLogged ? (
+              <div className="form">
+                {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}
+                <Textarea
+                  id="msg"
+                  isInvalid={isMsgLimitReached}
+                  resize="none"
+                  ref={textFieldRef}
+                  placeholder="Enter Message"
+                  value={message}
+                  onChange={handleChange}
+                  onKeyUp={handleKeyUp}
+                  variant='unstyled'
+                  pl={4}
+                  fontWeight='md'
+                />
+                <label htmlFor="msg" className='absolute-label'>{left} left</label>
+                <IconButton
+                  aria-label="Send"
+                  // colorScheme={isMsgLimitReached ? 'red' : 'gray'}
+                  isRound
+                  icon={<RiSendPlaneFill size={15} />}
+                  onClick={handleSendMessage}
+                  disabled={!message}
+                  isLoading={isSending}
+                >
+                  Send
+                </IconButton>
+              </div>
+            ) : (
+              <Flex
+                style={{ height: '80px' }}
+                justifyContent='center'
+                alignItems='center'
+                // bgColor='gray.600'
+              >
+                <Button rightIcon={<FaTelegramPlane size={18} />} size='lg' style={{ borderRadius: 'var(--chakra-radii-full)' }} colorScheme='blue' variant='solid' onClick={handleOpenExternalLink(`https://t.me/pravosleva_bot?start=invite-chat_${room}`)}>Зайти в чат через бота</Button>
+              </Flex>
+            )
+          }
         </Flex>
       </div>
     </>

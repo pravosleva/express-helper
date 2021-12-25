@@ -6,7 +6,7 @@ echo "$BUILD_DATE" &&
 
 # NOTE: Все директории относительно project root dir
 echo "SKIP_PREFLIGHT_CHECK=true
-GENERATE_SOURCEMAP=false" > src/frontend.signin/.env
+GENERATE_SOURCEMAP=false" > src/frontend.chat/.env
 
 if [ $# -eq 1 ]
 then
@@ -17,12 +17,14 @@ then
 PUBLIC_URL=/chat" > src/frontend.chat/.env.production &&
       echo "REACT_APP_WS_API_URL=http://localhost:5000
 PUBLIC_URL=/chat
+REACT_APP_API_URL=http://localhost:5000
 REACT_APP_CHAT_UPLOADS_URL=http://localhost:5000/chat/storage/uploads" > src/frontend.chat/.env.development.local
     ;;
     "prod")
 ## PRAVOSLEVA.RU
       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
 PUBLIC_URL=/express-helper/chat
+REACT_APP_API_URL=/express-helper/chat
 REACT_APP_CHAT_NAME=\"PUB 2021\"
 REACT_APP_CHAT_UPLOADS_URL=/express-helper/chat/storage/uploads
 REACT_APP_BUILD_DATE=\"$BUILD_DATE\"
@@ -31,6 +33,7 @@ REACT_APP_BUILD_DATE=\"$BUILD_DATE\"
 ## SMARTPRICE beta2
 #       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
 # PUBLIC_URL=http://104.248.201.86:5000/chat
+# REACT_APP_API_URL=http://104.248.201.86:5000/chat
 # REACT_APP_CHAT_NAME=\"Open Chat 2021\"
 # REACT_APP_CHAT_UPLOADS_URL=http://pravosleva.ru/express-helper/chat/storage/uploads" > src/frontend.chat/.env.production
     ;;
