@@ -30,7 +30,7 @@ import { PriceModal } from './components'
 import { TTask } from './types'
 import { getPrettyPrice } from '~/utils/getPrettyPrice'
 import Countdown, { zeroPad } from 'react-countdown'
-import { BsFillCalendarFill } from 'react-icons/bs'
+// import { BsFillCalendarFill } from 'react-icons/bs'
 
 type TProps = {
   data: TTask
@@ -51,6 +51,8 @@ const constants = {
   day1: 1 * 24 * 60 * 60 * 1000,
   day2: 2 * 24 * 60 * 60 * 1000,
   sec20: 20 * 1000,
+  year1: 1 * 12 * 30 * 24 * 60 * 60 * 1000,
+  year3: 3 * 12 * 30 * 24 * 60 * 60 * 1000,
 }
 
 export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker, onPriceModalOpen, onResetExpenses }: TProps) => {
@@ -252,6 +254,26 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
                       <Flex display="flex" alignItems="center">
                         <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
                         <Text fontSize="md" fontWeight='bold'>Set 20 s</Text>
+                      </Flex>
+                    </MenuItem>
+                    <MenuItem
+                      minH="40px"
+                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.year1 })}
+                      isDisabled={fixedDiff === constants.year1}
+                    >
+                      <Flex display="flex" alignItems="center">
+                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                        <Text fontSize="md" fontWeight='bold'>Set 1 year</Text>
+                      </Flex>
+                    </MenuItem>
+                    <MenuItem
+                      minH="40px"
+                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.year3 })}
+                      isDisabled={fixedDiff === constants.year3}
+                    >
+                      <Flex display="flex" alignItems="center">
+                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                        <Text fontSize="md" fontWeight='bold'>Set 3 years</Text>
                       </Flex>
                     </MenuItem>
                   </>

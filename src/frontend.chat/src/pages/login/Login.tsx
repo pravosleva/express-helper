@@ -126,14 +126,18 @@ export const Login = () => {
     // --
 
     // TODO: await check jwt
-    const jwtChecked = await axios(`${REACT_APP_API_URL}/api/auth/check-jwt`, {
+    const jwtChecked = await axios(`${REACT_APP_API_URL}/chat/api/auth/check-jwt`, {
       method: 'POST',
       cancelToken: axiosCancelToken.current,
     })
       .then((res) => res.data)
       .catch((err) => err)
     
-    const isLogged: boolean = jwtChecked?.ok && jwtChecked.code === 'logged'
+    let isLogged: boolean = jwtChecked?.ok && jwtChecked.code === 'logged'
+
+    if (isDev) {
+      isLogged = true
+    }
 
     if (!!socket)
       setIsLoading1(true)
@@ -147,10 +151,10 @@ export const Login = () => {
           isLogged
         },
         (error: string, isAdmin?: boolean) => {
-          // if (isDev) {
-          //   history.push('/chat')
-          //   return
-          // }
+          if (isDev) {
+            history.push('/chat')
+            return
+          }
 
           if (!!error) {
             if (error === 'FRONT:LOG/PAS') {
@@ -223,7 +227,7 @@ export const Login = () => {
       duration: 2000,
     })
     // console.log(pas)
-    const data: any = await axios.post(`${REACT_APP_API_URL}/api/auth/login`, {
+    const data: any = await axios.post(`${REACT_APP_API_URL}/chat/api/auth/login`, {
       username: name,
       password: pas,
       room,

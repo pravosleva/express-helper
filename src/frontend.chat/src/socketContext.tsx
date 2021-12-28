@@ -20,8 +20,6 @@ interface ISocketContext {
   setIsLogged: (val: boolean) => void
   isConnected: boolean
   setIsConnected: (val: boolean) => void
-  // regData: { registryLevel: number } | null
-  // setRegData: (val: { registryLevel: number } | null) => void
   resetRoomData: () => void
 }
 
@@ -32,10 +30,6 @@ export const SocketContext = createContext<ISocketContext>({
   setIsLogged: () => {},
   isConnected: false,
   setIsConnected: () => {},
-  // regData: null,
-  // setRegData: (_val: { registryLevel: number } | null) => {
-  //   throw new Error('setRegData should be implemented')
-  // },
   resetRoomData: () => {}
 })
 

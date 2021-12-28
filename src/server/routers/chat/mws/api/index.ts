@@ -11,6 +11,7 @@ import { logout } from './auth/logout'
 import { checkJWT } from './auth/check-jwt'
 import { ELoggedCookie } from '~/routers/chat/utils/types'
 // import cookieParser from 'cookie-parser'
+import { add as addNotif, checkRoomState as checkRoomNotifsState, remove as removeNotif } from './common-notifs'
 
 // import { redirectIfUnlogged } from './auth/redirect-if-unlogged.middle'
 // chatExternalApi.use(redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT))
@@ -33,7 +34,21 @@ chatExternalApi.get('/remove-user', removeUser)
 chatExternalApi.post('/auth/login', login(jwtSecret, 2))
 chatExternalApi.post('/auth/check-jwt', checkJWT(jwtSecret, ELoggedCookie.JWT))
 chatExternalApi.post('/auth/logout', logout(ELoggedCookie.JWT))
-
+chatExternalApi.post(
+  '/common-notifs/add',
+  // checkJWT(jwtSecret, ELoggedCookie.JWT),
+  addNotif
+)
+chatExternalApi.post(
+  '/common-notifs/check-room-state',
+  // checkJWT(jwtSecret, ELoggedCookie.JWT),
+  checkRoomNotifsState
+)
+chatExternalApi.post(
+  '/common-notifs/remove',
+  // checkJWT(jwtSecret, ELoggedCookie.JWT),
+  removeNotif
+)
 
 export {
   chatExternalApi,

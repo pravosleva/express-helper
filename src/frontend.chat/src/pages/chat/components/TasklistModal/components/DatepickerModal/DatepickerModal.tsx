@@ -18,18 +18,19 @@ type TProps = {
   isOpened: boolean
   onClose: () => void
   onSubmit: (ts: number) => void
-  initialUncheckedTs: number
+  initialTs: number
   content?: () => React.ReactElement
+  title?: string
 }
 
-export const DatepickerModal = ({ isOpened, onClose, onSubmit, initialUncheckedTs, content }: TProps) => {
+export const DatepickerModal = ({ isOpened, onClose, onSubmit, initialTs, content, title }: TProps) => {
   const inputRef = useRef<any>(null)
-  const [uncheckedTs, setUncheckedTs] = useState<number>(initialUncheckedTs)
+  const [uncheckedTs, setUncheckedTs] = useState<number>(initialTs)
   const modifiedValue = useMemo(() => {
-    const date = new Date(initialUncheckedTs)
+    const date = new Date(initialTs)
 
     return date.toISOString().substr(0, 10);
-  }, [initialUncheckedTs])
+  }, [initialTs])
   const handleInputChange = useCallback((e: any) => {
     // console.log(e.target.value) // 2021-12-16
 
@@ -52,7 +53,7 @@ export const DatepickerModal = ({ isOpened, onClose, onSubmit, initialUncheckedT
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>First Date</ModalHeader>
+        <ModalHeader>{!!title ? title : 'First Date'}</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
           <input
@@ -62,7 +63,7 @@ export const DatepickerModal = ({ isOpened, onClose, onSubmit, initialUncheckedT
               height: 'var(--chakra-sizes-10)',
               // lineHeight: '30px',
               paddingInlineStart: 'var(--chakra-space-4)',
-              paddingInlineEnd: 'var(--number-input-input-padding)',
+              paddingInlineEnd: 'var(--chakra-space-2',
               borderRadius: 'var(--chakra-radii-md)',
               fontSize: 'var(--chakra-fontSizes-md)',
               background: 'inherit',

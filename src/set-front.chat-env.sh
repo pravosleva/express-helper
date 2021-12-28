@@ -24,7 +24,7 @@ REACT_APP_CHAT_UPLOADS_URL=http://localhost:5000/chat/storage/uploads" > src/fro
 ## PRAVOSLEVA.RU
       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
 PUBLIC_URL=/express-helper/chat
-REACT_APP_API_URL=/express-helper/chat
+REACT_APP_API_URL=/express-helper
 REACT_APP_CHAT_NAME=\"PUB 2021\"
 REACT_APP_CHAT_UPLOADS_URL=/express-helper/chat/storage/uploads
 REACT_APP_BUILD_DATE=\"$BUILD_DATE\"

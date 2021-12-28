@@ -1,8 +1,38 @@
 import React, { useState, createContext, useEffect, useContext , useRef, MutableRefObject} from 'react'
 import slugify from 'slugify'
 import { getNormalizedString } from '~/utils/strings-ops'
+import { proxy } from 'valtio'
+// const state = useSnapshot(sprintFeatureProxy)
+
+type TUserInfo = {
+  regData: any
+}
+const userInfoProxy = proxy<TUserInfo>({
+  regData: {}
+})
+type TSprintFeature = {
+  commonNotifs: any
+  inProgress: number[]
+  isFeatureEnabled: boolean
+  tsUpdate: number
+  hasCompleted: boolean
+  isEmptyStateConfirmed: boolean
+  isPollingWorks: boolean
+}
+const initialSprintState: TSprintFeature = {
+  commonNotifs: {},
+  inProgress: [],
+  isFeatureEnabled: false,
+  tsUpdate: Date.now(),
+  hasCompleted: false,
+  isEmptyStateConfirmed: false,
+  isPollingWorks: false,
+}
+const sprintFeatureProxy = proxy<TSprintFeature>(initialSprintState)
 
 type TMainContext = {
+  sprintFeatureProxy: Partial<typeof Proxy> & TSprintFeature
+  userInfoProxy: Partial<typeof Proxy> & TUserInfo
   name: string
   room: string
   setName: (name: string) => void
@@ -16,6 +46,8 @@ type TMainContext = {
 }
 
 export const MainContext = createContext<TMainContext>({
+  sprintFeatureProxy,
+  userInfoProxy,
   name: '',
   room: '',
   setName: (_name: string) => {
@@ -65,6 +97,8 @@ export const MainProvider = ({ children }: any) => {
     <>
       <MainContext.Provider
         value={{
+          sprintFeatureProxy,
+          userInfoProxy,
           name,
           room,
           slugifiedRoom,

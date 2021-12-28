@@ -11,6 +11,7 @@ import {
   Flex,
   Text,
   Grid,
+  Spinner,
 } from '@chakra-ui/react'
 import { useDebounce, useLocalStorage } from 'react-use'
 import { SearchUserModal } from '~/pages/chat/components/SearchUserModal'
@@ -22,6 +23,9 @@ import { AiOutlineFire } from 'react-icons/ai'
 import { FiActivity } from 'react-icons/fi'
 import { EMessageStatus, TMessage, ERegistryLevel } from '~/utils/interfaces'
 import { useMainContext } from '~/mainContext'
+import { NotifsList } from '~/pages/chat/components/NotifsList'
+import { useSnapshot } from 'valtio'
+import pkg from '../../../../../package.json'
 
 type TSetting = {
   name: string
@@ -57,7 +61,8 @@ export const AccordionSettings = ({
   defaultAccordionItems,
   registryLevel,
 }: TProps) => {
-  const { room } = useMainContext()
+  const { room, sprintFeatureProxy } = useMainContext()
+  const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
   // --
   const [navbarMenuSettingsLS, setNavbarMenuSettingsLS] = useLocalStorage<{ [key: string]: number}>('chat.navbar-menu.default-index-tabs', {})
   const updateDefaultTabForTheRoom = useCallback((tabIndex: number) => {
@@ -128,7 +133,7 @@ export const AccordionSettings = ({
 
   const users = useMemo(() => !!assignmentSettingsLS?.[room] ? Object.keys(assignmentSettingsLS[room]) : [], [assignmentSettingsLS, room])
   const handleUserFilterClick = useCallback((name: string) => {
-    console.log(name)
+    // console.log(name)
     if (assignmentExecutorsFilters.includes(name)) {
       onRemoveAssignedToFilters(name)
     } else {
@@ -150,9 +155,9 @@ export const AccordionSettings = ({
 
     return res
   }, [logic, assignmentSettingsLS, room])
-  useEffect(() => {
-    console.log(countersMap)
-  }, [countersMap])
+  // useEffect(() => {
+  //   console.log(countersMap)
+  // }, [countersMap])
   const hasEnabledFilters = assignmentExecutorsFilters.length > 0
   const dangerCounter = useMemo(() => logic.getCountByFilters([EMessageStatus.Danger], assignmentExecutorsFilters), [assignmentExecutorsFilters, logic])
   const warnCounter = useMemo(() => logic.getCountByFilters([EMessageStatus.Warn], assignmentExecutorsFilters), [assignmentExecutorsFilters, logic])
@@ -164,6 +169,18 @@ export const AccordionSettings = ({
 
     onSetFilters(newStatuses)
   }, [onSetFilters, activeFilters])
+  const hasAnythingInSprint = useMemo(() => Object.keys(sprintFeatureSnap.commonNotifs).length > 0, [sprintFeatureSnap.commonNotifs])
+  const hasDetectedCompletedOnUpdate = useMemo(() => {
+    const reducer = (acc: boolean[], key: string) => {
+      if (sprintFeatureSnap.commonNotifs[key].tsTarget < Date.now()) {
+        acc.push(true)
+      }
+      return acc
+    }
+
+    return Object.keys(sprintFeatureSnap.commonNotifs).reduce(reducer, []).some(Boolean)
+    }, [sprintFeatureSnap.commonNotifs])
+
   return (
     <>
       {
@@ -254,11 +271,40 @@ export const AccordionSettings = ({
                           onClick={() => handleRemoveUser(name)}
                           colorScheme='gray'
                           variant='outline'
-                        ><FaTrashAlt size={14} /></Button>
+                        ><FaTrashAlt size={13} /></Button>
                       </Grid>
                     )
                   })}
                 </Stack>
+              </AccordionPanel>
+            </AccordionItem>
+          )
+        }
+        {
+          sprintFeatureSnap.isFeatureEnabled && registryLevel === ERegistryLevel.TGUser && (
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box flex='1' textAlign='left'>
+                    <Flex alignItems="center">
+                      <Text fontWeight="400" fontSize="md" letterSpacing="0">
+                        Sprint
+                      </Text>
+                      {
+                        (sprintFeatureSnap.hasCompleted || hasDetectedCompletedOnUpdate) ? (
+                          <Box ml={2} h={2} w={2} borderRadius="100px" bg='red.300'></Box>
+                        ) : (
+                          hasAnythingInSprint && <Box ml={2} h={2} w={2} borderRadius="100px" bg='gray.300'></Box>
+                        )}
+                    </Flex>
+                  </Box>
+                  {!sprintFeatureSnap.isPollingWorks ? <Spinner mr={1} size='xs' /> : <AccordionIcon />}
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
+                <NotifsList onRemove={(ts) => {
+                  sprintFeatureProxy.tsUpdate = ts
+                }} />
               </AccordionPanel>
             </AccordionItem>
           )
@@ -290,6 +336,32 @@ export const AccordionSettings = ({
             )
           })
         )}
+        <AccordionItem key='about'>
+          <h2>
+            <AccordionButton>
+              <Box flex='1' textAlign='left'>
+                About
+              </Box>
+              {/* <Box flex='1' textAlign='left'>
+                <Flex alignItems="center">
+                  <Text fontWeight="400" fontSize="md" letterSpacing="0">
+                    {title}
+                  </Text>
+                  {hasEnabledFilters && <Box ml={2} h={2} w={2} borderRadius="100px" bg='blue.300'></Box>}
+                </Flex>
+              </Box> */}
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
+            <em>This frontend stack</em>
+            <pre
+              style={{
+                whiteSpace: 'pre-wrap'
+              }}
+            >{JSON.stringify(pkg.dependencies, null, 2)}</pre>
+          </AccordionPanel>
+        </AccordionItem>
       </Accordion>
     </>
   )

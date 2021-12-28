@@ -23,7 +23,7 @@ export const AssignedBox = ({
   const isAssignedToMe = name === assignedTo[0]
 
   return (
-    <Box className='centered-box assigned-box'>
+    <Box className='right-box' style={{ marginTop: 0 }}>
       <div
         style={{
           display: 'flex',

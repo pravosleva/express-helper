@@ -46,6 +46,7 @@ import {
   TagLabel,
   Tag,
   Grid,
+  useToast, UseToastOptions
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
@@ -55,7 +56,6 @@ import { GiDeathSkull } from 'react-icons/gi'
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom'
-import { useToast, UseToastOptions } from '@chakra-ui/react'
 import clsx from 'clsx'
 import './Chat.scss'
 import { UsersContext } from '~/usersContext'
@@ -95,7 +95,13 @@ import { openExternalLink } from '~/utils/openExternalLink'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 // import { FaFire } from 'react-icons/fa'
 import { ImFire } from 'react-icons/im'
-import { FaTelegramPlane } from 'react-icons/fa'
+import { FaTelegramPlane, FaRunning } from 'react-icons/fa'
+import { DatepickerModal } from '~/pages/chat/components/TasklistModal/components/DatepickerModal' // './components/DatepickerModal'
+import { useSnapshot } from 'valtio'
+import { FiArrowRight } from 'react-icons/fi'
+import { PollingComponent } from '~/pages/chat/components/NotifsList/components/PollingComponent'
+import { BsFillCalendarFill } from 'react-icons/bs'
+import { useAddToHomescreenPrompt } from '~/common/hooks/useAddToHomescreenPrompt'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
@@ -176,7 +182,10 @@ const getBgColorByStatus = (s: EMessageStatus | 'assign') => {
 }
 
 export const Chat = () => {
-  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap, tsMapRef } = useContext(MainContext)
+  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy } = useContext(MainContext)
+  const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
+  const userInfoSnap = useSnapshot(userInfoProxy)
+
   // @ts-ignore
   const { socket, roomData, isConnected } = useSocketContext()
   const [message, setMessage] = useState('')
@@ -205,7 +214,6 @@ export const Chat = () => {
   //     if (!isLogged) history.push('/')
   // }, [isLogged])
 
-  const [regData, setRegData] = useState<any>(null)
   const [tsPoint, setTsPoint] = useState<number | null>(Date.now())
   const [fullChatReceived, setFullChatReceived] = useState<boolean>(false)
   const [isChatLoading, setIsChatLoading] = useState<boolean>(false)
@@ -242,7 +250,7 @@ export const Chat = () => {
         })
       }
       const myUserDataListener = (regData: any) => {
-        setRegData(regData)
+        userInfoProxy.regData = regData
       }
       const logoutFromServerListener = () => {
         history.push('/')
@@ -775,7 +783,7 @@ export const Chat = () => {
     const isConfirmed = window.confirm('Вы уверенны?')
     if (!isConfirmed) return
 
-    const jwtLogout = await axios.post(`${REACT_APP_API_URL}/api/auth/logout`, {})
+    const jwtLogout = await axios.post(`${REACT_APP_API_URL}/chat/api/auth/logout`, {})
       .then((res: any) => res.data)
       .catch((err: any) => err)
     
@@ -878,11 +886,8 @@ export const Chat = () => {
   }, [room, setAfLS])
   const isAssignmentFeatureEnabled = useMemo(() => !!afLS?.[room], [afLS, room])
   const [isAssignmentDescrOpened, setIsAssignmentDescrOpened] = useState<boolean>(false)
-  const openAssignmentDescr = useCallback((e) => {
-    setIsAssignmentDescrOpened(true)
-  }, [setIsAssignmentDescrOpened])
-  const closeAssignmentDescr = useCallback((e) => {
-    setIsAssignmentDescrOpened(false)
+  const toggleAssignmentDescr = useCallback((e) => {
+    setIsAssignmentDescrOpened((s) => !s)
   }, [setIsAssignmentDescrOpened])
 
   const toggleAssignmentFeature = useCallback((e) => {
@@ -908,16 +913,183 @@ export const Chat = () => {
   const handleOpenExternalLink = useCallback(openExternalLink, [])
   const handleSetQuickStruct = useCallback(() => {
     setMessage(`┣ root
-┣ a
-┣ a1
-┃ ┣ a2
-┃ ┗ a2
-┣ b`)
+┃ ┣ a
+┃ ┃ ┣ a1
+┃ ┃ ┣ a1.1
+┃ ┃ ┗ a1.2
+┃ ┣ b`)
   }, [setMessage])
-  const isLogged = useMemo(() => regData?.registryLevel === 2, [regData?.registryLevel])
+  const isLogged = useMemo(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
+
+  const handleRemoveFromSprint = async (ts: number) => {
+    console.log(editedMessage)
+    const data = { ts, room_id: room, username: name }
+    const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/remove`, {
+      ...data,
+    })
+      .then((res) => {
+        // console.log(res.data.stateChunk)
+        return res.data
+      })
+      .catch((err) => err)
+    console.log(result)
+    if (result.ok && result.ts) {
+      // setData((d: { [key: string]: TNotifItem }) => ({ ...d, ...result.stateChunk[String(result.ts)] }))
+      // setTsUpdate(result.tsUpdate)
+      if (!!sprintFeatureProxy.commonNotifs[String(result.ts)]) delete sprintFeatureProxy.commonNotifs[String(result.ts)]
+    }
+  }
+  const handleAddCommonNotif = async ({ ts, tsTarget, text }: any) => {
+    const data = { room_id: room, ts, tsTarget, username: name, text }
+    const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/add`, {
+      ...data,
+    })
+      .then((res) => {
+        // console.log(res.data.stateChunk)
+        return res.data
+      })
+      .catch((err) => err)
+    if (result.ok && !!result?.stateChunk && !!result.ts) {
+      // setData((d: { [key: string]: TNotifItem }) => ({ ...d, ...result.stateChunk[String(result.ts)] }))
+      // setTsUpdate(result.tsUpdate)
+      sprintFeatureProxy.commonNotifs = {
+        ...sprintFeatureProxy.commonNotifs,
+        [String(ts)]: {
+          text: result.stateChunk[String(result.ts)].text,
+          ts,
+          tsTarget: result.stateChunk[String(result.ts)].tsTarget,
+        }
+      }
+    }
+  }
+  const [isDatepickerOpened, setIsDatepickerOpened] = useState<boolean>(false)
+  const handleOpenDatePicker = useCallback(() => {
+    setIsDatepickerOpened(true)
+  }, [setIsDatepickerOpened])
+  const handleCloseDatePicker = useCallback(() => {
+    setIsDatepickerOpened(false)
+  }, [setIsDatepickerOpened])
+  const onUpdateTargetDate = (tsTarget: number) => {
+    const ts = editedMessage.ts
+    const text = editedMessage.text
+    handleAddCommonNotif({ ts, tsTarget, text })
+  }
+
+  // -- SPRINT
+  const [sprintSettingsLS, setSprintSettingsLS] = useLocalStorage<{ [key: string]: { isEnabled: boolean } }>('chat.sprint-feature.custom-settings', {})
+  const updateSprintSetting4TheRoom = useCallback((room_id: string, value: boolean) => {
+    const newState: { [key: string]: { isEnabled: boolean } } = { ...sprintSettingsLS }
+
+    // console.log(sprintSettingsLS)
+
+    if (!newState[room_id]) {
+      newState[room_id] = { isEnabled: value }
+    } else {
+      for (const _room in sprintSettingsLS) {
+        if (room_id !== _room) {
+          newState[_room] = sprintSettingsLS[_room]
+        } else {
+          newState[room_id] = { isEnabled: value }
+        }
+      }
+    }
+
+    // console.log(newState)
+
+    setSprintSettingsLS(newState)
+  }, [setSprintSettingsLS, sprintSettingsLS])
+  const toggleSprintFeature = () => {
+    const newVal = !sprintFeatureSnap.isFeatureEnabled
+    
+    updateSprintSetting4TheRoom(room, newVal)
+    sprintFeatureProxy.isFeatureEnabled = newVal
+  }
+  // useEffect(() => {
+  //   updateSprintSetting4TheRoom(room, sprintFeatureSnap.isFeatureEnabled)
+  // }, [sprintFeatureSnap.isFeatureEnabled])
+  useEffect(() => {
+    sprintFeatureProxy.isFeatureEnabled = sprintSettingsLS?.[room]?.isEnabled || false
+    sprintFeatureProxy.commonNotifs = {}
+    sprintFeatureProxy.tsUpdate = Date.now()
+  }, [room])
+  const [isSprintDescrOpened, setIsSprintDescrOpened] = useState<boolean>(false)
+  const toggleSprintDescr = () => {
+    setIsSprintDescrOpened((s) => !s)
+  }
+  const handleCheckPOST = async () => {
+    if (document.hidden || !isLogged) return
+    // NOTE: If false - than browser tab is active
+
+    const data = { room_id: room, tsUpdate: sprintFeatureSnap.tsUpdate }
+    const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/check-room-state`, {
+      ...data,
+    })
+      .then((res) => res.data)
+      .catch((err) => err)
+    // isPollingWorks
+
+    console.log('typeof result', typeof result)
+
+    switch (true) {
+      case (result instanceof Error):
+        sprintFeatureProxy.isPollingWorks = false
+        break;
+      case result.code === 'not_found': // EAPIRoomNotifsCode.NotFound:
+        sprintFeatureProxy.isPollingWorks = true
+        sprintFeatureProxy.isEmptyStateConfirmed = true
+        break;
+      default:
+        sprintFeatureProxy.isPollingWorks = true
+        if (!!result.state && Object.keys(result.state).length === 0) {
+          sprintFeatureProxy.isEmptyStateConfirmed = true
+        } // else { setIsEmptyStateConfirmed(false) }
+        break;
+    }
+
+    if (result.ok && result.tsUpdate !== sprintFeatureSnap.tsUpdate) {
+      try {
+        sprintFeatureProxy.commonNotifs = result.state
+        // console.log(result.state)
+        if (Object.keys(result.state).length > 0) {
+          sprintFeatureProxy.isEmptyStateConfirmed = false
+        } else {
+          sprintFeatureProxy.isEmptyStateConfirmed = true
+        }
+      } catch (err) {
+        console.log(err)
+      }
+      
+      sprintFeatureProxy.tsUpdate = result.tsUpdate
+    }
+  }
+  // --
+
+  // -- PWA
+  const [pwaPrompt, pwaPromptToInstall] = useAddToHomescreenPrompt()
+  const [isPWAReqVisible, setIsPWAReqVisible] = React.useState(false)
+  const pwaReqHide = () => { setIsPWAReqVisible(false) }
+  useEffect(
+    () => {
+      if (pwaPrompt) setIsPWAReqVisible(true);
+    },
+    [pwaPrompt]
+  )
+
+  // --
 
   return (
     <>
+      <DatepickerModal
+        // key={initialUncheckedTs}
+        isOpened={isDatepickerOpened}
+        onClose={handleCloseDatePicker}
+        onSubmit={onUpdateTargetDate}
+        initialTs={Date.now()}
+        // content={() => (
+        //   <pre>{JSON.stringify(editedTask.current, null, 2)}</pre>
+        // )}
+        title="Deadline"
+      />
       {upToSm && (
         <EmojiPickerModal
           isOpened={isEmojiOpened}
@@ -948,7 +1120,7 @@ export const Chat = () => {
       <MyInfoModal
         isOpened={isMyInfoModalOpened}
         onClose={handleMyInfoModalClose}
-        data={regData}
+        data={userInfoSnap.regData}
       />
 
       <SetPasswordModal
@@ -976,6 +1148,9 @@ export const Chat = () => {
             Unset status
           </CtxMenuItem>
         )}
+        {/* <CtxMenuItem data={{ foo: 'bar' }} onClick={handleOpenDatePicker}>
+          Set Target Sprint Date
+        </CtxMenuItem> */}
         <CtxMenuItem data={{ foo: 'bar' }} onClick={handleEditModalOpen}>
           Edit
         </CtxMenuItem>
@@ -1067,6 +1242,17 @@ export const Chat = () => {
                     <Stack spacing={4} mt={2}>
                       {/* <Box><Text>The room features</Text></Box> */}
                       <Grid templateColumns='repeat(3, 1fr)' gap={2}>
+                        {
+                          isPWAReqVisible && (
+                            <Box>
+                              <Grid templateColumns='50px auto 50px' gap={2}>
+                                <Button onClick={pwaReqHide}>Close</Button>
+                                <Box>Это приложение можно добавить на главный экран Вашего устройства</Box>
+                                <Button isFullWidth size='sm' onClick={pwaPromptToInstall}>Добавить</Button>
+                              </Grid>
+                            </Box>
+                          )
+                        }
                         <Menu autoSelect={false}>
                           <MenuButton
                             // as={IconButton}
@@ -1129,7 +1315,7 @@ export const Chat = () => {
                                 </MenuItem>
                               )}
                               {
-                                regData?.registryLevel !== ERegistryLevel.TGUser && (
+                                userInfoSnap.regData?.registryLevel !== ERegistryLevel.TGUser && (
                                   <MenuItem
                                     minH="40px"
                                     key="set-passwd-btn"
@@ -1188,26 +1374,49 @@ export const Chat = () => {
                       </Grid>
                       
                       <>
-                        {regData?.registryLevel === ERegistryLevel.TGUser && (
-                          <Box>
-                            <FormControl display='flex' alignItems='center'>
-                              <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} isChecked={isAssignmentFeatureEnabled} />
-                              <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
-                                Assignment feature
-                              </FormLabel>
-                            </FormControl>
-                            <Box mt={3} mb={0}>
-                            {isAssignmentDescrOpened ? (
-                              <span>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу<br /><Button size='sm' variant='link' onClick={closeAssignmentDescr} rounded='3xl'>Close</Button></span>
-                            ) : (
-                              <Button size='sm' variant='link' onClick={openAssignmentDescr} rounded='3xl'>What is it?</Button>
-                            )}
+                        {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
+                          <>
+                            <Box style={{ display: 'flex', alignItems: 'center' }}>
+                              <FormControl display='flex' alignItems='center'>
+                                <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} isChecked={isAssignmentFeatureEnabled} />
+                                <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
+                                  Assignment feature
+                                </FormLabel>
+                              </FormControl>
+                              <Box style={{ marginLeft: 'auto' }}>
+                                <Button size='sm' variant='link' onClick={toggleAssignmentDescr} rounded='3xl'>{isAssignmentDescrOpened ? 'Close' : 'What is it?'}</Button>
+                              </Box>
                             </Box>
-                          </Box>
+                            {
+                              isAssignmentDescrOpened && (
+                                <Box>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу</Box>
+                              )
+                            }
+                          </>
+                        )}
+                        {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
+                          <>
+                            <Box style={{ display: 'flex', alignItems: 'center' }}>
+                              <FormControl display='flex' alignItems='center'>
+                                <Switch id='sprint-feature-switcher' mr={3} onChange={toggleSprintFeature} isChecked={sprintFeatureSnap.isFeatureEnabled} />
+                                <FormLabel htmlFor='sprint-feature-switcher' mb='0'>
+                                  Sprint feature
+                                </FormLabel>
+                              </FormControl>
+                              <Box style={{ marginLeft: 'auto' }}>
+                                <Button size='sm' variant='link' onClick={toggleSprintDescr} rounded='3xl'>{isSprintDescrOpened ? 'Close' : 'What is it?'}</Button>
+                              </Box>
+                            </Box>
+                            {
+                              isSprintDescrOpened && (
+                                <Box>Эта фича позволит добавить задачи в спринт (они видны всем)</Box>
+                              )
+                            }
+                          </>
                         )}
                         
                         <AccordionSettings
-                          registryLevel={regData?.registryLevel}
+                          registryLevel={userInfoSnap.regData?.registryLevel || 0}
                           isAssignmentFeatureEnabled={isAssignmentFeatureEnabled}
                           logic={logic}
                           onAddAssignedToFilters={handleAddAssignedToFilter}
@@ -1457,9 +1666,11 @@ export const Chat = () => {
               return (
                 <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}-${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? assignedTo.join(',') : 'not_assigned'}`}>
                   <Box
+                    id={String(ts)}
                     className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
                     // style={transform}
-                    m=".3rem 0"
+                    mt={1}
+                    mb={2}
                   >
                     <Text
                       fontSize="sm"
@@ -1532,6 +1743,64 @@ export const Chat = () => {
                       }}
                     />
                   )}
+                  {/*
+                    sprintFeatureSnap.isFeatureEnabled && !isNextOneBtnEnabled && !file && (
+                      <Flex justifyContent='flex-end' alignItems='center' style={{ width: '100%' }} mb={2}>{
+                        !sprintFeatureSnap.commonNotifs[String(ts)] ? (
+                          <button
+                            disabled={sprintFeatureSnap.inProgress.includes(ts) ? true : undefined}
+                            className='special-btn special-btn-sm gray-btn rounded'
+                            onClick={() => {
+                              setEditedMessage(message)
+                              handleOpenDatePicker()}
+                            }
+                            style={{ display: 'flex', alignItems: 'center' }}
+                          ><span>Add to Sprint</span><span style={{ marginLeft: '7px' }}><BsArrowRight color="#FFF" size={13} /></span></button>
+                        ) : (
+                          <button
+                            disabled={sprintFeatureSnap.inProgress.includes(ts) ? true : undefined}
+                            className='special-btn special-btn-sm gray-btn rounded'
+                            onClick={() => {
+                              setEditedMessage(message)
+                              handleRemoveFromSprint(ts)
+                            }}
+                            style={{ display: 'flex', alignItems: 'center' }}
+                          ><span>Remove from Sprint</span><span style={{ marginLeft: '7px' }}><IoMdClose size={17} /></span></button>
+                        )
+                      }</Flex>
+                    )
+                  */}
+                  {
+                    userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && sprintFeatureSnap.isFeatureEnabled && !file && !!status && status !== EMessageStatus.Done && (
+                      <Flex justifyContent='flex-end' alignItems='center' style={{ width: '100%' }} mb={2}>{
+                        !sprintFeatureSnap.commonNotifs[String(ts)] ? (
+                          <Button
+                            isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
+                            size='xs'
+                            onClick={() => {
+                              setEditedMessage(message)
+                              handleOpenDatePicker()}
+                            }
+                            rightIcon={<FiArrowRight color="inherit" size={14} />}
+                            leftIcon={<BsFillCalendarFill size={14} />}
+                          >Add to Sprint</Button>
+                        ) : (
+                          <Button
+                            isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
+                            size='xs'
+                            onClick={() => {
+                              const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
+                              if (isConfirmed) {
+                                setEditedMessage(message)
+                                handleRemoveFromSprint(ts)
+                              }
+                            }}
+                            rightIcon={<IoMdClose color='inherit' size={14} />}
+                          >Remove from Sprint</Button>
+                        )
+                      }</Flex>
+                    )
+                  }
                   {isNextOneBtnEnabled && (
                     <Box className='centered-box'>
                       <button
@@ -1552,7 +1821,7 @@ export const Chat = () => {
                   <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Error: {uploadErrorMsg}</div>
                 </>
               )}
-              {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
+              {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
                 <>
                   <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
                   {isFileUploading && (
@@ -1566,7 +1835,10 @@ export const Chat = () => {
                 )
               }
               { isLogged && (
-                <div><button className='special-btn special-btn-md dark-btn' onClick={handleSetQuickStruct}>┣ Struct</button></div>
+                <div><button
+                  className='special-btn special-btn-md dark-btn'
+                  style={{ display: 'flex', alignItems: 'center' }}
+                  onClick={handleSetQuickStruct}><span style={{ marginRight: '7px' }}>┣</span><span>Struct</span></button></div>
               )}
               { isLogged && !!message && (
                 <div><button className='special-btn special-btn-md dark-btn' onClick={() => { setMessage('') }}>Clear</button></div>
@@ -1616,6 +1888,27 @@ export const Chat = () => {
           }
         </Flex>
       </div>
+      <PollingComponent
+        // key={this.context.device?.data?.id}
+        promise={handleCheckPOST}
+        resValidator={(data: any) => {
+          // console.log(data)
+          // if (!!data?.tsUpdate && data.tsUpdate !== tsUpdate) {
+          //   setTsUpdate(data?.tsUpdate)
+          //   setData(data.roomData)
+          // }
+
+          return false;
+        }}
+        onSuccess={() => {
+          // TODO
+          console.log('SUCCESS')
+        }}
+        onFail={(err) => {
+          console.log('FAIL')
+          console.log(err)
+        }}
+      />
     </>
   )
 }

@@ -14,6 +14,7 @@ import {
   TConnectionData,
   TMessage,
   TUploadFileEvent,
+  commonNotifsMapInstance as notifsMap,
 } from './state'
 import siofu from 'socketio-file-upload'
 import path from 'path'
@@ -532,6 +533,21 @@ export const withSocketChat = (io: Socket) => {
         result,
         cbSuccess: ({ result }) => {
           io.in(room).emit('message.update', result.targetMessage);
+
+          // -- notifs exp
+          const roomNotifs = notifsMap.get(room)
+          if (!!roomNotifs) {
+            const key = String(ts)
+            if (roomNotifs?.data && !!roomNotifs?.data[key]) {
+              if (!!roomNotifs?.data[key]) {
+                roomNotifs.data[key].text = result.targetMessage.text
+                roomNotifs.tsUpdate = Date.now()
+              }
+              
+              notifsMap.set(room, roomNotifs)
+            }
+          }
+          // --
         },
         cbError: ({ result }) => {
           if (result.isPrivateSocketCb) {
@@ -562,6 +578,22 @@ export const withSocketChat = (io: Socket) => {
             } else if (!!result.targetMessage.file?.fileName) {
               console.log('DELETED: fileName')
               removeFileIfNecessary(path.join(storagePath, result.targetMessage.file?.fileName))
+            }
+          }
+          // --
+
+          // -- notifs exp
+          const roomNotifs = notifsMap.get(room)
+          if (!!roomNotifs) {
+            const key = String(ts)
+            if (roomNotifs?.data && !!roomNotifs?.data[key]) {
+              try {
+                delete roomNotifs.data[key]
+                roomNotifs.tsUpdate = Date.now()
+                notifsMap.set(room, roomNotifs)
+              } catch (err) {
+                console.log(err)
+              }
             }
           }
           // --

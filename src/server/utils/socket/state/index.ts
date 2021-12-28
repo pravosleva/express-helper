@@ -1,3 +1,4 @@
+export * from './commonNotifsMapInstance'
 export * from './registeredTGChatIdsMapInstance'
 export * from './registeredUsersMapInstance'
 export * from './roomsMapInstance'

@@ -75,12 +75,18 @@ input[type="file"]:disabled + label {
     align-items: center;
     width: 100%;
 
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: var(--chakra-space-2);
+    margin-bottom: var(--chakra-space-2);
 }
-.centered-box.assigned-box {
-    margin-top: 0px;
-    justify-content: flex-start;
+
+.right-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    margin-top: var(--chakra-space-2);
+    margin-bottom: var(--chakra-space-2);
 }
 
 [data-rmiz-wrap="visible"], [data-rmiz-wrap="hidden"] {
@@ -150,6 +156,9 @@ input[type="file"]:disabled + label {
     cursor: pointer;
     font-weight: bold;
 }
+.special-btn:disabled {
+    opacity: 0.5;
+}
 .special-btn:hover {
     /* border: 2px solid var(--chakra-colors-gray-500); */
     border: 2px solid #FFF;
@@ -194,8 +203,31 @@ input[type="file"]:disabled + label {
     border: 2px solid #FFF;
 }
 
+.gray-btn {
+    background: var(--chakra-colors-gray-600);
+    color: #FFF;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.gray-btn:hover {
+    border: 2px solid #FFF;
+    background: rgba(0,0,0,0.8);
+    color: #FFF;
+}
+.gray-btn.rounded {
+    border-radius: 18px;
+}
+.muted {
+    opacity: 0.55;
+}
 
 /* ANIMATIONS EXPERIENCE
 https://codepen.io/desandro/pen/bMqZmr
 
+*/
+/*
+.notif-box:focus,
+.notif-box:active {
+    background: var(--chakra-colors-gray-200);
+    background: rgba(0, 0, 0, 0.75);
+}
 */

@@ -1,6 +1,6 @@
 {
   "name": "frontend.chat",
-  "version": "0.2.1",
+  "version": "0.2.5",
   "private": true,
   "homepage": "./express-helper/chat",
   "proxy": "http://localhost:5000",
@@ -110,6 +110,7 @@
     "ts-pnp": "1.2.0",
     "typescript": "^4.1.2",
     "url-loader": "4.1.1",
+    "valtio": "^1.2.7",
     "web-vitals": "^2.1.0",
     "webpack": "4.44.2",
     "webpack-dev-server": "3.11.1",
