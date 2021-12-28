@@ -867,10 +867,7 @@ export const Chat = () => {
   // -- Assignment feature switcher
   const [afLS, setAfLS] = useLocalStorage<{ [key: string]: number }>('chat.assignment-feature')
   const setAFLSRoom = useCallback((val: number) => {
-    // console.log(room, val)
     setAfLS((oldState) => {
-      // console.log(oldState)
-      // console.log('->')
       const newState: any = {}
 
       // NOTE: #migration
@@ -880,7 +877,6 @@ export const Chat = () => {
 
       newState[room] = val
 
-      // console.log(newState)
       return newState
     })
   }, [room, setAfLS])
@@ -928,15 +924,13 @@ export const Chat = () => {
       ...data,
     })
       .then((res) => {
-        // console.log(res.data.stateChunk)
         return res.data
       })
       .catch((err) => err)
-    console.log(result)
+
     if (result.ok && result.ts) {
-      // setData((d: { [key: string]: TNotifItem }) => ({ ...d, ...result.stateChunk[String(result.ts)] }))
-      // setTsUpdate(result.tsUpdate)
-      if (!!sprintFeatureProxy.commonNotifs[String(result.ts)]) delete sprintFeatureProxy.commonNotifs[String(result.ts)]
+      if (!!sprintFeatureProxy.commonNotifs[String(result.ts)])
+        delete sprintFeatureProxy.commonNotifs[String(result.ts)]
     }
   }
   const handleAddCommonNotif = async ({ ts, tsTarget, text }: any) => {
@@ -945,13 +939,10 @@ export const Chat = () => {
       ...data,
     })
       .then((res) => {
-        // console.log(res.data.stateChunk)
         return res.data
       })
       .catch((err) => err)
     if (result.ok && !!result?.stateChunk && !!result.ts) {
-      // setData((d: { [key: string]: TNotifItem }) => ({ ...d, ...result.stateChunk[String(result.ts)] }))
-      // setTsUpdate(result.tsUpdate)
       sprintFeatureProxy.commonNotifs = {
         ...sprintFeatureProxy.commonNotifs,
         [String(ts)]: {
@@ -980,8 +971,6 @@ export const Chat = () => {
   const updateSprintSetting4TheRoom = useCallback((room_id: string, value: boolean) => {
     const newState: { [key: string]: { isEnabled: boolean } } = { ...sprintSettingsLS }
 
-    // console.log(sprintSettingsLS)
-
     if (!newState[room_id]) {
       newState[room_id] = { isEnabled: value }
     } else {
@@ -993,9 +982,6 @@ export const Chat = () => {
         }
       }
     }
-
-    // console.log(newState)
-
     setSprintSettingsLS(newState)
   }, [setSprintSettingsLS, sprintSettingsLS])
   const toggleSprintFeature = () => {
@@ -1004,9 +990,6 @@ export const Chat = () => {
     updateSprintSetting4TheRoom(room, newVal)
     sprintFeatureProxy.isFeatureEnabled = newVal
   }
-  // useEffect(() => {
-  //   updateSprintSetting4TheRoom(room, sprintFeatureSnap.isFeatureEnabled)
-  // }, [sprintFeatureSnap.isFeatureEnabled])
   useEffect(() => {
     sprintFeatureProxy.isFeatureEnabled = sprintSettingsLS?.[room]?.isEnabled || false
     sprintFeatureProxy.commonNotifs = {}
@@ -1026,9 +1009,6 @@ export const Chat = () => {
     })
       .then((res) => res.data)
       .catch((err) => err)
-    // isPollingWorks
-
-    console.log('typeof result', typeof result)
 
     switch (true) {
       case (result instanceof Error):
@@ -1042,14 +1022,13 @@ export const Chat = () => {
         sprintFeatureProxy.isPollingWorks = true
         if (!!result.state && Object.keys(result.state).length === 0) {
           sprintFeatureProxy.isEmptyStateConfirmed = true
-        } // else { setIsEmptyStateConfirmed(false) }
+        }
         break;
     }
 
     if (result.ok && result.tsUpdate !== sprintFeatureSnap.tsUpdate) {
       try {
         sprintFeatureProxy.commonNotifs = result.state
-        // console.log(result.state)
         if (Object.keys(result.state).length > 0) {
           sprintFeatureProxy.isEmptyStateConfirmed = false
         } else {
@@ -1074,7 +1053,6 @@ export const Chat = () => {
     },
     [pwaPrompt]
   )
-
   // --
 
   return (
@@ -1085,9 +1063,7 @@ export const Chat = () => {
         onClose={handleCloseDatePicker}
         onSubmit={onUpdateTargetDate}
         initialTs={Date.now()}
-        // content={() => (
-        //   <pre>{JSON.stringify(editedTask.current, null, 2)}</pre>
-        // )}
+        // content={() => <pre>{JSON.stringify(editedTask.current, null, 2)}</pre>}
         title="Deadline"
       />
       {upToSm && (
@@ -1148,9 +1124,6 @@ export const Chat = () => {
             Unset status
           </CtxMenuItem>
         )}
-        {/* <CtxMenuItem data={{ foo: 'bar' }} onClick={handleOpenDatePicker}>
-          Set Target Sprint Date
-        </CtxMenuItem> */}
         <CtxMenuItem data={{ foo: 'bar' }} onClick={handleEditModalOpen}>
           Edit
         </CtxMenuItem>
@@ -1461,7 +1434,6 @@ export const Chat = () => {
                     <Button variant="outline" mr={1} onClick={handleCloseDrawerMenu}>
                       Close
                     </Button>
-                    {/* <Button colorScheme="blue">Submit</Button> */}
                   </DrawerFooter>
                 </DrawerContent>
               </Drawer>
@@ -1743,33 +1715,6 @@ export const Chat = () => {
                       }}
                     />
                   )}
-                  {/*
-                    sprintFeatureSnap.isFeatureEnabled && !isNextOneBtnEnabled && !file && (
-                      <Flex justifyContent='flex-end' alignItems='center' style={{ width: '100%' }} mb={2}>{
-                        !sprintFeatureSnap.commonNotifs[String(ts)] ? (
-                          <button
-                            disabled={sprintFeatureSnap.inProgress.includes(ts) ? true : undefined}
-                            className='special-btn special-btn-sm gray-btn rounded'
-                            onClick={() => {
-                              setEditedMessage(message)
-                              handleOpenDatePicker()}
-                            }
-                            style={{ display: 'flex', alignItems: 'center' }}
-                          ><span>Add to Sprint</span><span style={{ marginLeft: '7px' }}><BsArrowRight color="#FFF" size={13} /></span></button>
-                        ) : (
-                          <button
-                            disabled={sprintFeatureSnap.inProgress.includes(ts) ? true : undefined}
-                            className='special-btn special-btn-sm gray-btn rounded'
-                            onClick={() => {
-                              setEditedMessage(message)
-                              handleRemoveFromSprint(ts)
-                            }}
-                            style={{ display: 'flex', alignItems: 'center' }}
-                          ><span>Remove from Sprint</span><span style={{ marginLeft: '7px' }}><IoMdClose size={17} /></span></button>
-                        )
-                      }</Flex>
-                    )
-                  */}
                   {
                     userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && sprintFeatureSnap.isFeatureEnabled && !file && !!status && status !== EMessageStatus.Done && (
                       <Flex justifyContent='flex-end' alignItems='center' style={{ width: '100%' }} mb={2}>{
@@ -1889,16 +1834,9 @@ export const Chat = () => {
         </Flex>
       </div>
       <PollingComponent
-        // key={this.context.device?.data?.id}
         promise={handleCheckPOST}
-        resValidator={(data: any) => {
-          // console.log(data)
-          // if (!!data?.tsUpdate && data.tsUpdate !== tsUpdate) {
-          //   setTsUpdate(data?.tsUpdate)
-          //   setData(data.roomData)
-          // }
-
-          return false;
+        resValidator={(_data: any) => {
+          return false; // NOTE: Infinity
         }}
         onSuccess={() => {
           // TODO
