@@ -61,7 +61,7 @@ export const AccordionSettings = ({
   defaultAccordionItems,
   registryLevel,
 }: TProps) => {
-  const { room, sprintFeatureProxy } = useMainContext()
+  const { room, sprintFeatureProxy, assignmentFeatureProxy } = useMainContext()
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
   // --
   const [navbarMenuSettingsLS, setNavbarMenuSettingsLS] = useLocalStorage<{ [key: string]: number}>('chat.navbar-menu.default-index-tabs', {})
@@ -155,9 +155,6 @@ export const AccordionSettings = ({
 
     return res
   }, [logic, assignmentSettingsLS, room])
-  // useEffect(() => {
-  //   console.log(countersMap)
-  // }, [countersMap])
   const hasEnabledFilters = assignmentExecutorsFilters.length > 0
   const dangerCounter = useMemo(() => logic.getCountByFilters([EMessageStatus.Danger], assignmentExecutorsFilters), [assignmentExecutorsFilters, logic])
   const warnCounter = useMemo(() => logic.getCountByFilters([EMessageStatus.Warn], assignmentExecutorsFilters), [assignmentExecutorsFilters, logic])
@@ -216,7 +213,7 @@ export const AccordionSettings = ({
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                 <Stack>
                   <Flex alignItems="center">
-                    <Button size='sm' variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={18}/>}>Find user</Button>
+                    <Button size='sm' variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={15}/>}>Find user</Button>
                     {hasEnabledFilters && <Button size='sm' variant='ghost' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
                   </Flex>
                   {/*

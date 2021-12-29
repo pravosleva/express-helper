@@ -29,3 +29,13 @@ export type TMessage = {
 }
 
 export type TImageLightboxFormat = { src: string, alt: string | undefined }
+
+export type TRegistryData = {
+  passwordHash: string
+  registryLevel?: ERegistryLevel
+  tokens?: string[]
+  tg?: {
+    username: string
+    chat_id: number
+  }
+}

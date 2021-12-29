@@ -12,6 +12,10 @@ import { DefaultPage } from '~/common/components/DefaultPage'
 import { Dashboard } from '~/common/containers/Dashboard'
 import { theme } from '~/common/chakra/theme'
 import { CookiesProvider } from 'react-cookie'
+import Snowfall from 'react-snowfall'
+
+const month = new Date().getMonth()
+const isSnowRequired = [0, 10, 11].includes(month)
 
 function App() {
   return (
@@ -21,6 +25,7 @@ function App() {
           <MainProvider>
             <UsersProvider>
               <div className="App" style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
+                {isSnowRequired && <Snowfall />}
                 <Router>
                   <Switch>
                     <Route exact path="/" component={Login} />

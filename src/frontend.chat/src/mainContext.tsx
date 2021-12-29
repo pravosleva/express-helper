@@ -2,6 +2,7 @@ import React, { useState, createContext, useEffect, useContext , useRef, Mutable
 import slugify from 'slugify'
 import { getNormalizedString } from '~/utils/strings-ops'
 import { proxy } from 'valtio'
+import { useLocalStorage } from 'react-use'
 // const state = useSnapshot(sprintFeatureProxy)
 
 type TUserInfo = {
@@ -30,9 +31,17 @@ const initialSprintState: TSprintFeature = {
 }
 const sprintFeatureProxy = proxy<TSprintFeature>(initialSprintState)
 
+type TAssignmentInfo = {
+  isFetureEnabled: boolean
+}
+const assignmentFeatureProxy = proxy<TAssignmentInfo>({
+  isFetureEnabled: false
+})
+
 type TMainContext = {
   sprintFeatureProxy: Partial<typeof Proxy> & TSprintFeature
   userInfoProxy: Partial<typeof Proxy> & TUserInfo
+  assignmentFeatureProxy: Partial<typeof Proxy> & TAssignmentInfo
   name: string
   room: string
   setName: (name: string) => void
@@ -48,6 +57,7 @@ type TMainContext = {
 export const MainContext = createContext<TMainContext>({
   sprintFeatureProxy,
   userInfoProxy,
+  assignmentFeatureProxy,
   name: '',
   room: '',
   setName: (_name: string) => {
@@ -89,9 +99,19 @@ export const MainProvider = ({ children }: any) => {
     tsMapRef.current = tsMap
   }, [tsMap])
 
+  // const [lastRoomLS, setLastRoomLS, _removeLastRoomLS] = useLocalStorage<string>('chat.last-room', '')
+  // useEffect(() => {
+  //   if (!!lastRoomLS) setRoom(lastRoomLS)
+  // }, [])
+
   useEffect(() => {
     setNormalizedRoom(slugify(room.trim().toLowerCase()))
   }, [room, setNormalizedRoom])
+
+  // const [nameLS, _setNameLS, _removeNameLS] = useLocalStorage<string>('chat.my-name', '')
+  // useEffect(() => {
+  //   if (!!nameLS) setName(nameLS)
+  // }, [nameLS])
 
   return (
     <>
@@ -99,6 +119,7 @@ export const MainProvider = ({ children }: any) => {
         value={{
           sprintFeatureProxy,
           userInfoProxy,
+          assignmentFeatureProxy,
           name,
           room,
           slugifiedRoom,

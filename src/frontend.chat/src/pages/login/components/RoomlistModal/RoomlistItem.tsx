@@ -14,8 +14,9 @@ type TProps = {
 export const RoomlistItem = ({ roomName, onDelete, onClick }: TProps) => {
   return (
     <Tr>
-      <Td>
+      <Td pl={0}>
         <Tag
+          rounded='2xl'
           onClick={onClick}
           style={{
             cursor: 'pointer'
@@ -23,9 +24,12 @@ export const RoomlistItem = ({ roomName, onDelete, onClick }: TProps) => {
           size='lg'
         >{roomName}</Tag>
       </Td>
-      <Td isNumeric>
+      <Td isNumeric pr={0}>
         <IconButton
+          size='sm'
           aria-label="DEL"
+          colorScheme='red'
+          variant='outline'
           isRound
           icon={<IoMdClose size={15} />}
           onClick={() => {

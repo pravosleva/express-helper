@@ -98,6 +98,7 @@ import { ImFire } from 'react-icons/im'
 import { FaTelegramPlane, FaRunning } from 'react-icons/fa'
 import { DatepickerModal } from '~/pages/chat/components/TasklistModal/components/DatepickerModal' // './components/DatepickerModal'
 import { useSnapshot } from 'valtio'
+// const assignmentSnap = useSnapshot(assignmentFeatureProxy)
 import { FiArrowRight } from 'react-icons/fi'
 import { PollingComponent } from '~/pages/chat/components/NotifsList/components/PollingComponent'
 import { BsFillCalendarFill } from 'react-icons/bs'
@@ -182,9 +183,10 @@ const getBgColorByStatus = (s: EMessageStatus | 'assign') => {
 }
 
 export const Chat = () => {
-  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy } = useContext(MainContext)
+  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy } = useContext(MainContext)
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
   const userInfoSnap = useSnapshot(userInfoProxy)
+  const assignmentSnap = useSnapshot(assignmentFeatureProxy)
 
   // @ts-ignore
   const { socket, roomData, isConnected } = useSocketContext()
@@ -398,10 +400,11 @@ export const Chat = () => {
 
   useEffect(() => {
     console.log('EFFECT: socket?.connected', socket?.connected)
-    if (!!socket) {
+    if (!!socket && !!name && !!room) {
       if (!!socket?.connected) {
         socket.emit('setMeAgain', { name, room }, (err?: string) => {
           if (!!err) {
+            console.log(err)
             toast({ title: err, status: 'error' })
             history.push('/')
           }
@@ -412,7 +415,7 @@ export const Chat = () => {
         socket.emit('unsetMe', { name, room })
       }
     }
-  }, [socket?.connected, room, history])
+  }, [socket?.connected, room, history, name])
 
   const [filters, setFilters] = useState<EMessageStatus[]>([])
   const setFilter = (filter: EMessageStatus) => {
@@ -866,6 +869,9 @@ export const Chat = () => {
 
   // -- Assignment feature switcher
   const [afLS, setAfLS] = useLocalStorage<{ [key: string]: number }>('chat.assignment-feature')
+  useEffect(() => {
+    assignmentFeatureProxy.isFetureEnabled = afLS?.[room] === 1
+  }, [afLS, room])
   const setAFLSRoom = useCallback((val: number) => {
     setAfLS((oldState) => {
       const newState: any = {}
@@ -908,11 +914,12 @@ export const Chat = () => {
 
   const handleOpenExternalLink = useCallback(openExternalLink, [])
   const handleSetQuickStruct = useCallback(() => {
-    setMessage(`┣ root
+    setMessage((s) => `┣ ${s || 'root'}
 ┃ ┣ a
 ┃ ┃ ┣ a1
-┃ ┃ ┣ a1.1
-┃ ┃ ┗ a1.2
+┃ ┃ ┃ ┣ a1.1
+┃ ┃ ┃ ┗ a1.2
+┃ ┃ ┗ a2
 ┃ ┣ b`)
   }, [setMessage])
   const isLogged = useMemo(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
@@ -1464,9 +1471,7 @@ export const Chat = () => {
                       handleDisableSearch()
                     }}
                   />
-                  <div
-                    // style={{ maxHeight: '120px', overflowY: 'auto' }}
-                  >
+                  <div>
                     {
                       Object.values(EMessageStatus).map((status) => {
                         const Icon = !!getIconByStatus(status, false) ? <span style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(status, false)}</span> : null
@@ -1474,7 +1479,6 @@ export const Chat = () => {
                         const isFilterEnabled = filters.includes(status)
                         const isDisabed = counter === 0 || isFilterEnabled
 
-                        // if (filters.includes(status) || !counter) return null
                         return (
                           <MenuItem
                             minH="40px"
@@ -1597,8 +1601,8 @@ export const Chat = () => {
           >
             <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
               <Box mr="2">---</Box>
-              {!!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" />}
-              <Text ml={2} fontWeight="400">
+              {/* !!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" /> */}
+              <Text fontWeight="400">
                 {!!tsPoint
                   ? `Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`
                   : 'Больше ничего нет'
@@ -1704,7 +1708,7 @@ export const Chat = () => {
                       </div>
                     </div>
                   </Box>
-                  {!!assignedTo && assignedTo.length > 0 && (
+                  {assignmentSnap.isFetureEnabled && !!assignedTo && assignedTo.length > 0 && (
                     <AssignedBox
                       isMyMessage={isMyMessage}
                       assignedTo={assignedTo}
@@ -1716,7 +1720,9 @@ export const Chat = () => {
                     />
                   )}
                   {
-                    userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && sprintFeatureSnap.isFeatureEnabled && !file && !!status && status !== EMessageStatus.Done && (
+                    userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser
+                    && sprintFeatureSnap.isFeatureEnabled
+                    && !file && !!status && status !== EMessageStatus.Done && (
                       <Flex justifyContent='flex-end' alignItems='center' style={{ width: '100%' }} mb={2}>{
                         !sprintFeatureSnap.commonNotifs[String(ts)] ? (
                           <Button

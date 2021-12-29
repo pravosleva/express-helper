@@ -7,7 +7,7 @@ import { checkRoom } from './check-room'
 import { removeUser } from './remove-user'
 import { login } from './auth/login'
 import { logout } from './auth/logout'
-// import { mutateReqIfLogged } from './auth/mutate-req-if-logged.middle'
+import { mutateReqIfLogged } from './auth/mutate-req-if-logged.middle'
 import { checkJWT } from './auth/check-jwt'
 import { ELoggedCookie } from '~/routers/chat/utils/types'
 // import cookieParser from 'cookie-parser'
@@ -32,7 +32,7 @@ chatExternalApi.get('/get-users', getUsers)
 chatExternalApi.post('/check-room', checkRoom)
 chatExternalApi.get('/remove-user', removeUser)
 chatExternalApi.post('/auth/login', login(jwtSecret, 2))
-chatExternalApi.post('/auth/check-jwt', checkJWT(jwtSecret, ELoggedCookie.JWT))
+chatExternalApi.post('/auth/check-jwt', mutateReqIfLogged(jwtSecret, ELoggedCookie.JWT), checkJWT)
 chatExternalApi.post('/auth/logout', logout(ELoggedCookie.JWT))
 chatExternalApi.post(
   '/common-notifs/add',

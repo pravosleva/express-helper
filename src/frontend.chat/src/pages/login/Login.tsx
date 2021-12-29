@@ -25,17 +25,19 @@ import { RoomlistModal } from './components'
 import slugify from 'slugify'
 // import { FocusableElement } from "@chakra-ui/utils"
 import pkg from '../../../package.json'
-import { useCookies } from 'react-cookie'
-import axios from 'axios'
-import { FiArrowRight } from 'react-icons/fi'
+// import { useCookies } from 'react-cookie'
+// import axios from 'axios'
+// import { FiArrowRight } from 'react-icons/fi'
 import { openExternalLink } from '~/utils/openExternalLink'
 // const handleOpenExternalLink = useCallback(openExternalLink, [])
 import debounce from 'lodash.debounce'
+import { jwtHttpClient } from '~/utils/httpClient'
+import { EAPIUserCode } from '~/utils/httpClient/types'
 
 const isDev = process.env.NODE_ENV === 'development'
 const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'Anchous chat 2021'
 const REACT_APP_BUILD_DATE = process.env.REACT_APP_BUILD_DATE || ''
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
+// const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 type TLocalRoomItem = {
   name: string
   ts: number
@@ -44,7 +46,7 @@ type TLocalRoomItem = {
 const delay = (ms = 3000) => new Promise((res) => setTimeout(res, ms))
 
 export const Login = () => {
-  const [isVerified, setIsVerified] = useState<boolean>(false)
+  // const [isVerified, setIsVerified] = useState<boolean>(false)
   const {
     socket,
     setIsLogged,
@@ -58,6 +60,10 @@ export const Login = () => {
 
   // --- LS
   const [nameLS, setNameLS, removeNameLS] = useLocalStorage<string>('chat.my-name', '')
+  // useEffect(() => {
+  //   if (!!nameLS) setName(nameLS)
+  // }, [nameLS])
+  const [lastRoomLS, setLastRoomLS, _removeLastRoomLS] = useLocalStorage<string>('chat.last-room', '')
   const [tokenLS, setTokenLS] = useLocalStorage<any>('chat.token')
   const [roomlistLS, setRoomlistLS] = useLocalStorage<TLocalRoomItem[]>('chat.roomlist', [])
   const roomNames = useMemo(() => !!roomlistLS ? roomlistLS.filter(({ name }) => !!name).map(({ name }) => name) : [], [roomlistLS])
@@ -107,54 +113,60 @@ export const Login = () => {
   const { isOpen: isPasswordModalOpen, onOpen: handlePasswordModalOpen, onClose: handlePasswordModalClose } = useDisclosure()
   const [isLoading1, setIsLoading1] = useState<boolean>(false)
   const [isLoading2, setIsLoading2] = useState<boolean>(false)
-  const axiosCancelToken = useRef<any>(null)
-  const axiosCancelToken2 = useRef<any>(null)
+  // const axiosCancelToken = useRef<any>(null)
+  // const axiosCancelToken2 = useRef<any>(null)
 
-  const _handleLogin = useCallback(async (sR?: string) => {
-    if (isDev || name === 'pravosleva') toast({
-      position: 'top',
-      title: 'check-jwt',
-      // description: error,
-      status: 'warning',
-      duration: 2000,
-    })
+  const _tryLogin = useCallback(async (sR?: string) => {
+    // console.log('- try login')
+    setIsLoading1(true)
+    if (isDev || name === 'pravosleva') {
+      toast({
+        position: 'top',
+        title: '/check-jwt',
+        // description: error,
+        status: 'warning',
+        duration: 2000,
+      })
+    }
     setNameLS(name)
 
-    // -- NOTE: drop axios req
-    if (!!axiosCancelToken.current) axiosCancelToken2.current.cancel()
-    axiosCancelToken2.current = axios.CancelToken.source()
-    // --
-
     // TODO: await check jwt
-    const jwtChecked = await axios(`${REACT_APP_API_URL}/chat/api/auth/check-jwt`, {
-      method: 'POST',
-      cancelToken: axiosCancelToken.current,
-    })
-      .then((res) => res.data)
-      .catch((err) => err)
-    
-    let isLogged: boolean = jwtChecked?.ok && jwtChecked.code === 'logged'
+    // const jwtChecked = await axios(`${REACT_APP_API_URL}/chat/api/auth/check-jwt`, {
+    //   method: 'POST',
+    //   cancelToken: axiosCancelToken.current,
+    // })
+    //   .then((res) => res.data)
+    //   .catch((err) => err)
+    const jwtResponse = await jwtHttpClient.checkJWT().then(r => r).catch(e => e).finally(() => { setIsLoading1(false) })
 
-    if (isDev) {
+    let isLogged: boolean = false
+
+    // window.alert(JSON.stringify(jwtResponse, null, 2))
+
+    if (typeof jwtResponse === 'string') {
+      // NOTE: Fail
+      // window.alert(jwtResponse)
+      toast({ position: 'top', title: jwtResponse, status: 'warning', duration: 2000 })
+    } else if (isDev || (jwtResponse?.ok && jwtResponse.code === EAPIUserCode.Logged)) {
       isLogged = true
     }
+    // if (isDev) history.push('/chat')
 
-    if (!!socket)
+    const normalizedRoom = !!sR ? slugify(sR) : slugifiedRoom
+
+    if (!!socket) { // && !!room && !!name
       setIsLoading1(true)
       // @ts-ignore
       socket.emit(
         'login',
         {
           name,
-          room: !!sR ? slugify(sR) : slugifiedRoom,
+          room: normalizedRoom,
           // token: String(tokenLS),
           isLogged
         },
         (error: string, isAdmin?: boolean) => {
-          if (isDev) {
-            history.push('/chat')
-            return
-          }
+          // if (isDev) { history.push('/chat'); return; }
 
           if (!!error) {
             if (error === 'FRONT:LOG/PAS') {
@@ -201,133 +213,102 @@ export const Login = () => {
           } else {
             setRoomlistLS([{ name: room, ts: nowTs }])
           }
+          setLastRoomLS(normalizedRoom)
           // --
           history.push('/chat')
         }
       )
+    }
   }, [slugifiedRoom, name, tokenLS, room, history, roomlistLS, setIsAdmin, setIsLogged, setNameLS, setRoomlistLS, handlePasswordModalOpen, socket])
-  const handleLogin = useMemo(
-    () => debounce(_handleLogin, 1000), // { leading: true, trailing: false }
-    [_handleLogin]
+  const tryLogin = useMemo(
+    () => debounce(_tryLogin, 1000), // { leading: true, trailing: false }
+    [_tryLogin]
   );
 
-  const handleKeyDown = (ev: any) => {
-    if (ev.keyCode === 13) {
-      if (!!room) handleLogin()
-    }
-  }
+  const handleKeyDown = (ev: any) => { if (ev.keyCode === 13 && !!room) tryLogin() }
 
-  const [myPassword, setMyPassword] = useState<{ password: string }>({ password: '' })
+  // const [myPassword, setMyPassword] = useState<{ password: string }>({ password: '' })
   const _handleTryLoginWidthPassword = async (pas?: string) => {
     if (isDev || name === 'pravosleva') toast({
       position: 'top',
-      title: 'login',
+      title: '/login',
       // description: error,
       status: 'warning',
       duration: 2000,
     })
     // console.log(pas)
-    const data: any = await axios.post(`${REACT_APP_API_URL}/chat/api/auth/login`, {
-      username: name,
-      password: pas,
-      room,
-    })
-      .then((res) => {
-        // console.log(res.data)
-        return res.data
-      })
-      .catch((err) => {
-        console.log(err)
-        return err
-      })
+    // if (!!pas) {
+    setIsLoading2(true)
+    const data: any = await jwtHttpClient.login({ username: name, password: pas || '', room }).then((res) => res).catch((err) => err).finally(() => { setIsLoading2(false) })
     
     // console.log(data)
-    const isLogged = !!data?.ok && data.code === 'logged'
+    const isLogged = !!data?.ok && data.code === EAPIUserCode.Logged
+
+    // window.alert(JSON.stringify(data, null, 2))
+
     if (isLogged) {
-      toast({
-        position: "top",
-        title: "JWT received",
-        status: "success",
-        duration: 3000,
-      })
+      toast({ title: "JWT received", status: "success", duration: 3000, position: "top" })
     } else {
-      toast({
-        position: "top",
-        title: "Error",
-        description: data?.message || `Oops... Sorry: ${data?.code || 'No res.code'}`,
-        status: "error",
-        // duration: 3000,
-        // isClosable: true,
-      })
+      toast({ title: "Error", description: data?.message || `Oops... Sorry: ${data?.code || 'No res.code'}`, status: "error", position: "top" })
       return
     }
     if (!!socket) {
       setIsLoading2(true)
-      socket.emit('login.password', {
-        // password: pas || myPassword.password,
-        isLogged,
-        token: String(tokenLS),
-        name,
-        room: slugifiedRoom
-      }, (err?: string, isAdmin?: boolean, token?: string) => {
-        if (!!err) {
-          console.log('- this case')
-          console.log(err)
-          toast({
-            position: 'top',
-            description: err,
-            status: 'error',
-            duration: 2000,
-            isClosable: true,
-          })
-          setIsLoading2(false)
-          setIsLoading1(false)
-          return
-        } else {
-          if (!!token) setTokenLS(token)
-          if (isAdmin) setIsAdmin(true)
-          setIsLogged(true)
-          setIsLoading2(false)
-          setIsLoading1(false)
-          // setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
-          // --
-          const rooms: any = {}
-          const nowTs = Date.now()
-
-          if (!!roomlistLS) {
-            roomlistLS.forEach(({ name, ts }) => {
-              if (!!name) {
-                rooms[name] = {
-                  name,
-                  ts: name === room ? nowTs : ts,
-                }
-              }
-            })
-            rooms[room] = {
-              name: room,
-              ts: nowTs
-            }
-            setRoomlistLS(Object.values(rooms))
+      socket.emit(
+        'login.password',
+        { /* password: pas || myPassword.password, */ isLogged, token: String(tokenLS), name, room: slugifiedRoom },
+        (err?: string, isAdmin?: boolean, token?: string) => {
+          if (!!err) {
+            // console.log('- this case')
+            console.log(err)
+            toast({ description: err, status: 'error', duration: 2000, isClosable: true, position: 'top' })
+            setIsLoading2(false)
+            setIsLoading1(false)
+            return
           } else {
-            setRoomlistLS([{ name: room, ts: nowTs }])
+            if (!!token) setTokenLS(token)
+            if (isAdmin) setIsAdmin(true)
+            setIsLogged(true)
+            setIsLoading2(false)
+            setIsLoading1(false)
+            // setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
+            // --
+            const rooms: any = {}
+            const nowTs = Date.now()
+  
+            if (!!roomlistLS) {
+              roomlistLS.forEach(({ name, ts }) => {
+                if (!!name) {
+                  rooms[name] = {
+                    name,
+                    ts: name === room ? nowTs : ts,
+                  }
+                }
+              })
+              rooms[room] = {
+                name: room,
+                ts: nowTs
+              }
+              setRoomlistLS(Object.values(rooms))
+            } else {
+              setRoomlistLS([{ name: room, ts: nowTs }])
+            }
+            setLastRoomLS(room)
+            // --
+            // toast({ position: "bottom", title: "Hey there", description: `Hello, ${name}`, status: "success", duration: 3000, isClosable: true })
+            history.push('/chat')
           }
-          // --
-          // toast({ position: "bottom", title: "Hey there", description: `Hello, ${name}`, status: "success", duration: 3000, isClosable: true })
-          history.push('/chat')
         }
-      })
+      )
     }
+    // }
   }
   const handleTryLoginWidthPassword = useMemo(
     () => debounce(_handleTryLoginWidthPassword, 1000, { leading: true, trailing: false }),
     [_handleTryLoginWidthPassword]
   );
-  // const handleKeyDownPassword = (ev: any) => {
-  //   if (ev.keyCode === 13) { if (!!room) handleTryLoginWidthPassword() }
-  // }
-  const handleChangePassword = (e: any) => {
-    setMyPassword((state) => ({ ...state, password: e.target.value }))
-  }
+  // const handleKeyDownPassword = (ev: any) => { if (ev.keyCode === 13) { if (!!room) handleTryLoginWidthPassword() } }
+  // const handleChangePassword = (e: any) => { setMyPassword((state) => ({ ...state, password: e.target.value })) }
   const passwordRef = useRef(null)
   const loginBtnRef = useRef<any>(null)
 
@@ -344,8 +325,7 @@ export const Login = () => {
     if (!!roomlistLS) {
       const newRoomList = roomlistLS.filter(({ name }: TLocalRoomItem) => name !== roomName && (slugify(name.toLowerCase()) !== slugify(roomName.toLowerCase())))
 
-      console.log(newRoomList)
-
+      // console.log(newRoomList)
       setRoomlistLS(newRoomList)
     }
     // handleRoomlistModalClose()
@@ -356,13 +336,20 @@ export const Login = () => {
     handleRoomlistModalClose()
     if (!!loginBtnRef.current) loginBtnRef.current.focus()
     // setIsLoading1(true)
-    // setTimeout(handleLogin, 1000)
+    // setTimeout(tryLogin, 1000)
     return Promise.resolve()
   }
   // ---
 
   // const isSubmitDisabled = useMemo(() => !(!!name && myPassword.password.length === 4), [name, myPassword.password])
   const handleOpenExternalLink = useCallback(openExternalLink, [])
+
+  // useEffect(() => {
+  //   console.log('- EFFECT', lastRoomLS, renderCount)
+  //   if (renderCount === 0 && !!lastRoomLS) tryLogin(lastRoomLS)
+
+  //   renderCount += 1
+  // }, [])
 
   return (
     <>
@@ -377,7 +364,7 @@ export const Login = () => {
             .then(async () => {
               setIsLoading1(true)
               await delay(1000)
-              handleLogin(slugifiedRoom)
+              tryLogin(slugifiedRoom)
             })
             .catch((err) => {
               console.log(err)
@@ -394,7 +381,7 @@ export const Login = () => {
         isCentered
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent rounded='2xl'>
           <ModalHeader>
             <Flex justifyContent='center'>
             <FormControl mt={4} maxWidth={200}>
@@ -406,6 +393,7 @@ export const Login = () => {
                 // isDisabled
                 readOnly
                 value={name}
+                rounded='3xl'
               />
             </FormControl>
             </Flex>
@@ -415,17 +403,17 @@ export const Login = () => {
                   autoFocus
                   mask
                   defaultValue=''
-                  onChange={(value: string) => {
-                    handleChangePassword({ target: { value } })
-                  }}
+                  // onChange={(value: string) => { handleChangePassword({ target: { value } }) }}
                   onComplete={(value: string) => {
-                    if (!!name && !isLoading2 && !!room && value.length === 4) handleTryLoginWidthPassword(value)
+                    if (!!name && !isLoading2 && !!room && value.length === 4) {
+                      handleTryLoginWidthPassword(value)
+                    }
                   }}
                 >
-                  <PinInputField autoComplete='off' />
-                  <PinInputField autoComplete='off' />
-                  <PinInputField autoComplete='off' />
-                  <PinInputField autoComplete='off' />
+                  <PinInputField rounded='3xl' autoComplete='off' />
+                  <PinInputField rounded='3xl' autoComplete='off' />
+                  <PinInputField rounded='3xl' autoComplete='off' />
+                  <PinInputField rounded='3xl' autoComplete='off' />
                 </PinInput>
               </HStack>
             </Box>
@@ -447,7 +435,7 @@ export const Login = () => {
             </FormControl>
             */}
           </ModalHeader>
-          <ModalCloseButton />
+          <ModalCloseButton rounded='3xl' />
           {/* <ModalBody pb={6}>
             
           </ModalBody> */}
@@ -468,13 +456,13 @@ export const Login = () => {
 
       <Modal isOpen={isModalOpened} onClose={handleCloseModal} size="xs" autoFocus={false} isCentered>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Your name is<br />{nameLS}?</ModalHeader>
-          <ModalCloseButton />
+        <ModalContent rounded='2xl'>
+          <ModalHeader>Your name is<br />{name}?</ModalHeader>
+          <ModalCloseButton rounded='3xl' />
           {/* <ModalBody><Text size='lg'></Text></ModalBody> */}
 
           <ModalFooter>
-            <Button variant="ghost" mr={3} onClick={handleClearName}>
+            <Button variant="ghost" mr={2} onClick={handleClearName} rounded='3xl'>
               No
             </Button>
             <Button
@@ -483,7 +471,9 @@ export const Login = () => {
               onClick={() => {
                 setName(nameLSRef.current)
                 handleCloseModal()
+                // tryLogin()
               }}
+              rounded='3xl'
             >
               Yes
             </Button>
@@ -502,10 +492,14 @@ export const Login = () => {
           >
             {REACT_APP_CHAT_NAME}
           </Heading>
-          <Flex className="form" gap="1rem" flexDirection={{ base: 'column', md: 'row' }} mb={4}>
+          <Flex className="form" gap="1rem" flexDirection={{ base: 'column', md: 'column' }} mb={4}>
             <Box
-              mr={{ base: '0', md: '4' }}
-              mb={{ base: '4', md: '0' }}
+              // mr={{ base: '4', md: '4' }}
+              mb={{ base: '4', md: '4' }}
+              style={{
+                // border: '1px solid red',
+                width: '100%'
+              }}
             >
               <Text mb={1}>Username</Text>
               <Input
@@ -518,9 +512,10 @@ export const Login = () => {
                 onChange={(e) => {
                   setName(e.target.value)
                 }}
+                rounded='3xl'
               />
             </Box>
-            {
+            {/*
               !isRoomDisabled && (
                 <Box
                   mr={{ base: '0', md: '4' }}
@@ -541,32 +536,34 @@ export const Login = () => {
                   />
                 </Box>
               )
-            }
+            */}
             <IconButton
               mt='auto'
               ref={loginBtnRef}
-              colorScheme="blue"
+              colorScheme={!room ? "gray" : "blue"}
               isRound
               aria-label="icon-btn"
               icon={<RiArrowRightLine />}
               isLoading={isLoading1}
               onClick={() => {
-                handleLogin()
+                setIsLoading1(true)
+                tryLogin()
               }}
               isDisabled={!name || !room}
             />
           </Flex>
           {
-            !!roomlistLS && roomlistLS.length > 0 && (
-              <Button
-                tabIndex={10}
-                colorScheme="gray"
-                variant='ghost'
-                onClick={handleRoomlistModalOpen}
-              >
-                My Rooms
-              </Button>
-            )
+            // !!roomlistLS && roomlistLS.length > 0 && (
+            <Button
+              tabIndex={10}
+              colorScheme={!room ? "blue" : "gray"}
+              variant='ghost'
+              onClick={handleRoomlistModalOpen}
+              isDisabled={!name}
+              rounded='3xl'
+            >
+              My Rooms
+            </Button>
           }
           <Flex mt={1} justifyContent='center'>Все еще доступен режим Гостя под свободным ником</Flex>
           {!!REACT_APP_BUILD_DATE && (

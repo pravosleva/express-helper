@@ -26,7 +26,7 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
       const roomlistLS: { name: string, ts: number }[] = JSON.parse(window.localStorage.getItem('chat.roomlist') || '[]');
       const _roomNames = !!roomlistLS ? [...new Set(roomlistLS.filter(({ name }) => !!name).map(({ name }) => name))] : []
 
-      setRoomNames(_roomNames)
+      setRoomNames(_roomNames.sort())
     }
     refresh()
   }, [name])
@@ -40,6 +40,7 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
 
         return (
           <Button
+            justifyContent='flex-start'
             colorScheme={isGreen ? 'green' : 'gray'}
             size='sm'
             disabled={r === room}

@@ -10857,7 +10857,7 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
   integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
 
-react-fast-compare@3.2.0:
+react-fast-compare@3.2.0, react-fast-compare@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
@@ -10979,6 +10979,13 @@ react-scroll-to-bottom@^4.1.2:
     math-random "2.0.1"
     prop-types "15.7.2"
     simple-update-in "2.2.0"
+
+react-snowfall@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-snowfall/-/react-snowfall-1.1.1.tgz#bdd5e43ed622606fb6fdb9f1c82ca367608e65db"
+  integrity sha512-SREER5iikqVY8Fu0BpaYllzGHB1iKZacXY76E/rW1n1zKUH5ClqVWG1UZS+3fR6OTg9GkeGG459juSnARVoNGQ==
+  dependencies:
+    react-fast-compare "^3.2.0"
 
 react-spinners@^0.11.0:
   version "0.11.0"
@@ -11453,6 +11460,11 @@ ret@~0.1.10:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
+
+retry-axios@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/retry-axios/-/retry-axios-2.6.0.tgz#d4dc5c8a8e73982e26a705e46a33df99a28723e0"
+  integrity sha512-pOLi+Gdll3JekwuFjXO3fTq+L9lzMQGcSq7M5gIjExcl3Gu1hd4XXuf5o3+LuSBsaULQH7DiNbsqPd1chVpQGQ==
 
 retry@^0.12.0:
   version "0.12.0"
