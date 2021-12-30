@@ -110,7 +110,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
       >
         {
           !isClosable
-          ? (text)
+          ? <b>{text}</b>
           : (
             <div
               style={{
@@ -118,7 +118,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
                 flexDirection: 'column',
               }}
             >
-              <div>{isOpened ? text : firstString}</div>
+              <div>{isOpened ? <b>{text}</b> : <b>{firstString}</b>}</div>
               <div>
                 <Button
                   mt={2}
