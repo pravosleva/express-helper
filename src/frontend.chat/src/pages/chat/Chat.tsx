@@ -100,13 +100,13 @@ import { DatepickerModal } from '~/pages/chat/components/TasklistModal/component
 import { useSnapshot } from 'valtio'
 // const assignmentSnap = useSnapshot(assignmentFeatureProxy)
 import { FiArrowRight } from 'react-icons/fi'
-import { PollingComponent } from '~/pages/chat/components/NotifsList/components/PollingComponent'
+import { CheckRoomSprintPolling } from '~/common/components/CheckRoomSprintPolling'
 import { BsFillCalendarFill } from 'react-icons/bs'
 import { useAddToHomescreenPrompt } from '~/common/hooks/useAddToHomescreenPrompt'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
-/* -- NOTE: Socket upload file evs
+/* -- NOTE: Socket upload file evss
 // Sample 1 (12.3 kB)
 <- siofu_start { name: 'coca-cola.png', mtime: 1619100476733, meta: {}, size: 12302, encoding: 'octet', id: 0 }
 -> siofu_ready { id: 0, name: '1637615139703' }
@@ -1006,48 +1006,6 @@ export const Chat = () => {
   const toggleSprintDescr = () => {
     setIsSprintDescrOpened((s) => !s)
   }
-  const handleCheckPOST = async () => {
-    if (document.hidden || !isLogged) return
-    // NOTE: If false - than browser tab is active
-
-    const data = { room_id: room, tsUpdate: sprintFeatureSnap.tsUpdate }
-    const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/check-room-state`, {
-      ...data,
-    })
-      .then((res) => res.data)
-      .catch((err) => err)
-
-    switch (true) {
-      case (result instanceof Error):
-        sprintFeatureProxy.isPollingWorks = false
-        break;
-      case result.code === 'not_found': // EAPIRoomNotifsCode.NotFound:
-        sprintFeatureProxy.isPollingWorks = true
-        sprintFeatureProxy.isEmptyStateConfirmed = true
-        break;
-      default:
-        sprintFeatureProxy.isPollingWorks = true
-        if (!!result.state && Object.keys(result.state).length === 0) {
-          sprintFeatureProxy.isEmptyStateConfirmed = true
-        }
-        break;
-    }
-
-    if (result.ok && result.tsUpdate !== sprintFeatureSnap.tsUpdate) {
-      try {
-        sprintFeatureProxy.commonNotifs = result.state
-        if (Object.keys(result.state).length > 0) {
-          sprintFeatureProxy.isEmptyStateConfirmed = false
-        } else {
-          sprintFeatureProxy.isEmptyStateConfirmed = true
-        }
-      } catch (err) {
-        console.log(err)
-      }
-      
-      sprintFeatureProxy.tsUpdate = result.tsUpdate
-    }
-  }
   // --
 
   // -- PWA
@@ -1839,20 +1797,8 @@ export const Chat = () => {
           }
         </Flex>
       </div>
-      <PollingComponent
-        promise={handleCheckPOST}
-        resValidator={(_data: any) => {
-          return false; // NOTE: Infinity
-        }}
-        onSuccess={() => {
-          // TODO
-          console.log('SUCCESS')
-        }}
-        onFail={(err) => {
-          console.log('FAIL')
-          console.log(err)
-        }}
-      />
+      {/* <PollingComponent promise={handleCheckPOST} resValidator={(_data: any) => false} onSuccess={() => {}} onFail={console.log} /> */}
+      <CheckRoomSprintPolling />
     </>
   )
 }
