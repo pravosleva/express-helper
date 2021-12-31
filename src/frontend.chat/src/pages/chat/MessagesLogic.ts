@@ -32,7 +32,7 @@ export class Logic {
           this.messages.forEach((msg, i, arr) => {
             const { status, text, ts, assignedTo } = msg
             const condition = (
-              filters.includes(status)
+              !!status && filters.includes(status)
               && (!!words ? new RegExp(words.join("|"), 'gi').test(text.toLowerCase()) : true)
               && (assignmentExecutorsFilters.length > 0 ? !!assignedTo && Array.isArray(assignedTo) && assignmentExecutorsFilters.includes(assignedTo[0]) : true)
               ) || additionalTsToShow.includes(ts)
@@ -45,7 +45,7 @@ export class Logic {
                 const nextMsg = this.messages[i + 1]
 
                 // NOTE: NEXT ASSIGNMENT CONDITION [tested]
-                const isNextHidden = !(filters.includes(nextMsg.status)
+                const isNextHidden = !!nextMsg.status && !(filters.includes(nextMsg.status)
                   && (!!words ? new RegExp(words.join("|"), 'gi').test(nextMsg.text.toLowerCase()) : true) || additionalTsToShow.includes(nextMsg.ts)
                   && (assignmentExecutorsFilters.length > 0 && !!nextMsg.assignedTo && Array.isArray(nextMsg.assignedTo) && assignmentExecutorsFilters.includes(nextMsg.assignedTo[0]))
                 )
@@ -105,7 +105,7 @@ export class Logic {
         this.messages.forEach((msg, i, arr) => {
           const { status, ts, assignedTo } = msg
           const condition = (
-            filters.includes(status)
+            !!status && filters.includes(status)
             && (assignmentExecutorsFilters.length > 0 ? !!assignedTo && Array.isArray(assignedTo) && assignmentExecutorsFilters.includes(assignedTo[0]) : true)
           ) || additionalTsToShow.includes(ts)
 
@@ -118,7 +118,7 @@ export class Logic {
 
               // NOTE: NEXT ASSIGNMENT CONDITION [tested]
               const isNextHidden = !additionalTsToShow.includes(nextMsg.ts)
-              && !filters.includes(nextMsg.status)
+              && !!nextMsg.status && !filters.includes(nextMsg.status)
               && !(assignmentExecutorsFilters.length > 0 && !!nextMsg.assignedTo && Array.isArray(nextMsg.assignedTo) && !assignmentExecutorsFilters.includes(nextMsg.assignedTo[0]))
 
               modifiedMsg._next = { ts: this.messages[i + 1].ts, isHidden: isNextHidden }
@@ -144,7 +144,7 @@ export class Logic {
               const nextMsg = this.messages[i + 1]
 
               // NOTE: NEXT ASSIGNMENT CONDITION [tested]
-              const isNextHidden = !additionalTsToShow.includes(nextMsg.ts) && !filters.includes(nextMsg.status) && !(assignmentExecutorsFilters.length > 0 && !!nextMsg.assignedTo && Array.isArray(nextMsg.assignedTo) && assignmentExecutorsFilters.includes(nextMsg.assignedTo[0]))
+              const isNextHidden = !additionalTsToShow.includes(nextMsg.ts) && !!nextMsg.status && !filters.includes(nextMsg.status) && !(assignmentExecutorsFilters.length > 0 && !!nextMsg.assignedTo && Array.isArray(nextMsg.assignedTo) && assignmentExecutorsFilters.includes(nextMsg.assignedTo[0]))
 
               modifiedMsg._next = { ts: this.messages[i + 1].ts, isHidden: isNextHidden }
             }
@@ -165,8 +165,8 @@ export class Logic {
   }
   getCountByFilters(filters: EMessageStatus[], filtersAssignedTo?: string[]): number {
     switch (true) {
-      case filters.length > 0 && !filtersAssignedTo?.length: return this.messages.filter(({ status }) => filters.includes(status)).length
-      case filters.length > 0 && !!filtersAssignedTo?.length: return this.messages.filter(({ status, assignedTo }) => filters.includes(status) && (!!assignedTo && filtersAssignedTo?.includes(assignedTo[0]))).length
+      case filters.length > 0 && !filtersAssignedTo?.length: return this.messages.filter(({ status }) => !!status && filters.includes(status)).length
+      case filters.length > 0 && !!filtersAssignedTo?.length: return this.messages.filter(({ status, assignedTo }) => !!status && filters.includes(status) && (!!assignedTo && filtersAssignedTo?.includes(assignedTo[0]))).length
       default: return this.messages.length
     }
   }

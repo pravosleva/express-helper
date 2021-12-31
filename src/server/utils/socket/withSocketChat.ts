@@ -526,7 +526,7 @@ export const withSocketChat = (io: Socket) => {
       if (!!cb) cb({ result, nextTsPoint, isDone, targetRoom: room })
     })
 
-    socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: { text: string, status?: EMessageStatus, assignedTo?: string[] } }, cb?: () => void) => {
+    socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: TMessage }, cb?: () => void) => {
       const result = roomsMap.editMessage({ room, name, ts, newData })
 
       standardResultHandler({
@@ -538,10 +538,16 @@ export const withSocketChat = (io: Socket) => {
           const roomNotifs = notifsMap.get(room)
           if (!!roomNotifs) {
             const key = String(ts)
-            if (roomNotifs?.data && !!roomNotifs?.data[key]) {
+            if (!!roomNotifs?.data && !!roomNotifs?.data[key]) {
               if (!!roomNotifs?.data[key]) {
                 roomNotifs.data[key].text = result.targetMessage.text
+                roomNotifs.data[key].original = newData
                 roomNotifs.tsUpdate = Date.now()
+
+                // console.log('- case 1: roomNotifs.data[key].original set to:')
+                // console.log(newData)
+              } else {
+                // console.log('- case 2: no !!roomNotifs?.data[key]')
               }
               
               notifsMap.set(room, roomNotifs)

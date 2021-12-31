@@ -8,8 +8,9 @@ import { useMainContext } from '~/mainContext'
 type TProps = {
   assignedTo: string[]
   assignedBy: string
-  onUnassign: (assignedUserName: string) => void
-  isMyMessage: boolean
+  onUnassign?: (assignedUserName: string) => void
+  isMyMessage?: boolean
+  position?: 'right' | 'left' | 'center'
 }
 
 export const AssignedBox = ({
@@ -17,13 +18,14 @@ export const AssignedBox = ({
   assignedBy,
   onUnassign,
   isMyMessage,
+  position,
 }: TProps) => {
   const { name } = useMainContext()
   const isMeAssigner = name === assignedBy
   const isAssignedToMe = name === assignedTo[0]
 
   return (
-    <Box className='right-box' style={{ marginTop: 0 }}>
+    <Box className={!!position ? `${position}-box` : 'right-box'} style={{ marginTop: 0 }}>
       <div
         style={{
           display: 'flex',
@@ -40,7 +42,7 @@ export const AssignedBox = ({
         }}>
           <div style={{ fontSize: 'var(--chakra-fontSizes-sm)' }}><b>{assignedTo[0]}</b></div>
           {
-            (isMyMessage || isMeAssigner || isAssignedToMe) && (
+            (isMyMessage || isMeAssigner || isAssignedToMe) && !!onUnassign && (
               <div>
                 <Button ml={2} size='sm' variant='link' onClick={() => {
                   // handleUnassignFromUser(message, assignedTo[0])

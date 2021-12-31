@@ -7,9 +7,10 @@ type TProps = {
   mr?: string,
   ml?: string,
   fontSize?: number,
+  onClick?: () => void
 }
 
-export const UserAva = ({ name, size, mr, ml, fontSize }: TProps) => {
+export const UserAva = ({ name, size, mr, ml, fontSize, onClick }: TProps) => {
   const shortNick = name.split(' ').filter((w: string, i: number) => i < 2).map((word: string) => word[0].toUpperCase()).join('')
   const personalColor = stc(name)
 
@@ -20,7 +21,9 @@ export const UserAva = ({ name, size, mr, ml, fontSize }: TProps) => {
         marginRight: mr || 0,
         marginLeft: ml || 0,
         // order: isMyMessage ? 2 : 1,
+        cursor: !!onClick ? 'pointer' : 'default',
       }}
+      onClick={onClick || undefined}
     >
       <span
         className='ava'

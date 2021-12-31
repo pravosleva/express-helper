@@ -19,13 +19,14 @@ export type TMessage = {
   ts: number;
   editTs?: number;
   name: string;
-  status: EMessageStatus;
+  status?: EMessageStatus;
   file?: {
     fileName: string;
     filePath: string;
   };
   assignedTo?: string[];
   assignedBy?: string;
+  original?: TMessage
 }
 
 export type TImageLightboxFormat = { src: string, alt: string | undefined }

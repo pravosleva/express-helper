@@ -1,11 +1,14 @@
 import { useState, useMemo } from 'react'
-import { Box, Button, Flex, Grid, Text, Tag, useToast, UseToastOptions } from "@chakra-ui/react"
-import { getNormalizedDate } from '~/utils/timeConverter'
+import { Box, Button, Flex, Grid, Text, Tag, useToast, IconButton } from "@chakra-ui/react"
+import { getNormalizedDate, getDayMonth } from '~/utils/timeConverter'
 import { FaTrashAlt } from 'react-icons/fa'
 import Countdown, { zeroPad } from 'react-countdown'
 import { useSnapshot } from 'valtio'
 import { useMainContext } from '~/mainContext'
-import { ERegistryLevel } from '~/utils/interfaces'
+import { ERegistryLevel, TMessage } from '~/utils/interfaces'
+// import { AssignedBox } from '~/pages/chat/components/AssignedBox'
+import { UserAva } from '~/pages/chat/components/UserAva'
+import { IoMdClose } from 'react-icons/io'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -16,6 +19,7 @@ type TProps = {
   text: string
   inProgress: boolean
   onComplete?: ({ ts, text }: { ts: number, text: string }) => void
+  original: TMessage
 }
 
 const CountdownRenderer = ({ days, hours, minutes, seconds, completed }: any) => {
@@ -26,11 +30,11 @@ const CountdownRenderer = ({ days, hours, minutes, seconds, completed }: any) =>
   return <Tag colorScheme={color} ml={2}>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
 }
 
-export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete }: TProps) => {
+export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete, original }: TProps) => {
   const { userInfoProxy, sprintFeatureProxy } = useMainContext()
   const userInfoSnap = useSnapshot(userInfoProxy)
-  const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
-  const isLogged = useMemo<boolean>(() => userInfoSnap.regData.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData.registryLevel])
+  // const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
+  const isLogged = useMemo<boolean>(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
   // const isFirstRender = useRef<boolean>(true)
   // useEffect(() => {
   //   if (isFirstRender.current) console.log(`GET ${ts}`)
@@ -70,48 +74,69 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
     }
   }
   
-
+  // <Grid templateColumns='auto 50px' gap={2}>
   return (
-    <>
-      <Grid templateColumns='auto 50px' gap={2}>
+    <Box>
+      <Flex justifyContent='space-between' alignItems='center' mb={2}>
         <Flex alignItems='center'>
-          {getNormalizedDate(tsTarget)}
+          {getDayMonth(tsTarget)}
           <Countdown
             date={tsTarget}
             renderer={CountdownRenderer}
             onComplete={!!onComplete ? () => onComplete({ ts, text }) : undefined}
           />
         </Flex>
-        {
-          isLogged && (
-            <Button
-              size='sm'
-              isLoading={inProgress}
-              isDisabled={inProgress || !sprintFeatureSnap.isPollingWorks}
-              onClick={() => {
-                const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
-                if (isConfirmed) onRemove(ts)
-              }}
-              colorScheme='gray'
-              variant='outline'
-            ><FaTrashAlt size={13} /></Button>
-          )
-        }
-      </Grid>
+        <Flex alignItems='center'>
+          {!!original?.assignedTo && !!original?.assignedBy && (
+            <>
+              <UserAva size={19} name={original.assignedBy} ml='auto' fontSize={11} onClick={() => { !!original.assignedBy && window.alert(`Assigned by ${original.assignedBy}`) }} />
+              <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+              <UserAva size={19} name={original.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={11} onClick={() => { !!original.assignedTo && window.alert(`Assigned to ${original.assignedTo[0]}`) }} />
+            </>)
+          }
+          {
+            isLogged && (
+              <IconButton
+                size='xs'
+                aria-label="DEL"
+                colorScheme='red'
+                variant='outline'
+                isRound
+                icon={<IoMdClose size={15} />}
+                onClick={() => {
+                  const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
+                  if (isConfirmed) onRemove(ts)
+                }}
+              >
+                DEL
+              </IconButton>
+            )
+          }
+        </Flex>
+      </Flex>
       <Box
         style={{
-          // border: '1px solid red'
+          // border: '1px solid red',
+          // borderImage: `linear-gradient(to bottom, var(--chakra-colors-gray-200), rgba(0, 0, 0, 0)) 1 100%`,
           borderLeft: '4px solid var(--chakra-colors-gray-200)',
+          borderTop: '1px solid var(--chakra-colors-gray-200)', // `1px ${isClosable ? isOpened ? 'solid' : 'dashed' : 'solid'} var(--chakra-colors-gray-200)`,
+          borderTopLeftRadius: 'var(--chakra-radii-lg)',
+          paddingTop: 'var(--chakra-space-1)',
           paddingLeft: 'var(--chakra-space-3)',
           whiteSpace: 'pre-wrap',
+          // marginBottom: 'var(--chakra-space-1)'
         }}
         onClick={() => { handleScrollIntoView(ts) }}
         className='notif-box'
+        // mb={3}
       >
         {
           !isClosable
-          ? <b>{text}</b>
-          : (
+          ? (
+          <>
+            <b>{text}</b>
+          </>
+        ) : (
             <div
               style={{
                 display: 'flex',
@@ -121,19 +146,34 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
               <div>{isOpened ? <b>{text}</b> : <b>{firstString}</b>}</div>
               <div>
                 <Button
-                  mt={2}
+                  mt={1}
+                  // mb={2}
                   size='xs'
                   // isFullWidth
                   isLoading={inProgress}
                   onClick={toggle}
                   colorScheme='gray'
-                  variant='link'
+                  // variant='link'
+                  variant='outline'
+                  rounded='2xl'
                 >{isOpened ? 'Close' : 'Open'}</Button>
               </div>
             </div>
           )
         }
       </Box>
-    </>
+      {/*
+        !!original?.assignedTo && (
+          <Box mb={3}>
+            <AssignedBox
+              position='right'
+              // isMyMessage={isMyMessage}
+              assignedTo={original.assignedTo}
+              assignedBy={original.assignedBy || 'ERR'}
+            />
+          </Box>
+        )
+      */}
+    </Box>
   )
 }

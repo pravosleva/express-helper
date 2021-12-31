@@ -5,6 +5,7 @@ import { PollingComponent } from './components/PollingComponent'
 import { Button, Flex, Stack } from '@chakra-ui/react'
 import { NotifItem } from './components/NotifItem'
 import { useSnapshot, subscribe } from 'valtio'
+import { TMessage } from '~/utils/interfaces'
 // const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
@@ -24,6 +25,7 @@ export type TNotifItem = {
   username: string
   tsTarget: number
   text: string
+  original: TMessage
 }
 type TData = { [key: string]: TNotifItem }
 export type TRoomNotifs = {
@@ -87,10 +89,11 @@ export const NotifsList = ({ onRemove }: { onRemove: (ts: number) => void }) => 
     return arr
   }, [sprintFeatureSnap.commonNotifs])
 
-  const MemoNotifs = useMemo(() => notifsStateArr.sort(dynamicSort('tsTarget')).map(({ ts, text, tsTarget }) => {
+  const MemoNotifs = useMemo(() => notifsStateArr.sort(dynamicSort('tsTarget')).map(({ ts, text, tsTarget, original }) => {
     const isLoading = sprintFeatureSnap.inProgress.includes(ts)
     return (
     <NotifItem
+      original={original}
       inProgress={isLoading}
       tsTarget={tsTarget}
       key={String(ts)}
@@ -109,7 +112,7 @@ export const NotifsList = ({ onRemove }: { onRemove: (ts: number) => void }) => 
         !sprintFeatureSnap.isEmptyStateConfirmed ?
           notifsStateArr.length === 0
             ? <Flex alignItems='center' justifyContent='center'>Loading...</Flex>
-            : <Stack>{MemoNotifs}</Stack>
+            : <Stack spacing={4}>{MemoNotifs}</Stack>
             : <Flex alignItems='center' justifyContent='center'>No yet...</Flex>
       }
       {/* <pre>{JSON.stringify(notifsStateArr, null, 2)}</pre> */}

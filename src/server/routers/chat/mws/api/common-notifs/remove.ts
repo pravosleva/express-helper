@@ -32,7 +32,7 @@ export const remove = (req: IRequest, res: IResponse) => {
   const newRoomNotifsStruct: TData = { ...oldRoomNotifsStruct.data }
   delete newRoomNotifsStruct[String(ts)]
 
-  console.log(newRoomNotifsStruct)
+  // console.log(newRoomNotifsStruct)
 
   try {
     commonNotifsMapInstance.set(room_id, { data: newRoomNotifsStruct, tsUpdate: newTs })

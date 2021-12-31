@@ -1,3 +1,5 @@
+import { TMessage } from "~/utils/socket/state/types"
+
 export enum EAPIRoomNotifsCode {
   IncorrectParams = 'incorrect_params',
   NotFound = 'not_found',
@@ -13,6 +15,7 @@ export type TNotifItem = {
   username: string
   tsTarget: number
   text: string
+  original: TMessage
 }
 export type TData = { [key: string]: TNotifItem }
 export type TRoomNotifs = {

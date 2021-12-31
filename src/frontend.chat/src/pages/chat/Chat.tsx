@@ -503,8 +503,13 @@ export const Chat = () => {
   }, [])
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
-  const initialEditedMessageState = { text: '', ts: 0 }
-  const [editedMessage, setEditedMessage] = useState<{ text: string; ts: number; status?: EMessageStatus; file?: {fileName: string, filePath?: string }, assignedTo?: string[], assignedBy?: string }>(initialEditedMessageState)
+  const initialEditedMessageState: TMessage = {
+    text: '',
+    ts: 0,
+    user: name,
+    name,
+  }
+  const [editedMessage, setEditedMessage] = useState<TMessage>(initialEditedMessageState)
   const [isCtxMenuOpened, setIsCtxMenuOpened] = useState<boolean>(false)
   // const resetEditedMessage = () => {
   //   setEditedMessage(initialEditedMessageState)
@@ -530,7 +535,7 @@ export const Chat = () => {
       })
       return
     }
-    if (editedMessage?.text.length > charsLimit) {
+    if (!!editedMessage?.text && editedMessage?.text.length > charsLimit) {
       toast({
         position: 'top',
         // title: 'Sorry',
@@ -541,10 +546,11 @@ export const Chat = () => {
       return
     }
     if (!!socket) {
-      const newData: Partial<TMessage> = { text: editedMessage.text }
+      let newData: Partial<TMessage> = { text: editedMessage.text }
       if (!!editedMessage.status) newData.status = editedMessage.status
       if (!!editedMessage.assignedTo) newData.assignedTo = editedMessage.assignedTo
       if (!!assignedTo) newData.assignedTo = assignedTo
+      newData = { ...newData, ...editedMessage }
       socket.emit(
         'editMessage',
         { newData, ts: editedMessage.ts, room, name },
@@ -940,8 +946,8 @@ export const Chat = () => {
         delete sprintFeatureProxy.commonNotifs[String(result.ts)]
     }
   }
-  const handleAddCommonNotif = async ({ ts, tsTarget, text }: any) => {
-    const data = { room_id: room, ts, tsTarget, username: name, text }
+  const handleAddCommonNotif = async ({ ts, tsTarget, text, original }: any) => {
+    const data = { room_id: room, ts, tsTarget, username: name, text, original }
     const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/add`, {
       ...data,
     })
@@ -970,7 +976,7 @@ export const Chat = () => {
   const onUpdateTargetDate = (tsTarget: number) => {
     const ts = editedMessage.ts
     const text = editedMessage.text
-    handleAddCommonNotif({ ts, tsTarget, text })
+    handleAddCommonNotif({ ts, tsTarget, text, original: editedMessage })
   }
 
   // -- SPRINT
@@ -1171,7 +1177,7 @@ export const Chat = () => {
               >
                 <DrawerOverlay />
                 <DrawerContent>
-                  <DrawerCloseButton />
+                  <DrawerCloseButton rounded='3xl' />
                   <DrawerHeader borderBottomWidth="1px">
                     {room}
                   </DrawerHeader>
@@ -1395,8 +1401,9 @@ export const Chat = () => {
                     <ColorModeSwitcher
                       mr={2}
                       colorScheme="gray"
+                      rounded='3xl'
                     />
-                    <Button variant="outline" mr={1} onClick={handleCloseDrawerMenu}>
+                    <Button rounded='3xl' variant="outline" onClick={handleCloseDrawerMenu}>
                       Close
                     </Button>
                   </DrawerFooter>
@@ -1627,7 +1634,7 @@ export const Chat = () => {
                       className='opponent-ava-wrapper'
                     >
                       {!isMyMessage && <UserAva size={30} name={user} mr='.5rem' />}
-                      <div className={clsx("msg", { [status]: !!status, 'edited-message': isCtxMenuOpened && ts === editedMessage.ts })}>
+                      <div className={clsx("msg", { 'edited-message': isCtxMenuOpened && ts === editedMessage.ts }, !!status ? [status] : undefined)}>
                         {isMyMessage ? (
                           <ContextMenuTrigger
                             id="same_unique_identifier"
@@ -1656,13 +1663,13 @@ export const Chat = () => {
                             </Text>
                           </ContextMenuTrigger>
                         ) : (
-                          <Text display="inline-block" fontSize="md" className={clsx({ [status]: !!status })}
+                          <Text display="inline-block" fontSize="md" className={clsx(!!status ? [status] : undefined)}
                             // p=".3rem .9rem"
                           >
                             {text}
                           </Text>
                         )}
-                        {getIconByStatus(status, true)}
+                        {!!status && getIconByStatus(status, true)}
                       </div>
                     </div>
                   </Box>

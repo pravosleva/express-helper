@@ -1,5 +1,5 @@
 import React from 'react'
-import { Td, Tr, IconButton, Tag } from "@chakra-ui/react"
+import { Td, Tr, IconButton, Tag, Button } from "@chakra-ui/react"
 // import { useRef, useState } from "react"
 // import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 // import { FaRegTrashAlt } from 'react-icons/fa'
@@ -15,14 +15,13 @@ export const RoomlistItem = ({ roomName, onDelete, onClick }: TProps) => {
   return (
     <Tr>
       <Td pl={0}>
-        <Tag
-          rounded='2xl'
+        <Button
+          // rounded='2xl'
           onClick={onClick}
-          style={{
-            cursor: 'pointer'
-          }}
-          size='lg'
-        >{roomName}</Tag>
+          // style={{ cursor: 'pointer' }}
+          size='md'
+          variant='link'
+        >{roomName}</Button>
       </Td>
       <Td isNumeric pr={0}>
         <IconButton

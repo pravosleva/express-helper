@@ -1,5 +1,5 @@
 // @ts-ignore
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import {
   Button,
   Modal,
@@ -26,6 +26,9 @@ import { IoMdClose } from 'react-icons/io'
 import { TableItem } from './TableItem'
 import { useDebounce } from 'react-use'
 import { getNormalizedString } from '~/utils/strings-ops'
+import { useSnapshot } from 'valtio'
+import { useMainContext } from '~/mainContext'
+import { ERegistryLevel } from '~/utils/interfaces'
 
 type TProps = {
   isOpened: boolean
@@ -81,6 +84,10 @@ export const SearchUserModal = ({
     }
   }, [debouncedSearchText])
 
+  const { userInfoProxy } = useMainContext()
+  const userInfoSnap = useSnapshot(userInfoProxy)
+  const isLogged = useMemo<boolean>(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
+
   return (
     <Modal
       size="xs"
@@ -89,7 +96,7 @@ export const SearchUserModal = ({
       scrollBehavior='inside'
     >
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent rounded='2xl'>
         <ModalHeader>
           <Box pl={0} pr={0} pb={0}>
             <FormControl>
@@ -104,14 +111,15 @@ export const SearchUserModal = ({
                 // onKeyDown={handleKeyDownEditedMessage}
                 value={formData.userName}
                 onChange={handleInputChange}
+                rounded='3xl'
               />
             </FormControl>
           </Box>
         </ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton rounded='3xl' />
         <ModalBody pb={1} pl={1} pr={1}>
           <Table variant="simple" size='md'>
-            <TableCaption mt={5} mb={5} textAlign='left'>В этом поиске участвуют пользователи (за некоторым исключением), указавшие пароль для своего ника:<br />Боковое меню &gt; Tools &gt; Set my password</TableCaption>
+            {!isLogged && <TableCaption mt={5} mb={5} textAlign='left'>В этом поиске участвуют пользователи (за некоторым исключением), указавшие пароль для своего ника:<br />Боковое меню &gt; Tools &gt; Set my password</TableCaption>}
             <Tbody>
               {users.map((name: string) => {
                 return (
@@ -132,8 +140,8 @@ export const SearchUserModal = ({
         <ModalFooter
           className='modal-footer-btns-wrapper'
         >
-          {!!formData.userName && <Button onClick={resetForm} leftIcon={<IoMdClose />} variant='ghost' color='red.500'>Cancel</Button>}
-          <Button onClick={onClose}>Close</Button>
+          {!!formData.userName && <Button size='sm' rounded='2xl' onClick={resetForm} leftIcon={<IoMdClose />} variant='ghost' color='red.500'>Cancel</Button>}
+          <Button size='sm' rounded='2xl' variant='outline' onClick={onClose}>Close</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

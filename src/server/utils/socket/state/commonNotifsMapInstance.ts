@@ -2,8 +2,10 @@ import path from 'path'
 import { createPollingByConditions } from './createPollingByConditions'
 import { Counter } from '~/utils/counter'
 import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
-import merge from 'merge-deep'
+// import merge from 'merge-deep'
+import merge2 from 'deepmerge'
 import {
+  TMessage,
   TUserName,
 } from './types'
 import { createFileIfNecessary } from '~/utils/fs-tools/createFileIfNecessary'
@@ -20,6 +22,7 @@ type TNotifItem = {
   username: TUserName
   tsTarget: number
   text: string
+  original: TMessage
 }
 type TData = { [key: string]: TNotifItem }
 type TRoomNotifs = {
@@ -72,6 +75,20 @@ class Singleton {
 }
 
 export const commonNotifsMapInstance = Singleton.getInstance()
+const overwriteMerge = (_target, source, _options) => source
+const mergeData = (oldData: { data: TData, tsUpdate: number }, freshData: { data: TData, tsUpdate: number }) => {
+  // console.log('--- mergeData')
+  // console.log('-- OLD:')
+  // console.log(oldData)
+  // console.log('-- NEW:')
+  // console.log(freshData)
+  // console.log('---')
+  if (!!freshData?.data) {
+    return freshData
+  } else {
+    return { ...oldData, ...freshData }
+  }
+}
 
 const syncRegistryMap = () => {
   const isFirstScriptRun = counter.next().value === 0
@@ -110,7 +127,15 @@ const syncRegistryMap = () => {
       // console.log('- 1')
       // console.log(currentRegistryMapState)
       
-      const newStaticData = merge(staticData, currentRegistryMapState)
+      // const newStaticData = merge(staticData, currentRegistryMapState)
+      const newStaticData = merge2(staticData, currentRegistryMapState, {
+        arrayMerge: overwriteMerge,
+        customMerge: (_key: string) => {
+          // console.log(key)
+          // if (key === 'data') return mergeData
+          return mergeData
+        }
+      })
 
       // console.log('- 2: merged')
       // console.log(newStaticData)

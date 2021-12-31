@@ -69,7 +69,8 @@ input[type="file"]:disabled + label {
     cursor: not-allowed;
 }
 
-.centered-box {
+.centered-box,
+.center-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,6 +83,15 @@ input[type="file"]:disabled + label {
 .right-box {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    margin-top: var(--chakra-space-2);
+    margin-bottom: var(--chakra-space-2);
+}
+.left-box {
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 

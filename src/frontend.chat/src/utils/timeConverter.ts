@@ -34,6 +34,17 @@ export const getNormalizedDate = (date: string | number) => {
   return `${dateIndex}.${monthNames[monthIndex]}.${year}`
 }
 
+// 09.11
+export const getDayMonth = (date: string | number) => {
+  // const dt = new Date(sec * 10 ** 3)
+  const dt = new Date(date)
+  const monthNames = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+  const dateIndex = dt.getDate() < 10 ? `0${dt.getDate()}` : dt.getDate()
+  const monthIndex = dt.getMonth()
+
+  return `${dateIndex}.${monthNames[monthIndex]}`
+}
+
 // 09.11.2020 18:15:45
 export const getNormalizedDateTime2 = (date: string | number) => {
   // const dt = new Date(sec * 10 ** 3)

@@ -14,10 +14,16 @@ import { theme } from '~/common/chakra/theme'
 import { CookiesProvider } from 'react-cookie'
 import Snowfall from 'react-snowfall'
 
+// import frontPkg from '../package.json'
+// import backPkg from '../../../package.json'
+
 const month = new Date().getMonth()
 const isSnowRequired = [0, 10, 11].includes(month)
 
 function App() {
+  // const frontMajorVersion = frontPkg.version.split('.')[0]
+  // const backMajorVersion = backPkg.version.split('.')[0]
+
   return (
     <CookiesProvider>
       <ChakraProvider theme={theme}>

@@ -62,7 +62,7 @@ export const CheckRoomSprintPolling = () => {
         body: { room_id: room, tsUpdate: sprintFeatureSnap.tsUpdate },
       }
     },
-    timeout: 1000,
+    timeout: 4000,
   })
   // ---
 
