@@ -19,7 +19,7 @@ import {
   Text,
   Box,
 } from '@chakra-ui/react'
-import { useSocketContext } from '~/socketContext'
+import { useSocketContext } from '~/context/socketContext'
 import { useForm } from '~/common/hooks/useForm'
 import './SearchUserModal.scss'
 import { IoMdClose } from 'react-icons/io'
@@ -27,7 +27,7 @@ import { TableItem } from './TableItem'
 import { useDebounce } from 'react-use'
 import { getNormalizedString } from '~/utils/strings-ops'
 import { useSnapshot } from 'valtio'
-import { useMainContext } from '~/mainContext'
+import { useMainContext } from '~/context/mainContext'
 import { ERegistryLevel } from '~/utils/interfaces'
 
 type TProps = {

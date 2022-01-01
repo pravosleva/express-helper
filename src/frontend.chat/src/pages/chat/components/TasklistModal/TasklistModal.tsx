@@ -24,8 +24,8 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 import { md } from '~/common/chakra/theme'
-import { useSocketContext } from '~/socketContext'
-import { useMainContext } from '~/mainContext'
+import { useSocketContext } from '~/context/socketContext'
+import { useMainContext } from '~/context/mainContext'
 import { useForm } from '~/common/hooks/useForm'
 import './TasklistModal.scss'
 import { TaskItem } from './TaskItem'

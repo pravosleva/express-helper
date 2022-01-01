@@ -3,7 +3,7 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { UserAva } from '~/pages/chat/components/UserAva'
-import { useMainContext } from '~/mainContext'
+import { useMainContext } from '~/context/mainContext'
 
 type TProps = {
   assignedTo: string[]

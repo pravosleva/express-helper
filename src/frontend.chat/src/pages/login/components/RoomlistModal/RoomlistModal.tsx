@@ -21,7 +21,7 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from '~/common/hooks/useForm'
 // import { useSocketContext } from '~/socketContext'
-import { useMainContext } from '~/mainContext'
+import { useMainContext } from '~/context/mainContext'
 import { RoomlistItem } from './RoomlistItem'
 import { FiSearch } from 'react-icons/fi'
 import { useMemo } from 'react'

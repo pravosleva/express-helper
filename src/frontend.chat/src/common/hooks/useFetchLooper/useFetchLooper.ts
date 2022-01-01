@@ -20,7 +20,7 @@ export const useFetchLooper = ({
     beforeRequest: (payload: any) => boolean,
   },
   cb: {
-    onUpdateState: (hookResult: { state: any }) => void
+    onUpdateState?: (hookResult: { state: any }) => void
   },
 }) => {
   // --- POLLING: v2 

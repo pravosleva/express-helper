@@ -5,7 +5,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'react-use'
-import { useMainContext } from '~/mainContext'
+import { useMainContext } from '~/context/mainContext'
 import { getTruncated } from '~/utils/strings-ops'
 
 type TProps = {

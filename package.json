@@ -90,7 +90,7 @@
     "socket.io": "^4.2.0",
     "socketio-file-upload": "^0.7.3",
     "swagger-ui-express": "^4.1.4",
-    "systeminformation": "^5.8.7",
+    "systeminformation": "^5.9.17",
     "universal-cookie": "^4.0.4",
     "url-metadata": "^2.4.0",
     "yamljs": "^0.3.0"

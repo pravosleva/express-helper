@@ -12,6 +12,7 @@ import { checkJWT } from './auth/check-jwt'
 import { ELoggedCookie } from '~/routers/chat/utils/types'
 // import cookieParser from 'cookie-parser'
 import { add as addNotif, checkRoomState as checkRoomNotifsState, remove as removeNotif } from './common-notifs'
+import { getCPUState } from './get-cpu-state'
 
 // import { redirectIfUnlogged } from './auth/redirect-if-unlogged.middle'
 // chatExternalApi.use(redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT))
@@ -49,6 +50,7 @@ chatExternalApi.post(
   // checkJWT(jwtSecret, ELoggedCookie.JWT),
   removeNotif
 )
+chatExternalApi.get('/get-cpu-state', getCPUState)
 
 export {
   chatExternalApi,

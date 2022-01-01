@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useSocketContext } from "~/socketContext";
+import { useSocketContext } from "~/context/socketContext";
 // @ts-ignore
 import SocketIOFileUpload from 'socketio-file-upload'
 import { MdAddAPhoto } from 'react-icons/md'

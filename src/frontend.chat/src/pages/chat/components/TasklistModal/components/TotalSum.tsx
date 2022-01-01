@@ -5,7 +5,7 @@ import {
   Tag,
 } from '@chakra-ui/react'
 import { getPrettyPrice } from '~/utils/getPrettyPrice'
-import { UsersContext } from '~/usersContext'
+import { UsersContext } from '~/context/usersContext'
 
 const PUBLIC_URL = process.env.PUBLIC_URL || '.'
 const worker: any = new Worker(`${PUBLIC_URL}/web-worker/main.js`)

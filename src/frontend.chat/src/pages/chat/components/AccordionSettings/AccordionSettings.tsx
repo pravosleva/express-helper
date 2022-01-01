@@ -12,6 +12,9 @@ import {
   Text,
   Grid,
   Spinner,
+  FormControl,
+  Switch,
+  FormLabel,
 } from '@chakra-ui/react'
 import { useDebounce, useLocalStorage } from 'react-use'
 import { SearchUserModal } from '~/pages/chat/components/SearchUserModal'
@@ -22,10 +25,16 @@ import { FaTrashAlt, FaCheck } from 'react-icons/fa'
 import { AiOutlineFire } from 'react-icons/ai'
 import { FiActivity } from 'react-icons/fi'
 import { EMessageStatus, TMessage, ERegistryLevel } from '~/utils/interfaces'
-import { useMainContext } from '~/mainContext'
+import { useMainContext } from '~/context/mainContext'
 import { NotifsList } from '~/pages/chat/components/NotifsList'
 import { useSnapshot } from 'valtio'
 import pkg from '../../../../../package.json'
+import { PollingComponent } from '~/common/components/PollingComponent'
+import axios from 'axios'
+import { CheckRoomSprintPolling } from '~/common/components/CheckRoomSprintPolling'
+import { SwitchSection } from '~/common/components/SwitchSection'
+
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
 type TSetting = {
   name: string
@@ -61,8 +70,10 @@ export const AccordionSettings = ({
   defaultAccordionItems,
   registryLevel,
 }: TProps) => {
-  const { room, sprintFeatureProxy, assignmentFeatureProxy } = useMainContext()
+  const { room, sprintFeatureProxy, assignmentFeatureProxy, devtoolsFeatureProxy, cpuFeatureProxy } = useMainContext()
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
+  const devtoolsFeatureSnap = useSnapshot(devtoolsFeatureProxy)
+  const cpuFeatureSnap = useSnapshot(cpuFeatureProxy)
   // --
   const [navbarMenuSettingsLS, setNavbarMenuSettingsLS] = useLocalStorage<{ [key: string]: number}>('chat.navbar-menu.default-index-tabs', {})
   const updateDefaultTabForTheRoom = useCallback((tabIndex: number) => {
@@ -176,7 +187,38 @@ export const AccordionSettings = ({
     }
 
     return Object.keys(sprintFeatureSnap.commonNotifs).reduce(reducer, []).some(Boolean)
-    }, [sprintFeatureSnap.commonNotifs])
+  }, [sprintFeatureSnap.commonNotifs])
+
+  const toggleMainThreadPolling = () => {
+    devtoolsFeatureProxy.isSprintPollUsedInMainThreadOnly = !devtoolsFeatureProxy.isSprintPollUsedInMainThreadOnly
+  }
+
+  const updateCPUState = (result: any) => {
+    if (result?.ok) {
+      try {
+        if (!!result?.state?.mem) {
+          cpuFeatureProxy.mem = result.state.mem
+          cpuFeatureProxy.ts = Date.now()
+        }
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
+  const handleCheckCPU = async () => {
+    if (document.hidden) return
+    // NOTE: If false - than browser tab is active
+
+    const result = await axios.get(`${REACT_APP_API_URL}/chat/api/get-cpu-state`)
+      .then((res) => res.data)
+      .catch((err) => err)
+    
+    updateCPUState(result)
+  }
+  const [isMainThreadPollingDescrOpened, setIsMainThreadPollingDescrOpened] = useState<boolean>(false)
+  const toggleMainThreadPollingDescr = () => {
+    setIsMainThreadPollingDescrOpened((s) => !s)
+  }
 
   return (
     <>
@@ -333,32 +375,96 @@ export const AccordionSettings = ({
             )
           })
         )}
-        <AccordionItem key='about'>
-          <h2>
-            <AccordionButton>
-              <Box flex='1' textAlign='left'>
-                About
-              </Box>
-              {/* <Box flex='1' textAlign='left'>
-                <Flex alignItems="center">
-                  <Text fontWeight="400" fontSize="md" letterSpacing="0">
-                    {title}
-                  </Text>
-                  {hasEnabledFilters && <Box ml={2} h={2} w={2} borderRadius="100px" bg='blue.300'></Box>}
-                </Flex>
-              </Box> */}
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
-            <em>This frontend stack</em>
-            <pre
-              style={{
-                whiteSpace: 'pre-wrap'
-              }}
-            >{JSON.stringify(pkg.dependencies, null, 2)}</pre>
-          </AccordionPanel>
-        </AccordionItem>
+        {
+          devtoolsFeatureSnap.isFeatureEnabled && (
+            <>
+              <AccordionItem key='devtools-feature'>
+                <h2>
+                  <AccordionButton>
+                    <Box flex='1' textAlign='left'>
+                      Devtools
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
+                  {
+                    sprintFeatureSnap.isFeatureEnabled && (
+                      <Box mb={4}>
+                        <SwitchSection
+                          id='devtools-feature-switcher--sprint-poll'
+                          onChange={toggleMainThreadPolling}
+                          isChecked={devtoolsFeatureSnap.isSprintPollUsedInMainThreadOnly}
+                          label='Polling in Main Thread'
+                          // description='Эта фича позволит настроить доп. опции прозводительности, посмотреть аналитику потребления, возможно, что-то еще'
+                          description={() => {
+                            return (
+                              <>
+                                {devtoolsFeatureSnap.isSprintPollUsedInMainThreadOnly ? (
+                                  <Box mt={4}>Поллинг работает с основном потоке</Box>
+                                ) : (
+                                  <Box mt={4}>Поллинг работает в отдельном потоке (Web Worker)</Box>
+                                )}
+                              </>
+                            )
+                          }}
+                        />
+                      </Box>
+                    )
+                  }
+
+                  {!cpuFeatureSnap.mem ? (
+                    <Box>
+                      <Text style={{ textAlign: 'center' }}><em>CPU data is loading...</em></Text>
+                    </Box>
+                  ) : (
+                    <Box>
+                      <Text style={{ textAlign: 'center' }}><em>CPU mem</em></Text>
+                      <pre style={{  
+                        whiteSpace: 'pre-wrap'
+                      }}>{JSON.stringify(cpuFeatureSnap.mem, null, 2)}</pre>
+                    </Box>
+                  )}
+                  {
+                    devtoolsFeatureSnap.isSprintPollUsedInMainThreadOnly ? (
+                      <CheckRoomSprintPolling
+                        payload={{
+                          url: `${REACT_APP_API_URL}/chat/api/get-cpu-state`,
+                          method: 'GET',
+                        }}
+                        interval={10000}
+                        validateBeforeRequest={(_payload) => true}
+                        cbOnUpdateState={({ state: byHook }) => {
+                          updateCPUState(byHook)
+                        }}
+                      />
+                    ) : (
+                      <PollingComponent interval={5000} promise={handleCheckCPU} resValidator={(_data: any) => false} onSuccess={() => {}} onFail={console.log} />
+                    )
+                  }
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem key='about'>
+                <h2>
+                  <AccordionButton>
+                    <Box flex='1' textAlign='left'>
+                      About
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
+                  <Text style={{ textAlign: 'center' }}><em>This frontend stack</em></Text>
+                  <pre
+                    style={{
+                      whiteSpace: 'pre-wrap'
+                    }}
+                  >{JSON.stringify(pkg.dependencies, null, 2)}</pre>
+                </AccordionPanel>
+              </AccordionItem>
+            </>
+          )
+        }
       </Accordion>
     </>
   )

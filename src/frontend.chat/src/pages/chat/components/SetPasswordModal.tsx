@@ -13,8 +13,8 @@ import {
   ModalFooter,
   useToast,
 } from '@chakra-ui/react'
-import { useSocketContext } from '~/socketContext'
-import { useMainContext } from '~/mainContext'
+import { useSocketContext } from '~/context/socketContext'
+import { useMainContext } from '~/context/mainContext'
 
 type TProps = {
   isOpened: boolean

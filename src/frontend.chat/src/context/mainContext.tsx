@@ -4,6 +4,7 @@ import { getNormalizedString } from '~/utils/strings-ops'
 import { proxy } from 'valtio'
 import { useLocalStorage } from 'react-use'
 // const state = useSnapshot(sprintFeatureProxy)
+import { Systeminformation } from 'systeminformation'
 
 type TUserInfo = {
   regData: any
@@ -32,16 +33,36 @@ const initialSprintState: TSprintFeature = {
 const sprintFeatureProxy = proxy<TSprintFeature>(initialSprintState)
 
 type TAssignmentInfo = {
-  isFetureEnabled: boolean
+  isFeatureEnabled: boolean
 }
 const assignmentFeatureProxy = proxy<TAssignmentInfo>({
-  isFetureEnabled: false
+  isFeatureEnabled: false
+})
+
+type TDevtoolsInfo = {
+  isFeatureEnabled: boolean;
+  isSprintPollUsedInMainThreadOnly: boolean
+}
+const devtoolsFeatureProxy = proxy<TDevtoolsInfo>({
+  isFeatureEnabled: false,
+  isSprintPollUsedInMainThreadOnly: true,
+})
+
+type TCPUInfo = {
+  mem: Systeminformation.MemData | null
+  ts: number
+}
+const cpuFeatureProxy = proxy<TCPUInfo>({
+  mem: null,
+  ts: Date.now()
 })
 
 type TMainContext = {
   sprintFeatureProxy: Partial<typeof Proxy> & TSprintFeature
   userInfoProxy: Partial<typeof Proxy> & TUserInfo
   assignmentFeatureProxy: Partial<typeof Proxy> & TAssignmentInfo
+  devtoolsFeatureProxy: Partial<typeof Proxy> & TDevtoolsInfo
+  cpuFeatureProxy: Partial<typeof Proxy> & TCPUInfo
   name: string
   room: string
   setName: (name: string) => void
@@ -58,6 +79,8 @@ export const MainContext = createContext<TMainContext>({
   sprintFeatureProxy,
   userInfoProxy,
   assignmentFeatureProxy,
+  devtoolsFeatureProxy,
+  cpuFeatureProxy,
   name: '',
   room: '',
   setName: (_name: string) => {
@@ -120,6 +143,8 @@ export const MainProvider = ({ children }: any) => {
           sprintFeatureProxy,
           userInfoProxy,
           assignmentFeatureProxy,
+          devtoolsFeatureProxy,
+          cpuFeatureProxy,
           name,
           room,
           slugifiedRoom,

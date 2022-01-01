@@ -4,7 +4,7 @@ import { getNormalizedDate, getDayMonth } from '~/utils/timeConverter'
 import { FaTrashAlt } from 'react-icons/fa'
 import Countdown, { zeroPad } from 'react-countdown'
 import { useSnapshot } from 'valtio'
-import { useMainContext } from '~/mainContext'
+import { useMainContext } from '~/context/mainContext'
 import { ERegistryLevel, TMessage, EMessageStatus } from '~/utils/interfaces'
 // import { AssignedBox } from '~/pages/chat/components/AssignedBox'
 import { UserAva } from '~/pages/chat/components/UserAva'
@@ -41,8 +41,8 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
   //   if (isFirstRender.current) console.log(`GET ${ts}`)
   //   isFirstRender.current = false
   // }, [])
-  const firstString = text.split('\n')[0]
-  const isClosable: boolean = text.split('\n').length > 1
+  const firstString = !!text ? text.split('\n')[0] : 'ERR'
+  const isClosable: boolean = !!text ? text.split('\n').length > 1 : false
   const [isOpened, setIsOpened] = useState<boolean>(!isClosable)
   const toggle = () => {
     setIsOpened((s) => !s)

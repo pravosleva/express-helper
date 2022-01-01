@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react'
 import clsx from 'clsx'
 // import Zoom from 'react-medium-image-zoom'
-import { MainContext } from '~/mainContext'
+import { MainContext } from '~/context/mainContext'
 // import { FcGallery } from 'react-icons/fc'
 import Img from '@lxsmnsyc/react-image'
 import { Loader } from '~/common/components/Loader'

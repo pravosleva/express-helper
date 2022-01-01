@@ -1,9 +1,9 @@
 import React, { useState, createContext, useContext, useEffect, useCallback, useMemo } from 'react'
-import { useMainContext } from '~/mainContext'
-import { SocketContext } from '~/socketContext'
+import { useMainContext } from '~/context/mainContext'
+import { SocketContext } from '~/context/socketContext'
 import { PollingComponent } from '~/common/components/PollingComponent'
 import { useLocalStorage } from 'react-use'
-import { TTask } from './pages/chat/components/TasklistModal/types'
+import { TTask } from '../pages/chat/components/TasklistModal/types'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 
 type TUser = { name: string; room: string; socketId: string }
@@ -133,6 +133,7 @@ export const UsersProvider = ({ children }: any) => {
   return (
     <>
       <PollingComponent
+        interval={5000}
         promise={getTsPromise}
         onSuccess={(data) => {
           console.log(`SUCCESS: ${JSON.stringify(data)}`)

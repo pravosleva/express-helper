@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { MainContext } from '~/mainContext'
-import { SocketContext } from '~/socketContext'
+import { MainContext } from '~/context/mainContext'
+import { SocketContext } from '~/context/socketContext'
 import { Breakpoint, Flex, FormControl, FormLabel, Heading, HStack, IconButton, Input, PinInput, PinInputField } from '@chakra-ui/react'
 import { RiArrowRightLine } from 'react-icons/ri'
 import {

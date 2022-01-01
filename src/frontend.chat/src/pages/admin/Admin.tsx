@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { useMainContext } from '~/mainContext'
-import { useUsersContext } from '~/usersContext'
-import { useSocketContext } from '~/socketContext'
+import { useMainContext } from '~/context/mainContext'
+import { useUsersContext } from '~/context/usersContext'
+import { useSocketContext } from '~/context/socketContext'
 import { useToast,
   // UseToastOptions,
 } from '@chakra-ui/react'

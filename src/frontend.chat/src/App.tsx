@@ -2,11 +2,11 @@ import React from 'react'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import { Login } from '~/pages/login'
 import { Chat } from '~/pages/chat'
-import { SocketProvider } from './socketContext'
-import { MainProvider } from './mainContext'
+import { SocketProvider } from './context/socketContext'
+import { MainProvider } from './context/mainContext'
 import './App.css'
 import { ChakraProvider } from '@chakra-ui/react'
-import { UsersProvider } from './usersContext'
+import { UsersProvider } from './context/usersContext'
 import { DefaultPage } from '~/common/components/DefaultPage'
 // import { Admin } from '~/pages/admin'
 import { Dashboard } from '~/common/containers/Dashboard'
@@ -14,16 +14,18 @@ import { theme } from '~/common/chakra/theme'
 import { CookiesProvider } from 'react-cookie'
 import Snowfall from 'react-snowfall'
 
-// import frontPkg from '../package.json'
-// import backPkg from '../../../package.json'
+const mothsMapping: { [key: string]: number } = {
+  '10': 50, // Nov
+  '11': 250, // Dec
+  '0': 10, // Jan
+}
+const currentMonth = new Date().getMonth()
+const snowFlakeCountMap = new Map()
 
-const month = new Date().getMonth()
-const isSnowRequired = [0, 10, 11].includes(month)
+for (const month in mothsMapping) snowFlakeCountMap.set(Number(month), mothsMapping[String(month)])
+const currSnowflakeCountVal = snowFlakeCountMap.get(currentMonth)
 
 function App() {
-  // const frontMajorVersion = frontPkg.version.split('.')[0]
-  // const backMajorVersion = backPkg.version.split('.')[0]
-
   return (
     <CookiesProvider>
       <ChakraProvider theme={theme}>
@@ -31,7 +33,7 @@ function App() {
           <MainProvider>
             <UsersProvider>
               <div className="App" style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                {isSnowRequired && <Snowfall />}
+                {!!currSnowflakeCountVal && <Snowfall snowflakeCount={currSnowflakeCountVal} />}
                 <Router>
                   <Switch>
                     <Route exact path="/" component={Login} />

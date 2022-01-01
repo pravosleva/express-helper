@@ -1,4 +1,5 @@
 export * from './commonNotifsMapInstance'
+export * from './cpuStateInstance'
 export * from './registeredTGChatIdsMapInstance'
 export * from './registeredUsersMapInstance'
 export * from './roomsMapInstance'

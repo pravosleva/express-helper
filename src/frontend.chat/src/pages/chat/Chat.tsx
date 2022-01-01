@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
-import { MainContext } from '~/mainContext'
-import { useSocketContext } from '~/socketContext'
+import { MainContext } from '~/context/mainContext'
+import { useSocketContext } from '~/context/socketContext'
 import {
   Box,
   Flex,
@@ -58,7 +58,7 @@ import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 import ScrollToBottom from 'react-scroll-to-bottom'
 import clsx from 'clsx'
 import './Chat.scss'
-import { UsersContext } from '~/usersContext'
+import { UsersContext } from '~/context/usersContext'
 import { useTextCounter } from '~/common/hooks/useTextCounter'
 import { getNormalizedDateTime, getNormalizedDateTime2, getNormalizedDateTime3 } from '~/utils/timeConverter'
 import { ContextMenu, MenuItem as CtxMenuItem, ContextMenuTrigger } from 'react-contextmenu'
@@ -103,6 +103,8 @@ import { FiArrowRight } from 'react-icons/fi'
 import { CheckRoomSprintPolling } from '~/common/components/CheckRoomSprintPolling'
 import { BsFillCalendarFill } from 'react-icons/bs'
 import { useAddToHomescreenPrompt } from '~/common/hooks/useAddToHomescreenPrompt'
+import { PollingComponent } from '~/common/components/PollingComponent'
+import { SwitchSection } from '~/common/components/SwitchSection'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
@@ -183,10 +185,11 @@ const getBgColorByStatus = (s: EMessageStatus | 'assign') => {
 }
 
 export const Chat = () => {
-  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy } = useContext(MainContext)
+  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy, devtoolsFeatureProxy } = useContext(MainContext)
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
   const userInfoSnap = useSnapshot(userInfoProxy)
   const assignmentSnap = useSnapshot(assignmentFeatureProxy)
+  const devtoolsFeatureSnap = useSnapshot(devtoolsFeatureProxy)
 
   // @ts-ignore
   const { socket, roomData, isConnected } = useSocketContext()
@@ -876,7 +879,7 @@ export const Chat = () => {
   // -- Assignment feature switcher
   const [afLS, setAfLS] = useLocalStorage<{ [key: string]: number }>('chat.assignment-feature')
   useEffect(() => {
-    assignmentFeatureProxy.isFetureEnabled = afLS?.[room] === 1
+    assignmentFeatureProxy.isFeatureEnabled = afLS?.[room] === 1
   }, [afLS, room])
   const setAFLSRoom = useCallback((val: number) => {
     setAfLS((oldState) => {
@@ -898,7 +901,7 @@ export const Chat = () => {
     setIsAssignmentDescrOpened((s) => !s)
   }, [setIsAssignmentDescrOpened])
 
-  const toggleAssignmentFeature = useCallback((e) => {
+  const toggleAssignmentFeature = useCallback((e: any) => {
     setAFLSRoom(e.target.checked ? 1 : 0)
   }, [setAFLSRoom])
   // --
@@ -1008,23 +1011,54 @@ export const Chat = () => {
     sprintFeatureProxy.commonNotifs = {}
     sprintFeatureProxy.tsUpdate = Date.now()
   }, [room])
-  const [isSprintDescrOpened, setIsSprintDescrOpened] = useState<boolean>(false)
-  const toggleSprintDescr = () => {
-    setIsSprintDescrOpened((s) => !s)
-  }
   // --
 
-  // -- PWA
-  const [pwaPrompt, pwaPromptToInstall] = useAddToHomescreenPrompt()
-  const [isPWAReqVisible, setIsPWAReqVisible] = React.useState(false)
-  const pwaReqHide = () => { setIsPWAReqVisible(false) }
-  useEffect(
-    () => {
-      if (pwaPrompt) setIsPWAReqVisible(true);
-    },
-    [pwaPrompt]
-  )
-  // --
+  const toggleDevtoolsFeature = () => {
+    devtoolsFeatureProxy.isFeatureEnabled = !devtoolsFeatureProxy.isFeatureEnabled
+  }
+
+  const handleCheckPOST = async () => {
+    if (document.hidden || !isLogged) return
+    // NOTE: If false - than browser tab is active
+
+    const data = { room_id: room, tsUpdate: sprintFeatureSnap.tsUpdate }
+    const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/check-room-state`, {
+      ...data,
+    })
+      .then((res) => res.data)
+      .catch((err) => err)
+
+    switch (true) {
+      case (result instanceof Error):
+        sprintFeatureProxy.isPollingWorks = false
+        break;
+      case result.code === 'not_found': // EAPIRoomNotifsCode.NotFound:
+        sprintFeatureProxy.isPollingWorks = true
+        sprintFeatureProxy.isEmptyStateConfirmed = true
+        break;
+      default:
+        sprintFeatureProxy.isPollingWorks = true
+        if (!!result.state && Object.keys(result.state).length === 0) {
+          sprintFeatureProxy.isEmptyStateConfirmed = true
+        }
+        break;
+    }
+
+    if (result.ok && result.tsUpdate !== sprintFeatureSnap.tsUpdate) {
+      try {
+        sprintFeatureProxy.commonNotifs = result.state
+        if (Object.keys(result.state).length > 0) {
+          sprintFeatureProxy.isEmptyStateConfirmed = false
+        } else {
+          sprintFeatureProxy.isEmptyStateConfirmed = true
+        }
+      } catch (err) {
+        console.log(err)
+      }
+
+      sprintFeatureProxy.tsUpdate = result.tsUpdate
+    }
+  }
 
   return (
     <>
@@ -1186,17 +1220,6 @@ export const Chat = () => {
                     <Stack spacing={4} mt={2}>
                       {/* <Box><Text>The room features</Text></Box> */}
                       <Grid templateColumns='repeat(3, 1fr)' gap={2}>
-                        {
-                          isPWAReqVisible && (
-                            <Box>
-                              <Grid templateColumns='50px auto 50px' gap={2}>
-                                <Button onClick={pwaReqHide}>Close</Button>
-                                <Box>Это приложение можно добавить на главный экран Вашего устройства</Box>
-                                <Button isFullWidth size='sm' onClick={pwaPromptToInstall}>Добавить</Button>
-                              </Grid>
-                            </Box>
-                          )
-                        }
                         <Menu autoSelect={false}>
                           <MenuButton
                             // as={IconButton}
@@ -1319,44 +1342,31 @@ export const Chat = () => {
                       
                       <>
                         {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
-                          <>
-                            <Box style={{ display: 'flex', alignItems: 'center' }}>
-                              <FormControl display='flex' alignItems='center'>
-                                <Switch id='assignment-feature-switcher' mr={3} onChange={toggleAssignmentFeature} isChecked={isAssignmentFeatureEnabled} />
-                                <FormLabel htmlFor='assignment-feature-switcher' mb='0'>
-                                  Assignment feature
-                                </FormLabel>
-                              </FormControl>
-                              <Box style={{ marginLeft: 'auto' }}>
-                                <Button size='sm' variant='link' onClick={toggleAssignmentDescr} rounded='3xl'>{isAssignmentDescrOpened ? 'Close' : 'What is it?'}</Button>
-                              </Box>
-                            </Box>
-                            {
-                              isAssignmentDescrOpened && (
-                                <Box>Эта фича добавит дополнительный пункт контекстного меню сообщения в чате <b>Assign</b> для назначения задачи на пользователя, если рассматривать сообщение как задачу</Box>
-                              )
-                            }
-                          </>
+                          <SwitchSection
+                            label='Assignment feature'
+                            id='assignment-feature-switcher'
+                            onChange={toggleAssignmentFeature}
+                            isChecked={isAssignmentFeatureEnabled}
+                            description='Эта фича добавит дополнительный пункт Assign контекстного меню сообщения в чате для назначения задачи на пользователя, если рассматривать сообщение как задачу'
+                          />
                         )}
                         {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
-                          <>
-                            <Box style={{ display: 'flex', alignItems: 'center' }}>
-                              <FormControl display='flex' alignItems='center'>
-                                <Switch id='sprint-feature-switcher' mr={3} onChange={toggleSprintFeature} isChecked={sprintFeatureSnap.isFeatureEnabled} />
-                                <FormLabel htmlFor='sprint-feature-switcher' mb='0'>
-                                  Sprint feature
-                                </FormLabel>
-                              </FormControl>
-                              <Box style={{ marginLeft: 'auto' }}>
-                                <Button size='sm' variant='link' onClick={toggleSprintDescr} rounded='3xl'>{isSprintDescrOpened ? 'Close' : 'What is it?'}</Button>
-                              </Box>
-                            </Box>
-                            {
-                              isSprintDescrOpened && (
-                                <Box>Эта фича позволит добавить задачи в спринт (они видны всем)</Box>
-                              )
-                            }
-                          </>
+                          <SwitchSection
+                            label='Sprint feature'
+                            id='sprint-feature-switcher'
+                            onChange={toggleSprintFeature}
+                            isChecked={sprintFeatureSnap.isFeatureEnabled}
+                            description='Эта фича позволит добавить задачи в спринт (они видны всем)'
+                          />
+                        )}
+                        {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
+                          <SwitchSection
+                            label='Devtools'
+                            id='devtools-feature-switcher'
+                            onChange={toggleDevtoolsFeature}
+                            isChecked={devtoolsFeatureSnap.isFeatureEnabled}
+                            description='Эта фича позволит настроить доп. опции прозводительности, посмотреть аналитику потребления, возможно, что-то еще'
+                          />
                         )}
                         
                         <AccordionSettings
@@ -1476,15 +1486,6 @@ export const Chat = () => {
                       </MenuItem>
                     )
                   }
-                  {/*
-                  <MenuItem
-                      minH="40px"
-                      color='red.500'
-                    >
-                      <Text fontSize="md" fontWeight='bold' display='flex'>
-                        <span style={{ width: '17px', marginRight: '8px' }}><IoMdClose size={17} /></span><span>Close</span>
-                      </Text>
-                    </MenuItem> */}
                 </MenuList>
               </Menu>
 
@@ -1673,7 +1674,7 @@ export const Chat = () => {
                       </div>
                     </div>
                   </Box>
-                  {assignmentSnap.isFetureEnabled && !!assignedTo && assignedTo.length > 0 && (
+                  {assignmentSnap.isFeatureEnabled && !!assignedTo && assignedTo.length > 0 && (
                     <AssignedBox
                       isMyMessage={isMyMessage}
                       assignedTo={assignedTo}
@@ -1804,8 +1805,61 @@ export const Chat = () => {
           }
         </Flex>
       </div>
-      {/* <PollingComponent promise={handleCheckPOST} resValidator={(_data: any) => false} onSuccess={() => {}} onFail={console.log} /> */}
-      <CheckRoomSprintPolling />
+      {
+        sprintFeatureSnap.isFeatureEnabled && isDrawerMenuOpened && (
+          <>{
+            devtoolsFeatureSnap.isSprintPollUsedInMainThreadOnly ? (
+              <PollingComponent interval={5000} promise={handleCheckPOST} resValidator={(_data: any) => false} onSuccess={() => {}} onFail={console.log} />
+            ) : (
+              <CheckRoomSprintPolling
+                interval={5000}
+                payload={{
+                  url: `${REACT_APP_API_URL}/chat/api/common-notifs/check-room-state`,
+                  method: 'POST',
+                  body: { room_id: room, tsUpdate: sprintFeatureSnap.tsUpdate },
+                }}
+                validateBeforeRequest={(payload) => !!payload.body?.room_id && !document.hidden}
+                cbOnUpdateState={({ state }: any) => {
+                  // if (isDev) console.log('- state effect: new state!')
+                  const result = state
+                  if (!!result) {
+                    switch (true) {
+                      case (result instanceof Error):
+                        sprintFeatureProxy.isPollingWorks = false
+                        break;
+                      case result.code === 'not_found': // EAPIRoomNotifsCode.NotFound:
+                        sprintFeatureProxy.isPollingWorks = true
+                        sprintFeatureProxy.isEmptyStateConfirmed = true
+                        break;
+                      default:
+                        sprintFeatureProxy.isPollingWorks = true
+                        if (!!result.state && Object.keys(result.state).length === 0) {
+                          sprintFeatureProxy.isEmptyStateConfirmed = true
+                        }
+                        break;
+                    }
+                
+                    if (result.ok && result.tsUpdate !== sprintFeatureSnap.tsUpdate) {
+                      try {
+                        sprintFeatureProxy.commonNotifs = result.state
+                        if (Object.keys(result.state).length > 0) {
+                          sprintFeatureProxy.isEmptyStateConfirmed = false
+                        } else {
+                          sprintFeatureProxy.isEmptyStateConfirmed = true
+                        }
+                      } catch (err) {
+                        console.log(err)
+                      }
+                      
+                      sprintFeatureProxy.tsUpdate = result.tsUpdate
+                    }
+                  }
+                }}
+              />
+            )
+          }</>
+        )
+      }
     </>
   )
 }

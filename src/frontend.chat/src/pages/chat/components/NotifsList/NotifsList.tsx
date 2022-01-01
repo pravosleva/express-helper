@@ -1,8 +1,8 @@
 import { useState, useMemo, useEffect } from 'react'
-import { useMainContext } from '~/mainContext'
+import { useMainContext } from '~/context/mainContext'
 import axios from 'axios'
 import { PollingComponent } from './components/PollingComponent'
-import { Button, Flex, Stack } from '@chakra-ui/react'
+import { Button, Flex, Stack, Text } from '@chakra-ui/react'
 import { NotifItem } from './components/NotifItem'
 import { useSnapshot, subscribe } from 'valtio'
 import { TMessage } from '~/utils/interfaces'
@@ -111,9 +111,9 @@ export const NotifsList = ({ onRemove }: { onRemove: (ts: number) => void }) => 
       {
         !sprintFeatureSnap.isEmptyStateConfirmed ?
           notifsStateArr.length === 0
-            ? <Flex alignItems='center' justifyContent='center'>Loading...</Flex>
+            ? <Text style={{ textAlign: 'center' }}><em>Loading...</em></Text>
             : <Stack spacing={4}>{MemoNotifs}</Stack>
-            : <Flex alignItems='center' justifyContent='center'>No yet...</Flex>
+            : <Text style={{ textAlign: 'center' }}>Nothing yet...</Text>
       }
       {/* <pre>{JSON.stringify(notifsStateArr, null, 2)}</pre> */}
     </>
