@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useCallback, useRef, useMemo } 
 import { useHistory, useLocation } from 'react-router-dom'
 import { MainContext } from '~/mainContext'
 import { SocketContext } from '~/socketContext'
-import { Flex, FormControl, FormLabel, Heading, HStack, IconButton, Input, PinInput, PinInputField } from '@chakra-ui/react'
+import { Breakpoint, Flex, FormControl, FormLabel, Heading, HStack, IconButton, Input, PinInput, PinInputField } from '@chakra-ui/react'
 import { RiArrowRightLine } from 'react-icons/ri'
 import {
   Modal,
@@ -32,7 +32,7 @@ import { openExternalLink } from '~/utils/openExternalLink'
 // const handleOpenExternalLink = useCallback(openExternalLink, [])
 import debounce from 'lodash.debounce'
 import { jwtHttpClient } from '~/utils/httpClient'
-import { EAPIUserCode } from '~/utils/httpClient/types'
+import { EAPIUserCode, TUserResData } from '~/utils/httpClient/types'
 
 const isDev = process.env.NODE_ENV === 'development'
 const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'Anchous chat 2021'
@@ -137,19 +137,45 @@ export const Login = () => {
     // })
     //   .then((res) => res.data)
     //   .catch((err) => err)
-    const jwtResponse = await jwtHttpClient.checkJWT().then(r => r).catch(e => e).finally(() => { setIsLoading1(false) })
+
+    const jwtResponse: TUserResData = await jwtHttpClient.checkJWT({ username: name }).then(r => r).catch(e => e).finally(() => { setIsLoading1(false) })
 
     let isLogged: boolean = false
 
-    // window.alert(JSON.stringify(jwtResponse, null, 2))
+    switch (true) {
+      case (!jwtResponse?.ok):
+        // NOTE: Fail cases:
+        if (isDev) toast({
+          position: 'bottom',
+          title: jwtResponse?.message || jwtResponse?.code || '!jwtResponse?.ok',
+          status: 'warning',
+          description: `Debug${!!jwtResponse?.code ? `: ${jwtResponse.code}` : ''}`,
+        })
 
-    if (typeof jwtResponse === 'string') {
-      // NOTE: Fail
-      // window.alert(jwtResponse)
-      toast({ position: 'top', title: jwtResponse, status: 'warning', duration: 2000 })
-    } else if (isDev || (jwtResponse?.ok && jwtResponse.code === EAPIUserCode.Logged)) {
-      isLogged = true
+        switch (jwtResponse.code) {
+          case EAPIUserCode.NeedLogout:
+            // TODO: handleOpenLogoutConfirmation()
+            const isLogoutConfirmed = window.confirm('Need Logout! Wanna be logout?')
+
+            if (isLogoutConfirmed) {
+              const res = await jwtHttpClient.logout()
+                .then(r => r)
+                .catch(r => r)
+              if (res.ok) {
+                toast({ position: 'bottom', title: 'Unlogged', status: 'info', description: 'Try again' })
+              } else {
+                toast({ position: 'bottom', title: 'Oops... Что-то пошло не так', status: 'error', description: 'Need Logout' })
+              }
+            }
+            return;
+          default: break;
+        }
+        break;
+      default:
+        if (isDev || (jwtResponse?.ok && jwtResponse.code === EAPIUserCode.Logged)) isLogged = true
+        break;
     }
+
     // if (isDev) history.push('/chat')
 
     const normalizedRoom = !!sR ? slugify(sR) : slugifiedRoom
@@ -176,10 +202,10 @@ export const Login = () => {
             }
             toast({
               position: 'top',
-              title: 'Error',
+              title: 'Error by socket',
               description: error,
               status: 'error',
-              duration: 5000,
+              // duration: 5000,
               isClosable: true,
             })
             setIsLoading1(false)
@@ -249,7 +275,7 @@ export const Login = () => {
     if (isLogged) {
       toast({ title: "JWT received", status: "success", duration: 3000, position: "top" })
     } else {
-      toast({ title: "Error", description: data?.message || `Oops... Sorry: ${data?.code || 'No res.code'}`, status: "error", position: "top" })
+      toast({ title: "Error Log/Pas", description: data?.message || `Oops... Sorry: ${data?.code || 'No res.code'}`, status: "error", position: "top" })
       return
     }
     if (!!socket) {

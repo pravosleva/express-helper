@@ -1,8 +1,6 @@
 import axios, { CancelTokenSource } from 'axios'
-import { EAPIUserCode } from './types'
+import { EAPIUserCode, TUserResData } from './types'
 import { Api } from './Api'
-// @ts-ignore
-import { TRegistryData } from '~/utils/interfaces'
 
 // const createCancelTokenSource = () => axios.CancelToken.source()
 
@@ -21,45 +19,30 @@ class Singleton extends Api {
     return Singleton.instance
   }
 
-  async checkJWT(): Promise<
-    | {
-        ok: boolean
-        message?: string
-        code: EAPIUserCode
-        regData?: TRegistryData
-      }
-    | string
-  > {
+  async checkJWT({ username }: { username: string }): Promise<TUserResData> {
+    if (!username) return Promise.reject({ ok: false, message: 'Заполните имя пользователя' })
+
     this.commonCancelTokenSource.cancel('axios request canceled')
     this.commonCancelTokenSource = axios.CancelToken.source()
 
     const data = await this.api({
       url: '/auth/check-jwt',
-      data: {},
+      data: { username },
       cancelToken: this.commonCancelTokenSource.token
     })
       .then((r) => r)
-      .catch((msg) => msg)
+      .catch((r) => r)
     
     this.commonCancelTokenSource.cancel('axios request done')
 
-    if (typeof data === 'string') return Promise.reject(data)
-    return Promise.resolve(data)
+    return data.ok ? Promise.resolve(data) : Promise.reject(data)
   }
 
   async login(body: {
     username: string,
     password: string,
     room: string
-  }): Promise<
-    | {
-        ok: boolean
-        message?: string
-        code: EAPIUserCode
-        regData?: TRegistryData
-      }
-    | string
-  > {
+  }): Promise<TUserResData> {
     this.commonCancelTokenSource.cancel('axios request canceled')
     this.commonCancelTokenSource = axios.CancelToken.source()
 
@@ -69,12 +52,27 @@ class Singleton extends Api {
       cancelToken: this.commonCancelTokenSource.token
     })
       .then((r) => r)
-      .catch((msg) => msg)
+      .catch((r) => r)
     
     this.commonCancelTokenSource.cancel('axios request done')
 
-    if (typeof data === 'string') return Promise.reject(data)
-    return Promise.resolve(data)
+    return data.ok ? Promise.resolve(data) : Promise.reject(data)
+  }
+
+  async logout(): Promise<TUserResData> {
+    this.commonCancelTokenSource.cancel('axios request canceled')
+    this.commonCancelTokenSource = axios.CancelToken.source()
+
+    const data = await this.api({
+      url: '/auth/logout',
+      cancelToken: this.commonCancelTokenSource.token
+    })
+      .then((r) => r)
+      .catch((r) => r)
+    
+    this.commonCancelTokenSource.cancel('axios request done')
+
+    return data.ok ? Promise.resolve(data) : Promise.reject(data)
   }
 }
 

@@ -7,7 +7,7 @@ import { TRegistryData } from '~/utils/socket/state/types'
 // const isProd = process.env.NODE_ENV === 'production'
 const isDev = process.env.NODE_ENV === 'development'
 
-export const mutateReqIfLogged = (jwtSecret: string, cookieName: string) => (req: IRequest & { regData?: TRegistryData }, _res: IResponse, next: INextFunction) => {
+export const mutateReqIfLogged = (jwtSecret: string, cookieName: string) => (req: IRequest & { needLogout?: boolean, regData?: TRegistryData }, _res: IResponse, next: INextFunction) => {
   if (isDev) {
     const developer = 'pravosleva'
     const regData = registeredUsersMap.get(developer)
@@ -20,12 +20,26 @@ export const mutateReqIfLogged = (jwtSecret: string, cookieName: string) => (req
     */
     try {
       const jwtParsed: any = jwt.verify(req.cookies[cookieName], jwtSecret)
-      console.log(jwtParsed)
+      // console.log(jwtParsed)
 
-      if (typeof jwtParsed?.username === 'string') {
+      const username = req.body.username
+
+      if (typeof jwtParsed?.username === 'string' && !!req.body.username) {
         const regData = registeredUsersMap.get(jwtParsed.username)
 
-        if (!!regData) req.regData = regData
+        // console.log(`- username by front: ${username}`)
+
+        switch (true) {
+          case (!!regData && regData.tg?.username !== username):
+            req.needLogout = true
+            // console.log(`-- case 1: regData.tg?.username= ${regData.tg?.username}, req.body.username= ${username}`)
+            break;
+          case (!!regData && regData.tg?.username === username):
+            // console.log(`-- case 2: regData.tg?.username= ${regData.tg?.username}, req.body.username= ${username}`)
+            req.regData = regData
+            break;
+          default: break;
+        }
       }
       // return res.status(500).json({ message: 'tst1', ok: false })
     } catch (err) {
