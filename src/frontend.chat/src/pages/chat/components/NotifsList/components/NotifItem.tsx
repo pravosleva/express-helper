@@ -5,10 +5,11 @@ import { FaTrashAlt } from 'react-icons/fa'
 import Countdown, { zeroPad } from 'react-countdown'
 import { useSnapshot } from 'valtio'
 import { useMainContext } from '~/mainContext'
-import { ERegistryLevel, TMessage } from '~/utils/interfaces'
+import { ERegistryLevel, TMessage, EMessageStatus } from '~/utils/interfaces'
 // import { AssignedBox } from '~/pages/chat/components/AssignedBox'
 import { UserAva } from '~/pages/chat/components/UserAva'
 import { IoMdClose } from 'react-icons/io'
+import { ImFire } from 'react-icons/im'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -79,6 +80,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
     <Box>
       <Flex justifyContent='space-between' alignItems='center' mb={2}>
         <Flex alignItems='center'>
+          {original?.status === EMessageStatus.Danger && <span style={{ marginRight: 'var(--chakra-space-2)' }}><ImFire size={14}/></span>}
           {getDayMonth(tsTarget)}
           <Countdown
             date={tsTarget}
