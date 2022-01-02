@@ -1587,7 +1587,7 @@ export const Chat = () => {
                 return (
                   <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
                     {/* INF LOADER 2/3 */
-                      i === 5 && !!tsPoint && (
+                      i === 20 && !!tsPoint && (
                         <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
                           <Box mr="2">---</Box><Text fontWeight="400">{`Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`}</Text><Box ml="2">---</Box>
                         </Flex>
@@ -1608,7 +1608,7 @@ export const Chat = () => {
               return (
                 <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}-${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? assignedTo.join(',') : 'not_assigned'}`}>
                   {/* INF LOADER 3/3 */
-                    i === 5 && !!tsPoint && (
+                    i === 20 && !!tsPoint && (
                       <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
                         <Box mr="2">---</Box><Text fontWeight="400">{`Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`}</Text><Box ml="2">---</Box>
                       </Flex>
