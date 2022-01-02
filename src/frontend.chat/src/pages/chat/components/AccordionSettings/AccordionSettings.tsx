@@ -215,10 +215,6 @@ export const AccordionSettings = ({
     
     updateCPUState(result)
   }
-  const [isMainThreadPollingDescrOpened, setIsMainThreadPollingDescrOpened] = useState<boolean>(false)
-  const toggleMainThreadPollingDescr = () => {
-    setIsMainThreadPollingDescrOpened((s) => !s)
-  }
 
   return (
     <>
@@ -341,9 +337,11 @@ export const AccordionSettings = ({
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
-                <NotifsList onRemove={(ts) => {
-                  sprintFeatureProxy.tsUpdate = ts
-                }} />
+                
+                <Box>
+                  <NotifsList onRemove={(ts) => { sprintFeatureProxy.tsUpdate = ts }} />
+                </Box>
+                
               </AccordionPanel>
             </AccordionItem>
           )
@@ -357,14 +355,6 @@ export const AccordionSettings = ({
                     <Box flex='1' textAlign='left'>
                       {accordionButtonContent}
                     </Box>
-                    {/* <Box flex='1' textAlign='left'>
-                      <Flex alignItems="center">
-                        <Text fontWeight="400" fontSize="md" letterSpacing="0">
-                          {title}
-                        </Text>
-                        {hasEnabledFilters && <Box ml={2} h={2} w={2} borderRadius="100px" bg='blue.300'></Box>}
-                      </Flex>
-                    </Box> */}
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
@@ -381,9 +371,7 @@ export const AccordionSettings = ({
               <AccordionItem key='devtools-feature'>
                 <h2>
                   <AccordionButton>
-                    <Box flex='1' textAlign='left'>
-                      Devtools
-                    </Box>
+                    <Box flex='1' textAlign='left'>Devtools</Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
@@ -447,19 +435,13 @@ export const AccordionSettings = ({
               <AccordionItem key='about'>
                 <h2>
                   <AccordionButton>
-                    <Box flex='1' textAlign='left'>
-                      About
-                    </Box>
+                    <Box flex='1' textAlign='left'>About</Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                   <Text style={{ textAlign: 'center' }}><em>This frontend stack</em></Text>
-                  <pre
-                    style={{
-                      whiteSpace: 'pre-wrap'
-                    }}
-                  >{JSON.stringify(pkg.dependencies, null, 2)}</pre>
+                  <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(pkg.dependencies, null, 2)}</pre>
                 </AccordionPanel>
               </AccordionItem>
             </>

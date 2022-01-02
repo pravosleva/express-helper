@@ -137,11 +137,11 @@ const statusMap: {
   [key: string]: any
 } = {
   [EMessageStatus.Done]: <FaCheckCircle size={15} />,
-  [EMessageStatus.Dead]: <GiDeathSkull size={14} /*color='#000'*/ />,
+  [EMessageStatus.Dead]: <GiDeathSkull size={15} /*color='#000'*/ />,
   [EMessageStatus.Warn]: <FiActivity size={15} /*color='#000'*/ />,
   // [EMessageStatus.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />,
   // [EMessageStatus.Danger]: <FaFire size={14} />,
-  [EMessageStatus.Danger]: <ImFire size={14} />,
+  [EMessageStatus.Danger]: <ImFire size={15} />,
   [EMessageStatus.Success]: <FaCheck size={10} />,
   'assign': <CgAssign size={18}/>,
 }

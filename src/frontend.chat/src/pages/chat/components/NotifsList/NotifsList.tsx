@@ -5,8 +5,10 @@ import { PollingComponent } from './components/PollingComponent'
 import { Button, Flex, Stack, Text } from '@chakra-ui/react'
 import { NotifItem } from './components/NotifItem'
 import { useSnapshot, subscribe } from 'valtio'
-import { TMessage } from '~/utils/interfaces'
+import { TMessage, EMessageStatus } from '~/utils/interfaces'
 // const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
+// import { FiltersGrid } from './components/FiltersGrid'
+import { FiltersGrid } from '~/pages/chat/components/AccordionSettings/components/FiltersGrid'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
@@ -89,7 +91,12 @@ export const NotifsList = ({ onRemove }: { onRemove: (ts: number) => void }) => 
     return arr
   }, [sprintFeatureSnap.commonNotifs])
 
-  const MemoNotifs = useMemo(() => notifsStateArr.sort(dynamicSort('tsTarget')).map(({ ts, text, tsTarget, original }) => {
+  const [activeFilters, setActiveFilters] = useState<EMessageStatus[]>([])
+  const filteredNotifs = useMemo(() => {
+    return notifsStateArr.filter(({ original }) => activeFilters.length > 0 ? !!original?.status ? activeFilters.includes(original.status) : false : true)
+  }, [notifsStateArr, activeFilters])
+
+  const MemoNotifs = useMemo(() => filteredNotifs.sort(dynamicSort('tsTarget')).map(({ ts, text, tsTarget, original }) => {
     const isLoading = sprintFeatureSnap.inProgress.includes(ts)
     return (
     <NotifItem
@@ -104,10 +111,26 @@ export const NotifsList = ({ onRemove }: { onRemove: (ts: number) => void }) => 
         sprintFeatureProxy.hasCompleted = true
       }}
     />
-  )}), [notifsStateArr, sprintFeatureSnap.inProgress, sprintFeatureSnap.commonNotifs])
+  )}), [filteredNotifs, sprintFeatureSnap.inProgress, sprintFeatureSnap.commonNotifs])
 
   return (
     <>
+      {
+        sprintFeatureSnap.isPollingWorks && (
+          <FiltersGrid
+            toggleFilter={(status) => {
+              if (activeFilters.includes(status)) {
+                setActiveFilters((fs) => fs.filter((s) => s !== status))
+              } else {
+                setActiveFilters((fs) => [...fs, status])
+              }
+            }}
+            onSetFilters={(fs) => setActiveFilters(fs)}
+            allNotifs={notifsStateArr}
+            activeFilters={activeFilters}
+          />
+        )
+      }
       {
         !sprintFeatureSnap.isEmptyStateConfirmed ?
           notifsStateArr.length === 0

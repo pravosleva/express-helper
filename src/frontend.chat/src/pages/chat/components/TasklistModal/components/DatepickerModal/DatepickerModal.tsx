@@ -52,9 +52,9 @@ export const DatepickerModal = ({ isOpened, onClose, onSubmit, initialTs, conten
       initialFocusRef={inputRef}
     >
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent rounded='2xl'>
         <ModalHeader>{!!title ? title : 'First Date'}</ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton rounded='3xl' />
         <ModalBody pb={6}>
           <input
             key={uncheckedTs}
@@ -63,8 +63,9 @@ export const DatepickerModal = ({ isOpened, onClose, onSubmit, initialTs, conten
               height: 'var(--chakra-sizes-10)',
               // lineHeight: '30px',
               paddingInlineStart: 'var(--chakra-space-4)',
-              paddingInlineEnd: 'var(--chakra-space-2',
-              borderRadius: 'var(--chakra-radii-md)',
+              paddingInlineEnd: 'var(--chakra-space-2)',
+              // borderRadius: 'var(--chakra-radii-md)',
+              borderRadius: 'var(--chakra-radii-3xl)',
               fontSize: 'var(--chakra-fontSizes-md)',
               background: 'inherit',
               border: '1px solid currentcolor',
@@ -82,7 +83,7 @@ export const DatepickerModal = ({ isOpened, onClose, onSubmit, initialTs, conten
       >
         {/* !!price && <Button onClick={handleCancel} leftIcon={<IoMdClose />} variant='ghost' color='red.500'>Cancel</Button> */}
         {/* !!uncheckedTs && <Button onClick={handleSuccess} colorScheme="blue">Submit</Button> */}
-        <Button onClick={onClose} variant='ghost'>Close</Button>
+        <Button size='sm' rounded='2xl' onClick={onClose} variant='ghost'>Close</Button>
       </ModalFooter>
       </ModalContent>
     </Modal>

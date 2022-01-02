@@ -137,9 +137,7 @@ export const SearchUserModal = ({
           </Table>
           {/* <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(users || {}, null, 2)}</pre> */}
         </ModalBody>
-        <ModalFooter
-          className='modal-footer-btns-wrapper'
-        >
+        <ModalFooter className='modal-footer-btns-wrapper'>
           {!!formData.userName && <Button size='sm' rounded='2xl' onClick={resetForm} leftIcon={<IoMdClose />} variant='ghost' color='red.500'>Cancel</Button>}
           <Button size='sm' rounded='2xl' variant='outline' onClick={onClose}>Close</Button>
         </ModalFooter>

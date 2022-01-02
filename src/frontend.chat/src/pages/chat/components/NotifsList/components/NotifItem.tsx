@@ -10,6 +10,9 @@ import { ERegistryLevel, TMessage, EMessageStatus } from '~/utils/interfaces'
 import { UserAva } from '~/pages/chat/components/UserAva'
 import { IoMdClose } from 'react-icons/io'
 import { ImFire } from 'react-icons/im'
+import { FiActivity } from 'react-icons/fi'
+import { FaCheck, FaInfoCircle } from 'react-icons/fa'
+import { BsFillInfoCircleFill } from 'react-icons/bs'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -81,6 +84,9 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
       <Flex justifyContent='space-between' alignItems='center' mb={2}>
         <Flex alignItems='center'>
           {original?.status === EMessageStatus.Danger && <span style={{ marginRight: 'var(--chakra-space-2)' }}><ImFire size={14}/></span>}
+          {original?.status === EMessageStatus.Warn && <span style={{ marginRight: 'var(--chakra-space-2)' }}><FiActivity size={14}/></span>}
+          {original?.status === EMessageStatus.Success && <span style={{ marginRight: 'var(--chakra-space-3)' }}><FaCheck size={12}/></span>}
+          {original?.status === EMessageStatus.Info && <span style={{ marginRight: 'var(--chakra-space-2)' }}><FaInfoCircle size={14}/></span>}
           {getDayMonth(tsTarget)}
           <Countdown
             date={tsTarget}
