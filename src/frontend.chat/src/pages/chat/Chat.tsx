@@ -811,10 +811,7 @@ export const Chat = () => {
     removeTokenLS()
     // --
 
-    setTimeout(() => {
-      // history.go(0)
-      history.push('/')
-    }, 0)
+    setTimeout(() => { history.push('/') }, 0)
   }, [updateRoomTsInLS, socket, removeTokenLS, tokenLS])
   const handleRoomClick = useCallback((room) => {
     // console.log(room, 'CLICKED')
@@ -897,11 +894,6 @@ export const Chat = () => {
     })
   }, [room, setAfLS])
   const isAssignmentFeatureEnabled = useMemo(() => !!afLS?.[room], [afLS, room])
-  const [isAssignmentDescrOpened, setIsAssignmentDescrOpened] = useState<boolean>(false)
-  const toggleAssignmentDescr = useCallback((e) => {
-    setIsAssignmentDescrOpened((s) => !s)
-  }, [setIsAssignmentDescrOpened])
-
   const toggleAssignmentFeature = useCallback((e: any) => {
     setAFLSRoom(e.target.checked ? 1 : 0)
   }, [setAFLSRoom])
