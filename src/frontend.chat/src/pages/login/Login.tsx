@@ -38,6 +38,8 @@ const isDev = process.env.NODE_ENV === 'development'
 const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'Anchous chat 2021'
 const REACT_APP_BUILD_DATE = process.env.REACT_APP_BUILD_DATE || ''
 // const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
+const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
+
 type TLocalRoomItem = {
   name: string
   ts: number
@@ -469,8 +471,8 @@ export const Login = () => {
           <ModalFooter style={{ display: 'flex', justifyContent: 'space-between' }}>
             {/* <Grid templateColumns='2fr 2fr 1fr' gap={2}></Grid> */}
 
-            <Button mr={2} size='sm' variant='link' onClick={handleOpenExternalLink(`https://t.me/pravosleva_bot?start=invite-chat_${room}`)}>Регистрация</Button>
-            <Button size='sm' variant='link' onClick={handleOpenExternalLink(`https://t.me/pravosleva_bot?start=invite-chat_${room}`)}>Забыли пароль?</Button>
+            <Button mr={2} size='sm' variant='link' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Регистрация</Button>
+            <Button size='sm' variant='link' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Забыли пароль?</Button>
             {/*
             <Button size='xs' colorScheme="blue" onClick={() => handleTryLoginWidthPassword()} isLoading={isLoading2} isDisabled={isSubmitDisabled}>
               <FiArrowRight size={18} />

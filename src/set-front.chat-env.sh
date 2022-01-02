@@ -28,7 +28,7 @@ REACT_APP_API_URL=http://pravosleva.ru/express-helper
 REACT_APP_CHAT_NAME=\"PUB 2021\"
 REACT_APP_CHAT_UPLOADS_URL=/express-helper/chat/storage/uploads
 REACT_APP_BUILD_DATE=\"$BUILD_DATE\"
-" > src/frontend.chat/.env.production
+REACT_APP_PRAVOSLEVA_BOT_BASE_URL=https://t.me/pravosleva_bot" > src/frontend.chat/.env.production
 
 ## SMARTPRICE beta2
 #       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
@@ -36,7 +36,8 @@ REACT_APP_BUILD_DATE=\"$BUILD_DATE\"
 # # REACT_APP_API_URL=http://104.248.201.86:5000/chat
 # REACT_APP_API_URL=http://pravosleva.ru/express-helper
 # REACT_APP_CHAT_NAME=\"Open Chat 2021\"
-# REACT_APP_CHAT_UPLOADS_URL=http://pravosleva.ru/express-helper/chat/storage/uploads" > src/frontend.chat/.env.production
+# REACT_APP_CHAT_UPLOADS_URL=http://pravosleva.ru/express-helper/chat/storage/uploads
+# REACT_APP_PRAVOSLEVA_BOT_BASE_URL=https://t.me/pravosleva_bot" > src/frontend.chat/.env.production
     ;;
     *)
     echo "☠️ SCRIPT: unknown param $1" &&

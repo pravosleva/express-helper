@@ -107,6 +107,7 @@ import { PollingComponent } from '~/common/components/PollingComponent'
 import { SwitchSection } from '~/common/components/SwitchSection'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
+const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
 
 /* -- NOTE: Socket upload file evss
 // Sample 1 (12.3 kB)
@@ -1805,7 +1806,7 @@ export const Chat = () => {
                 alignItems='center'
                 // bgColor='gray.600'
               >
-                <Button rightIcon={<FaTelegramPlane size={18} />} size='lg' style={{ borderRadius: 'var(--chakra-radii-full)' }} colorScheme='blue' variant='solid' onClick={handleOpenExternalLink(`https://t.me/pravosleva_bot?start=invite-chat_${room}`)}>Зайти в чат через бота</Button>
+                <Button rightIcon={<FaTelegramPlane size={18} />} size='lg' style={{ borderRadius: 'var(--chakra-radii-full)' }} colorScheme='blue' variant='solid' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Зайти в чат через бота</Button>
               </Flex>
             )
           }
