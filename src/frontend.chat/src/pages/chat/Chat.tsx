@@ -1148,9 +1148,9 @@ export const Chat = () => {
         onClose={handleEditModalClose}
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent rounded='2xl'>
           <ModalHeader>Edit your msg</ModalHeader>
-          <ModalCloseButton />
+          <ModalCloseButton rounded='3xl' />
           <ModalBody pb={6}>
             <FormControl mt={4}>
               <FormLabel>Text</FormLabel>
@@ -1162,6 +1162,7 @@ export const Chat = () => {
                 // onKeyDown={handleKeyDownEditedMessage}
                 value={editedMessage.text}
                 onChange={handleChangeEditedMessage}
+                fontSize='lg'
               />
             </FormControl>
           </ModalBody>
@@ -1172,10 +1173,12 @@ export const Chat = () => {
               mr={3}
               // @ts-ignore
               onClick={handleSaveEditedMessage}
+              size='sm'
+              rounded='2xl'
             >
               Save
             </Button>
-            <Button onClick={handleEditModalClose}>Cancel</Button>
+            <Button size='sm' rounded='2xl' onClick={handleEditModalClose}>Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
