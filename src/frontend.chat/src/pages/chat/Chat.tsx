@@ -141,7 +141,7 @@ const statusMap: {
   [EMessageStatus.Warn]: <FiActivity size={15} /*color='#000'*/ />,
   // [EMessageStatus.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />,
   // [EMessageStatus.Danger]: <FaFire size={14} />,
-  [EMessageStatus.Danger]: <ImFire size={15} />,
+  [EMessageStatus.Danger]: <ImFire size={14} />,
   [EMessageStatus.Success]: <FaCheck size={10} />,
   'assign': <CgAssign size={18}/>,
 }
@@ -697,9 +697,10 @@ export const Chat = () => {
     /* Optional options */
     threshold: 0,
   })
+  const [inViewRef2, inView2, _entry2] = useInView({ threshold: 0 })
   useEffect(() => {
-    if (inView) getPieceOfChat()
-  }, [inView, getPieceOfChat])
+    if (inView || inView2) getPieceOfChat()
+  }, [inView, inView2, getPieceOfChat])
 
   const rendCounter = useRef<number>(0)
   useEffect(() => {
@@ -1560,15 +1561,10 @@ export const Chat = () => {
           )}
 
           <ScrollToBottom
-            className={clsx(
-              "messages",
-              // "height-limited-md",
-              { "height-limited-md": upToSm, "height-full-auto-sm": downToSm }
-            )}
+            className={clsx("messages", { "height-limited-md": upToSm, "height-full-auto-sm": downToSm })}
             debug={false}
-            // debounce={1000}
-          >
-            <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
+          >{/* INF LOADER 1/3 */}
+            <Flex ref={inViewRef2} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
               <Box mr="2">---</Box>
               {/* !!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" /> */}
               <Text fontWeight="400">
@@ -1596,20 +1592,35 @@ export const Chat = () => {
 
               if (!!file) {
                 return (
-                  <Image
-                    key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
-                    message={message}
-                    setEditedMessage={setEditedMessage}
-                    onEditModalOpen={handleEditModalOpen}
-                    onDeleteMessage={handleDeleteMessage}
-                    onAddAdditionalTsToShow={addAdditionalTsToShow}
-                    onOpenGallery={handleOpenGallery}
-                  />
+                  <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
+                    {/* INF LOADER 2/3 */
+                      i === 5 && !!tsPoint && (
+                        <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
+                          <Box mr="2">---</Box><Text fontWeight="400">{`Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`}</Text><Box ml="2">---</Box>
+                        </Flex>
+                      )
+                    }
+                    <Image
+                      message={message}
+                      setEditedMessage={setEditedMessage}
+                      onEditModalOpen={handleEditModalOpen}
+                      onDeleteMessage={handleDeleteMessage}
+                      onAddAdditionalTsToShow={addAdditionalTsToShow}
+                      onOpenGallery={handleOpenGallery}
+                    />
+                  </Fragment>
                 )
               }
 
               return (
                 <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}-${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? assignedTo.join(',') : 'not_assigned'}`}>
+                  {/* INF LOADER 3/3 */
+                    i === 5 && !!tsPoint && (
+                      <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
+                        <Box mr="2">---</Box><Text fontWeight="400">{`Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`}</Text><Box ml="2">---</Box>
+                      </Flex>
+                    )
+                  }
                   <Box
                     id={String(ts)}
                     className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
@@ -1809,7 +1820,7 @@ export const Chat = () => {
         </Flex>
       </div>
       {
-        sprintFeatureSnap.isFeatureEnabled && isDrawerMenuOpened && (
+        sprintFeatureSnap.isFeatureEnabled && (
           <>{
             devtoolsFeatureSnap.isSprintPollUsedInMainThreadOnly ? (
               <PollingComponent interval={5000} promise={handleCheckPOST} resValidator={(_data: any) => false} onSuccess={() => {}} onFail={console.log} />

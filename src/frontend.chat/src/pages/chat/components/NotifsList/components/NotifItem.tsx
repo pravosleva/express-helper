@@ -83,7 +83,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
     <Box>
       <Flex justifyContent='space-between' alignItems='center' mb={2}>
         <Flex alignItems='center'>
-          {original?.status === EMessageStatus.Danger && <span style={{ marginRight: 'var(--chakra-space-2)' }}><ImFire size={14}/></span>}
+          {original?.status === EMessageStatus.Danger && <span style={{ marginRight: 'var(--chakra-space-2)' }}><ImFire size={13}/></span>}
           {original?.status === EMessageStatus.Warn && <span style={{ marginRight: 'var(--chakra-space-2)' }}><FiActivity size={14}/></span>}
           {original?.status === EMessageStatus.Success && <span style={{ marginRight: 'var(--chakra-space-3)' }}><FaCheck size={12}/></span>}
           {original?.status === EMessageStatus.Info && <span style={{ marginRight: 'var(--chakra-space-2)' }}><FaInfoCircle size={14}/></span>}
