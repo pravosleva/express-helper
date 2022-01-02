@@ -96,9 +96,9 @@ export const GalleryModal = ({
       scrollBehavior='inside'
     >
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent rounded='2xl'>
         <ModalHeader>Gallery</ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton rounded='3xl' />
         <ModalBody
           // pb={1} pl={1} pr={1}
         >
@@ -200,7 +200,7 @@ export const GalleryModal = ({
         <ModalFooter
           className='modal-footer-btns-wrapper'
         >
-          <Button onClick={onClose} variant='ghost' color='red.500'>Close</Button>
+          <Button size='sm' rounded='2xl' onClick={onClose} variant='ghost' color='red.500'>Close</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

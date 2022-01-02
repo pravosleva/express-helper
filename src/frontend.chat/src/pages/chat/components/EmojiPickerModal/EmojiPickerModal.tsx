@@ -33,9 +33,9 @@ export const EmojiPickerModal0 = ({ onSubmit, isOpened, onClose }: TProps) => {
       initialFocusRef={searchFieldRef}
     >
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent rounded='3xl'>
         <ModalHeader>Emoji</ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton rounded='3xl' />
         <ModalBody pl={1} pr={1} ml='auto' mr='auto'>
           <Picker
             onEmojiClick={handleEmojiClick}
@@ -53,7 +53,7 @@ export const EmojiPickerModal0 = ({ onSubmit, isOpened, onClose }: TProps) => {
           className='modal-footer-btns-wrapper'
         >
           {/* !!selectedEmoji && <Button onClick={handleClear} leftIcon={<IoMdClose />} variant='ghost' color='red.500'>Cancel</Button> */}
-        <Button onClick={onClose}>Close</Button>
+        <Button size='sm' rounded='2xl' onClick={onClose}>Close</Button>
       </ModalFooter>
       </ModalContent>
     </Modal>

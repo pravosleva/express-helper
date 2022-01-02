@@ -24,11 +24,11 @@ type TProps = {
 }
 
 const CountdownRenderer = ({ days, hours, minutes, seconds, completed }: any) => {
-  if (completed) return <Tag colorScheme='red' ml={2}>Time is up!</Tag>
+  if (completed) return <Tag rounded='2xl' colorScheme='red' ml={2}>Time is up!</Tag>
   const getColorByDays = (days: number) => days <= 2 ? 'red' : 'gray'
   const color = getColorByDays(days)
 
-  return <Tag colorScheme={color} ml={2}>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
+  return <Tag rounded='2xl' colorScheme={color} ml={2}>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
 }
 
 export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete, original }: TProps) => {

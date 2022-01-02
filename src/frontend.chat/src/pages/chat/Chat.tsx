@@ -936,12 +936,8 @@ export const Chat = () => {
   const handleRemoveFromSprint = async (ts: number) => {
     // console.log(editedMessage)
     const data = { ts, room_id: room, username: name }
-    const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/remove`, {
-      ...data,
-    })
-      .then((res) => {
-        return res.data
-      })
+    const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/remove`, data)
+      .then((res) => res.data)
       .catch((err) => err)
 
     if (result.ok && result.ts) {
@@ -1231,6 +1227,7 @@ export const Chat = () => {
                             variant="outline"
                             leftIcon={<HiOutlineMenuAlt2 size={18}/>}
                             size='sm'
+                            rounded='2xl'
                           >
                             Tools
                           </MenuButton>
@@ -1240,6 +1237,7 @@ export const Chat = () => {
                             // _hover={{ bg: "gray.500", color: 'white' }}
                             // _expanded={{ bg: "gray.800" }}
                             // _focus={{ boxShadow: "outline" }}
+                            rounded='2xl'
                           >
                             <MenuItem
                               // _hover={{ bg: "gray.500", color: 'white' }}
@@ -1315,6 +1313,7 @@ export const Chat = () => {
                               leftIcon={<FcGallery color='#FFF' size={18} />}
                               onClick={() => { handleOpenGallery(allImagesMessagesLightboxFormat[0].src) }}
                               // mr={2}
+                              rounded='2xl'
                             >Photos</Button>
                           )
                         }
@@ -1336,6 +1335,7 @@ export const Chat = () => {
                             // mr={2}
                             colorScheme="gray"
                             variant="outline"
+                            rounded='2xl'
                           >Copy Link</Button>
                         </CopyToClipboard>
                       </Grid>

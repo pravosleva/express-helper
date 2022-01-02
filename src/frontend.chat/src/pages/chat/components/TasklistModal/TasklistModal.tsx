@@ -220,7 +220,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
         scrollBehavior='inside'
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent rounded='2xl'>
           <ModalHeader>
             <Stack>
               <Box>
@@ -245,7 +245,7 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
               </Box>
             </Stack>
           </ModalHeader>
-          <ModalCloseButton />
+          <ModalCloseButton rounded='3xl' />
           <ModalBody pb={1} pl={1} pr={1}>
             {isCreateTaskFormOpened && (
               <Box pl={5} pr={5} pb={5}>
@@ -325,10 +325,10 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
             {
               !isCreateTaskFormOpened && <TotalSum />
             }
-            {!isCreateTaskFormOpened && <Button onClick={handleCreateFormOpen} leftIcon={<IoMdAdd />}>New</Button>}
-            {isCreateTaskFormOpened && <Button onClick={handleCreateFormClose} leftIcon={<IoMdClose />}>Cancel</Button>}
-            {isCreateTaskFormOpened && !!formData.title && <Button onClick={handleCreateSubmit} color='green.500' variant='solid'>Create</Button>}
-            <Button onClick={onClose} variant='ghost' color='red.500'>Close</Button>
+            {!isCreateTaskFormOpened && <Button size='sm' rounded='2xl' onClick={handleCreateFormOpen} leftIcon={<IoMdAdd />}>New</Button>}
+            {isCreateTaskFormOpened && <Button size='sm' rounded='2xl' onClick={handleCreateFormClose} leftIcon={<IoMdClose />}>Cancel</Button>}
+            {isCreateTaskFormOpened && !!formData.title && <Button size='sm' rounded='2xl' onClick={handleCreateSubmit} color='green.500' variant='solid'>Create</Button>}
+            <Button size='sm' rounded='2xl' onClick={onClose} variant='ghost' color='red.500'>Close</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
