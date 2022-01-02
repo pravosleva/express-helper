@@ -25,16 +25,13 @@ export const TotalSum = () => {
   //   timeoutMs: 500 // Время, отведенное на переход
   // });
   useEffect(() => {
-    console.log('=== EFFECT ===')
     worker.onmessage = ($event: any) => {
       const { data } = $event
 
       if (!!data) {
         switch (data.actionCode) {
           case 'getSumLastMonths':
-            // startTransition(() => {
-            //   setSum($event.data.sum)
-            // })
+            // startTransition(() => { setSum($event.data.sum) })
             setSum($event.data.sum)
             break;
           default: break;

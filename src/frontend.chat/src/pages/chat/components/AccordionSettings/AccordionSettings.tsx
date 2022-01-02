@@ -401,7 +401,7 @@ export const AccordionSettings = ({
                             return (
                               <>
                                 {devtoolsFeatureSnap.isSprintPollUsedInMainThreadOnly ? (
-                                  <Box mt={4}>Поллинг работает с основном потоке</Box>
+                                  <Box mt={4}>Поллинг работает в основном потоке</Box>
                                 ) : (
                                   <Box mt={4}>Поллинг работает в отдельном потоке (Web Worker)</Box>
                                 )}

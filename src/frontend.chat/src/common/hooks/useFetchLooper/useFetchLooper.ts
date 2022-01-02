@@ -43,12 +43,9 @@ export const useFetchLooper = ({
   const t = useRef<NodeJS.Timeout>()
   useEffect(() => {
     const req = () => {
-      console.log(`- run worker in effect #${tick}`)
+      // console.log(`- run worker in effect #${tick}`)
       if (validate.beforeRequest(runnerAction.payload)) {
-        run({
-          type: runnerAction.type,
-          payload: runnerAction.payload,
-        })
+        run({ type: runnerAction.type, payload: runnerAction.payload })
       }
       setTick((c) => c + 1)
     }

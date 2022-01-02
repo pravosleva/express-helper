@@ -50,8 +50,6 @@ export class Logic {
                   && (assignmentExecutorsFilters.length > 0 && !!nextMsg.assignedTo && Array.isArray(nextMsg.assignedTo) && assignmentExecutorsFilters.includes(nextMsg.assignedTo[0]))
                 )
 
-                console.log()
-
                 modifiedMsg._next = { ts: this.messages[i + 1].ts, isHidden: isNextHidden }
               }
 

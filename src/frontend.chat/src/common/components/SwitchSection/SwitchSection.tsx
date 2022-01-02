@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { Box, Button, FormControl, FormLabel, Switch } from '@chakra-ui/react'
+import { Box, Button, FormControl, FormLabel, IconButton, Switch } from '@chakra-ui/react'
+import { IoMdClose } from 'react-icons/io'
+import { AiOutlineQuestion } from 'react-icons/ai'
 
 type TProps = {
   onChange: (e: any) => void
@@ -25,7 +27,17 @@ export const SwitchSection = ({ isChecked, onChange, description, id, label }: T
           </FormLabel>
         </FormControl>
         <Box style={{ marginLeft: 'auto' }}>
-          <Button size='sm' variant='link' onClick={toggleDescr} rounded='3xl'>{isDescriptionOpened ? 'Close' : 'What is it?'}</Button>
+          <IconButton
+            size='xs'
+            aria-label="Close"
+            colorScheme='gray'
+            variant='outline'
+            isRound
+            icon={isDescriptionOpened ? <IoMdClose size={15} /> : <AiOutlineQuestion size={15} />}
+            onClick={toggleDescr}
+          >
+            DEL
+          </IconButton>
         </Box>
       </Box>
       {

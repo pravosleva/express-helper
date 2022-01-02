@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 
 const workerHandler = (fn: (arg: any) => void) => {
   onmessage = (nativeWorkerEvt: any) => {
-    console.log(nativeWorkerEvt.data)
+    // console.log(nativeWorkerEvt.data)
     fn(nativeWorkerEvt.data)
   }
 }

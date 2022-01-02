@@ -934,7 +934,7 @@ export const Chat = () => {
   const isLogged = useMemo(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
 
   const handleRemoveFromSprint = async (ts: number) => {
-    console.log(editedMessage)
+    // console.log(editedMessage)
     const data = { ts, room_id: room, username: name }
     const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/remove`, {
       ...data,
