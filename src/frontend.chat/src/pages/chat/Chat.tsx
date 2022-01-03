@@ -1042,6 +1042,10 @@ export const Chat = () => {
     sprintFeatureProxy.isFeatureEnabled = sprintSettingsLS?.[room]?.isEnabled || false
     sprintFeatureProxy.commonNotifs = {}
     sprintFeatureProxy.tsUpdate = Date.now()
+    // - NOTE: For loading indicator (TODO: isUILoaderEnabled)
+    sprintFeatureProxy.isEmptyStateConfirmed = false
+    sprintFeatureProxy.isPollingWorks = false
+    // -
   }, [room])
   // --
 
