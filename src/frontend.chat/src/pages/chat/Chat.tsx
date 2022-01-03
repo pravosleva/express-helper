@@ -827,23 +827,32 @@ export const Chat = () => {
   // V2: Web Worker
   const [filteredMessages, setFilteredMessages] = useState<TMessage[]>([])
   const [allImagesMessagesLightboxFormat, setAllImagesMessagesLightboxFormat] = useState<any[]>([])
-
+  const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
   useEffect(() => {
     webWorkersInstance.filtersWorker.onmessage = ($event: { [key: string]: any, data: { type: string, result: TMessage[], perf: number } }) => {
       try {
         console.log(`Web Worker: ${$event.data.result.length} in ${$event.data.perf} ms`)
+        if (!!timers.current[$event.data.type]) clearTimeout(timers.current[$event.data.type])
         switch ($event.data.type) {
           case 'getFilteredMessages':
-            setFilteredMessages($event.data.result)
+            timers.current[$event.data.type] = setTimeout(() => {
+              setFilteredMessages($event.data.result)
+            }, 100)
             break;
           case 'getAllImagesLightboxFormat':
-            setAllImagesMessagesLightboxFormat($event.data.result)
+            timers.current[$event.data.type] = setTimeout(() => {
+              setAllImagesMessagesLightboxFormat($event.data.result)
+            }, 100)
             break;
           default: break;
         }
       } catch (err) {
         console.log(err)
       }
+    }
+
+    return () => {
+      for (const key in timers.current) if (!!timers.current[key]) clearTimeout(timers.current[key])
     }
   }, [])
 

@@ -45,7 +45,7 @@ type TDevtoolsInfo = {
 }
 const devtoolsFeatureProxy = proxy<TDevtoolsInfo>({
   isFeatureEnabled: false,
-  isSprintPollUsedInMainThreadOnly: true,
+  isSprintPollUsedInMainThreadOnly: false,
 })
 
 type TCPUInfo = {
