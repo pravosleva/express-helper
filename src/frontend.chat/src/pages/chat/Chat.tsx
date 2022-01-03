@@ -98,13 +98,12 @@ import { ImFire } from 'react-icons/im'
 import { FaTelegramPlane, FaRunning } from 'react-icons/fa'
 import { DatepickerModal } from '~/pages/chat/components/TasklistModal/components/DatepickerModal' // './components/DatepickerModal'
 import { useSnapshot } from 'valtio'
-// const assignmentSnap = useSnapshot(assignmentFeatureProxy)
 import { FiArrowRight } from 'react-icons/fi'
 import { CheckRoomSprintPolling } from '~/common/components/CheckRoomSprintPolling'
 import { BsFillCalendarFill } from 'react-icons/bs'
-import { useAddToHomescreenPrompt } from '~/common/hooks/useAddToHomescreenPrompt'
 import { PollingComponent } from '~/common/components/PollingComponent'
 import { SwitchSection } from '~/common/components/SwitchSection'
+import { webWorkersInstance } from '~/utils'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -819,7 +818,43 @@ export const Chat = () => {
     updateRoomTsInLS(room)
   }, [updateRoomTsInLS])
   // --
-  const filteredMessages = useMemo(() => logic.getFiltered({ filters, searchText: debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters }), [logic, filters, debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters])
+  
+  // -- FILTERS EXP
+  // V1
+  // const filteredMessages = useMemo(() => logic.getFiltered({ filters, searchText: debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters }), [logic, filters, debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters])
+  // const allImagesMessagesLightboxFormat = useMemo(() => logic.getAllImagesLightboxFormat(), [logic])
+
+  // V2: Web Worker
+  const [filteredMessages, setFilteredMessages] = useState<TMessage[]>([])
+  const [allImagesMessagesLightboxFormat, setAllImagesMessagesLightboxFormat] = useState<any[]>([])
+
+  useEffect(() => {
+    webWorkersInstance.filtersWorker.onmessage = ($event: { [key: string]: any, data: { type: string, result: TMessage[], perf: number } }) => {
+      try {
+        console.log(`Web Worker: ${$event.data.result.length} in ${$event.data.perf} ms`)
+        switch ($event.data.type) {
+          case 'getFilteredMessages':
+            setFilteredMessages($event.data.result)
+            break;
+          case 'getAllImagesLightboxFormat':
+            setAllImagesMessagesLightboxFormat($event.data.result)
+            break;
+          default: break;
+        }
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    webWorkersInstance.filtersWorker.postMessage({ type: 'getFilteredMessages', filters, searchText: debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters, messages })
+  }, [messages, filters, debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters])
+  useEffect(() => {
+    webWorkersInstance.filtersWorker.postMessage({ type: 'getAllImagesLightboxFormat', messages })
+  }, [messages])
+  // --
+  
   const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
   const [clickedImageSrc, setClickedImageSrc]= useState<string | null>(null)
   const handleOpenGallery = useCallback((src: string) => {
@@ -905,8 +940,6 @@ export const Chat = () => {
     resetForm()
     handleResetAssignmentFilters()
   }, [resetFilters, resetForm, handleResetAssignmentFilters])
-
-  const allImagesMessagesLightboxFormat = useMemo(() => logic.getAllImagesLightboxFormat(), [logic])
 
   const [isEmojiOpened, setIsEmojiOpened] = useState<boolean>(false)
   const handleOpenEmoji = useCallback(() => { setIsEmojiOpened(true) }, [setIsEmojiOpened])
