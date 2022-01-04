@@ -685,7 +685,7 @@ export const Chat = () => {
   const [upToSm] = useMediaQuery(`(min-width: ${md + 1}px)`)
   const completedTasksLen = useMemo(() => !!tasklist ? tasklist.filter(({ isCompleted }: any) => isCompleted).length : 0, [JSON.stringify(tasklist)])
   const percentage = useMemo(() => {
-    if (tasklist.length === 0) return 0
+    if (!tasklist || tasklist.length === 0 || !Array.isArray(tasklist)) return 0
 
     const all = tasklist.length
     const completed = completedTasksLen
@@ -1058,9 +1058,7 @@ export const Chat = () => {
     // NOTE: If false - than browser tab is active
 
     const data = { room_id: room, tsUpdate: sprintFeatureSnap.tsUpdate }
-    const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/check-room-state`, {
-      ...data,
-    })
+    const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/check-room-state`, data)
       .then((res) => res.data)
       .catch((err) => err)
 
