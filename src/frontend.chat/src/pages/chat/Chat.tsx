@@ -1601,7 +1601,7 @@ export const Chat = () => {
             className={clsx("messages", { "height-limited-md": upToSm, "height-full-auto-sm": downToSm })}
             debug={false}
           >{/* INF LOADER 1/3 */}
-            <Flex ref={inViewRef2} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
+            <Flex ref={inViewRef2} skip={inView} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
               <Box mr="2">---</Box>
               {/* !!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" /> */}
               <Text fontWeight="400">
