@@ -33,6 +33,7 @@ import { PollingComponent } from '~/common/components/PollingComponent'
 import axios from 'axios'
 import { CheckRoomSprintPolling } from '~/common/components/CheckRoomSprintPolling'
 import { SwitchSection } from '~/common/components/SwitchSection'
+import { ServerInfo } from './components/ServerInfo'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
@@ -196,8 +197,15 @@ export const AccordionSettings = ({
   const updateCPUState = (result: any) => {
     if (result?.ok) {
       try {
-        if (!!result?.state?.mem) {
-          cpuFeatureProxy.mem = result.state.mem
+        if (!!result?.state) {
+          const keys = [
+            "mem",
+            // "diskLayout",
+          ]
+
+          // @ts-ignore
+          for (const key of keys) cpuFeatureProxy[key] = result.state[key]
+
           cpuFeatureProxy.ts = Date.now()
         }
       } catch (err) {
@@ -401,16 +409,14 @@ export const AccordionSettings = ({
                     )
                   }
 
-                  {!cpuFeatureSnap.mem ? (
+                  {!cpuFeatureSnap ? (
                     <Box>
-                      <Text style={{ textAlign: 'center' }}><em>CPU data is loading...</em></Text>
+                      <Text style={{ textAlign: 'center' }}><em>Server data is loading...</em></Text>
                     </Box>
                   ) : (
                     <Box>
-                      <Text style={{ textAlign: 'center' }}><em>CPU mem</em></Text>
-                      <pre style={{  
-                        whiteSpace: 'pre-wrap'
-                      }}>{JSON.stringify(cpuFeatureSnap.mem, null, 2)}</pre>
+                      <Text style={{ textAlign: 'center' }}><em>Server</em></Text>
+                      <ServerInfo />
                     </Box>
                   )}
                   {
