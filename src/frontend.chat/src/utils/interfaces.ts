@@ -26,7 +26,8 @@ export type TMessage = {
   };
   assignedTo?: string[];
   assignedBy?: string;
-  original?: TMessage
+  original?: TMessage;
+  links?: { link: string, descr: string }[];
 }
 
 export type TImageLightboxFormat = { src: string, alt: string | undefined }

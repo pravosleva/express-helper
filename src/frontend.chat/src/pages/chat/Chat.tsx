@@ -104,6 +104,7 @@ import { BsFillCalendarFill } from 'react-icons/bs'
 import { PollingComponent } from '~/common/components/PollingComponent'
 import { SwitchSection } from '~/common/components/SwitchSection'
 import { webWorkersInstance } from '~/utils'
+import { AddLinkFormModal } from './components/AddLinkFormModal'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -130,6 +131,8 @@ const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_B
 // const overwriteMerge = (destinationArray, sourceArray, _options) => [, ...sourceArray]
 const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 const charsLimit = 2000
+
+const capitalizeFirstLetter = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1);
 
 type TUser = { socketId: string; room: string; name: string }
 
@@ -164,9 +167,6 @@ const getIconByStatuses = (statuses: EMessageStatus[], isColored: boolean) => {
       return res
     default: return null
   }
-}
-function capitalizeFirstLetter(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 const bgColorsMap: { [key: string]: string } = {
   [EMessageStatus.Done]: 'var(--chakra-colors-gray-500)',
@@ -260,7 +260,7 @@ export const Chat = () => {
       const logoutFromServerListener = () => {
         history.push('/')
       }
-      const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy }: { text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string }) => {
+      const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy, links }: { text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string, links?: { link: string, descr: string }[] }) => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
@@ -279,6 +279,11 @@ export const Chat = () => {
               newArr[targetIndex].assignedBy = assignedBy
             } else {
               if (!!newArr[targetIndex].assignedTo) delete newArr[targetIndex].assignedTo
+            }
+            if (!!links) {
+              newArr[targetIndex].links = links
+            } else {
+              newArr[targetIndex].links = []
             }
           }
           return newArr
@@ -553,6 +558,7 @@ export const Chat = () => {
       if (!!editedMessage.status) newData.status = editedMessage.status
       if (!!editedMessage.assignedTo) newData.assignedTo = editedMessage.assignedTo
       if (!!assignedTo) newData.assignedTo = assignedTo
+      if (!!editedMessage.links) newData.links = editedMessage.links
       newData = { ...newData, ...editedMessage }
       socket.emit(
         'editMessage',
@@ -603,6 +609,54 @@ export const Chat = () => {
       }
     }
   }
+  const [isAddLinkFormOpened, setIsAddLnkFormOpened] = useState<boolean>(false)
+  const openAddLinkForm = () => {
+    setIsAddLnkFormOpened(true)
+  }
+  const closeAddLinkForm = () => {
+    setIsAddLnkFormOpened(false)
+  }
+  const handleAddLink = useCallback(() => {
+    openAddLinkForm()
+  }, [editedMessage, openAddLinkForm])
+  const submitNewLink = ({ link, descr, cb }: any) => {
+    if (!!socket) {
+      const newData = { ...editedMessage }
+
+      if (!!link && !!descr) {
+        if (!!newData.links) {
+          newData.links = [...newData.links, { link, descr }]
+        } else {
+          newData.links = [{ link, descr }]
+        }
+      }
+      socket.emit(
+        'editMessage',
+        { newData, ts: editedMessage.ts, room, name },
+        () => {
+          cb()
+          closeAddLinkForm()
+        },
+      )
+    }
+  }
+  const handleDeleteLink = (link: string, tsMsg: number) => {
+    const isConfirmed = window.confirm(`Вы уверенны? Ссылка будет удалена\n${link}`)
+    if (!isConfirmed) return
+
+    if (!!socket) {
+      socket.emit(
+        'editMessage:delete-link',
+        { ts: tsMsg, room, name, link },
+      )
+    }
+  }
+  const goToExternalLink = (link: string) => {
+    const isConfirmed = window.confirm(`Открыть ссылку?\n${link}`)
+    if (!isConfirmed) return
+
+    window.open(link, '_blank')
+  }
   const handleSetStatus = (status: EMessageStatus) => {
     if (!!socket) {
       const newData: Partial<TMessage> = { text: editedMessage.text, status }
@@ -611,6 +665,7 @@ export const Chat = () => {
         newData.assignedTo = editedMessage.assignedTo
         newData.assignedBy = editedMessage.assignedBy
       }
+      if (!!editedMessage.links) newData.links = editedMessage.links
       socket.emit(
         'editMessage',
         { newData, ts: editedMessage.ts, room, name }
@@ -1143,6 +1198,12 @@ export const Chat = () => {
         onClose={handleSetPasswordModalClose}
       />
 
+      <AddLinkFormModal
+        isOpened={isAddLinkFormOpened}
+        onClose={closeAddLinkForm}
+        onSubmit={submitNewLink}
+      />
+
       <ContextMenu
         id="same_unique_identifier"
         onShow={handleShowCtxMenu}
@@ -1176,6 +1237,9 @@ export const Chat = () => {
             </CtxMenuItem>
           )
         }
+        <CtxMenuItem data={{ foo: 'bar' }} onClick={handleAddLink}>
+          Add link
+        </CtxMenuItem>
       </ContextMenu>
 
       <Modal
@@ -1613,7 +1677,7 @@ export const Chat = () => {
               <Box ml="2">---</Box>
             </Flex>
             {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, arr) => {
-              const { user, text, ts, editTs, status, file, _next, assignedTo, assignedBy } = message
+              const { user, text, ts, editTs, status, file, _next, assignedTo, assignedBy, links = [] } = message
               // const isLastOfFiltered = i === arr.length -1
               const isMyMessage = user === name
               const date = getNormalizedDateTime(ts)
@@ -1648,6 +1712,10 @@ export const Chat = () => {
                   </Fragment>
                 )
               }
+              const hasLinks = !!links && Array.isArray(links)
+              const needAssignmentBtns = userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser
+                && sprintFeatureSnap.isFeatureEnabled
+                && !file && !!status && status !== EMessageStatus.Done
 
               return (
                 <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}-${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? assignedTo.join(',') : 'not_assigned'}`}>
@@ -1737,36 +1805,100 @@ export const Chat = () => {
                     />
                   )}
                   {
-                    userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser
-                    && sprintFeatureSnap.isFeatureEnabled
-                    && !file && !!status && status !== EMessageStatus.Done && (
-                      <Flex justifyContent='flex-end' alignItems='center' style={{ width: '100%' }} mb={2}>{
-                        !sprintFeatureSnap.commonNotifs[String(ts)] ? (
-                          <Button
-                            isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
-                            size='xs'
-                            onClick={() => {
-                              setEditedMessage(message)
-                              handleOpenDatePicker()}
-                            }
-                            rightIcon={<FiArrowRight color="inherit" size={14} />}
-                            leftIcon={<BsFillCalendarFill size={14} />}
-                          >Add to Sprint</Button>
-                        ) : (
-                          <Button
-                            isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
-                            size='xs'
-                            onClick={() => {
-                              const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
-                              if (isConfirmed) {
-                                setEditedMessage(message)
-                                handleRemoveFromSprint(ts)
+                    hasLinks
+                    ? (
+                      <Flex spacing={2} className='flex-wraper-spaced-2' flexWrap='wrap' justifyContent='flex-end' style={{ width: '100%' }}>
+                        {links.map(({ link, descr }, i) => (
+                          <Tag
+                            mb={2}
+                            size='lg'
+                            key={`${link}-${i}`}
+                            borderRadius='full'
+                            variant='solid'
+                            colorScheme='blue'
+                            onClick={() => goToExternalLink(link)}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <TagLabel>{capitalizeFirstLetter(descr)}</TagLabel>
+                            <TagCloseButton
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleDeleteLink(link, ts)
+                              }}
+                              style={{ marginLeft: 'auto' }}
+                            />
+                          </Tag>
+                        ))}
+                        {
+                          needAssignmentBtns && (
+                            <>
+                              {
+                                !sprintFeatureSnap.commonNotifs[String(ts)] ? (
+                                  <Button
+                                    isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
+                                    size='sm'
+                                    borderRadius='full'
+                                    onClick={() => {
+                                      setEditedMessage(message)
+                                      handleOpenDatePicker()}
+                                    }
+                                    rightIcon={<FiArrowRight color="inherit" size={14} />}
+                                    leftIcon={<BsFillCalendarFill size={14} />}
+                                  >Add to Sprint</Button>
+                                ) : (
+                                  <Button
+                                    isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
+                                    size='sm'
+                                    borderRadius='full'
+                                    onClick={() => {
+                                      const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
+                                      if (isConfirmed) {
+                                        setEditedMessage(message)
+                                        handleRemoveFromSprint(ts)
+                                      }
+                                    }}
+                                    rightIcon={<IoMdClose color='inherit' size={14} />}
+                                  >Remove from Sprint</Button>
+                                )
                               }
-                            }}
-                            rightIcon={<IoMdClose color='inherit' size={14} />}
-                          >Remove from Sprint</Button>
-                        )
-                      }</Flex>
+                            </>
+                          )
+                        }
+                      </Flex>
+                    ) : (
+                      needAssignmentBtns && (
+                        <Flex justifyContent='flex-end' alignItems='center' style={{ width: '100%' }} mb={2}>
+                          {
+                            !sprintFeatureSnap.commonNotifs[String(ts)] ? (
+                              <Button
+                                isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
+                                size='sm'
+                                borderRadius='full'
+                                onClick={() => {
+                                  setEditedMessage(message)
+                                  handleOpenDatePicker()}
+                                }
+                                rightIcon={<FiArrowRight color="inherit" size={14} />}
+                                leftIcon={<BsFillCalendarFill size={14} />}
+                              >Add to Sprint</Button>
+                            ) : (
+                              <Button
+                                isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
+                                size='sm'
+                                borderRadius='full'
+                                onClick={() => {
+                                  const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
+                                  if (isConfirmed) {
+                                    setEditedMessage(message)
+                                    handleRemoveFromSprint(ts)
+                                  }
+                                }}
+                                rightIcon={<IoMdClose color='inherit' size={14} />}
+                              >Remove from Sprint</Button>
+                            )
+                          }
+                        </Flex>
+                      )
                     )
                   }
                   {isNextOneBtnEnabled && (

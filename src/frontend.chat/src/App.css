@@ -241,3 +241,7 @@ https://codepen.io/desandro/pen/bMqZmr
     background: rgba(0, 0, 0, 0.75);
 }
 */
+
+.flex-wraper-spaced-2 > *:not(:first-child) {
+    margin-left: var(--chakra-space-2);
+}

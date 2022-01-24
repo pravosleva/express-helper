@@ -85,7 +85,7 @@ class Singleton {
       room: string,
       name: string,
       ts: number,
-      newData: { text: string, status?: EMessageStatus, assignedTo?: string[] }
+      newData: { text: string, status?: EMessageStatus, assignedTo?: string[], links?: { link: string, descr: string }[] }
     }
   ): {
     isOk: boolean,
@@ -134,6 +134,12 @@ class Singleton {
             if (!!roomMessages[theMessageIndex].assignedTo) delete roomMessages[theMessageIndex].assignedTo
           }
 
+          if (!!newData.links && Array.isArray(newData.links) && newData.links.length > 0) {
+            roomMessages[theMessageIndex].links = newData.links
+          } else {
+            delete roomMessages[theMessageIndex].links
+          }
+
           // console.log(roomMessages[theMessageIndex])
 
           roomData = roomMessages
@@ -163,6 +169,67 @@ class Singleton {
       targetMessage,
     }
   }
+
+  public deleteLink({ ts, room, name, link }: { ts: number, room: string, name: string, link: string }) {
+    let roomData = this.state.get(room)
+    let isOk: boolean = false
+    const errMsgData: { title?: string, description?: string } = {
+      title: undefined,
+      description: undefined
+    }
+    let isPrivateSocketCb = false
+    let shouldLogout = false
+    let targetMessage
+
+    try {
+      if (!roomData) {
+        throw new Error('roomData not found')
+      } else {
+        const roomMessages = roomData
+        // const theMessageIndex = roomMessages.findIndex(({ ts: t }) => t === ts)
+        const theMessageIndex = binarySearchTsIndex({
+          messages: roomMessages,
+          targetTs: ts
+        })
+
+        if (theMessageIndex === -1) {
+          shouldLogout = true
+          throw new Error('theMessage not found; Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств;')
+        } else {
+          if (!!roomMessages[theMessageIndex].links && Array.isArray(roomMessages[theMessageIndex].links) && roomMessages[theMessageIndex].links.length > 0) {
+            roomMessages[theMessageIndex].links = roomMessages[theMessageIndex].links.filter(({ link: _link }) => _link !== link)
+          } else {
+            delete roomMessages[theMessageIndex].links
+          }
+
+          roomData = roomMessages
+          this.state.set(room, roomData)
+
+          isOk = true
+          targetMessage = roomMessages[theMessageIndex]
+
+          // io.in(room).emit('message.update', roomMessages[theMessageIndex]);
+        }
+      }
+    } catch(err) {
+      isOk = false
+      isPrivateSocketCb = true
+      errMsgData.description = err.message
+      errMsgData.title = 'SERVER ERR #1.1: EDIT MESSAGE (DEL LINK)'
+
+      // socket.emit('notification', { status: 'error', title: 'ERR #1', description: !!err.message ? `Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error' })
+      // socket.emit('FRONT:LOGOUT')
+    }
+
+    return {
+      isOk,
+      errMsgData,
+      isPrivateSocketCb,
+      shouldLogout,
+      targetMessage,
+    }
+  }
+
   public deleteMessage({ roomId: room, ts }: { roomId: string, ts: number }) {
     let roomData = this.state.get(room)
     let isOk: boolean = false

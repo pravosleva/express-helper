@@ -565,6 +565,25 @@ export const withSocketChat = (io: Socket) => {
       })
       if (!!cb) cb()
     })
+    socket.on('editMessage:delete-link', ({ ts, room, name, link }: { ts: number, room: string, name: string, link: string }, cb?: () => void) => {
+      const result = roomsMap.deleteLink({ ts, room, name, link })
+
+      standardResultHandler({
+        result,
+        cbSuccess: ({ result }) => {
+          io.in(room).emit('message.update', result.targetMessage);
+        },
+        cbError: ({ result }) => {
+          if (result.isPrivateSocketCb) {
+            // if (!!cb && !!result.errMsgData) cb(result.errMsgData.description)
+            socket.emit('notification', { status: 'error', title: result.errMsgData.title, description: result.errMsgData.description })
+            if (result.shouldLogout) socket.emit('FRONT:LOGOUT')
+          }
+        },
+      })
+      
+      if (!!cb) cb()
+    })
     socket.on('deleteMessage', ({ room, name, ts }, cb) => {
       const result = roomsMap.deleteMessage({ roomId: room, ts })
 

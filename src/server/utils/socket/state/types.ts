@@ -33,6 +33,7 @@ export type TMessage = {
     fileName: string
     filePath: string
   }
+  links?: { link: string, descr: string }[]
 }
 // export type TRoomData = {
 //   [userName: string]: TMessage[]
