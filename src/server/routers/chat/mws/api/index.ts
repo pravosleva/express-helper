@@ -13,6 +13,7 @@ import { ELoggedCookie } from '~/routers/chat/utils/types'
 // import cookieParser from 'cookie-parser'
 import { add as addNotif, checkRoomState as checkRoomNotifsState, remove as removeNotif } from './common-notifs'
 import { getCPUState } from './get-cpu-state'
+import { getBackupState } from './get-backup-state'
 
 // import { redirectIfUnlogged } from './auth/redirect-if-unlogged.middle'
 // chatExternalApi.use(redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT))
@@ -51,6 +52,7 @@ chatExternalApi.post(
   removeNotif
 )
 chatExternalApi.get('/get-cpu-state', getCPUState)
+chatExternalApi.get('/get-backup-state', getBackupState)
 
 export {
   chatExternalApi,

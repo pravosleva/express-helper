@@ -3,6 +3,16 @@ import { ncp } from 'ncp'
 import fs from 'fs'
 import { createDirIfNecessary } from './createDirIfNecessary'
 import path from 'path'
+import { cronStateInstance } from './cronStateInstance'
+// import { MakeLooper } from '~/utils/MakeLooper'
+import { createPollingByConditions } from '~/utils/socket/state/createPollingByConditions'
+import { Counter } from '~/utils/counter'
+import { createFileIfNecessary } from '~/utils/fs-tools/createFileIfNecessary'
+import { getStaticJSONSync } from './getStaticJSONSync'
+import merge from 'merge-deep'
+import { writeStaticJSONAsync } from './writeStaticJSONAsync'
+
+const counter = Counter()
 
 const cfg = {
     'backup-15min': '15,30,45,59 * * * *', // Every 15 min
@@ -15,6 +25,9 @@ const cfg = {
 }
 const projectRootDir = path.join(__dirname, '../../../')
 const sourcePath = path.join(projectRootDir, 'storage')
+
+const BACKUP_STATE_FILE_NAME = process.env.BACKUP_STATE_FILE_NAME || 'backup-state.json'
+const backupStateFilePath = path.join(projectRootDir, '/backup', BACKUP_STATE_FILE_NAME)
 
 createDirIfNecessary(path.join(projectRootDir, 'backup'))
 
@@ -42,10 +55,59 @@ Object.keys(cfg).forEach((dirName, i) => {
 
                         return
                     }
-    
+
+                    cronStateInstance.setData({ backupName: dirName })
                     console.log(`✅ BACKUP: ${dirName}`)
                 });
             }
         })
     })
+})
+
+const syncBackupState = () => {
+    createFileIfNecessary(backupStateFilePath)
+
+    const isFirstScriptRun = counter.next().value === 0
+
+    let oldStatic: { data: { [key: string]: any }, ts: number }
+    try {
+        oldStatic = getStaticJSONSync(backupStateFilePath)
+        // console.log(oldStatic.data)
+        if (!oldStatic?.data || !oldStatic.ts) throw new Error('#ERR20220217-15:49 Incorrect static data')
+    } catch (err) {
+        // TODO: Сделать нормальные логи
+        console.log('ERR#CHAT-BACKUP-STATE')
+        console.log(err)
+        oldStatic = { data: {}, ts: 0 }
+    }
+    const staticData: { [key: string]: { ts: number, descr: string } } = oldStatic.data
+    const ts = new Date().getTime()
+
+    if (isFirstScriptRun) {
+        // NOTE: Sync with old state:
+        Object.keys(staticData).forEach((name: string) => {
+          const modifiedState: { ts: number, descr: string } = staticData[name]
+          
+          cronStateInstance.set(name, modifiedState)
+        })
+    }
+
+    const currentBackupState: { [key: string]: { ts: number, descr: string } } = [...cronStateInstance.keys()].reduce((acc, backupName: string) => { acc[backupName] = cronStateInstance.get(backupName); return acc }, {})
+    const newStaticData = merge(staticData, currentBackupState)
+
+    writeStaticJSONAsync(backupStateFilePath, { data: newStaticData, ts })
+}
+
+createPollingByConditions({
+    cb: () => {
+      console.log('cb called')
+    },
+    interval: 60000,
+    callbackAsResolve: () => {
+      syncBackupState()
+    },
+    toBeOrNotToBe: () => true, // Need to retry again
+    callbackAsReject: () => {
+      console.log('NOWHERE')
+    },
 })
