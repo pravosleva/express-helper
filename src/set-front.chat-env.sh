@@ -1,6 +1,7 @@
 #!/bin/bash
 
 BUILD_DATE=$(date +"%Y-%m-%d %T") &&
+# BUILD_DATE='2022-01-25' &&
 
 echo "$BUILD_DATE" &&
 

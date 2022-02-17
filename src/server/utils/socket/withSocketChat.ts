@@ -197,18 +197,18 @@ export const withSocketChat = (io: Socket) => {
       const myRegData = registeredUsersMap.get(name)
 
       // -- NOTE: Logout if logged already?
-      // if (!!myRegData?.token && token) {
-      //   if (myRegData.token !== token) {
-      //     socket.emit('notification', { status: 'error', title: 'TOKEN is wrong', description: 'EXP: Вы зашли с другого устройства?' })
-      //     socket.emit('FRONT:LOGOUT')
-      //     return
-      //   }
-      // }
+      if (!!token && !!myRegData?.tokens) {
+        if (!myRegData.tokens.includes(token)) {
+          socket.emit('notification', { status: 'error', title: 'TOKEN is wrong', description: 'EXP: Вы зашли с другого устройства?' })
+          socket.emit('FRONT:LOGOUT')
+          return
+        }
+      }
 
-      // var rooms = io.sockets.adapter.sids[socket.id]
-      // for (let r in rooms) {
-      //   socket.leave(r)
-      // }
+      // @ts-ignore
+      var rooms = io.sockets.adapter.sids[socket.id]
+      console.log(rooms)
+      for (let r in rooms) socket.leave(r)
       // --
 
       socket.emit('my.user-data', myRegData || null)
@@ -380,31 +380,31 @@ export const withSocketChat = (io: Socket) => {
 
       if (isLogged) {
         
-        // const regData = registeredUsersMap.get(name)
+        const regData = registeredUsersMap.get(name)
 
-        // if (!!regData && !!regData.tokens) {
-        //   if (regData.tokens.includes(token)) {
-        //     // Go on...
-        //     // -- LOGOUT OLD
-        //     const existingUser = usersMap.get(name)
-        //     if (!!existingUser) {
-        //       const oldSocketId = existingUser.socketId
+        if (!!regData && !!regData.tokens) {
+          if (regData.tokens.includes(token)) {
+            // Go on...
+            // -- LOGOUT OLD
+            const existingUser = usersMap.get(name)
+            if (!!existingUser) {
+              const oldSocketId = existingUser.socketId
 
-        //       if (oldSocketId !== socket.id) logoutOld(oldSocketId)
-        //     }
-        //     // --
-        //   } else {
-        //     if (registeredUsersMap.has(name)) {
-        //       if (!!cb) cb('FRONT:LOG/PAS')
-        //       return
-        //     }
-        //   }
-        // } else {
-        //   if (registeredUsersMap.has(name)) {
-        //     if (!!cb) cb('FRONT:LOG/PAS')
-        //     return
-        //   }
-        // }
+              if (oldSocketId !== socket.id) logoutOld(oldSocketId)
+            }
+            // --
+          } else {
+            if (registeredUsersMap.has(name)) {
+              if (!!cb) cb('FRONT:LOG/PAS')
+              return
+            }
+          }
+        } else {
+          if (registeredUsersMap.has(name)) {
+            if (!!cb) cb('FRONT:LOG/PAS')
+            return
+          }
+        }
       } else {
         if (registeredUsersMap.has(name)) {
           if (!!cb) cb('FRONT:LOG/PAS')

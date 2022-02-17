@@ -46,7 +46,7 @@ import {
   TagLabel,
   Tag,
   Grid,
-  useToast, UseToastOptions
+  useToast, UseToastOptions, ButtonGroup
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
@@ -1809,25 +1809,31 @@ export const Chat = () => {
                     ? (
                       <Flex spacing={2} className='flex-wraper-spaced-2' flexWrap='wrap' justifyContent='flex-end' style={{ width: '100%' }}>
                         {links.map(({ link, descr }, i) => (
-                          <Tag
-                            mb={2}
-                            size='lg'
-                            key={`${link}-${i}`}
-                            borderRadius='full'
+                          <ButtonGroup
+                            size='sm'
+                            isAttached
                             variant='solid'
-                            colorScheme='blue'
-                            onClick={() => goToExternalLink(link)}
-                            style={{ cursor: 'pointer' }}
+                            mb={2}
+                            key={`${link}-${i}`}
+                            colorScheme='gray'
                           >
-                            <TagLabel>{capitalizeFirstLetter(descr)}</TagLabel>
-                            <TagCloseButton
+                            <Button
+                              mr='-px'
+                              onClick={() => goToExternalLink(link)}
+                              borderRadius='full'
+                            >
+                              {capitalizeFirstLetter(descr)}
+                            </Button>
+                            <IconButton
+                              borderRadius='full'
+                              aria-label='Remove link'
+                              icon={<IoMdClose color='inherit' size={14} />}
                               onClick={(e) => {
                                 e.stopPropagation()
                                 handleDeleteLink(link, ts)
                               }}
-                              style={{ marginLeft: 'auto' }}
                             />
-                          </Tag>
+                          </ButtonGroup>
                         ))}
                         {
                           needAssignmentBtns && (
@@ -1844,6 +1850,7 @@ export const Chat = () => {
                                     }
                                     rightIcon={<FiArrowRight color="inherit" size={14} />}
                                     leftIcon={<BsFillCalendarFill size={14} />}
+                                    mb={2}
                                   >Add to Sprint</Button>
                                 ) : (
                                   <Button
@@ -1858,6 +1865,7 @@ export const Chat = () => {
                                       }
                                     }}
                                     rightIcon={<IoMdClose color='inherit' size={14} />}
+                                    mb={2}
                                   >Remove from Sprint</Button>
                                 )
                               }
