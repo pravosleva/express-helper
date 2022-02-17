@@ -24,6 +24,8 @@ import { getParsedUserAgent, getToken, standardResultHandler } from './utils'
 import { Log } from '~/utils/socket/utils/Log'
 import { moveFile } from '~/utils/fs-tools/moveFile'
 
+require('~/utils/fs-tools/CRON-runner')
+
 const isDev = process.env.NODE_ENV === 'development'
 // console.log(process.env.NODE_ENV)
 // const log = new Log(isDev)

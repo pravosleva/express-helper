@@ -19,5 +19,8 @@
   "include": [
     "**/*.ts",
     "**/*.js"
+  ],
+  "exclude": [
+    "**/tsconfig.json"
   ]
 }

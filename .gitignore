@@ -84,3 +84,4 @@ server-dist/*
 # files
 storage/*
 !storage/.gitkeep
+backup/*
