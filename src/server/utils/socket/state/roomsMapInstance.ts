@@ -12,10 +12,14 @@ import {
 import { binarySearchTsIndex } from '~/utils/binarySearch'
 import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
 import { moveFileIfExists, moveFileSync } from '~/utils/fs-tools/moveFile'
+import { getDirectories } from '~/utils/fs-tools/getDirectories'
+import { getFiles } from '~/utils/fs-tools/getFiles'
 
 const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
 const projectRootDir = path.join(__dirname, '../../../../')
-const storageRoomsFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_STATE_FILE_NAME)
+const storageDir = path.join(projectRootDir, '/storage')
+const uploadsDir = path.join(projectRootDir, '/storage/uploads')
+const storageRoomsFilePath = path.join(storageDir, CHAT_ROOMS_STATE_FILE_NAME)
 
 const counter = Counter()
 
@@ -79,6 +83,66 @@ class Singleton {
     }
 
     return { result, nextTsPoint, isDone }
+  }
+  public _addFileAsMsg({
+    room,
+    fileName,
+  }: {
+    room: string,
+    fileName: string
+  }) {
+    let roomData = this.state.get(room)
+    let isOk: boolean = false
+    const ext = fileName.split('.').reverse()[0]
+
+    if (!ext) return { isOk: false }
+
+    let ts
+    try {
+      ts = Number(fileName.split('.')[0])
+      if (Number.isNaN(ts)) throw new Error('Fuckup: Incorrect name (shoud be number)')
+    } catch (err) {
+      return { isOk: false }
+    }
+
+    try {
+      if (!roomData) {
+        throw new Error('roomData not found')
+      } else {
+        const roomMessages = roomData
+        const theMessageIndex = binarySearchTsIndex({
+          messages: roomMessages,
+          targetTs: ts
+        })
+        let isExists = theMessageIndex !== -1
+
+        if (!isExists) {
+          for (let i = 0, max = roomData.length; i < max; i++) {
+            const isLast = i < roomData.length - 1
+            const data = { ts, file: { filePath: `${room}/${fileName}`, fileName }, user: 'pravosleva', text: '' }
+            
+            if (isLast) {
+              roomMessages.push(data)
+            } else {
+              if (ts > roomData[i].ts && roomData[i + 1].ts <= ts) {
+                roomMessages.splice(i + 1, 0, data)
+              }
+            }
+          }
+        } else {
+          // Nothing...
+        }
+
+        this.state.set(room, roomMessages)
+      }
+    } catch(err) {
+      isOk = false
+    }
+
+    return {
+      isOk,
+    }
+
   }
   public editMessage(
     { room, name, ts, newData }: {
@@ -376,84 +440,9 @@ const syncRoomsMap = () => {
           //   roomsMapInstance.set(roomName, newMsgs)
           // }
 
-          // 4. move files from /storage/uploads/<[room]<fileName>> to /storage/uploads/[room]/<fileName>
-          
+          // 4. Move files from /storage/uploads/<[room]<fileName>> to /storage/uploads/[room]/<fileName>
           const newMsgs = []
           for(const msg of staticData[roomName]) {
-            /*
-            if (!!msg.fileName) {
-              // console.log(`- ${msg.fileName}`)
-              const hasBracketInName = new RegExp('\\[').test(msg.fileName)
-
-              if (hasBracketInName) {
-                // console.log('- hasBracketInName')
-                // msg.user = 'pravosleva'
-                // 1.1. move file
-                const oldPath = path.join(projectRootDir, '/storage/uploads', msg.fileName)
-                const fileName = msg.fileName.split('/').reverse()[0]
-                const newFileName = fileName.split(']').reverse()[0]
-                const _re = new RegExp(/\[(.*)\]/)
-                const _roomName = fileName.match(_re)[1]
-
-                // console.log('_roomName', _roomName)
-
-                // 1.2. mkdir ifNecessary
-                const roomUploasDir = path.join(projectRootDir, '/storage/uploads', _roomName)
-                createDirIfNecessary(roomUploasDir)
-
-                // move file
-                const newPath = path.join(roomUploasDir, newFileName)
-                // console.log(`->> ${oldPath} -> ${newPath}`)
-                try {
-                  moveFileSync(oldPath, newPath, (err) => {
-                    if (!!err) {
-                      console.log('ERR: Не удалось перенести файл', msg.fileName)
-                      console.log(err)
-                    } else {
-                      // 1.3. update value
-                      msg.fileName = newFileName
-                      msg.filePath = `${_roomName}/${newFileName}`
-                      // delete msg.filePath
-                    }
-                  })
-
-
-                } catch (err) {
-                  console.log(err)
-                }
-
-              } else {
-                // console.log('- !hasBracketInName')
-                // if (msg.filePath !== 'room-101/1640124612218.png')
-                // 2. move file
-                const oldPath = path.join(projectRootDir, '/storage/uploads', msg.fileName)
-
-                const roomUploasDir = path.join(projectRootDir, '/storage/uploads', roomName)
-                createDirIfNecessary(roomUploasDir)
-
-                const newPath = path.join(projectRootDir, '/storage/uploads', `/${roomName}`, msg.fileName)
-
-                // console.log(`-> ${oldPath} -> ${newPath}`)
-
-                moveFileSync(oldPath, newPath, (err) => {
-                  if (!!err) {
-                    console.log('ERR: Не удалось перенести файл', msg.fileName)
-                    console.log(err.message)
-                  } else {
-                    // 1.3. update value
-                    // msg.fileName = newFileName
-                    msg.filePath = `${roomName}/${msg.fileName}`
-                    // delete msg.filePath
-                  }
-                })
-              }
-            } else {
-              // console.log('!msg.fileName')
-            }
-            */
-
-            // Others...
-            /**/
             // @ts-ignore
             if (!!msg.filePath) {
               msg.file = {
@@ -467,13 +456,39 @@ const syncRoomsMap = () => {
               // @ts-ignore
               delete msg.fileName
             }
-            /**/
 
             newMsgs.push(msg)
             roomsMapInstance.set(roomName, newMsgs)
           }
           // --
         })
+
+        // 5. Read dirs in /uploads/* and set old msgs if necessary
+        const dirs = getDirectories(uploadsDir)
+
+        console.log('---')
+        // console.log(dirs)
+        for(const room of dirs) {
+          if (!roomsMapInstance.has(room)) {
+            roomsMapInstance.set(room, [])
+            const files = getFiles(path.join(projectRootDir, '/storage/uploads', room))
+
+            console.log('-- 1')
+            files.forEach((fileName) => {
+              roomsMapInstance._addFileAsMsg({ fileName, room })
+            })
+            console.log('-- /1')
+          } else {
+            const files = getFiles(path.join(projectRootDir, '/storage/uploads', room))
+
+            console.log('-- 2')
+            files.forEach((fileName) => {
+              roomsMapInstance._addFileAsMsg({ fileName, room })
+            })
+            console.log('-- /2')
+          }
+        }
+        console.log('---')
       }
 
       const currentRoomsState = [...roomsMapInstance.keys()]

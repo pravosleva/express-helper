@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "private": true,
   "scripts": {
+    "take-backup:15": "bash quaint-files-copy.sh backup/backup-15min/ uploads/ json",
     "deploy2:smartprice:copy-chat-build": "bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build && bash deploy2.chat.front.sh server-dist/routers/chat/spa.build/ root@104.248.201.86:/home/projects/express-helper/server-dist/routers/chat/spa.build",
     "deploy2:smartprice": "yarn build:fresh-prod && bash deploy2.smartprice.prod.sh",
     "deploy2:prod:copy-chat-build": "bash src/set-front.chat-env.sh prod && yarn --cwd src/frontend.chat build && bash deploy2.chat.front.sh server-dist/routers/chat/spa.build/ root@pravosleva.ru:/home/projects/pravosleva-blog/express-helper/server-dist/routers/chat/spa.build",
