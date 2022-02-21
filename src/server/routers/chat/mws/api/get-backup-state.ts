@@ -45,7 +45,6 @@ export const getBackupState = (req: Request, res: Response) => {
         latest: {
           backupName: latestLockedBackup,
           data: state[latestLockedBackup],
-          message: getTimeAgo(_targetLatestTime),
         },
         extraInfo,
         _originalQuery: req.query,

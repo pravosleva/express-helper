@@ -13,10 +13,10 @@ import { cronStateInstance } from './cronStateInstance'
 const counter = Counter()
 
 const cfg = {
-    'backup-15min': '15,30,45,59 * * * *', // Every 15 min
-    'backup-20min': '0,20,40 * * * *', // Every 20 min
+    'backup-15min': '15,30,45,0 * * * *', // Every 15 min
+    // 'backup-20min': '0,20,40 * * * *', // Every 20 min
     // 'backup-1hour': '59 15 * * *', // Every day at 15:59
-    'backup-24h': '2 1 * * *', // Every day at 01:02
+    // 'backup-24h': '2 1 * * *', // Every day at 01:02
     // 'backup-1month': '* * 20 * *', // Every 20 day of moth
     // 'backup-sun': '* * * Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec Sun', // Running on Sundays of all months
     // 'backup-2months': '* * * Jan,Mar,May,Jul,Sep,Nov *',
