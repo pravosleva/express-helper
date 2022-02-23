@@ -30,6 +30,7 @@ import otApiV1BuyoutDocForm from './mws/otapi/v1/[partnerName]/buyout_doc_form'
 import otApiV1SignBuyoutDoc from './mws/otapi/v1/[partnerName]/sign_buyout_doc'
 import otApiV1ReuploadPhotos from './mws/otapi/v1/[partnerName]/reupload_photos'
 import otApiV1Swagger, { EPartner } from './mws/otapi/v1/[partnerName]/swagger'
+import courierApi from './mws/otapi/v1/[partnerName]/handover'
 // import checkAuth from '../auth/mws/check-jwt'
 import { EAccessCode, redirect } from '../auth/cfg'
 import redirectIfUnloggedMw from '../auth/mws/redirect-if-unlogged'
@@ -113,6 +114,7 @@ spApi.post('/otapi/v1/:partnerName/accept_price', otApiV1AcceptPrice)
 spApi.post('/otapi/v1/:partnerName/buyout_doc_form', otApiV1BuyoutDocForm)
 spApi.post('/otapi/v1/:partnerName/sign_buyout_doc', otApiV1SignBuyoutDoc)
 spApi.post('/otapi/v1/:partnerName/reupload_photos', otApiV1ReuploadPhotos)
+spApi.use('/otapi/v1/:partnerName/handover', courierApi)
 
 // 5. Offline Trade-in API imitation
 spApi.post('/partner_api/tradein/imei', partnerApiTradeInIMEI)

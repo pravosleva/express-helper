@@ -14,6 +14,7 @@ import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
 import { moveFileIfExists, moveFileSync } from '~/utils/fs-tools/moveFile'
 import { getDirectories } from '~/utils/fs-tools/getDirectories'
 import { getFiles } from '~/utils/fs-tools/getFiles'
+import delay from '~/utils/delay'
 
 const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
 const projectRootDir = path.join(__dirname, '../../../../')
@@ -84,7 +85,7 @@ class Singleton {
 
     return { result, nextTsPoint, isDone }
   }
-  public _addFileAsMsg({
+  public async _addFileAsMsg({
     room,
     fileName,
   }: {
@@ -105,9 +106,11 @@ class Singleton {
       return { isOk: false }
     }
 
+    const msg = { ts, file: { filePath: `${room}/${fileName}`, fileName }, user: 'pravosleva', text: '' }
+
     try {
       if (!roomData) {
-        throw new Error('roomData not found')
+        roomsMapInstance.set(room, [msg])
       } else {
         const roomMessages = roomData
         const theMessageIndex = binarySearchTsIndex({
@@ -117,23 +120,12 @@ class Singleton {
         let isExists = theMessageIndex !== -1
 
         if (!isExists) {
-          for (let i = 0, max = roomData.length; i < max; i++) {
-            const isLast = i < roomData.length - 1
-            const data = { ts, file: { filePath: `${room}/${fileName}`, fileName }, user: 'pravosleva', text: '' }
-            
-            if (isLast) {
-              roomMessages.push(data)
-            } else {
-              if (ts > roomData[i].ts && roomData[i + 1].ts <= ts) {
-                roomMessages.splice(i + 1, 0, data)
-              }
-            }
-          }
+          roomMessages.splice(theMessageIndex, 0, msg)
+
+          this.state.set(room, roomMessages)
         } else {
           // Nothing...
         }
-
-        this.state.set(room, roomMessages)
       }
     } catch(err) {
       isOk = false
@@ -142,7 +134,6 @@ class Singleton {
     return {
       isOk,
     }
-
   }
   public editMessage(
     { room, name, ts, newData }: {
@@ -464,31 +455,22 @@ const syncRoomsMap = () => {
         })
 
         // 5. Read dirs in /uploads/* and set old msgs if necessary
+        /*
         const dirs = getDirectories(uploadsDir)
 
         console.log('---')
         // console.log(dirs)
-        for(const room of dirs) {
-          if (!roomsMapInstance.has(room)) {
-            roomsMapInstance.set(room, [])
-            const files = getFiles(path.join(projectRootDir, '/storage/uploads', room))
+        for (const room of dirs) {
+          const files = getFiles(path.join(projectRootDir, '/storage/uploads', room))
 
-            console.log('-- 1')
-            files.forEach((fileName) => {
-              roomsMapInstance._addFileAsMsg({ fileName, room })
-            })
-            console.log('-- /1')
-          } else {
-            const files = getFiles(path.join(projectRootDir, '/storage/uploads', room))
-
-            console.log('-- 2')
-            files.forEach((fileName) => {
-              roomsMapInstance._addFileAsMsg({ fileName, room })
-            })
-            console.log('-- /2')
-          }
+          console.log('-- 0')
+          files.forEach((fileName) => {
+            roomsMapInstance._addFileAsMsg({ fileName, room })
+          })
+          console.log('-- /0')
         }
         console.log('---')
+        */
       }
 
       const currentRoomsState = [...roomsMapInstance.keys()]
