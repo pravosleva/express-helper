@@ -8,9 +8,10 @@ import {
 import clsx from 'clsx'
 // import Zoom from 'react-medium-image-zoom'
 import { MainContext } from '~/context/mainContext'
-// import { FcGallery } from 'react-icons/fc'
+// import { FcGallery } from 'react-icons/fc' // <FcGallery color='#FFF' size={17} />
 import Img from '@lxsmnsyc/react-image'
 import { Loader } from '~/common/components/Loader'
+import { openUrlInNewTab } from '~/utils/openUrlInNewTab'
 
 type TProps = {
   message: TMessage & { _next?: { ts: number, isHidden: boolean } }
@@ -44,6 +45,9 @@ export const Image = ({
   const handleImageClick = useCallback(() => {
     onOpenGallery(src)
   }, [onOpenGallery])
+  const handleUrlBtnClick = useCallback((_ev: any) => {
+    openUrlInNewTab(src)
+  }, [src])
 
   return (
     <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
@@ -93,10 +97,9 @@ export const Image = ({
                 onEditModalOpen()
               }}>Edit</button>
             )}
-            {/*
-            <button className='special-btn special-btn-sm yellow-btn' onClick={handleImageClick}>
-              <span style={{ display: 'flex', alignItems: 'center' }}><span style={{ marginRight: '5px' }}>Gallery</span><FcGallery color='#FFF' size={17} /></span>
-            </button> */}
+            <button className='special-btn special-btn-sm yellow-btn' onClick={handleUrlBtnClick}>
+              <span style={{ display: 'flex', alignItems: 'center' }}>Link</span>
+            </button>
           </div>
           
           {!!text && (

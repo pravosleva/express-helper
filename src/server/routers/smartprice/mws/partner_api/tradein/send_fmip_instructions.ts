@@ -15,7 +15,7 @@ const toClient = [
 export const sendFmipInstructions = async (req, res) => {
   /* REQ SAMPLE:
   { "phone": "79031231212" } */
-  const requiredFields = ['phone']
+  const requiredFields = ['id', 'phone']
   const errs = []
 
   for (const key of requiredFields) if (!req.body[key]) errs.push(`${key} is required!`)

@@ -10,8 +10,15 @@ export const startRoute = (req, res) => {
     })
   }
 
-  res.status(200).send({
-    ok: true,
-    _originalBody: req.body,
-  })
+  const baseFn = () => {
+    res.status(200).send({
+      ok: true,
+      count: 2,
+      _originalBody: req.body,
+    })
+  }
+
+  const { timeout } = req.body
+  if (!!timeout) setTimeout(baseFn, timeout);
+  else baseFn();
 }

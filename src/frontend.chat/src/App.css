@@ -204,7 +204,7 @@ input[type="file"]:disabled + label {
 .yellow-btn {
     background-color: var(--chakra-colors-yellow-300);
     color: var(--chakra-colors-gray-800);
-    border: 2px solid var(--chakra-colors-yellow-200);
+    border: 2px solid var(--chakra-colors-yellow-100);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .yellow-btn:hover {
