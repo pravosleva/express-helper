@@ -1,0 +1,82 @@
+@import '~/common/scss-vars/monitors.scss';
+
+$widgetWidth: 450;
+$widgetTogglerWidth: 70;
+$maxHeight: 400;
+$pad: var(--chakra-space-4);
+$widgetBorderRadius: var(--chakra-radii-lg);
+
+.widget-fixed {
+  border-radius: #{$widgetBorderRadius};
+  &_dark {
+    background: var(--chakra-colors-gray-700);
+  }
+  &_light {
+    background: var(--chakra-colors-gray-300);
+  }
+  position: fixed;
+  transition: all 0.2s linear;
+  z-index: 1001;
+  .paper {
+    width: #{$widgetWidth}px;
+    position: relative;
+  
+    // background: var(--chakra-colors-gray-700);
+    // box-shadow: var(--chakra-shadows-dark-lg);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: #{$widgetBorderRadius};
+    // border: 2px solid #FFF;
+
+    .content {
+      max-height: calc(100vh - #{$pad} - #{$pad});
+      padding: var(--chakra-space-4);
+      overflow-y: auto;
+    }
+  }
+}
+.widget-fixed--top-right {
+  top: #{$pad};
+  right: #{$pad};
+
+  &_opened {
+    transform: translateX(0);
+  }
+  &_closed {
+    transform: translateX(calc(#{$widgetWidth}px + #{$pad}));
+  }
+  .toggler {
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    left: -#{$widgetTogglerWidth}px;
+    width: #{$widgetTogglerWidth}px;
+  
+    padding: 15px;
+    // background: var(--chakra-colors-gray-600);
+    background: transparent;
+    // box-shadow: var(--chakra-shadows-dark-lg);
+  }
+}
+.widget-fixed--top-left {
+  top: #{$pad};
+  left: #{$pad};
+
+  &_opened {
+    transform: translateX(0);
+  }
+  &_closed {
+    transform: translateX(calc(-#{$widgetWidth}px - #{$pad}));
+  }
+  .toggler {
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    right: -#{$widgetTogglerWidth}px;
+    width: #{$widgetTogglerWidth}px;
+  
+    padding: 15px;
+    // background: var(--chakra-colors-gray-600);
+    background: transparent;
+    // box-shadow: var(--chakra-shadows-dark-lg);
+  }
+}

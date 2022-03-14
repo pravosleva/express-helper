@@ -66,7 +66,7 @@ import { ColorModeSwitcher } from '~/common/components/ColorModeSwitcher'
 import { SetPasswordModal } from './components/SetPasswordModal'
 import { MyInfoModal } from './components/MyInfoModal'
 import { TasklistModal } from './components/TasklistModal/TasklistModal'
-import { md } from '~/common/chakra/theme'
+import { md, lg } from '~/common/chakra/theme'
 import { IoMdLogOut } from 'react-icons/io'
 import { CgSearch, CgAssign } from 'react-icons/cg'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
@@ -105,6 +105,7 @@ import { PollingComponent } from '~/common/components/PollingComponent'
 import { SwitchSection } from '~/common/components/SwitchSection'
 import { webWorkersInstance } from '~/utils'
 import { AddLinkFormModal } from './components/AddLinkFormModal'
+import { Widget } from './components/Widget'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -736,8 +737,9 @@ export const Chat = () => {
   // ---
 
   // const heighlLimitParentClass = useBreakpointValue({ md: "height-limited-md", base: "height-limited-sm" })
-  const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
-  const [upToSm] = useMediaQuery(`(min-width: ${md + 1}px)`)
+  const [downToMd] = useMediaQuery(`(max-width: ${md}px)`)
+  const [upToMd] = useMediaQuery(`(min-width: ${md + 1}px)`)
+  const [upToLg] = useMediaQuery(`(min-width: ${lg + 1}px)`)
   const completedTasksLen = useMemo(() => !!tasklist ? tasklist.filter(({ isCompleted }: any) => isCompleted).length : 0, [JSON.stringify(tasklist)])
   const percentage = useMemo(() => {
     if (!tasklist || tasklist.length === 0 || !Array.isArray(tasklist)) return 0
@@ -1148,6 +1150,58 @@ export const Chat = () => {
       sprintFeatureProxy.tsUpdate = result.tsUpdate
     }
   }
+  const AccordionStuff = useMemo(() => {
+    return (
+      <AccordionSettings
+        registryLevel={userInfoSnap.regData?.registryLevel || 0}
+        isAssignmentFeatureEnabled={isAssignmentFeatureEnabled}
+        logic={logic}
+        onAddAssignedToFilters={handleAddAssignedToFilter}
+        onRemoveAssignedToFilters={handleRemoveAssignedToFilter}
+        assignmentExecutorsFilters={assignmentExecutorsFilters}
+        onResetFilters={handleResetAssignmentFilters}
+        onSetFilters={setFilters}
+        activeFilters={filters}
+        defaultAccordionItems={[
+          {
+            uniqueKey: 'roomlist',
+            accordionPanelContent: (
+              <Roomlist
+                resetMessages={resetMessages}
+                onCloseMenuBar={() => {
+                  handleCloseDrawerMenu()
+                  updateRoomTsInLS(room)
+                }}
+                handleRoomClick={handleRoomClick}
+              />
+            ),
+            accordionButtonContent: (
+              <Flex alignItems="center">
+                <Text fontWeight="400" fontSize="md" letterSpacing="0">
+                  My Rooms
+                </Text>
+                {hasNews && <Box ml={2} h={2} w={2} borderRadius="100px" bg='green.300'></Box>}
+              </Flex>
+            ),
+          },
+        ]}
+      />
+    )
+  }, [
+    logic,
+    isAssignmentFeatureEnabled,
+    userInfoSnap.regData?.registryLevel,
+    handleAddAssignedToFilter,
+    handleRemoveAssignedToFilter,
+    assignmentExecutorsFilters,
+    handleResetAssignmentFilters,
+    setFilters,
+    filters,
+    resetMessages,
+    room,
+    handleRoomClick,
+    hasNews,
+  ])
 
   return (
     <>
@@ -1160,7 +1214,7 @@ export const Chat = () => {
         // content={() => <pre>{JSON.stringify(editedTask.current, null, 2)}</pre>}
         title="Deadline"
       />
-      {upToSm && (
+      {upToMd && (
         <EmojiPickerModal
           isOpened={isEmojiOpened}
           onClose={handleCloseEmoji}
@@ -1474,40 +1528,7 @@ export const Chat = () => {
                           />
                         )}
                         
-                        <AccordionSettings
-                          registryLevel={userInfoSnap.regData?.registryLevel || 0}
-                          isAssignmentFeatureEnabled={isAssignmentFeatureEnabled}
-                          logic={logic}
-                          onAddAssignedToFilters={handleAddAssignedToFilter}
-                          onRemoveAssignedToFilters={handleRemoveAssignedToFilter}
-                          assignmentExecutorsFilters={assignmentExecutorsFilters}
-                          onResetFilters={handleResetAssignmentFilters}
-                          onSetFilters={setFilters}
-                          activeFilters={filters}
-                          defaultAccordionItems={[
-                            {
-                              uniqueKey: 'roomlist',
-                              accordionPanelContent: (
-                                <Roomlist
-                                  resetMessages={resetMessages}
-                                  onCloseMenuBar={() => {
-                                    handleCloseDrawerMenu()
-                                    updateRoomTsInLS(room)
-                                  }}
-                                  handleRoomClick={handleRoomClick}
-                                />
-                              ),
-                              accordionButtonContent: (
-                                <Flex alignItems="center">
-                                  <Text fontWeight="400" fontSize="md" letterSpacing="0">
-                                    My Rooms
-                                  </Text>
-                                  {hasNews && <Box ml={2} h={2} w={2} borderRadius="100px" bg='green.300'></Box>}
-                                </Flex>
-                              ),
-                            },
-                          ]}
-                        />
+                        {AccordionStuff}
                       </>
                     </Stack> 
                   </DrawerBody>
@@ -1636,7 +1657,7 @@ export const Chat = () => {
             {tasklist.length > 0 && <Progress value={percentage} size="xs" colorScheme="green" />}
           </Box>
           
-          {downToSm && (filters.length > 0 || !!formData.searchText || assignmentExecutorsFilters.length > 0) && (
+          {downToMd && (filters.length > 0 || !!formData.searchText || assignmentExecutorsFilters.length > 0) && (
             <div
               style={{
                 position: 'fixed',
@@ -1662,7 +1683,7 @@ export const Chat = () => {
           )}
 
           <ScrollToBottom
-            className={clsx("messages", { "height-limited-md": upToSm, "height-full-auto-sm": downToSm })}
+            className={clsx("messages", { "height-limited-md": upToMd, "height-full-auto-sm": downToMd })}
             debug={false}
           >{/* INF LOADER 1/3 */}
             <Flex ref={inViewRef2} skip={inView} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
@@ -1938,7 +1959,7 @@ export const Chat = () => {
                 </>
               )}
               {
-                upToSm && isLogged && (
+                upToMd && isLogged && (
                   <div><button className='special-btn special-btn-md dark-btn' onClick={handleOpenEmoji}>Emoji</button></div>
                 )
               }
@@ -2049,6 +2070,13 @@ export const Chat = () => {
               />
             )
           }</>
+        )
+      }
+      {
+        upToLg && (
+          <Widget position='top-right'>
+            {AccordionStuff}
+          </Widget>
         )
       }
     </>
