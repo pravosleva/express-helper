@@ -20,7 +20,7 @@ import { GoGear } from 'react-icons/go'
 // import { IoMdAdd, IoMdClose } from 'react-icons/io'
 // import { MdModeEdit } from 'react-icons/md'
 import { TiArrowLoop } from 'react-icons/ti'
-
+// <TiArrowLoop size={19} />
 // import { useDiffTime } from '~/common/hooks/useDiffTime'
 // import { AiOutlineFire } from 'react-icons/ai'
 import { MdTimer, MdTimerOff, MdAttachMoney, MdMoneyOff } from 'react-icons/md'
@@ -110,14 +110,17 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
 
     return (
       <>
-
-        <Menu>
+        <Menu
+          // strategy='fixed'
+          placement='left-end'
+        >
           <MenuButton
             as={IconButton}
             colorScheme={isLooped ? isFirstLoopRunning ? "yellow" : "blue" : "gray"}
             icon={isLooped ? <TiArrowLoop size={19} /> : <GoGear size={18} />}
             isRound
             // mr={2}
+            _expanded={{ color: isLooped ? isFirstLoopRunning ? "yellow.200" : "blue.200" : "gray.200", bg: "gray.500" }}
           >
             Main
           </MenuButton>

@@ -15,6 +15,8 @@ const CHAT_PASSWORD_HASHES_MAP_FILE_NAME = process.env.CHAT_PASSWORD_HASHES_MAP_
 const projectRootDir = path.join(__dirname, '../../../../')
 const storageRegistryMapFilePath = path.join(projectRootDir, '/storage', CHAT_PASSWORD_HASHES_MAP_FILE_NAME)
 
+export const tokensLimit = 2
+
 class Singleton {
   private static instance: Singleton;
    state: Map<TUserName, TRegistryData>;
@@ -105,9 +107,8 @@ const syncRegistryMap = () => {
           const modifiedState = staticData[name]
 
           // -- NOTE: Ограничения по количеству хранимых токенов
-          const limit = 1
-          if (!!modifiedState.tokens && Array.isArray(modifiedState.tokens) && modifiedState.tokens.length > limit) {
-            const numberToRemove = limit - modifiedState.tokens.length
+          if (!!modifiedState.tokens && Array.isArray(modifiedState.tokens) && modifiedState.tokens.length > tokensLimit) {
+            const numberToRemove = tokensLimit // - modifiedState.tokens.length
             modifiedState.tokens = modifiedState.tokens.splice(0, numberToRemove)
           }
           // --
@@ -134,7 +135,7 @@ createPollingByConditions({
   cb: () => {
     console.log('cb called')
   },
-  interval: 5000,
+  interval: 5 * 60 * 1000,
   callbackAsResolve: () => {
     syncRegistryMap()
   },

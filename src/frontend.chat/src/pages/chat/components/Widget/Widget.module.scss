@@ -1,10 +1,11 @@
 @import '~/common/scss-vars/monitors.scss';
 
-$widgetWidth: 450;
+$widgetWidth: 500;
 $widgetTogglerWidth: 70;
 $maxHeight: 400;
 $pad: var(--chakra-space-4);
-$widgetBorderRadius: var(--chakra-radii-lg);
+$padInternal: var(--chakra-space-4);
+$widgetBorderRadius: var(--chakra-radii-2xl);
 
 .widget-fixed {
   border-radius: #{$widgetBorderRadius};
@@ -29,7 +30,7 @@ $widgetBorderRadius: var(--chakra-radii-lg);
 
     .content {
       max-height: calc(100vh - #{$pad} - #{$pad});
-      padding: var(--chakra-space-4);
+      padding: #{$padInternal};
       overflow-y: auto;
     }
   }

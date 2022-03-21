@@ -108,7 +108,7 @@ createPollingByConditions({
   cb: () => {
     console.log('cb called')
   },
-  interval: 10000,
+  interval: 10 * 60 * 1000, // 10 min
   callbackAsResolve: () => {
     syncRegistryMap()
   },

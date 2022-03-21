@@ -135,7 +135,7 @@ createPollingByConditions({
   cb: () => {
     console.log('cb called')
   },
-  interval: 5000,
+  interval: 1 * 60 * 1000,
   callbackAsResolve: () => {
     syncRoomsTasklistMap()
   },

@@ -6,6 +6,8 @@ import {
 } from '@chakra-ui/react'
 import { getPrettyPrice } from '~/utils/getPrettyPrice'
 import { UsersContext } from '~/context/usersContext'
+import { TiArrowLoop } from 'react-icons/ti'
+// <TiArrowLoop size={19} />
 
 const PUBLIC_URL = process.env.PUBLIC_URL || '.'
 const worker: any = new Worker(`${PUBLIC_URL}/web-worker/main.js`)
@@ -56,7 +58,7 @@ export const TotalSum = () => {
     <Stack marginRight='auto'>
       {!!sum['month0.5'] && (
         // <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
-        <Text fontSize="sm" fontWeight='bold'>✅&nbsp;<Tag colorScheme='green'>Ready</Tag>&nbsp;&&nbsp;Unchecked ={getPrettyPrice(sum['month0.5'])}</Text>
+        <Text fontSize="sm" fontWeight='bold' display='flex'><span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag colorScheme='green'>Ready</Tag>&nbsp;&&nbsp;<span><TiArrowLoop size={19} /></span>&nbsp;🔲 ={getPrettyPrice(sum['month0.5'])}</Text>
       )}
       {!!sum.month3 && (
         <Text fontSize="sm" fontWeight='bold'>3m ={getPrettyPrice(sum.month3)}</Text>

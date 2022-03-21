@@ -106,6 +106,7 @@ import { SwitchSection } from '~/common/components/SwitchSection'
 import { webWorkersInstance } from '~/utils'
 import { AddLinkFormModal } from './components/AddLinkFormModal'
 import { Widget } from './components/Widget'
+import { TasklistContent } from './components/TasklistModal/components'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -2074,8 +2075,15 @@ export const Chat = () => {
       }
       {
         upToLg && (
-          <Widget position='top-right'>
+          <Widget position='top-left'>
             {AccordionStuff}
+          </Widget>
+        )
+      }
+      {
+        upToLg && (
+          <Widget position='top-right'>
+            <TasklistContent data={tasklist} />
           </Widget>
         )
       }

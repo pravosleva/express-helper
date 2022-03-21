@@ -53,6 +53,8 @@ import { payoutCardSendIframeSMS } from './mws/partner_api/tradein/payout_card/s
 import { checkFMIP } from './mws/partner_api/tradein/check_fmip'
 import { acceptApi } from './mws/partner_api/tradein/accept'
 import { sendFmipInstructions } from './mws/partner_api/tradein/send_fmip_instructions'
+import { policyConfirmationSMS } from './mws/partner_api/tradein/personal_data_processing_agreement/send_sms_code'
+import { signBySMSCode as signBySMSCode2 } from './mws/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_code'
 
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
 
@@ -134,6 +136,8 @@ spApi.post('/partner_api/tradein/payout_card/send_iframe_sms', payoutCardSendIfr
 spApi.post('/partner_api/tradein/check_fmip', jsonParser, checkFMIP)
 spApi.post('/partner_api/tradein/accept', jsonParser, acceptApi)
 spApi.post('/partner_api/tradein/send_fmip_instructions', sendFmipInstructions)
+spApi.post('/partner_api/tradein/personal_data_processing_agreement/send_sms_code', policyConfirmationSMS)
+spApi.post('/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_code', signBySMSCode2)
 
 // 6. New OT landing
 spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)

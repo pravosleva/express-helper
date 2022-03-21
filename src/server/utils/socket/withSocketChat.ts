@@ -23,6 +23,7 @@ import { removeFileIfNecessary } from '~/utils/fs-tools/removeFileIfNecessary'
 import { getParsedUserAgent, getToken, standardResultHandler } from './utils'
 // import { Log } from '~/utils/socket/utils/Log'
 import { moveFile } from '~/utils/fs-tools/moveFile'
+import { tokensLimit } from './state/registeredUsersMapInstance'
 
 // --- NOTE: Run CRON for backups!
 require('~/utils/cron/CRON-runner')
@@ -49,6 +50,7 @@ const uploadProgressMap = new Map<string, { connData: TConnectionData, status: s
 export const withSocketChat = (io: Socket) => {
   // -- NOTE: Logout on front
   const logoutOld = (socketId: string) => {
+    console.log('-- LOGOUT --')
     io.to(socketId).emit('FRONT:LOGOUT')
   }
   // --
@@ -203,7 +205,7 @@ export const withSocketChat = (io: Socket) => {
       // -- NOTE: Logout if logged already?
       if (!!token && !!myRegData?.tokens) {
         if (!myRegData.tokens.includes(token)) {
-          socket.emit('notification', { status: 'error', title: 'TOKEN is wrong', description: 'EXP: Вы зашли с другого устройства?' })
+          socket.emit('notification', { status: 'error', title: 'TOKEN is wrong', description: `EXP: Вы зашли с другого устройства?\nNo ${token} in ${JSON.stringify(myRegData.tokens)}` })
           socket.emit('FRONT:LOGOUT')
           return
         }
@@ -235,9 +237,7 @@ export const withSocketChat = (io: Socket) => {
       }
 
       const roomData = roomsMap.get(room)
-      if (!roomData) {
-        roomsMap.set(room, [])
-      }
+      if (!roomData) roomsMap.set(room, [])
 
       io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
@@ -319,8 +319,6 @@ export const withSocketChat = (io: Socket) => {
       const { passwordHash, registryLevel, ...rest } = registeredUsersMap.get(name)
       const newToken: string = getToken(name)
 
-      // console.log(password)
-      console.log('- isLogged', isLogged)
       if (!isLogged) return cb('Fuck you')
 
       if (isLogged) { // !bcrypt.compareSync(password, passwordHash)
@@ -328,7 +326,7 @@ export const withSocketChat = (io: Socket) => {
         const existingUser = usersMap.get(name)
         if (!!existingUser) {
           const oldSocketId = existingUser.socketId
-
+          
           if (oldSocketId !== socket.id) logoutOld(oldSocketId)
         }
         // --
@@ -339,17 +337,18 @@ export const withSocketChat = (io: Socket) => {
       
       // -- Set new token
       const regData = registeredUsersMap.get(name)
-
       if (!!regData) {
-        let newTokens = [newToken]
-        if (!!regData.tokens && Array.isArray(regData.tokens)) {
+        let newTokens: string[] = []
+
+        if (!!regData?.tokens && Array.isArray(regData.tokens)) {
           newTokens = [newToken, ...regData.tokens]
+        } else {
+          newTokens = [newToken]
         }
         // -- NOTE: Убрать старые токены
-        if (newTokens.length > 5) {
-          const numberToRemove = 5 - newTokens.length
-          newTokens = newTokens.splice(0, numberToRemove)
-        } 
+        if (newTokens.length > tokensLimit) {
+          newTokens = newTokens.splice(0, tokensLimit)
+        }
         // --
         registeredUsersMap.set(name, { ...regData, tokens: [...new Set(newTokens)] })
       }

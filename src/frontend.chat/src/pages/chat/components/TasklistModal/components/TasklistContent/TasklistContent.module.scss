@@ -1,0 +1,44 @@
+.modal-footer-btns-wrapper{
+  display: flex;
+  align-items: center;
+  & button:not(:last-child) {
+    margin-right: var(--chakra-space-2);
+  }
+}
+.red {
+  border: 1px dashed red;
+}
+.max-height {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.themed-bg {
+  &_dark {
+    background: var(--chakra-colors-gray-700);
+  }
+  &_light {
+    background: var(--chakra-colors-gray-300);
+  }
+}
+
+.control-box {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: var(--chakra-radii-xl);
+  border: 2px solid #FFF;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: var(--chakra-space-5) var(--chakra-space-5) var(--chakra-space-5) var(--chakra-space-5);
+}
+.sticky-footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: var(--chakra-space-5) var(--chakra-space-5) var(--chakra-space-5) var(--chakra-space-5);
+}

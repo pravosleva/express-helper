@@ -14,9 +14,6 @@ export const Widget = ({ children, position }: TProps) => {
     setIsOpened((s) => !s)
   }
   const mode = useColorMode()
-  useEffect(() => {
-    console.log(mode.colorMode)
-  }, [mode.colorMode])
 
   return (
     <div className={
