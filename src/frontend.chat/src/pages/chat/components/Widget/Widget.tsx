@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import styles from './Widget.module.scss'
 import { useColorMode } from '@chakra-ui/react'
+// const mode = useColorMode()
 
 type TProps = {
   children: React.ReactElement;

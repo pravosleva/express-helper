@@ -187,7 +187,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
             <Box
               pl={5}
               pr={5}
-              className={clsx(styles['control-box'], styles['sticky-header'], styles[`themed-bg_${mode.colorMode}`])}
+              className={clsx(styles['control-box'], styles['sticky-header'], styles[`themed-bg_${mode.colorMode}`], styles[`themed-bordered_${mode.colorMode}`])}
             >
               <Stack>
                 <Box
@@ -326,7 +326,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
           <Box
             pl={5}
             pr={5}
-            className={clsx(styles['modal-footer-btns-wrapper'], styles['control-box'], styles['sticky-footer'], styles[`themed-bg_${mode.colorMode}`])}>
+            className={clsx(styles['modal-footer-btns-wrapper'], styles['control-box'], styles['sticky-footer'], styles[`themed-bg_${mode.colorMode}`], styles[`themed-bordered_${mode.colorMode}`])}>
             {Controls}
           </Box>
         )

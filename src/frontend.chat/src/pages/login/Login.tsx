@@ -119,6 +119,11 @@ export const Login = () => {
   // const axiosCancelToken2 = useRef<any>(null)
 
   const _tryLogin = useCallback(async (sR?: string) => {
+    if (!sR && !slugifiedRoom) {
+      console.log('ABORTED. Reason: !sR && !slugifiedRoom')
+      return
+    }
+
     // console.log('- try login')
     setIsLoading1(true)
     if (isDev || name === 'pravosleva') {
@@ -130,7 +135,6 @@ export const Login = () => {
         duration: 2000,
       })
     }
-    setNameLS(name)
 
     // TODO: await check jwt
     // const jwtChecked = await axios(`${REACT_APP_API_URL}/chat/api/auth/check-jwt`, {
@@ -146,6 +150,8 @@ export const Login = () => {
 
     switch (true) {
       case (!jwtResponse?.ok):
+        console.log('JWT is not Ok')
+        console.dir(jwtResponse)
         // NOTE: Fail cases:
         if (isDev) toast({
           position: 'bottom',
@@ -174,13 +180,48 @@ export const Login = () => {
         }
         break;
       default:
-        if (isDev || (jwtResponse?.ok && jwtResponse.code === EAPIUserCode.Logged)) isLogged = true
+        // console.log('JWT is Ok')
+        // console.dir(jwtResponse)
+        // if (isDev || (jwtResponse?.ok && jwtResponse.code === EAPIUserCode.Logged)) isLogged = true
+        if (jwtResponse?.ok && jwtResponse.code === EAPIUserCode.Logged) {
+          if (jwtResponse.regData?.tg?.username === name) isLogged = true
+        }
         break;
     }
 
-    // if (isDev) history.push('/chat')
+    const addRoom = (newRoom: string) => {
+      const rooms: any = {}
+      const nowTs = Date.now()
+
+      if (!!roomlistLS) {
+        roomlistLS.forEach(({ name, ts }) => {
+          if (!!name) {
+            rooms[slugify(name)] = {
+              name,
+              ts: name === room ? nowTs : ts,
+            }
+          }
+        })
+
+        rooms[newRoom] = {
+          name: newRoom,
+          ts: nowTs
+        }
+        setRoomlistLS(Object.values(rooms))
+      } else {
+        setRoomlistLS([{ name: room, ts: nowTs }])
+      }
+    }
 
     const normalizedRoom = !!sR ? slugify(sR) : slugifiedRoom
+    if (isLogged) {
+      toast({ position: 'bottom', title: `Hello, ${jwtResponse.regData?.tg?.username || 'ERR'}`, status: 'info' })
+      if (!!normalizedRoom) setLastRoomLS(normalizedRoom)
+      addRoom(sR || slugifiedRoom)
+      history.push('/chat')
+    }
+
+    // if (isDev) history.push('/chat')
 
     if (!!socket) { // && !!room && !!name
       setIsLoading1(true)
@@ -219,29 +260,10 @@ export const Login = () => {
           setIsLoading1(false)
           // setRoomlistLS([...new Set([...roomlistLS, slugifiedRoom])])
           // --
-          const rooms: any = {}
-          const nowTs = Date.now()
 
-          if (!!roomlistLS) {
-            roomlistLS.forEach(({ name, ts }) => {
-              if (!!name) {
-                rooms[slugify(name)] = {
-                  name,
-                  ts: name === room ? nowTs : ts,
-                }
-              }
-            })
-
-            const newRoom = sR || slugifiedRoom
-            rooms[newRoom] = {
-              name: newRoom,
-              ts: nowTs
-            }
-            setRoomlistLS(Object.values(rooms))
-          } else {
-            setRoomlistLS([{ name: room, ts: nowTs }])
-          }
+          addRoom(sR || slugifiedRoom)
           setLastRoomLS(normalizedRoom)
+          setNameLS(name)
           // --
           history.push('/chat')
         }
@@ -321,7 +343,8 @@ export const Login = () => {
             } else {
               setRoomlistLS([{ name: room, ts: nowTs }])
             }
-            setLastRoomLS(room)
+            setLastRoomLS(slugifiedRoom)
+            setNameLS(name)
             // --
             // toast({ position: "bottom", title: "Hey there", description: `Hello, ${name}`, status: "success", duration: 3000, isClosable: true })
             history.push('/chat')
@@ -499,7 +522,7 @@ export const Login = () => {
               onClick={() => {
                 setName(nameLSRef.current)
                 handleCloseModal()
-                // tryLogin()
+                tryLogin()
               }}
               rounded='3xl'
             >

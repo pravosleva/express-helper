@@ -22,7 +22,7 @@ export const sendSMSCode = (req, res) => {
     })
   }
 
-  const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
+  const toBeOrNotToBe = 1 // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
 
   return setTimeout(() => {
     res.status(200).send({

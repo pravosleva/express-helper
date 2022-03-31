@@ -1,5 +1,7 @@
 import stc from 'string-to-color'
 import invert from 'invert-color'
+import stylesBase from '~/App.module.scss'
+import styles from '~/pages/chat/Chat.module.scss'
 
 type TProps = {
   name: string,
@@ -16,7 +18,7 @@ export const UserAva = ({ name, size, mr, ml, fontSize, onClick }: TProps) => {
 
   return (
     <span
-      className='opponent-ava-wrapper'
+      className={styles['opponent-ava-wrapper']}
       style={{
         marginRight: mr || 0,
         marginLeft: ml || 0,
@@ -26,7 +28,7 @@ export const UserAva = ({ name, size, mr, ml, fontSize, onClick }: TProps) => {
       onClick={onClick || undefined}
     >
       <span
-        className='ava'
+        className={stylesBase['ava']}
         style={{
           fontSize: !!fontSize ? `${fontSize}px` : '17px',
           borderRadius: '50%',

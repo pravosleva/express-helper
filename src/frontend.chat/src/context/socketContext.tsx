@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, useContext } from 'react'
+import React, { createContext, useEffect, useState, useContext, useRef } from 'react'
 import io, { Socket } from 'socket.io-client'
 // import { useToast } from "@chakra-ui/react"
 
@@ -46,6 +46,7 @@ export const SocketProvider =
     }
     const [isLogged, setIsLogged] = useState<boolean>(false)
     const [isConnected, setIsConnected] = useState<boolean>(true)
+    const isConnectedRef = useRef<boolean>(false)
 
     useEffect(() => {
       const disconnListener = () => {
@@ -58,27 +59,31 @@ export const SocketProvider =
         //     isClosable: true,
         // })
         setIsConnected(false)
+        isConnectedRef.current = false
       }
       // const oldChatListener = (data: { roomData: TRoomData }) => {
       //   setRoomData(data.roomData)
       // }
       const connListener = () => {
         setIsConnected(true)
+        isConnectedRef.current = true
       }
       const connErrListener = (reason: any) => {
         console.log(reason)
       }
 
-      // socket.on('oldChat', oldChatListener)
-      socket.on('disconnect', disconnListener)
-      socket.on('connect', connListener)
-      socket.on('connect_error', connErrListener)
+      if (!isConnectedRef.current) {
+        // socket.on('oldChat', oldChatListener)
+        socket.on('disconnect', disconnListener)
+        socket.on('connect', connListener)
+        socket.on('connect_error', connErrListener)
 
-      return () => {
-        // socket.off('oldChat', oldChatListener)
-        socket.off('disconnect', disconnListener)
-        socket.off('connect', connListener)
-        socket.off('connect_error', connErrListener)
+        return () => {
+          // socket.off('oldChat', oldChatListener)
+          socket.off('disconnect', disconnListener)
+          socket.off('connect', connListener)
+          socket.off('connect_error', connErrListener)
+        }
       }
     }, [socket, setIsConnected])
 

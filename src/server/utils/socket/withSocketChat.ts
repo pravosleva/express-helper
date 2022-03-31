@@ -56,6 +56,7 @@ export const withSocketChat = (io: Socket) => {
   // --
   io.on('connection', (socket) => {
     // log.socket('conn', socket)
+    console.log(`-- connected ${socket.id}`)
     
     const nameBySocketId = usersSocketMap.get(socket.id)
 
@@ -181,7 +182,7 @@ export const withSocketChat = (io: Socket) => {
           }
           // --
         } catch (err) {
-          // socket.emit('notification', { status: 'error', title: 'ERR #2', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error', _originalEvent: { message, userName } })
+          socket.emit('notification', { status: 'error', title: 'Попробуйте перезайти', description: !!err.message ? `${err.message || 'Unknown err'}` : 'Server error' })
           socket.emit('FRONT:LOGOUT')
         }
         // --
@@ -203,17 +204,16 @@ export const withSocketChat = (io: Socket) => {
       const myRegData = registeredUsersMap.get(name)
 
       // -- NOTE: Logout if logged already?
-      if (!!token && !!myRegData?.tokens) {
-        if (!myRegData.tokens.includes(token)) {
-          socket.emit('notification', { status: 'error', title: 'TOKEN is wrong', description: `EXP: Вы зашли с другого устройства?\nNo ${token} in ${JSON.stringify(myRegData.tokens)}` })
-          socket.emit('FRONT:LOGOUT')
-          return
-        }
-      }
+      // if (!!token && !!myRegData?.tokens) {
+      //   if (!myRegData.tokens.includes(token)) {
+      //     socket.emit('notification', { status: 'error', title: 'TOKEN is wrong', description: `EXP: Вы зашли с другого устройства?\nNo ${token} in ${JSON.stringify(myRegData.tokens)}` })
+      //     socket.emit('FRONT:LOGOUT')
+      //     return
+      //   }
+      // }
 
       // @ts-ignore
       var rooms = io.sockets.adapter.sids[socket.id]
-      console.log(rooms)
       for (let r in rooms) socket.leave(r)
       // --
 
@@ -488,7 +488,8 @@ export const withSocketChat = (io: Socket) => {
       // --- NEW WAY
       const ts = Date.now()
       try {
-        const { room, name } = usersMap.get(userName)
+        const user = usersMap.get(userName)
+        const { room, name } = user
         const newRoomData: TMessage[] = roomsMap.get(room)
 
         let registryLevel = 0
@@ -835,8 +836,7 @@ export const withSocketChat = (io: Socket) => {
     // ---
 
     socket.on("disconnect", () => {
-        // console.log(usersMap)
-        
+      console.log(`-- disconnected: ${socket.id}`)
         // TODO: Find name by socket.id -> usersMap.delete(user.name)
 
         // try {
@@ -855,10 +855,10 @@ export const withSocketChat = (io: Socket) => {
           usersSocketMap.delete(socket.id)
 
           const userConnData = usersMap.get(userName)
-          // io.emit('notification', { status: 'info', description: 'Someone disconnected' })
+          io.emit('notification', { status: 'info', description: `${userName} disconnected` })
 
           if (!!userConnData) {
-            usersMap.delete(userName)
+            usersMap.delete(userName) // .filter((n) => userName !== n)
             if (!!userConnData?.room) {
               io.in(userConnData.room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: userConnData.room })).filter(({ room }) => room === userConnData.room))
             }

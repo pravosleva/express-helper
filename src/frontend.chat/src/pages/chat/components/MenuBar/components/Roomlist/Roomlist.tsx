@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
 import {
-  Text,
   Button,
   Stack,
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'react-use'
 import { useMainContext } from '~/context/mainContext'
 import { getTruncated } from '~/utils/strings-ops'
+// import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
 
 type TProps = {
   resetMessages: () => void
@@ -33,10 +33,15 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
 
   const MemoBtns = useMemo(() => {
     // console.log('room btns effect...', ++c)
+    const roomlistLS: { name: string, ts: number }[] = JSON.parse(window.localStorage.getItem('chat.roomlist') || '[]');
+    // const hasNews = hasNewsInRoomlist(roomlistLS || [], tsMap, room)
+    // console.log(hasNews)
+
     if (!!roomlistLS && !!roomNames) {
       return <>{roomNames.map((r: string) => {
         const tsFromLS = roomlistLS.find(({ name }) => name === r)?.ts
-        const isGreen = room !== r ? (!!tsFromLS && tsMap[r] > tsFromLS) : false
+        const isGreen = room !== r ? (!!tsFromLS && (tsMap[r] > tsFromLS)) : false
+        const label = getTruncated(r, 28)
 
         return (
           <Button
@@ -57,13 +62,18 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
               onCloseMenuBar()
             }}
           >
-            {getTruncated(r, 28)}
+            {label}
           </Button>
         )
       })}</>
     }
     return []
-  }, [JSON.stringify(roomNames), JSON.stringify(roomlistLS), handleRoomClick, setRoom, resetMessages, onCloseMenuBar, tsMap, room])
+  }, [
+    JSON.stringify(roomNames), handleRoomClick, setRoom, resetMessages, onCloseMenuBar,
+    JSON.stringify(tsMap),
+    // roomlistLS,
+    room,
+  ])
 
   return (
     !!roomlistLS ? (

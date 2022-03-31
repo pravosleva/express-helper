@@ -14,19 +14,27 @@
   margin-bottom: 20px;
 }
 
+.themed-bordered {
+  &_dark {
+    border: 2px solid var(--chakra-colors-gray-400);
+  }
+  &_light {
+    border: 2px solid var(--chakra-colors-whiteAlpha-100);
+  }
+}
 .themed-bg {
   &_dark {
     background: var(--chakra-colors-gray-700);
   }
   &_light {
-    background: var(--chakra-colors-gray-300);
+    background: #FFF; // var(--chakra-colors-gray-300);
   }
 }
 
 .control-box {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: var(--chakra-radii-xl);
-  border: 2px solid #FFF;
+  // border: 2px solid #FFF;
 }
 .sticky-header {
   position: sticky;

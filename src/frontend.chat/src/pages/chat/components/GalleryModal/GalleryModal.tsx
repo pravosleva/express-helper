@@ -31,6 +31,8 @@ import clsx from 'clsx'
 import { Logic } from '~/pages/chat/MessagesLogic'
 import Img from '@lxsmnsyc/react-image'
 import { Loader } from '~/common/components/Loader'
+import styles from '~/pages/chat/Chat.module.scss'
+import stylesBase from '~/App.module.scss'
 
 type TProps = {
   isOpened: boolean
@@ -96,7 +98,9 @@ export const GalleryModal = ({
       scrollBehavior='inside'
     >
       <ModalOverlay />
-      <ModalContent rounded='2xl'>
+      <ModalContent
+        // rounded='2xl'
+      >
         <ModalHeader>Gallery</ModalHeader>
         <ModalCloseButton rounded='3xl' />
         <ModalBody
@@ -187,7 +191,7 @@ export const GalleryModal = ({
                             // ]}
                           />
                         </a>
-                        {!!alt && <div className='caption truncate-overflow-single-line' onClick={() => { handleTextClick(alt) }}>{alt}</div>}
+                        {!!alt && <div className={clsx('caption', stylesBase['truncate-overflow-single-line'])} onClick={() => { handleTextClick(alt) }}>{alt}</div>}
                       </div>
                     )
                   })

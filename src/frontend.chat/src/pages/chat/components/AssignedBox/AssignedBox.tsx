@@ -4,6 +4,7 @@ import {
 } from '@chakra-ui/react'
 import { UserAva } from '~/pages/chat/components/UserAva'
 import { useMainContext } from '~/context/mainContext'
+import styles from '~/App.module.scss'
 
 type TProps = {
   assignedTo: string[]
@@ -25,7 +26,7 @@ export const AssignedBox = ({
   const isAssignedToMe = name === assignedTo[0]
 
   return (
-    <Box className={!!position ? `${position}-box` : 'right-box'} style={{ marginTop: 0 }}>
+    <Box className={!!position ? styles[`${position}-box`] : styles['right-box']} style={{ marginTop: 0 }}>
       <div
         style={{
           display: 'flex',

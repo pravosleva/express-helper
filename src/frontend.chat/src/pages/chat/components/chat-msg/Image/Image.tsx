@@ -12,6 +12,8 @@ import { MainContext } from '~/context/mainContext'
 import Img from '@lxsmnsyc/react-image'
 import { Loader } from '~/common/components/Loader'
 import { openUrlInNewTab } from '~/utils/openUrlInNewTab'
+import styles from '~/pages/chat/Chat.module.scss'
+import stylesBase from '~/App.module.scss'
 
 type TProps = {
   message: TMessage & { _next?: { ts: number, isHidden: boolean } }
@@ -52,16 +54,16 @@ export const Image = ({
   return (
     <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
       <Box
-        className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
+        className={clsx(styles['message'], { [styles['my-message']]: isMyMessage, [styles['oponent-message']]: !isMyMessage })}
         m=".3rem 0"
       >
         <Text
           fontSize="sm"
           mb={1}
-          className={clsx("from")}
+          className={styles["from"]}
         >
           <b>{user}</b>{' '}
-          <span className="date">
+          <span className={styles["date"]}>
             {date}
             {!!editTs && (
               // <>{' '}/{' '}<b>Edited</b>{' '}{getNormalizedDateTime(editTs)}</>
@@ -69,7 +71,7 @@ export const Image = ({
             )}
           </span>
         </Text>
-        <div className='msg-as-image--wrapper'>
+        <div className={styles['msg-as-image--wrapper']}>
           {/* <img alt={text} src={src} style={{ width: '100%', minWidth: 'var(--msg-img-min-with)' }} /> */}
             
           <Img
@@ -83,33 +85,33 @@ export const Image = ({
             // containerRef={containerRef}
             // sources={[ { source: 'portrait.jpg', media: '(orientation: portrait)' }, { source: 'landscape.jpg', media: '(orientation: landscape)' }, ]}
           />
-          <div className='abs-img-service-btns top-left'>
+          <div className={clsx(stylesBase['abs-img-service-btns'], stylesBase['top-left'])}>
             {isMyMessage && (
-              <button className='special-btn special-btn-sm dark-btn red'
+              <button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-sm'], stylesBase['dark-btn'], stylesBase['red'])}
                 onClick={() => { onDeleteMessage(ts) }}
               >Del</button>
             )}
           </div>
-          <div className='abs-img-service-btns top-right'>
+          <div className={clsx(stylesBase['abs-img-service-btns'], stylesBase['top-right'])}>
             {isMyMessage && (
-              <button className='special-btn special-btn-sm dark-btn' onClick={() => {
+              <button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-sm'], stylesBase['dark-btn'])} onClick={() => {
                 handleClickCtxMenu()
                 onEditModalOpen()
               }}>Edit</button>
             )}
-            <button className='special-btn special-btn-sm yellow-btn' onClick={handleUrlBtnClick}>
+            <button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-sm'], stylesBase['yellow-btn'])} onClick={handleUrlBtnClick}>
               <span style={{ display: 'flex', alignItems: 'center' }}>Link</span>
             </button>
           </div>
           
           {!!text && (
-            <div className='abs-img-caption truncate-overflow' onClick={() => { alert(text) }}>
+            <div className={clsx(stylesBase['abs-img-caption'], stylesBase['truncate-overflow'])} onClick={() => { alert(text) }}>
               {text}
             </div>
           )}
         </div>
       </Box>
-      {isNextOneBtnEnabled && <div className='centered-box'><button className='special-btn special-btn-sm dark-btn' onClick={() => { onAddAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
+      {isNextOneBtnEnabled && <div className='centered-box'><button className={clsx(stylesBase['special-btn'], styles['special-btn-sm'], styles['dark-btn'])} onClick={() => { onAddAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
     </Fragment>
   )
 }

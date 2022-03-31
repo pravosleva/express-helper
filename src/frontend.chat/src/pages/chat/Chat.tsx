@@ -57,7 +57,9 @@ import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 // @ts-ignore
 import ScrollToBottom from 'react-scroll-to-bottom'
 import clsx from 'clsx'
-import './Chat.scss'
+import styles from './Chat.module.scss'
+import stylesBase from '~/App.module.scss'
+// import stylesCustomReactCtxMenu from '~/fix.react-contextmenu.scss'
 import { UsersContext } from '~/context/usersContext'
 import { useTextCounter } from '~/common/hooks/useTextCounter'
 import { getNormalizedDateTime, getNormalizedDateTime2, getNormalizedDateTime3 } from '~/utils/timeConverter'
@@ -107,6 +109,8 @@ import { webWorkersInstance } from '~/utils'
 import { AddLinkFormModal } from './components/AddLinkFormModal'
 import { Widget } from './components/Widget'
 import { TasklistContent } from './components/TasklistModal/components'
+import debounce from 'lodash.debounce'
+import { useColorMode } from '@chakra-ui/react'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -152,7 +156,7 @@ const statusMap: {
 }
 const getIconByStatus = (status: EMessageStatus | 'assign', isColored: boolean) => {
   switch (true) {
-    case !!statusMap[status]: return <span className='abs-tail' style={{ width: '17px', backgroundColor: isColored ? getBgColorByStatus(status) : 'inherit' }}>{statusMap[status]}</span>
+    case !!statusMap[status]: return <span className={styles['abs-tail']} style={{ width: '17px', backgroundColor: isColored ? getBgColorByStatus(status) : 'inherit' }}>{statusMap[status]}</span>
     default: return null
   }
 }
@@ -222,6 +226,10 @@ export const Chat = () => {
   // }, [isLogged])
 
   const [tsPoint, setTsPoint] = useState<number | null>(Date.now())
+  // const debouncedSetTsPoint = useMemo(
+  //   () => debounce(setTsPoint, 1000), // { leading: true, trailing: false }
+  //   [setTsPoint]
+  // );
   const [fullChatReceived, setFullChatReceived] = useState<boolean>(false)
   const [isChatLoading, setIsChatLoading] = useState<boolean>(false)
   const [isFileUploading, setIsFileUploading] = useState<boolean>(false)
@@ -252,7 +260,7 @@ export const Chat = () => {
           title: notif?.title,
           description: notif?.description,
           status: notif?.status || 'info',
-          duration: 7000,
+          duration: 20000,
           isClosable: true,
         })
       }
@@ -347,7 +355,7 @@ export const Chat = () => {
     }
   }, [socket, toast, room])
 
-  const partialOldChatListener = ({ result, nextTsPoint, isDone }: { result: TMessage[], nextTsPoint: number, isDone: boolean }) => {
+  const partialOldChatListener = useCallback(({ result, nextTsPoint, isDone }: { result: TMessage[], nextTsPoint: number, isDone: boolean }) => {
     setMessages((msgs: TMessage[]) => {
       // NOTE: Merge & filter unique & sort
       // -- TODO: refactoring?
@@ -360,8 +368,12 @@ export const Chat = () => {
     })
     setTsPoint(nextTsPoint)
     setFullChatReceived(isDone)
-  }
+  }, [])
 
+  const currentRoomRef = useRef<string>(room)
+  useEffect(() => {
+    currentRoomRef.current = room
+  }, [room])
   const getPieceOfChat = useCallback(() => {
     if (!!socket && !!tsPoint) {
       setIsChatLoading(true)
@@ -375,62 +387,64 @@ export const Chat = () => {
           try {
             const { result, nextTsPoint, isDone, targetRoom } = res
 
-            if (!!result && targetRoom === room) partialOldChatListener({ result, nextTsPoint, isDone })
+            if (!!result && targetRoom === currentRoomRef.current) partialOldChatListener({ result, nextTsPoint, isDone })
+            else console.log(`getPartialOldChat: SKIPED targetRoom= ${targetRoom} is not currentRoomRef.current= ${currentRoomRef.current}`)
           } catch (err) {
             console.log(err)
           }
 
         })
-      }, 500)
+      }, 0)
     }
-  }, [tsPoint, room, socket])
+  }, [tsPoint, room, socket, partialOldChatListener])
 
   const prevRoom = useRef<string | null>(null)
 
   useEffect(() => {
     // NOTE: Отписаться при смене комнаты
-    if (!!socket && !!prevRoom.current) {
+    if (!!socket && !!prevRoom.current && prevRoom.current !== room) {
       socket.emit('unsetMe', { name, room: prevRoom.current })
     }
     if (!!room) prevRoom.current = room
 
-    if (!!socket && !!name && !!room) {
+    if (!!socket?.connected && !!name && !!room) {
       socket.emit('setMeAgain', { name, room, token: String(tokenLS) }, (err?: string) => {
         if (!!err) {
           toast({ title: err, status: 'error', duration: 5000, isClosable: true })
           history.push('/')
         }
       })
-
-      return () => {
-        socket.emit('unsetMe', { name, room })
-      }
+      setFullChatReceived(false)
+      setTsPoint(Date.now())
+      // return () => { socket.emit('unsetMe', { name, room }) }
     }
-  }, [socket, toast, name, room, history])
+  }, [socket?.connected, toast, name, room, history])
 
-  useEffect(() => {
-    console.log('EFFECT: socket?.connected', socket?.connected)
-    if (!!socket && !!name && !!room) {
-      if (!!socket?.connected) {
-        socket.emit('setMeAgain', { name, room }, (err?: string) => {
-          if (!!err) {
-            console.log(err)
-            toast({ title: err, status: 'error' })
-            history.push('/')
-          }
-        })
-        setFullChatReceived(false)
-        setTsPoint(Date.now())
-      } else {
-        socket.emit('unsetMe', { name, room })
-      }
-    }
-  }, [socket?.connected, room, history, name])
+  // useEffect(() => {
+  //   console.log('EFFECT: socket?.connected', socket?.connected)
+  //   if (!!socket && !!name && !!room) {
+  //     if (!!socket?.connected) {
+  //       socket.emit('setMeAgain', { name, room }, (err?: string) => {
+  //         if (!!err) {
+  //           console.log(err)
+  //           toast({ title: err, status: 'error' })
+  //           history.push('/')
+  //         }
+  //         console.log('--- setMeAgain')
+  //       })
+  //       setFullChatReceived(false)
+  //       setTsPoint(Date.now())
+  //     } // else socket.emit('unsetMe', { name, room })
+  //   }
+  // }, [socket?.connected, room, history, name])
 
   const [filters, setFilters] = useState<EMessageStatus[]>([])
-  const setFilter = (filter: EMessageStatus) => {
-    setFilters([filter])
-  }
+  // const setFilter = useCallback((filter: EMessageStatus) => {
+  //   setFilters([filter])
+  // }, [setFilters])
+  const toggleFilter = useCallback((filter: EMessageStatus) => {
+    setFilters((state) => state.includes(filter) ? state.filter((f) => f !== filter) : [...state, filter])
+  }, [setFilters])
   const resetFilters = useCallback(() => {
     setFilters([])
   }, [setFilters])
@@ -487,9 +501,9 @@ export const Chat = () => {
         break
     }
   }
-  const handleChange = (ev: any) => {
+  const handleChange = useCallback((ev: any) => {
     setMessage(ev.target.value)
-  }
+  }, [setMessage])
   const hasUserInMessage = useCallback(
     (user: TUser) => {
       let result = false
@@ -583,9 +597,7 @@ export const Chat = () => {
     handleEditModalClose()
   }
   // const handleKeyDownEditedMessage = (ev: any) => {
-  //   if (ev.keyCode === 13) {
-  //     if (!!room) handleSaveEditedMessage()
-  //   }
+  //   if (ev.keyCode === 13 && !!room) handleSaveEditedMessage()
   // }
   const handleDeleteMessage = (ts: number) => {
     const isConfirmed = window.confirm('Вы точно хотите удалить это сообщение?')
@@ -756,8 +768,14 @@ export const Chat = () => {
     threshold: 0,
   })
   const [inViewRef2, inView2, _entry2] = useInView({ threshold: 0 })
+
+  // const _infinityChatLoadRef = useRef<NodeJS.Timeout>()
   useEffect(() => {
-    if (inView || inView2) getPieceOfChat()
+    if (inView || inView2) {
+      // if (!!_infinityChatLoadRef.current) clearTimeout(_infinityChatLoadRef.current)
+      // _infinityChatLoadRef.current = setTimeout(getPieceOfChat, 1000)
+      setTimeout(getPieceOfChat, 1000)
+    }
   }, [inView, inView2, getPieceOfChat])
 
   const rendCounter = useRef<number>(0)
@@ -874,7 +892,7 @@ export const Chat = () => {
   const handleRoomClick = useCallback((room) => {
     // console.log(room, 'CLICKED')
     updateRoomTsInLS(room)
-  }, [updateRoomTsInLS])
+  }, [])
   // --
   
   // -- FILTERS EXP
@@ -934,7 +952,7 @@ export const Chat = () => {
 
   const hasNews: boolean = useMemo(() => {
     return hasNewsInRoomlist(roomlistLS || [], tsMap, room)
-  }, [roomlistLS, tsMap, room])
+  }, [JSON.stringify(roomlistLS), JSON.stringify(tsMap), room])
 
   const onUserAssign = (name: string) => {
     if (!!editedMessage?.assignedTo && Array.isArray(editedMessage.assignedTo) && editedMessage.assignedTo.length > 0) {
@@ -1151,6 +1169,10 @@ export const Chat = () => {
       sprintFeatureProxy.tsUpdate = result.tsUpdate
     }
   }
+  const handleCloseMenuBar = useCallback(() => {
+    handleCloseDrawerMenu()
+    updateRoomTsInLS(room)
+  }, [room])
   const AccordionStuff = useMemo(() => {
     return (
       <AccordionSettings
@@ -1169,10 +1191,7 @@ export const Chat = () => {
             accordionPanelContent: (
               <Roomlist
                 resetMessages={resetMessages}
-                onCloseMenuBar={() => {
-                  handleCloseDrawerMenu()
-                  updateRoomTsInLS(room)
-                }}
+                onCloseMenuBar={handleCloseMenuBar}
                 handleRoomClick={handleRoomClick}
               />
             ),
@@ -1199,10 +1218,15 @@ export const Chat = () => {
     setFilters,
     filters,
     resetMessages,
-    room,
+    handleCloseMenuBar,
     handleRoomClick,
     hasNews,
   ])
+  const mode = useColorMode()
+  const isFiltersPresetDisabledCondition = useMemo(() => 
+    ((filters.every((f) => [EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn].includes(f) && filters.length === 3) && (filters.includes(EMessageStatus.Success) && filters.includes(EMessageStatus.Danger) && filters.includes(EMessageStatus.Warn)))),
+    [filters]
+  )
 
   return (
     <>
@@ -1287,7 +1311,7 @@ export const Chat = () => {
         </CtxMenuItem>
         {
           isAssignmentFeatureEnabled && (
-            <CtxMenuItem data={{ foo: 'bar' }} onClick={handleSearchUserModalOpen} className='assign'>
+            <CtxMenuItem data={{ foo: 'bar' }} onClick={handleSearchUserModalOpen} className={'assign'}>
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', background: 'inherit' }}>{!!getIconByStatus('assign', false) && <div style={{ marginRight: '8px' }}>{getIconByStatus('assign', false)}</div>}<div><b>Assign</b></div></div>
             </CtxMenuItem>
           )
@@ -1340,14 +1364,19 @@ export const Chat = () => {
         </ModalContent>
       </Modal>
 
-      <div className='main-wrapper'>
+      <div className={styles['main-wrapper']}>
         <Flex
-          className="room"
+          className={styles["room"]}
           flexDirection="column"
           width={{ base: '100%', sm: '450px', md: '550px' }}
           height={{ base: '100%', sm: 'auto' }}
         >
-          <Heading className="heading" as="h4" p={[4, 4]} borderRadius="8px 8px 0 0">
+          <Heading
+            className={styles["heading"]}
+            as="h4" p={[4, 4]} borderRadius="8px 8px 0 0"
+            bgColor={mode.colorMode === 'dark' ? 'gray.600' : 'gray.300'}
+            color={mode.colorMode === 'dark' ? 'white' : 'inherit'}
+          >
             <Flex alignItems="center" justifyContent="flex-start">
               <IconButton
                 // colorScheme="gray"
@@ -1406,7 +1435,7 @@ export const Chat = () => {
                               key="tasklist-btn"
                               onClick={handleTasklistModalOpen}
                             >
-                              <Text fontSize="md" fontWeight='bold'>Tasklist{tasklist.length > 0 ? ` ${percentage}% (${completedTasksLen} of ${tasklist.length})` : ''}</Text>
+                              <Text fontSize="md" fontWeight='bold'>Tasklist{tasklist?.length > 0 ? ` ${percentage}% (${completedTasksLen} of ${tasklist.length})` : ''}</Text>
                             </MenuItem>
                             <MenuDivider />
                             <MenuOptionGroup defaultValue="asc" title={`Users online: ${users.length}`}>
@@ -1579,16 +1608,18 @@ export const Chat = () => {
                         const Icon = !!getIconByStatus(status, false) ? <span style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(status, false)}</span> : null
                         const counter = logic.getCountByFilter(status)
                         const isFilterEnabled = filters.includes(status)
-                        const isDisabed = counter === 0 || isFilterEnabled
+                        // const isDisabed = counter === 0 || isFilterEnabled
+                        const isDisabed = counter === 0
 
                         return (
                           <MenuItem
                             minH="40px"
                             key={status}
-                            onClick={() => setFilter(status)}
+                            onClick={() => toggleFilter(status)}
                             isDisabled={isDisabed}
                           >
                             <Text fontSize="md" fontWeight='bold' display='flex'>{Icon}{capitalizeFirstLetter(status)} ({counter})</Text>
+                            {isFilterEnabled && <Text fontSize="md" fontWeight='bold' display='flex' marginLeft='auto'>✅</Text>}
                           </MenuItem>
                         )
                       })
@@ -1596,7 +1627,7 @@ export const Chat = () => {
                     <MenuItem
                       minH="40px"
                       onClick={() => setFilters([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn])}
-                      isDisabled={logic.getCountByFilters([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn]) === 0 || filters.join(',') === [EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn].join(',')}
+                      isDisabled={logic.getCountByFilters([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn]) === 0 || isFiltersPresetDisabledCondition}
                     >
                       <Text fontSize="md" fontWeight='bold' display='flex'>{getIconByStatuses([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn], false)}In progress ({logic.getCountByFilters([EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn])})</Text>
                     </MenuItem>
@@ -1663,7 +1694,7 @@ export const Chat = () => {
               style={{
                 position: 'fixed',
                 zIndex: 1000, // NOTE: Less than ctx menu: 1001
-                bottom: '85px', right: '50px', // right: '50%', transform: 'translateX(50%)',
+                bottom: '90px', right: 'var(--chakra-space-4)', // right: '50%', transform: 'translateX(50%)',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -1671,9 +1702,9 @@ export const Chat = () => {
             >
               <HStack spacing={4}>
                 <Tag
-                  size='md'
+                  size='lg'
                   borderRadius='full'
-                  variant='solid'
+                  variant='outline'
                   colorScheme='blue'
                 >
                   <TagLabel>Found {filteredMessages.length}</TagLabel>
@@ -1684,7 +1715,8 @@ export const Chat = () => {
           )}
 
           <ScrollToBottom
-            className={clsx("messages", { "height-limited-md": upToMd, "height-full-auto-sm": downToMd })}
+            followButtonClassName='follow-button'
+            className={clsx(styles["messages"], { [styles["height-limited-md"]]: upToMd, [styles["height-full-auto-sm"]]: downToMd })}
             debug={false}
           >{/* INF LOADER 1/3 */}
             <Flex ref={inViewRef2} skip={inView} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
@@ -1750,7 +1782,7 @@ export const Chat = () => {
                   }
                   <Box
                     id={String(ts)}
-                    className={clsx('message', { 'my-message': isMyMessage, 'oponent-message': !isMyMessage })}
+                    className={clsx(styles['message'], { [styles['my-message']]: isMyMessage, [styles['oponent-message']]: !isMyMessage })}
                     // style={transform}
                     mt={1}
                     mb={2}
@@ -1759,11 +1791,11 @@ export const Chat = () => {
                       fontSize="sm"
                       // opacity=".8"
                       mb={1}
-                      className={clsx("from", { 'is-hidden': /* (isMyMessage && ((!!formData.searchText || filters.length > 0) ? false : !isLast)) */ false })}
+                      className={clsx(styles["from"], { [styles['is-hidden']]: /* (isMyMessage && ((!!formData.searchText || filters.length > 0) ? false : !isLast)) */ false })}
                       // textAlign={isMyMessage ? 'right' : 'left'}
                     >
                       <b>{user}</b>{' '}
-                      <span className="date">
+                      <span className={styles["date"]}>
                         {date}
                         {!!editDate && <b>{' '}Edited</b>}
                       </span>
@@ -1773,10 +1805,10 @@ export const Chat = () => {
                         display: 'flex',
                         // position: 'relative'
                       }}
-                      className='opponent-ava-wrapper'
+                      className={styles['opponent-ava-wrapper']}
                     >
                       {!isMyMessage && <UserAva size={30} name={user} mr='.5rem' />}
-                      <div className={clsx("msg", { 'edited-message': isCtxMenuOpened && ts === editedMessage.ts }, !!status ? [status] : undefined)}>
+                      <div className={clsx(styles["msg"], { [styles['edited-message']]: isCtxMenuOpened && ts === editedMessage.ts }, !!status ? styles[status] : undefined)}>
                         {isMyMessage ? (
                           <ContextMenuTrigger
                             id="same_unique_identifier"
@@ -1805,7 +1837,7 @@ export const Chat = () => {
                             </Text>
                           </ContextMenuTrigger>
                         ) : (
-                          <Text display="inline-block" fontSize="md" className={clsx(!!status ? [status] : undefined)}
+                          <Text display="inline-block" fontSize="md" className={clsx(!!status ? [styles[status]] : undefined)}
                             // p=".3rem .9rem"
                           >
                             {text}
@@ -1829,7 +1861,7 @@ export const Chat = () => {
                   {
                     hasLinks
                     ? (
-                      <Flex spacing={2} className='flex-wraper-spaced-2' flexWrap='wrap' justifyContent='flex-end' style={{ width: '100%' }}>
+                      <Flex spacing={2} className={stylesBase['flex-wraper-spaced-2']} flexWrap='wrap' justifyContent='flex-end' style={{ width: '100%' }}>
                         {links.map(({ link, descr }, i) => (
                           <ButtonGroup
                             size='sm'
@@ -1932,9 +1964,9 @@ export const Chat = () => {
                     )
                   }
                   {isNextOneBtnEnabled && (
-                    <Box className='centered-box'>
+                    <Box className={stylesBase['centered-box']}>
                       <button
-                        className='special-btn special-btn-sm dark-btn'
+                        className={clsx(stylesBase['special-btn'], stylesBase['special-btn-sm'], stylesBase['dark-btn'])}
                         onClick={() => { addAdditionalTsToShow(_next.ts) }}
                       >
                         Next One
@@ -1944,40 +1976,44 @@ export const Chat = () => {
                 </Fragment>
               )
             })}
-            <div className='service-flex-row'>
-              {!!uploadErrorMsg && (
-                <>
-                  <div><button className='special-btn special-btn-md dark-btn green' onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} color='var(--chakra-colors-green-300)' /></span></span></button></div>
-                  <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Error: {uploadErrorMsg}</div>
-                </>
-              )}
-              {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
-                <>
-                  <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
-                  {isFileUploading && (
-                    <div>Uploading: {uploadPercentageRef.current} %</div>
-                  )}
-                </>
-              )}
-              {
-                upToMd && isLogged && (
-                  <div><button className='special-btn special-btn-md dark-btn' onClick={handleOpenEmoji}>Emoji</button></div>
-                )
-              }
-              { isLogged && (
-                <div><button
-                  className='special-btn special-btn-md dark-btn'
-                  style={{ display: 'flex', alignItems: 'center' }}
-                  onClick={handleSetQuickStruct}><span style={{ marginRight: '7px' }}>┣</span><span>Struct</span></button></div>
-              )}
-              { isLogged && !!message && (
-                <div><button className='special-btn special-btn-md dark-btn' onClick={() => { setMessage('') }}>Clear</button></div>
-              )}
-            </div>
           </ScrollToBottom>
           {
+            isLogged && (
+              <div className={clsx(styles['service-flex-row'], styles[`service-flex-row_${mode.colorMode}`])}>
+                {!!uploadErrorMsg && (
+                  <>
+                    <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'], stylesBase['green'])} onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} color='var(--chakra-colors-green-300)' /></span></span></button></div>
+                    <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Error: {uploadErrorMsg}</div>
+                  </>
+                )}
+                {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
+                  <>
+                    <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
+                    {isFileUploading && (
+                      <div>Uploading: {uploadPercentageRef.current} %</div>
+                    )}
+                  </>
+                )}
+                {
+                  upToMd && isLogged && (
+                    <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={handleOpenEmoji}>Emoji</button></div>
+                  )
+                }
+                { isLogged && (
+                  <div><button
+                    className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])}
+                    style={{ display: 'flex', alignItems: 'center' }}
+                    onClick={handleSetQuickStruct}><span style={{ marginRight: '7px' }}>┣</span><span>Struct</span></button></div>
+                )}
+                { isLogged && !!message && (
+                  <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={() => { setMessage('') }}>Clear</button></div>
+                )}
+              </div>
+            )
+          }
+          {
             isLogged ? (
-              <div className="form">
+              <div className={styles["form"]}>
                 {/* <input ref={textFieldRef} type="text" placeholder='Enter Message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} /> */}
                 <Textarea
                   id="msg"
@@ -1991,11 +2027,16 @@ export const Chat = () => {
                   variant='unstyled'
                   pl={4}
                   fontWeight='md'
+                  bgColor={mode.colorMode === 'dark' ? 'gray.600' : 'gray.300'}
+                  color={mode.colorMode === 'dark' ? 'white' : 'inherit'}
                 />
-                <label htmlFor="msg" className='absolute-label'>{left} left</label>
+                <label htmlFor="msg" className={styles['absolute-label']}>{left} left</label>
                 <IconButton
                   aria-label="Send"
-                  // colorScheme={isMsgLimitReached ? 'red' : 'gray'}
+                  // colorScheme={isMsgLimitReached ? 'red' : !!message ? 'blue' : 'gray'}
+                  // colorScheme='blue'
+                  bgColor={mode.colorMode === 'dark' ? 'gray.500' : 'gray.100'}
+                  color={mode.colorMode === 'dark' ? 'white' : 'inherit'}
                   isRound
                   icon={<RiSendPlaneFill size={15} />}
                   onClick={handleSendMessage}
@@ -2011,6 +2052,8 @@ export const Chat = () => {
                 justifyContent='center'
                 alignItems='center'
                 // bgColor='gray.600'
+                className={styles['sticky-bottom-mobile']}
+                bgColor={mode.colorMode === 'dark' ? 'gray.600' : 'gray.300'}
               >
                 <Button rightIcon={<FaTelegramPlane size={18} />} size='lg' style={{ borderRadius: 'var(--chakra-radii-full)' }} colorScheme='blue' variant='solid' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Зайти в чат через бота</Button>
               </Flex>
