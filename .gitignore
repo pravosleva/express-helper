@@ -55,7 +55,8 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+.env*
+!.env.example
 
 # next.js build output
 .next
@@ -73,3 +74,14 @@ local-logs/
 
 # deploy tool
 deploy-app-config.json
+
+# dist stuff
+routers/auth/pages/signin/*
+!routers/auth/pages/signin/.gitkeep
+server-dist/*
+!server-dist/.gitkeep
+
+# files
+storage/*
+!storage/.gitkeep
+backup/*

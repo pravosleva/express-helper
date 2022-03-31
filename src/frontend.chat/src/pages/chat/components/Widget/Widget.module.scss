@@ -1,0 +1,96 @@
+@import '~/common/scss-vars/monitors.scss';
+
+// $widgetWidth: 500;
+$widgetTogglerWidth: 70;
+$maxHeight: 400;
+$pad: var(--chakra-space-4);
+$padInternal: var(--chakra-space-4);
+$widgetBorderRadius: var(--chakra-radii-2xl);
+$widgetBgLight: #FFF; // var(--chakra-colors-gray-300);
+
+@function getWidgetWidth($full, $pad, $chatSpace) {
+  @return calc(#{$full}/2 - #{$pad}*6 - #{$chatSpace}/2);
+}
+
+.widget-fixed {
+  border-radius: #{$widgetBorderRadius};
+  &_dark {
+    background: var(--chakra-colors-gray-700);
+  }
+  &_light {
+    background: #{$widgetBgLight};
+  }
+  position: fixed;
+  transition: all 0.2s linear;
+  z-index: 1001;
+  .paper {
+    // width: #{$widgetWidth}px;
+    // width: calc(100vw/2 - #{$pad}*6 - 550px/2);
+    width: getWidgetWidth(100vw, #{$pad}, 550px);
+    position: relative;
+  
+    // background: var(--chakra-colors-gray-700);
+    // box-shadow: var(--chakra-shadows-dark-lg);
+    // box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    border-radius: #{$widgetBorderRadius};
+    // border: 2px solid #FFF;
+
+    .content {
+      max-height: calc(100vh - #{$pad} - #{$pad});
+      padding: #{$padInternal};
+      overflow-y: auto;
+    }
+  }
+}
+.widget-fixed--top-right {
+  top: #{$pad};
+  right: #{$pad};
+
+  &_opened {
+    transform: translateX(0);
+  }
+  &_closed {
+    // transform: translateX(calc(#{$widgetWidth}px + #{$pad}));
+    // transform: translateX(calc(#{getWidgetWidth(100vw, #{$pad}, 550px)} + #{$pad}));
+    transform: translateX(calc(100% + #{$pad}));
+  }
+  .toggler {
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    left: -#{$widgetTogglerWidth}px;
+    width: #{$widgetTogglerWidth}px;
+  
+    padding: 15px;
+    // background: var(--chakra-colors-gray-600);
+    background: transparent;
+    // box-shadow: var(--chakra-shadows-dark-lg);
+  }
+}
+.widget-fixed--top-left {
+  top: #{$pad};
+  left: #{$pad};
+
+  &_opened {
+    transform: translateX(0);
+  }
+  &_closed {
+    // transform: translateX(calc(-#{getWidgetWidth(100vw, #{$pad}, 550px)}px - #{$pad}));
+    // transform: translateX(-(#{getWidgetWidth(100vw, #{$pad}, 550px)}px));
+    transform: translateX(calc(-100% - #{$pad}));
+    // transform: translateX(calc(-#{$widgetWidth}px - #{$pad}));
+  }
+  .toggler {
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    right: -#{$widgetTogglerWidth}px;
+    width: #{$widgetTogglerWidth}px;
+  
+    padding: 15px;
+    // background: var(--chakra-colors-gray-600);
+    background: transparent;
+    // box-shadow: var(--chakra-shadows-dark-lg);
+  }
+}

@@ -1,0 +1,204 @@
+.truncate-overflow {
+    --max-lines: 3;
+    /* max-height: calc(var(--lh) * var(--max-lines)); */
+    /* max-height: calc(100% - var(--max-lines) * 1.1em); */
+    max-height: 49px;
+    overflow: hidden;
+}
+.truncate-overflow::before {
+    content: "...";
+    position: absolute;
+    bottom: 4px;
+    right: 2px;
+}
+.truncate-overflow::after {
+    content: "";
+    position: absolute;
+    right: 0; /* note: not using bottom */
+    width: 1rem;
+    height: 1rem;
+    /* background: white; */
+}
+
+.truncate-overflow-single-line {
+    --max-lines: 1;
+    max-height: 27px;
+    overflow: hidden;
+}
+
+.centered-box,
+.center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    margin-top: var(--chakra-space-2);
+    margin-bottom: var(--chakra-space-2);
+}
+
+.right-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    margin-top: var(--chakra-space-2);
+    margin-bottom: var(--chakra-space-2);
+}
+.left-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    margin-top: var(--chakra-space-2);
+    margin-bottom: var(--chakra-space-2);
+}
+
+[data-rmiz-wrap="visible"], [data-rmiz-wrap="hidden"] {
+    display: block;
+}
+:root {
+    --msg-img-min-with: 140px;
+}
+
+/* IMG */
+
+.abs-img-service-btns {
+    position: absolute;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: var(--chakra-space-1);
+    max-width: calc(var(--msg-img-min-with) - var(--chakra-space-1)*2);
+}
+.abs-img-caption {
+    transition: all 0.2s linear;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: var(--chakra-fontSizes-sm);
+    width: 100%;
+    background: var(--chakra-colors-gray-600);
+    color: #FFF;
+    border-radius: 0 0 10px 10px;
+
+    /*
+    max-height: 150px;
+    --max-lines: 3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    */
+}
+.abs-img-caption:hover,
+.abs-img-caption:active,
+.abs-img-caption:focus {
+    background: var(--chakra-colors-blue-500);
+}
+
+/* SERVICE BTNS WRAPPER */
+
+.top-right {
+    top: var(--chakra-space-1);
+    right: var(--chakra-space-1);
+}
+.top-left {
+    top: var(--chakra-space-1);
+    left: var(--chakra-space-1);
+}
+
+/* BUTTON */
+
+.special-btn {
+    transition: all 0.2s linear;
+    border: 2px solid var(--chakra-colors-gray-200);
+
+    display: inline;
+    
+    cursor: pointer;
+    font-weight: bold;
+}
+.special-btn:disabled {
+    opacity: 0.5;
+}
+.special-btn:hover {
+    /* border: 2px solid var(--chakra-colors-gray-500); */
+    border: 2px solid #FFF;
+    background: var(--chakra-colors-whiteAlpha-300);
+    color: #FFF;
+}
+.special-btn-md {
+    border-radius: 20px;
+    padding: 6px 12px;
+}
+.special-btn-sm {
+    border-radius: 8px;
+    padding: 3px 8px;
+}
+
+.dark-btn {
+    background: var(--chakra-colors-gray-800);
+    color: #FFF;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.dark-btn:hover {
+    border: 2px solid #FFF;
+    background: rgba(0,0,0,0.8);
+    color: #FFF;
+}
+.dark-btn.red, .dark-btn.red:hover {
+    color: var(--chakra-colors-red-500);
+}
+.dark-btn.green, .dark-btn.green:hover {
+    color: var(--chakra-colors-green-300);
+}
+
+.yellow-btn {
+    background-color: var(--chakra-colors-yellow-300);
+    color: var(--chakra-colors-gray-800);
+    border: 2px solid var(--chakra-colors-yellow-100);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.yellow-btn:hover {
+    background-color: var(--chakra-colors-yellow-400);
+    color: var(--chakra-colors-gray-800);
+    border: 2px solid #FFF;
+}
+
+.gray-btn {
+    background: var(--chakra-colors-gray-600);
+    color: #FFF;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.gray-btn:hover {
+    border: 2px solid #FFF;
+    background: rgba(0,0,0,0.8);
+    color: #FFF;
+}
+.gray-btn.rounded {
+    border-radius: 18px;
+}
+.muted {
+    opacity: 0.55;
+}
+
+/* ANIMATIONS EXPERIENCE
+https://codepen.io/desandro/pen/bMqZmr
+
+*/
+/*
+.notif-box:focus,
+.notif-box:active {
+    background: var(--chakra-colors-gray-200);
+    background: rgba(0, 0, 0, 0.75);
+}
+*/
+
+.flex-wraper-spaced-2 > *:not(:first-child) {
+    margin-left: var(--chakra-space-2);
+}

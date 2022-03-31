@@ -1,0 +1,205 @@
+swagger: '2.0'
+# See also: https://swagger.io/specification/v2/
+info:
+  title: QR test API
+  description: 'Demo *(Возможно, потребуется включить **CORS**)*'
+  version: '1.0.0'
+  contact:
+    email: 'selection4test@gmail.com'
+host: pravosleva.ru
+basePath: /express-helper/qr
+schemes:
+  - http
+tags:
+  - name: 'tst'
+    description: 'Something'
+    externalDocs:
+      description: 'Do anything'
+      url: 'swagger.io'
+  - name: 'logged-map'
+    description: 'Local state as JS object Map'
+    externalDocs:
+      description: 'Local state as JS object Map'
+paths:
+  /tst.generate:
+    get:
+      tags:
+        - 'tst'
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: payload
+          required: true
+          schema:
+            $ref: '#/definitions/GenerateSampleParams'
+      summary: 'Returns QR as data-image'
+      description: 'Вернет сгенерированный QR (as data-image) по `req.query.payload`'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              src:
+                type: string
+                required: true
+  /get-qr-by-logged-req-id:
+    get:
+      tags:
+        - 'logged-map'
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: logged_req_id
+          required: true
+          type: string
+      summary: 'Returns QR data from state'
+      description: 'Вернет данные по сгенерированному QR, если они там все еще есть'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              src:
+                type: string
+                required: true
+              qrData:
+                schema:
+                $ref: '#/definitions/QRData'
+
+  /get-logged-map:
+    get:
+      tags:
+        - 'logged-map'
+      produces:
+        - application/json
+      summary: 'Returns logged map data'
+      description: 'Обзор текущего стейта: объект в котором ключи - это `req_id` при успешной авторизации *(ключ будет удален при запросе QR)*'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              _express:
+                req.id:
+                  type: string
+                  required: true
+                loggedSize:
+                  type: number
+                  required: true
+                state:
+                  '41081ea2-f320-4640-a49c-10aae090ec7f':
+                    hash:
+                      type: string
+                      required: true
+                    qr:
+                      type: string
+                      required: true
+                    additionalLoggedCounter:
+                      type: number
+                      required: true
+                    success_url:
+                      type: string
+                      required: true
+                    fail_url:
+                      type: string
+                      required: true
+                    infoUrl:
+                      type: string
+                      required: true
+  /tst.try-auth-on-other-device:
+    get:
+      tags:
+        - 'tst'
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: logged_req_id
+          required: true
+      summary: 'Аутентификация на доп. устройстве'
+      description: 'Вызов `req.loggedMap.addLoggedSessionOrDelete(req.query.logged_req_id)` *(thenable)*: зайти с другого устройства можно 1 раз.'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              message:
+                type: string
+                required: true
+  /reset-logged-map:
+    get:
+      tags:
+        - 'logged-map'
+      produces:
+        - application/json
+      summary: 'Returns success or not'
+      description: 'Сброс текущего стейта *(временный объект в памяти процесса)*'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              loggetStateSize:
+                type: number
+                required: true
+definitions:
+  GenerateSampleParams:
+    type: object
+    properties:
+      payload:
+        required: true
+        type: string
+        description: 'Your payload in QR'
+  QRData:
+    type: object
+    properties:
+      qr:
+        required: true
+        type: string
+        description: 'QR data:image'
+      hash:
+        required: true
+        type: string
+        description: 'Special auth key'
+      additionalLoggedCounter:
+        required: true
+        type: number
+        description: 'Logged state counter'
+      success_url:
+        required: true
+        type: string
+        description: 'Success logged redirect url'
+      fail_url:
+        required: true
+        type: string
+        description: 'Unlogged redirect url'
+      infoUrl:
+        required: true
+        type: string

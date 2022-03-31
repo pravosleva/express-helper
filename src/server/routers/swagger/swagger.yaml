@@ -1,0 +1,141 @@
+swagger: '2.0'
+info:
+  title: Express helper API
+  description: API description in `express-helper/routers/swagger/swagger.yaml`
+  version: '1.0.0'
+host: pravosleva.ru
+basePath: /express-helper
+schemes:
+  - http
+paths:
+  /url-metadata/editorjs:
+    get:
+      parameters:
+        - name: 'url'
+          in: query
+          description: Your page url
+          required: true
+          type: string
+      summary: Returns metadata for your page url.
+      description: 'Получить metadata для конкретной страницы'
+      produces:
+        - application/json
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Standart for Editor.js'
+            type: object
+            properties:
+              success: 1
+              meta:
+                type: object
+            example:
+              success: 1
+              meta:
+                url: 'https://uremont.com'
+                og:title: 'Выбери свой автосервис | Uremont'
+        400:
+          description: 'Error: Bad Request'
+          schema:
+            info: query.url is required for example
+            type: object
+            properties:
+              success: 0
+              error:
+                type: object
+            example:
+              success: 0
+              error:
+                query: query.url is required
+  /recaptcha-v3/verify:
+    post:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: 'body'
+          required: true
+          schema:
+            $ref: '#/definitions/RecaptchaVerifyRequestParams'
+      summary: Returns scoring result by Google.
+      description: Получить оценочные данные от Гугла через сервис
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            info: Result of scoring by Google
+            type: object
+            properties:
+              success:
+                type: integer
+              captcha:
+                type: string
+              original:
+                required: true
+                schema:
+                  $ref: '#/definitions/RecaptchaVerifyResponseByGoogle'
+            example:
+              success: 1
+              captcha: 'req.body.captcha'
+              original:
+                success: true
+                score: 0.9
+                action: 'feedback'
+                challenge_ts: '2020-07-01T15:14:47Z'
+                hostname: 'pravosleva.ru'
+        400:
+          description: 'Error: Bad request'
+          schema:
+            info: 'Request error'
+            type: object
+            properties:
+              success: boolean
+              errors:
+                $ref: '#/definitions/ErrorsLikeUremont'
+            example:
+              success: 0
+              errors:
+                '!byGoogle.response.success':
+                  - 'Неожиданная ошибка на стороне Гугла'
+                  - 'Something else'
+definitions:
+  RecaptchaVerifyRequestParams:
+    type: object
+    properties:
+      captcha:
+        required: true
+        type: string
+        description: Токен, который был получен на клиенте
+  RecaptchaVerifyResponseByGoogle:
+    type: object
+    properties:
+      success:
+        required: true
+        type: boolean
+      score:
+        required: true
+        type: number
+        minimum: 0
+        maximum: 1
+        description: 'Оценка, является ли пользователь человеком, по мнению Гугла'
+      action:
+        required: true
+        type: string
+      challenge_ts:
+        required: true
+        type: string
+        description: "ISO format yyyy-MM-dd'T'HH:mm:ssZZ"
+      hostname:
+        required: true
+        type: string
+  ErrorsLikeUremont:
+    type: object
+    properties:
+      errorTypeSmple:
+        type: array
+        items:
+          type: string
+          description: Error description

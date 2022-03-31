@@ -1,0 +1,468 @@
+swagger: '2.0'
+# See also: https://swagger.io/specification/v2/
+info:
+  title: Online trade-in API
+  description: 'В тестовом режиме возможен случайный вариант ответа `success | fail` *(Возможно, потребуется включить **CORS**)*'
+  version: '1.0.0'
+  contact:
+    email: 'selection4test@gmail.com'
+host: pravosleva.ru
+basePath: /express-helper/smartprice/otapi/v1/svyaznoy
+schemes:
+  - http
+tags:
+  - name: step1
+    description: 'Check your IMEI'
+    externalDocs:
+      description: 'Проверить IMEI'
+      url: 'swagger.io'
+  - name: step2
+    description: 'Go on button'
+    externalDocs:
+      description: 'Кнопка Продолжить'
+  - name: step3
+    description: 'Кнопка Дефектов нет / Расчитать цену'
+    externalDocs:
+      description: '4 галочки (дефекты)'
+  - name: step4
+    description: 'Accept preprice'
+    externalDocs:
+      description: 'Кнопка К Финальной скидке'
+  - name: step6
+    description: 'Upload photo'
+    externalDocs:
+      description: 'Загрузка фото'
+  - name: step7
+    description: 'No descr'
+    externalDocs:
+      description: 'Кнопка Сделать новые фото'
+  - name: step8
+    description: 'Финальная скидка'
+    externalDocs:
+      description: 'Кнопки Отказаться / Подтвердить'
+paths:
+  /imei:
+    post:
+      tags:
+        - 'step1'
+      summary: 'Returns specific OT data'
+      description: 'Проверить IMEI'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: 'IMEI object that needs to be added to the store'
+          required: true
+          schema:
+            $ref: '#/definitions/IMEIVerifyRequestParams'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+              imei: string
+              phone:
+                type: object
+                properties:
+                  vendor: string
+                  model: string
+                  memory: string
+                  color: string
+                  memory_choices:
+                    $ref: '#/definitions/MemoryChoises'
+                  color_choices:
+                    $ref: '#/definitions/ColorChoices'
+            example:
+              ok: true
+              imei: '868030034494821'
+              phone:
+                vendor: Xiaomi
+                model: 'MI 6'
+                memory: ''
+                color: ''
+                memory_choices:
+                  - '128 GB'
+                  - '64 GB'
+                color_choices:
+                  '128 GB':
+                    - white
+                    - ceramic_black
+                    - blue
+                    - black
+                  '64 GB':
+                    - white
+                    - ceramic_black
+                    - blue
+                    - black
+                type: mobile_phone
+  /confirm_detection:
+    post:
+      tags:
+        - 'step2'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/ConfirmDetectionRequestParams'
+      summary: 'Returns specific OT data'
+      description: 'Кнопка Продолжить'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+            example:
+              ok: true
+  /diagnostics:
+    post:
+      tags:
+        - 'step3'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/DiagnosticsRequestParams'
+      summary: 'Returns specific OT data'
+      description: 'Кнопка Дефектов нет / Расчитать цену'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              message:
+                type: string
+                required: false
+            example:
+              ok: true
+  /reupload_photos:
+    post:
+      tags:
+        - 'step7'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/ReuploadPhotosRequestParams'
+      summary: 'No summary'
+      description: 'Кнопка Загрузить новые фото'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok:
+                type: boolean
+                required: true
+              need_photos:
+                $ref: '#/definitions/NeedPhotos'
+            example:
+              ok: true
+              need_photos:
+                - 'front'
+  /accept_preprice:
+    post:
+      tags:
+        - 'step4'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: odd_success
+          schema:
+            type: integer
+          required: false
+          description: Через сколько неудачных запросов будет отправлен удачный результат
+      summary: 'Подтверждение предварительной скидки'
+      description: 'Кнопка Рассчитать цену'
+      responses:
+        200:
+          description: OK
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+              need_photos:
+                $ref: '#/definitions/NeedPhotos'
+              additionalProperties:
+                type: object
+            example:
+              ok: true
+              need_photos:
+                - back
+                - front
+              code: some text
+              message: Message
+              extra: null
+            required:
+              - ok
+  /photo_upload:
+    post:
+      tags:
+        - 'step6'
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: odd_success
+          schema:
+            type: integer
+          required: false
+          description: Через сколько неудачных запросов будет отправлен удачный результат
+        - in: formData
+          name: file
+          type: file
+          description: The file to upload.
+      summary: 'Uploads a file'
+      description: 'Загрузка фото'
+      responses:
+        200:
+          description: OK
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+              need_photos:
+                $ref: '#/definitions/NeedPhotos'
+              additionalProperties:
+                type: object
+            example:
+              ok: true
+            required:
+              - ok
+  /check_state:
+    post:
+      tags:
+        - 'step6'
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: odd_success
+          schema:
+            type: integer
+          required: false
+          description: Через сколько неудачных запросов будет отправлен удачный результат
+      summary: 'Check state polling'
+      description: 'Polling'
+      responses:
+        200:
+          description: OK
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+            example:
+              ok: true
+              devices:
+                '777':
+                  state: 'ok'
+                  condition_limit: 'works'
+                  condition_limit_reason: 'case_defects'
+                  price: 1909
+                  price_rub: 1909
+            required:
+              - ok
+  /accept_price:
+    post:
+      tags:
+        - 'step8'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      summary: 'Returns price acception result'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/ReuploadPhotosRequestParams'
+      description: 'Кнопка Подтвердить'
+      responses:
+        200:
+          description: OK
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+            example:
+              ok: true
+  /decline_price:
+    post:
+      tags:
+        - 'step8'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      summary: 'Decline price'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/ReuploadPhotosRequestParams'
+      description: 'Кнопка Отказаться'
+      responses:
+        200:
+          description: OK
+          schema:
+            info: 'Success response sample'
+            type: object
+            properties:
+              ok: boolean
+            example:
+              ok: true
+
+definitions:
+  IMEIVerifyRequestParams:
+    type: object
+    properties:
+      IMEI:
+        required: true
+        type: string
+        description: 'Your device IMEI'
+  ColorChoices:
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        type: string
+    example:
+      '128 GB':
+        - white
+        - ceramic_black
+        - blue
+        - black
+      '64 GB':
+        - white
+        - ceramic_black
+        - blue
+        - black
+  CheckStateDeviceItem:
+    type: object
+    required:
+      - status
+      - condition_limit
+      - condition_limit_reason
+      - price
+      - price_rub
+    properties:
+      status:
+        type: 'string'
+        description: 'Статус устройства'
+        enum:
+          - 'ok'
+          - 'fake'
+          - 'bad_quality'
+          - 'in_progress'
+          - 'need_photos'
+      condition_limit:
+        type: 'string'
+        enum:
+          - 'works'
+      condition_limit_reason:
+        type: 'string'
+        enum:
+          - 'case_defects'
+      price:
+        type: number
+      price_rub:
+        type: number
+  ConfirmDetectionRequestParams:
+    type: object
+    properties:
+      color:
+        required: true
+        type: string
+      device:
+        required: true
+        type: number
+      memory:
+        required: true
+        type: string
+      model_ok:
+        required: true
+        type: boolean
+      same_imeis:
+        required: true
+        type: boolean
+      turns_on:
+        required: true
+        type: boolean
+  DiagnosticsRequestParams:
+    type: object
+    properties:
+      device:
+        required: true
+        type: number
+      diag_case:
+        required: true
+        type: boolean
+      diag_display:
+        required: true
+        type: boolean
+      diag_display_broken:
+        required: true
+        type: boolean
+      diag_display_burnouts:
+        required: true
+        type: boolean
+      no_touch_id:
+        required: true
+        type: boolean
+  ReuploadPhotosRequestParams:
+    type: object
+    properties:
+      device:
+        required: true
+        type: number
+  MemoryChoises:
+    type: array
+    items:
+      type: string
+  NeedPhotos:
+    type: array
+    items:
+      type: string

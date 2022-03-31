@@ -1,0 +1,82 @@
+.react-contextmenu--visible{
+  z-index: 1001;
+  border-radius: 8px; // var(--chakra-radii-md);
+  border: 2px solid #FFF;
+
+  > .react-contextmenu-item:first-child{
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  > .react-contextmenu-item:not(:last-child){
+    border-bottom: 2px solid #FFF; // var(--chakra-colors-gray-100);
+  }
+  > .react-contextmenu-item:last-child{
+    border-radius: 0 0 5px 5px;
+  }
+
+  > .info {
+    background: #6FACF4;
+    color: #FFF;
+  }
+  > .info:hover {
+    background: #408EEA;
+  }
+  > .warning {
+    background: #FFDE68;
+    color: #000;
+  }
+  > .warning:hover {
+    background: #FFD335;
+  }
+  > .success {
+    background: #63F5CC;
+    color: #000;
+  }
+  > .success:hover {
+    background: #31EAB7;
+  }
+  > .danger, > .assign {
+    background: #FF9177;
+    color: #000;
+  }
+  > .danger:hover, > .assign:hover {
+    background: #FF6D4A;
+  }
+  > .unset-status {
+    background: #AFAFAF;
+    color: #FFF;
+  }
+  > .unset-status:hover {
+    background: #959595;
+  }
+  > .dead {
+    background: gray;
+    color: #FFF;
+  }
+  > .dead:hover {
+    background: #000;
+  }
+  > .done {
+    background: var(--chakra-colors-gray-400);
+    color: #FFF;
+  }
+  > .done:hover {
+    background: var(--chakra-colors-gray-500);
+  }
+
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.react-contextmenu-item{
+  cursor: pointer;
+  background-color: var(--chakra-colors-gray-100);
+  color: var(--chakra-colors-gray-500);
+  padding: 0.5em 1.5em;
+  
+}
+// .react-contextmenu-item:hover{
+//   background-color: var(--chakra-colors-gray-200);
+//   color: var(--chakra-colors-gray-500);
+// }

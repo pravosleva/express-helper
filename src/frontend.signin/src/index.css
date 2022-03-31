@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* COOKIE DISCLAIMER */
+.cookie-disclaimer_container {
+  margin: 0 auto;
+  max-width: 576px;
+
+  display: flex !important;
+  align-items: center !important;
+}
+/* .cookie-disclaimer_container > div:first-child {
+  margin-bottom: 0px !important;
+} */
+.cookie-disclaimer_btns-wrapper {
+  display: flex;
+}
+.cookie-disclaimer_btns-wrapper > button:not(:last-child) {
+  margin-right: 0px !important;
+}
+
+/* REACT-NOTIFICATIONS-COMPONENT */
+
+.react-toast-notifications__container {
+  padding: 0;
+  overflow-y: hidden !important;
+}
+.react-toast-notifications__toast {
+  width: 100%;
+  max-width: 300px;
+}
+
+.notification__item {
+  font-family: Fira Sans, Montserrat, sans-serif;
+}
+
+.notification__item--danger {
+  background-color: #F44436 !important;
+  border-left: 8px solid #9F1C12 !important;
+  /* light: E37C7C */
+}
+
+.notification__item--info {
+  background: #556CD6;
+  background: linear-gradient(90deg, rgba(85,108,214,1) 0%, rgba(255,170,80,1) 100%);
+  border-left: 8px solid #1C2F8B !important;
+  /* light: 69A8E2 */
+}
+
+.notification__item--success {
+  /* background-color: #57cc99 !important; */
+  background: rgb(56,163,165);
+  background: linear-gradient(90deg, rgba(56,163,165,1) 0%, rgba(34,87,122,1) 100%);
+  border-left: 8px solid rgba(34,87,122,1) !important;
+  /* light: 9BDEAA */
+}
+
+.notification__item--warning {
+  background-color: #f5984e !important;
+  border-left: 8px solid #9f5519 !important;
+  /* light: FAB37A */
+}
+
+.notification__timer {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}

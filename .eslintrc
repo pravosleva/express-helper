@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier", "plugin:jest/recommended"],
+  "extends": ["airbnb/base", "prettier", "plugin:jest/recommended"],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
@@ -14,7 +14,10 @@
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "class-methods-use-this": "off",
-    "no-fallthrough": "off"
+    "no-fallthrough": "off",
+    "strict": "off",
+    "import/extensions": "off",
+    "no-plusplus": "off"
   },
   "env": {
     "jest/globals": true

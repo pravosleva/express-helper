@@ -1,12 +1,19 @@
 #!/usr/bin/env node
 
+const moduleAlias = require('module-alias')
+
+moduleAlias()
+
 /**
  * Module dependencies.
  */
 
 const debug = require('debug')('url-metadata-helper:server')
 const http = require('http')
-const app = require('../app')
+const path = require('path')
+require('dotenv').config({ path: path.join(__dirname, '../server-dist/.env') })
+
+const app = require('../server-dist/app')
 
 /**
  * Normalize a port into a number, string, or false.
@@ -40,6 +47,12 @@ app.set('port', port)
  */
 
 const server = http.createServer(app)
+
+/**
+ * Chat.
+ */
+
+require('~/utils/socket/withSocketChat').withSocketChat(require('socket.io')(server))
 
 /**
  * Listen on provided port, on all network interfaces.

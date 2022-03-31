@@ -1,0 +1,3 @@
+src/server/routers/auth/pages/signin/*
+server-dist/*
+src/frontend.*/*
