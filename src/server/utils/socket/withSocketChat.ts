@@ -71,7 +71,7 @@ export const withSocketChat = (io: Socket) => {
     const LIMIT_UPLOAD_FILE_SIZE_MB = 10
     uploader.maxFileSize = LIMIT_UPLOAD_FILE_SIZE_MB * 1024 * 1024;
     uploader.listen(socket)
-    uploader.on("start", function(event: TUploadFileEvent){
+    uploader.on("start", function(event: TUploadFileEvent) {
       if (/\.exe$/.test(event.file.name)) {
         uploader.abort(event.file.id, socket)
       } else if (event.file.size > LIMIT_UPLOAD_FILE_SIZE_MB * 1024 * 1024) {
@@ -89,7 +89,6 @@ export const withSocketChat = (io: Socket) => {
 
             for(const [_key, value] of usersMap.state) {
               const { socketId: _socketId } = value
-              
               if (socketId === _socketId) connData = value
             }
 
@@ -182,16 +181,24 @@ export const withSocketChat = (io: Socket) => {
           }
           // --
         } catch (err) {
+          // NOTE: Удаляем файл, если его успели сохранить
+          try {
+            const savedFilePath = path.join(uploadsPath, event.file.name)
+            removeFileIfNecessary(savedFilePath)
+          } catch (err2) {
+            socket.emit('notification', { status: 'error', title: 'DEBUG: err2', description: !!err2.message ? `${err2.message || 'Unknown err'}` : 'Server error' })
+          }
           socket.emit('notification', { status: 'error', title: 'Попробуйте перезайти', description: !!err.message ? `${err.message || 'Unknown err'}` : 'Server error' })
           socket.emit('FRONT:LOGOUT')
         }
         // --
 
         uploadProgressMap.delete(event.file.name)
-      }
+        event.file.clientDetail.base = event.file.base
+        socket.emit('upload:saved')
+      } else {
 
-      event.file.clientDetail.base = event.file.base
-      socket.emit('upload:saved')
+      }
     });
     uploader.on("error", function(ev){
       const msgs = [ev.error.message || 'No error message in event', `Limit ${LIMIT_UPLOAD_FILE_SIZE_MB} MB`] 
@@ -508,7 +515,7 @@ export const withSocketChat = (io: Socket) => {
         io.in(room).emit('message', newStuff);
         if (!!cb) cb()
       } catch (err) {
-        socket.emit('notification', { status: 'error', title: 'ERR #2', description: !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error', _originalEvent: { message, userName } })
+        socket.emit('notification', { status: 'error', title: 'ERR #2022', description: !!err.message ? `BUG: Попробуйте перезайти. Мы решаем эту проблему. ${err.message}` : 'Server error', _originalEvent: { message, userName } })
         socket.emit('FRONT:LOGOUT')
       }
       // ---
