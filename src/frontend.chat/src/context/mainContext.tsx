@@ -5,6 +5,7 @@ import { proxy } from 'valtio'
 import { useLocalStorage } from 'react-use'
 // const state = useSnapshot(sprintFeatureProxy)
 import { Systeminformation } from 'systeminformation'
+import { useLatest } from '~/common/hooks/useLatest'
 
 type TUserInfo = {
   regData: any
@@ -73,6 +74,7 @@ type TMainContext = {
   tsMap: {[key: string]: number},
   setTsMap: (_val: {[key: string]: number}) => void
   tsMapRef: MutableRefObject<{[key: string]: number}>
+  roomRef: MutableRefObject<string>
 }
 
 export const MainContext = createContext<TMainContext>({
@@ -98,7 +100,8 @@ export const MainContext = createContext<TMainContext>({
   setTsMap: (_val: {[key: string]: number}) => {
     throw new Error('setTsMap should be implemented')
   },
-  tsMapRef: { current: {} }
+  tsMapRef: { current: {} },
+  roomRef: { current: '' }
 })
 
 export const MainProvider = ({ children }: any) => {
@@ -115,12 +118,14 @@ export const MainProvider = ({ children }: any) => {
   const [slugifiedRoom, setNormalizedRoom] = useState<string>('')
   const [isAdmin, setIsAdmin] = useState<boolean>(false)
   const [tsMap, setTsMap] = useState<{[key: string]: number}>({})
-  const tsMapRef = useRef<{[key: string]: number}>({})
   
+  const tsMapRef = useRef<{[key: string]: number}>({})
   useEffect(() => {
     // NOTE: Императивный доступ для сравнения в эффекте без лишней зависимости
     tsMapRef.current = tsMap
   }, [tsMap])
+
+  const roomRef = useLatest(room)
 
   // const [lastRoomLS, setLastRoomLS, _removeLastRoomLS] = useLocalStorage<string>('chat.last-room', '')
   // useEffect(() => {
@@ -155,6 +160,7 @@ export const MainProvider = ({ children }: any) => {
           tsMap,
           setTsMap,
           tsMapRef,
+          roomRef,
         }}
       >
         {children}

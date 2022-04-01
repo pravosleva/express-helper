@@ -192,7 +192,7 @@ const getBgColorByStatus = (s: EMessageStatus | 'assign') => {
 }
 
 export const Chat = () => {
-  const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy, devtoolsFeatureProxy } = useContext(MainContext)
+  const { name, slugifiedRoom: room, roomRef, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy, devtoolsFeatureProxy } = useContext(MainContext)
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
   const userInfoSnap = useSnapshot(userInfoProxy)
   const assignmentSnap = useSnapshot(assignmentFeatureProxy)
@@ -372,10 +372,6 @@ export const Chat = () => {
     setFullChatReceived(isDone)
   }, [])
 
-  const currentRoomRef = useRef<string>(room)
-  useEffect(() => {
-    currentRoomRef.current = room
-  }, [room])
   const getPieceOfChat = useCallback(() => {
     if (!!socket && !!tsPoint) {
       setIsChatLoading(true)
@@ -383,14 +379,14 @@ export const Chat = () => {
         // NOTE: (про параметр targetRoom)
         // Пришлось подстраховаться, т.к. после смены комнаты все еще успевали приходить запрошенные сообщения
         // Для пользователя выглядело необычно =)
-        socket.emit('getPartialOldChat', { tsPoint, room }, (res: any) => {
+        socket.emit('getPartialOldChat', { tsPoint, room: roomRef.current }, (res: any) => {
           setIsChatLoading(false)
 
           try {
             const { result, nextTsPoint, isDone, targetRoom } = res
 
-            if (!!result && targetRoom === currentRoomRef.current) partialOldChatListener({ result, nextTsPoint, isDone })
-            else console.log(`getPartialOldChat: SKIPED targetRoom= ${targetRoom} is not currentRoomRef.current= ${currentRoomRef.current}`)
+            if (!!result && targetRoom === roomRef.current) partialOldChatListener({ result, nextTsPoint, isDone })
+            else console.log(`getPartialOldChat: SKIPED targetRoom= ${targetRoom} is not roomRef.current= ${roomRef.current}`)
           } catch (err) {
             console.log(err)
           }
@@ -398,7 +394,7 @@ export const Chat = () => {
         })
       }, 0)
     }
-  }, [tsPoint, room, socket, partialOldChatListener])
+  }, [tsPoint, socket, partialOldChatListener])
 
   const prevRoom = useRef<string | null>(null)
 
@@ -410,7 +406,7 @@ export const Chat = () => {
     if (!!room) prevRoom.current = room
 
     if (!!socket?.connected && !!name && !!room) {
-      socket.emit('setMeAgain', { name, room, token: String(tokenLS) }, (err?: string) => {
+      socket.emit('setMeAgain', { name, room: roomRef.current, token: String(tokenLS) }, (err?: string) => {
         if (!!err) {
           toast({ title: err, status: 'error', duration: 5000, isClosable: true })
           history.push('/')
@@ -469,6 +465,17 @@ export const Chat = () => {
 
   const [isSending, setIsSending] = useState<boolean>(false)
   const handleSendMessage = useCallback(() => {
+    if (!roomRef.current) {
+      toast({
+        position: 'top',
+        title: 'ERR',
+        description: 'Try again',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+      return
+    }
     if (isMsgLimitReached) {
       toast({
         position: 'top',
@@ -484,7 +491,11 @@ export const Chat = () => {
     if (!!socket && !!normalizedMsg) {
       setIsSending(true)
       
-      const newStuff: { message: string, userName: string, status?: EMessageStatus } = { message: normalizedMsg, userName: name }
+      const newStuff: { message: string, userName: string, status?: EMessageStatus, room: string } = {
+        message: normalizedMsg,
+        userName: name,
+        room: roomRef.current
+      }
 
       if (filters.length === 1 && Object.values(EMessageStatus).includes(filters[0])) newStuff.status = filters[0]
 
@@ -580,7 +591,7 @@ export const Chat = () => {
       newData = { ...newData, ...editedMessage }
       socket.emit(
         'editMessage',
-        { newData, ts: editedMessage.ts, room, name },
+        { newData, ts: editedMessage.ts, room: roomRef.current, name },
         (errMsg: string) => {
           if (!!errMsg) {
             toast({
@@ -597,7 +608,7 @@ export const Chat = () => {
     }
     if (!!cb) cb()
     handleEditModalClose()
-  }, [editedMessage, socket, toast, room, name, handleEditModalClose])
+  }, [editedMessage, socket, toast, name, handleEditModalClose])
   // const handleKeyDownEditedMessage = (ev: any) => {
   //   if (ev.keyCode === 13 && !!room) handleSaveEditedMessage()
   // }
@@ -608,7 +619,7 @@ export const Chat = () => {
       if (!!socket) {
         const targetTs = (!!ts && Number.isInteger(ts)) ? ts : editedMessage.ts
   
-        socket.emit('deleteMessage', { ts: targetTs, room, name }, (errMsg: string) => {
+        socket.emit('deleteMessage', { ts: targetTs, room: roomRef.current, name }, (errMsg: string) => {
           if (!!errMsg) {
             toast({
               position: 'top',
@@ -624,7 +635,7 @@ export const Chat = () => {
         window.alert('Похоже, проблема с соединением')
       }
     }
-  }, [socket, toast, room, name, editedMessage])
+  }, [socket, toast, name, editedMessage])
   const [isAddLinkFormOpened, setIsAddLnkFormOpened] = useState<boolean>(false)
   const openAddLinkForm = useCallback(() => {
     setIsAddLnkFormOpened(true)
@@ -648,7 +659,7 @@ export const Chat = () => {
       }
       socket.emit(
         'editMessage',
-        { newData, ts: editedMessage.ts, room, name },
+        { newData, ts: editedMessage.ts, room: roomRef.current, name },
         () => {
           cb()
           closeAddLinkForm()
@@ -663,10 +674,10 @@ export const Chat = () => {
     if (!!socket) {
       socket.emit(
         'editMessage:delete-link',
-        { ts: tsMsg, room, name, link },
+        { ts: tsMsg, room: roomRef.current, name, link },
       )
     }
-  }, [socket, room, name])
+  }, [socket, name])
   const goToExternalLink = useCallback((link: string) => {
     const isConfirmed = window.confirm(`Открыть ссылку?\n${link}`)
     if (!isConfirmed) return
@@ -684,10 +695,10 @@ export const Chat = () => {
       if (!!editedMessage.links) newData.links = editedMessage.links
       socket.emit(
         'editMessage',
-        { newData, ts: editedMessage.ts, room, name }
+        { newData, ts: editedMessage.ts, room: roomRef.current, name }
       )
     }
-  }, [socket, editedMessage, room, name])
+  }, [socket, editedMessage, name])
   const handleUnsetStatus = useCallback(() => {
     if (!!socket) {
       const newData: Partial<TMessage> = { text: editedMessage.text }
@@ -698,10 +709,10 @@ export const Chat = () => {
       }
       socket.emit(
         'editMessage',
-        { newData, ts: editedMessage.ts, room, name }
+        { newData, ts: editedMessage.ts, room: roomRef.current, name }
       )
     }
-  }, [socket, editedMessage, room, name])
+  }, [socket, editedMessage, name])
 
   // --- Set my password
   const [isSetPasswordModalOpened, setIsSetPasswordModalOpened] = useState<boolean>(false)
@@ -884,7 +895,7 @@ export const Chat = () => {
     }
 
     if (!!socket) socket.emit('logout', { name, token: String(tokenLS) })
-    updateRoomTsInLS(room)
+    updateRoomTsInLS(roomRef.current)
 
     // -- NOTE: New
     removeTokenLS()
@@ -954,8 +965,8 @@ export const Chat = () => {
   }, [setIsGalleryOpened])
 
   const hasNews: boolean = useMemo(() => {
-    return hasNewsInRoomlist(roomlistLS || [], tsMap, room)
-  }, [JSON.stringify(roomlistLS), JSON.stringify(tsMap), room])
+    return hasNewsInRoomlist(roomlistLS || [], tsMap, roomRef.current)
+  }, [JSON.stringify(roomlistLS), JSON.stringify(tsMap)])
 
   const onUserAssign = useCallback((name: string) => {
     if (!!editedMessage?.assignedTo && Array.isArray(editedMessage.assignedTo) && editedMessage.assignedTo.length > 0) {
@@ -995,15 +1006,16 @@ export const Chat = () => {
         if (newAssignedArr.length > 0) newData.assignedTo = newAssignedArr
       }
 
-      socket.emit('editMessage', { newData, ts: message.ts, room, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top', description: errMsg, status: 'error', duration: 7000, isClosable: true }) })
+      socket.emit('editMessage', { newData, ts: message.ts, room: roomRef.current, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top', description: errMsg, status: 'error', duration: 7000, isClosable: true }) })
     }
-  }, [socket, room, name])
+  }, [socket, name])
 
   // -- Assignment feature switcher
   const [afLS, setAfLS] = useLocalStorage<{ [key: string]: number }>('chat.assignment-feature')
   useEffect(() => {
-    assignmentFeatureProxy.isFeatureEnabled = afLS?.[room] === 1
-  }, [afLS, room])
+    if (!!roomRef.current)
+      assignmentFeatureProxy.isFeatureEnabled = afLS?.[roomRef.current] === 1
+  }, [afLS])
   const setAFLSRoom = useCallback((val: number) => {
     setAfLS((oldState) => {
       const newState: any = {}

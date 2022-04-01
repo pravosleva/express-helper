@@ -491,12 +491,12 @@ export const withSocketChat = (io: Socket) => {
       socket.emit('allRooms', { roomsData: [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {}) })
     })
 
-    socket.on('sendMessage', ({ message, userName, status }: { message: string, userName: string, status: EMessageStatus }, cb) => {
+    socket.on('sendMessage', ({ message, userName, status, room }: { room: string, message: string, userName: string, status: EMessageStatus }, cb) => {
       // --- NEW WAY
       const ts = Date.now()
       try {
-        const user = usersMap.get(userName)
-        const { room, name } = user
+        // const user = usersMap.get(userName)
+        // const { /* room, */ name } = user
         const newRoomData: TMessage[] = roomsMap.get(room)
 
         let registryLevel = 0
@@ -505,7 +505,7 @@ export const withSocketChat = (io: Socket) => {
           registryLevel = regData?.registryLevel || 1 // NOTE: Как минимум, logged
         }
 
-        const newStuff: TMessage = { text: message, ts, rl: registryLevel, user: name }
+        const newStuff: TMessage = { text: message, ts, rl: registryLevel, user: userName }
         if (!!status) newStuff.status = status
         
         newRoomData.push(newStuff)
