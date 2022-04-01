@@ -301,7 +301,7 @@ class Singleton {
         isOk = false
         isPrivateSocketCb = true
         errMsgData.description = 'roomData not found'
-        errMsgData.title = 'SERVER ERR #2021121800:32'
+        errMsgData.title = 'SERVER ERR #2021121801:32'
       } else {
         const roomMessages: TMessage[] = roomData
 
@@ -309,7 +309,7 @@ class Singleton {
           isOk = false
           isPrivateSocketCb = true
           errMsgData.description = `roomMessages is ${typeof roomMessages} not found`
-          errMsgData.title = 'SERVER ERR #2021121800:32'
+          errMsgData.title = 'SERVER ERR #2021121802:32'
         } else {
           // const theMessageIndex = userMessages.findIndex(({ ts: t }) => t === ts)
           const theMessageIndex = binarySearchTsIndex({
@@ -321,8 +321,8 @@ class Singleton {
 
             isOk = false
             isPrivateSocketCb = true
-            errMsgData.description = `theMessage not found for ts ${ts}`
-            errMsgData.title = 'SERVER ERR #2021121800:32'
+            errMsgData.description = `theMessage not found for ts ${ts} / room ${room}`
+            errMsgData.title = 'SERVER ERR #2021121803:32'
           } else {
             const _targetMessage = roomMessages[theMessageIndex]
             const newUserMessages = roomMessages.filter(({ ts: t }) => t !== ts)

@@ -109,8 +109,9 @@ import { webWorkersInstance } from '~/utils'
 import { AddLinkFormModal } from './components/AddLinkFormModal'
 import { Widget } from './components/Widget'
 import { TasklistContent } from './components/TasklistModal/components'
-import debounce from 'lodash.debounce'
+// import debounce from 'lodash.debounce'
 import { useColorMode } from '@chakra-ui/react'
+import { useLatest } from '~/common/hooks/useLatest'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -200,9 +201,10 @@ export const Chat = () => {
   // @ts-ignore
   const { socket, roomData, isConnected } = useSocketContext()
   const [message, setMessage] = useState('')
-  const resetMessage = () => {
+  const latestMessage = useLatest(message)
+  const resetMessage = useCallback(() => {
     setMessage('')
-  }
+  }, [setMessage])
   const [messages, setMessages] = useState<TMessage[]>([])
   const resetMessages = useCallback(() => {
     setMessages([])
@@ -478,7 +480,7 @@ export const Chat = () => {
       })
       return
     }
-    const normalizedMsg = message.trim().replace(/\n+/g, '\n') // message.replace(/\s+/g, ' ').trim()
+    const normalizedMsg = latestMessage.current.trim().replace(/\n+/g, '\n') // message.replace(/\s+/g, ' ').trim()
     if (!!socket && !!normalizedMsg) {
       setIsSending(true)
       
@@ -491,11 +493,11 @@ export const Chat = () => {
       })
       resetMessage()
     }
-  }, [toast, isMsgLimitReached, socket, setIsSending, resetMessage, filters, message])
+  }, [toast, isMsgLimitReached, socket, setIsSending, resetMessage, filters])
   const handleKeyUp = (ev: any) => {
     switch (true) {
       case ev.keyCode === 13 && !ev.shiftKey:
-        if (!!message) handleSendMessage()
+        if (!!latestMessage.current) handleSendMessage()
         break
       default:
         break
@@ -509,18 +511,18 @@ export const Chat = () => {
       let result = false
       const template = `@${user.name}`
 
-      if (message.includes(template)) result = true
+      if (latestMessage.current.includes(template)) result = true
 
       return result
     },
-    [message]
+    []
   )
-  const handleUserClick = (user: TUser) => {
+  const handleUserClick = useCallback((user: TUser) => {
     if (!hasUserInMessage(user)) {
-      setMessage(`@${user.name}, ${message}`)
+      setMessage(`@${user.name}, ${latestMessage.current}`)
     }
     if (!!textFieldRef.current) textFieldRef.current.focus()
-  }
+  }, [setMessage])
 
   useEffect(() => {
     if (!room || !name) history.push('/')
@@ -538,17 +540,17 @@ export const Chat = () => {
   // const resetEditedMessage = () => {
   //   setEditedMessage(initialEditedMessageState)
   // }
-  const handleShowCtxMenu = () => {
+  const handleShowCtxMenu = useCallback(() => {
     setIsCtxMenuOpened(true)
-  }
-  const handleHideCtxMenu = () => {
+  }, [setIsCtxMenuOpened])
+  const handleHideCtxMenu = useCallback(() => {
     setIsCtxMenuOpened(false)
-  }
+  }, [setIsCtxMenuOpened])
   const initialRef = useRef(null)
-  const handleChangeEditedMessage = (e: any) => {
+  const handleChangeEditedMessage = useCallback((e: any) => {
     setEditedMessage((state) => ({ ...state, text: e.target.value }))
-  }
-  const handleSaveEditedMessage = ({ assignedTo }: { assignedTo?: string[] }, cb?: () => void) => {
+  }, [setEditedMessage])
+  const handleSaveEditedMessage = useCallback(({ assignedTo }: { assignedTo?: string[] }, cb?: () => void) => {
     if (!editedMessage?.text && !editedMessage.file) {
       toast({
         position: 'top',
@@ -595,11 +597,11 @@ export const Chat = () => {
     }
     if (!!cb) cb()
     handleEditModalClose()
-  }
+  }, [editedMessage, socket, toast, room, name, handleEditModalClose])
   // const handleKeyDownEditedMessage = (ev: any) => {
   //   if (ev.keyCode === 13 && !!room) handleSaveEditedMessage()
   // }
-  const handleDeleteMessage = (ts: number) => {
+  const handleDeleteMessage = useCallback((ts: number) => {
     const isConfirmed = window.confirm('Вы точно хотите удалить это сообщение?')
 
     if (isConfirmed) {
@@ -622,18 +624,18 @@ export const Chat = () => {
         window.alert('Похоже, проблема с соединением')
       }
     }
-  }
+  }, [socket, toast, room, name, editedMessage])
   const [isAddLinkFormOpened, setIsAddLnkFormOpened] = useState<boolean>(false)
-  const openAddLinkForm = () => {
+  const openAddLinkForm = useCallback(() => {
     setIsAddLnkFormOpened(true)
-  }
-  const closeAddLinkForm = () => {
+  }, [setIsAddLnkFormOpened])
+  const closeAddLinkForm = useCallback(() => {
     setIsAddLnkFormOpened(false)
-  }
+  }, [setIsAddLnkFormOpened])
   const handleAddLink = useCallback(() => {
     openAddLinkForm()
-  }, [editedMessage, openAddLinkForm])
-  const submitNewLink = ({ link, descr, cb }: any) => {
+  }, [openAddLinkForm])
+  const submitNewLink = useCallback(({ link, descr, cb }: any) => {
     if (!!socket) {
       const newData = { ...editedMessage }
 
@@ -653,8 +655,8 @@ export const Chat = () => {
         },
       )
     }
-  }
-  const handleDeleteLink = (link: string, tsMsg: number) => {
+  }, [socket, closeAddLinkForm, editedMessage])
+  const handleDeleteLink = useCallback((link: string, tsMsg: number) => {
     const isConfirmed = window.confirm(`Вы уверенны? Ссылка будет удалена\n${link}`)
     if (!isConfirmed) return
 
@@ -664,14 +666,14 @@ export const Chat = () => {
         { ts: tsMsg, room, name, link },
       )
     }
-  }
-  const goToExternalLink = (link: string) => {
+  }, [socket, room, name])
+  const goToExternalLink = useCallback((link: string) => {
     const isConfirmed = window.confirm(`Открыть ссылку?\n${link}`)
     if (!isConfirmed) return
 
     window.open(link, '_blank')
-  }
-  const handleSetStatus = (status: EMessageStatus) => {
+  }, [])
+  const handleSetStatus = useCallback((status: EMessageStatus) => {
     if (!!socket) {
       const newData: Partial<TMessage> = { text: editedMessage.text, status }
 
@@ -685,8 +687,8 @@ export const Chat = () => {
         { newData, ts: editedMessage.ts, room, name }
       )
     }
-  }
-  const handleUnsetStatus = () => {
+  }, [socket, editedMessage, room, name])
+  const handleUnsetStatus = useCallback(() => {
     if (!!socket) {
       const newData: Partial<TMessage> = { text: editedMessage.text }
 
@@ -699,38 +701,38 @@ export const Chat = () => {
         { newData, ts: editedMessage.ts, room, name }
       )
     }
-  }
+  }, [socket, editedMessage, room, name])
 
   // --- Set my password
   const [isSetPasswordModalOpened, setIsSetPasswordModalOpened] = useState<boolean>(false)
-  const handleSetPasswordModalOpen = () => {
+  const handleSetPasswordModalOpen = useCallback(() => {
     setIsSetPasswordModalOpened(true)
-  }
-  const handleSetPasswordModalClose = () => {
+  }, [setIsSetPasswordModalOpened])
+  const handleSetPasswordModalClose = useCallback(() => {
     setIsSetPasswordModalOpened(false)
-  }
+  }, [setIsSetPasswordModalOpened])
   // ---
   // --- My info:
   const [isMyInfoModalOpened, setIsMyInfoModalOpened] = useState<boolean>(false)
-  const handleMyInfoModalOpen = () => {
+  const handleMyInfoModalOpen = useCallback(() => {
     setIsMyInfoModalOpened(true)
-  }
-  const handleMyInfoModalClose = () => {
+  }, [setIsMyInfoModalOpened])
+  const handleMyInfoModalClose = useCallback(() => {
     setIsMyInfoModalOpened(false)
-  }
+  }, [setIsMyInfoModalOpened])
   // ---
   // --- Tasklist:
   const [isTasklistModalOpened, setTasklistModalOpened] = useState<boolean>(false)
-  const handleTasklistModalOpen = () => {
+  const handleTasklistModalOpen = useCallback(() => {
     setTasklistModalOpened(true)
-  }
-  const handleTasklistModalClose = () => {
+  }, [setTasklistModalOpened])
+  const handleTasklistModalClose = useCallback(() => {
     setTasklistModalOpened(false)
-  }
+  }, [setTasklistModalOpened])
   // ---
   // --- Search user:
   const [isSearchUserModalOpened, setSearchUserModalOpened] = useState<boolean>(false)
-  const handleSearchUserModalOpen = () => {
+  const handleSearchUserModalOpen = useCallback(() => {
     if (!!editedMessage.assignedTo) {
       toast({
         position: 'top',
@@ -743,10 +745,10 @@ export const Chat = () => {
       return
     }
     setSearchUserModalOpened(true)
-  }
-  const handleSearchUserModalClose = () => {
+  }, [setSearchUserModalOpened, toast, editedMessage])
+  const handleSearchUserModalClose = useCallback(() => {
     setSearchUserModalOpened(false)
-  }
+  }, [setSearchUserModalOpened])
   // ---
 
   // const heighlLimitParentClass = useBreakpointValue({ md: "height-limited-md", base: "height-limited-sm" })
@@ -795,9 +797,9 @@ export const Chat = () => {
 
   const [additionalTsToShow, setAdditionalTsToShow] = useState<number[]>([])
 
-  const addAdditionalTsToShow = (ts: number) => {
+  const addAdditionalTsToShow = useCallback((ts: number) => {
     setAdditionalTsToShow((arr) => [...arr, ts])
-  }
+  }, [setAdditionalTsToShow])
   const resetAdditionalTsToShow = useCallback(() => {
     setAdditionalTsToShow([])
   }, [setAdditionalTsToShow])
@@ -826,17 +828,17 @@ export const Chat = () => {
   // }, [filters.length, resetAdditionalTsToShow])
 
   const [isSearchModeEnabled, setIsSearchModeEnabled] = useState<boolean>(false)
-  const handleEnableSearch = () => {
+  const handleEnableSearch = useCallback(() => {
     setIsSearchModeEnabled(true)
-  }
-  const handleDisableSearch = () => {
+  }, [setIsSearchModeEnabled])
+  const handleDisableSearch = useCallback(() => {
     setIsSearchModeEnabled(false)
-  }
+  }, [setIsSearchModeEnabled])
 
   const [isDrawerMenuOpened, setIsDrawerMenuOpened] = useState<boolean>(false)
-  const handleOpenDrawerMenu = () => {
+  const handleOpenDrawerMenu = useCallback(() => {
     setIsDrawerMenuOpened(true)
-  }
+  }, [setIsDrawerMenuOpened])
   const handleCloseDrawerMenu = useCallback(() => {
     setIsDrawerMenuOpened(false)
   }, [setIsDrawerMenuOpened])
@@ -844,7 +846,7 @@ export const Chat = () => {
   // -- ROOMS SAMPLE
   const [roomlistLS, setRoomlistLS] = useLocalStorage<{ name: string, ts: number }[]>('chat.roomlist', [])
   
-  const updateRoomTsInLS = (roomName: string) => {
+  const updateRoomTsInLS = useCallback((roomName: string) => {
     if (!!window) {
       let roomlistLS: any
 
@@ -867,7 +869,8 @@ export const Chat = () => {
         setRoomlistLS(newRooms)
       } catch (err) {}
     }
-  }
+  }, [])
+
   const handleLogout = useCallback(async () => {
     const isConfirmed = window.confirm('Вы уверенны?')
     if (!isConfirmed) return
@@ -954,7 +957,7 @@ export const Chat = () => {
     return hasNewsInRoomlist(roomlistLS || [], tsMap, room)
   }, [JSON.stringify(roomlistLS), JSON.stringify(tsMap), room])
 
-  const onUserAssign = (name: string) => {
+  const onUserAssign = useCallback((name: string) => {
     if (!!editedMessage?.assignedTo && Array.isArray(editedMessage.assignedTo) && editedMessage.assignedTo.length > 0) {
       toast({
         position: 'top',
@@ -979,8 +982,9 @@ export const Chat = () => {
         })
       })
     }
-  } // , [editedMessage, handleSearchUserModalClose, handleSaveEditedMessage])
-  const handleUnassignFromUser = (message: TMessage, unassignFromUserName: string) => {
+  }, [editedMessage, toast, handleSearchUserModalClose, handleSaveEditedMessage])
+
+  const handleUnassignFromUser = useCallback((message: TMessage, unassignFromUserName: string) => {
     if (!!socket) {
       const { assignedTo, ...rest } = message
       const newData: TMessage = { ...rest }
@@ -993,7 +997,7 @@ export const Chat = () => {
 
       socket.emit('editMessage', { newData, ts: message.ts, room, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top', description: errMsg, status: 'error', duration: 7000, isClosable: true }) })
     }
-  }
+  }, [socket, room, name])
 
   // -- Assignment feature switcher
   const [afLS, setAfLS] = useLocalStorage<{ [key: string]: number }>('chat.assignment-feature')
@@ -1045,7 +1049,7 @@ export const Chat = () => {
   }, [setMessage])
   const isLogged = useMemo(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
 
-  const handleRemoveFromSprint = async (ts: number) => {
+  const handleRemoveFromSprint = useCallback(async (ts: number) => {
     // console.log(editedMessage)
     const data = { ts, room_id: room, username: name }
     const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/remove`, data)
@@ -1056,8 +1060,8 @@ export const Chat = () => {
       if (!!sprintFeatureProxy.commonNotifs[String(result.ts)])
         delete sprintFeatureProxy.commonNotifs[String(result.ts)]
     }
-  }
-  const handleAddCommonNotif = async ({ ts, tsTarget, text, original }: any) => {
+  }, [room, name])
+  const handleAddCommonNotif = useCallback(async ({ ts, tsTarget, text, original }: any) => {
     const data = { room_id: room, ts, tsTarget, username: name, text, original }
     const result = await axios.post(`${REACT_APP_API_URL}/chat/api/common-notifs/add`, {
       ...data,
@@ -1076,7 +1080,8 @@ export const Chat = () => {
         }
       }
     }
-  }
+  }, [room, name])
+
   const [isDatepickerOpened, setIsDatepickerOpened] = useState<boolean>(false)
   const handleOpenDatePicker = useCallback(() => {
     setIsDatepickerOpened(true)
@@ -1084,11 +1089,11 @@ export const Chat = () => {
   const handleCloseDatePicker = useCallback(() => {
     setIsDatepickerOpened(false)
   }, [setIsDatepickerOpened])
-  const onUpdateTargetDate = (tsTarget: number) => {
+  const onUpdateTargetDate = useCallback((tsTarget: number) => {
     const ts = editedMessage.ts
     const text = editedMessage.text
     handleAddCommonNotif({ ts, tsTarget, text, original: editedMessage })
-  }
+  }, [handleAddCommonNotif, editedMessage])
 
   // -- SPRINT
   const [sprintSettingsLS, setSprintSettingsLS] = useLocalStorage<{ [key: string]: { isEnabled: boolean } }>('chat.sprint-feature.custom-settings', {})
@@ -1108,12 +1113,13 @@ export const Chat = () => {
     }
     setSprintSettingsLS(newState)
   }, [setSprintSettingsLS, sprintSettingsLS])
-  const toggleSprintFeature = () => {
+  const toggleSprintFeature = useCallback(() => {
     const newVal = !sprintFeatureSnap.isFeatureEnabled
     
     updateSprintSetting4TheRoom(room, newVal)
     sprintFeatureProxy.isFeatureEnabled = newVal
-  }
+  }, [updateSprintSetting4TheRoom, room])
+
   useEffect(() => {
     sprintFeatureProxy.isFeatureEnabled = sprintSettingsLS?.[room]?.isEnabled || false
     sprintFeatureProxy.commonNotifs = {}
@@ -1125,11 +1131,11 @@ export const Chat = () => {
   }, [room])
   // --
 
-  const toggleDevtoolsFeature = () => {
+  const toggleDevtoolsFeature = useCallback(() => {
     devtoolsFeatureProxy.isFeatureEnabled = !devtoolsFeatureProxy.isFeatureEnabled
-  }
+  }, [])
 
-  const handleCheckPOST = async () => {
+  const handleCheckPOST = useCallback(async () => {
     if (document.hidden || !isLogged) return
     // NOTE: If false - than browser tab is active
 
@@ -1168,11 +1174,13 @@ export const Chat = () => {
 
       sprintFeatureProxy.tsUpdate = result.tsUpdate
     }
-  }
+  }, [room, isLogged, sprintFeatureSnap.tsUpdate, document.hidden])
+
   const handleCloseMenuBar = useCallback(() => {
     handleCloseDrawerMenu()
     updateRoomTsInLS(room)
-  }, [room])
+  }, [room, updateRoomTsInLS, handleCloseDrawerMenu])
+
   const AccordionStuff = useMemo(() => {
     return (
       <AccordionSettings
@@ -1222,6 +1230,7 @@ export const Chat = () => {
     handleRoomClick,
     hasNews,
   ])
+
   const mode = useColorMode()
   const isFiltersPresetDisabledCondition = useMemo(() => 
     ((filters.every((f) => [EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn].includes(f) && filters.length === 3) && (filters.includes(EMessageStatus.Success) && filters.includes(EMessageStatus.Danger) && filters.includes(EMessageStatus.Warn)))),
@@ -1730,7 +1739,7 @@ export const Chat = () => {
               </Text>
               <Box ml="2">---</Box>
             </Flex>
-            {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, arr) => {
+            {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, _arr) => {
               const { user, text, ts, editTs, status, file, _next, assignedTo, assignedBy, links = [] } = message
               // const isLastOfFiltered = i === arr.length -1
               const isMyMessage = user === name
