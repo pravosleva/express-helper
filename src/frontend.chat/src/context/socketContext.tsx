@@ -36,10 +36,10 @@ export const SocketContext = createContext<ISocketContext>({
 
 export const SocketProvider =
   ({ children }: any) => {
-    const socket: Socket = io(REACT_APP_WS_API_URL, {
+    const socket: Socket = useMemo(() => io(REACT_APP_WS_API_URL, {
       reconnection: true,
       transports: ['websocket', 'polling'],
-    })
+    }), [])
     // const toast = useToast()
     const [roomData, setRoomData] = useState<TRoomData>([])
     const resetRoomData = () => {

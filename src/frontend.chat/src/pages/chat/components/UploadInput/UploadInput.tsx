@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useSocketContext } from "~/context/socketContext";
 // @ts-ignore
 import SocketIOFileUpload from 'socketio-file-upload'
@@ -19,16 +19,15 @@ export const UploadInput = ({
   label,
   isDisabled,
 }: TProps) => {
-  const { socket, roomData, isConnected } = useSocketContext()
+  const { socket } = useSocketContext()
+  const uploader = useMemo(() => new SocketIOFileUpload(socket, {
+    chunkSize: 50 * 1024,
+    maxFileSize: LIMIT_UPLOAD_FILE_SIZE_MB * 1024 * 1024,
+  }), [socket]);
 
   // -- Uploader init effect
   useEffect(() => {
     try {
-      const uploader = new SocketIOFileUpload(socket, {
-        chunkSize: 50 * 1024,
-        maxFileSize: LIMIT_UPLOAD_FILE_SIZE_MB * 1024 * 1024,
-      });
-
       uploader.listenOnInput(document.getElementById('siofu_input'))
       uploader.addEventListener("error", function(data: any){
         if (data.code === 1) alert("Don't upload such a big file")
@@ -40,7 +39,7 @@ export const UploadInput = ({
     } catch (err) {
       console.log(err)
     }
-  }, [socket])
+  }, [uploader])
   // ---
 
   return (

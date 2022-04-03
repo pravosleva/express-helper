@@ -50,7 +50,7 @@ const uploadProgressMap = new Map<string, { connData: TConnectionData, status: s
 export const withSocketChat = (io: Socket) => {
   // @ts-ignore
   instrument(io, {
-    // namespaceName: '/sp.pravosleva',
+    namespaceName: '/admin',
     // auth: false,
     auth: {
       type: "basic",

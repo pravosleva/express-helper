@@ -1709,31 +1709,6 @@ export const Chat = () => {
           <Box w='100%' h={1} m={[0, 0]}>
             {tasklist.length > 0 && <Progress value={percentage} size="xs" colorScheme="green" />}
           </Box>
-          
-          {downToMd && (filters.length > 0 || !!formData.searchText || assignmentExecutorsFilters.length > 0) && (
-            <div
-              style={{
-                position: 'fixed',
-                zIndex: 1000, // NOTE: Less than ctx menu: 1001
-                bottom: '90px', right: 'var(--chakra-space-4)', // right: '50%', transform: 'translateX(50%)',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <HStack spacing={4}>
-                <Tag
-                  size='lg'
-                  borderRadius='full'
-                  variant='outline'
-                  colorScheme='blue'
-                >
-                  <TagLabel>Found {filteredMessages.length}</TagLabel>
-                  <TagCloseButton onClick={resetSearchAndFiltersAndAssignmentFilters} />
-                </Tag>
-              </HStack>
-            </div>
-          )}
 
           <ScrollToBottom
             followButtonClassName='follow-button'
@@ -2028,6 +2003,20 @@ export const Chat = () => {
                 )}
                 { isLogged && !!message && (
                   <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={() => { setMessage('') }}>Clear</button></div>
+                )}
+                {(filters.length > 0 || !!formData.searchText || assignmentExecutorsFilters.length > 0) && (
+                  <>
+                    <Tag
+                      size='lg'
+                      borderRadius='full'
+                      variant='outline'
+                      colorScheme='blue'
+                      marginLeft='auto'
+                    >
+                      <TagLabel>Found {filteredMessages.length}</TagLabel>
+                      <TagCloseButton onClick={resetSearchAndFiltersAndAssignmentFilters} />
+                    </Tag>
+                  </>
                 )}
               </div>
             )
