@@ -2139,8 +2139,20 @@ export const Chat = () => {
       }
       {
         upToLg && (
-          <Widget position='top-left'>
+          <Widget position='top-left' isHalfHeight>
             {AccordionStuff}
+          </Widget>
+        )
+      }
+      {
+        upToLg && (
+          <Widget position='bottom-left' isHalfHeight>
+            <>
+              <Heading>In progress.</Heading>
+              <Text fontSize='md' fontStyle='italic'>One of two:</Text>
+              <Text fontSize='md'>👉 Chat msg discussion?</Text>
+              <Text fontSize='md'>👉 <b>{room}</b> room News content?</Text>
+            </>
           </Widget>
         )
       }

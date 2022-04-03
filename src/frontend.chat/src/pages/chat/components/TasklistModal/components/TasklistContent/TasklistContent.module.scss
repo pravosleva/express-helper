@@ -4,6 +4,7 @@
   & button:not(:last-child) {
     margin-right: var(--chakra-space-2);
   }
+  flex-wrap: wrap;
 }
 .red {
   border: 1px dashed red;
@@ -26,8 +27,23 @@
   &_dark {
     background: var(--chakra-colors-gray-700);
   }
+  /* if backdrop support: very transparent and blurred */
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    &_dark_backdrop-blur {
+      background: rgba(45,55,72,0.3);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
+  }
   &_light {
     background: #FFF; // var(--chakra-colors-gray-300);
+  }
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    &_light_backdrop-blur {
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
   }
 }
 

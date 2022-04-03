@@ -1,6 +1,7 @@
-import React, { createContext, useEffect, useState, useContext, useRef } from 'react'
+import React, { createContext, useEffect, useState, useContext, useRef, useMemo, useCallback } from 'react'
 import io, { Socket } from 'socket.io-client'
-// import { useToast } from "@chakra-ui/react"
+import { useToast } from "@chakra-ui/react"
+import { debounce } from 'lodash'
 
 const REACT_APP_WS_API_URL = process.env.REACT_APP_WS_API_URL || '/'
 
@@ -47,49 +48,69 @@ export const SocketProvider =
     const [isLogged, setIsLogged] = useState<boolean>(false)
     const [isConnected, setIsConnected] = useState<boolean>(true)
     const isConnectedRef = useRef<boolean>(false)
+    const socketIdRef = useRef<string | null>(null)
+
+    const toast = useToast()
+    useEffect(() => {
+      console.log(`EFF: isConnected= ${isConnected}`)
+      if (isConnected) toast({
+        position: 'top',
+        title: 'Connected...',
+        // description: notif?.description,
+        status: 'success',
+        duration: 3000,
+      })
+      else toast({
+        position: 'top',
+        title: 'Connection lost...',
+        // description: notif?.description,
+        status: 'error',
+        duration: 10000,
+        isClosable: true,
+      })
+    }, [isConnected])
+
+    const disconnListener = useCallback(() => {
+      setIsConnected(false)
+      isConnectedRef.current = false
+      socketIdRef.current = null
+    }, [])
+    const connListener = useCallback(() => {
+      setIsConnected(true)
+      isConnectedRef.current = true
+      socketIdRef.current = socket.id
+    }, [])
+    const connErrListener = useCallback((reason: any) => {
+      console.log(reason)
+    }, [])
+    const onSubscribe = useMemo(() => debounce(() => {
+      socket.on('disconnect', disconnListener)
+      socket.on('connect', connListener)
+      socket.on('connect_error', connErrListener)
+    }, 2000), [])
+    const onUnsubscribe = useMemo(() => debounce(() => {
+      socket.off('disconnect', disconnListener)
+      socket.off('connect', connListener)
+      socket.off('connect_error', connErrListener)
+    }, 0), [])
 
     useEffect(() => {
-      const disconnListener = () => {
-        // toast({
-        //     position: "top",
-        //     // title: 'Connection lost...',
-        //     description: 'Connection lost...',
-        //     status: "error",
-        //     duration: 5000,
-        //     isClosable: true,
-        // })
-        setIsConnected(false)
-        isConnectedRef.current = false
-      }
-      // const oldChatListener = (data: { roomData: TRoomData }) => {
-      //   setRoomData(data.roomData)
-      // }
-      const connListener = () => {
-        setIsConnected(true)
-        isConnectedRef.current = true
-      }
-      const connErrListener = (reason: any) => {
-        console.log(reason)
-      }
+      console.log('EFF: mount')
+      onSubscribe()
 
-      if (!isConnectedRef.current) {
-        // socket.on('oldChat', oldChatListener)
-        socket.on('disconnect', disconnListener)
-        socket.on('connect', connListener)
-        socket.on('connect_error', connErrListener)
-
-        return () => {
-          // socket.off('oldChat', oldChatListener)
-          socket.off('disconnect', disconnListener)
-          socket.off('connect', connListener)
-          socket.off('connect_error', connErrListener)
-        }
+      return () => {
+        onUnsubscribe()
       }
-    }, [socket, setIsConnected])
+    }, [])
 
     return (
       <SocketContext.Provider value={{
-        socket, roomData, isLogged, setIsLogged, isConnected, setIsConnected,
+        socket,
+        roomData,
+        isLogged,
+        setIsLogged,
+        isConnected,
+        setIsConnected,
         resetRoomData,
       }}>
         {children}

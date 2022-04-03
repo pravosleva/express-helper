@@ -65,11 +65,11 @@ chatApi.use(cookieParser())
 
 chatApi.use(
   '/admin-ui',
-  express.static(path.join(__dirname, './@socket.io/admin-ui/ui/dist'))
+  express.static(path.join(__dirname, './@socket.io/admin-ui-0.1.2/ui/dist'))
 )
 chatApi.use(
   '/admin-ui-prod',
-  express.static(path.join(__dirname, './@socket.io/admin-ui/ui/dist-pravosleva'))
+  express.static(path.join(__dirname, './@socket.io/admin-ui-0.1.2/ui/dist-pravosleva'))
 )
 chatApi.use('/api', jsonParser, chatExternalApi)
 chatApi.use('/get-users-map', getUsersMapRoute)

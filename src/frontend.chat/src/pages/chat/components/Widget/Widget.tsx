@@ -6,10 +6,11 @@ import { useColorMode } from '@chakra-ui/react'
 
 type TProps = {
   children: React.ReactElement;
-  position: 'top-left' | 'top-right';
+  position: 'top-left' | 'top-right' | 'bottom-left';
+  isHalfHeight?: boolean
 }
 
-export const Widget = ({ children, position }: TProps) => {
+export const Widget = ({ children, position, isHalfHeight }: TProps) => {
   const [isOpened, setIsOpened] = useState<boolean>(false)
   const openToggler = () => {
     setIsOpened((s) => !s)
@@ -31,8 +32,10 @@ export const Widget = ({ children, position }: TProps) => {
       <div
         className={styles['paper']}
       >
-        <div className={styles.content}>
+        <div className={clsx(styles.content, { [styles['half-height']]: !!isHalfHeight })}>
+          <div className={clsx(styles['abs-box'], styles['abs-box_top'])} />
           {children}
+          <div className={clsx(styles['abs-box'], styles['abs-box_bottom'])} />
         </div>
         <button
           onClick={openToggler}

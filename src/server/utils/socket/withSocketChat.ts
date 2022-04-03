@@ -48,6 +48,16 @@ createDirIfNecessary(uploadsPath)
 const uploadProgressMap = new Map<string, { connData: TConnectionData, status: string, event: any, ts: number }>()
 
 export const withSocketChat = (io: Socket) => {
+  // @ts-ignore
+  instrument(io, {
+    // namespaceName: '/sp.pravosleva',
+    // auth: false,
+    auth: {
+      type: "basic",
+      username: "admin",
+      password: "$2b$10$heqvAkYMez.Va6Et2uXInOnkCT6/uQj1brkrbyG3LpopDklcq7ZOS", // "changeit" encrypted with bcrypt
+    },
+  })
   // -- NOTE: Logout on front
   const logoutOld = (socketId: string) => {
     console.log('-- LOGOUT --')
@@ -873,7 +883,4 @@ export const withSocketChat = (io: Socket) => {
         }
     })
   })
-
-  // @ts-ignore
-  instrument(io, { auth: false, namespace: '/admin' })
 }

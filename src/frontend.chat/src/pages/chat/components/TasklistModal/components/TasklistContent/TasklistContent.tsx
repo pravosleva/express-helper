@@ -187,7 +187,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
             <Box
               pl={5}
               pr={5}
-              className={clsx(styles['control-box'], styles['sticky-header'], styles[`themed-bg_${mode.colorMode}`], styles[`themed-bordered_${mode.colorMode}`])}
+              className={clsx(styles['control-box'], styles['sticky-header'], styles[`themed-bg_${mode.colorMode}`], styles[`themed-bg_${mode.colorMode}_backdrop-blur`], styles[`themed-bordered_${mode.colorMode}`])}
             >
               <Stack>
                 <Box
@@ -205,8 +205,8 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                   <RadioGroup onChange={setRadioValue} value={radioValue}>
                     <Stack direction='row' justifyContent='center'>
                       <Radio value='all'>All</Radio>
-                      <Radio value='checked'>Checked only</Radio>
-                      <Radio value='unchecked'>Unchecked only</Radio>
+                      <Radio value='checked'>Checked</Radio>
+                      <Radio value='unchecked'>Unchecked</Radio>
                     </Stack>
                   </RadioGroup>
                 </Box>
@@ -318,7 +318,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         asModal
         ? (
           <>
-            <ModalFooter className='modal-footer-btns-wrapper'>
+            <ModalFooter className={clsx(styles['modal-footer-btns-wrapper'])}>
               {Controls}
             </ModalFooter>
           </>
@@ -326,7 +326,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
           <Box
             pl={5}
             pr={5}
-            className={clsx(styles['modal-footer-btns-wrapper'], styles['control-box'], styles['sticky-footer'], styles[`themed-bg_${mode.colorMode}`], styles[`themed-bordered_${mode.colorMode}`])}>
+            className={clsx(styles['modal-footer-btns-wrapper'], styles['control-box'], styles['sticky-footer'], styles[`themed-bg_${mode.colorMode}`], styles[`themed-bg_${mode.colorMode}_backdrop-blur`], styles[`themed-bordered_${mode.colorMode}`])}>
             {Controls}
           </Box>
         )

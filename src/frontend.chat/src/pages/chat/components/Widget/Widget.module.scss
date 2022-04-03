@@ -16,9 +16,33 @@ $widgetBgLight: #FFF; // var(--chakra-colors-gray-300);
   border-radius: #{$widgetBorderRadius};
   &_dark {
     background: var(--chakra-colors-gray-700);
+    .paper {
+      .abs-box {
+        &_bottom {
+          background: linear-gradient(transparent, var(--chakra-colors-gray-700));
+          height: 20px;
+        }
+        &_top {
+          background: linear-gradient(var(--chakra-colors-gray-700), transparent);
+          height: 20px;
+        }
+      }
+    }
   }
   &_light {
     background: #{$widgetBgLight};
+    .paper {
+      .abs-box {
+        &_bottom {
+          background: linear-gradient(transparent, #{$widgetBgLight});
+          height: 20px;
+        }
+        &_top {
+          background: linear-gradient(#{$widgetBgLight}, transparent);
+          height: 20px;
+        }
+      }
+    }
   }
   position: fixed;
   transition: all 0.2s linear;
@@ -36,10 +60,26 @@ $widgetBgLight: #FFF; // var(--chakra-colors-gray-300);
     border-radius: #{$widgetBorderRadius};
     // border: 2px solid #FFF;
 
+    .abs-box {
+      position: fixed;
+      width: calc(100% - #{$pad} - #{$pad});
+      &_bottom {
+        bottom: 0;
+        left: #{$pad}px;
+      }
+      &_top {
+        top: 0;
+        left: #{$pad}px;
+      }
+    }
+
     .content {
       max-height: calc(100vh - #{$pad} - #{$pad});
       padding: #{$padInternal};
       overflow-y: auto;
+    }
+    .half-height {
+      max-height: calc(50vh - #{$pad} - #{$pad}/2);
     }
   }
 }
@@ -85,6 +125,33 @@ $widgetBgLight: #FFF; // var(--chakra-colors-gray-300);
     font-size: 20px;
     position: absolute;
     top: 0px;
+    right: -#{$widgetTogglerWidth}px;
+    width: #{$widgetTogglerWidth}px;
+  
+    padding: 15px;
+    // background: var(--chakra-colors-gray-600);
+    background: transparent;
+    // box-shadow: var(--chakra-shadows-dark-lg);
+  }
+}
+
+.widget-fixed--bottom-left {
+  bottom: #{$pad};
+  left: #{$pad};
+
+  &_opened {
+    transform: translateX(0);
+  }
+  &_closed {
+    // transform: translateX(calc(-#{getWidgetWidth(100vw, #{$pad}, 550px)}px - #{$pad}));
+    // transform: translateX(-(#{getWidgetWidth(100vw, #{$pad}, 550px)}px));
+    transform: translateX(calc(-100% - #{$pad}));
+    // transform: translateX(calc(-#{$widgetWidth}px - #{$pad}));
+  }
+  .toggler {
+    font-size: 20px;
+    position: absolute;
+    bottom: 0px;
     right: -#{$widgetTogglerWidth}px;
     width: #{$widgetTogglerWidth}px;
   
