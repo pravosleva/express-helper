@@ -1874,15 +1874,17 @@ export const Chat = () => {
                             >
                               {capitalizeFirstLetter(descr)}
                             </Button>
-                            <IconButton
-                              borderRadius='full'
-                              aria-label='Remove link'
-                              icon={<IoMdClose color='inherit' size={14} />}
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                handleDeleteLink(link, ts)
-                              }}
-                            />
+                            {isMyMessage && (
+                              <IconButton
+                                borderRadius='full'
+                                aria-label='Remove link'
+                                icon={<IoMdClose color='inherit' size={14} />}
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  handleDeleteLink(link, ts)
+                                }}
+                              />
+                            )}
                           </ButtonGroup>
                         ))}
                         {
