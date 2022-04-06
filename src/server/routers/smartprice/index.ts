@@ -10,6 +10,7 @@ import deliverypriceForCitiesAutocompleteRoute from './mws/api/autocomplete/deli
 import streetsAutocompleteRoute from './mws/api/autocomplete/streets'
 import checkDiscountPromoRoute from './mws/api/check-discount'
 import warrantyPageRoute from './mws/api/warranty_claim_email'
+import { tradeinsIndex } from './mws/api/crm/tradeins'
 import crmTradeinsPickupHubsRoute from './mws/api/crm/tradeins/pickup_hubs'
 import crmPickupCreateAndSendBatchRoute from './mws/api/crm/pickup/create_and_send_batch'
 import crmProductsBuyoutBatchRoute from './mws/api/crm/crmproducts/buyout_batch'
@@ -56,7 +57,7 @@ import { sendFmipInstructions } from './mws/partner_api/tradein/send_fmip_instru
 import { policyConfirmationSMS } from './mws/partner_api/tradein/personal_data_processing_agreement/send_sms_code'
 import { signBySMSCode as signBySMSCode2 } from './mws/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_code'
 import { waitForVerified } from './mws/partner_api/tradein/wait_for/verified'
-
+import cors from 'cors'
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
 
 // const formidable = require('cyberjon-express-formidable')
@@ -76,6 +77,7 @@ spApi.post('/api/autocomplete/deliveryprice_for_cities', deliverypriceForCitiesA
 spApi.post('/api/autocomplete/streets', streetsAutocompleteRoute)
 spApi.post('/api/check-discount', checkDiscountPromoRoute)
 spApi.post('/api/warranty_claim_email', jsonParser, warrantyPageRoute)
+spApi.get('/api/crm/tradeins', jsonParser, cors(), tradeinsIndex)
 spApi.get('/api/crm/tradeins/pickup_hubs', jsonParser, crmTradeinsPickupHubsRoute)
 spApi.post('/api/crm/pickup/create_and_send_batch', jsonParser, crmPickupCreateAndSendBatchRoute)
 spApi.post('/api/crm/crmproducts/buyout_batch', jsonParser, crmProductsBuyoutBatchRoute)

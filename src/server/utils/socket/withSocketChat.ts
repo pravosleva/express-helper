@@ -29,6 +29,9 @@ import { tokensLimit } from './state/registeredUsersMapInstance'
 require('~/utils/cron/CRON-runner')
 // ---
 
+// NOTE: Если версия на фронте будет отлияаться, страница будет перезагружена при реконнекте
+const frontMajorVersionSupport = process.env.CHAT_FRONT_VERSION_SUPPORT || '2'
+
 // const isDev = process.env.NODE_ENV === 'development'
 // console.log(process.env.NODE_ENV)
 // const log = new Log(isDev)
@@ -46,6 +49,12 @@ createDirIfNecessary(uploadsPath)
 // console.log('--- bcrypt.hash 1234', bcrypt.hashSync('1234'))
 
 const uploadProgressMap = new Map<string, { connData: TConnectionData, status: string, event: any, ts: number }>()
+
+const getMapUnigueValues = (myMap: Map<any, string>) => {
+  const vals = []
+  for (const [_key, value] of myMap.entries()) vals.push(value)
+  return [...new Set(vals)]
+}
 
 export const withSocketChat = (io: Socket) => {
   // @ts-ignore
@@ -72,7 +81,7 @@ export const withSocketChat = (io: Socket) => {
 
     if (!!nameBySocketId) {
       usersSocketMap.delete(socket.id)
-      usersMap.delete(nameBySocketId)
+      // usersMap.delete(nameBySocketId)
     }
 
     // -- Uploader init (part 2/2)
@@ -97,9 +106,15 @@ export const withSocketChat = (io: Socket) => {
             // @ts-ignore
             const result: { isOk: boolean, message?: string, connData: TConnectionData } = {}
 
-            for(const [_key, value] of usersMap.state) {
-              const { socketId: _socketId } = value
-              if (socketId === _socketId) connData = value
+            // for(const [_key, value] of usersMap.state) {
+            //   const { socketId: _socketId } = value
+            //   if (socketId === _socketId) connData = value
+            // }
+            const detectedName = usersSocketMap.get(socketId)
+            if (!!detectedName) {
+              const _connData = usersMap.get(detectedName)
+              // if (socketId === _connData.socketId) connData = _connData
+              connData = _connData
             }
 
             result.isOk = !!connData?.room
@@ -107,7 +122,7 @@ export const withSocketChat = (io: Socket) => {
               if (!!connData?.room) {
                 result.connData = connData
               } else {
-                result.message = 'connData?.room not found in state: Try relogin'
+                result.message = 'connData?.[room] not found in state: Try relogin'
               }
             } else {
               result.message = 'User conn data not found in state: Try relogin'
@@ -130,7 +145,7 @@ export const withSocketChat = (io: Socket) => {
             })
             socket.emit('upload:started')
           } else {
-            throw new Error('ERR#707: FUCKUP')
+            throw new Error('ERR#707: Username not detected in state')
           }
         } catch (err) {
           console.log(err)
@@ -234,7 +249,7 @@ export const withSocketChat = (io: Socket) => {
       for (let r in rooms) socket.leave(r)
       // --
 
-      socket.emit('my.user-data', myRegData || null)
+      socket.emit('my.user-data', !!myRegData ? { ...myRegData, frontMajorVersionSupport } : null)
       // ---
       if (!name || !room) {
         cb('Попробуйте перезайти')
@@ -256,7 +271,8 @@ export const withSocketChat = (io: Socket) => {
       const roomData = roomsMap.get(room)
       if (!roomData) roomsMap.set(room, [])
 
-      io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      // io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
     socket.on('getTsMap', ({ rooms }: { rooms: string[] }) => {
       const tsMap = roomsMap.getTsMap(rooms)
@@ -279,7 +295,8 @@ export const withSocketChat = (io: Socket) => {
         usersMap.delete(nameBySocketId)
       }
 
-      io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      // io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
     })
 
     socket.on('login.set-pas-level-1', ({ password, name }, cb: (errMsg?: string) => void) => {
@@ -378,7 +395,8 @@ export const withSocketChat = (io: Socket) => {
       // ---
       
       // io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
-      io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      // io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
       socket.emit('my.user-data', registeredUsersMap.get(name) || null)
 
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
@@ -440,37 +458,41 @@ export const withSocketChat = (io: Socket) => {
       // socket.emit('oldChat', { roomData: roomsMap.get(room) })
       
       // io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
-      io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      // io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+      io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
       if (!!cb) cb(null, isUserAdmin(token))
 
       // ---
     })
-    socket.on('logout', ({ name, token }) => {
-      const userConnData = usersMap.get(name)
+    socket.on('logout', ({ name, room }) => {
+      // const userConnData = usersMap.get(name)
       // io.emit('notification', { status: 'info', description: 'Someone disconnected' })
       usersSocketMap.delete(socket.id)
 
-      // NOTE: Remove token if necessary?
-      // const regData = registeredUsersMap.get(name)
-      // if (!!regData && !!regData.token && !!token && token === regData.token) {
-      //   const { token, ...rest } = regData
-      //   registeredUsersMap.set(name, rest)
-      // }
-
-      if (!!userConnData) {
+      try {
         usersMap.delete(name)
-        if (!!userConnData?.room) {
-          socket.leave(userConnData.room)
-          io.in(userConnData.room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room }) => room === userConnData.room))
-          // io.in(userConnData.room).emit('notification', { status: 'info', description: `${name} just left the room`, _originalEvent: { name } })
-        }
+        socket.leave(room)
+        io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).filter((str) => usersMap.has(str)).map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room: r }) => room === r))
+      } catch (err) {
+        console.log(err)
       }
+
+      // if (!!userConnData) {
+      //   usersMap.delete(name)
+      //   if (!!userConnData?.room) {
+      //     socket.leave(room)
+      //     // io.in(userConnData.room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room }) => room === userConnData.room))
+      //     io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room }) => room === userConnData.room))
+      //     // io.in(userConnData.room).emit('notification', { status: 'info', description: `${name} just left the room`, _originalEvent: { name } })
+      //   }
+      // }
     })
 
     socket.on('users.room', ({ room }) => {
-      socket.emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room: r }) => room === r))
+      // socket.emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room: r }) => room === r))
+      socket.emit('users:room', getMapUnigueValues(usersSocketMap.state).filter((s) => usersMap.has(s)).map((str: string) => ({ name: str, room: usersMap.get(str).room })).filter(({ room: r }) => room === r))
     })
 
     socket.on('users.search', ({ searchText }: { searchText: string }, cb: ({ users }: { users: string[], isErrored?: boolean, message?: string }) => void) => {
@@ -497,7 +519,9 @@ export const withSocketChat = (io: Socket) => {
     // })
 
     socket.on('getAllInfo', () => {
-      socket.emit('allUsers', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room, userAgent: usersMap.get(str).userAgent })))
+      // socket.emit('allUsers', [...usersMap.keys()].map((str: string) => ({ name: str, room: usersMap.get(str).room, userAgent: usersMap.get(str).userAgent })))
+      socket.emit('allUsers', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room: usersMap.get(str).room, userAgent: usersMap.get(str).userAgent })))
+
       socket.emit('allRooms', { roomsData: [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {}) })
     })
 
@@ -872,12 +896,14 @@ export const withSocketChat = (io: Socket) => {
           usersSocketMap.delete(socket.id)
 
           const userConnData = usersMap.get(userName)
-          io.emit('notification', { status: 'info', description: `${userName} disconnected` })
+          // const isCurrentSocket = userConnData.socketId === socket.id
+          // io.emit('notification', { status: 'info', description: `${userName} disconnected` })
 
           if (!!userConnData) {
-            usersMap.delete(userName) // .filter((n) => userName !== n)
+            // usersMap.delete(userName) // .filter((n) => userName !== n)
             if (!!userConnData?.room) {
-              io.in(userConnData.room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: userConnData.room })).filter(({ room }) => room === userConnData.room))
+              // io.in(userConnData.room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room: userConnData.room })).filter(({ room }) => room === userConnData.room))
+              io.in(userConnData.room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room: userConnData.room })).filter(({ room }) => room === userConnData.room))
             }
           }
         }

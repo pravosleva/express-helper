@@ -112,6 +112,7 @@ import { TasklistContent } from './components/TasklistModal/components'
 // import debounce from 'lodash.debounce'
 import { useColorMode } from '@chakra-ui/react'
 import { useLatest } from '~/common/hooks/useLatest'
+import pkg from '../../../package.json'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -268,6 +269,26 @@ export const Chat = () => {
       }
       const myUserDataListener = (regData: any) => {
         userInfoProxy.regData = regData
+        const currentMajorVersion = pkg.version.split('.')[1]
+        if (!!regData?.frontMajorVersionSupport && regData.frontMajorVersionSupport !== currentMajorVersion) {
+          toast({
+            position: 'top',
+            title: `Actual version ${regData.frontMajorVersionSupport}`,
+            description: `Reload reason: ${currentMajorVersion}`,
+            status: 'error',
+            duration: 3000,
+          })
+          setTimeout(() => {
+            document.location.reload()
+          }, 4000)
+        }
+        // else toast({
+        //   position: 'top',
+        //   title: `${pkg.version}`,
+        //   // description: pkg.version,
+        //   status: 'info',
+        //   duration: 3000,
+        // })
       }
       const logoutFromServerListener = () => {
         history.push('/')
@@ -894,15 +915,11 @@ export const Chat = () => {
       toast({ position: 'top', description: jwtLogout?.message || 'Unlogged', status: 'info', duration: 3000, isClosable: true })
     }
 
-    if (!!socket) socket.emit('logout', { name, token: String(tokenLS) })
+    if (!!socket) socket.emit('logout', { name, room })
     updateRoomTsInLS(roomRef.current)
 
-    // -- NOTE: New
-    removeTokenLS()
-    // --
-
     setTimeout(() => { history.push('/') }, 0)
-  }, [updateRoomTsInLS, socket, removeTokenLS, tokenLS])
+  }, [updateRoomTsInLS, socket, room, name])
   const handleRoomClick = useCallback((room) => {
     // console.log(room, 'CLICKED')
     updateRoomTsInLS(room)

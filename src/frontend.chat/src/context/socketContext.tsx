@@ -65,7 +65,7 @@ export const SocketProvider =
         title: 'Connection lost...',
         // description: notif?.description,
         status: 'error',
-        duration: 10000,
+        duration: 3000,
         isClosable: true,
       })
     }, [isConnected])

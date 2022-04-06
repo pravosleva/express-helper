@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # NOTE: Все директории относительно project root dir
 echo "SKIP_PREFLIGHT_CHECK=true" > src/frontend.signin/.env
 
