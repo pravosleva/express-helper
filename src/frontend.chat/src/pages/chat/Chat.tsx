@@ -113,6 +113,7 @@ import { TasklistContent } from './components/TasklistModal/components'
 import { useColorMode } from '@chakra-ui/react'
 import { useLatest } from '~/common/hooks/useLatest'
 import pkg from '../../../package.json'
+import { SpecialTabs } from './components/SpecialTabs'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -2156,10 +2157,7 @@ export const Chat = () => {
         upToLg && (
           <Widget position='bottom-left' isHalfHeight>
             <>
-              <Heading>In progress.</Heading>
-              <Text fontSize='md' fontStyle='italic'>One of two:</Text>
-              <Text fontSize='md'>👉 Chat msg discussion?</Text>
-              <Text fontSize='md'>👉 <b>{room}</b> room News content?</Text>
+              <SpecialTabs />
             </>
           </Widget>
         )

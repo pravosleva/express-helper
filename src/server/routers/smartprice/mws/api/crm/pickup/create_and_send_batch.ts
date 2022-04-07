@@ -1,6 +1,6 @@
 /* eslint-disable prefer-destructuring */
 // const { getRandomInteger } = require('../../../../../../utils/getRandomInteger')
-const delay = require('../../../../../../utils/delay')
+import delay from '~/utils/delay'
 
 // const { SUCCESS_ANYWAY } = process.env
 
@@ -51,10 +51,15 @@ const toClient = {
   ],
 }
 
+const errTemplate = {
+  ok: false,
+  message: 'Tst err from backend'
+}
+
 // NOTE: По идее нужно делать как при назначении вывоза, то есть обновлять список пикапов исходя из этих данных.
 // Тут id - это номер пикапа, cdek_dispatch_number - номер накладной сдэк
 
-module.exports = async (req, res) => {
+export const createAndSendBatch = async (req: any, res: any) => {
   res.append('Content-Type', 'application/json')
 
   if (!req.is('multipart/form-data')) {
@@ -65,9 +70,11 @@ module.exports = async (req, res) => {
   //   res.status(500).send({ ok: false, message: 'Обязательное поле: req.body.dry_run' })
   // }
 
+  if (req.query.go_err_tst === '1') return res.status(200).send(errTemplate)
+
   // const toBeOrNotToBe = SUCCESS_ANYWAY === '1' ? 1 : Boolean(getRandomInteger(0, 1))
   let base
-  if (req.fields.dry_run === 'true') {
+  if (req.fields?.dry_run === 'true' || req.query.dry_run === '1') {
     base = toClient.dry_run[1]
   } else {
     base = toClient.dry_run[0]

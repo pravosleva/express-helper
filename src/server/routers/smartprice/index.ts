@@ -12,7 +12,7 @@ import checkDiscountPromoRoute from './mws/api/check-discount'
 import warrantyPageRoute from './mws/api/warranty_claim_email'
 import { tradeinsIndex } from './mws/api/crm/tradeins'
 import crmTradeinsPickupHubsRoute from './mws/api/crm/tradeins/pickup_hubs'
-import crmPickupCreateAndSendBatchRoute from './mws/api/crm/pickup/create_and_send_batch'
+import { createAndSendBatch as crmPickupCreateAndSendBatchRoute } from './mws/api/crm/pickup/create_and_send_batch'
 import crmProductsBuyoutBatchRoute from './mws/api/crm/crmproducts/buyout_batch'
 
 import md5Make from './mws/md5/make'
