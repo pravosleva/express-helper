@@ -77,6 +77,7 @@ import { Logic } from './MessagesLogic'
 import { useForm } from '~/common/hooks/useForm'
 import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
+import { AiFillTags } from 'react-icons/ai'
 import { useDebounce, useLocalStorage } from 'react-use'
 import { UploadInput } from './components/UploadInput'
 // import 'react-medium-image-zoom/dist/styles.css'
@@ -2067,7 +2068,14 @@ export const Chat = () => {
                   <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={() => { messageRef.current = '' }}>Clear</button></div>
                 )*/}
                 {isLogged && (
-                  <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={handleOpenTagsModal}>Tags</button></div>
+                  <div>
+                    <button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={handleOpenTagsModal}>
+                      <span style={{ display: 'flex', alignItems: 'center' }}>
+                        Tags
+                        <span style={{ marginLeft: '7px' }}><AiFillTags size={16} color={enabledTags.length > 0 ? 'var(--chakra-colors-blue-300)' : 'inherit'} /></span>
+                      </span>
+                    </button>
+                  </div>
                 )}
                 {(filters.length > 0 || !!formData.searchText || assignmentExecutorsFilters.length > 0) && (
                   <>
@@ -2078,7 +2086,7 @@ export const Chat = () => {
                       colorScheme='blue'
                       marginLeft='auto'
                     >
-                      <TagLabel>Found {filteredMessages.length}</TagLabel>
+                      <TagLabel>{getTruncated(formData.searchText, 50)} <b>{filteredMessages.length}</b></TagLabel>
                       <TagCloseButton onClick={resetSearchAndFiltersAndAssignmentFilters} />
                     </Tag>
                   </>

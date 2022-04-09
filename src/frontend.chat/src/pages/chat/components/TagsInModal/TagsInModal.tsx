@@ -25,7 +25,7 @@ type TProps = {
 }
 
 export const TagsInModal = ({ tags, isOpened, onClose, onToggeTag, enabledTags }: TProps) => {
-  const searchFieldRef = useRef(null)
+  // const searchFieldRef = useRef(null)
   const toggleTag = useCallback((tag: string) => (_e: any) => {
     onToggeTag(tag)
   }, [onToggeTag])
@@ -44,25 +44,26 @@ export const TagsInModal = ({ tags, isOpened, onClose, onToggeTag, enabledTags }
       isOpen={isOpened}
       onClose={onClose}
       scrollBehavior='inside'
-      initialFocusRef={searchFieldRef}
+      // initialFocusRef={searchFieldRef}
     >
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>
           <Box pl={0} pr={0} pb={0}>
             <FormControl>
-              <FormLabel>Search</FormLabel>
+              <FormLabel>Tags</FormLabel>
               <Input
-                autoFocus
+                autoFocus={false}
                 name='userName'
                 // isInvalid={!formData.userName}
                 type='text'
-                placeholder="Tag"
+                placeholder="Search"
                 // ref={initialSetPasswdRef}
                 // onKeyDown={handleKeyDownEditedMessage}
                 value={search}
                 onChange={handleInputChange}
-                rounded='3xl'
+                // rounded='3xl'
+                variant='flushed'
               />
             </FormControl>
 
