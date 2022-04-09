@@ -2086,7 +2086,7 @@ export const Chat = () => {
                       colorScheme='blue'
                       marginLeft='auto'
                     >
-                      <TagLabel>{getTruncated(formData.searchText, 50)} <b>{filteredMessages.length}</b></TagLabel>
+                      <TagLabel><b>{filteredMessages.length}</b> {getTruncated(formData.searchText, 50)}</TagLabel>
                       <TagCloseButton onClick={resetSearchAndFiltersAndAssignmentFilters} />
                     </Tag>
                   </>
