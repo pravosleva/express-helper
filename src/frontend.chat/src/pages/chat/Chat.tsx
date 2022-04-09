@@ -205,12 +205,14 @@ export const Chat = () => {
   // @ts-ignore
   const { socket, roomData, isConnected } = useSocketContext()
   const messageRef = useRef<string>('')
+  const [showClearBtn, setShowClearBtn] = useState<boolean>(false)
   const resetMessage = useCallback(() => {
     messageRef.current = ''
     const input = document.getElementById('msg')
     // @ts-ignore
     if (!!input) input.value = ''
-  }, [])
+    setShowClearBtn(false)
+  }, [setShowClearBtn])
   const [isTagsModalOpened, setIsTagsModalOpened] = useState<boolean>(false)
   const handleOpenTagsModal = useCallback(() => {
     setIsTagsModalOpened(true)
@@ -559,6 +561,8 @@ export const Chat = () => {
   }
   const handleChange = useCallback((ev: any) => {
     messageRef.current = ev.target.value
+    if (!!messageRef.current) setShowClearBtn(true)
+    else setShowClearBtn(false)
   }, [])
   const hasUserInMessage = useCallback(
     (user: TUser) => {
@@ -1117,7 +1121,11 @@ export const Chat = () => {
 ┃ ┃ ┃ ┗ a1.2
 ┃ ┃ ┗ a2
 ┃ ┣ b`
-  }, [])
+  const input = document.getElementById('msg')
+  // @ts-ignore
+  if (!!input) input.value = messageRef.current
+  setShowClearBtn(true)
+  }, [setShowClearBtn])
   const isLogged = useMemo(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
 
   const handleRemoveFromSprint = useCallback(async (ts: number) => {
@@ -1772,6 +1780,8 @@ export const Chat = () => {
           </Box>
 
           <ScrollToBottom
+            initialScrollBehavior='auto'
+            debounce={100}
             followButtonClassName='follow-button'
             className={clsx(styles["messages"], { [styles["height-limited-md"]]: upToMd, [styles["height-full-auto-sm"]]: downToMd })}
             debug={false}
@@ -2042,14 +2052,14 @@ export const Chat = () => {
                 {!!uploadErrorMsg && (
                   <>
                     <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'], stylesBase['green'])} onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} color='var(--chakra-colors-green-300)' /></span></span></button></div>
-                    <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Error: {uploadErrorMsg}</div>
+                    <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Err: {uploadErrorMsg}</div>
                   </>
                 )}
                 {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
                   <>
-                    <UploadInput id='siofu_input' label='Add file' isDisabled={isFileUploading} />
+                    <UploadInput id='siofu_input' label='Img' isDisabled={isFileUploading} />
                     {isFileUploading && (
-                      <div>Uploading: {uploadPercentageRef.current} %</div>
+                      <div><b>Upload... {uploadPercentageRef.current} %</b></div>
                     )}
                   </>
                 )}
@@ -2072,10 +2082,25 @@ export const Chat = () => {
                     <button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={handleOpenTagsModal}>
                       <span style={{ display: 'flex', alignItems: 'center' }}>
                         Tags
-                        <span style={{ marginLeft: '7px' }}><AiFillTags size={16} color={enabledTags.length > 0 ? 'var(--chakra-colors-blue-300)' : 'inherit'} /></span>
+                        <span style={{ marginLeft: '7px' }}><AiFillTags size={17} color={enabledTags.length > 0 ? 'var(--chakra-colors-blue-300)' : 'inherit'} /></span>
                       </span>
                     </button>
                   </div>
+                )}
+                { isLogged && showClearBtn && (
+                  <IconButton
+                    size='sm'
+                    aria-label="DEL"
+                    colorScheme='red'
+                    variant='outline'
+                    isRound
+                    icon={<IoMdClose size={15} />}
+                    onClick={() => {
+                      resetMessage()
+                    }}
+                  >
+                    DEL
+                  </IconButton>
                 )}
                 {(filters.length > 0 || !!formData.searchText || assignmentExecutorsFilters.length > 0) && (
                   <>

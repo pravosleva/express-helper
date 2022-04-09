@@ -20,6 +20,27 @@ type TProps = {
   onSubmit: ({ link, descr, cb }: { link: string, descr: string, cb: () => void }) => void;
 }
 
+const getSpecialDescr = (descr: string) => {
+  let result = descr
+  switch(true) {
+    case descr.slice(0, 3).toLowerCase() === 'mr ':
+      result = `⚡ ${descr.toUpperCase()}`
+      break;
+    case descr.slice(0, 3).toLowerCase() === 'qn ':
+      result = `❓ ${descr}`
+      break;
+    case descr.slice(0, 3).toLowerCase() === 'wtf':
+      result = `⚠️ ${descr.toUpperCase()}`
+      break;
+    case descr.toLowerCase() === 'done':
+      result = `✅ ${descr}`
+      break;
+    default:
+      break;
+  }
+  return result
+}
+
 export const AddLinkFormModal = ({
   isOpened,
   onClose,
@@ -30,7 +51,7 @@ export const AddLinkFormModal = ({
     descr: '',
   })
   const handleSubmit = () => {
-    onSubmit({ link: formData.link, descr: formData.descr, cb: () => { resetForm() } })
+    onSubmit({ link: formData.link, descr: getSpecialDescr(formData.descr), cb: () => { resetForm() } })
   }
   const isValidUrl = useMemo<boolean>(() => isUrl(formData.link), [formData.link])
   const linkRef = useRef(null)
