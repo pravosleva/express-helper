@@ -114,6 +114,7 @@ import { useColorMode } from '@chakra-ui/react'
 import { useLatest } from '~/common/hooks/useLatest'
 import pkg from '../../../package.json'
 import { SpecialTabs } from './components/SpecialTabs'
+import { TagsInModal } from './components/TagsInModal'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -202,11 +203,20 @@ export const Chat = () => {
 
   // @ts-ignore
   const { socket, roomData, isConnected } = useSocketContext()
-  const [message, setMessage] = useState('')
-  const latestMessage = useLatest(message)
+  const messageRef = useRef<string>('')
   const resetMessage = useCallback(() => {
-    setMessage('')
-  }, [setMessage])
+    messageRef.current = ''
+    const input = document.getElementById('msg')
+    // @ts-ignore
+    if (!!input) input.value = ''
+  }, [])
+  const [isTagsModalOpened, setIsTagsModalOpened] = useState<boolean>(false)
+  const handleOpenTagsModal = useCallback(() => {
+    setIsTagsModalOpened(true)
+  }, [setIsTagsModalOpened])
+  const handleCloseTagsModal = useCallback(() => {
+    setIsTagsModalOpened(false)
+  }, [setIsTagsModalOpened])
   const [messages, setMessages] = useState<TMessage[]>([])
   const resetMessages = useCallback(() => {
     setMessages([])
@@ -218,7 +228,7 @@ export const Chat = () => {
   const { users, tasklist } = useContext(UsersContext)
   const history = useHistory()
   const toast = useToast()
-  const [left, isMsgLimitReached] = useTextCounter({ text: message, limit: 2000 })
+  const [left, isMsgLimitReached] = useTextCounter({ text: messageRef.current, limit: 2000 })
   const [tokenLS, _setTokenLS, removeTokenLS] = useLocalStorage<any>('chat.token')
   // const textFieldRef = useRef<HTMLInputElement>(null)
   const textFieldRef = useRef<HTMLTextAreaElement>(null)
@@ -487,6 +497,16 @@ export const Chat = () => {
 
   const [isSending, setIsSending] = useState<boolean>(false)
   const handleSendMessage = useCallback(() => {
+    if (!messageRef.current) {
+      toast({
+        position: 'top',
+        title: 'Sorry',
+        description: 'Cant send empty msg',
+        status: 'error',
+        duration: 2000,
+      })
+      return
+    }
     if (!roomRef.current) {
       toast({
         position: 'top',
@@ -509,7 +529,7 @@ export const Chat = () => {
       })
       return
     }
-    const normalizedMsg = latestMessage.current.trim().replace(/\n+/g, '\n') // message.replace(/\s+/g, ' ').trim()
+    const normalizedMsg = messageRef.current.trim().replace(/\n+/g, '\n') // message.replace(/\s+/g, ' ').trim()
     if (!!socket && !!normalizedMsg) {
       setIsSending(true)
       
@@ -530,21 +550,21 @@ export const Chat = () => {
   const handleKeyUp = (ev: any) => {
     switch (true) {
       case ev.keyCode === 13 && !ev.shiftKey:
-        if (!!latestMessage.current) handleSendMessage()
+        if (!!messageRef.current) handleSendMessage()
         break
       default:
         break
     }
   }
   const handleChange = useCallback((ev: any) => {
-    setMessage(ev.target.value)
-  }, [setMessage])
+    messageRef.current = ev.target.value
+  }, [])
   const hasUserInMessage = useCallback(
     (user: TUser) => {
       let result = false
       const template = `@${user.name}`
 
-      if (latestMessage.current.includes(template)) result = true
+      if (messageRef.current.includes(template)) result = true
 
       return result
     },
@@ -552,10 +572,10 @@ export const Chat = () => {
   )
   const handleUserClick = useCallback((user: TUser) => {
     if (!hasUserInMessage(user)) {
-      setMessage(`@${user.name}, ${latestMessage.current}`)
+      messageRef.current = `@${user.name}, ${messageRef.current}`
     }
     if (!!textFieldRef.current) textFieldRef.current.focus()
-  }, [setMessage])
+  }, [])
 
   useEffect(() => {
     if (!room || !name) history.push('/')
@@ -840,6 +860,16 @@ export const Chat = () => {
   const { formData, handleInputChange, resetForm } = useForm({
     searchText: '',
   })
+  const enabledTags = useMemo<string[]>(() => formData.searchText.split(' ').filter((w: string) => w[0] === '#'), [formData.searchText])
+  const handleToggleTag = useCallback((tag: string) => {
+    if (formData.searchText.includes(tag)) {
+      const value = formData.searchText.replace(tag, '')
+      handleInputChange({ target: { name: 'searchText', value: value.replace(/\s\s+/g, ' ').trim() } })
+    } else {
+      const value = `${formData.searchText} ${tag}`
+      handleInputChange({ target: { name: 'searchText', value: value.replace(/\s\s+/g, ' ').trim() } })
+    }
+  }, [formData.searchText])
   const [debouncedSearchText, setDebouncedSearchText] = useState('');
   const [, _cancel] = useDebounce(
     () => {
@@ -934,6 +964,7 @@ export const Chat = () => {
 
   // V2: Web Worker
   const [filteredMessages, setFilteredMessages] = useState<TMessage[]>([])
+  const [tags, setTags] = useState<string[]>([])
   const [allImagesMessagesLightboxFormat, setAllImagesMessagesLightboxFormat] = useState<any[]>([])
   const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
   useEffect(() => {
@@ -945,6 +976,12 @@ export const Chat = () => {
           case 'getFilteredMessages':
             timers.current[$event.data.type] = setTimeout(() => {
               setFilteredMessages($event.data.result)
+            }, 100)
+            break;
+          case 'getTags':
+            timers.current[$event.data.type] = setTimeout(() => {
+              // @ts-ignore
+              setTags($event.data.result)
             }, 100)
             break;
           case 'getAllImagesLightboxFormat':
@@ -969,6 +1006,9 @@ export const Chat = () => {
   }, [messages, filters, debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters])
   useEffect(() => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getAllImagesLightboxFormat', messages })
+  }, [messages])
+  useEffect(() => {
+    webWorkersInstance.filtersWorker.postMessage({ type: 'getTags', messages })
   }, [messages])
   // --
   
@@ -1064,19 +1104,19 @@ export const Chat = () => {
   const handleOpenEmoji = useCallback(() => { setIsEmojiOpened(true) }, [setIsEmojiOpened])
   const handleCloseEmoji = useCallback(() => { setIsEmojiOpened(false) }, [setIsEmojiOpened])
   const handleSelectEmojies = useCallback((value: string) => {
-    setMessage((s) => `${s.trim()} ${value}`)
-  }, [setMessage])
+    messageRef.current = `${messageRef.current.trim()} ${value}`
+  }, [])
 
   const handleOpenExternalLink = useCallback(openExternalLink, [])
   const handleSetQuickStruct = useCallback(() => {
-    setMessage((s) => `┣ ${s || 'root'}
+    messageRef.current = `┣ ${messageRef.current || 'root'}
 ┃ ┣ a
 ┃ ┃ ┣ a1
 ┃ ┃ ┃ ┣ a1.1
 ┃ ┃ ┃ ┗ a1.2
 ┃ ┃ ┗ a2
-┃ ┣ b`)
-  }, [setMessage])
+┃ ┣ b`
+  }, [])
   const isLogged = useMemo(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
 
   const handleRemoveFromSprint = useCallback(async (ts: number) => {
@@ -1291,35 +1331,37 @@ export const Chat = () => {
         onSelectItem={onUserAssign}
         selectItemButtonText='Assign'
       />
-
       <GalleryModal
         isOpened={isGalleryOpened}
         onClose={handleCloseGallery}
         defaultSrc={clickedImageSrc}
         messages={messages}
       />
-
       <TasklistModal
         isOpened={isTasklistModalOpened}
         onClose={handleTasklistModalClose}
         data={tasklist}
       />
-
       <MyInfoModal
         isOpened={isMyInfoModalOpened}
         onClose={handleMyInfoModalClose}
         data={userInfoSnap.regData}
       />
-
       <SetPasswordModal
         isOpened={isSetPasswordModalOpened}
         onClose={handleSetPasswordModalClose}
       />
-
       <AddLinkFormModal
         isOpened={isAddLinkFormOpened}
         onClose={closeAddLinkForm}
         onSubmit={submitNewLink}
+      />
+      <TagsInModal
+        isOpened={isTagsModalOpened}
+        tags={tags}
+        onClose={handleCloseTagsModal}
+        onToggeTag={handleToggleTag}
+        enabledTags={enabledTags}
       />
 
       <ContextMenu
@@ -2021,8 +2063,11 @@ export const Chat = () => {
                     style={{ display: 'flex', alignItems: 'center' }}
                     onClick={handleSetQuickStruct}><span style={{ marginRight: '7px' }}>┣</span><span>Struct</span></button></div>
                 )}
-                { isLogged && !!message && (
-                  <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={() => { setMessage('') }}>Clear</button></div>
+                {/* isLogged && !!messageRef.current && (
+                  <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={() => { messageRef.current = '' }}>Clear</button></div>
+                )*/}
+                {isLogged && (
+                  <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={handleOpenTagsModal}>Tags</button></div>
                 )}
                 {(filters.length > 0 || !!formData.searchText || assignmentExecutorsFilters.length > 0) && (
                   <>
@@ -2051,7 +2096,7 @@ export const Chat = () => {
                   resize="none"
                   ref={textFieldRef}
                   placeholder="Enter Message"
-                  value={message}
+                  // value={messageRef.current}
                   onChange={handleChange}
                   onKeyUp={handleKeyUp}
                   variant='unstyled'
@@ -2070,7 +2115,7 @@ export const Chat = () => {
                   isRound
                   icon={<RiSendPlaneFill size={15} />}
                   onClick={handleSendMessage}
-                  disabled={!message}
+                  // disabled={!messageRef.current}
                   isLoading={isSending}
                 >
                   Send

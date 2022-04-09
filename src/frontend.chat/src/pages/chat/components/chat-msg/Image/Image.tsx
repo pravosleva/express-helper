@@ -111,7 +111,7 @@ export const Image = ({
           )}
         </div>
       </Box>
-      {isNextOneBtnEnabled && <div className='centered-box'><button className={clsx(stylesBase['special-btn'], styles['special-btn-sm'], styles['dark-btn'])} onClick={() => { onAddAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
+      {isNextOneBtnEnabled && <div className={stylesBase['centered-box']}><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-sm'], stylesBase['dark-btn'])} onClick={() => { onAddAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
     </Fragment>
   )
 }

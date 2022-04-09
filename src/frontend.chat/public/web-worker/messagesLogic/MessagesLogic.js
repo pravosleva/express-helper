@@ -184,4 +184,15 @@ class Logic {
 
     return res
   }
+  getTags() {
+    const abSort = (a, b) => a.localeCompare(b)
+    const latinAndCyrillicRe = /[^a-zA-Za-åa-ö-w-я 0-9]/gi
+    const res = this.messages.reduce((acc, cur) => {
+      if (!cur.text) return acc
+      const words = cur.text.replace(/\n/g, ' ').split(' ').filter((w) => latinAndCyrillicRe.test(w))
+      for (const word of words) if (word[0] === '#') acc.push(word)
+      return acc
+    }, [])
+    return [...new Set(res)].sort(abSort)
+  }
 }

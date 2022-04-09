@@ -32,12 +32,24 @@ self.onmessage = ($event) => {
     }
   }
 
+  // 3
+  const getTags = () => {
+    return (messages) => {
+      const logic = new Logic(messages)
+  
+      return logic.getTags()
+    }
+  }
+
   switch ($event.data.type) {
     case 'getFilteredMessages':
       result = getFilteredMessages($event.data)($event.data.messages);
       break;
     case 'getAllImagesLightboxFormat':
       result = getAllImagesLightboxFormat($event.data)($event.data.messages);
+      break;
+    case 'getTags':
+      result = getTags($event.data)($event.data.messages);
       break;
     // NOTE: Others...
     default:

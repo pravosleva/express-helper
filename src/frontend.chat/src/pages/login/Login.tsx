@@ -218,6 +218,7 @@ export const Login = () => {
       toast({ position: 'bottom', title: `Hello, ${jwtResponse.regData?.tg?.username || 'ERR'}`, status: 'info' })
       if (!!normalizedRoom) setLastRoomLS(normalizedRoom)
       addRoom(sR || slugifiedRoom)
+      setNameLS(name)
       history.push('/chat')
     }
 
@@ -241,6 +242,7 @@ export const Login = () => {
             if (error === 'FRONT:LOG/PAS') {
               handlePasswordModalOpen()
               setIsLoading1(false)
+              setNameLS(name)
               return
             }
             toast({

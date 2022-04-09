@@ -1,0 +1,11 @@
+.modal-tags-btns-wrapper {
+  display: flex;
+  align-items: center;
+  & > * {
+    margin-bottom: var(--chakra-space-2);
+  }
+  & button:not(:last-child) {
+    margin-right: var(--chakra-space-2);
+  }
+  flex-wrap: wrap;
+}
