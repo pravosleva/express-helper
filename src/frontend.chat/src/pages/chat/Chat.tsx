@@ -116,6 +116,10 @@ import { useLatest } from '~/common/hooks/useLatest'
 import pkg from '../../../package.json'
 import { SpecialTabs } from './components/SpecialTabs'
 import { TagsInModal } from './components/TagsInModal'
+import {
+  // useDeepEffect,
+  useCompare,
+} from '~/common/hooks/useDeepEffect'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -226,7 +230,7 @@ export const Chat = () => {
   }, [setMessages])
   const logic = useMemo<Logic>(() => {
     return new Logic(messages)
-  }, [JSON.stringify(messages)])
+  }, [useCompare([messages])])
   // @ts-ignore
   const { users, tasklist } = useContext(UsersContext)
   const history = useHistory()
@@ -813,7 +817,7 @@ export const Chat = () => {
   const [downToMd] = useMediaQuery(`(max-width: ${md}px)`)
   const [upToMd] = useMediaQuery(`(min-width: ${md + 1}px)`)
   const [upToLg] = useMediaQuery(`(min-width: ${lg + 1}px)`)
-  const completedTasksLen = useMemo(() => !!tasklist ? tasklist.filter(({ isCompleted }: any) => isCompleted).length : 0, [JSON.stringify(tasklist)])
+  const completedTasksLen = useMemo(() => !!tasklist ? tasklist.filter(({ isCompleted }: any) => isCompleted).length : 0, [useCompare([tasklist])])
   const percentage = useMemo(() => {
     if (!tasklist || tasklist.length === 0 || !Array.isArray(tasklist)) return 0
 
@@ -1029,7 +1033,7 @@ export const Chat = () => {
 
   const hasNews: boolean = useMemo(() => {
     return hasNewsInRoomlist(roomlistLS || [], tsMap, roomRef.current)
-  }, [JSON.stringify(roomlistLS), JSON.stringify(tsMap)])
+  }, [useCompare([roomlistLS, tsMap])])
 
   const onUserAssign = useCallback((name: string) => {
     if (!!editedMessage?.assignedTo && Array.isArray(editedMessage.assignedTo) && editedMessage.assignedTo.length > 0) {

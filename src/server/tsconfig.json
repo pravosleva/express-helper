@@ -21,6 +21,7 @@
     "**/*.js"
   ],
   "exclude": [
+    "tsconfig.json",
     "**/tsconfig.json"
   ]
 }
