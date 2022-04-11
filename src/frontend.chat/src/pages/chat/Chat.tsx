@@ -284,10 +284,10 @@ export const Chat = () => {
       const myUserDataListener = (regData: any) => {
         userInfoProxy.regData = regData
         const currentMajorVersion = pkg.version.split('.')[1]
-        if (!!regData?.frontMajorVersionSupport && regData.frontMajorVersionSupport !== currentMajorVersion) {
+        if (!!regData?.frontMinorVersionSupport && regData.frontMinorVersionSupport !== currentMajorVersion) {
           toast({
             position: 'top',
-            title: `Actual version ${regData.frontMajorVersionSupport}`,
+            title: `Actual version ${regData.frontMinorVersionSupport}`,
             description: `Reload reason: ${currentMajorVersion}`,
             status: 'error',
             duration: 3000,

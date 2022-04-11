@@ -20,24 +20,16 @@ import siofu from 'socketio-file-upload'
 import path from 'path'
 import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
 import { removeFileIfNecessary } from '~/utils/fs-tools/removeFileIfNecessary'
-import { getParsedUserAgent, getToken, standardResultHandler } from './utils'
+import { getParsedUserAgent, standardResultHandler } from './utils'
 // import { Log } from '~/utils/socket/utils/Log'
 import { moveFile } from '~/utils/fs-tools/moveFile'
-import { tokensLimit } from './state/registeredUsersMapInstance'
 
 // --- NOTE: Run CRON for backups!
 require('~/utils/cron/CRON-runner')
 // ---
 
 // NOTE: Если версия на фронте будет отлияаться, страница будет перезагружена при реконнекте
-const frontMajorVersionSupport = process.env.CHAT_FRONT_VERSION_SUPPORT || '2'
-
-// const isDev = process.env.NODE_ENV === 'development'
-// console.log(process.env.NODE_ENV)
-// const log = new Log(isDev)
-
-const { CHAT_ADMIN_TOKEN } = process.env
-const isUserAdmin = (token: string) => !!CHAT_ADMIN_TOKEN ? String(token) === CHAT_ADMIN_TOKEN : false
+const frontMinorVersionSupport = process.env.CHAT_FRONT_VERSION_SUPPORT || '2'
 const CHAT_UPLOADS_DIR_NAME = process.env.CHAT_UPLOADS_DIR_NAME || 'uploads'
 
 // -- Create uploads dir if necessary
@@ -249,7 +241,7 @@ export const withSocketChat = (io: Socket) => {
       for (let r in rooms) socket.leave(r)
       // --
 
-      socket.emit('my.user-data', !!myRegData ? { ...myRegData, frontMajorVersionSupport } : null)
+      socket.emit('my.user-data', !!myRegData ? { ...myRegData, frontMinorVersionSupport } : null)
       // ---
       if (!name || !room) {
         cb('Попробуйте перезайти')
@@ -350,9 +342,6 @@ export const withSocketChat = (io: Socket) => {
         return
       }
 
-      const { passwordHash, registryLevel, ...rest } = registeredUsersMap.get(name)
-      const newToken: string = getToken(name)
-
       if (!isLogged) return cb('Fuck you')
 
       if (isLogged) { // !bcrypt.compareSync(password, passwordHash)
@@ -368,25 +357,6 @@ export const withSocketChat = (io: Socket) => {
 
       socket.join(room)
       const roomData = roomsMap.get(room)
-      
-      // -- Set new token
-      const regData = registeredUsersMap.get(name)
-      if (!!regData) {
-        let newTokens: string[] = []
-
-        if (!!regData?.tokens && Array.isArray(regData.tokens)) {
-          newTokens = [newToken, ...regData.tokens]
-        } else {
-          newTokens = [newToken]
-        }
-        // -- NOTE: Убрать старые токены
-        if (newTokens.length > tokensLimit) {
-          newTokens = newTokens.splice(0, tokensLimit)
-        }
-        // --
-        registeredUsersMap.set(name, { ...regData, tokens: [...new Set(newTokens)] })
-      }
-      // --
 
       if (!roomData) roomsMap.set(room, [])
       // socket.emit('oldChat', { roomData: roomsMap.get(room) })
@@ -401,10 +371,10 @@ export const withSocketChat = (io: Socket) => {
 
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
-      if (!!cb) cb(null, isUserAdmin(token), newToken)
+      if (!!cb) cb(null)
     })
 
-    socket.on('login', ({ isLogged, name, room, token }, cb?: (reason?: string, isAdmin?: boolean) => void) => {
+    socket.on('login', ({ isLogged, name, room, token }, cb?: (reason?: string) => void) => {
       // if (!name || !room) {
       //   if (!!cb) cb('Room and Username are required')
       //   return
@@ -462,7 +432,7 @@ export const withSocketChat = (io: Socket) => {
       io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
-      if (!!cb) cb(null, isUserAdmin(token))
+      if (!!cb) cb(null)
 
       // ---
     })
