@@ -14,6 +14,17 @@ import { tradeinsIndex } from './mws/api/crm/tradeins'
 import crmTradeinsPickupHubsRoute from './mws/api/crm/tradeins/pickup_hubs'
 import { createAndSendBatch as crmPickupCreateAndSendBatchRoute } from './mws/api/crm/pickup/create_and_send_batch'
 import crmProductsBuyoutBatchRoute from './mws/api/crm/crmproducts/buyout_batch'
+import { crmStatesIndex } from './mws/api/crm/crmstates'
+import { crmRequestTypesIndex } from './mws/api/crm/crmrequest-types'
+import { crmProductRejectionReasonsIndex, crmProductRejectionReasonsRating } from './mws/api/crm/crmproduct-rejection-reasons'
+import { crmMarketingPartners } from './mws/api/crm/marketing/partners'
+import { crmDiscountReasons } from './mws/api/crm/crmproduct-discount-reasons'
+import { crmProductVariantsAllParams } from './mws/api/crm/productvariants'
+import { crmServiceCenters } from './mws/api/crm/service-centers'
+import { crmUsers, crmUsersMe } from './mws/api/crm/users'
+import { crmProductsIdIndex, crmProductsIDNextStates } from './mws/api/crm/crmproducts/[id]'
+import { crmPriceMultipliersFlags } from './mws/api/crm/pricemultipliers'
+import { crmHistoryTradeinId, crmHistoryProductId } from './mws/api/crm/history'
 
 import md5Make from './mws/md5/make'
 
@@ -81,6 +92,22 @@ spApi.get('/api/crm/tradeins', jsonParser, cors(), tradeinsIndex)
 spApi.get('/api/crm/tradeins/pickup_hubs', jsonParser, crmTradeinsPickupHubsRoute)
 spApi.post('/api/crm/pickup/create_and_send_batch', jsonParser, crmPickupCreateAndSendBatchRoute)
 spApi.post('/api/crm/crmproducts/buyout_batch', jsonParser, crmProductsBuyoutBatchRoute)
+spApi.get('/api/crm/crmstates', jsonParser, crmStatesIndex)
+spApi.get('/api/crm/crmrequest-types', jsonParser, crmRequestTypesIndex)
+spApi.get('/api/crm/crmproduct-rejection-reasons', jsonParser, crmProductRejectionReasonsIndex)
+spApi.get('/api/crm/crmproduct-rejection-reasons/rating', jsonParser, crmProductRejectionReasonsRating)
+spApi.get('/api/crm/marketing/partners', jsonParser, crmMarketingPartners)
+spApi.get('/api/crm/crmproduct-discount-reasons', jsonParser, crmDiscountReasons)
+spApi.get('/api/crm/productvariants/all_params', jsonParser, crmProductVariantsAllParams)
+spApi.get('/api/crm/service-centers', jsonParser, crmServiceCenters)
+spApi.get('/api/crm/users', jsonParser, crmUsers)
+spApi.post('/api/crm/users/me', jsonParser, crmUsersMe)
+spApi.get('/api/crm/crmproducts/:productId/', jsonParser, crmProductsIdIndex)
+// spApi.patch('/api/crm/crmproducts/:productId/', jsonParser, crmProductsIdIndex)
+spApi.get('/api/crm/crmproducts/:productId/next_states/', jsonParser, crmProductsIDNextStates)
+spApi.get('/api/crm/pricemultipliers/flags', jsonParser, crmPriceMultipliersFlags)
+spApi.get('/api/crm/history/tradein/:tradeinId', jsonParser, crmHistoryTradeinId)
+spApi.get('/api/crm/history/product/:productId', jsonParser, crmHistoryProductId)
 
 // 2. Frontend API imitation (не совсем понятно, почему Гена так называет часть запросов из клиента)
 spApi.get('/fapi/get-catalog-data', catalogDataRoute)
