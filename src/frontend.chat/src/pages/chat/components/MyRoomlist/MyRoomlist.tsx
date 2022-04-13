@@ -11,7 +11,6 @@ import {
 export const MyRoomlist = ({ children }: any) => {
   return (
     <Accordion allowMultiple>
-
       <AccordionItem>
         <h2>
           <AccordionButton>

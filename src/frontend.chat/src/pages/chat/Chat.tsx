@@ -120,6 +120,7 @@ import {
   // useDeepEffect,
   useCompare,
 } from '~/common/hooks/useDeepEffect'
+import { BiRefresh } from 'react-icons/bi'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -225,9 +226,14 @@ export const Chat = () => {
     setIsTagsModalOpened(false)
   }, [setIsTagsModalOpened])
   const [messages, setMessages] = useState<TMessage[]>([])
+  const [tsPoint, setTsPoint] = useState<number | null>(Date.now())
   const resetMessages = useCallback(() => {
+    setTsPoint(Date.now())
     setMessages([])
-  }, [setMessages])
+  }, [setMessages, setTsPoint])
+  const handleReconnect = useCallback(() => {
+    resetMessages()
+  }, [resetMessages])
   const logic = useMemo<Logic>(() => {
     return new Logic(messages)
   }, [useCompare([messages])])
@@ -246,7 +252,6 @@ export const Chat = () => {
   //     if (!isLogged) history.push('/')
   // }, [isLogged])
 
-  const [tsPoint, setTsPoint] = useState<number | null>(Date.now())
   // const debouncedSetTsPoint = useMemo(
   //   () => debounce(setTsPoint, 1000), // { leading: true, trailing: false }
   //   [setTsPoint]
@@ -825,7 +830,7 @@ export const Chat = () => {
     const completed = completedTasksLen
 
     return Math.round(completed * 100 / all)
-  }, [tasklist, completedTasksLen])
+  }, [useCompare([tasklist]), completedTasksLen])
 
   const [inViewRef, inView, _entry] = useInView({
     /* Optional options */
@@ -1780,7 +1785,7 @@ export const Chat = () => {
           </Heading>
 
           <Box w='100%' h={1} m={[0, 0]}>
-            {tasklist.length > 0 && <Progress value={percentage} size="xs" colorScheme="green" />}
+            {tasklist?.length > 0 && <Progress value={percentage} size="xs" colorScheme="green" />}
           </Box>
 
           <ScrollToBottom
@@ -2091,17 +2096,27 @@ export const Chat = () => {
                     </button>
                   </div>
                 )}
-                { isLogged && showClearBtn && (
+                <IconButton
+                  size='sm'
+                  aria-label="DEL"
+                  colorScheme='green'
+                  variant='outline'
+                  isRound
+                  icon={<BiRefresh size={20} />}
+                  onClick={handleReconnect}
+                  isDisabled={isChatLoading}
+                >
+                  RECONNECT
+                </IconButton>
+                {isLogged && showClearBtn && (
                   <IconButton
                     size='sm'
                     aria-label="DEL"
                     colorScheme='red'
                     variant='outline'
                     isRound
-                    icon={<IoMdClose size={15} />}
-                    onClick={() => {
-                      resetMessage()
-                    }}
+                    icon={<IoMdClose size={20} />}
+                    onClick={resetMessage}
                   >
                     DEL
                   </IconButton>

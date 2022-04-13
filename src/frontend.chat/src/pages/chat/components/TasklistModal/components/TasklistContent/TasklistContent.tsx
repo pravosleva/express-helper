@@ -27,6 +27,7 @@ import { TotalSum } from '../TotalSum'
 import { IoMdAdd, IoMdClose } from 'react-icons/io'
 import styles from './TasklistContent.module.scss'
 import clsx from 'clsx'
+import { useCompare } from '~/common/hooks/useDeepEffect'
 
 type TProps = {
   data: any[]
@@ -85,16 +86,17 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     }
   }
   const [radioValue, setRadioValue] = useState<string>('unchecked')
-  const completedTasksLen = useMemo(() => data.filter(({ isCompleted }: any) => isCompleted).length, [JSON.stringify(data)])
+  const completedTasksLen = useMemo(() => !!data ? data.filter(({ isCompleted }: any) => isCompleted).length : 0, [useCompare([data])])
   const percentage = useMemo(() => {
-    if (data.length === 0) return 0
+    if (!data || data.length === 0) return 0
 
     const all = data.length
     const completed = completedTasksLen
 
     return Math.round(completed * 100 / all)
-  }, [data, completedTasksLen])
+  }, [useCompare([data]), completedTasksLen])
   const MemoCurrentShortStateByRadio = useMemo(() => {
+    if (!data) return null
     switch(radioValue) {
       case 'checked': return (
         <span style={{ color: 'var(--chakra-colors-blue-400)' }}>Done: {completedTasksLen}</span>
@@ -106,7 +108,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         <span style={{ color: 'var(--chakra-colors-blue-400)' }}>Total: {data.length}</span>
       )
     }
-  }, [radioValue, completedTasksLen, data.length])
+  }, [radioValue, completedTasksLen, useCompare([data])])
   const handleCompleteToggle = useCallback((data: any) => {
     handleTaskUpdate({ ...data, isCompleted: !data.isCompleted })
   }, [handleTaskUpdate])
@@ -197,9 +199,9 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                     justifyContent: 'space-between',
                   }}
                 >
-                  {data.length > 0 ? <span style={{ color: 'var(--chakra-colors-green-400)' }}>{percentage}%</span> : ''}
+                  {data?.length > 0 ? <span style={{ color: 'var(--chakra-colors-green-400)' }}>{percentage}%</span> : ''}
                   {MemoCurrentShortStateByRadio}
-                  {data.length > 0 ? <>{completedTasksLen} of {data.length}</> : ''}
+                  {data?.length > 0 ? <>{completedTasksLen} of {data.length}</> : ''}
                 </Box>
                 <Box>
                   <RadioGroup onChange={setRadioValue} value={radioValue}>
@@ -219,7 +221,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
           EnterText
         )}
         {
-          data.length > 0 ? (
+          data?.length > 0 ? (
             <div>
               <Table variant="simple" size='md'>
                 <TableCaption mt={5} mb={5} textAlign='left'>При включенной опции <b>IS&nbsp;LOOPED</b> готовая задача будет работать как циклический таймер, сообщая о своей готовности быть unchecked через промежуток времени от создания до первого выполнения. Для сброса интервала выберите в меню <b>RESET&nbsp;LOOPER</b> и дайте новое время до выполнения</TableCaption>
@@ -270,7 +272,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         }
       </>
     )
-  }, [mode.colorMode, asModal, percentage, completedTasksLen, data, MemoCurrentShortStateByRadio, isCreateTaskFormOpened, formData.title, handleCompleteToggle, handleInputChange, handkeKeyUp, handleTaskDelete, handleTaskEdit, handleOpenPriceModal, handleResetExpenses])
+  }, [mode.colorMode, asModal, percentage, completedTasksLen, useCompare([data]), MemoCurrentShortStateByRadio, isCreateTaskFormOpened, formData.title, handleCompleteToggle, handleInputChange, handkeKeyUp, handleTaskDelete, handleTaskEdit, handleOpenPriceModal, handleResetExpenses])
 
   return (
     <>
@@ -282,7 +284,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         initialPrice={editedTask2?.price || 0}
       />
       {
-        asModal && (
+        asModal && !!data && (
           <ModalHeader>
             {modalHeader || null}
             <Box>

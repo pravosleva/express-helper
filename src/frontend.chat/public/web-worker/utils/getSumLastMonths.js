@@ -51,6 +51,7 @@ var getSumLastMonths = ({ months, currDate, tasklist }) => {
     return result
   }
 
+  if (!tasklist) return 0
   return tasklist.reduce((acc, task) => {
     if (
       !!task.uncheckTs

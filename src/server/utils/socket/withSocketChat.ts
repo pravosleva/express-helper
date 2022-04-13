@@ -671,7 +671,7 @@ export const withSocketChat = (io: Socket) => {
         io.in(room).emit('tasklist.add-item', { task: newTask })
       } else {
         roomTasklist = [newTask]
-        io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) })
+        io.in(room).emit('tasklist', { tasklist: roomTasklist })
       }
       roomsTasklistMap.set(room, roomTasklist)
       // io.in(room).emit('tasklist', { tasklist: roomsTasklistMap.get(room) })

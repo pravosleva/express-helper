@@ -1,12 +1,20 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, useCallback } from 'react'
 import {
+  Box,
   Button,
+  FormControl,
+  FormLabel,
+  Grid,
+  IconButton,
+  Input,
   Stack,
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'react-use'
 import { useMainContext } from '~/context/mainContext'
 import { getTruncated } from '~/utils/strings-ops'
 // import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
+import { useCompare } from '~/common/hooks/useDeepEffect'
+import { IoMdClose } from 'react-icons/io'
 
 type TProps = {
   resetMessages: () => void
@@ -31,6 +39,18 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
     refresh()
   }, [name])
 
+  const [searchRoomLS, setSearchRoomLS, _removeSearchRoomLS] = useLocalStorage<any>('chat.search-room', '')
+  const [search, setSearch] = useState<string>(searchRoomLS)
+  useEffect(() => {
+    setSearchRoomLS(search)
+  }, [search])
+  const handleChange = useCallback((e) => {
+    setSearch(e.target.value)
+  }, [setSearch])
+  const resetSearch = useCallback(() => {
+    setSearch('')
+  }, [setSearch])
+
   const MemoBtns = useMemo(() => {
     // console.log('room btns effect...', ++c)
     const roomlistLS: { name: string, ts: number }[] = JSON.parse(window.localStorage.getItem('chat.roomlist') || '[]');
@@ -38,7 +58,7 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
     // console.log(hasNews)
 
     if (!!roomlistLS && !!roomNames) {
-      return <>{roomNames.map((r: string) => {
+      return <>{roomNames.filter((r) => r.includes(search.toLowerCase())).map((r: string) => {
         const tsFromLS = roomlistLS.find(({ name }) => name === r)?.ts
         const isGreen = room !== r ? (!!tsFromLS && (tsMap[r] > tsFromLS)) : false
         const label = getTruncated(r, 28)
@@ -69,8 +89,9 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
     }
     return []
   }, [
-    JSON.stringify(roomNames), handleRoomClick, setRoom, resetMessages, onCloseMenuBar,
-    JSON.stringify(tsMap),
+    useCompare([roomNames, tsMap]),
+    handleRoomClick, setRoom, resetMessages, onCloseMenuBar,
+    search,
     // roomlistLS,
     room,
   ])
@@ -78,6 +99,39 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
   return (
     !!roomlistLS ? (
       <Stack pl={0} pr={0}>
+        <Grid
+          templateColumns='3fr auto'
+          gap={2}
+        >
+          <FormControl>
+            <Input
+              autoFocus={false}
+              name='search'
+              // isInvalid={!formData.userName}
+              type='text'
+              placeholder="Search"
+              // ref={initialSetPasswdRef}
+              // onKeyDown={handleKeyDownEditedMessage}
+              value={search}
+              onChange={handleChange}
+              rounded='2xl'
+              size='sm'
+              variant='outline'
+            />
+          </FormControl>
+          <IconButton
+            size='sm'
+            aria-label="DEL"
+            colorScheme='red'
+            variant='outline'
+            isRound
+            icon={<IoMdClose size={20} />}
+            onClick={resetSearch}
+            isDisabled={!search}
+          >
+            DEL
+          </IconButton>
+        </Grid>
         {MemoBtns}
       </Stack>
     ) : null

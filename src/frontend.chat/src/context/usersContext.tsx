@@ -5,6 +5,7 @@ import { PollingComponent } from '~/common/components/PollingComponent'
 import { useLocalStorage } from 'react-use'
 import { TTask } from '../pages/chat/components/TasklistModal/types'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
+import { useCompare } from '~/common/hooks/useDeepEffect'
 
 type TUser = { name: string; room: string; socketId: string }
 type TUsersContext = {
@@ -43,14 +44,14 @@ export const UsersProvider = ({ children }: any) => {
       setAllUsers(users)
     }
     const tlListener = ({ tasklist }: any) => {
-      setTasklist(tasklist)
+      setTasklist(tasklist || [])
     }
     const tlAIListener = ({ task }: { task: TTask }) => {
-      setTasklist(tl => [...tl, task])
+      setTasklist(tl => !!tl && Array.isArray(tl) ? [...tl, task] : [task])
     }
     const tlUIListener = ({ task }: { task: TTask }) => {
       setTasklist(tl => {
-        const targetIndex = binarySearchTsIndex({ messages: tl, targetTs: task.ts })
+        const targetIndex = binarySearchTsIndex({ messages: tl || [], targetTs: task.ts })
 
         if (targetIndex !== -1) {
           const newTl = [...tl]
@@ -59,14 +60,16 @@ export const UsersProvider = ({ children }: any) => {
 
           return newTl
         } else {
-          return [...tl, task]
+          return !!tl && Array.isArray(tl)
+          ? [...tl, task]
+          : [task]
         }
       })
     }
     const tlDIListener = ({ ts }: { ts: number }) => {
       setTasklist(tl => {
-        const newArr = [...tl]
-        const targetIndex = binarySearchTsIndex({ messages: tl, targetTs: ts })
+        const newArr = !!tl && Array.isArray(tl) ? [...tl] : []
+        const targetIndex = binarySearchTsIndex({ messages: !!tl && Array.isArray(tl) ? tl : [], targetTs: ts })
 
         if (targetIndex !== -1) newArr.splice(targetIndex, 1)
         return newArr
@@ -128,7 +131,7 @@ export const UsersProvider = ({ children }: any) => {
       }
     }
     return Promise.reject()
-  }, [JSON.stringify(roomlistLS), socket, socket?.connected])
+  }, [useCompare([roomlistLS]), socket, socket?.connected])
 
   return (
     <>
