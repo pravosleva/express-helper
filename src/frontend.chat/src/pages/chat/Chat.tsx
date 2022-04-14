@@ -49,7 +49,7 @@ import {
   useToast, UseToastOptions, ButtonGroup
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
-import { BiMessageDetail } from 'react-icons/bi'
+import { BiMessageDetail, BiUpArrowAlt } from 'react-icons/bi'
 import { RiSendPlaneFill, RiErrorWarningFill } from 'react-icons/ri'
 import { FaCheckCircle, FaCheck, FaListUl } from 'react-icons/fa'
 import { GiDeathSkull } from 'react-icons/gi'
@@ -227,9 +227,11 @@ export const Chat = () => {
   }, [setIsTagsModalOpened])
   const [messages, setMessages] = useState<TMessage[]>([])
   const [tsPoint, setTsPoint] = useState<number | null>(Date.now())
+  const [showLoadMoreBtn, setShowLoadMoreBtn] = useState<boolean>(false)
   const resetMessages = useCallback(() => {
     setTsPoint(Date.now())
     setMessages([])
+    setShowLoadMoreBtn(false)
   }, [setMessages, setTsPoint])
   const handleReconnect = useCallback(() => {
     resetMessages()
@@ -401,6 +403,11 @@ export const Chat = () => {
     }
   }, [socket, toast, room])
 
+  const chatHistoryChunksCounterRef = useRef<number>(0)
+  const handleLoadMore = useCallback(() => {
+    chatHistoryChunksCounterRef.current += 1
+    setShowLoadMoreBtn(false)
+  }, [setShowLoadMoreBtn])
   const partialOldChatListener = useCallback(({ result, nextTsPoint, isDone }: { result: TMessage[], nextTsPoint: number, isDone: boolean }) => {
     setMessages((msgs: TMessage[]) => {
       // NOTE: Merge & filter unique & sort
@@ -414,8 +421,9 @@ export const Chat = () => {
     })
     setTsPoint(nextTsPoint)
     setFullChatReceived(isDone)
-  }, [])
-
+    chatHistoryChunksCounterRef.current += 1
+    if (chatHistoryChunksCounterRef.current % 2 === 0) setShowLoadMoreBtn(true)
+  }, [setShowLoadMoreBtn])
   const getPieceOfChat = useCallback(() => {
     if (!!socket && !!tsPoint) {
       setIsChatLoading(true)
@@ -429,7 +437,8 @@ export const Chat = () => {
           try {
             const { result, nextTsPoint, isDone, targetRoom } = res
 
-            if (!!result && targetRoom === roomRef.current) partialOldChatListener({ result, nextTsPoint, isDone })
+            if (!!result && targetRoom === roomRef.current)
+              partialOldChatListener({ result, nextTsPoint, isDone })
             else console.log(`getPartialOldChat: SKIPED targetRoom= ${targetRoom} is not roomRef.current= ${roomRef.current}`)
           } catch (err) {
             console.log(err)
@@ -458,6 +467,7 @@ export const Chat = () => {
       })
       setFullChatReceived(false)
       setTsPoint(Date.now())
+      setShowLoadMoreBtn(false)
       // return () => { socket.emit('unsetMe', { name, room }) }
     }
   }, [socket?.connected, toast, name, room, history])
@@ -840,12 +850,12 @@ export const Chat = () => {
 
   // const _infinityChatLoadRef = useRef<NodeJS.Timeout>()
   useEffect(() => {
-    if (inView || inView2) {
+    if (!showLoadMoreBtn && (inView || inView2)) {
       // if (!!_infinityChatLoadRef.current) clearTimeout(_infinityChatLoadRef.current)
       // _infinityChatLoadRef.current = setTimeout(getPieceOfChat, 1000)
       setTimeout(getPieceOfChat, 1000)
     }
-  }, [inView, inView2, getPieceOfChat])
+  }, [inView, inView2, getPieceOfChat, showLoadMoreBtn])
 
   const rendCounter = useRef<number>(0)
   useEffect(() => {
@@ -1795,17 +1805,23 @@ export const Chat = () => {
             className={clsx(styles["messages"], { [styles["height-limited-md"]]: upToMd, [styles["height-full-auto-sm"]]: downToMd })}
             debug={false}
           >{/* INF LOADER 1/3 */}
-            <Flex ref={inViewRef2} skip={inView} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
-              <Box mr="2">---</Box>
-              {/* !!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" /> */}
-              <Text fontWeight="400">
-                {!!tsPoint
-                  ? `Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`
-                  : 'Больше ничего нет'
-                }
-              </Text>
-              <Box ml="2">---</Box>
-            </Flex>
+            {showLoadMoreBtn ? (
+              <Flex justifyContent='center' style={{ width: '100%' }}>
+                <Button size='sm' isDisabled={isChatLoading} leftIcon={isChatLoading ? <Spinner size='xs' /> : undefined} rightIcon={<BiUpArrowAlt size={15} />} rounded='2xl' onClick={handleLoadMore}>Load more</Button>
+              </Flex>
+            ) : (
+              <Flex ref={inViewRef2} skip={inView || showLoadMoreBtn} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
+                <Box mr="2">---</Box>
+                {/* !!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" /> */}
+                <Text fontWeight="400">
+                  {!!tsPoint
+                    ? `Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`
+                    : 'Больше ничего нет'
+                  }
+                </Text>
+                <Box ml="2">---</Box>
+              </Flex>
+            )}
             {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, _arr) => {
               const { user, text, ts, editTs, status, file, _next, assignedTo, assignedBy, links = [] } = message
               // const isLastOfFiltered = i === arr.length -1
@@ -1825,7 +1841,7 @@ export const Chat = () => {
                 return (
                   <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
                     {/* INF LOADER 2/3 */
-                      i === 20 && !!tsPoint && (
+                      (i === 20 && !!tsPoint) && !showLoadMoreBtn && (
                         <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
                           <Box mr="2">---</Box><Text fontWeight="400">{`Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`}</Text><Box ml="2">---</Box>
                         </Flex>
