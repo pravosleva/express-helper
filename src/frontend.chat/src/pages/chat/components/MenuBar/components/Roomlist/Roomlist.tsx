@@ -26,7 +26,7 @@ let c = 0
 const getWords = (search: string): string[] => search?.toLowerCase().split(' ').filter((str) => !!str)
 // --
 // NOTE: v1. Совпадение по всем словам
-const _testRoomNameInAllWords = ({ room, words }: { room: string, words: string[] }): boolean => {
+const _testRoomNameByAllWords = ({ room, words }: { room: string, words: string[] }): boolean => {
   const modifiedWords = words.join(' ').replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
   // Split your string at spaces & Encapsulate your words inside regex groups:
   const regexpGroups = modifiedWords.split(' ').map((w) => ['(?=.*' + w + ')'])
@@ -36,7 +36,7 @@ const _testRoomNameInAllWords = ({ room, words }: { room: string, words: string[
   return regexp.test(room)
 }
 // NOTE: v2. Совпадение по хотябы одному слову
-const testRoomNameInAnyWords = ({ room, words }: { room: string, words: string[] }): boolean => {
+const testRoomNameByAnyWord = ({ room, words }: { room: string, words: string[] }): boolean => {
   const modifiedWords = words.join(' ').replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
   const regexpGroups = modifiedWords.split(' ').map((w) => ['(?=.*' + w + ')'])
   const regexp = new RegExp('^' + regexpGroups.join('|') + '.*$', 'im')
@@ -46,7 +46,7 @@ const testRoomNameInAnyWords = ({ room, words }: { room: string, words: string[]
 // --
 const roomNameTest = ({ search, room }: { search: string, room: string }) => {
   const words = getWords(search)
-  return testRoomNameInAnyWords({ room, words })
+  return testRoomNameByAnyWord({ room, words })
 }
 
 export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TProps) => {
