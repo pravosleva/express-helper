@@ -43,10 +43,19 @@ input[type="file"]:disabled + label {
   cursor: not-allowed;
 }
 
+.follow-button::before {
+  content: '⬇️' !important;
+  font-size: 2.5em;
+}
 .follow-button {
-  height: 35px !important;
-  width: 35px !important;
+  position: relative;
+  height: 55px !important;
+  width: 55px !important;
+  /*
   border-radius: 50% !important;
-  right: var(--chakra-space-4) !important;
-  bottom: var(--chakra-space-4) !important;
+  */
+  right: 50px !important;
+  bottom: 50px !important;
+  right: var(--chakra-space-2) !important;
+  bottom: var(--chakra-space-2) !important;
 }

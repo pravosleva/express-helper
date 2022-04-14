@@ -394,6 +394,7 @@
   // margin: 1rem 0 .3rem 0;
   display: flex;
   align-items: center;
+  overflow-x: auto;
   // & > * { margin: .3rem 0; }
   & > *:not(:last-child) {
     margin-right: var(--chakra-space-2);
