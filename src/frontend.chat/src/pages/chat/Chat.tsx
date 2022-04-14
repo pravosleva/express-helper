@@ -1027,13 +1027,13 @@ export const Chat = () => {
 
   useEffect(() => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getFilteredMessages', filters, searchText: debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters, messages })
-  }, [useCompare([messages]), useCompare([messages]), debouncedSearchText, additionalTsToShow, useCompare([assignmentExecutorsFilters])])
+  }, [messages, useCompare([assignmentExecutorsFilters]), debouncedSearchText, additionalTsToShow])
   useEffect(() => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getAllImagesLightboxFormat', messages })
-  }, [useCompare([messages])])
+  }, [messages])
   useEffect(() => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getTags', messages })
-  }, [useCompare([messages])])
+  }, [messages])
   // --
   
   const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
