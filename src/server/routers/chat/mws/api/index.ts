@@ -10,10 +10,14 @@ import { logout } from './auth/logout'
 import { mutateReqIfLogged } from './auth/mutate-req-if-logged.middle'
 import { checkJWT } from './auth/check-jwt'
 import { ELoggedCookie } from '~/routers/chat/utils/types'
+import { getNormalizedNumber } from '~/utils/getNormalizedNumber'
+
 // import cookieParser from 'cookie-parser'
 import { add as addNotif, checkRoomState as checkRoomNotifsState, remove as removeNotif } from './common-notifs'
 import { getCPUState } from './get-cpu-state'
 import { getBackupState } from './get-backup-state'
+
+const CHAT_JWT_LIVE_LINIT_IN_DAYS = getNormalizedNumber(process.env.CHAT_JWT_LIVE_LINIT_IN_DAYS) || 2
 
 // import { redirectIfUnlogged } from './auth/redirect-if-unlogged.middle'
 // chatExternalApi.use(redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT))
@@ -33,7 +37,7 @@ chatExternalApi.post('/check-user', checkUser)
 chatExternalApi.get('/get-users', getUsers)
 chatExternalApi.post('/check-room', checkRoom)
 chatExternalApi.get('/remove-user', removeUser)
-chatExternalApi.post('/auth/login', login(jwtSecret, 2))
+chatExternalApi.post('/auth/login', login(jwtSecret, CHAT_JWT_LIVE_LINIT_IN_DAYS))
 chatExternalApi.post('/auth/check-jwt', mutateReqIfLogged(jwtSecret, ELoggedCookie.JWT), checkJWT)
 chatExternalApi.post('/auth/logout', logout(ELoggedCookie.JWT))
 chatExternalApi.post(

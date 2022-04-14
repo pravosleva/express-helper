@@ -46,11 +46,6 @@ export const createUser = (req, res) => {
       const simplePasswd = getRandomInteger(1000, 9999)
       const passwordHash = bcrypt.hashSync(String(simplePasswd))
 
-      // -- NOTE: tmp
-      // let oldTokens
-      // if (!!registeredUserData?.tokens && registeredUserData.tokens.length > 0) oldTokens = registeredUserData.tokens
-      // --
-      
       const newData: TRegistryData = {
         registryLevel: ERegistryLevel.TGUser,
         passwordHash,
@@ -59,7 +54,6 @@ export const createUser = (req, res) => {
           chat_id: chatId,
         }
       }
-      // if (!!oldTokens) newData.tokens = oldTokens
 
       registeredUsersMapInstance.set(username, newData)
       registeredTGChatIdsMapInstance.set(String(chatId), username)

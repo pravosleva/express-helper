@@ -7,7 +7,7 @@ import {
 import { getPrettyPrice } from '~/utils/getPrettyPrice'
 import { UsersContext } from '~/context/usersContext'
 import { TiArrowLoop } from 'react-icons/ti'
-// <TiArrowLoop size={19} />
+import { useCompare } from '~/common/hooks/useDeepEffect'
 
 const PUBLIC_URL = process.env.PUBLIC_URL || '.'
 const worker: any = new Worker(`${PUBLIC_URL}/web-worker/main.js`)
@@ -43,7 +43,7 @@ export const TotalSum = () => {
   }, [])
   const updateSum = useCallback(() => {
     worker.postMessage({ action: 'getSumLastMonths', tasklist });
-  }, [tasklist])
+  }, [useCompare([tasklist])])
   const timeout = useRef<any>()
 
   useEffect(() => {

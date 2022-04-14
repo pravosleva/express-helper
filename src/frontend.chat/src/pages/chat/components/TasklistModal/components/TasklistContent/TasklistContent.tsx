@@ -40,12 +40,12 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
   const { room } = useMainContext()
   const toast = useToast()
   const [isCreateTaskFormOpened, setIsCreateTaskFormOpened] = useState<boolean>(false)
-  const handleCreateFormOpen = () => {
+  const handleCreateFormOpen = useCallback(() => {
     setIsCreateTaskFormOpened(true)
-  }
-  const handleCreateFormClose = () => {
+  }, [setIsCreateTaskFormOpened])
+  const handleCreateFormClose = useCallback(() => {
     setIsCreateTaskFormOpened(false)
-  }
+  }, [setIsCreateTaskFormOpened])
   const { formData, handleInputChange, resetForm } = useForm({
     title: '',
   })
@@ -80,11 +80,11 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
       }
     })
   }, [socket, room])
-  const handkeKeyUp = (ev: any) => {
+  const handkeKeyUp = useCallback((ev: any) => {
     if (ev.keyCode === 13) {
       if (!!room) handleCreateSubmit()
     }
-  }
+  }, [handleCreateSubmit])
   const [radioValue, setRadioValue] = useState<string>('unchecked')
   const completedTasksLen = useMemo(() => !!data ? data.filter(({ isCompleted }: any) => isCompleted).length : 0, [useCompare([data])])
   const percentage = useMemo(() => {

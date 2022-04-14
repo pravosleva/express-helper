@@ -295,10 +295,10 @@ export const Chat = () => {
       const myUserDataListener = (regData: any) => {
         userInfoProxy.regData = regData
         const currentMajorVersion = pkg.version.split('.')[1]
-        if (!!regData?.frontMinorVersionSupport && regData.frontMinorVersionSupport !== currentMajorVersion) {
+        if (!!regData?._frontMinorVersionSupport && regData._frontMinorVersionSupport !== currentMajorVersion) {
           toast({
             position: 'top',
-            title: `Actual version ${regData.frontMinorVersionSupport}`,
+            title: `Actual version from backend: ${regData._frontMinorVersionSupport}`,
             description: `Reload reason: ${currentMajorVersion}`,
             status: 'error',
             duration: 3000,
@@ -1027,13 +1027,13 @@ export const Chat = () => {
 
   useEffect(() => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getFilteredMessages', filters, searchText: debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters, messages })
-  }, [messages, filters, debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters])
+  }, [useCompare([messages]), useCompare([messages]), debouncedSearchText, additionalTsToShow, useCompare([assignmentExecutorsFilters])])
   useEffect(() => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getAllImagesLightboxFormat', messages })
-  }, [messages])
+  }, [useCompare([messages])])
   useEffect(() => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getTags', messages })
-  }, [messages])
+  }, [useCompare([messages])])
   // --
   
   const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
@@ -1322,7 +1322,7 @@ export const Chat = () => {
     assignmentExecutorsFilters,
     handleResetAssignmentFilters,
     setFilters,
-    filters,
+    useCompare([filters]),
     resetMessages,
     handleCloseMenuBar,
     handleRoomClick,
@@ -1332,7 +1332,7 @@ export const Chat = () => {
   const mode = useColorMode()
   const isFiltersPresetDisabledCondition = useMemo(() => 
     ((filters.every((f) => [EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn].includes(f) && filters.length === 3) && (filters.includes(EMessageStatus.Success) && filters.includes(EMessageStatus.Danger) && filters.includes(EMessageStatus.Warn)))),
-    [filters]
+    [useCompare([filters])]
   )
 
   return (

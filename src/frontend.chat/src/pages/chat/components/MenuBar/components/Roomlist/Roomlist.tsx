@@ -23,6 +23,31 @@ type TProps = {
 }
 
 let c = 0
+const getWords = (search: string): string[] => search?.toLowerCase().split(' ').filter((str) => !!str)
+// --
+// NOTE: v1. Совпадение по всем словам
+const _testRoomNameInAllWords = ({ room, words }: { room: string, words: string[] }): boolean => {
+  const modifiedWords = words.join(' ').replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+  // Split your string at spaces & Encapsulate your words inside regex groups:
+  const regexpGroups = modifiedWords.split(' ').map((w) => ['(?=.*' + w + ')'])
+  // Create a regex pattern:
+  const regexp = new RegExp('^' + regexpGroups.join('') + '.*$', 'im')
+
+  return regexp.test(room)
+}
+// NOTE: v2. Совпадение по хотябы одному слову
+const testRoomNameInAnyWords = ({ room, words }: { room: string, words: string[] }): boolean => {
+  const modifiedWords = words.join(' ').replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+  const regexpGroups = modifiedWords.split(' ').map((w) => ['(?=.*' + w + ')'])
+  const regexp = new RegExp('^' + regexpGroups.join('|') + '.*$', 'im')
+
+  return regexp.test(room)
+}
+// --
+const roomNameTest = ({ search, room }: { search: string, room: string }) => {
+  const words = getWords(search)
+  return testRoomNameInAnyWords({ room, words })
+}
 
 export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TProps) => {
   const [roomlistLS, _setRoomlistLS] = useLocalStorage<{ name: string, ts: number }[]>('chat.roomlist', [])
@@ -58,7 +83,8 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
     // console.log(hasNews)
 
     if (!!roomlistLS && !!roomNames) {
-      return <>{roomNames.filter((r) => r.includes(search.toLowerCase())).map((r: string) => {
+      // .filter((r) => r.includes(search.toLowerCase()))
+      return <>{roomNames.filter((r) => roomNameTest({ room: r, search })).map((r: string) => {
         const tsFromLS = roomlistLS.find(({ name }) => name === r)?.ts
         const isGreen = room !== r ? (!!tsFromLS && (tsMap[r] > tsFromLS)) : false
         const label = getTruncated(r, 28)

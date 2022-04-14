@@ -9,6 +9,7 @@ import { TMessage, EMessageStatus } from '~/utils/interfaces'
 // const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
 // import { FiltersGrid } from './components/FiltersGrid'
 import { FiltersGrid } from '~/pages/chat/components/AccordionSettings/components/FiltersGrid'
+import { useCompare } from '~/common/hooks/useDeepEffect'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
@@ -94,7 +95,7 @@ export const NotifsList = ({ onRemove }: { onRemove: (ts: number) => void }) => 
   const [activeFilters, setActiveFilters] = useState<EMessageStatus[]>([])
   const filteredNotifs = useMemo(() => {
     return notifsStateArr.filter(({ original }) => activeFilters.length > 0 ? !!original?.status ? activeFilters.includes(original.status) : false : true)
-  }, [notifsStateArr, activeFilters])
+  }, [useCompare([notifsStateArr, activeFilters])])
 
   const MemoNotifs = useMemo(() => filteredNotifs.sort(dynamicSort('tsTarget')).map(({ ts, text, tsTarget, original }) => {
     const isLoading = sprintFeatureSnap.inProgress.includes(ts)

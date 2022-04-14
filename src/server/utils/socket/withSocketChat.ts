@@ -227,21 +227,12 @@ export const withSocketChat = (io: Socket) => {
       // ---
       const myRegData = registeredUsersMap.get(name)
 
-      // -- NOTE: Logout if logged already?
-      // if (!!token && !!myRegData?.tokens) {
-      //   if (!myRegData.tokens.includes(token)) {
-      //     socket.emit('notification', { status: 'error', title: 'TOKEN is wrong', description: `EXP: Вы зашли с другого устройства?\nNo ${token} in ${JSON.stringify(myRegData.tokens)}` })
-      //     socket.emit('FRONT:LOGOUT')
-      //     return
-      //   }
-      // }
-
       // @ts-ignore
       var rooms = io.sockets.adapter.sids[socket.id]
       for (let r in rooms) socket.leave(r)
       // --
 
-      socket.emit('my.user-data', !!myRegData ? { ...myRegData, frontMinorVersionSupport } : null)
+      socket.emit('my.user-data', !!myRegData ? { ...myRegData, _frontMinorVersionSupport: frontMinorVersionSupport } : null)
       // ---
       if (!name || !room) {
         cb('Попробуйте перезайти')
@@ -374,39 +365,25 @@ export const withSocketChat = (io: Socket) => {
       if (!!cb) cb(null)
     })
 
-    socket.on('login', ({ isLogged, name, room, token }, cb?: (reason?: string) => void) => {
-      // if (!name || !room) {
-      //   if (!!cb) cb('Room and Username are required')
-      //   return
-      // }
-
-      // --- NEW WAY
-      // if (usersMap.has(name) && !token) {
-      //   if (!!cb) cb(`Username ${name} already taken`)
-      //   return
-      // }
-
+    socket.on('login', ({ isLogged, name, room }, cb?: (reason?: string) => void) => {
       if (isLogged) {
         
         const regData = registeredUsersMap.get(name)
 
-        if (!!regData && !!regData.tokens) {
-          if (regData.tokens.includes(token)) {
-            // Go on...
-            // -- LOGOUT OLD
-            const existingUser = usersMap.get(name)
-            if (!!existingUser) {
-              const oldSocketId = existingUser.socketId
+        if (!!regData) {
+          // -- LOGOUT OLD
+          const existingUser = usersMap.get(name)
+          if (!!existingUser) {
+            const oldSocketId = existingUser.socketId
 
-              if (oldSocketId !== socket.id) logoutOld(oldSocketId)
-            }
-            // --
+            if (oldSocketId !== socket.id) logoutOld(oldSocketId)
           } else {
             if (registeredUsersMap.has(name)) {
               if (!!cb) cb('FRONT:LOG/PAS')
               return
             }
           }
+          // --
         } else {
           if (registeredUsersMap.has(name)) {
             if (!!cb) cb('FRONT:LOG/PAS')

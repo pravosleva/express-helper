@@ -42,7 +42,6 @@ export type TRoomData = TMessage[]
 export type TRegistryData = {
   passwordHash: string
   registryLevel?: ERegistryLevel
-  tokens?: string[]
   tg?: {
     username: string
     chat_id: number
