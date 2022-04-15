@@ -7,6 +7,8 @@ import {
   Grid,
   IconButton,
   Input,
+  InputGroup,
+  InputLeftElement,
   Stack,
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'react-use'
@@ -15,6 +17,7 @@ import { getTruncated } from '~/utils/strings-ops'
 // import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
 import { useCompare } from '~/common/hooks/useDeepEffect'
 import { IoMdClose } from 'react-icons/io'
+import { FiSearch } from 'react-icons/fi'
 
 type TProps = {
   resetMessages: () => void
@@ -129,24 +132,27 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
           templateColumns='3fr auto'
           gap={2}
         >
-          <FormControl>
+          <InputGroup>
+            <InputLeftElement
+              pointerEvents="none"
+
+              color="gray.300"
+              fontSize="1.0em"
+              children={<FiSearch />}
+            />
             <Input
-              autoFocus={false}
               name='search'
-              // isInvalid={!formData.userName}
               type='text'
               placeholder="Search"
-              // ref={initialSetPasswdRef}
-              // onKeyDown={handleKeyDownEditedMessage}
               value={search}
               onChange={handleChange}
-              rounded='2xl'
-              size='sm'
+              rounded='3xl'
+              size='md'
               variant='outline'
             />
-          </FormControl>
+          </InputGroup>
           <IconButton
-            size='sm'
+            size='md'
             aria-label="DEL"
             colorScheme='red'
             variant='outline'
