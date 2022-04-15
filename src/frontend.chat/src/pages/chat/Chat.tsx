@@ -112,7 +112,7 @@ import { Widget } from './components/Widget'
 import { TasklistContent } from './components/TasklistModal/components'
 // import debounce from 'lodash.debounce'
 import { useColorMode } from '@chakra-ui/react'
-import { useLatest } from '~/common/hooks/useLatest'
+// import { useLatest } from '~/common/hooks/useLatest'
 import pkg from '../../../package.json'
 import { SpecialTabs } from './components/SpecialTabs'
 import { TagsInModal } from './components/TagsInModal'
@@ -121,6 +121,7 @@ import {
   useCompare,
 } from '~/common/hooks/useDeepEffect'
 import { BiRefresh } from 'react-icons/bi'
+import { GoChecklist } from 'react-icons/go'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -2088,12 +2089,10 @@ export const Chat = () => {
                     )}
                   </>
                 )}
-                {
-                  upToMd && isLogged && (
-                    <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={handleOpenEmoji}>Emoji</button></div>
-                  )
-                }
-                { isLogged && (
+                {upToMd && isLogged && (
+                  <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={handleOpenEmoji}>Emoji</button></div>
+                )}
+                {isLogged && (
                   <div><button
                     className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])}
                     style={{ display: 'flex', alignItems: 'center' }}
@@ -2114,7 +2113,7 @@ export const Chat = () => {
                 )}
                 <IconButton
                   size='sm'
-                  aria-label="DEL"
+                  aria-label="RECONNECT"
                   colorScheme='green'
                   variant='outline'
                   isRound
@@ -2124,6 +2123,20 @@ export const Chat = () => {
                 >
                   RECONNECT
                 </IconButton>
+                {isLogged && (
+                  <IconButton
+                    size='sm'
+                    aria-label="TASKLIST"
+                    colorScheme='blue'
+                    variant='outline'
+                    isRound
+                    icon={<GoChecklist size={20} />}
+                    onClick={handleTasklistModalOpen}
+                    isDisabled={isTasklistModalOpened}
+                  >
+                    TASKLIST
+                  </IconButton>  
+                )}
                 {isLogged && showClearBtn && (
                   <IconButton
                     size='sm'

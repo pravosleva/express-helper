@@ -9,6 +9,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  InputRightElement,
   Stack,
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'react-use'
@@ -129,7 +130,7 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
     !!roomlistLS ? (
       <Stack pl={0} pr={0}>
         <Grid
-          templateColumns='3fr auto'
+          templateColumns='1fr'
           gap={2}
         >
           <InputGroup>
@@ -150,19 +151,21 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
               size='md'
               variant='outline'
             />
+            <InputRightElement>
+              <IconButton
+                size='xs'
+                aria-label="DEL"
+                colorScheme='red'
+                variant='outline'
+                isRound
+                icon={<IoMdClose size={15} />}
+                onClick={resetSearch}
+                isDisabled={!search}
+              >
+                DEL
+              </IconButton>
+            </InputRightElement>
           </InputGroup>
-          <IconButton
-            size='md'
-            aria-label="DEL"
-            colorScheme='red'
-            variant='outline'
-            isRound
-            icon={<IoMdClose size={20} />}
-            onClick={resetSearch}
-            isDisabled={!search}
-          >
-            DEL
-          </IconButton>
         </Grid>
         {MemoBtns}
       </Stack>
