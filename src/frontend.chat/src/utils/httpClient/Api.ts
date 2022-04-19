@@ -84,7 +84,11 @@ export class Api {
         if (axios.isCancel(err)) {
           console.log('Request canceled', err.message)
         } else {
-          console.log(err)
+          console.dir({
+            REACT_APP_API_URL,
+            err,
+            url,
+          })
         }
         return { isOk: false, message: err.message || 'No err.message', res: err }
       })

@@ -409,3 +409,8 @@ smartpriceApi.use(
   otApiV1Swagger
 )
 ```
+
+```bash
+# NOTE: Experimental
+# REACT_APP_API_URL=http://104.248.201.86:5000/chat
+```

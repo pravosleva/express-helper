@@ -1,15 +1,26 @@
 #!/bin/bash
 
-BUILD_DATE=$(date +"%Y-%m-%d %T") &&
-# BUILD_DATE='2022-01-25' &&
+BUILD_DATE=$(date +"%Y-%m-%d %T")
+# EXTERNAL_DIR=""$(dirname "$PWD")""
+# echo EXTERNAL_DIR
+
+source ./read-env.sh
+
+REACT_APP_WS_API_URL=$(read_env REACT_APP_WS_API_URL .env.prod."$2")
+PUBLIC_URL=$(read_env PUBLIC_URL .env.prod."$2")
+REACT_APP_API_URL=$(read_env REACT_APP_API_URL .env.prod."$2")
+REACT_APP_CHAT_NAME=$(read_env REACT_APP_CHAT_NAME .env.prod."$2")
+REACT_APP_CHAT_UPLOADS_URL=$(read_env REACT_APP_CHAT_UPLOADS_URL .env.prod."$2")
+REACT_APP_PRAVOSLEVA_BOT_BASE_URL=$(read_env REACT_APP_PRAVOSLEVA_BOT_BASE_URL .env.prod."$2")
 
 echo "$BUILD_DATE" &&
+echo $REACT_APP_API_URL &&
 
 # NOTE: Все директории относительно project root dir
 echo "SKIP_PREFLIGHT_CHECK=true
-GENERATE_SOURCEMAP=false" > src/frontend.chat/.env
+GENERATE_SOURCEMAP=true" > src/frontend.chat/.env
 
-if [ $# -eq 1 ]
+if [ $# -eq 2 ]
 then
   # NOTE: Билд CRA всегда происходит как для production.
   case $1 in
@@ -22,31 +33,21 @@ REACT_APP_API_URL=http://localhost:5000
 REACT_APP_CHAT_UPLOADS_URL=http://localhost:5000/chat/storage/uploads" > src/frontend.chat/.env.development.local
     ;;
     "prod")
-## PRAVOSLEVA.RU
-      echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
-PUBLIC_URL=/express-helper/chat
-REACT_APP_API_URL=http://pravosleva.ru/express-helper
-REACT_APP_CHAT_NAME=\"PUB 2021\"
-REACT_APP_CHAT_UPLOADS_URL=/express-helper/chat/storage/uploads
-REACT_APP_BUILD_DATE=\"$BUILD_DATE\"
-REACT_APP_PRAVOSLEVA_BOT_BASE_URL=https://t.me/pravosleva_bot" > src/frontend.chat/.env.production
-
-## SMARTPRICE beta2
-#       echo "REACT_APP_WS_API_URL=http://gosuslugi.pravosleva.ru
-# PUBLIC_URL=http://104.248.201.86:5000/chat
-# # REACT_APP_API_URL=http://104.248.201.86:5000/chat
-# REACT_APP_API_URL=http://pravosleva.ru/express-helper
-# REACT_APP_CHAT_NAME=\"Open Chat 2021\"
-# REACT_APP_CHAT_UPLOADS_URL=http://pravosleva.ru/express-helper/chat/storage/uploads
-# REACT_APP_PRAVOSLEVA_BOT_BASE_URL=https://t.me/pravosleva_bot" > src/frontend.chat/.env.production
+      echo "REACT_APP_WS_API_URL=$REACT_APP_WS_API_URL
+PUBLIC_URL=$PUBLIC_URL
+REACT_APP_API_URL=$REACT_APP_API_URL
+REACT_APP_CHAT_NAME=$REACT_APP_CHAT_NAME
+REACT_APP_CHAT_UPLOADS_URL=$REACT_APP_CHAT_UPLOADS_URL
+REACT_APP_BUILD_DATE=$BUILD_DATE
+REACT_APP_PRAVOSLEVA_BOT_BASE_URL=$REACT_APP_PRAVOSLEVA_BOT_BASE_URL" > src/frontend.chat/.env.production
     ;;
     *)
-    echo "☠️ SCRIPT: unknown param $1" &&
+    echo "☠️ SCRIPT: unknown param 1: $1" &&
     exit 1
   esac
   exit 0
 else
-  echo "☠️ SCRIPT: param was not set"
+  echo "☠️ SCRIPT: all params 1 & 2 was not set"
   exit 1
 fi
 
