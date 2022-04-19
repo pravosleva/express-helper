@@ -54,6 +54,7 @@ export const Image = ({
   return (
     <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
       <Box
+        id={String(ts)}
         className={clsx(styles['message'], { [styles['my-message']]: isMyMessage, [styles['oponent-message']]: !isMyMessage })}
         m=".3rem 0"
       >

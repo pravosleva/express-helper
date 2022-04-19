@@ -122,6 +122,7 @@ import {
 } from '~/common/hooks/useDeepEffect'
 import { BiRefresh } from 'react-icons/bi'
 import { GoChecklist } from 'react-icons/go'
+import { useLatest } from '~/common/hooks/useLatest'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -229,10 +230,12 @@ export const Chat = () => {
   const [messages, setMessages] = useState<TMessage[]>([])
   const [tsPoint, setTsPoint] = useState<number | null>(Date.now())
   const [showLoadMoreBtn, setShowLoadMoreBtn] = useState<boolean>(false)
+  const lastIdRef = useRef<string | null>(null)
   const resetMessages = useCallback(() => {
     setTsPoint(Date.now())
     setMessages([])
     setShowLoadMoreBtn(false)
+    lastIdRef.current = null
   }, [setMessages, setTsPoint])
   const handleReconnect = useCallback(() => {
     resetMessages()
@@ -409,7 +412,15 @@ export const Chat = () => {
     chatHistoryChunksCounterRef.current += 1
     setShowLoadMoreBtn(false)
   }, [setShowLoadMoreBtn])
+  const [filteredMessages, setFilteredMessages] = useState<TMessage[]>([])
+  const latestFilteredMessagesRef = useLatest(filteredMessages)
   const partialOldChatListener = useCallback(({ result, nextTsPoint, isDone }: { result: TMessage[], nextTsPoint: number, isDone: boolean }) => {
+    if (latestFilteredMessagesRef.current.length > 0) {
+      // console.log(latestFilteredMessagesRef.current[latestFilteredMessagesRef.current.length - 1])
+
+      // @ts-ignore
+      lastIdRef.current = String(latestFilteredMessagesRef.current[0].ts)
+    }
     setMessages((msgs: TMessage[]) => {
       // NOTE: Merge & filter unique & sort
       // -- TODO: refactoring?
@@ -423,7 +434,18 @@ export const Chat = () => {
     setTsPoint(nextTsPoint)
     setFullChatReceived(isDone)
     chatHistoryChunksCounterRef.current += 1
-    if (chatHistoryChunksCounterRef.current % 2 === 0) setShowLoadMoreBtn(true)
+    if (chatHistoryChunksCounterRef.current % 2 === 0) {
+      setShowLoadMoreBtn(true)
+      
+      if (!!lastIdRef.current) {
+        const domElm = document.getElementById(lastIdRef.current)
+        if (!!domElm) {
+          // domElm.style.border = '1px solid red'
+          const container = document.getElementsByClassName('scroll-to-bottom-container')[0]
+          container.scrollTo({ left: 0, behavior: 'auto', top: domElm.offsetTop })
+        } else console.error('NOT FOUND')
+      }
+    }
   }, [setShowLoadMoreBtn])
   const getPieceOfChat = useCallback(() => {
     if (!!socket && !!tsPoint) {
@@ -988,7 +1010,6 @@ export const Chat = () => {
   // const allImagesMessagesLightboxFormat = useMemo(() => logic.getAllImagesLightboxFormat(), [logic])
 
   // V2: Web Worker
-  const [filteredMessages, setFilteredMessages] = useState<TMessage[]>([])
   const [tags, setTags] = useState<string[]>([])
   const [allImagesMessagesLightboxFormat, setAllImagesMessagesLightboxFormat] = useState<any[]>([])
   const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
@@ -1800,6 +1821,7 @@ export const Chat = () => {
           </Box>
 
           <ScrollToBottom
+            scrollViewClassName='scroll-to-bottom-container'
             initialScrollBehavior='auto'
             debounce={100}
             followButtonClassName='follow-button'
@@ -1841,13 +1863,13 @@ export const Chat = () => {
               if (!!file) {
                 return (
                   <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
-                    {/* INF LOADER 2/3 */
+                    {/* INF LOADER 2/3
                       (i === 20 && !!tsPoint) && !showLoadMoreBtn && (
                         <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
                           <Box mr="2">---</Box><Text fontWeight="400">{`Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`}</Text><Box ml="2">---</Box>
                         </Flex>
                       )
-                    }
+                    */}
                     <Image
                       message={message}
                       setEditedMessage={setEditedMessage}
@@ -1866,13 +1888,13 @@ export const Chat = () => {
 
               return (
                 <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}-${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? assignedTo.join(',') : 'not_assigned'}`}>
-                  {/* INF LOADER 3/3 */
+                  {/* INF LOADER 3/3
                     i === 20 && !!tsPoint && (
                       <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
                         <Box mr="2">---</Box><Text fontWeight="400">{`Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`}</Text><Box ml="2">---</Box>
                       </Flex>
                     )
-                  }
+                  */}
                   <Box
                     id={String(ts)}
                     className={clsx(styles['message'], { [styles['my-message']]: isMyMessage, [styles['oponent-message']]: !isMyMessage })}

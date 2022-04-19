@@ -151,20 +151,24 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
               size='md'
               variant='outline'
             />
-            <InputRightElement>
-              <IconButton
-                size='xs'
-                aria-label="DEL"
-                colorScheme='red'
-                variant='outline'
-                isRound
-                icon={<IoMdClose size={15} />}
-                onClick={resetSearch}
-                isDisabled={!search}
-              >
-                DEL
-              </IconButton>
-            </InputRightElement>
+            {
+              !!search && (
+                <InputRightElement>
+                  <IconButton
+                    size='xs'
+                    aria-label="DEL"
+                    colorScheme='red'
+                    variant='outline'
+                    isRound
+                    icon={<IoMdClose size={15} />}
+                    onClick={resetSearch}
+                    isDisabled={!search}
+                  >
+                    DEL
+                  </IconButton>
+                </InputRightElement>
+              )
+            }
           </InputGroup>
         </Grid>
         {MemoBtns}
