@@ -1,0 +1,78 @@
+@import '~/common/scss-vars/monitors.scss';
+@import '~/common/scss-vars/dims.scss';
+
+$pad: var(--chakra-space-4);
+
+.fixed-search {
+  position: fixed;
+  transition: all 0.2s linear;
+  padding: #{$pad};
+
+  @media (max-width: #{$sm}px) {
+    height: 69px;
+    width: 100%;
+    top: -100px;
+    &--opened {
+      top: 0px;
+    }
+    border-radius: 0;
+  }
+  @media (min-width: #{$sm + 1}px) and (max-width: #{$md}px) {
+    height: 69px;
+    width: calc(100% - 195px);
+    top: -100px;
+    &--opened {
+      top: 0px;
+    }
+    border-radius: 0 0 10px 10px;
+  }
+  @media (min-width: #{$md + 1}px) {
+    height: 69px;
+    width: calc(540px - 185px);
+    top: -100px;
+    &--opened {
+      // top: 35px;
+      // top: calc(100vh - 200px - #{$tools-section-height} - var(--chakra-sizes-1));
+      top: 25px;
+    }
+    border-radius: 0 0 10px 10px;
+  }
+
+  // border: 1px dashed red;
+  z-index: 1001;
+  // background: #000;
+
+  // color: #FFF;
+}
+.search-input-wrapper {
+  // border: 1px solid red;
+  display: flex;
+  & > div {
+    width: 100%;
+    // border: 1px solid red;
+  }
+}
+
+.themed-bg {
+  &_dark {
+    background: var(--chakra-colors-gray-700);
+  }
+  /* if backdrop support: very transparent and blurred */
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    &_dark_backdrop-blur {
+      background: rgba(45,55,72,0.3);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
+  }
+  &_light {
+    background: var(--chakra-colors-gray-400);
+  }
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    &_light_backdrop-blur {
+      background: rgba(0,0,0,0);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
+  }
+}

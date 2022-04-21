@@ -75,10 +75,10 @@ import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
 import { useInView } from 'react-intersection-observer'
 import { Logic } from './MessagesLogic'
 import { useForm } from '~/common/hooks/useForm'
-import { SearchInModal } from './components/SearchInModal'
+// import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
 import { AiFillTags } from 'react-icons/ai'
-import { useDebounce, useLocalStorage } from 'react-use'
+import { useLocalStorage } from 'react-use'
 import { UploadInput } from './components/UploadInput'
 // import 'react-medium-image-zoom/dist/styles.css'
 import { EMessageStatus, TMessage, ERegistryLevel } from '~/utils/interfaces'
@@ -123,6 +123,8 @@ import {
 import { BiRefresh } from 'react-icons/bi'
 import { GoChecklist } from 'react-icons/go'
 import { useLatest } from '~/common/hooks/useLatest'
+import { useDebounce as useDebouncedValue } from '~/common/hooks/useDebounce'
+import { FixedSearch } from './components/FixedSearch'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -907,6 +909,7 @@ export const Chat = () => {
   const { formData, handleInputChange, resetForm } = useForm({
     searchText: '',
   })
+  
   const enabledTags = useMemo<string[]>(() => formData.searchText.split(' ').filter((w: string) => w[0] === '#'), [formData.searchText])
   const handleToggleTag = useCallback((tag: string) => {
     if (formData.searchText.includes(tag)) {
@@ -917,29 +920,30 @@ export const Chat = () => {
       handleInputChange({ target: { name: 'searchText', value: value.replace(/\s\s+/g, ' ').trim() } })
     }
   }, [formData.searchText])
-  const [debouncedSearchText, setDebouncedSearchText] = useState('');
-  const [, _cancel] = useDebounce(
-    () => {
-      // setState('Typing stopped');
-      setDebouncedSearchText(formData.searchText);
-    },
-    1000,
-    [formData.searchText]
-  );
+  // const [debouncedSearchText, setDebouncedSearchText] = useState('');
+  // const [, _cancel] = useDebounce(
+  //   () => {
+  //     // setState('Typing stopped');
+  //     setDebouncedSearchText(formData.searchText);
+  //   },
+  //   1000,
+  //   [formData.searchText]
+  // );
+  const debouncedSearchText = useDebouncedValue(formData.searchText, 500)
   // useEffect(() => {
   //   if (!formData.searchText && filters.length === 0) resetAdditionalTsToShow()
   // }, [formData.searchText, filters.length, resetAdditionalTsToShow])
   useEffect(() => {
     // if (!formData.searchText)
     resetAdditionalTsToShow()
-  }, [formData.searchText, filters.length, resetAdditionalTsToShow])
+  }, [debouncedSearchText, filters.length, resetAdditionalTsToShow])
   // useEffect(() => {
   //   resetAdditionalTsToShow()
   // }, [filters.length, resetAdditionalTsToShow])
 
   const [isSearchModeEnabled, setIsSearchModeEnabled] = useState<boolean>(false)
-  const handleEnableSearch = useCallback(() => {
-    setIsSearchModeEnabled(true)
+  const handleToggleSearch = useCallback(() => {
+    setIsSearchModeEnabled((s) => !s)
   }, [setIsSearchModeEnabled])
   const handleDisableSearch = useCallback(() => {
     setIsSearchModeEnabled(false)
@@ -1359,6 +1363,29 @@ export const Chat = () => {
 
   return (
     <>
+      <FixedSearch
+        searchText={formData.searchText}
+        name='searchText'
+        onChange={handleInputChange}
+        onClear={() => {
+          resetForm()
+          handleDisableSearch()
+        }}
+        isOpened={isSearchModeEnabled}
+        onClose={handleDisableSearch}
+      />
+
+      {/* <SearchInModal
+        isOpened={isSearchModeEnabled}
+        text={formData.searchText}
+        onClose={handleDisableSearch}
+        onChange={handleInputChange}
+        onClear={() => {
+          resetForm()
+          handleDisableSearch()
+        }}
+      /> */}
+
       <DatepickerModal
         // key={initialUncheckedTs}
         isOpened={isDatepickerOpened}
@@ -1499,7 +1526,7 @@ export const Chat = () => {
         <Flex
           className={styles["room"]}
           flexDirection="column"
-          width={{ base: '100%', sm: '450px', md: '550px' }}
+          width={{ base: '100%', lg: '550px' }}
           height={{ base: '100%', sm: 'auto' }}
         >
           <Heading
@@ -1723,16 +1750,6 @@ export const Chat = () => {
                   _dark={{ bg: "gray.600" }}
                 >
                   <MenuOptionGroup defaultValue="asc" title={`Filters${!!tsPoint ? ` / ${getNormalizedDateTime3(tsPoint)}` : ''}`}></MenuOptionGroup>
-                  <SearchInModal
-                    isOpened={isSearchModeEnabled}
-                    text={formData.searchText}
-                    onClose={handleDisableSearch}
-                    onChange={handleInputChange}
-                    onClear={() => {
-                      resetForm()
-                      handleDisableSearch()
-                    }}
-                  />
                   <div>
                     {
                       Object.values(EMessageStatus).map((status) => {
@@ -1798,7 +1815,7 @@ export const Chat = () => {
                 aria-label="Search"
                 icon={<CgSearch size={18} />}
                 justifySelf="flex-end"
-                onClick={handleEnableSearch}
+                onClick={handleToggleSearch}
                 mr={2}
               />
 

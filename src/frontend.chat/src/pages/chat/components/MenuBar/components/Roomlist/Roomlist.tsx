@@ -136,7 +136,6 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
           <InputGroup>
             <InputLeftElement
               pointerEvents="none"
-
               color="gray.300"
               fontSize="1.0em"
               children={<FiSearch />}
