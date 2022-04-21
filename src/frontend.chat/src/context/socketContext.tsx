@@ -59,6 +59,7 @@ export const SocketProvider =
         // description: notif?.description,
         status: 'success',
         duration: 3000,
+        variant: 'left-accent',
       })
       else toast({
         position: 'top',
@@ -67,6 +68,7 @@ export const SocketProvider =
         status: 'error',
         duration: 3000,
         isClosable: true,
+        variant: 'left-accent',
       })
     }, [isConnected])
 

@@ -67,7 +67,7 @@ class Singleton {
 
     if (!roomData) return { result: [], errorMsg: `Condition: !roomData for ${room}`, nextTsPoint: 0, isDone: true }
 
-    const messagesLimit = 20
+    const messagesLimit = 60
 
     for (let i = roomData.length - 1; i > -1; i--) {
       const isLast = i === 0
