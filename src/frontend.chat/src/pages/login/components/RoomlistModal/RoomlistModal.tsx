@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import {
   Button,
   Modal,
@@ -30,6 +30,14 @@ import './RoomlistModal.scss'
 import { IoMdAdd, IoMdClose } from 'react-icons/io'
 // import { BsArrowLeft } from 'react-icons/bs'
 import slugify from 'slugify'
+import { useLocalStorage } from 'react-use'
+import { getWords } from '~/utils/strings-ops/getWords'
+import { testRoomNameByAnyWord } from '~/utils/strings-ops/testRoomNameByAnyWord'
+
+const roomNameTest = ({ search, room }: { search: string, room: string }) => {
+  const words = getWords(search)
+  return testRoomNameByAnyWord({ room, words })
+}
 
 type TProps = {
   isOpened: boolean
@@ -40,9 +48,13 @@ type TProps = {
 }
 
 export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectRoom }: TProps) => {
+  const [searchRoomLS, setSearchRoomLS, _removeSearchRoomLS] = useLocalStorage<any>('chat.search-room', '')
   const { formData, handleInputChange, resetForm } = useForm({
-    search: '',
+    search: searchRoomLS,
   })
+  useEffect(() => {
+    setSearchRoomLS(formData.search)
+  }, [formData.search])
   const handleClear = () => {
     resetForm()
   }
@@ -57,9 +69,10 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
     }
     // resetForm()
   }
-  const roomlistAsObj = useMemo(() => getABSortedObj(roomlist), [roomlist])
+  const filteredRoomList = useMemo(() => !!formData.search ? roomlist.filter((r) => roomNameTest({ room: r, search: formData.search })) : roomlist, [roomlist, formData.search])
+  const roomlistAsObj = useMemo(() => getABSortedObj(filteredRoomList), [filteredRoomList])
   // const roomsKeys = useMemo(() => Object.keys(roomlistAsObj), [roomlistAsObj])
-  const displayedObj = useMemo(() => !!formData.search ? getABSortedObj(roomlist, formData.search) : roomlistAsObj, [roomlistAsObj, formData.search])
+  const displayedObj = useMemo(() => !!formData.search ? getABSortedObj(filteredRoomList) : roomlistAsObj, [roomlistAsObj, filteredRoomList])
   const displayedRoomsKeys = useMemo(() => Object.keys(displayedObj).sort(), [displayedObj])
 
   return (

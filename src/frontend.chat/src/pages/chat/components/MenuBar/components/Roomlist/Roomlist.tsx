@@ -19,6 +19,8 @@ import { getTruncated } from '~/utils/strings-ops'
 import { useCompare } from '~/common/hooks/useDeepEffect'
 import { IoMdClose } from 'react-icons/io'
 import { FiSearch } from 'react-icons/fi'
+import { getWords } from '~/utils/strings-ops/getWords'
+import { testRoomNameByAnyWord } from '~/utils/strings-ops/testRoomNameByAnyWord'
 
 type TProps = {
   resetMessages: () => void
@@ -26,28 +28,6 @@ type TProps = {
   handleRoomClick: (room: string) => void
 }
 
-let c = 0
-const getWords = (search: string): string[] => search?.toLowerCase().split(' ').filter((str) => !!str)
-// --
-// NOTE: v1. Совпадение по всем словам
-const _testRoomNameByAllWords = ({ room, words }: { room: string, words: string[] }): boolean => {
-  const modifiedWords = words.join(' ').replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
-  // Split your string at spaces & Encapsulate your words inside regex groups:
-  const regexpGroups = modifiedWords.split(' ').map((w) => ['(?=.*' + w + ')'])
-  // Create a regex pattern:
-  const regexp = new RegExp('^' + regexpGroups.join('') + '.*$', 'im')
-
-  return regexp.test(room)
-}
-// NOTE: v2. Совпадение по хотябы одному слову
-const testRoomNameByAnyWord = ({ room, words }: { room: string, words: string[] }): boolean => {
-  const modifiedWords = words.join(' ').replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
-  const regexpGroups = modifiedWords.split(' ').map((w) => ['(?=.*' + w + ')'])
-  const regexp = new RegExp('^' + regexpGroups.join('|') + '.*$', 'im')
-
-  return regexp.test(room)
-}
-// --
 const roomNameTest = ({ search, room }: { search: string, room: string }) => {
   const words = getWords(search)
   return testRoomNameByAnyWord({ room, words })

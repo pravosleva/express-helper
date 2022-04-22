@@ -315,7 +315,8 @@
       padding: 1rem;
   }
   .height-full-auto-sm > div {
-    min-height:100px;
+    // min-height:100px;
+    min-height: calc(100vh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
     max-height: calc(100vh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
   }
   .height-limited-md > div {
