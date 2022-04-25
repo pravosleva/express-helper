@@ -777,7 +777,7 @@ export const Chat = () => {
   }, [])
   const handleSetStatus = useCallback((status: EMessageStatus) => {
     if (!!socket) {
-      const newData: Partial<TMessage> = { text: editedMessage.text, status }
+      const newData: Partial<TMessage> = { ...editedMessage, status }
 
       if (!!editedMessage.assignedTo && !!editedMessage.assignedBy && status !== EMessageStatus.Done) {
         newData.assignedTo = editedMessage.assignedTo
@@ -792,7 +792,7 @@ export const Chat = () => {
   }, [socket, editedMessage, name])
   const handleUnsetStatus = useCallback(() => {
     if (!!socket) {
-      const newData: Partial<TMessage> = { text: editedMessage.text }
+      const newData: Partial<TMessage> = { ...editedMessage }
 
       if (!!editedMessage.assignedTo && !!editedMessage.assignedBy) {
         newData.assignedTo = editedMessage.assignedTo
@@ -1308,6 +1308,10 @@ export const Chat = () => {
   const AccordionStuff = useMemo(() => {
     return (
       <AccordionSettings
+        onEditMessage={(m) => {
+          setEditedMessage(m)
+          handleEditModalOpen()
+        }}
         registryLevel={userInfoSnap.regData?.registryLevel || 0}
         isAssignmentFeatureEnabled={isAssignmentFeatureEnabled}
         logic={logic}
@@ -1353,6 +1357,8 @@ export const Chat = () => {
     handleCloseMenuBar,
     handleRoomClick,
     hasNews,
+    setEditedMessage,
+    handleEditModalOpen,
   ])
 
   const mode = useColorMode()
@@ -2033,9 +2039,12 @@ export const Chat = () => {
                                     size='sm'
                                     borderRadius='full'
                                     onClick={() => {
+                                      console.groupCollapsed('setEditedMessage()')
+                                      console.log(message)
+                                      console.groupEnd()
                                       setEditedMessage(message)
-                                      handleOpenDatePicker()}
-                                    }
+                                      handleOpenDatePicker()
+                                    }}
                                     rightIcon={<FiArrowRight color="inherit" size={14} />}
                                     leftIcon={<BsFillCalendarFill size={14} />}
                                     mb={2}

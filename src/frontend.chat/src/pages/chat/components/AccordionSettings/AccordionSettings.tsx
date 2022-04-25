@@ -57,6 +57,7 @@ type TProps = {
   activeFilters: EMessageStatus[]
   defaultAccordionItems?: TAccordeonItem[]
   registryLevel: ERegistryLevel
+  onEditMessage?: (m: TMessage) => void
 }
 
 export const AccordionSettings = ({
@@ -70,6 +71,7 @@ export const AccordionSettings = ({
   activeFilters,
   defaultAccordionItems,
   registryLevel,
+  onEditMessage,
 }: TProps) => {
   const { room, sprintFeatureProxy, assignmentFeatureProxy, devtoolsFeatureProxy, cpuFeatureProxy } = useMainContext()
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
@@ -347,7 +349,10 @@ export const AccordionSettings = ({
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                 
                 <Box>
-                  <NotifsList onRemove={(ts) => { sprintFeatureProxy.tsUpdate = ts }} />
+                  <NotifsList
+                    onRemove={(ts) => { sprintFeatureProxy.tsUpdate = ts }}
+                    onEdit={onEditMessage}
+                  />
                 </Box>
                 
               </AccordionPanel>

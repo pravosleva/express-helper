@@ -13,6 +13,7 @@ import { ImFire } from 'react-icons/im'
 import { FiActivity } from 'react-icons/fi'
 import { FaCheck, FaInfoCircle } from 'react-icons/fa'
 import { BsFillInfoCircleFill } from 'react-icons/bs'
+import { AiTwotoneEdit } from 'react-icons/ai'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -24,6 +25,7 @@ type TProps = {
   inProgress: boolean
   onComplete?: ({ ts, text }: { ts: number, text: string }) => void
   original: TMessage
+  onEdit?: (m: TMessage) => void
 }
 
 const CountdownRenderer = ({ days, hours, minutes, seconds, completed }: any) => {
@@ -34,8 +36,8 @@ const CountdownRenderer = ({ days, hours, minutes, seconds, completed }: any) =>
   return <Tag rounded='2xl' colorScheme={color} ml={2}>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
 }
 
-export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete, original }: TProps) => {
-  const { userInfoProxy, sprintFeatureProxy } = useMainContext()
+export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete, original, onEdit }: TProps) => {
+  const { userInfoProxy, sprintFeatureProxy, name } = useMainContext()
   const userInfoSnap = useSnapshot(userInfoProxy)
   // const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
   const isLogged = useMemo<boolean>(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
@@ -77,6 +79,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
       console.log(err)
     }
   }
+  const isMyMessage = useMemo(() => original?.user === name, [name, original?.user])
   
   // <Grid templateColumns='auto 50px' gap={2}>
   return (
@@ -95,6 +98,24 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           />
         </Flex>
         <Flex alignItems='center'>
+          {
+            isMyMessage && !!onEdit && (
+              <IconButton
+                style={{ marginRight: '.5rem' }}
+                size='xs'
+                aria-label="EDIT"
+                colorScheme='green'
+                variant='outline'
+                isRound
+                icon={<AiTwotoneEdit size={15} />}
+                onClick={() => {
+                  onEdit(original)
+                }}
+              >
+                EDIT
+              </IconButton>
+            )
+          }
           {!!original?.assignedTo && !!original?.assignedBy && (
             <>
               <UserAva size={19} name={original.assignedBy} ml='auto' fontSize={11} onClick={() => { !!original.assignedBy && window.alert(`Assigned by ${original.assignedBy}`) }} />
@@ -143,6 +164,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           ? (
           <>
             <b>{text}</b>
+            {/* <pre style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap' }}>{JSON.stringify(original, null, 2)}</pre> */}
           </>
         ) : (
             <div
@@ -152,6 +174,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
               }}
             >
               <div>{isOpened ? <b>{text}</b> : <b>{firstString}</b>}</div>
+              {/* <pre style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap' }}>{JSON.stringify(original, null, 2)}</pre> */}
               <div>
                 <Button
                   mt={1}

@@ -174,6 +174,7 @@ class Singleton {
           shouldLogout = true
           throw new Error('theMessage not found; Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств;')
         } else {
+          roomMessages[theMessageIndex].user = name
           roomMessages[theMessageIndex].text = newData.text
           roomMessages[theMessageIndex].editTs = new Date().getTime()
           if (!!newData.status) {

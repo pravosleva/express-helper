@@ -59,7 +59,12 @@ function dynamicSort(property: string) {
   }
 }
 
-export const NotifsList = ({ onRemove }: { onRemove: (ts: number) => void }) => {
+type TProps = {
+  onRemove: (ts: number) => void
+  onEdit?: (m: TMessage) => void
+}
+
+export const NotifsList = ({ onRemove, onEdit }: TProps) => {
   const { room, sprintFeatureProxy } = useMainContext()
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
 
@@ -111,6 +116,7 @@ export const NotifsList = ({ onRemove }: { onRemove: (ts: number) => void }) => 
       onComplete={({ ts }) => {
         sprintFeatureProxy.hasCompleted = true
       }}
+      onEdit={onEdit}
     />
   )}), [filteredNotifs, sprintFeatureSnap.inProgress, sprintFeatureSnap.commonNotifs])
 
