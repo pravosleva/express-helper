@@ -17,6 +17,16 @@ const toClient = [
     _testField: {
       fromStepName: 'accept_preprice',
     },
+    subsidies: [
+      {
+        baseDiscount: 1300,
+        model: 'Apple iPhone SE 2020 128Gb',
+      },
+      {
+        baseDiscount: 900,
+        model: 'Samsung Galaxy A12',
+      },
+    ],
   },
 ]
 
