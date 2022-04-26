@@ -1367,6 +1367,8 @@ export const Chat = () => {
     [useCompare([filters])]
   )
 
+  const debouncedEditedMessageText = useDebouncedValue(editedMessage?.text || '', 1000)
+
   return (
     <>
       <FixedSearch
@@ -1486,30 +1488,78 @@ export const Chat = () => {
       </ContextMenu>
 
       <Modal
-        size="sm"
+        size={upToMd ? 'md' : 'full'}
         initialFocusRef={initialRef}
         finalFocusRef={textFieldRef}
         isOpen={isEditModalOpen}
         onClose={handleEditModalClose}
       >
         <ModalOverlay />
-        <ModalContent rounded='2xl'>
-          <ModalHeader>Edit your msg</ModalHeader>
+        <ModalContent
+          // rounded='2xl'
+        >
+          <ModalHeader>
+            Edit
+          </ModalHeader>
           <ModalCloseButton rounded='3xl' />
-          <ModalBody pb={6}>
-            <FormControl mt={4}>
-              <FormLabel>Text</FormLabel>
-              <Textarea
-                isInvalid={!editedMessage?.text}
-                resize="vertical"
-                placeholder="Message"
-                ref={initialRef}
-                // onKeyDown={handleKeyDownEditedMessage}
-                value={editedMessage.text}
-                onChange={handleChangeEditedMessage}
-                fontSize='lg'
-              />
-            </FormControl>
+          <ModalBody
+            p={0}
+          >
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              {!!debouncedEditedMessageText && (
+                <div style={{
+                  // padding: '5px 0 5px 0',
+                  position: 'sticky',
+                  top: 0,
+                  zIndex: 1,
+                }}>
+                  <pre style={{
+                    fontSize: '0.8em',
+                    border: '1px solid inherit',
+                    padding: '5px',
+                    marginBottom: '10px',
+                    backgroundColor: 'gray',
+                    color: '#FFF',
+                    borderRadius: 0,
+                    maxHeight: '200px',
+                    whiteSpace: 'pre-wrap',
+                    wordWrap: 'break-word',
+                    overflowY: 'auto',
+                  }}>{debouncedEditedMessageText}</pre>
+                </div>
+              )}
+              
+              <div
+                style={{
+                  padding: upToMd ? '0 var(--chakra-space-6)' : '0 var(--chakra-space-6) 0 var(--chakra-space-20)'
+                }}
+              >
+                <FormControl>
+                  {/* <FormLabel>Text</FormLabel> */}
+                  <Textarea
+                    style={{
+                      backgroundColor: mode.colorMode === 'dark' ? 'var(--chakra-colors-blackAlpha-600)' : 'var(--chakra-colors-blackAlpha-600)',
+                      color: mode.colorMode === 'dark' ? 'inherit' : '#FFF'
+                    }}
+                    isInvalid={!editedMessage?.text}
+                    resize="vertical"
+                    placeholder="Message"
+                    ref={initialRef}
+                    // onKeyDown={handleKeyDownEditedMessage}
+                    // value={editedMessage?.text}
+                    defaultValue={editedMessage?.text}
+                    onChange={handleChangeEditedMessage}
+                    fontSize='lg'
+                    rows={10}
+                  />
+                </FormControl>
+              </div>
+            </div>
           </ModalBody>
 
           <ModalFooter>
