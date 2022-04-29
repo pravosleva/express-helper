@@ -15,6 +15,7 @@ import { moveFileIfExists, moveFileSync } from '~/utils/fs-tools/moveFile'
 import { getDirectories } from '~/utils/fs-tools/getDirectories'
 import { getFiles } from '~/utils/fs-tools/getFiles'
 import delay from '~/utils/delay'
+import { sortByTs } from '~/utils/sortByTs'
 
 const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
 const projectRootDir = path.join(__dirname, '../../../../')
@@ -461,7 +462,7 @@ const syncRoomsMap = () => {
             }
 
             newMsgs.push(msg)
-            roomsMapInstance.set(roomName, newMsgs)
+            roomsMapInstance.set(roomName, newMsgs.sort(sortByTs))
           }
           // --
         })
