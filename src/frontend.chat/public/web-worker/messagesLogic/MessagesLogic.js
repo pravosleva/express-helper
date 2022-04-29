@@ -214,13 +214,15 @@ class Logic {
     const res = {
       columns: []
     }
+    const countersMapping = {}
 
     for (const status of statuses) {
       const cards = []
+      countersMapping[status] = 0
       
       for (const message of this.messages) {
-        
         if (message.status === status) {
+          countersMapping[status] += 1
           cards.push({
             id: message.ts,
             title: message.user,
@@ -235,7 +237,7 @@ class Logic {
           danger: '🔥 В работе',
           success: '✅ На тестировании',
           warning: '⚠️ Выясняем / Руки не дошли',
-          done: '☑️ Завершена',
+          done: '☑️ Завершенные',
           info: 'ℹ️ Идея / Информация',
           dead: '💀 Мертвые',
         }
@@ -244,7 +246,7 @@ class Logic {
 
       res.columns.push({
         id: status,
-        title: getTitle(status),
+        title: `${getTitle(status)} (${countersMapping[status]})`,
         cards: cards.sort(dynamicSort('position')),
       })
     }
