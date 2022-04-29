@@ -171,8 +171,11 @@ class Singleton {
         })
 
         // -- TODO: Debug binarySearchTsIndex
-        const _findIndexByArrayMethod = roomMessages.findIndex(({ ts: _ts }) => _ts === ts)
-        if (theMessageIndex === -1) theMessageIndex = _findIndexByArrayMethod
+        let _findIndexByArrayMethod
+        if (theMessageIndex === -1) {
+          _findIndexByArrayMethod = roomMessages.findIndex(({ ts: _ts }) => _ts === ts)
+          if (_findIndexByArrayMethod !== -1) theMessageIndex = _findIndexByArrayMethod
+        }
         // --
 
         if (theMessageIndex === -1) {

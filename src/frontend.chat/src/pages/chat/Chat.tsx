@@ -208,7 +208,7 @@ const getBgColorByStatus = (s: EMessageStatus | 'assign') => {
   }
 }
 
-const kanbanStatuses = [EMessageStatus.Info, EMessageStatus.Success, EMessageStatus.Warn, EMessageStatus.Danger, EMessageStatus.Done]
+const kanbanStatuses = [EMessageStatus.Info, EMessageStatus.Warn, EMessageStatus.Danger, EMessageStatus.Success, EMessageStatus.Done]
 type TKanbanCard = { id: number, title: EMessageStatus, description: string }
 type TKanbanState = {
   columns: {
