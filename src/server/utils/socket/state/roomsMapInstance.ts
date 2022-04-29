@@ -140,7 +140,7 @@ class Singleton {
       room: string,
       name: string,
       ts: number,
-      newData: { text: string, status?: EMessageStatus, assignedTo?: string[], links?: { link: string, descr: string }[] }
+      newData: { text: string, status?: EMessageStatus, assignedTo?: string[], links?: { link: string, descr: string }[], position?: number }
     }
   ): {
     isOk: boolean,
@@ -165,14 +165,19 @@ class Singleton {
       } else {
         const roomMessages = roomData
         // const theMessageIndex = roomMessages.findIndex(({ ts: t }) => t === ts)
-        const theMessageIndex = binarySearchTsIndex({
+        let theMessageIndex = binarySearchTsIndex({
           messages: roomMessages,
           targetTs: ts
         })
 
+        // -- TODO: Debug binarySearchTsIndex
+        const _findIndexByArrayMethod = roomMessages.findIndex(({ ts: _ts }) => _ts === ts)
+        if (theMessageIndex === -1) theMessageIndex = _findIndexByArrayMethod
+        // --
+
         if (theMessageIndex === -1) {
-          shouldLogout = true
-          throw new Error('theMessage not found; Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств;')
+          // shouldLogout = true
+          throw new Error(`editMessage ERR1: Попробуйте перезайти | theMessage not found; [room= ${room}, ts= ${ts}, newData.text=${newData.text}]; _findIndexByArrayMethod= ${_findIndexByArrayMethod}`)
         } else {
           roomMessages[theMessageIndex].user = name
           roomMessages[theMessageIndex].text = newData.text
@@ -195,6 +200,7 @@ class Singleton {
           } else {
             delete roomMessages[theMessageIndex].links
           }
+          if (!!newData.position || newData.position === 0) roomMessages[theMessageIndex].position = newData.position
 
           // console.log(roomMessages[theMessageIndex])
 
@@ -216,6 +222,8 @@ class Singleton {
       // socket.emit('notification', { status: 'error', title: 'ERR #1', description: !!err.message ? `Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error' })
       // socket.emit('FRONT:LOGOUT')
     }
+
+    // console.log(targetMessage)
 
     return {
       isOk,
@@ -339,7 +347,7 @@ class Singleton {
     } catch (err) {
       isOk = false
       isPrivateSocketCb = true
-      errMsgData.description = !!err.message ? `ERR: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error'
+      errMsgData.description = !!err.message ? `ERR3: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error'
       errMsgData.title = 'SERVER #ERR3'
       shouldLogout = true
     }

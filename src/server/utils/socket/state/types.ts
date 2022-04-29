@@ -34,6 +34,7 @@ export type TMessage = {
     filePath: string
   }
   links?: { link: string, descr: string }[]
+  position?: number
 }
 // export type TRoomData = {
 //   [userName: string]: TMessage[]

@@ -67,6 +67,19 @@
       "pre-commit": "lint-staged"
     }
   },
+  "jest": {
+    "verbose": true,
+    "preset": "./node_modules/@babel/preset-typescript",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/src/frontend.*"
+    ],
+    "moduleNameMapper": {
+      "@binarySearch": "<rootDir>/server-dist/utils/binarySearch.js"
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/*"
+    ]
+  },
   "dependencies": {
     "@socket.io/admin-ui": "^0.2.0",
     "animate.css": "^4.1.1",
@@ -112,10 +125,13 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
+    "@babel/preset-typescript": "^7.16.7",
     "@types/bcryptjs": "^2.4.2",
     "@types/es6-promisify": "^6.0.0",
     "@types/express": "^4.17.11",
     "@types/express-request-id": "^1.4.1",
+    "@types/jest": "^27.4.1",
     "@types/jsonwebtoken": "^8.5.1",
     "@types/ncp": "^2.0.5",
     "@types/qrcode": "^1.4.0",
@@ -131,9 +147,10 @@
     "eslint-plugin-jsx-a11y": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
-    "jest": "^26.0.1",
+    "jest": "^28.0.2",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
+    "ts-jest": "^27.1.4",
     "typescript": "^4.2.3"
   }
 }

@@ -125,6 +125,11 @@ import { GoChecklist } from 'react-icons/go'
 import { useLatest } from '~/common/hooks/useLatest'
 import { useDebounce as useDebouncedValue } from '~/common/hooks/useDebounce'
 import { FixedSearch } from './components/FixedSearch'
+import { FixedBottomSheet } from './components/FixedBottomSheet'
+import { BsTable } from 'react-icons/bs'
+// @ts-ignore
+import Board from '@asseinfo/react-kanban'
+import '@asseinfo/react-kanban/dist/styles.css'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -147,7 +152,6 @@ const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_B
 <- siofu_progress { size: 10312296, start: 10291000, end: 10312296, content: { _placeholder: true, num: 0 }, base64 true }
 -- */
 
-// @ts-ignore
 // const overwriteMerge = (destinationArray, sourceArray, _options) => [, ...sourceArray]
 const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 const charsLimit = 2000
@@ -203,6 +207,25 @@ const getBgColorByStatus = (s: EMessageStatus | 'assign') => {
     default: return 'current'
   }
 }
+
+const kanbanStatuses = [EMessageStatus.Info, EMessageStatus.Success, EMessageStatus.Warn, EMessageStatus.Danger, EMessageStatus.Done]
+type TKanbanCard = { id: number, title: EMessageStatus, description: string }
+type TKanbanState = {
+  columns: {
+    id: EMessageStatus
+    title: string
+    cards: (TMessage & TKanbanCard)[]
+  }[]
+}
+const getInitialStatusGroups = (statuses: EMessageStatus[]): TKanbanState =>
+  statuses.reduce((acc: any, status) => {
+    acc.columns.push({
+      id: status,
+      title: status,
+      cards: [],
+    })
+    return acc
+  }, { columns: [] })
 
 export const Chat = () => {
   const { name, slugifiedRoom: room, roomRef, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy, devtoolsFeatureProxy } = useContext(MainContext)
@@ -324,7 +347,7 @@ export const Chat = () => {
       const logoutFromServerListener = () => {
         history.push('/')
       }
-      const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy, links }: { text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string, links?: { link: string, descr: string }[] }) => {
+      const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy, links, position }: { position?: number, text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string, links?: { link: string, descr: string }[] }) => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
@@ -349,6 +372,7 @@ export const Chat = () => {
             } else {
               newArr[targetIndex].links = []
             }
+            if (!!position || position === 0) newArr[targetIndex].position = position
           }
           return newArr
         })
@@ -679,6 +703,7 @@ export const Chat = () => {
       if (!!editedMessage.assignedTo) newData.assignedTo = editedMessage.assignedTo
       if (!!assignedTo) newData.assignedTo = assignedTo
       if (!!editedMessage.links) newData.links = editedMessage.links
+      if (!!editedMessage.status && !editedMessage.position) newData.position = 0
       newData = { ...newData, ...editedMessage }
       socket.emit(
         'editMessage',
@@ -779,11 +804,6 @@ export const Chat = () => {
     if (!!socket) {
       const newData: Partial<TMessage> = { ...editedMessage, status }
 
-      if (!!editedMessage.assignedTo && !!editedMessage.assignedBy && status !== EMessageStatus.Done) {
-        newData.assignedTo = editedMessage.assignedTo
-        newData.assignedBy = editedMessage.assignedBy
-      }
-      if (!!editedMessage.links) newData.links = editedMessage.links
       socket.emit(
         'editMessage',
         { newData, ts: editedMessage.ts, room: roomRef.current, name }
@@ -793,11 +813,8 @@ export const Chat = () => {
   const handleUnsetStatus = useCallback(() => {
     if (!!socket) {
       const newData: Partial<TMessage> = { ...editedMessage }
+      delete newData.status
 
-      if (!!editedMessage.assignedTo && !!editedMessage.assignedBy) {
-        newData.assignedTo = editedMessage.assignedTo
-        newData.assignedBy = editedMessage.assignedBy
-      }
       socket.emit(
         'editMessage',
         { newData, ts: editedMessage.ts, room: roomRef.current, name }
@@ -1017,27 +1034,42 @@ export const Chat = () => {
   const [tags, setTags] = useState<string[]>([])
   const [allImagesMessagesLightboxFormat, setAllImagesMessagesLightboxFormat] = useState<any[]>([])
   const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
+  const [statusGroups, setStatusGroups] = useState<TKanbanState>(getInitialStatusGroups(kanbanStatuses))
   useEffect(() => {
     webWorkersInstance.filtersWorker.onmessage = ($event: { [key: string]: any, data: { type: string, result: TMessage[], perf: number } }) => {
       try {
-        console.log(`Web Worker: ${$event.data.result.length} in ${$event.data.perf} ms`)
+        switch (true) {
+          case (!!$event.data.result && Array.isArray($event.data.result)):
+            console.log(`Web Worker: ${$event.data.result.length} items in ${$event.data.perf} ms`)
+            break
+          default:
+            console.log(`Web Worker: ${typeof $event.data.result} in ${$event.data.perf} ms`)
+            break
+        }
+        
         if (!!timers.current[$event.data.type]) clearTimeout(timers.current[$event.data.type])
         switch ($event.data.type) {
           case 'getFilteredMessages':
             timers.current[$event.data.type] = setTimeout(() => {
               setFilteredMessages($event.data.result)
-            }, 100)
+            }, 0)
             break;
           case 'getTags':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setTags($event.data.result)
-            }, 100)
+            }, 0)
             break;
           case 'getAllImagesLightboxFormat':
             timers.current[$event.data.type] = setTimeout(() => {
               setAllImagesMessagesLightboxFormat($event.data.result)
-            }, 100)
+            }, 0)
+            break;
+          case 'getStatusKanban':
+            timers.current[$event.data.type] = setTimeout(() => {
+              // @ts-ignore
+              setStatusGroups($event.data.result)
+            }, 0)
             break;
           default: break;
         }
@@ -1060,6 +1092,9 @@ export const Chat = () => {
   useEffect(() => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getTags', messages })
   }, [messages])
+  useEffect(() => {
+    webWorkersInstance.filtersWorker.postMessage({ type: 'getStatusKanban', messages: filteredMessages, statuses: kanbanStatuses })
+  }, [filteredMessages])
   // --
   
   const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
@@ -1368,6 +1403,110 @@ export const Chat = () => {
   )
 
   const debouncedEditedMessageText = useDebouncedValue(editedMessage?.text || '', 1000)
+  const [isBottomSheetVisible, setIsBottomSheetVisible] = useState<boolean>(false)
+  const handleOpenBottomSheet = useCallback(() => {
+    setIsBottomSheetVisible(true)
+  }, [setIsBottomSheetVisible])
+  const handleCloseBottomSheet = useCallback(() => {
+    setIsBottomSheetVisible(false)
+  }, [setIsBottomSheetVisible])
+
+  const nextPositionRef = useRef<number>(0)
+  const prevPositionRef = useRef<number>(0)
+  const handleCardDragEnd = useCallback((card: TMessage & TKanbanCard, source: any, dest: any) => { // board: any, card: any, source: any, dest: any
+    // console.log('-- handleCardDragEnd')
+    const oldStatus = source.fromColumnId
+    const newStatus = dest.toColumnId
+    const oldPosition = source.fromPosition
+    let newPosition = dest.toPosition
+    const _isSameColumn = oldStatus === newStatus
+    const isMoveUpInSameColumn = _isSameColumn && source.fromPosition > dest.toPosition
+    const isMoveDownInSameColumn = _isSameColumn && source.fromPosition < dest.toPosition
+    const getIsReplacePositionInOtherColumn = (i: number) => {
+      console.log(`-- old elm pos= ${i}, new elm pos= ${dest.toPosition}`)
+      return !_isSameColumn && i === dest.toPosition
+    }
+    const getIsUpPositionInOtherColumn = (i: number) => !_isSameColumn && i < dest.toPosition
+    const getIsDownPositionInOtherColumn = (i: number) => !_isSameColumn && i > dest.toPosition
+
+    prevPositionRef.current = newPosition - 1
+    nextPositionRef.current = newPosition + 1
+    
+    const { id, title, description, ...rest } = card
+    // console.log('--', oldStatus !== newStatus || (_isSameColumn && oldPosition !== dest.toPosition))
+    if (oldStatus !== newStatus || (_isSameColumn && oldPosition !== dest.toPosition)) {
+      const newData = { ...rest, status: newStatus, position: newPosition }
+
+      for (const group of statusGroups.columns) {
+        if (group.id === newStatus) {
+          group.cards.forEach((_card, i) => {
+            if (_card.ts === card.ts) {
+              // NOTE: Skip
+              console.log('-- skip 0')
+            } else {
+              let position = i
+
+              switch (true) {
+                case isMoveUpInSameColumn:
+                case getIsReplacePositionInOtherColumn(i):
+                case getIsUpPositionInOtherColumn(i):
+                  if (i < newPosition) {}
+                  else if (i === newPosition) position += 1
+                  else position += 1
+                  break
+                case isMoveDownInSameColumn:
+                  if (i < newPosition) {
+                    // NOTE: Skip
+                  }
+                  else if (i === newPosition) position -= 1
+                  else position += 1
+                  break
+                case getIsDownPositionInOtherColumn(i):
+                  console.log('-- CASE 2: isDownPositionInOtherColumn')
+                  if (i < newPosition) {
+                    console.log('-- CASE 2.1')
+                  }
+                  else if (i === newPosition) {
+                    position += 1
+                    console.log('-- CASE 2.2')
+                  }
+                  else {
+                    position += 1
+                    console.log('-- CASE 2.3')
+                  }
+                  break
+                default:
+                  console.log('-- UNDEFINED CASE!')
+                  break
+              }
+
+              if (!!socket) socket.emit(
+                'editMessage',
+                { newData: { ..._card, position }, ts: _card.ts, room: roomRef.current, name }
+              )
+              // prevPositionRef.current += 1
+              nextPositionRef.current += 1
+            }
+          })
+        }
+      }
+
+      if (!!socket) socket.emit(
+        'editMessage',
+        { newData, ts: newData.ts, room: roomRef.current, name }
+      )
+    } else {
+      console.log('-- skip 1')
+    }
+  }, [editedMessage, name, socket, statusGroups])
+
+  const handleCardRemove = (card: TMessage & TKanbanCard) => {
+    // DEL status
+    const { title, description, id, ...newData } = card
+    delete newData.status
+    setEditedMessage(newData)
+    setTimeout(() => handleSaveEditedMessage({}), 0)
+  }
 
   return (
     <>
@@ -2235,6 +2374,21 @@ export const Chat = () => {
                     TASKLIST
                   </IconButton>  
                 )}
+                {
+                  upToMd && (
+                    <IconButton
+                      size='sm'
+                      aria-label="BSH"
+                      colorScheme='blue'
+                      variant='solid'
+                      isRound
+                      icon={<BsTable size={15} />}
+                      onClick={handleOpenBottomSheet}
+                    >
+                      BSH
+                    </IconButton> 
+                  )
+                } 
                 {isLogged && showClearBtn && (
                   <IconButton
                     size='sm'
@@ -2393,6 +2547,19 @@ export const Chat = () => {
           </Widget>
         )
       }
+      <FixedBottomSheet
+        isOpened={isBottomSheetVisible}
+        onClose={handleCloseBottomSheet}
+      >
+        <Board
+          onCardDragEnd={handleCardDragEnd}
+          disableColumnDrag
+          allowRemoveCard
+          onCardRemove={handleCardRemove}
+        >
+          {statusGroups}
+        </Board>
+      </FixedBottomSheet>
     </>
   )
 }

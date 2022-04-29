@@ -31,6 +31,7 @@
   ],
   "exclude": [
     "tsconfig.json",
-    "**/tsconfig.json"
+    "**/tsconfig.json",
+    "**/web-worker/*"
   ]
 }

@@ -77,7 +77,7 @@ export const TagsInModal = ({ tags, isOpened, onClose, onToggeTag, enabledTags }
           {memoizedTags.map((tag) => {
             const isEnabled = enabledTags.includes(tag)
             return (
-              <Button rounded='3xl' onClick={toggleTag(tag)} colorScheme={isEnabled ? 'blue' : 'gray'}>{tag}</Button>
+              <Button key={tag} rounded='3xl' onClick={toggleTag(tag)} colorScheme={isEnabled ? 'blue' : 'gray'}>{tag}</Button>
             )
           })}
         </ModalBody>

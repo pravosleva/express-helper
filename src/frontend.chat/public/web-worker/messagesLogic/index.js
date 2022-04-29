@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
 importScripts('./MessagesLogic.js');
 
 var window = self;
@@ -41,6 +44,16 @@ self.onmessage = ($event) => {
     }
   }
 
+  // 4
+  const getStatusKanban = () => {
+    return (messages, statuses) => {
+      const logic = new Logic(messages)
+  
+      return logic.getStatusKanban(statuses)
+    }
+  }
+
+  let result
   switch ($event.data.type) {
     case 'getFilteredMessages':
       result = getFilteredMessages($event.data)($event.data.messages);
@@ -50,6 +63,9 @@ self.onmessage = ($event) => {
       break;
     case 'getTags':
       result = getTags($event.data)($event.data.messages);
+      break;
+    case 'getStatusKanban':
+      result = getStatusKanban()($event.data.messages, $event.data.statuses);
       break;
     // NOTE: Others...
     default:

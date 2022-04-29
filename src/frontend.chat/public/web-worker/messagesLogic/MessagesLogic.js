@@ -1,3 +1,18 @@
+function dynamicSort(property) {
+  let sortOrder = 1;
+  if (property[0] === "-") {
+    sortOrder = -1;
+    property = property.substr(1);
+  }
+  return function (a,b) {
+    // NOTE: next line works with strings and numbers, 
+    // and you may want to customize it to your needs
+    const result = // a[property] !== b[property] ?
+      (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
+    return result * sortOrder;
+  }
+}
+
 class Logic {
   constructor(messages, REACT_APP_CHAT_UPLOADS_URL = '/chat/storage/uploads') {
     this.messages = messages;
@@ -194,5 +209,46 @@ class Logic {
       return acc
     }, [])
     return [...new Set(res)].sort(abSort)
+  }
+  getStatusKanban(statuses) {
+    const res = {
+      columns: []
+    }
+
+    for (const status of statuses) {
+      const cards = []
+      
+      for (const message of this.messages) {
+        
+        if (message.status === status) {
+          cards.push({
+            id: message.ts,
+            title: message.user,
+            description: message.text,
+            ...message,
+          })
+        }
+      }
+
+      const getTitle = (status) => {
+        const mapping = {
+          danger: '🔥 В работе',
+          success: '✅ На тестировании',
+          warning: '⚠️ Выясняем / Руки не дошли',
+          done: '☑️ Завершена',
+          info: 'ℹ️ Идея / Информация',
+          dead: '💀 Мертвые',
+        }
+        return mapping[status] || status
+      }
+
+      res.columns.push({
+        id: status,
+        title: getTitle(status),
+        cards: cards.sort(dynamicSort('position')),
+      })
+    }
+
+    return res;
   }
 }
