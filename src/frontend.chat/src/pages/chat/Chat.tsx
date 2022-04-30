@@ -2430,7 +2430,7 @@ export const Chat = () => {
                       size='sm'
                       aria-label="BSH"
                       colorScheme='blue'
-                      variant='solid'
+                      variant={isBottomSheetVisible ? 'solid' : 'outline'}
                       isRound
                       icon={<BsTable size={15} />}
                       onClick={toggleBottomSheet}
