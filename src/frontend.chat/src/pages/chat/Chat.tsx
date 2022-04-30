@@ -1997,6 +1997,7 @@ export const Chat = () => {
                         onClick={resetFilters}
                         // color='red.500'
                         // icon={<IoMdClose size={17} />}
+                        closeOnSelect
                       >
                         <Text color="red" fontSize="md" fontWeight='bold' display='flex'><span>Reset filters</span></Text>
                       </MenuItem>
