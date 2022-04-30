@@ -668,6 +668,10 @@ export const Chat = () => {
     name,
   }
   const [editedMessage, setEditedMessage] = useState<TMessage>(initialEditedMessageState)
+  const editedMessageRef = useRef<TMessage>(initialEditedMessageState)
+  useEffect(() => {
+    editedMessageRef.current = editedMessage
+  }, [useCompare([editedMessage])])
   const [isCtxMenuOpened, setIsCtxMenuOpened] = useState<boolean>(false)
   // const resetEditedMessage = () => {
   //   setEditedMessage(initialEditedMessageState)
@@ -683,7 +687,10 @@ export const Chat = () => {
     setEditedMessage((state) => ({ ...state, text: e.target.value }))
   }, [setEditedMessage])
   const handleSaveEditedMessage = useCallback(({ assignedTo }: { assignedTo?: string[] }, cb?: () => void) => {
-    if (!editedMessage?.text && !editedMessage.file) {
+    console.groupCollapsed('editedMessageRef.current')
+    console.log(editedMessageRef.current)
+    console.groupEnd()
+    if (!editedMessageRef.current?.text && !editedMessageRef.current.file) {
       toast({
         position: 'top',
         // title: 'Sorry',
@@ -693,7 +700,7 @@ export const Chat = () => {
       })
       return
     }
-    if (!!editedMessage?.text && editedMessage?.text.length > charsLimit) {
+    if (!!editedMessageRef.current?.text && editedMessageRef.current?.text.length > charsLimit) {
       toast({
         position: 'top',
         // title: 'Sorry',
@@ -704,16 +711,16 @@ export const Chat = () => {
       return
     }
     if (!!socket) {
-      let newData: Partial<TMessage> = { text: editedMessage.text }
-      if (!!editedMessage.status) newData.status = editedMessage.status
-      if (!!editedMessage.assignedTo) newData.assignedTo = editedMessage.assignedTo
+      let newData: Partial<TMessage> = { text: editedMessageRef.current.text }
+      if (!!editedMessageRef.current.status) newData.status = editedMessageRef.current.status
+      if (!!editedMessageRef.current.assignedTo) newData.assignedTo = editedMessageRef.current.assignedTo
       if (!!assignedTo) newData.assignedTo = assignedTo
-      if (!!editedMessage.links) newData.links = editedMessage.links
-      if (!!editedMessage.status && !editedMessage.position) newData.position = 0
-      newData = { ...newData, ...editedMessage }
+      if (!!editedMessageRef.current.links) newData.links = editedMessageRef.current.links
+      if (!!editedMessageRef.current.status && !editedMessageRef.current.position) newData.position = 0
+      newData = { ...newData, ...editedMessageRef.current }
       socket.emit(
         'editMessage',
-        { newData, ts: editedMessage.ts, room: roomRef.current, name },
+        { newData, ts: editedMessageRef.current.ts, room: roomRef.current, name },
         (errMsg: string) => {
           if (!!errMsg) {
             toast({
@@ -730,7 +737,7 @@ export const Chat = () => {
     }
     if (!!cb) cb()
     handleEditModalClose()
-  }, [editedMessage, socket, toast, name, handleEditModalClose])
+  }, [socket, toast, name, handleEditModalClose])
   // const handleKeyDownEditedMessage = (ev: any) => {
   //   if (ev.keyCode === 13 && !!room) handleSaveEditedMessage()
   // }
