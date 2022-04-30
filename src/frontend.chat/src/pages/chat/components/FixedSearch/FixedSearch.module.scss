@@ -8,6 +8,8 @@ $pad: var(--chakra-space-4);
   transition: all 0.2s linear;
   padding: #{$pad};
 
+  // border: 1px solid red;
+
   @media (max-width: #{$sm}px) {
     height: 69px;
     width: 100%;
@@ -27,15 +29,15 @@ $pad: var(--chakra-space-4);
     border-radius: 0 0 10px 10px;
   }
   @media (min-width: #{$md + 1}px) {
+    right: 0;
     height: 69px;
-    width: calc(540px - 185px);
-    top: -100px;
+    width: #{$room-desktop-width}px;
+    top: -100%;
     &--opened {
       // top: 35px;
       // top: calc(100vh - 200px - #{$tools-section-height} - var(--chakra-sizes-1));
-      top: 25px;
+      top: 0px;
     }
-    border-radius: 0 0 10px 10px;
   }
 
   // border: 1px dashed red;

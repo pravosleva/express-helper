@@ -8,7 +8,7 @@ import clsx from 'clsx'
 
 type TProps = {
   id: string
-  label: string
+  label?: string
   isDisabled: boolean
 }
 
@@ -45,7 +45,7 @@ export const UploadInput = ({
   return (
     <>
       <label htmlFor={id} className={clsx(styles["special-btn"], styles['special-btn-md'], styles['dark-btn'])} style={{ display: 'flex' }}>
-        <span>{label}</span><span style={{ marginLeft: '7px' }}><MdAddAPhoto size={19} /></span>
+        {!!label && <span style={{ marginRight: '7px' }}>{label}</span>}<span><MdAddAPhoto size={19} /></span>
       </label>
       <input id={id} type="file" accept=".gif,.png,.jpg,.jpeg" disabled={isDisabled} />
     </>

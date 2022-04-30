@@ -29,12 +29,13 @@
 .main-wrapper {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin: 0 auto;
   width: 100%;
 
-  overscroll-behavior: none
+  overscroll-behavior: none;
+  // border: 1px dashed red;
 }
 
 // TODO:
@@ -47,12 +48,9 @@
   }
 }
 .room{
-  @media (max-width: #{$sm}px) {
-    border-radius: 0px;
-    
-  }
+  // border: 1px solid red;
+  // @media (max-width: #{$sm}px) {}
   @media (min-width: #{$sm + 1}px) {
-    border-radius: 8px;
     box-shadow: 1px 1px 10px rgba(0,0,0,.1);
   }
   
@@ -93,226 +91,226 @@
     @media (min-width: #{$md + 1}px) {
       & h2 {
         width: 100%; // IE6 needs any width
-        max-width: 350px;
+        max-width: 250px;
       }
     }
   }
 
   .messages{
-      max-width: 100%;
-      width: 100%;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    & > * {
       overflow-x: hidden;
-      & > * {
-        overflow-x: hidden;
-        box-sizing: border-box;
-      }
+      box-sizing: border-box;
+    }
 
-      .msg-as-image--wrapper {
-        position: relative;
+    .msg-as-image--wrapper {
+      position: relative;
+      max-height: 310px;
+      min-height: 117px;
+
+      & > span > span:nth-child(2) {
+        background: var(--chakra-colors-gray-400);
+        border-radius: 10px;
+      }
+      
+      // border: 1px solid red;
+      & img {
+        border-radius: 10px;
         max-height: 310px;
         min-height: 117px;
+        height: 100%;
 
-        & > span > span:nth-child(2) {
-          background: var(--chakra-colors-gray-400);
-          border-radius: 10px;
-        }
-        
-        // border: 1px solid red;
-        & img {
-          border-radius: 10px;
-          max-height: 310px;
-          min-height: 117px;
-          height: 100%;
-
-          // padding:0px;
-          // border:0px;
-          // margin:-2px;
-        }
-        // & .iiz__btn.iiz__hint {
-        //   border-radius: 8px;
-        //   width: 35px;
-        //   height: 35px;
-        // }
-        // & .iiz__btn {
-        //   background: rgba(0,0,0,0.7);
-        //   border: 2px solid var(--chakra-colors-gray-400);
-        // }
-        // & .iiz__btn:hover {
-        //   border: 2px solid #FFF;
-        //   background: var(--chakra-colors-whiteAlpha-300);
-        //   color: #FFF;
-        // }
-        // & .iiz__hint::before {
-        //   width: 15px;
-        //   height: 15px;
-        //   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19.9 19.9'%3E%3Cpath d='M13.9 7.4C13.9 3.8 11 .9 7.4.9S.9 3.8.9 7.4s2.9 6.5 6.5 6.5 6.5-2.9 6.5-6.5zm5.3 12.5l-6.7-7.2c-1.4 1.3-3.2 2.1-5.1 2.1-4.1 0-7.4-3.3-7.4-7.4S3.3 0 7.4 0s7.4 3.3 7.4 7.4c0 1.7-.6 3.4-1.7 4.7l6.8 7.2-.7.6z' fill='%23FFFFFF'/%3E%3C/svg%3E") !important;
-        // }
-        // & .iiz__hint {
-        //   bottom: 5px;
-        //   right: 5px;
-        //   background: rgba(0, 0, 0, 0.8);
-        // }
+        // padding:0px;
+        // border:0px;
+        // margin:-2px;
       }
-      // .msg-as-image {
-      //   transition: all 0.2s linear;
-      //   border-radius: 10px;
-      //   object-fit: contain;
-      //   object-position: 50% 50%;
-      //   max-height: 200px;
-      //   min-width: 150px;
-      //   min-height: 150px;
+      // & .iiz__btn.iiz__hint {
+      //   border-radius: 8px;
+      //   width: 35px;
+      //   height: 35px;
+      // }
+      // & .iiz__btn {
+      //   background: rgba(0,0,0,0.7);
       //   border: 2px solid var(--chakra-colors-gray-400);
       // }
-      // .msg-as-image:hover {
+      // & .iiz__btn:hover {
       //   border: 2px solid #FFF;
+      //   background: var(--chakra-colors-whiteAlpha-300);
+      //   color: #FFF;
       // }
+      // & .iiz__hint::before {
+      //   width: 15px;
+      //   height: 15px;
+      //   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19.9 19.9'%3E%3Cpath d='M13.9 7.4C13.9 3.8 11 .9 7.4.9S.9 3.8.9 7.4s2.9 6.5 6.5 6.5 6.5-2.9 6.5-6.5zm5.3 12.5l-6.7-7.2c-1.4 1.3-3.2 2.1-5.1 2.1-4.1 0-7.4-3.3-7.4-7.4S3.3 0 7.4 0s7.4 3.3 7.4 7.4c0 1.7-.6 3.4-1.7 4.7l6.8 7.2-.7.6z' fill='%23FFFFFF'/%3E%3C/svg%3E") !important;
+      // }
+      // & .iiz__hint {
+      //   bottom: 5px;
+      //   right: 5px;
+      //   background: rgba(0, 0, 0, 0.8);
+      // }
+    }
+    // .msg-as-image {
+    //   transition: all 0.2s linear;
+    //   border-radius: 10px;
+    //   object-fit: contain;
+    //   object-position: 50% 50%;
+    //   max-height: 200px;
+    //   min-width: 150px;
+    //   min-height: 150px;
+    //   border: 2px solid var(--chakra-colors-gray-400);
+    // }
+    // .msg-as-image:hover {
+    //   border: 2px solid #FFF;
+    // }
 
-      .message{
-        animation: fadeIn 1s;
-        
-        @media (max-width: #{$sm}px) {
-          user-select: none;
-        }
-        width: auto;
-        max-width: 100%;
+    .message{
+      animation: fadeIn 1s;
+      
+      @media (max-width: #{$sm}px) {
+        user-select: none;
+      }
+      width: auto;
+      max-width: 100%;
 
-        // word-break: break-all;
-        hyphens: auto;
-        white-space: pre-wrap;
-        
-        // word-wrap: break-word;
+      // word-break: break-all;
+      hyphens: auto;
+      white-space: pre-wrap;
+      
+      // word-wrap: break-word;
+      overflow-wrap: normal !important;
+      & * {
         overflow-wrap: normal !important;
-        & * {
-          overflow-wrap: normal !important;
-        }
-
-        display: flex;
-        flex-direction: column;
-        .msg{
-          position: relative;
-          // padding: .3rem .9rem;
-          padding: .1rem .5rem;
-          font-weight: bold;
-          background: #FFF; // var(--chakra-colors-gray-100);
-          color: rgba(0,0,0,.7);
-          border-radius: 8px;
-          // font-size: 1em;
-          transition: all 0.5s linear;
-          border: 2px solid transparent;
-          align-self: flex-start;
-        }
-
-        // -- STATUSES:
-        .info {
-          background: #408EEA;
-          color: #FFF;
-        }
-        .warning {
-          background: #FFDE68;
-          // color: #000;
-        }
-        .success {
-          background: #31EAB7;
-          // color: #000;
-        }
-        .danger {
-          background: #FF9177;
-          // color: #FFF;
-        }
-        .dead {
-          background: var(--chakra-colors-gray-800);
-          color: #FFDE68;
-        }
-        .done {
-          background: var(--chakra-colors-gray-500);
-          color: #FFF;
-          // opacity: 0.3;
-        }
-        .edited-message {
-          border: 2px solid #FFF;
-        }
-        // --
       }
 
-      // .my-message:not(:last-child) {
-      //   .from{
-      //     display: none;
-      //   }
-      // }
-      .is-hidden{
-        display: none;
-      }
-      .my-message{
-          // animation: fadeIn 0.8s, slideFromRight 0.5s;
-          align-self: flex-end;
-          align-items: flex-end;
-
-          & .abs-tail {
-            position: absolute;
-            width: 17px;
-            height: 17px;
-            border-radius: 50%;
-            bottom: 0px;
-            right: 0px;
-            transform: translateX(40%) translateY(35%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #fff;
-          }
-      }
-      // .my-message:last-child{
-      //   .msg{
-      //     border-top-right-radius: 0px;
-      //   }
-      // }
-      .my-message{
-        .msg{
-          border-top-right-radius: 0px;
-        }
-      }
-
-      .oponent-message{
+      display: flex;
+      flex-direction: column;
+      .msg{
+        position: relative;
+        // padding: .3rem .9rem;
+        padding: .1rem .5rem;
+        font-weight: bold;
+        background: #FFF; // var(--chakra-colors-gray-100);
+        color: rgba(0,0,0,.7);
+        border-radius: 8px;
+        // font-size: 1em;
+        transition: all 0.5s linear;
+        border: 2px solid transparent;
         align-self: flex-start;
-        align-items: flex-start;
-        // .msg{ max-width: calc(100% - 33px - 0.5rem); }
-        // animation: fadeIn 0.8s, slideDown 0.5s;
-        // position: relative;
-        & .abs-tail {
-          position: absolute;
-          width: 17px;
-          height: 17px;
-          border-radius: 50%;
-          bottom: 0px;
-          left: 0px;
-          transform: translateX(-40%) translateY(35%);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #fff;
-        }
       }
-      // .oponent-message:last-child{
-      //   .msg{
-      //     border-top-left-radius: 0px;
-      //   }
-      // }
-      .oponent-message{
-        .msg{
-          border-top-left-radius: 0px;
-        }
+
+      // -- STATUSES:
+      .info {
+        background: #408EEA;
+        color: #FFF;
       }
+      .warning {
+        background: #FFDE68;
+        // color: #000;
+      }
+      .success {
+        background: #31EAB7;
+        // color: #000;
+      }
+      .danger {
+        background: #FF9177;
+        // color: #FFF;
+      }
+      .dead {
+        background: var(--chakra-colors-gray-800);
+        color: #FFDE68;
+      }
+      .done {
+        background: var(--chakra-colors-gray-500);
+        color: #FFF;
+        // opacity: 0.3;
+      }
+      .edited-message {
+        border: 2px solid #FFF;
+      }
+      // --
+    }
+
+    // .my-message:not(:last-child) {
+    //   .from{
+    //     display: none;
+    //   }
+    // }
+    .is-hidden{
+      display: none;
+    }
+    .my-message{
+      // animation: fadeIn 0.8s, slideFromRight 0.5s;
+      align-self: flex-end;
+      align-items: flex-end;
+
+      & .abs-tail {
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        bottom: 0px;
+        right: 0px;
+        transform: translateX(40%) translateY(35%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+      }
+    }
+    // .my-message:last-child{
+    //   .msg{
+    //     border-top-right-radius: 0px;
+    //   }
+    // }
+    .my-message{
+      .msg{
+        border-top-right-radius: 0px;
+      }
+    }
+
+    .oponent-message{
+      align-self: flex-start;
+      align-items: flex-start;
+      // .msg{ max-width: calc(100% - 33px - 0.5rem); }
+      // animation: fadeIn 0.8s, slideDown 0.5s;
+      // position: relative;
+      & .abs-tail {
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        bottom: 0px;
+        left: 0px;
+        transform: translateX(-40%) translateY(35%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+      }
+    }
+    // .oponent-message:last-child{
+    //   .msg{
+    //     border-top-left-radius: 0px;
+    //   }
+    // }
+    .oponent-message{
+      .msg{
+        border-top-left-radius: 0px;
+      }
+    }
   }
   
 
   .messages > div{
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-      width: auto !important;
-      overflow-y: auto;
-      
-      padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto !important;
+    overflow-y: auto;
+    
+    padding: 1rem;
   }
   .height-full-auto-sm > div {
     // min-height:100px;
@@ -320,16 +318,15 @@
     max-height: calc(100vh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
   }
   .height-limited-md > div {
-    min-height:calc(100vh - 200px - #{$tools-section-height} - var(--chakra-sizes-1));
-    max-height:calc(100vh - 200px - #{$tools-section-height} - var(--chakra-sizes-1));
+    min-height: calc(100vh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
+    max-height: calc(100vh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
+    // border: 1px solid green;
   }
   .form{
     font-family: 'Russo One';
     position: relative;
     z-index: 1;
-    @media (min-width: #{$sm + 1}px) {
-      border-radius: 0px 0px 8px 8px;
-    }
+    // @media (min-width: #{$sm + 1}px) {}
     @media (max-width: #{$sm}px) {
       position: sticky;
       bottom: 0;
@@ -338,22 +335,17 @@
     input{
       width: 100%;
       padding: 1.5rem 4rem 1.5rem 1.5rem;
-      border-radius: 0px 0px 8px 8px;
+      // border-radius: 0px 0px 8px 8px;
     }
     textarea{
       // height: 100px;
       width: 100%;
       // padding: 1.5rem 4rem 1.5rem 1.5rem;
 
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      border-radius: 0;
       
-      @media (max-width: #{$sm}px) {
-        border-radius: 0px;  
-      }
-      @media (min-width: #{$sm + 1}px) {
-        border-radius: 0px 0px 8px 8px;
-      }
+      // @media (max-width: #{$sm}px) {}
+      // @media (min-width: #{$sm + 1}px) {}
 
       // background-color: #fff;
       padding-right: 4rem;
@@ -385,9 +377,9 @@
 
 @media(max-width : 30em){
   .room{
-      .messages{
-          flex: 1;
-      }
+    .messages{
+      flex: 1;
+    }
   }
 }
 

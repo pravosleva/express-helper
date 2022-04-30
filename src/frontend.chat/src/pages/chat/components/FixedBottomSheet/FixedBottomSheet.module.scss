@@ -1,3 +1,5 @@
+@import '~/common/scss-vars/dims.scss';
+
 $padx: var(--chakra-space-4);
 
 .fixed-wrapper {
@@ -5,9 +7,8 @@ $padx: var(--chakra-space-4);
   z-index: 1001;
   background-color: #FFF;
   position: fixed;
-  width: 100%;
+  width: calc(100vw - #{$room-desktop-width}px);
   bottom: 0;
-  right: 0;
   left: 0;
   overflow-y: auto;
   transition: all 0.15s linear;

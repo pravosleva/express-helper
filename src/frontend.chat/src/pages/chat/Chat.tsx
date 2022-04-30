@@ -130,6 +130,10 @@ import { BsTable } from 'react-icons/bs'
 // @ts-ignore
 import Board from '@asseinfo/react-kanban'
 import '@asseinfo/react-kanban/dist/styles.css'
+// @ts-ignore
+// import dims from '../../common/scss-vars/dims.scss'
+
+const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -1721,12 +1725,13 @@ export const Chat = () => {
         <Flex
           className={styles["room"]}
           flexDirection="column"
-          width={{ base: '100%', lg: '550px' }}
+          width={{ base: '100%', lg: `${roomDesktopWidth}px` }}
           height={{ base: '100%', sm: 'auto' }}
         >
           <Heading
             className={styles["heading"]}
-            as="h4" p={[4, 4]} borderRadius="8px 8px 0 0"
+            as="h4"
+            p={[4, 4]}
             bgColor={mode.colorMode === 'dark' ? 'gray.600' : 'gray.300'}
             color={mode.colorMode === 'dark' ? 'white' : 'inherit'}
           >
@@ -2320,7 +2325,7 @@ export const Chat = () => {
                 )}
                 {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
                   <>
-                    <UploadInput id='siofu_input' label='Img' isDisabled={isFileUploading} />
+                    <UploadInput id='siofu_input' isDisabled={isFileUploading} />
                     {isFileUploading && (
                       <div><b>Upload... {uploadPercentageRef.current} %</b></div>
                     )}
@@ -2456,7 +2461,7 @@ export const Chat = () => {
               </div>
             ) : (
               <Flex
-                style={{ height: '80px' }}
+                style={{ height: '130px' }}
                 justifyContent='center'
                 alignItems='center'
                 // bgColor='gray.600'
@@ -2540,13 +2545,13 @@ export const Chat = () => {
           </Widget>
         )
       }
-      {
+      {/*
         upToLg && (
           <Widget position='top-right'>
             <TasklistContent data={tasklist} />
           </Widget>
         )
-      }
+      */}
       <FixedBottomSheet
         isOpened={isBottomSheetVisible}
         onClose={handleCloseBottomSheet}
