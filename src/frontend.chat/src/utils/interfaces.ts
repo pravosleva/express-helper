@@ -6,9 +6,9 @@ export enum ERegistryLevel {
 
 export enum EMessageStatus {
   Info = 'info',
-  Success = 'success',
   Warn = 'warning',
   Danger = 'danger',
+  Success = 'success',
   Dead = 'dead',
   Done = 'done',
 }

@@ -1038,7 +1038,8 @@ export const Chat = () => {
   const [tags, setTags] = useState<string[]>([])
   const [allImagesMessagesLightboxFormat, setAllImagesMessagesLightboxFormat] = useState<any[]>([])
   const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
-  const [statusGroups, setStatusGroups] = useState<TKanbanState>(getInitialStatusGroups(kanbanStatuses))
+  const filteredKanbanStatuses = useMemo(() => filters.length > 0 ? kanbanStatuses.filter((s) => filters.includes(s)) : kanbanStatuses, [filters])
+  const [statusGroups, setStatusGroups] = useState<TKanbanState>(getInitialStatusGroups(filteredKanbanStatuses))
   useEffect(() => {
     webWorkersInstance.filtersWorker.onmessage = ($event: { [key: string]: any, data: { type: string, result: TMessage[], perf: number } }) => {
       try {
@@ -1097,8 +1098,8 @@ export const Chat = () => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getTags', messages })
   }, [messages])
   useEffect(() => {
-    webWorkersInstance.filtersWorker.postMessage({ type: 'getStatusKanban', messages: filteredMessages, statuses: kanbanStatuses })
-  }, [filteredMessages])
+    webWorkersInstance.filtersWorker.postMessage({ type: 'getStatusKanban', messages: filteredMessages, statuses: filteredKanbanStatuses })
+  }, [filteredMessages, filteredKanbanStatuses])
   // --
   
   const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
@@ -1937,6 +1938,7 @@ export const Chat = () => {
               <Menu
                 autoSelect={false}
                 // onOpen={resetFilters}
+                closeOnSelect={!upToMd}
               >
                 <MenuButton
                   mr={2}
@@ -1951,6 +1953,14 @@ export const Chat = () => {
                 >
                   <MenuOptionGroup defaultValue="asc" title={`Filters${!!tsPoint ? ` / ${getNormalizedDateTime3(tsPoint)}` : ''}`}></MenuOptionGroup>
                   <div>
+                    {upToMd && (
+                      <MenuItem
+                        closeOnSelect
+                        minH="40px"
+                      >
+                        <Text color="red" fontSize="md" fontWeight='bold' display='flex'>Close Menu</Text>
+                      </MenuItem>
+                    )}
                     {
                       Object.values(EMessageStatus).map((status) => {
                         const Icon = !!getIconByStatus(status, false) ? <span style={{ marginRight: '8px', alignSelf: 'center' }}>{getIconByStatus(status, false)}</span> : null
@@ -1988,7 +1998,7 @@ export const Chat = () => {
                         // color='red.500'
                         // icon={<IoMdClose size={17} />}
                       >
-                        <Text fontSize="md" fontWeight='bold' display='flex'><span style={{ width: '17px', marginRight: '8px' }}><IoMdClose size={17} /></span><span>Unset filter</span></Text>
+                        <Text color="red" fontSize="md" fontWeight='bold' display='flex'><span>Reset filters</span></Text>
                       </MenuItem>
                     )
                   }

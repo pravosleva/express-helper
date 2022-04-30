@@ -183,7 +183,7 @@ class Singleton {
           // shouldLogout = true
           throw new Error(`editMessage ERR1: Попробуйте перезайти | theMessage not found; [room= ${room}, ts= ${ts}, newData.text=${newData.text}]; _findIndexByArrayMethod= ${_findIndexByArrayMethod}`)
         } else {
-          roomMessages[theMessageIndex].user = name
+          if (!roomMessages[theMessageIndex].user) roomMessages[theMessageIndex].user = name
           roomMessages[theMessageIndex].text = newData.text
           roomMessages[theMessageIndex].editTs = new Date().getTime()
           if (!!newData.status) {
