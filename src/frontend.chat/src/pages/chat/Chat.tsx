@@ -132,11 +132,13 @@ import Board from '@asseinfo/react-kanban'
 import '@asseinfo/react-kanban/dist/styles.css'
 // @ts-ignore
 // import dims from '../../common/scss-vars/dims.scss'
+import { FaRegSmile } from 'react-icons/fa'
 
 const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
+const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'Anchous chat 2021'
 
 /* -- NOTE: Socket upload file evss
 // Sample 1 (12.3 kB)
@@ -1409,8 +1411,8 @@ export const Chat = () => {
 
   const debouncedEditedMessageText = useDebouncedValue(editedMessage?.text || '', 1000)
   const [isBottomSheetVisible, setIsBottomSheetVisible] = useState<boolean>(false)
-  const handleOpenBottomSheet = useCallback(() => {
-    setIsBottomSheetVisible(true)
+  const toggleBottomSheet = useCallback(() => {
+    setIsBottomSheetVisible((s) => !s)
   }, [setIsBottomSheetVisible])
   const handleCloseBottomSheet = useCallback(() => {
     setIsBottomSheetVisible(false)
@@ -1723,6 +1725,27 @@ export const Chat = () => {
       </Modal>
 
       <div className={styles['main-wrapper']}>
+        {
+          upToMd && (
+            <div style={{
+              width: `calc(100vw - ${roomDesktopWidth}px)`,
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+              <Heading
+                as="h1"
+                size="3xl"
+                textAlign="center"
+                mb="8"
+                fontFamily="Bahiana"
+              >
+                {REACT_APP_CHAT_NAME}
+              </Heading>
+            </div>
+          )
+        }
         <Flex
           className={styles["room"]}
           flexDirection="column"
@@ -2343,7 +2366,18 @@ export const Chat = () => {
                   </>
                 )}
                 {upToMd && isLogged && (
-                  <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={handleOpenEmoji}>Emoji</button></div>
+                  <IconButton
+                    size='sm'
+                    aria-label="EMOJI"
+                    colorScheme='cyan'
+                    variant='outline'
+                    isRound
+                    icon={<FaRegSmile size={20} />}
+                    onClick={handleOpenEmoji}
+                    isDisabled={isChatLoading}
+                  >
+                    EMOJI
+                  </IconButton>
                 )}
                 {isLogged && (
                   <div><button
@@ -2399,7 +2433,7 @@ export const Chat = () => {
                       variant='solid'
                       isRound
                       icon={<BsTable size={15} />}
-                      onClick={handleOpenBottomSheet}
+                      onClick={toggleBottomSheet}
                     >
                       BSH
                     </IconButton> 

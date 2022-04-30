@@ -33,7 +33,7 @@ $padx: var(--chakra-space-4);
 
   .controls {
     position: sticky;
-    background-color: #FFF;
+    // background-color: #FFF;
     top: 0;
     border-bottom: 1px solid lightgray;
     // display: flex;
@@ -44,3 +44,13 @@ $padx: var(--chakra-space-4);
     // border: 1px dashed red;
   }
 }
+.bg {
+  &--dark {
+    background: var(--chakra-colors-gray-700);
+  }
+  &--light {
+    // background: var(--chakra-colors-gray-100);
+    background: #FFF;
+  }
+}
+

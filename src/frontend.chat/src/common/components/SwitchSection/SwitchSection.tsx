@@ -36,7 +36,7 @@ export const SwitchSection = ({ isChecked, onChange, description, id, label }: T
             icon={isDescriptionOpened ? <IoMdClose size={15} /> : <AiOutlineQuestion size={15} />}
             onClick={toggleDescr}
           >
-            DEL
+            CLOSE
           </IconButton>
         </Box>
       </Box>
