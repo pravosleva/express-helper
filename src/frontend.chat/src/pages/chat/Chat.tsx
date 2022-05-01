@@ -1988,7 +1988,7 @@ export const Chat = () => {
                         closeOnSelect
                         minH="40px"
                       >
-                        <Text color="red" fontSize="md" fontWeight='bold' display='flex'>Close Menu</Text>
+                        <Text color={mode.colorMode === 'light' ? "red" : 'red.200' } fontSize="md" fontWeight='bold' display='flex'>Close Menu</Text>
                       </MenuItem>
                     )}
                     {
@@ -2029,7 +2029,7 @@ export const Chat = () => {
                         // icon={<IoMdClose size={17} />}
                         closeOnSelect
                       >
-                        <Text color="red" fontSize="md" fontWeight='bold' display='flex'><span>Reset filters</span></Text>
+                        <Text color={mode.colorMode === 'light' ? "red" : 'red.200' } fontSize="md" fontWeight='bold' display='flex'><span>Reset filters</span></Text>
                       </MenuItem>
                     )
                   }
