@@ -472,7 +472,7 @@ export const withSocketChat = (io: Socket) => {
       socket.emit('allRooms', { roomsData: [...roomsMap.keys()].reduce((acc, roomName) => { acc[roomName] = roomsMap.get(roomName); return acc }, {}) })
     })
 
-    socket.on('sendMessage', ({ message, userName, status, room }: { room: string, message: string, userName: string, status: EMessageStatus }, cb) => {
+    socket.on('sendMessage', ({ message, userName, status, room, position }: { room: string, message: string, userName: string, status: EMessageStatus, position?: number }, cb) => {
       // --- NEW WAY
       const ts = Date.now()
       try {
@@ -488,10 +488,17 @@ export const withSocketChat = (io: Socket) => {
 
         const newStuff: TMessage = { text: message, ts, rl: registryLevel, user: userName }
         if (!!status) newStuff.status = status
+        if (!!position || position === 0) {
+          newStuff.position = position
+        } else {
+          console.log(`-- position is ${position} (${typeof position})`)
+        }
         
         newRoomData.push(newStuff)
 
         roomsMap.set(room, newRoomData)
+
+        console.log(newStuff)
 
         io.in(room).emit('message', newStuff);
         if (!!cb) cb()

@@ -132,7 +132,8 @@ import Board from '@asseinfo/react-kanban'
 import '@asseinfo/react-kanban/dist/styles.css'
 // @ts-ignore
 // import dims from '../../common/scss-vars/dims.scss'
-import { FaRegSmile } from 'react-icons/fa'
+import { FaRegSmile, FaPlus } from 'react-icons/fa'
+import { BsFillPlusCircleFill } from 'react-icons/bs'
 
 const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
@@ -212,6 +213,15 @@ const getBgColorByStatus = (s: EMessageStatus | 'assign') => {
     case !!bgColorsMap[s]: return bgColorsMap[s]
     default: return 'current'
   }
+}
+const colorSchemeMap: {
+  [key: string]: string
+} = {
+  [EMessageStatus.Done]: 'gray',
+  [EMessageStatus.Dead]: 'black',
+  [EMessageStatus.Warn]: 'yellow',
+  [EMessageStatus.Danger]: 'red',
+  [EMessageStatus.Success]: 'green',
 }
 
 const kanbanStatuses = [EMessageStatus.Info, EMessageStatus.Warn, EMessageStatus.Danger, EMessageStatus.Success, EMessageStatus.Done]
@@ -610,19 +620,30 @@ export const Chat = () => {
     if (!!socket && !!normalizedMsg) {
       setIsSending(true)
       
-      const newStuff: { message: string, userName: string, status?: EMessageStatus, room: string } = {
+      const newStuff: { message: string, userName: string, status?: EMessageStatus, room: string, position?: number } = {
         message: normalizedMsg,
         userName: name,
         room: roomRef.current
       }
 
       if (filters.length === 1 && Object.values(EMessageStatus).includes(filters[0])) newStuff.status = filters[0]
+      else if (editedMessageRef.current?.status && Object.values(EMessageStatus).includes(editedMessageRef.current.status))
+        newStuff.status = editedMessageRef.current.status
+      
+      if (!!editedMessageRef.current?.position || editedMessageRef.current?.position === 0) newStuff.position = editedMessageRef.current.position
 
       socket.emit('sendMessage', { ...newStuff }, () => {
         setIsSending(false)
       })
       resetMessage()
-    }
+      resetEditedMessage()
+    } else toast({
+      position: 'top',
+      title: 'Sorry',
+      description: 'Видимо, что-то случилось =)',
+      status: 'error',
+      duration: 4000,
+    })
   }, [toast, isMsgLimitReached, socket, setIsSending, resetMessage, filters])
   const handleKeyUp = (ev: any) => {
     switch (true) {
@@ -668,9 +689,13 @@ export const Chat = () => {
     name,
   }
   const [editedMessage, setEditedMessage] = useState<TMessage>(initialEditedMessageState)
+  const resetEditedMessage = useCallback(() => {
+    setEditedMessage(initialEditedMessageState)
+  }, [setEditedMessage])
   const editedMessageRef = useRef<TMessage>(initialEditedMessageState)
   useEffect(() => {
     editedMessageRef.current = editedMessage
+    messageRef.current = editedMessage.text
   }, [useCompare([editedMessage])])
   const [isCtxMenuOpened, setIsCtxMenuOpened] = useState<boolean>(false)
   // const resetEditedMessage = () => {
@@ -1427,12 +1452,17 @@ export const Chat = () => {
 
   const nextPositionRef = useRef<number>(0)
   const prevPositionRef = useRef<number>(0)
-  const handleCardDragEnd = useCallback((card: TMessage & TKanbanCard, source: any, dest: any) => { // board: any, card: any, source: any, dest: any
+  const handleCardDragEnd = useCallback((
+    card: TMessage & TKanbanCard,
+    source: { fromColumnId: string, fromPosition: number },
+    dest: { toColumnId: string, toPosition: number },
+    isNewCard?: boolean
+  ) => { // board: any, card: any, source: any, dest: any
     // console.log('-- handleCardDragEnd')
     const oldStatus = source.fromColumnId
     const newStatus = dest.toColumnId
     const oldPosition = source.fromPosition
-    let newPosition = dest.toPosition
+    const newPosition = dest.toPosition
     const _isSameColumn = oldStatus === newStatus
     const isMoveUpInSameColumn = _isSameColumn && source.fromPosition > dest.toPosition
     const isMoveDownInSameColumn = _isSameColumn && source.fromPosition < dest.toPosition
@@ -1505,14 +1535,22 @@ export const Chat = () => {
         }
       }
 
-      if (!!socket) socket.emit(
-        'editMessage',
-        { newData, ts: newData.ts, room: roomRef.current, name }
-      )
+      if (!!socket) {
+        if (!isNewCard) {
+          socket.emit(
+            'editMessage',
+            { newData, ts: newData.ts, room: roomRef.current, name }
+          )
+        } else {
+          console.log(card)
+          setEditedMessage(card)
+          setTimeout(handleSendMessage, 0)
+        }
+      }
     } else {
       console.log('-- skip 1')
     }
-  }, [editedMessage, name, socket, statusGroups])
+  }, [editedMessage, name, socket, statusGroups, setEditedMessage, handleSendMessage])
 
   const handleCardRemove = (card: TMessage & TKanbanCard) => {
     // DEL status
@@ -2613,6 +2651,49 @@ export const Chat = () => {
           disableColumnDrag
           allowRemoveCard
           onCardRemove={handleCardRemove}
+
+          renderColumnHeader={({ title, id }: { id: EMessageStatus, title: string, cards: TKanbanCard[] }) => {
+            return (
+              <div>
+                <div className='react-kanban-card__title'>{title}</div>
+                <div style={{
+                  // border: '1px solid red',
+                  marginBottom: '10px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                  <Button
+                    onClick={() => {
+                      const prompt = window.prompt('')
+                      if (!!prompt?.trim()) {
+                        const newCard: any = {
+                          ...initialEditedMessageState,
+                          text: prompt,
+                          status: id,
+                          position: 0,
+                        }
+                        // setEditedMessage(newCard)
+                        // setTimeout(handleSendMessage, 0)
+
+                        handleCardDragEnd(
+                          newCard,
+                          { fromColumnId: 'noname-special-for-new-message', fromPosition: 1000000 },
+                          { toColumnId: id, toPosition: 0 },
+                          true
+                        )
+                      }
+                    }}
+                    size='xs'
+                    isFullWidth
+                    colorScheme={colorSchemeMap[id] || 'blue'}
+                    variant='solid'
+                    leftIcon={<FaPlus size={9} />}
+                  >New</Button>
+                </div>
+              </div>
+            )
+          }}
         >
           {statusGroups}
         </Board>

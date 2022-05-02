@@ -6,6 +6,7 @@ import './index.css'
 import '~/fix.react-contextmenu.scss'
 import '~/fix.simple-react-lightbox.scss'
 import '~/fix.emoji-picker-react.scss'
+import '~/fix.react-kanban.scss'
 
 // ReactDOM.render(<App />, document.getElementById('root'))
 

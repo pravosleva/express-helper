@@ -1,0 +1,41 @@
+// @import '~/common/scss-vars/dims.scss';
+@import '~/common/scss-vars/colors.scss';
+
+// .react-kanban-board {}
+.react-kanban-card {
+  border-radius: 8px;
+  max-width: 230px;
+  min-width: 230px;
+}
+// .react-kanban-card-skeleton {}
+// .react-kanban-card--dragging {}
+// .react-kanban-card__description {}
+.react-kanban-card__title {
+  & > span:nth-child(2) {
+    border: 1px solid #{$red};
+    width: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #{$red};
+  }
+}
+.react-kanban-card__title {
+  & > span:nth-child(2):hover {
+    background-color: #{$red};
+    color: #FFF;
+  }
+}
+.react-kanban-column {
+  background-color: var(--chakra-colors-gray-200);
+  border-radius: 8px;
+}
+// .react-kanban-card-adder-form {}
+// .react-kanban-card-adder-button {}
+// .react-kanban-card-adder-form__title {}
+// .react-kanban-card-adder-form__description {}
+// .react-kanban-card-adder-form__button {}
+// .react-kanban-column-header {}
+// .react-kanban-column-header__button {}
+// .react-kanban-column-adder-button {}
