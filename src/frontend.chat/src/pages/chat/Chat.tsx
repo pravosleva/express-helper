@@ -1786,7 +1786,8 @@ export const Chat = () => {
                 mb="8"
                 fontFamily="Bahiana"
               >
-                {REACT_APP_CHAT_NAME}
+                {/* REACT_APP_CHAT_NAME */}
+                {room}
               </Heading>
             </div>
           )
