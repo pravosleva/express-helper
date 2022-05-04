@@ -30,6 +30,7 @@
 .react-kanban-column {
   background-color: var(--chakra-colors-gray-200);
   border-radius: 8px;
+  max-width: 260px;
 }
 // .react-kanban-card-adder-form {}
 // .react-kanban-card-adder-button {}

@@ -283,7 +283,7 @@ export const Chat = () => {
   }, [resetMessages])
   const logic = useMemo<Logic>(() => {
     return new Logic(messages)
-  }, [useCompare([messages])])
+  }, [messages])
   // @ts-ignore
   const { users, tasklist } = useContext(UsersContext)
   const history = useHistory()
@@ -2411,7 +2411,7 @@ export const Chat = () => {
                     )}
                   </>
                 )}
-                {upToMd && isLogged && (
+                {/*upToMd && isLogged && (
                   <IconButton
                     size='sm'
                     aria-label="EMOJI"
@@ -2424,7 +2424,7 @@ export const Chat = () => {
                   >
                     EMOJI
                   </IconButton>
-                )}
+                )*/}
                 {isLogged && (
                   <div><button
                     className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])}
