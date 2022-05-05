@@ -212,7 +212,10 @@ class Logic {
   }
   getStatusKanban(statuses) {
     const res = {
-      columns: []
+      total: 0,
+      reactKanban: {
+        columns: []
+      }
     }
     const countersMapping = {}
 
@@ -229,6 +232,7 @@ class Logic {
             description: message.text,
             ...message,
           })
+          res.total += 1
         }
       }
 
@@ -244,7 +248,7 @@ class Logic {
         return mapping[status] || status
       }
 
-      res.columns.push({
+      res.reactKanban.columns.push({
         id: status,
         title: `${getTitle(status)} (${countersMapping[status]})`,
         cards: cards.sort(dynamicSort('position')),

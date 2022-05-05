@@ -1075,11 +1075,13 @@ export const Chat = () => {
   const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
   const filteredKanbanStatuses = useMemo(() => filters.length > 0 ? kanbanStatuses.filter((s) => filters.includes(s)) : kanbanStatuses, [filters])
   const [statusGroups, setStatusGroups] = useState<TKanbanState>(getInitialStatusGroups(filteredKanbanStatuses))
+  const [kanbanTotalCounter, setKanbanTotalCounter] = useState<number>(0)
   useEffect(() => {
-    webWorkersInstance.filtersWorker.onmessage = ($event: { [key: string]: any, data: { type: string, result: TMessage[], perf: number } }) => {
+    webWorkersInstance.filtersWorker.onmessage = ($event: { [key: string]: any, data: { type: string, result: TMessage[] | { reactKanban: any, total: number }, perf: number } }) => {
       try {
         switch (true) {
           case (!!$event.data.result && Array.isArray($event.data.result)):
+            // @ts-ignore
             console.log(`Web Worker: ${$event.data.result.length} items in ${$event.data.perf} ms`)
             break
           default:
@@ -1091,6 +1093,7 @@ export const Chat = () => {
         switch ($event.data.type) {
           case 'getFilteredMessages':
             timers.current[$event.data.type] = setTimeout(() => {
+              // @ts-ignore
               setFilteredMessages($event.data.result)
             }, 0)
             break;
@@ -1102,13 +1105,16 @@ export const Chat = () => {
             break;
           case 'getAllImagesLightboxFormat':
             timers.current[$event.data.type] = setTimeout(() => {
+              // @ts-ignore
               setAllImagesMessagesLightboxFormat($event.data.result)
             }, 0)
             break;
           case 'getStatusKanban':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
-              setStatusGroups($event.data.result)
+              setStatusGroups($event.data.result.reactKanban)
+              // @ts-ignore
+              setKanbanTotalCounter($event.data.result.total)
             }, 0)
             break;
           default: break;
@@ -2648,7 +2654,7 @@ export const Chat = () => {
       <FixedBottomSheet
         isOpened={isBottomSheetVisible}
         onClose={handleCloseBottomSheet}
-        titleText={`Kanban total: ${filteredMessages.length} items`}
+        titleText={`Kanban total: ${kanbanTotalCounter} items`}
       >
         <Board
           onCardDragEnd={handleCardDragEnd}
