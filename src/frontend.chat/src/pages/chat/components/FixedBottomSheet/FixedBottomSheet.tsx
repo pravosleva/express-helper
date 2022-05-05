@@ -22,11 +22,12 @@ export const FixedBottomSheet = ({ isOpened, onClose, children }: TProps) => {
     <div
       className={clsx(
         styles['fixed-wrapper'],
+        `bg--${mode.colorMode}`,
         styles[`bg--${mode.colorMode}`],
         {
           [styles['fixed-wrapper--opened']]: isOpened,
           [styles['fixed-wrapper--fullHeight']]: fullHeight,
-          [styles['fixed-wrapper--maxHeightLimited']]: !fullHeight
+          [styles['fixed-wrapper--maxHeightLimited']]: !fullHeight,
         }
       )}
     >

@@ -46,7 +46,7 @@ import {
   TagLabel,
   Tag,
   Grid,
-  useToast, UseToastOptions, ButtonGroup
+  useToast, UseToastOptions, ButtonGroup, color
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
 import { BiMessageDetail, BiUpArrowAlt } from 'react-icons/bi'
@@ -77,7 +77,7 @@ import { Logic } from './MessagesLogic'
 import { useForm } from '~/common/hooks/useForm'
 // import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
-import { AiFillTags } from 'react-icons/ai'
+import { AiFillTags, AiTwotoneEdit } from 'react-icons/ai'
 import { useLocalStorage } from 'react-use'
 import { UploadInput } from './components/UploadInput'
 // import 'react-medium-image-zoom/dist/styles.css'
@@ -2407,7 +2407,7 @@ export const Chat = () => {
                   <>
                     <UploadInput id='siofu_input' isDisabled={isFileUploading} />
                     {isFileUploading && (
-                      <div><b>Upload... {uploadPercentageRef.current} %</b></div>
+                      <div><b>Upload...&nbsp;{uploadPercentageRef.current}&nbsp;%</b></div>
                     )}
                   </>
                 )}
@@ -2651,7 +2651,7 @@ export const Chat = () => {
           onCardDragEnd={handleCardDragEnd}
           disableColumnDrag
           allowRemoveCard
-          onCardRemove={handleCardRemove}
+          // onCardRemove={handleCardRemove}
 
           renderColumnHeader={({ title, id }: { id: EMessageStatus, title: string, cards: TKanbanCard[] }) => {
             return (
@@ -2692,6 +2692,91 @@ export const Chat = () => {
                     leftIcon={<FaPlus size={9} />}
                   >New</Button>
                 </div>
+              </div>
+            )
+          }}
+          renderCard={(card: TMessage & TKanbanCard, { removeCard, dragging }: any) => {
+            return (
+              <div className={clsx('react-kanban-card', { ['react-kanban-card--dragging']: dragging, ['bg--light']: mode.colorMode === 'light', ['bg--dark']: mode.colorMode === 'dark' } )}>
+                <div className='card-controls-box'>
+                  <div className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}><Text color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue' : 'inherit'}>{card.title}</Text></div>
+                  <div className='card-controls-box--right'>
+                    
+                    <IconButton
+                      size='xs'
+                      aria-label="EDIT"
+                      colorScheme='green'
+                      variant='outline'
+                      isRound
+                      icon={<AiTwotoneEdit size={15} />}
+                      onClick={() => {
+                        const { id, title, description, ...rest } = card
+                        setEditedMessage(rest)
+                        handleEditModalOpen()
+                      }}
+                    >
+                      EDIT
+                    </IconButton>
+                    <IconButton
+                      size='xs'
+                      aria-label="DEL"
+                      colorScheme='red'
+                      variant='outline'
+                      isRound
+                      icon={<IoMdClose size={15} />}
+                      onClick={() => handleCardRemove(card)}
+                    >
+                      DEL
+                    </IconButton>
+                  </div>
+                </div>
+                {assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy && (
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'flex-start',
+                  }}>
+                    <UserAva size={19} name={card.assignedBy} fontSize={11} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} />
+                    <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+                    <UserAva size={19} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={11} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} />
+                    {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
+                      <Button
+                        variant='solid'
+                        colorScheme='gray'
+                        size='xs'
+                        onClick={() => {
+                          const { id, title, description, ...rest } = card
+                          // @ts-ignore
+                          const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
+                          // @ts-ignore
+                          if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
+                        }}
+                      >Unassign</Button>
+                    )}
+                  </div>
+                )}
+                {
+                  assignmentSnap.isFeatureEnabled && !card?.assignedTo && (
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'flex-start',
+                    }}
+                    >
+                      <Button
+                        variant='solid'
+                        colorScheme='gray'
+                        size='xs'
+                        onClick={() => {
+                          const { id, title, description, ...rest } = card
+                          setEditedMessage(rest)
+                          handleSearchUserModalOpen()
+                        }}
+                      >Assign</Button>
+                    </div>
+                  )
+                }
+                {card.description}
               </div>
             )
           }}

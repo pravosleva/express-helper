@@ -3,7 +3,7 @@
 $padx: var(--chakra-space-4);
 
 .fixed-wrapper {
-  color: var(--chakra-colors-gray-600) !important;
+  // color: var(--chakra-colors-gray-600) !important;
   z-index: 1001;
   background-color: #FFF;
   position: fixed;
@@ -41,9 +41,7 @@ $padx: var(--chakra-space-4);
     // justify-content: flex-end;
   }
 
-  .container {
-    // border: 1px dashed red;
-  }
+  // .container {}
 }
 .bg {
   &--dark {

@@ -6,11 +6,40 @@
   border-radius: 5px;
   max-width: 230px;
   min-width: 230px;
+
+  .card-controls-box {
+    display: flex;
+    justify-content: space-between;
+    & > *:not(:last-child) {
+      margin-right: var(--chakra-space-1);
+    }
+
+    .card-title {
+      font-weight: bold;
+      word-break: break-word;
+    }
+    .card-controls-box--right {
+      display: flex;
+      justify-content: flex-end;
+      & > *:not(:last-child) {
+        margin-right: var(--chakra-space-1);
+      }
+    }
+  }
+}
+.react-kanban-card--dragging {
+  transform: rotate(-5deg); /* Equal to rotateZ(-5deg) */
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  border: 2px solid #FFF;
+}
+.react-kanban-card--dragging.bg--dark {
+  border: 2px solid #FFF;
 }
 // .react-kanban-card-skeleton {}
 // .react-kanban-card--dragging {}
 // .react-kanban-card__description {}
 .react-kanban-card__title {
+  margin-bottom: 10px;
   & > span:nth-child(2) {
     border: 1px solid #{$red};
     width: 22px;
@@ -20,17 +49,25 @@
     border-radius: 50%;
     color: #{$red};
   }
-}
-.react-kanban-card__title {
   & > span:nth-child(2):hover {
     background-color: #{$red};
     color: #FFF;
   }
 }
+.react-kanban-card__title.light {
+  color: var(--chakra-colors-gray-600);
+}
+// .react-kanban-card__title.dark {}
+
 .react-kanban-column {
-  background-color: var(--chakra-colors-gray-200);
   border-radius: 8px;
   max-width: 260px;
+}
+.bg--light .react-kanban-column.light {
+  background-color: var(--chakra-colors-gray-200);
+}
+.bg--dark .react-kanban-column {
+  background-color: var(--chakra-colors-gray-600);
 }
 // .react-kanban-card-adder-form {}
 // .react-kanban-card-adder-button {}
@@ -40,3 +77,13 @@
 // .react-kanban-column-header {}
 // .react-kanban-column-header__button {}
 // .react-kanban-column-adder-button {}
+
+.bg {
+  &--dark {
+    background: var(--chakra-colors-gray-700);
+  }
+  &--light {
+    // background: var(--chakra-colors-gray-100);
+    background: #FFF;
+  }
+}
