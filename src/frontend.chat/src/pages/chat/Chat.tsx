@@ -139,7 +139,7 @@ const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
-const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'Anchous chat 2021'
+const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'PUB DEV 2021'
 
 /* -- NOTE: Socket upload file evss
 // Sample 1 (12.3 kB)
@@ -329,7 +329,8 @@ export const Chat = () => {
           console.log(notif._originalEvent)
         }
         toast({
-          position: 'top',
+          position: 'top-left',
+
           title: notif?.title,
           description: notif?.description,
           status: notif?.status || 'info',
@@ -342,7 +343,7 @@ export const Chat = () => {
         const currentMajorVersion = pkg.version.split('.')[1]
         if (!!regData?._frontMinorVersionSupport && regData._frontMinorVersionSupport !== currentMajorVersion) {
           toast({
-            position: 'top',
+            position: 'top-left',
             title: `Actual version from backend: ${regData._frontMinorVersionSupport}`,
             description: `Reload reason: ${currentMajorVersion}`,
             status: 'error',
@@ -353,7 +354,7 @@ export const Chat = () => {
           }, 4000)
         }
         // else toast({
-        //   position: 'top',
+        //   position: 'top-left',
         //   title: `${pkg.version}`,
         //   // description: pkg.version,
         //   status: 'info',
@@ -586,7 +587,7 @@ export const Chat = () => {
   const handleSendMessage = useCallback(() => {
     if (!messageRef.current) {
       toast({
-        position: 'top',
+        position: 'top-left',
         title: 'Sorry',
         description: 'Cant send empty msg',
         status: 'error',
@@ -596,7 +597,7 @@ export const Chat = () => {
     }
     if (!roomRef.current) {
       toast({
-        position: 'top',
+        position: 'top-left',
         title: 'ERR',
         description: 'Try again',
         status: 'error',
@@ -607,7 +608,7 @@ export const Chat = () => {
     }
     if (isMsgLimitReached) {
       toast({
-        position: 'top',
+        position: 'top-left',
         title: 'Sorry',
         description: 'Cant send big msg',
         status: 'error',
@@ -638,7 +639,7 @@ export const Chat = () => {
       resetMessage()
       resetEditedMessage()
     } else toast({
-      position: 'top',
+      position: 'top-left',
       title: 'Sorry',
       description: 'Видимо, что-то случилось =)',
       status: 'error',
@@ -717,7 +718,7 @@ export const Chat = () => {
     console.groupEnd()
     if (!editedMessageRef.current?.text && !editedMessageRef.current.file) {
       toast({
-        position: 'top',
+        position: 'top-left',
         // title: 'Sorry',
         description: 'Should not be empty',
         status: 'error',
@@ -727,7 +728,7 @@ export const Chat = () => {
     }
     if (!!editedMessageRef.current?.text && editedMessageRef.current?.text.length > charsLimit) {
       toast({
-        position: 'top',
+        position: 'top-left',
         // title: 'Sorry',
         description: `Too big! ${charsLimit} chars, not more`,
         status: 'error',
@@ -749,7 +750,7 @@ export const Chat = () => {
         (errMsg: string) => {
           if (!!errMsg) {
             toast({
-              position: 'top',
+              position: 'top-left',
               // title: 'Sorry',
               description: errMsg,
               status: 'error',
@@ -776,7 +777,7 @@ export const Chat = () => {
         socket.emit('deleteMessage', { ts: targetTs, room: roomRef.current, name }, (errMsg: string) => {
           if (!!errMsg) {
             toast({
-              position: 'top',
+              position: 'top-left',
               // title: 'Sorry',
               description: errMsg,
               status: 'error',
@@ -892,7 +893,7 @@ export const Chat = () => {
   const handleSearchUserModalOpen = useCallback(() => {
     if (!!editedMessage.assignedTo) {
       toast({
-        position: 'top',
+        position: 'top-left',
         title: 'Sorry',
         description: `Already assigned to ${editedMessage.assignedTo.join(', ')}`,
         status: 'warning',
@@ -948,7 +949,7 @@ export const Chat = () => {
     if (isConnected) {
       // NOTE: При реконнекте нужно обнновить контент - проще всего очистить и начать загружать заново
       setMessages([])
-      // toast({ position: 'top', description: `Connect ${rendCounter.current}`, status: 'info', duration: 10000, isClosable: true })
+      // toast({ position: 'top-left', description: `Connect ${rendCounter.current}`, status: 'info', duration: 10000, isClosable: true })
     }
   }, [isConnected])
 
@@ -1049,7 +1050,7 @@ export const Chat = () => {
       .catch((err: any) => err)
     
     if (jwtLogout.ok) {
-      toast({ position: 'top', description: jwtLogout?.message || 'Unlogged', status: 'info', duration: 3000, isClosable: true })
+      toast({ position: 'top-left', description: jwtLogout?.message || 'Unlogged', status: 'info', duration: 3000, isClosable: true })
     }
 
     if (!!socket) socket.emit('logout', { name, room })
@@ -1153,7 +1154,7 @@ export const Chat = () => {
   const onUserAssign = useCallback((name: string) => {
     if (!!editedMessage?.assignedTo && Array.isArray(editedMessage.assignedTo) && editedMessage.assignedTo.length > 0) {
       toast({
-        position: 'top',
+        position: 'top-left',
         title: 'Sorry',
         description: 'For one user only',
         status: 'warning',
@@ -1166,7 +1167,7 @@ export const Chat = () => {
       handleSaveEditedMessage({ assignedTo: [name] }, () => {
         handleSearchUserModalClose()
         toast({
-          position: 'top',
+          position: 'top-left',
           title: 'Assigned',
           description: `to ${name}`,
           status: 'success',
@@ -1188,7 +1189,7 @@ export const Chat = () => {
         if (newAssignedArr.length > 0) newData.assignedTo = newAssignedArr
       }
 
-      socket.emit('editMessage', { newData, ts: message.ts, room: roomRef.current, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top', description: errMsg, status: 'error', duration: 7000, isClosable: true }) })
+      socket.emit('editMessage', { newData, ts: message.ts, room: roomRef.current, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top-left', description: errMsg, status: 'error', duration: 7000, isClosable: true }) })
     }
   }, [socket, name])
 
@@ -1539,7 +1540,8 @@ export const Chat = () => {
         if (!isNewCard) {
           socket.emit(
             'editMessage',
-            { newData, ts: newData.ts, room: roomRef.current, name }
+            { newData, ts: newData.ts, room: roomRef.current, name },
+            // () => {}
           )
         } else {
           console.log(card)
@@ -1938,7 +1940,7 @@ export const Chat = () => {
                           text={`http://pravosleva.ru/express-helper/chat/#/?room=${room}`}
                           onCopy={() => {
                             toast({
-                              position: 'top',
+                              position: 'top-left',
                               title: 'Link copied',
                               description: `http://pravosleva.ru/express-helper/chat/#/?room=${room}`,
                               status: 'success',
@@ -2646,6 +2648,7 @@ export const Chat = () => {
       <FixedBottomSheet
         isOpened={isBottomSheetVisible}
         onClose={handleCloseBottomSheet}
+        titleText={`Kanban total: ${filteredMessages.length} items`}
       >
         <Board
           onCardDragEnd={handleCardDragEnd}
@@ -2686,6 +2689,7 @@ export const Chat = () => {
                       }
                     }}
                     size='xs'
+                    borderRadius='full'
                     isFullWidth
                     colorScheme={colorSchemeMap[id] || 'blue'}
                     variant='solid'
@@ -2742,6 +2746,7 @@ export const Chat = () => {
                     {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
                       <Button
                         variant='solid'
+                        borderRadius='full'
                         colorScheme='gray'
                         size='xs'
                         onClick={() => {
@@ -2765,6 +2770,7 @@ export const Chat = () => {
                     >
                       <Button
                         variant='solid'
+                        borderRadius='full'
                         colorScheme='gray'
                         size='xs'
                         onClick={() => {

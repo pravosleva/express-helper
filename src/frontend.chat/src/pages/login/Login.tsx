@@ -35,7 +35,7 @@ import { jwtHttpClient } from '~/utils/httpClient'
 import { EAPIUserCode, TUserResData } from '~/utils/httpClient/types'
 
 const isDev = process.env.NODE_ENV === 'development'
-const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'Anchous chat 2021'
+const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'PUB DEV 2021'
 const REACT_APP_BUILD_DATE = process.env.REACT_APP_BUILD_DATE || ''
 // const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
@@ -128,7 +128,7 @@ export const Login = () => {
     setIsLoading1(true)
     if (isDev || name === 'pravosleva') {
       toast({
-        position: 'top',
+        position: 'top-left',
         title: '/check-jwt',
         // description: error,
         status: 'warning',
@@ -154,7 +154,7 @@ export const Login = () => {
         console.dir(jwtResponse)
         // NOTE: Fail cases:
         if (isDev) toast({
-          position: 'bottom',
+          position: 'bottom-left',
           title: jwtResponse?.message || jwtResponse?.code || '!jwtResponse?.ok',
           status: 'warning',
           description: `Debug${!!jwtResponse?.code ? `: ${jwtResponse.code}` : ''}`,
@@ -246,7 +246,7 @@ export const Login = () => {
               return
             }
             toast({
-              position: 'top',
+              position: 'top-left',
               title: 'Error by socket',
               description: error,
               status: 'error',
@@ -282,7 +282,7 @@ export const Login = () => {
   // const [myPassword, setMyPassword] = useState<{ password: string }>({ password: '' })
   const _handleTryLoginWidthPassword = async (pas?: string) => {
     if (isDev || name === 'pravosleva') toast({
-      position: 'top',
+      position: 'top-left',
       title: '/login',
       // description: error,
       status: 'warning',
@@ -299,9 +299,9 @@ export const Login = () => {
     // window.alert(JSON.stringify(data, null, 2))
 
     if (isLogged) {
-      toast({ title: "JWT received", status: "success", duration: 3000, position: "top" })
+      toast({ title: "JWT received", status: "success", duration: 3000, position: "top-left" })
     } else {
-      toast({ title: "Error Log/Pas", description: data?.message || `Oops... Sorry: ${data?.code || 'No res.code'}`, status: "error", position: "top" })
+      toast({ title: "Error Log/Pas", description: data?.message || `Oops... Sorry: ${data?.code || 'No res.code'}`, status: "error", position: "top-left" })
       return
     }
     if (!!socket) {
@@ -313,7 +313,7 @@ export const Login = () => {
           if (!!err) {
             // console.log('- this case')
             console.log(err)
-            toast({ description: err, status: 'error', duration: 2000, isClosable: true, position: 'top' })
+            toast({ description: err, status: 'error', duration: 2000, isClosable: true, position: 'top-left' })
             setIsLoading2(false)
             setIsLoading1(false)
             return
