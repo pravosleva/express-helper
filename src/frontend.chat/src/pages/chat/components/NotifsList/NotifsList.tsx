@@ -83,10 +83,7 @@ export const NotifsList = ({ onRemove, onEdit }: TProps) => {
         sprintFeatureProxy.inProgress = sprintFeatureProxy.inProgress.filter((_ts: number) => _ts !== ts)
         if (!!sprintFeatureProxy.commonNotifs[String(ts)]) delete sprintFeatureProxy.commonNotifs[String(ts)]
       })
-    if (result.ok) {
-      // setData((d: { [key: string]: TNotifItem }) => ({ ...d, ...result.stateChunk[String(result.ts)] }))
-      onRemove(result.tsUpdate)
-    }
+    if (result.ok) onRemove(result.tsUpdate)
   }
   const notifsStateArr: TNotifItem[] = useMemo(() => {
     if (!!sprintFeatureSnap.commonNotifs && Object.keys(sprintFeatureSnap.commonNotifs).length === 0) return []

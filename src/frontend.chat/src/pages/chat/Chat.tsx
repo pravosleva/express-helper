@@ -134,6 +134,8 @@ import '@asseinfo/react-kanban/dist/styles.css'
 // import dims from '../../common/scss-vars/dims.scss'
 import { FaRegSmile, FaPlus } from 'react-icons/fa'
 import { BsFillPlusCircleFill } from 'react-icons/bs'
+import { CountdownRenderer } from './components/NotifsList/components/CountdownRenderer'
+import Countdown from 'react-countdown'
 
 const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
@@ -2711,10 +2713,20 @@ export const Chat = () => {
           renderCard={(card: TMessage & TKanbanCard, { removeCard, dragging }: any) => {
             return (
               <div className={clsx('react-kanban-card', { ['react-kanban-card--dragging']: dragging, ['bg--light']: mode.colorMode === 'light', ['bg--dark']: mode.colorMode === 'dark' } )}>
-                <div className='card-controls-box'>
-                  <div className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}><Text color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue' : 'inherit'}>{card.title}</Text></div>
+                <div
+                  className='card-controls-box'
+                  style={{
+                    marginBottom: 'var(--chakra-space-2)'
+                  }}
+                >
+                  <div
+                    className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}
+                  >
+                    <Text
+                      color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue' : 'inherit'}
+                    >{card.title}</Text>
+                  </div>
                   <div className='card-controls-box--right'>
-                    
                     <IconButton
                       size='xs'
                       aria-label="EDIT"
@@ -2743,54 +2755,61 @@ export const Chat = () => {
                     </IconButton>
                   </div>
                 </div>
-                {assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy && (
+                {(assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy) || (!!sprintFeatureSnap.commonNotifs[String(card.ts)]) && (
                   <div style={{
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'flex-start',
+                    marginBottom: 'var(--chakra-space-2)',
                   }}>
-                    <UserAva size={19} name={card.assignedBy} fontSize={11} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} />
-                    <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
-                    <UserAva size={19} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={11} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} />
-                    {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
-                      <Button
-                        variant='solid'
-                        borderRadius='full'
-                        colorScheme='gray'
-                        size='xs'
-                        onClick={() => {
-                          const { id, title, description, ...rest } = card
-                          // @ts-ignore
-                          const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
-                          // @ts-ignore
-                          if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
-                        }}
-                      >Unassign</Button>
-                    )}
+                    {
+                      assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy ? (
+                        <>
+                          <UserAva size={19} name={card.assignedBy} fontSize={11} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} />
+                          <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+                          <UserAva size={19} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={11} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} />
+                          {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
+                            <Button
+                              variant='link'
+                              // borderRadius='full'
+                              colorScheme='gray'
+                              size='xs'
+                              onClick={() => {
+                                const { id, title, description, ...rest } = card
+                                // @ts-ignore
+                                const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
+                                // @ts-ignore
+                                if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
+                              }}
+                            >Unassign</Button>
+                          )}
+                        </>
+                      ) : (
+                        <Button
+                          variant='link'
+                          // borderRadius='full'
+                          colorScheme='gray'
+                          size='xs'
+                          onClick={() => {
+                            const { id, title, description, ...rest } = card
+                            setEditedMessage(rest)
+                            handleSearchUserModalOpen()
+                          }}
+                        >Assign</Button>
+                      )
+                    }
+                    {
+                      !!sprintFeatureSnap.commonNotifs[String(card.ts)] && (
+                        <span style={{ marginLeft: 'auto' }}>
+                          <Countdown
+                            date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
+                            renderer={CountdownRenderer}
+                          />
+                        </span>
+                      )
+                    }
                   </div>
                 )}
-                {
-                  assignmentSnap.isFeatureEnabled && !card?.assignedTo && (
-                    <div style={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      justifyContent: 'flex-start',
-                    }}
-                    >
-                      <Button
-                        variant='solid'
-                        borderRadius='full'
-                        colorScheme='gray'
-                        size='xs'
-                        onClick={() => {
-                          const { id, title, description, ...rest } = card
-                          setEditedMessage(rest)
-                          handleSearchUserModalOpen()
-                        }}
-                      >Assign</Button>
-                    </div>
-                  )
-                }
                 {card.description}
               </div>
             )

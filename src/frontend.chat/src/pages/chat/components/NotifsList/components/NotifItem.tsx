@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { Box, Button, Flex, Grid, Text, Tag, useToast, IconButton } from "@chakra-ui/react"
+import { Box, Button, Flex, Grid, Text, useToast, IconButton } from "@chakra-ui/react"
 import { getNormalizedDate, getDayMonth } from '~/utils/timeConverter'
 import { FaTrashAlt } from 'react-icons/fa'
 import Countdown, { zeroPad } from 'react-countdown'
@@ -14,6 +14,7 @@ import { FiActivity } from 'react-icons/fi'
 import { FaCheck, FaInfoCircle } from 'react-icons/fa'
 import { BsFillInfoCircleFill } from 'react-icons/bs'
 import { AiTwotoneEdit } from 'react-icons/ai'
+import { CountdownRenderer } from './CountdownRenderer'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -26,14 +27,6 @@ type TProps = {
   onComplete?: ({ ts, text }: { ts: number, text: string }) => void
   original: TMessage
   onEdit?: (m: TMessage) => void
-}
-
-const CountdownRenderer = ({ days, hours, minutes, seconds, completed }: any) => {
-  if (completed) return <Tag rounded='2xl' colorScheme='red' ml={2}>Time is up!</Tag>
-  const getColorByDays = (days: number) => days <= 2 ? 'red' : 'gray'
-  const color = getColorByDays(days)
-
-  return <Tag rounded='2xl' colorScheme={color} ml={2}>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
 }
 
 export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete, original, onEdit }: TProps) => {
@@ -91,11 +84,15 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           {original?.status === EMessageStatus.Success && <span style={{ marginRight: 'var(--chakra-space-3)' }}><FaCheck size={12}/></span>}
           {original?.status === EMessageStatus.Info && <span style={{ marginRight: 'var(--chakra-space-2)' }}><FaInfoCircle size={14}/></span>}
           {getDayMonth(tsTarget)}
-          <Countdown
-            date={tsTarget}
-            renderer={CountdownRenderer}
-            onComplete={!!onComplete ? () => onComplete({ ts, text }) : undefined}
-          />
+          <span
+            style={{ marginLeft: 'var(--chakra-space-2)' }}
+          >
+            <Countdown
+              date={tsTarget}
+              renderer={CountdownRenderer}
+              onComplete={!!onComplete ? () => onComplete({ ts, text }) : undefined}
+            />
+          </span>
         </Flex>
         <Flex alignItems='center'>
           {
