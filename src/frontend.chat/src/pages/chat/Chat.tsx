@@ -1450,6 +1450,9 @@ export const Chat = () => {
 
   const debouncedEditedMessageText = useDebouncedValue(editedMessage?.text || '', 1000)
   const [isBottomSheetVisible, setIsBottomSheetVisible] = useState<boolean>(false)
+  useEffect(() => {
+    setIsBottomSheetVisible(true)
+  }, [])
   const toggleBottomSheet = useCallback(() => {
     setIsBottomSheetVisible((s) => !s)
   }, [setIsBottomSheetVisible])
