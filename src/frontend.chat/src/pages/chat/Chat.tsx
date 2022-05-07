@@ -694,6 +694,7 @@ export const Chat = () => {
   const [editedMessage, setEditedMessage] = useState<TMessage>(initialEditedMessageState)
   const resetEditedMessage = useCallback(() => {
     setEditedMessage(initialEditedMessageState)
+    editedMessageRef.current = initialEditedMessageState
   }, [setEditedMessage])
   const editedMessageRef = useRef<TMessage>(initialEditedMessageState)
   useEffect(() => {
@@ -2726,90 +2727,103 @@ export const Chat = () => {
                       color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue' : 'inherit'}
                     >{card.title}</Text>
                   </div>
-                  <div className='card-controls-box--right'>
-                    <IconButton
-                      size='xs'
-                      aria-label="EDIT"
-                      colorScheme='green'
-                      variant='outline'
-                      isRound
-                      icon={<AiTwotoneEdit size={15} />}
-                      onClick={() => {
-                        const { id, title, description, ...rest } = card
-                        setEditedMessage(rest)
-                        handleEditModalOpen()
-                      }}
-                    >
-                      EDIT
-                    </IconButton>
-                    <IconButton
-                      size='xs'
-                      aria-label="DEL"
-                      colorScheme='red'
-                      variant='outline'
-                      isRound
-                      icon={<IoMdClose size={15} />}
-                      onClick={() => handleCardRemove(card)}
-                    >
-                      DEL
-                    </IconButton>
-                  </div>
+                  {
+                    card.user === name && (
+                      <div className='card-controls-box--right'>
+                        <IconButton
+                          size='xs'
+                          aria-label="EDIT"
+                          colorScheme='green'
+                          variant='outline'
+                          isRound
+                          icon={<AiTwotoneEdit size={15} />}
+                          onClick={() => {
+                            const { id, title, description, ...rest } = card
+                            setEditedMessage(rest)
+                            handleEditModalOpen()
+                          }}
+                        >
+                          EDIT
+                        </IconButton>
+                        <IconButton
+                          size='xs'
+                          aria-label="DEL"
+                          colorScheme='red'
+                          variant='outline'
+                          isRound
+                          icon={<IoMdClose size={15} />}
+                          onClick={() => handleCardRemove(card)}
+                        >
+                          DEL
+                        </IconButton>
+                      </div>
+                    )
+                  }
                 </div>
-                {(assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy) || (!!sprintFeatureSnap.commonNotifs[String(card.ts)]) && (
+                {(assignmentSnap.isFeatureEnabled || sprintFeatureSnap.isFeatureEnabled) &&
                   <div style={{
-                    display: 'flex',
+                    display:
+                      (assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy)
+                      || (sprintFeatureSnap.isFeatureEnabled && !!sprintFeatureSnap.commonNotifs[String(card.ts)])
+                      ? 'flex' : 'none',
                     flexDirection: 'row',
                     justifyContent: 'flex-start',
                     marginBottom: 'var(--chakra-space-2)',
                   }}>
                     {
-                      assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy ? (
-                        <>
-                          <UserAva size={19} name={card.assignedBy} fontSize={11} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} />
-                          <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
-                          <UserAva size={19} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={11} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} />
-                          {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
-                            <Button
-                              variant='link'
-                              // borderRadius='full'
-                              colorScheme='gray'
-                              size='xs'
-                              onClick={() => {
-                                const { id, title, description, ...rest } = card
-                                // @ts-ignore
-                                const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
-                                // @ts-ignore
-                                if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
-                              }}
-                            >Unassign</Button>
-                          )}
-                        </>
+                      assignmentSnap.isFeatureEnabled
+                      ? (
+                        !!card?.assignedTo && !!card?.assignedBy ? (
+                          <>
+                            <UserAva size={19} name={card.assignedBy} fontSize={11} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} />
+                            <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+                            <UserAva size={19} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={11} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} />
+                            {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
+                              <Button
+                                variant='link'
+                                // borderRadius='full'
+                                colorScheme='gray'
+                                size='xs'
+                                onClick={() => {
+                                  const { id, title, description, ...rest } = card
+                                  // @ts-ignore
+                                  const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
+                                  // @ts-ignore
+                                  if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
+                                }}
+                              >Unassign</Button>
+                            )}
+                          </>
+                        ) : (
+                          <Button
+                            variant='link'
+                            // borderRadius='full'
+                            colorScheme='gray'
+                            size='xs'
+                            onClick={() => {
+                              const { id, title, description, ...rest } = card
+                              setEditedMessage(rest)
+                              handleSearchUserModalOpen()
+                            }}
+                          >Assign</Button>
+                        )
                       ) : (
-                        <Button
-                          variant='link'
-                          // borderRadius='full'
-                          colorScheme='gray'
-                          size='xs'
-                          onClick={() => {
-                            const { id, title, description, ...rest } = card
-                            setEditedMessage(rest)
-                            handleSearchUserModalOpen()
-                          }}
-                        >Assign</Button>
+                        null
                       )
                     }
                     {
-                      !!sprintFeatureSnap.commonNotifs[String(card.ts)] && (
+                      sprintFeatureSnap.isFeatureEnabled
+                      ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] && (
                         <span style={{ marginLeft: 'auto' }}>
                           <Countdown
                             date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
                             renderer={CountdownRenderer}
                           />
                         </span>
-                      )
+                      ) : null
                     }
                   </div>
-                )}
+                }
                 {card.description}
               </div>
             )
