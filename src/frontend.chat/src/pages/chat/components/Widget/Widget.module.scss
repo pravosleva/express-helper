@@ -5,7 +5,7 @@ $widgetTogglerWidth: 70;
 $maxHeight: 400;
 $pad: var(--chakra-space-4);
 $padInternal: var(--chakra-space-4);
-$widgetBorderRadius: var(--chakra-radii-xl); // var(--chakra-radii-2xl);
+$widgetBorderRadius: var(--chakra-radii-lg); // var(--chakra-radii-2xl);
 $widgetBgLight: #FFF; // var(--chakra-colors-gray-300);
 
 @function getWidgetWidth($full, $pad, $chatSpace) {
