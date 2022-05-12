@@ -58,9 +58,11 @@
     "@getRandomInteger": "./server-dist/utils/getRandomInteger.js"
   },
   "lint-staged": {
-    "src/server/**/*.{js, jsx, ts, tsx} !src/server/routers/chat/@socket.io/**/*": [
+    "src/server/**/*.{js,jsx,ts,tsx} !src/server/routers/chat/@socket.io/**/*": [
       "node_modules/.bin/eslint --max-warnings=0 --no-ignore",
-      "prettier --write",
+      "prettier --write"
+    ],
+    "*.@(js|ts|tsx) !src/frontend.*": [
       "yarn test"
     ]
   },
