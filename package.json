@@ -51,7 +51,8 @@
     "start:pm2": "pm2 start npm --name \"express-helper-5000\" -- start",
     "test": "jest",
     "lint": "eslint --debug 'src/server/**/*.{js,jsx,ts,tsx}' 'bin/**/*'",
-    "lint:fix": "eslint 'src/server/**/*.{js,jsx,ts,tsx}' '!src/server/routers/chat/@socket.io/**/*' 'bin/**/*' --fix"
+    "lint:fix": "eslint 'src/server/**/*.{js,jsx,ts,tsx}' '!src/server/routers/chat/@socket.io/**/*' 'bin/**/*' --fix",
+    "prepare": "husky install"
   },
   "_moduleAliases": {
     "~": "./server-dist",
@@ -151,7 +152,7 @@
     "eslint-plugin-jest": "^23.17.1",
     "eslint-plugin-jsx-a11y": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "husky": "4.2.5",
+    "husky": "^8.0.0",
     "jest": "^28.0.2",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
