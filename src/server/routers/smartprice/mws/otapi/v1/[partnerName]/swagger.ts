@@ -9,11 +9,11 @@ const swaggerUi = require('swagger-ui-express')
 const YAML = require('yamljs')
 
 // const doc = YAML.load(path.join(__dirname, 'swagger.yaml'))
-// const EXTERNAL_ROUTING = process.env.EXTERNAL_ROUTING || ''
+const EXTERNAL_ROUTING = process.env.EXTERNAL_ROUTING || ''
 
 // NOTE: See also themes for swagger 3.x: https://github.com/ostranme/swagger-ui-themes/blob/develop/themes/3.x/theme-material.css
 const options = {
-  // customCssUrl: `${EXTERNAL_ROUTING}/assets/swagger-ui/css/theme-material.modified.sp.css`,
+  customCssUrl: `${EXTERNAL_ROUTING}/assets/swagger-ui/css/theme-material.modified.sp.css`,
   // customJs: `${EXTERNAL_ROUTING}/assets/swagger-ui/js/onload.js`,
 }
 
