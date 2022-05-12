@@ -72,7 +72,8 @@
     "verbose": true,
     "preset": "./node_modules/@babel/preset-typescript",
     "modulePathIgnorePatterns": [
-      "<rootDir>/src/frontend.*"
+      "<rootDir>/src/frontend.*",
+      "<rootDir>/server-dist/*"
     ],
     "moduleNameMapper": {
       "@binarySearch": "<rootDir>/server-dist/utils/binarySearch.js"
