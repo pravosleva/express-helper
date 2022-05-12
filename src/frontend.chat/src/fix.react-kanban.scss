@@ -22,7 +22,7 @@
       display: flex;
       justify-content: flex-end;
       & > *:not(:last-child) {
-        margin-right: var(--chakra-space-1);
+        margin-right: var(--chakra-space-2);
       }
     }
   }

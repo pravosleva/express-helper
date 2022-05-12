@@ -2248,11 +2248,11 @@ export const Chat = () => {
                               // bg="white"
                               // color="white"
                               // onContextMenu={handleClickCtxMenu}
-                              onContextMenu={(e) => {
+                              onContextMenu={(_e: any) => {
                                 // e.preventDefault()
                                 handleClickCtxMenu()
                               }}
-                              onClick={(e) => {
+                              onClick={(e: any) => {
                                 handleClickCtxMenu()
                                 toggleMenu(e)
                               }}
@@ -2309,7 +2309,7 @@ export const Chat = () => {
                                 borderRadius='full'
                                 aria-label='Remove link'
                                 icon={<IoMdClose color='inherit' size={14} />}
-                                onClick={(e) => {
+                                onClick={(e: any) => {
                                   e.stopPropagation()
                                   handleDeleteLink(link, ts)
                                 }}
@@ -2419,7 +2419,7 @@ export const Chat = () => {
                 )}
                 {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
                   <>
-                    <UploadInput id='siofu_input' isDisabled={isFileUploading} />
+                    <UploadInput id='siofu_input' isDisabled={isFileUploading} label='Img' />
                     {isFileUploading && (
                       <div><b>Upload...&nbsp;{uploadPercentageRef.current}&nbsp;%</b></div>
                     )}
@@ -2448,7 +2448,7 @@ export const Chat = () => {
                 {/* isLogged && !!messageRef.current && (
                   <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={() => { messageRef.current = '' }}>Clear</button></div>
                 )*/}
-                {isLogged && (
+                {/* isLogged && (
                   <div>
                     <button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])} onClick={handleOpenTagsModal}>
                       <span style={{ display: 'flex', alignItems: 'center' }}>
@@ -2457,6 +2457,20 @@ export const Chat = () => {
                       </span>
                     </button>
                   </div>
+                )*/}
+                {isLogged && (
+                  <IconButton
+                    size='sm'
+                    aria-label="TAGS"
+                    colorScheme='teal'
+                    variant='outline'
+                    isRound
+                    icon={<AiFillTags size={20} />}
+                    onClick={handleOpenTagsModal}
+                    // isDisabled={isChatLoading}
+                  >
+                    TAGS
+                  </IconButton>
                 )}
                 <IconButton
                   size='sm'
@@ -2724,7 +2738,7 @@ export const Chat = () => {
                     className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}
                   >
                     <Text
-                      color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue' : 'inherit'}
+                      color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue.500' : 'inherit'}
                     >{card.title}</Text>
                   </div>
                   {
