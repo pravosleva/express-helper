@@ -2,11 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 // import reportWebVitals from './reportWebVitals'
+import { disableReactDevTools } from '@fvilers/disable-react-devtools'
 import './index.css'
 import '~/fix.react-contextmenu.scss'
 import '~/fix.simple-react-lightbox.scss'
 import '~/fix.emoji-picker-react.scss'
 import '~/fix.react-kanban.scss'
+
+if (process.env.NODE_ENV === 'production')
+  disableReactDevTools()
 
 // ReactDOM.render(<App />, document.getElementById('root'))
 

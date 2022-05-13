@@ -52,14 +52,14 @@ export const SocketProvider =
 
     const toast = useToast()
     useEffect(() => {
-      console.log(`EFF: isConnected= ${isConnected}`)
+      // console.log(`EFF: isConnected= ${isConnected}`)
       if (isConnected) toast({
         position: 'top-left',
         title: 'Connected...',
         // description: notif?.description,
         status: 'success',
         duration: 3000,
-        variant: 'left-accent',
+        variant: 'solid',
       })
       else toast({
         position: 'top-left',
@@ -68,7 +68,7 @@ export const SocketProvider =
         status: 'error',
         duration: 3000,
         isClosable: true,
-        variant: 'left-accent',
+        variant: 'solid',
       })
     }, [isConnected])
 
