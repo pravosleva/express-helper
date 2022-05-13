@@ -20,7 +20,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalCloseButton,
-  FormLabel,
+  // FormLabel,
   FormControl,
   ModalFooter,
   MenuOptionGroup,
@@ -40,18 +40,29 @@ import {
   DrawerBody,
   DrawerFooter,
   Stack,
-  Switch,
-  HStack,
+  // Switch,
+  // HStack,
   TagCloseButton,
   TagLabel,
   Tag,
   Grid,
-  useToast, UseToastOptions, ButtonGroup, color
+  useToast, UseToastOptions, ButtonGroup, Tooltip,
+  // color
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
-import { BiMessageDetail, BiUpArrowAlt } from 'react-icons/bi'
-import { RiSendPlaneFill, RiErrorWarningFill } from 'react-icons/ri'
-import { FaCheckCircle, FaCheck, FaListUl } from 'react-icons/fa'
+import {
+  // BiMessageDetail,
+  BiUpArrowAlt,
+} from 'react-icons/bi'
+import {
+  RiSendPlaneFill,
+  // RiErrorWarningFill,
+} from 'react-icons/ri'
+import {
+  FaCheckCircle,
+  FaCheck,
+  // FaListUl,
+} from 'react-icons/fa'
 import { GiDeathSkull } from 'react-icons/gi'
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 // @ts-ignore
@@ -132,17 +143,22 @@ import Board from '@asseinfo/react-kanban'
 import '@asseinfo/react-kanban/dist/styles.css'
 // @ts-ignore
 // import dims from '../../common/scss-vars/dims.scss'
-import { FaRegSmile, FaPlus } from 'react-icons/fa'
-import { BsFillPlusCircleFill } from 'react-icons/bs'
+import {
+  // FaRegSmile,
+  FaPlus,
+} from 'react-icons/fa'
+// import { BsFillPlusCircleFill } from 'react-icons/bs'
 import { CountdownRenderer } from './components/NotifsList/components/CountdownRenderer'
 import Countdown from 'react-countdown'
 import { getNormalizedWordsArr } from '~/utils/strings-ops/getNormalizedWords'
+import { scrollIntoView } from '~/utils/scrollTo'
+import { CgArrowsVAlt } from 'react-icons/cg'
 
 const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_BASE_URL || 'https://t.me/pravosleva_bot'
-const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'PUB DEV 2021'
+// const REACT_APP_CHAT_NAME = process.env.REACT_APP_CHAT_NAME || 'PUB DEV 2021'
 
 /* -- NOTE: Socket upload file evss
 // Sample 1 (12.3 kB)
@@ -292,7 +308,7 @@ export const Chat = () => {
   const history = useHistory()
   const toast = useToast()
   const [left, isMsgLimitReached] = useTextCounter({ text: messageRef.current, limit: 2000 })
-  const [tokenLS, _setTokenLS, removeTokenLS] = useLocalStorage<any>('chat.token')
+  const [tokenLS, _setTokenLS, _removeTokenLS] = useLocalStorage<any>('chat.token')
   // const textFieldRef = useRef<HTMLInputElement>(null)
   const textFieldRef = useRef<HTMLTextAreaElement>(null)
 
@@ -1568,11 +1584,19 @@ export const Chat = () => {
   }, [editedMessage, name, socket, statusGroups, setEditedMessage, handleSendMessage])
 
   const handleCardRemove = (card: TMessage & TKanbanCard) => {
-    // DEL status
-    const { title, description, id, ...newData } = card
-    delete newData.status
-    setEditedMessage(newData)
-    setTimeout(() => handleSaveEditedMessage({}), 0)
+    try {
+      // To DEL status or not?
+      const isConfirmed = window.confirm('Удалить из доски?')
+
+      if (isConfirmed) {
+        const { title, description, id, ...newData } = card
+        delete newData.status
+        setEditedMessage(newData)
+        setTimeout(() => handleSaveEditedMessage({}), 0)
+      }
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -2745,32 +2769,74 @@ export const Chat = () => {
                   {
                     card.user === name && (
                       <div className='card-controls-box--right'>
-                        <IconButton
-                          size='xs'
-                          aria-label="EDIT"
-                          colorScheme='green'
-                          variant='outline'
-                          isRound
-                          icon={<AiTwotoneEdit size={15} />}
-                          onClick={() => {
-                            const { id, title, description, ...rest } = card
-                            setEditedMessage(rest)
-                            handleEditModalOpen()
-                          }}
-                        >
-                          EDIT
-                        </IconButton>
-                        <IconButton
-                          size='xs'
-                          aria-label="DEL"
-                          colorScheme='red'
-                          variant='outline'
-                          isRound
-                          icon={<IoMdClose size={15} />}
-                          onClick={() => handleCardRemove(card)}
-                        >
-                          DEL
-                        </IconButton>
+                        
+                        <Tooltip label="Проскроллить в чате" aria-label='SCTOLL_INTO_VIEW'>
+                          <IconButton
+                            size='xs'
+                            aria-label="-SCTOLL_INTO_VIEW"
+                            colorScheme='gray'
+                            variant='outline'
+                            isRound
+                            icon={<CgArrowsVAlt size={15} />}
+                            onClick={() => {
+                              const { ts } = card
+                              scrollIntoView(
+                                ts,
+                                {
+                                  fail: (ts) => {
+                                    toast({
+                                      position: 'bottom',
+                                      title: `Сообщения ${ts} нет в отфильтрованных`,
+                                      description: 'Либо сделать догрузку списка, либо сбросить фильтры',
+                                      status: 'warning',
+                                      duration: 5000,
+                                    })
+                                  },
+                                  success: (ts) => {
+                                    toast({
+                                      position: 'bottom',
+                                      title: `Msg ${ts} In viewport`,
+                                      status: 'success',
+                                      duration: 3000,
+                                    })
+                                  },
+                                }
+                              )
+                            }}
+                          >
+                            SCTOLL_INTO_VIEW
+                          </IconButton>
+                        </Tooltip>
+                        <Tooltip label="Редактировать" aria-label='EDIT'>
+                          <IconButton
+                            size='xs'
+                            aria-label="-EDIT"
+                            colorScheme='green'
+                            variant='outline'
+                            isRound
+                            icon={<AiTwotoneEdit size={15} />}
+                            onClick={() => {
+                              const { id, title, description, ...rest } = card
+                              setEditedMessage(rest)
+                              handleEditModalOpen()
+                            }}
+                          >
+                            EDIT
+                          </IconButton>
+                        </Tooltip>
+                        <Tooltip label="Удалить из доски (снять статус)" aria-label='DEL'>
+                          <IconButton
+                            size='xs'
+                            aria-label="-DEL"
+                            colorScheme='red'
+                            variant='outline'
+                            isRound
+                            icon={<IoMdClose size={15} />}
+                            onClick={() => handleCardRemove(card)}
+                          >
+                            DEL
+                          </IconButton>
+                        </Tooltip>
                       </div>
                     )
                   }

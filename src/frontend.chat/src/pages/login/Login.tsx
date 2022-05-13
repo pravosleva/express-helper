@@ -562,7 +562,7 @@ export const Login = () => {
                 type="text"
                 placeholder="User Name"
                 value={name}
-                onChange={(e) => {
+                onChange={(e: any) => {
                   setName(e.target.value)
                 }}
                 rounded='3xl'
@@ -618,7 +618,7 @@ export const Login = () => {
               My Rooms
             </Button>
           }
-          <Flex mt={1} justifyContent='center'>Все еще доступен режим Гостя под свободным ником</Flex>
+          {/* <Flex mt={1} justifyContent='center'>Все еще доступен режим Гостя под свободным ником</Flex> */}
           {!!REACT_APP_BUILD_DATE && (
             <Flex mt={1} justifyContent='center'>v{pkg.version} Last build {REACT_APP_BUILD_DATE.split(' ')[0]}</Flex>
           )}

@@ -15,6 +15,7 @@ import { FaCheck, FaInfoCircle } from 'react-icons/fa'
 import { BsFillInfoCircleFill } from 'react-icons/bs'
 import { AiTwotoneEdit } from 'react-icons/ai'
 import { CountdownRenderer } from './CountdownRenderer'
+import { scrollIntoView } from '~/utils/scrollTo'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -45,33 +46,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
   const toggle = () => {
     setIsOpened((s) => !s)
   }
-
   const toast = useToast()
-  const handleScrollIntoView = (ts: number) => {
-    try {
-      const targetElm = document.getElementById(String(ts)) // reference to scroll target
-        
-      if (!!targetElm) {
-        targetElm.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'smooth' })
-        if (isDev) toast({
-          position: 'bottom',
-          title: 'In viewport',
-          status: 'success',
-          duration: 3000,
-        })
-      } else {
-        toast({
-          position: 'bottom',
-          title: 'Элемент не подгружен',
-          description: 'Надо бы сделать догрузку списка',
-          status: 'warning',
-          duration: 3000,
-        })
-      }
-    } catch (err) {
-      console.log(err)
-    }
-  }
   const isMyMessage = useMemo(() => original?.user === name, [name, original?.user])
   
   // <Grid templateColumns='auto 50px' gap={2}>
@@ -152,7 +127,30 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           whiteSpace: 'pre-wrap',
           // marginBottom: 'var(--chakra-space-1)'
         }}
-        onClick={() => { handleScrollIntoView(ts) }}
+        onClick={() => {
+          scrollIntoView(
+            ts,
+            {
+              fail: (ts) => {
+                toast({
+                  position: 'bottom',
+                  title: `Сообщения ${ts} нет в отфильтрованных`,
+                  description: 'Либо сделать догрузку списка, либо сбросить фильтры',
+                  status: 'warning',
+                  duration: 5000,
+                })
+              },
+              success: (ts) => {
+                toast({
+                  position: 'bottom',
+                  title: `Msg ${ts} In viewport`,
+                  status: 'success',
+                  duration: 3000,
+                })
+              },
+            }
+          )
+        }}
         className='notif-box'
         // mb={3}
       >
