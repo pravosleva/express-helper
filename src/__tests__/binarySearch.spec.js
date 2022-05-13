@@ -5,7 +5,7 @@ import fakeDataSorted from './fake-data/binarySearch.set-02-sorted.json'
 // import { sortByTs } from '../server/utils/sortByTs'
 
 describe('Search index', () => {
-  test.skip('it should be correct', () => {
+  test.skip('list was not sorted', () => {
     const roomData = fakeData.data['ux-test'] // .sort(sortByTs)
     const targetTs = 1645164716822
     const i1 = binarySearchTsIndex({ messages: roomData, targetTs })

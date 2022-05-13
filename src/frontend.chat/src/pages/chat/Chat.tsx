@@ -136,6 +136,7 @@ import { FaRegSmile, FaPlus } from 'react-icons/fa'
 import { BsFillPlusCircleFill } from 'react-icons/bs'
 import { CountdownRenderer } from './components/NotifsList/components/CountdownRenderer'
 import Countdown from 'react-countdown'
+import { getNormalizedWords } from '~/utils/strings-ops/getNormalizedWords'
 
 const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
@@ -1103,7 +1104,7 @@ export const Chat = () => {
           case 'getTags':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
-              setTags($event.data.result)
+              setTags(getNormalizedWords($event.data.result))
             }, 0)
             break;
           case 'getAllImagesLightboxFormat':
