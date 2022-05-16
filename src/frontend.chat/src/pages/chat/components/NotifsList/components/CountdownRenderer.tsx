@@ -1,8 +1,14 @@
-import { Tag } from "@chakra-ui/react"
+import { Tag, Tooltip } from "@chakra-ui/react"
 import { zeroPad } from 'react-countdown'
+import { getTimeAgo } from '~/utils/getTimeAgo'
 
-export const CountdownRenderer = ({ days, hours, minutes, seconds, completed }: any) => {
-  if (completed) return <Tag rounded='2xl' colorScheme='red'>Time is up!</Tag>
+export const CountdownRenderer = ({ days, hours, minutes, seconds, completed, total, props, ...rest }: any) => {
+  // console.log(Object.keys(props))
+  if (completed) return (
+    <Tooltip label={`🏁 Time is up! ${getTimeAgo(props.date)} 🏁`} aria-label='UNASSIGN'>
+      <Tag rounded='2xl' colorScheme='red'>{getTimeAgo(props.date)}</Tag>
+    </Tooltip>
+  )
   const getColorByDays = (days: number) => days <= 2 ? 'red' : 'gray'
   const color = getColorByDays(days)
 

@@ -1489,6 +1489,28 @@ export const Chat = () => {
     isNewCard?: boolean
   ) => { // board: any, card: any, source: any, dest: any
     // console.log('-- handleCardDragEnd')
+
+    if (!isLogged) {
+      toast({
+        position: 'top-left',
+        title: 'Sorry',
+        description: 'For logged users only!',
+        status: 'error',
+        duration: 7000,
+      })
+      return
+    }
+    if (card.user === 'pravosleva' && card.user !== name) {
+      toast({
+        position: 'top-left',
+        title: 'Sorry',
+        description: `This action allowed for @${card.user} only!`,
+        status: 'error',
+        duration: 7000,
+      })
+      return
+    }
+
     const oldStatus = source.fromColumnId
     const newStatus = dest.toColumnId
     const oldPosition = source.fromPosition
@@ -1581,7 +1603,7 @@ export const Chat = () => {
     } else {
       console.log('-- skip 1')
     }
-  }, [editedMessage, name, socket, statusGroups, setEditedMessage, handleSendMessage])
+  }, [editedMessage, name, socket, statusGroups, setEditedMessage, handleSendMessage, isLogged])
 
   const handleCardRemove = (card: TMessage & TKanbanCard) => {
     try {
@@ -2751,6 +2773,7 @@ export const Chat = () => {
             )
           }}
           renderCard={(card: TMessage & TKanbanCard, { removeCard, dragging }: any) => {
+            const descrStrings = card.description.split('\n')
             return (
               <div className={clsx('react-kanban-card', { ['react-kanban-card--dragging']: dragging, ['bg--light']: mode.colorMode === 'light', ['bg--dark']: mode.colorMode === 'dark' } )}>
                 <div
@@ -2841,30 +2864,33 @@ export const Chat = () => {
                     )
                   }
                 </div>
-                {(assignmentSnap.isFeatureEnabled || sprintFeatureSnap.isFeatureEnabled) &&
-                  <div style={{
-                    display:
-                      (assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy)
-                      || (sprintFeatureSnap.isFeatureEnabled && !!sprintFeatureSnap.commonNotifs[String(card.ts)])
-                      ? 'flex' : 'none',
-                    flexDirection: 'row',
-                    justifyContent: 'flex-start',
-                    marginBottom: 'var(--chakra-space-2)',
-                  }}>
-                    {
-                      assignmentSnap.isFeatureEnabled
-                      ? (
-                        !!card?.assignedTo && !!card?.assignedBy ? (
-                          <>
-                            <UserAva size={19} name={card.assignedBy} fontSize={11} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} />
-                            <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
-                            <UserAva size={19} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={11} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} />
-                            {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
-                              <Button
-                                variant='link'
-                                // borderRadius='full'
-                                colorScheme='gray'
+                <div style={{
+                  display:
+                    // (assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy)
+                    // || (sprintFeatureSnap.isFeatureEnabled && !!sprintFeatureSnap.commonNotifs[String(card.ts)])
+                    // ? 'flex' : 'none',
+                    'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'flex-start',
+                  marginBottom: 'var(--chakra-space-2)',
+                }}>
+                  {
+                    assignmentSnap.isFeatureEnabled
+                    ? (
+                      !!card?.assignedTo && !!card?.assignedBy ? (
+                        <>
+                          <UserAva size={21} name={card.assignedBy} fontSize={13} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} tooltipText={`Assigned by ${card.assignedBy}`} />
+                          <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+                          <UserAva size={21} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={13} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} tooltipText={`Assigned to ${card.assignedTo[0]}`} />
+                          {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
+                            <Tooltip label={`Открепить от ${card.assignedTo[0]}`} aria-label='UNASSIGN'>
+                              <IconButton
                                 size='xs'
+                                aria-label="-UNASSIGN"
+                                colorScheme='gray'
+                                variant='outline'
+                                isRound
+                                icon={<IoMdClose size={15} />}
                                 onClick={() => {
                                   const { id, title, description, ...rest } = card
                                   // @ts-ignore
@@ -2872,40 +2898,47 @@ export const Chat = () => {
                                   // @ts-ignore
                                   if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
                                 }}
-                              >Unassign</Button>
-                            )}
-                          </>
-                        ) : (
+                              >
+                                UNASSIGN
+                              </IconButton>
+                            </Tooltip>
+                          )}
+                        </>
+                      ) : (
+                        <Tooltip label='Назначить на пользователя' offset={[0, 10]} placement='right' hasArrow aria-label='ASSIGN'>
                           <Button
-                            variant='link'
-                            // borderRadius='full'
+                            variant='outline'
+                            borderRadius='full'
                             colorScheme='gray'
                             size='xs'
                             onClick={() => {
-                              const { id, title, description, ...rest } = card
-                              setEditedMessage(rest)
-                              handleSearchUserModalOpen()
+                              resetEditedMessage()
+                              setTimeout(() => {
+                                const { id, title, description, ...rest } = card
+                                setEditedMessage(rest)
+                                handleSearchUserModalOpen()
+                              }, 500)
                             }}
                           >Assign</Button>
-                        )
-                      ) : (
-                        null
+                        </Tooltip>
                       )
-                    }
-                    {
-                      sprintFeatureSnap.isFeatureEnabled
-                      ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] && (
-                        <span style={{ marginLeft: 'auto' }}>
-                          <Countdown
-                            date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
-                            renderer={CountdownRenderer}
-                          />
-                        </span>
-                      ) : null
-                    }
-                  </div>
-                }
-                {card.description}
+                    ) : (
+                      null
+                    )
+                  }
+                  {
+                    sprintFeatureSnap.isFeatureEnabled
+                    ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] && (
+                      <span style={{ marginLeft: 'auto' }}>
+                        <Countdown
+                          date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
+                          renderer={CountdownRenderer}
+                        />
+                      </span>
+                    ) : null
+                  }
+                </div>
+                {descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}
               </div>
             )
           }}
