@@ -6,7 +6,8 @@ REACT_APP_API_URL=$(read_env SINGN_PAGE_REACT_APP2_API_URL .env.prod."$2")
 REACT_APP_EXTERNAL_ROUTING=$(read_env SIGN_PAGE_REACT_APP_EXTERNAL_ROUTING .env.prod."$2")
 
 # NOTE: Все директории относительно project root dir
-echo "SKIP_PREFLIGHT_CHECK=true" > src/frontend.signin/.env
+echo "SKIP_PREFLIGHT_CHECK=true
+GENERATE_SOURCEMAP=false" > src/frontend.signin/.env
 
 if [ $# -eq 2 ]
 then

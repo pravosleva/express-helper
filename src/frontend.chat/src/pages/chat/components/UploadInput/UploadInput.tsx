@@ -12,7 +12,7 @@ type TProps = {
   isDisabled: boolean
 }
 
-const LIMIT_UPLOAD_FILE_SIZE_MB = 10
+const UPLOAD_FILE_SIZE_LIMIT_MB = 5
 
 export const UploadInput = ({
   id,
@@ -22,7 +22,7 @@ export const UploadInput = ({
   const { socket } = useSocketContext()
   const uploader = useMemo(() => new SocketIOFileUpload(socket, {
     chunkSize: 50 * 1024,
-    maxFileSize: LIMIT_UPLOAD_FILE_SIZE_MB * 1024 * 1024,
+    maxFileSize: UPLOAD_FILE_SIZE_LIMIT_MB * 1024 * 1024,
   }), [socket]);
 
   // -- Uploader init effect

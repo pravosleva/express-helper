@@ -79,15 +79,15 @@ export const withSocketChat = (io: Socket) => {
     // -- Uploader init (part 2/2)
     const uploader = new siofu()
     uploader.dir = uploadsPath
-    const LIMIT_UPLOAD_FILE_SIZE_MB = 10
-    uploader.maxFileSize = LIMIT_UPLOAD_FILE_SIZE_MB * 1024 * 1024;
+    const UPLOAD_FILE_SIZE_LIMIT_MB = 5
+    uploader.maxFileSize = UPLOAD_FILE_SIZE_LIMIT_MB * 1024 * 1024;
     uploader.listen(socket)
     uploader.on("start", function(event: TUploadFileEvent) {
       if (/\.exe$/.test(event.file.name)) {
         uploader.abort(event.file.id, socket)
-      } else if (event.file.size > LIMIT_UPLOAD_FILE_SIZE_MB * 1024 * 1024) {
+      } else if (event.file.size > UPLOAD_FILE_SIZE_LIMIT_MB * 1024 * 1024) {
         uploader.abort(event.file.id, socket)
-        socket.emit('upload:error', { message: `Limit ${LIMIT_UPLOAD_FILE_SIZE_MB} MB; You gonna load ${(event.file.size / (1024 * 1024)).toFixed(0)} MB` })
+        socket.emit('upload:error', { message: `Limit ${UPLOAD_FILE_SIZE_LIMIT_MB} MB; You gonna load ${(event.file.size / (1024 * 1024)).toFixed(0)} MB` })
       } else {
         try {
           const ext = event.file.name.split('.').reverse()[0]
@@ -218,7 +218,7 @@ export const withSocketChat = (io: Socket) => {
       }
     });
     uploader.on("error", function(ev){
-      const msgs = [ev.error.message || 'No error message in event', `Limit ${LIMIT_UPLOAD_FILE_SIZE_MB} MB`] 
+      const msgs = [ev.error.message || 'No error message in event', `Limit ${UPLOAD_FILE_SIZE_LIMIT_MB} MB`] 
       socket.emit('upload:error', { message: msgs.join('; '), event: ev })
     });
     // --
