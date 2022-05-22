@@ -25,7 +25,7 @@ import { getParsedUserAgent, standardResultHandler } from './utils'
 import { moveFile } from '~/utils/fs-tools/moveFile'
 
 // --- NOTE: Run CRON for backups!
-require('~/utils/cron/CRON-runner')
+// require('~/utils/cron/CRON-runner')
 // ---
 
 // NOTE: Если версия на фронте будет отлияаться, страница будет перезагружена при реконнекте
@@ -79,7 +79,7 @@ export const withSocketChat = (io: Socket) => {
     // -- Uploader init (part 2/2)
     const uploader = new siofu()
     uploader.dir = uploadsPath
-    const UPLOAD_FILE_SIZE_LIMIT_MB = 5
+    const UPLOAD_FILE_SIZE_LIMIT_MB = 2
     uploader.maxFileSize = UPLOAD_FILE_SIZE_LIMIT_MB * 1024 * 1024;
     uploader.listen(socket)
     uploader.on("start", function(event: TUploadFileEvent) {

@@ -13,6 +13,12 @@ function dynamicSort(property) {
   }
 }
 
+function getLastDaysStartDate(days) {
+  const now = new Date();
+
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate() - days).getTime();
+}
+
 class Logic {
   constructor(messages, REACT_APP_CHAT_UPLOADS_URL = '/chat/storage/uploads') {
     this.messages = messages;
@@ -212,7 +218,15 @@ class Logic {
   }
   getStatusKanban(statuses) {
     const res = {
-      total: 0,
+      counters: {
+        total: 0,
+        totalCards: this.tasksTotalCounter,
+        doneLastWeek: this.doneLastWeek,
+        doneLastMonth: this.doneLastMonth,
+        doneLast3Months: this.doneLast3Months,
+        danger: this.dangerCounter,
+        success: this.successCounter,
+      },
       reactKanban: {
         columns: []
       }
@@ -232,7 +246,7 @@ class Logic {
             description: message.text,
             ...message,
           })
-          res.total += 1
+          res.counters.total += 1
         }
       }
 
@@ -256,5 +270,46 @@ class Logic {
     }
 
     return res;
+  }
+  get tasksTotalCounter() {
+    const statuses = ['info', 'warning', 'danger', 'success', 'done', 'dead']
+    return this.messages.reduce((acc, { status }) => {
+      if (statuses.includes(status)) acc += 1
+      return acc
+    }, 0)
+  }
+  _getTheStatusesLastDaysCounter(statuses, days) {
+    const targetDate = Date.now()
+    const startDate = getLastDaysStartDate(days)
+
+    return this.messages.reduce((acc, { status, editTs }) => {
+      if (
+        statuses.includes(status)
+        && editTs >= startDate
+        && editTs <= targetDate
+      ) acc += 1
+      return acc
+    }, 0)
+  }
+  get doneLastWeek() {
+    return this._getTheStatusesLastDaysCounter(['done'], 7)
+  }
+  get doneLastMonth() {
+    return this._getTheStatusesLastDaysCounter(['done'], 30)
+  }
+  get doneLast3Months() {
+    return this._getTheStatusesLastDaysCounter(['done'], 90)
+  }
+  getStatusCounter(statuses) {
+    return this.messages.reduce((acc, { status }) => {
+      if (statuses.includes(status)) acc += 1
+      return acc
+    }, 0)
+  }
+  get dangerCounter() {
+    return this.getStatusCounter(['danger'])
+  }
+  get successCounter() {
+    return this.getStatusCounter(['success'])
   }
 }

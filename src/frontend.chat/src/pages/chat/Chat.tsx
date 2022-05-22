@@ -79,7 +79,7 @@ import { ColorModeSwitcher } from '~/common/components/ColorModeSwitcher'
 import { SetPasswordModal } from './components/SetPasswordModal'
 import { MyInfoModal } from './components/MyInfoModal'
 import { TasklistModal } from './components/TasklistModal/TasklistModal'
-import { md, lg } from '~/common/chakra/theme'
+import { sm, md, lg } from '~/common/chakra/theme'
 import { IoMdLogOut } from 'react-icons/io'
 import { CgSearch, CgAssign } from 'react-icons/cg'
 import { binarySearchTsIndex } from '~/utils/sort/binarySearch'
@@ -136,7 +136,7 @@ import { GoChecklist } from 'react-icons/go'
 import { useLatest } from '~/common/hooks/useLatest'
 import { useDebounce as useDebouncedValue } from '~/common/hooks/useDebounce'
 import { FixedSearch } from './components/FixedSearch'
-import { FixedBottomSheet } from './components/FixedBottomSheet'
+import { FixedBottomSheet, MainSpace } from './components/FixedBottomSheet'
 import { BsTable } from 'react-icons/bs'
 // @ts-ignore
 import Board from '@asseinfo/react-kanban'
@@ -153,6 +153,7 @@ import Countdown from 'react-countdown'
 import { getNormalizedWordsArr } from '~/utils/strings-ops/getNormalizedWords'
 import { scrollIntoView } from '~/utils/scrollTo'
 import { CgArrowsVAlt } from 'react-icons/cg'
+import useDynamicRefs from 'use-dynamic-refs'
 
 const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
@@ -243,7 +244,7 @@ const colorSchemeMap: {
   [EMessageStatus.Success]: 'green',
 }
 
-const kanbanStatuses = [EMessageStatus.Info, EMessageStatus.Warn, EMessageStatus.Danger, EMessageStatus.Success, EMessageStatus.Done]
+const kanbanStatuses = [EMessageStatus.Warn, EMessageStatus.Danger, EMessageStatus.Success, EMessageStatus.Done]
 type TKanbanCard = { id: number, title: EMessageStatus, description: string }
 type TKanbanState = {
   columns: {
@@ -261,6 +262,29 @@ const getInitialStatusGroups = (statuses: EMessageStatus[]): TKanbanState =>
     })
     return acc
   }, { columns: [] })
+
+const addBlink = (ts: number) => {
+  try {
+    const card = document.getElementById(`card-${ts}`)
+    card?.classList.add('blink_me')
+  } catch (_err) {}
+}
+const removeBlink = (ts: number) => {
+  try {
+    const card = document.getElementById(`card-${ts}`)
+    card?.classList.remove('blink_me')
+  } catch (_err) {}
+}
+
+type TCounters = {
+  total: number,
+  totalCards: number,
+  doneLastWeek: number,
+  doneLastMonth: number,
+  doneLast3Months: number,
+  danger: number,
+  success: number,
+}
 
 export const Chat = () => {
   const { name, slugifiedRoom: room, roomRef, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy, devtoolsFeatureProxy } = useContext(MainContext)
@@ -299,7 +323,12 @@ export const Chat = () => {
   }, [setMessages, setTsPoint])
   const handleReconnect = useCallback(() => {
     resetMessages()
-  }, [resetMessages])
+    if (!!socket) {
+      console.log('EFF: socket RECONN')
+      socket.disconnect()
+      socket.connect()
+    }
+  }, [resetMessages, socket])
   const logic = useMemo<Logic>(() => {
     return new Logic(messages)
   }, [messages])
@@ -778,12 +807,13 @@ export const Chat = () => {
               isClosable: true,
             })
           }
+          resetEditedMessage()
         }
       )
     }
     if (!!cb) cb()
     handleEditModalClose()
-  }, [socket, toast, name, handleEditModalClose])
+  }, [socket, toast, name, handleEditModalClose, resetEditedMessage])
   // const handleKeyDownEditedMessage = (ev: any) => {
   //   if (ev.keyCode === 13 && !!room) handleSaveEditedMessage()
   // }
@@ -865,10 +895,13 @@ export const Chat = () => {
 
       socket.emit(
         'editMessage',
-        { newData, ts: editedMessage.ts, room: roomRef.current, name }
+        { newData, ts: editedMessage.ts, room: roomRef.current, name },
+        () => {
+          resetEditedMessage()
+        }
       )
     }
-  }, [socket, editedMessage, name])
+  }, [socket, editedMessage, name, resetEditedMessage])
   const handleUnsetStatus = useCallback(() => {
     if (!!socket) {
       const newData: Partial<TMessage> = { ...editedMessage }
@@ -876,10 +909,13 @@ export const Chat = () => {
 
       socket.emit(
         'editMessage',
-        { newData, ts: editedMessage.ts, room: roomRef.current, name }
+        { newData, ts: editedMessage.ts, room: roomRef.current, name },
+        () => {
+          resetEditedMessage()
+        }
       )
     }
-  }, [socket, editedMessage, name])
+  }, [socket, editedMessage, name, resetEditedMessage])
 
   // --- Set my password
   const [isSetPasswordModalOpened, setIsSetPasswordModalOpened] = useState<boolean>(false)
@@ -932,6 +968,7 @@ export const Chat = () => {
   // const heighlLimitParentClass = useBreakpointValue({ md: "height-limited-md", base: "height-limited-sm" })
   const [downToMd] = useMediaQuery(`(max-width: ${md}px)`)
   const [upToMd] = useMediaQuery(`(min-width: ${md + 1}px)`)
+  const [upToSm] = useMediaQuery(`(min-width: ${sm + 1}px)`)
   const [upToLg] = useMediaQuery(`(min-width: ${lg + 1}px)`)
   const completedTasksLen = useMemo(() => !!tasklist ? tasklist.filter(({ isCompleted }: any) => isCompleted).length : 0, [useCompare([tasklist])])
   const percentage = useMemo(() => {
@@ -1095,9 +1132,25 @@ export const Chat = () => {
   const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
   const filteredKanbanStatuses = useMemo(() => filters.length > 0 ? kanbanStatuses.filter((s) => filters.includes(s)) : kanbanStatuses, [filters])
   const [statusGroups, setStatusGroups] = useState<TKanbanState>(getInitialStatusGroups(filteredKanbanStatuses))
-  const [kanbanTotalCounter, setKanbanTotalCounter] = useState<number>(0)
+  const [counters, setCounters] = useState<TCounters>({
+    total: 0,
+    totalCards: 0,
+    doneLastWeek: 0,
+    doneLastMonth: 0,
+    doneLast3Months: 0,
+    danger: 0,
+    success: 0,
+  })
+
+  const messagesTotalCounter = useMemo<number>(() => messages.length, [messages.length])
+  
   useEffect(() => {
-    webWorkersInstance.filtersWorker.onmessage = ($event: { [key: string]: any, data: { type: string, result: TMessage[] | { reactKanban: any, total: number }, perf: number } }) => {
+    webWorkersInstance.filtersWorker.onmessage = (
+      $event: {
+        [key: string]: any,
+        data: { type: string, result: TMessage[] | { reactKanban: any, total: number, totalCards: number, doneLastWeek: number }, perf: number }
+      }
+    ) => {
       try {
         switch (true) {
           case (!!$event.data.result && Array.isArray($event.data.result)):
@@ -1131,10 +1184,11 @@ export const Chat = () => {
             break;
           case 'getStatusKanban':
             timers.current[$event.data.type] = setTimeout(() => {
+              console.log($event.data.result)
               // @ts-ignore
               setStatusGroups($event.data.result.reactKanban)
               // @ts-ignore
-              setKanbanTotalCounter($event.data.result.total)
+              setCounters($event.data.result.counters)
             }, 0)
             break;
           default: break;
@@ -1471,7 +1525,7 @@ export const Chat = () => {
   const debouncedEditedMessageText = useDebouncedValue(editedMessage?.text || '', 1000)
   const [isBottomSheetVisible, setIsBottomSheetVisible] = useState<boolean>(false)
   useEffect(() => {
-    setIsBottomSheetVisible(true)
+    if (upToMd) setIsBottomSheetVisible(true)
   }, [])
   const toggleBottomSheet = useCallback(() => {
     setIsBottomSheetVisible((s) => !s)
@@ -1504,7 +1558,7 @@ export const Chat = () => {
       toast({
         position: 'top-left',
         title: 'Sorry',
-        description: `This action allowed for @${card.user} only!`,
+        description: `This action allowed for ${card.user} only!`,
         status: 'error',
         duration: 7000,
       })
@@ -1620,6 +1674,84 @@ export const Chat = () => {
       console.log(err)
     }
   }
+  const handleAddToSprintKanbanCard = useCallback((card: TKanbanCard) => () => {
+    const { id, title, description, ...rest } = card
+    resetEditedMessage()
+
+    setTimeout(() => {
+      console.groupCollapsed('setEditedMessage()')
+      console.log(rest)
+      console.groupEnd()
+      // @ts-ignore
+      setEditedMessage(rest)
+      handleOpenDatePicker()
+    }, 500)
+  }, [resetEditedMessage, setEditedMessage, handleOpenDatePicker])
+  const handleRemoveFromSprintKanbanCard = useCallback((message) => () => {
+    const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
+
+    if (isConfirmed) {
+      resetEditedMessage()
+
+      setTimeout(() => {
+        setEditedMessage(message)
+        handleRemoveFromSprint(message.ts)
+      }, 500)
+    }
+  }, [setEditedMessage, handleRemoveFromSprint])
+  const [getRef, setRef] =  useDynamicRefs()
+  const listenersMap = useRef<{[key: string]: { mouseenter: (_arg: any) => void, mouseleave: (_arg: any) => void }}>({})
+  const timersMap = useRef<any>({})
+  useEffect(() => {
+    // console.log('-- EFF: ev listener')
+    // const fnsMap = {}
+    filteredMessages.forEach(({ ts }) => {
+      try {
+        const chatMsgContainerRef = getRef(String(ts))
+        // @ts-ignore
+        if (!!chatMsgContainerRef.current) {
+          listenersMap.current[String(ts)] = {
+            mouseenter: function() {
+              // console.log(this)
+              setTimeout(() => addBlink(ts), 0)
+              timersMap.current[String(ts)] = setTimeout(() => removeBlink(ts), 3000)
+            },
+            mouseleave: function() {
+              if (!!timersMap.current[String(ts)]) {
+                clearTimeout(timersMap.current[String(ts)])
+                setTimeout(() => removeBlink(ts), 0)
+              }
+            },
+          }
+        }
+        // @ts-ignore
+        chatMsgContainerRef.current.addEventListener('mouseenter', listenersMap.current[String(ts)].mouseenter)
+        // @ts-ignore
+        chatMsgContainerRef.current.addEventListener('mouseleave', listenersMap.current[String(ts)].mouseleave)
+        
+      } catch (_err) {
+        console.log('ERR 2')
+      }
+    })
+
+    return () => {
+      filteredMessages.forEach(({ ts }) => {
+        try {
+          const chatMsgContainerRef = getRef(String(ts))
+          // @ts-ignore
+          chatMsgContainerRef.current.removeEventListener('mouseenter', listenersMap.current[String(ts)].mouseenter)
+          // @ts-ignore
+          chatMsgContainerRef.current.removeEventListener('mouseleave', listenersMap.current[String(ts)].mouseleave)
+          if (!!timersMap.current[String(ts)]) {
+            setTimeout(() => removeBlink(ts), 0)
+            clearTimeout(timersMap.current[String(ts)])
+          }
+        } catch (err) {
+          console.log('ERR 1')
+        }
+      })
+    }
+  }, [filteredMessages, getRef])
 
   return (
     <>
@@ -1856,7 +1988,7 @@ export const Chat = () => {
         <Flex
           className={styles["room"]}
           flexDirection="column"
-          width={{ base: '100%', lg: `${roomDesktopWidth}px` }}
+          width={{ base: '100%', md: `${roomDesktopWidth}px` }}
           height={{ base: '100%', sm: 'auto' }}
         >
           <Heading
@@ -2187,11 +2319,11 @@ export const Chat = () => {
             debug={false}
           >{/* INF LOADER 1/3 */}
             {showLoadMoreBtn ? (
-              <Flex justifyContent='center' style={{ width: '100%' }}>
+              <Flex p={4} justifyContent='center' style={{ width: '100%' }}>
                 <Button size='sm' isDisabled={isChatLoading} leftIcon={isChatLoading ? <Spinner size='xs' /> : undefined} rightIcon={<BiUpArrowAlt size={15} />} rounded='2xl' onClick={handleLoadMore}>Load more</Button>
               </Flex>
             ) : (
-              <Flex ref={inViewRef2} skip={inView || showLoadMoreBtn} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
+              <Flex p={4} ref={inViewRef2} skip={inView || showLoadMoreBtn} alignItems="center" justifyContent='center' width='100%' opacity=".35">
                 <Box mr="2">---</Box>
                 {/* !!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" /> */}
                 <Text fontWeight="400">
@@ -2245,7 +2377,8 @@ export const Chat = () => {
                 && !file && !!status && status !== EMessageStatus.Done
 
               return (
-                <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}-${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? assignedTo.join(',') : 'not_assigned'}`}>
+                // @ts-ignore
+                <div ref={setRef(String(ts))} key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}-${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? assignedTo.join(',') : 'not_assigned'}`}>
                   {/* INF LOADER 3/3
                     i === 20 && !!tsPoint && (
                       <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
@@ -2451,7 +2584,7 @@ export const Chat = () => {
                       </button>
                     </Box>
                   )}
-                </Fragment>
+                </div>
               )
             })}
           </ScrollToBottom>
@@ -2460,8 +2593,8 @@ export const Chat = () => {
               <div className={clsx(styles['service-flex-row'], styles[`service-flex-row_${mode.colorMode}`])}>
                 {!!uploadErrorMsg && (
                   <>
-                    <div><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'], stylesBase['green'])} onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} color='var(--chakra-colors-green-300)' /></span></span></button></div>
-                    <div style={{ color: 'var(--chakra-colors-red-400)' }}>Upload Err: {uploadErrorMsg}</div>
+                    <div><button className={clsx('no-line-breaks', stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'], stylesBase['green'])} onClick={resetUploadErrorMsg}><span style={{ display: 'flex', alignItems: 'center' }}>Got it<span style={{ marginLeft: '7px' }}><FaCheck size={13} color='var(--chakra-colors-green-300)' /></span></span></button></div>
+                    <div style={{ color: 'var(--chakra-colors-red-400)', width: 'auto', minWidth: '150px' }}>Upload Err: {uploadErrorMsg}</div>
                   </>
                 )}
                 {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
@@ -2718,85 +2851,90 @@ export const Chat = () => {
           </Widget>
         )
       */}
-      <FixedBottomSheet
-        isOpened={isBottomSheetVisible}
-        onClose={handleCloseBottomSheet}
-        titleText={`Kanban total: ${kanbanTotalCounter} items`}
-      >
-        <Board
-          onCardDragEnd={handleCardDragEnd}
-          disableColumnDrag
-          allowRemoveCard
-          // onCardRemove={handleCardRemove}
+      {
+        upToSm && (
+          <FixedBottomSheet
+            isOpened={isBottomSheetVisible}
+            onClose={handleCloseBottomSheet}
+            mainSpaceRenderer={() => (
+              <MainSpace
+                counters={counters}
+                messagesTotalCounter={messagesTotalCounter}
+                dateDescr={!!tsPoint ? getNormalizedDateTime3(tsPoint) : ''}
+              />
+            )}
+          >
+            <Board
+              onCardDragEnd={handleCardDragEnd}
+              disableColumnDrag
+              allowRemoveCard
+              // onCardRemove={handleCardRemove}
 
-          renderColumnHeader={({ title, id }: { id: EMessageStatus, title: string, cards: TKanbanCard[] }) => {
-            return (
-              <div>
-                <div className='react-kanban-card__title'>{title}</div>
-                <div style={{
-                  // border: '1px solid red',
-                  marginBottom: '10px',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                  <Button
-                    onClick={() => {
-                      const prompt = window.prompt('')
-                      if (!!prompt?.trim()) {
-                        const newCard: any = {
-                          ...initialEditedMessageState,
-                          text: prompt,
-                          status: id,
-                          position: 0,
-                        }
-                        // setEditedMessage(newCard)
-                        // setTimeout(handleSendMessage, 0)
+              renderColumnHeader={({ title, id }: { id: EMessageStatus, title: string, cards: TKanbanCard[] }) => {
+                return (
+                  <div>
+                    <div className='react-kanban-card__title'>{title}</div>
+                    <div style={{
+                      // border: '1px solid red',
+                      marginBottom: '10px',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                      <Button
+                        onClick={() => {
+                          const prompt = window.prompt('')
+                          if (!!prompt?.trim()) {
+                            const newCard: any = {
+                              ...initialEditedMessageState,
+                              text: prompt,
+                              status: id,
+                              position: 0,
+                            }
+                            // setEditedMessage(newCard)
+                            // setTimeout(handleSendMessage, 0)
 
-                        handleCardDragEnd(
-                          newCard,
-                          { fromColumnId: 'noname-special-for-new-message', fromPosition: 1000000 },
-                          { toColumnId: id, toPosition: 0 },
-                          true
-                        )
-                      }
-                    }}
-                    size='xs'
-                    borderRadius='full'
-                    isFullWidth
-                    colorScheme={colorSchemeMap[id] || 'blue'}
-                    variant='solid'
-                    leftIcon={<FaPlus size={9} />}
-                  >New</Button>
-                </div>
-              </div>
-            )
-          }}
-          renderCard={(card: TMessage & TKanbanCard, { removeCard, dragging }: any) => {
-            const descrStrings = card.description.split('\n')
-            return (
-              <div className={clsx('react-kanban-card', { ['react-kanban-card--dragging']: dragging, ['bg--light']: mode.colorMode === 'light', ['bg--dark']: mode.colorMode === 'dark' } )}>
-                <div
-                  className='card-controls-box'
-                  style={{
-                    marginBottom: 'var(--chakra-space-2)'
-                  }}
-                >
-                  <div
-                    className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}
-                  >
-                    <Text
-                      color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue.500' : 'inherit'}
-                    >{card.title}</Text>
+                            handleCardDragEnd(
+                              newCard,
+                              { fromColumnId: 'noname-special-for-new-message', fromPosition: 1000000 },
+                              { toColumnId: id, toPosition: 0 },
+                              true
+                            )
+                          }
+                        }}
+                        size='xs'
+                        borderRadius='full'
+                        isFullWidth
+                        colorScheme={colorSchemeMap[id] || 'blue'}
+                        variant='solid'
+                        leftIcon={<FaPlus size={9} />}
+                      >New</Button>
+                    </div>
                   </div>
-                  {
-                    card.user === name && (
+                )
+              }}
+              renderCard={(card: TMessage & TKanbanCard, { removeCard, dragging }: any) => {
+                const descrStrings = card.description.split('\n')
+                return (
+                  <div id={`card-${card.ts}`} className={clsx('react-kanban-card', { ['react-kanban-card--dragging']: dragging, ['bg--light']: mode.colorMode === 'light', ['bg--dark']: mode.colorMode === 'dark' } )}>
+                    <div
+                      className='card-controls-box'
+                      style={{
+                        marginBottom: 'var(--chakra-space-2)',
+                      }}
+                    >
+                      <div
+                        className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}
+                      >
+                        <Text
+                          color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue.500' : 'inherit'}
+                        >{card.title}</Text>
+                      </div>
                       <div className='card-controls-box--right'>
-                        
-                        <Tooltip label="Проскроллить в чате" aria-label='SCTOLL_INTO_VIEW'>
+                        <Tooltip label="Проскроллить в чате" aria-label='SCROLL_INTO_VIEW'>
                           <IconButton
                             size='xs'
-                            aria-label="-SCTOLL_INTO_VIEW"
+                            aria-label="-SCROLL_INTO_VIEW"
                             colorScheme='gray'
                             variant='outline'
                             isRound
@@ -2827,125 +2965,165 @@ export const Chat = () => {
                               )
                             }}
                           >
-                            SCTOLL_INTO_VIEW
+                            SCROLL_INTO_VIEW
                           </IconButton>
                         </Tooltip>
-                        <Tooltip label="Редактировать" aria-label='EDIT'>
-                          <IconButton
-                            size='xs'
-                            aria-label="-EDIT"
-                            colorScheme='green'
-                            variant='outline'
-                            isRound
-                            icon={<AiTwotoneEdit size={15} />}
-                            onClick={() => {
-                              const { id, title, description, ...rest } = card
-                              setEditedMessage(rest)
-                              handleEditModalOpen()
-                            }}
-                          >
-                            EDIT
-                          </IconButton>
-                        </Tooltip>
-                        <Tooltip label="Удалить из доски (снять статус)" aria-label='DEL'>
-                          <IconButton
-                            size='xs'
-                            aria-label="-DEL"
-                            colorScheme='red'
-                            variant='outline'
-                            isRound
-                            icon={<IoMdClose size={15} />}
-                            onClick={() => handleCardRemove(card)}
-                          >
-                            DEL
-                          </IconButton>
-                        </Tooltip>
+                        {
+                          card.user === name && (
+                            <>
+                              <Tooltip label="Редактировать" aria-label='EDIT'>
+                                <IconButton
+                                  size='xs'
+                                  aria-label="-EDIT"
+                                  colorScheme='green'
+                                  variant='outline'
+                                  isRound
+                                  icon={<AiTwotoneEdit size={15} />}
+                                  onClick={() => {
+                                    const { id, title, description, ...rest } = card
+                                    setEditedMessage(rest)
+                                    handleEditModalOpen()
+                                  }}
+                                >
+                                  EDIT
+                                </IconButton>
+                              </Tooltip>
+                              <Tooltip label="Удалить из доски (снять статус)" aria-label='DEL'>
+                                <IconButton
+                                  size='xs'
+                                  aria-label="-DEL"
+                                  colorScheme='red'
+                                  variant='outline'
+                                  isRound
+                                  icon={<IoMdClose size={15} />}
+                                  onClick={() => handleCardRemove(card)}
+                                >
+                                  DEL
+                                </IconButton>
+                              </Tooltip>
+                            </>
+                          )
+                        }
                       </div>
-                    )
-                  }
-                </div>
-                <div style={{
-                  display:
-                    // (assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy)
-                    // || (sprintFeatureSnap.isFeatureEnabled && !!sprintFeatureSnap.commonNotifs[String(card.ts)])
-                    // ? 'flex' : 'none',
-                    'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'flex-start',
-                  marginBottom: 'var(--chakra-space-2)',
-                }}>
-                  {
-                    assignmentSnap.isFeatureEnabled
-                    ? (
-                      !!card?.assignedTo && !!card?.assignedBy ? (
-                        <>
-                          <UserAva size={21} name={card.assignedBy} fontSize={13} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} tooltipText={`Assigned by ${card.assignedBy}`} />
-                          <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
-                          <UserAva size={21} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={13} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} tooltipText={`Assigned to ${card.assignedTo[0]}`} />
-                          {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
-                            <Tooltip label={`Открепить от ${card.assignedTo[0]}`} aria-label='UNASSIGN'>
-                              <IconButton
+                    </div>
+                    <div style={{
+                      display:
+                        // (assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy)
+                        // || (sprintFeatureSnap.isFeatureEnabled && !!sprintFeatureSnap.commonNotifs[String(card.ts)])
+                        // ? 'flex' : 'none',
+                        'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'flex-start',
+                      alignItems: 'center',
+                      marginBottom: 'var(--chakra-space-2)',
+                    }}>
+                      {
+                        assignmentSnap.isFeatureEnabled
+                        ? (
+                          !!card?.assignedTo && !!card?.assignedBy ? (
+                            <>
+                              <UserAva size={21} name={card.assignedBy} fontSize={13} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} tooltipText={`Assigned by ${card.assignedBy}`} />
+                              <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+                              <UserAva size={21} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={13} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} tooltipText={`Assigned to ${card.assignedTo[0]}`} />
+                              {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
+                                <Tooltip label={`Открепить от ${card.assignedTo[0]}`} aria-label='UNASSIGN'>
+                                  <IconButton
+                                    size='xs'
+                                    aria-label="-UNASSIGN"
+                                    colorScheme='gray'
+                                    variant='outline'
+                                    isRound
+                                    icon={<IoMdClose size={15} />}
+                                    onClick={() => {
+                                      const { id, title, description, ...rest } = card
+                                      // @ts-ignore
+                                      const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
+                                      // @ts-ignore
+                                      if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
+                                    }}
+                                  >
+                                    UNASSIGN
+                                  </IconButton>
+                                </Tooltip>
+                              )}
+                            </>
+                          ) : (
+                            <Tooltip label='Назначить на пользователя' offset={[0, 10]} placement='right' hasArrow aria-label='ASSIGN'>
+                              <Button
+                                variant='outline'
+                                borderRadius='full'
+                                colorScheme='gray'
                                 size='xs'
-                                aria-label="-UNASSIGN"
+                                onClick={() => {
+                                  resetEditedMessage()
+                                  setTimeout(() => {
+                                    const { id, title, description, ...rest } = card
+                                    setEditedMessage(rest)
+                                    handleSearchUserModalOpen()
+                                  }, 500)
+                                }}
+                                isDisabled={card.user !== name}
+                              >Assign</Button>
+                            </Tooltip>
+                          )
+                        ) : (
+                          null
+                        )
+                      }
+                      {
+                        sprintFeatureSnap.isFeatureEnabled && card.status !== EMessageStatus.Done
+                        ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] ? (
+                          <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
+                            <Countdown
+                              date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
+                              renderer={CountdownRenderer}
+                            />
+                            <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
+                              <IconButton
+                                ml={2}
+                                size='xs'
+                                aria-label="-REMOVE_FROM_SPRINT"
                                 colorScheme='gray'
                                 variant='outline'
                                 isRound
                                 icon={<IoMdClose size={15} />}
-                                onClick={() => {
-                                  const { id, title, description, ...rest } = card
-                                  // @ts-ignore
-                                  const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
-                                  // @ts-ignore
-                                  if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
-                                }}
+                                onClick={handleRemoveFromSprintKanbanCard(card)}
+                                isDisabled={card.user !== name}
                               >
-                                UNASSIGN
+                                REMOVE_FROM_SPRINT
                               </IconButton>
                             </Tooltip>
-                          )}
-                        </>
-                      ) : (
-                        <Tooltip label='Назначить на пользователя' offset={[0, 10]} placement='right' hasArrow aria-label='ASSIGN'>
-                          <Button
-                            variant='outline'
-                            borderRadius='full'
-                            colorScheme='gray'
-                            size='xs'
-                            onClick={() => {
-                              resetEditedMessage()
-                              setTimeout(() => {
-                                const { id, title, description, ...rest } = card
-                                setEditedMessage(rest)
-                                handleSearchUserModalOpen()
-                              }, 500)
-                            }}
-                          >Assign</Button>
-                        </Tooltip>
-                      )
-                    ) : (
-                      null
-                    )
-                  }
-                  {
-                    sprintFeatureSnap.isFeatureEnabled
-                    ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] && (
-                      <span style={{ marginLeft: 'auto' }}>
-                        <Countdown
-                          date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
-                          renderer={CountdownRenderer}
-                        />
-                      </span>
-                    ) : null
-                  }
-                </div>
-                {descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}
-              </div>
-            )
-          }}
-        >
-          {statusGroups}
-        </Board>
-      </FixedBottomSheet>
+                          </div>
+                        ) : (
+                          <span style={{ marginLeft: 'auto' }}>
+                            <Tooltip label='Добавить в спринт' aria-label='ADD_TO_SPRINT'>
+                              <IconButton
+                                size='xs'
+                                aria-label="-ADD_TO_SPRINT"
+                                colorScheme='gray'
+                                variant='ghost'
+                                isRound
+                                icon={<BsFillCalendarFill size={17} />}
+                                onClick={handleAddToSprintKanbanCard(card)}
+                                isDisabled={card.user !== name}
+                              >
+                                ADD_TO_SPRINT
+                              </IconButton>
+                            </Tooltip>
+                          </span>
+                        ) : null
+                      }
+                    </div>
+                    {descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}
+                  </div>
+                )
+              }}
+            >
+              {statusGroups}
+            </Board>
+          </FixedBottomSheet>
+        )
+      }
     </>
   )
 }

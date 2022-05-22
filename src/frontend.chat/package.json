@@ -151,7 +151,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-standard": "^5.0.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "use-dynamic-refs": "^1.0.0"
   },
   "jest": {
     "roots": [

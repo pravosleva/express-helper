@@ -59,3 +59,19 @@ input[type="file"]:disabled + label {
   right: var(--chakra-space-2) !important;
   bottom: var(--chakra-space-2) !important;
 }
+
+.blink_me {
+  animation: blinker 0.2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.no-line-breaks {
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap !important;
+}

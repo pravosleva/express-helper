@@ -48,13 +48,13 @@ type TProps = {
 }
 
 export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectRoom }: TProps) => {
-  const [searchRoomLS, setSearchRoomLS, _removeSearchRoomLS] = useLocalStorage<any>('chat.search-room', '')
+  // const [searchRoomLS, setSearchRoomLS, _removeSearchRoomLS] = useLocalStorage<any>('chat.search-room', '')
   const { formData, handleInputChange, resetForm } = useForm({
-    search: searchRoomLS,
+    search: '',
   })
-  useEffect(() => {
-    setSearchRoomLS(formData.search)
-  }, [formData.search])
+  // useEffect(() => {
+  //   setSearchRoomLS(formData.search)
+  // }, [formData.search])
   const handleClear = () => {
     resetForm()
   }

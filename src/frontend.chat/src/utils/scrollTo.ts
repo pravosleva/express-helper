@@ -18,7 +18,7 @@ export const scrollIntoView = (ts: number, cb?: { success?: (ts: number) => void
     const targetElm = document.getElementById(String(ts)) // reference to scroll target
       
     if (!!targetElm) {
-      targetElm.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'smooth' })
+      targetElm.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'auto' })
       if (isDev && !!cb?.success) cb.success(ts)
     } else if (!!cb?.fail) cb.fail(ts)
   } catch (err) {

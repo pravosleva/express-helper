@@ -1,0 +1,29 @@
+.main-space {
+  // border: 1px dashed red;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  // & > * { border: 1px dashed red; }
+
+  .stat-box {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    & > * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    & > *:not(:last-child) {
+      margin-right: var(--chakra-sizes-4);
+    }
+    .diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+@import '~/common/scss-vars/monitors.scss';
 @import '~/common/scss-vars/dims.scss';
 
 $padx: var(--chakra-space-4);
@@ -7,7 +8,10 @@ $padx: var(--chakra-space-4);
   z-index: 1001;
   background-color: #FFF;
   position: fixed;
-  width: calc(100vw - #{$room-desktop-width}px);
+  @media (max-width: #{$md}px) { width: 100%; }
+  @media (min-width: #{$md + 1}px) {
+    width: calc(100vw - #{$room-desktop-width}px);
+  }
   bottom: 0;
   left: 0;
   overflow-y: auto;
@@ -31,14 +35,39 @@ $padx: var(--chakra-space-4);
   flex-direction: column;
   padding: 0;
 
-  .controls {
+  .tab-header {
     z-index: 1;
     position: sticky;
     // background-color: #FFF;
     top: 0;
-    border-bottom: 1px solid lightgray;
-    // display: flex;
-    // justify-content: flex-end;
+    border-bottom: 1px solid;
+    // border-bottom-width: var(--chakra-sizes-1);
+
+    height: calc(69px + var(--chakra-sizes-1));
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: var(--chakra-sizes-4);
+    & > * {
+      
+      height: calc(69px + var(--chakra-sizes-1));
+    }
+    & > *:not(:last-child) {
+      margin-right: var(--chakra-sizes-4);
+    }
+    
+    .controls {
+      // border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--chakra-sizes-2) 0 var(--chakra-sizes-2) 0;
+      & > *:not(:last-child) {
+        margin-bottom: var(--chakra-sizes-2);
+      }
+    }
   }
 
   // .container {}
@@ -46,10 +75,18 @@ $padx: var(--chakra-space-4);
 .bg {
   &--dark {
     background: var(--chakra-colors-gray-700);
+    .tab-header {
+      border-bottom-color: var(--chakra-colors-gray-600);
+    }
   }
   &--light {
     // background: var(--chakra-colors-gray-100);
+    // background: transparent;
     background: #FFF;
+    .tab-header {
+      background: var(--chakra-colors-gray-200);
+      border-bottom-color: var(--chakra-colors-gray-300);
+
+    }
   }
 }
-

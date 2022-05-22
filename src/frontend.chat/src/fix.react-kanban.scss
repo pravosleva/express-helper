@@ -3,6 +3,7 @@
 
 // .react-kanban-board {}
 .react-kanban-card {
+  user-select: none;
   border-radius: 8px;
   max-width: 245px;
   min-width: 245px;
@@ -76,7 +77,7 @@
   max-width: 275px;
 }
 .bg--light .react-kanban-column {
-  background-color: var(--chakra-colors-gray-100);
+  background-color: var(--chakra-colors-gray-200);
 }
 .bg--dark .react-kanban-column {
   background-color: var(--chakra-colors-gray-600);

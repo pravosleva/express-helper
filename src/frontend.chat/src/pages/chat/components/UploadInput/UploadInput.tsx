@@ -12,7 +12,7 @@ type TProps = {
   isDisabled: boolean
 }
 
-const UPLOAD_FILE_SIZE_LIMIT_MB = 5
+const UPLOAD_FILE_SIZE_LIMIT_MB = 2
 
 export const UploadInput = ({
   id,
@@ -21,7 +21,7 @@ export const UploadInput = ({
 }: TProps) => {
   const { socket } = useSocketContext()
   const uploader = useMemo(() => new SocketIOFileUpload(socket, {
-    chunkSize: 50 * 1024,
+    chunkSize: 25 * 1024,
     maxFileSize: UPLOAD_FILE_SIZE_LIMIT_MB * 1024 * 1024,
   }), [socket]);
 
@@ -44,7 +44,7 @@ export const UploadInput = ({
 
   return (
     <>
-      <label htmlFor={id} className={clsx(styles["special-btn"], styles['special-btn-md'], styles['dark-btn'])} style={{ display: 'flex' }}>
+      <label htmlFor={id} className={clsx('no-line-breaks', styles["special-btn"], styles['special-btn-md'], styles['dark-btn'])} style={{ display: 'flex' }}>
         {!!label && <span style={{ marginRight: '7px' }}>{label}</span>}<span><MdAddAPhoto size={19} /></span>
       </label>
       <input id={id} type="file" accept=".gif,.png,.jpg,.jpeg" disabled={isDisabled} />

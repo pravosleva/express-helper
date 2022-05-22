@@ -14,7 +14,7 @@ const EXTERNAL_ROUTING = process.env.EXTERNAL_ROUTING || ''
 // NOTE: See also themes for swagger 3.x: https://github.com/ostranme/swagger-ui-themes/blob/develop/themes/3.x/theme-material.css
 const options = {
   customCssUrl: `${EXTERNAL_ROUTING}/assets/swagger-ui/css/theme-material.modified.sp.css`,
-  // customJs: `${EXTERNAL_ROUTING}/assets/swagger-ui/js/onload.js`,
+  customJs: `${EXTERNAL_ROUTING}/assets/swagger-ui/js/onload.js`,
 }
 
 export enum EPartner {
