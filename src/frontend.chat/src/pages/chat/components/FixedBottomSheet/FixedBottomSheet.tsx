@@ -14,7 +14,7 @@ type TProps = {
 }
 
 export const FixedBottomSheet = ({ isOpened, onClose, children, mainSpaceRenderer }: TProps) => {
-  const [fullHeight, setFullHeight] = useState<boolean>(false)
+  const [fullHeight, setFullHeight] = useState<boolean>(true)
   const toggleFullHeight = useCallback(() => {
     setFullHeight((s) => !s)
   }, [setFullHeight])
