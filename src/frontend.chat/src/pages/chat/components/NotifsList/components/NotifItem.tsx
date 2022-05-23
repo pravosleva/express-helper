@@ -96,7 +96,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
             </>)
           }
           {
-            isLogged && Array.isArray(original.assignedBy) && name === original.assignedBy[0] && (
+            isLogged && Array.isArray(original?.assignedBy) && name === original.assignedBy[0] && (
               <IconButton
                 size='xs'
                 aria-label="DEL"

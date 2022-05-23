@@ -29,6 +29,7 @@ export type TMessage = {
   original?: TMessage;
   links?: { link: string, descr: string }[];
   position?: number
+  statusChangeTs?: number
 }
 
 export type TImageLightboxFormat = { src: string, alt: string | undefined }

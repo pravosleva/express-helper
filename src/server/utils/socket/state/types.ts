@@ -35,6 +35,7 @@ export type TMessage = {
   }
   links?: { link: string, descr: string }[]
   position?: number
+  statusChangeTs?: number
 }
 // export type TRoomData = {
 //   [userName: string]: TMessage[]

@@ -27,6 +27,8 @@ const counter = Counter()
 
 const overwriteMerge = (_target, source, _options) => source
 
+const isStatusChanged = (oldData: TMessage, newData: Partial<TMessage>) => oldData.status !== newData.status
+
 class Singleton {
   private static instance: Singleton;
    state: Map<TRoomId, TRoomData>;
@@ -183,11 +185,15 @@ class Singleton {
           // shouldLogout = true
           throw new Error(`editMessage ERR1: Попробуйте перезайти | theMessage not found; [room= ${room}, ts= ${ts}, newData.text=${newData.text}]; _findIndexByArrayMethod= ${_findIndexByArrayMethod}`)
         } else {
+          const editTs = new Date().getTime()
           if (!roomMessages[theMessageIndex].user) roomMessages[theMessageIndex].user = name
           roomMessages[theMessageIndex].text = newData.text
-          roomMessages[theMessageIndex].editTs = new Date().getTime()
+          roomMessages[theMessageIndex].editTs = editTs
           if (!!newData.status) {
-            roomMessages[theMessageIndex].status = newData.status
+            if (isStatusChanged(roomMessages[theMessageIndex], newData)) {
+              roomMessages[theMessageIndex].status = newData.status
+              roomMessages[theMessageIndex].statusChangeTs = editTs
+            }
           } else {
             if (!!roomMessages[theMessageIndex].status) delete roomMessages[theMessageIndex].status
           }

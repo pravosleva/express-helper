@@ -18,6 +18,8 @@ function getLastDaysStartDate(days) {
 
   return new Date(now.getFullYear(), now.getMonth(), now.getDate() - days).getTime();
 }
+const isInTimeInterval = ({ startDate, targetDate, obj, fieldName }) =>
+  !!obj[fieldName] && obj[fieldName] >= startDate && obj[fieldName] <= targetDate
 
 class Logic {
   constructor(messages, REACT_APP_CHAT_UPLOADS_URL = '/chat/storage/uploads') {
@@ -282,11 +284,14 @@ class Logic {
     const targetDate = Date.now()
     const startDate = getLastDaysStartDate(days)
 
-    return this.messages.reduce((acc, { status, editTs }) => {
+    return this.messages.reduce((acc, obj) => {
+      const { status, statusChangeTs } = obj
       if (
         statuses.includes(status)
-        && editTs >= startDate
-        && editTs <= targetDate
+        // && (!!statusChangeTs
+        //   ? isInTimeInterval({ startDate, targetDate, obj, fieldName: 'statusChangeTs' })
+        //   : isInTimeInterval({ startDate, targetDate, obj, fieldName: 'editTs' })
+        && !!statusChangeTs && isInTimeInterval({ startDate, targetDate, obj, fieldName: 'statusChangeTs' })
       ) acc += 1
       return acc
     }, 0)
