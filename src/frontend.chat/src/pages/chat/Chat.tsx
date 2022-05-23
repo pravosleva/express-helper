@@ -412,7 +412,7 @@ export const Chat = () => {
       const logoutFromServerListener = () => {
         history.push('/')
       }
-      const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy, links, position }: { position?: number, text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string, links?: { link: string, descr: string }[] }) => {
+      const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy, links, position, statusChangeTs }: { statusChangeTs?: number,  position?: number, text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string, links?: { link: string, descr: string }[] }) => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
@@ -438,6 +438,7 @@ export const Chat = () => {
               newArr[targetIndex].links = []
             }
             if (!!position || position === 0) newArr[targetIndex].position = position
+            if (!!statusChangeTs) newArr[targetIndex].statusChangeTs = statusChangeTs
           }
           return newArr
         })
@@ -1131,7 +1132,7 @@ export const Chat = () => {
   const [allImagesMessagesLightboxFormat, setAllImagesMessagesLightboxFormat] = useState<any[]>([])
   const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
   const filteredKanbanStatuses = useMemo(() => filters.length > 0 ? kanbanStatuses.filter((s) => filters.includes(s)) : kanbanStatuses, [filters])
-  const [statusGroups, setStatusGroups] = useState<TKanbanState>(getInitialStatusGroups(filteredKanbanStatuses))
+  const [kanbanState, setKanbanState] = useState<TKanbanState>(getInitialStatusGroups(filteredKanbanStatuses))
   const [counters, setCounters] = useState<TCounters>({
     total: 0,
     totalCards: 0,
@@ -1183,13 +1184,12 @@ export const Chat = () => {
             }, 0)
             break;
           case 'getStatusKanban':
-            timers.current[$event.data.type] = setTimeout(() => {
-              console.log($event.data.result)
-              // @ts-ignore
-              setStatusGroups($event.data.result.reactKanban)
-              // @ts-ignore
-              setCounters($event.data.result.counters)
-            }, 0)
+            // timers.current[$event.data.type] = setTimeout(() => {}, 0)
+            console.log($event.data.result)
+            // @ts-ignore
+            setKanbanState($event.data.result.reactKanban)
+            // @ts-ignore
+            setCounters($event.data.result.counters)
             break;
           default: break;
         }
@@ -1305,12 +1305,12 @@ export const Chat = () => {
     handleResetAssignmentFilters()
   }, [resetFilters, resetForm, handleResetAssignmentFilters])
 
-  const [isEmojiOpened, setIsEmojiOpened] = useState<boolean>(false)
-  const handleOpenEmoji = useCallback(() => { setIsEmojiOpened(true) }, [setIsEmojiOpened])
-  const handleCloseEmoji = useCallback(() => { setIsEmojiOpened(false) }, [setIsEmojiOpened])
-  const handleSelectEmojies = useCallback((value: string) => {
-    messageRef.current = `${messageRef.current.trim()} ${value}`
-  }, [])
+  // const [isEmojiOpened, setIsEmojiOpened] = useState<boolean>(false)
+  // const handleOpenEmoji = useCallback(() => { setIsEmojiOpened(true) }, [setIsEmojiOpened])
+  // const handleCloseEmoji = useCallback(() => { setIsEmojiOpened(false) }, [setIsEmojiOpened])
+  // const handleSelectEmojies = useCallback((value: string) => {
+  //   messageRef.current = `${messageRef.current.trim()} ${value}`
+  // }, [])
 
   const handleOpenExternalLink = useCallback(openExternalLink, [])
   const handleSetQuickStruct = useCallback(() => {
@@ -1587,7 +1587,7 @@ export const Chat = () => {
     if (oldStatus !== newStatus || (_isSameColumn && oldPosition !== dest.toPosition)) {
       const newData = { ...rest, status: newStatus, position: newPosition }
 
-      for (const group of statusGroups.columns) {
+      for (const group of kanbanState.columns) {
         if (group.id === newStatus) {
           group.cards.forEach((_card, i) => {
             if (_card.ts === card.ts) {
@@ -1657,7 +1657,7 @@ export const Chat = () => {
     } else {
       console.log('-- skip 1')
     }
-  }, [editedMessage, name, socket, statusGroups, setEditedMessage, handleSendMessage, isLogged])
+  }, [editedMessage, name, socket, kanbanState, setEditedMessage, handleSendMessage, isLogged])
 
   const handleCardRemove = (card: TMessage & TKanbanCard) => {
     try {
@@ -1679,13 +1679,13 @@ export const Chat = () => {
     resetEditedMessage()
 
     setTimeout(() => {
-      console.groupCollapsed('setEditedMessage()')
-      console.log(rest)
-      console.groupEnd()
+      // console.groupCollapsed('setEditedMessage()')
+      // console.log(rest)
+      // console.groupEnd()
       // @ts-ignore
       setEditedMessage(rest)
       handleOpenDatePicker()
-    }, 500)
+    }, 250)
   }, [resetEditedMessage, setEditedMessage, handleOpenDatePicker])
   const handleRemoveFromSprintKanbanCard = useCallback((message) => () => {
     const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
@@ -1696,7 +1696,7 @@ export const Chat = () => {
       setTimeout(() => {
         setEditedMessage(message)
         handleRemoveFromSprint(message.ts)
-      }, 500)
+      }, 250)
     }
   }, [setEditedMessage, handleRemoveFromSprint])
   const [getRef, setRef] =  useDynamicRefs()
@@ -1787,13 +1787,13 @@ export const Chat = () => {
         // content={() => <pre>{JSON.stringify(editedTask.current, null, 2)}</pre>}
         title="Deadline"
       />
-      {upToMd && (
+      {/* upToMd && (
         <EmojiPickerModal
           isOpened={isEmojiOpened}
           onClose={handleCloseEmoji}
           onSubmit={handleSelectEmojies}
         />
-      )}
+      ) */}
       <SearchUserModal
         isOpened={isSearchUserModalOpened}
         onClose={handleSearchUserModalClose}
@@ -2858,7 +2858,7 @@ export const Chat = () => {
             onClose={handleCloseBottomSheet}
             mainSpaceRenderer={() => (
               <MainSpace
-                counters={counters}
+                counters={{ ...counters }}
                 messagesTotalCounter={messagesTotalCounter}
                 dateDescr={!!tsPoint ? getNormalizedDateTime3(tsPoint) : ''}
               />
@@ -2928,7 +2928,7 @@ export const Chat = () => {
                       >
                         <Text
                           color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue.500' : 'inherit'}
-                        >{card.title}</Text>
+                        >Created by {card.title}</Text>
                       </div>
                       <div className='card-controls-box--right'>
                         <Tooltip label="Проскроллить в чате" aria-label='SCROLL_INTO_VIEW'>
@@ -3119,7 +3119,7 @@ export const Chat = () => {
                 )
               }}
             >
-              {statusGroups}
+              {kanbanState}
             </Board>
           </FixedBottomSheet>
         )

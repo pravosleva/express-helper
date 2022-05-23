@@ -540,15 +540,9 @@ export const withSocketChat = (io: Socket) => {
             if (!!roomNotifs?.data && !!roomNotifs?.data[key]) {
               if (!!roomNotifs?.data[key]) {
                 roomNotifs.data[key].text = result.targetMessage.text
-                roomNotifs.data[key].original = newData
-                roomNotifs.tsUpdate = Date.now()
-
-                // console.log('- case 1: roomNotifs.data[key].original set to:')
-                // console.log(newData)
-              } else {
-                // console.log('- case 2: no !!roomNotifs?.data[key]')
+                roomNotifs.data[key].original = result.targetMessage
+                roomNotifs.tsUpdate = result.targetMessage.editTs
               }
-              
               notifsMap.set(room, roomNotifs)
             }
           }

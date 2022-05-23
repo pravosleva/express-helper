@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { CircularProgress, CircularProgressLabel, Flex, Text } from '@chakra-ui/react'
 import { useMemo } from 'react'
 import styles from './MainSpace.module.scss'
@@ -16,7 +17,7 @@ type TProps = {
   }
 }
 
-export const MainSpace = ({
+const MainSpaceMemoized = ({
   dateDescr,
   messagesTotalCounter,
   counters
@@ -70,3 +71,7 @@ export const MainSpace = ({
     </div>
   )
 }
+
+const propsAreEqual = (_pp: any, _np: any): boolean => false
+
+export const MainSpace = memo(MainSpaceMemoized, propsAreEqual)
