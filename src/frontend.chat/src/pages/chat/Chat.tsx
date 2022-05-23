@@ -1169,27 +1169,28 @@ export const Chat = () => {
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setFilteredMessages($event.data.result)
-            }, 0)
+            }, 100)
             break;
           case 'getTags':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setTags(getNormalizedWordsArr($event.data.result))
-            }, 0)
+            }, 100)
             break;
           case 'getAllImagesLightboxFormat':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setAllImagesMessagesLightboxFormat($event.data.result)
-            }, 0)
+            }, 100)
             break;
           case 'getStatusKanban':
-            // timers.current[$event.data.type] = setTimeout(() => {}, 0)
-            console.log($event.data.result)
-            // @ts-ignore
-            setKanbanState($event.data.result.reactKanban)
-            // @ts-ignore
-            setCounters($event.data.result.counters)
+            timers.current[$event.data.type] = setTimeout(() => {
+              // console.log($event.data.result)
+              // @ts-ignore
+              setKanbanState($event.data.result.reactKanban)
+              // @ts-ignore
+              setCounters($event.data.result.counters)
+            }, 100)
             break;
           default: break;
         }
@@ -1685,7 +1686,7 @@ export const Chat = () => {
       // @ts-ignore
       setEditedMessage(rest)
       handleOpenDatePicker()
-    }, 250)
+    }, 100)
   }, [resetEditedMessage, setEditedMessage, handleOpenDatePicker])
   const handleRemoveFromSprintKanbanCard = useCallback((message) => () => {
     const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
@@ -1696,7 +1697,7 @@ export const Chat = () => {
       setTimeout(() => {
         setEditedMessage(message)
         handleRemoveFromSprint(message.ts)
-      }, 250)
+      }, 100)
     }
   }, [setEditedMessage, handleRemoveFromSprint])
   const [getRef, setRef] =  useDynamicRefs()
@@ -3060,7 +3061,7 @@ export const Chat = () => {
                                     const { id, title, description, ...rest } = card
                                     setEditedMessage(rest)
                                     handleSearchUserModalOpen()
-                                  }, 500)
+                                  }, 200)
                                 }}
                                 isDisabled={card.user !== name}
                               >Assign</Button>
