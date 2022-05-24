@@ -90,7 +90,7 @@ import { useForm } from '~/common/hooks/useForm'
 import { IoMdClose } from 'react-icons/io'
 import { AiFillTags, AiTwotoneEdit } from 'react-icons/ai'
 import { useLocalStorage } from 'react-use'
-import { UploadInput } from './components/UploadInput'
+// import { UploadInput } from './components/UploadInput'
 // import 'react-medium-image-zoom/dist/styles.css'
 import { EMessageStatus, TMessage, ERegistryLevel } from '~/utils/interfaces'
 import { Image } from './components/chat-msg'
@@ -103,7 +103,7 @@ import { UserAva } from '~/pages/chat/components/UserAva'
 import { AssignedBox } from './components/AssignedBox'
 import { AccordionSettings } from './components/AccordionSettings'
 import { FcGallery } from 'react-icons/fc'
-import { EmojiPickerModal } from './components/EmojiPickerModal'
+// import { EmojiPickerModal } from './components/EmojiPickerModal'
 import axios from 'axios'
 import { openExternalLink } from '~/utils/openExternalLink'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
@@ -1131,6 +1131,7 @@ export const Chat = () => {
   const [tags, setTags] = useState<string[]>([])
   const [allImagesMessagesLightboxFormat, setAllImagesMessagesLightboxFormat] = useState<any[]>([])
   const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
+  const abortEventsMap = useRef<{ [key: string]: number }>({})
   const filteredKanbanStatuses = useMemo(() => filters.length > 0 ? kanbanStatuses.filter((s) => filters.includes(s)) : kanbanStatuses, [filters])
   const [kanbanState, setKanbanState] = useState<TKanbanState>(getInitialStatusGroups(filteredKanbanStatuses))
   const [counters, setCounters] = useState<TCounters>({
@@ -1144,6 +1145,17 @@ export const Chat = () => {
   })
 
   const messagesTotalCounter = useMemo<number>(() => messages.length, [messages.length])
+  const getEconomyText = useCallback((eventDataType) => `economy= ${abortEventsMap.current[eventDataType] || 0}`, [])
+  const economyCounterInc = useCallback((eventDataType) => {
+    if (typeof abortEventsMap.current[eventDataType] === 'undefined') {
+      abortEventsMap.current[eventDataType] = 0
+    } else {
+      abortEventsMap.current[eventDataType] += 1
+    }
+  }, [])
+  const workerEventLog = useCallback((eventDataType) => {
+    console.log(`🔥 Web Worker: ${eventDataType}; ${getEconomyText(eventDataType)}`)
+  }, [getEconomyText])
   
   useEffect(() => {
     webWorkersInstance.filtersWorker.onmessage = (
@@ -1153,35 +1165,35 @@ export const Chat = () => {
       }
     ) => {
       try {
-        switch (true) {
-          case (!!$event.data.result && Array.isArray($event.data.result)):
-            // @ts-ignore
-            console.log(`Web Worker: ${$event.data.result.length} items in ${$event.data.perf} ms`)
-            break
-          default:
-            console.log(`Web Worker: ${typeof $event.data.result} in ${$event.data.perf} ms`)
-            break
+        const eventDataType = $event.data.type
+  
+        if (!!timers.current[eventDataType]) {
+          console.log(`Web Worker: aborted ${eventDataType} (${$event.data.perf} ms)`)
+          clearTimeout(timers.current[eventDataType])
+          economyCounterInc(eventDataType)
         }
-        
-        if (!!timers.current[$event.data.type]) clearTimeout(timers.current[$event.data.type])
+
         switch ($event.data.type) {
           case 'getFilteredMessages':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setFilteredMessages($event.data.result)
-            }, 100)
+              workerEventLog(eventDataType)
+            }, 50)
             break;
           case 'getTags':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setTags(getNormalizedWordsArr($event.data.result))
-            }, 100)
+              workerEventLog(eventDataType)
+            }, 50)
             break;
           case 'getAllImagesLightboxFormat':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setAllImagesMessagesLightboxFormat($event.data.result)
-            }, 100)
+              workerEventLog(eventDataType)
+            }, 50)
             break;
           case 'getStatusKanban':
             timers.current[$event.data.type] = setTimeout(() => {
@@ -1190,7 +1202,8 @@ export const Chat = () => {
               setKanbanState($event.data.result.reactKanban)
               // @ts-ignore
               setCounters($event.data.result.counters)
-            }, 100)
+              workerEventLog(eventDataType)
+            }, 50)
             break;
           default: break;
         }
@@ -2598,14 +2611,14 @@ export const Chat = () => {
                     <div style={{ color: 'var(--chakra-colors-red-400)', width: 'auto', minWidth: '150px' }}>Upload Err: {uploadErrorMsg}</div>
                   </>
                 )}
-                {assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
+                {/*assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
                   <>
                     <UploadInput id='siofu_input' isDisabled={isFileUploading} label='Img' />
                     {isFileUploading && (
                       <div><b>Upload...&nbsp;{uploadPercentageRef.current}&nbsp;%</b></div>
                     )}
                   </>
-                )}
+                    )*/}
                 {/*upToMd && isLogged && (
                   <IconButton
                     size='sm'
