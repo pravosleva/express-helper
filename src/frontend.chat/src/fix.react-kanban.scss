@@ -5,8 +5,8 @@
 .react-kanban-card {
   user-select: none;
   border-radius: 8px;
-  max-width: 245px;
-  min-width: 245px;
+  max-width: 250px;
+  min-width: 250px;
 
   .card-controls-box {
     display: flex;
@@ -16,7 +16,7 @@
     }
 
     .card-title {
-      font-weight: bold;
+      // font-weight: bold;
       word-break: break-word;
     }
     .card-controls-box--right {
@@ -26,6 +26,11 @@
         margin-right: var(--chakra-space-2);
       }
     }
+  }
+
+  .card-descr {
+    font-weight: bold;
+    font-size: 13px;
   }
 }
 .bg--dark .react-kanban-card {
@@ -74,7 +79,7 @@
 
 .react-kanban-column {
   border-radius: 8px;
-  max-width: 275px;
+  max-width: 280px;
 }
 .bg--light .react-kanban-column {
   background-color: var(--chakra-colors-gray-200);

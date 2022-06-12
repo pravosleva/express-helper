@@ -40,10 +40,11 @@ $padx: var(--chakra-space-4);
     position: sticky;
     // background-color: #FFF;
     top: 0;
-    border-bottom: 1px solid;
+    border-bottom: var(--chakra-sizes-1) solid;
     // border-bottom-width: var(--chakra-sizes-1);
 
     height: calc(69px + var(--chakra-sizes-1));
+    // height: 69px;
 
     display: flex;
     flex-direction: row;

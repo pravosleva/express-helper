@@ -34,13 +34,10 @@ import axios from 'axios'
 import { CheckRoomSprintPolling } from '~/common/components/CheckRoomSprintPolling'
 import { SwitchSection } from '~/common/components/SwitchSection'
 import { ServerInfo } from './components/ServerInfo'
+import { TSetting } from './interfaces'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
-type TSetting = {
-  name: string
-  ts: number
-}
 type TAccordeonItem = {
   uniqueKey: string
   accordionPanelContent: React.ReactElement

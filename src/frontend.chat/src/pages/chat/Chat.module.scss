@@ -394,6 +394,7 @@
 
 .service-flex-row {
   // margin: 1rem 0 .3rem 0;
+  // border: 1px solid red;
   display: flex;
   align-items: center;
   overflow-x: auto;
@@ -411,13 +412,16 @@
   padding: 0 var(--chakra-space-2) 0 var(--chakra-space-2);
   // box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
   &_dark {
-    border-top: var(--chakra-sizes-1) solid var(--chakra-colors-whiteAlpha-300);
+    border-top: var(--chakra-sizes-1) solid var(--chakra-colors-whiteAlpha-200);
+    background: linear-gradient(to bottom, var(--chakra-colors-gray-500), var(--chakra-colors-gray-600));
   }
   &_light {
     border-top: var(--chakra-sizes-1) solid var(--chakra-colors-gray-100);
+    background: linear-gradient(to bottom, var(--chakra-colors-gray-100), var(--chakra-colors-gray-300));
   }
 }
 .sticky-bottom-mobile {
+  background: linear-gradient(to bottom, transparent, var(--chakra-colors-blue-300));
   @media (max-width: #{$sm}px) {
     position: sticky;
     bottom: 0px;

@@ -22,9 +22,14 @@ const isInTimeInterval = ({ startDate, targetDate, obj, fieldName }) =>
   !!obj[fieldName] && obj[fieldName] >= startDate && obj[fieldName] <= targetDate
 
 class Logic {
-  constructor(messages, REACT_APP_CHAT_UPLOADS_URL = '/chat/storage/uploads') {
+  constructor({
+    messages,
+    REACT_APP_CHAT_UPLOADS_URL = '/chat/storage/uploads',
+    traceableUsers
+  }) {
     this.messages = messages;
     this.REACT_APP_CHAT_UPLOADS_URL = REACT_APP_CHAT_UPLOADS_URL
+    this.traceableUsers = traceableUsers || []
   }
 
   getFiltered({
@@ -218,17 +223,42 @@ class Logic {
     }, [])
     return [...new Set(res)].sort(abSort)
   }
+  getCounters(statuses) {
+    return {
+      total: this.getMessagesHasStatusCounter(statuses),
+      totalCards: this.tasksTotalCounter,
+      doneLastWeek: this.doneLastWeek,
+      doneLastMonth: this.doneLastMonth,
+      doneLast3Months: this.doneLast3Months,
+      danger: this.dangerCounter,
+      success: this.successCounter,
+      users: {
+        jobless: this.usersJoblessCounter,
+        statusCountersMap: this.getUserStatusCountersMap({
+          statuses: ['info', 'warning', 'danger', 'success', 'done', 'dead']
+        }),
+        statusMap: this.getUserStatusMap({
+          statuses: ['info', 'warning', 'danger', 'success', 'done', 'dead']
+        }),
+        joblessStatusMap: this.getUserJoblessStatusMap({
+          statuses: ['danger', 'success']
+        })
+      },
+    }
+  }
+  getMessagesHasStatusCounter(statuses = [
+    // 'info',
+    'warning',
+    'danger',
+    'success',
+    'done',
+    // 'dead'
+  ]) {
+    return this.messages.filter(({ status }) => !!status && statuses.includes(status)).length
+  }
   getStatusKanban(statuses) {
     const res = {
-      counters: {
-        total: 0,
-        totalCards: this.tasksTotalCounter,
-        doneLastWeek: this.doneLastWeek,
-        doneLastMonth: this.doneLastMonth,
-        doneLast3Months: this.doneLast3Months,
-        danger: this.dangerCounter,
-        success: this.successCounter,
-      },
+      counters: this.getCounters(statuses),
       reactKanban: {
         columns: []
       }
@@ -316,5 +346,136 @@ class Logic {
   }
   get successCounter() {
     return this.getStatusCounter(['success'])
+  }
+  get users() {
+    const users = new Set()
+    for (let i = 0, max = this.messages.length; i < max; i++) {
+      if (!!this.messages[i].user)
+        users.add(this.messages[i].user)
+    }
+    return [...users]
+  }
+  get assignedUsers() {
+    const users = new Set()
+    for (let i = 0, max = this.messages.length; i < max; i++) {
+      if (!!this.messages[i].assignedTo && Array.isArray(this.messages[i].assignedTo) && this.messages[i].assignedTo.length > 0) {
+        const aUsers = this.messages[i].assignedTo
+        aUsers.forEach((name) => {
+          users.add(name)
+        })
+      }
+    }
+    return [...users]
+  }
+  getUserStatusCountersMap({ statuses = [] }) {
+    // NOTE: Result { pravosleva: number }
+    const resultMap = new Map()
+    const users = this.traceableUsers.length > 0 ? this.traceableUsers : this.assignedUsers
+    
+    for (let i = 0, max = users.length; i < max; i++)
+      resultMap.set(users[i], 0)
+
+    this.messages.forEach(({ status, assignedTo }) => {
+      const aUsers = assignedTo
+      if (!!aUsers && Array.isArray(aUsers) && aUsers.length > 0) {
+        aUsers.forEach((name) => {
+          if (
+            resultMap.has(name)
+            && statuses.includes(status)
+          ) resultMap.set(name, resultMap.get(name) + 1)
+        })
+      }
+    })
+
+    return Object.fromEntries(resultMap)
+  }
+  getUserStatusMap({ statuses = [] }) {
+    // NOTE: Result { pravosleva: { [status]: number } }
+    const resultMap = new Map()
+    const users = this.traceableUsers.length > 0 ? this.traceableUsers : this.assignedUsers
+    // console.log(users)
+    const template = statuses.reduce((acc, status) => {
+      acc[status] = 0
+      return acc
+    }, {})
+
+    for (let i = 0, max = users.length; i < max; i++)
+      resultMap.set(users[i], template)
+
+    this.messages.forEach(({ status, assignedTo }) => {
+      const aUsers = assignedTo
+      if (!!aUsers && Array.isArray(aUsers) && aUsers.length > 0) {
+        aUsers.forEach((name) => {
+          if (
+            resultMap.has(name)
+            && statuses.includes(status)
+          ) {
+            const oldTemplate = resultMap.get(name)
+            if (typeof oldTemplate !== 'undefined') resultMap.set(name, {
+              ...oldTemplate,
+              [status]: oldTemplate[status] + 1
+            })
+          }
+        })
+      }
+    })
+
+    return Object.fromEntries(resultMap)
+  }
+  get usersJoblessCounter() {
+    const usersMapObj = this.getUserStatusCountersMap({
+      statuses: ['danger', 'success']
+    })
+    const users = this.traceableUsers.length > 0 ? this.traceableUsers : [] // this.assignedUsers
+    return Object.keys(usersMapObj).reduce((acc, user) => {
+      if (!usersMapObj[user] && users.includes(user)) acc += 1
+      return acc
+    }, 0)
+  }
+  getUserJoblessStatusMap({ statuses = [] }) {
+    // NOTE: Result { pravosleva: { [status]: number } }
+    const resultMap = new Map()
+    const users = this.traceableUsers.length > 0 ? this.traceableUsers : []
+
+    if (users.length === 0) return {}
+
+    const template = statuses.reduce((acc, status) => {
+      acc[status] = 0
+      return acc
+    }, {})
+
+    for (let i = 0, max = users.length; i < max; i++)
+      resultMap.set(users[i], template)
+
+    this.messages.forEach(({ status, assignedTo }) => {
+      const aUsers = assignedTo
+      if (!!aUsers && Array.isArray(aUsers) && aUsers.length > 0) {
+        aUsers.forEach((name) => {
+          if (
+            resultMap.has(name)
+            && statuses.includes(status)
+          ) {
+            const oldTemplate = resultMap.get(name)
+            if (typeof oldTemplate !== 'undefined') resultMap.set(name, {
+              ...oldTemplate,
+              [status]: oldTemplate[status] + 1
+            })
+          }
+        })
+      }
+    })
+
+    function logMapElements(value, key, _map) {
+      let shouldBeRemovedReasons = []
+      statuses.forEach((status) => {
+        if (!!value[status]) shouldBeRemovedReasons.push(true)
+        else shouldBeRemovedReasons.push(false)
+      })
+      if (shouldBeRemovedReasons.some(v => !!v))
+        resultMap.delete(key)
+    }
+    resultMap.forEach(logMapElements)
+
+    return Object.fromEntries(resultMap)
   }
 }

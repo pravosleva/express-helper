@@ -29,6 +29,13 @@ const app = express()
 
 const addRequestId = require('express-request-id')()
 
+const IS_REGULAR_REQUESTER_ENABLED = process.env.IS_REGULAR_REQUESTER_ENABLED === '1'
+
+// --- NOTE: Run CRON for regular requests
+// eslint-disable-next-line global-require
+if (IS_REGULAR_REQUESTER_ENABLED) require('~/utils/cron/CRON-requester-runner')
+// ---
+
 app.use(cors())
 app.use(addRequestId) // NOTE: New additional field req.id
 app.use(logger('dev'))

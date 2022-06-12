@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, useState, useCallback, useRef, useMemo } from 'react'
+import React, { Fragment, useContext, useEffect, useState, useCallback, useRef, useMemo, useLayoutEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '~/context/mainContext'
 import { useSocketContext } from '~/context/socketContext'
@@ -46,7 +46,7 @@ import {
   TagLabel,
   Tag,
   Grid,
-  useToast, UseToastOptions, ButtonGroup, Tooltip,
+  useToast, UseToastOptions, ButtonGroup, Tooltip, color,
   // color
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
@@ -90,7 +90,7 @@ import { useForm } from '~/common/hooks/useForm'
 import { IoMdClose } from 'react-icons/io'
 import { AiFillTags, AiTwotoneEdit } from 'react-icons/ai'
 import { useLocalStorage } from 'react-use'
-// import { UploadInput } from './components/UploadInput'
+import { UploadInput } from './components/UploadInput'
 // import 'react-medium-image-zoom/dist/styles.css'
 import { EMessageStatus, TMessage, ERegistryLevel } from '~/utils/interfaces'
 import { Image } from './components/chat-msg'
@@ -120,7 +120,7 @@ import { SwitchSection } from '~/common/components/SwitchSection'
 import { webWorkersInstance } from '~/utils'
 import { AddLinkFormModal } from './components/AddLinkFormModal'
 import { Widget } from './components/Widget'
-import { TasklistContent } from './components/TasklistModal/components'
+// import { TasklistContent } from './components/TasklistModal/components'
 // import debounce from 'lodash.debounce'
 import { useColorMode } from '@chakra-ui/react'
 // import { useLatest } from '~/common/hooks/useLatest'
@@ -154,6 +154,7 @@ import { getNormalizedWordsArr } from '~/utils/strings-ops/getNormalizedWords'
 import { scrollIntoView } from '~/utils/scrollTo'
 import { CgArrowsVAlt } from 'react-icons/cg'
 import useDynamicRefs from 'use-dynamic-refs'
+// import { useLocalStorageState as useLocalStorageState2 } from '~/common/hooks/useStorage'
 
 const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
@@ -284,6 +285,17 @@ type TCounters = {
   doneLast3Months: number,
   danger: number,
   success: number,
+  users: {
+    jobless: number,
+    statusCountersMap: {
+      [key: string]: number
+    },
+    statusMap: {
+      [key: string]: {
+        [key: string]: number
+      }
+    },
+  },
 }
 
 export const Chat = () => {
@@ -576,7 +588,7 @@ export const Chat = () => {
     if (!!socket?.connected && !!name && !!room) {
       socket.emit('setMeAgain', { name, room: roomRef.current, token: String(tokenLS) }, (err?: string) => {
         if (!!err) {
-          toast({ title: err, status: 'error', duration: 5000, isClosable: true })
+          toast({ title: err, status: 'error', duration: 5000 })
           history.push('/')
         }
       })
@@ -640,7 +652,8 @@ export const Chat = () => {
         title: 'Sorry',
         description: 'Cant send empty msg',
         status: 'error',
-        duration: 2000,
+        duration: 3000,
+        variant: 'solid',
       })
       return
     }
@@ -651,7 +664,7 @@ export const Chat = () => {
         description: 'Try again',
         status: 'error',
         duration: 3000,
-        isClosable: true,
+        variant: 'solid',
       })
       return
     }
@@ -662,7 +675,7 @@ export const Chat = () => {
         description: 'Cant send big msg',
         status: 'error',
         duration: 7000,
-        isClosable: true,
+        variant: 'solid',
       })
       return
     }
@@ -693,6 +706,7 @@ export const Chat = () => {
       description: 'Видимо, что-то случилось =)',
       status: 'error',
       duration: 4000,
+      variant: 'solid',
     })
   }, [toast, isMsgLimitReached, socket, setIsSending, resetMessage, filters])
   const handleKeyUp = (ev: any) => {
@@ -773,6 +787,7 @@ export const Chat = () => {
         description: 'Should not be empty',
         status: 'error',
         duration: 3000,
+        variant: 'solid',
       })
       return
     }
@@ -783,6 +798,7 @@ export const Chat = () => {
         description: `Too big! ${charsLimit} chars, not more`,
         status: 'error',
         duration: 3000,
+        variant: 'solid',
       })
       return
     }
@@ -834,6 +850,7 @@ export const Chat = () => {
               status: 'error',
               duration: 7000,
               isClosable: true,
+              variant: 'solid',
             })
           }
         })
@@ -956,6 +973,7 @@ export const Chat = () => {
         status: 'warning',
         duration: 7000,
         isClosable: true,
+        variant: 'solid',
       })
       return
     }
@@ -1134,15 +1152,6 @@ export const Chat = () => {
   const abortEventsMap = useRef<{ [key: string]: number }>({})
   const filteredKanbanStatuses = useMemo(() => filters.length > 0 ? kanbanStatuses.filter((s) => filters.includes(s)) : kanbanStatuses, [filters])
   const [kanbanState, setKanbanState] = useState<TKanbanState>(getInitialStatusGroups(filteredKanbanStatuses))
-  const [counters, setCounters] = useState<TCounters>({
-    total: 0,
-    totalCards: 0,
-    doneLastWeek: 0,
-    doneLastMonth: 0,
-    doneLast3Months: 0,
-    danger: 0,
-    success: 0,
-  })
 
   const messagesTotalCounter = useMemo<number>(() => messages.length, [messages.length])
   const getEconomyText = useCallback((eventDataType) => `economy= ${abortEventsMap.current[eventDataType] || 0}`, [])
@@ -1200,10 +1209,8 @@ export const Chat = () => {
               // console.log($event.data.result)
               // @ts-ignore
               setKanbanState($event.data.result.reactKanban)
-              // @ts-ignore
-              setCounters($event.data.result.counters)
               workerEventLog(eventDataType)
-            }, 50)
+            }, 0)
             break;
           default: break;
         }
@@ -1227,7 +1234,12 @@ export const Chat = () => {
     webWorkersInstance.filtersWorker.postMessage({ type: 'getTags', messages })
   }, [messages])
   useEffect(() => {
-    webWorkersInstance.filtersWorker.postMessage({ type: 'getStatusKanban', messages: filteredMessages, statuses: filteredKanbanStatuses })
+    webWorkersInstance.filtersWorker.postMessage({
+      type: 'getStatusKanban',
+      messages: filteredMessages,
+      statuses: filteredKanbanStatuses,
+      // traceableUsers: (!!assignmentSettingsLS && !!assignmentSettingsLS[room]) ? Object.keys(assignmentSettingsLS[room]) : []
+    })
   }, [filteredMessages, filteredKanbanStatuses])
   // --
   
@@ -1254,6 +1266,7 @@ export const Chat = () => {
         status: 'warning',
         duration: 7000,
         isClosable: true,
+        variant: 'solid',
       })
       return
     }
@@ -1267,6 +1280,7 @@ export const Chat = () => {
           status: 'success',
           duration: 7000,
           isClosable: true,
+          variant: 'solid',
         })
       })
     }
@@ -1283,7 +1297,7 @@ export const Chat = () => {
         if (newAssignedArr.length > 0) newData.assignedTo = newAssignedArr
       }
 
-      socket.emit('editMessage', { newData, ts: message.ts, room: roomRef.current, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top-left', description: errMsg, status: 'error', duration: 7000, isClosable: true }) })
+      socket.emit('editMessage', { newData, ts: message.ts, room: roomRef.current, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top-left', description: errMsg, status: 'error', duration: 7000, isClosable: true, variant: 'solid' }) })
     }
   }, [socket, name])
 
@@ -2320,8 +2334,13 @@ export const Chat = () => {
             </Flex>
           </Heading>
 
-          <Box w='100%' h={1} m={[0, 0]}>
-            {tasklist?.length > 0 && <Progress value={percentage} size="xs" colorScheme="green" />}
+          <Box
+            w='100%'
+            h={1}
+            m={[0, 0]}
+            backgroundColor={mode.colorMode === 'light' ? 'whiteAlpha.700' : 'gray.500'}
+          >
+            {tasklist?.length > 0 && <Progress value={percentage} size="xs" colorScheme="green" backgroundColor={mode.colorMode === 'light' ? 'whiteAlpha.700' : 'gray.500'} />}
           </Box>
 
           <ScrollToBottom
@@ -2611,14 +2630,14 @@ export const Chat = () => {
                     <div style={{ color: 'var(--chakra-colors-red-400)', width: 'auto', minWidth: '150px' }}>Upload Err: {uploadErrorMsg}</div>
                   </>
                 )}
-                {/*assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
+                {name === 'pravosleva' && assignmentExecutorsFilters.length === 0 && filters.length === 0 && !formData.searchText && userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && !uploadErrorMsg && (
                   <>
                     <UploadInput id='siofu_input' isDisabled={isFileUploading} label='Img' />
                     {isFileUploading && (
                       <div><b>Upload...&nbsp;{uploadPercentageRef.current}&nbsp;%</b></div>
                     )}
                   </>
-                    )*/}
+                )}
                 {/*upToMd && isLogged && (
                   <IconButton
                     size='sm'
@@ -2779,7 +2798,7 @@ export const Chat = () => {
                 alignItems='center'
                 // bgColor='gray.600'
                 className={styles['sticky-bottom-mobile']}
-                bgColor={mode.colorMode === 'dark' ? 'gray.600' : 'gray.300'}
+                // bgColor={mode.colorMode === 'dark' ? 'gray.600' : 'gray.300'}
               >
                 <Button rightIcon={<FaTelegramPlane size={18} />} size='lg' style={{ borderRadius: 'var(--chakra-radii-full)' }} colorScheme='blue' variant='solid' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Зайти в чат через бота</Button>
               </Flex>
@@ -2872,9 +2891,13 @@ export const Chat = () => {
             onClose={handleCloseBottomSheet}
             mainSpaceRenderer={() => (
               <MainSpace
-                counters={{ ...counters }}
+                // counters={{ ...counters }}
                 messagesTotalCounter={messagesTotalCounter}
                 dateDescr={!!tsPoint ? getNormalizedDateTime3(tsPoint) : ''}
+                filteredMessages={filteredMessages}
+                filteredKanbanStatuses={filteredKanbanStatuses}
+                room={room}
+                isFiltersActive={filters.length > 0 || assignmentExecutorsFilters.length > 0}
               />
             )}
           >
@@ -2941,8 +2964,8 @@ export const Chat = () => {
                         className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}
                       >
                         <Text
-                          color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue.500' : 'inherit'}
-                        >Created by {card.title}</Text>
+                          // color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue.500' : 'inherit'}
+                        >{card.title}</Text>
                       </div>
                       <div className='card-controls-box--right'>
                         <Tooltip label="Проскроллить в чате" aria-label='SCROLL_INTO_VIEW'>
@@ -3006,7 +3029,7 @@ export const Chat = () => {
                                 <IconButton
                                   size='xs'
                                   aria-label="-DEL"
-                                  colorScheme='red'
+                                  colorScheme='gray'
                                   variant='outline'
                                   isRound
                                   icon={<IoMdClose size={15} />}
@@ -3085,7 +3108,7 @@ export const Chat = () => {
                         )
                       }
                       {
-                        sprintFeatureSnap.isFeatureEnabled && card.status !== EMessageStatus.Done
+                        sprintFeatureSnap.isFeatureEnabled
                         ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] ? (
                           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
                             <Countdown
@@ -3109,26 +3132,29 @@ export const Chat = () => {
                             </Tooltip>
                           </div>
                         ) : (
-                          <span style={{ marginLeft: 'auto' }}>
-                            <Tooltip label='Добавить в спринт' aria-label='ADD_TO_SPRINT'>
-                              <IconButton
-                                size='xs'
-                                aria-label="-ADD_TO_SPRINT"
-                                colorScheme='gray'
-                                variant='ghost'
-                                isRound
-                                icon={<BsFillCalendarFill size={17} />}
-                                onClick={handleAddToSprintKanbanCard(card)}
-                                isDisabled={card.user !== name}
-                              >
-                                ADD_TO_SPRINT
-                              </IconButton>
-                            </Tooltip>
-                          </span>
+                          card.status !== EMessageStatus.Done
+                          ? (
+                            <span style={{ marginLeft: 'auto' }}>
+                              <Tooltip label='Добавить в спринт' aria-label='ADD_TO_SPRINT'>
+                                <IconButton
+                                  size='xs'
+                                  aria-label="-ADD_TO_SPRINT"
+                                  colorScheme='gray'
+                                  variant='ghost'
+                                  isRound
+                                  icon={<BsFillCalendarFill size={17} />}
+                                  onClick={handleAddToSprintKanbanCard(card)}
+                                  isDisabled={card.user !== name}
+                                >
+                                  ADD_TO_SPRINT
+                                </IconButton>
+                              </Tooltip>
+                            </span>
+                          ) : null
                         ) : null
                       }
                     </div>
-                    {descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}
+                    <Text className='card-descr'>{descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}</Text>
                   </div>
                 )
               }}

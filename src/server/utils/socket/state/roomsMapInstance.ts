@@ -70,13 +70,12 @@ class Singleton {
 
     if (!roomData) return { result: [], errorMsg: `Condition: !roomData for ${room}`, nextTsPoint: 0, isDone: true }
 
-    const messagesLimit = 60
+    const messagesLimit = 50
 
     for (let i = roomData.length - 1; i > -1; i--) {
       const isLast = i === 0
 
       if (counter <= messagesLimit && roomData[i].ts <= tsPoint) {
-
         result.unshift(roomData[i])
         counter += 1
         nextTsPoint = isLast ? null : roomData[i - 1].ts

@@ -1,0 +1,5 @@
+.controls-btns {
+  & > *:not(:last-child) {
+    margin-right: var(--chakra-space-2);
+  }
+}

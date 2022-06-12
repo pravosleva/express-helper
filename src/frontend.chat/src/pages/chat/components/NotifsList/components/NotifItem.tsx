@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { Box, Button, Flex, Grid, Text, useToast, IconButton } from "@chakra-ui/react"
+import { Box, Button, Flex, Grid, Text, useToast, IconButton, Tooltip } from "@chakra-ui/react"
 import { getNormalizedDate, getDayMonth } from '~/utils/timeConverter'
 import { FaTrashAlt } from 'react-icons/fa'
 import Countdown, { zeroPad } from 'react-countdown'
@@ -12,12 +12,13 @@ import { IoMdClose } from 'react-icons/io'
 import { ImFire } from 'react-icons/im'
 import { FiActivity } from 'react-icons/fi'
 import { FaCheck, FaInfoCircle } from 'react-icons/fa'
-import { BsFillInfoCircleFill } from 'react-icons/bs'
+// import { BsFillInfoCircleFill } from 'react-icons/bs'
 import { AiTwotoneEdit } from 'react-icons/ai'
 import { CountdownRenderer } from './CountdownRenderer'
 import { scrollIntoView } from '~/utils/scrollTo'
+import styles from './NotifItem.module.scss'
 
-const isDev = process.env.NODE_ENV === 'development'
+// const isDev = process.env.NODE_ENV === 'development'
 
 type TProps = {
   onRemove: (ts: number) => void
@@ -69,48 +70,54 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
             />
           </span>
         </Flex>
-        <Flex alignItems='center'>
+        <Flex alignItems='center' className={styles['controls-btns']}>
           {
             isMyMessage && !!onEdit && (
-              <IconButton
-                style={{ marginRight: '.5rem' }}
-                size='xs'
-                aria-label="EDIT"
-                colorScheme='green'
-                variant='outline'
-                isRound
-                icon={<AiTwotoneEdit size={15} />}
-                onClick={() => {
-                  onEdit(original)
-                }}
-              >
-                EDIT
-              </IconButton>
+              <Tooltip label='Edit' aria-label='EDIT'>
+                <IconButton
+                  // style={{ marginRight: '.5rem' }}
+                  size='xs'
+                  aria-label="-EDIT"
+                  colorScheme='green'
+                  variant='outline'
+                  isRound
+                  icon={<AiTwotoneEdit size={15} />}
+                  onClick={() => {
+                    onEdit(original)
+                  }}
+                >
+                  EDIT
+                </IconButton>
+              </Tooltip>
             )
           }
           {!!original?.assignedTo && !!original?.assignedBy && (
-            <>
+            <div
+              style={{ display: 'flex' }}
+            >
               <UserAva size={19} name={original.assignedBy} ml='auto' fontSize={11} onClick={() => { !!original.assignedBy && window.alert(`Assigned by ${original.assignedBy}`) }} />
               <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
-              <UserAva size={19} name={original.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={11} onClick={() => { !!original.assignedTo && window.alert(`Assigned to ${original.assignedTo[0]}`) }} />
-            </>)
+              <UserAva size={19} name={original.assignedTo[0]} fontSize={11} onClick={() => { !!original.assignedTo && window.alert(`Assigned to ${original.assignedTo[0]}`) }} />
+            </div>)
           }
           {
-            isLogged && Array.isArray(original?.assignedBy) && name === original.assignedBy[0] && (
-              <IconButton
-                size='xs'
-                aria-label="DEL"
-                colorScheme='red'
-                variant='outline'
-                isRound
-                icon={<IoMdClose size={15} />}
-                onClick={() => {
-                  const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
-                  if (isConfirmed) onRemove(ts)
-                }}
-              >
-                DEL
-              </IconButton>
+            isLogged && !!original?.assignedTo && Array.isArray(original.assignedTo) && original.assignedTo.length > 0 && (
+              <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
+                <IconButton
+                  size='xs'
+                  aria-label="DEL"
+                  colorScheme='red'
+                  variant='outline'
+                  isRound
+                  icon={<IoMdClose size={15} />}
+                  onClick={() => {
+                    const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
+                    if (isConfirmed) onRemove(ts)
+                  }}
+                >
+                  DEL
+                </IconButton>
+              </Tooltip>
             )
           }
         </Flex>
