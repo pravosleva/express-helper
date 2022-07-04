@@ -61,12 +61,18 @@ input[type="file"]:disabled + label {
 }
 
 .blink_me {
-  animation: blinker 0.2s linear infinite;
+  /* animation: blinker-color 0.5s cubic-bezier(0.1, -0.6, 0.2, 0) infinite; */
+  animation: blinker-color 0.5s linear infinite;
 }
 
 @keyframes blinker {
   50% {
     opacity: 0;
+  }
+}
+@keyframes blinker-color {
+  50% {
+    background-color: #f0616c;
   }
 }
 
