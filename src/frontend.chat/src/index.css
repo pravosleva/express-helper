@@ -73,6 +73,8 @@ input[type="file"]:disabled + label {
 @keyframes blinker-color {
   50% {
     background-color: #f0616c;
+    /* NOTE: https://mycolor.space/gradient?ori=to+right+top&hex=%23F0616C&hex2=%232196F3&sub=1 */
+    /* background-image: linear-gradient(to right top, #f0616c, #e9609d, #ca70c9, #9185e8, #2196f3); */
   }
 }
 
