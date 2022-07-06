@@ -3029,7 +3029,7 @@ export const Chat = () => {
                                 <IconButton
                                   size='xs'
                                   aria-label="-DEL"
-                                  colorScheme='gray'
+                                  colorScheme='yellow'
                                   variant='outline'
                                   isRound
                                   icon={<IoMdClose size={15} />}
@@ -3120,7 +3120,7 @@ export const Chat = () => {
                                 ml={2}
                                 size='xs'
                                 aria-label="-REMOVE_FROM_SPRINT"
-                                colorScheme='gray'
+                                colorScheme='red'
                                 variant='outline'
                                 isRound
                                 icon={<IoMdClose size={15} />}
