@@ -226,7 +226,7 @@ const bgColorsMap: { [key: string]: string } = {
   [EMessageStatus.Warn]: '#FFDE68',
   [EMessageStatus.Danger]: '#FF9177',
   [EMessageStatus.Info]: '#408EEA',
-  [EMessageStatus.Success]: '#31EAB7',
+  [EMessageStatus.Success]: '#31eab7',
   'assign': '#FF9177',
 }
 const getBgColorByStatus = (s: EMessageStatus | 'assign') => {
@@ -1586,7 +1586,7 @@ export const Chat = () => {
       toast({
         position: 'top-left',
         title: 'Sorry',
-        description: `This action allowed for ${card.user} only!`,
+        description: `Allowed for author - ${card.user}`,
         status: 'error',
         duration: 7000,
       })
@@ -3043,117 +3043,122 @@ export const Chat = () => {
                         }
                       </div>
                     </div>
-                    <div style={{
-                      display:
-                        // (assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy)
-                        // || (sprintFeatureSnap.isFeatureEnabled && !!sprintFeatureSnap.commonNotifs[String(card.ts)])
-                        // ? 'flex' : 'none',
-                        'flex',
-                      flexDirection: 'row',
-                      justifyContent: 'flex-start',
-                      alignItems: 'center',
-                      marginBottom: 'var(--chakra-space-2)',
-                    }}>
-                      {
-                        assignmentSnap.isFeatureEnabled
-                        ? (
-                          !!card?.assignedTo && !!card?.assignedBy ? (
-                            <>
-                              <UserAva size={21} name={card.assignedBy} fontSize={13} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} tooltipText={`Assigned by ${card.assignedBy}`} />
-                              <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
-                              <UserAva size={21} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={13} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} tooltipText={`Assigned to ${card.assignedTo[0]}`} />
-                              {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
-                                <Tooltip label={`Открепить от ${card.assignedTo[0]}`} aria-label='UNASSIGN'>
-                                  <IconButton
-                                    size='xs'
-                                    aria-label="-UNASSIGN"
+                    {
+                      (assignmentSnap.isFeatureEnabled
+                      || sprintFeatureSnap.isFeatureEnabled) && (
+                        <div style={{
+                          display:
+                            // (assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy)
+                            // || (sprintFeatureSnap.isFeatureEnabled && !!sprintFeatureSnap.commonNotifs[String(card.ts)])
+                            // ? 'flex' : 'none',
+                            'flex',
+                          flexDirection: 'row',
+                          justifyContent: 'flex-start',
+                          alignItems: 'center',
+                          marginBottom: 'var(--chakra-space-2)',
+                        }}>
+                          {
+                            assignmentSnap.isFeatureEnabled
+                            ? (
+                              !!card?.assignedTo && !!card?.assignedBy ? (
+                                <>
+                                  <UserAva size={21} name={card.assignedBy} fontSize={13} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} tooltipText={`Assigned by ${card.assignedBy}`} />
+                                  <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+                                  <UserAva size={21} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={13} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} tooltipText={`Assigned to ${card.assignedTo[0]}`} />
+                                  {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
+                                    <Tooltip label={`Открепить от ${card.assignedTo[0]}`} aria-label='UNASSIGN'>
+                                      <IconButton
+                                        size='xs'
+                                        aria-label="-UNASSIGN"
+                                        colorScheme='gray'
+                                        variant='outline'
+                                        isRound
+                                        icon={<IoMdClose size={15} />}
+                                        onClick={() => {
+                                          const { id, title, description, ...rest } = card
+                                          // @ts-ignore
+                                          const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
+                                          // @ts-ignore
+                                          if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
+                                        }}
+                                      >
+                                        UNASSIGN
+                                      </IconButton>
+                                    </Tooltip>
+                                  )}
+                                </>
+                              ) : (
+                                <Tooltip label='Назначить на пользователя' offset={[0, 10]} placement='right' hasArrow aria-label='ASSIGN'>
+                                  <Button
+                                    variant='outline'
+                                    borderRadius='full'
                                     colorScheme='gray'
+                                    size='xs'
+                                    onClick={() => {
+                                      resetEditedMessage()
+                                      setTimeout(() => {
+                                        const { id, title, description, ...rest } = card
+                                        setEditedMessage(rest)
+                                        handleSearchUserModalOpen()
+                                      }, 200)
+                                    }}
+                                    isDisabled={card.user !== name}
+                                  >Assign</Button>
+                                </Tooltip>
+                              )
+                            ) : (
+                              null
+                            )
+                          }
+                          {
+                            sprintFeatureSnap.isFeatureEnabled
+                            ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] ? (
+                              <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
+                                <Countdown
+                                  date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
+                                  renderer={CountdownRenderer}
+                                />
+                                <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
+                                  <IconButton
+                                    ml={2}
+                                    size='xs'
+                                    aria-label="-REMOVE_FROM_SPRINT"
+                                    colorScheme='red'
                                     variant='outline'
                                     isRound
                                     icon={<IoMdClose size={15} />}
-                                    onClick={() => {
-                                      const { id, title, description, ...rest } = card
-                                      // @ts-ignore
-                                      const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
-                                      // @ts-ignore
-                                      if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
-                                    }}
+                                    onClick={handleRemoveFromSprintKanbanCard(card)}
+                                    isDisabled={card.user !== name}
                                   >
-                                    UNASSIGN
+                                    REMOVE_FROM_SPRINT
                                   </IconButton>
                                 </Tooltip>
-                              )}
-                            </>
-                          ) : (
-                            <Tooltip label='Назначить на пользователя' offset={[0, 10]} placement='right' hasArrow aria-label='ASSIGN'>
-                              <Button
-                                variant='outline'
-                                borderRadius='full'
-                                colorScheme='gray'
-                                size='xs'
-                                onClick={() => {
-                                  resetEditedMessage()
-                                  setTimeout(() => {
-                                    const { id, title, description, ...rest } = card
-                                    setEditedMessage(rest)
-                                    handleSearchUserModalOpen()
-                                  }, 200)
-                                }}
-                                isDisabled={card.user !== name}
-                              >Assign</Button>
-                            </Tooltip>
-                          )
-                        ) : (
-                          null
-                        )
-                      }
-                      {
-                        sprintFeatureSnap.isFeatureEnabled
-                        ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] ? (
-                          <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
-                            <Countdown
-                              date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
-                              renderer={CountdownRenderer}
-                            />
-                            <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
-                              <IconButton
-                                ml={2}
-                                size='xs'
-                                aria-label="-REMOVE_FROM_SPRINT"
-                                colorScheme='red'
-                                variant='outline'
-                                isRound
-                                icon={<IoMdClose size={15} />}
-                                onClick={handleRemoveFromSprintKanbanCard(card)}
-                                isDisabled={card.user !== name}
-                              >
-                                REMOVE_FROM_SPRINT
-                              </IconButton>
-                            </Tooltip>
-                          </div>
-                        ) : (
-                          card.status !== EMessageStatus.Done
-                          ? (
-                            <span style={{ marginLeft: 'auto' }}>
-                              <Tooltip label='Добавить в спринт' aria-label='ADD_TO_SPRINT'>
-                                <IconButton
-                                  size='xs'
-                                  aria-label="-ADD_TO_SPRINT"
-                                  colorScheme='gray'
-                                  variant='ghost'
-                                  isRound
-                                  icon={<BsFillCalendarFill size={17} />}
-                                  onClick={handleAddToSprintKanbanCard(card)}
-                                  isDisabled={card.user !== name}
-                                >
-                                  ADD_TO_SPRINT
-                                </IconButton>
-                              </Tooltip>
-                            </span>
-                          ) : null
-                        ) : null
-                      }
-                    </div>
+                              </div>
+                            ) : (
+                              card.status !== EMessageStatus.Done
+                              ? (
+                                <span style={{ marginLeft: 'auto' }}>
+                                  <Tooltip label='Добавить в спринт' aria-label='ADD_TO_SPRINT'>
+                                    <IconButton
+                                      size='xs'
+                                      aria-label="-ADD_TO_SPRINT"
+                                      colorScheme='gray'
+                                      variant='ghost'
+                                      isRound
+                                      icon={<BsFillCalendarFill size={17} />}
+                                      onClick={handleAddToSprintKanbanCard(card)}
+                                      isDisabled={card.user !== name}
+                                    >
+                                      ADD_TO_SPRINT
+                                    </IconButton>
+                                  </Tooltip>
+                                </span>
+                              ) : null
+                            ) : null
+                          }
+                        </div>  
+                      )
+                    }
                     <Text className='card-descr'>{descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}</Text>
                   </div>
                 )
