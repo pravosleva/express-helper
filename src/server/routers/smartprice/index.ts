@@ -69,6 +69,7 @@ import { sendFmipInstructions } from './mws/partner_api/tradein/send_fmip_instru
 import { policyConfirmationSMS } from './mws/partner_api/tradein/personal_data_processing_agreement/send_sms_code'
 import { signBySMSCode as signBySMSCode2 } from './mws/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_code'
 import { waitForVerified } from './mws/partner_api/tradein/wait_for/verified'
+
 import cors from 'cors'
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
 

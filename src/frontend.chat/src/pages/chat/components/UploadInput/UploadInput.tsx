@@ -47,7 +47,7 @@ export const UploadInput = ({
       <label htmlFor={id} className={clsx('no-line-breaks', styles["special-btn"], styles['special-btn-md'], styles['dark-btn'])} style={{ display: 'flex' }}>
         {!!label && <span style={{ marginRight: '7px' }}>{label}</span>}<span><MdAddAPhoto size={19} /></span>
       </label>
-      <input id={id} type="file" accept=".gif,.png,.jpg,.jpeg" disabled={isDisabled} />
+      <input id={id} type="file" accept=".gif,.png,.jpg,.jpeg,.webp" disabled={isDisabled} />
     </>
   )
 }

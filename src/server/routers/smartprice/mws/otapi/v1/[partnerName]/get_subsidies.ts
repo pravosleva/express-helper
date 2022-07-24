@@ -20,7 +20,7 @@ export const getSubsidiesRoute = (req, res) => {
   // то и значения тоже могут измениться.
   /* REQ SAMPLE:
   { "id": 456 } */
-  const requiredFields = ['id']
+  const requiredFields = ['device']
   const errs = []
   for (const key of requiredFields) if (!req.body[key]) errs.push(`${key} is required!`)
   if (errs.length > 0) {
@@ -31,7 +31,7 @@ export const getSubsidiesRoute = (req, res) => {
     })
   }
 
-  const toBeOrNotToBe = getRandomInteger(0, 1)
+  const toBeOrNotToBe = 1 // getRandomInteger(0, 1)
   const getRandomSubsidies = () => [1, 2, 3, 4].reduce((acc, cur) => {
     acc.push({ model: `Model ${cur}`, baseDiscount: getRandomInteger(cur * 1000, 9999) })
     return acc

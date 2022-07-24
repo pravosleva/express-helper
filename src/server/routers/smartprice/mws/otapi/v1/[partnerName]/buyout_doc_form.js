@@ -15,7 +15,7 @@ const requiredFields = {
   // id_serial_number: true,
   // id_type: true,
   last_name: true,
-  patronymic: true,
+  // patronymic: true,
   phone: true,
 }
 
