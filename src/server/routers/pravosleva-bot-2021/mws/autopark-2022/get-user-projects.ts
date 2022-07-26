@@ -51,6 +51,7 @@ export const getUserProjects = async (req: IRequest & { autopark2022StorageFileP
         !!staticData[String(chat_id)]?.projects
         && Object.keys(staticData[String(chat_id)].projects).length > 0
       ) response.projects = staticData[String(chat_id)].projects
+      else response.message = 'Пока нет проектов'
 
       return res.status(200).json(response)
     } catch (err) {

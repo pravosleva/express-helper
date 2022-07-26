@@ -56,7 +56,7 @@ botApi.post('/autopark-2022/project/get-data', getAutoparkProject)
 botApi.post('/autopark-2022/project/update', updateAutoparkProject)
 botApi.post('/autopark-2022/project/remove-item', removeAutoparkProjectItem)
 botApi.post('/autopark-2022/project/remove', removeAutoparkProject)
-botApi.post('/autopark-2022/project/get-user-projects', getUserProjects)
+botApi.post('/autopark-2022/get-user-projects', getUserProjects)
 botApi.post('/autopark-2022/project/get-report', getProjectReport)
 
 export const pravoslevaBot2021Router = botApi
