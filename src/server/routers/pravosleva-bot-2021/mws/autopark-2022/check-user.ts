@@ -1,7 +1,7 @@
 import { Request as IRequest, Response as IResponse, NextFunction as INextFunction } from 'express'
-import { EAPIUserCode } from '~/routers/chat/mws/api/types';
+import { EAPIUserCode } from '~/routers/chat/mws/api/types'
 import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
-import { getRandomInteger } from '~/utils/getRandomInteger';
+import { getRandomInteger } from '~/utils/getRandomInteger'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -39,7 +39,6 @@ export const checkAutoparkUser = async (req: IRequest & { autopark2022StorageFil
   if (!!req.autopark2022StorageFilePath) {
     try {
       const { chat_id } = tg
-  
       const staticData: TStaticData = getStaticJSONSync(req.autopark2022StorageFilePath)
 
       if (!staticData[String(chat_id)]) return res.status(200).json({
@@ -48,28 +47,28 @@ export const checkAutoparkUser = async (req: IRequest & { autopark2022StorageFil
         code: EAPIUserCode.NotFound,
       })
 
-      const ts = new Date().getTime()
-      const password = getRandomInteger(1000, 9999)
+      // const ts = new Date().getTime()
+      // const password = getRandomInteger(1000, 9999)
 
-      let myNewData: TUserData = { tg, ts, password }
-      const myOldData: TUserData = staticData[String(chat_id)]
+      // let myNewData: Partial<TUserData> = { tg, ts }
+      // const myOldData: TUserData = staticData[String(chat_id)]
 
-      if (!!myOldData) myNewData = { ...myOldData, ...myNewData }
+      // if (!!myOldData) myNewData = { ...myOldData, ...myNewData }
 
-      myNewData = { ...myNewData, ts }
-      staticData[String(chat_id)] = myNewData
+      // myNewData = { ...myNewData, ts }
+      // staticData[String(chat_id)] = myNewData
 
-      writeStaticJSONAsync(req.autopark2022StorageFilePath, staticData)
+      // writeStaticJSONAsync(req.autopark2022StorageFilePath, staticData)
 
       const isUserExists = !!staticData[String(chat_id)]
-      const response: any = { ok: isUserExists, code: EAPIUserCode.UserExists }
+      const response: any = { ok: isUserExists, code: EAPIUserCode.UserExists, password: staticData[String(chat_id)]?.password || '----' }
 
       if (
         !!staticData[String(chat_id)]?.projects
         && Object.keys(staticData[String(chat_id)].projects).length > 0
       ) response.projects = staticData[String(chat_id)].projects
 
-      if (isDev) response.password = password
+      // if (isDev) response.password = password
 
       return res.status(200).json(response)
     } catch (err) {

@@ -1,6 +1,7 @@
 import { Request as IRequest, Response as IResponse, NextFunction as INextFunction } from 'express'
-import { EAPIUserCode } from '~/routers/chat/mws/api/types';
-import { getStaticJSONSync } from '~/utils/fs-tools'
+import { EAPIUserCode } from '~/routers/chat/mws/api/types'
+import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
+import { getRandomInteger } from '~/utils/getRandomInteger'
 
 function isNumeric(n: any): boolean {
   return !isNaN(parseFloat(n)) && isFinite(n);
@@ -39,6 +40,16 @@ export const checkAutoparkUserPassword = async (req: IRequest & { autopark2022St
       } else {
         response.message = 'Incorrect password'
       }
+
+      // -- NOTE: Update password
+      const ts = new Date().getTime()
+      const newPassword = getRandomInteger(1000, 9999)
+
+      const modifiedData = { ...staticData[String(chat_id)], password: newPassword, ts }
+
+      staticData[String(chat_id)] = modifiedData
+      writeStaticJSONAsync(req.autopark2022StorageFilePath, staticData)
+      // --
 
       return res.status(200).json(response)
     } catch (err) {
