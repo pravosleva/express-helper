@@ -1,6 +1,7 @@
 export enum EAPIUserCode {
-  UserExists = 'user_exists',
+  UserExists = 'already_exists',
   IncorrecrParams = 'incorrect_params',
+  IncorrecrBody = 'incorrect_body',
   Updated = 'updated',
   Created = 'created',
 

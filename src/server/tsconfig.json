@@ -13,7 +13,7 @@
       "~/*": ["./*"],
       "@getRandomInteger": ["./utils/getRandomInteger"]
     },
-    "sourceMap": false,
+    "sourceMap": true,
     "esModuleInterop": true,
   },
   "include": [
