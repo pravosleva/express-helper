@@ -15,6 +15,7 @@ import { removeAutoparkProjectItem } from './mws/autopark-2022/project/remove-it
 import { removeAutoparkProject } from './mws/autopark-2022/project/remove'
 import { getUserProjects } from './mws/autopark-2022/get-user-projects'
 import { getProjectReport } from './mws/autopark-2022/project/get-report'
+import { updateAutoparkProjectItem } from './mws/autopark-2022/project/update-item'
 
 const botApi = express()
 const bodyParser = require('body-parser')
@@ -58,5 +59,6 @@ botApi.post('/autopark-2022/project/remove-item', removeAutoparkProjectItem)
 botApi.post('/autopark-2022/project/remove', removeAutoparkProject)
 botApi.post('/autopark-2022/get-user-projects', getUserProjects)
 botApi.post('/autopark-2022/project/get-report', getProjectReport)
+botApi.post('/autopark-2022/project/update-item', updateAutoparkProjectItem)
 
 export const pravoslevaBot2021Router = botApi
