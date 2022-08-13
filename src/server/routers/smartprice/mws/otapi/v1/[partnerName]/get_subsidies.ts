@@ -31,9 +31,19 @@ export const getSubsidiesRoute = (req, res) => {
     })
   }
 
+  const isEmptyListRequired = req.query.empty_list === '1'
+  if (isEmptyListRequired) {
+    res.status(200).send({
+      ...toClient[1],
+      subsidies: [],
+      _originalBody: req.body,
+      _originalQuery: req.query,
+    })
+  }
+
   const toBeOrNotToBe = 1 // getRandomInteger(0, 1)
   const getRandomSubsidies = () => [1, 2, 3, 4].reduce((acc, cur) => {
-    acc.push({ model: `Model ${cur}`, baseDiscount: getRandomInteger(cur * 1000, 9999) })
+    acc.push({ model: `Model ${cur}`, baseDiscount: getRandomInteger(cur * 1000, 999999) })
     return acc
   }, [])
 
@@ -42,6 +52,7 @@ export const getSubsidiesRoute = (req, res) => {
       ...toClient[toBeOrNotToBe],
       subsidies: toBeOrNotToBe ? getRandomSubsidies() : [],
       _originalBody: req.body,
+      _originalQuery: req.query,
     })
   }, 3000)
 }

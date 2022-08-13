@@ -61,7 +61,9 @@ export const checkAutoparkUser = async (req: IRequest & { autopark2022StorageFil
       // writeStaticJSONAsync(req.autopark2022StorageFilePath, staticData)
 
       const isUserExists = !!staticData[String(chat_id)]
-      const response: any = { ok: isUserExists, code: EAPIUserCode.UserExists, password: staticData[String(chat_id)]?.password || '----' }
+      const response: any = { ok: isUserExists, code: EAPIUserCode.UserExists }
+
+      if (req.query.p === '1') response.password = staticData[String(chat_id)]?.password || null
 
       if (
         !!staticData[String(chat_id)]?.projects
