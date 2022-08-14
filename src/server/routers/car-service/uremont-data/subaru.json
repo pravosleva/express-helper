@@ -1,0 +1,2045 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 1716,
+			"name": "Forester",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 1471,
+			"is_seo_active": 0,
+			"rgs_code": "371014005",
+			"generations": [
+				{
+					"id": 4098,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "V",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/98/d89885b4873ebe2b2dc3523cd99ff0c7.png",
+					"images": [
+						{
+							"id": 443849,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443849/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443849/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/98/d89885b4873ebe2b2dc3523cd99ff0c7.png"
+						}
+					]
+				},
+				{
+					"id": 4099,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "IV Рестайлинг 2",
+					"start_year": 2016,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/06/7e/067e0a222304892fdfb20464477d82a9.png",
+					"images": [
+						{
+							"id": 443850,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443850/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443850/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/06/7e/067e0a222304892fdfb20464477d82a9.png"
+						}
+					]
+				},
+				{
+					"id": 4100,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "IV Рестайлинг",
+					"start_year": 2015,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/d3/02d390c20801267992815ba50de51282.png",
+					"images": [
+						{
+							"id": 443851,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443851/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443851/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/d3/02d390c20801267992815ba50de51282.png"
+						}
+					]
+				},
+				{
+					"id": 4101,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "IV",
+					"start_year": 2012,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/be/0abe4478b2f5780a96c4b2c3f887d879.png",
+					"images": [
+						{
+							"id": 443852,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443852/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443852/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/be/0abe4478b2f5780a96c4b2c3f887d879.png"
+						}
+					]
+				},
+				{
+					"id": 4102,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2011,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6a/89/6a89dbe09a5c079876bef331421a79e3.png",
+					"images": [
+						{
+							"id": 443853,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443853/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443853/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6a/89/6a89dbe09a5c079876bef331421a79e3.png"
+						}
+					]
+				},
+				{
+					"id": 4103,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "III",
+					"start_year": 2007,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/4e/2b4e707ce2048ca6ccc94e2c6d9118ba.png",
+					"images": [
+						{
+							"id": 443854,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443854/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443854/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/4e/2b4e707ce2048ca6ccc94e2c6d9118ba.png"
+						}
+					]
+				},
+				{
+					"id": 4104,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2005,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/99/a7990dbfdf963a5b17cce173b1a4e7e5.png",
+					"images": [
+						{
+							"id": 443855,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443855/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443855/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/99/a7990dbfdf963a5b17cce173b1a4e7e5.png"
+						}
+					]
+				},
+				{
+					"id": 4105,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "II",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/24/9a24113b99b9a88f6366baf7a7370eeb.png",
+					"images": [
+						{
+							"id": 443856,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443856/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443856/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/24/9a24113b99b9a88f6366baf7a7370eeb.png"
+						}
+					]
+				},
+				{
+					"id": 4106,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2000,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/95/ce/95ce9415e307b8da2eff879a278a86bf.png",
+					"images": [
+						{
+							"id": 443857,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443857/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443857/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/95/ce/95ce9415e307b8da2eff879a278a86bf.png"
+						}
+					]
+				},
+				{
+					"id": 4107,
+					"mark_name": "Subaru",
+					"model_name": "Forester",
+					"generation_name": "I",
+					"start_year": 1997,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bd/f9/bdf9364c5e4cf811248bef7319e3f98e.png",
+					"images": [
+						{
+							"id": 443858,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443858/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443858/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bd/f9/bdf9364c5e4cf811248bef7319e3f98e.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1717,
+			"name": "Impreza",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 1185,
+			"is_seo_active": 0,
+			"rgs_code": "371014012",
+			"generations": [
+				{
+					"id": 4108,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "V",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/62/66/62665302f8ee1828d491004e3f285b33.png",
+					"images": [
+						{
+							"id": 443859,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443859/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443859/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/62/66/62665302f8ee1828d491004e3f285b33.png"
+						}
+					]
+				},
+				{
+					"id": 4109,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "IV Рестайлинг",
+					"start_year": 2014,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5a/df/5adf3c1abfcd69ff736874322decb3b9.png",
+					"images": [
+						{
+							"id": 443860,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443860/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443860/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5a/df/5adf3c1abfcd69ff736874322decb3b9.png"
+						}
+					]
+				},
+				{
+					"id": 4110,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "IV",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/42/50/4250611baa6b072ad3aa57375c505092.png",
+					"images": [
+						{
+							"id": 443861,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443861/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443861/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/42/50/4250611baa6b072ad3aa57375c505092.png"
+						}
+					]
+				},
+				{
+					"id": 4111,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "III",
+					"start_year": 2007,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/04/55/045583a224e539cc251dc15566ffe45d.png",
+					"images": [
+						{
+							"id": 443862,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443862/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443862/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/04/55/045583a224e539cc251dc15566ffe45d.png"
+						}
+					]
+				},
+				{
+					"id": 4112,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "II Рестайлинг 2",
+					"start_year": 2005,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a9/ca/a9ca3e402aa5ae349424693000654394.png",
+					"images": [
+						{
+							"id": 443863,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443863/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443863/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a9/ca/a9ca3e402aa5ae349424693000654394.png"
+						}
+					]
+				},
+				{
+					"id": 4113,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "II Рестайлинг 1",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/c7/fec7d0948d0ac47f45141d6c552ef9b7.png",
+					"images": [
+						{
+							"id": 443864,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443864/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443864/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/c7/fec7d0948d0ac47f45141d6c552ef9b7.png"
+						}
+					]
+				},
+				{
+					"id": 4114,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "II",
+					"start_year": 2000,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f2/01/f2019de1d1db34c7d1e4cb8878e79479.png",
+					"images": [
+						{
+							"id": 443865,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443865/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443865/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f2/01/f2019de1d1db34c7d1e4cb8878e79479.png"
+						}
+					]
+				},
+				{
+					"id": 4115,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "I",
+					"start_year": 1992,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/be/93be566ee1b68eae3d481208b6ec1f7a.png",
+					"images": [
+						{
+							"id": 443866,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443866/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443866/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/be/93be566ee1b68eae3d481208b6ec1f7a.png"
+						}
+					]
+				},
+				{
+					"id": 5499,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ad/bf/adbf6cddefecec75e62375e9dfc158b4.png",
+					"images": [
+						{
+							"id": 444452,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444452/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444452/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ad/bf/adbf6cddefecec75e62375e9dfc158b4.png"
+						}
+					]
+				},
+				{
+					"id": 5500,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "III",
+					"start_year": 2007,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/ee/a6eeb8cd4835c717ee18db5557acc5e2.png",
+					"images": [
+						{
+							"id": 444453,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444453/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444453/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/ee/a6eeb8cd4835c717ee18db5557acc5e2.png"
+						}
+					]
+				},
+				{
+					"id": 5501,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "II Рестайлинг 2",
+					"start_year": 2005,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/25/5b/255bb69c65a0e28816c3759bb24cac2c.png",
+					"images": [
+						{
+							"id": 444454,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444454/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444454/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/25/5b/255bb69c65a0e28816c3759bb24cac2c.png"
+						}
+					]
+				},
+				{
+					"id": 5502,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "II Рестайлинг 1",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5b/c8/5bc8a1b9e4970d310307a20dd33b6e6d.png",
+					"images": [
+						{
+							"id": 444455,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444455/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444455/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5b/c8/5bc8a1b9e4970d310307a20dd33b6e6d.png"
+						}
+					]
+				},
+				{
+					"id": 5503,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "II",
+					"start_year": 2000,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/6e/196eab53c1443d01f195c110ffe21472.png",
+					"images": [
+						{
+							"id": 444456,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444456/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444456/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/6e/196eab53c1443d01f195c110ffe21472.png"
+						}
+					]
+				},
+				{
+					"id": 5504,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "I",
+					"start_year": 1992,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/cc/0dcc6318fc6b8f165e618326e1e3daf1.png",
+					"images": [
+						{
+							"id": 444457,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444457/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444457/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/cc/0dcc6318fc6b8f165e618326e1e3daf1.png"
+						}
+					]
+				},
+				{
+					"id": 5505,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "III",
+					"start_year": 2007,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/60/1a60ecbf8bde496ebf9bd999a0a491aa.png",
+					"images": [
+						{
+							"id": 444458,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444458/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444458/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/60/1a60ecbf8bde496ebf9bd999a0a491aa.png"
+						}
+					]
+				},
+				{
+					"id": 5506,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "II Рестайлинг 2",
+					"start_year": 2005,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/da/02da12a1c7496e4c0449bbf00d3e769e.png",
+					"images": [
+						{
+							"id": 444459,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444459/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444459/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/da/02da12a1c7496e4c0449bbf00d3e769e.png"
+						}
+					]
+				},
+				{
+					"id": 5507,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "II Рестайлинг 1",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/3a/db3ab477b1736741f75bb95cce387b36.png",
+					"images": [
+						{
+							"id": 444460,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444460/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444460/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/3a/db3ab477b1736741f75bb95cce387b36.png"
+						}
+					]
+				},
+				{
+					"id": 5508,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "II",
+					"start_year": 2000,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/aa/2baa7d9ae1f64b2c14f1e3503a6477c6.png",
+					"images": [
+						{
+							"id": 444461,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444461/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444461/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/aa/2baa7d9ae1f64b2c14f1e3503a6477c6.png"
+						}
+					]
+				},
+				{
+					"id": 5509,
+					"mark_name": "Subaru",
+					"model_name": "Impreza",
+					"generation_name": "I",
+					"start_year": 1994,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e1/de/e1de8ce89f51c2ae9b6ae7bdc45e042b.png",
+					"images": [
+						{
+							"id": 444462,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444462/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444462/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e1/de/e1de8ce89f51c2ae9b6ae7bdc45e042b.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1718,
+			"name": "Justy",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "371014048",
+			"generations": [
+				{
+					"id": 4116,
+					"mark_name": "Subaru",
+					"model_name": "Justy",
+					"generation_name": "V",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/04/0b/040b753e1f58b50523d461ccabf35c54.png",
+					"images": [
+						{
+							"id": 443867,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443867/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443867/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/04/0b/040b753e1f58b50523d461ccabf35c54.png"
+						}
+					]
+				},
+				{
+					"id": 4117,
+					"mark_name": "Subaru",
+					"model_name": "Justy",
+					"generation_name": "IV",
+					"start_year": 2007,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/27/1a270b7223373b738d12dbb95def873b.png",
+					"images": [
+						{
+							"id": 443868,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443868/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443868/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/27/1a270b7223373b738d12dbb95def873b.png"
+						}
+					]
+				},
+				{
+					"id": 4118,
+					"mark_name": "Subaru",
+					"model_name": "Justy",
+					"generation_name": "III",
+					"start_year": 2003,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/f2/1cf27851b55d10b3d34e46734b673136.png",
+					"images": [
+						{
+							"id": 443869,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443869/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443869/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/f2/1cf27851b55d10b3d34e46734b673136.png"
+						}
+					]
+				},
+				{
+					"id": 4119,
+					"mark_name": "Subaru",
+					"model_name": "Justy",
+					"generation_name": "II",
+					"start_year": 1995,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/67/91/67918e457107d3a90f0a76a3841db269.png",
+					"images": [
+						{
+							"id": 443870,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443870/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443870/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/67/91/67918e457107d3a90f0a76a3841db269.png"
+						}
+					]
+				},
+				{
+					"id": 4120,
+					"mark_name": "Subaru",
+					"model_name": "Justy",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1987,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/f0/a3f0f0e1636de2d2dfd56d26e3900179.png",
+					"images": [
+						{
+							"id": 443871,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443871/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443871/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/f0/a3f0f0e1636de2d2dfd56d26e3900179.png"
+						}
+					]
+				},
+				{
+					"id": 4121,
+					"mark_name": "Subaru",
+					"model_name": "Justy",
+					"generation_name": "I",
+					"start_year": 1984,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dd/bd/ddbd7b97897041c553b1da01fba47cc7.png",
+					"images": [
+						{
+							"id": 443872,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443872/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443872/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dd/bd/ddbd7b97897041c553b1da01fba47cc7.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1719,
+			"name": "Legacy",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 781,
+			"is_seo_active": 0,
+			"rgs_code": "371014057",
+			"generations": [
+				{
+					"id": 4122,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "VII",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/28/972804755b8e4caa82fb5cc9aae30179.png",
+					"images": [
+						{
+							"id": 443873,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443873/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443873/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/28/972804755b8e4caa82fb5cc9aae30179.png"
+						}
+					]
+				},
+				{
+					"id": 4123,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "VI Рестайлинг",
+					"start_year": 2017,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c7/ba/c7baa7eb7601d180482ad0ef6f4423fa.png",
+					"images": [
+						{
+							"id": 443874,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443874/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443874/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c7/ba/c7baa7eb7601d180482ad0ef6f4423fa.png"
+						}
+					]
+				},
+				{
+					"id": 4124,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "VI",
+					"start_year": 2014,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/b0/e6b06f9943cf107268f5c29118c20c13.png",
+					"images": [
+						{
+							"id": 443875,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443875/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443875/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/b0/e6b06f9943cf107268f5c29118c20c13.png"
+						}
+					]
+				},
+				{
+					"id": 4125,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "V Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8a/ce/8acee19917c547954d7b229e93665bdb.png",
+					"images": [
+						{
+							"id": 443876,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443876/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443876/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8a/ce/8acee19917c547954d7b229e93665bdb.png"
+						}
+					]
+				},
+				{
+					"id": 4126,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "V",
+					"start_year": 2009,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/59/1059ecb92642557820a9f61dddb4e701.png",
+					"images": [
+						{
+							"id": 443877,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443877/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443877/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/59/1059ecb92642557820a9f61dddb4e701.png"
+						}
+					]
+				},
+				{
+					"id": 4127,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "IV Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/27/34/2734c0141ad646e786ac91fa5c754283.png",
+					"images": [
+						{
+							"id": 443878,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443878/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443878/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/27/34/2734c0141ad646e786ac91fa5c754283.png"
+						}
+					]
+				},
+				{
+					"id": 4128,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "IV",
+					"start_year": 2003,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/37/8f/378f6dcf1ae871fb885d6d8ed2aa1350.png",
+					"images": [
+						{
+							"id": 443879,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443879/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443879/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/37/8f/378f6dcf1ae871fb885d6d8ed2aa1350.png"
+						}
+					]
+				},
+				{
+					"id": 4129,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "III",
+					"start_year": 1998,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/1b/0e1b084db2165fb7682284b57cf4bee0.png",
+					"images": [
+						{
+							"id": 443880,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443880/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443880/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/1b/0e1b084db2165fb7682284b57cf4bee0.png"
+						}
+					]
+				},
+				{
+					"id": 4130,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "II",
+					"start_year": 1993,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/08/88/0888c0da973230ee57cc47c3fb04d054.png",
+					"images": [
+						{
+							"id": 443881,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443881/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443881/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/08/88/0888c0da973230ee57cc47c3fb04d054.png"
+						}
+					]
+				},
+				{
+					"id": 4131,
+					"mark_name": "Subaru",
+					"model_name": "Legacy",
+					"generation_name": "I",
+					"start_year": 1989,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/e2/d6e2e882d9a43773c1a2c7bd22c78f6e.png",
+					"images": [
+						{
+							"id": 443882,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443882/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443882/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/e2/d6e2e882d9a43773c1a2c7bd22c78f6e.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20583,
+			"name": "Legacy Lancaster",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 41,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4132,
+					"mark_name": "Subaru",
+					"model_name": "Legacy Lancaster",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2001,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/a6/10a64dde0138c598fe8f326403fcf014.png",
+					"images": [
+						{
+							"id": 443883,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443883/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443883/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/a6/10a64dde0138c598fe8f326403fcf014.png"
+						}
+					]
+				},
+				{
+					"id": 4133,
+					"mark_name": "Subaru",
+					"model_name": "Legacy Lancaster",
+					"generation_name": "II",
+					"start_year": 1998,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/b8/28b84a172ef46d10f1d8079e871da814.png",
+					"images": [
+						{
+							"id": 443884,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443884/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443884/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/b8/28b84a172ef46d10f1d8079e871da814.png"
+						}
+					]
+				},
+				{
+					"id": 4134,
+					"mark_name": "Subaru",
+					"model_name": "Legacy Lancaster",
+					"generation_name": "I",
+					"start_year": 1995,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e8/1e/e81ecf188dcfd91b43e685f0ccb1aedb.png",
+					"images": [
+						{
+							"id": 443885,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443885/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443885/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e8/1e/e81ecf188dcfd91b43e685f0ccb1aedb.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1723,
+			"name": "Outback",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 520,
+			"is_seo_active": 0,
+			"rgs_code": "371014089",
+			"generations": [
+				{
+					"id": 4140,
+					"mark_name": "Subaru",
+					"model_name": "Outback",
+					"generation_name": "VI",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4c/9d/4c9d3d18ba35135ac19323be1b7ad3ff.png",
+					"images": [
+						{
+							"id": 443887,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443887/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443887/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4c/9d/4c9d3d18ba35135ac19323be1b7ad3ff.png"
+						}
+					]
+				},
+				{
+					"id": 4141,
+					"mark_name": "Subaru",
+					"model_name": "Outback",
+					"generation_name": "V Рестайлинг",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/26/79/2679c96af24ab00e7bfbec4bf98764c6.png",
+					"images": [
+						{
+							"id": 443888,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443888/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443888/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/26/79/2679c96af24ab00e7bfbec4bf98764c6.png"
+						}
+					]
+				},
+				{
+					"id": 4142,
+					"mark_name": "Subaru",
+					"model_name": "Outback",
+					"generation_name": "V",
+					"start_year": 2014,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dd/8b/dd8bc350c8c8f6129a4e848e1671be12.png",
+					"images": [
+						{
+							"id": 443889,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443889/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443889/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dd/8b/dd8bc350c8c8f6129a4e848e1671be12.png"
+						}
+					]
+				},
+				{
+					"id": 4143,
+					"mark_name": "Subaru",
+					"model_name": "Outback",
+					"generation_name": "IV Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/42/5f4278184dfa9fbecbe27edf995c25cf.png",
+					"images": [
+						{
+							"id": 443890,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443890/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443890/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/42/5f4278184dfa9fbecbe27edf995c25cf.png"
+						}
+					]
+				},
+				{
+					"id": 4144,
+					"mark_name": "Subaru",
+					"model_name": "Outback",
+					"generation_name": "IV",
+					"start_year": 2009,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/55/fc55c3cbd1d3cedfbb12c2d5a06b812a.png",
+					"images": [
+						{
+							"id": 443891,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443891/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443891/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/55/fc55c3cbd1d3cedfbb12c2d5a06b812a.png"
+						}
+					]
+				},
+				{
+					"id": 4145,
+					"mark_name": "Subaru",
+					"model_name": "Outback",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/2d/fe2d72606398717f2050b5b4f7313d0d.png",
+					"images": [
+						{
+							"id": 443892,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443892/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443892/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/2d/fe2d72606398717f2050b5b4f7313d0d.png"
+						}
+					]
+				},
+				{
+					"id": 4146,
+					"mark_name": "Subaru",
+					"model_name": "Outback",
+					"generation_name": "III",
+					"start_year": 2003,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/39/4939a84907a9f6bbd9717529ca5fbf6a.png",
+					"images": [
+						{
+							"id": 443893,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443893/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443893/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/39/4939a84907a9f6bbd9717529ca5fbf6a.png"
+						}
+					]
+				},
+				{
+					"id": 4147,
+					"mark_name": "Subaru",
+					"model_name": "Outback",
+					"generation_name": "II",
+					"start_year": 1998,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d4/3d/d43d863aa212596e018bad5ebcd1e0db.png",
+					"images": [
+						{
+							"id": 443894,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443894/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443894/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d4/3d/d43d863aa212596e018bad5ebcd1e0db.png"
+						}
+					]
+				},
+				{
+					"id": 4148,
+					"mark_name": "Subaru",
+					"model_name": "Outback",
+					"generation_name": "I",
+					"start_year": 1994,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/50/8e/508e10776e490f264b9896554589f6be.png",
+					"images": [
+						{
+							"id": 443895,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443895/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443895/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/50/8e/508e10776e490f264b9896554589f6be.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1724,
+			"name": "Pleo",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": "371014126",
+			"generations": [
+				{
+					"id": 4149,
+					"mark_name": "Subaru",
+					"model_name": "Pleo",
+					"generation_name": "II",
+					"start_year": 2010,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/2c/fc2c6d93902ddafcbd3e6f773d8aebc6.png",
+					"images": [
+						{
+							"id": 443896,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443896/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443896/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/2c/fc2c6d93902ddafcbd3e6f773d8aebc6.png"
+						}
+					]
+				},
+				{
+					"id": 4150,
+					"mark_name": "Subaru",
+					"model_name": "Pleo",
+					"generation_name": "I Рестайлинг 3",
+					"start_year": 2004,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/2e/7b2e557b3a6968ac35aba4f658ad1cfb.png",
+					"images": [
+						{
+							"id": 443897,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443897/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443897/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/2e/7b2e557b3a6968ac35aba4f658ad1cfb.png"
+						}
+					]
+				},
+				{
+					"id": 4151,
+					"mark_name": "Subaru",
+					"model_name": "Pleo",
+					"generation_name": "I Рестайлинг 2",
+					"start_year": 2002,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/89/0c89e0b17400024d6bccc115555c6f66.png",
+					"images": [
+						{
+							"id": 443898,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443898/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443898/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/89/0c89e0b17400024d6bccc115555c6f66.png"
+						}
+					]
+				},
+				{
+					"id": 4152,
+					"mark_name": "Subaru",
+					"model_name": "Pleo",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2000,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b1/62/b162815f6699e7a3cd43cab3c91284b0.png",
+					"images": [
+						{
+							"id": 443899,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443899/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443899/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b1/62/b162815f6699e7a3cd43cab3c91284b0.png"
+						}
+					]
+				},
+				{
+					"id": 4153,
+					"mark_name": "Subaru",
+					"model_name": "Pleo",
+					"generation_name": "I",
+					"start_year": 1998,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/34/c2346706d190cd4df04a368b8e150875.png",
+					"images": [
+						{
+							"id": 443900,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443900/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443900/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/34/c2346706d190cd4df04a368b8e150875.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1726,
+			"name": "R2",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 10,
+			"is_seo_active": 0,
+			"rgs_code": "856022212",
+			"generations": [
+				{
+					"id": 4155,
+					"mark_name": "Subaru",
+					"model_name": "R2",
+					"generation_name": "2003 – 2010",
+					"start_year": 2003,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/2b/972bd330723ce585a4e7c698a7d11c1e.png",
+					"images": [
+						{
+							"id": 443902,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443902/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443902/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/2b/972bd330723ce585a4e7c698a7d11c1e.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1732,
+			"name": "Tribeca",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 170,
+			"is_seo_active": 0,
+			"rgs_code": "371020153",
+			"generations": [
+				{
+					"id": 4169,
+					"mark_name": "Subaru",
+					"model_name": "Tribeca",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2007,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e9/ef/e9ef60b49e01e10653e446a5b18047ed.png",
+					"images": [
+						{
+							"id": 443912,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443912/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443912/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e9/ef/e9ef60b49e01e10653e446a5b18047ed.png"
+						}
+					]
+				},
+				{
+					"id": 4170,
+					"mark_name": "Subaru",
+					"model_name": "Tribeca",
+					"generation_name": "I",
+					"start_year": 2004,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/7b/fe7b12f624023bfce768cded9da1064a.png",
+					"images": [
+						{
+							"id": 443913,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443913/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443913/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/7b/fe7b12f624023bfce768cded9da1064a.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1735,
+			"name": "XV",
+			"mark_id": 166,
+			"sort_id": 1,
+			"rating": 102,
+			"is_seo_active": 0,
+			"rgs_code": "371021602",
+			"generations": [
+				{
+					"id": 4173,
+					"mark_name": "Subaru",
+					"model_name": "XV",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2021,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/15/10158af3c7ea3915bbfff3ade0ff3d63.png",
+					"images": [
+						{
+							"id": 443914,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443914/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443914/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/15/10158af3c7ea3915bbfff3ade0ff3d63.png"
+						}
+					]
+				},
+				{
+					"id": 4174,
+					"mark_name": "Subaru",
+					"model_name": "XV",
+					"generation_name": "II",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8e/10/8e102c68ed1333bbc3d6111ad2a16d3e.png",
+					"images": [
+						{
+							"id": 443915,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443915/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443915/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8e/10/8e102c68ed1333bbc3d6111ad2a16d3e.png"
+						}
+					]
+				},
+				{
+					"id": 4175,
+					"mark_name": "Subaru",
+					"model_name": "XV",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/af/5daf3bda724134b6468cef09a554a066.png",
+					"images": [
+						{
+							"id": 443916,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443916/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443916/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/af/5daf3bda724134b6468cef09a554a066.png"
+						}
+					]
+				},
+				{
+					"id": 4176,
+					"mark_name": "Subaru",
+					"model_name": "XV",
+					"generation_name": "I",
+					"start_year": 2011,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3b/72/3b72574ec68170c520171087ddc21248.png",
+					"images": [
+						{
+							"id": 443917,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443917/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443917/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3b/72/3b72574ec68170c520171087ddc21248.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20576,
+			"name": "1000",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4085,
+					"mark_name": "Subaru",
+					"model_name": "1000",
+					"generation_name": "I",
+					"start_year": 1965,
+					"finish_year": 1969,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20577,
+			"name": "1500",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1710,
+			"name": "Alcyone",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "371020151",
+			"generations": [
+				{
+					"id": 4086,
+					"mark_name": "Subaru",
+					"model_name": "Alcyone",
+					"generation_name": "II",
+					"start_year": 1991,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4087,
+					"mark_name": "Subaru",
+					"model_name": "Alcyone",
+					"generation_name": "I",
+					"start_year": 1985,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1711,
+			"name": "Baja",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "371013996",
+			"generations": [
+				{
+					"id": 4088,
+					"mark_name": "Subaru",
+					"model_name": "Baja",
+					"generation_name": "2002 – 2006",
+					"start_year": 2002,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20578,
+			"name": "Bighorn",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4089,
+					"mark_name": "Subaru",
+					"model_name": "Bighorn",
+					"generation_name": "II",
+					"start_year": 1991,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4090,
+					"mark_name": "Subaru",
+					"model_name": "Bighorn",
+					"generation_name": "I",
+					"start_year": 1990,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20579,
+			"name": "BRAT",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4091,
+					"mark_name": "Subaru",
+					"model_name": "BRAT",
+					"generation_name": "I",
+					"start_year": 1978,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1712,
+			"name": "BRZ",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "371021690",
+			"generations": [
+				{
+					"id": 4092,
+					"mark_name": "Subaru",
+					"model_name": "BRZ",
+					"generation_name": "II",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/93/4f93852feec04f4aae1853c57f142a24.png",
+					"images": [
+						{
+							"id": 443845,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443845/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443845/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/93/4f93852feec04f4aae1853c57f142a24.png"
+						}
+					]
+				},
+				{
+					"id": 4093,
+					"mark_name": "Subaru",
+					"model_name": "BRZ",
+					"generation_name": "I",
+					"start_year": 2012,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/b7/5fb78e0c7aaa515effa6187bf4028844.png",
+					"images": [
+						{
+							"id": 443846,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443846/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443846/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/b7/5fb78e0c7aaa515effa6187bf4028844.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1713,
+			"name": "Dex",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4094,
+					"mark_name": "Subaru",
+					"model_name": "Dex",
+					"generation_name": "2008 – 2010",
+					"start_year": 2008,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/dc/3cdc1ac9ebe2588b6bc7aa3e5a180591.png",
+					"images": [
+						{
+							"id": 443847,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443847/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443847/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/dc/3cdc1ac9ebe2588b6bc7aa3e5a180591.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1714,
+			"name": "Domingo",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "371014003",
+			"generations": [
+				{
+					"id": 4095,
+					"mark_name": "Subaru",
+					"model_name": "Domingo",
+					"generation_name": "II",
+					"start_year": 1994,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4096,
+					"mark_name": "Subaru",
+					"model_name": "Domingo",
+					"generation_name": "I",
+					"start_year": 1983,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20580,
+			"name": "Estratto",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1715,
+			"name": "Exiga",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 4,
+			"is_seo_active": 0,
+			"rgs_code": "371022005",
+			"generations": [
+				{
+					"id": 4097,
+					"mark_name": "Subaru",
+					"model_name": "Exiga",
+					"generation_name": "2008 – 2018",
+					"start_year": 2008,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/47/31478ce1a645b15ca2009729a37fc5a2.png",
+					"images": [
+						{
+							"id": 443848,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443848/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443848/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/47/31478ce1a645b15ca2009729a37fc5a2.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20581,
+			"name": "FF-1",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20582,
+			"name": "Fiori",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1720,
+			"name": "Leone",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "371014092",
+			"generations": [
+				{
+					"id": 4135,
+					"mark_name": "Subaru",
+					"model_name": "Leone",
+					"generation_name": "III",
+					"start_year": 1984,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4136,
+					"mark_name": "Subaru",
+					"model_name": "Leone",
+					"generation_name": "II",
+					"start_year": 1979,
+					"finish_year": 1984,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 22355,
+			"name": "Levorg",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4137,
+					"mark_name": "Subaru",
+					"model_name": "Levorg",
+					"generation_name": "2014 – н.в.",
+					"start_year": 2014,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f0/d1/f0d1973e7df55b0911040a0a4402ea8d.png",
+					"images": [
+						{
+							"id": 443886,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443886/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443886/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f0/d1/f0d1973e7df55b0911040a0a4402ea8d.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1721,
+			"name": "Libero",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4138,
+					"mark_name": "Subaru",
+					"model_name": "Libero",
+					"generation_name": "1984 – 1998",
+					"start_year": 1984,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20584,
+			"name": "Loyale",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1722,
+			"name": "Lucra",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4139,
+					"mark_name": "Subaru",
+					"model_name": "Lucra",
+					"generation_name": "2010 – 2015",
+					"start_year": 2010,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20585,
+			"name": "Mini Jumbo",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1725,
+			"name": "R1",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "371021337",
+			"generations": [
+				{
+					"id": 4154,
+					"mark_name": "Subaru",
+					"model_name": "R1",
+					"generation_name": "2005 – 2010",
+					"start_year": 2005,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/01/8d0102555384c29fab5b1f4a13a88c1d.png",
+					"images": [
+						{
+							"id": 443901,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443901/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443901/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/01/8d0102555384c29fab5b1f4a13a88c1d.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20586,
+			"name": "Rex",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "371020154",
+			"generations": [
+				{
+					"id": 4156,
+					"mark_name": "Subaru",
+					"model_name": "Rex",
+					"generation_name": "III",
+					"start_year": 1986,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4157,
+					"mark_name": "Subaru",
+					"model_name": "Rex",
+					"generation_name": "II",
+					"start_year": 1982,
+					"finish_year": 1985,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4158,
+					"mark_name": "Subaru",
+					"model_name": "Rex",
+					"generation_name": "I",
+					"start_year": 1972,
+					"finish_year": 1981,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1727,
+			"name": "Sambar",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "371014139",
+			"generations": [
+				{
+					"id": 4159,
+					"mark_name": "Subaru",
+					"model_name": "Sambar",
+					"generation_name": "VII",
+					"start_year": 2012,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1b/e1/1be1a6a3f038caa19630f240a2344d05.png",
+					"images": [
+						{
+							"id": 443903,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443903/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443903/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1b/e1/1be1a6a3f038caa19630f240a2344d05.png"
+						}
+					]
+				},
+				{
+					"id": 4160,
+					"mark_name": "Subaru",
+					"model_name": "Sambar",
+					"generation_name": "VI",
+					"start_year": 2009,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/90/3e/903e2c122d46e7491f485dae0a90b97f.png",
+					"images": [
+						{
+							"id": 443904,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443904/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443904/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/90/3e/903e2c122d46e7491f485dae0a90b97f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1728,
+			"name": "Stella",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "371021339",
+			"generations": [
+				{
+					"id": 4161,
+					"mark_name": "Subaru",
+					"model_name": "Stella",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/e9/b9e9deacdc7ca15ddb79598fb09503aa.png",
+					"images": [
+						{
+							"id": 443905,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443905/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443905/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/e9/b9e9deacdc7ca15ddb79598fb09503aa.png"
+						}
+					]
+				},
+				{
+					"id": 4162,
+					"mark_name": "Subaru",
+					"model_name": "Stella",
+					"generation_name": "III",
+					"start_year": 2014,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f5/9d/f59d8fcca7be0cdb04f331dbb1e0eada.png",
+					"images": [
+						{
+							"id": 443906,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443906/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443906/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f5/9d/f59d8fcca7be0cdb04f331dbb1e0eada.png"
+						}
+					]
+				},
+				{
+					"id": 4163,
+					"mark_name": "Subaru",
+					"model_name": "Stella",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3b/87/3b87bf80049c8be66e614bfb6b0f83fe.png",
+					"images": [
+						{
+							"id": 443907,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443907/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443907/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3b/87/3b87bf80049c8be66e614bfb6b0f83fe.png"
+						}
+					]
+				},
+				{
+					"id": 4164,
+					"mark_name": "Subaru",
+					"model_name": "Stella",
+					"generation_name": "II",
+					"start_year": 2011,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/70/b6/70b69485a6a3a6a28829f0ad4f56d9aa.png",
+					"images": [
+						{
+							"id": 443908,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443908/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443908/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/70/b6/70b69485a6a3a6a28829f0ad4f56d9aa.png"
+						}
+					]
+				},
+				{
+					"id": 4165,
+					"mark_name": "Subaru",
+					"model_name": "Stella",
+					"generation_name": "I",
+					"start_year": 2006,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c7/1c/c71c3e88fa7c6a74a5c76e9138338817.png",
+					"images": [
+						{
+							"id": 443909,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443909/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443909/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c7/1c/c71c3e88fa7c6a74a5c76e9138338817.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1729,
+			"name": "SVX",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "371014130",
+			"generations": [
+				{
+					"id": 4166,
+					"mark_name": "Subaru",
+					"model_name": "SVX",
+					"generation_name": "1991 – 1997",
+					"start_year": 1991,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1730,
+			"name": "Traviq",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "371014134",
+			"generations": [
+				{
+					"id": 4167,
+					"mark_name": "Subaru",
+					"model_name": "Traviq",
+					"generation_name": "2001 – 2004",
+					"start_year": 2001,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/0a/cb0a2af98fb10a78fe4b9c53b9bb0e9f.png",
+					"images": [
+						{
+							"id": 443910,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443910/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443910/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/0a/cb0a2af98fb10a78fe4b9c53b9bb0e9f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1731,
+			"name": "Trezia",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "371021950",
+			"generations": [
+				{
+					"id": 4168,
+					"mark_name": "Subaru",
+					"model_name": "Trezia",
+					"generation_name": "2010 – 2016",
+					"start_year": 2010,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/a2/d6a260124dd2e3cee5e47c38a7729872.png",
+					"images": [
+						{
+							"id": 443911,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443911/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443911/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/a2/d6a260124dd2e3cee5e47c38a7729872.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1733,
+			"name": "Vivio",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "371014136",
+			"generations": [
+				{
+					"id": 4171,
+					"mark_name": "Subaru",
+					"model_name": "Vivio",
+					"generation_name": "1992 – 1998",
+					"start_year": 1992,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20587,
+			"name": "Vortex",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1734,
+			"name": "XT",
+			"mark_id": 166,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "371013992",
+			"generations": [
+				{
+					"id": 4172,
+					"mark_name": "Subaru",
+					"model_name": "XT",
+					"generation_name": "1987 – 1992",
+					"start_year": 1987,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}

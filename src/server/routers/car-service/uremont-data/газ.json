@@ -1,0 +1,589 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 20706,
+			"name": "24 Волга",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 115,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5524,
+					"mark_name": "ГАЗ",
+					"model_name": "24 Волга",
+					"generation_name": "II (2410)",
+					"start_year": 1985,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6c/e6/6ce6a2598d0553a3142ab94c031e406a.png",
+					"images": [
+						{
+							"id": 444466,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444466/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444466/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6c/e6/6ce6a2598d0553a3142ab94c031e406a.png"
+						}
+					]
+				},
+				{
+					"id": 5525,
+					"mark_name": "ГАЗ",
+					"model_name": "24 Волга",
+					"generation_name": "I (24)",
+					"start_year": 1968,
+					"finish_year": 1987,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/14/1a14a005c2966664b48fe0e3253f48d9.png",
+					"images": [
+						{
+							"id": 444467,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444467/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444467/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/14/1a14a005c2966664b48fe0e3253f48d9.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20709,
+			"name": "3102 Волга",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 141,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5526,
+					"mark_name": "ГАЗ",
+					"model_name": "3102 Волга",
+					"generation_name": "1982 – 2009",
+					"start_year": 1982,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/89/f989221950e8320370a104d0141da9c2.png",
+					"images": [
+						{
+							"id": 444468,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444468/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444468/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/89/f989221950e8320370a104d0141da9c2.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20708,
+			"name": "31029 Волга",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 85,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5528,
+					"mark_name": "ГАЗ",
+					"model_name": "31029 Волга",
+					"generation_name": "1992 – 1998",
+					"start_year": 1992,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/e7/2fe7d6e45fca77cb9edbbab10d74e545.png",
+					"images": [
+						{
+							"id": 444470,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444470/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444470/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/e7/2fe7d6e45fca77cb9edbbab10d74e545.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20712,
+			"name": "3110 Волга",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 330,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5530,
+					"mark_name": "ГАЗ",
+					"model_name": "3110 Волга",
+					"generation_name": "1997 – 2008",
+					"start_year": 1997,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/b8/7bb87994ab6fa0c7047df35a256dc776.png",
+					"images": [
+						{
+							"id": 444471,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444471/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444471/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/b8/7bb87994ab6fa0c7047df35a256dc776.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20711,
+			"name": "31105 Волга",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 343,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5531,
+					"mark_name": "ГАЗ",
+					"model_name": "31105 Волга",
+					"generation_name": "2003 – 2009",
+					"start_year": 2003,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20713,
+			"name": "3310 Валдай",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 56,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20717,
+			"name": "Next",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 357,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2035,
+			"name": "Siber",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 231,
+			"is_seo_active": 0,
+			"rgs_code": "521021490",
+			"generations": [
+				{
+					"id": 5533,
+					"mark_name": "ГАЗ",
+					"model_name": "Siber",
+					"generation_name": "I",
+					"start_year": 2008,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/33/ad/33ad5bfd9b5f6eb0b1b111d18df4bc1a.png",
+					"images": [
+						{
+							"id": 444472,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444472/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444472/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/33/ad/33ad5bfd9b5f6eb0b1b111d18df4bc1a.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20718,
+			"name": "Газель",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 1480,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20722,
+			"name": "Соболь",
+			"mark_id": 216,
+			"sort_id": 1,
+			"rating": 396,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20702,
+			"name": "13 Чайка",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5519,
+					"mark_name": "ГАЗ",
+					"model_name": "13 Чайка",
+					"generation_name": "1959 – 1981",
+					"start_year": 1959,
+					"finish_year": 1981,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20703,
+			"name": "14 Чайка",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5520,
+					"mark_name": "ГАЗ",
+					"model_name": "14 Чайка",
+					"generation_name": "1977 – 1989",
+					"start_year": 1977,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20704,
+			"name": "17310 Трофим",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20705,
+			"name": "21 Волга",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 29,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5521,
+					"mark_name": "ГАЗ",
+					"model_name": "21 Волга",
+					"generation_name": "1956 – 1970",
+					"start_year": 1956,
+					"finish_year": 1970,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2024,
+			"name": "2308 Атаман",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5522,
+					"mark_name": "ГАЗ",
+					"model_name": "2308 Атаман",
+					"generation_name": "1999 – 2000",
+					"start_year": 1999,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/31/bc31272694331d9c01cc2136d2a44c54.png",
+					"images": [
+						{
+							"id": 444465,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444465/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444465/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/31/bc31272694331d9c01cc2136d2a44c54.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20939,
+			"name": "233001 Тигр",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5523,
+					"mark_name": "ГАЗ",
+					"model_name": "233001 Тигр",
+					"generation_name": "2004 – н.в.",
+					"start_year": 2004,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20707,
+			"name": "310221 Волга",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 28,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5527,
+					"mark_name": "ГАЗ",
+					"model_name": "310221 Волга",
+					"generation_name": "1997 – 2008",
+					"start_year": 1997,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/48/e3/48e3801aab75182c6f4847f9e04a74e2.png",
+					"images": [
+						{
+							"id": 444469,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444469/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444469/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/48/e3/48e3801aab75182c6f4847f9e04a74e2.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20710,
+			"name": "3105 Волга",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 19,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5529,
+					"mark_name": "ГАЗ",
+					"model_name": "3105 Волга",
+					"generation_name": "1992 – 1996",
+					"start_year": 1992,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2033,
+			"name": "3111",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "521017709",
+			"generations": [
+				{
+					"id": 5532,
+					"mark_name": "ГАЗ",
+					"model_name": "3111",
+					"generation_name": "2000 – 2004",
+					"start_year": 2000,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20968,
+			"name": "3307",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 19,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20947,
+			"name": "3308",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20969,
+			"name": "3309",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 22,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20714,
+			"name": "51",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20715,
+			"name": "52",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20970,
+			"name": "53",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 9,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20971,
+			"name": "63",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20716,
+			"name": "66",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19400,
+			"name": "67",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "521021472",
+			"generations": [
+				{
+					"id": 5534,
+					"mark_name": "ГАЗ",
+					"model_name": "67",
+					"generation_name": "1943 – 1953",
+					"start_year": 1943,
+					"finish_year": 1953,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2034,
+			"name": "69",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 10,
+			"is_seo_active": 0,
+			"rgs_code": "521021473",
+			"generations": [
+				{
+					"id": 5038,
+					"mark_name": "ГАЗ",
+					"model_name": "69",
+					"generation_name": "1953 – 1972",
+					"start_year": 1953,
+					"finish_year": 1972,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20719,
+			"name": "М-1",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5536,
+					"mark_name": "ГАЗ",
+					"model_name": "М-1",
+					"generation_name": "1934 – 1948",
+					"start_year": 1934,
+					"finish_year": 1948,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20720,
+			"name": "М-12 ЗиМ",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20721,
+			"name": "М-20 Победа",
+			"mark_id": 216,
+			"sort_id": 0,
+			"rating": 4,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5535,
+					"mark_name": "ГАЗ",
+					"model_name": "М-20 Победа",
+					"generation_name": "1946 – 1958",
+					"start_year": 1946,
+					"finish_year": 1958,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}

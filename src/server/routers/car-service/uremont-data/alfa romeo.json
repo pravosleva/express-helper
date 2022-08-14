@@ -1,0 +1,1070 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 22,
+			"name": "146",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": "003000076",
+			"generations": [
+				{
+					"id": 56,
+					"mark_name": "Alfa Romeo",
+					"model_name": "146",
+					"generation_name": "1994 – 2001",
+					"start_year": 1994,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/a8/34a891508e5ce94a3294d65f8d9a5de6.png",
+					"images": [
+						{
+							"id": 442011,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442011/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442011/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/a8/34a891508e5ce94a3294d65f8d9a5de6.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 23,
+			"name": "147",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 47,
+			"is_seo_active": 0,
+			"rgs_code": "003000088",
+			"generations": [
+				{
+					"id": 57,
+					"mark_name": "Alfa Romeo",
+					"model_name": "147",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2004,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/21/2b217c4e6d8a398e9fbb83a42a585bc7.png",
+					"images": [
+						{
+							"id": 442012,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442012/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442012/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/21/2b217c4e6d8a398e9fbb83a42a585bc7.png"
+						}
+					]
+				},
+				{
+					"id": 58,
+					"mark_name": "Alfa Romeo",
+					"model_name": "147",
+					"generation_name": "I",
+					"start_year": 2000,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7c/71/7c711c3ebb1beef1a46c32410435a76d.png",
+					"images": [
+						{
+							"id": 442013,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442013/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442013/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7c/71/7c711c3ebb1beef1a46c32410435a76d.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 25,
+			"name": "156",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 82,
+			"is_seo_active": 0,
+			"rgs_code": "003000111",
+			"generations": [
+				{
+					"id": 61,
+					"mark_name": "Alfa Romeo",
+					"model_name": "156",
+					"generation_name": "I Рестайлинг 2",
+					"start_year": 2003,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/77/527733da6b5327f14cfbb19ec69de7db.png",
+					"images": [
+						{
+							"id": 442014,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442014/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442014/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/77/527733da6b5327f14cfbb19ec69de7db.png"
+						}
+					]
+				},
+				{
+					"id": 62,
+					"mark_name": "Alfa Romeo",
+					"model_name": "156",
+					"generation_name": "I Рестайлинг 1",
+					"start_year": 2002,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/2f/cd2f03e584bb101178990ded51948e38.png",
+					"images": [
+						{
+							"id": 442015,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442015/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442015/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/2f/cd2f03e584bb101178990ded51948e38.png"
+						}
+					]
+				},
+				{
+					"id": 63,
+					"mark_name": "Alfa Romeo",
+					"model_name": "156",
+					"generation_name": "I",
+					"start_year": 1997,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/dc/1ddc38dd0c6a2e03898c250d4ffc9133.png",
+					"images": [
+						{
+							"id": 442016,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442016/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442016/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/dc/1ddc38dd0c6a2e03898c250d4ffc9133.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 26,
+			"name": "159",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 63,
+			"is_seo_active": 0,
+			"rgs_code": "003020011",
+			"generations": [
+				{
+					"id": 64,
+					"mark_name": "Alfa Romeo",
+					"model_name": "159",
+					"generation_name": "2005 – 2011",
+					"start_year": 2005,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/64/d8/64d85dfb7615fd6089025b9cf56a3521.png",
+					"images": [
+						{
+							"id": 442017,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442017/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442017/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/64/d8/64d85dfb7615fd6089025b9cf56a3521.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 27,
+			"name": "164",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": "426016932",
+			"generations": [
+				{
+					"id": 65,
+					"mark_name": "Alfa Romeo",
+					"model_name": "164",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1992,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9e/05/9e05ba433feb3d14f5fb7699b95ce150.png",
+					"images": [
+						{
+							"id": 442018,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442018/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442018/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9e/05/9e05ba433feb3d14f5fb7699b95ce150.png"
+						}
+					]
+				},
+				{
+					"id": 66,
+					"mark_name": "Alfa Romeo",
+					"model_name": "164",
+					"generation_name": "I",
+					"start_year": 1987,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/70/ab70b849c5b05e0688af35bd3a8b72db.png",
+					"images": [
+						{
+							"id": 442019,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442019/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442019/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/70/ab70b849c5b05e0688af35bd3a8b72db.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 28,
+			"name": "166",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 38,
+			"is_seo_active": 0,
+			"rgs_code": "003000158",
+			"generations": [
+				{
+					"id": 67,
+					"mark_name": "Alfa Romeo",
+					"model_name": "166",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2003,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/90/43/9043233026fd481e5c4d3787faed3684.png",
+					"images": [
+						{
+							"id": 442020,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442020/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442020/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/90/43/9043233026fd481e5c4d3787faed3684.png"
+						}
+					]
+				},
+				{
+					"id": 68,
+					"mark_name": "Alfa Romeo",
+					"model_name": "166",
+					"generation_name": "I",
+					"start_year": 1998,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/74/3474443b562662cfef0812336f9c4d65.png",
+					"images": [
+						{
+							"id": 442021,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442021/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442021/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/74/3474443b562662cfef0812336f9c4d65.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 30,
+			"name": "4C",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "003022023",
+			"generations": [
+				{
+					"id": 74,
+					"mark_name": "Alfa Romeo",
+					"model_name": "4C",
+					"generation_name": "2013 – 2016",
+					"start_year": 2013,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/09/130909b4db26ea6fa613f7c61987c62c.png",
+					"images": [
+						{
+							"id": 442022,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442022/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442022/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/09/130909b4db26ea6fa613f7c61987c62c.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 38,
+			"name": "Brera",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": "003020010",
+			"generations": [
+				{
+					"id": 82,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Brera",
+					"generation_name": "2006 – 2010",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f5/20/f52084e110c062721ae4d4b1e6fcdb19.png",
+					"images": [
+						{
+							"id": 442024,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442024/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442024/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f5/20/f52084e110c062721ae4d4b1e6fcdb19.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 41,
+			"name": "GT",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 19,
+			"is_seo_active": 0,
+			"rgs_code": "272021290",
+			"generations": [
+				{
+					"id": 89,
+					"mark_name": "Alfa Romeo",
+					"model_name": "GT",
+					"generation_name": "2003 – 2010",
+					"start_year": 2003,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/f4/e6f42af6a6ae49b0a517bad1030da9ff.png",
+					"images": [
+						{
+							"id": 442031,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442031/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442031/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/f4/e6f42af6a6ae49b0a517bad1030da9ff.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 44,
+			"name": "MiTo",
+			"mark_id": 3,
+			"sort_id": 1,
+			"rating": 4,
+			"is_seo_active": 0,
+			"rgs_code": "003021000",
+			"generations": [
+				{
+					"id": 91,
+					"mark_name": "Alfa Romeo",
+					"model_name": "MiTo",
+					"generation_name": "I Рестайлинг 2",
+					"start_year": 2016,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/e0/abe09b671c7f018c8fbf0e0bb6c3dace.png",
+					"images": [
+						{
+							"id": 442033,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442033/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442033/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/e0/abe09b671c7f018c8fbf0e0bb6c3dace.png"
+						}
+					]
+				},
+				{
+					"id": 92,
+					"mark_name": "Alfa Romeo",
+					"model_name": "MiTo",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/45/45/4545793534838496c37190fbdec3374a.png",
+					"images": [
+						{
+							"id": 442034,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442034/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442034/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/45/45/4545793534838496c37190fbdec3374a.png"
+						}
+					]
+				},
+				{
+					"id": 93,
+					"mark_name": "Alfa Romeo",
+					"model_name": "MiTo",
+					"generation_name": "I",
+					"start_year": 2008,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/9d/e39dcc106060a7e267118646bcc28947.png",
+					"images": [
+						{
+							"id": 442035,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442035/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442035/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/9d/e39dcc106060a7e267118646bcc28947.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 21,
+			"name": "145",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "426020767",
+			"generations": [
+				{
+					"id": 54,
+					"mark_name": "Alfa Romeo",
+					"model_name": "145",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1999,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/29/f3/29f3f90c14cc89aa6ff82f65f3f7e595.png",
+					"images": [
+						{
+							"id": 442009,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442009/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442009/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/29/f3/29f3f90c14cc89aa6ff82f65f3f7e595.png"
+						}
+					]
+				},
+				{
+					"id": 55,
+					"mark_name": "Alfa Romeo",
+					"model_name": "145",
+					"generation_name": "I",
+					"start_year": 1994,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d5/59/d559470774b8b45262082cb572437efe.png",
+					"images": [
+						{
+							"id": 442010,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442010/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442010/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d5/59/d559470774b8b45262082cb572437efe.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 24,
+			"name": "155",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "003000095",
+			"generations": [
+				{
+					"id": 59,
+					"mark_name": "Alfa Romeo",
+					"model_name": "155",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1995,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 60,
+					"mark_name": "Alfa Romeo",
+					"model_name": "155",
+					"generation_name": "I",
+					"start_year": 1992,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19754,
+			"name": "1750",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19601,
+			"name": "1900",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 69,
+					"mark_name": "Alfa Romeo",
+					"model_name": "1900",
+					"generation_name": "1950 – 1959",
+					"start_year": 1950,
+					"finish_year": 1959,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19755,
+			"name": "2000",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19756,
+			"name": "2300",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19257,
+			"name": "2600",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 70,
+					"mark_name": "Alfa Romeo",
+					"model_name": "2600",
+					"generation_name": "I",
+					"start_year": 1961,
+					"finish_year": 1968,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 29,
+			"name": "33",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "003000173",
+			"generations": [
+				{
+					"id": 71,
+					"mark_name": "Alfa Romeo",
+					"model_name": "33",
+					"generation_name": "II",
+					"start_year": 1990,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 72,
+					"mark_name": "Alfa Romeo",
+					"model_name": "33",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1986,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 73,
+					"mark_name": "Alfa Romeo",
+					"model_name": "33",
+					"generation_name": "I",
+					"start_year": 1983,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 32,
+			"name": "75",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "344013293",
+			"generations": [
+				{
+					"id": 75,
+					"mark_name": "Alfa Romeo",
+					"model_name": "75",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1988,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 76,
+					"mark_name": "Alfa Romeo",
+					"model_name": "75",
+					"generation_name": "I",
+					"start_year": 1985,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 33,
+			"name": "8C Competizione",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "003020999",
+			"generations": [
+				{
+					"id": 77,
+					"mark_name": "Alfa Romeo",
+					"model_name": "8C Competizione",
+					"generation_name": "2007 – 2010",
+					"start_year": 2007,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/38/a73870e9f147da9e6ee87025c5fcc73f.png",
+					"images": [
+						{
+							"id": 442023,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442023/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442023/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/38/a73870e9f147da9e6ee87025c5fcc73f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 34,
+			"name": "90",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "361013423",
+			"generations": [
+				{
+					"id": 78,
+					"mark_name": "Alfa Romeo",
+					"model_name": "90",
+					"generation_name": "1984 – 1987",
+					"start_year": 1984,
+					"finish_year": 1987,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 31,
+			"name": "Alfa 6",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5145,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Alfa 6",
+					"generation_name": "1927 – 1933",
+					"start_year": 1927,
+					"finish_year": 1933,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 35,
+			"name": "Alfasud",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "003000247",
+			"generations": [
+				{
+					"id": 79,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Alfasud",
+					"generation_name": "1971 – 1983",
+					"start_year": 1971,
+					"finish_year": 1983,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 36,
+			"name": "Alfetta",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "003000274",
+			"generations": [
+				{
+					"id": 80,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Alfetta",
+					"generation_name": "1972 – 1987",
+					"start_year": 1972,
+					"finish_year": 1987,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19757,
+			"name": "AR6",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19758,
+			"name": "AR8",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 37,
+			"name": "Arna",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "003000288",
+			"generations": [
+				{
+					"id": 81,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Arna",
+					"generation_name": "1983 – 1987",
+					"start_year": 1983,
+					"finish_year": 1987,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19759,
+			"name": "Dauphine",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 39,
+			"name": "Giulia",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "003000294",
+			"generations": [
+				{
+					"id": 83,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Giulia",
+					"generation_name": "II (952)",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/bb/53bb5177ae690fd055defda67b065def.png",
+					"images": [
+						{
+							"id": 442025,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442025/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442025/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/bb/53bb5177ae690fd055defda67b065def.png"
+						}
+					]
+				},
+				{
+					"id": 84,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Giulia",
+					"generation_name": "I (105)",
+					"start_year": 1962,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/14/db14d80cb938325e9d8cf41b292364b2.png",
+					"images": [
+						{
+							"id": 442026,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442026/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442026/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/14/db14d80cb938325e9d8cf41b292364b2.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 40,
+			"name": "Giulietta",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "003000303",
+			"generations": [
+				{
+					"id": 85,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Giulietta",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4e/81/4e81adbae2198b829f42419836184c9e.png",
+					"images": [
+						{
+							"id": 442027,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442027/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442027/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4e/81/4e81adbae2198b829f42419836184c9e.png"
+						}
+					]
+				},
+				{
+					"id": 86,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Giulietta",
+					"generation_name": "III",
+					"start_year": 2010,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/b2/ccb21a9045ba4d8fa52588b578bd7d49.png",
+					"images": [
+						{
+							"id": 442028,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442028/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442028/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/b2/ccb21a9045ba4d8fa52588b578bd7d49.png"
+						}
+					]
+				},
+				{
+					"id": 87,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Giulietta",
+					"generation_name": "II",
+					"start_year": 1977,
+					"finish_year": 1985,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/85/ae85bf52443fb89cb50ec113df174960.png",
+					"images": [
+						{
+							"id": 442029,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442029/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442029/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/85/ae85bf52443fb89cb50ec113df174960.png"
+						}
+					]
+				},
+				{
+					"id": 88,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Giulietta",
+					"generation_name": "I",
+					"start_year": 1954,
+					"finish_year": 1963,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a0/54/a0546e8cebfa9da61fc35cc638b042e9.png",
+					"images": [
+						{
+							"id": 442030,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442030/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442030/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a0/54/a0546e8cebfa9da61fc35cc638b042e9.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 43,
+			"name": "GTV",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "003000321",
+			"generations": [
+				{
+					"id": 90,
+					"mark_name": "Alfa Romeo",
+					"model_name": "GTV",
+					"generation_name": "1995 – 2006",
+					"start_year": 1995,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/b0/57b04219b15b11ceaa0d9c17675771d9.png",
+					"images": [
+						{
+							"id": 442032,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442032/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442032/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/b0/57b04219b15b11ceaa0d9c17675771d9.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19760,
+			"name": "Milano",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 45,
+			"name": "Montreal",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "003000332",
+			"generations": [
+				{
+					"id": 94,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Montreal",
+					"generation_name": "1970 – 1979",
+					"start_year": 1970,
+					"finish_year": 1979,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19761,
+			"name": "S.Z./R.Z.",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 47,
+			"name": "Spider",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "003000336",
+			"generations": [
+				{
+					"id": 95,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Spider",
+					"generation_name": "III",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/c5/10c50f4fb27ecc7c375765fa43c28e89.png",
+					"images": [
+						{
+							"id": 442036,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442036/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442036/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/c5/10c50f4fb27ecc7c375765fa43c28e89.png"
+						}
+					]
+				},
+				{
+					"id": 96,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Spider",
+					"generation_name": "II",
+					"start_year": 1995,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f3/ea/f3ea086f182aaf99b826b9e082d8acc8.png",
+					"images": [
+						{
+							"id": 442037,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442037/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442037/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f3/ea/f3ea086f182aaf99b826b9e082d8acc8.png"
+						}
+					]
+				},
+				{
+					"id": 97,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Spider",
+					"generation_name": "I",
+					"start_year": 1966,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/9f/1d9f1b10424d46a1b8b0e2edaa6660fb.png",
+					"images": [
+						{
+							"id": 442038,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442038/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442038/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/9f/1d9f1b10424d46a1b8b0e2edaa6660fb.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20994,
+			"name": "Stelvio",
+			"mark_id": 3,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 98,
+					"mark_name": "Alfa Romeo",
+					"model_name": "Stelvio",
+					"generation_name": "2017 – н.в.",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/61/a661ad458cbd236e526e21a3475b6117.png",
+					"images": [
+						{
+							"id": 442039,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442039/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442039/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/61/a661ad458cbd236e526e21a3475b6117.png"
+						}
+					]
+				}
+			]
+		}
+	]
+}

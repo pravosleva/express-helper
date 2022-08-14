@@ -1,0 +1,3696 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 615,
+			"name": "C-Max",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 485,
+			"is_seo_active": 0,
+			"rgs_code": "104021133",
+			"generations": [
+				{
+					"id": 1272,
+					"mark_name": "Ford",
+					"model_name": "C-Max",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f6/ea/f6eaa9f2d174c62a01137265e3b0ae94.png",
+					"images": [
+						{
+							"id": 442608,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442608/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442608/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f6/ea/f6eaa9f2d174c62a01137265e3b0ae94.png"
+						}
+					]
+				},
+				{
+					"id": 1273,
+					"mark_name": "Ford",
+					"model_name": "C-Max",
+					"generation_name": "II",
+					"start_year": 2010,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/d6/2fd609ab8ea399cc04e7f42ce492a381.png",
+					"images": [
+						{
+							"id": 442609,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442609/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442609/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/d6/2fd609ab8ea399cc04e7f42ce492a381.png"
+						}
+					]
+				},
+				{
+					"id": 1274,
+					"mark_name": "Ford",
+					"model_name": "C-Max",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2007,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9f/52/9f52326739ee990d8061a1ac7749dcc6.png",
+					"images": [
+						{
+							"id": 442610,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442610/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442610/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9f/52/9f52326739ee990d8061a1ac7749dcc6.png"
+						}
+					]
+				},
+				{
+					"id": 1275,
+					"mark_name": "Ford",
+					"model_name": "C-Max",
+					"generation_name": "I",
+					"start_year": 2003,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/e2/75e24ad4836fcce9fca32c45c19b355a.png",
+					"images": [
+						{
+							"id": 442611,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442611/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442611/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/e2/75e24ad4836fcce9fca32c45c19b355a.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 624,
+			"name": "Escape",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 491,
+			"is_seo_active": 0,
+			"rgs_code": "104004600",
+			"generations": [
+				{
+					"id": 1295,
+					"mark_name": "Ford",
+					"model_name": "Escape",
+					"generation_name": "IV",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1296,
+					"mark_name": "Ford",
+					"model_name": "Escape",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1297,
+					"mark_name": "Ford",
+					"model_name": "Escape",
+					"generation_name": "III",
+					"start_year": 2012,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1298,
+					"mark_name": "Ford",
+					"model_name": "Escape",
+					"generation_name": "II",
+					"start_year": 2007,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1299,
+					"mark_name": "Ford",
+					"model_name": "Escape",
+					"generation_name": "I Рестайлинг 2",
+					"start_year": 2007,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1300,
+					"mark_name": "Ford",
+					"model_name": "Escape",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2004,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1301,
+					"mark_name": "Ford",
+					"model_name": "Escape",
+					"generation_name": "I",
+					"start_year": 2000,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 630,
+			"name": "Explorer",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 581,
+			"is_seo_active": 0,
+			"rgs_code": "872022392",
+			"generations": [
+				{
+					"id": 1317,
+					"mark_name": "Ford",
+					"model_name": "Explorer",
+					"generation_name": "VI",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1318,
+					"mark_name": "Ford",
+					"model_name": "Explorer",
+					"generation_name": "V Рестайлинг 2",
+					"start_year": 2017,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1319,
+					"mark_name": "Ford",
+					"model_name": "Explorer",
+					"generation_name": "V Рестайлинг",
+					"start_year": 2015,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1320,
+					"mark_name": "Ford",
+					"model_name": "Explorer",
+					"generation_name": "V",
+					"start_year": 2010,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1321,
+					"mark_name": "Ford",
+					"model_name": "Explorer",
+					"generation_name": "IV",
+					"start_year": 2005,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1322,
+					"mark_name": "Ford",
+					"model_name": "Explorer",
+					"generation_name": "III",
+					"start_year": 2001,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1323,
+					"mark_name": "Ford",
+					"model_name": "Explorer",
+					"generation_name": "II",
+					"start_year": 1994,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1324,
+					"mark_name": "Ford",
+					"model_name": "Explorer",
+					"generation_name": "I",
+					"start_year": 1990,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 634,
+			"name": "Fiesta",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 1204,
+			"is_seo_active": 0,
+			"rgs_code": "104004830",
+			"generations": [
+				{
+					"id": 1336,
+					"mark_name": "Ford",
+					"model_name": "Fiesta",
+					"generation_name": "Mk7",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/89/3b/893b7f73486ef05ce04257db474ccb6a.png",
+					"images": [
+						{
+							"id": 442619,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442619/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442619/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/89/3b/893b7f73486ef05ce04257db474ccb6a.png"
+						}
+					]
+				},
+				{
+					"id": 1337,
+					"mark_name": "Ford",
+					"model_name": "Fiesta",
+					"generation_name": "Mk6 Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6d/73/6d7344f5873f1c57e00e7adc1ed61b76.png",
+					"images": [
+						{
+							"id": 442620,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442620/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442620/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6d/73/6d7344f5873f1c57e00e7adc1ed61b76.png"
+						}
+					]
+				},
+				{
+					"id": 1338,
+					"mark_name": "Ford",
+					"model_name": "Fiesta",
+					"generation_name": "Mk6",
+					"start_year": 2008,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/e9/b7e986ae1bc2eac63837ccd04260700b.png",
+					"images": [
+						{
+							"id": 442621,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442621/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442621/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/e9/b7e986ae1bc2eac63837ccd04260700b.png"
+						}
+					]
+				},
+				{
+					"id": 1339,
+					"mark_name": "Ford",
+					"model_name": "Fiesta",
+					"generation_name": "Mk5",
+					"start_year": 2002,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/29/60/29604a77d08c10f654e197c0b571c696.png",
+					"images": [
+						{
+							"id": 442622,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442622/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442622/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/29/60/29604a77d08c10f654e197c0b571c696.png"
+						}
+					]
+				},
+				{
+					"id": 1340,
+					"mark_name": "Ford",
+					"model_name": "Fiesta",
+					"generation_name": "Mk4 Рестайлинг",
+					"start_year": 1999,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/17/b7174c2fd947419f8e49401a3e944a07.png",
+					"images": [
+						{
+							"id": 442623,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442623/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442623/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/17/b7174c2fd947419f8e49401a3e944a07.png"
+						}
+					]
+				},
+				{
+					"id": 1341,
+					"mark_name": "Ford",
+					"model_name": "Fiesta",
+					"generation_name": "Mk4",
+					"start_year": 1995,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1342,
+					"mark_name": "Ford",
+					"model_name": "Fiesta",
+					"generation_name": "Mk3",
+					"start_year": 1989,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/ee/28eece0ec8aa9d3845ce99189acdcf9c.png",
+					"images": [
+						{
+							"id": 442624,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442624/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442624/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/ee/28eece0ec8aa9d3845ce99189acdcf9c.png"
+						}
+					]
+				},
+				{
+					"id": 1343,
+					"mark_name": "Ford",
+					"model_name": "Fiesta",
+					"generation_name": "Mk2",
+					"start_year": 1983,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/8d/028d2d2fd91b44c27ba658d020275c1e.png",
+					"images": [
+						{
+							"id": 442625,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442625/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442625/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/8d/028d2d2fd91b44c27ba658d020275c1e.png"
+						}
+					]
+				},
+				{
+					"id": 1344,
+					"mark_name": "Ford",
+					"model_name": "Fiesta",
+					"generation_name": "Mk1",
+					"start_year": 1976,
+					"finish_year": 1983,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/6c/a36cf690fc417b157d08419f02ea9672.png",
+					"images": [
+						{
+							"id": 442626,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442626/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442626/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/6c/a36cf690fc417b157d08419f02ea9672.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 637,
+			"name": "Focus",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 18331,
+			"is_seo_active": 0,
+			"rgs_code": "104004889",
+			"generations": [
+				{
+					"id": 1348,
+					"mark_name": "Ford",
+					"model_name": "Focus",
+					"generation_name": "IV",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/53/5d536b13e77e7891b9f10e1838c2f519.png",
+					"images": [
+						{
+							"id": 442627,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442627/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442627/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/53/5d536b13e77e7891b9f10e1838c2f519.png"
+						}
+					]
+				},
+				{
+					"id": 1349,
+					"mark_name": "Ford",
+					"model_name": "Focus",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2014,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1350,
+					"mark_name": "Ford",
+					"model_name": "Focus",
+					"generation_name": "III",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/ec/1cec8a45c875476dda77fbff8deeece1.png",
+					"images": [
+						{
+							"id": 442628,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442628/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442628/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/ec/1cec8a45c875476dda77fbff8deeece1.png"
+						}
+					]
+				},
+				{
+					"id": 1351,
+					"mark_name": "Ford",
+					"model_name": "Focus",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2007,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/84/0a84cd9b2f9f06cc1c32893ffb05ac08.png",
+					"images": [
+						{
+							"id": 442629,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442629/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442629/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/84/0a84cd9b2f9f06cc1c32893ffb05ac08.png"
+						}
+					]
+				},
+				{
+					"id": 1352,
+					"mark_name": "Ford",
+					"model_name": "Focus",
+					"generation_name": "II",
+					"start_year": 2005,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/00/cb0022387da0109b74022855f97c7401.png",
+					"images": [
+						{
+							"id": 442630,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442630/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442630/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/00/cb0022387da0109b74022855f97c7401.png"
+						}
+					]
+				},
+				{
+					"id": 1353,
+					"mark_name": "Ford",
+					"model_name": "Focus",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2001,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/7d/1c7dc12d2dce52b027ec180de0df51c3.png",
+					"images": [
+						{
+							"id": 442631,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442631/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442631/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/7d/1c7dc12d2dce52b027ec180de0df51c3.png"
+						}
+					]
+				},
+				{
+					"id": 1354,
+					"mark_name": "Ford",
+					"model_name": "Focus",
+					"generation_name": "I",
+					"start_year": 1998,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/94/66/9466c2661d1023210a61a4d0f2f6b37b.png",
+					"images": [
+						{
+							"id": 442632,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442632/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442632/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/94/66/9466c2661d1023210a61a4d0f2f6b37b.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 641,
+			"name": "Fusion",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 1295,
+			"is_seo_active": 0,
+			"rgs_code": "104004944",
+			"generations": [
+				{
+					"id": 1358,
+					"mark_name": "Ford",
+					"model_name": "Fusion",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2005,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/77/94/77944ac38ccd1dc605aa00f5e48cc661.png",
+					"images": [
+						{
+							"id": 442633,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442633/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442633/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/77/94/77944ac38ccd1dc605aa00f5e48cc661.png"
+						}
+					]
+				},
+				{
+					"id": 1359,
+					"mark_name": "Ford",
+					"model_name": "Fusion",
+					"generation_name": "I",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/df/5c/df5c9d4795b1c36d35b547d201ef5c21.png",
+					"images": [
+						{
+							"id": 442634,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442634/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442634/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/df/5c/df5c9d4795b1c36d35b547d201ef5c21.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 648,
+			"name": "Kuga",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 1095,
+			"is_seo_active": 0,
+			"rgs_code": "104021145",
+			"generations": [
+				{
+					"id": 1380,
+					"mark_name": "Ford",
+					"model_name": "Kuga",
+					"generation_name": "III",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/43/d8433f0a8ae5aa14da96950a429b5537.png",
+					"images": [
+						{
+							"id": 442644,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442644/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442644/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/43/d8433f0a8ae5aa14da96950a429b5537.png"
+						}
+					]
+				},
+				{
+					"id": 1381,
+					"mark_name": "Ford",
+					"model_name": "Kuga",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c1/1a/c11ab4574b806f001114f56a72cab266.png",
+					"images": [
+						{
+							"id": 442645,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442645/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442645/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c1/1a/c11ab4574b806f001114f56a72cab266.png"
+						}
+					]
+				},
+				{
+					"id": 1382,
+					"mark_name": "Ford",
+					"model_name": "Kuga",
+					"generation_name": "II",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/22/9f/229fbec06ed6f0b3848dfb7a5b43c722.png",
+					"images": [
+						{
+							"id": 442646,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442646/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442646/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/22/9f/229fbec06ed6f0b3848dfb7a5b43c722.png"
+						}
+					]
+				},
+				{
+					"id": 1383,
+					"mark_name": "Ford",
+					"model_name": "Kuga",
+					"generation_name": "I",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/94/30948496cc663dfea03956c41f417995.png",
+					"images": [
+						{
+							"id": 442647,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442647/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442647/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/94/30948496cc663dfea03956c41f417995.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 652,
+			"name": "Mondeo",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 4139,
+			"is_seo_active": 0,
+			"rgs_code": "104005036",
+			"generations": [
+				{
+					"id": 1391,
+					"mark_name": "Ford",
+					"model_name": "Mondeo",
+					"generation_name": "V Рестайлинг",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c9/68/c96811c77930c9679abafb6face402e3.png",
+					"images": [
+						{
+							"id": 442648,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442648/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442648/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c9/68/c96811c77930c9679abafb6face402e3.png"
+						}
+					]
+				},
+				{
+					"id": 1392,
+					"mark_name": "Ford",
+					"model_name": "Mondeo",
+					"generation_name": "V",
+					"start_year": 2014,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d5/5a/d55a835f714e03c8f9a60cbcf582ab9a.png",
+					"images": [
+						{
+							"id": 442649,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442649/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442649/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d5/5a/d55a835f714e03c8f9a60cbcf582ab9a.png"
+						}
+					]
+				},
+				{
+					"id": 1393,
+					"mark_name": "Ford",
+					"model_name": "Mondeo",
+					"generation_name": "IV Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/a1/d9a1d7bc2a40505b591d74a7c04a3835.png",
+					"images": [
+						{
+							"id": 442650,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442650/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442650/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/a1/d9a1d7bc2a40505b591d74a7c04a3835.png"
+						}
+					]
+				},
+				{
+					"id": 1394,
+					"mark_name": "Ford",
+					"model_name": "Mondeo",
+					"generation_name": "IV",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ba/b8/bab80ed047b68f75fffb12659bf09d6f.png",
+					"images": [
+						{
+							"id": 442651,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442651/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442651/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ba/b8/bab80ed047b68f75fffb12659bf09d6f.png"
+						}
+					]
+				},
+				{
+					"id": 1395,
+					"mark_name": "Ford",
+					"model_name": "Mondeo",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2003,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/82/43827e083a93194aef53136c76292f56.png",
+					"images": [
+						{
+							"id": 442652,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442652/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442652/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/82/43827e083a93194aef53136c76292f56.png"
+						}
+					]
+				},
+				{
+					"id": 1396,
+					"mark_name": "Ford",
+					"model_name": "Mondeo",
+					"generation_name": "III",
+					"start_year": 2000,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/19/a319c38c47e156552ccc0aa36efc234e.png",
+					"images": [
+						{
+							"id": 442653,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442653/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442653/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/19/a319c38c47e156552ccc0aa36efc234e.png"
+						}
+					]
+				},
+				{
+					"id": 1397,
+					"mark_name": "Ford",
+					"model_name": "Mondeo",
+					"generation_name": "II",
+					"start_year": 1994,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/95/fb/95fb1abaadaae35ac548dc090bfa0437.png",
+					"images": [
+						{
+							"id": 442654,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442654/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442654/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/95/fb/95fb1abaadaae35ac548dc090bfa0437.png"
+						}
+					]
+				},
+				{
+					"id": 1398,
+					"mark_name": "Ford",
+					"model_name": "Mondeo",
+					"generation_name": "I",
+					"start_year": 1993,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/f2/a3f218c33e2db480863fbd0404cc5f0e.png",
+					"images": [
+						{
+							"id": 442655,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442655/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442655/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/f2/a3f218c33e2db480863fbd0404cc5f0e.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 659,
+			"name": "S-Max",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 309,
+			"is_seo_active": 0,
+			"rgs_code": "104020649",
+			"generations": [
+				{
+					"id": 1423,
+					"mark_name": "Ford",
+					"model_name": "S-Max",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/ec/e3ecc52b756d66dfa3e266323e807269.png",
+					"images": [
+						{
+							"id": 442662,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442662/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442662/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/ec/e3ecc52b756d66dfa3e266323e807269.png"
+						}
+					]
+				},
+				{
+					"id": 1424,
+					"mark_name": "Ford",
+					"model_name": "S-Max",
+					"generation_name": "II",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8e/14/8e141a462b696cd392cead8afd26ab0e.png",
+					"images": [
+						{
+							"id": 442663,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442663/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442663/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8e/14/8e141a462b696cd392cead8afd26ab0e.png"
+						}
+					]
+				},
+				{
+					"id": 1425,
+					"mark_name": "Ford",
+					"model_name": "S-Max",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5b/65/5b65361859f9aa084565c1b1f642d3ce.png",
+					"images": [
+						{
+							"id": 442664,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442664/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442664/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5b/65/5b65361859f9aa084565c1b1f642d3ce.png"
+						}
+					]
+				},
+				{
+					"id": 1426,
+					"mark_name": "Ford",
+					"model_name": "S-Max",
+					"generation_name": "I",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20079,
+			"name": "Transit",
+			"mark_id": 63,
+			"sort_id": 1,
+			"rating": 626,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 611,
+			"name": "Aerostar",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "104004532",
+			"generations": [
+				{
+					"id": 1264,
+					"mark_name": "Ford",
+					"model_name": "Aerostar",
+					"generation_name": "1986 – 1997",
+					"start_year": 1986,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20047,
+			"name": "Anglia",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 612,
+			"name": "Aspire",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "236009343",
+			"generations": [
+				{
+					"id": 1265,
+					"mark_name": "Ford",
+					"model_name": "Aspire",
+					"generation_name": "1993 – 1997",
+					"start_year": 1993,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20048,
+			"name": "Bantam",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 614,
+			"name": "Bronco",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 4,
+			"is_seo_active": 0,
+			"rgs_code": "104021131",
+			"generations": [
+				{
+					"id": 1266,
+					"mark_name": "Ford",
+					"model_name": "Bronco",
+					"generation_name": "VI",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1267,
+					"mark_name": "Ford",
+					"model_name": "Bronco",
+					"generation_name": "V",
+					"start_year": 1992,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1268,
+					"mark_name": "Ford",
+					"model_name": "Bronco",
+					"generation_name": "IV",
+					"start_year": 1987,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1269,
+					"mark_name": "Ford",
+					"model_name": "Bronco",
+					"generation_name": "III",
+					"start_year": 1980,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1270,
+					"mark_name": "Ford",
+					"model_name": "Bronco",
+					"generation_name": "II",
+					"start_year": 1978,
+					"finish_year": 1979,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1271,
+					"mark_name": "Ford",
+					"model_name": "Bronco",
+					"generation_name": "I",
+					"start_year": 1966,
+					"finish_year": 1977,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2223,
+			"name": "Bronco II",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5210,
+					"mark_name": "Ford",
+					"model_name": "Bronco II",
+					"generation_name": "1984 – 1990",
+					"start_year": 1984,
+					"finish_year": 1990,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 616,
+			"name": "Capri",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "104004539",
+			"generations": [
+				{
+					"id": 1276,
+					"mark_name": "Ford",
+					"model_name": "Capri",
+					"generation_name": "III",
+					"start_year": 1978,
+					"finish_year": 1987,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1277,
+					"mark_name": "Ford",
+					"model_name": "Capri",
+					"generation_name": "II",
+					"start_year": 1974,
+					"finish_year": 1977,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1278,
+					"mark_name": "Ford",
+					"model_name": "Capri",
+					"generation_name": "I",
+					"start_year": 1969,
+					"finish_year": 1974,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20049,
+			"name": "Comete",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 617,
+			"name": "Consul",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "104004551",
+			"generations": [
+				{
+					"id": 1279,
+					"mark_name": "Ford",
+					"model_name": "Consul",
+					"generation_name": "1972 – 1976",
+					"start_year": 1972,
+					"finish_year": 1976,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 618,
+			"name": "Contour",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 8,
+			"is_seo_active": 0,
+			"rgs_code": "104020671",
+			"generations": [
+				{
+					"id": 1280,
+					"mark_name": "Ford",
+					"model_name": "Contour",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1997,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/61/58/61584136adb6ed39df63ae9b08738843.png",
+					"images": [
+						{
+							"id": 442612,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442612/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442612/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/61/58/61584136adb6ed39df63ae9b08738843.png"
+						}
+					]
+				},
+				{
+					"id": 1281,
+					"mark_name": "Ford",
+					"model_name": "Contour",
+					"generation_name": "I",
+					"start_year": 1994,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/cd/edcd23011b1293a467a921047aa17b8f.png",
+					"images": [
+						{
+							"id": 442613,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442613/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442613/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/cd/edcd23011b1293a467a921047aa17b8f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20050,
+			"name": "Corcel",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20051,
+			"name": "Corsair",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20052,
+			"name": "Cortina",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1282,
+					"mark_name": "Ford",
+					"model_name": "Cortina",
+					"generation_name": "III",
+					"start_year": 1970,
+					"finish_year": 1976,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 619,
+			"name": "Cougar",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 16,
+			"is_seo_active": 0,
+			"rgs_code": "231009194",
+			"generations": [
+				{
+					"id": 1283,
+					"mark_name": "Ford",
+					"model_name": "Cougar",
+					"generation_name": "1998 – 2002",
+					"start_year": 1998,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2275,
+			"name": "Courier",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "104005513",
+			"generations": []
+		},
+		{
+			"id": 620,
+			"name": "Crown Victoria",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "104004568",
+			"generations": [
+				{
+					"id": 1284,
+					"mark_name": "Ford",
+					"model_name": "Crown Victoria",
+					"generation_name": "II",
+					"start_year": 1997,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1285,
+					"mark_name": "Ford",
+					"model_name": "Crown Victoria",
+					"generation_name": "I",
+					"start_year": 1992,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20053,
+			"name": "Del Rey",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20054,
+			"name": "Durango",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20057,
+			"name": "E-series",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 621,
+			"name": "Econoline",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1286,
+					"mark_name": "Ford",
+					"model_name": "Econoline",
+					"generation_name": "IV",
+					"start_year": 1992,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1287,
+					"mark_name": "Ford",
+					"model_name": "Econoline",
+					"generation_name": "III",
+					"start_year": 1975,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1288,
+					"mark_name": "Ford",
+					"model_name": "Econoline",
+					"generation_name": "II",
+					"start_year": 1968,
+					"finish_year": 1974,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20055,
+			"name": "Econovan",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 622,
+			"name": "EcoSport",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 111,
+			"is_seo_active": 0,
+			"rgs_code": "104021980",
+			"generations": [
+				{
+					"id": 1289,
+					"mark_name": "Ford",
+					"model_name": "EcoSport",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1290,
+					"mark_name": "Ford",
+					"model_name": "EcoSport",
+					"generation_name": "I",
+					"start_year": 2014,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 623,
+			"name": "Edge",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": "104021136",
+			"generations": [
+				{
+					"id": 1291,
+					"mark_name": "Ford",
+					"model_name": "Edge",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1292,
+					"mark_name": "Ford",
+					"model_name": "Edge",
+					"generation_name": "II",
+					"start_year": 2015,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1293,
+					"mark_name": "Ford",
+					"model_name": "Edge",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1294,
+					"mark_name": "Ford",
+					"model_name": "Edge",
+					"generation_name": "I",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20056,
+			"name": "Elite",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 626,
+			"name": "Escort",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 54,
+			"is_seo_active": 0,
+			"rgs_code": "104004608",
+			"generations": [
+				{
+					"id": 1302,
+					"mark_name": "Ford",
+					"model_name": "Escort",
+					"generation_name": "V Рестайлинг 2",
+					"start_year": 1995,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/70/c1/70c19db7c60093e17e8072c3d65de888.png",
+					"images": [
+						{
+							"id": 442614,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442614/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442614/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/70/c1/70c19db7c60093e17e8072c3d65de888.png"
+						}
+					]
+				},
+				{
+					"id": 1303,
+					"mark_name": "Ford",
+					"model_name": "Escort",
+					"generation_name": "V Рестайлинг 1",
+					"start_year": 1991,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/1a/5d1a4ff03ed46ee3673ad11b0f100938.png",
+					"images": [
+						{
+							"id": 442615,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442615/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442615/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/1a/5d1a4ff03ed46ee3673ad11b0f100938.png"
+						}
+					]
+				},
+				{
+					"id": 1304,
+					"mark_name": "Ford",
+					"model_name": "Escort",
+					"generation_name": "V",
+					"start_year": 1990,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bd/99/bd99138d4a7bda53c94fa5d1b94ff034.png",
+					"images": [
+						{
+							"id": 442616,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442616/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442616/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bd/99/bd99138d4a7bda53c94fa5d1b94ff034.png"
+						}
+					]
+				},
+				{
+					"id": 1305,
+					"mark_name": "Ford",
+					"model_name": "Escort",
+					"generation_name": "IV",
+					"start_year": 1986,
+					"finish_year": 1990,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/18/c2/18c2a60fbfccda6f1ee8f560a2f42e22.png",
+					"images": [
+						{
+							"id": 442617,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442617/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442617/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/18/c2/18c2a60fbfccda6f1ee8f560a2f42e22.png"
+						}
+					]
+				},
+				{
+					"id": 1306,
+					"mark_name": "Ford",
+					"model_name": "Escort",
+					"generation_name": "III",
+					"start_year": 1980,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/13/a6133e02500245ee971bb33601366ecf.png",
+					"images": [
+						{
+							"id": 442618,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442618/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442618/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/13/a6133e02500245ee971bb33601366ecf.png"
+						}
+					]
+				},
+				{
+					"id": 1307,
+					"mark_name": "Ford",
+					"model_name": "Escort",
+					"generation_name": "II",
+					"start_year": 1973,
+					"finish_year": 1981,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1308,
+					"mark_name": "Ford",
+					"model_name": "Escort",
+					"generation_name": "I",
+					"start_year": 1968,
+					"finish_year": 1976,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 627,
+			"name": "Everest",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1309,
+					"mark_name": "Ford",
+					"model_name": "Everest",
+					"generation_name": "II",
+					"start_year": 2006,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1310,
+					"mark_name": "Ford",
+					"model_name": "Everest",
+					"generation_name": "I",
+					"start_year": 2003,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 628,
+			"name": "Excursion",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "104004768",
+			"generations": [
+				{
+					"id": 1311,
+					"mark_name": "Ford",
+					"model_name": "Excursion",
+					"generation_name": "1999 – 2005",
+					"start_year": 1999,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20058,
+			"name": "EXP",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 629,
+			"name": "Expedition",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 20,
+			"is_seo_active": 0,
+			"rgs_code": "104004782",
+			"generations": [
+				{
+					"id": 1312,
+					"mark_name": "Ford",
+					"model_name": "Expedition",
+					"generation_name": "IV",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1313,
+					"mark_name": "Ford",
+					"model_name": "Expedition",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2014,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1314,
+					"mark_name": "Ford",
+					"model_name": "Expedition",
+					"generation_name": "III",
+					"start_year": 2006,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1315,
+					"mark_name": "Ford",
+					"model_name": "Expedition",
+					"generation_name": "II",
+					"start_year": 2002,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1316,
+					"mark_name": "Ford",
+					"model_name": "Expedition",
+					"generation_name": "I",
+					"start_year": 1996,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19066,
+			"name": "Explorer Sport Trac",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1325,
+					"mark_name": "Ford",
+					"model_name": "Explorer Sport Trac",
+					"generation_name": "II",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1326,
+					"mark_name": "Ford",
+					"model_name": "Explorer Sport Trac",
+					"generation_name": "I",
+					"start_year": 2000,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20061,
+			"name": "F-450",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20065,
+			"name": "F-Series",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 20,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5211,
+					"mark_name": "Ford",
+					"model_name": "F-Series",
+					"generation_name": "XIII Рестайлинг",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5212,
+					"mark_name": "Ford",
+					"model_name": "F-Series",
+					"generation_name": "XIII",
+					"start_year": 2014,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5213,
+					"mark_name": "Ford",
+					"model_name": "F-Series",
+					"generation_name": "XII",
+					"start_year": 2008,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5214,
+					"mark_name": "Ford",
+					"model_name": "F-Series",
+					"generation_name": "XI",
+					"start_year": 2003,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5215,
+					"mark_name": "Ford",
+					"model_name": "F-Series",
+					"generation_name": "X",
+					"start_year": 1996,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5216,
+					"mark_name": "Ford",
+					"model_name": "F-Series",
+					"generation_name": "IX",
+					"start_year": 1991,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5217,
+					"mark_name": "Ford",
+					"model_name": "F-Series",
+					"generation_name": "VIII",
+					"start_year": 1986,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5218,
+					"mark_name": "Ford",
+					"model_name": "F-Series",
+					"generation_name": "VII",
+					"start_year": 1979,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19462,
+			"name": "Fairlane",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1327,
+					"mark_name": "Ford",
+					"model_name": "Fairlane",
+					"generation_name": "VI (Argentina)",
+					"start_year": 1969,
+					"finish_year": 1981,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1328,
+					"mark_name": "Ford",
+					"model_name": "Fairlane",
+					"generation_name": "II",
+					"start_year": 1957,
+					"finish_year": 1959,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 632,
+			"name": "Fairmont",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "104004822",
+			"generations": [
+				{
+					"id": 1329,
+					"mark_name": "Ford",
+					"model_name": "Fairmont",
+					"generation_name": "1978 – 1983",
+					"start_year": 1978,
+					"finish_year": 1983,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20062,
+			"name": "Falcon",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1330,
+					"mark_name": "Ford",
+					"model_name": "Falcon",
+					"generation_name": "III (XA XB XC)",
+					"start_year": 1972,
+					"finish_year": 1979,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1331,
+					"mark_name": "Ford",
+					"model_name": "Falcon",
+					"generation_name": "II (XR XT XW XY)",
+					"start_year": 1966,
+					"finish_year": 1972,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1332,
+					"mark_name": "Ford",
+					"model_name": "Falcon",
+					"generation_name": "I (XK XL XM XP)",
+					"start_year": 1960,
+					"finish_year": 1966,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 633,
+			"name": "Festiva",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "226021515",
+			"generations": [
+				{
+					"id": 1333,
+					"mark_name": "Ford",
+					"model_name": "Festiva",
+					"generation_name": "III",
+					"start_year": 1996,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1334,
+					"mark_name": "Ford",
+					"model_name": "Festiva",
+					"generation_name": "II",
+					"start_year": 1993,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1335,
+					"mark_name": "Ford",
+					"model_name": "Festiva",
+					"generation_name": "I",
+					"start_year": 1986,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20063,
+			"name": "Figo",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 635,
+			"name": "Five Hundred",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "104020672",
+			"generations": [
+				{
+					"id": 1345,
+					"mark_name": "Ford",
+					"model_name": "Five Hundred",
+					"generation_name": "2004 – 2007",
+					"start_year": 2004,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 636,
+			"name": "Flex",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "104021142",
+			"generations": [
+				{
+					"id": 1346,
+					"mark_name": "Ford",
+					"model_name": "Flex",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1347,
+					"mark_name": "Ford",
+					"model_name": "Flex",
+					"generation_name": "I",
+					"start_year": 2008,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20064,
+			"name": "Freda",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "104021491",
+			"generations": [
+				{
+					"id": 1355,
+					"mark_name": "Ford",
+					"model_name": "Freda",
+					"generation_name": "I",
+					"start_year": 1995,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 638,
+			"name": "Freestar",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "104021143",
+			"generations": [
+				{
+					"id": 1356,
+					"mark_name": "Ford",
+					"model_name": "Freestar",
+					"generation_name": "2003 – 2007",
+					"start_year": 2003,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 639,
+			"name": "Freestyle",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": "104021144",
+			"generations": [
+				{
+					"id": 1357,
+					"mark_name": "Ford",
+					"model_name": "Freestyle",
+					"generation_name": "2004 – 2009",
+					"start_year": 2004,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19275,
+			"name": "Galaxie",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 26,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1360,
+					"mark_name": "Ford",
+					"model_name": "Galaxie",
+					"generation_name": "IV",
+					"start_year": 1968,
+					"finish_year": 1974,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1361,
+					"mark_name": "Ford",
+					"model_name": "Galaxie",
+					"generation_name": "III",
+					"start_year": 1965,
+					"finish_year": 1968,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1362,
+					"mark_name": "Ford",
+					"model_name": "Galaxie",
+					"generation_name": "II",
+					"start_year": 1960,
+					"finish_year": 1964,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 642,
+			"name": "Galaxy",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 216,
+			"is_seo_active": 0,
+			"rgs_code": "104004950",
+			"generations": [
+				{
+					"id": 1363,
+					"mark_name": "Ford",
+					"model_name": "Galaxy",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/cd/dbcdbe2bebbd7d46e8e2e3b8d72e4330.png",
+					"images": [
+						{
+							"id": 442635,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442635/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442635/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/cd/dbcdbe2bebbd7d46e8e2e3b8d72e4330.png"
+						}
+					]
+				},
+				{
+					"id": 1364,
+					"mark_name": "Ford",
+					"model_name": "Galaxy",
+					"generation_name": "III",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/a9/1da902b6d3c67820abc376ed759a0e8f.png",
+					"images": [
+						{
+							"id": 442636,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442636/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442636/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/a9/1da902b6d3c67820abc376ed759a0e8f.png"
+						}
+					]
+				},
+				{
+					"id": 1365,
+					"mark_name": "Ford",
+					"model_name": "Galaxy",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/92/cf/92cfbb7dd87f60d627f6b611eec8ac57.png",
+					"images": [
+						{
+							"id": 442637,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442637/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442637/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/92/cf/92cfbb7dd87f60d627f6b611eec8ac57.png"
+						}
+					]
+				},
+				{
+					"id": 1366,
+					"mark_name": "Ford",
+					"model_name": "Galaxy",
+					"generation_name": "II",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/32/c0/32c0d1e62f32056d2b705baeae80ab66.png",
+					"images": [
+						{
+							"id": 442638,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442638/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442638/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/32/c0/32c0d1e62f32056d2b705baeae80ab66.png"
+						}
+					]
+				},
+				{
+					"id": 1367,
+					"mark_name": "Ford",
+					"model_name": "Galaxy",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2000,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/16/ed163987e93a9531ef55184cd4a90950.png",
+					"images": [
+						{
+							"id": 442639,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442639/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442639/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/16/ed163987e93a9531ef55184cd4a90950.png"
+						}
+					]
+				},
+				{
+					"id": 1368,
+					"mark_name": "Ford",
+					"model_name": "Galaxy",
+					"generation_name": "I",
+					"start_year": 1995,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6f/9f/6f9f57157165aebec86ba91ef6df212d.png",
+					"images": [
+						{
+							"id": 442640,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442640/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442640/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6f/9f/6f9f57157165aebec86ba91ef6df212d.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20066,
+			"name": "GPW",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 644,
+			"name": "Granada",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "104004967",
+			"generations": [
+				{
+					"id": 1369,
+					"mark_name": "Ford",
+					"model_name": "Granada",
+					"generation_name": "II",
+					"start_year": 1977,
+					"finish_year": 1985,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1370,
+					"mark_name": "Ford",
+					"model_name": "Granada",
+					"generation_name": "I",
+					"start_year": 1972,
+					"finish_year": 1977,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20067,
+			"name": "Grand C-Max",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 23,
+			"is_seo_active": 0,
+			"rgs_code": "104021595",
+			"generations": []
+		},
+		{
+			"id": 645,
+			"name": "GT",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1371,
+					"mark_name": "Ford",
+					"model_name": "GT",
+					"generation_name": "II",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1372,
+					"mark_name": "Ford",
+					"model_name": "GT",
+					"generation_name": "I",
+					"start_year": 2005,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19615,
+			"name": "GT40",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1373,
+					"mark_name": "Ford",
+					"model_name": "GT40",
+					"generation_name": "1964 – 1969",
+					"start_year": 1964,
+					"finish_year": 1969,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20068,
+			"name": "Ikon",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1374,
+					"mark_name": "Ford",
+					"model_name": "Ikon",
+					"generation_name": "II",
+					"start_year": 2007,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1375,
+					"mark_name": "Ford",
+					"model_name": "Ikon",
+					"generation_name": "I",
+					"start_year": 1999,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 646,
+			"name": "Ixion",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "104020662",
+			"generations": [
+				{
+					"id": 1376,
+					"mark_name": "Ford",
+					"model_name": "Ixion",
+					"generation_name": "1999 – 2005",
+					"start_year": 1999,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 647,
+			"name": "Ka",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 19,
+			"is_seo_active": 0,
+			"rgs_code": "104005007",
+			"generations": [
+				{
+					"id": 1377,
+					"mark_name": "Ford",
+					"model_name": "Ka",
+					"generation_name": "III",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/21/65214c055b68e3110644deb411c871ba.png",
+					"images": [
+						{
+							"id": 442641,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442641/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442641/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/21/65214c055b68e3110644deb411c871ba.png"
+						}
+					]
+				},
+				{
+					"id": 1378,
+					"mark_name": "Ford",
+					"model_name": "Ka",
+					"generation_name": "II",
+					"start_year": 2008,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ba/b2/bab2f5d559a291baf53ff6c9d4ac2c56.png",
+					"images": [
+						{
+							"id": 442642,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442642/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442642/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ba/b2/bab2f5d559a291baf53ff6c9d4ac2c56.png"
+						}
+					]
+				},
+				{
+					"id": 1379,
+					"mark_name": "Ford",
+					"model_name": "Ka",
+					"generation_name": "I",
+					"start_year": 1996,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/16/e7/16e7ff5c5b901fdffb20b25d43e194de.png",
+					"images": [
+						{
+							"id": 442643,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442643/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442643/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/16/e7/16e7ff5c5b901fdffb20b25d43e194de.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 649,
+			"name": "Laser",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "296012168",
+			"generations": [
+				{
+					"id": 1384,
+					"mark_name": "Ford",
+					"model_name": "Laser",
+					"generation_name": "IV",
+					"start_year": 1994,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1385,
+					"mark_name": "Ford",
+					"model_name": "Laser",
+					"generation_name": "II",
+					"start_year": 1985,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20069,
+			"name": "Lobo",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20070,
+			"name": "LTD II",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20961,
+			"name": "M151",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1386,
+					"mark_name": "Ford",
+					"model_name": "M151",
+					"generation_name": "I",
+					"start_year": 1959,
+					"finish_year": 1982,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20071,
+			"name": "Mainline",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1387,
+					"mark_name": "Ford",
+					"model_name": "Mainline",
+					"generation_name": "1952 – 1956",
+					"start_year": 1952,
+					"finish_year": 1956,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 651,
+			"name": "Maverick",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 124,
+			"is_seo_active": 0,
+			"rgs_code": "104005022",
+			"generations": [
+				{
+					"id": 1388,
+					"mark_name": "Ford",
+					"model_name": "Maverick",
+					"generation_name": "II",
+					"start_year": 2000,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1389,
+					"mark_name": "Ford",
+					"model_name": "Maverick",
+					"generation_name": "I",
+					"start_year": 1993,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19276,
+			"name": "Model A",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1390,
+					"mark_name": "Ford",
+					"model_name": "Model A",
+					"generation_name": "1927 – 1931",
+					"start_year": 1927,
+					"finish_year": 1931,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 653,
+			"name": "Mustang",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 38,
+			"is_seo_active": 0,
+			"rgs_code": "104005119",
+			"generations": [
+				{
+					"id": 1399,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "VI Рестайлинг",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bb/1e/bb1eb350c06f2368209411a61e08c10d.png",
+					"images": [
+						{
+							"id": 442656,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442656/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442656/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bb/1e/bb1eb350c06f2368209411a61e08c10d.png"
+						}
+					]
+				},
+				{
+					"id": 1400,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "VI",
+					"start_year": 2014,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f7/0e/f70e280d460ee58599190703590e1ed9.png",
+					"images": [
+						{
+							"id": 442657,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442657/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442657/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f7/0e/f70e280d460ee58599190703590e1ed9.png"
+						}
+					]
+				},
+				{
+					"id": 1401,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "V Рестайлинг",
+					"start_year": 2009,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/a1/52a1df23f02a009ffdb1c3c64622742c.png",
+					"images": [
+						{
+							"id": 442658,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442658/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442658/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/a1/52a1df23f02a009ffdb1c3c64622742c.png"
+						}
+					]
+				},
+				{
+					"id": 1402,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "V",
+					"start_year": 2004,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/aa/f3/aaf3eb82d13310b09cbfb296bfa8dfdf.png",
+					"images": [
+						{
+							"id": 442659,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442659/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442659/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/aa/f3/aaf3eb82d13310b09cbfb296bfa8dfdf.png"
+						}
+					]
+				},
+				{
+					"id": 1403,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "IV Рестайлинг",
+					"start_year": 1998,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6e/37/6e37c8410d059be3370c8bfd2f3ef2bc.png",
+					"images": [
+						{
+							"id": 442660,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442660/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442660/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6e/37/6e37c8410d059be3370c8bfd2f3ef2bc.png"
+						}
+					]
+				},
+				{
+					"id": 1404,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "IV",
+					"start_year": 1993,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b0/3e/b03ea49ed744e36853187e1bcfc918b3.png",
+					"images": [
+						{
+							"id": 442661,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442661/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442661/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b0/3e/b03ea49ed744e36853187e1bcfc918b3.png"
+						}
+					]
+				},
+				{
+					"id": 1405,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "III Рестайлинг",
+					"start_year": 1986,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1406,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "III",
+					"start_year": 1978,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1407,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "II",
+					"start_year": 1974,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1408,
+					"mark_name": "Ford",
+					"model_name": "Mustang",
+					"generation_name": "I",
+					"start_year": 1964,
+					"finish_year": 1973,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 654,
+			"name": "Orion",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1409,
+					"mark_name": "Ford",
+					"model_name": "Orion",
+					"generation_name": "III",
+					"start_year": 1990,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1410,
+					"mark_name": "Ford",
+					"model_name": "Orion",
+					"generation_name": "II",
+					"start_year": 1985,
+					"finish_year": 1990,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1411,
+					"mark_name": "Ford",
+					"model_name": "Orion",
+					"generation_name": "I",
+					"start_year": 1983,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20072,
+			"name": "Pampa",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20073,
+			"name": "Pilot",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20074,
+			"name": "Pinto",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20075,
+			"name": "Popular",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20076,
+			"name": "Prefect",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 655,
+			"name": "Probe",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 34,
+			"is_seo_active": 0,
+			"rgs_code": "104005181",
+			"generations": [
+				{
+					"id": 1412,
+					"mark_name": "Ford",
+					"model_name": "Probe",
+					"generation_name": "II",
+					"start_year": 1992,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1413,
+					"mark_name": "Ford",
+					"model_name": "Probe",
+					"generation_name": "I",
+					"start_year": 1988,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 656,
+			"name": "Puma",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "104005190",
+			"generations": [
+				{
+					"id": 1414,
+					"mark_name": "Ford",
+					"model_name": "Puma",
+					"generation_name": "II",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1415,
+					"mark_name": "Ford",
+					"model_name": "Puma",
+					"generation_name": "I",
+					"start_year": 1997,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19515,
+			"name": "Ranchero",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1416,
+					"mark_name": "Ford",
+					"model_name": "Ranchero",
+					"generation_name": "VI",
+					"start_year": 1972,
+					"finish_year": 1976,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1417,
+					"mark_name": "Ford",
+					"model_name": "Ranchero",
+					"generation_name": "I",
+					"start_year": 1957,
+					"finish_year": 1960,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 658,
+			"name": "Ranger",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 60,
+			"is_seo_active": 0,
+			"rgs_code": "275020668",
+			"generations": [
+				{
+					"id": 1418,
+					"mark_name": "Ford",
+					"model_name": "Ranger",
+					"generation_name": "IV",
+					"start_year": 2015,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1419,
+					"mark_name": "Ford",
+					"model_name": "Ranger",
+					"generation_name": "III",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1420,
+					"mark_name": "Ford",
+					"model_name": "Ranger",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2009,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1421,
+					"mark_name": "Ford",
+					"model_name": "Ranger",
+					"generation_name": "II",
+					"start_year": 2006,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1422,
+					"mark_name": "Ford",
+					"model_name": "Ranger",
+					"generation_name": "I",
+					"start_year": 1998,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 660,
+			"name": "Scorpio",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 35,
+			"is_seo_active": 0,
+			"rgs_code": "221007909",
+			"generations": [
+				{
+					"id": 1427,
+					"mark_name": "Ford",
+					"model_name": "Scorpio",
+					"generation_name": "II",
+					"start_year": 1994,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1428,
+					"mark_name": "Ford",
+					"model_name": "Scorpio",
+					"generation_name": "I",
+					"start_year": 1985,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20077,
+			"name": "Shelby",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "104021146",
+			"generations": []
+		},
+		{
+			"id": 661,
+			"name": "Sierra",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 77,
+			"is_seo_active": 0,
+			"rgs_code": "392014616",
+			"generations": [
+				{
+					"id": 1429,
+					"mark_name": "Ford",
+					"model_name": "Sierra",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1987,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1430,
+					"mark_name": "Ford",
+					"model_name": "Sierra",
+					"generation_name": "I",
+					"start_year": 1982,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 663,
+			"name": "Taunus",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "104005375",
+			"generations": [
+				{
+					"id": 1431,
+					"mark_name": "Ford",
+					"model_name": "Taunus",
+					"generation_name": "III",
+					"start_year": 1979,
+					"finish_year": 1982,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1432,
+					"mark_name": "Ford",
+					"model_name": "Taunus",
+					"generation_name": "II",
+					"start_year": 1975,
+					"finish_year": 1979,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1433,
+					"mark_name": "Ford",
+					"model_name": "Taunus",
+					"generation_name": "I",
+					"start_year": 1970,
+					"finish_year": 1976,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1434,
+					"mark_name": "Ford",
+					"model_name": "Taunus",
+					"generation_name": "P5",
+					"start_year": 1964,
+					"finish_year": 1967,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 664,
+			"name": "Taurus",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 19,
+			"is_seo_active": 0,
+			"rgs_code": "104005379",
+			"generations": [
+				{
+					"id": 1435,
+					"mark_name": "Ford",
+					"model_name": "Taurus",
+					"generation_name": "VI Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1436,
+					"mark_name": "Ford",
+					"model_name": "Taurus",
+					"generation_name": "VI",
+					"start_year": 2009,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1437,
+					"mark_name": "Ford",
+					"model_name": "Taurus",
+					"generation_name": "V",
+					"start_year": 2007,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1438,
+					"mark_name": "Ford",
+					"model_name": "Taurus",
+					"generation_name": "IV Рестайлинг",
+					"start_year": 2003,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1439,
+					"mark_name": "Ford",
+					"model_name": "Taurus",
+					"generation_name": "IV",
+					"start_year": 1999,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1440,
+					"mark_name": "Ford",
+					"model_name": "Taurus",
+					"generation_name": "III",
+					"start_year": 1995,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1441,
+					"mark_name": "Ford",
+					"model_name": "Taurus",
+					"generation_name": "II",
+					"start_year": 1991,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1442,
+					"mark_name": "Ford",
+					"model_name": "Taurus",
+					"generation_name": "I",
+					"start_year": 1985,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 665,
+			"name": "Taurus X",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1443,
+					"mark_name": "Ford",
+					"model_name": "Taurus X",
+					"generation_name": "2007 – 2009",
+					"start_year": 2007,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19068,
+			"name": "Telstar",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "104021507",
+			"generations": [
+				{
+					"id": 1444,
+					"mark_name": "Ford",
+					"model_name": "Telstar",
+					"generation_name": "V",
+					"start_year": 1996,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1445,
+					"mark_name": "Ford",
+					"model_name": "Telstar",
+					"generation_name": "III",
+					"start_year": 1991,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1446,
+					"mark_name": "Ford",
+					"model_name": "Telstar",
+					"generation_name": "II",
+					"start_year": 1987,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 666,
+			"name": "Tempo",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "221007914",
+			"generations": [
+				{
+					"id": 1447,
+					"mark_name": "Ford",
+					"model_name": "Tempo",
+					"generation_name": "1983 – 1994",
+					"start_year": 1983,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20078,
+			"name": "Territory",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1448,
+					"mark_name": "Ford",
+					"model_name": "Territory",
+					"generation_name": "SZ Рестайлинг",
+					"start_year": 2014,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1449,
+					"mark_name": "Ford",
+					"model_name": "Territory",
+					"generation_name": "SZ",
+					"start_year": 2011,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1450,
+					"mark_name": "Ford",
+					"model_name": "Territory",
+					"generation_name": "SY Рестайлинг",
+					"start_year": 2009,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1451,
+					"mark_name": "Ford",
+					"model_name": "Territory",
+					"generation_name": "SY",
+					"start_year": 2005,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1452,
+					"mark_name": "Ford",
+					"model_name": "Territory",
+					"generation_name": "SX",
+					"start_year": 2004,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 667,
+			"name": "Thunderbird",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "104005401",
+			"generations": [
+				{
+					"id": 1453,
+					"mark_name": "Ford",
+					"model_name": "Thunderbird",
+					"generation_name": "XI (Retro Birds)",
+					"start_year": 2000,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1454,
+					"mark_name": "Ford",
+					"model_name": "Thunderbird",
+					"generation_name": "X (Super Birds)",
+					"start_year": 1988,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1455,
+					"mark_name": "Ford",
+					"model_name": "Thunderbird",
+					"generation_name": "IX (Aero Birds)",
+					"start_year": 1983,
+					"finish_year": 1988,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1456,
+					"mark_name": "Ford",
+					"model_name": "Thunderbird",
+					"generation_name": "VI",
+					"start_year": 1972,
+					"finish_year": 1976,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1457,
+					"mark_name": "Ford",
+					"model_name": "Thunderbird",
+					"generation_name": "V",
+					"start_year": 1967,
+					"finish_year": 1971,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1458,
+					"mark_name": "Ford",
+					"model_name": "Thunderbird",
+					"generation_name": "III",
+					"start_year": 1961,
+					"finish_year": 1963,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1459,
+					"mark_name": "Ford",
+					"model_name": "Thunderbird",
+					"generation_name": "I",
+					"start_year": 1955,
+					"finish_year": 1957,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19278,
+			"name": "Torino",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1460,
+					"mark_name": "Ford",
+					"model_name": "Torino",
+					"generation_name": "III",
+					"start_year": 1972,
+					"finish_year": 1976,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20995,
+			"name": "Tourneo",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 36,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 668,
+			"name": "Tourneo Connect",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 88,
+			"is_seo_active": 0,
+			"rgs_code": "104020647",
+			"generations": [
+				{
+					"id": 1461,
+					"mark_name": "Ford",
+					"model_name": "Tourneo Connect",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/67/57677476a76930ead42b08345196c1bb.png",
+					"images": [
+						{
+							"id": 442665,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442665/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442665/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/67/57677476a76930ead42b08345196c1bb.png"
+						}
+					]
+				},
+				{
+					"id": 1462,
+					"mark_name": "Ford",
+					"model_name": "Tourneo Connect",
+					"generation_name": "II",
+					"start_year": 2013,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/83/d083cf9eab6dca2495d635b750dd5c59.png",
+					"images": [
+						{
+							"id": 442666,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442666/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442666/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/83/d083cf9eab6dca2495d635b750dd5c59.png"
+						}
+					]
+				},
+				{
+					"id": 1463,
+					"mark_name": "Ford",
+					"model_name": "Tourneo Connect",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2009,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bb/f2/bbf28ebadd8bb35a8970a044ab2a5e0c.png",
+					"images": [
+						{
+							"id": 442667,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442667/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442667/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bb/f2/bbf28ebadd8bb35a8970a044ab2a5e0c.png"
+						}
+					]
+				},
+				{
+					"id": 1464,
+					"mark_name": "Ford",
+					"model_name": "Tourneo Connect",
+					"generation_name": "I",
+					"start_year": 2002,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2239,
+			"name": "Tourneo Custom",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 19,
+			"is_seo_active": 0,
+			"rgs_code": "104021714",
+			"generations": [
+				{
+					"id": 1465,
+					"mark_name": "Ford",
+					"model_name": "Tourneo Custom",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1466,
+					"mark_name": "Ford",
+					"model_name": "Tourneo Custom",
+					"generation_name": "I",
+					"start_year": 2012,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20080,
+			"name": "Transit Connect",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 73,
+			"is_seo_active": 0,
+			"rgs_code": "104021147",
+			"generations": [
+				{
+					"id": 1467,
+					"mark_name": "Ford",
+					"model_name": "Transit Connect",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1468,
+					"mark_name": "Ford",
+					"model_name": "Transit Connect",
+					"generation_name": "II",
+					"start_year": 2013,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1469,
+					"mark_name": "Ford",
+					"model_name": "Transit Connect",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2009,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1470,
+					"mark_name": "Ford",
+					"model_name": "Transit Connect",
+					"generation_name": "I",
+					"start_year": 2002,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19393,
+			"name": "Transit Custom",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 16,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20081,
+			"name": "Vedette",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20082,
+			"name": "Verona",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 669,
+			"name": "Windstar",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "104005508",
+			"generations": [
+				{
+					"id": 1471,
+					"mark_name": "Ford",
+					"model_name": "Windstar",
+					"generation_name": "II",
+					"start_year": 1998,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1472,
+					"mark_name": "Ford",
+					"model_name": "Windstar",
+					"generation_name": "I",
+					"start_year": 1994,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19705,
+			"name": "Zephyr",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1473,
+					"mark_name": "Ford",
+					"model_name": "Zephyr",
+					"generation_name": "II",
+					"start_year": 1956,
+					"finish_year": 1962,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20083,
+			"name": "Zodiac",
+			"mark_id": 63,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		}
+	]
+}

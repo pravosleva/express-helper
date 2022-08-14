@@ -1,0 +1,1365 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 319,
+			"name": "300C",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 85,
+			"is_seo_active": 0,
+			"rgs_code": "055002263",
+			"generations": [
+				{
+					"id": 748,
+					"mark_name": "Chrysler",
+					"model_name": "300C",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2015,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/30/f13016a687e4e4c2ea558576a97a8687.png",
+					"images": [
+						{
+							"id": 442392,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442392/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442392/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/30/f13016a687e4e4c2ea558576a97a8687.png"
+						}
+					]
+				},
+				{
+					"id": 749,
+					"mark_name": "Chrysler",
+					"model_name": "300C",
+					"generation_name": "II",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/84/cf/84cfcd3075162c0921c25bccaad0797e.png",
+					"images": [
+						{
+							"id": 442393,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442393/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442393/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/84/cf/84cfcd3075162c0921c25bccaad0797e.png"
+						}
+					]
+				},
+				{
+					"id": 750,
+					"mark_name": "Chrysler",
+					"model_name": "300C",
+					"generation_name": "I",
+					"start_year": 2004,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/35/c8/35c8f51d926f1c8a537da54bcbed6ba4.png",
+					"images": [
+						{
+							"id": 442394,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442394/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442394/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/35/c8/35c8f51d926f1c8a537da54bcbed6ba4.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 320,
+			"name": "300M",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 41,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 751,
+					"mark_name": "Chrysler",
+					"model_name": "300M",
+					"generation_name": "1998 – 2004",
+					"start_year": 1998,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19878,
+			"name": "Grand Voyager",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 42,
+			"is_seo_active": 0,
+			"rgs_code": "296012160",
+			"generations": []
+		},
+		{
+			"id": 328,
+			"name": "Intrepid",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 13,
+			"is_seo_active": 0,
+			"rgs_code": "079003519",
+			"generations": [
+				{
+					"id": 770,
+					"mark_name": "Chrysler",
+					"model_name": "Intrepid",
+					"generation_name": "II",
+					"start_year": 1998,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 771,
+					"mark_name": "Chrysler",
+					"model_name": "Intrepid",
+					"generation_name": "I",
+					"start_year": 1993,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 332,
+			"name": "Neon",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 23,
+			"is_seo_active": 0,
+			"rgs_code": "296012172",
+			"generations": [
+				{
+					"id": 779,
+					"mark_name": "Chrysler",
+					"model_name": "Neon",
+					"generation_name": "II",
+					"start_year": 1999,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dc/56/dc56f33ae2aff61288a10712b9aca99c.png",
+					"images": [
+						{
+							"id": 442396,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442396/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442396/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dc/56/dc56f33ae2aff61288a10712b9aca99c.png"
+						}
+					]
+				},
+				{
+					"id": 780,
+					"mark_name": "Chrysler",
+					"model_name": "Neon",
+					"generation_name": "I",
+					"start_year": 1994,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/07/c9/07c9ea84ce7036050ff2c007b285f1c9.png",
+					"images": [
+						{
+							"id": 442397,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442397/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442397/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/07/c9/07c9ea84ce7036050ff2c007b285f1c9.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 334,
+			"name": "Pacifica",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 40,
+			"is_seo_active": 0,
+			"rgs_code": "055020320",
+			"generations": [
+				{
+					"id": 791,
+					"mark_name": "Chrysler",
+					"model_name": "Pacifica",
+					"generation_name": "RU Рестайлинг",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ca/bf/cabf45bfc88cfb99c91c33251e5b9718.png",
+					"images": [
+						{
+							"id": 442398,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442398/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442398/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ca/bf/cabf45bfc88cfb99c91c33251e5b9718.png"
+						}
+					]
+				},
+				{
+					"id": 792,
+					"mark_name": "Chrysler",
+					"model_name": "Pacifica",
+					"generation_name": "RU",
+					"start_year": 2016,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/c3/dec3e575befdf53582a8772b02fb590a.png",
+					"images": [
+						{
+							"id": 442399,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442399/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442399/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/c3/dec3e575befdf53582a8772b02fb590a.png"
+						}
+					]
+				},
+				{
+					"id": 793,
+					"mark_name": "Chrysler",
+					"model_name": "Pacifica",
+					"generation_name": "CS",
+					"start_year": 2003,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/6a/d06a08e55a588a2523d8c0630f1c04a7.png",
+					"images": [
+						{
+							"id": 442400,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442400/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442400/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/6a/d06a08e55a588a2523d8c0630f1c04a7.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 336,
+			"name": "PT Cruiser",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 136,
+			"is_seo_active": 0,
+			"rgs_code": "055002342",
+			"generations": [
+				{
+					"id": 795,
+					"mark_name": "Chrysler",
+					"model_name": "PT Cruiser",
+					"generation_name": "2000 – 2010",
+					"start_year": 2000,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7f/ab/7fab301bcb779542cb98c8c2c2301aaf.png",
+					"images": [
+						{
+							"id": 442401,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442401/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442401/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7f/ab/7fab301bcb779542cb98c8c2c2301aaf.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 338,
+			"name": "Sebring",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 136,
+			"is_seo_active": 0,
+			"rgs_code": "055002352",
+			"generations": [
+				{
+					"id": 797,
+					"mark_name": "Chrysler",
+					"model_name": "Sebring",
+					"generation_name": "III",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ff/5b/ff5b3140c13884e8621b31578ac5196f.png",
+					"images": [
+						{
+							"id": 442402,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442402/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442402/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ff/5b/ff5b3140c13884e8621b31578ac5196f.png"
+						}
+					]
+				},
+				{
+					"id": 798,
+					"mark_name": "Chrysler",
+					"model_name": "Sebring",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2003,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 799,
+					"mark_name": "Chrysler",
+					"model_name": "Sebring",
+					"generation_name": "II",
+					"start_year": 2000,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/bd/4abd078bb1d3d43f50221ae378bbf4a1.png",
+					"images": [
+						{
+							"id": 442403,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442403/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442403/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/bd/4abd078bb1d3d43f50221ae378bbf4a1.png"
+						}
+					]
+				},
+				{
+					"id": 800,
+					"mark_name": "Chrysler",
+					"model_name": "Sebring",
+					"generation_name": "I",
+					"start_year": 1994,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/37/91/3791429797bf840d1034a24ee840c102.png",
+					"images": [
+						{
+							"id": 442404,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442404/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442404/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/37/91/3791429797bf840d1034a24ee840c102.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 341,
+			"name": "Town and Country",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 109,
+			"is_seo_active": 0,
+			"rgs_code": "055020318",
+			"generations": [
+				{
+					"id": 5199,
+					"mark_name": "Chrysler",
+					"model_name": "Town and Country",
+					"generation_name": "V Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5200,
+					"mark_name": "Chrysler",
+					"model_name": "Town and Country",
+					"generation_name": "V",
+					"start_year": 2007,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5201,
+					"mark_name": "Chrysler",
+					"model_name": "Town and Country",
+					"generation_name": "IV Рестайлинг",
+					"start_year": 2004,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5202,
+					"mark_name": "Chrysler",
+					"model_name": "Town and Country",
+					"generation_name": "IV",
+					"start_year": 2000,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5203,
+					"mark_name": "Chrysler",
+					"model_name": "Town and Country",
+					"generation_name": "III",
+					"start_year": 1995,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5204,
+					"mark_name": "Chrysler",
+					"model_name": "Town and Country",
+					"generation_name": "II",
+					"start_year": 1990,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 344,
+			"name": "Voyager",
+			"mark_id": 36,
+			"sort_id": 1,
+			"rating": 113,
+			"is_seo_active": 0,
+			"rgs_code": "296012183",
+			"generations": [
+				{
+					"id": 803,
+					"mark_name": "Chrysler",
+					"model_name": "Voyager",
+					"generation_name": "VI",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/64/27/6427c457102617cd0e343fbb9a3fbcff.png",
+					"images": [
+						{
+							"id": 442405,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442405/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442405/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/64/27/6427c457102617cd0e343fbb9a3fbcff.png"
+						}
+					]
+				},
+				{
+					"id": 804,
+					"mark_name": "Chrysler",
+					"model_name": "Voyager",
+					"generation_name": "V Рестайлинг",
+					"start_year": 2011,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/42/98/42980bbea0eeaea486a3a8bde41ddf5a.png",
+					"images": [
+						{
+							"id": 442406,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442406/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442406/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/42/98/42980bbea0eeaea486a3a8bde41ddf5a.png"
+						}
+					]
+				},
+				{
+					"id": 805,
+					"mark_name": "Chrysler",
+					"model_name": "Voyager",
+					"generation_name": "V",
+					"start_year": 2007,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/da/00/da005ba6db99da8decf95506ab3999ef.png",
+					"images": [
+						{
+							"id": 442407,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442407/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442407/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/da/00/da005ba6db99da8decf95506ab3999ef.png"
+						}
+					]
+				},
+				{
+					"id": 806,
+					"mark_name": "Chrysler",
+					"model_name": "Voyager",
+					"generation_name": "IV Рестайлинг",
+					"start_year": 2004,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b3/82/b382e214a2f3d92db7b7d3ae70dc19c7.png",
+					"images": [
+						{
+							"id": 442408,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442408/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442408/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b3/82/b382e214a2f3d92db7b7d3ae70dc19c7.png"
+						}
+					]
+				},
+				{
+					"id": 807,
+					"mark_name": "Chrysler",
+					"model_name": "Voyager",
+					"generation_name": "IV",
+					"start_year": 2000,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/91/28/91289436bd7168f35462c6d98634bb12.png",
+					"images": [
+						{
+							"id": 442409,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442409/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442409/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/91/28/91289436bd7168f35462c6d98634bb12.png"
+						}
+					]
+				},
+				{
+					"id": 808,
+					"mark_name": "Chrysler",
+					"model_name": "Voyager",
+					"generation_name": "III",
+					"start_year": 1995,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/96/be/96be5a7ada9e47af1ae10a8b52e5c53d.png",
+					"images": [
+						{
+							"id": 442410,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442410/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442410/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/96/be/96be5a7ada9e47af1ae10a8b52e5c53d.png"
+						}
+					]
+				},
+				{
+					"id": 809,
+					"mark_name": "Chrysler",
+					"model_name": "Voyager",
+					"generation_name": "II",
+					"start_year": 1991,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/94/2f942df6c393e0fc3e9a851f2c92c658.png",
+					"images": [
+						{
+							"id": 442411,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442411/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442411/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/94/2f942df6c393e0fc3e9a851f2c92c658.png"
+						}
+					]
+				},
+				{
+					"id": 810,
+					"mark_name": "Chrysler",
+					"model_name": "Voyager",
+					"generation_name": "I",
+					"start_year": 1984,
+					"finish_year": 1990,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/9e/319e471884ac1e7f485e46868deaec0d.png",
+					"images": [
+						{
+							"id": 442412,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442412/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442412/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/9e/319e471884ac1e7f485e46868deaec0d.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19609,
+			"name": "180",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 745,
+					"mark_name": "Chrysler",
+					"model_name": "180",
+					"generation_name": "1970 – 1982",
+					"start_year": 1970,
+					"finish_year": 1982,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 318,
+			"name": "200",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 746,
+					"mark_name": "Chrysler",
+					"model_name": "200",
+					"generation_name": "II",
+					"start_year": 2014,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/76/bf/76bf9a73974b5dc3925e62b591695ab5.png",
+					"images": [
+						{
+							"id": 442390,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442390/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442390/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/76/bf/76bf9a73974b5dc3925e62b591695ab5.png"
+						}
+					]
+				},
+				{
+					"id": 747,
+					"mark_name": "Chrysler",
+					"model_name": "200",
+					"generation_name": "I",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/b1/23b1d064d339e8921f1674753faad81f.png",
+					"images": [
+						{
+							"id": 442391,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442391/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442391/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/b1/23b1d064d339e8921f1674753faad81f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19870,
+			"name": "Alpine",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 321,
+			"name": "Aspen",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 752,
+					"mark_name": "Chrysler",
+					"model_name": "Aspen",
+					"generation_name": "2006 – 2008",
+					"start_year": 2006,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19871,
+			"name": "Avenger",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19872,
+			"name": "Centura",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 322,
+			"name": "Cirrus",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "055002265",
+			"generations": [
+				{
+					"id": 753,
+					"mark_name": "Chrysler",
+					"model_name": "Cirrus",
+					"generation_name": "1994 – 2000",
+					"start_year": 1994,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 323,
+			"name": "Concorde",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 9,
+			"is_seo_active": 0,
+			"rgs_code": "055002269",
+			"generations": [
+				{
+					"id": 754,
+					"mark_name": "Chrysler",
+					"model_name": "Concorde",
+					"generation_name": "II",
+					"start_year": 1997,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 755,
+					"mark_name": "Chrysler",
+					"model_name": "Concorde",
+					"generation_name": "I",
+					"start_year": 1992,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19873,
+			"name": "Conquest",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19611,
+			"name": "Cordoba",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 756,
+					"mark_name": "Chrysler",
+					"model_name": "Cordoba",
+					"generation_name": "II",
+					"start_year": 1981,
+					"finish_year": 1983,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 757,
+					"mark_name": "Chrysler",
+					"model_name": "Cordoba",
+					"generation_name": "I",
+					"start_year": 1975,
+					"finish_year": 1979,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 324,
+			"name": "Crossfire",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 4,
+			"is_seo_active": 0,
+			"rgs_code": "055020319",
+			"generations": [
+				{
+					"id": 758,
+					"mark_name": "Chrysler",
+					"model_name": "Crossfire",
+					"generation_name": "2003 – 2007",
+					"start_year": 2003,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/36/ff/36ff9ffb4f62d472e00f70f18c50d56d.png",
+					"images": [
+						{
+							"id": 442395,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442395/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442395/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/36/ff/36ff9ffb4f62d472e00f70f18c50d56d.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19874,
+			"name": "Daytona",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 759,
+					"mark_name": "Chrysler",
+					"model_name": "Daytona",
+					"generation_name": "1986 – 1993",
+					"start_year": 1986,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19875,
+			"name": "Delta",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19876,
+			"name": "Drifter",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 325,
+			"name": "Dynasty",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "125006381",
+			"generations": [
+				{
+					"id": 760,
+					"mark_name": "Chrysler",
+					"model_name": "Dynasty",
+					"generation_name": "1988 – 1993",
+					"start_year": 1988,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19877,
+			"name": "Executive",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 326,
+			"name": "Fifth Avenue",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 761,
+					"mark_name": "Chrysler",
+					"model_name": "Fifth Avenue",
+					"generation_name": "II",
+					"start_year": 1990,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 762,
+					"mark_name": "Chrysler",
+					"model_name": "Fifth Avenue",
+					"generation_name": "I",
+					"start_year": 1982,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19879,
+			"name": "Horizon",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "391014495",
+			"generations": []
+		},
+		{
+			"id": 19880,
+			"name": "Hunter",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 327,
+			"name": "Imperial",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 763,
+					"mark_name": "Chrysler",
+					"model_name": "Imperial",
+					"generation_name": "VII",
+					"start_year": 1990,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 764,
+					"mark_name": "Chrysler",
+					"model_name": "Imperial",
+					"generation_name": "VI",
+					"start_year": 1949,
+					"finish_year": 1954,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 765,
+					"mark_name": "Chrysler",
+					"model_name": "Imperial",
+					"generation_name": "V",
+					"start_year": 1940,
+					"finish_year": 1948,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 766,
+					"mark_name": "Chrysler",
+					"model_name": "Imperial",
+					"generation_name": "IV",
+					"start_year": 1937,
+					"finish_year": 1939,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 767,
+					"mark_name": "Chrysler",
+					"model_name": "Imperial",
+					"generation_name": "III",
+					"start_year": 1934,
+					"finish_year": 1936,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 768,
+					"mark_name": "Chrysler",
+					"model_name": "Imperial",
+					"generation_name": "II",
+					"start_year": 1931,
+					"finish_year": 1933,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 769,
+					"mark_name": "Chrysler",
+					"model_name": "Imperial",
+					"generation_name": "I",
+					"start_year": 1926,
+					"finish_year": 1930,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19881,
+			"name": "Lancer",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19882,
+			"name": "Laser",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 329,
+			"name": "LeBaron",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 772,
+					"mark_name": "Chrysler",
+					"model_name": "LeBaron",
+					"generation_name": "III Рестайлинг",
+					"start_year": 1992,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 773,
+					"mark_name": "Chrysler",
+					"model_name": "LeBaron",
+					"generation_name": "III",
+					"start_year": 1986,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 774,
+					"mark_name": "Chrysler",
+					"model_name": "LeBaron",
+					"generation_name": "II",
+					"start_year": 1981,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 775,
+					"mark_name": "Chrysler",
+					"model_name": "LeBaron",
+					"generation_name": "I",
+					"start_year": 1977,
+					"finish_year": 1981,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 330,
+			"name": "LHS",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 4,
+			"is_seo_active": 0,
+			"rgs_code": "055002323",
+			"generations": [
+				{
+					"id": 776,
+					"mark_name": "Chrysler",
+					"model_name": "LHS",
+					"generation_name": "II",
+					"start_year": 1998,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 777,
+					"mark_name": "Chrysler",
+					"model_name": "LHS",
+					"generation_name": "I",
+					"start_year": 1993,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 331,
+			"name": "Nassau",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 778,
+					"mark_name": "Chrysler",
+					"model_name": "Nassau",
+					"generation_name": "2007 – 2007",
+					"start_year": 2007,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 333,
+			"name": "New Yorker",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 781,
+					"mark_name": "Chrysler",
+					"model_name": "New Yorker",
+					"generation_name": "XIV",
+					"start_year": 1994,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 782,
+					"mark_name": "Chrysler",
+					"model_name": "New Yorker",
+					"generation_name": "XIII",
+					"start_year": 1988,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 783,
+					"mark_name": "Chrysler",
+					"model_name": "New Yorker",
+					"generation_name": "XII",
+					"start_year": 1983,
+					"finish_year": 1988,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 784,
+					"mark_name": "Chrysler",
+					"model_name": "New Yorker",
+					"generation_name": "VII",
+					"start_year": 1965,
+					"finish_year": 1968,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 785,
+					"mark_name": "Chrysler",
+					"model_name": "New Yorker",
+					"generation_name": "VI",
+					"start_year": 1960,
+					"finish_year": 1964,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 786,
+					"mark_name": "Chrysler",
+					"model_name": "New Yorker",
+					"generation_name": "V",
+					"start_year": 1957,
+					"finish_year": 1959,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 787,
+					"mark_name": "Chrysler",
+					"model_name": "New Yorker",
+					"generation_name": "IV",
+					"start_year": 1955,
+					"finish_year": 1956,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 788,
+					"mark_name": "Chrysler",
+					"model_name": "New Yorker",
+					"generation_name": "III",
+					"start_year": 1949,
+					"finish_year": 1954,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19883,
+			"name": "Newport",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 789,
+					"mark_name": "Chrysler",
+					"model_name": "Newport",
+					"generation_name": "VI",
+					"start_year": 1973,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 790,
+					"mark_name": "Chrysler",
+					"model_name": "Newport",
+					"generation_name": "V",
+					"start_year": 1968,
+					"finish_year": 1973,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 335,
+			"name": "Prowler",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "296012176",
+			"generations": [
+				{
+					"id": 794,
+					"mark_name": "Chrysler",
+					"model_name": "Prowler",
+					"generation_name": "2001 – 2002",
+					"start_year": 2001,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 337,
+			"name": "Saratoga",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "055021447",
+			"generations": [
+				{
+					"id": 796,
+					"mark_name": "Chrysler",
+					"model_name": "Saratoga",
+					"generation_name": "1989 – 1995",
+					"start_year": 1989,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 339,
+			"name": "Stratus",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": "079003547",
+			"generations": [
+				{
+					"id": 801,
+					"mark_name": "Chrysler",
+					"model_name": "Stratus",
+					"generation_name": "1994 – 2000",
+					"start_year": 1994,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19884,
+			"name": "Sunbeam",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 340,
+			"name": "TC",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "723021311",
+			"generations": []
+		},
+		{
+			"id": 19885,
+			"name": "Valiant",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19886,
+			"name": "Valiant Galant",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 343,
+			"name": "Vision",
+			"mark_id": 36,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "185021159",
+			"generations": [
+				{
+					"id": 802,
+					"mark_name": "Chrysler",
+					"model_name": "Vision",
+					"generation_name": "1993 – 1997",
+					"start_year": 1993,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}

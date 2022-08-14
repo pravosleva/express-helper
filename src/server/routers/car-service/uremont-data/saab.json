@@ -1,0 +1,285 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 1635,
+			"name": "9-2X",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3926,
+					"mark_name": "Saab",
+					"model_name": "9-2X",
+					"generation_name": "2004 – 2006",
+					"start_year": 2004,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1636,
+			"name": "9-3",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 137,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3927,
+					"mark_name": "Saab",
+					"model_name": "9-3",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2007,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3928,
+					"mark_name": "Saab",
+					"model_name": "9-3",
+					"generation_name": "II",
+					"start_year": 2002,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3929,
+					"mark_name": "Saab",
+					"model_name": "9-3",
+					"generation_name": "I",
+					"start_year": 1998,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1638,
+			"name": "9-5",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 140,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3930,
+					"mark_name": "Saab",
+					"model_name": "9-5",
+					"generation_name": "II",
+					"start_year": 2010,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3931,
+					"mark_name": "Saab",
+					"model_name": "9-5",
+					"generation_name": "I Рестайлинг 2",
+					"start_year": 2005,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3932,
+					"mark_name": "Saab",
+					"model_name": "9-5",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2001,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3933,
+					"mark_name": "Saab",
+					"model_name": "9-5",
+					"generation_name": "I",
+					"start_year": 1997,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1639,
+			"name": "9-7X",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3934,
+					"mark_name": "Saab",
+					"model_name": "9-7X",
+					"generation_name": "2005 – 2009",
+					"start_year": 2005,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1640,
+			"name": "90",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3935,
+					"mark_name": "Saab",
+					"model_name": "90",
+					"generation_name": "1984 – 1987",
+					"start_year": 1984,
+					"finish_year": 1987,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1641,
+			"name": "900",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 14,
+			"is_seo_active": 0,
+			"rgs_code": "361013425",
+			"generations": [
+				{
+					"id": 3936,
+					"mark_name": "Saab",
+					"model_name": "900",
+					"generation_name": "II",
+					"start_year": 1993,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3937,
+					"mark_name": "Saab",
+					"model_name": "900",
+					"generation_name": "I",
+					"start_year": 1978,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1642,
+			"name": "9000",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 41,
+			"is_seo_active": 0,
+			"rgs_code": "361013478",
+			"generations": [
+				{
+					"id": 3938,
+					"mark_name": "Saab",
+					"model_name": "9000",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1991,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3939,
+					"mark_name": "Saab",
+					"model_name": "9000",
+					"generation_name": "I",
+					"start_year": 1984,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1643,
+			"name": "95",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3940,
+					"mark_name": "Saab",
+					"model_name": "95",
+					"generation_name": "1959 – 1978",
+					"start_year": 1959,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1644,
+			"name": "96",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "361013517",
+			"generations": [
+				{
+					"id": 3941,
+					"mark_name": "Saab",
+					"model_name": "96",
+					"generation_name": "1960 – 1980",
+					"start_year": 1960,
+					"finish_year": 1980,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1645,
+			"name": "99",
+			"mark_id": 152,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "361013521",
+			"generations": [
+				{
+					"id": 3942,
+					"mark_name": "Saab",
+					"model_name": "99",
+					"generation_name": "1967 – 1984",
+					"start_year": 1967,
+					"finish_year": 1984,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}

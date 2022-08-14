@@ -1,0 +1,452 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 679,
+			"name": "CK",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 59,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5219,
+					"mark_name": "Geely",
+					"model_name": "CK",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/62/bd/62bd6ecfd2faf13bfa5e9fe09846b503.png",
+					"images": [
+						{
+							"id": 444388,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444388/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444388/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/62/bd/62bd6ecfd2faf13bfa5e9fe09846b503.png"
+						}
+					]
+				},
+				{
+					"id": 5220,
+					"mark_name": "Geely",
+					"model_name": "CK",
+					"generation_name": "I",
+					"start_year": 2007,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 680,
+			"name": "Emgrand",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 852,
+			"is_seo_active": 0,
+			"rgs_code": "185021698",
+			"generations": []
+		},
+		{
+			"id": 20098,
+			"name": "FC",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5221,
+					"mark_name": "Geely",
+					"model_name": "FC",
+					"generation_name": "2006 – 2011",
+					"start_year": 2006,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/e3/13e366cee24ea0fb66fd06906a988fdb.png",
+					"images": [
+						{
+							"id": 444389,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444389/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444389/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/e3/13e366cee24ea0fb66fd06906a988fdb.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2111,
+			"name": "GC6",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 61,
+			"is_seo_active": 0,
+			"rgs_code": "185021952",
+			"generations": [
+				{
+					"id": 1482,
+					"mark_name": "Geely",
+					"model_name": "GC6",
+					"generation_name": "2014 – 2016",
+					"start_year": 2014,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/15/27/1527aeae9ea1d3e5a9a41709a4997eb6.png",
+					"images": [
+						{
+							"id": 442670,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442670/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442670/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/15/27/1527aeae9ea1d3e5a9a41709a4997eb6.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 688,
+			"name": "MK",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 552,
+			"is_seo_active": 0,
+			"rgs_code": "185020558",
+			"generations": [
+				{
+					"id": 1484,
+					"mark_name": "Geely",
+					"model_name": "MK",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/19/4319e2195c784cfa29c1b712e72c51c0.png",
+					"images": [
+						{
+							"id": 442672,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442672/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442672/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/19/4319e2195c784cfa29c1b712e72c51c0.png"
+						}
+					]
+				},
+				{
+					"id": 1485,
+					"mark_name": "Geely",
+					"model_name": "MK",
+					"generation_name": "I",
+					"start_year": 2006,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/9c/309ca359e3db4e1733ce075b7b782c88.png",
+					"images": [
+						{
+							"id": 442673,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442673/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442673/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/9c/309ca359e3db4e1733ce075b7b782c88.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20988,
+			"name": "NL3",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 22,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20102,
+			"name": "Otaka",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 29,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2258,
+			"name": "SC7",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 9,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1487,
+					"mark_name": "Geely",
+					"model_name": "SC7",
+					"generation_name": "2011 – 2015",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6a/46/6a4643a4c8f489f9d7bf3f709d09dc20.png",
+					"images": [
+						{
+							"id": 442675,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442675/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442675/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6a/46/6a4643a4c8f489f9d7bf3f709d09dc20.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 683,
+			"name": "Vision",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 32,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 682,
+			"name": "X7",
+			"mark_id": 67,
+			"sort_id": 1,
+			"rating": 72,
+			"is_seo_active": 0,
+			"rgs_code": "875022471",
+			"generations": []
+		},
+		{
+			"id": 22385,
+			"name": "Atlas",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1480,
+					"mark_name": "Geely",
+					"model_name": "Atlas",
+					"generation_name": "I",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/fc/2afc760253ca39b789d9be56314586bc.png",
+					"images": [
+						{
+							"id": 442668,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442668/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442668/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/fc/2afc760253ca39b789d9be56314586bc.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 678,
+			"name": "Beauty Leopard",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1481,
+					"mark_name": "Geely",
+					"model_name": "Beauty Leopard",
+					"generation_name": "2005 – 2006",
+					"start_year": 2005,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a4/d0/a4d021c50a4a02b57f0d3a59a4873c10.png",
+					"images": [
+						{
+							"id": 442669,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442669/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442669/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a4/d0/a4d021c50a4a02b57f0d3a59a4873c10.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20097,
+			"name": "CD",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 22405,
+			"name": "Coolray",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19069,
+			"name": "GC9",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1483,
+					"mark_name": "Geely",
+					"model_name": "GC9",
+					"generation_name": "2015 – 2019",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/49/3d4993f6bc61e4035f4b2fe3fd9ff667.png",
+					"images": [
+						{
+							"id": 442671,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442671/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442671/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/49/3d4993f6bc61e4035f4b2fe3fd9ff667.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20099,
+			"name": "GE",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20100,
+			"name": "GX7",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20101,
+			"name": "HQ",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 685,
+			"name": "LC",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "206022263",
+			"generations": [
+				{
+					"id": 5222,
+					"mark_name": "Geely",
+					"model_name": "LC",
+					"generation_name": "2008 – 2016",
+					"start_year": 2008,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/48/81/48811ab15b8085e30759b809a92dc35f.png",
+					"images": [
+						{
+							"id": 444390,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444390/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444390/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/48/81/48811ab15b8085e30759b809a92dc35f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 689,
+			"name": "MR",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "372020163",
+			"generations": [
+				{
+					"id": 1486,
+					"mark_name": "Geely",
+					"model_name": "MR",
+					"generation_name": "2003 – 2009",
+					"start_year": 2003,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/55/d855fff2f7cdbcbecfec96d86403e9aa.png",
+					"images": [
+						{
+							"id": 442674,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442674/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442674/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/55/d855fff2f7cdbcbecfec96d86403e9aa.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 686,
+			"name": "Panda",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20103,
+			"name": "SL",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 22436,
+			"name": "Tugella",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20104,
+			"name": "Uliou",
+			"mark_id": 67,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		}
+	]
+}

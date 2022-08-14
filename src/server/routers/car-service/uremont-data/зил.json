@@ -1,0 +1,118 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 20724,
+			"name": "110",
+			"mark_id": 218,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2048,
+			"name": "114",
+			"mark_id": 218,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "582017861",
+			"generations": [
+				{
+					"id": 5047,
+					"mark_name": "ЗИЛ",
+					"model_name": "114",
+					"generation_name": "1967 – 1978",
+					"start_year": 1967,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2049,
+			"name": "117",
+			"mark_id": 218,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "582017863",
+			"generations": [
+				{
+					"id": 5048,
+					"mark_name": "ЗИЛ",
+					"model_name": "117",
+					"generation_name": "1971 – 1978",
+					"start_year": 1971,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20972,
+			"name": "130",
+			"mark_id": 218,
+			"sort_id": 1,
+			"rating": 9,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20973,
+			"name": "131",
+			"mark_id": 218,
+			"sort_id": 1,
+			"rating": 4,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20974,
+			"name": "157",
+			"mark_id": 218,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2050,
+			"name": "4104",
+			"mark_id": 218,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "582017865",
+			"generations": [
+				{
+					"id": 5049,
+					"mark_name": "ЗИЛ",
+					"model_name": "4104",
+					"generation_name": "1978 – 2002",
+					"start_year": 1978,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20725,
+			"name": "5301",
+			"mark_id": 218,
+			"sort_id": 1,
+			"rating": 10,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		}
+	]
+}

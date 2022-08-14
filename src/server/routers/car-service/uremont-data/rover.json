@@ -1,0 +1,409 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 1624,
+			"name": "200 Series",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 18,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1625,
+			"name": "25",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 8,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3914,
+					"mark_name": "Rover",
+					"model_name": "25",
+					"generation_name": "1999 – 2005",
+					"start_year": 1999,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1626,
+			"name": "400 Series",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 21,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20538,
+			"name": "416i",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1627,
+			"name": "45",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 10,
+			"is_seo_active": 0,
+			"rgs_code": "344013273",
+			"generations": [
+				{
+					"id": 3915,
+					"mark_name": "Rover",
+					"model_name": "45",
+					"generation_name": "1999 – 2005",
+					"start_year": 1999,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1628,
+			"name": "600 Series",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 9,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1629,
+			"name": "75",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 117,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3916,
+					"mark_name": "Rover",
+					"model_name": "75",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2004,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3917,
+					"mark_name": "Rover",
+					"model_name": "75",
+					"generation_name": "I",
+					"start_year": 1999,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1630,
+			"name": "800 Series",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1632,
+			"name": "Mini MK",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "344013355",
+			"generations": [
+				{
+					"id": 5466,
+					"mark_name": "Rover",
+					"model_name": "Mini MK",
+					"generation_name": "1989 – 2000",
+					"start_year": 1989,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2366,
+			"name": "Streetwise",
+			"mark_id": 151,
+			"sort_id": 1,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3925,
+					"mark_name": "Rover",
+					"model_name": "Streetwise",
+					"generation_name": "2003 – 2005",
+					"start_year": 2003,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20535,
+			"name": "10",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1623,
+			"name": "100",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3912,
+					"mark_name": "Rover",
+					"model_name": "100",
+					"generation_name": "1994 – 2000",
+					"start_year": 1994,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20536,
+			"name": "14",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3913,
+					"mark_name": "Rover",
+					"model_name": "14",
+					"generation_name": "I",
+					"start_year": 1933,
+					"finish_year": 1948,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20537,
+			"name": "16",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20539,
+			"name": "CityRover",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20540,
+			"name": "Maestro",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3918,
+					"mark_name": "Rover",
+					"model_name": "Maestro",
+					"generation_name": "1991 – 1997",
+					"start_year": 1991,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1631,
+			"name": "Metro",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3919,
+					"mark_name": "Rover",
+					"model_name": "Metro",
+					"generation_name": "1987 – 1994",
+					"start_year": 1987,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20541,
+			"name": "Montego",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3920,
+					"mark_name": "Rover",
+					"model_name": "Montego",
+					"generation_name": "1988 – 1994",
+					"start_year": 1988,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20542,
+			"name": "P3",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3921,
+					"mark_name": "Rover",
+					"model_name": "P3",
+					"generation_name": "1948 – 1949",
+					"start_year": 1948,
+					"finish_year": 1949,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19741,
+			"name": "P4",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3922,
+					"mark_name": "Rover",
+					"model_name": "P4",
+					"generation_name": "1949 – 1964",
+					"start_year": 1949,
+					"finish_year": 1964,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20543,
+			"name": "P5",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1633,
+			"name": "P6",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3923,
+					"mark_name": "Rover",
+					"model_name": "P6",
+					"generation_name": "1963 – 1977",
+					"start_year": 1963,
+					"finish_year": 1977,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20544,
+			"name": "Quintet",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1634,
+			"name": "SD1",
+			"mark_id": 151,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3924,
+					"mark_name": "Rover",
+					"model_name": "SD1",
+					"generation_name": "1976 – 1986",
+					"start_year": 1976,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}

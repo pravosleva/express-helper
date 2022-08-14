@@ -1,0 +1,98 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 22354,
+			"name": "G70",
+			"mark_id": 3815,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1488,
+					"mark_name": "Genesis",
+					"model_name": "G70",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1489,
+					"mark_name": "Genesis",
+					"model_name": "G70",
+					"generation_name": "I",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 22350,
+			"name": "G80",
+			"mark_id": 3815,
+			"sort_id": 1,
+			"rating": 16,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1490,
+					"mark_name": "Genesis",
+					"model_name": "G80",
+					"generation_name": "II",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1491,
+					"mark_name": "Genesis",
+					"model_name": "G80",
+					"generation_name": "I",
+					"start_year": 2016,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20977,
+			"name": "G90",
+			"mark_id": 3815,
+			"sort_id": 1,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1492,
+					"mark_name": "Genesis",
+					"model_name": "G90",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1493,
+					"mark_name": "Genesis",
+					"model_name": "G90",
+					"generation_name": "I",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}

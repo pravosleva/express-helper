@@ -1,0 +1,893 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 1998,
+			"name": "2107",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 3938,
+			"is_seo_active": 0,
+			"rgs_code": "838021906",
+			"generations": [
+				{
+					"id": 2218,
+					"mark_name": "ВАЗ",
+					"model_name": "2107",
+					"generation_name": "1982 – 2012",
+					"start_year": 1982,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/3d/933d99f2274dca8b38f9a8edd3cd8af1.png",
+					"images": [
+						{
+							"id": 443004,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443004/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443004/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/3d/933d99f2274dca8b38f9a8edd3cd8af1.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2000,
+			"name": "2109",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 3293,
+			"is_seo_active": 0,
+			"rgs_code": "838021908",
+			"generations": [
+				{
+					"id": 2220,
+					"mark_name": "ВАЗ",
+					"model_name": "2109",
+					"generation_name": "1987 – 2006",
+					"start_year": 1987,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/fd/aefd2c0db17977bc02ac5b0d6f03db9a.png",
+					"images": [
+						{
+							"id": 443006,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443006/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443006/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/fd/aefd2c0db17977bc02ac5b0d6f03db9a.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2002,
+			"name": "2110",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 3869,
+			"is_seo_active": 0,
+			"rgs_code": "838021910",
+			"generations": [
+				{
+					"id": 2221,
+					"mark_name": "ВАЗ",
+					"model_name": "2110",
+					"generation_name": "1995 – 2014",
+					"start_year": 1995,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/50/bc5042a3cb866794860e108519ac6e42.png",
+					"images": [
+						{
+							"id": 443007,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443007/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443007/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/50/bc5042a3cb866794860e108519ac6e42.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2004,
+			"name": "2112",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 3860,
+			"is_seo_active": 0,
+			"rgs_code": "838021912",
+			"generations": [
+				{
+					"id": 2223,
+					"mark_name": "ВАЗ",
+					"model_name": "2112",
+					"generation_name": "1998 – 2009",
+					"start_year": 1998,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/98/6c/986ca7480a72c2fab8d461e70006ed29.png",
+					"images": [
+						{
+							"id": 443009,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443009/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443009/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/98/6c/986ca7480a72c2fab8d461e70006ed29.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2006,
+			"name": "2114",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 6486,
+			"is_seo_active": 0,
+			"rgs_code": "838021914",
+			"generations": [
+				{
+					"id": 2225,
+					"mark_name": "ВАЗ",
+					"model_name": "2114",
+					"generation_name": "2001 – 2013",
+					"start_year": 2001,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0f/a7/0fa7cf2eee98be3eec20dd3bae3373e5.png",
+					"images": [
+						{
+							"id": 443011,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443011/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443011/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0f/a7/0fa7cf2eee98be3eec20dd3bae3373e5.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2007,
+			"name": "2115",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 3247,
+			"is_seo_active": 0,
+			"rgs_code": "838021915",
+			"generations": [
+				{
+					"id": 2226,
+					"mark_name": "ВАЗ",
+					"model_name": "2115",
+					"generation_name": "1997 – 2012",
+					"start_year": 1997,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ec/28/ec28e56532eea01c761c743db1083617.png",
+					"images": [
+						{
+							"id": 443012,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443012/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443012/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ec/28/ec28e56532eea01c761c743db1083617.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2015,
+			"name": "Granta",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 5988,
+			"is_seo_active": 0,
+			"rgs_code": "838021929",
+			"generations": [
+				{
+					"id": 2230,
+					"mark_name": "ВАЗ",
+					"model_name": "Granta",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/a5/0ea52d9e57755549245c136d93ee5897.png",
+					"images": [
+						{
+							"id": 443016,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443016/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443016/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/a5/0ea52d9e57755549245c136d93ee5897.png"
+						}
+					]
+				},
+				{
+					"id": 2231,
+					"mark_name": "ВАЗ",
+					"model_name": "Granta",
+					"generation_name": "I",
+					"start_year": 2011,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/f8/4af86f7a63272daf474da800d4de2ea6.png",
+					"images": [
+						{
+							"id": 443017,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443017/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443017/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/f8/4af86f7a63272daf474da800d4de2ea6.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2016,
+			"name": "Kalina Cross",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 5916,
+			"is_seo_active": 0,
+			"rgs_code": "838021924",
+			"generations": []
+		},
+		{
+			"id": 2018,
+			"name": "Priora",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 8479,
+			"is_seo_active": 0,
+			"rgs_code": "838021928",
+			"generations": [
+				{
+					"id": 2236,
+					"mark_name": "ВАЗ",
+					"model_name": "Priora",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/72/32/7232d4bb2f09d07149bc68629fc9ec54.png",
+					"images": [
+						{
+							"id": 443022,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443022/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443022/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/72/32/7232d4bb2f09d07149bc68629fc9ec54.png"
+						}
+					]
+				},
+				{
+					"id": 2237,
+					"mark_name": "ВАЗ",
+					"model_name": "Priora",
+					"generation_name": "I",
+					"start_year": 2007,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19209,
+			"name": "Vesta",
+			"mark_id": 215,
+			"sort_id": 1,
+			"rating": 2725,
+			"is_seo_active": 0,
+			"rgs_code": "501022496",
+			"generations": [
+				{
+					"id": 2238,
+					"mark_name": "ВАЗ",
+					"model_name": "Vesta",
+					"generation_name": "I",
+					"start_year": 2015,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/fc/8dfc7f9f3fd88aaf580e3f6d8139b6e6.png",
+					"images": [
+						{
+							"id": 443023,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443023/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443023/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/fc/8dfc7f9f3fd88aaf580e3f6d8139b6e6.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1991,
+			"name": "1111 Ока",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 275,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2211,
+					"mark_name": "ВАЗ",
+					"model_name": "1111 Ока",
+					"generation_name": "1987 – 2008",
+					"start_year": 1987,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/c3/e6c309e53c0034eb8b4e09d2f80fcadc.png",
+					"images": [
+						{
+							"id": 442997,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442997/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442997/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/c3/e6c309e53c0034eb8b4e09d2f80fcadc.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 22423,
+			"name": "111730 Калина",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 22420,
+			"name": "11183 Калина",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 22421,
+			"name": "11194 Калина",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1992,
+			"name": "2101",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 313,
+			"is_seo_active": 0,
+			"rgs_code": "838021900",
+			"generations": [
+				{
+					"id": 2212,
+					"mark_name": "ВАЗ",
+					"model_name": "2101",
+					"generation_name": "1970 – 1988",
+					"start_year": 1970,
+					"finish_year": 1988,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/f4/e6f42a06f51da946b06d6afabd3e6ede.png",
+					"images": [
+						{
+							"id": 442998,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442998/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442998/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/f4/e6f42a06f51da946b06d6afabd3e6ede.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1993,
+			"name": "2102",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 50,
+			"is_seo_active": 0,
+			"rgs_code": "838021901",
+			"generations": [
+				{
+					"id": 2213,
+					"mark_name": "ВАЗ",
+					"model_name": "2102",
+					"generation_name": "1971 – 1986",
+					"start_year": 1971,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9e/85/9e85f737715cfed0d8b47f73612e8f18.png",
+					"images": [
+						{
+							"id": 442999,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442999/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442999/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9e/85/9e85f737715cfed0d8b47f73612e8f18.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1994,
+			"name": "2103",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 93,
+			"is_seo_active": 0,
+			"rgs_code": "838021902",
+			"generations": [
+				{
+					"id": 2214,
+					"mark_name": "ВАЗ",
+					"model_name": "2103",
+					"generation_name": "1972 – 1984",
+					"start_year": 1972,
+					"finish_year": 1984,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/63/de63ebf13271a68f8c4a61c68b976973.png",
+					"images": [
+						{
+							"id": 443000,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443000/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443000/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/63/de63ebf13271a68f8c4a61c68b976973.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1995,
+			"name": "2104",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 708,
+			"is_seo_active": 0,
+			"rgs_code": "838021903",
+			"generations": [
+				{
+					"id": 2215,
+					"mark_name": "ВАЗ",
+					"model_name": "2104",
+					"generation_name": "1984 – 2012",
+					"start_year": 1984,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/eb/e9/ebe9388996001214d9ad17d29c765d94.png",
+					"images": [
+						{
+							"id": 443001,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443001/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443001/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/eb/e9/ebe9388996001214d9ad17d29c765d94.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1996,
+			"name": "2105",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 1469,
+			"is_seo_active": 0,
+			"rgs_code": "838021904",
+			"generations": [
+				{
+					"id": 2216,
+					"mark_name": "ВАЗ",
+					"model_name": "2105",
+					"generation_name": "1979 – 2011",
+					"start_year": 1979,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/85/ef8574f67abe056f46f0c5bd56c7322a.png",
+					"images": [
+						{
+							"id": 443002,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443002/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443002/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/85/ef8574f67abe056f46f0c5bd56c7322a.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1997,
+			"name": "2106",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 1309,
+			"is_seo_active": 0,
+			"rgs_code": "838021905",
+			"generations": [
+				{
+					"id": 2217,
+					"mark_name": "ВАЗ",
+					"model_name": "2106",
+					"generation_name": "1976 – 2006",
+					"start_year": 1976,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/d2/fed22d63caff02774bbcde413c0d55cb.png",
+					"images": [
+						{
+							"id": 443003,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443003/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443003/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/d2/fed22d63caff02774bbcde413c0d55cb.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1999,
+			"name": "2108",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 636,
+			"is_seo_active": 0,
+			"rgs_code": "838021907",
+			"generations": [
+				{
+					"id": 2219,
+					"mark_name": "ВАЗ",
+					"model_name": "2108",
+					"generation_name": "1984 – 2005",
+					"start_year": 1984,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e1/55/e1553c7358b2b5cda89958a7e6082638.png",
+					"images": [
+						{
+							"id": 443005,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443005/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443005/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e1/55/e1553c7358b2b5cda89958a7e6082638.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2003,
+			"name": "2111",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 860,
+			"is_seo_active": 0,
+			"rgs_code": "838021911",
+			"generations": [
+				{
+					"id": 2222,
+					"mark_name": "ВАЗ",
+					"model_name": "2111",
+					"generation_name": "1997 – 2009",
+					"start_year": 1997,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/48/80/488017ee6f5ba4fdafcb9486c3af6f2d.png",
+					"images": [
+						{
+							"id": 443008,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443008/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443008/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/48/80/488017ee6f5ba4fdafcb9486c3af6f2d.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2005,
+			"name": "2113",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 879,
+			"is_seo_active": 0,
+			"rgs_code": "838021913",
+			"generations": [
+				{
+					"id": 2224,
+					"mark_name": "ВАЗ",
+					"model_name": "2113",
+					"generation_name": "2004 – 2013",
+					"start_year": 2004,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/ab/a7ab1ed9176e2f4b697ee5e3bc54499f.png",
+					"images": [
+						{
+							"id": 443010,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443010/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443010/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/ab/a7ab1ed9176e2f4b697ee5e3bc54499f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2008,
+			"name": "2120 Надежда",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 15,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2227,
+					"mark_name": "ВАЗ",
+					"model_name": "2120 Надежда",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2002,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/26/5c/265cf795410260f66b56cd72c5ecc01b.png",
+					"images": [
+						{
+							"id": 443013,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443013/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443013/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/26/5c/265cf795410260f66b56cd72c5ecc01b.png"
+						}
+					]
+				},
+				{
+					"id": 2228,
+					"mark_name": "ВАЗ",
+					"model_name": "2120 Надежда",
+					"generation_name": "I",
+					"start_year": 1998,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/95/5295234686f5b12b080128faa2333cfb.png",
+					"images": [
+						{
+							"id": 443014,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443014/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443014/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/95/5295234686f5b12b080128faa2333cfb.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 22356,
+			"name": "2121",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2010,
+			"name": "2123",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 210,
+			"is_seo_active": 0,
+			"rgs_code": "838021918",
+			"generations": [
+				{
+					"id": 2229,
+					"mark_name": "ВАЗ",
+					"model_name": "2123",
+					"generation_name": "1998 – 2002",
+					"start_year": 1998,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/87/46/87465d33080826f122cf7b5f037916a5.png",
+					"images": [
+						{
+							"id": 443015,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443015/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443015/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/87/46/87465d33080826f122cf7b5f037916a5.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 22422,
+			"name": "219060 Гранта",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2012,
+			"name": "4x4",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 1230,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5270,
+					"mark_name": "ВАЗ",
+					"model_name": "4x4",
+					"generation_name": "I Рестайлинг (2020)",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/78/ab783152f77e12fefcaec58b3443c20b.png",
+					"images": [
+						{
+							"id": 444414,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444414/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444414/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/78/ab783152f77e12fefcaec58b3443c20b.png"
+						}
+					]
+				},
+				{
+					"id": 5271,
+					"mark_name": "ВАЗ",
+					"model_name": "4x4",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1993,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/83/758392ff3080920787cb5792a9e67e42.png",
+					"images": [
+						{
+							"id": 444415,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444415/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444415/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/83/758392ff3080920787cb5792a9e67e42.png"
+						}
+					]
+				},
+				{
+					"id": 5272,
+					"mark_name": "ВАЗ",
+					"model_name": "4x4",
+					"generation_name": "I",
+					"start_year": 1977,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/77/d777af13846e04f7edc2e1545aa61210.png",
+					"images": [
+						{
+							"id": 444416,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444416/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444416/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/77/d777af13846e04f7edc2e1545aa61210.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2017,
+			"name": "Largus",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 1447,
+			"is_seo_active": 0,
+			"rgs_code": "838021897",
+			"generations": [
+				{
+					"id": 2234,
+					"mark_name": "ВАЗ",
+					"model_name": "Largus",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2021,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/03/e303298a1c6db5315491cabcedd5b75c.png",
+					"images": [
+						{
+							"id": 443020,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443020/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443020/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/03/e303298a1c6db5315491cabcedd5b75c.png"
+						}
+					]
+				},
+				{
+					"id": 2235,
+					"mark_name": "ВАЗ",
+					"model_name": "Largus",
+					"generation_name": "I",
+					"start_year": 2012,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/b8/f1b81aa205e53a9561107eb87c66ea6e.png",
+					"images": [
+						{
+							"id": 443021,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443021/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443021/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/b8/f1b81aa205e53a9561107eb87c66ea6e.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19210,
+			"name": "XRAY",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 390,
+			"is_seo_active": 0,
+			"rgs_code": "501022273",
+			"generations": [
+				{
+					"id": 2239,
+					"mark_name": "ВАЗ",
+					"model_name": "XRAY",
+					"generation_name": "I",
+					"start_year": 2015,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/47/4a479287b52363776895aa8d772c71d8.png",
+					"images": [
+						{
+							"id": 443024,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443024/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443024/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/47/4a479287b52363776895aa8d772c71d8.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 22425,
+			"name": "Гранта",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 22424,
+			"name": "Калина",
+			"mark_id": 215,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5557,
+					"mark_name": "ВАЗ",
+					"model_name": "Калина",
+					"generation_name": "II",
+					"start_year": 2013,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/e1/65e1eac1c5b51149e142f3ca410de55d.png",
+					"images": [
+						{
+							"id": 444968,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444968/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444968/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/e1/65e1eac1c5b51149e142f3ca410de55d.png"
+						},
+						{
+							"id": 444966,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444966/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444966/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/73/49/734976d299a58f57aa4fde773a6002db.png"
+						}
+					]
+				},
+				{
+					"id": 5558,
+					"mark_name": "ВАЗ",
+					"model_name": "Калина",
+					"generation_name": "I",
+					"start_year": 2004,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/82/5382da9372ada01ecbd8ea2bcd203b90.png",
+					"images": [
+						{
+							"id": 444967,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444967/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444967/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/82/5382da9372ada01ecbd8ea2bcd203b90.png"
+						}
+					]
+				}
+			]
+		}
+	]
+}

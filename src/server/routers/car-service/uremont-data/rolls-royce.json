@@ -1,0 +1,488 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 19739,
+			"name": "Camargue",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3880,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Camargue",
+					"generation_name": "1975 – 1986",
+					"start_year": 1975,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1615,
+			"name": "Corniche",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3881,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Corniche",
+					"generation_name": "V",
+					"start_year": 2000,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3882,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Corniche",
+					"generation_name": "I - IV",
+					"start_year": 1971,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20980,
+			"name": "Dawn",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "342022202",
+			"generations": [
+				{
+					"id": 3883,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Dawn",
+					"generation_name": "2015 – н.в.",
+					"start_year": 2015,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20533,
+			"name": "Flying Spur",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1616,
+			"name": "Ghost",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "342022002",
+			"generations": [
+				{
+					"id": 3884,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Ghost",
+					"generation_name": "II",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3885,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Ghost",
+					"generation_name": "I Рестайлинг (Series II)",
+					"start_year": 2014,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3886,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Ghost",
+					"generation_name": "I",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5465,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Ghost",
+					"generation_name": "1906 – 1926",
+					"start_year": 1906,
+					"finish_year": 1926,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1617,
+			"name": "Park Ward",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "342013170",
+			"generations": [
+				{
+					"id": 3887,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Park Ward",
+					"generation_name": "2000 – 2002",
+					"start_year": 2000,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1618,
+			"name": "Phantom",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "342013172",
+			"generations": [
+				{
+					"id": 3888,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Phantom",
+					"generation_name": "VIII",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3889,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Phantom",
+					"generation_name": "VII Рестайлинг (Series II)",
+					"start_year": 2012,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3890,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Phantom",
+					"generation_name": "VII",
+					"start_year": 2003,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3891,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Phantom",
+					"generation_name": "V",
+					"start_year": 1959,
+					"finish_year": 1968,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3892,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Phantom",
+					"generation_name": "IV",
+					"start_year": 1950,
+					"finish_year": 1956,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3893,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Phantom",
+					"generation_name": "III",
+					"start_year": 1936,
+					"finish_year": 1939,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3894,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Phantom",
+					"generation_name": "II",
+					"start_year": 1929,
+					"finish_year": 1936,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3895,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Phantom",
+					"generation_name": "I",
+					"start_year": 1925,
+					"finish_year": 1931,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19294,
+			"name": "Silver Cloud",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "342022134",
+			"generations": [
+				{
+					"id": 3896,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Cloud",
+					"generation_name": "III",
+					"start_year": 1963,
+					"finish_year": 1966,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3897,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Cloud",
+					"generation_name": "II",
+					"start_year": 1959,
+					"finish_year": 1962,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3898,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Cloud",
+					"generation_name": "I",
+					"start_year": 1955,
+					"finish_year": 1958,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19295,
+			"name": "Silver Shadow",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3900,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Shadow",
+					"generation_name": "1965 – 1980",
+					"start_year": 1965,
+					"finish_year": 1980,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20534,
+			"name": "Silver Spirit",
+			"mark_id": 149,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3901,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Spirit",
+					"generation_name": "Mark IV",
+					"start_year": 1995,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3902,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Spirit",
+					"generation_name": "Mark III",
+					"start_year": 1993,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3903,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Spirit",
+					"generation_name": "Mark II",
+					"start_year": 1989,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3904,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Spirit",
+					"generation_name": "Mark I",
+					"start_year": 1980,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19350,
+			"name": "Silver Dawn",
+			"mark_id": 149,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1619,
+			"name": "Silver Seraph",
+			"mark_id": 149,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "342013174",
+			"generations": [
+				{
+					"id": 3899,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Seraph",
+					"generation_name": "1998 – 2002",
+					"start_year": 1998,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1620,
+			"name": "Silver Spur",
+			"mark_id": 149,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "342021304",
+			"generations": [
+				{
+					"id": 3905,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Spur",
+					"generation_name": "Mark IV",
+					"start_year": 1995,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3906,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Spur",
+					"generation_name": "Mark III",
+					"start_year": 1993,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3907,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Spur",
+					"generation_name": "Mark II",
+					"start_year": 1989,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3908,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Spur",
+					"generation_name": "Mark I",
+					"start_year": 1980,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19296,
+			"name": "Silver Wraith",
+			"mark_id": 149,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3909,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Silver Wraith",
+					"generation_name": "1946 – 1959",
+					"start_year": 1946,
+					"finish_year": 1959,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1621,
+			"name": "Wraith",
+			"mark_id": 149,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "342021957",
+			"generations": [
+				{
+					"id": 3910,
+					"mark_name": "Rolls-Royce",
+					"model_name": "Wraith",
+					"generation_name": "2013 – н.в.",
+					"start_year": 2013,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}

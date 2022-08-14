@@ -24,6 +24,7 @@ import { qrApi as qrRouter } from './routers/qr'
 import { addsDevicesLoggedStateInstance } from './utils/addsDevicesLoggedStateInstance'
 import { pravoslevaBot2021Router } from './routers/pravosleva-bot-2021'
 import { systemRouter } from './routers/system'
+import { caseServiceApi } from './routers/car-service'
 
 const app = express()
 
@@ -73,5 +74,6 @@ app.use('/pravosleva-bot-2021', pravoslevaBot2021Router)
 app.use('/system', systemRouter)
 app.use('/chat', chatRouter)
 // app.use('/chat-login', chatLogin)
+app.use('/car-service', caseServiceApi)
 
 module.exports = app

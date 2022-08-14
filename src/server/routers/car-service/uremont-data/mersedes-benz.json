@@ -1,0 +1,3202 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 20342,
+			"name": "A-Класс",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 282,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2695,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "IV (W177)",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/29/e529d813d3d6df3efefa0c670b9cf73a.png",
+					"images": [
+						{
+							"id": 443274,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443274/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443274/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/29/e529d813d3d6df3efefa0c670b9cf73a.png"
+						}
+					]
+				},
+				{
+					"id": 2696,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "III (W176) Рестайлинг",
+					"start_year": 2015,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/25/3f/253f01438537aabf3cc4252357ff0607.png",
+					"images": [
+						{
+							"id": 443275,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443275/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443275/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/25/3f/253f01438537aabf3cc4252357ff0607.png"
+						}
+					]
+				},
+				{
+					"id": 2697,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "III (W176)",
+					"start_year": 2012,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/47/4e/474ee2482cf048bc8d195b8e7b0e7d78.png",
+					"images": [
+						{
+							"id": 443276,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443276/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443276/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/47/4e/474ee2482cf048bc8d195b8e7b0e7d78.png"
+						}
+					]
+				},
+				{
+					"id": 2698,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "II (W169) Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/57/995754bb52acc1e900cb4b18db90eebc.png",
+					"images": [
+						{
+							"id": 443277,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443277/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443277/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/57/995754bb52acc1e900cb4b18db90eebc.png"
+						}
+					]
+				},
+				{
+					"id": 2699,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "II (W169)",
+					"start_year": 2004,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/79/2b79d5e1ce7aff2250dad8ed395376ce.png",
+					"images": [
+						{
+							"id": 443278,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443278/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443278/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/79/2b79d5e1ce7aff2250dad8ed395376ce.png"
+						}
+					]
+				},
+				{
+					"id": 2700,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "I (W168) Рестайлинг",
+					"start_year": 2001,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/e7/0de709d13dd33d2c0d40746148cf35b9.png",
+					"images": [
+						{
+							"id": 443279,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443279/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443279/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/e7/0de709d13dd33d2c0d40746148cf35b9.png"
+						}
+					]
+				},
+				{
+					"id": 2701,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "I (W168)",
+					"start_year": 1997,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/4f/a34f51adf342783f4cc47f95eee0b3f1.png",
+					"images": [
+						{
+							"id": 443280,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443280/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443280/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/4f/a34f51adf342783f4cc47f95eee0b3f1.png"
+						}
+					]
+				},
+				{
+					"id": 5282,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "II (W177)",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5283,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "I (W176) Рестайлинг",
+					"start_year": 2015,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5284,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "A-Класс",
+					"generation_name": "I (W176)",
+					"start_year": 2013,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20349,
+			"name": "C-Класс",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 2256,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2709,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "V (W206)",
+					"start_year": 2021,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/f3/d8f316849ed3ec93bdb935074c1fac38.png",
+					"images": [
+						{
+							"id": 443288,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443288/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443288/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/f3/d8f316849ed3ec93bdb935074c1fac38.png"
+						}
+					]
+				},
+				{
+					"id": 2710,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "IV (W205) Рестайлинг",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/be/fa/befa40203459eed0d8f86d17adb7fcb5.png",
+					"images": [
+						{
+							"id": 443289,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443289/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443289/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/be/fa/befa40203459eed0d8f86d17adb7fcb5.png"
+						}
+					]
+				},
+				{
+					"id": 2711,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "IV (W205)",
+					"start_year": 2014,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/c9/d3c94a2e2f22b13d15488f02916aa42d.png",
+					"images": [
+						{
+							"id": 443290,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443290/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443290/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/c9/d3c94a2e2f22b13d15488f02916aa42d.png"
+						}
+					]
+				},
+				{
+					"id": 2712,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "III (W204) Рестайлинг",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9b/8a/9b8ae95fb072fc1cf160390d23bad0aa.png",
+					"images": [
+						{
+							"id": 443291,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443291/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443291/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9b/8a/9b8ae95fb072fc1cf160390d23bad0aa.png"
+						}
+					]
+				},
+				{
+					"id": 2713,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "III (W204)",
+					"start_year": 2006,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/32/8b/328b8085b7a378445103e7d76a1980c2.png",
+					"images": [
+						{
+							"id": 443292,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443292/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443292/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/32/8b/328b8085b7a378445103e7d76a1980c2.png"
+						}
+					]
+				},
+				{
+					"id": 2714,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "II (W203) Рестайлинг",
+					"start_year": 2004,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/96/d0961251bc76f7dad8632e7646350cdf.png",
+					"images": [
+						{
+							"id": 443293,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443293/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443293/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/96/d0961251bc76f7dad8632e7646350cdf.png"
+						}
+					]
+				},
+				{
+					"id": 2715,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "II (W203)",
+					"start_year": 2000,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/14/83/148321fabc41c7a32aacc2e2cca9b62d.png",
+					"images": [
+						{
+							"id": 443294,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443294/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443294/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/14/83/148321fabc41c7a32aacc2e2cca9b62d.png"
+						}
+					]
+				},
+				{
+					"id": 2716,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "I (W202) Рестайлинг",
+					"start_year": 1997,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/eb/e2/ebe2b3d69c10145cb6de67a857501b46.png",
+					"images": [
+						{
+							"id": 443295,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443295/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443295/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/eb/e2/ebe2b3d69c10145cb6de67a857501b46.png"
+						}
+					]
+				},
+				{
+					"id": 2717,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "I (W202)",
+					"start_year": 1993,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/d5/4bd5337317d235c7a56a15b32fcf2340.png",
+					"images": [
+						{
+							"id": 443296,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443296/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443296/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/d5/4bd5337317d235c7a56a15b32fcf2340.png"
+						}
+					]
+				},
+				{
+					"id": 5285,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "IV (W205) Рестайлинг",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5286,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "IV (W205)",
+					"start_year": 2014,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5287,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "III (W204) Рестайлинг",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5288,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "III (W204)",
+					"start_year": 2007,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5289,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "II (W203) Рестайлинг",
+					"start_year": 2004,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5290,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "II (W203)",
+					"start_year": 2001,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5291,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "I (W202) Рестайлинг",
+					"start_year": 1997,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5292,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "C-Класс",
+					"generation_name": "I (W202)",
+					"start_year": 1994,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20346,
+			"name": "CLK-Класс",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 230,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2725,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLK-Класс",
+					"generation_name": "II (W209) Рестайлинг",
+					"start_year": 2005,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b8/a6/b8a6f61f6af155352de77ff947b9638d.png",
+					"images": [
+						{
+							"id": 443304,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443304/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443304/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b8/a6/b8a6f61f6af155352de77ff947b9638d.png"
+						}
+					]
+				},
+				{
+					"id": 2726,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLK-Класс",
+					"generation_name": "II (W209)",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/bb/63bb273cd56941ba65a81dfd7b42fe54.png",
+					"images": [
+						{
+							"id": 443305,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443305/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443305/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/bb/63bb273cd56941ba65a81dfd7b42fe54.png"
+						}
+					]
+				},
+				{
+					"id": 2727,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLK-Класс",
+					"generation_name": "I (W208) Рестайлинг",
+					"start_year": 1999,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/05/2305969b0b7b11e42183a8e093124056.png",
+					"images": [
+						{
+							"id": 443306,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443306/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443306/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/05/2305969b0b7b11e42183a8e093124056.png"
+						}
+					]
+				},
+				{
+					"id": 2728,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLK-Класс",
+					"generation_name": "I (W208)",
+					"start_year": 1997,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/1e/991e6d65e42c645f59e6e85292c17b2f.png",
+					"images": [
+						{
+							"id": 443307,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443307/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443307/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/1e/991e6d65e42c645f59e6e85292c17b2f.png"
+						}
+					]
+				},
+				{
+					"id": 5303,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLK-Класс",
+					"generation_name": "II (W209) Рестайлинг",
+					"start_year": 2005,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5304,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLK-Класс",
+					"generation_name": "II (W209)",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5305,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLK-Класс",
+					"generation_name": "I (W208) Рестайлинг",
+					"start_year": 2000,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5306,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLK-Класс",
+					"generation_name": "I (W208)",
+					"start_year": 1999,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20350,
+			"name": "E-Класс",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 3393,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2729,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "V (W213 S213 C238) Рестайлинг",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/11/e311d7e680e5894075d238e0ea2bfc55.png",
+					"images": [
+						{
+							"id": 443308,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443308/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443308/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/11/e311d7e680e5894075d238e0ea2bfc55.png"
+						}
+					]
+				},
+				{
+					"id": 2730,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "V (W213 S213 C238)",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/d1/93d189761689f4e3f553af8db0de0b51.png",
+					"images": [
+						{
+							"id": 443309,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443309/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443309/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/d1/93d189761689f4e3f553af8db0de0b51.png"
+						}
+					]
+				},
+				{
+					"id": 2731,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "IV (W212 S212 C207) Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1f/79/1f79250a445930f1aca16c13090318a0.png",
+					"images": [
+						{
+							"id": 443310,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443310/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443310/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1f/79/1f79250a445930f1aca16c13090318a0.png"
+						}
+					]
+				},
+				{
+					"id": 2732,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "IV (W212 S212 C207)",
+					"start_year": 2009,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6e/6b/6e6becb40d6d135868092d21683401a9.png",
+					"images": [
+						{
+							"id": 443311,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443311/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443311/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6e/6b/6e6becb40d6d135868092d21683401a9.png"
+						}
+					]
+				},
+				{
+					"id": 2733,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "III (W211 S211) Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/77/e2/77e2ccd33d06614000715f7245851ebc.png",
+					"images": [
+						{
+							"id": 443312,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443312/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443312/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/77/e2/77e2ccd33d06614000715f7245851ebc.png"
+						}
+					]
+				},
+				{
+					"id": 2734,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "III (W211 S211)",
+					"start_year": 2002,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9c/a6/9ca65e678a1b2f42bb53a41f628a0892.png",
+					"images": [
+						{
+							"id": 443313,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443313/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443313/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9c/a6/9ca65e678a1b2f42bb53a41f628a0892.png"
+						}
+					]
+				},
+				{
+					"id": 2735,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "II (W210 S210) Рестайлинг",
+					"start_year": 1999,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/32/7e/327e7c9db7e36d80d794321b324e5641.png",
+					"images": [
+						{
+							"id": 443314,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443314/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443314/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/32/7e/327e7c9db7e36d80d794321b324e5641.png"
+						}
+					]
+				},
+				{
+					"id": 2736,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "II (W210 S210)",
+					"start_year": 1995,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/af/b3/afb334037e1ce08f7050ac8eaf0a0b02.png",
+					"images": [
+						{
+							"id": 443315,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443315/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443315/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/af/b3/afb334037e1ce08f7050ac8eaf0a0b02.png"
+						}
+					]
+				},
+				{
+					"id": 2737,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "I (W124)",
+					"start_year": 1992,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/3a/a23a205fa58b20da8c197374aea9e6f2.png",
+					"images": [
+						{
+							"id": 443316,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443316/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443316/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/3a/a23a205fa58b20da8c197374aea9e6f2.png"
+						}
+					]
+				},
+				{
+					"id": 5319,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "V (W213) Рестайлинг",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5320,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "V (W213)",
+					"start_year": 2016,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5321,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "IV (W212 S212) Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5322,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "IV (W212 S212)",
+					"start_year": 2009,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5323,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "III (W211 S211) Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5324,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "III (W211 S211)",
+					"start_year": 2002,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5325,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "II (W210 S210) Рестайлинг",
+					"start_year": 1999,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5326,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "II (W210 S210)",
+					"start_year": 1996,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5327,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "E-Класс",
+					"generation_name": "I (W124)",
+					"start_year": 1994,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20354,
+			"name": "GL-Класс",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 616,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2746,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GL-Класс",
+					"generation_name": "II (X166)",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/16/4f16a83f8afa5a1cc82cf27c93609369.png",
+					"images": [
+						{
+							"id": 443325,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443325/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443325/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/16/4f16a83f8afa5a1cc82cf27c93609369.png"
+						}
+					]
+				},
+				{
+					"id": 2747,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GL-Класс",
+					"generation_name": "I (X164) Рестайлинг",
+					"start_year": 2009,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/6d/856d1a38e8a4b43c9f5425b3b89afb85.png",
+					"images": [
+						{
+							"id": 443326,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443326/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443326/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/6d/856d1a38e8a4b43c9f5425b3b89afb85.png"
+						}
+					]
+				},
+				{
+					"id": 2748,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GL-Класс",
+					"generation_name": "I (X164)",
+					"start_year": 2006,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/a0/2ea0be4669c21440879803d90b6819bd.png",
+					"images": [
+						{
+							"id": 443327,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443327/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443327/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/a0/2ea0be4669c21440879803d90b6819bd.png"
+						}
+					]
+				},
+				{
+					"id": 5334,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GL-Класс",
+					"generation_name": "2012 – 2016",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20352,
+			"name": "GLK-Класс",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 317,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2749,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLK-Класс",
+					"generation_name": "I (X204) Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/91/5a/915a9c4a616cde912a44b4fc2600fe04.png",
+					"images": [
+						{
+							"id": 443328,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443328/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443328/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/91/5a/915a9c4a616cde912a44b4fc2600fe04.png"
+						}
+					]
+				},
+				{
+					"id": 2750,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLK-Класс",
+					"generation_name": "I (X204)",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/92/2e927dd884ed24265f5a027d12c4456f.png",
+					"images": [
+						{
+							"id": 443329,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443329/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443329/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/92/2e927dd884ed24265f5a027d12c4456f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20357,
+			"name": "M-Класс",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 1027,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2751,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "III (W166)",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/8b/318b42beeb6b9fbf1a1418f994bfe374.png",
+					"images": [
+						{
+							"id": 443330,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443330/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443330/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/8b/318b42beeb6b9fbf1a1418f994bfe374.png"
+						}
+					]
+				},
+				{
+					"id": 2752,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "II (W164) Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/d3/2fd3dd62b3526fe982f851b66162a9b7.png",
+					"images": [
+						{
+							"id": 443331,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443331/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443331/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/d3/2fd3dd62b3526fe982f851b66162a9b7.png"
+						}
+					]
+				},
+				{
+					"id": 2753,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "II (W164)",
+					"start_year": 2005,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/3d/1a3d0d150e178dc07f9c84f1095ab372.png",
+					"images": [
+						{
+							"id": 443332,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443332/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443332/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/3d/1a3d0d150e178dc07f9c84f1095ab372.png"
+						}
+					]
+				},
+				{
+					"id": 2754,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "I (W163) Рестайлинг",
+					"start_year": 2001,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/70/c1/70c19f689a4e8ba9dc17f067d4027ada.png",
+					"images": [
+						{
+							"id": 443333,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443333/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443333/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/70/c1/70c19f689a4e8ba9dc17f067d4027ada.png"
+						}
+					]
+				},
+				{
+					"id": 2755,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "I (W163)",
+					"start_year": 1997,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5e/e2/5ee296807a5043680e1acb8668cd74f1.png",
+					"images": [
+						{
+							"id": 443334,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443334/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443334/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5e/e2/5ee296807a5043680e1acb8668cd74f1.png"
+						}
+					]
+				},
+				{
+					"id": 5361,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "III (W166)",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5362,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "II (W164) Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5363,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "II (W164)",
+					"start_year": 2006,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5364,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "I (W163) Рестайлинг",
+					"start_year": 2001,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5365,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "M-Класс",
+					"generation_name": "I (W163)",
+					"start_year": 2000,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20364,
+			"name": "S-Класс",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 933,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2759,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "VII (W223)",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f2/5d/f25d8352b62520dd3ac837188166d110.png",
+					"images": [
+						{
+							"id": 443338,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443338/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443338/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f2/5d/f25d8352b62520dd3ac837188166d110.png"
+						}
+					]
+				},
+				{
+					"id": 2760,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "VI (W222 C217) Рестайлинг",
+					"start_year": 2017,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/e8/a1e8696bf09aad8dc685b80bfe830149.png",
+					"images": [
+						{
+							"id": 443339,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443339/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443339/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/e8/a1e8696bf09aad8dc685b80bfe830149.png"
+						}
+					]
+				},
+				{
+					"id": 2761,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "VI (W222 C217)",
+					"start_year": 2013,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/25/f5/25f5e925911f301cb3909b3300332fc7.png",
+					"images": [
+						{
+							"id": 443340,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443340/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443340/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/25/f5/25f5e925911f301cb3909b3300332fc7.png"
+						}
+					]
+				},
+				{
+					"id": 2762,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "V (W221) Рестайлинг",
+					"start_year": 2009,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/06/2a06355d50565f4a074c3f5f19ee605c.png",
+					"images": [
+						{
+							"id": 443341,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443341/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443341/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/06/2a06355d50565f4a074c3f5f19ee605c.png"
+						}
+					]
+				},
+				{
+					"id": 2763,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "V (W221)",
+					"start_year": 2005,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 2764,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "IV (W220) Рестайлинг",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/13/4913a39dddcafb188921308cf3d7fe17.png",
+					"images": [
+						{
+							"id": 443342,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443342/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443342/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/13/4913a39dddcafb188921308cf3d7fe17.png"
+						}
+					]
+				},
+				{
+					"id": 2765,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "IV (W220)",
+					"start_year": 1998,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/90/0d90106e85699a94e3b8b2a0a374b0e4.png",
+					"images": [
+						{
+							"id": 443343,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443343/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443343/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/90/0d90106e85699a94e3b8b2a0a374b0e4.png"
+						}
+					]
+				},
+				{
+					"id": 2766,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "III (W140) Рестайлинг",
+					"start_year": 1994,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/5d/b75d3eeaf8d4843dcc0d2438916f9551.png",
+					"images": [
+						{
+							"id": 443344,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443344/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443344/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/5d/b75d3eeaf8d4843dcc0d2438916f9551.png"
+						}
+					]
+				},
+				{
+					"id": 2767,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "III (W140)",
+					"start_year": 1991,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/c4/40c4489b94e940702dc23df520f6cd47.png",
+					"images": [
+						{
+							"id": 443345,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443345/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443345/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/c4/40c4489b94e940702dc23df520f6cd47.png"
+						}
+					]
+				},
+				{
+					"id": 2768,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "II (W126) Рестайлинг",
+					"start_year": 1985,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 2769,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "II (W126)",
+					"start_year": 1979,
+					"finish_year": 1985,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 2770,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "I (W116)",
+					"start_year": 1972,
+					"finish_year": 1980,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 2771,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "W108",
+					"start_year": 1965,
+					"finish_year": 1972,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5367,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "III (W222 C217) Рестайлинг",
+					"start_year": 2017,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5368,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "III (W222 C217)",
+					"start_year": 2013,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5369,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "II (W221) Рестайлинг",
+					"start_year": 2009,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5370,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "II (W221)",
+					"start_year": 2006,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5371,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "I (W220) Рестайлинг",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5372,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "S-Класс",
+					"generation_name": "I (W220)",
+					"start_year": 1999,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20363,
+			"name": "Sprinter",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 424,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2225,
+			"name": "Vito",
+			"mark_id": 116,
+			"sort_id": 1,
+			"rating": 305,
+			"is_seo_active": 0,
+			"rgs_code": "230009064",
+			"generations": [
+				{
+					"id": 2795,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "Vito",
+					"generation_name": "III (W447)",
+					"start_year": 2014,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/20/5b/205be2ae53365d7c1ac6666dbbb490ec.png",
+					"images": [
+						{
+							"id": 443369,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443369/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443369/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/20/5b/205be2ae53365d7c1ac6666dbbb490ec.png"
+						}
+					]
+				},
+				{
+					"id": 2796,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "Vito",
+					"generation_name": "II (W639) Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/a8/52a834bc2afe82658306b5b49c753f31.png",
+					"images": [
+						{
+							"id": 443370,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443370/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443370/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/a8/52a834bc2afe82658306b5b49c753f31.png"
+						}
+					]
+				},
+				{
+					"id": 2797,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "Vito",
+					"generation_name": "II (W639)",
+					"start_year": 2003,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bd/83/bd83a810069e2f88e5b79719a5a2e132.png",
+					"images": [
+						{
+							"id": 443371,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443371/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443371/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bd/83/bd83a810069e2f88e5b79719a5a2e132.png"
+						}
+					]
+				},
+				{
+					"id": 2798,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "Vito",
+					"generation_name": "I (W638)",
+					"start_year": 1996,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/6c/536c3f54fee66bcacd475631d42f0c54.png",
+					"images": [
+						{
+							"id": 443372,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443372/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443372/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/6c/536c3f54fee66bcacd475631d42f0c54.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2280,
+			"name": "AMG GT",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": "230022043",
+			"generations": [
+				{
+					"id": 2702,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "AMG GT",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/15/97/159744c81deb65ec614b7365490ac220.png",
+					"images": [
+						{
+							"id": 443281,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443281/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443281/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/15/97/159744c81deb65ec614b7365490ac220.png"
+						}
+					]
+				},
+				{
+					"id": 2703,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "AMG GT",
+					"generation_name": "I",
+					"start_year": 2014,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/81/b8/81b81e122cb050768d422e6339f34b9f.png",
+					"images": [
+						{
+							"id": 443282,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443282/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443282/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/81/b8/81b81e122cb050768d422e6339f34b9f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20343,
+			"name": "B-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 184,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2704,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "B-Класс",
+					"generation_name": "III (W247)",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/5c/975ceaa2e76201a4dd1b8d84197cd140.png",
+					"images": [
+						{
+							"id": 443283,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443283/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443283/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/5c/975ceaa2e76201a4dd1b8d84197cd140.png"
+						}
+					]
+				},
+				{
+					"id": 2705,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "B-Класс",
+					"generation_name": "II (W246) Рестайлинг",
+					"start_year": 2014,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/d6/44d6ec07ce51f372bf3ac3c47a9bf435.png",
+					"images": [
+						{
+							"id": 443284,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443284/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443284/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/d6/44d6ec07ce51f372bf3ac3c47a9bf435.png"
+						}
+					]
+				},
+				{
+					"id": 2706,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "B-Класс",
+					"generation_name": "II (W246)",
+					"start_year": 2011,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/87/5f870bdf99fda4295bec453ffdca22c9.png",
+					"images": [
+						{
+							"id": 443285,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443285/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443285/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/87/5f870bdf99fda4295bec453ffdca22c9.png"
+						}
+					]
+				},
+				{
+					"id": 2707,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "B-Класс",
+					"generation_name": "I (W245) Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/05/4d/054d0a34cb75f7284a849235525fa9fd.png",
+					"images": [
+						{
+							"id": 443286,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443286/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443286/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/05/4d/054d0a34cb75f7284a849235525fa9fd.png"
+						}
+					]
+				},
+				{
+					"id": 2708,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "B-Класс",
+					"generation_name": "I (W245)",
+					"start_year": 2005,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7a/85/7a8540fe4fce9bb0f5633210d795ddcb.png",
+					"images": [
+						{
+							"id": 443287,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443287/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443287/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7a/85/7a8540fe4fce9bb0f5633210d795ddcb.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1190,
+			"name": "Citan",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 11,
+			"is_seo_active": 0,
+			"rgs_code": "230021883",
+			"generations": [
+				{
+					"id": 2718,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "Citan",
+					"generation_name": "2012 – н.в.",
+					"start_year": 2012,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/dd/5fdd2aefa30907eca5a1b586010d23c7.png",
+					"images": [
+						{
+							"id": 443297,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443297/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443297/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/dd/5fdd2aefa30907eca5a1b586010d23c7.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20348,
+			"name": "CL-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 111,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2719,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CL-Класс",
+					"generation_name": "III (C216) Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/68/8568e5907aef69cccfbbd4df01b8f9da.png",
+					"images": [
+						{
+							"id": 443298,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443298/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443298/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/68/8568e5907aef69cccfbbd4df01b8f9da.png"
+						}
+					]
+				},
+				{
+					"id": 2720,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CL-Класс",
+					"generation_name": "III (C216)",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1e/7a/1e7a7a1dcae542729c83376a8aad0583.png",
+					"images": [
+						{
+							"id": 443299,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443299/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443299/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1e/7a/1e7a7a1dcae542729c83376a8aad0583.png"
+						}
+					]
+				},
+				{
+					"id": 2721,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CL-Класс",
+					"generation_name": "II (C215) Рестайлинг",
+					"start_year": 2002,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bf/94/bf940ab8c356562d6433c046f1f9b9e3.png",
+					"images": [
+						{
+							"id": 443300,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443300/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443300/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bf/94/bf940ab8c356562d6433c046f1f9b9e3.png"
+						}
+					]
+				},
+				{
+					"id": 2722,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CL-Класс",
+					"generation_name": "II (C215)",
+					"start_year": 1999,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4d/c5/4dc5b5683fc4784896d3a502f95b2962.png",
+					"images": [
+						{
+							"id": 443301,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443301/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443301/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4d/c5/4dc5b5683fc4784896d3a502f95b2962.png"
+						}
+					]
+				},
+				{
+					"id": 2723,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CL-Класс",
+					"generation_name": "I (C140)",
+					"start_year": 1992,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/58/0d/580d2e539b0eac50513446608164ad5d.png",
+					"images": [
+						{
+							"id": 443302,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443302/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443302/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/58/0d/580d2e539b0eac50513446608164ad5d.png"
+						}
+					]
+				},
+				{
+					"id": 5293,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CL-Класс",
+					"generation_name": "II (C216) Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5294,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CL-Класс",
+					"generation_name": "II (C216)",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5295,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CL-Класс",
+					"generation_name": "I (C215) Рестайлинг",
+					"start_year": 2002,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5296,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CL-Класс",
+					"generation_name": "I (C215)",
+					"start_year": 2000,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20344,
+			"name": "CLA-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 84,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5297,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLA-Класс",
+					"generation_name": "II (C118 X118)",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5298,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLA-Класс",
+					"generation_name": "I (C117 X117) Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5299,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLA-Класс",
+					"generation_name": "I (C117 X117)",
+					"start_year": 2013,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5300,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLA-Класс",
+					"generation_name": "II (C118 X118)",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5301,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLA-Класс",
+					"generation_name": "I (C117 X117) Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5302,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLA-Класс",
+					"generation_name": "I (C117 X117)",
+					"start_year": 2013,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20345,
+			"name": "CLC-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 46,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2724,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLC-Класс",
+					"generation_name": "2008 – 2011",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/04/b904abf54c0b66a2d1d3743953155530.png",
+					"images": [
+						{
+							"id": 443303,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443303/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443303/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/04/b904abf54c0b66a2d1d3743953155530.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20347,
+			"name": "CLS-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 172,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5307,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "III (C257) Рестайлинг",
+					"start_year": 2021,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5308,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "III (C257)",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5309,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "II (C218) Рестайлинг",
+					"start_year": 2014,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5310,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "II (C218)",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5311,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "I (C219) Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5312,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "I (C219)",
+					"start_year": 2004,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5313,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "III (C257) Рестайлинг",
+					"start_year": 2021,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5314,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "III (C257)",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5315,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "II (W218) Рестайлинг",
+					"start_year": 2014,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5316,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "II (W218)",
+					"start_year": 2011,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5317,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "I (C219) Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5318,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "CLS-Класс",
+					"generation_name": "I (C219)",
+					"start_year": 2005,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20355,
+			"name": "G-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 178,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2738,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "III (W463)",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/f5/85f5f82c59fcc09233e99a88904a70be.png",
+					"images": [
+						{
+							"id": 443317,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443317/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443317/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/f5/85f5f82c59fcc09233e99a88904a70be.png"
+						}
+					]
+				},
+				{
+					"id": 2739,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "II (W463) Рестайлинг 4",
+					"start_year": 2015,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/2e/552e949bbb3c82a72103bfec33d58d01.png",
+					"images": [
+						{
+							"id": 443318,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443318/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443318/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/2e/552e949bbb3c82a72103bfec33d58d01.png"
+						}
+					]
+				},
+				{
+					"id": 2740,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "II (W463) Рестайлинг 3",
+					"start_year": 2012,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/bc/ccbc0ecf2da3af17ec4b0dfa252eedb7.png",
+					"images": [
+						{
+							"id": 443319,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443319/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443319/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/bc/ccbc0ecf2da3af17ec4b0dfa252eedb7.png"
+						}
+					]
+				},
+				{
+					"id": 2741,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "I (W461) Professional",
+					"start_year": 2010,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/0f/990ff9bea0f67daaa8b20909a48652d4.png",
+					"images": [
+						{
+							"id": 443320,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443320/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443320/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/0f/990ff9bea0f67daaa8b20909a48652d4.png"
+						}
+					]
+				},
+				{
+					"id": 2742,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "II (W463) Рестайлинг 2",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/54/e35408703ed8a35022e6eb1357f89468.png",
+					"images": [
+						{
+							"id": 443321,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443321/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443321/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/54/e35408703ed8a35022e6eb1357f89468.png"
+						}
+					]
+				},
+				{
+					"id": 2743,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "II (W463) Рестайлинг 1",
+					"start_year": 2006,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/92/ab/92ab1c905c82c38c9c51cd7c7f69b425.png",
+					"images": [
+						{
+							"id": 443322,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443322/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443322/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/92/ab/92ab1c905c82c38c9c51cd7c7f69b425.png"
+						}
+					]
+				},
+				{
+					"id": 2744,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "II (W463)",
+					"start_year": 1990,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/02/6802297a2409e3942004c982993e15c0.png",
+					"images": [
+						{
+							"id": 443323,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443323/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443323/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/02/6802297a2409e3942004c982993e15c0.png"
+						}
+					]
+				},
+				{
+					"id": 2745,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "I (W460 W461)",
+					"start_year": 1979,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/9e/ed9e0b7bf3807778cda3e5990ca8bad0.png",
+					"images": [
+						{
+							"id": 443324,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443324/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443324/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/9e/ed9e0b7bf3807778cda3e5990ca8bad0.png"
+						}
+					]
+				},
+				{
+					"id": 5328,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "II (W463)",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5329,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "I (W463) Рестайлинг 3",
+					"start_year": 2015,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5330,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "I (W463) Рестайлинг 2",
+					"start_year": 2012,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5331,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "I (W463) Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5332,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "I (W463)",
+					"start_year": 1994,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5333,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "G-Класс",
+					"generation_name": "2013 – 2015",
+					"start_year": 2013,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20351,
+			"name": "GLA-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 88,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5335,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLA-Класс",
+					"generation_name": "II (H247)",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5336,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLA-Класс",
+					"generation_name": "I (X156) Рестайлинг",
+					"start_year": 2017,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5337,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLA-Класс",
+					"generation_name": "I (X156)",
+					"start_year": 2013,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5338,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLA-Класс",
+					"generation_name": "II (H247)",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5339,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLA-Класс",
+					"generation_name": "I (X156) Рестайлинг",
+					"start_year": 2017,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5340,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLA-Класс",
+					"generation_name": "I (X156)",
+					"start_year": 2014,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19719,
+			"name": "GLC-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 78,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5341,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLC-Класс",
+					"generation_name": "I (X253) Рестайлинг",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5342,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLC-Класс",
+					"generation_name": "I (X253)",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5343,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLC-Класс",
+					"generation_name": "I (X253) Рестайлинг",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5344,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLC-Класс",
+					"generation_name": "I (X253)",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5345,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLC-Класс",
+					"generation_name": "I (C253) Рестайлинг",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5346,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLC-Класс",
+					"generation_name": "I (C253)",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5347,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLC-Класс",
+					"generation_name": "I (C253) Рестайлинг",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5348,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLC-Класс",
+					"generation_name": "I (C253)",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 18965,
+			"name": "GLE-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 56,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5349,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLE-Класс",
+					"generation_name": "II (V167)",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5350,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLE-Класс",
+					"generation_name": "I (W166)",
+					"start_year": 2015,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5351,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLE-Класс",
+					"generation_name": "II (V167)",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5352,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLE-Класс",
+					"generation_name": "I (W166)",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5353,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLE-Класс",
+					"generation_name": "II (C167)",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5354,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLE-Класс",
+					"generation_name": "I (C292)",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5355,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLE-Класс",
+					"generation_name": "II (C167)",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5356,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLE-Класс",
+					"generation_name": "I (C292)",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20353,
+			"name": "GLS-класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 32,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5357,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLS-класс",
+					"generation_name": "II (X167)",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3e/90/3e9090f68a7b4b78c4eb61671f9fcaf9.png",
+					"images": [
+						{
+							"id": 444419,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444419/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444419/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3e/90/3e9090f68a7b4b78c4eb61671f9fcaf9.png"
+						}
+					]
+				},
+				{
+					"id": 5358,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLS-класс",
+					"generation_name": "I (X166)",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/1e/0e1ed033fb55afe55cb682a0c66377bf.png",
+					"images": [
+						{
+							"id": 444420,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444420/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444420/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/1e/0e1ed033fb55afe55cb682a0c66377bf.png"
+						}
+					]
+				},
+				{
+					"id": 5359,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLS-класс",
+					"generation_name": "II (X167)",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5360,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "GLS-класс",
+					"generation_name": "I (X166)",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20356,
+			"name": "MB",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 29,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20358,
+			"name": "R-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 46,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2756,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "R-Класс",
+					"generation_name": "I Рестайлинг 2",
+					"start_year": 2010,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/f8/0df80bc850476f7680899324da210539.png",
+					"images": [
+						{
+							"id": 443335,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443335/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443335/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/f8/0df80bc850476f7680899324da210539.png"
+						}
+					]
+				},
+				{
+					"id": 2757,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "R-Класс",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2007,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1f/5f/1f5f9062ce7eb6f7f7e88f3072e46f38.png",
+					"images": [
+						{
+							"id": 443336,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443336/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443336/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1f/5f/1f5f9062ce7eb6f7f7e88f3072e46f38.png"
+						}
+					]
+				},
+				{
+					"id": 2758,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "R-Класс",
+					"generation_name": "I",
+					"start_year": 2005,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/92/19/9219563b3c648740025107a4c46f03f0.png",
+					"images": [
+						{
+							"id": 443337,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443337/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443337/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/92/19/9219563b3c648740025107a4c46f03f0.png"
+						}
+					]
+				},
+				{
+					"id": 5366,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "R-Класс",
+					"generation_name": "2006 – 2007",
+					"start_year": 2006,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20362,
+			"name": "SL-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 33,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2772,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "VI (R231) Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6d/95/6d955756e4f738a955b7fdadada55481.png",
+					"images": [
+						{
+							"id": 443346,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443346/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443346/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6d/95/6d955756e4f738a955b7fdadada55481.png"
+						}
+					]
+				},
+				{
+					"id": 2773,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "VI (R231)",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/d2/ded2df14a4db90f8bee8806d8eb8eb17.png",
+					"images": [
+						{
+							"id": 443347,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443347/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443347/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/d2/ded2df14a4db90f8bee8806d8eb8eb17.png"
+						}
+					]
+				},
+				{
+					"id": 2774,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "V (R230) Рестайлинг 2",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/84/f884dfdbe2260613410c8c4c5e126d56.png",
+					"images": [
+						{
+							"id": 443348,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443348/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443348/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/84/f884dfdbe2260613410c8c4c5e126d56.png"
+						}
+					]
+				},
+				{
+					"id": 2775,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "V (R230) Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/47/2f/472fa65ff51ed0659c2091164f0e6378.png",
+					"images": [
+						{
+							"id": 443349,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443349/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443349/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/47/2f/472fa65ff51ed0659c2091164f0e6378.png"
+						}
+					]
+				},
+				{
+					"id": 2776,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "V (R230)",
+					"start_year": 2001,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7c/3a/7c3a66da1d24ba561d03b42a73d97ee9.png",
+					"images": [
+						{
+							"id": 443350,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443350/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443350/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7c/3a/7c3a66da1d24ba561d03b42a73d97ee9.png"
+						}
+					]
+				},
+				{
+					"id": 2777,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "IV (R129) Рестайлинг 2",
+					"start_year": 1998,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b3/dd/b3dda24d242206c16e44f3d01677566f.png",
+					"images": [
+						{
+							"id": 443351,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443351/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443351/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b3/dd/b3dda24d242206c16e44f3d01677566f.png"
+						}
+					]
+				},
+				{
+					"id": 2778,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "IV (R129) Рестайлинг",
+					"start_year": 1995,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e8/66/e866eb49f6979fae17bdea9ae15a224c.png",
+					"images": [
+						{
+							"id": 443352,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443352/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443352/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e8/66/e866eb49f6979fae17bdea9ae15a224c.png"
+						}
+					]
+				},
+				{
+					"id": 2779,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "IV (R129)",
+					"start_year": 1989,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/af/a1af51b4626a36f518dc4ea387bbc956.png",
+					"images": [
+						{
+							"id": 443353,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443353/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443353/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/af/a1af51b4626a36f518dc4ea387bbc956.png"
+						}
+					]
+				},
+				{
+					"id": 2780,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "III (R107 C107)",
+					"start_year": 1971,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/fb/a6fb402208985235f09798f6548794ee.png",
+					"images": [
+						{
+							"id": 443354,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443354/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443354/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/fb/a6fb402208985235f09798f6548794ee.png"
+						}
+					]
+				},
+				{
+					"id": 2781,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "II (W113)",
+					"start_year": 1963,
+					"finish_year": 1971,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/8d/d98dd081743e3c5f94ee5e0bf7dd40bf.png",
+					"images": [
+						{
+							"id": 443355,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443355/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443355/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/8d/d98dd081743e3c5f94ee5e0bf7dd40bf.png"
+						}
+					]
+				},
+				{
+					"id": 2782,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "I (R121)",
+					"start_year": 1955,
+					"finish_year": 1963,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/62/9a62ec829e04d2cf7b515d6aea406844.png",
+					"images": [
+						{
+							"id": 443356,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443356/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443356/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/62/9a62ec829e04d2cf7b515d6aea406844.png"
+						}
+					]
+				},
+				{
+					"id": 2783,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "W198",
+					"start_year": 1954,
+					"finish_year": 1963,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/95/45/954571e502a167ae250c0cc7e0cfb9ad.png",
+					"images": [
+						{
+							"id": 443357,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443357/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443357/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/95/45/954571e502a167ae250c0cc7e0cfb9ad.png"
+						}
+					]
+				},
+				{
+					"id": 5373,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "III (R231) Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5374,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "III (R231)",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5375,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "II (R230) Рестайлинг 2",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5376,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "II (R230) Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5377,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "II (R230)",
+					"start_year": 2002,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5378,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "I (R129) Рестайлинг",
+					"start_year": 1998,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5379,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SL-Класс",
+					"generation_name": "I (R129)",
+					"start_year": 1993,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20359,
+			"name": "SLC-класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5380,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLC-класс",
+					"generation_name": "I (R172)",
+					"start_year": 2016,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5381,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLC-класс",
+					"generation_name": "I (R172)",
+					"start_year": 2016,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20360,
+			"name": "SLK-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 79,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2784,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLK-Класс",
+					"generation_name": "III (R172)",
+					"start_year": 2011,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/f1/ccf1af7fcc59bdddbe4e198d3610d30c.png",
+					"images": [
+						{
+							"id": 443358,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443358/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443358/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/f1/ccf1af7fcc59bdddbe4e198d3610d30c.png"
+						}
+					]
+				},
+				{
+					"id": 2785,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLK-Класс",
+					"generation_name": "II (R171) Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6b/cd/6bcd86c1e0031aeee6c62421dcaeb35c.png",
+					"images": [
+						{
+							"id": 443359,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443359/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443359/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6b/cd/6bcd86c1e0031aeee6c62421dcaeb35c.png"
+						}
+					]
+				},
+				{
+					"id": 2786,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLK-Класс",
+					"generation_name": "II (R171)",
+					"start_year": 2004,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/8b/d88b63ab4025c87195a52fa8444efb61.png",
+					"images": [
+						{
+							"id": 443360,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443360/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443360/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/8b/d88b63ab4025c87195a52fa8444efb61.png"
+						}
+					]
+				},
+				{
+					"id": 2787,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLK-Класс",
+					"generation_name": "I (R170) Рестайлинг",
+					"start_year": 2000,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/4c/444c666a3cc6763dba89d840421ac221.png",
+					"images": [
+						{
+							"id": 443361,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443361/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443361/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/4c/444c666a3cc6763dba89d840421ac221.png"
+						}
+					]
+				},
+				{
+					"id": 2788,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLK-Класс",
+					"generation_name": "I (R170)",
+					"start_year": 1996,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4d/1e/4d1eb2b62c3ddc9c9c2465bb59a3ec9b.png",
+					"images": [
+						{
+							"id": 443362,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443362/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443362/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4d/1e/4d1eb2b62c3ddc9c9c2465bb59a3ec9b.png"
+						}
+					]
+				},
+				{
+					"id": 5382,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLK-Класс",
+					"generation_name": "III (R172)",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5383,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLK-Класс",
+					"generation_name": "II (R171) Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5384,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLK-Класс",
+					"generation_name": "II (R171)",
+					"start_year": 2004,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5385,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLK-Класс",
+					"generation_name": "I (R170)",
+					"start_year": 2001,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20361,
+			"name": "SLR-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5386,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLR-Класс",
+					"generation_name": "2003 – 2009",
+					"start_year": 2003,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1207,
+			"name": "SLS AMG",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 4,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2789,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "SLS AMG",
+					"generation_name": "2010 – 2014",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/73/45/7345bafe6be1a5e080d11ff6d4570e29.png",
+					"images": [
+						{
+							"id": 443363,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443363/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443363/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/73/45/7345bafe6be1a5e080d11ff6d4570e29.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20365,
+			"name": "T1",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 32,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20366,
+			"name": "T2",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 9,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20367,
+			"name": "Type 300",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20368,
+			"name": "Unimog",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20370,
+			"name": "V-Класс",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 81,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2790,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "V-Класс",
+					"generation_name": "II",
+					"start_year": 2014,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/27/ff/27ff224d4c9a232eb857edc0824dbe06.png",
+					"images": [
+						{
+							"id": 443364,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443364/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443364/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/27/ff/27ff224d4c9a232eb857edc0824dbe06.png"
+						}
+					]
+				},
+				{
+					"id": 2791,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "V-Класс",
+					"generation_name": "I (W638)",
+					"start_year": 1996,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c4/af/c4af3b56bac9539817363c723d798cde.png",
+					"images": [
+						{
+							"id": 443365,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443365/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443365/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c4/af/c4af3b56bac9539817363c723d798cde.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1209,
+			"name": "Vaneo",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 9,
+			"is_seo_active": 0,
+			"rgs_code": "230009058",
+			"generations": [
+				{
+					"id": 2792,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "Vaneo",
+					"generation_name": "2001 – 2005",
+					"start_year": 2001,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/2b/f12b1f62a154a1e06d49af9a53be081f.png",
+					"images": [
+						{
+							"id": 443366,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443366/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443366/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/2b/f12b1f62a154a1e06d49af9a53be081f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 20369,
+			"name": "Vario",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1210,
+			"name": "Viano",
+			"mark_id": 116,
+			"sort_id": 0,
+			"rating": 78,
+			"is_seo_active": 0,
+			"rgs_code": "230020314",
+			"generations": [
+				{
+					"id": 2793,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "Viano",
+					"generation_name": "I (W639) Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/4a/9d4a12e311139d4e41ab97a48944ad15.png",
+					"images": [
+						{
+							"id": 443367,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443367/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443367/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/4a/9d4a12e311139d4e41ab97a48944ad15.png"
+						}
+					]
+				},
+				{
+					"id": 2794,
+					"mark_name": "Mercedes-Benz",
+					"model_name": "Viano",
+					"generation_name": "I (W639)",
+					"start_year": 2003,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/66/526642e708f448421e2a6edac1944c50.png",
+					"images": [
+						{
+							"id": 443368,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443368/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443368/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/66/526642e708f448421e2a6edac1944c50.png"
+						}
+					]
+				}
+			]
+		}
+	]
+}

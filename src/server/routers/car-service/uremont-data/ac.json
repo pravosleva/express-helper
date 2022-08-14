@@ -1,0 +1,150 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 1,
+			"name": "378 GT Zagato",
+			"mark_id": 1,
+			"sort_id": 1,
+			"rating": 33,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2,
+			"name": "ACE",
+			"mark_id": 1,
+			"sort_id": 1,
+			"rating": 15,
+			"is_seo_active": 0,
+			"rgs_code": "001000004",
+			"generations": [
+				{
+					"id": 1,
+					"mark_name": "AC",
+					"model_name": "ACE",
+					"generation_name": "1992 – 2000",
+					"start_year": 1992,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/de/7bdec4032317d694aef48a65145c7c1b.png",
+					"images": [
+						{
+							"id": 441957,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441957/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441957/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/de/7bdec4032317d694aef48a65145c7c1b.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Aceca",
+			"mark_id": 1,
+			"sort_id": 1,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "001000010",
+			"generations": [
+				{
+					"id": 2,
+					"mark_name": "AC",
+					"model_name": "Aceca",
+					"generation_name": "1998 – 2000",
+					"start_year": 1998,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/b9/00b9ed712050f915059ce09c2138b9d0.png",
+					"images": [
+						{
+							"id": 441958,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441958/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441958/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/b9/00b9ed712050f915059ce09c2138b9d0.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 4,
+			"name": "Cobra",
+			"mark_id": 1,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "001000013",
+			"generations": [
+				{
+					"id": 3,
+					"mark_name": "AC",
+					"model_name": "Cobra",
+					"generation_name": "Mk VI",
+					"start_year": 2013,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/8e/2a8e69059318ee0148a2dd369907d696.png",
+					"images": [
+						{
+							"id": 441959,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441959/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441959/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/8e/2a8e69059318ee0148a2dd369907d696.png"
+						}
+					]
+				},
+				{
+					"id": 4,
+					"mark_name": "AC",
+					"model_name": "Cobra",
+					"generation_name": "Mk V",
+					"start_year": 1999,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/fa/00fad64d227a2b100c2a590754a0ceae.png",
+					"images": [
+						{
+							"id": 441960,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441960/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441960/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/fa/00fad64d227a2b100c2a590754a0ceae.png"
+						}
+					]
+				},
+				{
+					"id": 5,
+					"mark_name": "AC",
+					"model_name": "Cobra",
+					"generation_name": "Mk IV",
+					"start_year": 1990,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/d2/d3d2ce4cced50810911f1e6aae21a028.png",
+					"images": [
+						{
+							"id": 441961,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441961/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441961/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/d2/d3d2ce4cced50810911f1e6aae21a028.png"
+						}
+					]
+				},
+				{
+					"id": 6,
+					"mark_name": "AC",
+					"model_name": "Cobra",
+					"generation_name": "Mk III",
+					"start_year": 1965,
+					"finish_year": 1967,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/22/9922d738237607e9cd79627022665468.png",
+					"images": [
+						{
+							"id": 441962,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441962/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/441962/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/22/9922d738237607e9cd79627022665468.png"
+						}
+					]
+				}
+			]
+		}
+	]
+}

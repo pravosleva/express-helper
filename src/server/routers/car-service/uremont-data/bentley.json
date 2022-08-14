@@ -1,0 +1,512 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 128,
+			"name": "Arnage",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "033001278",
+			"generations": [
+				{
+					"id": 336,
+					"mark_name": "Bentley",
+					"model_name": "Arnage",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2002,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 337,
+					"mark_name": "Bentley",
+					"model_name": "Arnage",
+					"generation_name": "I",
+					"start_year": 1998,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 129,
+			"name": "Azure",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "033001287",
+			"generations": [
+				{
+					"id": 338,
+					"mark_name": "Bentley",
+					"model_name": "Azure",
+					"generation_name": "II",
+					"start_year": 2005,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 339,
+					"mark_name": "Bentley",
+					"model_name": "Azure",
+					"generation_name": "I",
+					"start_year": 1995,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19340,
+			"name": "Bentayga",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 11,
+			"is_seo_active": 0,
+			"rgs_code": "033022179",
+			"generations": [
+				{
+					"id": 340,
+					"mark_name": "Bentley",
+					"model_name": "Bentayga",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 341,
+					"mark_name": "Bentley",
+					"model_name": "Bentayga",
+					"generation_name": "I",
+					"start_year": 2015,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 130,
+			"name": "Brooklands",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "033020040",
+			"generations": [
+				{
+					"id": 342,
+					"mark_name": "Bentley",
+					"model_name": "Brooklands",
+					"generation_name": "II",
+					"start_year": 2007,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 343,
+					"mark_name": "Bentley",
+					"model_name": "Brooklands",
+					"generation_name": "I",
+					"start_year": 1992,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 132,
+			"name": "Continental Flying Spur",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 345,
+					"mark_name": "Bentley",
+					"model_name": "Continental Flying Spur",
+					"generation_name": "2005 – 2012",
+					"start_year": 2005,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 133,
+			"name": "Continental GT",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 19,
+			"is_seo_active": 0,
+			"rgs_code": "207007806",
+			"generations": [
+				{
+					"id": 346,
+					"mark_name": "Bentley",
+					"model_name": "Continental GT",
+					"generation_name": "III",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 347,
+					"mark_name": "Bentley",
+					"model_name": "Continental GT",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2015,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/71/37/71375cf71681b079299d8977ee49fe41.png",
+					"images": [
+						{
+							"id": 442231,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442231/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442231/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/71/37/71375cf71681b079299d8977ee49fe41.png"
+						}
+					]
+				},
+				{
+					"id": 348,
+					"mark_name": "Bentley",
+					"model_name": "Continental GT",
+					"generation_name": "II",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/35/d635e38a0189d9ae47431102a879bfb5.png",
+					"images": [
+						{
+							"id": 442232,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442232/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442232/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/35/d635e38a0189d9ae47431102a879bfb5.png"
+						}
+					]
+				},
+				{
+					"id": 349,
+					"mark_name": "Bentley",
+					"model_name": "Continental GT",
+					"generation_name": "I",
+					"start_year": 2003,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/f6/4af686adaad3a708e6df184de9db054b.png",
+					"images": [
+						{
+							"id": 442233,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442233/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442233/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/f6/4af686adaad3a708e6df184de9db054b.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 21003,
+			"name": "Continental GT3‑R",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 135,
+			"name": "Flying Spur",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "033022022",
+			"generations": [
+				{
+					"id": 351,
+					"mark_name": "Bentley",
+					"model_name": "Flying Spur",
+					"generation_name": "II",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 352,
+					"mark_name": "Bentley",
+					"model_name": "Flying Spur",
+					"generation_name": "I",
+					"start_year": 2013,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 136,
+			"name": "Mulsanne",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "033020042",
+			"generations": [
+				{
+					"id": 354,
+					"mark_name": "Bentley",
+					"model_name": "Mulsanne",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/25/0225dd204aef692c2210e3d313d69174.png",
+					"images": [
+						{
+							"id": 442234,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442234/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442234/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/25/0225dd204aef692c2210e3d313d69174.png"
+						}
+					]
+				},
+				{
+					"id": 355,
+					"mark_name": "Bentley",
+					"model_name": "Mulsanne",
+					"generation_name": "II",
+					"start_year": 2010,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/01/60011e251d19c3dc1a4170a5afb33bb4.png",
+					"images": [
+						{
+							"id": 442235,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442235/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442235/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/01/60011e251d19c3dc1a4170a5afb33bb4.png"
+						}
+					]
+				},
+				{
+					"id": 356,
+					"mark_name": "Bentley",
+					"model_name": "Mulsanne",
+					"generation_name": "I",
+					"start_year": 1980,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d1/6a/d16a2fd2a30c9199974ff7dc919ca156.png",
+					"images": [
+						{
+							"id": 442236,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442236/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442236/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d1/6a/d16a2fd2a30c9199974ff7dc919ca156.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 137,
+			"name": "Turbo R",
+			"mark_id": 15,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 359,
+					"mark_name": "Bentley",
+					"model_name": "Turbo R",
+					"generation_name": "1985 – 1999",
+					"start_year": 1985,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 131,
+			"name": "Continental",
+			"mark_id": 15,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "207007804",
+			"generations": [
+				{
+					"id": 344,
+					"mark_name": "Bentley",
+					"model_name": "Continental",
+					"generation_name": "I",
+					"start_year": 1984,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2283,
+			"name": "Continental GTC",
+			"mark_id": 15,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2284,
+			"name": "Continental Supersports",
+			"mark_id": 15,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 134,
+			"name": "Eight",
+			"mark_id": 15,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 350,
+					"mark_name": "Bentley",
+					"model_name": "Eight",
+					"generation_name": "1984 – 1992",
+					"start_year": 1984,
+					"finish_year": 1992,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19557,
+			"name": "Mark VI",
+			"mark_id": 15,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 353,
+					"mark_name": "Bentley",
+					"model_name": "Mark VI",
+					"generation_name": "1946 – 1952",
+					"start_year": 1946,
+					"finish_year": 1952,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19558,
+			"name": "R Type",
+			"mark_id": 15,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 357,
+					"mark_name": "Bentley",
+					"model_name": "R Type",
+					"generation_name": "1952 – 1955",
+					"start_year": 1952,
+					"finish_year": 1955,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19259,
+			"name": "S-series",
+			"mark_id": 15,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5153,
+					"mark_name": "Bentley",
+					"model_name": "S-series",
+					"generation_name": "III",
+					"start_year": 1962,
+					"finish_year": 1965,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5154,
+					"mark_name": "Bentley",
+					"model_name": "S-series",
+					"generation_name": "II",
+					"start_year": 1959,
+					"finish_year": 1962,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5155,
+					"mark_name": "Bentley",
+					"model_name": "S-series",
+					"generation_name": "I",
+					"start_year": 1955,
+					"finish_year": 1959,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19559,
+			"name": "T-series",
+			"mark_id": 15,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 358,
+					"mark_name": "Bentley",
+					"model_name": "T-series",
+					"generation_name": "1965 – 1980",
+					"start_year": 1965,
+					"finish_year": 1980,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}

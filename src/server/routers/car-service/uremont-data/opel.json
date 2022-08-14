@@ -1,0 +1,2303 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 1425,
+			"name": "Antara",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 490,
+			"is_seo_active": 0,
+			"rgs_code": "272020666",
+			"generations": [
+				{
+					"id": 3426,
+					"mark_name": "Opel",
+					"model_name": "Antara",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2010,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/41/c5/41c523608c0bb8e9d64b174ec5b9fd36.png",
+					"images": [
+						{
+							"id": 443606,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443606/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443606/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/41/c5/41c523608c0bb8e9d64b174ec5b9fd36.png"
+						}
+					]
+				},
+				{
+					"id": 3427,
+					"mark_name": "Opel",
+					"model_name": "Antara",
+					"generation_name": "I",
+					"start_year": 2006,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/3d/f83db7c67d1b6bb8548d1b4eb59516bc.png",
+					"images": [
+						{
+							"id": 443607,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443607/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443607/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/3d/f83db7c67d1b6bb8548d1b4eb59516bc.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1427,
+			"name": "Astra",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 7889,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3431,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "K Рестайлинг",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/01/68010237710769f4940874594f96d3a4.png",
+					"images": [
+						{
+							"id": 443608,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443608/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443608/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/01/68010237710769f4940874594f96d3a4.png"
+						}
+					]
+				},
+				{
+					"id": 3432,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "K",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/2d/592d2eded51353ea15ec8f9b6f03a06c.png",
+					"images": [
+						{
+							"id": 443609,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443609/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443609/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/2d/592d2eded51353ea15ec8f9b6f03a06c.png"
+						}
+					]
+				},
+				{
+					"id": 3433,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "J Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/47/ac/47ac1bf4df7b186db60d318fc3f85c9e.png",
+					"images": [
+						{
+							"id": 443610,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443610/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443610/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/47/ac/47ac1bf4df7b186db60d318fc3f85c9e.png"
+						}
+					]
+				},
+				{
+					"id": 3434,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "J",
+					"start_year": 2009,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/72/1372040acb0b012ee7b98254fb650ee2.png",
+					"images": [
+						{
+							"id": 443611,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443611/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443611/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/72/1372040acb0b012ee7b98254fb650ee2.png"
+						}
+					]
+				},
+				{
+					"id": 3435,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "H Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/79/d7/79d766e41f56096aaaf4166c78428ae3.png",
+					"images": [
+						{
+							"id": 443612,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443612/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443612/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/79/d7/79d766e41f56096aaaf4166c78428ae3.png"
+						}
+					]
+				},
+				{
+					"id": 3436,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "H",
+					"start_year": 2004,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/d0/ead08fcc8f8e61aaf13a7b69ba081738.png",
+					"images": [
+						{
+							"id": 443613,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443613/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443613/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/d0/ead08fcc8f8e61aaf13a7b69ba081738.png"
+						}
+					]
+				},
+				{
+					"id": 3437,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "G",
+					"start_year": 1998,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/6d/7b6d59e162796bb53c3ebe6efc125217.png",
+					"images": [
+						{
+							"id": 443614,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443614/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443614/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/6d/7b6d59e162796bb53c3ebe6efc125217.png"
+						}
+					]
+				},
+				{
+					"id": 3438,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "F",
+					"start_year": 1991,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/40/0040249ae0aeeb85f24aaff62f0956c4.png",
+					"images": [
+						{
+							"id": 443615,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443615/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443615/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/40/0040249ae0aeeb85f24aaff62f0956c4.png"
+						}
+					]
+				},
+				{
+					"id": 5413,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "J",
+					"start_year": 2012,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/3d/303d1172ebbf9c69f657b487b62ae285.png",
+					"images": [
+						{
+							"id": 444421,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444421/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444421/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/3d/303d1172ebbf9c69f657b487b62ae285.png"
+						}
+					]
+				},
+				{
+					"id": 5414,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "H",
+					"start_year": 2005,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/43/ea43af0024d9bb0f1d0e9403be558730.png",
+					"images": [
+						{
+							"id": 444422,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444422/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444422/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/43/ea43af0024d9bb0f1d0e9403be558730.png"
+						}
+					]
+				},
+				{
+					"id": 5415,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "G Рестайлинг",
+					"start_year": 2002,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/c3/f8c31e076c70a1a41f3c39dde436e564.png",
+					"images": [
+						{
+							"id": 444423,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444423/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444423/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/c3/f8c31e076c70a1a41f3c39dde436e564.png"
+						}
+					]
+				},
+				{
+					"id": 5416,
+					"mark_name": "Opel",
+					"model_name": "Astra",
+					"generation_name": "G",
+					"start_year": 1999,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/61/99/61992959e8ad91035d36c1710f1a7653.png",
+					"images": [
+						{
+							"id": 444424,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444424/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444424/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/61/99/61992959e8ad91035d36c1710f1a7653.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1433,
+			"name": "Corsa",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 1379,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3451,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "F",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ce/aa/ceaa512aa05739a295513aaef0e0d25c.png",
+					"images": [
+						{
+							"id": 443624,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443624/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443624/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ce/aa/ceaa512aa05739a295513aaef0e0d25c.png"
+						}
+					]
+				},
+				{
+					"id": 3452,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "E",
+					"start_year": 2014,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/90/9790719786ccf017557bf0392285ba66.png",
+					"images": [
+						{
+							"id": 443625,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443625/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443625/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/90/9790719786ccf017557bf0392285ba66.png"
+						}
+					]
+				},
+				{
+					"id": 3453,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "D Рестайлинг II",
+					"start_year": 2011,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/33/c5/33c52682a4e0a34dfb51fbcd476080f2.png",
+					"images": [
+						{
+							"id": 443626,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443626/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443626/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/33/c5/33c52682a4e0a34dfb51fbcd476080f2.png"
+						}
+					]
+				},
+				{
+					"id": 3454,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "D Рестайлинг I",
+					"start_year": 2010,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5a/32/5a321b2b94b2d58a0c6d88836d6921b9.png",
+					"images": [
+						{
+							"id": 443627,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443627/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443627/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5a/32/5a321b2b94b2d58a0c6d88836d6921b9.png"
+						}
+					]
+				},
+				{
+					"id": 3455,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "D",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5c/c4/5cc4ebb6d4b182fa32c291a877adbdd5.png",
+					"images": [
+						{
+							"id": 443628,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443628/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443628/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5c/c4/5cc4ebb6d4b182fa32c291a877adbdd5.png"
+						}
+					]
+				},
+				{
+					"id": 3456,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "C Рестайлинг",
+					"start_year": 2003,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/15/8a/158aad93eae947854f21cc1e6bf899af.png",
+					"images": [
+						{
+							"id": 443629,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443629/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443629/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/15/8a/158aad93eae947854f21cc1e6bf899af.png"
+						}
+					]
+				},
+				{
+					"id": 3457,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "C",
+					"start_year": 2000,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/df/dc/dfdc67aff3a5515d43f70531b7444b41.png",
+					"images": [
+						{
+							"id": 443630,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443630/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443630/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/df/dc/dfdc67aff3a5515d43f70531b7444b41.png"
+						}
+					]
+				},
+				{
+					"id": 3458,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "B",
+					"start_year": 1993,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/d1/f9d130972b36af1c66124fa82cd3425e.png",
+					"images": [
+						{
+							"id": 443631,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443631/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443631/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/d1/f9d130972b36af1c66124fa82cd3425e.png"
+						}
+					]
+				},
+				{
+					"id": 3459,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "A",
+					"start_year": 1982,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/f0/f8f0b3a7e336de521a7d502d67177885.png",
+					"images": [
+						{
+							"id": 443632,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443632/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443632/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/f0/f8f0b3a7e336de521a7d502d67177885.png"
+						}
+					]
+				},
+				{
+					"id": 5417,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "E",
+					"start_year": 2015,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/f7/d0f7e0369bf7ea7b138d0de93bcfc1df.png",
+					"images": [
+						{
+							"id": 444425,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444425/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444425/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/f7/d0f7e0369bf7ea7b138d0de93bcfc1df.png"
+						}
+					]
+				},
+				{
+					"id": 5418,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "D Рестайлинг II",
+					"start_year": 2011,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/dc/a3dc9751140c3e69d47ea33db19501bd.png",
+					"images": [
+						{
+							"id": 444426,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444426/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444426/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/dc/a3dc9751140c3e69d47ea33db19501bd.png"
+						}
+					]
+				},
+				{
+					"id": 5419,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "D Рестайлинг I",
+					"start_year": 2010,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/e6/34e6946ce674c6d308c7def30ce64c09.png",
+					"images": [
+						{
+							"id": 444427,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444427/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444427/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/e6/34e6946ce674c6d308c7def30ce64c09.png"
+						}
+					]
+				},
+				{
+					"id": 5420,
+					"mark_name": "Opel",
+					"model_name": "Corsa",
+					"generation_name": "D",
+					"start_year": 2007,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6b/9b/6b9b9584904d9d0631946b816a2c9637.png",
+					"images": [
+						{
+							"id": 444428,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444428/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444428/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6b/9b/6b9b9584904d9d0631946b816a2c9637.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1435,
+			"name": "Frontera",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 137,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3462,
+					"mark_name": "Opel",
+					"model_name": "Frontera",
+					"generation_name": "B Рестайлинг",
+					"start_year": 2001,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/cd/cccd803ae4306321ca28636e9272be84.png",
+					"images": [
+						{
+							"id": 443633,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443633/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443633/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/cd/cccd803ae4306321ca28636e9272be84.png"
+						}
+					]
+				},
+				{
+					"id": 3463,
+					"mark_name": "Opel",
+					"model_name": "Frontera",
+					"generation_name": "B",
+					"start_year": 1998,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/c2/9dc2f78ab1c16e45c5e5039bea13c7a8.png",
+					"images": [
+						{
+							"id": 443634,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443634/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443634/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/c2/9dc2f78ab1c16e45c5e5039bea13c7a8.png"
+						}
+					]
+				},
+				{
+					"id": 3464,
+					"mark_name": "Opel",
+					"model_name": "Frontera",
+					"generation_name": "A",
+					"start_year": 1992,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/69/36/69367d9887daf19308a34dcfbb49540c.png",
+					"images": [
+						{
+							"id": 443635,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443635/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443635/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/69/36/69367d9887daf19308a34dcfbb49540c.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1437,
+			"name": "Insignia",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 522,
+			"is_seo_active": 0,
+			"rgs_code": "272021291",
+			"generations": [
+				{
+					"id": 3467,
+					"mark_name": "Opel",
+					"model_name": "Insignia",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3e/e7/3ee73e6fe7bfe1b120e3397a102de113.png",
+					"images": [
+						{
+							"id": 443636,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443636/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443636/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3e/e7/3ee73e6fe7bfe1b120e3397a102de113.png"
+						}
+					]
+				},
+				{
+					"id": 3468,
+					"mark_name": "Opel",
+					"model_name": "Insignia",
+					"generation_name": "II",
+					"start_year": 2017,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/9d/759d2a63d3e7847b5d389f4507e0b198.png",
+					"images": [
+						{
+							"id": 443637,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443637/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443637/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/9d/759d2a63d3e7847b5d389f4507e0b198.png"
+						}
+					]
+				},
+				{
+					"id": 3469,
+					"mark_name": "Opel",
+					"model_name": "Insignia",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ad/19/ad19879fd3f3eb44c84c2224b2e6018e.png",
+					"images": [
+						{
+							"id": 443638,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443638/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443638/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ad/19/ad19879fd3f3eb44c84c2224b2e6018e.png"
+						}
+					]
+				},
+				{
+					"id": 3470,
+					"mark_name": "Opel",
+					"model_name": "Insignia",
+					"generation_name": "I",
+					"start_year": 2008,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/9a/a29a681b7a4cb034f8f8820e0aa3cc28.png",
+					"images": [
+						{
+							"id": 443639,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443639/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443639/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/9a/a29a681b7a4cb034f8f8820e0aa3cc28.png"
+						}
+					]
+				},
+				{
+					"id": 5421,
+					"mark_name": "Opel",
+					"model_name": "Insignia",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/2e/f82ec9dca07cd4661a474bc7d09cf7b6.png",
+					"images": [
+						{
+							"id": 444429,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444429/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444429/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/2e/f82ec9dca07cd4661a474bc7d09cf7b6.png"
+						}
+					]
+				},
+				{
+					"id": 5422,
+					"mark_name": "Opel",
+					"model_name": "Insignia",
+					"generation_name": "I",
+					"start_year": 2009,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c0/ae/c0aebc0fb113bc1305249a0a4d439513.png",
+					"images": [
+						{
+							"id": 444430,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444430/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444430/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c0/ae/c0aebc0fb113bc1305249a0a4d439513.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1440,
+			"name": "Meriva",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 410,
+			"is_seo_active": 0,
+			"rgs_code": "272011249",
+			"generations": [
+				{
+					"id": 3487,
+					"mark_name": "Opel",
+					"model_name": "Meriva",
+					"generation_name": "B Рестайлинг",
+					"start_year": 2014,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/95/06/95064a778a169ae51282a44dadf25db7.png",
+					"images": [
+						{
+							"id": 443640,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443640/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443640/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/95/06/95064a778a169ae51282a44dadf25db7.png"
+						}
+					]
+				},
+				{
+					"id": 3488,
+					"mark_name": "Opel",
+					"model_name": "Meriva",
+					"generation_name": "B",
+					"start_year": 2010,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/9e/759e8effb0ee18d37f17560c00009f2d.png",
+					"images": [
+						{
+							"id": 443641,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443641/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443641/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/9e/759e8effb0ee18d37f17560c00009f2d.png"
+						}
+					]
+				},
+				{
+					"id": 3489,
+					"mark_name": "Opel",
+					"model_name": "Meriva",
+					"generation_name": "A Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/03/f10361cdd8e2cab187d0ff5feefec017.png",
+					"images": [
+						{
+							"id": 443642,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443642/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443642/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/03/f10361cdd8e2cab187d0ff5feefec017.png"
+						}
+					]
+				},
+				{
+					"id": 3490,
+					"mark_name": "Opel",
+					"model_name": "Meriva",
+					"generation_name": "A",
+					"start_year": 2003,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/a3/a2a3030013000dd7ceae87f919ebf1f9.png",
+					"images": [
+						{
+							"id": 443643,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443643/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443643/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/a3/a2a3030013000dd7ceae87f919ebf1f9.png"
+						}
+					]
+				},
+				{
+					"id": 5423,
+					"mark_name": "Opel",
+					"model_name": "Meriva",
+					"generation_name": "B Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1441,
+			"name": "Mokka",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 493,
+			"is_seo_active": 0,
+			"rgs_code": "272021676",
+			"generations": [
+				{
+					"id": 3491,
+					"mark_name": "Opel",
+					"model_name": "Mokka",
+					"generation_name": "II",
+					"start_year": 2021,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/c0/28c0e78c21407b8335595f09be363957.png",
+					"images": [
+						{
+							"id": 443644,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443644/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443644/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/c0/28c0e78c21407b8335595f09be363957.png"
+						}
+					]
+				},
+				{
+					"id": 3492,
+					"mark_name": "Opel",
+					"model_name": "Mokka",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/bb/1dbbfdd654c17acb0e2e6eff518cdd51.png",
+					"images": [
+						{
+							"id": 443645,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443645/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443645/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/bb/1dbbfdd654c17acb0e2e6eff518cdd51.png"
+						}
+					]
+				},
+				{
+					"id": 3493,
+					"mark_name": "Opel",
+					"model_name": "Mokka",
+					"generation_name": "I",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/20/4d/204df4b9c77fbc14fb084c6ce1dfff44.png",
+					"images": [
+						{
+							"id": 443646,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443646/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443646/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/20/4d/204df4b9c77fbc14fb084c6ce1dfff44.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1444,
+			"name": "Omega",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 329,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3497,
+					"mark_name": "Opel",
+					"model_name": "Omega",
+					"generation_name": "B Рестайлинг",
+					"start_year": 1999,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3498,
+					"mark_name": "Opel",
+					"model_name": "Omega",
+					"generation_name": "B",
+					"start_year": 1994,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3499,
+					"mark_name": "Opel",
+					"model_name": "Omega",
+					"generation_name": "A",
+					"start_year": 1984,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1451,
+			"name": "Vectra",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 1258,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3513,
+					"mark_name": "Opel",
+					"model_name": "Vectra",
+					"generation_name": "C Рестайлинг",
+					"start_year": 2005,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/c0/f9c06c50c2d77f7fc9929ee6a63bb7b4.png",
+					"images": [
+						{
+							"id": 443651,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443651/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443651/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/c0/f9c06c50c2d77f7fc9929ee6a63bb7b4.png"
+						}
+					]
+				},
+				{
+					"id": 3514,
+					"mark_name": "Opel",
+					"model_name": "Vectra",
+					"generation_name": "C",
+					"start_year": 2002,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ce/25/ce25d037ccd09e8cf78abacb9d3bed31.png",
+					"images": [
+						{
+							"id": 443652,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443652/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443652/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ce/25/ce25d037ccd09e8cf78abacb9d3bed31.png"
+						}
+					]
+				},
+				{
+					"id": 3515,
+					"mark_name": "Opel",
+					"model_name": "Vectra",
+					"generation_name": "B Рестайлинг",
+					"start_year": 1999,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8c/2a/8c2aaeea2d42a718d95df14b36d2a69f.png",
+					"images": [
+						{
+							"id": 443653,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443653/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443653/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8c/2a/8c2aaeea2d42a718d95df14b36d2a69f.png"
+						}
+					]
+				},
+				{
+					"id": 3516,
+					"mark_name": "Opel",
+					"model_name": "Vectra",
+					"generation_name": "B",
+					"start_year": 1995,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b6/52/b6529a0c5f19dc2d5519dc0732238363.png",
+					"images": [
+						{
+							"id": 443654,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443654/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443654/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b6/52/b6529a0c5f19dc2d5519dc0732238363.png"
+						}
+					]
+				},
+				{
+					"id": 3517,
+					"mark_name": "Opel",
+					"model_name": "Vectra",
+					"generation_name": "A",
+					"start_year": 1988,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ff/cd/ffcd4e9ea14623d0562d28074b09a6e8.png",
+					"images": [
+						{
+							"id": 443655,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443655/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443655/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ff/cd/ffcd4e9ea14623d0562d28074b09a6e8.png"
+						}
+					]
+				},
+				{
+					"id": 5425,
+					"mark_name": "Opel",
+					"model_name": "Vectra",
+					"generation_name": "C Рестайлинг",
+					"start_year": 2005,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1453,
+			"name": "Zafira",
+			"mark_id": 130,
+			"sort_id": 1,
+			"rating": 1023,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3524,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "C Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5a/d9/5ad99876b582ae63304e8482b469a1d7.png",
+					"images": [
+						{
+							"id": 443662,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443662/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443662/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5a/d9/5ad99876b582ae63304e8482b469a1d7.png"
+						}
+					]
+				},
+				{
+					"id": 3525,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "C",
+					"start_year": 2011,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/12/9a12ef3cde2f3373d3750d82f3a46bad.png",
+					"images": [
+						{
+							"id": 443663,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443663/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443663/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/12/9a12ef3cde2f3373d3750d82f3a46bad.png"
+						}
+					]
+				},
+				{
+					"id": 3526,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "B Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/a6/dea6eb1cbd1f5e1951c7676ed8d20601.png",
+					"images": [
+						{
+							"id": 443664,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443664/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443664/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/a6/dea6eb1cbd1f5e1951c7676ed8d20601.png"
+						}
+					]
+				},
+				{
+					"id": 3527,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "B",
+					"start_year": 2005,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6e/a4/6ea43078c946d25a4b84dc676d6ca8f5.png",
+					"images": [
+						{
+							"id": 443665,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443665/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443665/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6e/a4/6ea43078c946d25a4b84dc676d6ca8f5.png"
+						}
+					]
+				},
+				{
+					"id": 3528,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "A Рестайлинг",
+					"start_year": 2003,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/f6/57f69e4753387f4826fa8b122c19c775.png",
+					"images": [
+						{
+							"id": 443666,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443666/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443666/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/f6/57f69e4753387f4826fa8b122c19c775.png"
+						}
+					]
+				},
+				{
+					"id": 3529,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "A",
+					"start_year": 1999,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/85/d385b24b6b4be9f0d5cf99da42e9aa27.png",
+					"images": [
+						{
+							"id": 443667,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443667/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443667/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/85/d385b24b6b4be9f0d5cf99da42e9aa27.png"
+						}
+					]
+				},
+				{
+					"id": 5426,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "I",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/84/2384a39d178923b252af8d6cefc52aee.png",
+					"images": [
+						{
+							"id": 444431,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444431/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444431/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/84/2384a39d178923b252af8d6cefc52aee.png"
+						}
+					]
+				},
+				{
+					"id": 5427,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "B",
+					"start_year": 2005,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5428,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "A Рестайлинг",
+					"start_year": 2003,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 5429,
+					"mark_name": "Opel",
+					"model_name": "Zafira",
+					"generation_name": "A",
+					"start_year": 2001,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1421,
+			"name": "Adam",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "272021692",
+			"generations": [
+				{
+					"id": 3417,
+					"mark_name": "Opel",
+					"model_name": "Adam",
+					"generation_name": "I",
+					"start_year": 2013,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1422,
+			"name": "Admiral",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "726020729",
+			"generations": [
+				{
+					"id": 3418,
+					"mark_name": "Opel",
+					"model_name": "Admiral",
+					"generation_name": "B",
+					"start_year": 1969,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3419,
+					"mark_name": "Opel",
+					"model_name": "Admiral",
+					"generation_name": "A",
+					"start_year": 1964,
+					"finish_year": 1968,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3420,
+					"mark_name": "Opel",
+					"model_name": "Admiral",
+					"generation_name": "37",
+					"start_year": 1937,
+					"finish_year": 1939,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1423,
+			"name": "Agila",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 75,
+			"is_seo_active": 0,
+			"rgs_code": "421015602",
+			"generations": [
+				{
+					"id": 3421,
+					"mark_name": "Opel",
+					"model_name": "Agila",
+					"generation_name": "B",
+					"start_year": 2008,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ad/d9/add94c491bb5414b199ab9cc43e8f4db.png",
+					"images": [
+						{
+							"id": 443603,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443603/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443603/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ad/d9/add94c491bb5414b199ab9cc43e8f4db.png"
+						}
+					]
+				},
+				{
+					"id": 3422,
+					"mark_name": "Opel",
+					"model_name": "Agila",
+					"generation_name": "A Рестайлинг",
+					"start_year": 2004,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/84/68/84683fa2d17e93f384e43a547a42b6b8.png",
+					"images": [
+						{
+							"id": 443604,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443604/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443604/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/84/68/84683fa2d17e93f384e43a547a42b6b8.png"
+						}
+					]
+				},
+				{
+					"id": 3423,
+					"mark_name": "Opel",
+					"model_name": "Agila",
+					"generation_name": "A",
+					"start_year": 2000,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/9d/d79d432c4fcde4cce6d71de811f55eb2.png",
+					"images": [
+						{
+							"id": 443605,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443605/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443605/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/9d/d79d432c4fcde4cce6d71de811f55eb2.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1424,
+			"name": "Ampera",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3424,
+					"mark_name": "Opel",
+					"model_name": "Ampera",
+					"generation_name": "II",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3425,
+					"mark_name": "Opel",
+					"model_name": "Ampera",
+					"generation_name": "I",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20472,
+			"name": "Arena",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1426,
+			"name": "Ascona",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 12,
+			"is_seo_active": 0,
+			"rgs_code": "272020641",
+			"generations": [
+				{
+					"id": 3428,
+					"mark_name": "Opel",
+					"model_name": "Ascona",
+					"generation_name": "C",
+					"start_year": 1981,
+					"finish_year": 1988,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3429,
+					"mark_name": "Opel",
+					"model_name": "Ascona",
+					"generation_name": "B",
+					"start_year": 1975,
+					"finish_year": 1981,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3430,
+					"mark_name": "Opel",
+					"model_name": "Ascona",
+					"generation_name": "A",
+					"start_year": 1970,
+					"finish_year": 1975,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 22439,
+			"name": "Astra j gtc",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20473,
+			"name": "Bedford Blitz",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20474,
+			"name": "Blazer",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20475,
+			"name": "Cabrio",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20476,
+			"name": "Calais",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1428,
+			"name": "Calibra",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 27,
+			"is_seo_active": 0,
+			"rgs_code": "421015748",
+			"generations": [
+				{
+					"id": 3439,
+					"mark_name": "Opel",
+					"model_name": "Calibra",
+					"generation_name": "1990 – 1997",
+					"start_year": 1990,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9b/df/9bdf87e8892d8c57f5961b38549556bc.png",
+					"images": [
+						{
+							"id": 443616,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443616/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443616/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9b/df/9bdf87e8892d8c57f5961b38549556bc.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1429,
+			"name": "Campo",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "272010982",
+			"generations": [
+				{
+					"id": 3440,
+					"mark_name": "Opel",
+					"model_name": "Campo",
+					"generation_name": "1991 – 2000",
+					"start_year": 1991,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/37/b437f1172f8a6571dd589a481ad49f23.png",
+					"images": [
+						{
+							"id": 443617,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443617/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443617/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/37/b437f1172f8a6571dd589a481ad49f23.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1430,
+			"name": "Cascada",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3441,
+					"mark_name": "Opel",
+					"model_name": "Cascada",
+					"generation_name": "2013 – 2019",
+					"start_year": 2013,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1431,
+			"name": "Combo",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 40,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3442,
+					"mark_name": "Opel",
+					"model_name": "Combo",
+					"generation_name": "PCMA",
+					"start_year": 2021,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f7/c5/f7c533fd840f888aafa854a9df759a61.png",
+					"images": [
+						{
+							"id": 443618,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443618/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443618/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f7/c5/f7c533fd840f888aafa854a9df759a61.png"
+						}
+					]
+				},
+				{
+					"id": 3443,
+					"mark_name": "Opel",
+					"model_name": "Combo",
+					"generation_name": "E",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/64/07/6407fd3b3e639967fb5cebca982c23d1.png",
+					"images": [
+						{
+							"id": 443619,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443619/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443619/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/64/07/6407fd3b3e639967fb5cebca982c23d1.png"
+						}
+					]
+				},
+				{
+					"id": 3444,
+					"mark_name": "Opel",
+					"model_name": "Combo",
+					"generation_name": "D",
+					"start_year": 2011,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ca/0c/ca0c7fe6e37cdc7d1648a95c130118aa.png",
+					"images": [
+						{
+							"id": 443620,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443620/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443620/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ca/0c/ca0c7fe6e37cdc7d1648a95c130118aa.png"
+						}
+					]
+				},
+				{
+					"id": 3445,
+					"mark_name": "Opel",
+					"model_name": "Combo",
+					"generation_name": "C Рестайлинг",
+					"start_year": 2003,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/66/c4/66c40ce0c0378897f87017ff38b2f4a3.png",
+					"images": [
+						{
+							"id": 443621,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443621/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443621/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/66/c4/66c40ce0c0378897f87017ff38b2f4a3.png"
+						}
+					]
+				},
+				{
+					"id": 3446,
+					"mark_name": "Opel",
+					"model_name": "Combo",
+					"generation_name": "C",
+					"start_year": 2001,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/43/974391e51b76c2db6c32457fa1c1daa3.png",
+					"images": [
+						{
+							"id": 443622,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443622/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443622/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/43/974391e51b76c2db6c32457fa1c1daa3.png"
+						}
+					]
+				},
+				{
+					"id": 3447,
+					"mark_name": "Opel",
+					"model_name": "Combo",
+					"generation_name": "B",
+					"start_year": 1993,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/04/55/0455aa196c685d2c0e495a1eae8e6b1f.png",
+					"images": [
+						{
+							"id": 443623,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443623/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443623/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/04/55/0455aa196c685d2c0e495a1eae8e6b1f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1432,
+			"name": "Commodore",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3448,
+					"mark_name": "Opel",
+					"model_name": "Commodore",
+					"generation_name": "C",
+					"start_year": 1978,
+					"finish_year": 1982,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3449,
+					"mark_name": "Opel",
+					"model_name": "Commodore",
+					"generation_name": "B",
+					"start_year": 1972,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3450,
+					"mark_name": "Opel",
+					"model_name": "Commodore",
+					"generation_name": "A",
+					"start_year": 1967,
+					"finish_year": 1971,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1434,
+			"name": "Diplomat",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "757021091",
+			"generations": [
+				{
+					"id": 3460,
+					"mark_name": "Opel",
+					"model_name": "Diplomat",
+					"generation_name": "B",
+					"start_year": 1969,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3461,
+					"mark_name": "Opel",
+					"model_name": "Diplomat",
+					"generation_name": "A",
+					"start_year": 1964,
+					"finish_year": 1968,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1436,
+			"name": "GT",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3465,
+					"mark_name": "Opel",
+					"model_name": "GT",
+					"generation_name": "II",
+					"start_year": 2006,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3466,
+					"mark_name": "Opel",
+					"model_name": "GT",
+					"generation_name": "I",
+					"start_year": 1968,
+					"finish_year": 1973,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1438,
+			"name": "Kadett",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 12,
+			"is_seo_active": 0,
+			"rgs_code": "272011098",
+			"generations": [
+				{
+					"id": 3471,
+					"mark_name": "Opel",
+					"model_name": "Kadett",
+					"generation_name": "E Рестайлинг",
+					"start_year": 1989,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3472,
+					"mark_name": "Opel",
+					"model_name": "Kadett",
+					"generation_name": "E",
+					"start_year": 1984,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3473,
+					"mark_name": "Opel",
+					"model_name": "Kadett",
+					"generation_name": "D",
+					"start_year": 1979,
+					"finish_year": 1984,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3474,
+					"mark_name": "Opel",
+					"model_name": "Kadett",
+					"generation_name": "C",
+					"start_year": 1973,
+					"finish_year": 1979,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3475,
+					"mark_name": "Opel",
+					"model_name": "Kadett",
+					"generation_name": "B",
+					"start_year": 1965,
+					"finish_year": 1973,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3476,
+					"mark_name": "Opel",
+					"model_name": "Kadett",
+					"generation_name": "A",
+					"start_year": 1962,
+					"finish_year": 1965,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3477,
+					"mark_name": "Opel",
+					"model_name": "Kadett",
+					"generation_name": "37",
+					"start_year": 1937,
+					"finish_year": 1940,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19617,
+			"name": "Kapitan",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3478,
+					"mark_name": "Opel",
+					"model_name": "Kapitan",
+					"generation_name": "B",
+					"start_year": 1969,
+					"finish_year": 1970,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3479,
+					"mark_name": "Opel",
+					"model_name": "Kapitan",
+					"generation_name": "A",
+					"start_year": 1964,
+					"finish_year": 1968,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3480,
+					"mark_name": "Opel",
+					"model_name": "Kapitan",
+					"generation_name": "P2",
+					"start_year": 1959,
+					"finish_year": 1963,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3481,
+					"mark_name": "Opel",
+					"model_name": "Kapitan",
+					"generation_name": "P1",
+					"start_year": 1958,
+					"finish_year": 1959,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3482,
+					"mark_name": "Opel",
+					"model_name": "Kapitan",
+					"generation_name": "II",
+					"start_year": 1953,
+					"finish_year": 1958,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3483,
+					"mark_name": "Opel",
+					"model_name": "Kapitan",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1951,
+					"finish_year": 1953,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3484,
+					"mark_name": "Opel",
+					"model_name": "Kapitan",
+					"generation_name": "I",
+					"start_year": 1938,
+					"finish_year": 1950,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1439,
+			"name": "Manta",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "272011218",
+			"generations": [
+				{
+					"id": 3485,
+					"mark_name": "Opel",
+					"model_name": "Manta",
+					"generation_name": "B",
+					"start_year": 1975,
+					"finish_year": 1988,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3486,
+					"mark_name": "Opel",
+					"model_name": "Manta",
+					"generation_name": "A",
+					"start_year": 1970,
+					"finish_year": 1975,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1442,
+			"name": "Monterey",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3494,
+					"mark_name": "Opel",
+					"model_name": "Monterey",
+					"generation_name": "A рестайлинг",
+					"start_year": 1998,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3495,
+					"mark_name": "Opel",
+					"model_name": "Monterey",
+					"generation_name": "A",
+					"start_year": 1992,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1443,
+			"name": "Monza",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3496,
+					"mark_name": "Opel",
+					"model_name": "Monza",
+					"generation_name": "1978 – 1986",
+					"start_year": 1978,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20477,
+			"name": "Movano",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 18,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 1445,
+			"name": "Rekord",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": "272011352",
+			"generations": [
+				{
+					"id": 3500,
+					"mark_name": "Opel",
+					"model_name": "Rekord",
+					"generation_name": "E",
+					"start_year": 1977,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3501,
+					"mark_name": "Opel",
+					"model_name": "Rekord",
+					"generation_name": "D",
+					"start_year": 1972,
+					"finish_year": 1977,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3502,
+					"mark_name": "Opel",
+					"model_name": "Rekord",
+					"generation_name": "C",
+					"start_year": 1967,
+					"finish_year": 1971,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3503,
+					"mark_name": "Opel",
+					"model_name": "Rekord",
+					"generation_name": "B",
+					"start_year": 1965,
+					"finish_year": 1966,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3504,
+					"mark_name": "Opel",
+					"model_name": "Rekord",
+					"generation_name": "A",
+					"start_year": 1963,
+					"finish_year": 1965,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1446,
+			"name": "Senator",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "421016017",
+			"generations": [
+				{
+					"id": 3505,
+					"mark_name": "Opel",
+					"model_name": "Senator",
+					"generation_name": "B",
+					"start_year": 1987,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 3506,
+					"mark_name": "Opel",
+					"model_name": "Senator",
+					"generation_name": "A",
+					"start_year": 1978,
+					"finish_year": 1987,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1447,
+			"name": "Signum",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 12,
+			"is_seo_active": 0,
+			"rgs_code": "272011415",
+			"generations": [
+				{
+					"id": 3507,
+					"mark_name": "Opel",
+					"model_name": "Signum",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2005,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/eb/19eb27aa66a32ae82661de5758fe3268.png",
+					"images": [
+						{
+							"id": 443647,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443647/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443647/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/eb/19eb27aa66a32ae82661de5758fe3268.png"
+						}
+					]
+				},
+				{
+					"id": 3508,
+					"mark_name": "Opel",
+					"model_name": "Signum",
+					"generation_name": "I",
+					"start_year": 2003,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/42/e2/42e2d272370a78f2be6c052f5b9dbd8f.png",
+					"images": [
+						{
+							"id": 443648,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443648/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443648/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/42/e2/42e2d272370a78f2be6c052f5b9dbd8f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1448,
+			"name": "Sintra",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 9,
+			"is_seo_active": 0,
+			"rgs_code": "421016027",
+			"generations": [
+				{
+					"id": 3509,
+					"mark_name": "Opel",
+					"model_name": "Sintra",
+					"generation_name": "1996 – 1999",
+					"start_year": 1996,
+					"finish_year": 1999,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1449,
+			"name": "Speedster",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3510,
+					"mark_name": "Opel",
+					"model_name": "Speedster",
+					"generation_name": "2000 – 2005",
+					"start_year": 2000,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20478,
+			"name": "Super 6",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5424,
+					"mark_name": "Opel",
+					"model_name": "Super 6",
+					"generation_name": "1936 – 1938",
+					"start_year": 1936,
+					"finish_year": 1938,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1450,
+			"name": "Tigra",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 46,
+			"is_seo_active": 0,
+			"rgs_code": "421016031",
+			"generations": [
+				{
+					"id": 3511,
+					"mark_name": "Opel",
+					"model_name": "Tigra",
+					"generation_name": "B",
+					"start_year": 2004,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9e/b3/9eb346e3534add4b676c82399808cc83.png",
+					"images": [
+						{
+							"id": 443649,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443649/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443649/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9e/b3/9eb346e3534add4b676c82399808cc83.png"
+						}
+					]
+				},
+				{
+					"id": 3512,
+					"mark_name": "Opel",
+					"model_name": "Tigra",
+					"generation_name": "A",
+					"start_year": 1994,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/07/a4/07a497dba163ea08ef8aa4ad3993d1d4.png",
+					"images": [
+						{
+							"id": 443650,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443650/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443650/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/07/a4/07a497dba163ea08ef8aa4ad3993d1d4.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1452,
+			"name": "Vita",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 21,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 3518,
+					"mark_name": "Opel",
+					"model_name": "Vita",
+					"generation_name": "C",
+					"start_year": 2000,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/c9/44c93acc9016ec5e1234b6493eccae75.png",
+					"images": [
+						{
+							"id": 443656,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443656/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443656/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/c9/44c93acc9016ec5e1234b6493eccae75.png"
+						}
+					]
+				},
+				{
+					"id": 3519,
+					"mark_name": "Opel",
+					"model_name": "Vita",
+					"generation_name": "B",
+					"start_year": 1995,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/54/5b/545b405db0c3a925e3a1a2f85a2eddb1.png",
+					"images": [
+						{
+							"id": 443657,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443657/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443657/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/54/5b/545b405db0c3a925e3a1a2f85a2eddb1.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2227,
+			"name": "Vivaro",
+			"mark_id": 130,
+			"sort_id": 0,
+			"rating": 34,
+			"is_seo_active": 0,
+			"rgs_code": "421016109",
+			"generations": [
+				{
+					"id": 3520,
+					"mark_name": "Opel",
+					"model_name": "Vivaro",
+					"generation_name": "C",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/39/ce/39cec54c5c0120ae04fb21ae345c3a8c.png",
+					"images": [
+						{
+							"id": 443658,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443658/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443658/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/39/ce/39cec54c5c0120ae04fb21ae345c3a8c.png"
+						}
+					]
+				},
+				{
+					"id": 3521,
+					"mark_name": "Opel",
+					"model_name": "Vivaro",
+					"generation_name": "B",
+					"start_year": 2014,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/aa/ab/aaab6ddc3e2b9a71bb6f4fd4fa67b882.png",
+					"images": [
+						{
+							"id": 443659,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443659/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443659/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/aa/ab/aaab6ddc3e2b9a71bb6f4fd4fa67b882.png"
+						}
+					]
+				},
+				{
+					"id": 3522,
+					"mark_name": "Opel",
+					"model_name": "Vivaro",
+					"generation_name": "A Рестайлинг",
+					"start_year": 2006,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/96/56/96561473f123faf861f6d7f853770381.png",
+					"images": [
+						{
+							"id": 443660,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443660/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443660/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/96/56/96561473f123faf861f6d7f853770381.png"
+						}
+					]
+				},
+				{
+					"id": 3523,
+					"mark_name": "Opel",
+					"model_name": "Vivaro",
+					"generation_name": "A",
+					"start_year": 2001,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/96/d696ad7070f5d8257d8f382430b623bb.png",
+					"images": [
+						{
+							"id": 443661,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443661/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443661/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/96/d696ad7070f5d8257d8f382430b623bb.png"
+						}
+					]
+				}
+			]
+		}
+	]
+}

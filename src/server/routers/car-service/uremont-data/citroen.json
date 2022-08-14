@@ -1,0 +1,1748 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 348,
+			"name": "Berlingo",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 390,
+			"is_seo_active": 0,
+			"rgs_code": "056002469",
+			"generations": [
+				{
+					"id": 814,
+					"mark_name": "Citroen",
+					"model_name": "Berlingo",
+					"generation_name": "III",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/a1/83a17d4a6bc0214ca00dbdfbfd8b2406.png",
+					"images": [
+						{
+							"id": 442416,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442416/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442416/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/a1/83a17d4a6bc0214ca00dbdfbfd8b2406.png"
+						}
+					]
+				},
+				{
+					"id": 815,
+					"mark_name": "Citroen",
+					"model_name": "Berlingo",
+					"generation_name": "II Рестайлинг 2",
+					"start_year": 2015,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/8c/4f8c5d466e12ead4f5a54c5727b040dc.png",
+					"images": [
+						{
+							"id": 442417,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442417/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442417/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/8c/4f8c5d466e12ead4f5a54c5727b040dc.png"
+						}
+					]
+				},
+				{
+					"id": 816,
+					"mark_name": "Citroen",
+					"model_name": "Berlingo",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/3e/d33e81c6b675dfe3da3dcb77b6784405.png",
+					"images": [
+						{
+							"id": 442418,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442418/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442418/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/3e/d33e81c6b675dfe3da3dcb77b6784405.png"
+						}
+					]
+				},
+				{
+					"id": 817,
+					"mark_name": "Citroen",
+					"model_name": "Berlingo",
+					"generation_name": "II",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f3/bc/f3bcbad5fd809976d2c8a166de1c0921.png",
+					"images": [
+						{
+							"id": 442419,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442419/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442419/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f3/bc/f3bcbad5fd809976d2c8a166de1c0921.png"
+						}
+					]
+				},
+				{
+					"id": 818,
+					"mark_name": "Citroen",
+					"model_name": "Berlingo",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2002,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/94/4a94ec810befc6028013109a7b0415f5.png",
+					"images": [
+						{
+							"id": 442420,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442420/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442420/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4a/94/4a94ec810befc6028013109a7b0415f5.png"
+						}
+					]
+				},
+				{
+					"id": 819,
+					"mark_name": "Citroen",
+					"model_name": "Berlingo",
+					"generation_name": "I",
+					"start_year": 1996,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/5c/4b5c161700dc246867a72c556c532043.png",
+					"images": [
+						{
+							"id": 442421,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442421/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442421/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/5c/4b5c161700dc246867a72c556c532043.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 350,
+			"name": "C-Crosser",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 120,
+			"is_seo_active": 0,
+			"rgs_code": "056021070",
+			"generations": [
+				{
+					"id": 821,
+					"mark_name": "Citroen",
+					"model_name": "C-Crosser",
+					"generation_name": "2007 – 2013",
+					"start_year": 2007,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/08/24/0824e36de6793d11b568a32d4db275cd.png",
+					"images": [
+						{
+							"id": 442423,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442423/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442423/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/08/24/0824e36de6793d11b568a32d4db275cd.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 351,
+			"name": "C-Elysee",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 122,
+			"is_seo_active": 0,
+			"rgs_code": "056021693",
+			"generations": [
+				{
+					"id": 822,
+					"mark_name": "Citroen",
+					"model_name": "C-Elysee",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/06/de067a41a134f634fab9eaf3faeb2d45.png",
+					"images": [
+						{
+							"id": 442424,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442424/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442424/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/06/de067a41a134f634fab9eaf3faeb2d45.png"
+						}
+					]
+				},
+				{
+					"id": 823,
+					"mark_name": "Citroen",
+					"model_name": "C-Elysee",
+					"generation_name": "I",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4d/b0/4db0efb0534d44b800beea161632008f.png",
+					"images": [
+						{
+							"id": 442425,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442425/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442425/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4d/b0/4db0efb0534d44b800beea161632008f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 354,
+			"name": "C3",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 243,
+			"is_seo_active": 0,
+			"rgs_code": "753022348",
+			"generations": [
+				{
+					"id": 833,
+					"mark_name": "Citroen",
+					"model_name": "C3",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2020,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/c2/acc276a63c1cc7151f59a92e7f5aedcf.png",
+					"images": [
+						{
+							"id": 442434,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442434/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442434/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/c2/acc276a63c1cc7151f59a92e7f5aedcf.png"
+						}
+					]
+				},
+				{
+					"id": 834,
+					"mark_name": "Citroen",
+					"model_name": "C3",
+					"generation_name": "III",
+					"start_year": 2016,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/27/4927b79f844cfbd0211f401bf621c3b0.png",
+					"images": [
+						{
+							"id": 442435,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442435/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442435/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/27/4927b79f844cfbd0211f401bf621c3b0.png"
+						}
+					]
+				},
+				{
+					"id": 835,
+					"mark_name": "Citroen",
+					"model_name": "C3",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/8a/b48af601f9a9054a665d8fd480e37e8a.png",
+					"images": [
+						{
+							"id": 442436,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442436/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442436/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/8a/b48af601f9a9054a665d8fd480e37e8a.png"
+						}
+					]
+				},
+				{
+					"id": 836,
+					"mark_name": "Citroen",
+					"model_name": "C3",
+					"generation_name": "II",
+					"start_year": 2009,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/89/d1/89d14fcc731aec9a03be998106d1e6d7.png",
+					"images": [
+						{
+							"id": 442437,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442437/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442437/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/89/d1/89d14fcc731aec9a03be998106d1e6d7.png"
+						}
+					]
+				},
+				{
+					"id": 837,
+					"mark_name": "Citroen",
+					"model_name": "C3",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2005,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 838,
+					"mark_name": "Citroen",
+					"model_name": "C3",
+					"generation_name": "I",
+					"start_year": 2002,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/ee/97ee667809d29f876cb4bbd0341478e8.png",
+					"images": [
+						{
+							"id": 442438,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442438/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442438/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/ee/97ee667809d29f876cb4bbd0341478e8.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 355,
+			"name": "C3 Picasso",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 140,
+			"is_seo_active": 0,
+			"rgs_code": "056021534",
+			"generations": [
+				{
+					"id": 839,
+					"mark_name": "Citroen",
+					"model_name": "C3 Picasso",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/50/36/5036b10e8a656889ee3e7aec0f87b11c.png",
+					"images": [
+						{
+							"id": 442439,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442439/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442439/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/50/36/5036b10e8a656889ee3e7aec0f87b11c.png"
+						}
+					]
+				},
+				{
+					"id": 840,
+					"mark_name": "Citroen",
+					"model_name": "C3 Picasso",
+					"generation_name": "I",
+					"start_year": 2009,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fb/f3/fbf3e19e50c0ee3f6366dd06988d878c.png",
+					"images": [
+						{
+							"id": 442440,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442440/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442440/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fb/f3/fbf3e19e50c0ee3f6366dd06988d878c.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 358,
+			"name": "C4",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 1955,
+			"is_seo_active": 0,
+			"rgs_code": "056020340",
+			"generations": [
+				{
+					"id": 841,
+					"mark_name": "Citroen",
+					"model_name": "C4",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2015,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/59/fe59b1a82f5946234ce3c9514f0b01cc.png",
+					"images": [
+						{
+							"id": 442441,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442441/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442441/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/59/fe59b1a82f5946234ce3c9514f0b01cc.png"
+						}
+					]
+				},
+				{
+					"id": 842,
+					"mark_name": "Citroen",
+					"model_name": "C4",
+					"generation_name": "II",
+					"start_year": 2010,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3e/0b/3e0b456d542d06afd81ae9ec33e447d3.png",
+					"images": [
+						{
+							"id": 442442,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442442/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442442/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3e/0b/3e0b456d542d06afd81ae9ec33e447d3.png"
+						}
+					]
+				},
+				{
+					"id": 843,
+					"mark_name": "Citroen",
+					"model_name": "C4",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c1/d5/c1d5d60eccaf79cdef83f70a3cb7d1bd.png",
+					"images": [
+						{
+							"id": 442443,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442443/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442443/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c1/d5/c1d5d60eccaf79cdef83f70a3cb7d1bd.png"
+						}
+					]
+				},
+				{
+					"id": 844,
+					"mark_name": "Citroen",
+					"model_name": "C4",
+					"generation_name": "I",
+					"start_year": 2004,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/3d/db3dbc1982548e86be995db5e4e7119e.png",
+					"images": [
+						{
+							"id": 442444,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442444/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442444/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/3d/db3dbc1982548e86be995db5e4e7119e.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19893,
+			"name": "C4 L",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 107,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 359,
+			"name": "C4 Picasso",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 285,
+			"is_seo_active": 0,
+			"rgs_code": "056021069",
+			"generations": [
+				{
+					"id": 846,
+					"mark_name": "Citroen",
+					"model_name": "C4 Picasso",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2016,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/46/29/46292767c69e36876bc181e849d778d3.png",
+					"images": [
+						{
+							"id": 442446,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442446/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442446/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/46/29/46292767c69e36876bc181e849d778d3.png"
+						}
+					]
+				},
+				{
+					"id": 847,
+					"mark_name": "Citroen",
+					"model_name": "C4 Picasso",
+					"generation_name": "II",
+					"start_year": 2013,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/24/01/2401e4ff1b2ba2092c90c4d5dcb98c8c.png",
+					"images": [
+						{
+							"id": 442447,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442447/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442447/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/24/01/2401e4ff1b2ba2092c90c4d5dcb98c8c.png"
+						}
+					]
+				},
+				{
+					"id": 848,
+					"mark_name": "Citroen",
+					"model_name": "C4 Picasso",
+					"generation_name": "I",
+					"start_year": 2006,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/be/6e/be6e9f7c2d26634127d69d8bf7629927.png",
+					"images": [
+						{
+							"id": 442448,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442448/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442448/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/be/6e/be6e9f7c2d26634127d69d8bf7629927.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 360,
+			"name": "C5",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 716,
+			"is_seo_active": 0,
+			"rgs_code": "753022349",
+			"generations": [
+				{
+					"id": 849,
+					"mark_name": "Citroen",
+					"model_name": "C5",
+					"generation_name": "II",
+					"start_year": 2008,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 850,
+					"mark_name": "Citroen",
+					"model_name": "C5",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2004,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 851,
+					"mark_name": "Citroen",
+					"model_name": "C5",
+					"generation_name": "I",
+					"start_year": 2000,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19901,
+			"name": "Jumper",
+			"mark_id": 37,
+			"sort_id": 1,
+			"rating": 123,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 345,
+			"name": "2 CV",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": "056002434",
+			"generations": [
+				{
+					"id": 811,
+					"mark_name": "Citroen",
+					"model_name": "2 CV",
+					"generation_name": "1963 – 1990",
+					"start_year": 1963,
+					"finish_year": 1990,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/44/00441446437607758d0cca6231471ed0.png",
+					"images": [
+						{
+							"id": 442413,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442413/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442413/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/44/00441446437607758d0cca6231471ed0.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19887,
+			"name": "Acadiane",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "056002440",
+			"generations": []
+		},
+		{
+			"id": 346,
+			"name": "Ami",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "056002442",
+			"generations": [
+				{
+					"id": 812,
+					"mark_name": "Citroen",
+					"model_name": "Ami",
+					"generation_name": "1961 – 1978",
+					"start_year": 1961,
+					"finish_year": 1978,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/14/66/14663c85bcaf3dd2f80c6f57eed85dbe.png",
+					"images": [
+						{
+							"id": 442414,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442414/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442414/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/14/66/14663c85bcaf3dd2f80c6f57eed85dbe.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 347,
+			"name": "AX",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "056002451",
+			"generations": [
+				{
+					"id": 813,
+					"mark_name": "Citroen",
+					"model_name": "AX",
+					"generation_name": "1986 – 1998",
+					"start_year": 1986,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/61/0061d409d64f40ff2fcc7a6ee1600c16.png",
+					"images": [
+						{
+							"id": 442415,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442415/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442415/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/61/0061d409d64f40ff2fcc7a6ee1600c16.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19888,
+			"name": "Axel",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19889,
+			"name": "Bijou",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 349,
+			"name": "BX",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "056002486",
+			"generations": [
+				{
+					"id": 820,
+					"mark_name": "Citroen",
+					"model_name": "BX",
+					"generation_name": "1982 – 1994",
+					"start_year": 1982,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/2d/cb2d30df84c48286ca33f31adf7cf356.png",
+					"images": [
+						{
+							"id": 442422,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442422/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442422/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/2d/cb2d30df84c48286ca33f31adf7cf356.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19895,
+			"name": "C-Quatre",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 824,
+					"mark_name": "Citroen",
+					"model_name": "C-Quatre",
+					"generation_name": "II",
+					"start_year": 2013,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/ce/efcee36dbb7cf2baf4eef06282f7a1f0.png",
+					"images": [
+						{
+							"id": 442426,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442426/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442426/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/ce/efcee36dbb7cf2baf4eef06282f7a1f0.png"
+						}
+					]
+				},
+				{
+					"id": 825,
+					"mark_name": "Citroen",
+					"model_name": "C-Quatre",
+					"generation_name": "I",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/d0/d9d0b41247434801e369da789d76d2cb.png",
+					"images": [
+						{
+							"id": 442427,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442427/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442427/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/d0/d9d0b41247434801e369da789d76d2cb.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19896,
+			"name": "C-Triomphe",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 826,
+					"mark_name": "Citroen",
+					"model_name": "C-Triomphe",
+					"generation_name": "I",
+					"start_year": 2006,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/32/2f3292a609e67f003a2765bbac4a39e6.png",
+					"images": [
+						{
+							"id": 442428,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442428/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442428/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/32/2f3292a609e67f003a2765bbac4a39e6.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 2383,
+			"name": "C-Zero",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 827,
+					"mark_name": "Citroen",
+					"model_name": "C-Zero",
+					"generation_name": "2010 – 2012",
+					"start_year": 2010,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 352,
+			"name": "C1",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 54,
+			"is_seo_active": 0,
+			"rgs_code": "056021514",
+			"generations": [
+				{
+					"id": 828,
+					"mark_name": "Citroen",
+					"model_name": "C1",
+					"generation_name": "II",
+					"start_year": 2014,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d5/a5/d5a5a6eb14427c545c97e2c33ead8b9b.png",
+					"images": [
+						{
+							"id": 442429,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442429/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442429/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d5/a5/d5a5a6eb14427c545c97e2c33ead8b9b.png"
+						}
+					]
+				},
+				{
+					"id": 829,
+					"mark_name": "Citroen",
+					"model_name": "C1",
+					"generation_name": "I Рестайлинг 2",
+					"start_year": 2012,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/b9/a1b93ca76eedf8c34a697cb6a4e6d26b.png",
+					"images": [
+						{
+							"id": 442430,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442430/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442430/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/b9/a1b93ca76eedf8c34a697cb6a4e6d26b.png"
+						}
+					]
+				},
+				{
+					"id": 830,
+					"mark_name": "Citroen",
+					"model_name": "C1",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/f3/19f3c82c76929ee3db384cf0a1a4da4a.png",
+					"images": [
+						{
+							"id": 442431,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442431/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442431/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/f3/19f3c82c76929ee3db384cf0a1a4da4a.png"
+						}
+					]
+				},
+				{
+					"id": 831,
+					"mark_name": "Citroen",
+					"model_name": "C1",
+					"generation_name": "I",
+					"start_year": 2005,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/4f/594fc90f7e56cbbad85f3053bdfc5ffc.png",
+					"images": [
+						{
+							"id": 442432,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442432/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442432/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/4f/594fc90f7e56cbbad85f3053bdfc5ffc.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19890,
+			"name": "C15",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 353,
+			"name": "C2",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 65,
+			"is_seo_active": 0,
+			"rgs_code": "056002544",
+			"generations": [
+				{
+					"id": 832,
+					"mark_name": "Citroen",
+					"model_name": "C2",
+					"generation_name": "2003 – 2009",
+					"start_year": 2003,
+					"finish_year": 2009,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/94/78/947812c4561705392d53556c982f37e6.png",
+					"images": [
+						{
+							"id": 442433,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442433/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442433/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/94/78/947812c4561705392d53556c982f37e6.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19891,
+			"name": "C25",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19892,
+			"name": "C35",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 356,
+			"name": "C4 AirCross",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 11,
+			"is_seo_active": 0,
+			"rgs_code": "056021671",
+			"generations": [
+				{
+					"id": 845,
+					"mark_name": "Citroen",
+					"model_name": "C4 AirCross",
+					"generation_name": "2012 – 2017",
+					"start_year": 2012,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a5/5b/a55b8f5ccb1455d45ff675dbfc65c951.png",
+					"images": [
+						{
+							"id": 442445,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442445/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442445/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a5/5b/a55b8f5ccb1455d45ff675dbfc65c951.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 22342,
+			"name": "C5 AirCross",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 852,
+					"mark_name": "Citroen",
+					"model_name": "C5 AirCross",
+					"generation_name": "I",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/51/c3/51c3d8654767a74031336ca49c0ccba2.png",
+					"images": [
+						{
+							"id": 442449,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442449/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442449/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/51/c3/51c3d8654767a74031336ca49c0ccba2.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 361,
+			"name": "C6",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 13,
+			"is_seo_active": 0,
+			"rgs_code": "056020341",
+			"generations": [
+				{
+					"id": 853,
+					"mark_name": "Citroen",
+					"model_name": "C6",
+					"generation_name": "2004 – 2012",
+					"start_year": 2004,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/4b/ac4b3100798dc8b6ff9b078549515404.png",
+					"images": [
+						{
+							"id": 442450,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442450/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442450/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/4b/ac4b3100798dc8b6ff9b078549515404.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 362,
+			"name": "C8",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 8,
+			"is_seo_active": 0,
+			"rgs_code": "056002594",
+			"generations": [
+				{
+					"id": 854,
+					"mark_name": "Citroen",
+					"model_name": "C8",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b2/6e/b26e519173555480a18450b67c376f61.png",
+					"images": [
+						{
+							"id": 442451,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442451/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442451/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b2/6e/b26e519173555480a18450b67c376f61.png"
+						}
+					]
+				},
+				{
+					"id": 855,
+					"mark_name": "Citroen",
+					"model_name": "C8",
+					"generation_name": "I",
+					"start_year": 2002,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/4c/9a4c9d2e8c003bf31df8848c66bd5d02.png",
+					"images": [
+						{
+							"id": 442452,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442452/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442452/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/4c/9a4c9d2e8c003bf31df8848c66bd5d02.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19894,
+			"name": "Chanson",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 363,
+			"name": "CX",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "056002605",
+			"generations": [
+				{
+					"id": 856,
+					"mark_name": "Citroen",
+					"model_name": "CX",
+					"generation_name": "II",
+					"start_year": 1985,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 857,
+					"mark_name": "Citroen",
+					"model_name": "CX",
+					"generation_name": "I",
+					"start_year": 1974,
+					"finish_year": 1985,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19897,
+			"name": "Dispatch",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19520,
+			"name": "DS",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 13,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 858,
+					"mark_name": "Citroen",
+					"model_name": "DS",
+					"generation_name": "I Рестайлинг 2",
+					"start_year": 1968,
+					"finish_year": 1976,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 859,
+					"mark_name": "Citroen",
+					"model_name": "DS",
+					"generation_name": "I Рестайлинг 1",
+					"start_year": 1963,
+					"finish_year": 1968,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 860,
+					"mark_name": "Citroen",
+					"model_name": "DS",
+					"generation_name": "I",
+					"start_year": 1955,
+					"finish_year": 1973,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 364,
+			"name": "DS3",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 16,
+			"is_seo_active": 0,
+			"rgs_code": "056021575",
+			"generations": [
+				{
+					"id": 861,
+					"mark_name": "Citroen",
+					"model_name": "DS3",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2014,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5b/c9/5bc9d7dae03705af8ba8ae045774424f.png",
+					"images": [
+						{
+							"id": 442453,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442453/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442453/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5b/c9/5bc9d7dae03705af8ba8ae045774424f.png"
+						}
+					]
+				},
+				{
+					"id": 862,
+					"mark_name": "Citroen",
+					"model_name": "DS3",
+					"generation_name": "I",
+					"start_year": 2009,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c3/f5/c3f51dbb2d16f6885be3c331e06fa89d.png",
+					"images": [
+						{
+							"id": 442454,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442454/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442454/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c3/f5/c3f51dbb2d16f6885be3c331e06fa89d.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 365,
+			"name": "DS4",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 58,
+			"is_seo_active": 0,
+			"rgs_code": "056021669",
+			"generations": [
+				{
+					"id": 863,
+					"mark_name": "Citroen",
+					"model_name": "DS4",
+					"generation_name": "2011 – 2015",
+					"start_year": 2011,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/5d/e35dad38192629710ce4af33b5189459.png",
+					"images": [
+						{
+							"id": 442455,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442455/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442455/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/5d/e35dad38192629710ce4af33b5189459.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 366,
+			"name": "DS5",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 55,
+			"is_seo_active": 0,
+			"rgs_code": "056021675",
+			"generations": [
+				{
+					"id": 864,
+					"mark_name": "Citroen",
+					"model_name": "DS5",
+					"generation_name": "2012 – 2015",
+					"start_year": 2012,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/54/49/54494f3658843a1d6c4751fb9ecf00a3.png",
+					"images": [
+						{
+							"id": 442456,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442456/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442456/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/54/49/54494f3658843a1d6c4751fb9ecf00a3.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 367,
+			"name": "Dyane",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "056002649",
+			"generations": [
+				{
+					"id": 865,
+					"mark_name": "Citroen",
+					"model_name": "Dyane",
+					"generation_name": "1967 – 1984",
+					"start_year": 1967,
+					"finish_year": 1984,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 368,
+			"name": "Evasion",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": "056002654",
+			"generations": [
+				{
+					"id": 866,
+					"mark_name": "Citroen",
+					"model_name": "Evasion",
+					"generation_name": "1994 – 2002",
+					"start_year": 1994,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/3a/573a69033ed74c45cdb0c09997754d54.png",
+					"images": [
+						{
+							"id": 442457,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442457/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442457/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/3a/573a69033ed74c45cdb0c09997754d54.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19898,
+			"name": "Fukang",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 369,
+			"name": "GS",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "206007756",
+			"generations": [
+				{
+					"id": 867,
+					"mark_name": "Citroen",
+					"model_name": "GS",
+					"generation_name": "1971 – 1986",
+					"start_year": 1971,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19899,
+			"name": "H Van",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19900,
+			"name": "ID",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "056002675",
+			"generations": []
+		},
+		{
+			"id": 2221,
+			"name": "Jumpy",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 32,
+			"is_seo_active": 0,
+			"rgs_code": "056002724",
+			"generations": [
+				{
+					"id": 868,
+					"mark_name": "Citroen",
+					"model_name": "Jumpy",
+					"generation_name": "III",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/96/a7/96a7687ad6204aa12e72ff527b6db59a.png",
+					"images": [
+						{
+							"id": 442458,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442458/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442458/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/96/a7/96a7687ad6204aa12e72ff527b6db59a.png"
+						}
+					]
+				},
+				{
+					"id": 869,
+					"mark_name": "Citroen",
+					"model_name": "Jumpy",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/8a/d98a0c1785e1c0a757844ec448c41fd4.png",
+					"images": [
+						{
+							"id": 442459,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442459/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442459/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/8a/d98a0c1785e1c0a757844ec448c41fd4.png"
+						}
+					]
+				},
+				{
+					"id": 870,
+					"mark_name": "Citroen",
+					"model_name": "Jumpy",
+					"generation_name": "II",
+					"start_year": 2007,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/de/31de4bb4800b56cd2948695558763032.png",
+					"images": [
+						{
+							"id": 442460,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442460/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442460/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/de/31de4bb4800b56cd2948695558763032.png"
+						}
+					]
+				},
+				{
+					"id": 871,
+					"mark_name": "Citroen",
+					"model_name": "Jumpy",
+					"generation_name": "I",
+					"start_year": 1994,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/7f/d77ffb173a0546e12cd8ff47dfec9520.png",
+					"images": [
+						{
+							"id": 442461,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442461/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442461/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/7f/d77ffb173a0546e12cd8ff47dfec9520.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19613,
+			"name": "LN",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 872,
+					"mark_name": "Citroen",
+					"model_name": "LN",
+					"generation_name": "1976 – 1986",
+					"start_year": 1976,
+					"finish_year": 1986,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19902,
+			"name": "Mehari",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19903,
+			"name": "Nemo",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 873,
+					"mark_name": "Citroen",
+					"model_name": "Nemo",
+					"generation_name": "I",
+					"start_year": 2008,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/50/0e500c22b03b1ced140d20357d780a45.png",
+					"images": [
+						{
+							"id": 442462,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442462/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442462/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/50/0e500c22b03b1ced140d20357d780a45.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19904,
+			"name": "Relay",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 371,
+			"name": "Saxo",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "056002739",
+			"generations": [
+				{
+					"id": 874,
+					"mark_name": "Citroen",
+					"model_name": "Saxo",
+					"generation_name": "1996 – 2003",
+					"start_year": 1996,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/96/ac96895fa718de9d4d6cc24dbbe85537.png",
+					"images": [
+						{
+							"id": 442463,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442463/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442463/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/96/ac96895fa718de9d4d6cc24dbbe85537.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19521,
+			"name": "SM",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 875,
+					"mark_name": "Citroen",
+					"model_name": "SM",
+					"generation_name": "1970 – 1975",
+					"start_year": 1970,
+					"finish_year": 1975,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 22362,
+			"name": "Spacetourer",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 876,
+					"mark_name": "Citroen",
+					"model_name": "Spacetourer",
+					"generation_name": "I",
+					"start_year": 2016,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/89/fa/89fac7843daa8cdb06fd28902dee6d0b.png",
+					"images": [
+						{
+							"id": 442464,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442464/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442464/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/89/fa/89fac7843daa8cdb06fd28902dee6d0b.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 19905,
+			"name": "Synergie",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 372,
+			"name": "Visa",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "056002755",
+			"generations": [
+				{
+					"id": 877,
+					"mark_name": "Citroen",
+					"model_name": "Visa",
+					"generation_name": "1978 – 1991",
+					"start_year": 1978,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 373,
+			"name": "Xantia",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 15,
+			"is_seo_active": 0,
+			"rgs_code": "056002768",
+			"generations": [
+				{
+					"id": 878,
+					"mark_name": "Citroen",
+					"model_name": "Xantia",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1998,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/7a/237a76e5ce26ef39d3cafb2eded89cde.png",
+					"images": [
+						{
+							"id": 442465,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442465/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442465/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/7a/237a76e5ce26ef39d3cafb2eded89cde.png"
+						}
+					]
+				},
+				{
+					"id": 879,
+					"mark_name": "Citroen",
+					"model_name": "Xantia",
+					"generation_name": "I",
+					"start_year": 1992,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/7a/597a1497a45cda4c042149b9c29e615e.png",
+					"images": [
+						{
+							"id": 442466,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442466/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442466/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/7a/597a1497a45cda4c042149b9c29e615e.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 374,
+			"name": "XM",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 19,
+			"is_seo_active": 0,
+			"rgs_code": "056002798",
+			"generations": [
+				{
+					"id": 880,
+					"mark_name": "Citroen",
+					"model_name": "XM",
+					"generation_name": "II",
+					"start_year": 1994,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 881,
+					"mark_name": "Citroen",
+					"model_name": "XM",
+					"generation_name": "I",
+					"start_year": 1989,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 375,
+			"name": "Xsara",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 25,
+			"is_seo_active": 0,
+			"rgs_code": "056002827",
+			"generations": [
+				{
+					"id": 882,
+					"mark_name": "Citroen",
+					"model_name": "Xsara",
+					"generation_name": "1997 – 2006",
+					"start_year": 1997,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/71/b7/71b795cc87a0eda622dd240c33b87ad3.png",
+					"images": [
+						{
+							"id": 442467,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442467/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442467/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/71/b7/71b795cc87a0eda622dd240c33b87ad3.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 376,
+			"name": "Xsara Picasso",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 82,
+			"is_seo_active": 0,
+			"rgs_code": "056002870",
+			"generations": [
+				{
+					"id": 883,
+					"mark_name": "Citroen",
+					"model_name": "Xsara Picasso",
+					"generation_name": "1999 – 2012",
+					"start_year": 1999,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/68/a1685b75dbff355986cbd607feb49e5f.png",
+					"images": [
+						{
+							"id": 442468,
+							"thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442468/a7976a725ec80733f6d42509f6b2445d.png",
+							"thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442468/a797bbf704b091c9c5dad2334e9cb84f.png",
+							"file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/68/a1685b75dbff355986cbd607feb49e5f.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 377,
+			"name": "ZX",
+			"mark_id": 37,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "056002876",
+			"generations": [
+				{
+					"id": 884,
+					"mark_name": "Citroen",
+					"model_name": "ZX",
+					"generation_name": "1991 – 1998",
+					"start_year": 1991,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}

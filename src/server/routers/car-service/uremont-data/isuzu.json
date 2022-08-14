@@ -1,0 +1,879 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 20220,
+			"name": "117",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1967,
+					"mark_name": "Isuzu",
+					"model_name": "117",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1977,
+					"finish_year": 1981,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1968,
+					"mark_name": "Isuzu",
+					"model_name": "117",
+					"generation_name": "I",
+					"start_year": 1968,
+					"finish_year": 1977,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 889,
+			"name": "Axiom",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 14,
+			"is_seo_active": 0,
+			"rgs_code": "145006702",
+			"generations": [
+				{
+					"id": 1976,
+					"mark_name": "Isuzu",
+					"model_name": "Axiom",
+					"generation_name": "2002 – 2004",
+					"start_year": 2002,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 890,
+			"name": "Bighorn",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 32,
+			"is_seo_active": 0,
+			"rgs_code": "145020346",
+			"generations": [
+				{
+					"id": 1978,
+					"mark_name": "Isuzu",
+					"model_name": "Bighorn",
+					"generation_name": "II",
+					"start_year": 1991,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1979,
+					"mark_name": "Isuzu",
+					"model_name": "Bighorn",
+					"generation_name": "I",
+					"start_year": 1981,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 891,
+			"name": "D-Max",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "145021555",
+			"generations": [
+				{
+					"id": 1980,
+					"mark_name": "Isuzu",
+					"model_name": "D-Max",
+					"generation_name": "III",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1981,
+					"mark_name": "Isuzu",
+					"model_name": "D-Max",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2017,
+					"finish_year": 2020,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1982,
+					"mark_name": "Isuzu",
+					"model_name": "D-Max",
+					"generation_name": "II",
+					"start_year": 2012,
+					"finish_year": 2018,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1983,
+					"mark_name": "Isuzu",
+					"model_name": "D-Max",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1984,
+					"mark_name": "Isuzu",
+					"model_name": "D-Max",
+					"generation_name": "I",
+					"start_year": 2002,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 892,
+			"name": "Gemini",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "145006712",
+			"generations": [
+				{
+					"id": 1989,
+					"mark_name": "Isuzu",
+					"model_name": "Gemini",
+					"generation_name": "V",
+					"start_year": 1997,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1990,
+					"mark_name": "Isuzu",
+					"model_name": "Gemini",
+					"generation_name": "IV",
+					"start_year": 1993,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1991,
+					"mark_name": "Isuzu",
+					"model_name": "Gemini",
+					"generation_name": "III",
+					"start_year": 1990,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1992,
+					"mark_name": "Isuzu",
+					"model_name": "Gemini",
+					"generation_name": "II",
+					"start_year": 1985,
+					"finish_year": 1990,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1993,
+					"mark_name": "Isuzu",
+					"model_name": "Gemini",
+					"generation_name": "I",
+					"start_year": 1974,
+					"finish_year": 1987,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 895,
+			"name": "MU",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "145020353",
+			"generations": [
+				{
+					"id": 1999,
+					"mark_name": "Isuzu",
+					"model_name": "MU",
+					"generation_name": "II",
+					"start_year": 1998,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 2000,
+					"mark_name": "Isuzu",
+					"model_name": "MU",
+					"generation_name": "I",
+					"start_year": 1989,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20233,
+			"name": "N-Series",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 16,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 898,
+			"name": "Rodeo",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 11,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2005,
+					"mark_name": "Isuzu",
+					"model_name": "Rodeo",
+					"generation_name": "II",
+					"start_year": 1998,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 2006,
+					"mark_name": "Isuzu",
+					"model_name": "Rodeo",
+					"generation_name": "I",
+					"start_year": 1989,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 901,
+			"name": "Trooper",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 22,
+			"is_seo_active": 0,
+			"rgs_code": "145006758",
+			"generations": [
+				{
+					"id": 2008,
+					"mark_name": "Isuzu",
+					"model_name": "Trooper",
+					"generation_name": "II",
+					"start_year": 1992,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 2009,
+					"mark_name": "Isuzu",
+					"model_name": "Trooper",
+					"generation_name": "I",
+					"start_year": 1981,
+					"finish_year": 1991,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 903,
+			"name": "Wizard",
+			"mark_id": 85,
+			"sort_id": 1,
+			"rating": 10,
+			"is_seo_active": 0,
+			"rgs_code": "145020355",
+			"generations": [
+				{
+					"id": 2011,
+					"mark_name": "Isuzu",
+					"model_name": "Wizard",
+					"generation_name": "II",
+					"start_year": 1998,
+					"finish_year": 2004,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 2012,
+					"mark_name": "Isuzu",
+					"model_name": "Wizard",
+					"generation_name": "I",
+					"start_year": 1990,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20221,
+			"name": "Alterra",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 886,
+			"name": "Amigo",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1969,
+					"mark_name": "Isuzu",
+					"model_name": "Amigo",
+					"generation_name": "II",
+					"start_year": 1998,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1970,
+					"mark_name": "Isuzu",
+					"model_name": "Amigo",
+					"generation_name": "I",
+					"start_year": 1989,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 887,
+			"name": "Ascender",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": "145006696",
+			"generations": [
+				{
+					"id": 1971,
+					"mark_name": "Isuzu",
+					"model_name": "Ascender",
+					"generation_name": "2003 – 2008",
+					"start_year": 2003,
+					"finish_year": 2008,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 888,
+			"name": "Aska",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "145006699",
+			"generations": [
+				{
+					"id": 1972,
+					"mark_name": "Isuzu",
+					"model_name": "Aska",
+					"generation_name": "IV",
+					"start_year": 1997,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1973,
+					"mark_name": "Isuzu",
+					"model_name": "Aska",
+					"generation_name": "III",
+					"start_year": 1994,
+					"finish_year": 1997,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1974,
+					"mark_name": "Isuzu",
+					"model_name": "Aska",
+					"generation_name": "II",
+					"start_year": 1990,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1975,
+					"mark_name": "Isuzu",
+					"model_name": "Aska",
+					"generation_name": "I",
+					"start_year": 1983,
+					"finish_year": 1989,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20222,
+			"name": "Bellel",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20223,
+			"name": "Bellett",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1977,
+					"mark_name": "Isuzu",
+					"model_name": "Bellett",
+					"generation_name": "1963 – 1973",
+					"start_year": 1963,
+					"finish_year": 1973,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20224,
+			"name": "Campo",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20225,
+			"name": "Como",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20226,
+			"name": "Crosswind",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20227,
+			"name": "Fargo",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1985,
+					"mark_name": "Isuzu",
+					"model_name": "Fargo",
+					"generation_name": "E25",
+					"start_year": 2001,
+					"finish_year": 2002,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1986,
+					"mark_name": "Isuzu",
+					"model_name": "Fargo",
+					"generation_name": "I",
+					"start_year": 1980,
+					"finish_year": 1995,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20996,
+			"name": "Filly",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5257,
+					"mark_name": "Isuzu",
+					"model_name": "Filly",
+					"generation_name": "I",
+					"start_year": 1997,
+					"finish_year": 2005,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20228,
+			"name": "Florian",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1987,
+					"mark_name": "Isuzu",
+					"model_name": "Florian",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1977,
+					"finish_year": 1983,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1988,
+					"mark_name": "Isuzu",
+					"model_name": "Florian",
+					"generation_name": "I",
+					"start_year": 1967,
+					"finish_year": 1977,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20229,
+			"name": "Fuego",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19709,
+			"name": "Hombre",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1994,
+					"mark_name": "Isuzu",
+					"model_name": "Hombre",
+					"generation_name": "I",
+					"start_year": 1995,
+					"finish_year": 2000,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20230,
+			"name": "I-Mark",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20231,
+			"name": "i-Series",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 893,
+			"name": "Impulse",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "145020351",
+			"generations": [
+				{
+					"id": 1995,
+					"mark_name": "Isuzu",
+					"model_name": "Impulse",
+					"generation_name": "II",
+					"start_year": 1990,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1996,
+					"mark_name": "Isuzu",
+					"model_name": "Impulse",
+					"generation_name": "I",
+					"start_year": 1983,
+					"finish_year": 1990,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 894,
+			"name": "KB",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 1997,
+					"mark_name": "Isuzu",
+					"model_name": "KB",
+					"generation_name": "III (TF)",
+					"start_year": 1988,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 1998,
+					"mark_name": "Isuzu",
+					"model_name": "KB",
+					"generation_name": "II",
+					"start_year": 1980,
+					"finish_year": 1988,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20232,
+			"name": "Midi",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2002,
+					"mark_name": "Isuzu",
+					"model_name": "Midi",
+					"generation_name": "1986 – 1996",
+					"start_year": 1986,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 896,
+			"name": "MU-7",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2001,
+					"mark_name": "Isuzu",
+					"model_name": "MU-7",
+					"generation_name": "2004 – 2013",
+					"start_year": 2004,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20234,
+			"name": "Oasis",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20235,
+			"name": "Panther",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 897,
+			"name": "Piazza",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "145006741",
+			"generations": [
+				{
+					"id": 2003,
+					"mark_name": "Isuzu",
+					"model_name": "Piazza",
+					"generation_name": "II",
+					"start_year": 1990,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 2004,
+					"mark_name": "Isuzu",
+					"model_name": "Piazza",
+					"generation_name": "I",
+					"start_year": 1980,
+					"finish_year": 1990,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20236,
+			"name": "Statesman de Ville",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 899,
+			"name": "Stylus",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 2007,
+					"mark_name": "Isuzu",
+					"model_name": "Stylus",
+					"generation_name": "1990 – 1993",
+					"start_year": 1990,
+					"finish_year": 1993,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 902,
+			"name": "VehiCross",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 2,
+			"is_seo_active": 0,
+			"rgs_code": "145006774",
+			"generations": [
+				{
+					"id": 2010,
+					"mark_name": "Isuzu",
+					"model_name": "VehiCross",
+					"generation_name": "1997 – 2001",
+					"start_year": 1997,
+					"finish_year": 2001,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20237,
+			"name": "Wasp",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20238,
+			"name": "WFR",
+			"mark_id": 85,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		}
+	]
+}

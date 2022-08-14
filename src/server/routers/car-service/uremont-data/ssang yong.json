@@ -1,0 +1,510 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 1699,
+			"name": "Actyon",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 965,
+			"is_seo_active": 0,
+			"rgs_code": "370020150",
+			"generations": [
+				{
+					"id": 4052,
+					"mark_name": "Ssang Yong",
+					"model_name": "Actyon",
+					"generation_name": "II Рестайлинг",
+					"start_year": 2013,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4053,
+					"mark_name": "Ssang Yong",
+					"model_name": "Actyon",
+					"generation_name": "II",
+					"start_year": 2010,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4054,
+					"mark_name": "Ssang Yong",
+					"model_name": "Actyon",
+					"generation_name": "I",
+					"start_year": 2005,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 22381,
+			"name": "Actyon Sports",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 22,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4055,
+					"mark_name": "Ssang Yong",
+					"model_name": "Actyon Sports",
+					"generation_name": "II",
+					"start_year": 2012,
+					"finish_year": 2016,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4056,
+					"mark_name": "Ssang Yong",
+					"model_name": "Actyon Sports",
+					"generation_name": "I",
+					"start_year": 2006,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1701,
+			"name": "Chairman",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 6,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4057,
+					"mark_name": "Ssang Yong",
+					"model_name": "Chairman",
+					"generation_name": "II (W)",
+					"start_year": 2008,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4058,
+					"mark_name": "Ssang Yong",
+					"model_name": "Chairman",
+					"generation_name": "I (H)",
+					"start_year": 1997,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20573,
+			"name": "Istana",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 18,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4059,
+					"mark_name": "Ssang Yong",
+					"model_name": "Istana",
+					"generation_name": "I",
+					"start_year": 1995,
+					"finish_year": 2003,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1704,
+			"name": "Korando",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 59,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4061,
+					"mark_name": "Ssang Yong",
+					"model_name": "Korando",
+					"generation_name": "IV",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4062,
+					"mark_name": "Ssang Yong",
+					"model_name": "Korando",
+					"generation_name": "III Рестайлинг 2",
+					"start_year": 2017,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4063,
+					"mark_name": "Ssang Yong",
+					"model_name": "Korando",
+					"generation_name": "III Рестайлинг",
+					"start_year": 2013,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4064,
+					"mark_name": "Ssang Yong",
+					"model_name": "Korando",
+					"generation_name": "III",
+					"start_year": 2010,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4065,
+					"mark_name": "Ssang Yong",
+					"model_name": "Korando",
+					"generation_name": "II",
+					"start_year": 1996,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4066,
+					"mark_name": "Ssang Yong",
+					"model_name": "Korando",
+					"generation_name": "I",
+					"start_year": 1988,
+					"finish_year": 1996,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1705,
+			"name": "Kyron",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 696,
+			"is_seo_active": 0,
+			"rgs_code": "370020149",
+			"generations": [
+				{
+					"id": 4069,
+					"mark_name": "Ssang Yong",
+					"model_name": "Kyron",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2007,
+					"finish_year": 2015,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4070,
+					"mark_name": "Ssang Yong",
+					"model_name": "Kyron",
+					"generation_name": "I",
+					"start_year": 2005,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1706,
+			"name": "Musso",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 35,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4071,
+					"mark_name": "Ssang Yong",
+					"model_name": "Musso",
+					"generation_name": "II",
+					"start_year": 2018,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4072,
+					"mark_name": "Ssang Yong",
+					"model_name": "Musso",
+					"generation_name": "I Рестайлинг",
+					"start_year": 1998,
+					"finish_year": 2006,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4073,
+					"mark_name": "Ssang Yong",
+					"model_name": "Musso",
+					"generation_name": "I",
+					"start_year": 1993,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1707,
+			"name": "Rexton",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 291,
+			"is_seo_active": 0,
+			"rgs_code": "370013985",
+			"generations": [
+				{
+					"id": 4075,
+					"mark_name": "Ssang Yong",
+					"model_name": "Rexton",
+					"generation_name": "IV",
+					"start_year": 2017,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4076,
+					"mark_name": "Ssang Yong",
+					"model_name": "Rexton",
+					"generation_name": "III",
+					"start_year": 2012,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4077,
+					"mark_name": "Ssang Yong",
+					"model_name": "Rexton",
+					"generation_name": "II",
+					"start_year": 2006,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4078,
+					"mark_name": "Ssang Yong",
+					"model_name": "Rexton",
+					"generation_name": "I",
+					"start_year": 2001,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1708,
+			"name": "Rodius",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 5,
+			"is_seo_active": 0,
+			"rgs_code": "370021330",
+			"generations": [
+				{
+					"id": 4079,
+					"mark_name": "Ssang Yong",
+					"model_name": "Rodius",
+					"generation_name": "II",
+					"start_year": 2013,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4080,
+					"mark_name": "Ssang Yong",
+					"model_name": "Rodius",
+					"generation_name": "I Рестайлинг",
+					"start_year": 2007,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4081,
+					"mark_name": "Ssang Yong",
+					"model_name": "Rodius",
+					"generation_name": "I",
+					"start_year": 2004,
+					"finish_year": 2007,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1709,
+			"name": "Stavic",
+			"mark_id": 165,
+			"sort_id": 1,
+			"rating": 62,
+			"is_seo_active": 0,
+			"rgs_code": "370021879",
+			"generations": [
+				{
+					"id": 4082,
+					"mark_name": "Ssang Yong",
+					"model_name": "Stavic",
+					"generation_name": "2013 – н.в.",
+					"start_year": 2013,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1702,
+			"name": "Kallista",
+			"mark_id": 165,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": "370013962",
+			"generations": [
+				{
+					"id": 4060,
+					"mark_name": "Ssang Yong",
+					"model_name": "Kallista",
+					"generation_name": "1992 – 1994",
+					"start_year": 1992,
+					"finish_year": 1994,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 1703,
+			"name": "Korando Family",
+			"mark_id": 165,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4067,
+					"mark_name": "Ssang Yong",
+					"model_name": "Korando Family",
+					"generation_name": "1987 – 1998",
+					"start_year": 1987,
+					"finish_year": 1998,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20574,
+			"name": "Korando Turismo",
+			"mark_id": 165,
+			"sort_id": 0,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4068,
+					"mark_name": "Ssang Yong",
+					"model_name": "Korando Turismo",
+					"generation_name": "I",
+					"start_year": 2013,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 19140,
+			"name": "Nomad",
+			"mark_id": 165,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 4074,
+					"mark_name": "Ssang Yong",
+					"model_name": "Nomad",
+					"generation_name": "2013 – 2017",
+					"start_year": 2013,
+					"finish_year": 2017,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20575,
+			"name": "Tager",
+			"mark_id": 165,
+			"sort_id": 0,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 19208,
+			"name": "Tivoli",
+			"mark_id": 165,
+			"sort_id": 0,
+			"rating": 3,
+			"is_seo_active": 0,
+			"rgs_code": "370022232",
+			"generations": [
+				{
+					"id": 4083,
+					"mark_name": "Ssang Yong",
+					"model_name": "Tivoli",
+					"generation_name": "2019 – н.в.",
+					"start_year": 2019,
+					"finish_year": null,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				},
+				{
+					"id": 4084,
+					"mark_name": "Ssang Yong",
+					"model_name": "Tivoli",
+					"generation_name": "2015 – 2019",
+					"start_year": 2015,
+					"finish_year": 2019,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}
