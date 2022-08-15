@@ -2299,15 +2299,15 @@ export const Chat = () => {
               <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }} mr={2}>
                 {/* <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading> */}
                 <Heading fontSize='lg' fontFamily='Jura'>
-                  {room} {isChatLoading && !!tsPoint && (
+                  {getTruncated(room, 22)} {isChatLoading && !!tsPoint && (
                     <Spinner size='xs' />
                   )}
                 </Heading>
                 <Flex alignItems="center">
-                  <Text mr="2" fontWeight="400" fontSize="md" letterSpacing="0">
+                  <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
+                  <Text ml="2" fontWeight="400" fontSize="md" letterSpacing="0">
                     {getTruncated(name)}
                   </Text>
-                  <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
                 </Flex>
               </Flex>
 

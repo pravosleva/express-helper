@@ -13,7 +13,14 @@ export interface ICustomRequest extends IRequest {
 
 export type THelp = {
   params: {
-    body: {
+    body?: {
+      [key: string]: {
+        type: string
+        descr: string
+        required: boolean
+      }
+    };
+    query?: {
       [key: string]: {
         type: string
         descr: string

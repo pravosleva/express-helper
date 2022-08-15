@@ -53,22 +53,17 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
   // <Grid templateColumns='auto 50px' gap={2}>
   return (
     <Box>
-      <Flex justifyContent='space-between' alignItems='center' mb={2}>
+      <Flex
+        justifyContent='space-between'
+        alignItems='center'
+        mb={1}
+      >
         <Flex alignItems='center'>
           {original?.status === EMessageStatus.Danger && <span style={{ marginRight: 'var(--chakra-space-2)' }}><ImFire size={13}/></span>}
           {original?.status === EMessageStatus.Warn && <span style={{ marginRight: 'var(--chakra-space-2)' }}><FiActivity size={14}/></span>}
           {original?.status === EMessageStatus.Success && <span style={{ marginRight: 'var(--chakra-space-3)' }}><FaCheck size={12}/></span>}
           {original?.status === EMessageStatus.Info && <span style={{ marginRight: 'var(--chakra-space-2)' }}><FaInfoCircle size={14}/></span>}
           {getDayMonth(tsTarget)}
-          <span
-            style={{ marginLeft: 'var(--chakra-space-2)' }}
-          >
-            <Countdown
-              date={tsTarget}
-              renderer={CountdownRenderer}
-              onComplete={!!onComplete ? () => onComplete({ ts, text }) : undefined}
-            />
-          </span>
         </Flex>
         <Flex alignItems='center' className={styles['controls-btns']}>
           {
@@ -122,6 +117,17 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           }
         </Flex>
       </Flex>
+      <Box mb={3}>
+        <span
+          // style={{ marginLeft: 'var(--chakra-space-2)' }}
+        >
+          <Countdown
+            date={tsTarget}
+            renderer={CountdownRenderer}
+            onComplete={!!onComplete ? () => onComplete({ ts, text }) : undefined}
+          />
+        </span>
+      </Box>
       <Box
         style={{
           // border: '1px solid red',
