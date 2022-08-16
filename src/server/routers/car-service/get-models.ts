@@ -27,10 +27,9 @@ export const getModels = async (req: IRequest & { autopark2022StorageFilePath: s
   const { vendor } = req.query
 
   try {
-
     if (typeof vendor !== 'string') return res.status(200).send({
       ok: false,
-      message: 'Неверный параметр запроса',
+      message: 'Неверный параметр запроса vendor',
       _originalQuery: req.query,
     })
 
@@ -39,15 +38,16 @@ export const getModels = async (req: IRequest & { autopark2022StorageFilePath: s
       ok: false,
       _originalQuery: req.query,
     }
-    if (!modelsMap.has(vendor)) {
+    const modifiedVendorKey = vendor.toLocaleLowerCase()
+    if (!modelsMap.has(modifiedVendorKey)) {
       // - NOTE: Try to read
-      const vendorData = getStaticJSONSync(path.join(storageUremontSamplesFilePath, `/${vendor.toLowerCase()}.json`))
+      const vendorData = getStaticJSONSync(path.join(storageUremontSamplesFilePath, `/${modifiedVendorKey}.json`))
 
-      if (!!vendorData) modelsMap.set(vendor, vendorData)
+      if (!!vendorData) modelsMap.set(modifiedVendorKey, vendorData)
       // -
     }
 
-    const vendorData = modelsMap.get(vendor)
+    const vendorData = modelsMap.get(modifiedVendorKey)
     if (!!vendorData) {
       response.ok = true
       response.models = getModifiedModelList(vendorData)
@@ -58,7 +58,8 @@ export const getModels = async (req: IRequest & { autopark2022StorageFilePath: s
     }
     response._service = {
       totalInCash: modelsMap.size,
-      storageUremontSamplesFilePath: path.join(storageUremontSamplesFilePath, `/${vendor.toLowerCase()}.json`),
+      storageUremontSamplesFilePath: path.join(storageUremontSamplesFilePath, `/${modifiedVendorKey}.json`),
+      modifiedVendorKey,
     }
 
     return res.status(200).json(response)

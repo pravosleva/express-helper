@@ -1,0 +1,172 @@
+{
+	"success": 1,
+	"models": [
+		{
+			"id": 2086,
+			"name": "Aquila",
+			"mark_id": 226,
+			"sort_id": 1,
+			"rating": 55,
+			"is_seo_active": 0,
+			"rgs_code": "811021718",
+			"generations": [
+				{
+					"id": 5071,
+					"mark_name": "ТагАЗ",
+					"model_name": "Aquila",
+					"generation_name": "I",
+					"start_year": 2012,
+					"finish_year": 2014,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2088,
+			"name": "C10",
+			"mark_id": 226,
+			"sort_id": 1,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": "811021660",
+			"generations": [
+				{
+					"id": 5072,
+					"mark_name": "ТагАЗ",
+					"model_name": "C10",
+					"generation_name": "2011 – 2013",
+					"start_year": 2011,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2089,
+			"name": "C190",
+			"mark_id": 226,
+			"sort_id": 1,
+			"rating": 7,
+			"is_seo_active": 0,
+			"rgs_code": "811021662",
+			"generations": [
+				{
+					"id": 5073,
+					"mark_name": "ТагАЗ",
+					"model_name": "C190",
+					"generation_name": "2011 – 2013",
+					"start_year": 2011,
+					"finish_year": 2013,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2087,
+			"name": "C30",
+			"mark_id": 226,
+			"sort_id": 1,
+			"rating": 0,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5550,
+					"mark_name": "ТагАЗ",
+					"model_name": "C30",
+					"generation_name": "2011 – 2011",
+					"start_year": 2011,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 20738,
+			"name": "Hardy",
+			"mark_id": 226,
+			"sort_id": 1,
+			"rating": 1,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 20739,
+			"name": "Master",
+			"mark_id": 226,
+			"sort_id": 1,
+			"rating": 4,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": []
+		},
+		{
+			"id": 2090,
+			"name": "Road Partner",
+			"mark_id": 226,
+			"sort_id": 1,
+			"rating": 16,
+			"is_seo_active": 0,
+			"rgs_code": "811021487",
+			"generations": [
+				{
+					"id": 5074,
+					"mark_name": "ТагАЗ",
+					"model_name": "Road Partner",
+					"generation_name": "2008 – 2011",
+					"start_year": 2008,
+					"finish_year": 2011,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2091,
+			"name": "Tager",
+			"mark_id": 226,
+			"sort_id": 1,
+			"rating": 69,
+			"is_seo_active": 0,
+			"rgs_code": "811021488",
+			"generations": [
+				{
+					"id": 5075,
+					"mark_name": "ТагАЗ",
+					"model_name": "Tager",
+					"generation_name": "2008 – 2012",
+					"start_year": 2008,
+					"finish_year": 2012,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		},
+		{
+			"id": 2092,
+			"name": "Vega",
+			"mark_id": 226,
+			"sort_id": 1,
+			"rating": 26,
+			"is_seo_active": 0,
+			"rgs_code": null,
+			"generations": [
+				{
+					"id": 5076,
+					"mark_name": "ТагАЗ",
+					"model_name": "Vega",
+					"generation_name": "2009 – 2010",
+					"start_year": 2009,
+					"finish_year": 2010,
+					"image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+					"images": []
+				}
+			]
+		}
+	]
+}
