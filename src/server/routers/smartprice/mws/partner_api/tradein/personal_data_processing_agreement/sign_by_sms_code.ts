@@ -82,7 +82,7 @@ export const signBySMSCode = (req: any, res: any) => {
     })
   }
 
-  const toBeOrNotToBe = random_success ? getRandomInteger(0, 1) : 0
+  const toBeOrNotToBe = random_success ? getRandomInteger(0, 1) : 1
   const result = toClient[toBeOrNotToBe]
 
   return res.status(200).send({

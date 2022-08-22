@@ -59,7 +59,7 @@ const _help: THelp = {
       buyout_mode: {
         type: 'string',
         descr: 'Тип выкупа',
-        required: true,
+        required: false,
       },
       odd_success: {
         type: 'number',

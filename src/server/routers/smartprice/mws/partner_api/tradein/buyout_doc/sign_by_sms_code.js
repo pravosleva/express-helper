@@ -27,7 +27,7 @@ export const signBySMSCode = (req, res) => {
   }
 
   // const toBeOrNotToBe = SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 2)
-  const toBeOrNotToBe = 2
+  const toBeOrNotToBe = 1
 
   return setTimeout(() => {
     res.status(200).send({
