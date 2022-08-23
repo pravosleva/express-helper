@@ -1,6 +1,10 @@
 import { Request as IRequest, Response as IResponse, NextFunction as INextFunction } from 'express'
 import { EAPIUserCode } from '~/routers/chat/mws/api/types';
 import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
+import jwt from 'jsonwebtoken'
+
+const jwtSecret = 'super-secret'
+const jwtCookieName = 'autopark-2022.jwt'
 
 type TItem = {
   name: string;
@@ -35,6 +39,26 @@ export const removeAutoparkProject = async (req: IRequest & { autopark2022Storag
       _originalParams: { body: req.body },
     })
   }
+
+  // -- NOTE: tmp user check
+  if (!req.cookies || !req.cookies[jwtCookieName]) {
+    return res.status(401).send({
+      success: false,
+      message: 'Try to login',
+      _originalParams: { params: req.params },
+    })
+  } else {
+    const jwtParsed: any = jwt.verify(req.cookies[jwtCookieName], jwtSecret)
+
+    if (typeof jwtParsed?.chat_id !== 'string' || jwtParsed?.chat_id !== req.body.chat_id) {
+      return res.status(401).send({
+        success: false,
+        message: 'It\'s not your progect',
+        _originalParams: { params: req.params },
+      })
+    }
+  }
+  // --
 
   if (!!req.autopark2022StorageFilePath) {
     try {

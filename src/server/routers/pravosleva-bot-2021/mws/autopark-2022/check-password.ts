@@ -2,6 +2,8 @@ import { Request as IRequest, Response as IResponse, NextFunction as INextFuncti
 import { EAPIUserCode } from '~/routers/chat/mws/api/types'
 import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
 import { getRandomInteger } from '~/utils/getRandomInteger'
+import jwt from 'jsonwebtoken'
+import { getMsByDays } from '~/utils/auth/getMsByDays'
 
 function isNumeric(n: any): boolean {
   return !isNaN(parseFloat(n)) && isFinite(n);
@@ -17,6 +19,8 @@ type TUserData = {
 type TStaticData = {
   [key: string]: TUserData
 }
+
+const jwtSecret = 'super-secret'
 
 export const checkAutoparkUserPassword = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
   const { password, chat_id } = req.body
@@ -37,6 +41,14 @@ export const checkAutoparkUserPassword = async (req: IRequest & { autopark2022St
 
       if (isUserExists && isNumeric(password) && staticData[String(chat_id)].password === Number(password)) {
         response.ok = true
+
+        // 2. --- Password correct -> set jwt to cookie
+        const daysLimit: number = 3
+        const jwt4Cookie = jwt.sign({ chat_id }, jwtSecret, { expiresIn: 60 * 60 * 24 * daysLimit })
+        const maxAge = getMsByDays(daysLimit)
+
+        res.cookie('autopark-2022.jwt', jwt4Cookie, { maxAge, httpOnly: true })
+        // ---
       } else {
         response.message = 'Incorrect password'
       }
