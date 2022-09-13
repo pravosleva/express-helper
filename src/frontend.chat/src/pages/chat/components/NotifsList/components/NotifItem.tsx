@@ -65,68 +65,70 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           {original?.status === EMessageStatus.Info && <span style={{ marginRight: 'var(--chakra-space-2)' }}><FaInfoCircle size={14}/></span>}
           {getDayMonth(tsTarget)}
         </Flex>
-        <Flex alignItems='center' className={styles['controls-btns']}>
-          {
-            isMyMessage && !!onEdit && (
-              <Tooltip label='Edit' aria-label='EDIT'>
-                <IconButton
-                  // style={{ marginRight: '.5rem' }}
-                  size='xs'
-                  aria-label="-EDIT"
-                  colorScheme='green'
-                  variant='outline'
-                  isRound
-                  icon={<AiTwotoneEdit size={15} />}
-                  onClick={() => {
-                    onEdit(original)
-                  }}
-                >
-                  EDIT
-                </IconButton>
-              </Tooltip>
-            )
-          }
-          {!!original?.assignedTo && !!original?.assignedBy && (
-            <div
-              style={{ display: 'flex' }}
-            >
-              <UserAva size={19} name={original.assignedBy} ml='auto' fontSize={11} onClick={() => { !!original.assignedBy && window.alert(`Assigned by ${original.assignedBy}`) }} />
-              <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
-              <UserAva size={19} name={original.assignedTo[0]} fontSize={11} onClick={() => { !!original.assignedTo && window.alert(`Assigned to ${original.assignedTo[0]}`) }} />
-            </div>)
-          }
-          {
-            isLogged && !!original?.assignedTo && Array.isArray(original.assignedTo) && original.assignedTo.length > 0 && (
-              <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
-                <IconButton
-                  size='xs'
-                  aria-label="DEL"
-                  colorScheme='red'
-                  variant='outline'
-                  isRound
-                  icon={<IoMdClose size={15} />}
-                  onClick={() => {
-                    const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
-                    if (isConfirmed) onRemove(ts)
-                  }}
-                >
-                  DEL
-                </IconButton>
-              </Tooltip>
-            )
-          }
-        </Flex>
       </Flex>
       <Box mb={3}>
-        <span
-          // style={{ marginLeft: 'var(--chakra-space-2)' }}
-        >
-          <Countdown
-            date={tsTarget}
-            renderer={CountdownRenderer}
-            onComplete={!!onComplete ? () => onComplete({ ts, text }) : undefined}
-          />
-        </span>
+        <Flex justifyContent='space-between' alignItems='center'>
+          <span
+            // style={{ marginLeft: 'var(--chakra-space-2)' }}
+          >
+            <Countdown
+              date={tsTarget}
+              renderer={CountdownRenderer}
+              onComplete={!!onComplete ? () => onComplete({ ts, text }) : undefined}
+            />
+          </span>
+          <Flex className={styles['controls-btns']}>
+            {
+              isMyMessage && !!onEdit && (
+                <Tooltip label='Edit' aria-label='EDIT'>
+                  <IconButton
+                    // style={{ marginRight: '.5rem' }}
+                    size='xs'
+                    aria-label="-EDIT"
+                    colorScheme='green'
+                    variant='outline'
+                    isRound
+                    icon={<AiTwotoneEdit size={15} />}
+                    onClick={() => {
+                      onEdit(original)
+                    }}
+                  >
+                    EDIT
+                  </IconButton>
+                </Tooltip>
+              )
+            }
+            {!!original?.assignedTo && !!original?.assignedBy && (
+              <div
+                style={{ display: 'flex' }}
+              >
+                <UserAva size={19} name={original.assignedBy} ml='auto' fontSize={11} onClick={() => { !!original.assignedBy && window.alert(`Assigned by ${original.assignedBy}`) }} />
+                <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+                <UserAva size={19} name={original.assignedTo[0]} fontSize={11} onClick={() => { !!original.assignedTo && window.alert(`Assigned to ${original.assignedTo[0]}`) }} />
+              </div>)
+            }
+            {
+              isLogged && !!original?.assignedTo && Array.isArray(original.assignedTo) && original.assignedTo.length > 0 && (
+                <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
+                  <IconButton
+                    size='xs'
+                    aria-label="DEL"
+                    colorScheme='red'
+                    variant='outline'
+                    isRound
+                    icon={<IoMdClose size={15} />}
+                    onClick={() => {
+                      const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
+                      if (isConfirmed) onRemove(ts)
+                    }}
+                  >
+                    DEL
+                  </IconButton>
+                </Tooltip>
+              )
+            }
+          </Flex>
+        </Flex>
       </Box>
       <Box
         style={{

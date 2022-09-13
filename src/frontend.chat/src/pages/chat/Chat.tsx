@@ -239,13 +239,13 @@ const colorSchemeMap: {
   [key: string]: string
 } = {
   [EMessageStatus.Done]: 'gray',
-  [EMessageStatus.Dead]: 'black',
+  [EMessageStatus.Dead]: 'gray',
   [EMessageStatus.Warn]: 'yellow',
   [EMessageStatus.Danger]: 'red',
   [EMessageStatus.Success]: 'green',
 }
 
-const kanbanStatuses = [EMessageStatus.Warn, EMessageStatus.Danger, EMessageStatus.Success, EMessageStatus.Done]
+const kanbanStatuses = [EMessageStatus.Warn, EMessageStatus.Danger, EMessageStatus.Success, EMessageStatus.Done, EMessageStatus.Dead]
 type TKanbanCard = { id: number, title: EMessageStatus, description: string }
 type TKanbanState = {
   columns: {
@@ -428,7 +428,7 @@ export const Chat = () => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
-          
+
           if (targetIndex !== -1) {
             newArr[targetIndex].text = text
             if (!!editTs) newArr[targetIndex].editTs = editTs
@@ -459,7 +459,7 @@ export const Chat = () => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
-          
+
           if (targetIndex !== -1) newArr.splice(targetIndex, 1)
           return newArr
         })
@@ -540,7 +540,7 @@ export const Chat = () => {
     chatHistoryChunksCounterRef.current += 1
     if (chatHistoryChunksCounterRef.current % 2 === 0) {
       setShowLoadMoreBtn(true)
-      
+
       if (!!lastIdRef.current) {
         const domElm = document.getElementById(lastIdRef.current)
         if (!!domElm) {
@@ -682,7 +682,7 @@ export const Chat = () => {
     const normalizedMsg = messageRef.current.trim().replace(/\n+/g, '\n') // message.replace(/\s+/g, ' ').trim()
     if (!!socket && !!normalizedMsg) {
       setIsSending(true)
-      
+
       const newStuff: { message: string, userName: string, status?: EMessageStatus, room: string, position?: number } = {
         message: normalizedMsg,
         userName: name,
@@ -692,7 +692,7 @@ export const Chat = () => {
       if (filters.length === 1 && Object.values(EMessageStatus).includes(filters[0])) newStuff.status = filters[0]
       else if (editedMessageRef.current?.status && Object.values(EMessageStatus).includes(editedMessageRef.current.status))
         newStuff.status = editedMessageRef.current.status
-      
+
       if (!!editedMessageRef.current?.position || editedMessageRef.current?.position === 0) newStuff.position = editedMessageRef.current.position
 
       socket.emit('sendMessage', { ...newStuff }, () => {
@@ -840,7 +840,7 @@ export const Chat = () => {
     if (isConfirmed) {
       if (!!socket) {
         const targetTs = (!!ts && Number.isInteger(ts)) ? ts : editedMessage.ts
-  
+
         socket.emit('deleteMessage', { ts: targetTs, room: roomRef.current, name }, (errMsg: string) => {
           if (!!errMsg) {
             toast({
@@ -1041,7 +1041,7 @@ export const Chat = () => {
   const { formData, handleInputChange, resetForm } = useForm({
     searchText: '',
   })
-  
+
   const enabledTags = useMemo<string[]>(() => formData.searchText.split(' ').filter((w: string) => w[0] === '#'), [formData.searchText])
   const handleToggleTag = useCallback((tag: string) => {
     if (formData.searchText.includes(tag)) {
@@ -1091,7 +1091,7 @@ export const Chat = () => {
 
   // -- ROOMS SAMPLE
   const [roomlistLS, setRoomlistLS] = useLocalStorage<{ name: string, ts: number }[]>('chat.roomlist', [])
-  
+
   const updateRoomTsInLS = useCallback((roomName: string) => {
     if (!!window) {
       let roomlistLS: any
@@ -1124,7 +1124,7 @@ export const Chat = () => {
     const jwtLogout = await axios.post(`${REACT_APP_API_URL}/chat/api/auth/logout`, {})
       .then((res: any) => res.data)
       .catch((err: any) => err)
-    
+
     if (jwtLogout.ok) {
       toast({ position: 'top-left', description: jwtLogout?.message || 'Unlogged', status: 'info', duration: 3000, isClosable: true })
     }
@@ -1139,7 +1139,7 @@ export const Chat = () => {
     updateRoomTsInLS(room)
   }, [])
   // --
-  
+
   // -- FILTERS EXP
   // V1
   // const filteredMessages = useMemo(() => logic.getFiltered({ filters, searchText: debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters }), [logic, filters, debouncedSearchText, additionalTsToShow, assignmentExecutorsFilters])
@@ -1165,7 +1165,7 @@ export const Chat = () => {
   const workerEventLog = useCallback((eventDataType) => {
     console.log(`🔥 Web Worker: ${eventDataType}; ${getEconomyText(eventDataType)}`)
   }, [getEconomyText])
-  
+
   useEffect(() => {
     webWorkersInstance.filtersWorker.onmessage = (
       $event: {
@@ -1175,7 +1175,7 @@ export const Chat = () => {
     ) => {
       try {
         const eventDataType = $event.data.type
-  
+
         if (!!timers.current[eventDataType]) {
           console.log(`Web Worker: aborted ${eventDataType} (${$event.data.perf} ms)`)
           clearTimeout(timers.current[eventDataType])
@@ -1242,7 +1242,7 @@ export const Chat = () => {
     })
   }, [filteredMessages, filteredKanbanStatuses])
   // --
-  
+
   const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
   const [clickedImageSrc, setClickedImageSrc]= useState<string | null>(null)
   const handleOpenGallery = useCallback((src: string) => {
@@ -1422,7 +1422,7 @@ export const Chat = () => {
   }, [setSprintSettingsLS, sprintSettingsLS])
   const toggleSprintFeature = useCallback(() => {
     const newVal = !sprintFeatureSnap.isFeatureEnabled
-    
+
     updateSprintSetting4TheRoom(room, newVal)
     sprintFeatureProxy.isFeatureEnabled = newVal
   }, [updateSprintSetting4TheRoom, room])
@@ -1545,7 +1545,7 @@ export const Chat = () => {
   ])
 
   const mode = useColorMode()
-  const isFiltersPresetDisabledCondition = useMemo(() => 
+  const isFiltersPresetDisabledCondition = useMemo(() =>
     ((filters.every((f) => [EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn].includes(f) && filters.length === 3) && (filters.includes(EMessageStatus.Success) && filters.includes(EMessageStatus.Danger) && filters.includes(EMessageStatus.Warn)))),
     [useCompare([filters])]
   )
@@ -1609,7 +1609,7 @@ export const Chat = () => {
 
     prevPositionRef.current = newPosition - 1
     nextPositionRef.current = newPosition + 1
-    
+
     const { id, title, description, ...rest } = card
     // console.log('--', oldStatus !== newStatus || (_isSameColumn && oldPosition !== dest.toPosition))
     if (oldStatus !== newStatus || (_isSameColumn && oldPosition !== dest.toPosition)) {
@@ -1756,7 +1756,7 @@ export const Chat = () => {
         chatMsgContainerRef.current.addEventListener('mouseenter', listenersMap.current[String(ts)].mouseenter)
         // @ts-ignore
         chatMsgContainerRef.current.addEventListener('mouseleave', listenersMap.current[String(ts)].mouseleave)
-        
+
       } catch (_err) {
         console.log('ERR 2')
       }
@@ -1945,7 +1945,7 @@ export const Chat = () => {
                   }}>{debouncedEditedMessageText}</pre>
                 </div>
               )}
-              
+
               <div
                 style={{
                   padding: upToMd ? '0 var(--chakra-space-6)' : '0 var(--chakra-space-6) 0 var(--chakra-space-20)'
@@ -2177,7 +2177,7 @@ export const Chat = () => {
                           >Copy Link</Button>
                         </CopyToClipboard>
                       </Grid>
-                      
+
                       <>
                         {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
                           <SwitchSection
@@ -2206,10 +2206,10 @@ export const Chat = () => {
                             description='Эта фича позволит настроить доп. опции прозводительности, посмотреть аналитику потребления, возможно, что-то еще'
                           />
                         )}
-                        
+
                         {AccordionStuff}
                       </>
-                    </Stack> 
+                    </Stack>
                   </DrawerBody>
 
                   <DrawerFooter borderTopWidth="1px">
@@ -2492,7 +2492,7 @@ export const Chat = () => {
                       assignedTo={assignedTo}
                       assignedBy={assignedBy || 'ERR'}
                       onUnassign={(userName: string) => {
-                        const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${userName}?`) 
+                        const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${userName}?`)
                         if (isConFirmed) handleUnassignFromUser(message, userName)
                       }}
                     />
@@ -2709,7 +2709,7 @@ export const Chat = () => {
                     isDisabled={isTasklistModalOpened}
                   >
                     TASKLIST
-                  </IconButton>  
+                  </IconButton>
                 )}
                 {
                   upToMd && (
@@ -2723,9 +2723,9 @@ export const Chat = () => {
                       onClick={toggleBottomSheet}
                     >
                       BSH
-                    </IconButton> 
+                    </IconButton>
                   )
-                } 
+                }
                 {isLogged && showClearBtn && (
                   <IconButton
                     size='sm'
@@ -2839,7 +2839,7 @@ export const Chat = () => {
                         }
                         break;
                     }
-                
+
                     if (result.ok && result.tsUpdate !== sprintFeatureSnap.tsUpdate) {
                       try {
                         sprintFeatureProxy.commonNotifs = result.state
@@ -2851,7 +2851,7 @@ export const Chat = () => {
                       } catch (err) {
                         console.log(err)
                       }
-                      
+
                       sprintFeatureProxy.tsUpdate = result.tsUpdate
                     }
                   }
@@ -3077,7 +3077,7 @@ export const Chat = () => {
                                         onClick={() => {
                                           const { id, title, description, ...rest } = card
                                           // @ts-ignore
-                                          const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`) 
+                                          const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`)
                                           // @ts-ignore
                                           if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
                                         }}
@@ -3156,7 +3156,7 @@ export const Chat = () => {
                               ) : null
                             ) : null
                           }
-                        </div>  
+                        </div>
                       )
                     }
                     <Text className='card-descr'>{descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}</Text>
