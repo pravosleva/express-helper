@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { Box, Button, Flex, Grid, Text, useToast, IconButton, Tooltip } from "@chakra-ui/react"
-import { getNormalizedDate, getDayMonth } from '~/utils/timeConverter'
-import { FaTrashAlt } from 'react-icons/fa'
+// import { getNormalizedDate, getDayMonth } from '~/utils/timeConverter'
+// import { FaTrashAlt } from 'react-icons/fa'
 import Countdown, { zeroPad } from 'react-countdown'
 import { useSnapshot } from 'valtio'
 import { useMainContext } from '~/context/mainContext'
@@ -9,14 +9,15 @@ import { ERegistryLevel, TMessage, EMessageStatus } from '~/utils/interfaces'
 // import { AssignedBox } from '~/pages/chat/components/AssignedBox'
 import { UserAva } from '~/pages/chat/components/UserAva'
 import { IoMdClose } from 'react-icons/io'
-import { ImFire } from 'react-icons/im'
-import { FiActivity } from 'react-icons/fi'
-import { FaCheck, FaInfoCircle } from 'react-icons/fa'
+// import { ImFire } from 'react-icons/im'
+// import { FiActivity } from 'react-icons/fi'
+// import { FaCheck, FaInfoCircle } from 'react-icons/fa'
 // import { BsFillInfoCircleFill } from 'react-icons/bs'
 import { AiTwotoneEdit } from 'react-icons/ai'
 import { CountdownRenderer } from './CountdownRenderer'
 import { scrollIntoView } from '~/utils/scrollTo'
 import styles from './NotifItem.module.scss'
+import { FiChevronUp, FiChevronDown } from 'react-icons/fi'
 
 // const isDev = process.env.NODE_ENV === 'development'
 
@@ -44,7 +45,8 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
   const firstString = !!text ? text.split('\n')[0] : 'ERR'
   const isClosable: boolean = !!text ? text.split('\n').length > 1 : false
   const [isOpened, setIsOpened] = useState<boolean>(!isClosable)
-  const toggle = () => {
+  const toggle = (e: any) => {
+    e.stopPropagation()
     setIsOpened((s) => !s)
   }
   const toast = useToast()
@@ -53,7 +55,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
   // <Grid templateColumns='auto 50px' gap={2}>
   return (
     <Box>
-      <Flex
+      {/* <Flex
         justifyContent='space-between'
         alignItems='center'
         mb={1}
@@ -65,7 +67,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           {original?.status === EMessageStatus.Info && <span style={{ marginRight: 'var(--chakra-space-2)' }}><FaInfoCircle size={14}/></span>}
           {getDayMonth(tsTarget)}
         </Flex>
-      </Flex>
+      </Flex> */}
       <Box mb={3}>
         <Flex justifyContent='space-between' alignItems='center'>
           <span
@@ -134,11 +136,19 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
         style={{
           // border: '1px solid red',
           // borderImage: `linear-gradient(to bottom, var(--chakra-colors-gray-200), rgba(0, 0, 0, 0)) 1 100%`,
-          borderLeft: '4px solid var(--chakra-colors-gray-200)',
-          borderTop: '1px solid var(--chakra-colors-gray-200)', // `1px ${isClosable ? isOpened ? 'solid' : 'dashed' : 'solid'} var(--chakra-colors-gray-200)`,
-          borderTopLeftRadius: 'var(--chakra-radii-lg)',
-          paddingTop: 'var(--chakra-space-1)',
-          paddingLeft: 'var(--chakra-space-3)',
+          
+          // borderLeft: '4px solid var(--chakra-colors-gray-200)',
+          // borderTop: '1px solid var(--chakra-colors-gray-200)', // `1px ${isClosable ? isOpened ? 'solid' : 'dashed' : 'solid'} var(--chakra-colors-gray-200)`,
+          border: '1px solid var(--chakra-colors-gray-200)',
+          borderLeft: '5px solid var(--chakra-colors-gray-200)',
+          
+          // paddingTop: 'var(--chakra-space-1)',
+          // paddingLeft: 'var(--chakra-space-3)',
+          padding: 'var(--chakra-space-1) var(--chakra-space-3)',
+
+          // borderTopLeftRadius: 'var(--chakra-radii-lg)',
+          borderRadius: 'var(--chakra-radii-lg)',
+
           whiteSpace: 'pre-wrap',
           // marginBottom: 'var(--chakra-space-1)'
         }}
@@ -185,10 +195,10 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
             >
               <div>{isOpened ? <b>{text}</b> : <b>{firstString}</b>}</div>
               {/* <pre style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap' }}>{JSON.stringify(original, null, 2)}</pre> */}
-              <div>
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Button
                   mt={1}
-                  // mb={2}
+                  mb={2}
                   size='xs'
                   // isFullWidth
                   isLoading={inProgress}
@@ -197,6 +207,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
                   // variant='link'
                   variant='outline'
                   rounded='2xl'
+                  rightIcon={isOpened ? <FiChevronUp /> : <FiChevronDown />}
                 >{isOpened ? 'Close' : 'Open'}</Button>
               </div>
             </div>

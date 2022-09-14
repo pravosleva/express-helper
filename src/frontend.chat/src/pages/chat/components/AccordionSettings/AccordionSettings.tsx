@@ -259,7 +259,7 @@ export const AccordionSettings = ({
                 <Stack>
                   <Flex alignItems="center">
                     <Button size='sm' rounded='2xl' variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={15}/>}>Find user</Button>
-                    {hasEnabledFilters && <Button size='sm' rounded='2xl' variant='ghost' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
+                    {hasEnabledFilters && <Button colorScheme='blue'size='sm' rounded='2xl' variant='ghost' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
                   </Flex>
                   {/*
                   <Grid templateColumns='1fr 1fr 1fr 50px' gap={2}>

@@ -132,7 +132,7 @@ import {
   useCompare,
 } from '~/common/hooks/useDeepEffect'
 import { BiRefresh } from 'react-icons/bi'
-import { GoChecklist } from 'react-icons/go'
+import { GoChecklist, GoGear } from 'react-icons/go'
 import { useLatest } from '~/common/hooks/useLatest'
 import { useDebounce as useDebouncedValue } from '~/common/hooks/useDebounce'
 import { FixedSearch } from './components/FixedSearch'
@@ -2030,7 +2030,8 @@ export const Chat = () => {
               <IconButton
                 // colorScheme="gray"
                 aria-label="Menu"
-                icon={<FiMenu size={18} />}
+                // icon={<FiMenu size={18} />}
+                icon={<GoGear size={18} />}
                 // justifySelf="flex-end"
                 isRound
                 onClick={handleOpenDrawerMenu}
@@ -2960,13 +2961,64 @@ export const Chat = () => {
                         marginBottom: 'var(--chakra-space-2)',
                       }}
                     >
-                      <div
+                      {/* <div
                         className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}
                       >
-                        <Text
-                          // color={assignmentExecutorsFilters.includes(name) ? mode.colorMode === 'dark' ? 'blue.200' : 'blue.500' : 'inherit'}
-                        >{card.title}</Text>
-                      </div>
+                        <Text>{card.title} 1</Text>
+                      </div> */}
+                      {
+                        assignmentSnap.isFeatureEnabled
+                        ? (
+                          !!card?.assignedTo && !!card?.assignedBy ? (
+                            <div style={{ display: 'flex' }}>
+                              <UserAva size={21} name={card.assignedBy} fontSize={13} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} tooltipText={`Assigned by ${card.assignedBy}`} />
+                              <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+                              <UserAva size={21} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={13} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} tooltipText={`Assigned to ${card.assignedTo[0]}`} />
+                              {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
+                                <Tooltip label={`Открепить от ${card.assignedTo[0]}`} aria-label='UNASSIGN'>
+                                  <IconButton
+                                    size='xs'
+                                    aria-label="-UNASSIGN"
+                                    colorScheme='gray'
+                                    variant='outline'
+                                    isRound
+                                    icon={<IoMdClose size={15} />}
+                                    onClick={() => {
+                                      const { id, title, description, ...rest } = card
+                                      // @ts-ignore
+                                      const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`)
+                                      // @ts-ignore
+                                      if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
+                                    }}
+                                  >
+                                    UNASSIGN
+                                  </IconButton>
+                                </Tooltip>
+                              )}
+                            </div>
+                          ) : (
+                            <Tooltip label='Назначить на пользователя' offset={[0, 10]} placement='right' hasArrow aria-label='ASSIGN'>
+                              <Button
+                                variant='outline'
+                                borderRadius='full'
+                                colorScheme='gray'
+                                size='xs'
+                                onClick={() => {
+                                  resetEditedMessage()
+                                  setTimeout(() => {
+                                    const { id, title, description, ...rest } = card
+                                    setEditedMessage(rest)
+                                    handleSearchUserModalOpen()
+                                  }, 200)
+                                }}
+                                isDisabled={card.user !== name}
+                              >Assign</Button>
+                            </Tooltip>
+                          )
+                        ) : (
+                          null
+                        )
+                      }
                       <div className='card-controls-box--right'>
                         <Tooltip label="Проскроллить в чате" aria-label='SCROLL_INTO_VIEW'>
                           <IconButton
@@ -3043,6 +3095,7 @@ export const Chat = () => {
                         }
                       </div>
                     </div>
+                    <Text className='card-descr'>{descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}</Text>
                     {
                       (assignmentSnap.isFeatureEnabled
                       || sprintFeatureSnap.isFeatureEnabled) && (
@@ -3055,65 +3108,18 @@ export const Chat = () => {
                           flexDirection: 'row',
                           justifyContent: 'flex-start',
                           alignItems: 'center',
-                          marginBottom: 'var(--chakra-space-2)',
+                          // marginTop: 'var(--chakra-space-2)',
                         }}>
-                          {
-                            assignmentSnap.isFeatureEnabled
-                            ? (
-                              !!card?.assignedTo && !!card?.assignedBy ? (
-                                <>
-                                  <UserAva size={21} name={card.assignedBy} fontSize={13} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} tooltipText={`Assigned by ${card.assignedBy}`} />
-                                  <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
-                                  <UserAva size={21} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={13} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} tooltipText={`Assigned to ${card.assignedTo[0]}`} />
-                                  {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
-                                    <Tooltip label={`Открепить от ${card.assignedTo[0]}`} aria-label='UNASSIGN'>
-                                      <IconButton
-                                        size='xs'
-                                        aria-label="-UNASSIGN"
-                                        colorScheme='gray'
-                                        variant='outline'
-                                        isRound
-                                        icon={<IoMdClose size={15} />}
-                                        onClick={() => {
-                                          const { id, title, description, ...rest } = card
-                                          // @ts-ignore
-                                          const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`)
-                                          // @ts-ignore
-                                          if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
-                                        }}
-                                      >
-                                        UNASSIGN
-                                      </IconButton>
-                                    </Tooltip>
-                                  )}
-                                </>
-                              ) : (
-                                <Tooltip label='Назначить на пользователя' offset={[0, 10]} placement='right' hasArrow aria-label='ASSIGN'>
-                                  <Button
-                                    variant='outline'
-                                    borderRadius='full'
-                                    colorScheme='gray'
-                                    size='xs'
-                                    onClick={() => {
-                                      resetEditedMessage()
-                                      setTimeout(() => {
-                                        const { id, title, description, ...rest } = card
-                                        setEditedMessage(rest)
-                                        handleSearchUserModalOpen()
-                                      }, 200)
-                                    }}
-                                    isDisabled={card.user !== name}
-                                  >Assign</Button>
-                                </Tooltip>
-                              )
-                            ) : (
-                              null
-                            )
-                          }
                           {
                             sprintFeatureSnap.isFeatureEnabled
                             ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] ? (
-                              <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
+                              <div
+                                style={{
+                                  marginLeft: 'auto',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  marginTop: 'var(--chakra-space-2)',
+                                }}>
                                 <Countdown
                                   date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
                                   renderer={CountdownRenderer}
@@ -3135,9 +3141,9 @@ export const Chat = () => {
                                 </Tooltip>
                               </div>
                             ) : (
-                              card.status !== EMessageStatus.Done
+                              card.status !== EMessageStatus.Done && card.status !== EMessageStatus.Dead
                               ? (
-                                <span style={{ marginLeft: 'auto' }}>
+                                <span style={{ marginLeft: 'auto', marginTop: 'var(--chakra-space-2)' }}>
                                   <Tooltip label='Добавить в спринт' aria-label='ADD_TO_SPRINT'>
                                     <IconButton
                                       size='xs'
@@ -3159,7 +3165,6 @@ export const Chat = () => {
                         </div>
                       )
                     }
-                    <Text className='card-descr'>{descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}</Text>
                   </div>
                 )
               }}
