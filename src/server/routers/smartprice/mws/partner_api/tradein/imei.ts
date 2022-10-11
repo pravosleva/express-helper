@@ -222,6 +222,8 @@ const toClient = [
     show_warning: false,
     raw_data:
       '{"refcode":"05072022082737","responsestatus":"success","deviceid":"354809101735914","partnerid":"SmartPrice","branchid":"RUS","recordidentifier":"1657024050.4169106-devreqid","blackliststatus":"No","greyliststatus":"No","imeihistory":[{"action":"NA","date":"NA","by":"NA","Country":"NA"}],"manufacturer":"Samsung Korea","brandname":"Samsung","marketingname":"Galaxy S10+","modelname":"SM-G975F","band":"CA_2,CA_3,CA_7,CA_38,CA_40,CA_41,CA_1A-3A,CA_1A-5A,CA_1A-7A,CA_1A-8A,CA_1A-20A,CA_1A-28A,CA_1A-40A,CA_2A-12A,CA_3C-5A,CA_3A-7A,CA_3A-7A-7A,CA_3C-7A,CA_3C-7C,CA_3A-8A,CA_3A-3A-8A,CA_3A-20A,CA_3C-20A,CA_3A-28A,CA_3A-38A,CA_3A-40A,CA_3A-40C,CA_3A-41A,CA_4A-7A,CA_4A-12A,CA_4A-17A,CA_5A-7A,CA_5A-40A,CA_7A-8A,CA_7A-20A,CA_7B-28A,CA_7C-28A,CA_20A-38A,CA_38A-40A,CA_2A-2A,CA_3A-3A,CA_4A-4A,CA_7A-7A,CA_40A-40A,CA_41A-41C,CA_66A-66A,CA_1A-3A-5A,CA_1A-3A-7A,CA_1A-3C-7A,CA_1A-3A-8A,CA_1A-3A-20A,CA_1A-3A-28A,CA_1A-7A-20A,CA_1A-7A-28A,CA_3A-5A-40A,CA_3A-7A-8A,CA_3A-7A-20A,CA_3A-7A-28A,CA_3A-20A-32A,CA_1A-3A-7A-20A,LTE FDD BAND 1,LTE FDD BAND 2,LTE FDD BAND 3,LTE FDD BAND 4,LTE FDD BAND 5,LTE FDD BAND 7,LTE FDD BAND 8,LTE FDD BAND 12,LTE FDD BAND 13,LTE FDD BAND 17,LTE FDD BAND 18,LTE FDD BAND 19,LTE FDD BAND 20,LTE FDD BAND 25,LTE FDD BAND 26,LTE FDD BAND 28,LTE FDD Band 66,LTE TDD BAND 38,LTE TDD BAND 39,LTE TDD BAND 40,LTE TDD BAND 41,GSM 1800,GSM 1900,GSM850 (GSM800),GSM 900,WCDMA FDD Band 1,WCDMA FDD Band 2,WCDMA FDD Band 4,WCDMA FDD Band 5,WCDMA FDD Band 8,WCDMA TDD Band A","operatingsys":"Android","nfc":"Yes","bluetooth":"Yes","WLAN":"Yes","devicetype":"Smartphone"}',
+    analytics_session_id: 123,
+    seconds_since_analytics_session_started: '2022-09-15T13:06+03:00',
   },
 ]
 

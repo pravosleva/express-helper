@@ -87,7 +87,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
                     // style={{ marginRight: '.5rem' }}
                     size='xs'
                     aria-label="-EDIT"
-                    colorScheme='green'
+                    colorScheme='gray'
                     variant='outline'
                     isRound
                     icon={<AiTwotoneEdit size={15} />}

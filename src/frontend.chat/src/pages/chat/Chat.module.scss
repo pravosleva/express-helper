@@ -206,29 +206,29 @@
 
         // -- STATUSES:
         .info {
-          /* background: #408EEA; */
-          background-image: linear-gradient(to right top, #00b1d9, #00a3d5, #0094d0, #1485c8, #2e75be);;
+          background: #408EEA;
+          // background-image: linear-gradient(to right top, #00b1d9, #00a3d5, #0094d0, #1485c8, #2e75be);;
           color: #FFF;
-          border: 2px solid #00b1d9;
+          // border: 2px solid #00b1d9;
         }
         .warning {
-          // background: #FFDE68;
-          background-image: linear-gradient(to right top, #ffde68, #f2d25c, #e4c550, #d7b944, #caad38);
+          background: #FFDE68;
+          // background-image: linear-gradient(to right top, #ffde68, #f2d25c, #e4c550, #d7b944, #caad38);
           // color: #000;
-          border-color: #FFDE68;
+          // border-color: #FFDE68;
         }
         .success {
-          // background: #31EAB7;
-          background-image: linear-gradient(to right top, #31eab7, #28daa8, #1ecb99, #11bb8b, #00ac7d);
+          background: #31EAB7;
+          // background-image: linear-gradient(to right top, #31eab7, #28daa8, #1ecb99, #11bb8b, #00ac7d);
           // color: #000;
-          border-color: #31eab7;
+          // border-color: #31eab7;
         }
         .danger {
-          // background: #FF9177;
+          background: #FF9177;
           // background: linear-gradient(180deg, #d63435 15%, #fd5951 90%);
-          background-image: linear-gradient(to right top, #ff9177, #f4876e, #e97e65, #de745d, #d36b54);
+          // background-image: linear-gradient(to right top, #ff9177, #f4876e, #e97e65, #de745d, #d36b54);
           // color: #FFF;
-          border-color: #FF9177;
+          // border-color: #FF9177;
         }
         .dead {
           background: var(--chakra-colors-gray-800);

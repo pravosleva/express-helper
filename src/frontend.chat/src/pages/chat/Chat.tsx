@@ -192,7 +192,7 @@ const statusMap: {
   [key: string]: any
 } = {
   [EMessageStatus.Done]: <FaCheckCircle size={15} />,
-  [EMessageStatus.Dead]: <GiDeathSkull size={15} /*color='#000'*/ />,
+  [EMessageStatus.Dead]: <GiDeathSkull size={14} /*color='#000'*/ />,
   [EMessageStatus.Warn]: <FiActivity size={15} /*color='#000'*/ />,
   // [EMessageStatus.Danger]: <RiErrorWarningFill size={17} /*color='#000'*/ />,
   // [EMessageStatus.Danger]: <FaFire size={14} />,
@@ -2471,6 +2471,8 @@ export const Chat = () => {
                                 toggleMenu(e)
                               }}
                               // order={isMyMessage ? 1 : 2}
+                              // className='truncate-overflow'
+                              style={{ wordBreak: 'break-all' }}
                             >
                               {text}
                               {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
@@ -2479,6 +2481,7 @@ export const Chat = () => {
                         ) : (
                           <Text display="inline-block" fontSize="md" className={clsx(!!status ? [styles[status]] : undefined)}
                             // p=".3rem .9rem"
+                            style={{ wordBreak: 'break-all' }}
                           >
                             {text}
                           </Text>
@@ -3064,7 +3067,7 @@ export const Chat = () => {
                                 <IconButton
                                   size='xs'
                                   aria-label="-EDIT"
-                                  colorScheme='green'
+                                  colorScheme='gray'
                                   variant='outline'
                                   isRound
                                   icon={<AiTwotoneEdit size={15} />}
@@ -3081,7 +3084,7 @@ export const Chat = () => {
                                 <IconButton
                                   size='xs'
                                   aria-label="-DEL"
-                                  colorScheme='yellow'
+                                  colorScheme='gray'
                                   variant='outline'
                                   isRound
                                   icon={<IoMdClose size={15} />}
