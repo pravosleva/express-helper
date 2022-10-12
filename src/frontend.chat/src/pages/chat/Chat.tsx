@@ -146,6 +146,7 @@ import '@asseinfo/react-kanban/dist/styles.css'
 import {
   // FaRegSmile,
   FaPlus,
+  FaCopy,
 } from 'react-icons/fa'
 // import { BsFillPlusCircleFill } from 'react-icons/bs'
 import { CountdownRenderer } from './components/NotifsList/components/CountdownRenderer'
@@ -184,7 +185,13 @@ const REACT_APP_PRAVOSLEVA_BOT_BASE_URL = process.env.REACT_APP_PRAVOSLEVA_BOT_B
 const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 const charsLimit = 2000
 
-const capitalizeFirstLetter = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1);
+const capitalizeFirstLetter = (str: string, limit?: number): string => {
+  const res = str.charAt(0).toUpperCase() + str.slice(1)
+
+  if (!!limit && res.length > limit) return `${res.substring(0, limit)}...`
+
+  return res
+}
 
 type TUser = { socketId: string; room: string; name: string }
 
@@ -2472,7 +2479,10 @@ export const Chat = () => {
                               }}
                               // order={isMyMessage ? 1 : 2}
                               // className='truncate-overflow'
-                              style={{ wordBreak: 'break-all' }}
+                              style={{
+                                // wordBreak: 'break-all',
+                                overflowWrap: 'break-word',
+                              }}
                             >
                               {text}
                               {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
@@ -2481,7 +2491,10 @@ export const Chat = () => {
                         ) : (
                           <Text display="inline-block" fontSize="md" className={clsx(!!status ? [styles[status]] : undefined)}
                             // p=".3rem .9rem"
-                            style={{ wordBreak: 'break-all' }}
+                            style={{
+                              // wordBreak: 'break-all',
+                              overflowWrap: 'break-word',
+                            }}
                           >
                             {text}
                           </Text>
@@ -2514,12 +2527,34 @@ export const Chat = () => {
                             key={`${link}-${i}`}
                             colorScheme='gray'
                           >
+                            <CopyToClipboard
+                              text={link}
+                              onCopy={() => {
+                                toast({
+                                  position: 'top-left',
+                                  title: 'Link copied',
+                                  description: link,
+                                  status: 'success',
+                                  duration: 5000,
+                                  // isClosable: true,
+                                })
+                              }}
+                              >
+                              <IconButton
+                                borderRadius='full'
+                                aria-label='Copy link'
+                                icon={<FaCopy color='inherit' size={14} />}
+                                title={link}
+                              />
+                            </CopyToClipboard>
                             <Button
                               mr='-px'
+                              ml='-px'
                               onClick={() => goToExternalLink(link)}
                               borderRadius='full'
+                              title={descr}
                             >
-                              {capitalizeFirstLetter(descr)}
+                              {capitalizeFirstLetter(descr, 30)}
                             </Button>
                             {isMyMessage && (
                               <IconButton
