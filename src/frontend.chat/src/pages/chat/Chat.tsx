@@ -156,6 +156,8 @@ import { scrollIntoView } from '~/utils/scrollTo'
 import { CgArrowsVAlt } from 'react-icons/cg'
 import useDynamicRefs from 'use-dynamic-refs'
 // import { useLocalStorageState as useLocalStorageState2 } from '~/common/hooks/useStorage'
+import { EditInModal } from './components/EditInModal'
+import { AddToSprintIconButton } from './components/IconButton'
 
 const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
@@ -1006,7 +1008,7 @@ export const Chat = () => {
     return Math.round(completed * 100 / all)
   }, [useCompare([tasklist]), completedTasksLen])
 
-  const [inViewRef, inView, _entry] = useInView({
+  const [_inViewRef, inView, _entry] = useInView({
     /* Optional options */
     threshold: 0,
   })
@@ -1265,7 +1267,7 @@ export const Chat = () => {
   }, [useCompare([roomlistLS, tsMap])])
 
   const onUserAssign = useCallback((name: string) => {
-    if (!!editedMessage?.assignedTo && Array.isArray(editedMessage.assignedTo) && editedMessage.assignedTo.length > 0) {
+    if (!!editedMessageRef.current?.assignedTo && Array.isArray(editedMessageRef.current.assignedTo) && editedMessageRef.current.assignedTo.length > 0) {
       toast({
         position: 'top-left',
         title: 'Sorry',
@@ -1277,7 +1279,7 @@ export const Chat = () => {
       })
       return
     }
-    if (!!editedMessage) {
+    if (!!editedMessageRef.current) {
       handleSaveEditedMessage({ assignedTo: [name] }, () => {
         handleSearchUserModalClose()
         toast({
@@ -1291,7 +1293,8 @@ export const Chat = () => {
         })
       })
     }
-  }, [editedMessage, toast, handleSearchUserModalClose, handleSaveEditedMessage])
+  }, [toast, handleSearchUserModalClose, handleSaveEditedMessage])
+  // editedMessage
 
   const handleUnassignFromUser = useCallback((message: TMessage, unassignFromUserName: string) => {
     if (!!socket) {
@@ -1404,10 +1407,12 @@ export const Chat = () => {
     setIsDatepickerOpened(false)
   }, [setIsDatepickerOpened])
   const onUpdateTargetDate = useCallback((tsTarget: number) => {
-    const ts = editedMessage.ts
-    const text = editedMessage.text
-    handleAddCommonNotif({ ts, tsTarget, text, original: editedMessage })
-  }, [handleAddCommonNotif, editedMessage])
+    if (!!editedMessageRef.current) {
+      const ts = editedMessageRef.current.ts
+      const text = editedMessageRef.current.text
+      handleAddCommonNotif({ ts, tsTarget, text, original: editedMessageRef.current })
+    }
+  }, [handleAddCommonNotif]) // , useCompare([editedMessage])
 
   // -- SPRINT
   const [sprintSettingsLS, setSprintSettingsLS] = useLocalStorage<{ [key: string]: { isEnabled: boolean } }>('chat.sprint-feature.custom-settings', {})
@@ -1906,96 +1911,14 @@ export const Chat = () => {
         </CtxMenuItem>
       </ContextMenu>
 
-      <Modal
-        size={upToMd ? 'md' : 'full'}
-        initialFocusRef={initialRef}
-        finalFocusRef={textFieldRef}
-        isOpen={isEditModalOpen}
-        onClose={handleEditModalClose}
-      >
-        <ModalOverlay />
-        <ModalContent
-          // rounded='2xl'
-        >
-          <ModalHeader>
-            Edit
-          </ModalHeader>
-          <ModalCloseButton rounded='3xl' />
-          <ModalBody
-            p={0}
-          >
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              {!!debouncedEditedMessageText && (
-                <div style={{
-                  // padding: '5px 0 5px 0',
-                  position: 'sticky',
-                  top: 0,
-                  zIndex: 1,
-                }}>
-                  <pre style={{
-                    fontSize: '0.8em',
-                    border: '1px solid inherit',
-                    padding: '5px',
-                    marginBottom: '10px',
-                    backgroundColor: 'gray',
-                    color: '#FFF',
-                    borderRadius: 0,
-                    maxHeight: '200px',
-                    whiteSpace: 'pre-wrap',
-                    wordWrap: 'break-word',
-                    overflowY: 'auto',
-                  }}>{debouncedEditedMessageText}</pre>
-                </div>
-              )}
-
-              <div
-                style={{
-                  padding: upToMd ? '0 var(--chakra-space-6)' : '0 var(--chakra-space-6) 0 var(--chakra-space-20)'
-                }}
-              >
-                <FormControl>
-                  {/* <FormLabel>Text</FormLabel> */}
-                  <Textarea
-                    style={{
-                      backgroundColor: mode.colorMode === 'dark' ? 'var(--chakra-colors-blackAlpha-600)' : 'var(--chakra-colors-blackAlpha-600)',
-                      color: mode.colorMode === 'dark' ? 'inherit' : '#FFF'
-                    }}
-                    isInvalid={!editedMessage?.text}
-                    resize="vertical"
-                    placeholder="Message"
-                    ref={initialRef}
-                    // onKeyDown={handleKeyDownEditedMessage}
-                    // value={editedMessage?.text}
-                    defaultValue={editedMessage?.text}
-                    onChange={handleChangeEditedMessage}
-                    fontSize='lg'
-                    rows={10}
-                  />
-                </FormControl>
-              </div>
-            </div>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button
-              colorScheme="blue"
-              mr={3}
-              // @ts-ignore
-              onClick={handleSaveEditedMessage}
-              size='sm'
-              rounded='2xl'
-            >
-              Save
-            </Button>
-            <Button size='sm' rounded='2xl' onClick={handleEditModalClose}>Cancel</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      <EditInModal
+        isEditModalOpen={isEditModalOpen}
+        handleEditModalClose={handleEditModalClose}
+        editedMessage={editedMessage}
+        handleChangeEditedMessage={handleChangeEditedMessage}
+        debouncedEditedMessageText={debouncedEditedMessageText}
+        handleSaveEditedMessage={handleSaveEditedMessage}
+      />
 
       <div className={styles['main-wrapper']}>
         {
@@ -3182,20 +3105,10 @@ export const Chat = () => {
                               card.status !== EMessageStatus.Done && card.status !== EMessageStatus.Dead
                               ? (
                                 <span style={{ marginLeft: 'auto', marginTop: 'var(--chakra-space-2)' }}>
-                                  <Tooltip label='Добавить в спринт' aria-label='ADD_TO_SPRINT'>
-                                    <IconButton
-                                      size='xs'
-                                      aria-label="-ADD_TO_SPRINT"
-                                      colorScheme='gray'
-                                      variant='ghost'
-                                      isRound
-                                      icon={<BsFillCalendarFill size={17} />}
-                                      onClick={handleAddToSprintKanbanCard(card)}
-                                      isDisabled={card.user !== name}
-                                    >
-                                      ADD_TO_SPRINT
-                                    </IconButton>
-                                  </Tooltip>
+                                  <AddToSprintIconButton
+                                    handleAddToSprintKanbanCard={handleAddToSprintKanbanCard}
+                                    card={card}
+                                  />
                                 </span>
                               ) : null
                             ) : null

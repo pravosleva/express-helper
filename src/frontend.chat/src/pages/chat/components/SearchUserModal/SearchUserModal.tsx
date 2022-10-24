@@ -45,6 +45,9 @@ export const SearchUserModal = ({
   selectItemButtonText,
   isDisabledItem,
 }: TProps) => {
+  useEffect(() => {
+    console.log('onSelectItem updated')
+  }, [onSelectItem])
   const { socket } = useSocketContext()
   const { formData, handleInputChange, resetForm } = useForm({
     userName: '',

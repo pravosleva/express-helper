@@ -8,9 +8,9 @@ import {
   ModalBody,
   ModalCloseButton,
   ModalFooter,
-  NumberInput,
-  NumberInputField,
-  Input,
+  // NumberInput,
+  // NumberInputField,
+  // Input,
 } from '@chakra-ui/react'
 // import { IoMdClose } from 'react-icons/io'
 
