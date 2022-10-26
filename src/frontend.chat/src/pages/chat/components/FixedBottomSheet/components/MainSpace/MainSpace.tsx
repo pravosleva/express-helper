@@ -1,19 +1,40 @@
-import { memo, useLayoutEffect, useRef, useState, useEffect } from 'react'
-import { Button, CircularProgress, CircularProgressLabel, Flex, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text, Tooltip } from '@chakra-ui/react'
+import { memo, useLayoutEffect, useRef, useState, useEffect, useCallback } from 'react'
+import { Button, CircularProgress, CircularProgressLabel, Divider, Flex, HStack, IconButton, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, StackDivider, Text, Tooltip, useToast, VStack } from '@chakra-ui/react'
 import { useMemo } from 'react'
 import styles from './MainSpace.module.scss'
 import { webWorkersInstance } from '~/utils'
 import { EMessageStatus, TMessage } from '~/utils/interfaces'
 import { TSetting } from '~/pages/chat/components/AccordionSettings'
+import { PopoverInfoButton } from './components'
 
 type TCounters = {
   total: number,
   totalCards: number,
-  doneLastWeek: number,
-  doneLastMonth: number,
-  doneLast3Months: number,
+  doneDetails:{
+    lastWeek: {
+      counter: number,
+      items: TMessage[],
+    }
+    lastMonth: {
+      counter: number,
+      items: TMessage[],
+    },
+    last3Months: {
+      counter: number,
+      items: TMessage[],
+    },
+  },
   danger: number,
+  dangerDetails: {
+    items: TMessage[],
+  },
+  successDetails: {
+    items: TMessage[],
+  },
   success: number,
+  infoDetails: {
+    items: TMessage[],
+  },
   users: {
     jobless: number,
     statusCountersMap: {
@@ -38,7 +59,9 @@ type TProps = {
   filteredMessages: TMessage[],
   filteredKanbanStatuses: EMessageStatus[],
   room: string,
-  isFiltersActive: boolean
+  isFiltersActive: boolean,
+  onCheckItOut: (ts: number) => void
+  onCancelBlink: (ts: number) => void
 }
 
 const MainSpaceMemoized = ({
@@ -49,17 +72,39 @@ const MainSpaceMemoized = ({
   filteredKanbanStatuses,
   room,
   isFiltersActive,
+  onCheckItOut,
+  onCancelBlink,
 }: TProps) => {
   const timers = useRef<{ [key: string]: NodeJS.Timeout }>({})
 
   const [counters, setCounters] = useState<TCounters>({
     total: 0,
     totalCards: 0,
-    doneLastWeek: 0,
-    doneLastMonth: 0,
-    doneLast3Months: 0,
+    doneDetails:{
+      lastWeek: {
+        counter: 0,
+        items: [],
+      },
+      lastMonth: {
+        counter: 0,
+        items: [],
+      },
+      last3Months: {
+        counter: 0,
+        items: [],
+      },
+    },
     danger: 0,
+    dangerDetails: {
+      items: [],
+    },
+    successDetails: {
+      items: [],
+    },
     success: 0,
+    infoDetails: {
+      items: [],
+    },
     users: {
       jobless: 0,
       statusCountersMap: {},
@@ -134,6 +179,18 @@ const MainSpaceMemoized = ({
   }, [_effCounter, _setEffCounter, isFiltersInactive])
   // -
 
+  // const handleClickDoneLastWeek = useCallback(() => {
+  //   console.log(counters.doneDetails.lastWeek.items)
+    
+  // }, [counters?.doneDetails?.lastWeek?.items])
+
+  const handleClickToCheckItOut = useCallback((ts: number) => () => {
+    onCheckItOut(ts)
+  }, [onCheckItOut])
+  const handleMouseLeave = useCallback((ts: number) => () => {
+    onCancelBlink(ts)
+  }, [onCancelBlink])
+
   return (
     <div className={styles['main-space']}>
       <Flex
@@ -143,7 +200,7 @@ const MainSpaceMemoized = ({
         height='100%'
       >
         <Text fontStyle='italic' fontWeight='bold'>Kanban</Text>
-        {!!dateDescr && <Text fontStyle='italic' fontWeight='bold'>Подгружено с {dateDescr}</Text>}
+        {!!dateDescr && <Text fontStyle='italic' fontWeight='bold'>Подгружено {messagesTotalCounter} (с {dateDescr})</Text>}
       </Flex>
       {
         isFiltersInactive && (
@@ -153,15 +210,13 @@ const MainSpaceMemoized = ({
               alignItems: 'center',
             }}
           >
-            <Popover>
-              <PopoverTrigger>
+            <PopoverInfoButton
+              headerRenderer={() => <b>Свободные пользователи</b>}
+              triggerRenderer={() => (
                 <Button>Jobless users {counters.users?.jobless}</Button>
-              </PopoverTrigger>
-              <PopoverContent>
-                <PopoverArrow />
-                <PopoverCloseButton />
-                <PopoverHeader>Свободные пользователи</PopoverHeader>
-                <PopoverBody>
+              )}
+              bodyRenderer={() => (
+                <>
                   <b>Jobless</b> - Имеются ввиду юзеры для которых выполнены условия:
                   <ul style={{ paddingLeft: 'var(--chakra-space-4)' }}>
                     <li>добавлен в список отслеживаемых <code>assignmentFeature</code> (сейчас {aUsersCounter} в списке)</li>
@@ -180,9 +235,9 @@ const MainSpaceMemoized = ({
                       overflowY: 'auto',
                     }}>{JSON.stringify(counters.users?.joblessStatusMap, null, 2)}</pre>
                   )}
-                </PopoverBody>
-              </PopoverContent>
-            </Popover>
+                </>
+              )}
+            />
           </div>
         )
       }
@@ -192,10 +247,207 @@ const MainSpaceMemoized = ({
           justifyContent='center'
           alignItems='flex-start'
           height='100%'
+          pr={1}
         >
-          <Text>Total cards: {counters.totalCards}</Text>
-          <Text>Kanban displayed: {counters.total}</Text>
-          <Text>Msgs loaded: {messagesTotalCounter}</Text>
+          <Flex
+            justifyContent='space-between'
+            style={{
+              width: '100%',
+            }}
+            alignItems='center'
+          >
+            <span>🔥 In work</span>
+            <PopoverInfoButton
+              headerRenderer={() => <b>In status Danger total ({counters.dangerDetails.items.length})</b>}
+              triggerRenderer={() => (
+                <IconButton
+                  size='xs'
+                  ml={1}
+                  aria-label="DANGER-DETAILS"
+                  colorScheme='red'
+                  variant='outline'
+                  isRound
+                  icon={<span>{counters.dangerDetails.items.length}</span>}
+                  // onClick={handleClickDoneLastWeek}
+                  isDisabled={counters.dangerDetails.items.length === 0}
+                >
+                  DANGER-DETAILS
+                </IconButton>
+              )}
+              bodyRenderer={() => (
+                <>
+                  <VStack
+                    divider={<StackDivider />}
+                    alignItems='flex-start'
+                    style={{
+                      maxHeight: '300px',
+                      overflowY: 'auto',
+                    }}
+                  >
+                    {
+                      counters.dangerDetails.items.map((e, i, a) => (
+                        <Flex
+                          direction='row'
+                          justifyContent='space-between'
+                          key={e.ts}
+                          spacing={2}
+                          style={{ width: '100%', cursor: 'crosshair' }}
+                        >
+                          <div
+                            style={{
+                              whiteSpace: 'pre-wrap',
+                              wordWrap: 'break-word',
+                              // border: '1px solid red',
+                              width: '100%',
+                            }}
+                            onMouseEnter={handleClickToCheckItOut(e.ts)}
+                            onMouseLeave={handleMouseLeave(e.ts)}
+                          >{e.text}</div>
+                          {/* <IconButton
+                            size='xs'
+                            ml={1}
+                            aria-label="CHECK_IT_OUT"
+                            colorScheme='gray'
+                            variant='outline'
+                            isRound
+                            icon={<CgArrowsVAlt size={15} />}
+                            onClick={handleClickToCheckItOut(e.ts)}
+                          >
+                            CHECK_IT_OUT
+                          </IconButton> */}
+                        </Flex>
+                      ))
+                    }
+                  </VStack>
+                </>
+              )}
+            />
+          </Flex>
+          {/* <Text>Kanban displayed: {counters.total}</Text> */}
+          <Flex
+            justifyContent='space-between'
+            style={{
+              width: '100%',
+            }}
+            alignItems='center'
+          >
+            <span>✅ On testing</span>
+            <PopoverInfoButton
+              headerRenderer={() => <b>In status Success total ({counters.successDetails.items.length})</b>}
+              triggerRenderer={() => (
+                <IconButton
+                  size='xs'
+                  ml={1}
+                  aria-label="SUCCESS-DETAILS"
+                  colorScheme='green'
+                  variant='outline'
+                  isRound
+                  icon={<span>{counters.successDetails.items.length}</span>}
+                  // onClick={handleClickDoneLastWeek}
+                  isDisabled={counters.successDetails.items.length === 0}
+                >
+                  SUCCESS-DETAILS
+                </IconButton>
+              )}
+              bodyRenderer={() => (
+                <>
+                  <VStack
+                    divider={<StackDivider />}
+                    alignItems='flex-start'
+                    style={{
+                      maxHeight: '300px',
+                      overflowY: 'auto',
+                    }}
+                  >
+                    {
+                      counters.successDetails.items.map((e, i, a) => (
+                        <Flex
+                          direction='row'
+                          justifyContent='space-between'
+                          key={e.ts}
+                          spacing={2}
+                          style={{ width: '100%', cursor: 'crosshair' }}
+                        >
+                          <div
+                            style={{
+                              whiteSpace: 'pre-wrap',
+                              wordWrap: 'break-word',
+                              // border: '1px solid red',
+                              width: '100%',
+                            }}
+                            onMouseEnter={handleClickToCheckItOut(e.ts)}
+                            onMouseLeave={handleMouseLeave(e.ts)}
+                          >{e.text}</div>
+                        </Flex>
+                      ))
+                    }
+                  </VStack>
+                </>
+              )}
+            />
+          </Flex>
+          <Flex
+            justifyContent='space-between'
+            style={{
+              width: '100%',
+            }}
+            alignItems='center'
+          >
+            <span>ℹ️ Info</span>
+            <PopoverInfoButton
+              headerRenderer={() => <b>In status Info total ({counters.infoDetails.items.length})</b>}
+              triggerRenderer={() => (
+                <IconButton
+                  size='xs'
+                  ml={1}
+                  aria-label="INFO-DETAILS"
+                  colorScheme='blue'
+                  variant='outline'
+                  isRound
+                  icon={<span>{counters.infoDetails.items.length}</span>}
+                  // onClick={handleClickDoneLastWeek}
+                  isDisabled={counters.infoDetails.items.length === 0}
+                >
+                  INFO-DETAILS
+                </IconButton>
+              )}
+              bodyRenderer={() => (
+                <>
+                  <VStack
+                    divider={<StackDivider />}
+                    alignItems='flex-start'
+                    style={{
+                      maxHeight: '300px',
+                      overflowY: 'auto',
+                    }}
+                  >
+                    {
+                      counters.infoDetails.items.map((e, i, a) => (
+                        <Flex
+                          direction='row'
+                          justifyContent='space-between'
+                          key={e.ts}
+                          spacing={2}
+                          style={{ width: '100%', cursor: 'crosshair' }}
+                        >
+                          <div
+                            style={{
+                              whiteSpace: 'pre-wrap',
+                              wordWrap: 'break-word',
+                              // border: '1px solid red',
+                              width: '100%',
+                            }}
+                            onMouseEnter={handleClickToCheckItOut(e.ts)}
+                            onMouseLeave={handleMouseLeave(e.ts)}
+                          >{e.text}</div>
+                        </Flex>
+                      ))
+                    }
+                  </VStack>
+                </>
+              )}
+            />
+          </Flex>
         </Flex>
         <Tooltip label='Отображено задач, имеющих статус' aria-label='DISPLAYED' hasArrow>
           <div className={styles['diagram']}>
@@ -209,12 +461,127 @@ const MainSpaceMemoized = ({
           justifyContent='center'
           alignItems='flex-start'
           height='100%'
+          pr={1}
         >
-          <Text>Done last week: {counters.doneLastWeek}</Text>
-          <Text>Done last month: {counters.doneLastMonth}</Text>
-          <Text>Done last 3 mth: {counters.doneLast3Months}</Text>
+          <Flex
+            justifyContent='space-between'
+            style={{
+              width: '100%',
+            }}
+            alignItems='center'
+          >
+            <span>☑️ Last week</span>
+            <PopoverInfoButton
+              popoverPlacement='bottom-start'
+              headerRenderer={() => <b>Done last week ({counters.doneDetails.lastWeek.counter})</b>}
+              triggerRenderer={() => (
+                <IconButton
+                  size='xs'
+                  ml={1}
+                  aria-label="DONE-LAST-WEEK-DETAILS"
+                  colorScheme='gray'
+                  variant='outline'
+                  isRound
+                  icon={<span>{counters.doneDetails.lastWeek.counter}</span>}
+                  // onClick={handleClickDoneLastWeek}
+                  isDisabled={counters.doneDetails.lastWeek.items.length === 0}
+                >
+                  DONE-LAST-WEEK-DETAILS
+                </IconButton>
+              )}
+              bodyRenderer={() => (
+                <>
+                  <VStack
+                    divider={<StackDivider />}
+                    alignItems='flex-start'
+                    style={{
+                      maxHeight: '300px',
+                      overflowY: 'auto',
+                    }}
+                  >
+                    {
+                      counters.doneDetails.lastWeek.items.map((e, i, a) => (
+                        <Flex
+                          direction='row'
+                          justifyContent='space-between'
+                          key={e.ts}
+                          spacing={2}
+                          style={{ width: '100%', cursor: 'crosshair' }}
+                        >
+                          <div
+                            style={{
+                              whiteSpace: 'pre-wrap',
+                              wordWrap: 'break-word',
+                              // border: '1px solid red',
+                              width: '100%',
+                            }}
+                            onMouseEnter={handleClickToCheckItOut(e.ts)}
+                            onMouseLeave={handleMouseLeave(e.ts)}
+                          >{e.text}</div>
+                          {/* <IconButton
+                            size='xs'
+                            ml={1}
+                            aria-label="CHECK_IT_OUT"
+                            colorScheme='gray'
+                            variant='outline'
+                            isRound
+                            icon={<CgArrowsVAlt size={15} />}
+                            onClick={handleClickToCheckItOut(e.ts)}
+                          >
+                            CHECK_IT_OUT
+                          </IconButton> */}
+                        </Flex>
+                      ))
+                    }
+                  </VStack>
+                </>
+              )}
+            />
+          </Flex>
+          <Flex
+            justifyContent='space-between'
+            style={{
+              width: '100%',
+            }}
+          >
+            <span>☑️ Last m.</span>
+            <IconButton
+              size='xs'
+              ml={1}
+              aria-label="DONE-LAST-MONTH-DETAILS"
+              colorScheme='gray'
+              variant='outline'
+              isRound
+              icon={<span>{counters.doneDetails.lastMonth.counter}</span>}
+              onClick={() => console.log(counters.doneDetails.lastMonth.items)}
+              isDisabled
+            >
+              DONE-LAST-MONTH-DETAILS
+            </IconButton>
+          </Flex>
+          <Flex
+            justifyContent='space-between'
+            style={{
+              width: '100%',
+            }}
+          >
+            <span>☑️ Last 3 m.</span>
+            <IconButton
+              size='xs'
+              ml={1}
+              aria-label="DONE-LAST-3MONTHS-DETAILS"
+              colorScheme='gray'
+              variant='outline'
+              isRound
+              icon={<span>{counters.doneDetails.last3Months.counter}</span>}
+              onClick={() => console.log(counters.doneDetails.last3Months.items)}
+              isDisabled
+            >
+              DONE-LAST-3MONTHS-DETAILS
+            </IconButton>
+          </Flex>
         </Flex>
-        <Tooltip label='На тестировании из того что в работе' aria-label='ON_TEST' hasArrow>
+        <Tooltip label='На тестировании из того что в работе 🔥 & ✅' aria-label='ON_TEST' hasArrow>
           <div className={styles['diagram']}>
             <CircularProgress value={inProgressPercentage} color='green.400'>
               <CircularProgressLabel>{inProgressPercentage}%</CircularProgressLabel>

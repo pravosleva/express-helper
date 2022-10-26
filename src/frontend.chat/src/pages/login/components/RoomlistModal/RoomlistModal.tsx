@@ -77,7 +77,7 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
 
   return (
     <Modal
-      size="xs"
+      size="sm"
       isOpen={isOpened}
       onClose={onClose}
       scrollBehavior='inside'
@@ -123,7 +123,12 @@ export const RoomlistModal = ({ isOpened, onClose, roomlist, onDelete, onSelectR
                 displayedRoomsKeys.map((key: string) => (
                   <Fragment key={key}>
                     <Heading fontFamily='Russo One' as="h2" size="md" isTruncated>&#8212; {key.toUpperCase()}</Heading>
-                    <Table variant="simple" size='sm' mb={2}>
+                    <Table
+                      variant="simple"
+                      size='sm'
+                      mb={2}
+                      // style={{ width: '100%', maxWidth: '100%' }}
+                    >
                       <Tbody>
                         {displayedObj[key].map((roomName: string) => {
                           const handleDel = () => {

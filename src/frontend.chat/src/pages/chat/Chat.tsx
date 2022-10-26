@@ -89,6 +89,7 @@ import { useForm } from '~/common/hooks/useForm'
 // import { SearchInModal } from './components/SearchInModal'
 import { IoMdClose } from 'react-icons/io'
 import { AiFillTags, AiTwotoneEdit } from 'react-icons/ai'
+import { MdEdit } from 'react-icons/md'
 import { useLocalStorage } from 'react-use'
 import { UploadInput } from './components/UploadInput'
 // import 'react-medium-image-zoom/dist/styles.css'
@@ -273,38 +274,70 @@ const getInitialStatusGroups = (statuses: EMessageStatus[]): TKanbanState =>
     return acc
   }, { columns: [] })
 
-const addBlink = (ts: number) => {
-  try {
-    const card = document.getElementById(`card-${ts}`)
-    card?.classList.add('blink_me')
-  } catch (_err) {}
-}
 const removeBlink = (ts: number) => {
   try {
     const card = document.getElementById(`card-${ts}`)
     card?.classList.remove('blink_me')
   } catch (_err) {}
 }
+const addBlink = (ts: number) => {
+  try {
+    const card = document.getElementById(`card-${ts}`)
+    card?.classList.add('blink_me')
+  } catch (_err) {}
+}
 
-type TCounters = {
-  total: number,
-  totalCards: number,
-  doneLastWeek: number,
-  doneLastMonth: number,
-  doneLast3Months: number,
-  danger: number,
-  success: number,
-  users: {
-    jobless: number,
-    statusCountersMap: {
-      [key: string]: number
-    },
-    statusMap: {
-      [key: string]: {
-        [key: string]: number
-      }
-    },
-  },
+type TTimer = { card?: ReturnType<typeof setTimeout> | null, msg: ReturnType<typeof setTimeout> | null }
+const timersMap = new Map<number, TTimer>()
+const clearTimerIfNecessary = (ts: number) => {
+  const existsTimer = timersMap.get(ts)
+  if (!!existsTimer) {
+    if (!!existsTimer.card) clearTimeout(existsTimer.card)
+    if (!!existsTimer.msg) clearTimeout(existsTimer.msg)
+  }
+}
+const addBlinkWithTimer = (ts: number, ms: number, colorMode: 'light' | 'dark', doBlinkCard: boolean) => {
+  try {
+    clearTimerIfNecessary(ts)
+    const timer: TTimer = {
+      card: null,
+      msg: null
+    }
+    if (doBlinkCard) {
+      // removeBlink(ts)
+      addBlink(ts)
+      timer.card = setTimeout(() => { removeBlink(ts) }, ms)
+    }
+    const msg = document.getElementById(String(ts))
+    if (!!msg) {
+      const oldColor = 'inherit'
+      msg.style.color = colorMode === 'dark' ? 'var(--chakra-colors-red-200)' : 'var(--chakra-colors-red-600)'
+      msg.classList.add('blink_me_translated')
+      timer.msg = setTimeout(() => {
+        // @ts-ignore
+        msg.style.color = oldColor
+        msg.classList.remove('blink_me_translated')
+      }, ms)
+    } else {
+      console.log(`msg ${ts} not found`)
+    }
+    timersMap.set(ts, timer)
+  } catch (err) {
+    console.log(err)
+  }
+}
+const removeBlinkWithTimer = (ts: number) => {
+  try {
+    clearTimerIfNecessary(ts)
+    removeBlink(ts)
+    const msg = document.getElementById(String(ts))
+    if (!!msg) {
+      msg.style.color = 'inherit'
+      msg.classList.remove('blink_me_translated')
+    }
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 export const Chat = () => {
@@ -1197,21 +1230,21 @@ export const Chat = () => {
               // @ts-ignore
               setFilteredMessages($event.data.result)
               workerEventLog(eventDataType)
-            }, 50)
+            }, 0)
             break;
           case 'getTags':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setTags(getNormalizedWordsArr($event.data.result))
               workerEventLog(eventDataType)
-            }, 50)
+            }, 0)
             break;
           case 'getAllImagesLightboxFormat':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setAllImagesMessagesLightboxFormat($event.data.result)
               workerEventLog(eventDataType)
-            }, 50)
+            }, 0)
             break;
           case 'getStatusKanban':
             timers.current[$event.data.type] = setTimeout(() => {
@@ -1336,12 +1369,6 @@ export const Chat = () => {
     setAFLSRoom(e.target.checked ? 1 : 0)
   }, [setAFLSRoom])
   // --
-
-  const resetSearchAndFiltersAndAssignmentFilters = useCallback(() => {
-    resetFilters()
-    resetForm()
-    handleResetAssignmentFilters()
-  }, [resetFilters, resetForm, handleResetAssignmentFilters])
 
   // const [isEmojiOpened, setIsEmojiOpened] = useState<boolean>(false)
   // const handleOpenEmoji = useCallback(() => { setIsEmojiOpened(true) }, [setIsEmojiOpened])
@@ -1793,16 +1820,25 @@ export const Chat = () => {
     }
   }, [filteredMessages, getRef])
 
+  const handleClearFixedSearch = useCallback(() => {
+    resetForm()
+    handleDisableSearch()
+  }, [resetForm, handleDisableSearch])
+
+  const resetSearchAndFiltersAndAssignmentFilters = useCallback(() => {
+    resetFilters()
+    resetForm()
+    handleResetAssignmentFilters()
+    handleDisableSearch()
+  }, [resetFilters, resetForm, handleResetAssignmentFilters, handleDisableSearch])
+
   return (
     <>
       <FixedSearch
         searchText={formData.searchText}
         name='searchText'
         onChange={handleInputChange}
-        onClear={() => {
-          resetForm()
-          handleDisableSearch()
-        }}
+        onClear={handleClearFixedSearch}
         isOpened={isSearchModeEnabled}
         onClose={handleDisableSearch}
       />
@@ -2860,6 +2896,27 @@ export const Chat = () => {
                 filteredKanbanStatuses={filteredKanbanStatuses}
                 room={room}
                 isFiltersActive={filters.length > 0 || assignmentExecutorsFilters.length > 0}
+                onCheckItOut={(ts) => {
+                  console.log(ts)
+                  scrollIntoView(
+                    ts,
+                    {
+                      fail: (ts) => {
+                        toast({
+                          position: 'bottom',
+                          title: `Сообщения ${ts} нет в отфильтрованных`,
+                          description: 'Либо сделать догрузку списка, либо сбросить фильтры',
+                          status: 'warning',
+                          duration: 5000,
+                        })
+                      },
+                      success: (ts) => {
+                        addBlinkWithTimer(ts, 4000, mode.colorMode, true)
+                      },
+                    }
+                  )
+                }}
+                onCancelBlink={removeBlinkWithTimer}
               />
             )}
           >
@@ -3004,12 +3061,7 @@ export const Chat = () => {
                                     })
                                   },
                                   success: (ts) => {
-                                    toast({
-                                      position: 'bottom',
-                                      title: `Msg ${ts} In viewport`,
-                                      status: 'success',
-                                      duration: 3000,
-                                    })
+                                    addBlinkWithTimer(ts, 4000, mode.colorMode, false)
                                   },
                                 }
                               )
@@ -3028,7 +3080,7 @@ export const Chat = () => {
                                   colorScheme='gray'
                                   variant='outline'
                                   isRound
-                                  icon={<AiTwotoneEdit size={15} />}
+                                  icon={<MdEdit size={15} />}
                                   onClick={() => {
                                     const { id, title, description, ...rest } = card
                                     setEditedMessage(rest)
@@ -3085,21 +3137,23 @@ export const Chat = () => {
                                   date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
                                   renderer={CountdownRenderer}
                                 />
-                                <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
-                                  <IconButton
-                                    ml={2}
-                                    size='xs'
-                                    aria-label="-REMOVE_FROM_SPRINT"
-                                    colorScheme='red'
-                                    variant='outline'
-                                    isRound
-                                    icon={<IoMdClose size={15} />}
-                                    onClick={handleRemoveFromSprintKanbanCard(card)}
-                                    isDisabled={card.user !== name}
-                                  >
-                                    REMOVE_FROM_SPRINT
-                                  </IconButton>
-                                </Tooltip>
+                                {card.user === name && (
+                                  <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
+                                    <IconButton
+                                      ml={2}
+                                      size='xs'
+                                      aria-label="-REMOVE_FROM_SPRINT"
+                                      colorScheme='red'
+                                      variant='outline'
+                                      isRound
+                                      icon={<IoMdClose size={15} />}
+                                      onClick={handleRemoveFromSprintKanbanCard(card)}
+                                      // isDisabled={card.user !== name}
+                                    >
+                                      REMOVE_FROM_SPRINT
+                                    </IconButton>
+                                  </Tooltip>
+                                )}
                               </div>
                             ) : (
                               card.status !== EMessageStatus.Done && card.status !== EMessageStatus.Dead

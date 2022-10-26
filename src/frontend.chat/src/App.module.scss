@@ -23,7 +23,11 @@
 .truncate-overflow-single-line {
     --max-lines: 1;
     max-height: 27px;
+    width: 100%;
+    margin: 0 0 20px 0;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .centered-box,

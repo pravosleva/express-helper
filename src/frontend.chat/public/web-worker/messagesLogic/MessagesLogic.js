@@ -32,6 +32,10 @@ class Logic {
     this.traceableUsers = traceableUsers || []
   }
 
+  get possibleStatuses() {
+    return ['info', 'warning', 'danger', 'success', 'done', 'dead']
+  }
+
   getFiltered({
     filters,
     searchText,
@@ -223,22 +227,52 @@ class Logic {
     }, [])
     return [...new Set(res)].sort(abSort)
   }
+  _getItems({ statuses = this.possibleStatuses }) {
+    const res = []
+    for(const message of this.messages) {
+      if (!!message.status && statuses.includes(message.status)) res.push(message)
+    }
+    return res
+  }
   getCounters(statuses) {
+    const lastWeekItems = this._getLastWeekItems()
+    const lastMonthItems = this._getLastMonthItems()
+    const last3MonthsItems = this._getLast3MonthsItems()
     return {
       total: this.getMessagesHasStatusCounter(statuses),
       totalCards: this.tasksTotalCounter,
-      doneLastWeek: this.doneLastWeek,
-      doneLastMonth: this.doneLastMonth,
-      doneLast3Months: this.doneLast3Months,
+      doneDetails: {
+        lastWeek: {
+          counter: this.doneLastWeek,
+          items: lastWeekItems.done?.reverse() || [],
+        },
+        lastMonth: {
+          counter: this.doneLastMonth,
+          items: lastMonthItems.done?.reverse() || [],
+        },
+        last3Months: {
+          counter: this.doneLast3Months,
+          items: last3MonthsItems.done?.reverse() || [],
+        }
+      },
       danger: this.dangerCounter,
+      dangerDetails: {
+        items: this.dangerItems.sort(dynamicSort('editTs')).reverse()
+      },
+      successDetails: {
+        items: this.successItems.sort(dynamicSort('editTs')).reverse()
+      },
       success: this.successCounter,
+      infoDetails: {
+        items: this.infoItems.sort(dynamicSort('editTs')).reverse()
+      },
       users: {
         jobless: this.usersJoblessCounter,
         statusCountersMap: this.getUserStatusCountersMap({
-          statuses: ['info', 'warning', 'danger', 'success', 'done', 'dead']
+          statuses: this.possibleStatuses,
         }),
         statusMap: this.getUserStatusMap({
-          statuses: ['info', 'warning', 'danger', 'success', 'done', 'dead']
+          statuses: this.possibleStatuses,
         }),
         joblessStatusMap: this.getUserJoblessStatusMap({
           statuses: ['danger', 'success']
@@ -304,7 +338,7 @@ class Logic {
     return res;
   }
   get tasksTotalCounter() {
-    const statuses = ['info', 'warning', 'danger', 'success', 'done', 'dead']
+    const statuses = this.possibleStatuses
     return this.messages.reduce((acc, { status }) => {
       if (statuses.includes(status)) acc += 1
       return acc
@@ -326,6 +360,23 @@ class Logic {
       return acc
     }, 0)
   }
+  _getTheStatusesLastDaysItems(statuses, days) {
+    const targetDate = Date.now()
+    const startDate = getLastDaysStartDate(days)
+
+    return this.messages.reduce((acc, obj) => {
+      const { status, statusChangeTs } = obj
+      if (
+        statuses.includes(status)
+        // && (!!statusChangeTs
+        //   ? isInTimeInterval({ startDate, targetDate, obj, fieldName: 'statusChangeTs' })
+        //   : isInTimeInterval({ startDate, targetDate, obj, fieldName: 'editTs' })
+        && !!statusChangeTs && isInTimeInterval({ startDate, targetDate, obj, fieldName: 'statusChangeTs' })
+      ) acc[status] = !!acc[status] ? [...acc[status], obj].sort(dynamicSort('editTs')) : [obj]
+      return acc
+    }, {})
+  }
+
   get doneLastWeek() {
     return this._getTheStatusesLastDaysCounter(['done'], 7)
   }
@@ -335,6 +386,17 @@ class Logic {
   get doneLast3Months() {
     return this._getTheStatusesLastDaysCounter(['done'], 90)
   }
+
+  _getLastWeekItems(statuses = this.possibleStatuses) {
+    return this._getTheStatusesLastDaysItems(statuses, 7)
+  }
+  _getLastMonthItems(statuses = this.possibleStatuses) {
+    return this._getTheStatusesLastDaysItems(statuses, 30)
+  }
+  _getLast3MonthsItems(statuses = this.possibleStatuses) {
+    return this._getTheStatusesLastDaysItems(statuses, 90)
+  }
+
   getStatusCounter(statuses) {
     return this.messages.reduce((acc, { status }) => {
       if (statuses.includes(status)) acc += 1
@@ -343,6 +405,15 @@ class Logic {
   }
   get dangerCounter() {
     return this.getStatusCounter(['danger'])
+  }
+  get dangerItems() {
+    return this._getItems({ statuses: ['danger'] })
+  }
+  get successItems() {
+    return this._getItems({ statuses: ['success'] })
+  }
+  get infoItems() {
+    return this._getItems({ statuses: ['info'] })
   }
   get successCounter() {
     return this.getStatusCounter(['success'])

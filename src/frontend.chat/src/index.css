@@ -13,14 +13,14 @@ body {
   overflow-y: hidden;;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
-}
+} */
 /* @keyframes slideFromLeft {
   0% { transform: translateX(-100px); }
   100% { transform: translateX(0px); }
@@ -65,11 +65,20 @@ input[type="file"]:disabled + label {
   animation: blinker-bg-color 0.5s linear infinite;
 }
 
-@keyframes blinker-opacity {
-  50% {
-    opacity: 0;
+@keyframes blinker-translate {
+  25% {
+    /* transform: translateX(-5px); */
+    opacity: .25;
+  }
+  75% {
+    /* transform: translateX(5px); */
+    opacity: .75;
   }
 }
+.blink_me_translated {
+  animation: blinker-translate 0.5s linear infinite;
+}
+
 @keyframes blinker-bg-color {
   50% {
     background-color: #f0616c;

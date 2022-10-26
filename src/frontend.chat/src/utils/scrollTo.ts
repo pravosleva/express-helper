@@ -1,4 +1,4 @@
-const isDev = process.env.NODE_ENV === 'development'
+// const isDev = process.env.NODE_ENV === 'development'
 
 const scrollToRef = (ref: any, headerPx: number = 0, additionalPx: number = 0, noAnimation?: boolean) => {
   if (!!ref?.current && !!window) {
@@ -19,7 +19,8 @@ export const scrollIntoView = (ts: number, cb?: { success?: (ts: number) => void
       
     if (!!targetElm) {
       targetElm.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'auto' })
-      if (isDev && !!cb?.success) cb.success(ts)
+      // if (isDev && !!cb?.success) cb.success(ts)
+      if (!!cb?.success) cb.success(ts)
     } else if (!!cb?.fail) cb.fail(ts)
   } catch (err) {
     console.log(err)

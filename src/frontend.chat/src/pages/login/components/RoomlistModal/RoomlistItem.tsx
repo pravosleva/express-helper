@@ -4,6 +4,7 @@ import { Td, Tr, IconButton, Tag, Button } from "@chakra-ui/react"
 // import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 // import { FaRegTrashAlt } from 'react-icons/fa'
 import { IoMdClose } from 'react-icons/io'
+import clsx from 'clsx'
 
 type TProps = {
   roomName: string
@@ -21,6 +22,8 @@ export const RoomlistItem = ({ roomName, onDelete, onClick }: TProps) => {
           // style={{ cursor: 'pointer' }}
           size='md'
           variant='link'
+          // className={clsx('truncate-overflow-single-line', 'special-btn')}
+          title={roomName}
         >{roomName}</Button>
       </Td>
       <Td isNumeric pr={0}>

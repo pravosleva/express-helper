@@ -166,12 +166,12 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
                 })
               },
               success: (ts) => {
-                toast({
-                  position: 'bottom',
-                  title: `Msg ${ts} In viewport`,
-                  status: 'success',
-                  duration: 3000,
-                })
+                // toast({
+                //   position: 'bottom',
+                //   title: `Msg ${ts} In viewport`,
+                //   status: 'success',
+                //   duration: 3000,
+                // })
               },
             }
           )

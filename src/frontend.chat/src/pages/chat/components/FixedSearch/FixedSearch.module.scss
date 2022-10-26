@@ -5,7 +5,7 @@ $pad: var(--chakra-space-4);
 
 .fixed-search {
   position: fixed;
-  transition: all 1s linear;
+  transition: all 0.5s linear;
   padding: #{$pad};
 
   // border: 1px solid red;
@@ -13,7 +13,7 @@ $pad: var(--chakra-space-4);
   @media (max-width: #{$sm}px) {
     height: 69px;
     width: 100%;
-    top: -100px;
+    top: -100%;
     &--opened {
       top: 0px;
     }
@@ -22,7 +22,7 @@ $pad: var(--chakra-space-4);
   @media (min-width: #{$sm + 1}px) and (max-width: #{$md}px) {
     height: 69px;
     width: calc(100% - 195px);
-    top: -100px;
+    top: -100%;
     &--opened {
       top: 0px;
     }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 type TProps = {
   [key: string]: any
@@ -6,26 +6,26 @@ type TProps = {
 
 export const useForm = (initialState = {}): TProps => {
   const [formData, setFormData] = useState<{ [key: string]: any }>(initialState)
-  const resetForm = () => {
+  const resetForm = useCallback(() => {
     setFormData(initialState)
-  }
+  }, [])
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     switch (e.target.type) {
       case 'checkbox':
-        setFormData({
-          ...formData,
+        setFormData((oldData) => ({
+          ...oldData,
           [e.target.name]: e.target.checked,
-        })
+        }))
         break
       default:
-        setFormData({
-          ...formData,
+        setFormData((oldData) => ({
+          ...oldData,
           [e.target.name]: e.target.value,
-        })
+        }))
         break
     }
-  }
+  }, [setFormData])
 
   return { formData, handleInputChange, resetForm }
 }

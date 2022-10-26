@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import styles from './FixedSearch.module.scss'
 import clsx from 'clsx'
 import { Grid, IconButton, Input, InputGroup, InputLeftElement, InputRightElement, useColorMode } from '@chakra-ui/react';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 import { HiChevronUp } from 'react-icons/hi'
+import { useDebounce as useDebouncedValue } from '~/common/hooks/useDebounce'
 
 type TProps = {
   searchText: string;
@@ -31,8 +32,32 @@ export const FixedSearch = ({
   // }
   const inputRef = useRef<any>(null)
   useEffect(() => {
+    // console.log('UPD: isOpened')
     if (isOpened && !!inputRef.current) inputRef.current.focus()
   }, [isOpened])
+
+  const [localText, setLocalText] = useState<string>(searchText)
+  const debouncedLocalText = useDebouncedValue(localText, 500)
+  useEffect(() => {
+    if (!!debouncedLocalText) {
+      onChange({ target: { name: 'searchText', value: debouncedLocalText } })
+    }
+  }, [debouncedLocalText, onChange])
+  const handleChange = (e: any): void => {
+    console.log(e.target.value)
+    setLocalText(e.target.value)
+  }
+  const handleClose = useCallback(() => {
+    onClose()
+    setLocalText(searchText)
+  }, [onClose, searchText])
+  const handleClear = useCallback(() => {
+    onClear()
+    setLocalText('')
+  }, [onClear])
+  useEffect(() => {
+    if (!searchText) setLocalText('')
+  }, [searchText])
 
   return (
     <div
@@ -67,11 +92,16 @@ export const FixedSearch = ({
               name='searchText'
               type='text'
               placeholder="Search"
-              value={searchText}
-              onChange={onChange}
+              value={localText}
+              onChange={handleChange}
               rounded='3xl'
               size='md'
               variant='outline'
+              style={{
+                caretColor: mode.colorMode === 'light' ? 'var(--chakra-colors-red-600)' : 'var(--chakra-colors-red-200)',
+                color: mode.colorMode === 'light' ? 'var(--chakra-colors-red-600)' : 'var(--chakra-colors-red-200)',
+                fontWeight: 'bold',
+              }}
             />
             {
               !!searchText && (
@@ -83,7 +113,7 @@ export const FixedSearch = ({
                     variant='outline'
                     isRound
                     icon={<IoMdClose size={15} />}
-                    onClick={onClear}
+                    onClick={handleClear}
                     isDisabled={!searchText}
                   >
                     DEL
@@ -93,13 +123,13 @@ export const FixedSearch = ({
             }
           </InputGroup>
           <IconButton
-            size='xs'
+            size='sm'
             aria-label="DEL"
             colorScheme='gray'
             variant='outline'
             isRound
             icon={<HiChevronUp size={15} />}
-            onClick={onClose}
+            onClick={handleClose}
           >
             DEL
           </IconButton>
