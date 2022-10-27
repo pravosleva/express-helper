@@ -159,6 +159,16 @@ import useDynamicRefs from 'use-dynamic-refs'
 // import { useLocalStorageState as useLocalStorageState2 } from '~/common/hooks/useStorage'
 import { EditInModal } from './components/EditInModal'
 import { AddToSprintIconButton } from './components/IconButton'
+import scrollIntoView2 from 'scroll-into-view-if-needed';
+
+const scrollInKanban = (node: any) => {
+  scrollIntoView2(node, {
+    behavior: 'smooth',
+    block: 'center',
+    boundary: document.getElementById('react-kanban-board'),
+    inline: 'center',
+  });
+}
 
 const roomDesktopWidth = 400 // parseInt(dims.roomDesktopWidth)
 
@@ -284,6 +294,8 @@ const addBlink = (ts: number) => {
   try {
     const card = document.getElementById(`card-${ts}`)
     card?.classList.add('blink_me')
+
+    scrollInKanban(card)
   } catch (_err) {}
 }
 
@@ -2897,7 +2909,7 @@ export const Chat = () => {
                 room={room}
                 isFiltersActive={filters.length > 0 || assignmentExecutorsFilters.length > 0}
                 onCheckItOut={(ts) => {
-                  console.log(ts)
+                  // console.log(ts)
                   scrollIntoView(
                     ts,
                     {

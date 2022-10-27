@@ -106,6 +106,7 @@
     "resolve-url-loader": "^3.1.2",
     "retry-axios": "^2.6.0",
     "sass-loader": "^10.0.5",
+    "scroll-into-view-if-needed": "^2.2.29",
     "semver": "7.3.2",
     "simple-react-lightbox": "3.6.7",
     "slugify": "^1.6.0",
