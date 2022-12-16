@@ -2,7 +2,7 @@ import stc from 'string-to-color'
 import invert from 'invert-color'
 import stylesBase from '~/App.module.scss'
 import styles from '~/pages/chat/Chat.module.scss'
-import { Tooltip } from '@chakra-ui/react'
+import { Placement as TPlacement, Tooltip } from '@chakra-ui/react'
 
 type TProps = {
   name: string,
@@ -12,14 +12,15 @@ type TProps = {
   fontSize?: number,
   onClick?: () => void,
   tooltipText?: string,
+  tooltipPlacement?: TPlacement,
 }
 
-export const UserAva = ({ name, size, mr, ml, fontSize, onClick, tooltipText }: TProps) => {
+export const UserAva = ({ name, size, mr, ml, fontSize, onClick, tooltipText, tooltipPlacement }: TProps) => {
   const shortNick = name.split(' ').filter((w: string, i: number) => i < 2).map((word: string) => word[0].toUpperCase()).join('')
   const personalColor = stc(name)
 
   return (
-    <Tooltip label={!!tooltipText ? tooltipText : name} aria-label='NAME'>
+    <Tooltip label={!!tooltipText ? tooltipText : name} aria-label='NAME' placement={!!tooltipPlacement ? tooltipPlacement : 'bottom'}>
       <span
         className={styles['opponent-ava-wrapper']}
         style={{
@@ -27,6 +28,7 @@ export const UserAva = ({ name, size, mr, ml, fontSize, onClick, tooltipText }: 
           marginLeft: ml || 0,
           // order: isMyMessage ? 2 : 1,
           cursor: !!onClick ? 'pointer' : 'default',
+          // border: '1px solid red',
         }}
         onClick={onClick || undefined}
       >

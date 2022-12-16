@@ -1,0 +1,90 @@
+{
+  "ok": true,
+  "currency": "KZT",
+  "price": 81920,
+  "id": 115362,
+  "condition": "C",
+  "sp_condition": "best",
+  "nine_photos_mode": "full",
+  "subsidies": [
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy Watch 4 40mm",
+      "title": "Samsung Galaxy Watch 4 40mm",
+      "price": 0
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy Watch 4 44mm",
+      "title": "Samsung Galaxy Watch 4 44mm",
+      "price": 0
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy Watch 4 Classic 42mm",
+      "title": "Samsung Galaxy Watch 4 Classic 42mm",
+      "price": 55000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy Watch 4 Classic 46mm",
+      "title": "Samsung Galaxy Watch 4 Classic 46mm",
+      "price": 55000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy S20 FE",
+      "title": "Samsung Galaxy S20 FE",
+      "price": 70000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy Tab S7",
+      "title": "Samsung Galaxy Tab S7",
+      "price": 70000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy Tab S7 FE",
+      "title": "Samsung Galaxy Tab S7 FE",
+      "price": 70000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy S21",
+      "title": "Samsung Galaxy S21",
+      "price": 75000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy Tab S7 plus",
+      "title": "Samsung Galaxy Tab S7 plus",
+      "price": 75000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy S21 plus",
+      "title": "Samsung Galaxy S21 plus",
+      "price": 85000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy S21 ultra",
+      "title": "Samsung Galaxy S21 ultra",
+      "price": 95000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy Z Flip 3",
+      "title": "Samsung Galaxy Z Flip 3",
+      "price": 100000
+    },
+    {
+      "vendor": "Samsung",
+      "model": "Galaxy Z Fold 3",
+      "title": "Samsung Galaxy Z Fold 3",
+      "price": 110000
+    }
+  ],
+  "sim_check_enabled": false
+}

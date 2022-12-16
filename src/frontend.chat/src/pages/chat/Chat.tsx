@@ -2810,7 +2810,7 @@ export const Chat = () => {
                 className={styles['sticky-bottom-mobile']}
                 // bgColor={mode.colorMode === 'dark' ? 'gray.600' : 'gray.300'}
               >
-                <Button rightIcon={<FaTelegramPlane size={18} />} size='lg' style={{ borderRadius: 'var(--chakra-radii-full)' }} colorScheme='blue' variant='solid' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Зайти в чат через бота</Button>
+                <Button rightIcon={<FaTelegramPlane size={18} />} size='lg' style={{ borderRadius: 'var(--chakra-radii-full)' }} colorScheme='blue' variant='solid' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Зайти через бота</Button>
               </Flex>
             )
           }

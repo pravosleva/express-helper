@@ -70,6 +70,7 @@ import { sendFmipInstructions } from './mws/partner_api/tradein/send_fmip_instru
 import { policyConfirmationSMS } from './mws/partner_api/tradein/personal_data_processing_agreement/send_sms_code'
 import { signBySMSCode as signBySMSCode2 } from './mws/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_code'
 import { waitForVerified } from './mws/partner_api/tradein/wait_for/verified'
+import { boughtDevice } from './mws/partner_api/tradein/bought_device'
 
 import cors from 'cors'
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
@@ -174,6 +175,7 @@ spApi.post('/partner_api/tradein/send_fmip_instructions', sendFmipInstructions)
 spApi.post('/partner_api/tradein/personal_data_processing_agreement/send_sms_code', policyConfirmationSMS)
 spApi.post('/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_code', signBySMSCode2)
 spApi.post('/partner_api/tradein/wait_for/verified', waitForVerified)
+spApi.post('/partner_api/tradein/bought_device', boughtDevice)
 
 // 6. New OT landing
 spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)

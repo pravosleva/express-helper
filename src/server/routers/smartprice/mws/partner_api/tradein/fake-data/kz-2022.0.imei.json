@@ -1,0 +1,2090 @@
+{
+  "ok": true,
+  "phone": {
+    "vendor": "Samsung",
+    "type": "mobile_phone",
+    "model": "Galaxy S10 plus",
+    "memory": "",
+    "memory_choices": [
+      "512 GB",
+      "128 GB",
+      "1024 GB"
+    ],
+    "color": "",
+    "color_choices": {
+      "512 GB": [
+        "canary_yellow",
+        "cardinal_red",
+        "ceramic_black",
+        "ceramic_white",
+        "flamingo_pink",
+        "prism_black",
+        "prism_blue",
+        "prism_green",
+        "prism_white"
+      ],
+      "128 GB": [
+        "prism_white",
+        "prism_green",
+        "prism_blue",
+        "prism_black",
+        "flamingo_pink",
+        "ceramic_white",
+        "ceramic_black",
+        "cardinal_red",
+        "canary_yellow"
+      ],
+      "1024 GB": [
+        "prism_white",
+        "prism_green",
+        "prism_blue",
+        "prism_black",
+        "flamingo_pink",
+        "ceramic_white",
+        "ceramic_black",
+        "cardinal_red",
+        "canary_yellow"
+      ]
+    },
+    "find_my_iphone": ""
+  },
+  "imei": "354809106809375",
+  "currency": "KZT",
+  "possible_prices": {
+    "C": {
+      "512 GB": {
+        "canary_yellow": 103774,
+        "cardinal_red": 103774,
+        "ceramic_black": 103774,
+        "ceramic_white": 103774,
+        "flamingo_pink": 103774,
+        "prism_black": 103774,
+        "prism_blue": 103774,
+        "prism_green": 103774,
+        "prism_white": 103774
+      },
+      "128 GB": {
+        "prism_white": 81920,
+        "prism_green": 81920,
+        "prism_blue": 81920,
+        "prism_black": 81920,
+        "flamingo_pink": 81920,
+        "ceramic_white": 81920,
+        "ceramic_black": 81920,
+        "cardinal_red": 81920,
+        "canary_yellow": 81920
+      },
+      "1024 GB": {
+        "prism_white": 113481,
+        "prism_green": 113481,
+        "prism_blue": 113481,
+        "prism_black": 113481,
+        "flamingo_pink": 113481,
+        "ceramic_white": 113481,
+        "ceramic_black": 113481,
+        "cardinal_red": 113481,
+        "canary_yellow": 113481
+      }
+    },
+    "D": {
+      "512 GB": {
+        "canary_yellow": 76949,
+        "cardinal_red": 76949,
+        "ceramic_black": 76949,
+        "ceramic_white": 76949,
+        "flamingo_pink": 76949,
+        "prism_black": 76949,
+        "prism_blue": 76949,
+        "prism_green": 76949,
+        "prism_white": 76949
+      },
+      "128 GB": {
+        "prism_white": 60680,
+        "prism_green": 60680,
+        "prism_blue": 60680,
+        "prism_black": 60680,
+        "flamingo_pink": 60680,
+        "ceramic_white": 60680,
+        "ceramic_black": 60680,
+        "cardinal_red": 60680,
+        "canary_yellow": 60680
+      },
+      "1024 GB": {
+        "prism_white": 84227,
+        "prism_green": 84227,
+        "prism_blue": 84227,
+        "prism_black": 84227,
+        "flamingo_pink": 84227,
+        "ceramic_white": 84227,
+        "ceramic_black": 84227,
+        "cardinal_red": 84227,
+        "canary_yellow": 84227
+      }
+    },
+    "NC": {
+      "512 GB": {
+        "canary_yellow": 43761,
+        "cardinal_red": 43761,
+        "ceramic_black": 43761,
+        "ceramic_white": 43761,
+        "flamingo_pink": 43761,
+        "prism_black": 43761,
+        "prism_blue": 43761,
+        "prism_green": 43761,
+        "prism_white": 43761
+      },
+      "128 GB": {
+        "prism_white": 41315,
+        "prism_green": 41315,
+        "prism_blue": 41315,
+        "prism_black": 41315,
+        "flamingo_pink": 41315,
+        "ceramic_white": 41315,
+        "ceramic_black": 41315,
+        "cardinal_red": 41315,
+        "canary_yellow": 41315
+      },
+      "1024 GB": {
+        "prism_white": 46797,
+        "prism_green": 46797,
+        "prism_blue": 46797,
+        "prism_black": 46797,
+        "flamingo_pink": 46797,
+        "ceramic_white": 46797,
+        "ceramic_black": 46797,
+        "cardinal_red": 46797,
+        "canary_yellow": 46797
+      }
+    }
+  },
+  "possible_subsidies": [
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "cardinal_red": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "flamingo_pink": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_blue": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_green": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_green": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_blue": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "flamingo_pink": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "cardinal_red": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "canary_yellow": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_green": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_blue": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "flamingo_pink": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "cardinal_red": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "canary_yellow": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy Watch 4 40mm",
+      "title": "Samsung Galaxy Watch 4 40mm"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "cardinal_red": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "flamingo_pink": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_blue": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_green": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_green": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_blue": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "flamingo_pink": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "cardinal_red": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "canary_yellow": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_green": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_blue": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "prism_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "flamingo_pink": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_white": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "ceramic_black": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "cardinal_red": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          },
+          "canary_yellow": {
+            "C": 0,
+            "D": 0,
+            "NC": 0
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy Watch 4 44mm",
+      "title": "Samsung Galaxy Watch 4 44mm"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "cardinal_red": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "flamingo_pink": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_blue": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_green": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_green": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_blue": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "flamingo_pink": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "cardinal_red": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "canary_yellow": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_green": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_blue": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "flamingo_pink": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "cardinal_red": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "canary_yellow": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy Watch 4 Classic 42mm",
+      "title": "Samsung Galaxy Watch 4 Classic 42mm"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "cardinal_red": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "flamingo_pink": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_blue": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_green": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_green": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_blue": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "flamingo_pink": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "cardinal_red": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "canary_yellow": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_green": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_blue": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "prism_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "flamingo_pink": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_white": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "ceramic_black": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "cardinal_red": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          },
+          "canary_yellow": {
+            "C": 55000,
+            "D": 45000,
+            "NC": 35000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy Watch 4 Classic 46mm",
+      "title": "Samsung Galaxy Watch 4 Classic 46mm"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "cardinal_red": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "flamingo_pink": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_blue": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_green": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_green": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_blue": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "flamingo_pink": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "cardinal_red": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "canary_yellow": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_green": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_blue": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "flamingo_pink": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "cardinal_red": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "canary_yellow": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy S20 FE",
+      "title": "Samsung Galaxy S20 FE"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "cardinal_red": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "flamingo_pink": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_blue": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_green": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_green": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_blue": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "flamingo_pink": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "cardinal_red": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "canary_yellow": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_green": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_blue": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "prism_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "flamingo_pink": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_white": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "ceramic_black": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "cardinal_red": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          },
+          "canary_yellow": {
+            "C": 70000,
+            "D": 60000,
+            "NC": 30000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy Tab S7",
+      "title": "Samsung Galaxy Tab S7"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "cardinal_red": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "ceramic_black": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "ceramic_white": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "flamingo_pink": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_black": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_blue": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_green": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_white": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_green": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_blue": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_black": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "flamingo_pink": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "ceramic_white": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "ceramic_black": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "cardinal_red": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "canary_yellow": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_green": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_blue": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "prism_black": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "flamingo_pink": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "ceramic_white": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "ceramic_black": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "cardinal_red": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          },
+          "canary_yellow": {
+            "C": 70000,
+            "D": 55000,
+            "NC": 45000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy Tab S7 FE",
+      "title": "Samsung Galaxy Tab S7 FE"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "cardinal_red": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "flamingo_pink": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_blue": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_green": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_green": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_blue": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "flamingo_pink": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "cardinal_red": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "canary_yellow": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_green": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_blue": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "flamingo_pink": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "cardinal_red": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "canary_yellow": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy S21",
+      "title": "Samsung Galaxy S21"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "cardinal_red": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "flamingo_pink": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_blue": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_green": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_green": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_blue": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "flamingo_pink": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "cardinal_red": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "canary_yellow": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_green": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_blue": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "prism_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "flamingo_pink": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_white": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "ceramic_black": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "cardinal_red": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          },
+          "canary_yellow": {
+            "C": 75000,
+            "D": 65000,
+            "NC": 40000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy Tab S7 plus",
+      "title": "Samsung Galaxy Tab S7 plus"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "cardinal_red": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "ceramic_black": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "ceramic_white": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "flamingo_pink": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_black": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_blue": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_green": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_white": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_green": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_blue": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_black": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "flamingo_pink": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "ceramic_white": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "ceramic_black": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "cardinal_red": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "canary_yellow": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_green": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_blue": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "prism_black": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "flamingo_pink": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "ceramic_white": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "ceramic_black": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "cardinal_red": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          },
+          "canary_yellow": {
+            "C": 85000,
+            "D": 75000,
+            "NC": 45000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy S21 plus",
+      "title": "Samsung Galaxy S21 plus"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "cardinal_red": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "ceramic_black": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "ceramic_white": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "flamingo_pink": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_black": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_blue": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_green": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_white": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_green": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_blue": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_black": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "flamingo_pink": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "ceramic_white": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "ceramic_black": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "cardinal_red": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "canary_yellow": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_green": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_blue": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "prism_black": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "flamingo_pink": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "ceramic_white": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "ceramic_black": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "cardinal_red": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          },
+          "canary_yellow": {
+            "C": 95000,
+            "D": 85000,
+            "NC": 50000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy S21 ultra",
+      "title": "Samsung Galaxy S21 ultra"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "cardinal_red": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "ceramic_black": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "ceramic_white": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "flamingo_pink": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_black": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_blue": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_green": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_white": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_green": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_blue": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_black": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "flamingo_pink": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "ceramic_white": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "ceramic_black": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "cardinal_red": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "canary_yellow": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_green": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_blue": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "prism_black": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "flamingo_pink": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "ceramic_white": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "ceramic_black": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "cardinal_red": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          },
+          "canary_yellow": {
+            "C": 100000,
+            "D": 90000,
+            "NC": 50000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy Z Flip 3",
+      "title": "Samsung Galaxy Z Flip 3"
+    },
+    {
+      "prices": {
+        "512 GB": {
+          "canary_yellow": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "cardinal_red": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "ceramic_black": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "ceramic_white": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "flamingo_pink": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_black": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_blue": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_green": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_white": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          }
+        },
+        "128 GB": {
+          "prism_white": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_green": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_blue": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_black": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "flamingo_pink": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "ceramic_white": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "ceramic_black": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "cardinal_red": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "canary_yellow": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          }
+        },
+        "1024 GB": {
+          "prism_white": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_green": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_blue": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "prism_black": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "flamingo_pink": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "ceramic_white": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "ceramic_black": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "cardinal_red": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          },
+          "canary_yellow": {
+            "C": 110000,
+            "D": 100000,
+            "NC": 90000
+          }
+        }
+      },
+      "vendor": "Samsung",
+      "model": "Galaxy Z Fold 3",
+      "title": "Samsung Galaxy Z Fold 3"
+    }
+  ],
+  "photo": null,
+  "id": 115362,
+  "show_warning": false,
+  "raw_data": "{\"refcode\":\"23112022081732\",\"responsestatus\":\"success\",\"deviceid\":\"354809106809375\",\"partnerid\":\"SmartPrice\",\"branchid\":\"RUS\",\"recordidentifier\":\"1669209450.436-15a596b9599584b7acd1870561873a76\",\"blackliststatus\":\"No\",\"greyliststatus\":\"No\",\"imeihistory\":[{\"action\":\"NA\",\"date\":\"NA\",\"by\":\"NA\",\"Country\":\"NA\"}],\"manufacturer\":\"Samsung Korea\",\"brandname\":\"Samsung\",\"marketingname\":\"Galaxy S10+\",\"modelname\":\"SM-G975F\",\"band\":\"CA_2,CA_3,CA_7,CA_38,CA_40,CA_41,CA_1A-3A,CA_1A-5A,CA_1A-7A,CA_1A-8A,CA_1A-20A,CA_1A-28A,CA_1A-40A,CA_2A-12A,CA_3C-5A,CA_3A-7A,CA_3A-7A-7A,CA_3C-7A,CA_3C-7C,CA_3A-8A,CA_3A-3A-8A,CA_3A-20A,CA_3C-20A,CA_3A-28A,CA_3A-38A,CA_3A-40A,CA_3A-40C,CA_3A-41A,CA_4A-7A,CA_4A-12A,CA_4A-17A,CA_5A-7A,CA_5A-40A,CA_7A-8A,CA_7A-20A,CA_7B-28A,CA_7C-28A,CA_20A-38A,CA_38A-40A,CA_2A-2A,CA_3A-3A,CA_4A-4A,CA_7A-7A,CA_40A-40A,CA_41A-41C,CA_66A-66A,CA_1A-3A-5A,CA_1A-3A-7A,CA_1A-3C-7A,CA_1A-3A-8A,CA_1A-3A-20A,CA_1A-3A-28A,CA_1A-7A-20A,CA_1A-7A-28A,CA_3A-5A-40A,CA_3A-7A-8A,CA_3A-7A-20A,CA_3A-7A-28A,CA_3A-20A-32A,CA_1A-3A-7A-20A,LTE FDD BAND 1,LTE FDD BAND 2,LTE FDD BAND 3,LTE FDD BAND 4,LTE FDD BAND 5,LTE FDD BAND 7,LTE FDD BAND 8,LTE FDD BAND 12,LTE FDD BAND 13,LTE FDD BAND 17,LTE FDD BAND 18,LTE FDD BAND 19,LTE FDD BAND 20,LTE FDD BAND 25,LTE FDD BAND 26,LTE FDD BAND 28,LTE FDD Band 66,LTE TDD BAND 38,LTE TDD BAND 39,LTE TDD BAND 40,LTE TDD BAND 41,GSM 1800,GSM 1900,GSM850 (GSM800),GSM 900,WCDMA FDD Band 1,WCDMA FDD Band 2,WCDMA FDD Band 4,WCDMA FDD Band 5,WCDMA FDD Band 8,WCDMA TDD Band A\",\"operatingsys\":\"Android\",\"nfc\":\"Yes\",\"bluetooth\":\"Yes\",\"WLAN\":\"Yes\",\"devicetype\":\"Smartphone\"}"
+}

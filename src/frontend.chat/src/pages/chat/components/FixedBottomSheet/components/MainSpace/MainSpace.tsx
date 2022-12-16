@@ -6,6 +6,8 @@ import { webWorkersInstance } from '~/utils'
 import { EMessageStatus, TMessage } from '~/utils/interfaces'
 import { TSetting } from '~/pages/chat/components/AccordionSettings'
 import { PopoverInfoButton } from './components'
+import { UserAva } from '~/pages/chat/components/UserAva'
+import { getNormalizedDate } from '~/utils/timeConverter'
 
 type TCounters = {
   total: number,
@@ -213,7 +215,7 @@ const MainSpaceMemoized = ({
             <PopoverInfoButton
               headerRenderer={() => <b>Свободные пользователи</b>}
               triggerRenderer={() => (
-                <Button>Jobless users {counters.users?.jobless}</Button>
+                <Button>Jobless: {counters.users?.jobless}</Button>
               )}
               bodyRenderer={() => (
                 <>
@@ -449,6 +451,7 @@ const MainSpaceMemoized = ({
             />
           </Flex>
         </Flex>
+        {/*
         <Tooltip label='Отображено задач, имеющих статус' aria-label='DISPLAYED' hasArrow>
           <div className={styles['diagram']}>
             <CircularProgress value={displayedPercentage} color='gray.400'>
@@ -456,6 +459,7 @@ const MainSpaceMemoized = ({
             </CircularProgress>
           </div>
         </Tooltip>
+        */}
         <Flex
           direction='column'
           justifyContent='center'
@@ -502,34 +506,36 @@ const MainSpaceMemoized = ({
                     {
                       counters.doneDetails.lastWeek.items.map((e, i, a) => (
                         <Flex
-                          direction='row'
-                          justifyContent='space-between'
+                          direction='column'
+                          // justifyContent='space-between'
                           key={e.ts}
                           spacing={2}
                           style={{ width: '100%', cursor: 'crosshair' }}
+                          onMouseEnter={handleClickToCheckItOut(e.ts)}
+                          onMouseLeave={handleMouseLeave(e.ts)}
                         >
-                          <div
-                            style={{
-                              whiteSpace: 'pre-wrap',
-                              wordWrap: 'break-word',
-                              // border: '1px solid red',
-                              width: '100%',
-                            }}
-                            onMouseEnter={handleClickToCheckItOut(e.ts)}
-                            onMouseLeave={handleMouseLeave(e.ts)}
-                          >{e.text}</div>
-                          {/* <IconButton
-                            size='xs'
-                            ml={1}
-                            aria-label="CHECK_IT_OUT"
-                            colorScheme='gray'
-                            variant='outline'
-                            isRound
-                            icon={<CgArrowsVAlt size={15} />}
-                            onClick={handleClickToCheckItOut(e.ts)}
+                          <Flex
+                            direction='row'
+                            justifyContent='space-between'
+                            spacing={2}
                           >
-                            CHECK_IT_OUT
-                          </IconButton> */}
+                            <UserAva tooltipText={`Created by ${e.user}`} size={19} name={e.user} mr='.5rem' fontSize={11} tooltipPlacement='auto-end' />
+                            <div
+                              style={{
+                                whiteSpace: 'pre-wrap',
+                                wordWrap: 'break-word',
+                                // border: '1px solid red',
+                                width: '100%',
+                              }}
+                            >{e.text}</div>
+                          </Flex>
+                          <Flex
+                            justifyContent='space-between'
+                            style={{ opacity: 0.5 }}
+                          >
+                            <em>Created at {getNormalizedDate(e.ts)}</em>
+                            {!!e.statusChangeTs && <em>Status upd at {getNormalizedDate(e.statusChangeTs)}</em>}
+                          </Flex>
                         </Flex>
                       ))
                     }
@@ -545,19 +551,73 @@ const MainSpaceMemoized = ({
             }}
           >
             <span>☑️ Last m.</span>
-            <IconButton
-              size='xs'
-              ml={1}
-              aria-label="DONE-LAST-MONTH-DETAILS"
-              colorScheme='gray'
-              variant='outline'
-              isRound
-              icon={<span>{counters.doneDetails.lastMonth.counter}</span>}
-              onClick={() => console.log(counters.doneDetails.lastMonth.items)}
-              isDisabled
-            >
-              DONE-LAST-MONTH-DETAILS
-            </IconButton>
+            <PopoverInfoButton
+              popoverPlacement='bottom-start'
+              headerRenderer={() => <b>Done last 30 days ({counters.doneDetails.lastMonth.counter})</b>}
+              triggerRenderer={() => (
+                <IconButton
+                  size='xs'
+                  ml={1}
+                  aria-label="DONE-LAST-MONTH-DETAILS"
+                  colorScheme='gray'
+                  variant='outline'
+                  isRound
+                  icon={<span>{counters.doneDetails.lastMonth.counter}</span>}
+                  // onClick={handleClickDoneLastWeek}
+                  isDisabled={counters.doneDetails.lastMonth.items.length === 0}
+                >
+                  DONE-LAST-MONTH-DETAILS
+                </IconButton>
+              )}
+              bodyRenderer={() => (
+                <>
+                  <VStack
+                    divider={<StackDivider />}
+                    alignItems='flex-start'
+                    style={{
+                      maxHeight: '300px',
+                      overflowY: 'auto',
+                    }}
+                  >
+                    {
+                      counters.doneDetails.lastMonth.items.map((e, i, a) => (
+                        <Flex
+                          direction='column'
+                          // justifyContent='space-between'
+                          key={e.ts}
+                          spacing={2}
+                          style={{ width: '100%', cursor: 'crosshair' }}
+                          onMouseEnter={handleClickToCheckItOut(e.ts)}
+                          onMouseLeave={handleMouseLeave(e.ts)}
+                        >
+                          <Flex
+                            direction='row'
+                            justifyContent='space-between'
+                            spacing={2}
+                          >
+                            <UserAva tooltipText={`Created by ${e.user}`} size={19} name={e.user} mr='.5rem' fontSize={11} tooltipPlacement='auto-end' />
+                            <div
+                              style={{
+                                whiteSpace: 'pre-wrap',
+                                wordWrap: 'break-word',
+                                width: '100%',
+                              }}
+                            >{e.text}</div>
+                          </Flex>
+                          <Flex
+                            justifyContent='space-between'
+                            style={{ opacity: 0.5 }}
+                          >
+                            <em>Created at {getNormalizedDate(e.ts)}</em>
+                            {!!e.statusChangeTs && <em>Status upd at {getNormalizedDate(e.statusChangeTs)}</em>}
+                          </Flex>
+                        </Flex>
+                      ))
+                    }
+                  </VStack>
+                </>
+              )}
+            />
           </Flex>
           <Flex
             justifyContent='space-between'
@@ -566,21 +626,78 @@ const MainSpaceMemoized = ({
             }}
           >
             <span>☑️ Last 3 m.</span>
-            <IconButton
-              size='xs'
-              ml={1}
-              aria-label="DONE-LAST-3MONTHS-DETAILS"
-              colorScheme='gray'
-              variant='outline'
-              isRound
-              icon={<span>{counters.doneDetails.last3Months.counter}</span>}
-              onClick={() => console.log(counters.doneDetails.last3Months.items)}
-              isDisabled
-            >
-              DONE-LAST-3MONTHS-DETAILS
-            </IconButton>
+            <PopoverInfoButton
+              popoverPlacement='bottom-start'
+              headerRenderer={() => <b>Done last 90 days ({counters.doneDetails.last3Months.counter})</b>}
+              triggerRenderer={() => (
+                <IconButton
+                  size='xs'
+                  ml={1}
+                  aria-label="DONE-LAST-3MONTHS-DETAILS"
+                  colorScheme='gray'
+                  variant='outline'
+                  isRound
+                  icon={<span>{counters.doneDetails.last3Months.counter}</span>}
+                  // onClick={() => console.log(counters.doneDetails.last3Months.items)}
+                  isDisabled={counters.doneDetails.last3Months.items.length === 0}
+                >
+                  DONE-LAST-3MONTHS-DETAILS
+                </IconButton>
+              )}
+              bodyRenderer={() => (
+                <>
+                  <VStack
+                    divider={<StackDivider />}
+                    alignItems='flex-start'
+                    style={{
+                      maxHeight: '300px',
+                      overflowY: 'auto',
+                    }}
+                  >
+                    {
+                      counters.doneDetails.last3Months.items.map((e, i, a) => (
+                        <Flex
+                          direction='column'
+                          // justifyContent='space-between'
+                          key={e.ts}
+                          spacing={2}
+                          style={{ width: '100%', cursor: 'crosshair' }}
+                          onMouseEnter={handleClickToCheckItOut(e.ts)}
+                          onMouseLeave={handleMouseLeave(e.ts)}
+                        >
+                          <Flex
+                            direction='row'
+                            justifyContent='space-between'
+                            spacing={2}
+                          >
+                            <UserAva tooltipText={`Created by ${e.user}`} size={19} name={e.user} mr='.5rem' fontSize={11} tooltipPlacement='auto-end' />
+                            <div
+                              style={{
+                                whiteSpace: 'pre-wrap',
+                                wordWrap: 'break-word',
+                                width: '100%',
+                              }}
+                            >{e.text}</div>
+                          </Flex>
+                          <Flex
+                            justifyContent='space-between'
+                            style={{
+                              opacity: 0.5,
+                            }}
+                          >
+                            <em>Created at {getNormalizedDate(e.ts)}</em>
+                            {!!e.statusChangeTs && <em>Status upd at {getNormalizedDate(e.statusChangeTs)}</em>}
+                          </Flex>
+                        </Flex>
+                      ))
+                    }
+                  </VStack>
+                </>
+              )}
+            />
           </Flex>
         </Flex>
+        {/*
         <Tooltip label='На тестировании из того что в работе 🔥 & ✅' aria-label='ON_TEST' hasArrow>
           <div className={styles['diagram']}>
             <CircularProgress value={inProgressPercentage} color='green.400'>
@@ -588,6 +705,7 @@ const MainSpaceMemoized = ({
             </CircularProgress>
           </div>
         </Tooltip>
+        */}
       </div>
     </div>
   )

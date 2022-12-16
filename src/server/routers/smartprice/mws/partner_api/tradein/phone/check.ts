@@ -1,5 +1,6 @@
 // @ts-ignore
 // import { getRandomInteger } from '../../../../../../utils/getRandomInteger'
+import kzSuccess2022 from '../fake-data/kz-2022.0.phone_check.json'
 
 // const { SUCCESS_ANYWAY } = process.env
 
@@ -35,6 +36,13 @@ export default async (req, res) => {
     "memory": "8 GB"
   }
   */
+
+  if (req.body.kz_2022) {
+    return res.status(200).send({
+      ...kzSuccess2022,
+      _originalBody: req.body,
+    })
+  }
 
   setTimeout(() => {
     res.status(200).send({

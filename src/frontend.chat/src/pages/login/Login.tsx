@@ -609,13 +609,13 @@ export const Login = () => {
             // !!roomlistLS && roomlistLS.length > 0 && (
             <Button
               tabIndex={10}
-              colorScheme={!room ? "blue" : "gray"}
-              variant='ghost'
+              colorScheme={!room ? 'blue' : 'gray'}
+              variant={!room ? "solid" : 'ghost'}
               onClick={handleRoomlistModalOpen}
               isDisabled={!name}
               rounded='3xl'
             >
-              My Rooms
+              {!room ? 'Выберите чат' : 'My Rooms'}
             </Button>
           }
           {/* <Flex mt={1} justifyContent='center'>Все еще доступен режим Гостя под свободным ником</Flex> */}

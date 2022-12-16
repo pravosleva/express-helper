@@ -27,27 +27,29 @@ const currSnowflakeCountVal = snowFlakeCountMap.get(currentMonth)
 
 function App() {
   return (
-    <CookiesProvider>
-      <ChakraProvider theme={theme}>
-        <SocketProvider>
-          <MainProvider>
-            <UsersProvider>
-              <div className="App" style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                {!!currSnowflakeCountVal && <Snowfall snowflakeCount={currSnowflakeCountVal} />}
-                <Router>
-                  <Switch>
-                    <Route exact path="/" component={Login} />
-                    <Route path="/chat" component={Chat} />
-                    <Route path="/admin" component={Dashboard} />
-                    <Route path="*" component={DefaultPage} />
-                  </Switch>
-                </Router>
-              </div>
-            </UsersProvider>
-          </MainProvider>
-        </SocketProvider>
-      </ChakraProvider>
-    </CookiesProvider>
+    <>
+      {!!currSnowflakeCountVal && <Snowfall snowflakeCount={currSnowflakeCountVal} />}
+      <CookiesProvider>
+        <ChakraProvider theme={theme}>
+          <SocketProvider>
+            <MainProvider>
+              <UsersProvider>
+                <div className="App" style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
+                  <Router>
+                    <Switch>
+                      <Route exact path="/" component={Login} />
+                      <Route path="/chat" component={Chat} />
+                      <Route path="/admin" component={Dashboard} />
+                      <Route path="*" component={DefaultPage} />
+                    </Switch>
+                  </Router>
+                </div>
+              </UsersProvider>
+            </MainProvider>
+          </SocketProvider>
+        </ChakraProvider>
+      </CookiesProvider>
+    </>
   )
 }
 

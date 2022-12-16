@@ -1,8 +1,9 @@
 // @ts-ignore
 // import { getRandomInteger } from '~/utils/getRandomInteger'
 import { THelp } from '~/utils/interfaces'
+import kzSuccess2022 from './fake-data/kz-2022.0.imei.json'
 
-const { SUCCESS_ANYWAY } = process.env
+// const { SUCCESS_ANYWAY } = process.env
 
 // const toClient: any[] = [
 //   {
@@ -229,6 +230,7 @@ const toClient = [
 
 export default async (req, res) => {
   const errs: string[] = []
+  const { memory_value, color_value, vendor_value, kz_2022 } = req.body
 
   for (const key in _help.params.body) {
     if (_help.params.body[key]?.required && !req.body[key]) {
@@ -244,12 +246,25 @@ export default async (req, res) => {
     })
 
   const toBeOrNotToBe = 1 // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
+  let result: any = {
+    ...toClient[toBeOrNotToBe],
+  }
+
+  if (!!toBeOrNotToBe) {
+    if (kz_2022) result = kzSuccess2022
+    if (!!color_value) result.phone.color = color_value
+    if (!!memory_value) result.phone.memory = memory_value
+    if (!!vendor_value) result.phone.vendor = vendor_value
+  }
+
+  const adds = {
+    imei: req.body.IMEI,
+    _originalBody: req.body,
+  }
+
+  result = { ...result, ...adds }
 
   setTimeout(() => {
-    res.status(200).send({
-      ...toClient[toBeOrNotToBe],
-      imei: req.body.IMEI,
-      _originalBody: req.body,
-    })
+    res.status(200).send(result)
   }, 1000)
 }
