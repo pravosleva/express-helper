@@ -121,7 +121,7 @@ import { SwitchSection } from '~/common/components/SwitchSection'
 import { webWorkersInstance } from '~/utils'
 import { AddLinkFormModal } from './components/AddLinkFormModal'
 import { Widget } from './components/Widget'
-// import { TasklistContent } from './components/TasklistModal/components'
+import { TasklistContent } from './components/TasklistModal/components'
 // import debounce from 'lodash.debounce'
 import { useColorMode } from '@chakra-ui/react'
 // import { useLatest } from '~/common/hooks/useLatest'
@@ -2878,7 +2878,7 @@ export const Chat = () => {
           </Widget>
         )
       }
-      {
+      {/*
         upToLg && (
           <Widget position='bottom-left' isHalfHeight>
             <>
@@ -2886,14 +2886,14 @@ export const Chat = () => {
             </>
           </Widget>
         )
-      }
-      {/*
+      */}
+      {
         upToLg && (
-          <Widget position='top-right'>
+          <Widget position='bottom-left' isHalfHeight>
             <TasklistContent data={tasklist} />
           </Widget>
         )
-      */}
+      }
       {
         upToSm && (
           <FixedBottomSheet
@@ -2984,7 +2984,7 @@ export const Chat = () => {
               renderCard={(card: TMessage & TKanbanCard, { removeCard, dragging }: any) => {
                 const descrStrings = card.description.split('\n')
                 return (
-                  <div id={`card-${card.ts}`} className={clsx('react-kanban-card', { ['react-kanban-card--dragging']: dragging, ['bg--light']: mode.colorMode === 'light', ['bg--dark']: mode.colorMode === 'dark' } )}>
+                  <div id={`card-${card.ts}`} className={clsx('react-kanban-card', { 'react-kanban-card--dragging': dragging, 'bg--light': mode.colorMode === 'light', 'bg--dark': mode.colorMode === 'dark' } )}>
                     <div
                       className='card-controls-box'
                       style={{
