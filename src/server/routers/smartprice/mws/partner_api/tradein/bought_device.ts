@@ -47,6 +47,7 @@ const toClient = [
     subsidy: {
       // title: 'Samsung Galaxy Watch 4 40mm' // С нулевым price
       title: 'Samsung Galaxy Watch 4 Classic 42mm',
+      price: 1000,
     },
   },
 ]

@@ -15,8 +15,8 @@ const toClient = [
   },
   {
     ok: true,
-    started: true,
-    status: 'ok', // Чтоб крутилка исчезла и флоу пошел дальше
+    started: false,
+    status: 'not_checked', // Чтоб крутилка исчезла и флоу пошел дальше
     photo_states: {},
     loop: false,
     condition_limit: null,
@@ -30,27 +30,35 @@ const toClient = [
 
 export default async (req, res) => {
   const toBeOrNotToBe = 1 // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
-
-  const { odd_success, random_success } = req.body
+  const { odd_success, random_success, _set_started_flag, _set_custom_status } = req.body
 
   if (odd_success) {
     const count: number = counter.next().value || 0
     const isOddSuccess: boolean = count % odd_success === 0
     const isSuccess = isOddSuccess && random_success ? getRandomInteger(0, 1) : isOddSuccess
     const message = `Custom fuckup ${count} % ${odd_success} (${typeof odd_success}): ${count % odd_success}`
-
-    return res.status(200).send({
+    const result = {
       ...toClient[Number(isSuccess)],
       message,
       _originalBody: req.body,
       // _help,
-    })
+    }
+
+    if (isSuccess && _set_started_flag) result.started = true
+    if (isSuccess && _set_custom_status) result.status = _set_custom_status
+
+    return res.status(200).send(result)
   }
 
+  const result = {
+    ...toClient[toBeOrNotToBe],
+    _originalBody: req.body,
+  }
+
+  if (!!toBeOrNotToBe && _set_started_flag) result.started = true
+  if (!!toBeOrNotToBe && _set_custom_status) result.status = _set_custom_status
+
   setTimeout(() => {
-    res.status(200).send({
-      ...toClient[toBeOrNotToBe],
-      _originalBody: req.body,
-    })
+    res.status(200).send(result)
   }, 1000)
 }

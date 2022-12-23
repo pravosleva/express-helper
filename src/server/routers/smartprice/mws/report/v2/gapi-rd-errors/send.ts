@@ -1,16 +1,6 @@
 import { Request as IRequest, Response as IResponse } from 'express'
 // @ts-ignore
 import { google } from 'googleapis'
-// import credentials from './credentials_console.cloud.google.com.json'
-import fs from 'fs'
-import path from 'path'
-
-const projectRootDir = path.join(__dirname, '../../../../../../../')
-if (!fs.existsSync(path.join(projectRootDir, 'server-dist/routers/smartprice/mws/report/v2/gapi-rd-errors/credentials_console.cloud.google.com.json'))) {
-  throw new Error(
-    `⛔ The file\n"server-dist/routers/smartprice/mws/report/v2/gapi-rd-errors/credentials_console.cloud.google.com.json" can't be found. Put it to:\n"src/server/routers/smartprice/mws/report/v2/gapi-rd-errors/credentials_console.cloud.google.com.json" before build`
-  )
-}
 
 enum EInsertDataOption {
   INSERT_ROWS = 'INSERT_ROWS', // Будет дописывать в первый свободный "пробел" в таблице и добавлять пустую строку под ней
@@ -28,7 +18,7 @@ export const sendRDError = async (req: IRequest, res: IResponse) => {
   let auth: any
   try {
     auth = new google.auth.GoogleAuth({
-      keyFile: 'server-dist/routers/smartprice/mws/report/v2/gapi-rd-errors/credentials_console.cloud.google.com.json',
+      keyFile: 'server-dist/routers/smartprice/mws/report/v2/credentials_console.cloud.google.com.json',
       scopes: 'https://www.googleapis.com/auth/spreadsheets',
     })
   } catch (err) {

@@ -88,7 +88,7 @@
     ]
   },
   "dependencies": {
-    "@googleapis/docs": "^2.0.0",
+    "@googleapis/docs": "2.0.0",
     "@socket.io/admin-ui": "^0.2.0",
     "animate.css": "^4.1.1",
     "axios": "^0.19.2",
@@ -109,7 +109,7 @@
     "express-request-id": "^1.4.1",
     "express-static-proxy": "^1.0.0",
     "fs-extra": "^10.0.0",
-    "googleapis": "^109.0.1",
+    "googleapis": "109.0.1",
     "js-base64": "^3.6.1",
     "jsonwebtoken": "^8.5.1",
     "md5-hash": "^1.0.1",
