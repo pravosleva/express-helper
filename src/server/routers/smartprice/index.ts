@@ -74,6 +74,7 @@ import { boughtDevice } from './mws/partner_api/tradein/bought_device'
 
 import cors from 'cors'
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
+import { reportV2 } from './mws/report/v2'
 
 // const formidable = require('cyberjon-express-formidable')
 
@@ -184,5 +185,6 @@ spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)
 spApi.post('/report/add', reportAddAPI)
 spApi.get('/report/get-state', reportGetStateAPI)
 spApi.get('/report/resolve-issue', reportResolveIssueAPI)
+spApi.use('/report/v2', reportV2)
 
 export default spApi

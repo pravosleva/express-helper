@@ -230,7 +230,7 @@ const toClient = [
 
 export default async (req, res) => {
   const errs: string[] = []
-  const { memory_value, color_value, vendor_value, kz_2022 } = req.body
+  const { memory_value, color_value, vendor_value, kz_2022, _err_tst } = req.body
 
   for (const key in _help.params.body) {
     if (_help.params.body[key]?.required && !req.body[key]) {
@@ -245,7 +245,7 @@ export default async (req, res) => {
       _help,
     })
 
-  const toBeOrNotToBe = 1 // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
+  let toBeOrNotToBe = !!_err_tst ? 0 : 1 // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
   let result: any = {
     ...toClient[toBeOrNotToBe],
   }

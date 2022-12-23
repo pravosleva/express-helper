@@ -1,3 +1,4 @@
-export * from './add'
-export * from './get-state'
-export * from './resolve-issue'
+export * from './v1/add'
+export * from './v1/get-state'
+export * from './v1/resolve-issue'
+export * from './v2'

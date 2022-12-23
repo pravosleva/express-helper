@@ -85,3 +85,6 @@ server-dist/*
 storage/*
 !storage/.gitkeep
 backup/*
+
+# access
+credentials*.json

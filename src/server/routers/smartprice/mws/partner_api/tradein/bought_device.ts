@@ -1,7 +1,7 @@
 import { getRandomInteger } from '~/utils/getRandomInteger'
 import { THelp } from '~/utils/interfaces'
 
-const { SUCCESS_ANYWAY } = process.env
+// const { SUCCESS_ANYWAY } = process.env
 
 const _help: THelp = {
   params: {
@@ -26,6 +26,11 @@ const _help: THelp = {
         descr: 'Успешный ответ либо нет',
         required: false,
       },
+      _bought_device_title: {
+        type: 'string',
+        descr: 'Какое значение вернуть в subsidies.title в успешном ответе',
+        required: false,
+      },
     },
   },
 }
@@ -39,6 +44,10 @@ const toClient = [
   },
   {
     ok: true,
+    subsidy: {
+      // title: 'Samsung Galaxy Watch 4 40mm' // С нулевым price
+      title: 'Samsung Galaxy Watch 4 Classic 42mm',
+    },
   },
 ]
 
@@ -67,11 +76,15 @@ export const boughtDevice = async (req, res) => {
     })
 
   const toBeOrNotToBe = 1 // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
+  const { _bought_device_title } = req.body
+  const result = {
+    ...toClient[toBeOrNotToBe],
+    _originalBody: req.body,
+  }
+
+  if (!!toBeOrNotToBe && !!_bought_device_title) result.subsidy.title = _bought_device_title
 
   return setTimeout(() => {
-    res.status(200).send({
-      ...toClient[toBeOrNotToBe],
-      _originalBody: req.body,
-    })
+    res.status(200).send(result)
   }, 2000)
 }
