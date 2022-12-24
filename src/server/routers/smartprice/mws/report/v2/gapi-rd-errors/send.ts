@@ -7,6 +7,12 @@ enum EInsertDataOption {
   OVERWRITE = 'OVERWRITE', // Будет заполнять свободные строки (если их удалить)
 }
 
+// TODO: exp
+// function insertRow(sheet, rowData, optIndex) {
+//   var index = optIndex || 1
+//   sheet.insertRowBefore(index).getRange(index, 1, 1, rowData.length).setValues([rowData])
+// }
+
 export const sendRDError = async (req: IRequest, res: IResponse) => {
   const { rowValues } = req.body
 

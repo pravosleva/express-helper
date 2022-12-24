@@ -459,7 +459,7 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@googleapis/docs@^2.0.0":
+"@googleapis/docs@2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@googleapis/docs/-/docs-2.0.0.tgz#8db7bb0dd4946178a4bdcd2d8e87e130cf075792"
   integrity sha512-TtQcwIUhBGc4ftr3XChNcXaXUSwZtZJo6HlOQ95Qjq1gsImXuPOAEKfjPhIsN0xlea9WOutC6ZT7kNWuOK+3CA==
@@ -3362,7 +3362,7 @@ googleapis-common@^6.0.0, googleapis-common@^6.0.3:
     url-template "^2.0.8"
     uuid "^9.0.0"
 
-googleapis@^109.0.1:
+googleapis@109.0.1:
   version "109.0.1"
   resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-109.0.1.tgz#e4b160c9aff12acfd8ce0b4617f5192b7b8c01b3"
   integrity sha512-x286OtNu0ngzxfGz2XgRs4aMhrwutRCkCE12dh2M1jIZOpOndB7ELFXEhmtxaJ7z3257flKIbiiCJZeBO+ze/Q==
@@ -3520,10 +3520,10 @@ human-signals@^2.1.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
-husky@^8.0.0:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.2.tgz#5816a60db02650f1f22c8b69b928fd6bcd77a236"
-  integrity sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==
+husky@7.x:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.4.tgz#242048245dc49c8fb1bf0cc7cfb98dd722531535"
+  integrity sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==
 
 iconv-lite@0.4.23:
   version "0.4.23"
