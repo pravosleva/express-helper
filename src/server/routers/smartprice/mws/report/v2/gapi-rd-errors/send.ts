@@ -1,17 +1,7 @@
 import { Request as IRequest, Response as IResponse } from 'express'
 // @ts-ignore
 import { google } from 'googleapis'
-
-enum EInsertDataOption {
-  INSERT_ROWS = 'INSERT_ROWS', // Будет дописывать в первый свободный "пробел" в таблице и добавлять пустую строку под ней
-  OVERWRITE = 'OVERWRITE', // Будет заполнять свободные строки (если их удалить)
-}
-
-// TODO: exp
-// function insertRow(sheet, rowData, optIndex) {
-//   var index = optIndex || 1
-//   sheet.insertRowBefore(index).getRange(index, 1, 1, rowData.length).setValues([rowData])
-// }
+import { EInsertDataOption } from '~/routers/smartprice/mws/report/v2/types'
 
 export const sendRDError = async (req: IRequest, res: IResponse) => {
   const { rowValues } = req.body
@@ -61,7 +51,7 @@ export const sendRDError = async (req: IRequest, res: IResponse) => {
     gRes = await googleSheets.spreadsheets.values.append({
       auth,
       spreadsheetId,
-      range: 'Sheet1!A2', // Sheet1!A2:B
+      range: 'Sheet1!A2',
       valueInputOption: 'USER_ENTERED',
 
       // NOTE: Legacy param?
