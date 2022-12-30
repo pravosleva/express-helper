@@ -54,12 +54,16 @@ const syncRoomsTasklistMap = () => {
       let oldStatic: { data: { [roomName: string]: TRoomTasklist }, ts: number }
       try {
         oldStatic = getStaticJSONSync(storageRoomsTasklistMapFilePath)
-        if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_131.2: incorrect static data')
+        if (!oldStatic?.data || !oldStatic.ts) {
+          console.log(oldStatic)
+          throw new Error('ERR#CHAT.SOCKET_131.2: incorrect static data')
+        }
       } catch (err) {
         // TODO: Сделать нормальные логи
         console.log('ERR#CHAT.SOCKET_131.1')
         console.log(err)
-        oldStatic = { data: {}, ts: 0 }
+        // oldStatic = { data: {}, ts: 0 }
+        process.exit(1)
       }
       const staticData = oldStatic.data
       const ts = new Date().getTime()

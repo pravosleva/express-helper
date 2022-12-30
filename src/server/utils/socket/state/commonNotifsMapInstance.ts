@@ -99,12 +99,16 @@ const syncRegistryMap = () => {
       try {
         oldStatic = getStaticJSONSync(storageCommonNotifsMapFilePath)
         // console.log(oldStatic.data)
-        if (!oldStatic?.data || !oldStatic.ts) throw new Error('#ERR2021122508:35 Incorrect static data')
+        if (!oldStatic?.data || !oldStatic.ts) {
+          console.log(oldStatic)
+          throw new Error('#ERR2021122508:35 Incorrect static data')
+        }
       } catch (err) {
         // TODO: Сделать нормальные логи
         console.log('ERR#CHAT.COMMON.NOTIFS')
         console.log(err)
-        oldStatic = { data: {}, ts: 0 }
+        // oldStatic = { data: {}, ts: 0 }
+        process.exit(1)
       }
       const staticData: { [key: string]: TRoomNotifs } = oldStatic.data
       const ts = new Date().getTime()

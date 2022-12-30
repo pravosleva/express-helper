@@ -91,12 +91,16 @@ const syncRegistryMap = () => {
       let oldStatic: { data: { [key: string]: { passwordHash: string, registryLevel?: ERegistryLevel, tokens?: string[] } }, ts: number }
       try {
         oldStatic = getStaticJSONSync(storageRegistryMapFilePath)
-        if (!oldStatic?.data || !oldStatic.ts) throw new Error('ERR#CHAT.SOCKET_121.2: incorrect static data')
+        if (!oldStatic?.data || !oldStatic.ts) {
+          console.log(oldStatic)
+          throw new Error('ERR#CHAT.SOCKET_121.2: incorrect static data')
+        }
       } catch (err) {
         // TODO: Сделать нормальные логи
         console.log('ERR#CHAT.SOCKET_121.1')
         console.log(err)
-        oldStatic = { data: {}, ts: 0 }
+        // oldStatic = { data: {}, ts: 0 }
+        process.exit(1)
       }
       const staticData = oldStatic.data
       const ts = new Date().getTime()

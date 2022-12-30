@@ -67,12 +67,16 @@ const syncRegistryMap = () => {
       let oldStatic: { data: { [key: string]: string }, ts: number }
       try {
         oldStatic = getStaticJSONSync(storageTGChatIdsMapFilePath)
-        if (!oldStatic?.data || !oldStatic.ts) throw new Error('#ERR2021121816:03 Incorrect static data')
+        if (!oldStatic?.data || !oldStatic.ts) {
+          console.log(oldStatic)
+          throw new Error('#ERR2021121816:03 Incorrect static data')
+        }
       } catch (err) {
         // TODO: Сделать нормальные логи
         console.log('ERR#CHAT.SOCKET_121.1')
         console.log(err)
-        oldStatic = { data: {}, ts: 0 }
+        // oldStatic = { data: {}, ts: 0 }
+        process.exit(1)
       }
       const staticData = oldStatic.data
       const ts = new Date().getTime()
