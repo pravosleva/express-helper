@@ -25,6 +25,7 @@ import { addsDevicesLoggedStateInstance } from './utils/addsDevicesLoggedStateIn
 import { pravoslevaBot2021Router } from './routers/pravosleva-bot-2021'
 import { systemRouter } from './routers/system'
 import { caseServiceApi } from './routers/car-service'
+import { subprojectsRouter } from './routers/subprojects'
 
 const app = express()
 
@@ -76,5 +77,6 @@ app.use('/system', systemRouter)
 app.use('/chat', chatRouter)
 // app.use('/chat-login', chatLogin)
 app.use('/car-service', caseServiceApi)
+app.use('/subprojects', subprojectsRouter)
 
 module.exports = app

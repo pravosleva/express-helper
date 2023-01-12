@@ -252,8 +252,16 @@ export default async (req, res) => {
 
   if (!!toBeOrNotToBe) {
     if (kz_2022) result = kzSuccess2022
-    if (!!color_value) result.phone.color = color_value
-    if (!!memory_value) result.phone.memory = memory_value
+    if (!!color_value) {
+      result.phone.color = color_value
+    } else {
+      result.phone.color = ''
+    }
+    if (!!memory_value) {
+      result.phone.memory = memory_value
+    } else {
+      result.phone.memory = ''
+    }
     if (!!vendor_value) result.phone.vendor = vendor_value
   }
 

@@ -3,7 +3,7 @@ import { Request as IRequest, Response as IResponse } from 'express'
 import { google } from 'googleapis'
 import { EInsertDataOption } from '~/routers/smartprice/mws/report/v2/types'
 
-export const sendRDError = async (req: IRequest, res: IResponse) => {
+export const sendReport = async (req: IRequest, res: IResponse) => {
   const { rowValues } = req.body
 
   if (!rowValues || !Array.isArray(rowValues)) return res.status(400).send({
@@ -51,7 +51,7 @@ export const sendRDError = async (req: IRequest, res: IResponse) => {
     gRes = await googleSheets.spreadsheets.values.append({
       auth,
       spreadsheetId,
-      range: 'Sheet1!A2',
+      range: '/ssr/rd-errs!A2',
       valueInputOption: 'USER_ENTERED',
 
       // NOTE: Legacy param?

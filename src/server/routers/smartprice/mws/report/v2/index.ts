@@ -1,5 +1,7 @@
 import express from 'express'
-import { sendRDError } from './gapi-rd-errors/send'
+import { sendReport as sendSSRRDError } from './ssr/rd-errs/send'
+import { sendReport as sendOfflineTradeInUploadPhotoReport } from './offline-tradein/upload-wizard/send'
+
 import fs from 'fs'
 import path from 'path'
 
@@ -12,6 +14,11 @@ if (!fs.existsSync(path.join(projectRootDir, 'server-dist/routers/smartprice/mws
 
 const router = express.Router()
 
-router.post('/gapi-rd-errors/send', sendRDError)
+// SSR
+router.post('/gapi-rd-errors/send', sendSSRRDError)
+router.post('/ssr/rd-errs/send', sendSSRRDError)
+
+// OFFLINE TRADE-IN
+router.post('/offline-tradein/upload-wizard/send', sendOfflineTradeInUploadPhotoReport)
 
 export const reportV2 = router

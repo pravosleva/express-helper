@@ -30,7 +30,7 @@ export default async (req, res) => {
     })
   }
 
-  const { success_anyway } = req.body
+  const { success_anyway } = req.query
   const toBeOrNotToBe = success_anyway ? 1 : getRandomInteger(0, 1)
 
   return setTimeout(() => {
