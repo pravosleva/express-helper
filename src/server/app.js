@@ -66,8 +66,10 @@ app.use('/users', usersRouter)
 app.use('/url-metadata', urlMetadataRouter)
 app.use('/recaptcha-v3', reCAPTCHAV3Router)
 app.use('/swagger', mainSwaggerRouter)
+
 app.use('/smartprice', smartpriceRouter)
 app.use('/sp', smartpriceRouter)
+
 app.use('/imei', imeiRouter)
 app.use('/gcs', gcsApi)
 app.use('/auth', authRouter)

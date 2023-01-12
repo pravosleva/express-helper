@@ -1,4 +1,4 @@
-import { getRandomInteger } from '~/utils/getRandomInteger'
+// import { getRandomInteger } from '~/utils/getRandomInteger'
 import { THelp } from '~/utils/interfaces'
 
 // const { SUCCESS_ANYWAY } = process.env

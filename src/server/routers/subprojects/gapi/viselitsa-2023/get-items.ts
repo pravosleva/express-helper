@@ -8,6 +8,7 @@ const getItemsArr = ({ sheetData, validateRow }: { sheetData: string[][], valida
   const result: TGameItem[] = []
 
   for (const row of sheetData) {
+    if (!row[0].trim()) continue // Если первая клетка пуста
     if (!!validateRow(row)) {
       const newItem: TGameItem = { answer: row[0] }
       if (!!row[1]) newItem.question = row[1]
