@@ -1,9 +1,10 @@
-import { Response as IResponse } from 'express'
+import { Response as IResponse, NextFunction as INextFunction } from 'express'
 // @ts-ignore
 import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
+import axios from 'axios'
 
-export const sendReport = async (req: TSPRequest, res: IResponse) => {
+export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
   const { rowValues } = req.body
 
   if (!rowValues || !Array.isArray(rowValues)) return res.status(400).send({
@@ -48,7 +49,47 @@ export const sendReport = async (req: TSPRequest, res: IResponse) => {
   const result: any = {
     ok: true,
   }
-  if (!!gRes) result.gRes = gRes
+  if (!!gRes) {
+    result.gRes = gRes
 
-  return res.status(200).send(result)
+    try {
+      const updatedRange = gRes.data?.updates?.updatedRange // NOTE: '/offline-tradein/upload-wizard'!A20:M20
+      const lastCell = updatedRange.split(':')[1]
+      // var price = "£1,739.12";
+      // parseFloat(price.replace( /[^\d\.]*/g, '')); // 1739.12
+
+      const lastRow = Number(lastCell.replace( /[^\d\.]*/g, ''))
+      result.id = lastRow
+    } catch (err) {
+      result.message = err.message || 'Не удалось распарсить до id'
+    }
+  }
+
+  req.smartprice.report = {
+    rowValues,
+    resultId: result.id,
+  }
+
+  res.status(200).send(result)
+  next()
+}
+
+export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFunction) => {
+  if (!!req.smartprice.report?.rowValues) {
+    const rowValues = req.smartprice.report.rowValues
+    const resultId = req.smartprice.report.resultId
+
+    try {
+      axios.post('https://pravosleva.ru/tg-bot-2021/sp-notify/offline-tradein/send', {
+        chat_id: 432590698,
+        rowValues,
+        resultId,
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  else next()
+  
+  next()
 }

@@ -11,5 +11,9 @@ export type TSPRequest = IRequest & {
   smartprice: {
     googleSheetsAuth: GoogleAuth<JSONClient>;
     spreadsheetId: string;
+    report?: {
+      rowValues?: any[];
+      resultId?: number;
+    }
   };
 }

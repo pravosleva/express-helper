@@ -8,7 +8,7 @@ const getItemsArr = ({ sheetData, validateRow }: { sheetData: string[][], valida
   const result: TGameItem[] = []
 
   for (const row of sheetData) {
-    if (!row[0].trim()) continue // Если первая клетка пуста
+    if (!row[0]) continue // Если первая клетка пуста
     if (!!validateRow(row)) {
       const newItem: TGameItem = { answer: row[0] }
       if (!!row[1]) newItem.question = row[1]
@@ -82,7 +82,7 @@ export const getItems = async (req: IRequest, res: IResponse) => {
     result.gRes = gRes
     result.items = getItemsArr({
       sheetData: gRes.data.values,
-      validateRow: (row) => !!row[0].replace(' ', '')
+      validateRow: (row) => !!row[0] && typeof row[0] === 'string' && !!row[0].replace(' ', '')
     })
   } else {
     result.ok = false

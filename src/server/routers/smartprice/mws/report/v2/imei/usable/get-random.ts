@@ -69,7 +69,7 @@ const getRandomValue = ({ gRes, isFreshOnly }) => {
   }
   return {
     value: v,
-    index,
+    index: index + 4, // NOTE: Строки начинаются с 1 + три строки в шапке
   }
 }
 

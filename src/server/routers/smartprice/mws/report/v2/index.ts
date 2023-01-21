@@ -1,6 +1,9 @@
 import express from 'express'
 import { sendReport as sendSsrRdError } from './ssr/rd-errs/send'
-import { sendReport as sendOfflineTradeInUploadPhotoReport } from './offline-tradein/upload-wizard/send'
+import {
+  sendReport as sendOfflineTradeInUploadPhotoReport,
+  spNotifyMW as spOfflineTradeNotifyMW,
+} from './offline-tradein/upload-wizard/send'
 import { getRandom as getRandomIMEI } from './imei/usable/get-random'
 import { sendBoughtDevice } from './imei/bought-device/send'
 import { google } from 'googleapis'
@@ -38,7 +41,7 @@ router.post('/gapi-rd-errors/send', sendSsrRdError)
 router.post('/ssr/rd-errs/send', sendSsrRdError)
 
 // OFFLINE TRADE-IN
-router.post('/offline-tradein/upload-wizard/send', sendOfflineTradeInUploadPhotoReport)
+router.post('/offline-tradein/upload-wizard/send', sendOfflineTradeInUploadPhotoReport, spOfflineTradeNotifyMW)
 
 // IMEI SERVICE
 router.post('/imei/usable/get-random', getRandomIMEI)

@@ -3,7 +3,11 @@ import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
 import { Singleton as UsersMapSingleton } from '~/utils/gcsUsersMapInstance'
 
 export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSingleton, gcsStorageFilePath: string }, res: IResponse) => {
-  const { userName, chatData } = req.body
+  const { userName, chatData, credentialsImpl } = req.body
+
+  if (!credentialsImpl)
+    return res.status(403).json({ success: false, message: 'Kern fucked =)' })
+
   const { from } = req.query
   const requiredParams: string[] = ['userName', 'chatData']
   const _skipedParams = []

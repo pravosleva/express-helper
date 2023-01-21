@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable camelcase */
 /* eslint-disable import/extensions */
 // @ts-ignore
@@ -30,8 +31,8 @@ export default async (req, res) => {
     })
   }
 
-  const { success_anyway } = req.query
-  const toBeOrNotToBe = success_anyway ? 1 : getRandomInteger(0, 1)
+  const { success_anyway, fail_anyway } = req.query
+  const toBeOrNotToBe = fail_anyway ? 0 : success_anyway ? 1 : getRandomInteger(0, 1)
 
   return setTimeout(() => {
     res.status(200).send({
