@@ -4,6 +4,7 @@ import {
   sendReport as sendOfflineTradeInUploadPhotoReport,
   spNotifyMW as spOfflineTradeNotifyMW,
 } from './offline-tradein/upload-wizard/send'
+import { sendReport as sendOfflineTradeInMainReport } from './offline-tradein/main/send'
 import { getRandom as getRandomIMEI } from './imei/usable/get-random'
 import { sendBoughtDevice } from './imei/bought-device/send'
 import { google } from 'googleapis'
@@ -37,11 +38,12 @@ const spGoogleSheetsAuth = (req, res, next) => {
 router.use(spGoogleSheetsAuth)
 
 // SSR
-router.post('/gapi-rd-errors/send', sendSsrRdError)
+router.post('/gapi-rd-errors/send', sendSsrRdError) // Deprecated
 router.post('/ssr/rd-errs/send', sendSsrRdError)
 
 // OFFLINE TRADE-IN
 router.post('/offline-tradein/upload-wizard/send', sendOfflineTradeInUploadPhotoReport, spOfflineTradeNotifyMW)
+router.post('/offline-tradein/main/send', sendOfflineTradeInMainReport)
 
 // IMEI SERVICE
 router.post('/imei/usable/get-random', getRandomIMEI)
