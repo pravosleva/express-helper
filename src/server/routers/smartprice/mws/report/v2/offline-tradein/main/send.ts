@@ -25,6 +25,9 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   const client = await auth.getClient()
   const googleSheets = google.sheets({ version: 'v4', auth: client })
   const spreadsheetId = req.smartprice.spreadsheetId
+  const date = new Date()
+  const ts = date.getTime()
+  const uiDate = date.toJSON()
 
   let gRes: any
   try {
@@ -35,7 +38,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
       valueInputOption: 'USER_ENTERED',
       insertDataOption: EInsertDataOption.INSERT_ROWS,
       requestBody: {
-        values: [rowValues],
+        values: [[uiDate, ts, ...rowValues]],
       },
     })
   } catch (err) {
