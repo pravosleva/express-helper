@@ -5,7 +5,9 @@ import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v
 import axios from 'axios'
 
 export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
-  const { rowValues } = req.body
+  const { rowValues: _rowValues } = req.body
+  const date = new Date()
+  const rowValues = [date.toJSON(), ..._rowValues]
 
   if (!rowValues || !Array.isArray(rowValues)) return res.status(400).send({
     ok: false,
