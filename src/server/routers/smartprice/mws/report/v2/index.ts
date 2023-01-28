@@ -6,6 +6,7 @@ import {
 } from './offline-tradein/upload-wizard/send'
 import { sendReport as sendOfflineTradeInMainGoogleSheetsReport } from './offline-tradein/main/send'
 import { getRandom as getRandomIMEI } from './imei/usable/get-random'
+import { markAsUsed as markIMEIAsUsed } from './imei/usable/mark-as-used'
 import { sendBoughtDevice } from './imei/bought-device/send'
 import { google } from 'googleapis'
 
@@ -51,6 +52,7 @@ router.post('/offline-tradein/main/send', sendOfflineTradeInMainGoogleSheetsRepo
 
 // IMEI SERVICE
 router.post('/imei/usable/get-random', getRandomIMEI)
+router.post('/imei/usable/mark-as-used', markIMEIAsUsed)
 router.post('/imei/bought-device/send', sendBoughtDevice)
 
 export const reportV2 = router

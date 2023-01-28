@@ -17,7 +17,7 @@ const _help: THelp = {
       vendor: {
         type: 'string',
         descr: 'Производитель',
-        required: false,
+        required: true,
       },
       deviceType: {
         type: 'string',
@@ -26,36 +26,40 @@ const _help: THelp = {
       },
       isFreshOnly: {
         type: 'boolean',
-        descr: 'Только из неиспользованных',
+        descr: 'Только из неиспользованных (видимо, с незагруженными фото)',
         required: false,
       },
     },
   },
 }
+const tableOffset = 4
 
 const getRandomValue = ({ gRes, isFreshOnly }) => {
-  let v = null
-  let index = null
+  let v: string | null = null
+  let index: number | null = null
+  let report: any[] = []
+
   if (!!gRes?.data?.values && Array.isArray(gRes?.data?.values)) {
-    const allRows: any[][] = gRes.data.values.filter(r => !!r[0])
+    const allRows: any[][] = gRes.data.values // .filter(r => !!r[0])
 
     if (allRows.length === 0) return { value: null, index: null }
 
     switch (true) {
       case isFreshOnly: {
-        const possibleRows = allRows.filter((row) => {
-          const hasUsedFlag = row.length === 2
-          const alreadyUsed = Boolean(row[1])
-          return hasUsedFlag ? !alreadyUsed : true
-        })
-        if (possibleRows.length === 0) {
-          // NOTE: Take from bought devices?
-          return { value: null, index: null }
-        } else {
-          index = Math.floor(Math.random() * possibleRows.length)
-          const randRow = possibleRows[index]
-          v = randRow[0]
+        const possibleIndexes: number[] = []
+        for (let i = 0, max = allRows.length; i < max; i++) {
+          // const hasUsedFlag = allRows[i].length === 2
+          const alreadyUsed = !!allRows[i][1] && (allRows[i][1] === 'ИСТИНА' || allRows[i][1] === 'TRUE')
+          report.push(`${i + tableOffset}: alreadyUsed= ${alreadyUsed}`)
+          if (!alreadyUsed) possibleIndexes.push(i)
         }
+
+        if (possibleIndexes.length === 0) return { value: null, index: null }
+
+        index = possibleIndexes[Math.floor(Math.random() * possibleIndexes.length)]
+
+        const randRow = allRows[index]
+        v = randRow[0]
       }
         break
       default: {
@@ -69,7 +73,8 @@ const getRandomValue = ({ gRes, isFreshOnly }) => {
   }
   return {
     value: v,
-    index: index + 4, // NOTE: Строки начинаются с 1 + три строки в шапке
+    index: index + tableOffset, // NOTE: Строки начинаются с 1 + три строки в шапке
+    report,
   }
 }
 
@@ -83,15 +88,17 @@ const cfg = {
     Samsung: ['E', 'F'],
   }
 }
-const getColumnNames = ({ deviceType = 'mobile_phone', vendor = 'Samsung' }) => {
+const getColumnNames = ({ deviceType, vendor }) => {
+  if (!cfg[deviceType]) return null
+
   const _modifiedVendor = getCapitalizedFirstLetter(vendor)
   // NOTE: Не поможет для случаев типа OnePlus!
 
-  return cfg[deviceType][vendor] || cfg[deviceType][_modifiedVendor] || cfg[deviceType].Samsung
+  return cfg[deviceType][vendor] || cfg[deviceType][_modifiedVendor] || null
 }
 
 export const getRandom = async (req: TSPRequest, res: IResponse) => {
-  const { limit = 5, vendor, deviceType, isFreshOnly } = req.body
+  const { limit = 10, vendor, deviceType, isFreshOnly } = req.body
   const modifiedLimit = limit <= maxLimit ? limit : maxLimit
   const result: any = {
     _originalBody: req.body,
@@ -130,10 +137,13 @@ export const getRandom = async (req: TSPRequest, res: IResponse) => {
 
   try {
     const columnNames = getColumnNames({ vendor, deviceType })
+
+    if (!columnNames) throw new Error(`Не предусмотрено для кейса: ${deviceType} ${vendor}`)
+
     gRes = await googleSheets.spreadsheets.values.get({
       auth,
       spreadsheetId,
-      range: `/imei/usable!${columnNames[0]}4:${columnNames[1] || columnNames[0]}${3 + modifiedLimit}`,
+      range: `/imei/usable!${columnNames[0]}${tableOffset}:${columnNames[1] || columnNames[0]}${(tableOffset - 1) + modifiedLimit}`,
     })
   } catch (err) {
     console.log(err)
@@ -152,9 +162,12 @@ export const getRandom = async (req: TSPRequest, res: IResponse) => {
     result.ok = true
     result.value = randomItemData.value
     result.id = randomItemData.index
+    result._service = {
+      getRandomValue: randomItemData
+    }
   } else {
     result.ok = false
-    result.message = 'ERR: !!gRes?.data?.values is false'
+    result.message = `ERR: !!gRes?.data?.values is ${JSON.stringify(gRes?.data?.values)}`
   }
 
   res.status(200).send(result)
