@@ -38,15 +38,19 @@ const getRandomValue = ({ gRes, isFreshOnly }) => {
   let v: string | null = null
   let index: number | null = null
   let report: any[] = []
+  let possibleIndexes: number[] = []
 
   if (!!gRes?.data?.values && Array.isArray(gRes?.data?.values)) {
     const allRows: any[][] = gRes.data.values // .filter(r => !!r[0])
 
-    if (allRows.length === 0) return { value: null, index: null }
+    if (allRows.length === 0) return {
+      value: null,
+      index: null,
+    }
 
     switch (true) {
       case isFreshOnly: {
-        const possibleIndexes: number[] = []
+        possibleIndexes = []
         for (let i = 0, max = allRows.length; i < max; i++) {
           // const hasUsedFlag = allRows[i].length === 2
           const alreadyUsed = !!allRows[i][1] && (allRows[i][1] === 'ИСТИНА' || allRows[i][1] === 'TRUE')
@@ -54,27 +58,41 @@ const getRandomValue = ({ gRes, isFreshOnly }) => {
           if (!alreadyUsed) possibleIndexes.push(i)
         }
 
-        if (possibleIndexes.length === 0) return { value: null, index: null }
+        if (possibleIndexes.length === 0) return {
+          value: null,
+          index: null,
+          service: {
+            report,
+          },
+          message: 'Вероятно, доступные IMEI закончились'
+        }
 
         index = possibleIndexes[Math.floor(Math.random() * possibleIndexes.length)]
 
         const randRow = allRows[index]
         v = randRow[0]
-      }
         break
+      }
       default: {
         index = Math.floor(Math.random() * allRows.length)
         const randRow = allRows[index]
 
         v = randRow[0]
-      }
         break
+      }
     }
   }
+
+  if (!index) 
+
   return {
     value: v,
     index: index + tableOffset, // NOTE: Строки начинаются с 1 + три строки в шапке
-    report,
+    service: {
+      report,
+      tableOffset,
+      possibleIndexes,
+    },
   }
 }
 
@@ -158,16 +176,20 @@ export const getRandom = async (req: TSPRequest, res: IResponse) => {
 
   const randomItemData = getRandomValue({ gRes, isFreshOnly })
 
-  if (!!gRes?.data?.values) {
+  if (!randomItemData.index) {
+    result.ok = false
+    result.message = randomItemData.message || 'Не удалось получить IMEI из таблицы'
+  } else if (!!gRes?.data?.values) {
     result.ok = true
     result.value = randomItemData.value
     result.id = randomItemData.index
-    result._service = {
-      getRandomValue: randomItemData
-    }
   } else {
     result.ok = false
-    result.message = `ERR: !!gRes?.data?.values is ${JSON.stringify(gRes?.data?.values)}`
+    result.message = `!!gRes?.data?.values is ${JSON.stringify(gRes?.data?.values)}`
+  }
+
+  result._service = {
+    getRandomValue: randomItemData
   }
 
   res.status(200).send(result)
