@@ -34,7 +34,12 @@ const _help: THelp = {
 }
 const tableOffset = 4
 
-const getRandomValue = ({ gRes, isFreshOnly }) => {
+const getRandomValue = ({ gRes, isFreshOnly }): {
+  index: any;
+  value: any;
+  message?: any;
+  service?: any;
+} => {
   let v: string | null = null
   let index: number | null = null
   let report: any[] = []
@@ -46,6 +51,7 @@ const getRandomValue = ({ gRes, isFreshOnly }) => {
     if (allRows.length === 0) return {
       value: null,
       index: null,
+      message: `gRes?.data?.values: Получено ${allRows.length} строк`,
     }
 
     switch (true) {
@@ -82,8 +88,6 @@ const getRandomValue = ({ gRes, isFreshOnly }) => {
       }
     }
   }
-
-  if (!index) 
 
   return {
     value: v,
@@ -176,9 +180,9 @@ export const getRandom = async (req: TSPRequest, res: IResponse) => {
 
   const randomItemData = getRandomValue({ gRes, isFreshOnly })
 
-  if (!randomItemData.index) {
+  if (!randomItemData?.index) {
     result.ok = false
-    result.message = randomItemData.message || 'Не удалось получить IMEI из таблицы'
+    result.message = randomItemData?.message || 'Не удалось получить IMEI из таблицы'
   } else if (!!gRes?.data?.values) {
     result.ok = true
     result.value = randomItemData.value
@@ -189,7 +193,7 @@ export const getRandom = async (req: TSPRequest, res: IResponse) => {
   }
 
   result._service = {
-    getRandomValue: randomItemData
+    getRandomValue: randomItemData || `randomItemData is ${typeof randomItemData}`
   }
 
   res.status(200).send(result)
