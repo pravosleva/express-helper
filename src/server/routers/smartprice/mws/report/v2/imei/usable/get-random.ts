@@ -120,7 +120,7 @@ const getColumnNames = ({ deviceType, vendor }) => {
 }
 
 export const getRandom = async (req: TSPRequest, res: IResponse) => {
-  const { limit = 10, vendor, deviceType, isFreshOnly } = req.body
+  const { limit = 20, vendor, deviceType, isFreshOnly } = req.body
   const modifiedLimit = limit <= maxLimit ? limit : maxLimit
   const result: any = {
     _originalBody: req.body,
