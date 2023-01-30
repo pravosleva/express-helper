@@ -9,7 +9,7 @@ import { getRandom as getRandomIMEI } from './imei/usable/get-random'
 import { markAsUsed as markIMEIAsUsed } from './imei/usable/mark-as-used'
 import { sendBoughtDevice } from './imei/bought-device/send'
 import { google } from 'googleapis'
-import { runExtraNotifs as runOfflineTradeInExtraNotifs } from './offline-tradein/run-extra'
+import { runTGExtraNotifs as runTGExtraNotifs } from './run-tg-extra-notifs'
 
 import fs from 'fs'
 import path from 'path'
@@ -39,6 +39,9 @@ const spGoogleSheetsAuth = (req, res, next) => {
 
 router.use(spGoogleSheetsAuth)
 
+// TG notifs service
+router.post('/run-tg-extra-notifs', runTGExtraNotifs)
+
 // SSR
 router.post('/gapi-rd-errors/send', sendSsrRdErrorGoogleSheetsReport) // Deprecated
 router.post('/ssr/rd-errs/send', sendSsrRdErrorGoogleSheetsReport)
@@ -50,7 +53,6 @@ router.post(
   spOfflineTradeInTelegramNotifyMW,
 )
 router.post('/offline-tradein/main/send', sendOfflineTradeInMainGoogleSheetsReport)
-router.post('/offline-tradein/run-extra', runOfflineTradeInExtraNotifs)
 
 // IMEI SERVICE
 router.post('/imei/usable/get-random', getRandomIMEI)

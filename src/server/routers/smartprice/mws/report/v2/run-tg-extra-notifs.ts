@@ -4,13 +4,13 @@ import { TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 
 const isDev = process.env.NODE_ENV === 'development'
 
-export const runExtraNotifs = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
+export const runTGExtraNotifs = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
   if (!!req.body?.chat_id || !!req.body?.namespace) {
     let result = null
     try {
       result = await axios.post(isDev ? 'http://localhost:2021/sp-notify/run-extra' : 'http://pravosleva.ru/tg-bot-2021/sp-notify/run-extra', {
         chat_id: req.body.chat_id,
-        namespace: req.body?.namespace, // ENamespaces.OFFLINE_TRADEIN_UPLOAD_WIZARD,
+        namespace: req.body?.namespace,
       })
         .then(r => r.data)
         .catch(e => e)
