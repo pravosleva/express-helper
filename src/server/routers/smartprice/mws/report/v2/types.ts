@@ -17,3 +17,7 @@ export type TSPRequest = IRequest & {
     }
   };
 }
+
+export enum ENamespaces {
+  OFFLINE_TRADEIN_UPLOAD_WIZARD = 'offline-tradein/upload-wizard'
+}

@@ -9,6 +9,7 @@ import { getRandom as getRandomIMEI } from './imei/usable/get-random'
 import { markAsUsed as markIMEIAsUsed } from './imei/usable/mark-as-used'
 import { sendBoughtDevice } from './imei/bought-device/send'
 import { google } from 'googleapis'
+import { runExtraNotifs as runOfflineTradeInExtraNotifs } from './offline-tradein/run-extra'
 
 import fs from 'fs'
 import path from 'path'
@@ -49,6 +50,7 @@ router.post(
   spOfflineTradeInTelegramNotifyMW,
 )
 router.post('/offline-tradein/main/send', sendOfflineTradeInMainGoogleSheetsReport)
+router.post('/offline-tradein/run-extra', runOfflineTradeInExtraNotifs)
 
 // IMEI SERVICE
 router.post('/imei/usable/get-random', getRandomIMEI)
