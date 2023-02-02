@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, useContext, useRef, useMemo, useCallback } from 'react'
+import React, { useLayoutEffect, createContext, useState, useContext, useRef, useMemo, useCallback } from 'react'
 import io, { Socket } from 'socket.io-client'
 import { useToast } from "@chakra-ui/react"
 import { debounce } from 'lodash'
@@ -51,7 +51,7 @@ export const SocketProvider =
     const socketIdRef = useRef<string | null>(null)
 
     const toast = useToast()
-    useEffect(() => {
+    useLayoutEffect(() => {
       // console.log(`EFF: isConnected= ${isConnected}`)
       if (isConnected) toast({
         position: 'top-left',
@@ -96,7 +96,7 @@ export const SocketProvider =
       socket.off('connect_error', connErrListener)
     }, 0), [])
 
-    useEffect(() => {
+    useLayoutEffect(() => {
       console.log('EFF: mount')
       onSubscribe()
 

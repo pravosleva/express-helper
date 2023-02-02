@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext, useEffect, useCallback, useMemo } from 'react'
+import React, { useState, createContext, useContext, useLayoutEffect, useCallback } from 'react'
 import { useMainContext } from '~/context/mainContext'
 import { SocketContext } from '~/context/socketContext'
 import { PollingComponent } from '~/common/components/PollingComponent'
@@ -36,7 +36,7 @@ export const UsersProvider = ({ children }: any) => {
   const { slugifiedRoom, setTsMap, room, name, tsMapRef } = useMainContext()
   const [tasklist, setTasklist] = useState<any[]>([])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const sUListener = (users: TUser[]) => {
       setUsers(users)
     }
@@ -107,7 +107,7 @@ export const UsersProvider = ({ children }: any) => {
     if (!!socket) socket.emit('getTasklist', { room: slugifiedRoom })
   }, [slugifiedRoom, socket])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     getUsers()
     getTasklist()
   }, [socket, socket?.connected, slugifiedRoom])

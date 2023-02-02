@@ -1,4 +1,5 @@
-import React, { useContext, useState, useEffect, useCallback, useRef, useMemo } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useLayoutEffect, useContext, useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { MainContext } from '~/context/mainContext'
 import { SocketContext } from '~/context/socketContext'
@@ -87,7 +88,7 @@ export const Login = () => {
   }
   const countRef = useRef(0)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!name && countRef.current === 0) {
       if (!!nameLSRef.current) {
         setName(nameLSRef.current)
@@ -99,7 +100,7 @@ export const Login = () => {
   }, [handleOpenModal, setName, nameLS, name])
   // ---
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const queryParams = new URLSearchParams(location.search)
     const openRoomName: string | null = queryParams.get('room')
 

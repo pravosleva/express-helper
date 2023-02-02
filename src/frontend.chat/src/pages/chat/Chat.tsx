@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, useContext, useEffect, useState, useCallback, useRef, useMemo, useLayoutEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '~/context/mainContext'
@@ -826,7 +827,6 @@ export const Chat = () => {
   const handleHideCtxMenu = useCallback(() => {
     setIsCtxMenuOpened(false)
   }, [setIsCtxMenuOpened])
-  const initialRef = useRef(null)
   const handleChangeEditedMessage = useCallback((e: any) => {
     setEditedMessage((state) => ({ ...state, text: e.target.value }))
   }, [setEditedMessage])
@@ -1358,7 +1358,7 @@ export const Chat = () => {
 
   // -- Assignment feature switcher
   const [afLS, setAfLS] = useLocalStorage<{ [key: string]: number }>('chat.assignment-feature')
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!!roomRef.current)
       assignmentFeatureProxy.isFeatureEnabled = afLS?.[roomRef.current] === 1
   }, [afLS])
@@ -1478,7 +1478,7 @@ export const Chat = () => {
     sprintFeatureProxy.isFeatureEnabled = newVal
   }, [updateSprintSetting4TheRoom, room])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     sprintFeatureProxy.isFeatureEnabled = sprintSettingsLS?.[room]?.isEnabled || false
     sprintFeatureProxy.commonNotifs = {}
     sprintFeatureProxy.tsUpdate = Date.now()
@@ -1603,7 +1603,7 @@ export const Chat = () => {
 
   const debouncedEditedMessageText = useDebouncedValue(editedMessage?.text || '', 1000)
   const [isBottomSheetVisible, setIsBottomSheetVisible] = useState<boolean>(false)
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (upToMd) setIsBottomSheetVisible(true)
   }, [])
   const toggleBottomSheet = useCallback(() => {
@@ -1781,7 +1781,7 @@ export const Chat = () => {
   const [getRef, setRef] =  useDynamicRefs()
   const listenersMap = useRef<{[key: string]: { mouseenter: (_arg: any) => void, mouseleave: (_arg: any) => void }}>({})
   const timersMap = useRef<any>({})
-  useEffect(() => {
+  useLayoutEffect(() => {
     // console.log('-- EFF: ev listener')
     // const fnsMap = {}
     filteredMessages.forEach(({ ts }) => {

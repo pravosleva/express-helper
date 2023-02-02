@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect, useContext , useRef, MutableRefObject} from 'react'
+import React, { useState, createContext, useLayoutEffect, useContext , useRef, MutableRefObject} from 'react'
 import slugify from 'slugify'
 import { getNormalizedString } from '~/utils/strings-ops'
 import { proxy } from 'valtio'
@@ -120,7 +120,7 @@ export const MainProvider = ({ children }: any) => {
   const [tsMap, setTsMap] = useState<{[key: string]: number}>({})
   
   const tsMapRef = useRef<{[key: string]: number}>({})
-  useEffect(() => {
+  useLayoutEffect(() => {
     // NOTE: Императивный доступ для сравнения в эффекте без лишней зависимости
     tsMapRef.current = tsMap
   }, [tsMap])
@@ -132,7 +132,7 @@ export const MainProvider = ({ children }: any) => {
   //   if (!!lastRoomLS) setRoom(lastRoomLS)
   // }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setNormalizedRoom(slugify(room.trim().toLowerCase()))
   }, [room, setNormalizedRoom])
 
