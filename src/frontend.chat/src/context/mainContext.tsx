@@ -1,8 +1,8 @@
-import React, { useState, createContext, useLayoutEffect, useContext , useRef, MutableRefObject} from 'react'
+import React, { useEffect, useState, createContext, useLayoutEffect, useContext , useRef, MutableRefObject} from 'react'
 import slugify from 'slugify'
 import { getNormalizedString } from '~/utils/strings-ops'
 import { proxy } from 'valtio'
-// import { useLocalStorage } from 'react-use'
+import { useLocalStorage } from 'react-use'
 // const state = useSnapshot(sprintFeatureProxy)
 import { Systeminformation } from 'systeminformation'
 import { useLatest } from '~/common/hooks/useLatest'
@@ -75,6 +75,7 @@ type TMainContext = {
   setTsMap: (_val: {[key: string]: number}) => void
   tsMapRef: MutableRefObject<{[key: string]: number}>
   roomRef: MutableRefObject<string>
+  // setLastRoomLS: (room: string) => void
 }
 
 export const MainContext = createContext<TMainContext>({
@@ -101,7 +102,10 @@ export const MainContext = createContext<TMainContext>({
     throw new Error('setTsMap should be implemented')
   },
   tsMapRef: { current: {} },
-  roomRef: { current: '' }
+  roomRef: { current: '' },
+  // setLastRoomLS: (room: string) => {
+  //   throw new Error('setLastRoomLS should be implemented')
+  // }
 })
 
 export const MainProvider = ({ children }: any) => {
@@ -127,13 +131,14 @@ export const MainProvider = ({ children }: any) => {
 
   const roomRef = useLatest(room)
 
-  // const [lastRoomLS, setLastRoomLS, _removeLastRoomLS] = useLocalStorage<string>('chat.last-room', '')
-  // useEffect(() => {
-  //   if (!!lastRoomLS) setRoom(lastRoomLS)
-  // }, [])
+  const [_lastRoomLS, setLastRoomLS, _removeLastRoomLS] = useLocalStorage<string>('chat.last-room', '')
 
   useLayoutEffect(() => {
-    setNormalizedRoom(slugify(room.trim().toLowerCase()))
+    const normRoom = slugify(room.trim().toLowerCase())
+    if (!!normRoom) {
+      setNormalizedRoom(normRoom)
+      setLastRoomLS(normRoom)
+    }
   }, [room, setNormalizedRoom])
 
   // const [nameLS, _setNameLS, _removeNameLS] = useLocalStorage<string>('chat.my-name', '')

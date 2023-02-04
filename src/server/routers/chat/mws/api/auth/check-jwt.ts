@@ -24,6 +24,7 @@ export const checkJWT = (req: IRequest & { regData?: TRegistryData, needLogout?:
       return res.status(200).json({ ok: true, code: EAPIUserCode.Logged, regData: req.regData })
     } catch (err) {
       return res.status(401).json({
+        ok: false,
         message: `Ошибка аутентификации #1\n${err.message || 'No err.message'}`,
         code: EAPIUserCode.Unlogged
       })

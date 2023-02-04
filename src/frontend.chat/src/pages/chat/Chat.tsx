@@ -97,7 +97,7 @@ import { UploadInput } from './components/UploadInput'
 import { EMessageStatus, TMessage, ERegistryLevel } from '~/utils/interfaces'
 import { Image } from './components/chat-msg'
 import { GalleryModal } from './components/GalleryModal'
-import { getTruncated } from '~/utils/strings-ops'
+import { getNormalizedString, getTruncated } from '~/utils/strings-ops'
 import { Roomlist } from './components/MenuBar/components'
 import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
 import { SearchUserModal } from './components/SearchUserModal'
@@ -123,7 +123,7 @@ import { webWorkersInstance } from '~/utils'
 import { AddLinkFormModal } from './components/AddLinkFormModal'
 import { Widget } from './components/Widget'
 import { TasklistContent } from './components/TasklistModal/components'
-// import debounce from 'lodash.debounce'
+import debounce from 'lodash.debounce'
 import { useColorMode } from '@chakra-ui/react'
 // import { useLatest } from '~/common/hooks/useLatest'
 import pkg from '../../../package.json'
@@ -161,6 +161,9 @@ import useDynamicRefs from 'use-dynamic-refs'
 import { EditInModal } from './components/EditInModal'
 import { AddToSprintIconButton } from './components/IconButton'
 import scrollIntoView2 from 'scroll-into-view-if-needed';
+import { getRandomInteger } from '~/utils/getRandomInteger'
+import { jwtHttpClient } from '~/utils/httpClient'
+import { EAPIUserCode, TUserResData } from '~/utils/httpClient/types'
 
 const scrollInKanban = (node: any) => {
   scrollIntoView2(node, {
@@ -227,7 +230,7 @@ const getIconByStatus = (status: EMessageStatus | 'assign', isColored: boolean) 
     default: return null
   }
 }
-const getIconByStatuses = (statuses: EMessageStatus[], isColored: boolean) => {
+const getIconByStatuses = (statuses: EMessageStatus[], _isColored: boolean) => {
   switch (true) {
     case statuses.length > 0:
       const res: any[] = []
@@ -354,7 +357,7 @@ const removeBlinkWithTimer = (ts: number) => {
 }
 
 export const Chat = () => {
-  const { name, slugifiedRoom: room, roomRef, setRoom, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy, devtoolsFeatureProxy } = useContext(MainContext)
+  const { name, slugifiedRoom: room, roomRef, setRoom, setName, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy, devtoolsFeatureProxy } = useContext(MainContext)
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
   const userInfoSnap = useSnapshot(userInfoProxy)
   const assignmentSnap = useSnapshot(assignmentFeatureProxy)
@@ -477,6 +480,19 @@ export const Chat = () => {
         // })
       }
       const logoutFromServerListener = () => {
+        // const queryParams = new URLSearchParams(document.location.search)
+        // const roomFromUrl: string | null = queryParams.get('room')
+
+        // console.log('-- roomFromUrl')
+        // console.log(roomFromUrl)
+
+        // if (!!roomFromUrl) {
+        //   const normalizedRoom = getNormalizedString(roomFromUrl)
+        //   if (!!normalizedRoom) setRoom(normalizedRoom)
+
+        //   return
+        // } else
+
         history.push('/')
       }
       const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy, links, position, statusChangeTs }: { statusChangeTs?: number,  position?: number, text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string, links?: { link: string, descr: string }[] }) => {
@@ -796,8 +812,59 @@ export const Chat = () => {
     if (!!textFieldRef.current) textFieldRef.current.focus()
   }, [])
 
-  useEffect(() => {
-    if (!room || !name) history.push('/')
+  const _tryLogin = useCallback(async () => {
+    const roomFromLS = window.localStorage.getItem('chat.last-room')
+    let normalizedRoom
+    if (!!roomFromLS) normalizedRoom = roomFromLS.replace(/"/g, '')
+    const nameFromLS = window.localStorage.getItem('chat.my-name')
+    let normalizedName
+    if (!!nameFromLS) normalizedName = nameFromLS.replace(/"/g, '')
+
+    if (!!normalizedRoom && !!normalizedName) {
+      const jwtResponse: TUserResData = await jwtHttpClient.checkJWT({ username: normalizedName })
+        .then(r => r)
+        .catch(e => e)
+
+      console.log(jwtResponse)
+      if (jwtResponse?.ok) {
+        // console.log('LOGGED!!')
+        setName(normalizedName)
+        if (!!normalizedRoom) {
+          setRoom(normalizedRoom)
+          roomRef.current = normalizedRoom
+          setTimeout(getPieceOfChat, 0)
+        }
+      } else history.push('/')
+    } else history.push('/')
+  }, [])
+  const tryLogin = useMemo(
+    () => debounce(_tryLogin, 1000), // { leading: true, trailing: false }
+    [_tryLogin]
+  );
+
+  useLayoutEffect(() => {
+    // console.log('-- EFF')
+    if (!room || !name) {
+      // console.log('-- LOOK:', room, name)
+      // -- NOTE: Try get from url.query
+      // const queryParams = new URLSearchParams(document.location.search)
+      // const roomFromUrl: string | null = queryParams.get('room')
+
+      // console.log('-- roomFromUrl')
+      // console.log(roomFromUrl)
+
+      // if (!!roomFromUrl) {
+      //   const normalizedRoom = getNormalizedString(roomFromUrl)
+      //   if (!!normalizedRoom) setRoom(normalizedRoom)
+
+      //   return
+      // }
+
+      tryLogin()
+      
+      // --
+      // history.push('/')
+    } // else history.push('/')
   }, [])
 
   const { isOpen: isEditModalOpen, onOpen: handleEditModalOpen, onClose: handleEditModalClose } = useDisclosure()
@@ -813,7 +880,7 @@ export const Chat = () => {
     editedMessageRef.current = initialEditedMessageState
   }, [setEditedMessage])
   const editedMessageRef = useRef<TMessage>(initialEditedMessageState)
-  useEffect(() => {
+  useLayoutEffect(() => {
     editedMessageRef.current = editedMessage
     messageRef.current = editedMessage.text
   }, [useCompare([editedMessage])])
@@ -1060,7 +1127,7 @@ export const Chat = () => {
   const [inViewRef2, inView2, _entry2] = useInView({ threshold: 0 })
 
   // const _infinityChatLoadRef = useRef<NodeJS.Timeout>()
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!showLoadMoreBtn && (inView || inView2)) {
       // if (!!_infinityChatLoadRef.current) clearTimeout(_infinityChatLoadRef.current)
       // _infinityChatLoadRef.current = setTimeout(getPieceOfChat, 1000)
@@ -1069,7 +1136,7 @@ export const Chat = () => {
   }, [inView, inView2, getPieceOfChat, showLoadMoreBtn])
 
   const rendCounter = useRef<number>(0)
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isConnected) rendCounter.current += 1
     const isFirstRender = rendCounter.current === 1
     if (isFirstRender) return
@@ -1157,7 +1224,7 @@ export const Chat = () => {
         const newRooms: any[] = []
 
         if (rooms.length > 0) {
-          rooms.forEach(({ name, ts }: any, i: number) => {
+          rooms.forEach(({ name, ts }: any, _i: number) => {
             if (name === roomName) {
               newRooms.push({ name, ts: Date.now() })
             } else {
@@ -1359,9 +1426,10 @@ export const Chat = () => {
   // -- Assignment feature switcher
   const [afLS, setAfLS] = useLocalStorage<{ [key: string]: number }>('chat.assignment-feature')
   useLayoutEffect(() => {
-    if (!!roomRef.current)
-      assignmentFeatureProxy.isFeatureEnabled = afLS?.[roomRef.current] === 1
-  }, [afLS])
+    console.log(`roomRef.current= ${roomRef.current}, room= ${room}`)
+    if (!!room)
+      assignmentFeatureProxy.isFeatureEnabled = afLS?.[room] === 1
+  }, [afLS, room])
   const setAFLSRoom = useCallback((val: number) => {
     setAfLS((oldState) => {
       const newState: any = {}
@@ -1478,7 +1546,7 @@ export const Chat = () => {
     sprintFeatureProxy.isFeatureEnabled = newVal
   }, [updateSprintSetting4TheRoom, room])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     sprintFeatureProxy.isFeatureEnabled = sprintSettingsLS?.[room]?.isEnabled || false
     sprintFeatureProxy.commonNotifs = {}
     sprintFeatureProxy.tsUpdate = Date.now()
@@ -1843,6 +1911,25 @@ export const Chat = () => {
     handleResetAssignmentFilters()
     handleDisableSearch()
   }, [resetFilters, resetForm, handleResetAssignmentFilters, handleDisableSearch])
+
+  const runCreateFakeData = useCallback(() => {
+    if (!socket) return
+    const runSingle = (i: number) => {
+      const int = getRandomInteger(10, 100)
+      const newStuff: { message: string, userName: string, status?: EMessageStatus, room: string, position?: number } = {
+        message: `Имитация нагрузки ${int} #${i}`,
+        userName: `random-name.${int}-`,
+        room: roomRef.current
+      }
+      socket.emit('sendMessage', newStuff)
+    }
+    const runSingleFor = ({ limit, delay }: { limit: number, delay: number }) => {
+      for (let i = 0, max = limit; i < max; i++) setTimeout(() => runSingle(i), i * delay)
+    }
+    const limit = getRandomInteger(5, 10)
+    const delay = getRandomInteger(100, 1000)
+    runSingleFor({ limit, delay })
+  }, [socket, name])
 
   return (
     <>
@@ -2347,7 +2434,7 @@ export const Chat = () => {
                 <Box ml="2">---</Box>
               </Flex>
             )}
-            {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, i, _arr) => {
+            {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, _i, _arr) => {
               const { user, text, ts, editTs, status, file, _next, assignedTo, assignedBy, links = [] } = message
               // const isLastOfFiltered = i === arr.length -1
               const isMyMessage = user === name
@@ -2646,6 +2733,10 @@ export const Chat = () => {
                     {isFileUploading && (
                       <div><b>Upload...&nbsp;{uploadPercentageRef.current}&nbsp;%</b></div>
                     )}
+                    <div><button
+                    className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])}
+                    style={{ display: 'flex', alignItems: 'center' }}
+                    onClick={runCreateFakeData}><span style={{ marginRight: '7px' }}>┣</span><span>FAKE!</span></button></div>
                   </>
                 )}
                 {/*upToMd && isLogged && (

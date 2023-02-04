@@ -108,8 +108,8 @@ export const Login = () => {
       setRoom(slugify(openRoomName))
       setIsRoomDisabled(true)
 
-      queryParams.delete('room')
-      history.replace({ search: queryParams.toString() })
+      // queryParams.delete('room')
+      // history.replace({ search: queryParams.toString() })
     }
   }, [location.search, history, setRoom])
 
@@ -127,15 +127,15 @@ export const Login = () => {
 
     // console.log('- try login')
     setIsLoading1(true)
-    if (isDev || name === 'pravosleva') {
-      toast({
-        position: 'top-left',
-        title: '/check-jwt',
-        // description: error,
-        status: 'warning',
-        duration: 2000,
-      })
-    }
+    // if (isDev || name === 'pravosleva') {
+    //   toast({
+    //     position: 'top-left',
+    //     title: '/check-jwt',
+    //     // description: error,
+    //     status: 'warning',
+    //     duration: 2000,
+    //   })
+    // }
 
     // TODO: await check jwt
     // const jwtChecked = await axios(`${REACT_APP_API_URL}/chat/api/auth/check-jwt`, {
@@ -215,9 +215,19 @@ export const Login = () => {
     }
 
     const normalizedRoom = !!sR ? slugify(sR) : slugifiedRoom
+
+    // if (!!sR) {
+    //   console.log(`-- sR: ${sR}`)
+    //   console.log(`-- slugify(sR): ${slugify(sR)}`)
+    // } else {
+    //   console.log(`-- slugifiedRoom: ${slugifiedRoom}`)
+    // }
+
+    // console.log(`-- normalizedRoom -> ${normalizedRoom}`)
+
     if (isLogged) {
       toast({ position: 'bottom', title: `Hello, ${jwtResponse.regData?.tg?.username || 'ERR'}`, status: 'info' })
-      if (!!normalizedRoom) setLastRoomLS(normalizedRoom)
+      // if (!!normalizedRoom) setLastRoomLS(normalizedRoom)
       addRoom(sR || slugifiedRoom)
       setNameLS(name)
       history.push('/chat')
@@ -346,7 +356,7 @@ export const Login = () => {
             } else {
               setRoomlistLS([{ name: room, ts: nowTs }])
             }
-            setLastRoomLS(slugifiedRoom)
+            // setLastRoomLS(slugifiedRoom)
             setNameLS(name)
             // --
             // toast({ position: "bottom", title: "Hey there", description: `Hello, ${name}`, status: "success", duration: 3000, isClosable: true })

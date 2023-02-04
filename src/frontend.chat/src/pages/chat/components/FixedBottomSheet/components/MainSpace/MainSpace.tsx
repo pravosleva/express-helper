@@ -178,7 +178,7 @@ const MainSpaceMemoized = ({
       }
     }
     setTimeout(run, 1000)
-  }, [_effCounter, _setEffCounter, isFiltersInactive])
+  }, [_effCounter, _setEffCounter, isFiltersInactive, room])
   // -
 
   // const handleClickDoneLastWeek = useCallback(() => {

@@ -8,8 +8,6 @@ import { TRegistryData } from '~/utils/socket/state/types'
 const isDev = process.env.NODE_ENV === 'development'
 
 export const mutateReqIfLogged = (jwtSecret: string, cookieName: string) => (req: IRequest & { needLogout?: boolean, regData?: TRegistryData }, _res: IResponse, next: INextFunction) => {
-  console.log('-- mw: mutateReqIfLogged')
-
   // if (isDev) {
   //   console.log('CASE 1')
   //   const developer = 'pravosleva'
@@ -17,7 +15,7 @@ export const mutateReqIfLogged = (jwtSecret: string, cookieName: string) => (req
   //   req.regData = regData
   // } else
   if (!!req.cookies && !!req.cookies[cookieName]) {
-    console.log('CASE 2')
+    console.log('-- mutate-req-if-logged.middle: CASE 2')
     /*
     * Try to decode & verify the JWT token
     * The token contains user's id ( it can contain more informations )
@@ -43,10 +41,10 @@ export const mutateReqIfLogged = (jwtSecret: string, cookieName: string) => (req
         switch (true) {
           case (!!regData && regData.tg?.username !== username):
             req.needLogout = true
-            console.log(`-- case 1: regData.tg?.username= ${regData.tg?.username}, req.body.username= ${username}`)
+            console.log(`-- mutate-req-if-logged.middle: CASE 2.1: regData.tg?.username= ${regData.tg?.username}, req.body.username= ${username}`)
             break;
           case (!!regData && regData.tg?.username === username):
-            console.log(`-- case 2: regData.tg?.username= ${regData.tg?.username}, req.body.username= ${username}`)
+            console.log(`-- mutate-req-if-logged.middle: CASE 2.2: regData.tg?.username= ${regData.tg?.username}, req.body.username= ${username}`)
             req.regData = regData
             break;
           default: break;
@@ -61,7 +59,7 @@ export const mutateReqIfLogged = (jwtSecret: string, cookieName: string) => (req
     }
     // --
   } else {
-    console.log('CASE 3')
+    console.log('-- mutate-req-if-logged.middle: CASE 3')
   }
 
   console.log(req.regData)
