@@ -12,6 +12,7 @@ import {
   MenuOptionGroup,
   Flex,
   Tooltip,
+  Box,
   Tag,
   Stack,
 } from "@chakra-ui/react"
@@ -33,6 +34,7 @@ import Countdown, { zeroPad } from 'react-countdown'
 // import { BsFillCalendarFill } from 'react-icons/bs'
 
 type TProps = {
+  char: string
   data: TTask
   onCompleteToggle: () => void
   onDelete: (ts: number) => void
@@ -55,7 +57,7 @@ const constants = {
   year3: 3 * 12 * 30 * 24 * 60 * 60 * 1000,
 }
 
-export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker, onPriceModalOpen, onResetExpenses }: TProps) => {
+export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker, onPriceModalOpen, onResetExpenses, char }: TProps) => {
   const {
     title,
     // description,
@@ -331,8 +333,8 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
 
   return (
     <>
-      <Tr>
-        <Td>
+      <Flex display="flex" alignItems="center">
+        <Box p={5} pl={6} as='div'>
           <Flex display="flex" alignItems="center">
             <Text color='green.500' fontSize="md" onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
             {/*
@@ -353,10 +355,15 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
             )}
             */}
           </Flex>
-        </Td>
-        <Td /* fontWeight='bold' */ pl={0} pr={0}>
-          <Stack>
+        </Box>
+        <Box p={5} fontSize='15px' as='div'>
+          <Flex direction='column'>
             <Editable
+              border='2px dashed lightgray'
+              style={{ width: 'auto' }}
+              pl={2}
+              pr={2}
+              mb={2}
               fontWeight='bold' 
               defaultValue={title}
               onChange={(nextVal: string) => {
@@ -371,9 +378,9 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
             </Editable>
 
             {timeSection}
-          </Stack>
-        </Td>
-        <Td isNumeric>
+          </Flex>
+        </Box>
+        <Box p={5} style={{ marginLeft: 'auto' }} as='div'>
           {/* <IconButton
             aria-label="DEL"
             isRound
@@ -384,8 +391,8 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
           </IconButton> */}
           {/* <Button onClick={handleEditOpen}>EDIT</Button> */}
           {MemoizedMenu}
-        </Td>
-      </Tr>
+        </Box>
+      </Flex>
     </>
   )
 }

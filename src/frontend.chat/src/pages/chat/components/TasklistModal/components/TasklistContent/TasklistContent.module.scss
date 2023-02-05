@@ -66,3 +66,25 @@
   z-index: 2;
   padding: var(--chakra-space-5) var(--chakra-space-5) var(--chakra-space-5) var(--chakra-space-5);
 }
+
+.abHeader {
+  font-weight: bold;
+  font-size: 15px;
+  opacity: 0.5;
+  position: sticky;
+  top: 0;
+  padding: 0 var(--chakra-space-1) 0 var(--chakra-space-1);
+
+  &_dark {
+    background: rgba(0,0,0,0.3);
+    background: linear-gradient(0deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+  }
+  &_light {
+    background: rgba(0,0,0,0.1);
+    background: linear-gradient(0deg, transparent 0%, rgba(0,0,0,0.1) 100%);
+  }
+  &_topRadius {
+    border-radius: var(--chakra-radii-xl) var(--chakra-radii-xl) 0 0;
+    padding: 0 var(--chakra-space-3) 0 var(--chakra-space-3);
+  }
+}

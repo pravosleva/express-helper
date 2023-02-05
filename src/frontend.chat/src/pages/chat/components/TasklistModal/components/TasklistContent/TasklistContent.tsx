@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, useEffect } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import { useSocketContext } from '~/context/socketContext'
 import { useMainContext } from '~/context/mainContext'
 import {
@@ -19,6 +19,11 @@ import {
   ModalFooter,
   ModalBody,
   useColorMode,
+  Thead,
+  Tr,
+  Th,
+  Divider,
+  Flex,
 } from '@chakra-ui/react'
 import { useForm } from '~/common/hooks/useForm'
 import { TaskItem } from '../../TaskItem'
@@ -28,6 +33,7 @@ import { IoMdAdd, IoMdClose } from 'react-icons/io'
 import styles from './TasklistContent.module.scss'
 import clsx from 'clsx'
 import { useCompare } from '~/common/hooks/useDeepEffect'
+import { getABSortedObjByObjects } from './getABSortedObjByObjects'
 
 type TProps = {
   data: any[]
@@ -139,6 +145,8 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
   }, [handleTaskEdit, editedTask2])
   // --
 
+  const abDataVersion = useMemo(() => getABSortedObjByObjects({ arr: data }), [data])
+
   const Controls = useMemo(() => {
     return (
       <>
@@ -220,18 +228,18 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         {asModal && (
           EnterText
         )}
-        {
+        {/*
           data?.length > 0 ? (
             <div>
               <Table variant="simple" size='md'>
                 <TableCaption mt={5} mb={5} textAlign='left'>При включенной опции <b>IS&nbsp;LOOPED</b> готовая задача будет работать как циклический таймер, сообщая о своей готовности быть unchecked через промежуток времени от создания до первого выполнения. Для сброса интервала выберите в меню <b>RESET&nbsp;LOOPER</b> и дайте новое время до выполнения</TableCaption>
-                {/* <Thead>
+                <Thead>
                   <Tr>
                     <Th>St.</Th>
                     <Th>Title</Th>
                     <Th isNumeric></Th>
                   </Tr>
-                </Thead> */}
+                </Thead>
                 <Tbody>
                   {data.map((data: any) => {
                     switch (radioValue) {
@@ -267,6 +275,80 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                   })}
                 </Tbody>
               </Table>
+            </div>
+          ) : <Text fontWeight='md' p={5}>No tasks yet...</Text>
+        */}
+        <Text fontWeight='md' p={5}>При включенной опции <b>IS&nbsp;LOOPED</b> готовая задача будет работать как циклический таймер, сообщая о своей готовности быть unchecked через промежуток времени от создания до первого выполнения. Для сброса интервала выберите в меню <b>RESET&nbsp;LOOPER</b> и дайте новое время до выполнения</Text>
+        
+        {/* <pre>{JSON.stringify(abDataVersion, null, 2)}</pre> */}
+        {
+          Object.keys(abDataVersion).length > 0 ? (
+            <div>
+              {Object.keys(abDataVersion).map((key: string) => {
+                switch (radioValue) {
+                  case 'all': break;
+                  case 'checked':
+                    // if (!data.isCompleted) return null;
+                    if (abDataVersion[key].every((data) => !data.isCompleted)) return null;
+                    break;
+                  case 'unchecked':
+                    // if (data.isCompleted) return null;
+                    if (abDataVersion[key].every((data) => data.isCompleted)) return null;
+                    break;
+                  default: break;
+                }
+
+                return (
+
+                  <div key={key}>
+
+                    {asModal && <Divider marginTop="0px" marginBottom='0px' />}
+
+                    <Flex direction='column'>
+  
+                      <div className={clsx(styles.abHeader, styles[`abHeader_${mode.colorMode}`], { [styles[`abHeader_topRadius`]]: !asModal })}>
+                        {key.toUpperCase()}
+                      </div>
+                      
+                      <div style={{ zIndex: 1 }}>
+                        {abDataVersion[key].map((data: any) => {
+                          switch (radioValue) {
+                            case 'all': break;
+                            case 'checked':
+                              if (!data.isCompleted) return null;
+                              break;
+                            case 'unchecked':
+                              if (data.isCompleted) return null;
+                              break;
+                            default: break;
+                          }
+
+                          return (
+                            <TaskItem
+                              char={key}
+                              key={data.editTs || data.ts}
+                              data={data}
+                              onCompleteToggle={() => {
+                                handleCompleteToggle(data)
+                              }}
+                              onDelete={handleTaskDelete}
+                              onEdit={handleTaskEdit}
+                              onLoopSwitch={() => {
+                                handleTaskLoopToggler(data)
+                              }}
+                              // onOpenDatePicker={handleOpenDatePicker}
+                              onOpenDatePicker={() => { console.log('Datepicker in progress...') }}
+
+                              onPriceModalOpen={handleOpenPriceModal}
+                              onResetExpenses={handleResetExpenses}
+                            />
+                          )
+                        })}
+                      </div>
+                    </Flex>
+                  </div>
+                )
+              })}
             </div>
           ) : <Text fontWeight='md' p={5}>No tasks yet...</Text>
         }
@@ -310,7 +392,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         asModal
         ? (
           <>
-            <ModalBody pb={5} pl={1} pr={1}>
+            <ModalBody pb={5} pl={0} pr={0} pt={0}>
               {Body}
             </ModalBody>
           </>
