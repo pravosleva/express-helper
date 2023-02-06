@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, memo } from 'react'
 import { useSocketContext } from "~/context/socketContext";
 // @ts-ignore
 import SocketIOFileUpload from 'socketio-file-upload'
@@ -14,7 +14,7 @@ type TProps = {
 
 const UPLOAD_FILE_SIZE_LIMIT_MB = 2
 
-export const UploadInput = ({
+export const UploadInput = memo(({
   id,
   label,
   isDisabled,
@@ -50,4 +50,4 @@ export const UploadInput = ({
       <input id={id} type="file" accept=".gif,.png,.jpg,.jpeg,.webp" disabled={isDisabled} />
     </>
   )
-}
+})

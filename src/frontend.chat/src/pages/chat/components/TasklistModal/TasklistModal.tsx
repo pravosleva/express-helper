@@ -1,3 +1,4 @@
+import { memo } from 'react'
 // @ts-ignore
 import {
   Modal,
@@ -20,7 +21,7 @@ type TProps = {
   data: any
 }
 
-export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
+export const TasklistModal = memo(({ isOpened, onClose, data }: TProps) => {
   // const [isPending, startTransition] = useTransition();
   const [downToSm] = useMediaQuery(`(max-width: ${md}px)`)
   // const [upToSm] = useMediaQuery(`(min-width: ${md + 1}px)`)
@@ -50,4 +51,4 @@ export const TasklistModal = ({ isOpened, onClose, data }: TProps) => {
       </Modal>
     </>
   )
-}
+})

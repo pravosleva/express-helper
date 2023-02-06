@@ -1,4 +1,4 @@
-import { Fragment, useContext, useCallback } from 'react'
+import { Fragment, useContext, useCallback, memo, useMemo } from 'react'
 import { TMessage } from '~/utils/interfaces'
 import { getNormalizedDateTime } from '~/utils/timeConverter'
 import {
@@ -26,7 +26,7 @@ type TProps = {
 
 const REACT_APP_CHAT_UPLOADS_URL = process.env.REACT_APP_CHAT_UPLOADS_URL || '/chat/storage/uploads' // '/chat/storage-proxy/uploads'
 
-export const Image = ({
+export const Image = memo(({
   message,
   setEditedMessage,
   onEditModalOpen,
@@ -43,10 +43,10 @@ export const Image = ({
   const date = getNormalizedDateTime(ts)
   const isNextOneBtnEnabled = _next?.isHidden
   const handleClickCtxMenu = () => setEditedMessage(message)
-  const src = `${REACT_APP_CHAT_UPLOADS_URL}/${filePath || fileName}`
+  const src = useMemo(() => `${REACT_APP_CHAT_UPLOADS_URL}/${filePath || fileName}`, [filePath, fileName])
   const handleImageClick = useCallback(() => {
     onOpenGallery(src)
-  }, [onOpenGallery])
+  }, [onOpenGallery, src])
   const handleUrlBtnClick = useCallback((_ev: any) => {
     openUrlInNewTab(src)
   }, [src])
@@ -115,4 +115,4 @@ export const Image = ({
       {isNextOneBtnEnabled && <div className={stylesBase['centered-box']}><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-sm'], stylesBase['dark-btn'])} onClick={() => { onAddAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
     </Fragment>
   )
-}
+})

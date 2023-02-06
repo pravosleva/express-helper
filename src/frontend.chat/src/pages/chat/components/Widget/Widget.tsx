@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, memo } from 'react'
 import clsx from 'clsx'
 import styles from './Widget.module.scss'
 import { useColorMode } from '@chakra-ui/react'
@@ -10,7 +10,7 @@ type TProps = {
   isHalfHeight?: boolean
 }
 
-export const Widget = ({ children, position, isHalfHeight }: TProps) => {
+export const Widget = memo(({ children, position, isHalfHeight }: TProps) => {
   const [isOpened, setIsOpened] = useState<boolean>(false)
   const openToggler = () => {
     setIsOpened((s) => !s)
@@ -44,4 +44,4 @@ export const Widget = ({ children, position, isHalfHeight }: TProps) => {
       </div>
     </div>
   )
-}
+})

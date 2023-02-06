@@ -172,7 +172,7 @@ const MainSpaceMemoized = ({
             setAUsersCounter(Object.keys(parsedVal[room]).length)
           }
         } catch (err) {
-          console.log(err)
+          // console.log(err)
         }
         _setEffCounter(s => s + 1)
       }

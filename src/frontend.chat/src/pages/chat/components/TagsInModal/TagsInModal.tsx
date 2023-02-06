@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState, useMemo } from 'react'
+import React, { useRef, useCallback, useState, useMemo, memo } from 'react'
 import {
   Button,
   Modal,
@@ -24,7 +24,7 @@ type TProps = {
   enabledTags: string[]
 }
 
-export const TagsInModal = ({ tags, isOpened, onClose, onToggeTag, enabledTags }: TProps) => {
+export const TagsInModal = memo(({ tags, isOpened, onClose, onToggeTag, enabledTags }: TProps) => {
   // const searchFieldRef = useRef(null)
   const toggleTag = useCallback((tag: string) => (_e: any) => {
     onToggeTag(tag)
@@ -90,4 +90,4 @@ export const TagsInModal = ({ tags, isOpened, onClose, onToggeTag, enabledTags }
       </ModalContent>
     </Modal>
   )
-}
+})

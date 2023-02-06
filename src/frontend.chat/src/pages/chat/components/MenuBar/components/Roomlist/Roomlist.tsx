@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useCallback } from 'react'
+import { useEffect, useMemo, useState, useCallback, memo } from 'react'
 import {
   Box,
   Button,
@@ -33,7 +33,7 @@ const roomNameTest = ({ search, room }: { search: string, room: string }) => {
   return testRoomNameByAnyWord({ room, words })
 }
 
-export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TProps) => {
+export const Roomlist = memo(({ resetMessages, onCloseMenuBar, handleRoomClick }: TProps) => {
   const [roomlistLS, _setRoomlistLS] = useLocalStorage<{ name: string, ts: number }[]>('chat.roomlist', [])
   const { name, slugifiedRoom: room, setRoom, isAdmin, tsMap } = useMainContext()
   const [roomNames, setRoomNames] = useState<string[]>([])
@@ -154,4 +154,4 @@ export const Roomlist = ({ resetMessages, onCloseMenuBar, handleRoomClick }: TPr
       </Stack>
     ) : null
   )
-}
+})

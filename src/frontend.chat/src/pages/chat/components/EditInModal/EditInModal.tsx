@@ -1,5 +1,5 @@
 import { useColorMode, useMediaQuery, Button, FormControl, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Textarea } from "@chakra-ui/react"
-import { useRef } from "react"
+import { useRef, memo } from "react"
 import { md } from '~/common/chakra/theme'
 
 type TProps = {
@@ -11,7 +11,7 @@ type TProps = {
   handleSaveEditedMessage: ({ assignedTo }: { assignedTo?: string[] }, cb?: () => void) => void
 }
 
-export const EditInModal = ({
+export const EditInModal = memo(({
   isEditModalOpen,
   handleEditModalClose,
   editedMessage,
@@ -118,4 +118,4 @@ export const EditInModal = ({
       </ModalContent>
     </Modal>
   )
-}
+})

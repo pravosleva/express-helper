@@ -1,5 +1,5 @@
 // @ts-ignore
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, memo } from 'react'
 import {
   Button,
   Modal,
@@ -38,7 +38,7 @@ type TProps = {
   isDisabledItem?: (text: string) => boolean
 }
 
-export const SearchUserModal = ({
+export const SearchUserModal = memo(({
   isOpened,
   onClose,
   onSelectItem,
@@ -147,4 +147,4 @@ export const SearchUserModal = ({
       </ModalContent>
     </Modal>
   )
-}
+})

@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect, useCallback } from 'react'
+import React, { useRef, useMemo, useEffect, useCallback, memo } from 'react'
 import {
   Button,
   Modal,
@@ -31,7 +31,7 @@ import clsx from 'clsx'
 import { Logic } from '~/pages/chat/MessagesLogic'
 import Img from '@lxsmnsyc/react-image'
 import { Loader } from '~/common/components/Loader'
-import styles from '~/pages/chat/Chat.module.scss'
+// import styles from '~/pages/chat/Chat.module.scss'
 import stylesBase from '~/App.module.scss'
 
 type TProps = {
@@ -41,7 +41,7 @@ type TProps = {
   messages: TMessage[]
 }
 
-export const GalleryModal = ({
+export const GalleryModal = memo(({
   isOpened,
   onClose,
   defaultSrc,
@@ -167,12 +167,13 @@ export const GalleryModal = ({
 
                     return (
                       <div
-                        className={clsx('grid-item', { ['active-grid-item']: isActive })}
+                        className={clsx('grid-item', { 'active-grid-item': isActive })}
                         key={`${src}_${slugify(alt || 'no-comment')}`}
                       >
                         <a
                           href={src}
                           target='_blank'
+                          rel="noreferrer"
                           className={clsx({ 'active': isActive })}
                         >
                           {/* <img src={src} alt={alt} /> */}
@@ -209,4 +210,4 @@ export const GalleryModal = ({
       </ModalContent>
     </Modal>
   )
-}
+})

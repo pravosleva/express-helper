@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import {
   Box,
   Button,
@@ -14,7 +15,7 @@ type TProps = {
   position?: 'right' | 'left' | 'center'
 }
 
-export const AssignedBox = ({
+export const AssignedBox = memo(({
   assignedTo,
   assignedBy,
   onUnassign,
@@ -56,4 +57,4 @@ export const AssignedBox = ({
       </div>
     </Box>
   )
-}
+})

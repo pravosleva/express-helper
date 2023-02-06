@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, memo } from 'react'
 import { useSocketContext } from '~/context/socketContext'
 import { useMainContext } from '~/context/mainContext'
 import {
@@ -40,6 +40,83 @@ type TProps = {
   asModal?: boolean
   modalHeader?: string
 }
+
+type TMemoizedGroupProps = {
+  asModal: boolean;
+  colorMode: any;
+  abDataVersion: any;
+  char: any;
+  radioValue: any;
+  handleCompleteToggle: any;
+  handleTaskLoopToggler: any;
+  handleOpenPriceModal: any;
+  handleResetExpenses: any;
+  handleTaskDelete: any;
+  handleTaskEdit: any;
+}
+
+const MemoizedGroup = memo(({
+  asModal,
+  colorMode, // mode.colorMode
+  abDataVersion,
+  char: key, // key
+  radioValue,
+  handleCompleteToggle,
+  handleTaskLoopToggler,
+  handleOpenPriceModal,
+  handleResetExpenses,
+  handleTaskDelete,
+  handleTaskEdit,
+}: TMemoizedGroupProps) => {
+  return (
+    <div>
+      {asModal && <Divider marginTop="0px" marginBottom='0px' />}
+
+      <Flex direction='column'>
+
+        <div className={clsx(styles.abHeader, styles[`abHeader_${colorMode}`], { [styles[`abHeader_topRadius`]]: !asModal })}>
+          {key.toUpperCase()}
+        </div>
+        
+        <div style={{ zIndex: 1 }} className={styles.itemsList}>
+          {abDataVersion[key].map((data: any) => {
+            switch (radioValue) {
+              case 'all': break;
+              case 'checked':
+                if (!data.isCompleted) return null;
+                break;
+              case 'unchecked':
+                if (data.isCompleted) return null;
+                break;
+              default: break;
+            }
+
+            return (
+              <TaskItem
+                char={key}
+                key={data.editTs || data.ts}
+                data={data}
+                onCompleteToggle={() => {
+                  handleCompleteToggle(data)
+                }}
+                onDelete={handleTaskDelete}
+                onEdit={handleTaskEdit}
+                onLoopSwitch={() => {
+                  handleTaskLoopToggler(data)
+                }}
+                // onOpenDatePicker={handleOpenDatePicker}
+                onOpenDatePicker={() => { console.log('Datepicker in progress...') }}
+
+                onPriceModalOpen={handleOpenPriceModal}
+                onResetExpenses={handleResetExpenses}
+              />
+            )
+          })}
+        </div>
+      </Flex>
+    </div>
+  )
+})
 
 export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
   const { socket } = useSocketContext()
@@ -300,53 +377,20 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
 
                 return (
 
-                  <div key={key}>
-
-                    {asModal && <Divider marginTop="0px" marginBottom='0px' />}
-
-                    <Flex direction='column'>
-  
-                      <div className={clsx(styles.abHeader, styles[`abHeader_${mode.colorMode}`], { [styles[`abHeader_topRadius`]]: !asModal })}>
-                        {key.toUpperCase()}
-                      </div>
-                      
-                      <div style={{ zIndex: 1 }}>
-                        {abDataVersion[key].map((data: any) => {
-                          switch (radioValue) {
-                            case 'all': break;
-                            case 'checked':
-                              if (!data.isCompleted) return null;
-                              break;
-                            case 'unchecked':
-                              if (data.isCompleted) return null;
-                              break;
-                            default: break;
-                          }
-
-                          return (
-                            <TaskItem
-                              char={key}
-                              key={data.editTs || data.ts}
-                              data={data}
-                              onCompleteToggle={() => {
-                                handleCompleteToggle(data)
-                              }}
-                              onDelete={handleTaskDelete}
-                              onEdit={handleTaskEdit}
-                              onLoopSwitch={() => {
-                                handleTaskLoopToggler(data)
-                              }}
-                              // onOpenDatePicker={handleOpenDatePicker}
-                              onOpenDatePicker={() => { console.log('Datepicker in progress...') }}
-
-                              onPriceModalOpen={handleOpenPriceModal}
-                              onResetExpenses={handleResetExpenses}
-                            />
-                          )
-                        })}
-                      </div>
-                    </Flex>
-                  </div>
+                  <MemoizedGroup
+                    key={key}
+                    asModal={asModal || false}
+                    colorMode={mode.colorMode}
+                    abDataVersion={abDataVersion}
+                    char={key}
+                    radioValue={radioValue}
+                    handleCompleteToggle={handleCompleteToggle}
+                    handleTaskLoopToggler={handleTaskLoopToggler}
+                    handleOpenPriceModal={handleOpenPriceModal}
+                    handleResetExpenses={handleResetExpenses}
+                    handleTaskDelete={handleTaskDelete}
+                    handleTaskEdit={handleTaskEdit}
+                  />
                 )
               })}
             </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, useContext, useEffect, useState, useCallback, useRef, useMemo, useLayoutEffect } from 'react'
 import { useHistory } from 'react-router-dom'
@@ -102,7 +103,6 @@ import { Roomlist } from './components/MenuBar/components'
 import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
 import { SearchUserModal } from './components/SearchUserModal'
 import { UserAva } from '~/pages/chat/components/UserAva'
-import { AssignedBox } from './components/AssignedBox'
 import { AccordionSettings } from './components/AccordionSettings'
 import { FcGallery } from 'react-icons/fc'
 // import { EmojiPickerModal } from './components/EmojiPickerModal'
@@ -164,6 +164,7 @@ import scrollIntoView2 from 'scroll-into-view-if-needed';
 import { getRandomInteger } from '~/utils/getRandomInteger'
 import { jwtHttpClient } from '~/utils/httpClient'
 import { EAPIUserCode, TUserResData } from '~/utils/httpClient/types'
+import { MemoizedOtherMessage } from './components/MemoizedOtherMessage'
 
 const scrollInKanban = (node: any) => {
   scrollIntoView2(node, {
@@ -356,6 +357,42 @@ const removeBlinkWithTimer = (ts: number) => {
   }
 }
 
+// const JustMessage = ({ message, name = "JustMessage" }) => {
+//   console.log(`render ${name}`, message.id);
+
+//   return (
+//     <div key={message.id}>
+//       #{message.id}: {message.text}
+//     </div>
+//   );
+// };
+
+const MemoizedFileMessage = React.memo(({
+  message,
+  setEditedMessage,
+  handleEditModalOpen,
+  handleDeleteMessage,
+  addAdditionalTsToShow,
+  handleOpenGallery,
+}: any) => {
+  return (
+    <Fragment>
+      <Image
+        message={message}
+        setEditedMessage={setEditedMessage}
+        onEditModalOpen={handleEditModalOpen}
+        onDeleteMessage={handleDeleteMessage}
+        onAddAdditionalTsToShow={addAdditionalTsToShow}
+        onOpenGallery={handleOpenGallery}
+      />
+    </Fragment>
+  )
+})
+
+// const MemoMessage = React.memo(({ message }) => {
+//   return <JustMessage message={message} name="MemoMessage" />;
+// });
+
 export const Chat = () => {
   const { name, slugifiedRoom: room, roomRef, setRoom, setName, isAdmin, tsMap, tsMapRef, sprintFeatureProxy, userInfoProxy, assignmentFeatureProxy, devtoolsFeatureProxy } = useContext(MainContext)
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
@@ -435,6 +472,16 @@ export const Chat = () => {
       const msgListener = (msg: TMessage) => {
         // @ts-ignore
         setMessages((messages: TMessage[]) => [...messages, msg])
+        setTimeout(() => {
+          toast({
+            position: 'top',
+            title: msg.user,
+            description: msg.text,
+            status: 'info',
+            duration: 5000,
+            isClosable: true,
+          })
+        })
       }
       const notifListener = (notif: {
         status: UseToastOptions['status']
@@ -1152,7 +1199,8 @@ export const Chat = () => {
 
   const [additionalTsToShow, setAdditionalTsToShow] = useState<number[]>([])
 
-  const addAdditionalTsToShow = useCallback((ts: number) => {
+  const addAdditionalTsToShow = useCallback((ts?: number) => {
+    if (!ts) return
     setAdditionalTsToShow((arr) => [...arr, ts])
   }, [setAdditionalTsToShow])
   const resetAdditionalTsToShow = useCallback(() => {
@@ -2071,6 +2119,7 @@ export const Chat = () => {
                 textAlign="center"
                 mb="8"
                 fontFamily="Bahiana"
+                className="animation-swing"
               >
                 {/* REACT_APP_CHAT_NAME */}
                 {room}
@@ -2436,284 +2485,47 @@ export const Chat = () => {
             )}
             {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, _i, _arr) => {
               const { user, text, ts, editTs, status, file, _next, assignedTo, assignedBy, links = [] } = message
-              // const isLastOfFiltered = i === arr.length -1
-              const isMyMessage = user === name
-              const date = getNormalizedDateTime(ts)
-              const editDate = !!editTs ? getNormalizedDateTime(editTs) : null
-              // const isLast = i === messages.length - 1
-              const isNextOneBtnEnabled = _next?.isHidden
               const handleClickCtxMenu = () => setEditedMessage(message)
-              let contextTriggerRef: any = null;
-              const toggleMenu = (e: any) => {
-                // @ts-ignore
-                  if(!!contextTriggerRef) contextTriggerRef.handleContextClick(e);
-              }
-
+              
               if (!!file) {
                 return (
-                  <Fragment key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}>
-                    {/* INF LOADER 2/3
-                      (i === 20 && !!tsPoint) && !showLoadMoreBtn && (
-                        <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
-                          <Box mr="2">---</Box><Text fontWeight="400">{`Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`}</Text><Box ml="2">---</Box>
-                        </Flex>
-                      )
-                    */}
-                    <Image
-                      message={message}
-                      setEditedMessage={setEditedMessage}
-                      onEditModalOpen={handleEditModalOpen}
-                      onDeleteMessage={handleDeleteMessage}
-                      onAddAdditionalTsToShow={addAdditionalTsToShow}
-                      onOpenGallery={handleOpenGallery}
-                    />
-                  </Fragment>
+                  <MemoizedFileMessage
+                    key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
+                    message={message}
+                    setEditedMessage={setEditedMessage}
+                    handleEditModalOpen={handleEditModalOpen}
+                    handleDeleteMessage={handleDeleteMessage}
+                    addAdditionalTsToShow={addAdditionalTsToShow}
+                    handleOpenGallery={handleOpenGallery}
+                  />
                 )
               }
-              const hasLinks = !!links && Array.isArray(links)
-              const needAssignmentBtns = userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser
-                && sprintFeatureSnap.isFeatureEnabled
-                && !file && !!status && status !== EMessageStatus.Done
 
               return (
                 // @ts-ignore
                 <div ref={setRef(String(ts))} key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}-${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? assignedTo.join(',') : 'not_assigned'}`}>
-                  {/* INF LOADER 3/3
-                    i === 20 && !!tsPoint && (
-                      <Flex ref={inViewRef} alignItems="center" justifyContent='center' width='100%' opacity=".35" mb={4}>
-                        <Box mr="2">---</Box><Text fontWeight="400">{`Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`}</Text><Box ml="2">---</Box>
-                      </Flex>
-                    )
-                  */}
-                  <Box
-                    id={String(ts)}
-                    className={clsx(styles['message'], { [styles['my-message']]: isMyMessage, [styles['oponent-message']]: !isMyMessage })}
-                    // style={transform}
-                    mt={1}
-                    mb={2}
-                  >
-                    <Text
-                      fontSize="sm"
-                      // opacity=".8"
-                      mb={1}
-                      className={clsx(styles["from"], { [styles['is-hidden']]: /* (isMyMessage && ((!!formData.searchText || filters.length > 0) ? false : !isLast)) */ false })}
-                      // textAlign={isMyMessage ? 'right' : 'left'}
-                    >
-                      <b>{user}</b>{' '}
-                      <span className={styles["date"]}>
-                        {date}
-                        {!!editDate && <b>{' '}Edited</b>}
-                      </span>
-                    </Text>
-                    <div
-                      style={{
-                        display: 'flex',
-                        // position: 'relative'
-                      }}
-                      className={styles['opponent-ava-wrapper']}
-                    >
-                      {!isMyMessage && <UserAva size={30} name={user} mr='.5rem' />}
-                      <div className={clsx(styles["msg"], { [styles['edited-message']]: isCtxMenuOpened && ts === editedMessage.ts }, !!status ? styles[status] : undefined)}>
-                        {isMyMessage ? (
-                          <ContextMenuTrigger
-                            id="same_unique_identifier"
-                            key={`${user}-${ts}-${editTs || 'original'}-${status || 'no-status'}`}
-                            ref={c => contextTriggerRef = c}
-                          >
-                            <Text
-                              fontSize="md"
-                              // p=".3rem .9rem"
-                              display="inline-block"
-                              // bg="white"
-                              // color="white"
-                              // onContextMenu={handleClickCtxMenu}
-                              onContextMenu={(_e: any) => {
-                                // e.preventDefault()
-                                handleClickCtxMenu()
-                              }}
-                              onClick={(e: any) => {
-                                handleClickCtxMenu()
-                                toggleMenu(e)
-                              }}
-                              // order={isMyMessage ? 1 : 2}
-                              // className='truncate-overflow'
-                              style={{
-                                // wordBreak: 'break-all',
-                                overflowWrap: 'break-word',
-                              }}
-                            >
-                              {text}
-                              {/* <div className='abs-edit-btn'><RiEdit2Fill /></div> */}
-                            </Text>
-                          </ContextMenuTrigger>
-                        ) : (
-                          <Text display="inline-block" fontSize="md" className={clsx(!!status ? [styles[status]] : undefined)}
-                            // p=".3rem .9rem"
-                            style={{
-                              // wordBreak: 'break-all',
-                              overflowWrap: 'break-word',
-                            }}
-                          >
-                            {text}
-                          </Text>
-                        )}
-                        {!!status && getIconByStatus(status, true)}
-                      </div>
-                    </div>
-                  </Box>
-                  {assignmentSnap.isFeatureEnabled && !!assignedTo && assignedTo.length > 0 && (
-                    <AssignedBox
-                      isMyMessage={isMyMessage}
-                      assignedTo={assignedTo}
-                      assignedBy={assignedBy || 'ERR'}
-                      onUnassign={(userName: string) => {
-                        const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${userName}?`)
-                        if (isConFirmed) handleUnassignFromUser(message, userName)
-                      }}
-                    />
-                  )}
-                  {
-                    hasLinks
-                    ? (
-                      <Flex spacing={2} className={stylesBase['flex-wraper-spaced-2']} flexWrap='wrap' justifyContent='flex-end' style={{ width: '100%' }}>
-                        {links.map(({ link, descr }, i) => (
-                          <ButtonGroup
-                            size='sm'
-                            isAttached
-                            variant='solid'
-                            mb={2}
-                            key={`${link}-${i}`}
-                            colorScheme='gray'
-                          >
-                            <CopyToClipboard
-                              text={link}
-                              onCopy={() => {
-                                toast({
-                                  position: 'top-left',
-                                  title: 'Link copied',
-                                  description: link,
-                                  status: 'success',
-                                  duration: 5000,
-                                  // isClosable: true,
-                                })
-                              }}
-                              >
-                              <IconButton
-                                borderRadius='full'
-                                aria-label='Copy link'
-                                icon={<FaCopy color='inherit' size={14} />}
-                                title={link}
-                              />
-                            </CopyToClipboard>
-                            <Button
-                              mr='-px'
-                              ml='-px'
-                              onClick={() => goToExternalLink(link)}
-                              borderRadius='full'
-                              title={descr}
-                            >
-                              {capitalizeFirstLetter(descr, 30)}
-                            </Button>
-                            {isMyMessage && (
-                              <IconButton
-                                borderRadius='full'
-                                aria-label='Remove link'
-                                icon={<IoMdClose color='inherit' size={14} />}
-                                onClick={(e: any) => {
-                                  e.stopPropagation()
-                                  handleDeleteLink(link, ts)
-                                }}
-                              />
-                            )}
-                          </ButtonGroup>
-                        ))}
-                        {
-                          needAssignmentBtns && (
-                            <>
-                              {
-                                !sprintFeatureSnap.commonNotifs[String(ts)] ? (
-                                  <Button
-                                    isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
-                                    size='sm'
-                                    borderRadius='full'
-                                    onClick={() => {
-                                      console.groupCollapsed('setEditedMessage()')
-                                      console.log(message)
-                                      console.groupEnd()
-                                      setEditedMessage(message)
-                                      handleOpenDatePicker()
-                                    }}
-                                    rightIcon={<FiArrowRight color="inherit" size={14} />}
-                                    leftIcon={<BsFillCalendarFill size={14} />}
-                                    mb={2}
-                                  >Add to Sprint</Button>
-                                ) : (
-                                  <Button
-                                    isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
-                                    size='sm'
-                                    borderRadius='full'
-                                    onClick={() => {
-                                      const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
-                                      if (isConfirmed) {
-                                        setEditedMessage(message)
-                                        handleRemoveFromSprint(ts)
-                                      }
-                                    }}
-                                    rightIcon={<IoMdClose color='inherit' size={14} />}
-                                    mb={2}
-                                  >Remove from Sprint</Button>
-                                )
-                              }
-                            </>
-                          )
-                        }
-                      </Flex>
-                    ) : (
-                      needAssignmentBtns && (
-                        <Flex justifyContent='flex-end' alignItems='center' style={{ width: '100%' }} mb={2}>
-                          {
-                            !sprintFeatureSnap.commonNotifs[String(ts)] ? (
-                              <Button
-                                isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
-                                size='sm'
-                                borderRadius='full'
-                                onClick={() => {
-                                  setEditedMessage(message)
-                                  handleOpenDatePicker()}
-                                }
-                                rightIcon={<FiArrowRight color="inherit" size={14} />}
-                                leftIcon={<BsFillCalendarFill size={14} />}
-                              >Add to Sprint</Button>
-                            ) : (
-                              <Button
-                                isDisabled={sprintFeatureSnap.inProgress.includes(ts) || !sprintFeatureSnap.isPollingWorks}
-                                size='sm'
-                                borderRadius='full'
-                                onClick={() => {
-                                  const isConfirmed = window.confirm('Вы точно хотите удалить это из спринта?')
-                                  if (isConfirmed) {
-                                    setEditedMessage(message)
-                                    handleRemoveFromSprint(ts)
-                                  }
-                                }}
-                                rightIcon={<IoMdClose color='inherit' size={14} />}
-                              >Remove from Sprint</Button>
-                            )
-                          }
-                        </Flex>
-                      )
-                    )
-                  }
-                  {isNextOneBtnEnabled && (
-                    <Box className={stylesBase['centered-box']}>
-                      <button
-                        className={clsx(stylesBase['special-btn'], stylesBase['special-btn-sm'], stylesBase['dark-btn'])}
-                        onClick={() => { addAdditionalTsToShow(_next.ts) }}
-                      >
-                        Next One
-                      </button>
-                    </Box>
-                  )}
+                  <MemoizedOtherMessage
+                    message={message}
+                    isCtxMenuOpened={isCtxMenuOpened}
+                    editedMessageTs={editedMessage?.ts || null}
+                    handleClickCtxMenu={handleClickCtxMenu}
+                    assignmentSnapIsFeatureEnabled={sprintFeatureSnap.isFeatureEnabled}
+                    handleUnassignFromUser={handleUnassignFromUser}
+                    goToExternalLink={goToExternalLink}
+                    handleDeleteLink={handleDeleteLink}
+                    needAssignmentBtns={userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser
+                      && sprintFeatureSnap.isFeatureEnabled
+                      && !file && !!status && status !== EMessageStatus.Done}
+                    hasSprintFeatureSnapCommonNotifs={sprintFeatureSnap.commonNotifs[String(ts)]}
+                    isSprintFeatureSnapPollingWorks={sprintFeatureSnap.isPollingWorks}
+                    isSprintFeatureSnapInProgressIncludesTs={sprintFeatureSnap.inProgress.includes(ts)}
+                    setEditedMessage={setEditedMessage}
+                    handleOpenDatePicker={handleOpenDatePicker}
+                    handleRemoveFromSprint={handleRemoveFromSprint}
+                    isNextOneBtnEnabled={!!_next?.isHidden}
+                    addAdditionalTsToShow={addAdditionalTsToShow}
+                    name={name}
+                  />
                 </div>
               )
             })}

@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import {
   Heading,
   Tab,
@@ -12,7 +13,7 @@ type TProps = {
   taskId?: string
 }
 
-export const SpecialTabs = ({
+export const SpecialTabs = memo(({
   taskId
 }: TProps) => {
   return (
@@ -43,4 +44,4 @@ export const SpecialTabs = ({
       </TabPanels>
     </Tabs>
   )
-}
+})

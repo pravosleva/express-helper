@@ -70,6 +70,8 @@ var getSumLastMonths = ({ months, currDate, tasklist }) => {
       // && task.checkTs <= targetDate // Global (montn 1, 2, 3, 6)
     ) {
       return acc + (task.price || 0)
+    } else if (!!task.price && !task.isCompleted) {
+      return acc + (task.price || 0)
     }
     return acc
   }, 0)

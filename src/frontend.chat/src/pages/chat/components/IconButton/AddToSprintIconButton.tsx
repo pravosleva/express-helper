@@ -1,5 +1,5 @@
 import { IconButton, Tooltip } from "@chakra-ui/react"
-import { useContext, useEffect } from "react"
+import { useContext, memo } from "react"
 import { BsFillCalendarFill } from "react-icons/bs"
 import { MainContext } from "~/context/mainContext"
 import { EMessageStatus, TMessage, /* ERegistryLevel */ } from '~/utils/interfaces'
@@ -11,7 +11,7 @@ type TProps = {
   card: TKanbanCard & TMessage
 }
 
-export const AddToSprintIconButton = ({
+export const AddToSprintIconButton = memo(({
   handleAddToSprintKanbanCard,
   card,
 }: TProps) => {
@@ -36,4 +36,4 @@ export const AddToSprintIconButton = ({
       </IconButton>
     </Tooltip>
   )
-}
+})

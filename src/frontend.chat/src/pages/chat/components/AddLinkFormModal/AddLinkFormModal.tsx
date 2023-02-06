@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback, useMemo, useEffect } from 'react'
+import React, { useRef, useState, useCallback, useMemo, useEffect, memo } from 'react'
 import {
   Button,
   Modal,
@@ -41,7 +41,7 @@ const getSpecialDescr = (descr: string) => {
   return result
 }
 
-export const AddLinkFormModal = ({
+export const AddLinkFormModal = memo(({
   isOpened,
   onClose,
   onSubmit,
@@ -83,4 +83,4 @@ export const AddLinkFormModal = ({
       </ModalContent>
     </Modal>
   )
-}
+})

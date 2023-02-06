@@ -58,7 +58,8 @@ export const TotalSum = () => {
     <Stack marginRight='auto'>
       {!!sum['month0.5'] && (
         // <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
-        <Text fontSize="sm" fontWeight='bold' display='flex'><span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag colorScheme='green'>Ready</Tag>&nbsp;&&nbsp;<span><TiArrowLoop size={19} /></span>&nbsp;🔲 ={getPrettyPrice(sum['month0.5'])}</Text>
+        <Text fontSize="sm" fontWeight='bold' display='flex'><span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag colorScheme='green'>Ready</Tag>&nbsp;&&nbsp;🔲 ={getPrettyPrice(sum['month0.5'])}</Text>
+        // <span><TiArrowLoop size={19} /></span>&nbsp;
       )}
       {!!sum.month3 && (
         <Text fontSize="sm" fontWeight='bold'>3m ={getPrettyPrice(sum.month3)}</Text>

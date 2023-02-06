@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, memo } from 'react'
 import styles from './FixedSearch.module.scss'
 import clsx from 'clsx'
 import { Grid, IconButton, Input, InputGroup, InputLeftElement, InputRightElement, useColorMode } from '@chakra-ui/react';
@@ -16,7 +16,7 @@ type TProps = {
   onClose: () => void;
 }
 
-export const FixedSearch = ({
+export const FixedSearch = memo(({
   searchText,
   onChange,
   onClear,
@@ -137,4 +137,4 @@ export const FixedSearch = ({
       </div>
     </div>
   )
-}
+})

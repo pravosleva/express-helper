@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, memo } from 'react'
 import {
   Button,
   Modal,
@@ -20,7 +20,7 @@ type TProps = {
   onClear: () => void
 }
 
-export const SearchInModal = ({ text, onChange, isOpened, onClose, onClear }: TProps) => {
+export const SearchInModal = memo(({ text, onChange, isOpened, onClose, onClear }: TProps) => {
   const handkeKeyUp = (ev: any) => {
     if (ev.keyCode === 13) {
       if (!!text) onClose()
@@ -52,4 +52,4 @@ export const SearchInModal = ({ text, onChange, isOpened, onClose, onClear }: TP
       </ModalContent>
     </Modal>
   )
-}
+})

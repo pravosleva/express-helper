@@ -1,7 +1,7 @@
 import styles from './FixedBottomSheet.module.scss'
 import clsx from 'clsx'
 import { Button, Grid, useColorMode, Text, Flex, IconButton, Tooltip, useToast } from '@chakra-ui/react'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, memo } from 'react'
 import { BiUpArrowAlt, BiDownArrowAlt } from 'react-icons/bi'
 import { IoMdClose } from 'react-icons/io'
 import { BsInfo } from 'react-icons/bs'
@@ -13,7 +13,7 @@ type TProps = {
   mainSpaceRenderer: React.FC
 }
 
-export const FixedBottomSheet = ({ isOpened, onClose, children, mainSpaceRenderer }: TProps) => {
+export const FixedBottomSheet = memo(({ isOpened, onClose, children, mainSpaceRenderer }: TProps) => {
   const [fullHeight, setFullHeight] = useState<boolean>(true)
   const toggleFullHeight = useCallback(() => {
     setFullHeight((s) => !s)
@@ -96,6 +96,6 @@ export const FixedBottomSheet = ({ isOpened, onClose, children, mainSpaceRendere
       </div>
     </div>
   )
-}
+})
 
 // , { [styles['container--fullHeight']]: fullHeight, [styles['container--maxHeightLimited']]: !fullHeight }

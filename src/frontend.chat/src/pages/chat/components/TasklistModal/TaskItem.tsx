@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo, useCallback } from "react"
+import React, { useRef, useState, useMemo, useCallback, memo } from "react"
 import {
   Td, Tr, Editable, EditablePreview, EditableInput,
   IconButton,
@@ -57,7 +57,7 @@ const constants = {
   year3: 3 * 12 * 30 * 24 * 60 * 60 * 1000,
 }
 
-export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker, onPriceModalOpen, onResetExpenses, char }: TProps) => {
+export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker, onPriceModalOpen, onResetExpenses, char }: TProps) => {
   const {
     title,
     // description,
@@ -91,7 +91,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
   const timeSection = (
     <>
       {!!timeEnd ? (
-        <Text>
+        <Text mt={2}>
           <Countdown
             date={timeEnd}
             renderer={CountdownRenderer}
@@ -114,7 +114,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
       <>
         <Menu
           // strategy='fixed'
-          placement='left-end'
+          placement='right-end'
         >
           <MenuButton
             as={IconButton}
@@ -153,7 +153,7 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
                     <Text fontSize="md" fontWeight='bold'>Is looped?</Text>
                   </Flex>
                 </MenuItem>
-                {!!fixedDiff && (
+                {!!fixedDiff && isLooped && (
                   <>
                     <MenuItem
                       minH="40px"
@@ -332,67 +332,38 @@ export const TaskItem = ({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitc
   
 
   return (
-    <>
-      <Flex display="flex" alignItems="center">
-        <Box p={5} pl={6} as='div'>
-          <Flex display="flex" alignItems="center">
-            <Text color='green.500' fontSize="md" onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
-            {/*
-            {percentageInProgress && (
-              <Tooltip label="Работает таймер" aria-label="A tooltip1" placement="top-start">
-                <Text color="gray.300"><GiDynamite size={18} /></Text>
-              </Tooltip>
-            )}
-            {showTimer && (
-              <Tooltip label="Отслеживается первый цикл" aria-label="A tooltip2" placement="top-start">
-                <Text color="gray.300"><MdTimer size={18} /></Text>
-              </Tooltip>
-            )}
-            {showTimerOff && (
-              <Tooltip label="Используется интервал" aria-label="A tooltip3" placement="top-start">
-                <Text color="gray.300"><MdTimerOff size={18} /></Text>
-              </Tooltip>
-            )}
-            */}
-          </Flex>
-        </Box>
-        <Box p={5} fontSize='15px' as='div'>
-          <Flex direction='column'>
-            <Editable
-              border='2px dashed lightgray'
-              style={{ width: 'auto' }}
-              pl={2}
-              pr={2}
-              mb={2}
-              fontWeight='bold' 
-              defaultValue={title}
-              onChange={(nextVal: string) => {
-                titleEditedRef.current = nextVal
-              }}
-              onSubmit={() => {
-                onEdit({ ...data, title: titleEditedRef.current })
-              }}
-            >
-              <EditablePreview />
-              <EditableInput />
-            </Editable>
-
-            {timeSection}
-          </Flex>
-        </Box>
-        <Box p={5} style={{ marginLeft: 'auto' }} as='div'>
-          {/* <IconButton
-            aria-label="DEL"
-            isRound
-            icon={<FaRegTrashAlt size={15} />}
-            onClick={() => onDelete(data.ts)}
+    <Flex display="flex" alignItems="flex-start">
+      <Box p={5} pl={6} as='div'>
+        {MemoizedMenu}
+      </Box>
+      <Box p={5} pl={0} pr={0} fontSize='15px' as='div'>
+        <div>
+          <Editable
+            border='2px dashed lightgray'
+            style={{ width: 'auto' }}
+            pl={2}
+            pr={2}
+            fontWeight='bold' 
+            defaultValue={title}
+            onChange={(nextVal: string) => {
+              titleEditedRef.current = nextVal
+            }}
+            onSubmit={() => {
+              onEdit({ ...data, title: titleEditedRef.current })
+            }}
           >
-            DEL
-          </IconButton> */}
-          {/* <Button onClick={handleEditOpen}>EDIT</Button> */}
-          {MemoizedMenu}
-        </Box>
-      </Flex>
-    </>
+            <EditablePreview />
+            <EditableInput />
+          </Editable>
+
+          {timeSection}
+        </div>
+      </Box>
+      <Box p={5} style={{ marginLeft: 'auto' }} as='div'>
+        <Flex display="flex" alignItems="center">
+          <Text pt={2} color='green.500' fontSize="md" onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
+        </Flex>
+      </Box>
+    </Flex>
   )
-}
+})

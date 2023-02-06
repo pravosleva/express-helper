@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, useEffect } from 'react'
+import { useState, useCallback, useMemo, useEffect, memo } from 'react'
 import {
   Accordion,
   AccordionItem,
@@ -57,7 +57,7 @@ type TProps = {
   onEditMessage?: (m: TMessage) => void
 }
 
-export const AccordionSettings = ({
+export const AccordionSettings = memo(({
   isAssignmentFeatureEnabled,
   logic,
   onAddAssignedToFilters,
@@ -458,4 +458,4 @@ export const AccordionSettings = ({
       </Accordion>
     </>
   )
-}
+})

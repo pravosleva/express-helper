@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, memo } from 'react'
 import { useMainContext } from '~/context/mainContext'
 import axios from 'axios'
 import { PollingComponent } from './components/PollingComponent'
@@ -64,7 +64,7 @@ type TProps = {
   onEdit?: (m: TMessage) => void
 }
 
-export const NotifsList = ({ onRemove, onEdit }: TProps) => {
+export const NotifsList = memo(({ onRemove, onEdit }: TProps) => {
   const { room, sprintFeatureProxy } = useMainContext()
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
 
@@ -145,4 +145,4 @@ export const NotifsList = ({ onRemove, onEdit }: TProps) => {
       {/* <pre>{JSON.stringify(notifsStateArr, null, 2)}</pre> */}
     </>
   )
-}
+})

@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, memo } from 'react'
 import {
   Accordion,
   AccordionItem,
@@ -8,7 +8,7 @@ import {
   Box,
 } from '@chakra-ui/react'
 
-export const MyRoomlist = ({ children }: any) => {
+export const MyRoomlist = memo(({ children }: any) => {
   return (
     <Accordion allowMultiple>
       <AccordionItem>
@@ -26,4 +26,4 @@ export const MyRoomlist = ({ children }: any) => {
       </AccordionItem>
     </Accordion>
   )
-}
+})
