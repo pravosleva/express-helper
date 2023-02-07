@@ -113,7 +113,7 @@
     "https": "^1.0.0",
     "imei_gencheck": "^4.0.0",
     "js-base64": "^3.6.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "md5-hash": "^1.0.1",
     "merge-deep": "^3.0.3",
     "module-alias": "^2.2.2",
