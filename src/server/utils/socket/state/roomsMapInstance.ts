@@ -12,10 +12,10 @@ import {
 import { binarySearchTsIndex } from '~/utils/binarySearch'
 import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
 import { moveFileIfExists, moveFileSync } from '~/utils/fs-tools/moveFile'
-import { getDirectories } from '~/utils/fs-tools/getDirectories'
-import { getFiles } from '~/utils/fs-tools/getFiles'
+import { getFiles, getDirectories } from '~/utils/fs-tools'
 import delay from '~/utils/delay'
 import { sortByTs } from '~/utils/sortByTs'
+import { getUniqueItemsByProperties } from '~/utils/socket/utils/getUniqueItemsByProperties'
 
 const CHAT_ROOMS_STATE_FILE_NAME = process.env.CHAT_ROOMS_STATE_FILE_NAME || 'chat.rooms.json'
 const projectRootDir = path.join(__dirname, '../../../../')
@@ -26,6 +26,7 @@ const storageRoomsFilePath = path.join(storageDir, CHAT_ROOMS_STATE_FILE_NAME)
 const counter = Counter()
 
 const overwriteMerge = (_target, source, _options) => source
+const concatArrsMerge = (target, source, _options) => [...target, ...source]
 
 const isStatusChanged = (oldData: TMessage, newData: Partial<TMessage>) => oldData.status !== newData.status
 
@@ -61,7 +62,7 @@ class Singleton {
   public get size(): number {
     return this.state.size
   }
-  public getPartial({ tsPoint, room }: { tsPoint: number, room: string }): { result: TRoomData, errorMsg?: string, nextTsPoint: number | null, isDone: boolean } {
+  public getPartial({ tsPoint, room }: { tsPoint: number, room: string }): { result: TRoomData, errorMsg?: string, nextTsPoint: number | null, isDone: boolean, service?: { msg: string; [key: string]: any } } {
     const roomData = this.state.get(room)
     const result = []
     let nextTsPoint = null
@@ -71,28 +72,50 @@ class Singleton {
     if (!roomData) return { result: [], errorMsg: `Condition: !roomData for ${room}`, nextTsPoint: 0, isDone: true }
 
     const messagesLimit = 50
+    const _msgs = []
+    const _specialMsgs = []
+    const service: any = {}
+
+    const counters = {
+      added: 0,
+      notAdded: 0,
+    }
 
     for (let i = roomData.length - 1; i > -1; i--) {
       const isLast = i === 0
 
       if (counter <= messagesLimit && roomData[i].ts <= tsPoint) {
+        // _msgs.push(`[+] i= ${i} [added]`)
         result.unshift(roomData[i])
         counter += 1
         nextTsPoint = isLast ? null : roomData[i - 1].ts
         // console.log(`--- ${i}`, nextTsPoint, `!!nextTsPoint= ${!!nextTsPoint}`, nextTsPoint < tsPoint)
         // console.log(roomData[i])
         isDone = isLast
+        // counters.added += 1
+      } else {
+        // _msgs.push(`[-] i= ${i} [not added]`)
+        // counters.notAdded += 1
+        // if (roomData[i].ts > tsPoint) _specialMsgs.push(`${roomData[i].ts} > ${tsPoint}`)
+        continue
       }
-    }
 
-    return { result, nextTsPoint, isDone }
+      // _msgs.push(`Iteration done: ${i}, isLast=${isLast}`)
+    }
+    if (counters.added > 0) _msgs.push(`added: ${counters.added}`)
+    if (counters.notAdded > 0) _msgs.push(`notAdded: ${counters.notAdded}`)
+    if (_msgs.length > 0) service.msg = [..._msgs, ..._specialMsgs].join('\n')
+
+    return { result, nextTsPoint, isDone, service }
   }
   public async _addFileAsMsg({
     room,
     fileName,
+    user,
   }: {
     room: string,
-    fileName: string
+    fileName: string,
+    user?: string
   }) {
     let roomData = this.state.get(room)
     let isOk: boolean = false
@@ -108,7 +131,7 @@ class Singleton {
       return { isOk: false }
     }
 
-    const msg = { ts, file: { filePath: `${room}/${fileName}`, fileName }, user: 'pravosleva', text: '' }
+    const msg = { ts, file: { filePath: `${room}/${fileName}`, fileName }, user: (user || 'pravosleva'), text: '' }
 
     try {
       if (!roomData) {
@@ -455,6 +478,7 @@ const syncRoomsMap = () => {
           // 4. Move files from /storage/uploads/<[room]<fileName>> to /storage/uploads/[room]/<fileName>
           const newMsgs = []
           for(const msg of staticData[roomName]) {
+            /*
             // @ts-ignore
             if (!!msg.filePath) {
               msg.file = {
@@ -468,22 +492,58 @@ const syncRoomsMap = () => {
               // @ts-ignore
               delete msg.fileName
             }
-
-            newMsgs.push(msg)
+            */
+            if (!!msg.user) {
+              newMsgs.push(msg)
+            }
             roomsMapInstance.set(roomName, newMsgs.sort(sortByTs))
           }
           // --
+
+          // 6. Read dirs in /uploads/[roomName]/* and set old msgs if necessary
+          const dirs = getDirectories(uploadsDir)
+          console.log(`--- ${uploadsDir}`)
+          console.log(dirs)
+          for (const room of dirs) {
+            // Object.keys(staticData).forEach((roomName: string) => {})
+            const isRoomExists = !!staticData[room]
+            if (!isRoomExists) {
+              staticData[room] = []
+            }
+            console.log(`-- ${room}`)
+            const files = getFiles(path.join(projectRootDir, '/storage/uploads', room))
+            // NOTE: Set msg if msg.ts does not exists
+            
+            files.forEach((fileName) => {
+              console.log(fileName)
+
+              try {
+                const ts = Number(fileName.split('.')[0])
+                const theMessageIndex = binarySearchTsIndex({
+                  messages: staticData[room],
+                  targetTs: ts
+                })
+                const isMsgExists = theMessageIndex !== -1
+                if (!isMsgExists) {
+                  roomsMapInstance._addFileAsMsg({ fileName, room, user: 'pravosleva' })
+                  console.log('file added.')
+                }
+              } catch (err) {
+                console.log(err)
+              }
+            })
+            console.log(`-- END: ${room}`)
+          }
+          console.log('---')
         })
 
         // 5. Read dirs in /uploads/* and set old msgs if necessary
         /*
         const dirs = getDirectories(uploadsDir)
-
         console.log('---')
         // console.log(dirs)
         for (const room of dirs) {
           const files = getFiles(path.join(projectRootDir, '/storage/uploads', room))
-
           console.log('-- 0')
           files.forEach((fileName) => {
             roomsMapInstance._addFileAsMsg({ fileName, room })
@@ -496,7 +556,10 @@ const syncRoomsMap = () => {
 
       const currentRoomsState = [...roomsMapInstance.keys()]
         .reduce((acc, roomName) => {
-          acc[roomName] = roomsMapInstance.get(roomName);
+          // const oldArr: TMessage[] = !!staticData[roomName] ? staticData[roomName] : []
+          // const newArr: TMessage[] = roomsMapInstance.get(roomName) || []
+          // acc[roomName] = [...roomsMapInstance.get(roomName)].sort(sortByTs);
+          acc[roomName] = getUniqueItemsByProperties({ items: roomsMapInstance.get(roomName).sort(sortByTs), propNames: ['ts'] });
           // -- tmp
           // Object.keys(acc[roomName]).forEach((key) => {
           //   acc[roomName][key].forEach(({ text, ts, registryLevel }: TMessage, i: number) => {

@@ -680,17 +680,26 @@ export const Chat = () => {
           setIsChatLoading(false)
 
           try {
-            const { result, nextTsPoint, isDone, targetRoom } = res
+            const { result, nextTsPoint, isDone, targetRoom, service } = res
 
-            if (!!result && targetRoom === roomRef.current)
+            if (!!result && targetRoom === roomRef.current) {
               partialOldChatListener({ result, nextTsPoint, isDone })
-            else console.log(`getPartialOldChat: SKIPED targetRoom= ${targetRoom} is not roomRef.current= ${roomRef.current}`)
+              // if (!!service?.msg) toast({
+              //   position: 'top-left',
+              //   title: 'Service',
+              //   description: service?.msg,
+              //   status: 'info',
+              //   duration: 7000,
+              //   variant: 'solid',
+              // })
+            } else console.log(`getPartialOldChat: SKIPED targetRoom= ${targetRoom} is not roomRef.current= ${roomRef.current}`)
+
           } catch (err) {
             console.log(err)
           }
 
         })
-      }, 0)
+      }, 1000)
     }
   }, [tsPoint, socket, partialOldChatListener])
 
@@ -826,7 +835,7 @@ export const Chat = () => {
       duration: 4000,
       variant: 'solid',
     })
-  }, [toast, isMsgLimitReached, socket, setIsSending, resetMessage, filters])
+  }, [toast, isMsgLimitReached, socket, setIsSending, resetMessage, filters, name])
   const handleKeyUp = (ev: any) => {
     switch (true) {
       case ev.keyCode === 13 && !ev.shiftKey:

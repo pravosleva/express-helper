@@ -17,7 +17,7 @@ type TProps = {
 }
 
 export const UserAva = memo(({ name, size, mr, ml, fontSize, onClick, tooltipText, tooltipPlacement }: TProps) => {
-  const shortNick = name.split(' ').filter((w: string, i: number) => i < 2).map((word: string) => word[0].toUpperCase()).join('')
+  const shortNick = name.split(' ').filter((w: string, i: number) => i < 2).map((word: string) => (word || typeof word)[0].toUpperCase()).join('')
   const personalColor = stc(name)
 
   return (

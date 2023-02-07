@@ -515,14 +515,14 @@ export const withSocketChat = (io: Socket) => {
         return
       }
 
-      const { result, nextTsPoint, isDone, errorMsg } = roomsMap.getPartial({ tsPoint, room })
+      const { result, nextTsPoint, isDone, errorMsg, service } = roomsMap.getPartial({ tsPoint, room })
 
       if (!!errorMsg) {
         socket.emit('notification', { status: 'error', title: 'ERR #4.2', description: errorMsg })
         return
       }
       // socket.emit('partialOldChat', { result, nextTsPoint, isDone })
-      if (!!cb) cb({ result, nextTsPoint, isDone, targetRoom: room })
+      if (!!cb) cb({ result, nextTsPoint, isDone, targetRoom: room, service })
     })
 
     socket.on('editMessage', ({ room, name, ts, newData }: { room: string, name: string, ts: number, newData: TMessage }, cb?: () => void) => {
