@@ -81,7 +81,9 @@ class Singleton {
       notAdded: 0,
     }
 
-    for (let i = roomData.length - 1; i > -1; i--) {
+    let isCompleted = false
+
+    for (let i = roomData.length - 1; !isCompleted && i > -1; i--) {
       const isLast = i === 0
 
       if (counter <= messagesLimit && roomData[i].ts <= tsPoint) {
@@ -93,12 +95,9 @@ class Singleton {
         // console.log(roomData[i])
         isDone = isLast
         // counters.added += 1
-      } else {
-        // _msgs.push(`[-] i= ${i} [not added]`)
-        // counters.notAdded += 1
-        // if (roomData[i].ts > tsPoint) _specialMsgs.push(`${roomData[i].ts} > ${tsPoint}`)
-        continue
-      }
+      } else if(roomData[i].ts >= tsPoint) {
+        isCompleted = true
+      } else continue
 
       // _msgs.push(`Iteration done: ${i}, isLast=${isLast}`)
     }
