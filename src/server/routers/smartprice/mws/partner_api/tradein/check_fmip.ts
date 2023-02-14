@@ -37,5 +37,5 @@ export const checkFMIP = async (req, res) => {
       ...toClient[toBeOrNotToBe],
       _originalBody: req.body,
     })
-  }, 16000)
+  }, 5000)
 }
