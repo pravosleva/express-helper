@@ -78,7 +78,7 @@ const MemoizedGroup = memo(({
           {key.toUpperCase()}
         </div>
         
-        <div style={{ zIndex: 1 }} className={styles.itemsList}>
+        <div style={{ zIndex: 1 }} className={clsx(styles.itemsList, styles[`themed-task-item_${colorMode}`])}>
           {abDataVersion[key].map((data: any) => {
             switch (radioValue) {
               case 'all': break;
@@ -118,7 +118,7 @@ const MemoizedGroup = memo(({
   )
 })
 
-export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
+export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
   const { socket } = useSocketContext()
   const { room } = useMainContext()
   const toast = useToast()
@@ -216,7 +216,7 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     } else {
       toast({ title: 'ERR#1', description: 'FUCKUP COND: !!activeTaskRef.current && Number.isInteger(price)', status: 'error', duration: 5000, isClosable: true })
     }
-  }, [handleTaskEdit, editedTask2])
+  }, [handleTaskEdit, editedTask2, handleClosePriceModal])
   const handleResetExpenses = useCallback(() => {
     handleTaskEdit({ ...editedTask2, price: 0 })
   }, [handleTaskEdit, editedTask2])
@@ -238,9 +238,6 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     )
   }, [isCreateTaskFormOpened, formData.title, handleCreateFormOpen, handleCreateFormClose, handleCreateSubmit])
   const mode = useColorMode()
-  // useEffect(() => {
-  //   console.log(mode.colorMode)
-  // }, [mode.colorMode])
   const EnterText = useMemo(() => {
     return (
       <>
@@ -462,3 +459,5 @@ export const TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     </>
   )
 }
+
+export const TasklistContent = memo(_TasklistContent)

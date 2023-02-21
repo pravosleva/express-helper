@@ -96,6 +96,15 @@
 }
 .itemsList {
   & > div:last-child {
-    margin-bottom: var(--chakra-space-2);
+    margin-bottom: var(--chakra-space-4);
+  }
+}
+.themed-task-item {
+  &_dark:hover {
+    background: var(--chakra-colors-gray-600);
+    // box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.5); 
+  }
+  &_light:hover {
+    background: var(--chakra-colors-gray-100);
   }
 }
