@@ -34,6 +34,7 @@ import axios from 'axios'
 import { CheckRoomSprintPolling } from '~/common/components/CheckRoomSprintPolling'
 import { SwitchSection } from '~/common/components/SwitchSection'
 import { ServerInfo } from './components/ServerInfo'
+import { ClientInfo } from './components/ClientInfo'
 import { TSetting } from './interfaces'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
@@ -411,14 +412,21 @@ export const AccordionSettings = memo(({
                     )
                   }
 
-                  {!cpuFeatureSnap ? (
+                  {!!cpuFeatureSnap?.mem && (
+                    <Box mb={2}>
+                      <Text style={{ textAlign: 'center' }}><em>Server</em></Text>
+                      <ServerInfo />
+                    </Box>
+                  )}
+                  {/* @ts-ignore */}
+                  {!!window.performance?.memory ? (
                     <Box>
-                      <Text style={{ textAlign: 'center' }}><em>Server data is loading...</em></Text>
+                      <Text style={{ textAlign: 'center' }}><em>Client</em></Text>
+                      <ClientInfo />
                     </Box>
                   ) : (
                     <Box>
-                      <Text style={{ textAlign: 'center' }}><em>Server</em></Text>
-                      <ServerInfo />
+                      <Text style={{ textAlign: 'center' }}><em>Client: Deprecated feature not supported</em></Text>
                     </Box>
                   )}
                   {
