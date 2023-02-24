@@ -1,5 +1,4 @@
 import { useState, useCallback, useMemo, memo, useEffect } from 'react'
-
 import {
   Input,
   useColorMode,
@@ -8,43 +7,54 @@ import {
   InputLeftElement,
   IconButton,
   InputRightElement,
+  useToast,
 } from '@chakra-ui/react'
 import { FiSearch } from 'react-icons/fi'
 import { IoMdClose } from 'react-icons/io'
-// import { HiChevronUp } from 'react-icons/hi'
 import { useDebounce as useDebouncedValue } from '~/common/hooks/useDebounce'
+import { AiOutlinePlus } from 'react-icons/ai'
+import { useSocketContext } from '~/context/socketContext'
+import { useMainContext } from '~/context/mainContext'
 
 type TProps = {
   initialState: string;
   onChange: (e: any) => void;
   onClear: (e?: any) => void;
+  isCreateNewDisabled: boolean
 }
 
 export const ResponsiveSearchField = ({
   initialState,
   onChange,
   onClear,
+  isCreateNewDisabled,
 }: TProps) => {
   const [state, setState] = useState<string>(initialState)
   const handleClear = useCallback(() => {
     setState('')
     onClear()
   }, [setState, onClear])
-  const debouncedSearchText = useDebouncedValue(state, 1000)
+  const debouncedSearchText = useDebouncedValue(state, 200)
   useEffect(() => {
     onChange({ target: { value: debouncedSearchText } })
   }, [debouncedSearchText, onChange])
   const mode = useColorMode()
+
+  const { socket } = useSocketContext()
+  const { room } = useMainContext()
+  const toast = useToast()
+  const handleCreateNew = useCallback(() => {
+    if (!!socket) socket?.emit('createTask', { room, title: state }, (errMsg?: string) => {
+      if (!!errMsg) toast({ title: errMsg, status: 'error', duration: 5000, isClosable: true })
+      else handleClear()
+    })
+  }, [state, room, handleClear, toast])
+
   return (
-    <div
-      style={{
-        width: '100%',
-        // border: '1px solid red',
-      }}
-    >
+    <div style={{ width: '100%' }}>
       <Grid
         mt={1}
-        templateColumns='1fr'
+        templateColumns={!!state ? '2fr auto' : '1fr'}
         gap={2}
         alignItems='center'
       >
@@ -94,17 +104,18 @@ export const ResponsiveSearchField = ({
             )
           }
         </InputGroup>
-        {/* <IconButton
+        {!!state && <IconButton
           size='sm'
-          aria-label="DEL"
-          colorScheme='gray'
+          aria-label="ADD"
+          colorScheme='green'
           variant='outline'
           isRound
-          icon={<HiChevronUp size={15} />}
-          onClick={handleClose}
+          icon={<AiOutlinePlus size={15} />}
+          onClick={handleCreateNew}
+          isDisabled={isCreateNewDisabled}
         >
-          DEL
-        </IconButton> */}
+          ADD
+        </IconButton>}
       </Grid>
     </div>
   )

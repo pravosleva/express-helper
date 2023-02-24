@@ -225,13 +225,15 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
 
   const [searchString, setSearchString] = useState<string>('')
   const handleSearchChange = useCallback((e) => {
-    console.log(e.target.value)
     setSearchString(e.target.value)
   }, [setSearchString])
   const handleSearchClear = useCallback(() => {
     setSearchString('')
   }, [setSearchString])
   const abDataVersion = useMemo(() => getABSortedObjByObjects({ arr: data, substr: searchString }), [data, searchString])
+  const hasSearchInData = useMemo(() => {
+    return data.findIndex(({ title }) => title.toLowerCase() === searchString.toLowerCase()) !== -1
+  }, [data, searchString])
 
   const Controls = useMemo(() => {
     return (
@@ -302,6 +304,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                     initialState={searchString}
                     onChange={handleSearchChange}
                     onClear={handleSearchClear}
+                    isCreateNewDisabled={hasSearchInData}
                   />
                 </Box>
                 <Box>
@@ -460,6 +463,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                     initialState={searchString}
                     onChange={handleSearchChange}
                     onClear={handleSearchClear}
+                    isCreateNewDisabled={hasSearchInData}
                   />
                 </Box>
                 <Box>
