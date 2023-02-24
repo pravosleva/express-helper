@@ -34,6 +34,7 @@ import styles from './TasklistContent.module.scss'
 import clsx from 'clsx'
 import { useCompare } from '~/common/hooks/useDeepEffect'
 import { getABSortedObjByObjects } from './getABSortedObjByObjects'
+import { ResponsiveSearchField } from './components'
 
 type TProps = {
   data: any[]
@@ -78,7 +79,7 @@ const MemoizedGroup = memo(({
           {key.toUpperCase()}
         </div>
         
-        <div style={{ zIndex: 1 }} className={clsx(styles.itemsList, styles[`themed-task-item_${colorMode}`])}>
+        <div style={{ zIndex: 1 }} className={clsx(styles.itemsList)}>
           {abDataVersion[key].map((data: any) => {
             switch (radioValue) {
               case 'all': break;
@@ -222,7 +223,15 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
   }, [handleTaskEdit, editedTask2])
   // --
 
-  const abDataVersion = useMemo(() => getABSortedObjByObjects({ arr: data }), [data])
+  const [searchString, setSearchString] = useState<string>('')
+  const handleSearchChange = useCallback((e) => {
+    console.log(e.target.value)
+    setSearchString(e.target.value)
+  }, [setSearchString])
+  const handleSearchClear = useCallback(() => {
+    setSearchString('')
+  }, [setSearchString])
+  const abDataVersion = useMemo(() => getABSortedObjByObjects({ arr: data, substr: searchString }), [data, searchString])
 
   const Controls = useMemo(() => {
     return (
@@ -285,6 +294,16 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                   {MemoCurrentShortStateByRadio}
                   {data?.length > 0 ? <>{completedTasksLen} of {data.length}</> : ''}
                 </Box>
+                <Box
+                  pl={5}
+                  pr={5}
+                >
+                  <ResponsiveSearchField
+                    initialState={searchString}
+                    onChange={handleSearchChange}
+                    onClear={handleSearchClear}
+                  />
+                </Box>
                 <Box>
                   <RadioGroup onChange={setRadioValue} value={radioValue}>
                     <Stack direction='row' justifyContent='center'>
@@ -300,7 +319,9 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
           )
         }
         {asModal && (
-          EnterText
+          <>
+            {EnterText}
+          </>
         )}
         {/*
           data?.length > 0 ? (
@@ -373,7 +394,6 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                 }
 
                 return (
-
                   <MemoizedGroup
                     key={key}
                     asModal={asModal || false}
@@ -395,7 +415,24 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         }
       </>
     )
-  }, [mode.colorMode, asModal, percentage, completedTasksLen, useCompare([data]), MemoCurrentShortStateByRadio, isCreateTaskFormOpened, formData.title, handleCompleteToggle, handleInputChange, handkeKeyUp, handleTaskDelete, handleTaskEdit, handleOpenPriceModal, handleResetExpenses])
+  }, [
+    mode.colorMode,
+    asModal,
+    percentage,
+    completedTasksLen,
+    useCompare([data]),
+    MemoCurrentShortStateByRadio,
+    isCreateTaskFormOpened,
+    formData.title,
+    handleCompleteToggle,
+    handleInputChange,
+    handkeKeyUp,
+    handleTaskDelete,
+    handleTaskEdit,
+    handleOpenPriceModal,
+    handleResetExpenses,
+    abDataVersion,
+  ])
 
   return (
     <>
@@ -415,6 +452,16 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                 <Box>
                   {data.length > 0 ? <><span style={{ color: 'var(--chakra-colors-green-400)' }}>{percentage}%</span> | {completedTasksLen} of {data.length} |</> : ''} {MemoCurrentShortStateByRadio}
                 </Box>
+                <Box
+                  pt={2}
+                  pb={2}
+                >
+                  <ResponsiveSearchField
+                    initialState={searchString}
+                    onChange={handleSearchChange}
+                    onClear={handleSearchClear}
+                  />
+                </Box>
                 <Box>
                   <RadioGroup onChange={setRadioValue} value={radioValue}>
                     <Stack direction='row'>
@@ -433,7 +480,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         asModal
         ? (
           <>
-            <ModalBody pb={5} pl={0} pr={0} pt={0}>
+            <ModalBody pb={0} pl={0} pr={0} pt={0}>
               {Body}
             </ModalBody>
           </>

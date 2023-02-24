@@ -15,6 +15,7 @@ import {
   Box,
   Tag,
   Stack,
+  useColorMode,
 } from "@chakra-ui/react"
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 import { GoGear } from 'react-icons/go'
@@ -32,6 +33,8 @@ import { TTask } from './types'
 import { getPrettyPrice } from '~/utils/getPrettyPrice'
 import Countdown, { zeroPad } from 'react-countdown'
 // import { BsFillCalendarFill } from 'react-icons/bs'
+import styles from './TaskItem.module.scss'
+
 
 type TProps = {
   char: string
@@ -106,10 +109,12 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
   //   onOpenDatePicker(data)
   // }
 
+  const mode = useColorMode()
+
   const MemoizedMenu = useMemo(() => {
     // NOTE: !(all fields is ok)
     const isFirstLoopRunning = !(!!data.checkTs && !!data.uncheckTs)
-
+    
     return (
       <>
         <Menu
@@ -330,9 +335,14 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
     )
   }, [isLooped, onDelete, JSON.stringify(data), onResetExpenses, onPriceModalOpen, onEdit, onLoopSwitch, isLooped, fixedDiff])
   
-
   return (
-    <Flex display="flex" alignItems="flex-start">
+    <div
+      className={styles[`themed-task-item_${mode.colorMode}`]}
+      style={{
+        display: "flex",
+        alignItems: "flex-start",
+      }}
+    >
       <Box p={5} pl={6} as='div'>
         {MemoizedMenu}
       </Box>
@@ -364,6 +374,6 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
           <Text pt={2} color='green.500' fontSize="md" onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
         </Flex>
       </Box>
-    </Flex>
+    </div>
   )
 })

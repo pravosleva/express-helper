@@ -8,6 +8,14 @@ type TRes = {
   [key: string]: TTask[]
 }
 
+const testWordByAnyWord = ({ testedWord, words }: { testedWord: string, words: string[] }): boolean => {
+  const modifiedWords = words.join(' ').replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
+  const regexpGroups = modifiedWords.split(' ').map((w) => ['(?=.*' + w + ')'])
+  const regexp = new RegExp('^' + regexpGroups.join('|') + '.*$', 'im')
+
+  return regexp.test(testedWord)
+}
+
 export const getABSortedObjByObjects = ({ arr, substr }: { arr: TTask[], substr?: string }): TRes => {
   const res: TRes = {}
   // const 
@@ -17,7 +25,10 @@ export const getABSortedObjByObjects = ({ arr, substr }: { arr: TTask[], substr?
     const firstChar = str[0].toLowerCase()
 
     if (!!substr) {
-      if (str.includes(substr.toLowerCase())) {
+      if (
+        testWordByAnyWord({ testedWord: str, words: substr.split(' ') })
+        // str.includes(substr.toLowerCase())
+      ) {
         if (!res[firstChar]) {
           res[firstChar] = [arr[i]]
         } else {
