@@ -222,7 +222,7 @@ class Logic {
     const res = this.messages.reduce((acc, cur) => {
       if (!cur.text) return acc
       const words = cur.text.replace(/\n/g, ' ').split(' ').filter((w) => latinAndCyrillicAndNumsRe.test(w))
-      for (const word of words) if (word[0] === '#') acc.push(word)
+      for (const word of words) if (!!word && word[0] === '#') acc.push(word)
       return acc
     }, [])
     return [...new Set(res)].sort(abSort)

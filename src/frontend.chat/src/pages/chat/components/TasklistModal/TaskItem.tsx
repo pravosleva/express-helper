@@ -371,7 +371,7 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
       </Box>
       <Box p={5} style={{ marginLeft: 'auto' }} as='div'>
         <Flex display="flex" alignItems="center">
-          <Text pt={2} color='green.500' fontSize="md" onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={18} /> : <ImCheckboxUnchecked size={18} />}</Text>
+          <Text pt={2} color='green.500' fontSize="md" onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={20} /> : <ImCheckboxUnchecked size={20} />}</Text>
         </Flex>
       </Box>
     </div>

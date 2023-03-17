@@ -36,8 +36,14 @@ import { useCompare } from '~/common/hooks/useDeepEffect'
 import { getABSortedObjByObjects } from './getABSortedObjByObjects'
 import { ResponsiveSearchField } from './components'
 
+type TTask = {
+  ts: number;
+  editTs?: number;
+  title: string;
+  isCompleted: boolean;
+}
 type TProps = {
-  data: any[]
+  data: TTask[]
   asModal?: boolean
   modalHeader?: string
 }
@@ -305,6 +311,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                     onChange={handleSearchChange}
                     onClear={handleSearchClear}
                     isCreateNewDisabled={hasSearchInData}
+                    data={data}
                   />
                 </Box>
                 <Box>
@@ -376,7 +383,6 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
             </div>
           ) : <Text fontWeight='md' p={5}>No tasks yet...</Text>
         */}
-        <Text fontWeight='md' p={5}>При включенной опции <b>IS&nbsp;LOOPED</b> готовая задача будет работать как циклический таймер, сообщая о своей готовности быть unchecked через промежуток времени от создания до первого выполнения. Для сброса интервала выберите в меню <b>RESET&nbsp;LOOPER</b> и дайте новое время до выполнения</Text>
         
         {/* <pre>{JSON.stringify(abDataVersion, null, 2)}</pre> */}
         {
@@ -416,6 +422,8 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
             </div>
           ) : <Text fontWeight='md' p={5}>No tasks yet...</Text>
         }
+
+        <Text fontWeight='md' p={5}>При включенной опции <b>IS&nbsp;LOOPED</b> готовая задача будет работать как циклический таймер, сообщая о своей готовности быть unchecked через промежуток времени от создания до первого выполнения. Для сброса интервала выберите в меню <b>RESET&nbsp;LOOPER</b> и дайте новое время до выполнения</Text>
       </>
     )
   }, [
@@ -464,6 +472,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                     onChange={handleSearchChange}
                     onClear={handleSearchClear}
                     isCreateNewDisabled={hasSearchInData}
+                    data={data}
                   />
                 </Box>
                 <Box>

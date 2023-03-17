@@ -22,7 +22,14 @@ export const getABSortedObjByObjects = ({ arr, substr }: { arr: TTask[], substr?
   const lowerCaseArr = arr.map(({ title }) => title.toLowerCase())
 
   lowerCaseArr.forEach((str: string, i: number) => {
-    const firstChar = str[0].toLowerCase()
+    let firstChar
+    if (str.length > 1) {
+      if (str[0] !== '#') {
+        firstChar = str[0].toLowerCase()
+      } else {
+        firstChar = str[1].toLowerCase()
+      }
+    } else firstChar = str[0].toLowerCase()
 
     if (!!substr) {
       if (

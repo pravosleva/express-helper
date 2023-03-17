@@ -2,9 +2,14 @@
 
 const baseTool = {
   alpha: function alpha(a: string, b: string) {
-    a = a.toUpperCase();
-    b = b.toUpperCase();
-    return a < b ? -1 : a > b ? 1 : 0;
+    // NOTE: v1
+    // a = a.toUpperCase();
+    // b = b.toUpperCase();
+    // return a < b ? -1 : a > b ? 1 : 0;
+    
+    // NOTE v2: localeCompare
+    // const abSort = (a: string, b: string) => a.localeCompare(b)
+    return a.localeCompare(b)
   },
   number: function number(a: any, b: any) {
     const _a = parseFloat(a);

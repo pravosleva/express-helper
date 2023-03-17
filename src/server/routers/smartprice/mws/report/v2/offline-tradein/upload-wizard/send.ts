@@ -83,7 +83,8 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
 
     try {
       axios.post('https://pravosleva.ru/tg-bot-2021/sp-notify/offline-tradein/upload-wizard/send', {
-        chat_id: 432590698,
+        // chat_id: 432590698,
+        chat_id: -1001615277747,
         rowValues,
         resultId,
         ts: new Date().getTime(),

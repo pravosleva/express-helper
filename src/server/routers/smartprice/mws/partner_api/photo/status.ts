@@ -59,7 +59,7 @@ type TScenario = {
 const responseScenarioMap = new Map<[key: string], TScenario>()
 
 export default async (req, res) => {
-  const { _odd_scenario } = req.body
+  const { _odd_scenario, _add_data } = req.body
 
   const result: any = {
     _originalBody: req.body,
@@ -233,6 +233,10 @@ export default async (req, res) => {
           size: responseScenarioMap.size
         }
       }
+
+      if (!!_add_data) Object.keys(_add_data).map((key) => {
+        result[key] = _add_data[key]
+      })
 
       return res.status(200).send(result)
     }
