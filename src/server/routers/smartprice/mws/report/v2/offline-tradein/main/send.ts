@@ -2,7 +2,7 @@ import { Response as IResponse, NextFunction as INextFunction } from 'express'
 // @ts-ignore
 import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
-// import axios from 'axios'
+import axios from 'axios'
 
 export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
   const { rowValues } = req.body
@@ -100,3 +100,86 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
   next()
 }
 */
+
+// NOTE: Send to another Google sheet
+export const spRetranslateToUploadWizardMW = async (req: TSPRequest, _res: IResponse, next: INextFunction) => {
+  if (!!req.smartprice.report?.rowValues) {
+    const rowValues = req.smartprice.report.rowValues
+    // const resultId = req.smartprice.report.resultId
+
+    // NOTE: Input sample
+    // [
+    //   ps.eventCode,
+    //   this.uniqueSessionKey,
+    //   ps.about,
+    //   ps.errMessage || '',
+    //   ps.whatHaveWeDone || '',
+    //   ps.jsonStringified || '',
+    // ]
+
+    const allowableEventCodes = [
+      'status_bad_quality',
+      'status_not_checked_started',
+      'status_ok',
+    ]
+
+    if (!rowValues[0] || !allowableEventCodes.includes(rowValues[0])) next()
+
+    // NOTE: Output sample
+    // [
+    //   this.uniqueSessionKey,
+    //   code,
+    //   uiErrText,
+    //   filesCounter,
+    //   tradeinId,
+    //   additionalInfo,
+    //   partnerName,
+    //   initPageTotalRequiredLeft,
+    //   initMutatedWindowInfo,
+    //   errMessage,
+    //   csrfToken,
+    //   originalResponseFromBackend
+    // ]
+
+    // NOTE: Try to extract additional data
+    let _tradeinIdExtracted = ''
+    let _partnerNameExtracted = ''
+    let _resExtracted = ''
+    let _serviceErrMsg = ''
+    let _csrfTokenExtracted = ''
+    try {
+      const json = JSON.parse(rowValues[5])
+      if (!!json.tradeinId) _tradeinIdExtracted = json.tradeinId
+      if (!!json.partnerName) _partnerNameExtracted = json.partnerName
+      if (!!json.res) _resExtracted = json.res
+      if (!!json.csrfToken) _csrfTokenExtracted = json.csrfToken
+    } catch (err) {
+      _serviceErrMsg = err?.message || `ERR: Неизвестная ошибка при попытке распарсить: ${rowValues[5]} (${typeof rowValues[5]})`
+    }
+
+    const modifiedRowValues = [
+      rowValues[1], // uniqueSessionKey
+      rowValues[0], // code
+      '', // uiErrText
+      '', // filesCounter
+      _tradeinIdExtracted, // tradeinId,
+      `${rowValues[2] || 'No retranslated additionalInfo'}${!!_serviceErrMsg ? ` | ${_serviceErrMsg}` : ''}`, // additionalInfo,
+      _partnerNameExtracted, // partnerName,
+      '', // initPageTotalRequiredLeft,
+      '', // initMutatedWindowInfo,
+      rowValues[3], // errMessage,
+      _csrfTokenExtracted, // csrfToken,
+      _resExtracted, // originalResponseFromBackend
+    ]
+
+    try {
+      axios.post('https://pravosleva.ru/express-helper/sp/report/v2/offline-tradein/upload-wizard/send', {
+        rowValues: modifiedRowValues,
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  
+  next()
+}

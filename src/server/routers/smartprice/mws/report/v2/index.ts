@@ -4,7 +4,10 @@ import {
   sendReport as sendOfflineTradeInUploadPhotoGoogleSheetsReport,
   spNotifyMW as spOfflineTradeInTelegramNotifyMW,
 } from './offline-tradein/upload-wizard/send'
-import { sendReport as sendOfflineTradeInMainGoogleSheetsReport } from './offline-tradein/main/send'
+import {
+  sendReport as sendOfflineTradeInMainGoogleSheetsReport,
+  spRetranslateToUploadWizardMW as spOfflineTradeInRetranslateToUploadWizardMW,
+} from './offline-tradein/main/send'
 import { getRandom as getRandomIMEI } from './imei/usable/get-random'
 import { markAsUsed as markIMEIAsUsed } from './imei/usable/mark-as-used'
 import { sendBoughtDevice } from './imei/bought-device/send'
@@ -52,7 +55,11 @@ router.post(
   sendOfflineTradeInUploadPhotoGoogleSheetsReport,
   spOfflineTradeInTelegramNotifyMW,
 )
-router.post('/offline-tradein/main/send', sendOfflineTradeInMainGoogleSheetsReport)
+router.post(
+  '/offline-tradein/main/send',
+  sendOfflineTradeInMainGoogleSheetsReport,
+  spOfflineTradeInRetranslateToUploadWizardMW,
+)
 
 // IMEI SERVICE
 router.post('/imei/usable/get-random', getRandomIMEI)
