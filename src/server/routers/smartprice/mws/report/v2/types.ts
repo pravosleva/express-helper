@@ -14,6 +14,7 @@ export type TSPRequest = IRequest & {
     report?: {
       rowValues?: any[];
       resultId?: number;
+      ts?: number;
     }
   };
 }

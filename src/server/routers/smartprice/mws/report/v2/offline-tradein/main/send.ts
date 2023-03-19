@@ -7,6 +7,8 @@ import axios from 'axios'
 export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
   const { rowValues } = req.body
 
+  console.log(rowValues)
+
   if (!rowValues || !Array.isArray(rowValues)) return res.status(400).send({
     ok: false,
     message: `req.rowValues is ${typeof rowValues}; Should be array`
@@ -71,6 +73,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   req.smartprice.report = {
     rowValues,
     resultId: result.id,
+    ts,
   }
 
   res.status(200).send(result)
@@ -106,6 +109,12 @@ export const spRetranslateToUploadWizardMW = async (req: TSPRequest, _res: IResp
   if (!!req.smartprice.report?.rowValues) {
     const rowValues = req.smartprice.report.rowValues
     // const resultId = req.smartprice.report.resultId
+    const ts = req.smartprice.report.ts
+    let uiDate
+    if (!!ts) {
+      const date = new Date(ts)
+      uiDate = date.toJSON()
+    }
 
     // NOTE: Input sample
     // [
@@ -119,65 +128,82 @@ export const spRetranslateToUploadWizardMW = async (req: TSPRequest, _res: IResp
 
     const allowableEventCodes = [
       'status_bad_quality',
-      'status_not_checked_started',
+      'status_fake',
       'status_ok',
+      'status_not_checked_started',
+      'status_null',
     ]
 
-    if (!rowValues[0] || !allowableEventCodes.includes(rowValues[0])) next()
+    if (!!rowValues[0] && allowableEventCodes.includes(rowValues[0])) {
 
-    // NOTE: Output sample
-    // [
-    //   this.uniqueSessionKey,
-    //   code,
-    //   uiErrText,
-    //   filesCounter,
-    //   tradeinId,
-    //   additionalInfo,
-    //   partnerName,
-    //   initPageTotalRequiredLeft,
-    //   initMutatedWindowInfo,
-    //   errMessage,
-    //   csrfToken,
-    //   originalResponseFromBackend
-    // ]
+      // NOTE: Output sample
+      // [
+      //   this.uniqueSessionKey,
+      //   code,
+      //   uiErrText,
+      //   filesCounter,
+      //   tradeinId,
+      //   additionalInfo,
+      //   partnerName,
+      //   initPageTotalRequiredLeft,
+      //   initMutatedWindowInfo,
+      //   errMessage,
+      //   csrfToken,
+      //   originalResponseFromBackend
+      // ]
 
-    // NOTE: Try to extract additional data
-    let _tradeinIdExtracted = ''
-    let _partnerNameExtracted = ''
-    let _resExtracted = ''
-    let _serviceErrMsg = ''
-    let _csrfTokenExtracted = ''
-    try {
-      const json = JSON.parse(rowValues[5])
-      if (!!json.tradeinId) _tradeinIdExtracted = json.tradeinId
-      if (!!json.partnerName) _partnerNameExtracted = json.partnerName
-      if (!!json.res) _resExtracted = json.res
-      if (!!json.csrfToken) _csrfTokenExtracted = json.csrfToken
-    } catch (err) {
-      _serviceErrMsg = err?.message || `ERR: Неизвестная ошибка при попытке распарсить: ${rowValues[5]} (${typeof rowValues[5]})`
-    }
+      // NOTE: Try to extract additional data
+      let _tradeinIdExtracted = ''
+      let _partnerNameExtracted = ''
+      let _resExtracted = ''
+      let _serviceErrMsg = ''
+      let _csrfTokenExtracted = ''
+      try {
+        const json = JSON.parse(rowValues[5])
+        if (!!json.tradeinId) _tradeinIdExtracted = json.tradeinId
+        if (!!json.partnerName) _partnerNameExtracted = json.partnerName
+        if (!!json.res) _resExtracted = json.res
+        if (!!json.csrfToken) _csrfTokenExtracted = json.csrfToken
+      } catch (err) {
+        _serviceErrMsg = err?.message || `ERR: Неизвестная ошибка при попытке распарсить: ${rowValues[5]} (${typeof rowValues[5]})`
+      }
 
-    const modifiedRowValues = [
-      rowValues[1], // uniqueSessionKey
-      rowValues[0], // code
-      '', // uiErrText
-      '', // filesCounter
-      _tradeinIdExtracted, // tradeinId,
-      `${rowValues[2] || 'No retranslated additionalInfo'}${!!_serviceErrMsg ? ` | ${_serviceErrMsg}` : ''}`, // additionalInfo,
-      _partnerNameExtracted, // partnerName,
-      '', // initPageTotalRequiredLeft,
-      '', // initMutatedWindowInfo,
-      rowValues[3], // errMessage,
-      _csrfTokenExtracted, // csrfToken,
-      _resExtracted, // originalResponseFromBackend
-    ]
+      const addInfoMsgs = []
+      if (uiDate) addInfoMsgs.push(uiDate)
+      if (_serviceErrMsg) addInfoMsgs.push(_serviceErrMsg)
 
-    try {
-      axios.post('https://pravosleva.ru/express-helper/sp/report/v2/offline-tradein/upload-wizard/send', {
-        rowValues: modifiedRowValues,
-      })
-    } catch (err) {
-      console.log(err)
+      try {
+        const modifiedRowValues = [
+          rowValues[1], // uniqueSessionKey
+          rowValues[0], // code
+          '', // uiErrText
+          '', // filesCounter
+          _tradeinIdExtracted, // tradeinId,
+
+          addInfoMsgs.length > 0 ? addInfoMsgs.join(', ') : '', // additionalInfo, (rowValues[2]?)
+
+          _partnerNameExtracted, // partnerName,
+          '', // initPageTotalRequiredLeft,
+          '', // initMutatedWindowInfo,
+          rowValues[3], // errMessage,
+          _csrfTokenExtracted, // csrfToken,
+          !!_resExtracted ? JSON.stringify(_resExtracted) : '', // originalResponseFromBackend
+        ]
+        axios.post('https://pravosleva.ru/express-helper/sp/report/v2/offline-tradein/upload-wizard/send', {
+          rowValues: modifiedRowValues,
+        })
+
+        // NOTE: JSON for example
+        // "{\"tradeinId\":115362,\"partnerName\":\"postman\",\"csrfToken\":\"9Ash2IHLTmS0TTlLrbv4RRMuoElsoIF6l8tleTl3iRq2esxwdQXapqXcXYm9iZff\",\"res\":\"test\"}"
+        // "{\"tradeinId\":115362,\"partnerName\":\"postman\",\"csrfToken\":\"abc123\",\"res\":{\"ok\":true,\"message\":\"Это сообщение придет, когда фронт в основном интерфейсе узнает об изменении статуса на ok, bad_quality, fake\"}}"
+      } catch (err) {
+        console.log(err)
+      } finally {
+        next()
+      }
+    } else {
+      console.log(`-- eventCode ${String(rowValues[0])} not allowed`)
+      next()
     }
   }
   
