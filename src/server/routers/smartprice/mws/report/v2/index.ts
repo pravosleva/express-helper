@@ -5,6 +5,9 @@ import {
   spNotifyMW as spOfflineTradeInTelegramNotifyMW,
 } from './offline-tradein/upload-wizard/send'
 import {
+  getAnalysis as sendOfflineTradeInGetAnalysis,
+} from './offline-tradein/upload-wizard/get-timing-analysis'
+import {
   sendReport as sendOfflineTradeInMainGoogleSheetsReport,
   spRetranslateToUploadWizardMW as spOfflineTradeInRetranslateToUploadWizardMW,
 } from './offline-tradein/main/send'
@@ -54,6 +57,10 @@ router.post(
   '/offline-tradein/upload-wizard/send',
   sendOfflineTradeInUploadPhotoGoogleSheetsReport,
   spOfflineTradeInTelegramNotifyMW,
+)
+router.post(
+  '/offline-tradein/upload-wizard/get-timing-analysis',
+  sendOfflineTradeInGetAnalysis,
 )
 router.post(
   '/offline-tradein/main/send',

@@ -132,6 +132,12 @@ export const spRetranslateToUploadWizardMW = async (req: TSPRequest, _res: IResp
       'status_ok',
       'status_not_checked_started',
       'status_null',
+
+      // NOTE: Main UI debug (retranslated logs)
+      'accept_err',
+      'accept_ok',
+      'bought_device_err',
+      'bought_device_ok',
     ]
 
     if (!!rowValues[0] && allowableEventCodes.includes(rowValues[0])) {
