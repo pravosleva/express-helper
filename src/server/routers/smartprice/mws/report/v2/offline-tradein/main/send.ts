@@ -6,9 +6,6 @@ import axios from 'axios'
 
 export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
   const { rowValues } = req.body
-
-  console.log(rowValues)
-
   if (!rowValues || !Array.isArray(rowValues)) return res.status(400).send({
     ok: false,
     message: `req.rowValues is ${typeof rowValues}; Should be array`

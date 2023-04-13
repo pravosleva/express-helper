@@ -2,13 +2,10 @@ import { Response as IResponse, NextFunction as INextFunction } from 'express'
 // @ts-ignore
 import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
-import axios from 'axios'
+// import axios from 'axios'
 
 export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
-  const { rowValues: _rowValues } = req.body
-  const date = new Date()
-  const rowValues = [date.toJSON(), ..._rowValues]
-
+  const { rowValues } = req.body
   if (!rowValues || !Array.isArray(rowValues)) return res.status(400).send({
     ok: false,
     message: `req.rowValues is ${typeof rowValues}; Should be array`
@@ -27,17 +24,20 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   const client = await auth.getClient()
   const googleSheets = google.sheets({ version: 'v4', auth: client })
   const spreadsheetId = req.smartprice.spreadsheetId
+  const date = new Date()
+  const ts = date.getTime()
+  const uiDate = date.toJSON()
 
   let gRes: any
   try {
     gRes = await googleSheets.spreadsheets.values.append({
       auth,
       spreadsheetId,
-      range: '/offline-tradein/upload-wizard!A2',
+      range: '/crm/main!A2',
       valueInputOption: 'USER_ENTERED',
       insertDataOption: EInsertDataOption.INSERT_ROWS,
       requestBody: {
-        values: [rowValues],
+        values: [[uiDate, ts, ...rowValues]],
       },
     })
   } catch (err) {
@@ -67,24 +67,26 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     }
   }
 
-  req.smartprice.report = {
-    rowValues,
-    resultId: result.id,
-  }
+  // req.smartprice.report = {
+  //   rowValues,
+  //   resultId: result.id,
+  //   ts,
+  // }
 
   res.status(200).send(result)
   next()
 }
 
+// TODO
+/*
 export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFunction) => {
   if (!!req.smartprice.report?.rowValues) {
     const rowValues = req.smartprice.report.rowValues
     const resultId = req.smartprice.report.resultId
 
     try {
-      axios.post('http://pravosleva.ru/tg-bot-2021/sp-notify/offline-tradein/upload-wizard/send', {
-        // chat_id: 432590698,
-        chat_id: -1001615277747,
+      axios.post('https://pravosleva.ru/tg-bot-2021/sp-notify/offline-tradein/main/send', {
+        chat_id: 432590698,
         rowValues,
         resultId,
         ts: new Date().getTime(),
@@ -97,3 +99,4 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
   
   next()
 }
+*/

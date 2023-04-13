@@ -110,8 +110,9 @@
 
     .msg-as-image--wrapper {
       position: relative;
-      max-height: 310px;
       min-height: 117px;
+      // max-height: 310px;
+      max-height: 117px;
 
       & > span > span:nth-child(2) {
         background: var(--chakra-colors-gray-400);
@@ -121,8 +122,9 @@
       // border: 1px solid red;
       & img {
         border-radius: 10px;
-        max-height: 310px;
         min-height: 117px;
+        // max-height: 310px;
+        max-height: 117px;
         height: 100%;
 
         // padding:0px;

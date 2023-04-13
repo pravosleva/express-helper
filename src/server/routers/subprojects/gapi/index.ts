@@ -1,5 +1,8 @@
 import express from 'express'
 import { getItems } from './viselitsa-2023/get-items'
+import { getDict } from './audit-helper-2023/get-dict-1'
+import { getDict2 } from './audit-helper-2023/get-dict-2'
+import { mainReport } from './audit-helper-2023/main-report'
 import fs from 'fs'
 import path from 'path'
 import bodyParser from 'body-parser'
@@ -16,5 +19,8 @@ if (!fs.existsSync(path.join(projectRootDir, 'server-dist/routers/subprojects/ga
 const router = express.Router()
 
 router.post('/viselitsa-2023/get-items', jsonParser, getItems)
+router.post('/audit-helper-2023/get-dict-1', jsonParser, getDict)
+router.post('/audit-helper-2023/get-dict-2', jsonParser, getDict2)
+router.post('/audit-helper-2023/main-report', jsonParser, mainReport)
 
 export const gapiRouter = router

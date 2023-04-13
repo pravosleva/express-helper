@@ -22,14 +22,28 @@ const getRowDetails = ({ row }): string => {
     const eventCode = row[2]
     switch (true) {
       // NOTE: Количество загруженных фото равно требуемому на загруженной странице
-      case (eventCode === 'upload_ok' && !!row[4] && !!row[8] && row[4] === row[8]):
-        result = `✅ Количество загруженных фото равно требуемому на загруженной странице (${row[8]})`
+      case (eventCode === 'upload_ok'): {
+        const photoType = row[3] // (uiErrText in table)
+        switch (true) {
+          case !!row[4] && !!row[8] && row[4] === row[8]:
+            // NOTE: Загружено последнее фото
+            result = `✅ (${row[4]} of ${row[8]}) ${photoType}: Количество загруженных фото соответствует требуемому на загруженной странице`
+            break
+          case !!row[4] && !!row[8] && row[4] !== row[8]:
+            // NOTE: Не последнее
+            result = `✅ (${row[4]} of ${row[8]}) ${photoType}`
+            break
+          default:
+            break
+        }
         break
+      }
       default:
         break
     }
   } catch (err) {
     console.log('- ERR: getAddSymbol')
+    console.log(err)
   }
   return result
 }
@@ -54,8 +68,22 @@ const getMarkdown = ({ rows }): string => {
     },
   }
   const statusesForReloadsRegistration = {
-    uploadPage: ['upload_ok', 'upload_err'],
-    mainPage: ['status_ok', 'status_fake', 'status_bad_quality', 'status_null', 'status_not_checked_started'],
+    uploadPage: [
+      'tradein_id_entered',
+      'upload_ok',
+      'upload_err',
+    ],
+    mainPage: [
+      'accept_ok',
+      'accept_err',
+      'status_bad_quality',
+      'status_ok',
+      'status_fake',
+      'status_not_checked_started',
+      'status_null',
+      'bought_device_err',
+      'bought_device_ok',
+    ],
   }
   const _fixReload = ({ row }): void => {
     const eventCode = row[2]

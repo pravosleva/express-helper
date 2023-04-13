@@ -16,6 +16,9 @@ import { markAsUsed as markIMEIAsUsed } from './imei/usable/mark-as-used'
 import { sendBoughtDevice } from './imei/bought-device/send'
 import { google } from 'googleapis'
 import { runTGExtraNotifs as runTGExtraNotifs } from './run-tg-extra-notifs'
+import {
+  sendReport as sendCRMGoogleSheetsReport,
+} from './crm/main/send'
 
 import fs from 'fs'
 import path from 'path'
@@ -67,6 +70,9 @@ router.post(
   sendOfflineTradeInMainGoogleSheetsReport,
   spOfflineTradeInRetranslateToUploadWizardMW,
 )
+
+// CRM
+router.post('/crm/main/send', sendCRMGoogleSheetsReport)
 
 // IMEI SERVICE
 router.post('/imei/usable/get-random', getRandomIMEI)
