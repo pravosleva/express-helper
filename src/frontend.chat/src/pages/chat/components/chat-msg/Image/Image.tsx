@@ -76,7 +76,7 @@ export const Image = memo(({
           {/* <img alt={text} src={src} style={{ width: '100%', minWidth: 'var(--msg-img-min-with)' }} /> */}
             
           <Img
-            style={{ width: '100%', minWidth: 'var(--msg-img-min-with)' }}
+            style={{ width: '100%', minWidth: 'var(--msg-img-min-with)', objectFit: 'cover' }}
             src={src}
             alt={text}
             loading='lazy'

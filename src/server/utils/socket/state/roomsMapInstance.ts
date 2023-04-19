@@ -38,6 +38,12 @@ class Singleton {
     this.state = new Map<TRoomId, TRoomData>()
   }
 
+  public getRoomData(room: string) {
+    if (!this.state.has(room)) return null
+
+    return this.state.get(room)
+  }
+
   public static getInstance(): Singleton {
     if (!Singleton.instance) Singleton.instance = new Singleton();
 

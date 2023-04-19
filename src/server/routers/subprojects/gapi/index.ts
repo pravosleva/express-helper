@@ -6,6 +6,9 @@ import { mainReport } from './audit-helper-2023/main-report'
 import fs from 'fs'
 import path from 'path'
 import bodyParser from 'body-parser'
+import { getLinksForParser } from './audit-helper-2023/get-links-for-parser'
+import { sendNotifyMW as sendAuditHelper2023Notify } from './audit-helper-2023/notify/send'
+import { sendNotify2MW as sendAuditHelper2023NotifyV2 } from './audit-helper-2023/notify/send-2'
 
 const jsonParser = bodyParser.json()
 
@@ -22,5 +25,8 @@ router.post('/viselitsa-2023/get-items', jsonParser, getItems)
 router.post('/audit-helper-2023/get-dict-1', jsonParser, getDict)
 router.post('/audit-helper-2023/get-dict-2', jsonParser, getDict2)
 router.post('/audit-helper-2023/main-report', jsonParser, mainReport)
+router.post('/audit-helper-2023/get-links-for-parser', jsonParser, getLinksForParser)
+router.post('/audit-helper-2023/notify/send', jsonParser, sendAuditHelper2023Notify)
+router.post('/audit-helper-2023/notify/send-2', jsonParser, sendAuditHelper2023NotifyV2)
 
 export const gapiRouter = router

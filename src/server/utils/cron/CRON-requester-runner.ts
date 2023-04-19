@@ -74,7 +74,7 @@ const baseFn = () => {
 
 const randomMinutes = getRandomInteger(30, 59)
 
-console.log(`CRON Requester interval: ${randomMinutes} 15 * * *`)
+console.log(`CRON: Requester interval ${randomMinutes} 15 * * *`)
 
 cron.schedule(`${randomMinutes} 15 * * *` /* Every day at 15:(30-59) */, function() {
   baseFn()

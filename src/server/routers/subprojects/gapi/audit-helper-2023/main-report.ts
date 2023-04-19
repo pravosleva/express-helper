@@ -19,6 +19,7 @@ export const mainReport = async (req: IRequest, res: IResponse) => {
     gRes: null,
     _details: {
       _originalBody: req.body,
+      tgNotify: {},
     },
   }
 
@@ -88,15 +89,37 @@ export const mainReport = async (req: IRequest, res: IResponse) => {
     }
   }
 
-  if (!!gRes?.data?.values) {
+  if (!!gRes?.data?.updates) {
     console.log(gRes)
     result.ok = true
-    result.gRes = gRes
+    result._details.gRes = gRes
+
   } else {
     result.ok = false
     result.gRes = gRes
-    result.message = `gRes?.data?.values is ${typeof !gRes?.data?.values}`
+    result.message = `gRes?.data?.updates is ${typeof gRes?.data?.updates}`
   }
+
+  // -- NOTE: Get User ID for notifier
+  try {
+    const gRes = await googleSheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: '/audit-helper-2023/main-report!B1',
+    })
+    if (!!gRes?.data?.values) {
+      // console.log(gRes?.data?.values) // [ [ 'V7lCM11sqkmvS8j' ] ]
+      if (Array.isArray(gRes?.data?.values) && Array.isArray(gRes?.data?.values[0]) && !!gRes?.data?.values[0][0]) {
+        result._details.tgNotify.userIdAsNotifier = gRes?.data?.values[0][0]
+      } else throw new Error(`Не удалось найти clientId как оповещателя (значение B1); gRes?.data?.values= ${JSON.stringify(gRes?.data?.values)}`)
+    } else {
+      result._details.tgNotify.message = 'Не удалось получить значение B1',
+      result._details.tgNotify.gRes = gRes
+    }
+  } catch (err) {
+    result._details.tgNotify.message = typeof err === 'string' ? err : (err.message || 'No err.message')
+  }
+  // --
 
   res.status(200).send(result)
 }

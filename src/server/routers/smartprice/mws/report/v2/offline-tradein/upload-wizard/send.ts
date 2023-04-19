@@ -4,8 +4,8 @@ import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 import axios from 'axios'
 
-// const isDev = process.env.NODE_ENV === 'development'
-const isProd = process.env.NODE_ENV === 'production'
+const isDev = process.env.NODE_ENV === 'development'
+// const isProd = process.env.NODE_ENV === 'production'
 
 export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
   const { rowValues: _rowValues } = req.body
@@ -85,9 +85,10 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
     const resultId = req.smartprice.report.resultId
 
     try {
-      axios.post('http://pravosleva.ru/tg-bot-2021/sp-notify/offline-tradein/upload-wizard/send', {
+      axios.post('http://pravosleva.ru/tg-bot-2021/notify/sp/offline-tradein/upload-wizard/send', {
         // chat_id: 432590698,
-        chat_id: isProd ? -1001615277747 : 432590698,
+        // chat_id: isDev ? 432590698 : -1001615277747,
+        chat_id: -1001615277747,
         rowValues,
         resultId,
         ts: new Date().getTime(),

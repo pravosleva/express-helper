@@ -85,7 +85,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
     const resultId = req.smartprice.report.resultId
 
     try {
-      axios.post('https://pravosleva.ru/tg-bot-2021/sp-notify/offline-tradein/main/send', {
+      axios.post('https://pravosleva.ru/tg-bot-2021/notify/sp/offline-tradein/main/send', {
         chat_id: 432590698,
         rowValues,
         resultId,

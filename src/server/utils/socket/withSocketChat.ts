@@ -26,6 +26,7 @@ import { moveFile } from '~/utils/fs-tools/moveFile'
 
 // --- NOTE: Run CRON for backups!
 require('~/utils/cron/CRON-backup-runner')
+require('~/utils/cron/CRON-kanban2021-parrot-for-smartprice')
 // ---
 
 // NOTE: Если версия на фронте будет отлияаться, страница будет перезагружена при реконнекте
