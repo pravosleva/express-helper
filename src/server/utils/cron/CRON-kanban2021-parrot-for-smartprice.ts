@@ -3,6 +3,7 @@ import cron from 'node-cron'
 import { roomsMapInstance, EMessageStatus, TMessage } from '~/utils/socket/state'
 import { testTextByAllWords } from '~/utils/string-ops/testTextByAllWords'
 import { sortArrayByKeys } from '~/utils/sort/sortArrayByKeys'
+import { getStatusTranslated } from '~/utils/socket/state/getStatusTranslated'
 
 // const isDev = process.env.NODE_ENV === 'development'
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
@@ -103,7 +104,7 @@ const cfg: TCfg = [
             text,
           } = msg
 
-          return `${charCfg[status] || '❓'} ${i + 1}. ${position >= 0 ? `Приоритет ${position + 1}` : ''}${(!!links && Array.isArray(links)) ? `\nСсылки:\n${links.map(({ link, descr }) => `[${descr}](${link})`).join('\n')}` : ''} \n\`\`\`\n${text}\n\`\`\``
+          return `\`\`\`\n${charCfg[status] || '❓'} ${i + 1}. ${text}\n\`\`\`\n${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `\n${links.map(({ link, descr }) => `👉 [${descr}](${link})`).join('\n')}` : ''}`
           // return JSON.stringify(msg)
         }).join('\n\n')
         },
@@ -129,7 +130,7 @@ const cfg: TCfg = [
           targetHashtags,
           targetStatuses,
         }: { msgs: TMessage[]; targetHashtags: string[]; targetStatuses: EMessageStatus[]; }) => {
-          return `*${targetHashtags.join(' ')}*\n${msgs.length > 0 ? `Есть задачи со статусом *${[...targetStatuses].join(', ')}* (${msgs.length})` : `Нет задач, ожидающих деплой на прод ${[...targetStatuses].join(', ')}`}`
+          return `*${targetHashtags.join(' ')}*\n${msgs.length > 0 ? `Есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Нет задач, ожидающих деплой на прод ${[...targetStatuses].join(', ')}`}`
         },
         targetMD: ({
           msgs,
@@ -146,7 +147,7 @@ const cfg: TCfg = [
             text,
           } = msg
 
-          return `${charCfg[status] || '❓'} ${i + 1}. ${position >= 0 ? `Приоритет ${position + 1}` : ''}${(!!links && Array.isArray(links)) ? `\nСсылки:\n${links.map(({ link, descr }) => `[${descr}](${link})`).join('\n')}` : ''} \n\`\`\`\n${text}\n\`\`\``
+          return `\`\`\`\n${charCfg[status] || '❓'} ${i + 1}. ${text}\n\`\`\`\n${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `\n${links.map(({ link, descr }) => `👉 [${descr}](${link})`).join('\n')}` : ''}`
           // return JSON.stringify(msg)
         }).join('\n\n'),
       },
