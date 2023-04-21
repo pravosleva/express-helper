@@ -74,7 +74,7 @@ const cfg: TCfg = [
           const sortedMsgs = sortArrayByKeys({
             arr: msgs,
             keys: ['position'],
-            order: -1,
+            order: 1,
           })
           return sortedMsgs.map((msg, i) => {
           /* NOTE: _targetMsgs For example
@@ -134,7 +134,7 @@ const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `В чат-комнатах \`${targetRooms.join(' ')}\` Есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
+          return `${msgs.length > 0 ? `В чат-комнатах \`${targetRooms.join(' ')}\` есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
         },
         targetMD: ({
           msgs,
@@ -144,7 +144,7 @@ const cfg: TCfg = [
           const sortedMsgs = sortArrayByKeys({
             arr: msgs,
             keys: ['position'],
-            order: -1,
+            order: 1,
           })
           return sortedMsgs.map((msg, i) => {
             const {
@@ -175,7 +175,7 @@ const cfg: TCfg = [
     id: 3,
     _descr: 'Reminder for me (whats up)',
     isEnabled: true,
-    cronSetting: '30 14 * * *', // Every day at 13:30
+    cronSetting: '0 15 * * *', // Every day at 15:00
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
     targetHashtags: [],
@@ -189,8 +189,9 @@ const cfg: TCfg = [
           msgs,
           targetHashtags,
           targetStatuses,
+          targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `Есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
+          return `${msgs.length > 0 ? `В чат-комнатах \`${targetRooms.join(' ')}\` есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
         },
         targetMD: ({
           msgs,
@@ -200,7 +201,7 @@ const cfg: TCfg = [
           const sortedMsgs = sortArrayByKeys({
             arr: msgs,
             keys: ['position'],
-            order: -1,
+            order: 1,
           })
           return sortedMsgs.map((msg, i) => {
             const {
