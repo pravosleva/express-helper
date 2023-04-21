@@ -11,4 +11,13 @@ const messageTranslator = {
   [EMessageStatus.Done]: 'Готово',
 }
 
-export const getStatusTranslated = (status: EMessageStatus) => messageTranslator[status] || getCapitalizedFirstLetter(status)
+export const statusCfg: { [key in EMessageStatus]: string } = {
+  [EMessageStatus.Danger]: '🔥',
+  [EMessageStatus.Success]: '✅',
+  [EMessageStatus.Warn]: '⚠️',
+  [EMessageStatus.Dead]: '💀',
+  [EMessageStatus.Done]: '☑️',
+  [EMessageStatus.Info]: 'ℹ️',
+}
+
+export const getStatusTranslated = (status: EMessageStatus) => `${statusCfg[status] || '❓'} ${messageTranslator[status] || getCapitalizedFirstLetter(status)}`

@@ -3,19 +3,10 @@ import cron from 'node-cron'
 import { roomsMapInstance, EMessageStatus, TMessage } from '~/utils/socket/state'
 import { testTextByAllWords } from '~/utils/string-ops/testTextByAllWords'
 import { sortArrayByKeys } from '~/utils/sort/sortArrayByKeys'
-import { getStatusTranslated } from '~/utils/socket/state/getStatusTranslated'
+import { getStatusTranslated, statusCfg } from '~/utils/socket/state/getStatusTranslated'
 
 // const isDev = process.env.NODE_ENV === 'development'
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
-
-const charCfg: { [key in EMessageStatus]: string } = {
-  [EMessageStatus.Danger]: '🔥',
-  [EMessageStatus.Success]: '✅',
-  [EMessageStatus.Warn]: '⚠️',
-  [EMessageStatus.Dead]: '💀',
-  [EMessageStatus.Done]: '☑️',
-  [EMessageStatus.Info]: 'ℹ️',
-}
 
 // NOTE: Parrots reference
 type TCfg = {
@@ -107,8 +98,18 @@ const cfg: TCfg = [
             assignedTo,
           } = msg
 
-          return `\`\`\`\n${i + 1}. ${charCfg[status] || '❓'} ${text}\n\`\`\`\n${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? `👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}\n` : ''}${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}` : ''}`
-        }).join('\n\n')
+          const msgList = [
+            `\`\`\`\n${i + 1}. ${statusCfg[status] || '❓'} ${text}\n\`\`\``,
+          ]
+          if (position >= 0)
+            msgList.push(`Приоритет ${position + 1}`)
+          if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+            msgList.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+          if (!!links && Array.isArray(links))
+            msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+
+          return msgList.join('\n')
+          }).join('\n\n')
         },
       },
     },
@@ -139,17 +140,34 @@ const cfg: TCfg = [
           msgs,
           targetHashtags,
           targetStatuses,
-        }) => msgs.map((msg, i) => {
-          const {
-            status,
-            position,
-            links,
-            text,
-            assignedTo,
-          } = msg
+        }) => {
+          const sortedMsgs = sortArrayByKeys({
+            arr: msgs,
+            keys: ['position'],
+            order: -1,
+          })
+          return sortedMsgs.map((msg, i) => {
+            const {
+              status,
+              position,
+              links,
+              text,
+              assignedTo,
+            } = msg
 
-          return `\`\`\`\n${i + 1}. ${charCfg[status] || '❓'} ${text}\n\`\`\`\n${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? `👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}\n` : ''}${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}` : ''}`
-        }).join('\n\n'),
+            const msgList = [
+              `\`\`\`\n${i + 1}. ${statusCfg[status] || '❓'} ${text}\n\`\`\``,
+            ]
+            if (position >= 0)
+              msgList.push(`Приоритет ${position + 1}`)
+            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+              msgList.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+            if (!!links && Array.isArray(links))
+              msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+
+            return msgList.join('\n')
+          }).join('\n\n')
+        },
       },
     },
   },
@@ -157,10 +175,10 @@ const cfg: TCfg = [
     id: 3,
     _descr: 'Reminder for me (whats up)',
     isEnabled: true,
-    cronSetting: '0 13 * * *', // Every day at 13:00
+    cronSetting: '30 14 * * *', // Every day at 13:30
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
-    targetHashtags: ['#ssr'],
+    targetHashtags: [],
     targetStatuses: [EMessageStatus.Danger, EMessageStatus.Success, EMessageStatus.Warn],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
@@ -178,17 +196,34 @@ const cfg: TCfg = [
           msgs,
           targetHashtags,
           targetStatuses,
-        }) => msgs.map((msg, i) => {
-          const {
-            status,
-            position,
-            links,
-            text,
-            assignedTo,
-          } = msg
+        }) => {
+          const sortedMsgs = sortArrayByKeys({
+            arr: msgs,
+            keys: ['position'],
+            order: -1,
+          })
+          return sortedMsgs.map((msg, i) => {
+            const {
+              status,
+              position,
+              links,
+              text,
+              assignedTo,
+            } = msg
 
-          return `\`\`\`\n${i + 1}. ${charCfg[status] || '❓'} ${text}\n\`\`\`\n${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? `👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}\n` : ''}${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}` : ''}`
-        }).join('\n\n'),
+            const msgList = [
+              `\`\`\`\n${i + 1}. ${statusCfg[status] || '❓'} ${text}\n\`\`\``,
+            ]
+            if (position >= 0)
+              msgList.push(`Приоритет ${position + 1}`)
+            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+              msgList.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+            if (!!links && Array.isArray(links))
+              msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+
+            return msgList.join('\n')
+          }).join('\n\n')
+        },
       },
     },
   }
