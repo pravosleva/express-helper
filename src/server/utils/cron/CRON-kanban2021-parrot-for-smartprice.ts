@@ -20,7 +20,7 @@ const charCfg: { [key in EMessageStatus]: string } = {
 // NOTE: Parrots reference
 type TCfg = {
   id: number;
-  descr: string;
+  _descr: string;
   isEnabled: boolean;
   cronSetting: string;
   targetRooms: string[];
@@ -38,12 +38,14 @@ type TCfg = {
       about: ({}: {
         msgs: TMessage[];
         targetHashtags: string[];
-        targetStatuses: string[]
+        targetStatuses: EMessageStatus[];
+        targetRooms: string[];
       }) => string;
       targetMD: ({}: {
         msgs: TMessage[];
         targetHashtags: string[];
-        targetStatuses: string[]
+        targetStatuses: EMessageStatus[];
+        targetRooms: string[];
       }) => string;
     };
   };
@@ -51,7 +53,7 @@ type TCfg = {
 const cfg: TCfg = [
   {
     id: 1,
-    descr: 'Напоминалка для Алексея',
+    _descr: 'Напоминалка для Алексея',
     isEnabled: true,
     cronSetting: '0 11 * * Mon',
     // cronSetting: '0 16 * * *', // Every day at 16:00
@@ -60,7 +62,7 @@ const cfg: TCfg = [
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
     targetHashtags: ['#marketing'],
-    targetStatuses: [EMessageStatus.Danger],
+    targetStatuses: [EMessageStatus.Success],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
@@ -70,14 +72,14 @@ const cfg: TCfg = [
           msgs,
           targetHashtags,
           targetStatuses,
-        }: { msgs: TMessage[]; targetHashtags: string[]; targetStatuses: EMessageStatus[]; }) => {
-          return `*${targetHashtags.join(' ')}* ${msgs.length > 0 ? `Непонятен статус задач (${msgs.length} шт.)` : 'Нет задач с непонятным статусом'}`
+        }) => {
+          return `${msgs.length > 0 ? `Непонятен статус задач (${msgs.length} шт.)` : 'Нет задач с непонятным статусом (Impossible case?)'} *${targetHashtags.join(' ')}*`
         },
         targetMD: ({
           msgs,
           targetHashtags,
           targetStatuses,
-        }: { msgs: TMessage[]; targetHashtags: string[]; targetStatuses: EMessageStatus[]; }) => {
+        }) => {
           const sortedMsgs = sortArrayByKeys({
             arr: msgs,
             keys: ['position'],
@@ -102,10 +104,10 @@ const cfg: TCfg = [
             links,
             // user, // tg username
             text,
+            assignedTo,
           } = msg
 
-          return `\`\`\`\n${charCfg[status] || '❓'} ${i + 1}. ${text}\n\`\`\`\n${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `\n${links.map(({ link, descr }) => `👉 [${descr}](${link})`).join('\n')}` : ''}`
-          // return JSON.stringify(msg)
+          return `\`\`\`\n${i + 1}. ${charCfg[status] || '❓'} ${text}\n\`\`\`\n${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? `👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}\n` : ''}${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}` : ''}`
         }).join('\n\n')
         },
       },
@@ -113,7 +115,7 @@ const cfg: TCfg = [
   },
   {
     id: 2,
-    descr: 'Reminder for me (daily deploy after 21:00)',
+    _descr: 'Reminder for me (daily deploy after 21:00)',
     isEnabled: true,
     cronSetting: '0 21 * * *', // Every day at 21:00
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
@@ -129,31 +131,77 @@ const cfg: TCfg = [
           msgs,
           targetHashtags,
           targetStatuses,
-        }: { msgs: TMessage[]; targetHashtags: string[]; targetStatuses: EMessageStatus[]; }) => {
-          return `*${targetHashtags.join(' ')}*\n${msgs.length > 0 ? `Есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Нет задач, ожидающих деплой на прод ${[...targetStatuses].join(', ')}`}`
+          targetRooms,
+        }) => {
+          return `${msgs.length > 0 ? `В чат-комнатах \`${targetRooms.join(' ')}\` Есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
         },
         targetMD: ({
           msgs,
           targetHashtags,
           targetStatuses,
-        }: { msgs: TMessage[]; targetHashtags: string[]; targetStatuses: EMessageStatus[]; }) => msgs.map((msg, i) => {
+        }) => msgs.map((msg, i) => {
           const {
             status,
             position,
-            // editTs,
-            // ts, // Create ts
             links,
-            // user, // tg username
             text,
+            assignedTo,
           } = msg
 
-          return `\`\`\`\n${charCfg[status] || '❓'} ${i + 1}. ${text}\n\`\`\`\n${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `\n${links.map(({ link, descr }) => `👉 [${descr}](${link})`).join('\n')}` : ''}`
-          // return JSON.stringify(msg)
+          return `\`\`\`\n${i + 1}. ${charCfg[status] || '❓'} ${text}\n\`\`\`\n${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? `👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}\n` : ''}${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}` : ''}`
+        }).join('\n\n'),
+      },
+    },
+  },
+  {
+    id: 3,
+    _descr: 'Reminder for me (whats up)',
+    isEnabled: true,
+    cronSetting: '0 13 * * *', // Every day at 13:00
+    validateBeforeRequest: ({ msgs }) => msgs.length > 0,
+    targetRooms: ['sp.pravosleva'],
+    targetHashtags: ['#ssr'],
+    targetStatuses: [EMessageStatus.Danger, EMessageStatus.Success, EMessageStatus.Warn],
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: 432590698, // NOTE: Den Pol
+        eventCode: 'daily_reminder',
+        about: ({
+          msgs,
+          targetHashtags,
+          targetStatuses,
+        }) => {
+          return `${msgs.length > 0 ? `Есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
+        },
+        targetMD: ({
+          msgs,
+          targetHashtags,
+          targetStatuses,
+        }) => msgs.map((msg, i) => {
+          const {
+            status,
+            position,
+            links,
+            text,
+            assignedTo,
+          } = msg
+
+          return `\`\`\`\n${i + 1}. ${charCfg[status] || '❓'} ${text}\n\`\`\`\n${!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0 ? `👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}\n` : ''}${position >= 0 ? `Приоритет ${position + 1}\n` : ''}${(!!links && Array.isArray(links)) ? `${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}` : ''}`
         }).join('\n\n'),
       },
     },
   }
 ]
+
+const _checkingSet = new Set()
+const _parrotIds = []
+for (const parrot of cfg) {
+  _checkingSet.add(parrot.id)
+  _parrotIds.push(parrot.id)
+}
+if (_checkingSet.size !== _parrotIds.length)
+  throw new Error(`⛔ Проверьте cfg виртуальных попугаев (их ${_parrotIds.length}) на предмет уникальности их id (уникальных ${_checkingSet.size}). Не можем запустить в таком виде`)
 
 const parrots = new Map()
 for(const parrot of cfg) {
@@ -182,12 +230,23 @@ for(const parrot of cfg) {
           const roomData = _roomsData[room]
     
           for (const msg of roomData) {
-            if (
-              !!msg.status &&
-              targetStatuses.includes(msg.status) &&
-              !!msg.text &&
-              testTextByAllWords({ text: msg.text, words: targetHashtags })
-            ) _targetMsgs.push(msg)
+            switch (true) {
+              case targetHashtags.length > 0:
+                if (
+                  !!msg.status &&
+                  targetStatuses.includes(msg.status) &&
+                  !!msg.text &&
+                  testTextByAllWords({ text: msg.text, words: targetHashtags })
+                ) _targetMsgs.push(msg)
+                break
+              default:
+                if (
+                  !!msg.status &&
+                  targetStatuses.includes(msg.status) &&
+                  !!msg.text
+                ) _targetMsgs.push(msg)
+                break
+            }
           }
         }
 
@@ -199,12 +258,12 @@ for(const parrot of cfg) {
               ts: new Date().getTime(),
               eventCode: req.body.eventCode,
               about: typeof req.body.about === 'function'
-                ? req.body.about({ msgs: _targetMsgs, targetHashtags, targetStatuses })
+                ? req.body.about({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms })
                 : typeof req.body.about === 'string'
                   ? req.body.about || '[about: empty]'
                   : '[about: incorrect format]',
               targetMD: typeof req.body.targetMD === 'function'
-                ? req.body.targetMD({ msgs: _targetMsgs, targetHashtags, targetStatuses })
+                ? req.body.targetMD({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms })
                 : typeof req.body.targetMD === 'string'
                   ? req.body.targetMD || '[targetMD: empty]'
                   : '[targetMD: incorrect format]',
