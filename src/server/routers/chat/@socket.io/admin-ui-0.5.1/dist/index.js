@@ -1,9 +1,20 @@
 "use strict";
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RedisStore = exports.InMemoryStore = exports.instrument = void 0;
 const typed_events_1 = require("./typed-events");
 const debug_1 = require("debug");
-const bcrypt_1 = require("bcrypt");
+const bcryptjs_1 = require("bcryptjs");
 const cluster_1 = require("cluster");
 const stores_1 = require("./stores");
 const os = require("os");
@@ -22,7 +33,7 @@ const initAuthenticationMiddleware = (namespace, options) => {
         debug("basic authentication is enabled");
         const basicAuth = options.auth;
         try {
-            bcrypt_1.getRounds(basicAuth.password);
+            bcryptjs_1.getRounds(basicAuth.password);
         }
         catch (e) {
             throw new Error("the `password` field must be a valid bcrypt hash");
@@ -34,7 +45,7 @@ const initAuthenticationMiddleware = (namespace, options) => {
                 return next();
             }
             if (socket.handshake.auth.username === basicAuth.username) {
-                const isMatching = await bcrypt_1.compare(socket.handshake.auth.password, basicAuth.password);
+                const isMatching = await bcryptjs_1.compare(socket.handshake.auth.password, basicAuth.password);
                 if (isMatching) {
                     debug("authentication success with valid credentials");
                     const sessionId = randomId();
@@ -68,13 +79,23 @@ const initStatsEmitter = (adminNamespace, serverId) => {
         hostname: os.hostname(),
         pid: process.pid,
     };
+    const io = adminNamespace.server;
     const emitStats = () => {
+        var _a;
         debug("emit stats");
-        // @ts-ignore private reference
-        const clientsCount = adminNamespace.server.engine.clientsCount;
+        const namespaces = [];
+        io._nsps.forEach((namespace) => {
+            namespaces.push({
+                name: namespace.name,
+                socketsCount: namespace.sockets.size,
+            });
+        });
         adminNamespace.emit("server_stats", Object.assign({}, baseStats, {
             uptime: process.uptime(),
-            clientsCount,
+            clientsCount: (_a = io.engine) === null || _a === void 0 ? void 0 : _a.clientsCount,
+            pollingClientsCount: io._pollingClientsCount,
+            aggregatedEvents: io._eventBuffer.getValuesAndClear(),
+            namespaces,
         }));
     };
     const interval = setInterval(emitStats, 2000);
@@ -219,16 +240,37 @@ const registerFeatureHandlers = (io, socket, supportedFeatures) => {
         }
     }
 };
-const registerListeners = (adminNamespace, nsp) => {
-    nsp.on("connection", (socket) => {
+const registerVerboseListeners = (adminNamespace, nsp) => {
+    nsp.prependListener("connection", (socket) => {
         // @ts-ignore
         const clientId = socket.client.id;
-        socket.data = socket.data || {};
-        socket.data._admin = {
-            clientId: clientId.substring(0, 12),
-            transport: socket.conn.transport.name,
+        const createProxy = (obj) => {
+            if (typeof obj !== "object") {
+                return obj;
+            }
+            return new Proxy(obj, {
+                set(target, p, value) {
+                    target[p] = createProxy(value);
+                    adminNamespace.emit("socket_updated", {
+                        id: socket.id,
+                        nsp: nsp.name,
+                        data: serializeData(socket.data),
+                    });
+                    return true;
+                },
+            });
         };
-        adminNamespace.emit("socket_connected", serialize(socket, nsp.name));
+        const data = socket.data || {}; // could be set in a middleware
+        socket.data = createProxy({
+            _admin: {
+                clientId: clientId.substring(0, 12),
+                transport: socket.conn.transport.name,
+            },
+        });
+        for (const key in data) {
+            socket.data[key] = createProxy(data[key]);
+        }
+        adminNamespace.emit("socket_connected", serialize(socket, nsp.name), new Date());
         socket.conn.on("upgrade", (transport) => {
             socket.data._admin.transport = transport.name;
             adminNamespace.emit("socket_updated", {
@@ -237,16 +279,32 @@ const registerListeners = (adminNamespace, nsp) => {
                 transport: transport.name,
             });
         });
+        if (nsp !== adminNamespace) {
+            if (typeof socket.onAny === "function") {
+                socket.onAny((...args) => {
+                    const withAck = typeof args[args.length - 1] === "function";
+                    if (withAck) {
+                        args = args.slice(0, -1);
+                    }
+                    adminNamespace.emit("event_received", nsp.name, socket.id, args, new Date());
+                });
+            }
+            if (typeof socket.onAnyOutgoing === "function") {
+                socket.onAnyOutgoing((...args) => {
+                    adminNamespace.emit("event_sent", nsp.name, socket.id, args, new Date());
+                });
+            }
+        }
         socket.on("disconnect", (reason) => {
-            adminNamespace.emit("socket_disconnected", nsp.name, socket.id, reason);
+            adminNamespace.emit("socket_disconnected", nsp.name, socket.id, reason, new Date());
         });
     });
     nsp.adapter.on("join-room", (room, id) => {
-        adminNamespace.emit("room_joined", nsp.name, room, id);
+        adminNamespace.emit("room_joined", nsp.name, room, id, new Date());
     });
     nsp.adapter.on("leave-room", (room, id) => {
         process.nextTick(() => {
-            adminNamespace.emit("room_left", nsp.name, room, id);
+            adminNamespace.emit("room_left", nsp.name, room, id, new Date());
         });
     });
 };
@@ -262,6 +320,7 @@ const serialize = (socket, nsp) => {
         clientId,
         transport,
         nsp,
+        data: serializeData(socket.data),
         handshake: {
             address,
             headers: socket.handshake.headers,
@@ -276,6 +335,83 @@ const serialize = (socket, nsp) => {
         rooms: [...socket.rooms],
     };
 };
+const serializeData = (data) => {
+    const { _admin } = data, obj = __rest(data, ["_admin"]);
+    return obj;
+};
+class EventBuffer {
+    constructor() {
+        this.buffer = new Map();
+    }
+    push(type, subType, count = 1) {
+        const timestamp = new Date();
+        timestamp.setMilliseconds(0);
+        const key = `${timestamp.getTime()};${type};${subType}`;
+        if (this.buffer.has(key)) {
+            this.buffer.get(key).count += count;
+        }
+        else {
+            this.buffer.set(key, {
+                timestamp: timestamp.getTime(),
+                type,
+                subType,
+                count,
+            });
+        }
+    }
+    getValuesAndClear() {
+        const values = [...this.buffer.values()];
+        this.buffer.clear();
+        return values;
+    }
+}
+const registerEngineListeners = (io) => {
+    io._eventBuffer = new EventBuffer();
+    io._pollingClientsCount = 0;
+    const onConnection = (rawSocket) => {
+        io._eventBuffer.push("rawConnection");
+        if (rawSocket.transport.name === "polling") {
+            io._pollingClientsCount++;
+            const decr = () => {
+                io._pollingClientsCount--;
+            };
+            rawSocket.once("upgrade", () => {
+                rawSocket.removeListener("close", decr);
+                decr();
+            });
+            rawSocket.once("close", decr);
+        }
+        rawSocket.on("packetCreate", ({ data }) => {
+            if (data) {
+                io._eventBuffer.push("packetsOut", undefined);
+                io._eventBuffer.push("bytesOut", undefined, Buffer.byteLength(data));
+            }
+        });
+        rawSocket.on("packet", ({ data }) => {
+            if (data) {
+                io._eventBuffer.push("packetsIn", undefined);
+                io._eventBuffer.push("bytesIn", undefined, Buffer.byteLength(data));
+            }
+        });
+        rawSocket.on("close", (reason) => {
+            io._eventBuffer.push("rawDisconnection", reason);
+        });
+    };
+    if (io.engine) {
+        io.engine.on("connection", onConnection);
+    }
+    else {
+        // io.engine might be undefined if instrument() is called before binding the Socket.IO server to the HTTP server
+        process.nextTick(() => {
+            if (io.engine) {
+                io.engine.on("connection", onConnection);
+            }
+            else {
+                debug("WARN: no engine");
+            }
+        });
+    }
+};
 function instrument(io, opts) {
     const options = Object.assign({
         namespaceName: "/admin",
@@ -283,22 +419,36 @@ function instrument(io, opts) {
         readonly: false,
         serverId: undefined,
         store: new stores_1.InMemoryStore(),
+        mode: process.env.NODE_ENV || "development",
     }, opts);
     debug("options: %j", options);
     const adminNamespace = io.of(options.namespaceName);
     initAuthenticationMiddleware(adminNamespace, options);
     const supportedFeatures = options.readonly ? [] : detectSupportedFeatures(io);
+    supportedFeatures.push(typed_events_1.Feature.AGGREGATED_EVENTS);
+    const isDevelopmentMode = options.mode === "development";
+    if (isDevelopmentMode) {
+        supportedFeatures.push(typed_events_1.Feature.ALL_EVENTS);
+    }
     debug("supported features: %j", supportedFeatures);
-    initStatsEmitter(adminNamespace, options.serverId);
     adminNamespace.on("connection", async (socket) => {
         registerFeatureHandlers(io, socket, supportedFeatures);
         socket.emit("config", {
             supportedFeatures,
         });
-        socket.emit("all_sockets", await fetchAllSockets(io));
+        if (isDevelopmentMode) {
+            socket.emit("all_sockets", await fetchAllSockets(io));
+        }
     });
-    io._nsps.forEach((nsp) => registerListeners(adminNamespace, nsp));
-    io.on("new_namespace", (nsp) => registerListeners(adminNamespace, nsp));
+    registerEngineListeners(io);
+    if (isDevelopmentMode) {
+        const registerNamespaceListeners = (nsp) => {
+            registerVerboseListeners(adminNamespace, nsp);
+        };
+        io._nsps.forEach(registerNamespaceListeners);
+        io.on("new_namespace", registerNamespaceListeners);
+    }
+    initStatsEmitter(adminNamespace, options.serverId);
 }
 exports.instrument = instrument;
 var stores_2 = require("./stores");

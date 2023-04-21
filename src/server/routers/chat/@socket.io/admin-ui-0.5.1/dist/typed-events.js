@@ -11,4 +11,6 @@ var Feature;
     Feature["MJOIN"] = "MJOIN";
     Feature["MLEAVE"] = "MLEAVE";
     Feature["MDISCONNECT"] = "MDISCONNECT";
+    Feature["AGGREGATED_EVENTS"] = "AGGREGATED_EVENTS";
+    Feature["ALL_EVENTS"] = "ALL_EVENTS";
 })(Feature = exports.Feature || (exports.Feature = {}));

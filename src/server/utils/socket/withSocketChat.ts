@@ -1,4 +1,4 @@
-// import { instrument } from '@socket.io/admin-ui'
+import { instrument } from '@socket.io/admin-ui'
 import { Socket } from 'socket.io'
 import bcrypt from 'bcryptjs'
 import { binarySearchTsIndex } from '~/utils/binarySearch'
@@ -51,15 +51,15 @@ const getMapUnigueValues = (myMap: Map<any, string>) => {
 
 export const withSocketChat = (io: Socket) => {
   // @ts-ignore
-  // instrument(io, {
-  //   namespaceName: '/admin',
-  //   // auth: false,
-  //   auth: {
-  //     type: "basic",
-  //     username: "admin",
-  //     password: "$2b$10$heqvAkYMez.Va6Et2uXInOnkCT6/uQj1brkrbyG3LpopDklcq7ZOS", // "changeit" encrypted with bcrypt
-  //   },
-  // })
+  instrument(io, {
+    namespaceName: '/admin',
+    // auth: false,
+    auth: {
+      type: "basic",
+      username: "admin",
+      password: "$2b$10$heqvAkYMez.Va6Et2uXInOnkCT6/uQj1brkrbyG3LpopDklcq7ZOS", // "changeit" encrypted with bcrypt
+    },
+  })
   // -- NOTE: Logout on front
   const logoutOld = (socketId: string) => {
     console.log('-- LOGOUT --')

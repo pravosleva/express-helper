@@ -5,16 +5,16 @@ import path from 'path'
 import fs from 'fs'
 import { chatExternalApi } from './mws/api'
 import bodyParser from 'body-parser'
-import { redirectIfUnlogged } from './mws/api/auth/redirect-if-unlogged.middle' //  './auth/redirect-if-unlogged.middle'
+// import { redirectIfUnlogged } from './mws/api/auth/redirect-if-unlogged.middle' //  './auth/redirect-if-unlogged.middle'
 // chatExternalApi.use(redirectIfUnlogged(jwtSecret, ELoggedCookie.JWT))
 import { ELoggedCookie } from '~/routers/chat/utils/types'
-import { redirectIfIncorrectParams } from './mws/api/auth/redirect-if-incorrect-params.middle'
+// import { redirectIfIncorrectParams } from './mws/api/auth/redirect-if-incorrect-params.middle'
 import cookieParser from 'cookie-parser'
 import { setUsernameToCookieOrDelete } from './mws/api/auth/set-username-to-cookie-or-delete'
 
 const jwtSecret = 'tst'
 
-const isDev = process.env.NODE_ENV === 'development'
+// const isDev = process.env.NODE_ENV === 'development'
 const jsonParser = bodyParser.json()
 const getUsersMapRoute = require('./mws/get-users-map').getUsersMap
 
@@ -63,14 +63,14 @@ const chatApi = express()
 
 chatApi.use(cookieParser())
 
-// chatApi.use(
-//   '/admin-ui',
-//   express.static(path.join(__dirname, './@socket.io/admin-ui-0.1.2/ui/dist'))
-// )
-// chatApi.use(
-//   '/admin-ui-prod',
-//   express.static(path.join(__dirname, './@socket.io/admin-ui-0.1.2/ui/dist-pravosleva'))
-// )
+chatApi.use(
+  '/admin-ui',
+  express.static(path.join(__dirname, './@socket.io/admin-ui-0.5.1/ui/dist'))
+)
+chatApi.use(
+  '/admin-ui-prod',
+  express.static(path.join(__dirname, './@socket.io/admin-ui-0.5.1/ui/dist-pravosleva'))
+)
 chatApi.use('/api', jsonParser, chatExternalApi)
 chatApi.use('/get-users-map', getUsersMapRoute)
 

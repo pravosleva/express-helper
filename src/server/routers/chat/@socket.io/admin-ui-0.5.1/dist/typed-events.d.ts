@@ -5,23 +5,38 @@ export declare enum Feature {
     DISCONNECT = "DISCONNECT",
     MJOIN = "MJOIN",
     MLEAVE = "MLEAVE",
-    MDISCONNECT = "MDISCONNECT"
+    MDISCONNECT = "MDISCONNECT",
+    AGGREGATED_EVENTS = "AGGREGATED_EVENTS",
+    ALL_EVENTS = "ALL_EVENTS"
 }
 interface Config {
     supportedFeatures: Feature[];
 }
+export declare type NamespaceEvent = {
+    timestamp: number;
+    type: string;
+    subType?: string;
+    count: number;
+};
+export declare type NamespaceDetails = {
+    name: string;
+    socketsCount: number;
+};
 interface ServerStats {
     serverId: string;
     hostname: string;
     pid: number;
     uptime: number;
     clientsCount: number;
+    pollingClientsCount: number;
+    namespaces: NamespaceDetails[];
 }
 export interface SerializedSocket {
     id: string;
     clientId: string;
     transport: string;
     nsp: string;
+    data: any;
     handshake: any;
     rooms: string[];
 }
@@ -30,11 +45,13 @@ export interface ServerEvents {
     config: (config: Config) => void;
     server_stats: (stats: ServerStats) => void;
     all_sockets: (sockets: SerializedSocket[]) => void;
-    socket_connected: (socket: SerializedSocket) => void;
+    socket_connected: (socket: SerializedSocket, timestamp: Date) => void;
     socket_updated: (socket: Partial<SerializedSocket>) => void;
-    socket_disconnected: (nsp: string, id: string, reason: string) => void;
-    room_joined: (nsp: string, room: string, id: string) => void;
-    room_left: (nsp: string, room: string, id: string) => void;
+    socket_disconnected: (nsp: string, id: string, reason: string, timestamp: Date) => void;
+    room_joined: (nsp: string, room: string, id: string, timestamp: Date) => void;
+    room_left: (nsp: string, room: string, id: string, timestamp: Date) => void;
+    event_received: (nsp: string, id: string, args: any[], timestamp: Date) => void;
+    event_sent: (nsp: string, id: string, args: any[], timestamp: Date) => void;
 }
 export interface ClientEvents {
     emit: (nsp: string, filter: string | undefined, ev: string, ...args: any[]) => void;
