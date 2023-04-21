@@ -4,6 +4,7 @@ import { roomsMapInstance, EMessageStatus, TMessage } from '~/utils/socket/state
 import { testTextByAllWords } from '~/utils/string-ops/testTextByAllWords'
 import { sortArrayByKeys } from '~/utils/sort/sortArrayByKeys'
 import { getStatusTranslated, statusCfg } from '~/utils/socket/state/getStatusTranslated'
+import plural from 'plural-ru'
 
 // const isDev = process.env.NODE_ENV === 'development'
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
@@ -64,7 +65,7 @@ const cfg: TCfg = [
           targetHashtags,
           targetStatuses,
         }) => {
-          return `${msgs.length > 0 ? `Непонятен статус задач (${msgs.length} шт.)` : 'Нет задач с непонятным статусом (Impossible case?)'} *${targetHashtags.join(' ')}*`
+          return `${msgs.length > 0 ? `Непонятен статус ${plural(msgs.length, 'задачи', 'задач')}` : 'Нет задач с непонятным статусом (Impossible case?)'} *${targetHashtags.join(' ')}*`
         },
         targetMD: ({
           msgs,
@@ -134,7 +135,7 @@ const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `В чат-комнатах \`${targetRooms.join(' ')}\` есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
+          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} \`${targetRooms.join(' ')}\` есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')} *${[...targetStatuses.map(getStatusTranslated)].join(', ')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
         },
         targetMD: ({
           msgs,
@@ -191,7 +192,7 @@ const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `В чат-комнатах \`${targetRooms.join(' ')}\` есть задачи со статусом *${[...targetStatuses.map(getStatusTranslated)].join(', ')}* (${msgs.length})` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
+          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} \`${targetRooms.join(' ')}\` есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')} *${[...targetStatuses.map(getStatusTranslated)].join(', ')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
         },
         targetMD: ({
           msgs,

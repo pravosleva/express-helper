@@ -123,6 +123,7 @@
     "node-cron": "^3.0.0",
     "node-imei": "^1.0.8",
     "os": "^0.1.2",
+    "plural-ru": "^2.0.2",
     "qrcode": "^1.4.4",
     "request": "^2.88.2",
     "shelljs": "^0.8.4",
