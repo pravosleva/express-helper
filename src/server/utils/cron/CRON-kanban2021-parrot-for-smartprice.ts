@@ -5,6 +5,9 @@ import { testTextByAllWords } from '~/utils/string-ops/testTextByAllWords'
 import { sortArrayByKeys } from '~/utils/sort/sortArrayByKeys'
 import { getStatusTranslated, statusCfg } from '~/utils/socket/state/getStatusTranslated'
 import plural from 'plural-ru'
+import { Designer } from '~/utils/Designer'
+
+const designer = new Designer()
 
 // const isDev = process.env.NODE_ENV === 'development'
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
@@ -72,11 +75,20 @@ const cfg: TCfg = [
           targetHashtags,
           targetStatuses,
         }) => {
-          const sortedMsgs = sortArrayByKeys({
-            arr: msgs,
-            keys: ['position'],
-            order: 1,
+          const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
+            arr: sortArrayByKeys({
+              arr: msgs,
+              keys: ['position'],
+              order: 1,
+            }),
+            targetFieldName: 'status',
+            topTemplate: [
+              EMessageStatus.Success,
+              EMessageStatus.Danger,
+              EMessageStatus.Warn,
+            ],
           })
+          
           return sortedMsgs.map((msg, i) => {
           /* NOTE: _targetMsgs For example
           {
@@ -142,10 +154,18 @@ const cfg: TCfg = [
           targetHashtags,
           targetStatuses,
         }) => {
-          const sortedMsgs = sortArrayByKeys({
-            arr: msgs,
-            keys: ['position'],
-            order: 1,
+          const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
+            arr: sortArrayByKeys({
+              arr: msgs,
+              keys: ['position'],
+              order: 1,
+            }),
+            targetFieldName: 'status',
+            topTemplate: [
+              EMessageStatus.Success,
+              EMessageStatus.Danger,
+              EMessageStatus.Warn,
+            ],
           })
           return sortedMsgs.map((msg, i) => {
             const {
@@ -180,7 +200,11 @@ const cfg: TCfg = [
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
     targetHashtags: [],
-    targetStatuses: [EMessageStatus.Danger, EMessageStatus.Success, EMessageStatus.Warn],
+    targetStatuses: [
+      // EMessageStatus.Danger,
+      EMessageStatus.Success,
+      EMessageStatus.Warn,
+    ],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
@@ -199,10 +223,18 @@ const cfg: TCfg = [
           targetHashtags,
           targetStatuses,
         }) => {
-          const sortedMsgs = sortArrayByKeys({
-            arr: msgs,
-            keys: ['position'],
-            order: 1,
+          const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
+            arr: sortArrayByKeys({
+              arr: msgs,
+              keys: ['position'],
+              order: 1,
+            }),
+            targetFieldName: 'status',
+            topTemplate: [
+              EMessageStatus.Success,
+              EMessageStatus.Danger,
+              EMessageStatus.Warn,
+            ],
           })
           return sortedMsgs.map((msg, i) => {
             const {
