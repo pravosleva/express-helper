@@ -1,7 +1,7 @@
 import delay from '~/utils/delay'
-import json from './fake-data/all_params.json'
+import json from './fake-data/search.json'
 
-export const crmProductVariantsAllParams = async (req, res) => {
+export const search = async (req, res) => {
   res.append('Content-Type', 'application/json')
 
   // TODO: if !delivery -> 403 поле delivery обязательно
@@ -11,7 +11,7 @@ export const crmProductVariantsAllParams = async (req, res) => {
 
   // res.status(toBeOrNotToBe ? 200 : 400).send(response)
 
-  await delay(3000)
+  await delay(1000)
 
   res.status(200).send(response)
 }

@@ -16,10 +16,11 @@ import { createAndSendBatch as crmPickupCreateAndSendBatchRoute } from './mws/ap
 import crmProductsBuyoutBatchRoute from './mws/api/crm/crmproducts/buyout_batch'
 import { crmStatesIndex } from './mws/api/crm/crmstates'
 import { crmRequestTypesIndex } from './mws/api/crm/crmrequest-types'
+import { search as crmSearch } from './mws/api/crm/crmrequests/search'
 import { crmProductRejectionReasonsIndex, crmProductRejectionReasonsRating } from './mws/api/crm/crmproduct-rejection-reasons'
 import { crmMarketingPartners } from './mws/api/crm/marketing/partners'
 import { crmDiscountReasons } from './mws/api/crm/crmproduct-discount-reasons'
-import { crmProductVariantsAllParams } from './mws/api/crm/productvariants'
+import { crmProductVariantsAllParams, crmReadyForSelling } from './mws/api/crm/productvariants'
 import { crmServiceCenters } from './mws/api/crm/service-centers'
 import { crmUsers, crmUsersMe } from './mws/api/crm/users'
 import { crmProductsIdIndex, crmProductsIDNextStates } from './mws/api/crm/crmproducts/[id]'
@@ -99,11 +100,14 @@ spApi.post('/api/crm/pickup/create_and_send_batch', jsonParser, crmPickupCreateA
 spApi.post('/api/crm/crmproducts/buyout_batch', jsonParser, crmProductsBuyoutBatchRoute)
 spApi.get('/api/crm/crmstates', jsonParser, crmStatesIndex)
 spApi.get('/api/crm/crmrequest-types', jsonParser, crmRequestTypesIndex)
+spApi.post('/api/crmrequests/search', jsonParser, crmSearch)
+spApi.post('/api/crm/productvariants/ready_for_selling', jsonParser, (req, res, next) => { next() })
 spApi.get('/api/crm/crmproduct-rejection-reasons', jsonParser, crmProductRejectionReasonsIndex)
 spApi.get('/api/crm/crmproduct-rejection-reasons/rating', jsonParser, crmProductRejectionReasonsRating)
 spApi.get('/api/crm/marketing/partners', jsonParser, crmMarketingPartners)
 spApi.get('/api/crm/crmproduct-discount-reasons', jsonParser, crmDiscountReasons)
 spApi.get('/api/crm/productvariants/all_params', jsonParser, crmProductVariantsAllParams)
+spApi.get('/api/crm/productvariants/ready_for_selling', jsonParser, crmReadyForSelling)
 spApi.get('/api/crm/service-centers', jsonParser, crmServiceCenters)
 spApi.get('/api/crm/users', jsonParser, crmUsers)
 spApi.post('/api/crm/users/me', jsonParser, crmUsersMe)
