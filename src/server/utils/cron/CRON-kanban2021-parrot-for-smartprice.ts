@@ -90,38 +90,44 @@ const cfg: TCfg = [
           })
           
           return sortedMsgs.map((msg, i) => {
-          /* NOTE: _targetMsgs For example
-          {
-            text: 'test',
-            ts: 1681386545058,
-            rl: 2,
-            user: 'pravosleva',
-            status: 'success',
-            position: 0
-          }
-          */
-          const {
-            status,
-            position,
-            // editTs,
-            // ts, // Create ts
-            links,
-            // user, // tg username
-            text,
-            assignedTo,
-          } = msg
+            /* NOTE: _targetMsgs For example
+            {
+              text: 'test',
+              ts: 1681386545058,
+              rl: 2,
+              user: 'pravosleva',
+              status: 'success',
+              position: 0
+            }
+            */
+            const {
+              status,
+              position,
+              // editTs,
+              // ts, // Create ts
+              links,
+              // user, // tg username
+              text,
+              assignedTo,
+            } = msg
 
-          const msgList = [
-            `\`\`\`\n${i + 1}. ${statusCfg[status] || '❓'} ${text}\n\`\`\``,
-          ]
-          if (position >= 0)
-            msgList.push(`Приоритет ${position + 1}`)
-          if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
-            msgList.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
-          if (!!links && Array.isArray(links))
-            msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+            const msgList = [
+              `\`${i + 1}. ${statusCfg[status] || '❓'} ${text}\``,
+            ]
 
-          return msgList.join('\n')
+            // -- NOTE: Custom msg
+            const specialMsgs = []
+            if (position >= 0)
+              specialMsgs.push(`Приоритет ${position + 1}`)
+            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+              specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+
+            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+            // --
+            if (!!links && Array.isArray(links))
+              msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+
+            return msgList.join('\n')
           }).join('\n\n')
         },
       },
@@ -167,22 +173,32 @@ const cfg: TCfg = [
               EMessageStatus.Warn,
             ],
           })
+          
           return sortedMsgs.map((msg, i) => {
             const {
               status,
               position,
+              // editTs,
+              // ts, // Create ts
               links,
+              // user, // tg username
               text,
               assignedTo,
             } = msg
 
             const msgList = [
-              `\`\`\`\n${i + 1}. ${statusCfg[status] || '❓'} ${text}\n\`\`\``,
+              `\`${i + 1}. ${statusCfg[status] || '❓'} ${text}\``,
             ]
+
+            // -- NOTE: Custom msg
+            const specialMsgs = []
             if (position >= 0)
-              msgList.push(`Приоритет ${position + 1}`)
+              specialMsgs.push(`Приоритет ${position + 1}`)
             if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
-              msgList.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+              specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+
+            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+            // --
             if (!!links && Array.isArray(links))
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
 
@@ -236,22 +252,32 @@ const cfg: TCfg = [
               EMessageStatus.Warn,
             ],
           })
+          
           return sortedMsgs.map((msg, i) => {
             const {
               status,
               position,
+              // editTs,
+              // ts, // Create ts
               links,
+              // user, // tg username
               text,
               assignedTo,
             } = msg
 
             const msgList = [
-              `\`\`\`\n${i + 1}. ${statusCfg[status] || '❓'} ${text}\n\`\`\``,
+              `\`${i + 1}. ${statusCfg[status] || '❓'} ${text}\``,
             ]
+
+            // -- NOTE: Custom msg
+            const specialMsgs = []
             if (position >= 0)
-              msgList.push(`Приоритет ${position + 1}`)
+              specialMsgs.push(`Приоритет ${position + 1}`)
             if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
-              msgList.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+              specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+
+            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+            // --
             if (!!links && Array.isArray(links))
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
 
