@@ -50,8 +50,8 @@ const cfg: TCfg = [
     id: 1,
     _descr: 'Напоминалка для Алексея',
     isEnabled: true,
-    cronSetting: '0 11 * * Mon',
-    // cronSetting: '0 16 * * *', // Every day at 16:00
+    // cronSetting: '0 11 * * Mon', // Every Mon at 11:00
+    cronSetting: '5 11 * * *', // Every day at 11:05
     // cronSetting: '44 13 * * Thu',
     // cronSetting: isDev ? '*/10 * * * * Thu', // NOTE: Every 10 secs for isDev
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
@@ -112,7 +112,7 @@ const cfg: TCfg = [
             } = msg
 
             const msgList = [
-              `\`${i + 1}. ${statusCfg[status] || '❓'} ${text}\``,
+              `\`${i + 1}. ${statusCfg[status]?.symbol || '❓'} ${text}\``,
             ]
 
             // -- NOTE: Custom msg
@@ -187,7 +187,7 @@ const cfg: TCfg = [
             } = msg
 
             const msgList = [
-              `\`${i + 1}. ${statusCfg[status] || '❓'} ${text}\``,
+              `\`${i + 1}. ${statusCfg[status]?.symbol || '❓'} ${text}\``,
             ]
 
             // -- NOTE: Custom msg
@@ -212,7 +212,7 @@ const cfg: TCfg = [
     id: 3,
     _descr: 'Reminder for me (whats up)',
     isEnabled: true,
-    cronSetting: '0 15 * * *', // Every day at 15:00
+    cronSetting: '5 13 * * *', // Every day at 13:05
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
     targetHashtags: [],
@@ -266,7 +266,7 @@ const cfg: TCfg = [
             } = msg
 
             const msgList = [
-              `\`${i + 1}. ${statusCfg[status] || '❓'} ${text}\``,
+              `\`${i + 1}. ${statusCfg[status]?.symbol || '❓'} ${text}\``,
             ]
 
             // -- NOTE: Custom msg
