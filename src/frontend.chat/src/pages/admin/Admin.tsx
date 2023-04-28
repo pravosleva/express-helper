@@ -67,6 +67,17 @@ export const Admin = () => {
       }
     }
   }, [socket, toast, name, room, history])
+
+  useEffect(() => {
+    const body = document.getElementsByTagName("body")[0];
+    // @ts-ignore
+    body.style.overflowY = 'auto'
+    return () => {
+    // @ts-ignore
+    body.style.overflowY = 'hidden'
+    }
+  }, [])
+
   const [searchRoom, setSearchRoom] = useState<string>('')
   const [searchUser, setSearchUser] = useState<string>('')
   const usersFiltered = useMemo(
@@ -123,8 +134,8 @@ export const Admin = () => {
         />
       </SimpleGrid>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 4, lg: 4 }} marginBottom={{ base: 4 }}>
-        <Card title="allUsers">{!!usersFiltered ? <ReactJson src={usersFiltered} /> : <div>No data</div>}</Card>
-        <Card title="roomsData">{!!roomsFiltered ? <ReactJson src={roomsFiltered} /> : <div>No data</div>}</Card>
+        <Card title="allUsers">{!!usersFiltered ? <ReactJson src={usersFiltered} collapsed /> : <div>No data</div>}</Card>
+        <Card title="roomsData">{!!roomsFiltered ? <ReactJson src={roomsFiltered} collapsed /> : <div>No data</div>}</Card>
       </SimpleGrid>
       <Grid h="200px" templateRows="repeat(2, 1fr)" templateColumns="repeat(5, 1fr)" gap={4}>
         <GridItem rowSpan={2} colSpan={1} bg="tomato"></GridItem>

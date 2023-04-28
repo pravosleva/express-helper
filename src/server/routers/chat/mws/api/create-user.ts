@@ -20,19 +20,6 @@ export const createUser = (req, res) => {
     })
   }
 
-  // const registeredUserData = registeredUsersMapInstance.get(username)
-  /* NOTE: Проще пересоздать в любой влучае: забыл пароль, поменял ник...
-  if (
-    !!registeredUserData
-    // && username !== 'pravosleva'
-  ) {
-    return res.status(200).send({
-      ok: false,
-      message: `Пользователь ${username} уже существует.\n\nОпции в разработке:\n- Восстановление пароля\n- Удаление пользователя`,
-      code: EAPIUserCode.UserExists,
-      _originalBody: req.body,
-    })
-  } else { */
   const oldTGChatIdData = registeredTGChatIdsMapInstance.get(String(chatId))
 
   switch (true) {
@@ -74,5 +61,4 @@ export const createUser = (req, res) => {
         _originalBody: req.body,
       })
   }
-  // }
 }

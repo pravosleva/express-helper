@@ -1,4 +1,13 @@
-import { Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger } from "@chakra-ui/react"
+import {
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTrigger,
+  useColorMode,
+} from "@chakra-ui/react"
 
 type TProps = {
   headerRenderer: React.FC<any>
@@ -13,6 +22,8 @@ export const PopoverInfoButton = ({
   headerRenderer,
   popoverPlacement,
 }: TProps) => {
+  const mode = useColorMode()
+  
   return (
     <Popover
       placement={popoverPlacement}
@@ -20,7 +31,7 @@ export const PopoverInfoButton = ({
       <PopoverTrigger>
         {triggerRenderer({})}
       </PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent style={{ color: mode.colorMode === 'dark' ? '#FFF' : 'inherit' }}>
         <PopoverArrow />
         <PopoverCloseButton />
         <PopoverHeader>{headerRenderer({})}</PopoverHeader>
