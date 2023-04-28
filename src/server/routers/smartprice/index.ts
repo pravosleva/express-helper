@@ -17,10 +17,12 @@ import crmProductsBuyoutBatchRoute from './mws/api/crm/crmproducts/buyout_batch'
 import { crmStatesIndex } from './mws/api/crm/crmstates'
 import { crmRequestTypesIndex } from './mws/api/crm/crmrequest-types'
 import { search as crmSearch } from './mws/api/crm/crmrequests/search'
+import { crmBidId } from './mws/api/crm/crmrequests/[bid_id]'
 import { crmProductRejectionReasonsIndex, crmProductRejectionReasonsRating } from './mws/api/crm/crmproduct-rejection-reasons'
+import { crmProducts } from './mws/api/crm/products'
 import { crmMarketingPartners } from './mws/api/crm/marketing/partners'
 import { crmDiscountReasons } from './mws/api/crm/crmproduct-discount-reasons'
-import { crmProductVariantsAllParams, crmReadyForSelling } from './mws/api/crm/productvariants'
+import { crmProductVariantsIndex, crmProductVariantsAllParams, crmReadyForSelling } from './mws/api/crm/productvariants'
 import { crmServiceCenters } from './mws/api/crm/service-centers'
 import { crmUsers, crmUsersMe } from './mws/api/crm/users'
 import { crmProductsIdIndex, crmProductsIDNextStates } from './mws/api/crm/crmproducts/[id]'
@@ -101,10 +103,13 @@ spApi.post('/api/crm/crmproducts/buyout_batch', jsonParser, crmProductsBuyoutBat
 spApi.get('/api/crm/crmstates', jsonParser, crmStatesIndex)
 spApi.get('/api/crm/crmrequest-types', jsonParser, crmRequestTypesIndex)
 spApi.post('/api/crm/crmrequests/search', jsonParser, crmSearch)
+spApi.get('/api/crm/crmrequests/:bid_id', jsonParser, crmBidId)
 spApi.get('/api/crm/crmproduct-rejection-reasons', jsonParser, crmProductRejectionReasonsIndex)
 spApi.get('/api/crm/crmproduct-rejection-reasons/rating', jsonParser, crmProductRejectionReasonsRating)
+spApi.get('/api/crm/products', crmProducts)
 spApi.get('/api/crm/marketing/partners', jsonParser, crmMarketingPartners)
 spApi.get('/api/crm/crmproduct-discount-reasons', jsonParser, crmDiscountReasons)
+spApi.get('/api/crm/productvariants', jsonParser, crmProductVariantsIndex)
 spApi.get('/api/crm/productvariants/all_params', jsonParser, crmProductVariantsAllParams)
 spApi.get('/api/crm/productvariants/ready_for_selling', jsonParser, crmReadyForSelling)
 spApi.get('/api/crm/service-centers', jsonParser, crmServiceCenters)
