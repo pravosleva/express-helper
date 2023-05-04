@@ -13,17 +13,43 @@ export const crmBidId = async (req, res) => {
     },
   }
 
-  const { dbs_special, isFuckupTest } = req.body
+  const {
+    _dev_scenario_settings,
+    ...restNewData
+  } = req.body
 
-  if (dbs_special === true || req.dbs_special === false) response.dbs_special = dbs_special
+  // if (dbs_special === true || req.dbs_special === false) response.dbs_special = dbs_special
 
-  if (isFuckupTest) {
-    return res.status(403).send({
-      message: 'Custom fuckup'
-    })
+  if (!!_dev_scenario_settings) {
+    try {
+      const { status } = _dev_scenario_settings
+
+      switch (true) {
+        case !!status && !Number.isNaN(status):
+          return res.status(status).send({
+            ...response,
+            ...restNewData,
+            _service: {
+              originalBody: req.body,
+            },
+          })
+        default:
+          throw new Error('No case for your params')
+      }
+    } catch (err) {
+      return res.status(403).send({
+        _service: {
+          originalBody: req.body,
+        },
+        message: typeof err === 'string' ? err : (err?.message || 'No err.message')
+      })
+    } 
   }
 
   await delay(1000)
 
-  return res.status(200).send(response)
+  return res.status(200).send({
+    ...response,
+    ...restNewData,
+  })
 }

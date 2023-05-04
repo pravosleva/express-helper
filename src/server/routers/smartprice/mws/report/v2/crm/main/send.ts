@@ -4,12 +4,42 @@ import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 // import axios from 'axios'
 
+export const rules = {
+  params: {
+    body: {
+      rowValues: {
+        type: '(string | number)[]',
+        descr: 'Row values / props uiDate & ts will be added by server',
+        required: true,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+          
+          switch (true) {
+            case !Array.isArray(val):
+              result.ok = false
+              result.reason = 'Should be array!'
+              break
+            case val.length === 0:
+              result.ok = false
+              result.reason = 'Len is zero. Why?'
+              break
+            default:
+              break
+          }
+          return result
+        }
+      }
+    }
+  }
+}
+
 export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
   const { rowValues } = req.body
-  if (!rowValues || !Array.isArray(rowValues)) return res.status(400).send({
-    ok: false,
-    message: `req.rowValues is ${typeof rowValues}; Should be array`
-  })
 
   let auth: any
   try {

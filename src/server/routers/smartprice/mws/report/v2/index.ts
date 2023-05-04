@@ -18,7 +18,9 @@ import { google } from 'googleapis'
 import { runTGExtraNotifs as runTGExtraNotifs } from './run-tg-extra-notifs'
 import {
   sendReport as sendCRMGoogleSheetsReport,
+  rules as crmMainReportRules,
 } from './crm/main/send'
+import { withReqParamsValidationMW } from '~/utils/express-validation/withReqParamsValidationMW'
 
 import fs from 'fs'
 import path from 'path'
@@ -72,7 +74,9 @@ router.post(
 )
 
 // CRM
-router.post('/crm/main/send', sendCRMGoogleSheetsReport)
+router.post('/crm/main/send', withReqParamsValidationMW({
+  rules: crmMainReportRules
+}), sendCRMGoogleSheetsReport)
 
 // IMEI SERVICE
 router.post('/imei/usable/get-random', getRandomIMEI)

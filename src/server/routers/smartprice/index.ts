@@ -103,7 +103,6 @@ spApi.post('/api/crm/crmproducts/buyout_batch', jsonParser, crmProductsBuyoutBat
 spApi.get('/api/crm/crmstates', jsonParser, crmStatesIndex)
 spApi.get('/api/crm/crmrequest-types', jsonParser, crmRequestTypesIndex)
 spApi.post('/api/crm/crmrequests/search', jsonParser, crmSearch)
-spApi.get('/api/crm/crmrequests/:bid_id', jsonParser, crmBidId)
 spApi.patch('/api/crm/crmrequests/:bid_id', jsonParser, crmBidId)
 spApi.get('/api/crm/crmproduct-rejection-reasons', jsonParser, crmProductRejectionReasonsIndex)
 spApi.get('/api/crm/crmproduct-rejection-reasons/rating', jsonParser, crmProductRejectionReasonsRating)
