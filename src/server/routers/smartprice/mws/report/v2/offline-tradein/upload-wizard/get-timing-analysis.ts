@@ -4,6 +4,59 @@ import { google } from 'googleapis'
 import { TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 import { getTimeDiff, getZero } from '~/utils/getTimeDiff'
 
+export const rules = {
+  params: {
+    body: {
+      tradeinId: {
+        type: 'number',
+        descr: 'Trade-In ID',
+        required: true,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+          
+          switch (true) {
+            case Number.isNaN(val):
+              result.ok = false
+              result.reason = `Should be number, received ${typeof val}`
+              break
+            default:
+              break
+          }
+          return result
+        }
+      },
+      limit: {
+        type: 'number',
+        descr: 'Количество строк в таблице',
+        required: false,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+
+          switch (true) {
+            case Number.isNaN(val):
+              result.ok = false
+              result.reason = `Should be number, received ${typeof val}`
+              break
+            default:
+              break
+          }
+          return result
+        },
+      }
+    }
+  }
+}
+
 const getRowsByTradeinId = ({ tradeinId, gRes }: { tradeinId: number, gRes: any }): any[] => {
   let result = []
 
@@ -178,11 +231,6 @@ export const getAnalysis = async (req: TSPRequest, res: IResponse, next: INextFu
   const { tradeinId, limit = 20000 } = req.body
   const maxLimit = 50000
   const _limit = limit > maxLimit ? maxLimit : limit
-
-  if (!tradeinId) return res.status(400).send({
-    ok: false,
-    message: `req.tradeinId is ${typeof tradeinId}; Should be number`
-  })
 
   let auth: any
   try {

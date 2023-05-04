@@ -3,9 +3,11 @@ import { sendReport as sendSsrRdErrorGoogleSheetsReport } from './ssr/rd-errs/se
 import {
   sendReport as sendOfflineTradeInUploadPhotoGoogleSheetsReport,
   spNotifyMW as spOfflineTradeInTelegramNotifyMW,
+  rules as uploadWizardReportRules,
 } from './offline-tradein/upload-wizard/send'
 import {
   getAnalysis as sendOfflineTradeInGetAnalysis,
+  rules as getTimingAnalysisRules,
 } from './offline-tradein/upload-wizard/get-timing-analysis'
 import {
   sendReport as sendOfflineTradeInMainGoogleSheetsReport,
@@ -60,11 +62,17 @@ router.post('/ssr/rd-errs/send', sendSsrRdErrorGoogleSheetsReport)
 // OFFLINE TRADE-IN
 router.post(
   '/offline-tradein/upload-wizard/send',
+  withReqParamsValidationMW({
+    rules: uploadWizardReportRules,
+  }),
   sendOfflineTradeInUploadPhotoGoogleSheetsReport,
   spOfflineTradeInTelegramNotifyMW,
 )
 router.post(
   '/offline-tradein/upload-wizard/get-timing-analysis',
+  withReqParamsValidationMW({
+    rules: getTimingAnalysisRules,
+  }),
   sendOfflineTradeInGetAnalysis,
 )
 router.post(
