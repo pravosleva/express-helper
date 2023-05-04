@@ -17,7 +17,7 @@ import crmProductsBuyoutBatchRoute from './mws/api/crm/crmproducts/buyout_batch'
 import { crmStatesIndex } from './mws/api/crm/crmstates'
 import { crmRequestTypesIndex } from './mws/api/crm/crmrequest-types'
 import { search as crmSearch } from './mws/api/crm/crmrequests/search'
-import { crmBidId } from './mws/api/crm/crmrequests/[bid_id]'
+import { crmBidId, rules as crmBidIdRules } from './mws/api/crm/crmrequests/[bid_id]'
 import { crmProductRejectionReasonsIndex, crmProductRejectionReasonsRating } from './mws/api/crm/crmproduct-rejection-reasons'
 import { crmProducts } from './mws/api/crm/products'
 import { crmMarketingPartners } from './mws/api/crm/marketing/partners'
@@ -78,6 +78,7 @@ import { boughtDevice } from './mws/partner_api/tradein/bought_device'
 import cors from 'cors'
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
 import { reportV2 } from './mws/report/v2'
+import { withReqParamsValidationMW } from '~/utils/express-validation/withReqParamsValidationMW'
 
 // const formidable = require('cyberjon-express-formidable')
 
@@ -103,7 +104,9 @@ spApi.post('/api/crm/crmproducts/buyout_batch', jsonParser, crmProductsBuyoutBat
 spApi.get('/api/crm/crmstates', jsonParser, crmStatesIndex)
 spApi.get('/api/crm/crmrequest-types', jsonParser, crmRequestTypesIndex)
 spApi.post('/api/crm/crmrequests/search', jsonParser, crmSearch)
-spApi.patch('/api/crm/crmrequests/:bid_id', jsonParser, crmBidId)
+spApi.patch('/api/crm/crmrequests/:bid_id', jsonParser, withReqParamsValidationMW({
+  rules: crmBidIdRules,
+}), crmBidId)
 spApi.get('/api/crm/crmproduct-rejection-reasons', jsonParser, crmProductRejectionReasonsIndex)
 spApi.get('/api/crm/crmproduct-rejection-reasons/rating', jsonParser, crmProductRejectionReasonsRating)
 spApi.get('/api/crm/products', crmProducts)

@@ -52,6 +52,7 @@ export const withReqParamsValidationMW =
         _service: {
           originalBody: req.body,
           originalQuery: req.query,
+          rules,
         },
       })
     // --
