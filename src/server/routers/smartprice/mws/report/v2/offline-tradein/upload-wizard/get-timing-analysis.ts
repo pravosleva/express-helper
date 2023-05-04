@@ -32,7 +32,7 @@ export const rules = {
       },
       limit: {
         type: 'number',
-        descr: 'Количество строк в таблице',
+        descr: 'Количество обрабатываемых строк в Google Spreadsheet таблице',
         required: false,
         validate: (val: any) => {
           const result: {
