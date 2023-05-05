@@ -3,20 +3,17 @@ const delay = require('../../../../utils/delay')
 // const upload = multer({ dest: 'uploads/' })
 // See also: https://github.com/expressjs/multer/blob/master/doc/README-ru.md
 
-// https://t.ringeo.ru/issue/IT-1676
+// NOTE: https://t.ringeo.ru/issue/IT-1676
 /*
 Ручка: https://smartprice.ru/api/warranty_claim_email
-
 Принимает POST-запрос с Content-Type: multipart/form-data.
-
 Поля:
-
-    type: обмен, возврат или ремонт;
-    imei;
-    warranty_card: номер гарантийного талона;
-    client_phone: телефон;
-    description: содержимое большой текстовой дырки;
-    claim_file: один или более приложенных файлов.
+  type: обмен, возврат или ремонт;
+  imei;
+  warranty_card: номер гарантийного талона;
+  client_phone: телефон;
+  description: содержимое большой текстовой дырки;
+  claim_file: один или более приложенных файлов.
 */
 
 // const { getRandomInteger } = require('utils/getRandomInteger')

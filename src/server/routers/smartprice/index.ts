@@ -88,7 +88,7 @@ const spApi = express()
 
 // spApi.use(formidable())
 
-// 1. Special API imitation
+// 1. CRM & SSR special API imitation
 spApi.get('/api/catalog', catalogCounterRoute)
 spApi.post('/api/cdb', cartMutationRoute)
 spApi.delete('/api/cdb', cartDeleteRoute)
@@ -126,14 +126,14 @@ spApi.get('/api/crm/history/tradein/:tradeinId', jsonParser, crmHistoryTradeinId
 spApi.get('/api/crm/history/product/:productId', jsonParser, crmHistoryProductId)
 spApi.post('/api/analytics/event', jsonParser, analyticsEvent)
 
-// 2. Frontend API imitation (не совсем понятно, почему Гена так называет часть запросов из клиента)
+// 2. SSR: fe API imitation (не совсем понятно, почему Гена так называет часть запросов из клиента)
 spApi.get('/fapi/get-catalog-data', catalogDataRoute)
 
 // 3. Etc.
 spApi.get('/md5/make', jsonParser, md5Make)
 
 // 4. Online Trade-in API imitation
-// 4.1 Docs for partners
+// 4.1 SSR OT: Docs for partners
 spApi.use(
   '/otapi/v1/:partnerName/swagger',
   function (req, res, next) {
@@ -151,7 +151,7 @@ spApi.use(
   // redirectIfUnloggedMw(redirect[EAccessCode.OTSvyaznoyV1].jwtSecret, EAccessCode.OTSvyaznoyV1),
   otApiV1Swagger
 )
-// 4.2 Etc.
+// 4.2 SSR OT: Online Trade-In
 spApi.post('/otapi/v1/:partnerName/imei', otApiV1GetIMEI)
 spApi.post('/otapi/v1/:partnerName/confirm_detection', otApiV1ConfirmDetection)
 spApi.post('/otapi/v1/:partnerName/diagnostics', otApiV1Diagnostics)
@@ -166,7 +166,7 @@ spApi.post('/otapi/v1/:partnerName/reupload_photos', otApiV1ReuploadPhotos)
 spApi.use('/otapi/v1/:partnerName/handover', courierApi)
 spApi.post('/otapi/v1/:partnerName/get_subsidies', getSubsidiesRoute)
 
-// 5. Offline Trade-in API imitation
+// 5. RINGEO: Offline Trade-in API imitation
 spApi.post('/partner_api/tradein/imei', partnerApiTradeInIMEI)
 spApi.post('/partner_api/tradein/phone/check', partnerApiTradeInPhoneCheck)
 spApi.post('/partner_api/photo/link', partnerApiTradeInPhotoLink)
@@ -189,7 +189,7 @@ spApi.post('/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_
 spApi.post('/partner_api/tradein/wait_for/verified', waitForVerified)
 spApi.post('/partner_api/tradein/bought_device', boughtDevice)
 
-// 6. New OT landing
+// 6. SSR: New OT landing
 spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)
 
 // 7. Report
