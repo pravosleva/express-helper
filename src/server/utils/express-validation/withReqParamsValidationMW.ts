@@ -76,9 +76,26 @@ export const withReqParamsValidationMW =
 
       // -- NOTE: Пробуем добавить детали первой ошибки результатов обработки в ответ (если они есть)
       try {
-        if (!!errs[0]._reponseDetails) {
-          const { status: _status, _addProps } = errs[0]._reponseDetails
-          status = _status
+        // NOTE: v1 Добавить, если они имеются только у превой ошибки
+        // if (!!errs[0]._reponseDetails) {
+        //   const { status: newStatus, _addProps } = errs[0]._reponseDetails
+        //   status = newStatus
+        //   if (!!_addProps && Object.keys(_addProps).length > 0) {
+        //     for (const key in _addProps) result[key] = _addProps[key]
+        //   }
+        // }
+
+        // NOTE: v2 А если для этой нет? Нужно ли добавить детали хотя бы для одной ошибки из имеющихся?
+        let _reponseDetails: any = null
+        for (const err of errs) {
+          if (!!err._reponseDetails) {
+            _reponseDetails = err._reponseDetails
+            break
+          }
+        }
+        if (!!_reponseDetails) {
+          const { status: newStatus, _addProps } = _reponseDetails
+          status = newStatus
           if (!!_addProps && Object.keys(_addProps).length > 0) {
             for (const key in _addProps) result[key] = _addProps[key]
           }
