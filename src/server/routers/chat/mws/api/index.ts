@@ -16,6 +16,7 @@ import { getNormalizedNumber } from '~/utils/getNormalizedNumber'
 import { add as addNotif, checkRoomState as checkRoomNotifsState, remove as removeNotif } from './common-notifs'
 import { getCPUState } from './get-cpu-state'
 import { getBackupState } from './get-backup-state'
+import { withReqParamsValidationMW } from '~/utils/express-validation/withReqParamsValidationMW'
 
 const CHAT_JWT_LIVE_LINIT_IN_DAYS = getNormalizedNumber(process.env.CHAT_JWT_LIVE_LINIT_IN_DAYS) || 2
 
@@ -48,6 +49,32 @@ chatExternalApi.post(
 chatExternalApi.post(
   '/common-notifs/check-room-state',
   // checkJWT(jwtSecret, ELoggedCookie.JWT),
+  withReqParamsValidationMW({
+    rules: {
+      params: {
+        body: {
+          room_id: {
+            type: 'string',
+            descr: 'Room name',
+            required: true,
+            validate: (val) => ({
+              ok: !!val && typeof val === 'string',
+              reason: 'Should be string & not empty',
+            }),
+          },
+          tsUpdate: {
+            type: 'number',
+            descr: 'Last update timestamp',
+            required: true,
+            validate: (val) => ({
+              ok: !!val && typeof val === 'number',
+              reason: 'Should be number & > 0',
+            }),
+          },
+        },
+      }
+    }
+  }),
   checkRoomNotifsState
 )
 chatExternalApi.post(
