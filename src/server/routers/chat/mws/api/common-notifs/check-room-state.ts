@@ -1,16 +1,47 @@
 import { Request as IRequest, Response as IResponse } from 'express'
 import { commonNotifsMapInstance } from '~/utils/socket/state'
 import { EAPIRoomNotifsCode } from './types'
+import { THelp } from '~/utils/express-validation'
+
+export const checkRoomStateRules: THelp = {
+  params: {
+    body: {
+      room_id: {
+        type: 'string',
+        descr: 'Room name',
+        required: true,
+        validate: (val: any) => ({
+          ok: !!val && typeof val === 'string',
+          reason: 'Should be string & not empty',
+          _reponseDetails: {
+            status: 400,
+            _addProps: {
+              code: EAPIRoomNotifsCode.IncorrectParams,
+            }
+          }
+        }),
+      },
+      tsUpdate: {
+        type: 'number',
+        descr: 'Client timestamp (last update)',
+        required: true,
+        validate: (val: any) => ({
+          ok: !!val && typeof val === 'number',
+          reason: 'Should be number & > 0',
+          _reponseDetails: {
+            status: 400,
+            _addProps: {
+              code: EAPIRoomNotifsCode.IncorrectParams,
+            }
+          }
+        }),
+      },
+    },
+  }
+}
 
 export const checkRoomState = (req: IRequest, res: IResponse) => {
   const { room_id, tsUpdate: clientTsUpdate } = req.body
-
-  if (!room_id) return res.status(400).send({
-    ok: false,
-    message: 'Params ERR: room_id is required',
-    code: EAPIRoomNotifsCode.IncorrectParams,
-    _originalBody: req.body,
-  })
 
   if (!clientTsUpdate) {
     // NOTE: Первый раз спрашивает, в стейте еще ничего нет
@@ -23,14 +54,18 @@ export const checkRoomState = (req: IRequest, res: IResponse) => {
         message: 'Данные нашлись',
         state: roomNotifsStruct.data,
         tsUpdate: roomNotifsStruct.tsUpdate,
-        _originalBody: req.body,
+        _service: {
+          originalBody: req.body,
+        },
       })
     } else {
       return res.status(200).send({
         ok: false,
         message: '1: Стейта не обнаружено, возможно он был удален или часть данных отсутствует',
         code: EAPIRoomNotifsCode.NotFound,
-        _originalBody: req.body,
+        _service: {
+          originalBody: req.body,
+        },
       })
     }
   }
@@ -40,7 +75,9 @@ export const checkRoomState = (req: IRequest, res: IResponse) => {
     ok: false,
     message: '2: Стейта не обнаружено, возможно он был удален или часть данных отсутствует',
     code: EAPIRoomNotifsCode.NotFound,
-    _originalBody: req.body,
+    _service: {
+      originalBody: req.body,
+    },
   })
   
   if (roomNotifsStruct.tsUpdate === clientTsUpdate) return res.status(200).send({
@@ -48,7 +85,9 @@ export const checkRoomState = (req: IRequest, res: IResponse) => {
     message: 'Изменений еще не было',
     // state: roomNotifsStruct.data,
     code: EAPIRoomNotifsCode.NoUpdates,
-    _originalBody: req.body,
+    _service: {
+      originalBody: req.body,
+    },
   })
 
   return res.status(200).send({
@@ -57,6 +96,8 @@ export const checkRoomState = (req: IRequest, res: IResponse) => {
     message: 'Есть обновления...',
     state: roomNotifsStruct.data,
     tsUpdate: roomNotifsStruct.tsUpdate,
-    _originalBody: req.body,
+    _service: {
+      originalBody: req.body,
+    },
   })
 }

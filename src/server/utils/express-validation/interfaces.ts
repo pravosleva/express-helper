@@ -5,9 +5,15 @@ export type THelp = {
         type: string
         descr: string
         required: boolean
-        validate: (arg: any) => ({
+        validate: (val: any) => ({
           ok: boolean
           reason?: string
+          _reponseDetails?: {
+            status: number
+            _addProps?: {
+              [key: string]: any
+            }
+          }
         })
       }
     }
@@ -16,9 +22,15 @@ export type THelp = {
         type: string
         descr: string
         required: boolean
-        validate: (arg: any) => ({
+        validate: (val: any) => ({
           ok: boolean
           reason?: string
+          _reponseDetails?: {
+            status: number
+            _addProps?: {
+              [key: string]: any
+            }
+          }
         })
       }
     }
