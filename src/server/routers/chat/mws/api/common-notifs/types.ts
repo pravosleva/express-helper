@@ -22,3 +22,14 @@ export type TRoomNotifs = {
   tsUpdate: number
   data: TData
 }
+
+export namespace NNotifs {
+  export type TNotifItem = {
+    ts: number
+    username: string
+    tsTarget: number
+    text: string
+    original: TMessage
+  }
+  export type TData = { [key: string]: TNotifItem }
+}

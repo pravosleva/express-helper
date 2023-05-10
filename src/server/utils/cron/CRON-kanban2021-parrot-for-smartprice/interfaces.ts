@@ -11,10 +11,13 @@ export type TCfg = {
   validateBeforeRequest: ({}: {
     msgs: TMessage[];
   }) => boolean;
+  _specialMsgValidator?: (msg: TMessage) => boolean;
+  _useSprintOnly?: boolean;
   req: {
     url: string;
     body: {
       chat_id: number;
+      message_thread_id?: number;
       eventCode: string;
       // resultId: number;
       about: ({}: {

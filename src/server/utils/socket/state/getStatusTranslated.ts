@@ -17,11 +17,11 @@ export const statusCfg: { [key in EMessageStatus]: { symbol: string; descr?: str
   },
   [EMessageStatus.Success]: {
     symbol: '✅',
-    descr: '(надо бы протестировать и закрыть)',
+    descr: '(пора протестировать и закрыть)',
   },
   [EMessageStatus.Warn]: {
     symbol: '⚠️',
-    descr: '(надо бы дать пояснения)',
+    descr: '(задача стоит на месте, либо ожидает пояснений)',
   },
   [EMessageStatus.Dead]: {
     symbol: '💀',

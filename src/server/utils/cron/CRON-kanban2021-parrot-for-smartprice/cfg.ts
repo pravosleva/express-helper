@@ -5,10 +5,15 @@ import { sortArrayByKeys } from '~/utils/sort/sortArrayByKeys'
 import { getStatusTranslated, statusCfg } from '~/utils/socket/state/getStatusTranslated'
 import plural from 'plural-ru'
 import { getTimeAgo } from '~/utils/getTimeAgo'
+import { NNotifs } from '~/routers/chat/mws/api/common-notifs'
+import { getTimeDiff } from '~/utils/getTimeDiff'
 
 const designer = new Designer()
 // const isDev = process.env.NODE_ENV === 'development'
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
+
+// NOTE: Link example
+// http://pravosleva.ru/express-helper/chat/#/chat?room=audit.lidiya005
 
 export const cfg: TCfg = [
   {
@@ -32,8 +37,9 @@ export const cfg: TCfg = [
           msgs,
           targetHashtags,
           targetStatuses,
+          targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `Непонятен статус ${plural(msgs.length, 'задачи', 'задач')}` : 'Нет задач с непонятным статусом (Impossible case?)'} *${targetHashtags.join(' ')}*`
+          return `Непонятен статус ${plural(msgs.length, 'задачи', 'задач')}${targetHashtags.length > 0 ? ` *${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           msgs,
@@ -102,7 +108,7 @@ export const cfg: TCfg = [
     id: 2,
     _descr: 'Reminder for me (daily deploy after 21:00)',
     isEnabled: true,
-    cronSetting: '0 21 * * *', // Every day at 21:00
+    cronSetting: '5 0 21 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 21:00:05
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
     targetHashtags: ['#ssr'],
@@ -118,7 +124,7 @@ export const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} \`${targetRooms.join(' ')}\` есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')} *${[...targetStatuses.map(getStatusTranslated)].join(', ')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
+          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} \`${targetRooms.join(' ')}\` есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')} *${[...targetStatuses.map(getStatusTranslated)].join(', ')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? ` с ${plural(targetRooms.length, 'хэштегом', 'хэштегами')} *${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           msgs,
@@ -163,7 +169,7 @@ export const cfg: TCfg = [
             if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
               specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
             if (!!statusChangeTs && typeof statusChangeTs === 'number')
-              specialMsgs.push(`Статус изменен ${getTimeAgo(statusChangeTs)}`)
+              specialMsgs.push(`Status upd ${getTimeAgo(statusChangeTs)}`)
 
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
@@ -180,7 +186,7 @@ export const cfg: TCfg = [
     id: 3,
     _descr: 'Reminder for me (whats up)',
     isEnabled: true,
-    cronSetting: '5 13 * * *', // Every day at 13:05
+    cronSetting: '2 18 * * *', // Every day at 18:02
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
     targetHashtags: [],
@@ -200,7 +206,7 @@ export const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} \`${targetRooms.join(' ')}\` есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')} *${[...targetStatuses.map(getStatusTranslated)].join(', ')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
+          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} \`${targetRooms.join(' ')}\` есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')} *${[...targetStatuses.map(getStatusTranslated)].join(', ')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? ` с ${plural(targetRooms.length, 'хэштегом', 'хэштегами')} *${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           msgs,
@@ -258,16 +264,19 @@ export const cfg: TCfg = [
   {
     id: 4,
     _descr: 'Статус вопросов быта',
-    isEnabled: true,
-    cronSetting: '0 17 * * *', // Every day at 17:00
+    isEnabled: false,
+    // cronSetting: '1 18 * * *', // Every day at 18:01
+    cronSetting: '1 18 * * Mon,Wed', // Every Mon,Wed at 18:01
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['magaz'],
-    targetHashtags: [], // ['#dom'],
+    targetHashtags: ['#dailyReport'],
     targetStatuses: [EMessageStatus.Danger],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
-        chat_id: 432590698, // NOTE: Den Pol
+        // chat_id: 432590698, // NOTE: Den Pol
+        chat_id: -1001551335399,
+        message_thread_id: 1099, // NOTE: Красная Акула -> Notifs exp (topic)
         eventCode: 'magaz_reminder_daily',
         about: ({
           msgs,
@@ -275,7 +284,7 @@ export const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} \`${targetRooms.join(' ')}\` есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')} *${[...targetStatuses.map(getStatusTranslated)].join(', ')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`} *${targetHashtags.join(' ')}*`
+          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} \`${targetRooms.join(' ')}\` есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')} *${[...targetStatuses.map(getStatusTranslated)].join(', ')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? ` с ${plural(targetRooms.length, 'хэштегом', 'хэштегами')} *${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           msgs,
@@ -310,7 +319,7 @@ export const cfg: TCfg = [
             } = msg
 
             const msgList = [
-              `\`${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}\``,
+              `${i + 1}.${!!statusCfg[status]?.symbol ? ` ${statusCfg[status]?.symbol}` : ''} \`${text}\``,
             ]
 
             // -- NOTE: Custom msg
@@ -320,12 +329,121 @@ export const cfg: TCfg = [
             if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
               specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
             if (!!statusChangeTs && typeof statusChangeTs === 'number')
-              specialMsgs.push(`Статус изменен ${getTimeAgo(statusChangeTs)}`)
+              specialMsgs.push(`Status upd ${getTimeAgo(statusChangeTs)}`)
 
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
             if (!!links && Array.isArray(links))
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+
+            return msgList.join('\n')
+          }).join('\n\n')
+        },
+      },
+    },
+  },
+  {
+    id: 5,
+    _descr: 'Спринт (magaz)',
+    isEnabled: true,
+    // cronSetting: '40 18 * * *', // Every day at 18:40
+    cronSetting: '1 18 * * Mon', // Every Mon at 18:01
+    _useSprintOnly: true,
+    _specialMsgValidator: (msg: TMessage & Partial<NNotifs.TNotifItem>) => {
+      let result = false
+      // NOTE: Фильтровать только те задачи, дедлайн которых не более 3 дней
+      const { tsTarget } = msg
+
+      if (!tsTarget) result = false
+      else {
+        const timeDiff = getTimeDiff({ startDate: new Date(), finishDate: new Date(tsTarget) })
+
+        if (timeDiff.d <= 3) result = true
+      }
+
+      return result
+    },
+    validateBeforeRequest: ({ msgs }) => msgs.length > 0,
+    targetRooms: ['magaz'],
+    targetHashtags: ['#dailyReport'],
+    targetStatuses: [EMessageStatus.Warn, EMessageStatus.Danger],
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        // chat_id: 432590698, // NOTE: Den Pol
+        chat_id: -1001551335399,
+        message_thread_id: 1099, // NOTE: Красная Акула -> Notifs exp (topic)
+        eventCode: 'magaz_reminder_daily',
+        about: ({
+          msgs,
+          targetHashtags,
+          targetStatuses,
+          targetRooms,
+        }) => {
+          return `*Спринты* (о чем-то запланированном): ${msgs.length > 0 ? `в ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} \`${targetRooms.join(' ')}\` есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')} *${[...targetStatuses.map(getStatusTranslated)].join(' / ')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`}${targetHashtags.length > 0 ? ` с ${plural(targetRooms.length, 'хэштегом', 'хэштегами')} *${targetHashtags.join(' ')}*` : ''}`
+        },
+        targetMD: ({
+          msgs,
+          targetHashtags,
+          targetStatuses,
+          targetRooms,
+        }) => {
+          const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
+            arr: sortArrayByKeys({
+              arr: msgs,
+              // NOTE: В данном случае, мы имеем расширенный объект
+              // @ts-ignore
+              keys: ['tsTarget'],
+              order: 1,
+            }),
+            targetFieldName: 'status',
+            topTemplate: [
+              EMessageStatus.Success,
+              EMessageStatus.Danger,
+              EMessageStatus.Warn,
+            ],
+          })
+          
+          return sortedMsgs.map((msg: TMessage & Partial<NNotifs.TNotifItem>, i) => {
+            const {
+              status,
+              position,
+              // editTs,
+              // ts, // NOTE: Create timestamp
+              links,
+              // user, // NOTE: TG username
+              text,
+              assignedTo,
+              statusChangeTs,
+              tsTarget,
+            } = msg // NOTE: When _useSprintOnly enabled -> we have enhanced msg object
+
+            // const msgList = [
+            //   `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} See text below` : 'See text below'}\n\n\`\`\`\n${JSON.stringify(msg, null, 2)}\n\`\`\``,
+            // ]
+            const msgList = [
+              `${i + 1}.${!!statusCfg[status]?.symbol ? ` ${statusCfg[status]?.symbol}` : ''} \`${text}\``,
+            ]
+
+            // -- NOTE: Custom msg
+            const specialMsgs = []
+            if (position >= 0)
+              specialMsgs.push(`Приоритет ${position + 1}`)
+            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+              specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+            
+            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+            // --
+
+            if (!!statusChangeTs && typeof statusChangeTs === 'number')
+              msgList.push(`Status upd ${getTimeAgo(statusChangeTs)}`)
+            if (!!tsTarget && typeof tsTarget === 'number')
+              msgList.push(`Until deadline ${getTimeDiff({ startDate: new Date(), finishDate: new Date(tsTarget) }).message}`)
+            
+            if (!!links && Array.isArray(links))
+              msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+            
+            msgList.push(`${targetRooms.map((room) => `💬 [${room}](http://pravosleva.ru/express-helper/chat/#/chat?room=${room})`).join('\n')}`)
 
             return msgList.join('\n')
           }).join('\n\n')

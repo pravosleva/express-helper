@@ -869,10 +869,48 @@ export const Chat = () => {
   }, [])
 
   const _tryLogin = useCallback(async () => {
+    const _urlSearchParams: URLSearchParams = new URLSearchParams(window.location.href)
+    const roomFromUrlParams = _urlSearchParams.get('room')
+    let roomFromUrlParams2
+    try {
+      const _params = window.location.href.split('?')[1]
+      const _entries = _params.split('&').map((str) => {
+        const spl = str.split('=')
+        return spl
+      })
+      const targetEntry = _entries.find((entry) => entry[0] === 'room')
+
+      if (!!targetEntry) roomFromUrlParams2 = targetEntry[1]
+    } catch (err) {
+      console.log(err)
+    }
     const roomFromLS = window.localStorage.getItem('chat.last-room')
+
     let normalizedRoom
-    if (!!roomFromLS) normalizedRoom = roomFromLS.replace(/"/g, '')
+    if (!!roomFromUrlParams) {
+      normalizedRoom = roomFromUrlParams.replace(/"/g, '')
+    } else if (!!roomFromUrlParams2) {
+      normalizedRoom = roomFromUrlParams2.replace(/"/g, '')
+    } else if (!!roomFromLS) {
+      normalizedRoom = roomFromLS.replace(/"/g, '')
+    }
+
+    // toast({
+    //   position: 'bottom-left',
+    //   // title: 'Sorry',
+    //   description: JSON.stringify({
+    //     fromUrlParams: roomFromUrlParams,
+    //     fromLS: roomFromLS,
+    //     keys: _urlSearchParams.keys(),
+    //     entries: _urlSearchParams.entries(),
+    //   }),
+    //   status: 'warning',
+    //   duration: 7000,
+    //   variant: 'solid',
+    // })
+
     const nameFromLS = window.localStorage.getItem('chat.my-name')
+    
     let normalizedName
     if (!!nameFromLS) normalizedName = nameFromLS.replace(/"/g, '')
 
