@@ -29,6 +29,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.truncate-overflow-single-line-exp {
+  // border: 1px solid red;
+
+  --max-lines: 1;
+  width: 100%;
+  // margin: 0 0 20px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 25px;
+}
 
 .centered-box,
 .center-box {

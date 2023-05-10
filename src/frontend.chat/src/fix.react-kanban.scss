@@ -17,6 +17,7 @@
 
     .card-title {
       // font-weight: bold;
+      font-family: system-ui;
       word-break: break-word;
     }
     .card-controls-box--right {
@@ -30,6 +31,7 @@
   }
 
   .card-descr {
+    font-family: system-ui;
     font-weight: bold;
     font-size: 13px;
   }
@@ -50,6 +52,7 @@
 // .react-kanban-card--dragging {}
 // .react-kanban-card__description {}
 .react-kanban-card__title {
+  font-weight: bold;
   margin-bottom: 10px;
   border-bottom-width: 2px;
   & > span:nth-child(2) {

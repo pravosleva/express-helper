@@ -165,6 +165,7 @@ import { getRandomInteger } from '~/utils/getRandomInteger'
 import { jwtHttpClient } from '~/utils/httpClient'
 import { EAPIUserCode, TUserResData } from '~/utils/httpClient/types'
 import { MemoizedOtherMessage } from './components/MemoizedOtherMessage'
+import appStyles from '~/App.module.scss'
 
 const scrollInKanban = (node: any) => {
   scrollIntoView2(node, {
@@ -2209,7 +2210,7 @@ export const Chat = () => {
                 <DrawerContent>
                   <DrawerCloseButton rounded='3xl' />
                   <DrawerHeader borderBottomWidth="1px">
-                    {room}
+                    <div className={appStyles['truncate-overflow-single-line-exp']}>{room}</div>
                   </DrawerHeader>
 
                   <DrawerBody>
@@ -2460,16 +2461,29 @@ export const Chat = () => {
 
               <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }} mr={2}>
                 {/* <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading> */}
-                <Heading fontSize='lg' fontFamily='Jura'>
-                  {getTruncated(room, 22)} {isChatLoading && !!tsPoint && (
+                <Heading fontSize='lg' fontFamily='system-ui' className={appStyles['truncate-overflow-single-line']}>
+                  {room} {isChatLoading && !!tsPoint && (
                     <Spinner size='xs' />
                   )}
                 </Heading>
                 <Flex alignItems="center">
                   <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
-                  <Text ml="2" fontWeight="400" fontSize="md" letterSpacing="0">
-                    {getTruncated(name)}
-                  </Text>
+                  <Box
+                    ml="2"
+                    
+                    fontWeight="400"
+                    fontSize="md"
+                    letterSpacing="0"
+                    fontFamily='system-ui'
+                    
+                    style={{
+                      maxWidth: '185px',
+                      boxSizing: 'border-box',
+                    }}
+                    className={appStyles['truncate-overflow-single-line']}
+                  >
+                    {name}
+                  </Box>
                 </Flex>
               </Flex>
 
@@ -2592,10 +2606,12 @@ export const Chat = () => {
                     {isFileUploading && (
                       <div><b>Upload...&nbsp;{uploadPercentageRef.current}&nbsp;%</b></div>
                     )}
+                    {/*
                     <div><button
                     className={clsx(stylesBase['special-btn'], stylesBase['special-btn-md'], stylesBase['dark-btn'])}
                     style={{ display: 'flex', alignItems: 'center' }}
                     onClick={runCreateFakeData}><span style={{ marginRight: '7px' }}>┣</span><span>FAKE!</span></button></div>
+                    */}
                   </>
                 )}
                 {/*upToMd && isLogged && (

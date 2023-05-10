@@ -21,6 +21,7 @@ import { IoMdClose } from 'react-icons/io'
 import { FiSearch } from 'react-icons/fi'
 import { getWords } from '~/utils/strings-ops/getWords'
 import { testRoomNameByAnyWord } from '~/utils/strings-ops/testRoomNameByAnyWord'
+import appStyles from '~/App.module.scss'
 
 type TProps = {
   resetMessages: () => void
@@ -70,15 +71,16 @@ export const Roomlist = memo(({ resetMessages, onCloseMenuBar, handleRoomClick }
       // .filter((r) => r.includes(search.toLowerCase()))
       return <>{roomNames.filter((r) => roomNameTest({ room: r, search })).map((r: string) => {
         const tsFromLS = roomlistLS.find(({ name }) => name === r)?.ts
-        const isGreen = room !== r ? (!!tsFromLS && (tsMap[r] > tsFromLS)) : false
-        const label = getTruncated(r, 28)
+        const hasFreshState = room !== r ? (!!tsFromLS && (tsMap[r] > tsFromLS)) : false
+        // const label = getTruncated(r, 28)
+        const isCurrentRoom = r === room
 
         return (
           <Button
             justifyContent='flex-start'
-            colorScheme={isGreen ? 'green' : 'gray'}
+            colorScheme={hasFreshState ? 'green' : 'gray'}
             size='sm'
-            disabled={r === room}
+            disabled={isCurrentRoom}
             key={r}
             // as={IconButton}
             as={Button}
@@ -86,13 +88,16 @@ export const Roomlist = memo(({ resetMessages, onCloseMenuBar, handleRoomClick }
             // isRound="true"
             // mr={1}
             onClick={() => {
+              if (isCurrentRoom) return
+
               handleRoomClick(r)
               setRoom(r)
               resetMessages()
               onCloseMenuBar()
             }}
+            className={appStyles['truncate-overflow-single-line-exp']}
           >
-            {label}
+            {isCurrentRoom ? `👉 ${r}` : r}
           </Button>
         )
       })}</>
