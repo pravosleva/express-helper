@@ -31,29 +31,33 @@ export const withReqParamsValidationMW =
 
               errs.push(errOpts)
             } else {
-              try {
-                const validationReult = rules.params[reqProp][key]?.validate(req[reqProp][key])
-
-                if (!validationReult.ok) {
-                  const errOpts: {
-                    msg: string;
-                    _reponseDetails?: {
-                      status: number;
-                      [key: string]: any;
+              // -- NOTE: Если имеется необязательный параметр, проверим его
+              if (!!req[reqProp][key]) {
+                try {
+                  const validationReult = rules.params[reqProp][key]?.validate(req[reqProp][key])
+  
+                  if (!validationReult.ok) {
+                    const errOpts: {
+                      msg: string;
+                      _reponseDetails?: {
+                        status: number;
+                        [key: string]: any;
+                      }
+                    } = {
+                      msg: `Incorrect request param format: \`req.${reqProp}.${key}\` (${rules.params[reqProp][key].descr}) expected: ${rules.params[reqProp][key].type}, received: ${typeof req[reqProp][key]}${!!validationReult.reason ? ` ⚠️ by developer: ${validationReult.reason}` : ''}`,
                     }
-                  } = {
-                    msg: `Incorrect request param format: \`req.${reqProp}.${key}\` (${rules.params[reqProp][key].descr}) expected: ${rules.params[reqProp][key].type}, received: ${typeof req[reqProp][key]}${!!validationReult.reason ? ` ⚠️ by developer: ${validationReult.reason}` : ''}`,
+                    if (!!validationReult._reponseDetails)
+                      errOpts._reponseDetails = validationReult._reponseDetails
+  
+                    errs.push(errOpts)
                   }
-                  if (!!validationReult._reponseDetails)
-                    errOpts._reponseDetails = validationReult._reponseDetails
-
-                  errs.push(errOpts)
+                } catch (err) {
+                  errs.push({
+                    msg: `Не удалось проверить поле: \`req.${reqProp}.${key}\` (${rules.params[reqProp][key].descr}); ${typeof err === 'string' ? err : (err.message || 'No err.message')}`
+                  })
                 }
-              } catch (err) {
-                errs.push({
-                  msg: `Не удалось проверить поле: \`req.${reqProp}.${key}\` (${rules.params[reqProp][key].descr}); ${typeof err === 'string' ? err : (err.message || 'No err.message')}`
-                })
               }
+              // --
             }
           }
           break
