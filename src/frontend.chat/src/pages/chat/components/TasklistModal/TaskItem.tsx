@@ -52,6 +52,7 @@ const constants = {
   week: 7 * 24 * 60 * 60 * 1000,
   month1: 30 * 24 * 60 * 60 * 1000,
   month2: 2 * 30 * 24 * 60 * 60 * 1000,
+  month3: 2 * 30 * 24 * 60 * 60 * 1000,
   month6: 6 * 30 * 24 * 60 * 60 * 1000,
   day1: 1 * 24 * 60 * 60 * 1000,
   day2: 2 * 24 * 60 * 60 * 1000,
@@ -208,6 +209,16 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
                     </MenuItem>
                     <MenuItem
                       minH="40px"
+                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month1 })}
+                      isDisabled={fixedDiff === constants.month1}
+                    >
+                      <Flex display="flex" alignItems="center">
+                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                        <Text fontSize="md" fontWeight='bold'>Set 1 month</Text>
+                      </Flex>
+                    </MenuItem>
+                    <MenuItem
+                      minH="40px"
                       onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month2 })}
                       isDisabled={fixedDiff === constants.month2}
                     >
@@ -218,12 +229,12 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
                     </MenuItem>
                     <MenuItem
                       minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month1 })}
-                      isDisabled={fixedDiff === constants.month1}
+                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month3 })}
+                      isDisabled={fixedDiff === constants.month3}
                     >
                       <Flex display="flex" alignItems="center">
                         <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 1 month</Text>
+                        <Text fontSize="md" fontWeight='bold'>Set 3 month</Text>
                       </Flex>
                     </MenuItem>
                     <MenuItem
@@ -371,7 +382,9 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
       </Box>
       <Box p={5} style={{ marginLeft: 'auto' }} as='div'>
         <Flex display="flex" alignItems="center">
-          <Text pt={2} color='green.500' fontSize="md" onClick={onCompleteToggle}>{isCompleted ? <ImCheckboxChecked size={20} /> : <ImCheckboxUnchecked size={20} />}</Text>
+          <Text pt={2} color='green.500' fontSize="md" onClick={onCompleteToggle}>
+            {isCompleted ? <ImCheckboxChecked size={20} /> : <ImCheckboxUnchecked size={20} />}
+          </Text>
         </Flex>
       </Box>
     </div>

@@ -24,9 +24,10 @@ import { getParsedUserAgent, standardResultHandler } from './utils'
 // import { Log } from '~/utils/socket/utils/Log'
 import { moveFile } from '~/utils/fs-tools/moveFile'
 
-// --- NOTE: Run CRON for backups!
+// --- NOTE: Run CRON for anything
 require('~/utils/cron/CRON-backup-runner')
-require('~/utils/cron/CRON-kanban2021-parrot-for-smartprice')
+require('~/utils/cron/CRON-kanban2021-parrots')
+require('~/utils/cron/CRON-kanban2021-parrots.tasklist')
 // ---
 
 // NOTE: Если версия на фронте будет отлияаться, страница будет перезагружена при реконнекте
@@ -363,10 +364,11 @@ export const withSocketChat = (io: Socket) => {
 
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
-      if (!!cb) cb(null)
+      const isAdmin = name === 'pravosleva'
+      if (!!cb) cb(null, isAdmin)
     })
 
-    socket.on('login', ({ isLogged, name, room }, cb?: (reason?: string) => void) => {
+    socket.on('login', ({ isLogged, name, room }, cb?: (reason?: string, isAdmin?: boolean) => void) => {
       if (isLogged) {
         
         const regData = registeredUsersMap.get(name)
@@ -410,7 +412,8 @@ export const withSocketChat = (io: Socket) => {
       io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
       // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
 
-      if (!!cb) cb(null)
+      const isAdmin = name === 'pravosleva'
+      if (!!cb) cb(null, isAdmin)
 
       // ---
     })
@@ -622,6 +625,41 @@ export const withSocketChat = (io: Socket) => {
 
           if (result.isPrivateSocketCb) {
             socket.emit('notification', { status: 'error', title: result.errMsgData?.title || 'ERR #3', description: result.errMsgData?.description || 'Server error' })
+          }
+          if (result.shouldLogout) socket.emit('FRONT:LOGOUT')
+        },
+      })
+    })
+    socket.on('restoreMessage', ({ room, name, ts, original }: { room: string, name: string, ts: number, original: TMessage }, cb) => {
+      const result = roomsMap.restoreMessage({ room, ts, original, name })
+
+      standardResultHandler({
+        result,
+        cbSuccess: ({ result }) => {
+          // io.in(room).emit('oldChat', { roomData: roomsMap.get(room) });
+          io.in(room).emit('message.restore', { ts, original: result.targetMessage });
+
+          // -- notifs exp
+          const roomNotifs = notifsMap.get(room)
+          if (!!roomNotifs) {
+            const key = String(ts)
+            if (roomNotifs?.data && !!roomNotifs?.data[key]) {
+              try {
+                // delete roomNotifs.data[key]
+                roomNotifs.tsUpdate = Date.now()
+                notifsMap.set(room, roomNotifs)
+              } catch (err) {
+                console.log(err)
+              }
+            }
+          }
+          // --
+        },
+        cbError: ({ result }) => {
+          // if (cb) cb(result.errMsgData?.description || 'ERR')
+
+          if (result.isPrivateSocketCb) {
+            socket.emit('notification', { status: 'error', title: result.errMsgData?.title || 'ERR #3001', description: result.errMsgData?.description || 'Server error' })
           }
           if (result.shouldLogout) socket.emit('FRONT:LOGOUT')
         },

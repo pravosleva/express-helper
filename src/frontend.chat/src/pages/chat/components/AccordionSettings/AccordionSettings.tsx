@@ -56,6 +56,7 @@ type TProps = {
   defaultAccordionItems?: TAccordeonItem[]
   registryLevel: ERegistryLevel
   onEditMessage?: (m: TMessage) => void
+  onRestore: (original: TMessage) => void
 }
 
 export const AccordionSettings = memo(({
@@ -70,6 +71,7 @@ export const AccordionSettings = memo(({
   defaultAccordionItems,
   registryLevel,
   onEditMessage,
+  onRestore,
 }: TProps) => {
   const { room, sprintFeatureProxy, assignmentFeatureProxy, devtoolsFeatureProxy, cpuFeatureProxy } = useMainContext()
   const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
@@ -350,6 +352,7 @@ export const AccordionSettings = memo(({
                   <NotifsList
                     onRemove={(ts) => { sprintFeatureProxy.tsUpdate = ts }}
                     onEdit={onEditMessage}
+                    onRestore={onRestore}
                   />
                 </Box>
                 

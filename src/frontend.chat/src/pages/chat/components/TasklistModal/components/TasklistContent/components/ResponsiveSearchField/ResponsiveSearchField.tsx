@@ -174,6 +174,8 @@ export const ResponsiveSearchField = ({
               flexWrap: 'wrap',
               gap: 'var(--chakra-space-2)',
               marginTop: 'var(--chakra-space-2)',
+              maxHeight: '100px',
+              overflowY: 'auto',
             }}
           >
             {tagList.map((tag) => {

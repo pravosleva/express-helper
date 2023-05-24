@@ -364,22 +364,23 @@ export const cfg: TCfg = [
     _useSprintOnly: true,
     _specialMsgValidator: (msg: TMessage & Partial<NNotifs.TNotifItem>) => {
       let result = false
-      // NOTE: Фильтровать только те задачи, дедлайн которых не более 7 дней
+      const deadlineLimitInDays = 14
+      // NOTE: Фильтровать только те задачи, дедлайн которых не более {deadlineLimitInDays} дней
       const { tsTarget } = msg
 
       if (!tsTarget) result = false
       else {
         const timeDiff = getTimeDiff({ startDate: new Date(), finishDate: new Date(tsTarget) })
 
-        if (timeDiff.d <= 7) result = true
+        if (timeDiff.d <= deadlineLimitInDays) result = true
       }
 
       return result
     },
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['magaz'],
-    targetHashtags: ['#weeklyReminder'],
-    targetStatuses: [EMessageStatus.Warn, EMessageStatus.Danger],
+    targetHashtags: ['#sprintWeeklyReminder'],
+    targetStatuses: [EMessageStatus.Info, EMessageStatus.Warn, EMessageStatus.Danger],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
@@ -422,6 +423,7 @@ export const cfg: TCfg = [
               EMessageStatus.Success,
               EMessageStatus.Danger,
               EMessageStatus.Warn,
+              EMessageStatus.Info,
             ],
           })
           
@@ -458,8 +460,11 @@ export const cfg: TCfg = [
 
             if (!!statusChangeTs && typeof statusChangeTs === 'number')
               msgList.push(`Status upd ${getTimeAgo(statusChangeTs)}`)
-            if (!!tsTarget && typeof tsTarget === 'number')
-              msgList.push(`Until deadline ${getTimeDiff({ startDate: new Date(), finishDate: new Date(tsTarget) }).message}`)
+            if (!!tsTarget && typeof tsTarget === 'number') {
+              const timeDiff = getTimeDiff({ startDate: new Date(), finishDate: new Date(tsTarget) })
+              if (timeDiff.isNegative) msgList.push(`🚨 Deadline failed ${getTimeAgo(tsTarget)}`)
+              else msgList.push(`Until deadline ${timeDiff.message}`)
+            }
             
             if (!!links && Array.isArray(links))
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)

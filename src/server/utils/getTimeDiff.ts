@@ -47,6 +47,7 @@ type TResult = {
   sec: number;
   ms: number;
   message: string;
+  isNegative: boolean;
 }
 
 export const getTimeDiff = ({
@@ -68,5 +69,6 @@ export const getTimeDiff = ({
     sec: diffData.seconds,
     ms: diffData.milliSeconds,
     message: diffData.diffStrCustom,
+    isNegative: diffMs < 0,
   }
 }

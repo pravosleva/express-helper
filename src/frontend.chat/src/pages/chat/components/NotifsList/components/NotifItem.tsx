@@ -18,6 +18,7 @@ import { CountdownRenderer } from './CountdownRenderer'
 import { scrollIntoView } from '~/utils/scrollTo'
 import styles from './NotifItem.module.scss'
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi'
+import { BiRefresh } from 'react-icons/bi'
 
 // const isDev = process.env.NODE_ENV === 'development'
 
@@ -30,10 +31,11 @@ type TProps = {
   onComplete?: ({ ts, text }: { ts: number, text: string }) => void
   original: TMessage
   onEdit?: (m: TMessage) => void
+  onRestore: (original: TMessage) => void
 }
 
-export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete, original, onEdit }: TProps) => {
-  const { userInfoProxy, sprintFeatureProxy, name } = useMainContext()
+export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete, original, onEdit, onRestore }: TProps) => {
+  const { userInfoProxy, sprintFeatureProxy, name, isAdmin } = useMainContext()
   const userInfoSnap = useSnapshot(userInfoProxy)
   // const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
   const isLogged = useMemo<boolean>(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
@@ -110,7 +112,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
               </div>)
             }
             {
-              isLogged && !!original?.assignedTo && Array.isArray(original.assignedTo) && original.assignedTo.length > 0 && (
+              isLogged && isMyMessage && (
                 <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
                   <IconButton
                     size='xs'
@@ -125,6 +127,28 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
                     }}
                   >
                     DEL
+                  </IconButton>
+                </Tooltip>
+              )
+            }
+            {
+              isLogged && isAdmin && !!original && (
+                <Tooltip label='Try to restore' aria-label='RESTORE'>
+                  <IconButton
+                    size='xs'
+                    aria-label="RESTORE"
+                    colorScheme='yellow'
+                    variant='solid'
+                    isRound
+                    icon={<BiRefresh size={15} />}
+                    onClick={() => {
+                      console.log(original)
+
+                      const isConfirmed = window.confirm('Sure?')
+                      if (isConfirmed) onRestore(original)
+                    }}
+                  >
+                    RESTORE
                   </IconButton>
                 </Tooltip>
               )

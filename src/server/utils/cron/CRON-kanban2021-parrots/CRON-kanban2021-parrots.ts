@@ -142,7 +142,7 @@ const baseFn = () => {
     return { key: entry[0], value: entry[1] };
   });
 
-  for(const sett of arr) {
+  for (const sett of arr) {
     const { value : { promise, cronSetting } } = sett
 
     cron.schedule(cronSetting, promise, {

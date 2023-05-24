@@ -48,7 +48,7 @@ import {
   TagLabel,
   Tag,
   Grid,
-  useToast, UseToastOptions, ButtonGroup, Tooltip, color,
+  useToast, UseToastOptions, Tooltip,
   // color
 } from '@chakra-ui/react'
 import { FiActivity, FiFilter, FiMenu } from 'react-icons/fi'
@@ -601,10 +601,37 @@ export const Chat = () => {
         setIsFileUploading(false)
         if (!!data?.message) setUploadErrorMsg(data.message)
       }
+      const restoreMessageListener = (data: { original: TMessage; ts: number }) => {
+        console.log('-- RESTORE (wip)')
+        console.log(data)
+        // if (!!data?.message) setUploadErrorMsg(data.message)
+
+        setMessages((ms: TMessage[]) => {
+          let prevMsgIndex = -1
+          const newArr = [...ms]
+
+          for (let i = 0, max = ms.length; i < max; i++) {
+            const { ts } = ms[i]
+            if (ts < data.original.ts) {
+              prevMsgIndex = i
+            } else break
+          }
+
+          if (prevMsgIndex !== -1) {
+            // NOTE: https://ru.stackoverflow.com/a/1051779/552549
+            newArr.splice(prevMsgIndex + 1, 0, data.original)
+          } else {
+            newArr.unshift(data.original)
+          }
+
+          return newArr
+        })
+      }
 
       socket.on('message', msgListener)
       socket.on('message.update', updMsgListener)
       socket.on('message.delete', delMsgListener)
+      socket.on('message.restore', restoreMessageListener)
       socket.on('notification', notifListener)
       socket.on('my.user-data', myUserDataListener)
       socket.on('FRONT:LOGOUT', logoutFromServerListener)
@@ -618,6 +645,7 @@ export const Chat = () => {
         socket.off('message', msgListener)
         socket.off('message.update', updMsgListener)
         socket.off('message.delete', delMsgListener)
+        socket.off('message.restore', restoreMessageListener)
         socket.off('notification', notifListener)
         socket.off('my.user-data', myUserDataListener)
         socket.off('FRONT:LOGOUT', logoutFromServerListener)
@@ -770,7 +798,6 @@ export const Chat = () => {
   const handleResetAssignmentFilters = useCallback(() => {
     setAssignmentExecutorsFilters([])
   }, [setAssignmentExecutorsFilters])
-
 
   const [isSending, setIsSending] = useState<boolean>(false)
   const handleSendMessage = useCallback(() => {
@@ -1075,6 +1102,33 @@ export const Chat = () => {
       }
     }
   }, [socket, toast, name, editedMessage])
+  const handleRestoreMessage = useCallback((original) => {
+    console.log('restore')
+    console.log(original)
+    if (!!socket) {
+      socket.emit('restoreMessage', { ts: original.ts, room: roomRef.current, name, original }, (errMsg?: string) => {
+        if (!!errMsg) {
+          toast({
+            position: 'top-left',
+            // title: 'Sorry',
+            description: errMsg,
+            status: 'error',
+            duration: 7000,
+            isClosable: true,
+            variant: 'solid',
+          })
+        } else toast({
+          position: 'top-left',
+          title: 'Ok',
+          status: 'info',
+          duration: 3000,
+        })
+      })
+    } else {
+      window.alert('Похоже, проблема с соединением')
+    }
+  }, [name, toast])
+
   const [isAddLinkFormOpened, setIsAddLnkFormOpened] = useState<boolean>(false)
   const openAddLinkForm = useCallback(() => {
     setIsAddLnkFormOpened(true)
@@ -1739,6 +1793,7 @@ export const Chat = () => {
             ),
           },
         ]}
+        onRestore={handleRestoreMessage}
       />
     )
   }, [

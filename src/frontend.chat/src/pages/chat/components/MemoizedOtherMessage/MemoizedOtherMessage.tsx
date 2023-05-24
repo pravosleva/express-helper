@@ -37,20 +37,21 @@ import { AssignedBox } from '~/pages/chat/components/AssignedBox'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import {
   // FaRegSmile,
-  FaPlus,
+  // FaPlus,
   FaCopy,
 } from 'react-icons/fa'
 import { IoMdClose } from 'react-icons/io'
 import { FiArrowRight } from 'react-icons/fi'
 import { BsFillCalendarFill } from 'react-icons/bs'
+import appStyles from '~/App.module.scss'
 
-const capitalizeFirstLetter = (str: string, limit?: number): string => {
-  const res = str.charAt(0).toUpperCase() + str.slice(1)
+// const capitalizeFirstLetter = (str: string, limit?: number): string => {
+//   const res = str.charAt(0).toUpperCase() + str.slice(1)
 
-  if (!!limit && res.length > limit) return `${res.substring(0, limit)}...`
+//   if (!!limit && res.length > limit) return `${res.substring(0, limit)}...`
 
-  return res
-}
+//   return res
+// }
 
 const bgColorsMap: { [key: string]: string } = {
   [EMessageStatus.Done]: 'var(--chakra-colors-gray-500)',
@@ -244,6 +245,9 @@ export const MemoizedOtherMessage = React.memo(({
                 mb={2}
                 key={`${link}-${i}`}
                 colorScheme='gray'
+                style={{
+                  maxWidth: '100%',
+                }}
               >
                 <CopyToClipboard
                   text={link}
@@ -271,8 +275,13 @@ export const MemoizedOtherMessage = React.memo(({
                   onClick={() => goToExternalLink(link)}
                   borderRadius='full'
                   title={descr}
+                  style={{
+                    // justifyContent: 'left',
+                    display: 'block',
+                  }}
+                  className={appStyles['truncate-overflow-single-line-exp']}
                 >
-                  {capitalizeFirstLetter(descr, 30)}
+                  {descr}
                 </Button>
                 {isMyMessage && (
                   <IconButton

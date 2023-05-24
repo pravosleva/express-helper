@@ -13,6 +13,7 @@
     "deploy2:smartprice": "yarn build:fresh-prod:smartprice && bash deploy2.prod.sh smartprice",
     "deploy2:prod:copy-chat-build": "bash src/set-front.chat-env.sh prod pravosleva && yarn --cwd src/frontend.chat build && bash deploy2.prod.chat.front.sh pravosleva",
     "deploy2:prod": "yarn build:fresh-prod:pravosleva && bash deploy2.prod.sh pravosleva",
+    "deploy2:prod:copy-server-build": "bash deploy2.prod.sh pravosleva",
     "dev:chat": "yarn build:fresh-dev:chat-only && bash run-dev.sh chat",
     "dev:signin": "bash run-dev.sh signin",
     "dev": "bash run-dev.sh",

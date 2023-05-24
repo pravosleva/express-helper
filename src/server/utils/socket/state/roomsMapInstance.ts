@@ -77,7 +77,7 @@ class Singleton {
 
     if (!roomData) return { result: [], errorMsg: `Condition: !roomData for ${room}`, nextTsPoint: 0, isDone: true }
 
-    const messagesLimit = 50
+    const messagesLimit = 100
     const _msgs = []
     const _specialMsgs = []
     const service: any = {}
@@ -386,6 +386,104 @@ class Singleton {
       isPrivateSocketCb = true
       errMsgData.description = !!err.message ? `ERR3: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error'
       errMsgData.title = 'SERVER #ERR3'
+      shouldLogout = true
+    }
+
+    return {
+      isOk,
+      errMsgData,
+      isPrivateSocketCb,
+      shouldLogout,
+      targetMessage,
+    }
+  }
+  public restoreMessage({ room, name, ts, original }: { room: string, name: string, ts: number, original: TMessage }) {
+    let roomData = this.state.get(room)
+    let isOk: boolean = false
+    const errMsgData: { title?: string, description?: string } = {
+      title: undefined,
+      description: undefined
+    }
+    let isPrivateSocketCb = false
+    let shouldLogout = false
+    let targetMessage
+
+    let prevMsgIndex = -1
+
+    try {
+      if (!roomData) {
+        isOk = false
+        isPrivateSocketCb = true
+        errMsgData.description = 'roomData not found'
+        errMsgData.title = 'SERVER ERR #1001'
+      } else {
+        const roomMessages: TMessage[] = roomData
+
+        const _theMessageIndex = binarySearchTsIndex({
+          messages: roomMessages,
+          targetTs: ts
+        })
+        if (_theMessageIndex !== -1) {
+          isOk = false
+          isPrivateSocketCb = true
+          errMsgData.description = ''
+          errMsgData.title = 'Already exists'
+          shouldLogout = false
+        } else {
+          if (!roomMessages) {
+            isOk = false
+            isPrivateSocketCb = true
+            errMsgData.description = `roomMessages is ${typeof roomMessages} not found`
+            errMsgData.title = 'SERVER ERR #1002'
+          } else {
+            // const theMessageIndex = binarySearchTsIndex({
+            //   messages: roomMessages,
+            //   targetTs: ts
+            // })
+  
+            // if (theMessageIndex === -1) {
+  
+            //   isOk = false
+            //   isPrivateSocketCb = true
+            //   errMsgData.description = `theMessage not found for ts ${ts} / room ${room}`
+            //   errMsgData.title = 'SERVER ERR #1003'
+            // } else {
+            //   const _targetMessage = roomMessages[theMessageIndex]
+            //   const newUserMessages = roomMessages.filter(({ ts: t }) => t !== ts)
+  
+            //   roomData = newUserMessages
+            //   this.state.set(room, roomData)
+            //   isOk = true
+            //   isPrivateSocketCb = false
+            //   targetMessage = _targetMessage
+            // }
+            for (let i = 0, max = roomMessages.length; i < max; i++) {
+              const { ts } = roomMessages[i]
+              if (ts < original.ts) {
+                prevMsgIndex = i
+              }
+            }
+  
+            if (prevMsgIndex !== -1) {
+              // NOTE: https://ru.stackoverflow.com/a/1051779/552549
+              roomMessages.splice(prevMsgIndex + 1, 0, { ...original, assignedBy: name })
+            } else {
+              roomMessages.unshift({ ...original, assignedBy: name })
+            }
+  
+            const _targetMessage = roomMessages[prevMsgIndex + 1]
+            this.state.set(room, roomMessages)
+            isOk = true
+            isPrivateSocketCb = false
+            targetMessage = _targetMessage
+          }
+        }
+      }
+    } catch (err) {
+      isOk = false
+      isPrivateSocketCb = true
+      errMsgData.description = !!err.message ? `ERR3: Попробуйте перезайти. Скорее всего, ошибка связана с Logout на одном из устройств; ${err.message}` : 'Server error'
+      errMsgData.title = 'SERVER ERR #1004'
       shouldLogout = true
     }
 
