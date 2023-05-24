@@ -218,14 +218,48 @@ class Logic {
   }
   getTags() {
     const abSort = (a, b) => a.localeCompare(b)
-    const latinAndCyrillicAndNumsRe = /[^a-zA-Za-åa-ö-w-я 0-9]/gi
-    const res = this.messages.reduce((acc, cur) => {
-      if (!cur.text) return acc
-      const words = cur.text.replace(/\n/g, ' ').split(' ').filter((w) => latinAndCyrillicAndNumsRe.test(w))
-      for (const word of words) if (!!word && word[0] === '#') acc.push(word)
-      return acc
-    }, [])
-    return [...new Set(res)].sort(abSort)
+
+    // NTOE: V1
+    // const latinAndCyrillicAndNumsRe = /[^a-zA-Za-åa-ö-w-я 0-9]/gi
+    // const res = this.messages.reduce((acc, cur) => {
+    //   if (!cur.text) return acc
+
+    //   const words = cur.text.replace(/\n/g, ' ').split(' ').filter((w) => latinAndCyrillicAndNumsRe.test(w))
+    //   for (const word of words) if (!!word && word[0] === '#') acc.push(word)
+      
+    //   return acc
+    // }, [])
+    // return [...new Set(res)].sort(abSort)
+
+    // NOTE: V2
+    const getTagList = ({
+      originalMsgList,
+    }) => {
+      const uniqueTagsMap = originalMsgList.reduce((obj, msg) => {
+        try {
+          for (const tag of msg.match(/#[a-zA-Z0-9]+/g) || []) {
+            if (!!tag && !obj[tag]) obj[tag] = true
+          }
+        } catch (err) {
+          console.groupCollapsed(`- getTagList err levl 1 (msg: ${msg})`)
+          console.warn(err)
+          console.log(msg)
+          console.log(typeof msg)
+          console.groupEnd()
+        }
+    
+        return obj
+      }, {});
+    
+      return Object.keys(uniqueTagsMap)
+    }
+    const res = getTagList({
+      originalMsgList: this.messages.map(({ text }) => text),
+    })
+
+    console.log(res)
+    
+    return res.sort(abSort)
   }
   _getItems({ statuses = this.possibleStatuses }) {
     const res = []

@@ -90,7 +90,7 @@
   },
   "dependencies": {
     "@googleapis/docs": "2.0.0",
-    "@socket.io/admin-ui": "^4.x",
+    "@socket.io/admin-ui": "^0.4.x",
     "animate.css": "^4.1.1",
     "axios": "^0.19.2",
     "bash-exec": "^1.0.3",
@@ -162,6 +162,7 @@
     "husky": "7.x",
     "jest": "^28.0.2",
     "lint-staged": "^10.2.11",
+    "perf_hooks": "^0.0.1",
     "prettier": "^2.0.5",
     "ts-jest": "^27.1.4",
     "typescript": "^4.2.3"
