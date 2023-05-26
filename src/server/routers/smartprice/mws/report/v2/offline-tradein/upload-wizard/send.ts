@@ -7,12 +7,14 @@ import axios from 'axios'
 // const isDev = process.env.NODE_ENV === 'development'
 // const isProd = process.env.NODE_ENV === 'production'
 
+const expectedPropsLenTotal: number = 10
+
 export const rules = {
   params: {
     body: {
       rowValues: {
         type: '(string | number)[]',
-        descr: 'Row values / props uiDate will be added by server',
+        descr: `${expectedPropsLenTotal} column values of row / + uiDate will be added by server`,
         required: true,
         validate: (val: any) => {
           const result: {
@@ -31,9 +33,10 @@ export const rules = {
               result.ok = false
               result.reason = 'Len is zero. Why?'
               break
-            case val.length != 6:
+            case val.length != expectedPropsLenTotal:
+              // NOTE: 10 column values of row / + 1 column value (uiDate for example: 2023-05-24T13:24:22.433Z -> A1)
               result.ok = false
-              result.reason = `Expected len should be 6, received: ${val.length} Why?`
+              result.reason = `Expected len should be ${expectedPropsLenTotal}, received: ${val.length} Why?`
               break
             default:
               break
