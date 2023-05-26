@@ -106,6 +106,17 @@
     max-width: 100%;
     width: 100%;
     overflow-x: hidden;
+    
+    @media (min-width: #{$sm + 1}px) {
+      max-height: calc(100vh - 69px - var(--chakra-sizes-1) - 50px - 80px);
+      min-height: calc(100vh - 69px - var(--chakra-sizes-1) - 50px - 80px);
+    }
+    @media (max-width: #{$sm}px) {
+      // NOTE: Full - header space - progress bar - bnts - textarea
+      max-height: calc(100dvh - 69px - var(--chakra-sizes-1) - 50px - 80px);
+      min-height: calc(100dvh - 69px - var(--chakra-sizes-1) - 50px - 80px);
+    }
+
     & > * {
       overflow-x: hidden;
       box-sizing: border-box;
