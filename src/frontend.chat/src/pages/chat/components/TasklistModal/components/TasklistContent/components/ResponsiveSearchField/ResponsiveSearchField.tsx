@@ -17,6 +17,7 @@ import { AiOutlinePlus } from 'react-icons/ai'
 import { useSocketContext } from '~/context/socketContext'
 import { useMainContext } from '~/context/mainContext'
 import { useCompare } from '~/common/hooks/useDeepEffect'
+import { getTagList } from '~/utils/strings-ops/getTagList'
 
 type TTask = {
   ts: number;
@@ -31,20 +32,24 @@ type TProps = {
   onClear: (e?: any) => void;
   isCreateNewDisabled: boolean
 }
-const getHashTags = (data: TTask[]) => {
-  const abSort = (a: string, b: string) => a.localeCompare(b)
-  const latinRe = /[^a-zA-Z]/gi
-  const cyrillicRe = /[^а-яА-Я]/gi
-  const numsRe = /[^0-9]/gi
-  const res = data.reduce((acc: string[], cur: TTask) => {
-    if (!cur.title) return acc
-    const words = cur.title.replace(/\n/g, ' ').split(' ').filter((w) => latinRe.test(w) || cyrillicRe.test(w) || numsRe.test(w))
-    for (const word of words) if (!!word && word[0] === '#') acc.push(word)
-    return acc
-  }, [])
-  return [...new Set(res)].sort(abSort)
-}
+// const getHashTags = (data: TTask[]) => {
+//   const abSort = (a: string, b: string) => a.localeCompare(b)
+//   const latinRe = /[^a-zA-Z]/gi
+//   const cyrillicRe = /[^а-яА-Я]/gi
+//   const numsRe = /[^0-9]/gi
+//   const res = data.reduce((acc: string[], cur: TTask) => {
+//     if (!cur.title) return acc
+//     const words = cur.title.replace(/\n/g, ' ').split(' ').filter((w) => latinRe.test(w) || cyrillicRe.test(w) || numsRe.test(w))
+//     for (const word of words) if (!!word && word[0] === '#') acc.push(word)
+//     return acc
+//   }, [])
 
+//   // TODO: a-zA-Zа-яА-Я0-9
+
+//   return [...new Set(res)].sort(abSort)
+// }
+
+const defaultTagsLimit: number = 5
 export const ResponsiveSearchField = ({
   data,
   initialState,
@@ -52,7 +57,19 @@ export const ResponsiveSearchField = ({
   onClear,
   isCreateNewDisabled,
 }: TProps) => {
-  const tagList = useMemo<string[]>(() => getHashTags(data), [useCompare(data)])
+  // const tagList = useMemo<string[]>(() => getHashTags(data), [useCompare(data)])
+  const tagList: string[] = useMemo(() => getTagList({
+    originalMsgList: data.map(({ title }) => title)
+  }).sortedList, [useCompare(data)])
+  const extendetTagsInfo: {
+    [key: string]: {
+      name: string;
+      counter: number;
+    }
+  } = useMemo(() => getTagList({
+    originalMsgList: data.map(({ title }) => title)
+  }).extended, [useCompare(data)])
+  const [isShowMoreEnabled, setIsShowMoreEnabled] = useState(false)
   const [enabledTags, setEnabledTags] = useState<string[]>([])
   const enabledTagsRef = useRef<Set<string>>(new Set())
 
@@ -174,29 +191,66 @@ export const ResponsiveSearchField = ({
               flexWrap: 'wrap',
               gap: 'var(--chakra-space-2)',
               marginTop: 'var(--chakra-space-2)',
-              maxHeight: '100px',
+              maxHeight: '105px',
               overflowY: 'auto',
             }}
           >
-            {tagList.map((tag) => {
+            {tagList.map((tag, i) => {
               const isEnabled = checkIsTagEnabled(tag)
+              const isHidden = isShowMoreEnabled ? false : i > defaultTagsLimit - 1
+              if (isHidden) return null
               return (
                 <Button
                   key={`${tag}_${String(isEnabled)}`}
                   size='md'
                   colorScheme={isEnabled ? 'blue' : 'gray'}
-                  variant={isEnabled ? 'solid' : 'outline'}
+                  variant={isEnabled ? 'solid' : 'ghost'}
                   // leftIcon={<FcGallery color='#FFF' size={18} />}
                   onClick={() => {
                     toggleTag(tag)
                   }}
                   // mr={2}
                   rounded='3xl'
+                  rightIcon={<div style={{
+                    border: 'var(--chakra-borders-2px) var(--chakra-colors-red-600)',
+                    padding: 'var(--chakra-space-1)',
+                    minWidth: 'var(--chakra-space-8)',
+                    borderRadius: 'var(--chakra-radii-2xl)',
+                  }}>{extendetTagsInfo[tag].counter}</div>}
                 >
                   {tag}
                 </Button>
               )
             })}
+            {!isShowMoreEnabled ? (
+              <Button
+                size='md'
+                colorScheme='gray'
+                variant='outline' 
+                // leftIcon={<FcGallery color='#FFF' size={18} />}
+                onClick={() => {
+                  setIsShowMoreEnabled(true)
+                }}
+                // mr={2}
+                rounded='3xl'
+              >
+                Show more
+              </Button>
+            ) : (
+              <Button
+                size='md'
+                colorScheme='gray'
+                variant='outline' 
+                // leftIcon={<FcGallery color='#FFF' size={18} />}
+                onClick={() => {
+                  setIsShowMoreEnabled(false)
+                }}
+                // mr={2}
+                rounded='3xl'
+              >
+                Collapse
+              </Button>
+            )}
           </div>
         )
       }

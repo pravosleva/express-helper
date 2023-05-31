@@ -237,7 +237,7 @@ class Logic {
     }) => {
       const uniqueTagsMap = originalMsgList.reduce((obj, msg) => {
         try {
-          for (const tag of msg.match(/#[a-zA-Z0-9]+/g) || []) {
+          for (const tag of msg.match(/#[a-zA-Zа-яА-Я0-9]+/g) || []) {
             if (!!tag && !obj[tag]) obj[tag] = true
           }
         } catch (err) {
@@ -257,7 +257,7 @@ class Logic {
       originalMsgList: this.messages.map(({ text }) => text),
     })
 
-    console.log(res)
+    // console.log(res)
     
     return res.sort(abSort)
   }
