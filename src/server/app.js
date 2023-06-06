@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import cors from 'cors'
 import siofu from 'socketio-file-upload'
+import serverTiming from 'server-timing'
 import authRouter from './routers/auth'
 import chatRouter from './routers/chat'
 // import chatLogin from './routers/chat-login'
@@ -38,6 +39,12 @@ const IS_REGULAR_REQUESTER_ENABLED = process.env.IS_REGULAR_REQUESTER_ENABLED ==
 if (IS_REGULAR_REQUESTER_ENABLED) require('~/utils/cron/CRON-requester-runner')
 // ---
 
+app.use(
+  serverTiming({
+    // Only send metrics if query parameter `debug` is set to `true`
+    // enabled: (req, res) => req.query.debug === 'true'
+  })
+)
 app.use(cors())
 app.use(addRequestId) // NOTE: New additional field req.id
 app.use(logger('dev'))

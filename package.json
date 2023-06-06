@@ -127,6 +127,7 @@
     "plural-ru": "^2.0.2",
     "qrcode": "^1.4.4",
     "request": "^2.88.2",
+    "server-timing": "^3.3.3",
     "shelljs": "^0.8.4",
     "slugify": "^1.6.3",
     "socket.io": "^4.2.0",

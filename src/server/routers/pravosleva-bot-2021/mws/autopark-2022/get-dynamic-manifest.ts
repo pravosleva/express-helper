@@ -19,6 +19,8 @@ const _help: THelp = {
   },
 }
 
+const baseUrl = 'https://pravosleva.ru/express-helper'
+
 export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse) => {
   const errs: string[] = []
 
@@ -46,7 +48,7 @@ export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFi
       "display": "fullscreen",
       "orientation": "portrait",
       "scope": "/",
-      "start_url": "/",
+      "start_url": `${baseUrl}/`,
       "icons": [
         {
           "src": "icons/icon-72x72.png",
@@ -91,7 +93,7 @@ export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFi
       ],
       "splash_pages": null
     }
-    manifest.start_url = `/autopark-2022/${chat_id}`
+    manifest.start_url = `${baseUrl}/autopark-2022/${chat_id}`
     if (!!project_id) manifest.start_url += `/${project_id}`
     return res.status(200).send(JSON.stringify(manifest))
   } catch (err) {

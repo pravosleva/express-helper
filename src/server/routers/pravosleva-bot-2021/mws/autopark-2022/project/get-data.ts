@@ -36,7 +36,9 @@ export const getAutoparkProject = async (req: IRequest & { autopark2022StorageFi
 
   if (!!req.autopark2022StorageFilePath) {
     try {
+      res.startTime('read_storage_file_sync', req.autopark2022StorageFilePath)
       const staticData: TStaticData = getStaticJSONSync(req.autopark2022StorageFilePath)
+      res.endTime('read_storage_file_sync')
 
       if (!staticData[chat_id]) {
         return res.status(200).json({ ok: false, code: EAPIUserCode.NotFound })
