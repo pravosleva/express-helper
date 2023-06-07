@@ -7,7 +7,7 @@ import axios from 'axios'
 // const isDev = process.env.NODE_ENV === 'development'
 // const isProd = process.env.NODE_ENV === 'production'
 
-const expectedPropsLenTotal: number = 10
+const expectedPropsLenTotal: number = 12
 
 export const rules = {
   params: {
