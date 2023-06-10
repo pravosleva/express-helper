@@ -28,6 +28,7 @@ import { crmUsers, crmUsersMe } from './mws/api/crm/users'
 import { crmProductsIdIndex, crmProductsIDNextStates } from './mws/api/crm/crmproducts/[id]'
 import { crmPriceMultipliersFlags } from './mws/api/crm/pricemultipliers'
 import { crmHistoryTradeinId, crmHistoryProductId } from './mws/api/crm/history'
+import { crmBanners } from './mws/api/crm/banners'
 import { analyticsEvent } from './mws/api/analytics/event'
 
 import md5Make from './mws/md5/make'
@@ -126,6 +127,7 @@ spApi.get('/api/crm/pricemultipliers/flags', jsonParser, crmPriceMultipliersFlag
 spApi.get('/api/crm/history/tradein/:tradeinId', jsonParser, crmHistoryTradeinId)
 spApi.get('/api/crm/history/product/:productId', jsonParser, crmHistoryProductId)
 spApi.post('/api/analytics/event', jsonParser, analyticsEvent)
+spApi.post('/api/crm/banners', jsonParser, crmBanners)
 
 // 2. SSR: fe API imitation (не совсем понятно, почему Гена так называет часть запросов из клиента)
 spApi.get('/fapi/get-catalog-data', catalogDataRoute)
