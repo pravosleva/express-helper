@@ -41,7 +41,14 @@ module.exports = async (req, res) => {
   const base = toClient[randIndex]
   const response = {
     ...base,
-    _original: { body: req.body, fields: req.fields },
+    _service: {
+      req: {
+        params: req.params,
+        query: req.query,
+        body: req.body,
+        fields: req.fields,
+      },
+    },
   }
 
   await delay(3000)

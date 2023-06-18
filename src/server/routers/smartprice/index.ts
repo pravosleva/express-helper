@@ -26,9 +26,10 @@ import { crmProductVariantsIndex, crmProductVariantsAllParams, crmReadyForSellin
 import { crmServiceCenters } from './mws/api/crm/service-centers'
 import { crmUsers, crmUsersMe } from './mws/api/crm/users'
 import { crmProductsIdIndex, crmProductsIDNextStates } from './mws/api/crm/crmproducts/[id]'
+import { crmProductsIndexGet } from './mws/api/crm/crmproducts'
 import { crmPriceMultipliersFlags } from './mws/api/crm/pricemultipliers'
 import { crmHistoryTradeinId, crmHistoryProductId } from './mws/api/crm/history'
-import { crmBanners } from './mws/api/crm/banners'
+import { crmBannersGET, crmBannersPOST, crmAddBanner, crmDeleteBanner } from './mws/api/crm/banners'
 import { analyticsEvent } from './mws/api/analytics/event'
 
 import md5Make from './mws/md5/make'
@@ -120,14 +121,18 @@ spApi.get('/api/crm/productvariants/ready_for_selling', jsonParser, crmReadyForS
 spApi.get('/api/crm/service-centers', jsonParser, crmServiceCenters)
 spApi.get('/api/crm/users', jsonParser, crmUsers)
 spApi.post('/api/crm/users/me', jsonParser, crmUsersMe)
-spApi.get('/api/crm/crmproducts/:productId/', jsonParser, crmProductsIdIndex)
-// spApi.patch('/api/crm/crmproducts/:productId/', jsonParser, crmProductsIdIndex)
-spApi.get('/api/crm/crmproducts/:productId/next_states/', jsonParser, crmProductsIDNextStates)
+spApi.get('/api/crm/crmproducts', jsonParser, crmProductsIndexGet)
+spApi.get('/api/crm/crmproducts/:productId', jsonParser, crmProductsIdIndex)
+// spApi.patch('/api/crm/crmproducts/:productId', jsonParser, crmProductsIdIndex)
+spApi.get('/api/crm/crmproducts/:productId/next_states', jsonParser, crmProductsIDNextStates)
 spApi.get('/api/crm/pricemultipliers/flags', jsonParser, crmPriceMultipliersFlags)
 spApi.get('/api/crm/history/tradein/:tradeinId', jsonParser, crmHistoryTradeinId)
 spApi.get('/api/crm/history/product/:productId', jsonParser, crmHistoryProductId)
 spApi.post('/api/analytics/event', jsonParser, analyticsEvent)
-spApi.post('/api/crm/banners', jsonParser, crmBanners)
+spApi.get('/api/crm/banners', crmBannersGET)
+spApi.post('/api/crm/banners', jsonParser, crmBannersPOST)
+spApi.post('/api/crm/banners/:type', jsonParser, crmAddBanner)
+spApi.post('/api/crm/banners/:type/delete', jsonParser, crmDeleteBanner)
 
 // 2. SSR: fe API imitation (не совсем понятно, почему Гена так называет часть запросов из клиента)
 spApi.get('/fapi/get-catalog-data', catalogDataRoute)

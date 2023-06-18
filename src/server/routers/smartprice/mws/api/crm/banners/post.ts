@@ -8,7 +8,7 @@ const isBodyValid = (body): boolean => {
   return result
 }
 
-export const crmBanners = async (req, res) => {
+export const crmBannersPOST = async (req, res) => {
   res.append('Content-Type', 'application/json')
 
   const { body } = req
@@ -16,12 +16,24 @@ export const crmBanners = async (req, res) => {
   if (!isBodyValid(body)) return res.status(400).send({
     ok: false,
     message: 'Invalid body',
+    _service: {
+      req: {
+        params: req.params,
+        query: req.query,
+      },
+    },
   })
 
   await delay(1000)
 
   return res.status(200).send({
     ok: true,
-    message: 'TODO: Выяснить формат ответа',
+    message: 'TODO: Нет нормального формата ответа',
+    _service: {
+      req: {
+        params: req.params,
+        query: req.query,
+      },
+    },
   })
 }

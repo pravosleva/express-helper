@@ -1,0 +1,80 @@
+{
+	"sale": {
+		"413": {
+			"id": 413,
+			"type": "sale",
+			"position": 7,
+			"color1": "FFFFFF",
+			"color2": "FFFFFF",
+			"url": "https://smartprice.ru/sale/",
+			"file_mobile": "https://ringeo.ru/filestorage/5dbeafa4c8cdf8535b75320c66d29b33/3097670/1686419235/3600",
+			"file_desktop": "https://ringeo.ru/filestorage/75540ffe1c376519337859b60f4acf08/3097669/1686419235/3600"
+		},
+		"572": {
+			"id": 572,
+			"type": "sale",
+			"position": 6,
+			"color1": "e8fda8",
+			"color2": "e8fda8",
+			"url": "https://smartprice.ru/catalog?page=1&sort=price%3Adesc&stock=true&sale=true&condition=works",
+			"file_mobile": "https://ringeo.ru/filestorage/925a9fa38aaf28dd7adc1392dc8c4ca9/3387032/1686419235/3600",
+			"file_desktop": "https://ringeo.ru/filestorage/b3a68081af3ecfb34bc2c4a877d9fea4/3387031/1686419235/3600"
+		}
+	},
+	"index": {
+		"411": {
+			"id": 411,
+			"type": "index",
+			"position": 2,
+			"color1": "FFFFFF",
+			"color2": "FFFFFF",
+			"url": "https://smartprice.ru/",
+			"file_mobile": "https://ringeo.ru/filestorage/cba7e40361420551d1990fef1ffba2e0/3097663/1686419235/3600",
+			"file_desktop": "https://ringeo.ru/filestorage/789d3385353bce79e17e896a5b36e6a0/3097662/1686419235/3600"
+		},
+		"570": {
+			"id": 570,
+			"type": "index",
+			"position": 1,
+			"color1": "e8fda8",
+			"color2": "e8fda8",
+			"url": "https://smartprice.ru/",
+			"file_mobile": "https://ringeo.ru/filestorage/15a28cc0d86e6823d83ea9aae3bb4a43/3387028/1686419235/3600",
+			"file_desktop": "https://ringeo.ru/filestorage/7becd2051233a5021fd60c89e0b06f59/3387027/1686419235/3600"
+		}
+	},
+	"product_page": {
+		"437": {
+			"id": 437,
+			"type": "product_page",
+			"position": 3,
+			"color1": "accc00",
+			"color2": "accc00",
+			"url": "https://smartprice.ru/catalog?page=1&sort=price%3Aasc&stock=true&sale=true",
+			"file_mobile": "https://ringeo.ru/filestorage/aff58903f5f91949abcd7151109cf04e/3143076/1686419235/3600",
+			"file_desktop": "https://ringeo.ru/filestorage/6ad1687adb1c64b2a72902b915c0552e/3143075/1686419235/3600"
+		}
+	},
+	"catalog": {
+		"412": {
+			"id": 412,
+			"type": "catalog",
+			"position": 5,
+			"color1": "FFFFFF",
+			"color2": "FFFFFF",
+			"url": "https://smartprice.ru/catalog?page=1&sort=price%3Adesc&stock=true",
+			"file_mobile": "https://ringeo.ru/filestorage/1226fe202b57505c79adf89b6df54674/3097667/1686419235/3600",
+			"file_desktop": "https://ringeo.ru/filestorage/d59ac3fa82c54c65406ee659f777dc21/3097666/1686419235/3600"
+		},
+		"571": {
+			"id": 571,
+			"type": "catalog",
+			"position": 4,
+			"color1": "e8fda8",
+			"color2": "e8fda8",
+			"url": "https://smartprice.ru/catalog?page=1&sort=price%3Adesc&stock=true",
+			"file_mobile": "https://ringeo.ru/filestorage/f540f766d4f5d04e9ab0227d09c18100/3387030/1686419235/3600",
+			"file_desktop": "https://ringeo.ru/filestorage/2af25026b43d8827808414dccedb59ca/3387029/1686419235/3600"
+		}
+	}
+}
