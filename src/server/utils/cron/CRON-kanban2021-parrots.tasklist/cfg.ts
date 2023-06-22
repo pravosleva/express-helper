@@ -45,7 +45,8 @@ export const cfg: TCfg = [
         finishDate: new Date(timeEnd)
       })
 
-      const isCorrect = !!checkTs && isCompleted && isLooped && diff.d <= 30
+      const daysRangeHalf = 30
+      const isCorrect = !!checkTs && isCompleted && isLooped && diff.d <= daysRangeHalf
 
       // if (isCorrect) {
       //   console.log(task)
@@ -85,7 +86,7 @@ export const cfg: TCfg = [
           targetHashtags,
           targetRooms,
         }) => {
-          return `В ближайшей перспективе (30 дней) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задач', '%d задач')}${targetHashtags.length > 0 ? ` *${targetHashtags.join(' ')}*` : ''}`
+          return `В ближайшей перспективе (30 дней) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задач', '%d задач')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           tasks,
