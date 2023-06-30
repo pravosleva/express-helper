@@ -1,7 +1,7 @@
 // @ts-ignore
 // import { getRandomInteger } from '~/utils/getRandomInteger'
 import { THelp } from '~/utils/interfaces'
-import kzSuccess2022 from './fake-data/kz-2022.0.imei.json'
+import kzSuccess2022 from './fake-data/kz-2023.0-dev-exp.imei.json'
 
 // const { SUCCESS_ANYWAY } = process.env
 
