@@ -62,11 +62,16 @@ export default async (req, res) => {
   const { _odd_scenario, _add_data } = req.body
 
   const result: any = {
-    _originalBody: req.body,
     // Default:
     ok: false,
     status: EStatus.NOT_CHECKED,
     started: false,
+
+    _service: {
+      req: {
+        body: req.body,
+      },
+    },
   }
 
   try {
@@ -228,10 +233,8 @@ export default async (req, res) => {
 
       if (result.status === EStatus.OK) responseScenarioMap.delete(_odd_scenario.uniquePollingKey)
 
-      result._service = {
-        responseScenarioMap: {
-          size: responseScenarioMap.size
-        }
+      result._service.responseScenarioMapDetails = {
+        size: responseScenarioMap.size
       }
 
       if (!!_add_data) Object.keys(_add_data).map((key) => {

@@ -28,6 +28,24 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   const ts = date.getTime()
   const uiDate = date.toJSON()
 
+  // -- NOTE: Modify rowValues
+  const { partnerSettingsAnalysis } = req.smartprice
+  let jsonStringifiedModified: any
+  if (!!partnerSettingsAnalysis) {
+    try {
+      const json = JSON.parse(rowValues[5])
+      if (!partnerSettingsAnalysis.ok && !!partnerSettingsAnalysis.diffs) json.partnerSettingsAnalysis = partnerSettingsAnalysis
+
+      jsonStringifiedModified = JSON.stringify(json)
+      // NOTE: Replace jsonStringified
+      rowValues[5] = jsonStringifiedModified
+    } catch (err) {
+      // jsonStringifiedModified = ''
+      // NOTE: Nothing...
+    }
+  }
+  // --
+
   let gRes: any
   try {
     gRes = await googleSheets.spreadsheets.values.append({
@@ -135,6 +153,10 @@ export const spRetranslateToUploadWizardMW = async (req: TSPRequest, _res: IResp
       'accept_ok',
       'bought_device_err',
       'bought_device_ok',
+      'kz2023_bought_device_err',
+      'kz2023_bought_device_err_1',
+      'kz2023_bought_device_err_2',
+      'kz2023_bought_device_ok',
     ]
 
     if (!!rowValues[0] && allowableEventCodes.includes(rowValues[0])) {
@@ -158,7 +180,7 @@ export const spRetranslateToUploadWizardMW = async (req: TSPRequest, _res: IResp
       // NOTE: Try to extract additional data
       let _tradeinIdExtracted = ''
       let _partnerNameExtracted = ''
-      let _resExtracted = ''
+      let _resExtracted: any = ''
       let _serviceErrMsg = ''
       let _csrfTokenExtracted = ''
       try {
@@ -166,6 +188,16 @@ export const spRetranslateToUploadWizardMW = async (req: TSPRequest, _res: IResp
         if (!!json.tradeinId) _tradeinIdExtracted = json.tradeinId
         if (!!json.partnerName) _partnerNameExtracted = json.partnerName
         if (!!json.res) _resExtracted = json.res
+        if (!!req.smartprice.partnerSettingsAnalysis) {
+          if (!!_resExtracted) _resExtracted._about = {
+            partnerSettingsAnalysis: req.smartprice.partnerSettingsAnalysis,
+          }
+          else _resExtracted = {
+            _about: {
+              partnerSettingsAnalysis: req.smartprice.partnerSettingsAnalysis,
+            },
+          }
+        }
         if (!!json.csrfToken) _csrfTokenExtracted = json.csrfToken
       } catch (err) {
         _serviceErrMsg = err?.message || `ERR: Неизвестная ошибка при попытке распарсить: ${rowValues[5]} (${typeof rowValues[5]})`
@@ -197,8 +229,8 @@ export const spRetranslateToUploadWizardMW = async (req: TSPRequest, _res: IResp
         })
 
         // NOTE: JSON for example
-        // "{\"tradeinId\":115362,\"partnerName\":\"postman\",\"csrfToken\":\"9Ash2IHLTmS0TTlLrbv4RRMuoElsoIF6l8tleTl3iRq2esxwdQXapqXcXYm9iZff\",\"res\":\"test\"}"
-        // "{\"tradeinId\":115362,\"partnerName\":\"postman\",\"csrfToken\":\"abc123\",\"res\":{\"ok\":true,\"message\":\"Это сообщение придет, когда фронт в основном интерфейсе узнает об изменении статуса на ok, bad_quality, fake\"}}"
+        // "{\"tradeinId\":100002,\"partnerName\":\"postman\",\"csrfToken\":\"9Ash2IHLTmS0TTlLrbv4RRMuoElsoIF6l8tleTl3iRq2esxwdQXapqXcXYm9iZff\",\"res\":\"test\"}"
+        // "{\"tradeinId\":100002,\"partnerName\":\"postman\",\"csrfToken\":\"abc123\",\"res\":{\"ok\":true,\"message\":\"Это сообщение придет, когда фронт в основном интерфейсе узнает об изменении статуса на ok, bad_quality, fake\"}}"
       } catch (err) {
         console.log(err)
       } finally {

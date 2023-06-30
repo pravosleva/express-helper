@@ -26,6 +26,7 @@ import { withReqParamsValidationMW } from '~/utils/express-validation/withReqPar
 
 import fs from 'fs'
 import path from 'path'
+import { partnerSettings } from '~/routers/smartprice/utils/offline-tradein/partnerSettings'
 
 const projectRootDir = path.join(__dirname, '../../../../../../')
 if (!fs.existsSync(path.join(projectRootDir, 'server-dist/routers/smartprice/mws/report/v2/credentials_console.cloud.google.com.json'))) {
@@ -51,6 +52,23 @@ const spGoogleSheetsAuth = (req, res, next) => {
 }
 
 router.use(spGoogleSheetsAuth)
+
+// -- NOTE: Offline Trade-In partner Django template settings analysis
+const spOfflineTradeInPartnerSettingsAnalysis = (req, res, next) => {
+  if (!!req.body) {
+    const { _partnerSettingsDebug } = req.body
+
+    if (!!_partnerSettingsDebug) {
+      req.smartprice.partnerSettingsAnalysis = partnerSettings.getAnalysis({
+        namespace: _partnerSettingsDebug.namespace,
+        testedSettings: _partnerSettingsDebug.testedSettings,
+      })
+    }
+  }
+  next()
+}
+router.use(spOfflineTradeInPartnerSettingsAnalysis)
+// --
 
 // TG notifs service
 router.post('/run-tg-extra-notifs', runTGExtraNotifs)

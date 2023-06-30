@@ -15,6 +15,19 @@ export type TSPRequest = IRequest & {
       rowValues?: any[];
       resultId?: number;
       ts?: number;
+    };
+    partnerSettingsAnalysis?: {
+      ok: boolean;
+      diffs?: {
+        [key: string]: any;
+      };
+      details?: {
+        [key: string]: any;
+      };
+      expected?: {
+        [key: string]: any;
+      };
+      message?: string;
     }
   };
 }
