@@ -3,13 +3,54 @@ import { Response as IResponse } from 'express'
 import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 
+const expectedPropsLenTotal = 13
+const userAgentIgnoreList = ['Python/3.8 aiohttp/3.8.1']
+
+export const rules = {
+  params: {
+    body: {
+      rowValues: {
+        type: '(string | number)[]',
+        descr: 'Значения столбцов в таблице',
+        required: true,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+          
+          switch (true) {
+            case !Array.isArray(val):
+              result.ok = false
+              result.reason = 'req.body.rowValues should be array! (в этом случае uiData добавляет отправитель)'
+              break
+            case val.length === 0:
+              result.ok = false
+              result.reason = 'Len is zero (why?)'
+              break
+            case val.length !== expectedPropsLenTotal:
+              result.ok = false
+              result.reason = `Expected len should be ${expectedPropsLenTotal}. Received: ${val.length} (why?)`
+              break
+            // NOTE: Check user-agent value in event
+            case userAgentIgnoreList.includes(val[12]):
+              result.ok = false
+              result.reason = `user-agent (req.body.rowValues[12]) exists in ignore list. Received: ${val[12]}`
+              break
+            default:
+              break
+          }
+          return result
+        }
+      }
+    }
+  }
+}
+
 export const sendReport = async (req: TSPRequest, res: IResponse) => {
   const { rowValues } = req.body
-
-  if (!rowValues || !Array.isArray(rowValues)) return res.status(400).send({
-    ok: false,
-    message: `req.rowValues is ${typeof rowValues}; Should be array`
-  })
 
   let auth: any
   try {
@@ -63,10 +104,9 @@ export const sendReport = async (req: TSPRequest, res: IResponse) => {
       },
     })
   } catch (err) {
-    console.log(err)
     return res.status(500).send({
       ok: false,
-      message: err.message || 'No err.message'
+      message: `By Google: ${err.message || 'No err.message'}`
     })
   }
 

@@ -1,5 +1,5 @@
 import express from 'express'
-import { sendReport as sendSsrRdErrorGoogleSheetsReport } from './ssr/rd-errs/send'
+import { sendReport as sendSsrRdErrorGoogleSheetsReport, rules as ssrRdErrorGoogleSheetsReportRules } from './ssr/rd-errs/send'
 import {
   sendReport as sendOfflineTradeInUploadPhotoGoogleSheetsReport,
   spNotifyMW as spOfflineTradeInTelegramNotifyMW,
@@ -75,7 +75,13 @@ router.post('/run-tg-extra-notifs', runTGExtraNotifs)
 
 // SSR
 router.post('/gapi-rd-errors/send', sendSsrRdErrorGoogleSheetsReport) // Deprecated
-router.post('/ssr/rd-errs/send', sendSsrRdErrorGoogleSheetsReport)
+router.post(
+  '/ssr/rd-errs/send',
+  withReqParamsValidationMW({
+    rules: ssrRdErrorGoogleSheetsReportRules,
+  }),
+  sendSsrRdErrorGoogleSheetsReport,
+  )
 
 // OFFLINE TRADE-IN
 router.post(
