@@ -2,6 +2,7 @@ import { Response as IResponse } from 'express'
 // @ts-ignore
 import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
+import { TValidationResult } from '~/utils/express-validation'
 
 const expectedPropsLenTotal = 13
 const userAgentIgnoreList = ['Python/3.8 aiohttp/3.8.1']
@@ -11,13 +12,10 @@ export const rules = {
     body: {
       rowValues: {
         type: '(string | number)[]',
-        descr: 'Значения столбцов в таблице',
+        descr: 'Значения столбцов в новой строке таблицы',
         required: true,
         validate: (val: any) => {
-          const result: {
-            ok: boolean;
-            reason?: string;
-          } = {
+          const result: TValidationResult = {
             ok: true,
           }
           
@@ -42,6 +40,9 @@ export const rules = {
             default:
               break
           }
+          result._reponseDetails = {
+            status: 200,
+          }
           return result
         }
       }
@@ -57,7 +58,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse) => {
     auth = req.smartprice.googleSheetsAuth
   } catch (err) {
     console.log(err)
-    return res.status(500).send({
+    return res.status(200).send({
       ok: false,
       message: err.message || 'No err.message'
     })
@@ -104,7 +105,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse) => {
       },
     })
   } catch (err) {
-    return res.status(500).send({
+    return res.status(200).send({
       ok: false,
       message: `By Google: ${err.message || 'No err.message'}`
     })

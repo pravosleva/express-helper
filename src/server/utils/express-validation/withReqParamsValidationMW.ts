@@ -21,22 +21,22 @@ export const withReqParamsValidationMW =
         case 'query':
           for (const key in rules.params[reqProp]) {
             if (rules.params[reqProp][key]?.required && !req[reqProp][key]) {
-              const validationReult = rules.params[reqProp][key]?.validate(req[reqProp][key])
+              const validationResult = rules.params[reqProp][key]?.validate(req[reqProp][key])
               const errOpts: any = {
-                msg: `Missing required param: \`req.${reqProp}.${key}\` (${rules.params[reqProp][key].type}: ${rules.params[reqProp][key].descr})${!!validationReult.reason ? ` ⚠️ by developer: ${validationReult.reason}` : ''}`
+                msg: `Missing required param: \`req.${reqProp}.${key}\` (${rules.params[reqProp][key].type}: ${rules.params[reqProp][key].descr})${!!validationResult.reason ? ` | ⚠️ By developer: ${validationResult.reason}` : ''}`
               }
               
-              if (!!validationReult._reponseDetails)
-                errOpts._reponseDetails = validationReult._reponseDetails
+              if (!!validationResult._reponseDetails)
+                errOpts._reponseDetails = validationResult._reponseDetails
 
               errs.push(errOpts)
             } else {
               // -- NOTE: Если имеется необязательный параметр, проверим его
               if (!!req[reqProp][key]) {
                 try {
-                  const validationReult = rules.params[reqProp][key]?.validate(req[reqProp][key])
+                  const validationResult = rules.params[reqProp][key]?.validate(req[reqProp][key])
   
-                  if (!validationReult.ok) {
+                  if (!validationResult.ok) {
                     const errOpts: {
                       msg: string;
                       _reponseDetails?: {
@@ -44,10 +44,10 @@ export const withReqParamsValidationMW =
                         [key: string]: any;
                       }
                     } = {
-                      msg: `Incorrect request param format: \`req.${reqProp}.${key}\` (${rules.params[reqProp][key].descr}) expected: ${rules.params[reqProp][key].type}, received: ${typeof req[reqProp][key]}${!!validationReult.reason ? ` ⚠️ by developer: ${validationReult.reason}` : ''}`,
+                      msg: `Incorrect request param format: \`req.${reqProp}.${key}\` (${rules.params[reqProp][key].descr}) expected: ${rules.params[reqProp][key].type}. Received: ${typeof req[reqProp][key]}${!!validationResult.reason ? ` | ⚠️ By developer: ${validationResult.reason}` : ''}`,
                     }
-                    if (!!validationReult._reponseDetails)
-                      errOpts._reponseDetails = validationReult._reponseDetails
+                    if (!!validationResult._reponseDetails)
+                      errOpts._reponseDetails = validationResult._reponseDetails
   
                     errs.push(errOpts)
                   }
