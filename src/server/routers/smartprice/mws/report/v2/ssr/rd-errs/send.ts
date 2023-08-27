@@ -5,7 +5,14 @@ import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v
 import { TValidationResult } from '~/utils/express-validation'
 
 const expectedPropsLenTotal = 13
-const userAgentIgnoreList = ['Python/3.8 aiohttp/3.8.1']
+
+const userAgentIgnoreList = [
+  'Python/3.8 aiohttp/3.8.1', // NOTE: Предположительно, чей-то скрипт
+  'Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/)', // NOTE: Majestic; https://www.mj12bot.com/
+]
+
+// TODO:
+// const userAgentIgnoreContract = /^(MJ12bot).|Mozilla\/5.0 (compatible; MJ12bot\/v1.4.8; http:\/\/mj12bot.com\/)|Python\/3.8 aiohttp\/3.8.1/;
 
 export const rules = {
   params: {
@@ -26,7 +33,7 @@ export const rules = {
               break
             case val.length === 0:
               result.ok = false
-              result.reason = 'Len is zero (why?)'
+              result.reason = 'req.body.rowValues.length is zero (why?)'
               break
             case val.length !== expectedPropsLenTotal:
               result.ok = false
