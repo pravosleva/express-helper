@@ -9,6 +9,7 @@ const expectedPropsLenTotal = 13
 const userAgentIgnoreList = [
   'Python/3.8 aiohttp/3.8.1', // NOTE: Предположительно, чей-то скрипт
   'Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/)', // NOTE: Majestic; https://www.mj12bot.com/
+  'Mozilla/5.0 (compatible; DotBot/1.2; +https://opensiteexplorer.org/dotbot; help@moz.com)',
 ]
 
 // TODO:
