@@ -3,6 +3,9 @@ import { Response as IResponse, NextFunction as INextFunction } from 'express'
 import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 import axios from 'axios'
+import { Counter } from '~/utils/counter'
+
+const counter = Counter()
 
 // const isDev = process.env.NODE_ENV === 'development'
 // const isProd = process.env.NODE_ENV === 'production'
@@ -108,6 +111,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
       result.id = lastRow
     } catch (err) {
       result.message = err.message || 'Не удалось распарсить до id'
+      result.id = counter.next().value
     }
   }
 

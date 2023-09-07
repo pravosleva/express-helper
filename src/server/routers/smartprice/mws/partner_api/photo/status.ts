@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 // @ts-ignore
-// import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/getRandomInteger'
 // @ts-ignore
 // import { Counter } from '~/utils/counter'
 import { THelp } from '~/utils/interfaces'
@@ -28,8 +28,9 @@ const toClient = [
   },
   {
     ok: true,
-    started: false,
-    status: 'not_checked', // Чтоб крутилка исчезла и флоу пошел дальше
+    started: true,
+    // status: 'not_checked',
+    status: 'ok', // Чтоб крутилка исчезла и флоу пошел дальше
     photo_states: {},
     loop: false,
     condition_limit: null,
@@ -274,12 +275,11 @@ export default async (req, res) => {
   // //   _originalBody: req.body,
   // // }
 
-  const toBeOrNotToBe = 0 // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
+  const toBeOrNotToBe = getRandomInteger(0, 1) // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
+
+  const __result = { ...toClient[toBeOrNotToBe] }
 
   return setTimeout(() => {
-    res.status(200).send({
-      // ...result,
-      ...toClient[toBeOrNotToBe],
-    })
+    res.status(200).send(__result)
   }, 1000)
 }

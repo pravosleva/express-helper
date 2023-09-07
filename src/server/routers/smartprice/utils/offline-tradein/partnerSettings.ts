@@ -56,6 +56,14 @@ const cfg: {
     t_direct_buyout_verified_via_api: true,
     t_kz_buyout_doc: true,
   },
+  mtsmain2023: {
+    // Required in Frontend
+    t_offline_buyout_sms: false,
+    partner_is_sberlike: false,
+    t_require_iin: false,
+    // Required in Backend only
+    // NOTE: Как настроен mtsmain (их там нет, wtf?): https://t.me/c/1482327140/17118
+  },
 }
 
 /**
