@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Open Chat 2021 CRA based"
+      content="KANBAN 2021"
     />
     <!-- PWA -->
     <link rel="shortcut icon" sizes="16x16" href="%PUBLIC_URL%/logo144.png">
@@ -16,7 +17,7 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Open Chat 2021" />
+    <meta name="apple-mobile-web-app-title" content="KANBAN 2021" />
     <link rel="shortcut icon" sizes="192x192" href="%PUBLIC_URL%/logo192.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="%PUBLIC_URL%/logo192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo192.png">
@@ -28,8 +29,8 @@
     <meta name="msapplication-navbutton-color" content="#22577a">
     <meta name="msapplication-TileColor" content="#22577a">
     <meta name="msapplication-TileImage" content="%PUBLIC_URL%/logo144.png">
-    <meta name="application-name" content="Open Chat 2021">
-    <meta name="msapplication-tooltip" content="Open Chat 2021">
+    <meta name="application-name" content="KANBAN 2021">
+    <meta name="msapplication-tooltip" content="KANBAN 2021">
     <meta name="msapplication-starturl" content="%PUBLIC_URL%/menu?utm_source=homescreen">
     <meta name="msapplication-starturl" content="%PUBLIC_URL%/menu?utm_source=homescreen">
     <!-- Safari: TODO -->
@@ -48,6 +49,24 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>%REACT_APP_CHAT_NAME%</title>
+
+    <script defer src="%PUBLIC_URL%/tools/eruda/eruda@3.0.1.min.js"></script>
+    <script defer src="%PUBLIC_URL%/tools/eruda/eruda-monitor@1.0.0.min.js"></script>
+    <script async type="text/javascript">
+      const onLoad = () => {
+        const el = document.createElement('div')
+        document.body.appendChild(el)
+
+        eruda.init({
+          container: el,
+          // tool: ['console', 'elements']
+        })
+        eruda.add(erudaMonitor)
+
+        eruda.position({ x: 13, y: 90 })
+      }
+      document.addEventListener("DOMContentLoaded", onLoad)
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

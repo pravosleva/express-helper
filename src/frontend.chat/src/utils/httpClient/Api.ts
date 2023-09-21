@@ -44,16 +44,16 @@ export class Api {
     return (axiosRes: AxiosResponse) => {
       try {
         if (!validator(axiosRes)) {
-          console.log('- case 1: axiosRes')
-          console.log(axiosRes)
+          // console.log('- case 1: axiosRes')
+          // console.log(axiosRes)
           return { isOk: false, res: axiosRes.data }
         }
-        console.log('- case 2: axiosRes')
-        console.log(axiosRes)
+        // console.log('- case 2: axiosRes')
+        // console.log(axiosRes)
         return { isOk: true, res: axiosRes.data }
       } catch (err: any) {
-        console.log('- case 3: axiosRes')
-        console.log(axiosRes)
+        // console.log('- case 3: axiosRes')
+        // console.log(axiosRes)
         return { isOk: false, res: axiosRes?.data || err, message: err.message || 'No err.message' }
       }
     }

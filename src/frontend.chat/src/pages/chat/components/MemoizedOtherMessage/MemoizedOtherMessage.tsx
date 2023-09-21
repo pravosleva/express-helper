@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment } from 'react'
 import {
   Box,
   Flex,
@@ -140,9 +140,9 @@ export const MemoizedOtherMessage = React.memo(({
       if(!!contextTriggerRef) contextTriggerRef.handleContextClick(e);
   }
 
-  useEffect(() => {
-    console.log(`-- RENDER ${message.ts}`)
-  }, [])
+  // useEffect(() => {
+  //   console.log(`-- RENDER ${message.ts}`)
+  // }, [])
 
   return (
     <Fragment>

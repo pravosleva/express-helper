@@ -947,7 +947,7 @@ export const Chat = () => {
         .then(r => r)
         .catch(e => e)
 
-      console.log(jwtResponse)
+      // console.log(jwtResponse)
       if (jwtResponse?.ok) {
         // console.log('LOGGED!!')
         setName(normalizedName)
@@ -2028,7 +2028,7 @@ export const Chat = () => {
         chatMsgContainerRef.current.addEventListener('mouseleave', listenersMap.current[String(ts)].mouseleave)
 
       } catch (_err) {
-        console.log('ERR 2')
+        // console.log('ERR 2')
       }
     })
 
@@ -2044,12 +2044,12 @@ export const Chat = () => {
             setTimeout(() => removeBlink(ts), 0)
             clearTimeout(timersMap.current[String(ts)])
           }
-        } catch (err) {
-          console.log('ERR 1')
+        } catch (_err) {
+          // console.log('ERR 1')
         }
       })
     }
-  }, [filteredMessages, getRef])
+  }, [useCompare([filteredMessages]), getRef])
 
   const handleClearFixedSearch = useCallback(() => {
     resetForm()
@@ -2332,9 +2332,23 @@ export const Chat = () => {
                                     history.push('/admin')
                                   }}
                                 >
-                                  <Text fontSize="md" fontWeight='bold'>Admin panel</Text>
+                                  <Text fontSize="md" fontWeight='bold'>Chat admin panel</Text>
                                 </MenuItem>
                               )}
+                              <MenuItem
+                                minH="40px"
+                                key="adm-btn"
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  try {
+                                    window.open('https://gosuslugi.pravosleva.ru/express-helper/chat/admin-ui/', '_blank')
+                                  } catch (err) {
+                                    console.warn(err)
+                                  }
+                                }}
+                              >
+                                <Text fontSize="md" fontWeight='bold'>Socket.io admin panel</Text>
+                              </MenuItem>
                               {
                                 userInfoSnap.regData?.registryLevel !== ERegistryLevel.TGUser && (
                                   <MenuItem
