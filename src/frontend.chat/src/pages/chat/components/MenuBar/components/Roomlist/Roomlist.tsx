@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState, useCallback, memo } from 'react'
 import {
-  Box,
+  // Box,
   Button,
-  FormControl,
-  FormLabel,
+  // FormControl,
+  // FormLabel,
   Grid,
   IconButton,
   Input,
@@ -14,14 +14,15 @@ import {
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'react-use'
 import { useMainContext } from '~/context/mainContext'
-import { getTruncated } from '~/utils/strings-ops'
+// import { getTruncated } from '~/utils/strings-ops'
 // import { hasNewsInRoomlist } from '~/utils/hasNewsInRoomlist'
 import { useCompare } from '~/common/hooks/useDeepEffect'
-import { IoMdClose } from 'react-icons/io'
+import { IoMdClose, IoMdAddCircle } from 'react-icons/io'
 import { FiSearch } from 'react-icons/fi'
 import { getWords } from '~/utils/strings-ops/getWords'
 import { testRoomNameByAnyWord } from '~/utils/strings-ops/testRoomNameByAnyWord'
 import appStyles from '~/App.module.scss'
+import slugify from 'slugify'
 
 type TProps = {
   resetMessages: () => void
@@ -41,7 +42,7 @@ export const Roomlist = memo(({ resetMessages, onCloseMenuBar, handleRoomClick }
   
   useEffect(() => {
     const refresh = () => {
-      const roomlistLS: { name: string, ts: number }[] = JSON.parse(window.localStorage.getItem('chat.roomlist') || '[]');
+      const roomlistLS: { name: string, ts: number }[] = JSON.parse(window.localStorage.getItem('chat.roomlist') || '[]')
       const _roomNames = !!roomlistLS ? [...new Set(roomlistLS.filter(({ name }) => !!name).map(({ name }) => name))] : []
 
       setRoomNames(_roomNames.sort())
@@ -55,7 +56,7 @@ export const Roomlist = memo(({ resetMessages, onCloseMenuBar, handleRoomClick }
     setSearchRoomLS(search)
   }, [search])
   const handleChange = useCallback((e) => {
-    setSearch(e.target.value)
+    setSearch(e.target.value.toLowerCase())
   }, [setSearch])
   const resetSearch = useCallback(() => {
     setSearch('')
@@ -110,15 +111,30 @@ export const Roomlist = memo(({ resetMessages, onCloseMenuBar, handleRoomClick }
     // roomlistLS,
     room,
   ])
+  const hasInRoomNames = useMemo(() => !Array.isArray(roomNames) || roomNames.includes(search), [room, roomNames, search])
+  const handleAddRoom = useCallback((name: string) => () => {
+    const refresh = (name: string) => {
+      const slugifiedName = slugify(name.trim())
+      const roomlistLS: { name: string, ts: number }[] = JSON.parse(window.localStorage.getItem('chat.roomlist') || '[]')
+      const newRoomlist = [...roomlistLS, { name: slugifiedName, ts: new Date().getTime() }]
+      window.localStorage.setItem('chat.roomlist', JSON.stringify(newRoomlist))
+
+      const _roomNames = !!roomlistLS ? [...new Set(newRoomlist.filter(({ name }) => !!name).map(({ name }) => name))] : []
+      setRoomNames(_roomNames.sort())
+    }
+    refresh(name)
+  }, [])
 
   return (
     !!roomlistLS ? (
       <Stack pl={0} pr={0}>
         <Grid
-          templateColumns='1fr'
+          // templateColumns='1fr'
+          templateColumns={!!search ? '2fr auto' : '1fr'}
           gap={2}
         >
           <InputGroup>
+
             <InputLeftElement
               pointerEvents="none"
               color="gray.300"
@@ -154,6 +170,22 @@ export const Roomlist = memo(({ resetMessages, onCloseMenuBar, handleRoomClick }
               )
             }
           </InputGroup>
+          {
+            !!search && (
+              <IconButton
+                size='md'
+                aria-label='ADD'
+                colorScheme='green'
+                variant='solid'
+                isRound
+                icon={<IoMdAddCircle size={18} />}
+                onClick={handleAddRoom(search)}
+                isDisabled={!search || hasInRoomNames}
+              >
+                ADD
+              </IconButton>
+            )
+          }
         </Grid>
         {MemoBtns}
       </Stack>

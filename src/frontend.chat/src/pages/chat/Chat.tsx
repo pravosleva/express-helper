@@ -1433,9 +1433,9 @@ export const Chat = () => {
       abortEventsMap.current[eventDataType] += 1
     }
   }, [])
-  const workerEventLog = useCallback((eventDataType) => {
-    console.log(`🔥 Web Worker: ${eventDataType}; ${getEconomyText(eventDataType)}`)
-  }, [getEconomyText])
+  // const workerEventLog = useCallback((eventDataType) => {
+  //   console.log(`🔥 Web Worker: ${eventDataType}; ${getEconomyText(eventDataType)}`)
+  // }, [getEconomyText])
 
   useEffect(() => {
     webWorkersInstance.filtersWorker.onmessage = (
@@ -1458,21 +1458,21 @@ export const Chat = () => {
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setFilteredMessages($event.data.result)
-              workerEventLog(eventDataType)
+              // workerEventLog(eventDataType)
             }, 0)
             break;
           case 'getTags':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setTags(getNormalizedWordsArr($event.data.result))
-              workerEventLog(eventDataType)
+              // workerEventLog(eventDataType)
             }, 0)
             break;
           case 'getAllImagesLightboxFormat':
             timers.current[$event.data.type] = setTimeout(() => {
               // @ts-ignore
               setAllImagesMessagesLightboxFormat($event.data.result)
-              workerEventLog(eventDataType)
+              // workerEventLog(eventDataType)
             }, 0)
             break;
           case 'getStatusKanban':
@@ -1480,7 +1480,7 @@ export const Chat = () => {
               // console.log($event.data.result)
               // @ts-ignore
               setKanbanState($event.data.result.reactKanban)
-              workerEventLog(eventDataType)
+              // workerEventLog(eventDataType)
             }, 0)
             break;
           default: break;

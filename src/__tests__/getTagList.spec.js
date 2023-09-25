@@ -141,4 +141,25 @@ describe(`getTagList: ${limit} items`, () => {
 
     expect(tagList).toEqual(expectedList)
   })
+
+  test('case 7: empty taglist', () => {
+    const originalMsgList = ['test message without tags']
+    const expectedList = []
+
+    // const t0 = performance.now()
+
+    const result = originalMsgList.join(' ').split(/(?:^| )(?!#)[^#]*|(?<=#\S+)[^#\w]+(?:[^#]+)?/)
+
+    const s = new Set()
+    for (let i = 0; i < result.length; i += 1) {
+      const w = result[i]
+      if (w) s.add(w)
+    }
+    const tagList = [...s]
+
+    // const t1 = performance.now()
+    // console.log(`case 6 perf: ${t1 - t0}`)
+
+    expect(tagList).toEqual(expectedList)
+  })
 })

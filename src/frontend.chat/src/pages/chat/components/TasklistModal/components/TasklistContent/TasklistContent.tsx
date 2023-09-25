@@ -200,9 +200,19 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     }
   }, [radioValue, completedTasksLen, useCompare([data])])
   const handleCompleteToggle = useCallback((data: any) => {
+    if (data.isLooped) {
+      const isConfirmed = window.confirm('⚠️ Это может повлиять на обратный счетчик!\nВы уверены, что хотите изменить статус?')
+      if (!isConfirmed) return
+    }
+    
     handleTaskUpdate({ ...data, isCompleted: !data.isCompleted })
   }, [handleTaskUpdate])
   const handleTaskLoopToggler = useCallback((data: any) => {
+    if (data.isLooped) {
+      const isConfirmed = window.confirm('⚠️ Это может повлиять на обратный счетчик!\nВы уверены, что хотите изменить статус?')
+      if (!isConfirmed) return
+    }
+  
     handleTaskUpdate({ ...data, isLooped: !data.isLooped })
   }, [handleTaskUpdate])
   // -- NOTE: PRICE MODAL

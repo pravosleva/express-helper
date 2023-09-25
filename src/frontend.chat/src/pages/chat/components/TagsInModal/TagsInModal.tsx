@@ -57,7 +57,7 @@ export const TagsInModal = memo(({ tags, isOpened, onClose, onToggeTag, enabledT
                 name='userName'
                 // isInvalid={!formData.userName}
                 type='text'
-                placeholder="Search"
+                placeholder="Search by substr or #tag..."
                 // ref={initialSetPasswdRef}
                 // onKeyDown={handleKeyDownEditedMessage}
                 value={search}
@@ -74,12 +74,12 @@ export const TagsInModal = memo(({ tags, isOpened, onClose, onToggeTag, enabledT
           pb={6}
           className={styles['modal-tags-btns-wrapper']}
         >
-          {memoizedTags.map((tag) => {
+          {memoizedTags.length > 0 ? memoizedTags.map((tag) => {
             const isEnabled = enabledTags.includes(tag)
             return (
-              <Button key={tag} rounded='3xl' onClick={toggleTag(tag)} colorScheme={isEnabled ? 'blue' : 'gray'}>{tag}</Button>
+              <Button key={tag} rounded='3xl' size='sm' onClick={toggleTag(tag)} colorScheme={isEnabled ? 'blue' : 'gray'}>{tag}</Button>
             )
-          })}
+          }) : 'No tags yet...'}
         </ModalBody>
         <ModalFooter
           className='modal-footer-btns-wrapper'

@@ -190,7 +190,8 @@ export const ResponsiveSearchField = ({
               flexDirection: 'row',
               flexWrap: 'wrap',
               gap: 'var(--chakra-space-2)',
-              marginTop: 'var(--chakra-space-2)',
+              paddingTop: 'var(--chakra-space-2)',
+              paddingBottom: 'var(--chakra-space-2)',
               // maxHeight: '105px',
               maxHeight: '300px',
               overflowY: 'auto',
@@ -203,7 +204,7 @@ export const ResponsiveSearchField = ({
               return (
                 <Button
                   key={`${tag}_${String(isEnabled)}`}
-                  size='md'
+                  size='sm'
                   colorScheme={isEnabled ? 'blue' : 'gray'}
                   variant={isEnabled ? 'solid' : 'ghost'}
                   // leftIcon={<FcGallery color='#FFF' size={18} />}
@@ -216,42 +217,48 @@ export const ResponsiveSearchField = ({
                     border: 'var(--chakra-borders-2px) var(--chakra-colors-red-600)',
                     padding: 'var(--chakra-space-1)',
                     minWidth: 'var(--chakra-space-8)',
-                    borderRadius: 'var(--chakra-radii-2xl)',
+                    borderRadius: 'var(--chakra-radii-3xl)',
                   }}>{extendetTagsInfo[tag].counter}</div>}
                 >
                   {tag}
                 </Button>
               )
             })}
-            {!isShowMoreEnabled ? (
-              <Button
-                size='md'
-                colorScheme='gray'
-                variant='outline' 
-                // leftIcon={<FcGallery color='#FFF' size={18} />}
-                onClick={() => {
-                  setIsShowMoreEnabled(true)
-                }}
-                // mr={2}
-                rounded='3xl'
-              >
-                Show more
-              </Button>
-            ) : (
-              <Button
-                size='md'
-                colorScheme='gray'
-                variant='outline' 
-                // leftIcon={<FcGallery color='#FFF' size={18} />}
-                onClick={() => {
-                  setIsShowMoreEnabled(false)
-                }}
-                // mr={2}
-                rounded='3xl'
-              >
-                Collapse
-              </Button>
-            )}
+            {
+              tagList.length > defaultTagsLimit ? (
+                <>
+                  {!isShowMoreEnabled ? (
+                    <Button
+                      size='sm'
+                      colorScheme='blue'
+                      variant='link' 
+                      // leftIcon={<FcGallery color='#FFF' size={18} />}
+                      onClick={() => {
+                        setIsShowMoreEnabled(true)
+                      }}
+                      // mr={2}
+                      // rounded='3xl'
+                    >
+                      Show more
+                    </Button>
+                  ) : (
+                    <Button
+                      size='sm'
+                      colorScheme='blue'
+                      variant='link' 
+                      // leftIcon={<FcGallery color='#FFF' size={18} />}
+                      onClick={() => {
+                        setIsShowMoreEnabled(false)
+                      }}
+                      // mr={2}
+                      // rounded='3xl'
+                    >
+                      Collapse
+                    </Button>
+                  )}
+                </>
+              ) : null
+            }
           </div>
         )
       }
