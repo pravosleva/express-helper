@@ -27,6 +27,7 @@ import { pravoslevaBot2021Router } from './routers/pravosleva-bot-2021'
 import { systemRouter } from './routers/system'
 import { caseServiceApi } from './routers/car-service'
 import { subprojectsRouter } from './routers/subprojects'
+import { pravoslevaBlod2023Api } from './routers/pravosleva-blog-2023'
 
 const app = express()
 
@@ -87,5 +88,6 @@ app.use('/chat', chatRouter)
 // app.use('/chat-login', chatLogin)
 app.use('/car-service', caseServiceApi)
 app.use('/subprojects', subprojectsRouter)
+app.use('/pravosleva-blog-2023', pravoslevaBlod2023Api)
 
 module.exports = app

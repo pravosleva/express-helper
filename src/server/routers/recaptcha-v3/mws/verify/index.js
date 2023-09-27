@@ -9,7 +9,9 @@ const { RECAPTCHAV3_VERIFY_URL } = process.env
 module.exports = async (req, res) => {
   if (!req.body.captcha) {
     res.status(400).send({
-      success: 0,
+      ok: false,
+      message: 'Captcha token is undefined',
+
       captcha: req.body.captcha,
       errors: {
         requestError: ['Captcha token is undefined'],
@@ -30,14 +32,17 @@ module.exports = async (req, res) => {
   if (byGoogle.isOk) {
     if (byGoogle.response.success) {
       res.status(200).send({
-        success: 1,
+        ok: true,
         original: byGoogle.response,
       })
     } else {
       res.status(500).send({
-        success: 0,
+        ok: false,
+        message: 'Неожиданная ошибка на стороне Гугла: !byGoogle.response.success',
+
         captcha: req.body.captcha,
         original: byGoogle.response,
+
         errors: {
           '!byGoogle.response.success': ['Неожиданная ошибка на стороне Гугла'],
         },
@@ -45,7 +50,9 @@ module.exports = async (req, res) => {
     }
   } else {
     res.status(500).send({
-      success: 0,
+      ok: false,
+      message: `Обработанная ошибка !byGoogle.isOk: ${byGoogle.msg}`,
+
       captcha: req.body.captcha,
       errors: {
         '!byGoogle.isOk': [byGoogle.msg],

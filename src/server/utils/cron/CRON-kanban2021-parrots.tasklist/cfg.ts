@@ -14,10 +14,12 @@ const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 // NOTE: Link example
 // http://pravosleva.ru/express-helper/chat/#/chat?room=audit.lidiya005
 
+const daysRangeHalf = 7
+
 export const cfg: TCfg = [
   {
     id: 1,
-    _descr: '30 days perspective: isLooped & isCompleted & Will be ready soon (or ready in 30 days)',
+    _descr: `${daysRangeHalf} days perspective: isLooped & isCompleted & Will be ready soon (or ready in ${daysRangeHalf} days)`,
     isEnabled: true,
     // cronSetting: '0 11 * * Mon', // Every Mon at 11:00
     cronSetting: '10 1 10 * * *', // Every day at 10:01:10
@@ -44,8 +46,7 @@ export const cfg: TCfg = [
         startDate: new Date(),
         finishDate: new Date(timeEnd)
       })
-
-      const daysRangeHalf = 30
+      
       const isCorrect = !!checkTs && isCompleted && isLooped && diff.d <= daysRangeHalf
 
       // if (isCorrect) {
@@ -86,7 +87,7 @@ export const cfg: TCfg = [
           targetHashtags,
           targetRooms,
         }) => {
-          return `В ближайшей перспективе (30 дней) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задач', '%d задач')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return `В ближайшей перспективе (${daysRangeHalf} дней) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задач', '%d задач')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           tasks,

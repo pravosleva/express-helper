@@ -27,19 +27,37 @@ import { withReqParamsValidationMW } from '~/utils/express-validation/withReqPar
 import fs from 'fs'
 import path from 'path'
 import { partnerSettings } from '~/routers/smartprice/utils/offline-tradein/partnerSettings'
+import { GoogleAuth } from 'google-auth-library'
+import { JSONClient } from 'google-auth-library/build/src/auth/googleauth'
 
 const projectRootDir = path.join(__dirname, '../../../../../../')
-if (!fs.existsSync(path.join(projectRootDir, 'server-dist/routers/smartprice/mws/report/v2/credentials_console.cloud.google.com.json'))) {
-  throw new Error(
-    `⛔ The file\n"server-dist/routers/smartprice/mws/report/v2/credentials_console.cloud.google.com.json" can't be found. Put it to:\n"src/server/routers/smartprice/mws/report/v2/credentials_console.cloud.google.com.json" before build`
-  )
+type TCredentialsItem = {
+  distPath: string;
+  srcPath: string;
+  getErrMsg: (_ps: {
+    distPath: string;
+    srcPath: string;
+  }) => string;
+}
+const consoleCloudGoogleCredentialFiles: {[key: string]: TCredentialsItem} = {
+  smartprice: {
+    distPath: 'server-dist/routers/smartprice/mws/report/v2/credentials_console.cloud.google.com.json',
+    srcPath: 'src/server/routers/smartprice/mws/report/v2/credentials_console.cloud.google.com.json',
+    getErrMsg: (file: { distPath: string; srcPath: string }) => `⛔ The file\n"${file.distPath}" can't be found. Put it to:\n"${file.srcPath}" before build`,
+  },
+}
+for (const key in consoleCloudGoogleCredentialFiles) {
+  const file = consoleCloudGoogleCredentialFiles[key]
+  if (!fs.existsSync(path.join(projectRootDir, file.distPath))) {
+    throw new Error(file.getErrMsg(file))
+  }
 }
 
 const router = express.Router()
 
-const spGoogleSheetsAuth = (req, res, next) => {
-  const auth = new google.auth.GoogleAuth({
-    keyFile: 'server-dist/routers/smartprice/mws/report/v2/credentials_console.cloud.google.com.json',
+const spGoogleSheetsAuth = (req, _res, next) => {
+  const auth: GoogleAuth<JSONClient> = new google.auth.GoogleAuth({
+    keyFile: consoleCloudGoogleCredentialFiles.smartprice.distPath,
     scopes: 'https://www.googleapis.com/auth/spreadsheets',
   })
   const spreadsheetId = '1NBXuyGlCznS0SJjJJX52vR3ZzqPAPM8LQPM_GX8T_Wc'
@@ -50,7 +68,6 @@ const spGoogleSheetsAuth = (req, res, next) => {
   }
   next()
 }
-
 router.use(spGoogleSheetsAuth)
 
 // -- NOTE: Offline Trade-In partner Django template settings analysis
