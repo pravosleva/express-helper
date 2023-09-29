@@ -1,6 +1,6 @@
 {
   "name": "express-helper",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "_test-env:s": "bash test-env.sh smartprice",

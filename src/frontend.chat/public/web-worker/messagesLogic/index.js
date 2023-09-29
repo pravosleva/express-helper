@@ -29,7 +29,7 @@ self.onmessage = ($event) => {
     return (messages) => {
       const logic = new Logic({
         messages,
-        REACT_APP_CHAT_UPLOADS_URL: 'http://pravosleva.ru/express-helper/chat/storage/uploads'
+        REACT_APP_CHAT_UPLOADS_URL: 'https://pravosleva.pro/express-helper/chat/storage/uploads'
       })
   
       return logic.getAllImagesLightboxFormat()

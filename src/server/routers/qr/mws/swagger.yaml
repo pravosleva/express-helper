@@ -6,10 +6,10 @@ info:
   version: '1.0.0'
   contact:
     email: 'selection4test@gmail.com'
-host: pravosleva.ru
+host: pravosleva.pro
 basePath: /express-helper/qr
 schemes:
-  - http
+  - https
 tags:
   - name: 'tst'
     description: 'Something'

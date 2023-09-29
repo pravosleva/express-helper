@@ -107,7 +107,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
     const resultId = req.smartprice.report.resultId
 
     try {
-      axios.post('https://pravosleva.ru/tg-bot-2021/notify/sp/offline-tradein/main/send', {
+      axios.post('https://pravosleva.pro/tg-bot-2021/notify/sp/offline-tradein/main/send', {
         chat_id: 432590698,
         rowValues,
         resultId,
@@ -231,7 +231,7 @@ export const spRetranslateToUploadWizardMW = async (req: TSPRequest, _res: IResp
           _csrfTokenExtracted, // csrfToken,
           !!_resExtracted ? JSON.stringify(_resExtracted) : '', // originalResponseFromBackend
         ]
-        axios.post('https://pravosleva.ru/express-helper/sp/report/v2/offline-tradein/upload-wizard/send', {
+        axios.post('https://pravosleva.pro/express-helper/sp/report/v2/offline-tradein/upload-wizard/send', {
           rowValues: modifiedRowValues,
         })
 

@@ -20,47 +20,47 @@ const p2 = () => axios
   .get('http://code-samples.space/api/notes?limit=7')
   .then((res) => res.data)
   .catch((err) => err);
-const p3 = () => axios
-  .post('http://pravosleva.ru/api/graphql', {
-    query: `{
-      projects: pages(
-        sort: "createdAt:DESC"
-        where: { type: "project" }
-      ) {
-        id
-        shortName
-        metadata {
-          shareImage { url }
-          metaDescription
-        }
-        updatedAt
-        createdAt
-        type
-      }
-      articles: pages(
-        sort: "createdAt:DESC"
-        where: { type: "article" }
-      ) {
-        id
-        shortName
-        metadata {
-          shareImage { url }
-          metaDescription
-        }
-        updatedAt
-        createdAt
-        type
-      }
-    }`,
-  })
-  .then((res) => res.data)
-  .catch((err) => err);
+// const p3 = () => axios
+//   .post('http://pravosleva.ru/api/graphql', {
+//     query: `{
+//       projects: pages(
+//         sort: "createdAt:DESC"
+//         where: { type: "project" }
+//       ) {
+//         id
+//         shortName
+//         metadata {
+//           shareImage { url }
+//           metaDescription
+//         }
+//         updatedAt
+//         createdAt
+//         type
+//       }
+//       articles: pages(
+//         sort: "createdAt:DESC"
+//         where: { type: "article" }
+//       ) {
+//         id
+//         shortName
+//         metadata {
+//           shareImage { url }
+//           metaDescription
+//         }
+//         updatedAt
+//         createdAt
+//         type
+//       }
+//     }`,
+//   })
+//   .then((res) => res.data)
+//   .catch((err) => err);
 
 const baseFn = () => {
   Promise.all([
     p1(),
     p2(),
-    p3(),
+    // p3(),
   ])
     .then((values) => {
       console.log(values);

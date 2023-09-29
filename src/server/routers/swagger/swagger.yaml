@@ -3,10 +3,10 @@ info:
   title: Express helper API
   description: API description in `express-helper/routers/swagger/swagger.yaml`
   version: '1.0.0'
-host: pravosleva.ru
+host: pravosleva.pro
 basePath: /express-helper
 schemes:
-  - http
+  - https
 paths:
   /url-metadata/editorjs:
     get:
@@ -85,7 +85,7 @@ paths:
                 score: 0.9
                 action: 'feedback'
                 challenge_ts: '2020-07-01T15:14:47Z'
-                hostname: 'pravosleva.ru'
+                hostname: 'pravosleva.pro'
         400:
           description: 'Error: Bad request'
           schema:

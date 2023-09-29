@@ -39,7 +39,7 @@ export const sendNotify2MW = async (req: IRequset, res: IResponse, _next: INextF
   })
   
   try {
-    const tgBotRes = await axios.post('http://pravosleva.ru/tg-bot-2021/notify/audit-helper-2023/send-2', {
+    const tgBotRes = await axios.post('https://pravosleva.pro/tg-bot-2021/notify/audit-helper-2023/send-2', {
       // chat_id: 432590698,
       // chat_id: isDev ? 432590698 : -949603342,
       chat_id: -949603342,

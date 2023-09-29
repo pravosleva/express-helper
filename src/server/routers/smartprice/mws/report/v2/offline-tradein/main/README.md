@@ -20,7 +20,7 @@ const rowValues = [
 Wget({
   __maxRetries: 3,
   timeout: 12000,
-  url: `${window.location.protocol}//pravosleva.ru/express-helper/sp/report/v2/offline-tradein/main/send`,
+  url: `${window.location.protocol}//pravosleva.pro/express-helper/sp/report/v2/offline-tradein/main/send`,
   type: 'json',
   method: 'POST',
   contentType: 'application/json; charset=utf-8',

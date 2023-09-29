@@ -2341,7 +2341,7 @@ export const Chat = () => {
                                 onClick={(e) => {
                                   e.preventDefault()
                                   try {
-                                    window.open('https://gosuslugi.pravosleva.ru/express-helper/chat/admin-ui/', '_blank')
+                                    window.open('http://gosuslugi.pravosleva.ru/express-helper/chat/admin-ui/', '_blank')
                                   } catch (err) {
                                     console.warn(err)
                                   }
@@ -2388,12 +2388,12 @@ export const Chat = () => {
                           )
                         }
                         <CopyToClipboard
-                          text={`http://pravosleva.ru/express-helper/chat/#/?room=${room}`}
+                          text={`https://pravosleva.pro/express-helper/chat/#/?room=${room}`}
                           onCopy={() => {
                             toast({
                               position: 'top-left',
                               title: 'Link copied',
-                              description: `http://pravosleva.ru/express-helper/chat/#/?room=${room}`,
+                              description: `https://pravosleva.pro/express-helper/chat/#/?room=${room}`,
                               status: 'success',
                               duration: 5000,
                               isClosable: true,

@@ -19,7 +19,7 @@ export const checkRoom = (req, res) => {
     return res.status(200).send({
       ok: true,
       code: EAPIRoomCode.RoomExists,
-      link: `http://pravosleva.ru/express-helper/chat/#/?room=${room_id}`,
+      link: `https://pravosleva.pro/express-helper/chat/#/?room=${room_id}`,
       _originalBody: req.body,
     })
   } else {

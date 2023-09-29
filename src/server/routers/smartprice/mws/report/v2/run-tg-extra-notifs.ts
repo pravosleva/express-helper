@@ -8,7 +8,7 @@ export const runTGExtraNotifs = async (req: TSPRequest, res: IResponse, next: IN
   if (!!req.body?.chat_id || !!req.body?.namespace) {
     let result = null
     try {
-      result = await axios.post(isDev ? 'http://localhost:2021/notify/sp/run-extra' : 'http://pravosleva.ru/tg-bot-2021/notify/sp/run-extra', {
+      result = await axios.post(isDev ? 'http://localhost:2021/notify/sp/run-extra' : 'https://pravosleva.pro/tg-bot-2021/notify/sp/run-extra', {
         chat_id: req.body.chat_id,
         namespace: req.body?.namespace,
       })

@@ -13,12 +13,12 @@ const http = require('http')
 const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '../server-dist/.env') })
 
-const https = require('https')
-const fs = require('fs')
+// const https = require('https')
+// const fs = require('fs')
 
 const app = require('../server-dist/app')
 
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 
 /**
  * Normalize a port into a number, string, or false.
@@ -46,33 +46,33 @@ app.set('port', port)
 const server = http.createServer(app)
 
 // serve the API with signed certificate on 443 (SSL/HTTPS) port
-let httpsServer
-if (isProd)
-  httpsServer = https.createServer(
-    {
-      key: fs.readFileSync('/etc/letsencrypt/live/pravosleva.ru/privkey.pem'),
-      cert: fs.readFileSync('/etc/letsencrypt/live/pravosleva.ru/fullchain.pem'),
-    },
-    app
-  )
+// let httpsServer
+// if (isProd)
+//   httpsServer = https.createServer(
+//     {
+//       key: fs.readFileSync('/etc/letsencrypt/live/pravosleva.ru/privkey.pem'),
+//       cert: fs.readFileSync('/etc/letsencrypt/live/pravosleva.ru/fullchain.pem'),
+//     },
+//     app
+//   )
 
 /**
  * Chat.
  */
 
 require('~/utils/socket/withSocketChat').withSocketChat(require('socket.io')(server))
-require('~/utils/socket/withSocketChat').withSocketChat(require('socket.io')(httpsServer))
+// require('~/utils/socket/withSocketChat').withSocketChat(require('socket.io')(httpsServer))
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
 server.listen(port)
-if (httpsServer)
-  httpsServer.listen(443, () => {
-    // eslint-disable-next-line no-console
-    console.log('HTTPS Server running on port 443')
-  })
+// if (httpsServer)
+//   httpsServer.listen(443, () => {
+//     // eslint-disable-next-line no-console
+//     console.log('HTTPS Server running on port 443')
+//   })
 
 /**
  * Event listener for HTTP server "error" event.

@@ -31,7 +31,7 @@ self.onmessage = ($event) => {
   // 2
   const getAllImagesLightboxFormat = () => {
     return (messages) => {
-      const logic = new Logic(messages, 'http://pravosleva.ru/express-helper/chat/storage/uploads')
+      const logic = new Logic(messages, 'https://pravosleva.pro/express-helper/chat/storage/uploads')
   
       return logic.getAllImagesLightboxFormat()
     }

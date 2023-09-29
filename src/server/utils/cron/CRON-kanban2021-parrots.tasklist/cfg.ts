@@ -12,7 +12,7 @@ import { getTimeDiff } from '~/utils/getTimeDiff'
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 
 // NOTE: Link example
-// http://pravosleva.ru/express-helper/chat/#/chat?room=audit.lidiya005
+// https://pravosleva.pro/express-helper/chat/#/chat?room=audit.lidiya005
 
 const daysRangeHalf = 7
 
@@ -127,7 +127,7 @@ export const cfg: TCfg = [
               ? `✅ Ready ${getTimeAgo(timeEnd)}`
               : `⏱️ Left: ${diff.message}`
             )
-            specialMsgs.push(`💬 [${room}](http://pravosleva.ru/express-helper/chat/#/chat?room=${room})`)
+            specialMsgs.push(`💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
             
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --

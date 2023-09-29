@@ -70,7 +70,7 @@ export class Api {
       id?: number;
     }>({
       noUrlPrefix: true,
-      url: `${protocol}//pravosleva.ru/express-helper/sp/report/v2/offline-tradein/upload-wizard/send`,
+      url: `${protocol}//pravosleva.pro/express-helper/sp/report/v2/offline-tradein/upload-wizard/send`,
       method: 'POST',
       data: JSON.stringify({ rowValues }),
       signal: this.reportAbortController.signal, // 'X-CSRFToken': (window as any).CSRF_TOKEN
@@ -78,7 +78,7 @@ export class Api {
     return data?.ok ? Promise.resolve(data) : Promise.reject(data)
 
     // NOTE: v2
-    // return fetch(`${protocol}://pravosleva.ru/express-helper/sp/report/v2/offline-tradein/upload-wizard/send`, {
+    // return fetch(`${protocol}://pravosleva.pro/express-helper/sp/report/v2/offline-tradein/upload-wizard/send`, {
     //   method: 'POST',
     //   body: JSON.stringify({ rowValues }),
     //   signal: this.reportAbortController.signal,
