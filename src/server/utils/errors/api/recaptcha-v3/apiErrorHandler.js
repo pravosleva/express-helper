@@ -12,18 +12,15 @@ const { ApiError } = require('../ApiError')
 */
 
 const apiErrorHandler = (res) => {
-  if (res.success) {
-    return res
-  }
+  if (res.success) return res
+
   const errors = {}
 
-  ;['score', 'action', 'challenge_ts', 'hostname'].forEach((key) => {
-    if (res[key]) {
-      errors[key] = res[key]
-    }
+  ;['score', 'action', 'challenge_ts', 'hostname', 'error-codes'].forEach((key) => {
+    if (res[key]) errors[key] = res[key]
   })
 
-  if (Object.keys(errors) === 0) {
+  if (Object.keys(errors).length === 0) {
     errors.noKeys = 'Ошибки не получены от апи гугла'
   }
 

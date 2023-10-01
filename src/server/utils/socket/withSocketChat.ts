@@ -369,52 +369,68 @@ export const withSocketChat = (io: Socket) => {
     })
 
     socket.on('login', ({ isLogged, name, room }, cb?: (reason?: string, isAdmin?: boolean) => void) => {
-      if (isLogged) {
-        
-        const regData = registeredUsersMap.get(name)
+      console.log('-- socket incom: login')
+      try {
+        if (isLogged) {
+          console.log('point2023:case1')
+          const regData = registeredUsersMap.get(name)
 
-        if (!!regData) {
-          // -- LOGOUT OLD
-          const existingUser = usersMap.get(name)
-          if (!!existingUser) {
-            const oldSocketId = existingUser.socketId
+          if (!!regData) {
+            console.log('point2023:case1.1')
+            // -- LOGOUT OLD
+            const existingUser = usersMap.get(name)
+            if (!!existingUser) {
+              console.log('point2023:case1.1.1')
+              const oldSocketId = existingUser.socketId
 
-            if (oldSocketId !== socket.id) logoutOld(oldSocketId)
+              if (oldSocketId !== socket.id) logoutOld(oldSocketId)
+            } else {
+              console.log('point2023:case1.1.2')
+              if (registeredUsersMap.has(name)) {
+                if (!!cb) cb('FRONT:LOG/PAS')
+                return
+              }
+            }
+            // --
           } else {
+            console.log('point2023:case1.2')
             if (registeredUsersMap.has(name)) {
               if (!!cb) cb('FRONT:LOG/PAS')
               return
             }
           }
-          // --
         } else {
+          console.log('point2023:case2')
           if (registeredUsersMap.has(name)) {
-            if (!!cb) cb('FRONT:LOG/PAS')
+            console.log('point2023:case2.1')
+            if (!!cb) {
+              console.log('point2023:case2.1.1')
+              cb('FRONT:LOG/PAS')
+            } else {
+              console.log('point2023:case2.1.2')
+            }
             return
           }
         }
-      } else {
-        if (registeredUsersMap.has(name)) {
-          if (!!cb) cb('FRONT:LOG/PAS')
-          return
-        }
+
+        socket.join(room)
+
+        const roomData = roomsMap.get(room)
+
+        if (!roomData) roomsMap.set(room, [])
+        // socket.emit('oldChat', { roomData: roomsMap.get(room) })
+        
+        // io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
+        // io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+        io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
+        // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
+
+        const isAdmin = name === 'pravosleva'
+        if (!!cb) cb(null, isAdmin)
+      } catch (err) {
+        console.log('point2023:ERR')
+        console.log(err)
       }
-
-      socket.join(room)
-
-      const roomData = roomsMap.get(room)
-
-      if (!roomData) roomsMap.set(room, [])
-      // socket.emit('oldChat', { roomData: roomsMap.get(room) })
-      
-      // io.in(room).emit('notification', { status: 'info', description: `${name} just entered the room` })
-      // io.in(room).emit('users:room', [...usersMap.keys()].map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
-      io.in(room).emit('users:room', getMapUnigueValues(usersSocketMap.state).map((str: string) => ({ name: str, room })).filter(({ room: r }) => r === room))
-      // io.emit('notification', { status: 'info', description: 'Someone\'s here' })
-
-      const isAdmin = name === 'pravosleva'
-      if (!!cb) cb(null, isAdmin)
-
       // ---
     })
     socket.on('logout', ({ name, room }) => {

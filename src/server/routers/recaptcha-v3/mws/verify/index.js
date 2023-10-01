@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
         original: byGoogle.response,
       })
     } else {
-      res.status(500).send({
+      res.status(200).send({
         ok: false,
         message: 'Неожиданная ошибка на стороне Гугла: !byGoogle.response.success',
 
@@ -52,7 +52,7 @@ module.exports = async (req, res) => {
     res.status(500).send({
       ok: false,
       message: `Обработанная ошибка !byGoogle.isOk: ${byGoogle.msg}`,
-
+      byGoogle,
       captcha: req.body.captcha,
       errors: {
         '!byGoogle.isOk': [byGoogle.msg],

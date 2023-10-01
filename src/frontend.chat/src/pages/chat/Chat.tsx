@@ -2341,7 +2341,7 @@ export const Chat = () => {
                                 onClick={(e) => {
                                   e.preventDefault()
                                   try {
-                                    window.open('http://gosuslugi.pravosleva.ru/express-helper/chat/admin-ui/', '_blank')
+                                    window.open('https://gosuslugi.pravosleva.pro/express-helper/chat/admin-ui/', '_blank')
                                   } catch (err) {
                                     console.warn(err)
                                   }

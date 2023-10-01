@@ -163,6 +163,7 @@ export const Login = () => {
 
         switch (jwtResponse.code) {
           case EAPIUserCode.NeedLogout:
+          // case EAPIUserCode.Unlogged:
             // TODO: handleOpenLogoutConfirmation()
             const isLogoutConfirmed = window.confirm('Need Logout! Wanna be logout?')
 
@@ -187,6 +188,7 @@ export const Login = () => {
         if (jwtResponse?.ok && jwtResponse.code === EAPIUserCode.Logged) {
           if (jwtResponse.regData?.tg?.username === name) isLogged = true
         }
+        // else if (jwtResponse.code === EAPIUserCode.Unlogged) {}
         break;
     }
 
@@ -236,7 +238,13 @@ export const Login = () => {
     // if (isDev) history.push('/chat')
 
     if (!!socket) { // && !!room && !!name
+      console.log('-- socket.emit login...')
       setIsLoading1(true)
+
+      // --- NOTE: Rrmove this
+      // if (name === 'pravosleva') {}
+      // ---
+
       // @ts-ignore
       socket.emit(
         'login',
