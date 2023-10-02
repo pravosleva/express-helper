@@ -11,15 +11,14 @@ import { getTimeDiff } from '~/utils/getTimeDiff'
 // const isDev = process.env.NODE_ENV === 'development'
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 
-// NOTE: Link example
-// https://pravosleva.pro/express-helper/chat/#/chat?room=audit.lidiya005
+// NOTE: Chat link example: https://pravosleva.pro/express-helper/chat/#/chat?room=audit.lidiya005
 
 const daysRangeHalf = 7
 
 export const cfg: TCfg = [
   {
     id: 1,
-    _descr: `${daysRangeHalf} days perspective: isLooped & isCompleted & Will be ready soon (or ready in ${daysRangeHalf} days)`,
+    _descr: `${daysRangeHalf} days perspective: !isCompleted || (isLooped & isCompleted & Will be ready soon (or ready in ${daysRangeHalf} days))`,
     isEnabled: true,
     // cronSetting: '0 11 * * Mon', // Every Mon at 11:00
     cronSetting: '10 1 10 * * *', // Every day at 10:01:10
@@ -41,32 +40,20 @@ export const cfg: TCfg = [
 
       // const targetDate = new Date(task.uncheckTs + task.fixedDiff)
       const timeEnd = checkTs + (checkTs - uncheckTs)
-
       const diff = getTimeDiff({
         startDate: new Date(),
         finishDate: new Date(timeEnd)
       })
-      
-      const isCorrect = !!checkTs && isCompleted && isLooped && diff.d <= daysRangeHalf
-
-      // if (isCorrect) {
-      //   console.log(task)
-      //   console.log(diff)
-      //   /* NOTE: Example
-      //   {
-      //     ts: 1639316052419,
-      //     title: 'New test',
-      //     isCompleted: true,
-      //     isLooped: true,
-      //     editTs: 1683791624193,
-      //     fixedDiff: 327588748,
-      //     uncheckTs: 1683464035445,
-      //     checkTs: 1683791624193
-      //   }
-      //   { d: 0, h: 0, min: 0, sec: 5, ms: 890, message: '00:05' }
-      //   */
-      // }
-
+      const isCorrect = !isCompleted || (!!checkTs && isCompleted && isLooped && diff.d <= daysRangeHalf)
+      // /* NOTE: Task example
+      // { ts: 1639316052419,
+      //   title: 'New test',
+      //   isCompleted: true,
+      //   isLooped: true,
+      //   editTs: 1683791624193,
+      //   fixedDiff: 327588748,
+      //   uncheckTs: 1683464035445,
+      //   checkTs: 1683791624193, } */
       return isCorrect
     },
     targetRooms: ['magaz'],
@@ -74,26 +61,15 @@ export const cfg: TCfg = [
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
-        // NOTE: Den Pol
-        // chat_id: 432590698,
-
-        // NOTE: My home -> Reminder (topic)
-        chat_id: -1001917842024,
+        // chat_id: 432590698, // NOTE: Den Pol
+        chat_id: -1001917842024, // NOTE: My home -> Reminder (topic)
         message_thread_id: 5,
 
-        eventCode: 'magaz_tasklist_reminder_daily',
-        about: ({
-          tasks,
-          targetHashtags,
-          targetRooms,
-        }) => {
-          return `В ближайшей перспективе (${daysRangeHalf} дней) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задач', '%d задач')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+        eventCode: 'tasklist_reminder_daily',
+        about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
+          return `В ближайшей перспективе (${daysRangeHalf} ${plural(tasks.length, '%d день', '%d дня', '%d дней')}) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задач', '%d задач')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
-        targetMD: ({
-          tasks,
-          targetHashtags,
-          targetRooms,
-        }) => {
+        targetMD: ({ tasks, /* targetHashtags, targetRooms, */ }) => {
           const sortedMsgs = sortArrayByKeys({
             arr: tasks,
             keys: ['uncheckTs'],
@@ -107,6 +83,7 @@ export const cfg: TCfg = [
               checkTs,
               // fixedDiff,
               room,
+              isCompleted,
             } = task
 
             // const targetDate = new Date(uncheckTs + fixedDiff)
@@ -115,24 +92,28 @@ export const cfg: TCfg = [
               startDate: new Date(),
               finishDate: new Date(timeEnd),
             })
-
             const msgList = [
               `\`${i + 1}. ${title}\``,
             ]
-
             // -- NOTE: Custom msg
             const specialMsgs: string[] = []
-            specialMsgs.push(
-              diff.isNegative
-              ? `✅ Ready ${getTimeAgo(timeEnd)}`
-              : `⏱️ Left: ${diff.message}`
-            )
+            switch (true) {
+              case !isCompleted:
+                specialMsgs.push('🔥 In progress')
+                break
+              default:
+                specialMsgs.push(
+                  diff.isNegative
+                  ? `⚠️ Ready ${getTimeAgo(timeEnd)}`
+                  : `⏱️ ${diff.message} left`
+                )
+                break
+            }
             specialMsgs.push(`💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
-            
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
-            return msgList.join('\n')
+            return `_${msgList.join('\n')}_`
           }).join('\n\n')
         },
       },

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const moduleAlias = require('module-alias')
 
 moduleAlias()
@@ -7,15 +6,16 @@ moduleAlias()
 /**
  * Module dependencies.
  */
-
 const debug = require('debug')('url-metadata-helper:server')
 const http = require('http')
 const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '../server-dist/.env') })
 
+const axios = require('axios')
+
+const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 // const https = require('https')
 // const fs = require('fs')
-
 const app = require('../server-dist/app')
 
 // const isProd = process.env.NODE_ENV === 'production'
@@ -23,7 +23,6 @@ const app = require('../server-dist/app')
 /**
  * Normalize a port into a number, string, or false.
  */
-
 function normalizePort(val) {
   const port = parseInt(val, 10)
 
@@ -35,38 +34,32 @@ function normalizePort(val) {
 /**
  * Get port from environment and store in Express.
  */
-
 const port = normalizePort(process.env.PORT || '3000')
 app.set('port', port)
 
 /**
  * Create HTTP server.
  */
-
 const server = http.createServer(app)
 
 // serve the API with signed certificate on 443 (SSL/HTTPS) port
 // let httpsServer
 // if (isProd)
 //   httpsServer = https.createServer(
-//     {
-//       key: fs.readFileSync('/etc/letsencrypt/live/pravosleva.ru/privkey.pem'),
-//       cert: fs.readFileSync('/etc/letsencrypt/live/pravosleva.ru/fullchain.pem'),
-//     },
+//     { key: fs.readFileSync('/etc/letsencrypt/live/pravosleva.ru/privkey.pem'),
+//       cert: fs.readFileSync('/etc/letsencrypt/live/pravosleva.ru/fullchain.pem'), },
 //     app
 //   )
 
 /**
  * Chat.
  */
-
 require('~/utils/socket/withSocketChat').withSocketChat(require('socket.io')(server))
 // require('~/utils/socket/withSocketChat').withSocketChat(require('socket.io')(httpsServer))
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-
 server.listen(port)
 // if (httpsServer)
 //   httpsServer.listen(443, () => {
@@ -74,11 +67,32 @@ server.listen(port)
 //     console.log('HTTPS Server running on port 443')
 //   })
 
+const state = {
+  auxCounter: 0,
+  errsCounter: 0,
+}
+
 /**
  * Event listener for HTTP server "error" event.
  */
-
 function onError(error) {
+  state.errs += 1
+  axios
+    .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, {
+      resultId: state.errs,
+      chat_id: 432590698, // NOTE: Den Pol
+      ts: new Date().getTime(),
+      eventCode: 'aux_service',
+      about: 'Express Helper server error',
+      targetMD: `Express Helper server error: ${error.code || 'No error.code'}\n\n\`\`\`${JSON.stringify(
+        error,
+        null,
+        2
+      )}\n\`\`\``,
+    })
+    .then((res) => res.data)
+    .catch((err) => err)
+
   if (error.syscall !== 'listen') {
     throw error
   }
@@ -96,17 +110,34 @@ function onError(error) {
       break
   }
 }
-
 server.on('error', onError)
 
 /**
  * Event listener for HTTP server "listening" event.
  */
-
 function onListening() {
+  state.auxCounter += 1
   const addr = server.address()
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`
   debug(`Listening on ${bind}`)
-}
 
+  axios
+    .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, {
+      resultId: state.auxCounter,
+      chat_id: 432590698, // NOTE: Den Pol
+      ts: new Date().getTime(),
+      eventCode: 'aux_service',
+      about: 'Express Helper server started',
+      targetMD: `\`\`\`\n${JSON.stringify(
+        {
+          NODE_ENV: process.env.NODE_ENV,
+          tgBotApiUrl,
+        },
+        null,
+        2
+      )}\n\`\`\``,
+    })
+    .then((res) => res.data)
+    .catch((err) => err)
+}
 server.on('listening', onListening)
