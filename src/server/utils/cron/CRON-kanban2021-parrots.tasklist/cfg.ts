@@ -67,7 +67,7 @@ export const cfg: TCfg = [
 
         eventCode: 'tasklist_reminder_daily',
         about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
-          return `В ближайшей перспективе (${daysRangeHalf} ${plural(tasks.length, '%d день', '%d дня', '%d дней')}) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задач', '%d задач')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return `_В ближайшей перспективе (${plural(daysRangeHalf, '%d день', '%d дня', '%d дней')}) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задач', '%d задач')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}_`
         },
         targetMD: ({ tasks, /* targetHashtags, targetRooms, */ }) => {
           const sortedMsgs = sortArrayByKeys({
@@ -84,6 +84,7 @@ export const cfg: TCfg = [
               // fixedDiff,
               room,
               isCompleted,
+              isLooped,
             } = task
 
             // const targetDate = new Date(uncheckTs + fixedDiff)
@@ -93,27 +94,29 @@ export const cfg: TCfg = [
               finishDate: new Date(timeEnd),
             })
             const msgList = [
-              `\`${i + 1}. ${title}\``,
+              `${i + 1}. ${title}`,
             ]
             // -- NOTE: Custom msg
             const specialMsgs: string[] = []
             switch (true) {
-              case !isCompleted:
-                specialMsgs.push('🔥 In progress')
-                break
-              default:
+              case isLooped:
                 specialMsgs.push(
                   diff.isNegative
                   ? `⚠️ Ready ${getTimeAgo(timeEnd)}`
                   : `⏱️ ${diff.message} left`
                 )
                 break
+              case !isCompleted:
+                specialMsgs.push('🔥 In progress')
+                break
+              default:
+                break
             }
-            specialMsgs.push(`💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
+            specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
-            return `_${msgList.join('\n')}_`
+            return `${msgList.join('\n')}`
           }).join('\n\n')
         },
       },
