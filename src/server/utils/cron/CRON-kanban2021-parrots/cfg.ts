@@ -83,7 +83,7 @@ export const cfg: TCfg = [
             } = msg
 
             const msgList = [
-              `\`${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}\``,
+              `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}`,
             ]
 
             // -- NOTE: Custom msg
@@ -160,7 +160,7 @@ export const cfg: TCfg = [
             } = msg
 
             const msgList = [
-              `\`${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}\``,
+              `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}`,
             ]
 
             // -- NOTE: Custom msg
@@ -242,7 +242,7 @@ export const cfg: TCfg = [
             } = msg
 
             const msgList = [
-              `\`${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}\``,
+              `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}`,
             ]
 
             // -- NOTE: Custom msg
@@ -333,7 +333,7 @@ export const cfg: TCfg = [
             } = msg
 
             const msgList = [
-              `${i + 1}.${!!statusCfg[status]?.symbol ? ` ${statusCfg[status]?.symbol}` : ''} \`${text}\``,
+              `${i + 1}.${!!statusCfg[status]?.symbol ? ` ${statusCfg[status]?.symbol}` : ''} ${text}`,
             ]
 
             // -- NOTE: Custom msg
@@ -445,7 +445,7 @@ export const cfg: TCfg = [
             //   `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} See text below` : 'See text below'}\n\n\`\`\`\n${JSON.stringify(msg, null, 2)}\n\`\`\``,
             // ]
             const msgList = [
-              `${i + 1}.${!!statusCfg[status]?.symbol ? ` ${statusCfg[status]?.symbol}` : ''} \`${text}\``,
+              `${i + 1}.${!!statusCfg[status]?.symbol ? ` ${statusCfg[status]?.symbol}` : ''} ${text}`,
             ]
 
             // -- NOTE: Custom msg
@@ -537,7 +537,7 @@ export const cfg: TCfg = [
             } = msg
 
             const msgList = [
-              `${i + 1}.${!!statusCfg[status]?.symbol ? ` ${statusCfg[status]?.symbol}` : ''} \`${text}\``,
+              `${i + 1}.${!!statusCfg[status]?.symbol ? ` ${statusCfg[status]?.symbol}` : ''} ${text}`,
             ]
 
             // -- NOTE: Custom msg
