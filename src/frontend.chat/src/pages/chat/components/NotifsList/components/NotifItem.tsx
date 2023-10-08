@@ -161,17 +161,17 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           // border: '1px solid red',
           // borderImage: `linear-gradient(to bottom, var(--chakra-colors-gray-200), rgba(0, 0, 0, 0)) 1 100%`,
           
-          // borderLeft: '4px solid var(--chakra-colors-gray-200)',
-          // borderTop: '1px solid var(--chakra-colors-gray-200)', // `1px ${isClosable ? isOpened ? 'solid' : 'dashed' : 'solid'} var(--chakra-colors-gray-200)`,
-          border: '1px solid var(--chakra-colors-gray-200)',
-          borderLeft: '5px solid var(--chakra-colors-gray-200)',
+          borderLeft: '4px solid var(--chakra-colors-gray-200)',
+          borderTop: '1px solid var(--chakra-colors-gray-200)', // `1px ${isClosable ? isOpened ? 'solid' : 'dashed' : 'solid'} var(--chakra-colors-gray-200)`,
+          // border: '1px solid var(--chakra-colors-gray-200)',
+          // borderLeft: '5px solid var(--chakra-colors-gray-200)',
           
           // paddingTop: 'var(--chakra-space-1)',
           // paddingLeft: 'var(--chakra-space-3)',
           padding: 'var(--chakra-space-1) var(--chakra-space-3)',
 
           // borderTopLeftRadius: 'var(--chakra-radii-lg)',
-          borderRadius: 'var(--chakra-radii-lg)',
+          // borderRadius: 'var(--chakra-radii-lg)',
 
           whiteSpace: 'pre-wrap',
           // marginBottom: 'var(--chakra-space-1)'

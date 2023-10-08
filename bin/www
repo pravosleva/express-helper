@@ -68,7 +68,7 @@ server.listen(port)
 //   })
 
 const state = {
-  auxCounter: 0,
+  startsCounter: 0,
   errsCounter: 0,
 }
 
@@ -76,10 +76,10 @@ const state = {
  * Event listener for HTTP server "error" event.
  */
 function onError(error) {
-  state.errs += 1
+  state.errsCounter += 1
   axios
     .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, {
-      resultId: state.errs,
+      resultId: state.errsCounter,
       chat_id: 432590698, // NOTE: Den Pol
       ts: new Date().getTime(),
       eventCode: 'aux_service',
@@ -116,14 +116,14 @@ server.on('error', onError)
  * Event listener for HTTP server "listening" event.
  */
 function onListening() {
-  state.auxCounter += 1
+  state.startsCounter += 1
   const addr = server.address()
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`
   debug(`Listening on ${bind}`)
 
   axios
     .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, {
-      resultId: state.auxCounter,
+      resultId: state.startsCounter,
       chat_id: 432590698, // NOTE: Den Pol
       ts: new Date().getTime(),
       eventCode: 'aux_service',

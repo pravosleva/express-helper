@@ -76,6 +76,7 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
   const titleEditedRef = useRef<string>(data.title)
 
   const CountdownRenderer = ({ days, hours, minutes, seconds, completed }: any) => {
+
     const showFire = isLooped && isCompleted && completed
 
     // if (showFire) return (
@@ -84,11 +85,11 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
     //   </Tooltip>
     // )
     if (showFire) return (
-      <Tag colorScheme='green'>Ready</Tag>
+      <Tag colorScheme='green' rounded='2xl' style={{ fontFamily: 'system-ui' }}>Ready</Tag>
     )
   
     return (
-      <Tag>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
+      <Tag rounded='2xl' style={{ fontFamily: 'system-ui' }}>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
     )
   }
   const timeEnd: any = !!checkTs && !!uncheckTs && isCompleted && isLooped ? checkTs + (checkTs - uncheckTs) : null
