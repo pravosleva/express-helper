@@ -34,7 +34,8 @@ function normalizePort(val) {
 /**
  * Get port from environment and store in Express.
  */
-const port = normalizePort(process.env.PORT || '3000')
+const PORT = process.env.PORT || '3000'
+const port = normalizePort(PORT)
 app.set('port', port)
 
 /**
@@ -84,11 +85,7 @@ function onError(error) {
       ts: new Date().getTime(),
       eventCode: 'aux_service',
       about: 'Express Helper server error',
-      targetMD: `Express Helper server error: ${error.code || 'No error.code'}\n\n\`\`\`${JSON.stringify(
-        error,
-        null,
-        2
-      )}\n\`\`\``,
+      targetMD: `${error.code || 'No error.code'}\n\n\`\`\`${JSON.stringify(error, null, 2)}\n\`\`\``,
     })
     .then((res) => res.data)
     .catch((err) => err)
@@ -127,7 +124,7 @@ function onListening() {
       chat_id: 432590698, // NOTE: Den Pol
       ts: new Date().getTime(),
       eventCode: 'aux_service',
-      about: 'Express Helper server started',
+      about: `\`/express-helper\` 🚀 Started on TCP ${PORT}`,
       targetMD: `\`\`\`\n${JSON.stringify(
         {
           NODE_ENV: process.env.NODE_ENV,
