@@ -29,6 +29,6 @@ echo -ne '######                    (30%)\r'
 
 echo -ne '########################  (100%)\r'
 
-echo "🔨 POSTBUILD COMPLETED "
+echo "🛠️ POSTBUILD COMPLETED "
 
 exit 0

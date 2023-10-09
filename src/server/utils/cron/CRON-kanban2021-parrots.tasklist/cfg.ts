@@ -27,7 +27,7 @@ export const cfg: TCfg = [
     // cronSetting: isDev ? '*/10 * * * * *' : '10 1 10 * * *', // NOTE: Every 10 secs for isDev
     validateBeforeRequest: ({ tasks }) => tasks.length > 0,
     _specialMsgValidator(task) {
-      // NOTE: Интересуют только те задачи, до uncheck которых осталось менее 30 дней
+      // NOTE: Интересуют только те задачи, до uncheck которых осталось менее daysRangeHalf дней
       const {
         isCompleted,
         isLooped,
@@ -44,7 +44,7 @@ export const cfg: TCfg = [
         startDate: new Date(),
         finishDate: new Date(timeEnd)
       })
-      const isCorrect = !isCompleted || (!!checkTs && isCompleted && isLooped && diff.d <= daysRangeHalf)
+      const isCorrect = !!checkTs && isCompleted && isLooped && diff.d <= daysRangeHalf
       // /* NOTE: Task example
       // { ts: 1639316052419,
       //   title: 'New test',
@@ -83,8 +83,8 @@ export const cfg: TCfg = [
               checkTs,
               // fixedDiff,
               room,
-              isCompleted,
-              isLooped,
+              // isCompleted,
+              // isLooped,
             } = task
 
             // const targetDate = new Date(uncheckTs + fixedDiff)
@@ -99,19 +99,65 @@ export const cfg: TCfg = [
             // -- NOTE: Custom msg
             const specialMsgs: string[] = []
             switch (true) {
-              case isLooped:
+              default:
                 specialMsgs.push(
                   diff.isNegative
                   ? `⚠️ Ready ${getTimeAgo(timeEnd)}`
                   : `⏱️ ${diff.message} left`
                 )
                 break
-              case !isCompleted:
-                specialMsgs.push('🔥 In progress')
-                break
-              default:
-                break
             }
+            specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
+            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+            // --
+
+            return `${msgList.join('\n')}`
+          }).join('\n\n')
+        },
+      },
+    },
+  },
+  {
+    id: 2,
+    _descr: 'Все незавершенные таски',
+    isEnabled: true,
+    cronSetting: '30 1 10 * * *', // Every day at 10:01:30
+    validateBeforeRequest: ({ tasks }) => tasks.length > 0,
+    _specialMsgValidator: (task) => !task.isCompleted,
+    targetRooms: ['magaz'],
+    targetHashtags: [],
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: -1001917842024, // NOTE: My home -> Reminder (topic)
+        message_thread_id: 5,
+
+        eventCode: 'tasklist_reminder_daily',
+        about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
+          return `_🔥 Имеются ${plural(tasks.length, '%d задача', '%d задач', '%d задач')} в работе${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}_`
+        },
+        targetMD: ({ tasks, /* targetHashtags, targetRooms, */ }) => {
+          const sortedMsgs = sortArrayByKeys({
+            arr: tasks,
+            keys: ['editTs'],
+            order: 1,
+          })
+          return sortedMsgs.map((task, i) => {
+            const {
+              title,
+              // uncheckTs,
+              // checkTs,
+              // fixedDiff,
+              room,
+              // isCompleted,
+              // isLooped,
+            } = task
+            const msgList = [
+              `${i + 1}. ${title}`,
+            ]
+
+            // -- NOTE: Custom msg
+            const specialMsgs: string[] = []
             specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
