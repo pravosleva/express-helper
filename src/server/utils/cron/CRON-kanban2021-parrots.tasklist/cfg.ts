@@ -168,4 +168,55 @@ export const cfg: TCfg = [
       },
     },
   },
+  {
+    id: 3,
+    _descr: 'Все незавершенные таски (Тишка)',
+    isEnabled: true,
+    cronSetting: '01 37 08 * * *', // Every day at 08:37:01
+    validateBeforeRequest: ({ tasks }) => tasks.length > 0,
+    _specialMsgValidator: (task) => !task.isCompleted,
+    targetRooms: ['magaz'],
+    targetHashtags: ['#кот'],
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: -1001917842024, // NOTE: My home -> Тишка (topic) https://t.me/c/1917842024/324
+        message_thread_id: 324,
+
+        eventCode: 'tasklist_reminder_daily',
+        about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
+          return `_🔥 Имеются ${plural(tasks.length, '%d задача', '%d задач', '%d задач')} в работе${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}_`
+        },
+        targetMD: ({ tasks, /* targetHashtags, targetRooms, */ }) => {
+          const sortedMsgs = sortArrayByKeys({
+            arr: tasks,
+            keys: ['editTs'],
+            order: 1,
+          })
+          return sortedMsgs.map((task, i) => {
+            const {
+              title,
+              // uncheckTs,
+              // checkTs,
+              // fixedDiff,
+              room,
+              // isCompleted,
+              // isLooped,
+            } = task
+            const msgList = [
+              `${i + 1}. ${title}`,
+            ]
+
+            // -- NOTE: Custom msg
+            const specialMsgs: string[] = []
+            specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
+            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+            // --
+
+            return `${msgList.join('\n')}`
+          }).join('\n\n')
+        },
+      },
+    },
+  },
 ]
