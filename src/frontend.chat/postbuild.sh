@@ -2,10 +2,13 @@
 # set -e
 # set -x
 
-echo "🔨 POSTBUILD STARTED: Chat"
-
 EXTERNAL_DIR_0=""$(dirname "$PWD")""
 EXTERNAL_DIR=""$(dirname "$EXTERNAL_DIR_0")""
+
+source "${EXTERNAL_DIR}/log-format.sh"
+
+info '-- POSTBUILD STARTED: Chat page 🔨 '
+
 TARGET_DIR="${EXTERNAL_DIR}/server-dist/routers/chat/spa.build"
 
 # Step 1: Create target dir if necessary
@@ -32,6 +35,6 @@ echo -ne '######                    (30%)\r'
 
 echo -ne '########################  (100%)\r'
 
-echo "🛠️ POSTBUILD COMPLETED "
+info '-- POSTBUILD COMPLETED 🛠️ '
 
 exit 0
