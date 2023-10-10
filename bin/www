@@ -84,7 +84,7 @@ function onError(error) {
       chat_id: 432590698, // NOTE: Den Pol
       ts: new Date().getTime(),
       eventCode: 'aux_service',
-      about: 'Express Helper server error',
+      about: '`/express-helper`\n⛔ Error',
       targetMD: `${error.code || 'No error.code'}\n\n\`\`\`${JSON.stringify(error, null, 2)}\n\`\`\``,
     })
     .then((res) => res.data)
