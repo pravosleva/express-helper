@@ -62,7 +62,7 @@ export const cfg: TCfg = [
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         // chat_id: 432590698, // NOTE: Den Pol
-        chat_id: -1001917842024, // NOTE: My home -> Reminder (topic)
+        chat_id: -1001917842024, // NOTE: My home -> Reminder (topic) https://t.me/c/1917842024/5
         message_thread_id: 5,
 
         eventCode: 'tasklist_reminder_daily',
