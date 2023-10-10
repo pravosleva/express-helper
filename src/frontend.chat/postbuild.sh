@@ -15,9 +15,12 @@ then
   if [ ! $? -eq 0 ]; then
     echo "ERROR: ${TARGET_DIR} could not be created!"
     exit 1
+  else
+    echo "New dir created: ${TARGET_DIR}"
   fi
 else
   rm -rf ${TARGET_DIR}/*;
+  echo "Dir cleared: ${TARGET_DIR}"
 fi
 
 echo -ne '##                        (10%)\r'

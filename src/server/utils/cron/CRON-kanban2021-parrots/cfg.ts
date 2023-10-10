@@ -208,12 +208,16 @@ export const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          // return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}: *${[...targetStatuses.map(getStatusTranslated)].join('; ')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return `${
+            msgs.length > 0
+            ? `Current state of affairs in ${targetRooms.map((room) => `[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+            : ''}`
         },
         targetMD: ({
           msgs,
-          targetHashtags,
-          targetStatuses,
+          // targetHashtags,
+          // targetStatuses,
         }) => {
           const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
             arr: sortArrayByKeys({
@@ -294,15 +298,19 @@ export const cfg: TCfg = [
         about: ({
           msgs,
           targetHashtags,
-          targetStatuses,
+          // targetStatuses,
           targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          // return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return `${
+            msgs.length > 0
+            ? `Current state of affairs in ${targetRooms.map((room) => `[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+            : ''}`
         },
         targetMD: ({
           msgs,
-          targetHashtags,
-          targetStatuses,
+          // targetHashtags,
+          // targetStatuses,
         }) => {
           const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
             arr: sortArrayByKeys({
