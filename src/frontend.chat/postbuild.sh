@@ -6,6 +6,7 @@ EXTERNAL_DIR_0=""$(dirname "$PWD")""
 EXTERNAL_DIR=""$(dirname "$EXTERNAL_DIR_0")""
 
 source "${EXTERNAL_DIR}/log-format.sh"
+# NOTE: See also https://opensource.com/article/20/6/bash-source-command
 
 info '-- POSTBUILD STARTED: Chat page 🔨 '
 
