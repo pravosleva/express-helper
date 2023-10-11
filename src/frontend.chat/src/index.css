@@ -177,3 +177,16 @@ input[type="file"]:disabled + label {
     backdrop-filter: blur(2em);
   }
 }
+
+.responsive-block-0202 {
+  padding: 0px var(--chakra-space-2) 0px var(--chakra-space-2);
+}
+.responsive-block-0404 {
+  padding: 0px var(--chakra-space-4) 0px var(--chakra-space-4);
+}
+.no-last-border-bottom > *:last-child {
+  border-bottom: none;
+}
+.no-first-border-top > *:first-child {
+  border-top: none;
+}

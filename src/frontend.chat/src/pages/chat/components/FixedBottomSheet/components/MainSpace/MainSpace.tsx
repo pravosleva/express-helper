@@ -8,6 +8,7 @@ import { TSetting } from '~/pages/chat/components/AccordionSettings'
 import { PopoverInfoButton } from './components'
 import { UserAva } from '~/pages/chat/components/UserAva'
 import { getNormalizedDate } from '~/utils/timeConverter'
+import equal from 'fast-deep-equal'
 
 type TCounters = {
   total: number,
@@ -159,26 +160,35 @@ const MainSpaceMemoized = ({
       traceableUsers: (!!assignmentSettingsLS && !!assignmentSettingsLS[room]) ? Object.keys(assignmentSettingsLS[room]) : []
     })
   }, [filteredMessages, filteredKanbanStatuses, assignmentSettingsLS, room])
-  const [_effCounter, _setEffCounter] = useState<number>(0)
+  // const [_effCounter, _setEffCounter] = useState<number>(0)
   const isFiltersInactive = useMemo(() => !isFiltersActive, [isFiltersActive])
-  useEffect(() => {
+  useLayoutEffect(() => {
     const run = () => {
       if (isFiltersInactive && typeof window !== 'undefined' && !document.hidden) {
         const val = window.localStorage.getItem('chat.assignment-feature.custom-settings')
         const parsedVal = JSON.parse(val || '{}')
         try {
           if (!!val) {
-            setAssignmentSettingsLS(parsedVal)
-            setAUsersCounter(Object.keys(parsedVal[room]).length)
+            // if (!equal(val, parsedVal)) {
+            //   console.log('--- not equal')
+            //   console.log(val)
+            //   console.log(parsedVal)
+            //   setAssignmentSettingsLS(parsedVal)
+            // }
+            if (aUsersCounter !== Object.keys(parsedVal[room]).length) setAUsersCounter(Object.keys(parsedVal[room]).length)
           }
         } catch (err) {
           // console.log(err)
         }
-        _setEffCounter(s => s + 1)
+        // _setEffCounter(s => s + 1)
       }
     }
-    setTimeout(run, 1000)
-  }, [_effCounter, _setEffCounter, isFiltersInactive, room])
+    const interval = setInterval(run, 1000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [isFiltersInactive, room, aUsersCounter])
   // -
 
   // const handleClickDoneLastWeek = useCallback(() => {

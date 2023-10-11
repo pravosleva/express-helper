@@ -2269,12 +2269,13 @@ export const Chat = () => {
                   </DrawerHeader>
 
                   <DrawerBody
-                    pt={0}
-                    pb={0}
+                    // pt={0}
+                    // pb={0}
+                    p={0}
                   >
                     <Stack spacing={4} mt={4}>
                       {/* <Box><Text>The room features</Text></Box> */}
-                      <Grid templateColumns='repeat(3, 1fr)' gap={2}>
+                      <Grid templateColumns='repeat(3, 1fr)' gap={2} className='responsive-block-0404'>
                         <Menu autoSelect={false}>
                           <MenuButton
                             // as={IconButton}
@@ -2415,33 +2416,38 @@ export const Chat = () => {
 
                       <>
                         {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
-                          <SwitchSection
-                            label='Assignment feature'
-                            id='assignment-feature-switcher'
-                            onChange={toggleAssignmentFeature}
-                            isChecked={isAssignmentFeatureEnabled}
-                            description='Эта фича добавит дополнительный пункт Assign контекстного меню сообщения в чате для назначения задачи на пользователя, если рассматривать сообщение как задачу'
-                          />
+                          <div className='responsive-block-0404'>
+                            <SwitchSection
+                              label='Assignment feature'
+                              id='assignment-feature-switcher'
+                              onChange={toggleAssignmentFeature}
+                              isChecked={isAssignmentFeatureEnabled}
+                              description='Эта фича добавит дополнительный пункт Assign контекстного меню сообщения в чате для назначения задачи на пользователя, если рассматривать сообщение как задачу'
+                            />
+                          </div>
                         )}
                         {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
-                          <SwitchSection
-                            label='Sprint feature'
-                            id='sprint-feature-switcher'
-                            onChange={toggleSprintFeature}
-                            isChecked={sprintFeatureSnap.isFeatureEnabled}
-                            description='Эта фича позволит добавить задачи в спринт (они видны всем)'
-                          />
+                          <div className='responsive-block-0404'>
+                            <SwitchSection
+                              label='Sprint feature'
+                              id='sprint-feature-switcher'
+                              onChange={toggleSprintFeature}
+                              isChecked={sprintFeatureSnap.isFeatureEnabled}
+                              description='Эта фича позволит добавить задачи в спринт (они видны всем)'
+                            />
+                          </div>
                         )}
                         {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
-                          <SwitchSection
-                            label='Devtools'
-                            id='devtools-feature-switcher'
-                            onChange={toggleDevtoolsFeature}
-                            isChecked={devtoolsFeatureSnap.isFeatureEnabled}
-                            description='Эта фича позволит настроить доп. опции прозводительности, посмотреть аналитику потребления, возможно, что-то еще'
-                          />
+                          <div className='responsive-block-0404'>
+                            <SwitchSection
+                              label='Devtools'
+                              id='devtools-feature-switcher'
+                              onChange={toggleDevtoolsFeature}
+                              isChecked={devtoolsFeatureSnap.isFeatureEnabled}
+                              description='Эта фича позволит настроить доп. опции прозводительности, посмотреть аналитику потребления, возможно, что-то еще'
+                            />
+                          </div>
                         )}
-
                         {AccordionStuff}
                       </>
                     </Stack>

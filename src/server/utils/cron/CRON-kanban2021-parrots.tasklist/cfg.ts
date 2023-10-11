@@ -126,6 +126,7 @@ export const cfg: TCfg = [
     _specialMsgValidator: (task) => !task.isCompleted,
     targetRooms: ['magaz'],
     targetHashtags: [],
+    ignoredHashTags: ['#кот'],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {

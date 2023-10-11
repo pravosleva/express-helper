@@ -166,9 +166,9 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           // border: '1px solid var(--chakra-colors-gray-200)',
           // borderLeft: '5px solid var(--chakra-colors-gray-200)',
           
-          // paddingTop: 'var(--chakra-space-1)',
-          // paddingLeft: 'var(--chakra-space-3)',
-          padding: 'var(--chakra-space-1) var(--chakra-space-3)',
+          paddingTop: 'var(--chakra-space-1)',
+          paddingLeft: 'var(--chakra-space-3)',
+          // padding: 'var(--chakra-space-1) var(--chakra-space-3)',
 
           // borderTopLeftRadius: 'var(--chakra-radii-lg)',
           // borderRadius: 'var(--chakra-radii-lg)',
@@ -219,17 +219,17 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
             >
               <div>{isOpened ? <b>{text}</b> : <b>{firstString}</b>}</div>
               {/* <pre style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap' }}>{JSON.stringify(original, null, 2)}</pre> */}
-              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <Button
                   mt={1}
-                  mb={2}
+                  mb={0}
                   size='xs'
                   // isFullWidth
                   isLoading={inProgress}
                   onClick={toggle}
                   colorScheme='gray'
                   // variant='link'
-                  variant='outline'
+                  variant='ghost'
                   rounded='2xl'
                   rightIcon={isOpened ? <FiChevronUp /> : <FiChevronDown />}
                 >{isOpened ? 'Close' : 'Open'}</Button>

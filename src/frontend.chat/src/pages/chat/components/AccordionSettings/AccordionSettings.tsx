@@ -37,6 +37,7 @@ import { ServerInfo } from './components/ServerInfo'
 import { ClientInfo } from './components/ClientInfo'
 import { TSetting } from './interfaces'
 import { StickyAccordionButton } from './components/StickyAccordionButton'
+import clsx from 'clsx'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
@@ -251,6 +252,7 @@ export const AccordionSettings = memo(({
           flexDirection: 'column',
           gap: '2px',
         }}
+        className={clsx('no-last-border-bottom', 'no-first-border-top')}
       >
         {
           registryLevel === ERegistryLevel.TGUser && isAssignmentFeatureEnabled && (
@@ -269,7 +271,7 @@ export const AccordionSettings = memo(({
                 </StickyAccordionButton>
               </>
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
-                <Stack>
+                <Stack className='responsive-block-0404'>
                   <Flex alignItems="center">
                     <Button size='sm' rounded='2xl' variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={15}/>}>Find user</Button>
                     {hasEnabledFilters && <Button colorScheme='blue'size='sm' rounded='2xl' variant='ghost' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
@@ -357,8 +359,7 @@ export const AccordionSettings = memo(({
                 </StickyAccordionButton>
               </>
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
-                
-                <Box>
+                <Box className='responsive-block-0404'>
                   <NotifsList
                     onRemove={(ts) => { sprintFeatureProxy.tsUpdate = ts }}
                     onEdit={onEditMessage}
@@ -383,7 +384,9 @@ export const AccordionSettings = memo(({
                   </StickyAccordionButton>
                 </>
                 <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
-                  {accordionPanelContent}
+                  <div className='responsive-block-0404'>
+                    {accordionPanelContent}
+                  </div>
                 </AccordionPanel>
               </AccordionItem>
             )
@@ -402,7 +405,7 @@ export const AccordionSettings = memo(({
                 <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                   {
                     sprintFeatureSnap.isFeatureEnabled && (
-                      <Box mb={4}>
+                      <Box mb={4} className='responsive-block-0404'>
                         <SwitchSection
                           id='devtools-feature-switcher--sprint-poll'
                           onChange={toggleMainThreadPolling}
@@ -426,19 +429,19 @@ export const AccordionSettings = memo(({
                   }
 
                   {!!cpuFeatureSnap?.mem && (
-                    <Box mb={2}>
+                    <Box mb={2} className='responsive-block-0202'>
                       <Text style={{ textAlign: 'center' }}><em>Server</em></Text>
                       <ServerInfo />
                     </Box>
                   )}
                   {/* @ts-ignore */}
                   {!!window.performance?.memory ? (
-                    <Box>
+                    <Box className='responsive-block-0202'>
                       <Text style={{ textAlign: 'center' }}><em>Client</em></Text>
                       <ClientInfo />
                     </Box>
                   ) : (
-                    <Box>
+                    <Box className='responsive-block-0202'>
                       <Text style={{ textAlign: 'center' }}><em>Client: Deprecated feature not supported</em></Text>
                     </Box>
                   )}
@@ -469,8 +472,10 @@ export const AccordionSettings = memo(({
                   </StickyAccordionButton>
                 </>
                 <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
-                  <Text style={{ textAlign: 'center' }}><em>This frontend stack</em></Text>
-                  <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(pkg.dependencies, null, 2)}</pre>
+                  <div className='responsive-block-0202'>
+                    <Text style={{ textAlign: 'center' }}><em>This frontend stack</em></Text>
+                    <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(pkg.dependencies, null, 2)}</pre>
+                  </div>
                 </AccordionPanel>
               </AccordionItem>
             </>
