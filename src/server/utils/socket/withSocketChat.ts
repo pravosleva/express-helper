@@ -234,7 +234,9 @@ export const withSocketChat = (io: Socket) => {
       for (let r in rooms) socket.leave(r)
       // --
 
-      socket.emit('my.user-data', !!myRegData ? { ...myRegData, _frontMinorVersionSupport: frontMinorVersionSupport } : null)
+      const { passwordHash, ...restRegData } = myRegData
+
+      socket.emit('my.user-data', !!myRegData ? { ...restRegData, _frontMinorVersionSupport: Number(frontMinorVersionSupport) } : null)
       // ---
       if (!name || !room) {
         cb('Попробуйте перезайти')
@@ -294,9 +296,9 @@ export const withSocketChat = (io: Socket) => {
         const regData = registeredUsersMap.get(name)
         switch (true) {
           case regData.registryLevel === ERegistryLevel.Guest || regData.registryLevel === ERegistryLevel.Logged:
-            const hash = bcrypt.hashSync(password)
+            // const hash = bcrypt.hashSync(password)
 
-            regData.passwordHash = hash
+            // regData.passwordHash = hash
             regData.registryLevel = ERegistryLevel.Logged
             registeredUsersMap.set(name, regData)
             if (!!cb) cb()
@@ -309,9 +311,12 @@ export const withSocketChat = (io: Socket) => {
         }
         socket.emit('my.user-data', regData)
       } else {
-        const hash = bcrypt.hashSync(password)
+        // const hash = bcrypt.hashSync(password)
 
-        const regData: any = { passwordHash: hash, registryLevel: ERegistryLevel.Logged }
+        const regData: any = {
+          // passwordHash: hash,
+          registryLevel: ERegistryLevel.Logged,
+        }
         registeredUsersMap.set(name, regData)
         if (!!cb) cb()
         socket.emit('my.user-data', regData)

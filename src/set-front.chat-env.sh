@@ -18,7 +18,7 @@ echo $REACT_APP_API_URL &&
 
 # NOTE: Все директории относительно project root dir
 echo "SKIP_PREFLIGHT_CHECK=true
-GENERATE_SOURCEMAP=true" > src/frontend.chat/.env
+GENERATE_SOURCEMAP=false" > src/frontend.chat/.env
 
 if [ $# -eq 2 ]
 then

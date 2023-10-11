@@ -507,17 +507,17 @@ export const Chat = () => {
       const myUserDataListener = (regData: any) => {
         userInfoProxy.regData = regData
         const currentMajorVersion = pkg.version.split('.')[1]
-        if (!!regData?._frontMinorVersionSupport && regData._frontMinorVersionSupport !== currentMajorVersion) {
+        if (!!regData?._frontMinorVersionSupport && (regData._frontMinorVersionSupport !== Number(currentMajorVersion)) || isNaN(regData?._frontMinorVersionSupport)) {
           toast({
             position: 'top-left',
             title: `Actual version from backend: ${regData._frontMinorVersionSupport}`,
-            description: `Reload reason: ${currentMajorVersion}`,
+            description: `7s Reload reason: ${currentMajorVersion}`,
             status: 'error',
-            duration: 3000,
+            duration: 6000,
           })
           setTimeout(() => {
             document.location.reload()
-          }, 4000)
+          }, 7000)
         }
         // else toast({
         //   position: 'top-left',

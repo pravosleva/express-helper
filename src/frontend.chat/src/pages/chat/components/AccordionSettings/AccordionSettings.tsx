@@ -454,7 +454,7 @@ export const AccordionSettings = memo(({
               <AccordionItem key='about'>
                 <h2>
                   <AccordionButton>
-                    <Box flex='1' textAlign='left'>About</Box>
+                    <Box flex='1' textAlign='left'>About v{pkg.version}</Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
