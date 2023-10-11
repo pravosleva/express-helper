@@ -18,7 +18,7 @@ const parrots = new Map()
 for (const parrot of cfg) {
   if (parrot.isEnabled) {
     parrots.set(parrot.id, {
-      promise: async () => {
+      promise: async (): Promise<void> => {
         const {
           targetRooms,
           targetHashtags,

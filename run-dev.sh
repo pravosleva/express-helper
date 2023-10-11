@@ -34,5 +34,5 @@ then
 else
   # echo "☠️ SCRIPT: envs-init.sh | Param is required! cra|nextjs"
   # exit 1
-  yarn build:fresh-dev && yarn start
+  yarn build:fresh-dev && yarn start:dev
 fi
