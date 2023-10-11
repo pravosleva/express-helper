@@ -2,7 +2,7 @@ import { useState, useCallback, useMemo, useEffect, memo } from 'react'
 import {
   Accordion,
   AccordionItem,
-  AccordionButton,
+  // AccordionButton,
   AccordionIcon,
   AccordionPanel,
   Box,
@@ -36,6 +36,7 @@ import { SwitchSection } from '~/common/components/SwitchSection'
 import { ServerInfo } from './components/ServerInfo'
 import { ClientInfo } from './components/ClientInfo'
 import { TSetting } from './interfaces'
+import { StickyAccordionButton } from './components/StickyAccordionButton'
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || ''
 
@@ -241,12 +242,21 @@ export const AccordionSettings = memo(({
         )
       }
       {/* <pre>{JSON.stringify(countersMap, null, 2)}</pre> */}
-      <Accordion allowToggle defaultIndex={(!!navbarMenuSettingsLS?.[room] || navbarMenuSettingsLS?.[room] === 0) ? navbarMenuSettingsLS?.[room] : -1} onChange={updateDefaultTabForTheRoom}>
+      <Accordion
+        allowToggle
+        defaultIndex={(!!navbarMenuSettingsLS?.[room] || navbarMenuSettingsLS?.[room] === 0) ? navbarMenuSettingsLS?.[room] : -1}
+        onChange={updateDefaultTabForTheRoom}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '2px',
+        }}
+      >
         {
           registryLevel === ERegistryLevel.TGUser && isAssignmentFeatureEnabled && (
             <AccordionItem>
-              <h2>
-                <AccordionButton>
+              <>
+                <StickyAccordionButton>
                   <Box flex='1' textAlign='left'>
                     <Flex alignItems="center">
                       <Text fontWeight="400" fontSize="md" letterSpacing="0">
@@ -256,8 +266,8 @@ export const AccordionSettings = memo(({
                     </Flex>
                   </Box>
                   <AccordionIcon />
-                </AccordionButton>
-              </h2>
+                </StickyAccordionButton>
+              </>
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                 <Stack>
                   <Flex alignItems="center">
@@ -328,8 +338,8 @@ export const AccordionSettings = memo(({
         {
           sprintFeatureSnap.isFeatureEnabled && registryLevel === ERegistryLevel.TGUser && (
             <AccordionItem>
-              <h2>
-                <AccordionButton>
+              <>
+                <StickyAccordionButton>
                   <Box flex='1' textAlign='left'>
                     <Flex alignItems="center">
                       <Text fontWeight="400" fontSize="md" letterSpacing="0">
@@ -344,8 +354,8 @@ export const AccordionSettings = memo(({
                     </Flex>
                   </Box>
                   {!sprintFeatureSnap.isPollingWorks ? <Spinner mr={1} size='xs' /> : <AccordionIcon />}
-                </AccordionButton>
-              </h2>
+                </StickyAccordionButton>
+              </>
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                 
                 <Box>
@@ -364,14 +374,14 @@ export const AccordionSettings = memo(({
           defaultAccordionItems.map(({ uniqueKey, accordionPanelContent, accordionButtonContent }) => {
             return (
               <AccordionItem key={uniqueKey}>
-                <h2>
-                  <AccordionButton>
+                <>
+                  <StickyAccordionButton>
                     <Box flex='1' textAlign='left'>
                       {accordionButtonContent}
                     </Box>
                     <AccordionIcon />
-                  </AccordionButton>
-                </h2>
+                  </StickyAccordionButton>
+                </>
                 <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                   {accordionPanelContent}
                 </AccordionPanel>
@@ -383,12 +393,12 @@ export const AccordionSettings = memo(({
           devtoolsFeatureSnap.isFeatureEnabled && (
             <>
               <AccordionItem key='devtools-feature'>
-                <h2>
-                  <AccordionButton>
+                <>
+                  <StickyAccordionButton>
                     <Box flex='1' textAlign='left'>Devtools</Box>
                     <AccordionIcon />
-                  </AccordionButton>
-                </h2>
+                  </StickyAccordionButton>
+                </>
                 <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                   {
                     sprintFeatureSnap.isFeatureEnabled && (
@@ -452,12 +462,12 @@ export const AccordionSettings = memo(({
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem key='about'>
-                <h2>
-                  <AccordionButton>
+                <>
+                  <StickyAccordionButton>
                     <Box flex='1' textAlign='left'>About v{pkg.version}</Box>
                     <AccordionIcon />
-                  </AccordionButton>
-                </h2>
+                  </StickyAccordionButton>
+                </>
                 <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                   <Text style={{ textAlign: 'center' }}><em>This frontend stack</em></Text>
                   <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(pkg.dependencies, null, 2)}</pre>

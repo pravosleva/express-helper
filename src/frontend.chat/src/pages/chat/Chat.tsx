@@ -2268,8 +2268,11 @@ export const Chat = () => {
                     <div className={appStyles['truncate-overflow-single-line-exp']}>{room}</div>
                   </DrawerHeader>
 
-                  <DrawerBody>
-                    <Stack spacing={4} mt={2}>
+                  <DrawerBody
+                    pt={0}
+                    pb={0}
+                  >
+                    <Stack spacing={4} mt={4}>
                       {/* <Box><Text>The room features</Text></Box> */}
                       <Grid templateColumns='repeat(3, 1fr)' gap={2}>
                         <Menu autoSelect={false}>
@@ -2527,33 +2530,34 @@ export const Chat = () => {
                   }
                 </MenuList>
               </Menu>
-
+              
               <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }} mr={2}>
                 {/* <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading> */}
                 <Heading fontSize='lg' fontFamily='system-ui' className={appStyles['truncate-overflow-single-line']}>
-                  {room} {isChatLoading && !!tsPoint && (
-                    <Spinner size='xs' />
-                  )}
+                  {room || 'Wait...'} {isChatLoading && !!tsPoint && <Spinner size='xs' />}
                 </Heading>
-                <Flex alignItems="center">
-                  <Box h={2} w={2} borderRadius="100px" bg={isConnected ? 'green.300' : 'red.300'}></Box>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'flex-start',
+                    alignItems: 'center',
+                    gap: 'var(--chakra-space-1)',
+                  }}
+                >
+                  <Box h={2} w={2} style={{ minWidth: 'var(--chakra-sizes-2)' }} borderRadius="var(--chakra-radii-2xl)" bg={isConnected ? 'green.300' : 'red.300'}></Box>
                   <Box
-                    ml="2"
-                    
+                    // ml="2"
                     fontWeight="400"
                     fontSize="md"
                     letterSpacing="0"
                     fontFamily='system-ui'
-                    
-                    style={{
-                      maxWidth: '185px',
-                      boxSizing: 'border-box',
-                    }}
+                    style={{ maxWidth: '185px', boxSizing: 'border-box' }}
                     className={appStyles['truncate-overflow-single-line']}
                   >
-                    {name}
+                    {name || '...'}
                   </Box>
-                </Flex>
+                </div>
               </Flex>
 
               <IconButton
