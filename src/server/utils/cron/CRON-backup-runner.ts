@@ -44,99 +44,99 @@ const backupStateFilePath = path.join(projectRootDir, './backup', BACKUP_STATE_F
 createDirIfNecessary(path.join(projectRootDir, 'backup'))
 
 Object.keys(cfg).forEach((dirName, i) => {
-    const destDir = path.join(projectRootDir, `backup/${dirName}`)
-    createDirIfNecessary(destDir)
+  const destDir = path.join(projectRootDir, `backup/${dirName}`)
+  createDirIfNecessary(destDir)
 
-    const cronInterval = cfg[dirName]
+  const cronInterval = cfg[dirName]
 
-    cron.schedule(cronInterval, function() {
-        // NOTE: v2 (средствами bash)
-        // See also: https://www.npmjs.com/package/bash-exec
-        const runDir = path.join(__dirname, '../../../') // SAMPLE: /home/den/projects/smartprice_projects/express-helper/
-        const cmd = `yarn --cwd ${runDir} make-backup:${dirName}`
-        bashExec(cmd)
-            .then((arg: any) => {
-                console.log(`- backup ${dirName}: ok`)
-                console.log(arg)
-                cronStateInstance.setData({ backupName: dirName })
-                console.log('-')
-            })
-            .catch((err: any) => {
-                const lockedBackupName = dirName === 'backup-20min' ? 'backup-15min' : 'backup-20min'
-                console.log(`- backup ${dirName}: fail; locked bacupName: ${lockedBackupName}`)
-                console.log(err)
-                cronStateInstance.lock(lockedBackupName)
-                console.log('-')
-            })
-        /*
-        fs.readdir(sourcePath, function(err, files) {
-            if (err) {
-                return console.error(err);
-            }
-            if (files.length === 0) {
-                console.log('🚫 BACKUP: empty folder!')
-            } else {
-                // -- TEST:
-                // cronStateInstance.lock('backup-1min')
-                // --
-                const locked = cronStateInstance.getLocked()
+  cron.schedule(cronInterval, function() {
+    // NOTE: v2 (средствами bash)
+    // See also: https://www.npmjs.com/package/bash-exec
+    const runDir = path.join(__dirname, '../../../') // SAMPLE: /home/den/projects/smartprice_projects/express-helper/
+    const cmd = `yarn --cwd ${runDir} make-backup:${dirName}`
+    bashExec(cmd)
+      .then((arg: any) => {
+        console.log(`- backup ${dirName}: ok`)
+        console.log(arg)
+        cronStateInstance.setData({ backupName: dirName })
+        console.log('-')
+      })
+      .catch((err: any) => {
+        const lockedBackupName = dirName === 'backup-20min' ? 'backup-15min' : 'backup-20min'
+        console.log(`- backup ${dirName}: fail; locked bacupName: ${lockedBackupName}`)
+        console.log(err)
+        cronStateInstance.lock(lockedBackupName)
+        console.log('-')
+      })
+      /*
+      fs.readdir(sourcePath, function(err, files) {
+        if (err) {
+          return console.error(err);
+        }
+        if (files.length === 0) {
+          console.log('🚫 BACKUP: empty folder!')
+        } else {
+          // -- TEST:
+          // cronStateInstance.lock('backup-1min')
+          // --
+          const locked = cronStateInstance.getLocked()
 
-                switch (true) {
-                    case !!locked && locked === dirName:
-                        // Не перезаписываем директорию
-                        break;
-                    case !!locked && locked !== dirName:
-                        // NOTE: На самом деле, нет смысла сохранять другие бэкапы,
-                        // т.к. восстанавливать придется из залоченного бэкапа
+          switch (true) {
+            case !!locked && locked === dirName:
+              // Не перезаписываем директорию
+              break;
+            case !!locked && locked !== dirName:
+              // NOTE: На самом деле, нет смысла сохранять другие бэкапы,
+              // т.к. восстанавливать придется из залоченного бэкапа
 
-                        // = SKIP or CLEAR =
-                        console.log(`🚫 BACKUP2: SKIP ${dirName}`)
-                        // clearDirIfExists(path.join(projectRootDir, `backup/${dirName}`))
-                        // =
+              // = SKIP or CLEAR =
+              console.log(`🚫 BACKUP2: SKIP ${dirName}`)
+              // clearDirIfExists(path.join(projectRootDir, `backup/${dirName}`))
+              // =
 
-                        // NOTE: v2 (For each file with validation) выборочно для содержимого директории
-                        // for (const filePath of files) {
-                        //     ncp(filePath, destDir, {
-                        //         filter: (file) => {
-                        //             // SAMPLES file:
-                        //             // /home/pravosleva/projects/smartprice_projects/express-helper/gcs-users.json
-                        //             // /home/pravosleva/projects/smartprice_projects/express-helper/uploads
-                        //             const exclude = ['uploads']
-                        //             return !exclude.includes(file.split('/').reverse()[0])
-                        //         }
-                        //     }, function(err) {
-                        //         if (!!err) {
-                        //             console.log(`🚫 BACKUP2: ERR ${dirName}`)
-                        //             console.log(err)
-            
-                        //             createDirIfNecessary(path.join(projectRootDir, `backup/${dirName}`))
-                        //             return
-                        //         }
+              // NOTE: v2 (For each file with validation) выборочно для содержимого директории
+              // for (const filePath of files) {
+              //     ncp(filePath, destDir, {
+              //         filter: (file) => {
+              //             // SAMPLES file:
+              //             // /home/pravosleva/projects/smartprice_projects/express-helper/gcs-users.json
+              //             // /home/pravosleva/projects/smartprice_projects/express-helper/uploads
+              //             const exclude = ['uploads']
+              //             return !exclude.includes(file.split('/').reverse()[0])
+              //         }
+              //     }, function(err) {
+              //         if (!!err) {
+              //             console.log(`🚫 BACKUP2: ERR ${dirName}`)
+              //             console.log(err)
+  
+              //             createDirIfNecessary(path.join(projectRootDir, `backup/${dirName}`))
+              //             return
+              //         }
 
-                        //         cronStateInstance.setData({ backupName: dirName })
-                        //         console.log(`✅ BACKUP2: ${dirName}`)
-                        //     });   
-                        // }
-                        break;
-                    default:
-                        // NOTE: v1 для директории (средствами js)
-                        // ncp(sourcePath, destDir, function(err) {
-                        //     if (!!err) {
-                        //         console.log(`🚫 BACKUP: ERR ${dirName}`)
-                        //         console.log(err)
-        
-                        //         createDirIfNecessary(path.join(projectRootDir, `backup/${dirName}`))
-                        //         return
-                        //     }
-        
-                        //     cronStateInstance.setData({ backupName: dirName })
-                        //     console.log(`✅ BACKUP: ${dirName}`)
-                        // });
-                        break;
-                }         
-            }
-        }) */
-    })
+              //         cronStateInstance.setData({ backupName: dirName })
+              //         console.log(`✅ BACKUP2: ${dirName}`)
+              //     });   
+              // }
+              break;
+            default:
+              // NOTE: v1 для директории (средствами js)
+              // ncp(sourcePath, destDir, function(err) {
+              //     if (!!err) {
+              //         console.log(`🚫 BACKUP: ERR ${dirName}`)
+              //         console.log(err)
+
+              //         createDirIfNecessary(path.join(projectRootDir, `backup/${dirName}`))
+              //         return
+              //     }
+
+              //     cronStateInstance.setData({ backupName: dirName })
+              //     console.log(`✅ BACKUP: ${dirName}`)
+              // });
+              break;
+          }         
+        }
+    }) */
+  })
 })
 
 const syncBackupState = () => {
