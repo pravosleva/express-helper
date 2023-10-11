@@ -22,6 +22,7 @@ for(const parrot of cfg) {
         const {
           targetRooms,
           targetHashtags,
+          ignoredHashTags,
           targetStatuses,
           req,
           validateBeforeRequest,
@@ -51,13 +52,28 @@ for(const parrot of cfg) {
 
                 switch (true) {
                   case targetHashtags.length > 0:
-                    if (
-                      !!original.status &&
-                      targetStatuses.includes(original.status) &&
-                      !!original.text &&
-                      testTextByAllWords({ text: original.text, words: targetHashtags }) &&
-                      (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
-                    ) _targetMsgs.push({ ...original, ...rest })
+                    // --
+                    switch (true) {
+                      case !!ignoredHashTags && ignoredHashTags.length > 0:
+                        if (
+                          !!original.status &&
+                          targetStatuses.includes(original.status) &&
+                          !!original.text &&
+                          testTextByAllWords({ text: original.text, words: targetHashtags }) &&
+                          !testTextByAllWords({ text: original.text, words: ignoredHashTags }) &&
+                          (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
+                        ) _targetMsgs.push({ ...original, ...rest })
+                        break
+                      default:
+                        if (
+                          !!original.status &&
+                          targetStatuses.includes(original.status) &&
+                          !!original.text &&
+                          testTextByAllWords({ text: original.text, words: targetHashtags }) &&
+                          (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
+                        ) _targetMsgs.push({ ...original, ...rest })
+                        break
+                    }
                     break
                   default:
                     if (

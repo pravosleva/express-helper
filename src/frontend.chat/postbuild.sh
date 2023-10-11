@@ -36,6 +36,6 @@ echo -ne '######                    (30%)\r'
 
 echo -ne '########################  (100%)\r'
 
-info '-- POSTBUILD COMPLETED 🛠️ '
+good '-- POSTBUILD COMPLETED 🛠️ '
 
 exit 0

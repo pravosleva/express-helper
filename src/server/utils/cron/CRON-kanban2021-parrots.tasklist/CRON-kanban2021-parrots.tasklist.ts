@@ -15,7 +15,7 @@ if (_checkingSet.size !== _parrotIds.length)
   throw new Error(`⛔ Проверьте cfg виртуальных попугаев parrots.tasklist (их ${_parrotIds.length}) на предмет уникальности их id (уникальных ${_checkingSet.size}). Не можем запустить в таком виде`)
 
 const parrots = new Map()
-for(const parrot of cfg) {
+for (const parrot of cfg) {
   if (parrot.isEnabled) {
     parrots.set(parrot.id, {
       promise: async () => {
@@ -26,6 +26,7 @@ for(const parrot of cfg) {
           validateBeforeRequest,
           id,
           _specialMsgValidator,
+          ignoredHashTags,
         } = parrot
 
         const _roomsData: { [key: string]: TEnhancedTask[] } = {}
@@ -45,14 +46,29 @@ for(const parrot of cfg) {
         
               for (const task of roomData) {
                 const { title } = task
+
                 switch (true) {
                   case targetHashtags.length > 0:
-                    if (
-                      !!title &&
-                      testTextByAllWords({ text: title, words: targetHashtags }) &&
-                      (!!_specialMsgValidator ? _specialMsgValidator(task) : true)
-                    ) _targetMsgs.push({ ...task, room })
+                    // --
+                    switch (true) {
+                      case !!ignoredHashTags && ignoredHashTags.length > 0:
+                        if (
+                          !!title &&
+                          testTextByAllWords({ text: title, words: targetHashtags }) &&
+                          !testTextByAllWords({ text: title, words: ignoredHashTags }) &&
+                          (!!_specialMsgValidator ? _specialMsgValidator(task) : true)
+                        ) _targetMsgs.push({ ...task, room })
+                        break
+                      default:
+                        if (
+                          !!title &&
+                          testTextByAllWords({ text: title, words: targetHashtags }) &&
+                          (!!_specialMsgValidator ? _specialMsgValidator(task) : true)
+                        ) _targetMsgs.push({ ...task, room })
+                        break
+                    }
                     break
+                    // --
                   default:
                     if (
                       !!title &&

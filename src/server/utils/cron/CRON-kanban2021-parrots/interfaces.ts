@@ -7,6 +7,7 @@ export type TCfg = {
   cronSetting: string;
   targetRooms: string[];
   targetHashtags: string[];
+  ignoredHashTags?: string[];
   targetStatuses: EMessageStatus[];
   validateBeforeRequest: ({}: {
     msgs: TMessage[];

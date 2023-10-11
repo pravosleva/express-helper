@@ -9,6 +9,7 @@ export type TCfg = {
   cronSetting: string;
   targetRooms: string[];
   targetHashtags: string[];
+  ignoredHashTags?: string[];
   validateBeforeRequest: ({}: {
     tasks: TEnhancedTask[];
   }) => boolean;

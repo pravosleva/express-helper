@@ -67,7 +67,7 @@ export const cfg: TCfg = [
 
         eventCode: 'tasklist_reminder_daily',
         about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
-          return `_В ближайшей перспективе (${plural(daysRangeHalf, '%d день', '%d дня', '%d дней')}) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задач', '%d задач')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}_`
+          return `_В ближайшей перспективе (${plural(daysRangeHalf, '%d день', '%d дня', '%d дней')}) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задачи', '%d задач')}_${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({ tasks, /* targetHashtags, targetRooms, */ }) => {
           const sortedMsgs = sortArrayByKeys({
@@ -134,7 +134,7 @@ export const cfg: TCfg = [
 
         eventCode: 'tasklist_reminder_daily',
         about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
-          return `_🔥 Имеются ${plural(tasks.length, '%d задача', '%d задач', '%d задач')} в работе${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}_`
+          return `_🔥 ${plural(tasks.length, '%d задача', '%d задачи', '%d задач')} в работе_${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({ tasks, /* targetHashtags, targetRooms, */ }) => {
           const sortedMsgs = sortArrayByKeys({
@@ -172,7 +172,7 @@ export const cfg: TCfg = [
     id: 3,
     _descr: 'Все незавершенные таски (Тишка)',
     isEnabled: true,
-    cronSetting: '01 37 08 * * *', // Every day at 08:37:01
+    cronSetting: '01 05 09 * * *', // Every day at 09:05:01
     validateBeforeRequest: ({ tasks }) => tasks.length > 0,
     _specialMsgValidator: (task) => !task.isCompleted,
     targetRooms: ['magaz'],
@@ -185,7 +185,7 @@ export const cfg: TCfg = [
 
         eventCode: 'tasklist_reminder_daily',
         about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
-          return `_🔥 Имеются ${plural(tasks.length, '%d задача', '%d задач', '%d задач')} в работе${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}_`
+          return `_🔥 ${plural(tasks.length, '%d задача', '%d задачи', '%d задач')} в работе_${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({ tasks, /* targetHashtags, targetRooms, */ }) => {
           const sortedMsgs = sortArrayByKeys({

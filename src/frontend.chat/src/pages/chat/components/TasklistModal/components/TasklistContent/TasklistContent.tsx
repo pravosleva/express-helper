@@ -157,6 +157,9 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     })
   }, [socket, room])
   const handleTaskDelete = useCallback((ts: number) => {
+    const isConfirmed = window.confirm('Вы уверены?')
+    if (!isConfirmed) return
+
     if (!!socket) socket?.emit('deleteTask', { room, ts }, (errMsg?: string) => {
       if (!!errMsg) {
         toast({ title: errMsg, status: 'error', duration: 5000, isClosable: true })

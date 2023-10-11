@@ -15,6 +15,7 @@ info=${bldwht}*${txtrst}        # Feedback
 pass=${bldblu}*${txtrst}
 warn=${bldred}*${txtrst}
 ques=${bldblu}?${txtrst}
+
 debug() {
   cdate=$(date '+%Y-%m-%d %H:%M:%S')
   echo "${bldwht}$cdate $@ $txtrst"

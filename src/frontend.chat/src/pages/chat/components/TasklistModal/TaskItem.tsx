@@ -48,17 +48,64 @@ type TProps = {
   onResetExpenses: () => void
 }
 
-const constants = {
-  week: 7 * 24 * 60 * 60 * 1000,
-  month1: 30 * 24 * 60 * 60 * 1000,
-  month2: 2 * 30 * 24 * 60 * 60 * 1000,
-  month3: 3 * 30 * 24 * 60 * 60 * 1000,
-  month6: 6 * 30 * 24 * 60 * 60 * 1000,
-  day1: 1 * 24 * 60 * 60 * 1000,
-  day2: 2 * 24 * 60 * 60 * 1000,
-  sec20: 20 * 1000,
-  year1: 1 * 12 * 30 * 24 * 60 * 60 * 1000,
-  year3: 3 * 12 * 30 * 24 * 60 * 60 * 1000,
+const constants: {
+  [key: string]: {
+    value: number;
+    label: string;
+  }
+} = {
+  h1: {
+    value: 1 * 60 * 60 * 1000,
+    label: '1 hour',
+  },
+  week: {
+    value: 7 * 24 * 60 * 60 * 1000,
+    label: '1 week',
+  },
+  month1: {
+    value: 1 * 30 * 24 * 60 * 60 * 1000,
+    label: '1 month',
+  },
+  month2: {
+    value: 2 * 30 * 24 * 60 * 60 * 1000,
+    label: '2 months',
+  },
+  month3: {
+    value: 3 * 30 * 24 * 60 * 60 * 1000,
+    label: '3 months',
+  },
+  month6: {
+    value: 6 * 30 * 24 * 60 * 60 * 1000,
+    label: '6 months',
+  },
+  day1: {
+    value: 1 * 24 * 60 * 60 * 1000,
+    label: '1 day',
+  },
+  day2: {
+    value: 2 * 24 * 60 * 60 * 1000,
+    label: '2 days',
+  },
+  day10: {
+    value: 10 * 24 * 60 * 60 * 1000,
+    label: '10 days',
+  },
+  year1: {
+    value: 1 * 12 * 30 * 24 * 60 * 60 * 1000,
+    label: '1 year',
+  },
+  year2: {
+    value: 2 * 12 * 30 * 24 * 60 * 60 * 1000,
+    label: '2 years',
+  },
+  year3: {
+    value: 3 * 12 * 30 * 24 * 60 * 60 * 1000,
+    label: '3 years',
+  },
+  year10: {
+    value: 10 * 12 * 30 * 24 * 60 * 60 * 1000,
+    label: '10 years',
+  },
 }
 
 export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker, onPriceModalOpen, onResetExpenses, char }: TProps) => {
@@ -187,117 +234,20 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
                         <Text fontSize="md" fontWeight='bold'>Set First Date</Text>
                       </Flex>
                     </MenuItem> */}
-                    
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: 1 * 60 * 60 * 1000 })}
-                      isDisabled={fixedDiff === 1 * 60 * 60 * 1000}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 1 h</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.week })}
-                      isDisabled={fixedDiff === constants.week}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 1 week</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month1 })}
-                      isDisabled={fixedDiff === constants.month1}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 1 month</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month2 })}
-                      isDisabled={fixedDiff === constants.month2}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 2 month</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month3 })}
-                      isDisabled={fixedDiff === constants.month3}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 3 month</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.month6 })}
-                      isDisabled={fixedDiff === constants.month6}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 6 months</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.day1 })}
-                      isDisabled={fixedDiff === constants.day1}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 1 day</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.day2 })}
-                      isDisabled={fixedDiff === constants.day2}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 2 days</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.sec20 })}
-                      isDisabled={fixedDiff === constants.sec20}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 20 s</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.year1 })}
-                      isDisabled={fixedDiff === constants.year1}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 1 year</Text>
-                      </Flex>
-                    </MenuItem>
-                    <MenuItem
-                      minH="40px"
-                      onClick={() => onEdit({ ...data, newFixedDiffTs: constants.year3 })}
-                      isDisabled={fixedDiff === constants.year3}
-                    >
-                      <Flex display="flex" alignItems="center">
-                        <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
-                        <Text fontSize="md" fontWeight='bold'>Set 3 years</Text>
-                      </Flex>
-                    </MenuItem>
+
+                    {Object.keys(constants).map((key) => (
+                      <MenuItem
+                        key={key}
+                        minH="40px"
+                        onClick={() => onEdit({ ...data, newFixedDiffTs: constants[key].value })}
+                        isDisabled={fixedDiff === constants[key].value}
+                      >
+                        <Flex display="flex" alignItems="center">
+                          <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
+                          <Text fontSize="md" fontWeight='bold'>{constants[key].label}</Text>
+                        </Flex>
+                      </MenuItem>
+                    ))}
                   </>
                 )}
               </div>

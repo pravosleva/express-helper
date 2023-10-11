@@ -1,13 +1,14 @@
 #!/bin/bash
 
 source ./read-env.sh
+source ./log-format.sh # NOTE: See also https://opensource.com/article/20/6/bash-source-command
 
 EXPRESS_HELPER_SERVER_TARGET_PATH_BUILD_DIR=$(read_env EXPRESS_HELPER_SERVER_TARGET_PATH_BUILD_DIR .env.prod."$1")
 # EXPRESS_HELPER_SERVER_TARGET_PATH_NM_DIR=$(read_env EXPRESS_HELPER_SERVER_TARGET_PATH_NM_DIR .env.prod."$1")
 EXPRESS_HELPER_SERVER_TARGET_PATH_PUBLIC_DIR=$(read_env EXPRESS_HELPER_SERVER_TARGET_PATH_PUBLIC_DIR .env.prod."$1")
 # EXPRESS_HELPER_SERVER_TARGET_PATH_BIN_DIR=$(read_env EXPRESS_HELPER_SERVER_TARGET_PATH_BIN_DIR .env.prod."$1")
 
-echo '-- 🛫 DEPLOY STARTED' &&
+info '-- 🛫 DEPLOY STARTED' &&
 
 rsync -av --delete server-dist/ $EXPRESS_HELPER_SERVER_TARGET_PATH_BUILD_DIR &&
 # rsync -av --delete node_modules/ $EXPRESS_HELPER_SERVER_TARGET_PATH_NM_DIR &&
@@ -22,4 +23,4 @@ rsync -av --delete public/ $EXPRESS_HELPER_SERVER_TARGET_PATH_PUBLIC_DIR &&
 # rsync -av --delete storage/pravosleva-bot-2021.autopark-2022.json root@pravosleva.pro:/root/projects/pravosleva-blog/express-helper/storage/pravosleva-bot-2021.autopark-2022.json &&
 # rsync -av --delete storage/pravosleva-bot-2021.json root@pravosleva.pro:/root/projects/pravosleva-blog/express-helper/storage/pravosleva-bot-2021.json &&
 
-echo '-- 🛬 DEPLOY COMPLETED'
+good '-- 🛬 DEPLOY COMPLETED'
