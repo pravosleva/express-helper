@@ -9,7 +9,7 @@ export const cfg: TCfg = [
     id: 1,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 10 20,21 * *', // NOTE: Every month 20th and 21th at 10:01:15
+    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 10 20 * *', // NOTE: Every month 20th at 10:01:15
 
     // NOTE: See also https://stackoverflow.com/questions/70889523/node-cron-job-to-run-on-28th-and-29th-day-of-every-month
     req: {

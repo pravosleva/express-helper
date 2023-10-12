@@ -58,6 +58,7 @@ export const cfg: TCfg = [
     },
     targetRooms: ['magaz'],
     targetHashtags: [],
+    ignoredHashTags: ['#кот'],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
@@ -210,6 +211,104 @@ export const cfg: TCfg = [
 
             // -- NOTE: Custom msg
             const specialMsgs: string[] = []
+            specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
+            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+            // --
+
+            return `${msgList.join('\n')}`
+          }).join('\n\n')
+        },
+      },
+    },
+  },
+  {
+    id: 4,
+    _descr: `${daysRangeHalf} days perspective: !isCompleted || (isLooped & isCompleted & Will be ready soon (or ready in ${daysRangeHalf} days))`,
+    isEnabled: true,
+    cronSetting: '01 06 09 * * *', // Every day at 09:06:01
+    validateBeforeRequest: ({ tasks }) => tasks.length > 0,
+    _specialMsgValidator(task) {
+      // NOTE: Интересуют только те задачи, до uncheck которых осталось менее daysRangeHalf дней
+      const {
+        isCompleted,
+        isLooped,
+        checkTs,
+        uncheckTs,
+        fixedDiff,
+      } = task
+
+      if (!uncheckTs || !fixedDiff) return false
+
+      // const targetDate = new Date(task.uncheckTs + task.fixedDiff)
+      const timeEnd = checkTs + (checkTs - uncheckTs)
+      const diff = getTimeDiff({
+        startDate: new Date(),
+        finishDate: new Date(timeEnd)
+      })
+      const isCorrect = !!checkTs && isCompleted && isLooped && diff.d <= daysRangeHalf
+      // /* NOTE: Task example
+      // { ts: 1639316052419,
+      //   title: 'New test',
+      //   isCompleted: true,
+      //   isLooped: true,
+      //   editTs: 1683791624193,
+      //   fixedDiff: 327588748,
+      //   uncheckTs: 1683464035445,
+      //   checkTs: 1683791624193, } */
+      return isCorrect
+    },
+    targetRooms: ['magaz'],
+    targetHashtags: ['#кот'],
+    ignoredHashTags: [],
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        // chat_id: 432590698, // NOTE: Den Pol
+        chat_id: -1001917842024, // NOTE: My home -> Тишка (topic) https://t.me/c/1917842024/5
+        message_thread_id: 154, // https://t.me/c/1917842024/154
+
+        eventCode: 'tasklist_reminder_daily',
+        about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
+          return `_В ближайшей перспективе (${plural(daysRangeHalf, '%d день', '%d дня', '%d дней')}) ${plural(tasks.length, 'потребует', 'потребуют')} решения ${plural(tasks.length, '%d задача', '%d задачи', '%d задач')}_${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+        },
+        targetMD: ({ tasks, /* targetHashtags, targetRooms, */ }) => {
+          const sortedMsgs = sortArrayByKeys({
+            arr: tasks,
+            keys: ['uncheckTs'],
+            order: 1,
+          })
+          
+          return sortedMsgs.map((task, i) => {
+            const {
+              title,
+              uncheckTs,
+              checkTs,
+              // fixedDiff,
+              room,
+              // isCompleted,
+              // isLooped,
+            } = task
+
+            // const targetDate = new Date(uncheckTs + fixedDiff)
+            const timeEnd: number = checkTs + (checkTs - uncheckTs)
+            const diff = getTimeDiff({
+              startDate: new Date(),
+              finishDate: new Date(timeEnd),
+            })
+            const msgList = [
+              `${i + 1}. ${title}`,
+            ]
+            // -- NOTE: Custom msg
+            const specialMsgs: string[] = []
+            switch (true) {
+              default:
+                specialMsgs.push(
+                  diff.isNegative
+                  ? `⚠️ Ready ${getTimeAgo(timeEnd)}`
+                  : `⏱️ ${diff.message} left`
+                )
+                break
+            }
             specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --

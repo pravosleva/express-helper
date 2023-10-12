@@ -28,7 +28,7 @@ import { moveFile } from '~/utils/fs-tools/moveFile'
 require('~/utils/cron/CRON-backup-runner')
 require('~/utils/cron/CRON-kanban2021-parrots')
 require('~/utils/cron/CRON-kanban2021-parrots.tasklist')
-require('~/utils/cron/CRON-kanban2021-sinlge/run')
+require('~/utils/cron/CRON-kanban2021-single/run')
 // ---
 
 // NOTE: Если версия на фронте будет отлияаться, страница будет перезагружена при реконнекте
