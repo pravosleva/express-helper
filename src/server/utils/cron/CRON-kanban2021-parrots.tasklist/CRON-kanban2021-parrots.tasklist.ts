@@ -70,10 +70,21 @@ for (const parrot of cfg) {
                     break
                     // --
                   default:
-                    if (
-                      !!title &&
-                      (!!_specialMsgValidator ? _specialMsgValidator(task) : true)
-                    ) _targetMsgs.push({ ...task, room })
+                    switch (true) {
+                      case !!ignoredHashTags && ignoredHashTags.length > 0:
+                        if (
+                          !!title &&
+                          !testTextByAllWords({ text: title, words: ignoredHashTags }) &&
+                          (!!_specialMsgValidator ? _specialMsgValidator(task) : true)
+                        ) _targetMsgs.push({ ...task, room })
+                        break
+                      default:
+                        if (
+                          !!title &&
+                          (!!_specialMsgValidator ? _specialMsgValidator(task) : true)
+                        ) _targetMsgs.push({ ...task, room })
+                        break
+                    }
                     break
                 }
               }

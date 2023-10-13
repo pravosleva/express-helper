@@ -76,12 +76,25 @@ for(const parrot of cfg) {
                     }
                     break
                   default:
-                    if (
-                      !!original.status &&
-                      targetStatuses.includes(original.status) &&
-                      !!original.text &&
-                      (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
-                    ) _targetMsgs.push({ ...original, ...rest })
+                    switch (true) {
+                      case !!ignoredHashTags && ignoredHashTags.length > 0:
+                        if (
+                          !!original.status &&
+                          targetStatuses.includes(original.status) &&
+                          !!original.text &&
+                          !testTextByAllWords({ text: original.text, words: ignoredHashTags }) &&
+                          (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
+                        ) _targetMsgs.push({ ...original, ...rest })
+                        break
+                      default:
+                        if (
+                          !!original.status &&
+                          targetStatuses.includes(original.status) &&
+                          !!original.text &&
+                          (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
+                        ) _targetMsgs.push({ ...original, ...rest })
+                        break
+                    }
                     break
                 }
               }
