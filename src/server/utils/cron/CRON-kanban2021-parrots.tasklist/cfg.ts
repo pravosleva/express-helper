@@ -182,8 +182,8 @@ export const cfg: TCfg = [
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
-        chat_id: -1001917842024, // NOTE: My home -> Тишка (topic) https://t.me/c/1917842024/324
-        message_thread_id: 324,
+        chat_id: -1001917842024, // NOTE: My home
+        message_thread_id: 324, // NOTE: -> Тишка (topic) https://t.me/c/1917842024/324
 
         eventCode: 'tasklist_reminder_daily',
         about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
@@ -223,7 +223,7 @@ export const cfg: TCfg = [
   },
   {
     id: 4,
-    _descr: `${daysRangeHalf} days perspective: !isCompleted || (isLooped & isCompleted & Will be ready soon (or ready in ${daysRangeHalf} days))`,
+    _descr: `Тишка: ${daysRangeHalf} days perspective: !isCompleted || (isLooped & isCompleted & Will be ready soon (or ready in ${daysRangeHalf} days))`,
     isEnabled: true,
     cronSetting: '01 06 09 * * *', // Every day at 09:06:01
     validateBeforeRequest: ({ tasks }) => tasks.length > 0,
@@ -264,8 +264,8 @@ export const cfg: TCfg = [
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         // chat_id: 432590698, // NOTE: Den Pol
-        chat_id: -1001917842024, // NOTE: My home -> Тишка (topic) https://t.me/c/1917842024/5
-        message_thread_id: 154, // https://t.me/c/1917842024/154
+        chat_id: -1001917842024, // NOTE: My home
+        message_thread_id: 324, // NOTE: -> Тишка (topic) https://t.me/c/1917842024/324
 
         eventCode: 'tasklist_reminder_daily',
         about: ({ tasks, targetHashtags, /* targetRooms, */ }) => {
