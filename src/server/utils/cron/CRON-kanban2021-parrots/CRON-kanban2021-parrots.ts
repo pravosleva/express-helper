@@ -1,7 +1,7 @@
 import axios from 'axios'
 import cron from 'node-cron'
 import { roomsMapInstance, TMessage, commonNotifsMapInstance } from '~/utils/socket/state'
-import { testTextByAllWords } from '~/utils/string-ops/testTextByAllWords'
+import { testTextByAnyWord } from '~/utils/string-ops'
 import { cfg } from './cfg'
 import { TRoomNotifs, NNotifs } from '~/routers/chat/mws/api/common-notifs'
 
@@ -59,8 +59,8 @@ for(const parrot of cfg) {
                           !!original.status &&
                           targetStatuses.includes(original.status) &&
                           !!original.text &&
-                          testTextByAllWords({ text: original.text, words: targetHashtags }) &&
-                          !testTextByAllWords({ text: original.text, words: ignoredHashTags }) &&
+                          testTextByAnyWord({ text: original.text, words: targetHashtags }) &&
+                          !testTextByAnyWord({ text: original.text, words: ignoredHashTags }) &&
                           (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
                         ) _targetMsgs.push({ ...original, ...rest })
                         break
@@ -69,7 +69,7 @@ for(const parrot of cfg) {
                           !!original.status &&
                           targetStatuses.includes(original.status) &&
                           !!original.text &&
-                          testTextByAllWords({ text: original.text, words: targetHashtags }) &&
+                          testTextByAnyWord({ text: original.text, words: targetHashtags }) &&
                           (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
                         ) _targetMsgs.push({ ...original, ...rest })
                         break
@@ -82,7 +82,7 @@ for(const parrot of cfg) {
                           !!original.status &&
                           targetStatuses.includes(original.status) &&
                           !!original.text &&
-                          !testTextByAllWords({ text: original.text, words: ignoredHashTags }) &&
+                          !testTextByAnyWord({ text: original.text, words: ignoredHashTags }) &&
                           (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
                         ) _targetMsgs.push({ ...original, ...rest })
                         break
@@ -119,7 +119,7 @@ for(const parrot of cfg) {
                       !!msg.status &&
                       targetStatuses.includes(msg.status) &&
                       !!msg.text &&
-                      testTextByAllWords({ text: msg.text, words: targetHashtags }) &&
+                      testTextByAnyWord({ text: msg.text, words: targetHashtags }) &&
                       (!!_specialMsgValidator ? _specialMsgValidator(msg) : true)
                     ) _targetMsgs.push(msg)
                     break

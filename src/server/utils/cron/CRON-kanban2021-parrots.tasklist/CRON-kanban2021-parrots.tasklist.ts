@@ -1,7 +1,7 @@
 import axios from 'axios'
 import cron from 'node-cron'
 import { roomsTasklistMapInstance, TRoomTasklist, TRoomTask } from '~/utils/socket/state'
-import { testTextByAllWords } from '~/utils/string-ops/testTextByAllWords'
+import { testTextByAnyWord } from '~/utils/string-ops'
 import { cfg } from './cfg'
 import { TEnhancedTask } from './interfaces'
 
@@ -54,15 +54,15 @@ for (const parrot of cfg) {
                       case !!ignoredHashTags && ignoredHashTags.length > 0:
                         if (
                           !!title &&
-                          testTextByAllWords({ text: title, words: targetHashtags }) &&
-                          !testTextByAllWords({ text: title, words: ignoredHashTags }) &&
+                          testTextByAnyWord({ text: title, words: targetHashtags }) &&
+                          !testTextByAnyWord({ text: title, words: ignoredHashTags }) &&
                           (!!_specialMsgValidator ? _specialMsgValidator(task) : true)
                         ) _targetMsgs.push({ ...task, room })
                         break
                       default:
                         if (
                           !!title &&
-                          testTextByAllWords({ text: title, words: targetHashtags }) &&
+                          testTextByAnyWord({ text: title, words: targetHashtags }) &&
                           (!!_specialMsgValidator ? _specialMsgValidator(task) : true)
                         ) _targetMsgs.push({ ...task, room })
                         break
@@ -74,7 +74,7 @@ for (const parrot of cfg) {
                       case !!ignoredHashTags && ignoredHashTags.length > 0:
                         if (
                           !!title &&
-                          !testTextByAllWords({ text: title, words: ignoredHashTags }) &&
+                          !testTextByAnyWord({ text: title, words: ignoredHashTags }) &&
                           (!!_specialMsgValidator ? _specialMsgValidator(task) : true)
                         ) _targetMsgs.push({ ...task, room })
                         break

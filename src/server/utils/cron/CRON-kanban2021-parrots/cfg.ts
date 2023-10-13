@@ -386,8 +386,8 @@ export const cfg: TCfg = [
       return result
     },
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
-    targetRooms: ['magaz'],
-    targetHashtags: ['#sprintWeeklyReminder'],
+    targetRooms: ['magaz', 'auto.pravosleva'],
+    targetHashtags: ['#sprintWeeklyReminder', '#краснаяАкула'],
     targetStatuses: [EMessageStatus.Info, EMessageStatus.Warn, EMessageStatus.Danger],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
