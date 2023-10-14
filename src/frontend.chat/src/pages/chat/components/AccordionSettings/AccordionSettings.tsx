@@ -250,7 +250,7 @@ export const AccordionSettings = memo(({
         style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '2px',
+          // gap: '2px',
         }}
         className={clsx('no-last-border-bottom', 'no-first-border-top')}
       >

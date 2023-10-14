@@ -495,7 +495,7 @@ export const Chat = () => {
           console.log(notif._originalEvent)
         }
         toast({
-          position: 'top-left',
+          position: 'top',
 
           title: notif?.title,
           description: notif?.description,
@@ -509,7 +509,7 @@ export const Chat = () => {
         const currentMajorVersion = pkg.version.split('.')[1]
         if (!!regData?._frontMinorVersionSupport && (regData._frontMinorVersionSupport !== Number(currentMajorVersion)) || isNaN(regData?._frontMinorVersionSupport)) {
           toast({
-            position: 'top-left',
+            position: 'top',
             title: `Actual version from backend: ${regData._frontMinorVersionSupport}`,
             description: `7s Reload reason: ${currentMajorVersion}`,
             status: 'error',
@@ -520,7 +520,7 @@ export const Chat = () => {
           }, 7000)
         }
         // else toast({
-        //   position: 'top-left',
+        //   position: 'top',
         //   title: `${pkg.version}`,
         //   // description: pkg.version,
         //   status: 'info',
@@ -714,7 +714,7 @@ export const Chat = () => {
             if (!!result && targetRoom === roomRef.current) {
               partialOldChatListener({ result, nextTsPoint, isDone })
               // if (!!service?.msg) toast({
-              //   position: 'top-left',
+              //   position: 'top',
               //   title: 'Service',
               //   description: service?.msg,
               //   status: 'info',
@@ -803,7 +803,7 @@ export const Chat = () => {
   const handleSendMessage = useCallback(() => {
     if (!messageRef.current) {
       toast({
-        position: 'top-left',
+        position: 'top',
         title: 'Sorry',
         description: 'Cant send empty msg',
         status: 'error',
@@ -814,7 +814,7 @@ export const Chat = () => {
     }
     if (!roomRef.current) {
       toast({
-        position: 'top-left',
+        position: 'top',
         title: 'ERR',
         description: 'Try again',
         status: 'error',
@@ -825,7 +825,7 @@ export const Chat = () => {
     }
     if (isMsgLimitReached) {
       toast({
-        position: 'top-left',
+        position: 'top',
         title: 'Sorry',
         description: 'Cant send big msg',
         status: 'error',
@@ -856,7 +856,7 @@ export const Chat = () => {
       resetMessage()
       resetEditedMessage()
     } else toast({
-      position: 'top-left',
+      position: 'top',
       title: 'Sorry',
       description: 'Видимо, что-то случилось =)',
       status: 'error',
@@ -906,9 +906,9 @@ export const Chat = () => {
         const spl = str.split('=')
         return spl
       })
-      const targetEntry = _entries.find((entry) => entry[0] === 'room')
+      const roomEntry = _entries.find((entry) => entry[0] === 'room')
 
-      if (!!targetEntry) roomFromUrlParams2 = targetEntry[1]
+      if (!!roomEntry) roomFromUrlParams2 = roomEntry[1]
     } catch (err) {
       console.log(err)
     }
@@ -1025,7 +1025,7 @@ export const Chat = () => {
     console.groupEnd()
     if (!editedMessageRef.current?.text && !editedMessageRef.current.file) {
       toast({
-        position: 'top-left',
+        position: 'top',
         // title: 'Sorry',
         description: 'Should not be empty',
         status: 'error',
@@ -1036,7 +1036,7 @@ export const Chat = () => {
     }
     if (!!editedMessageRef.current?.text && editedMessageRef.current?.text.length > charsLimit) {
       toast({
-        position: 'top-left',
+        position: 'top',
         // title: 'Sorry',
         description: `Too big! ${charsLimit} chars, not more`,
         status: 'error',
@@ -1059,7 +1059,7 @@ export const Chat = () => {
         (errMsg: string) => {
           if (!!errMsg) {
             toast({
-              position: 'top-left',
+              position: 'top',
               // title: 'Sorry',
               description: errMsg,
               status: 'error',
@@ -1087,7 +1087,7 @@ export const Chat = () => {
         socket.emit('deleteMessage', { ts: targetTs, room: roomRef.current, name }, (errMsg: string) => {
           if (!!errMsg) {
             toast({
-              position: 'top-left',
+              position: 'top',
               // title: 'Sorry',
               description: errMsg,
               status: 'error',
@@ -1109,7 +1109,7 @@ export const Chat = () => {
       socket.emit('restoreMessage', { ts: original.ts, room: roomRef.current, name, original }, (errMsg?: string) => {
         if (!!errMsg) {
           toast({
-            position: 'top-left',
+            position: 'top',
             // title: 'Sorry',
             description: errMsg,
             status: 'error',
@@ -1118,7 +1118,7 @@ export const Chat = () => {
             variant: 'solid',
           })
         } else toast({
-          position: 'top-left',
+          position: 'top',
           title: 'Ok',
           status: 'info',
           duration: 3000,
@@ -1228,6 +1228,19 @@ export const Chat = () => {
   const handleTasklistModalOpen = useCallback(() => {
     setTasklistModalOpened(true)
   }, [setTasklistModalOpened])
+  useLayoutEffect(() => {
+    try {
+      const _params = window.location.href.split('?')[1]
+      const _entries = _params.split('&').map((str) => {
+        const spl = str.split('=')
+        return spl
+      })
+      const openTaskListEntry = _entries.find((entry) => entry[0] === 'open-tasklist')
+      let openTaskListFromUrlParams2
+
+      if (!!openTaskListEntry && openTaskListEntry[1] === '1') handleTasklistModalOpen()
+    } catch (err) {}
+  }, [])
   const handleTasklistModalClose = useCallback(() => {
     setTasklistModalOpened(false)
   }, [setTasklistModalOpened])
@@ -1237,7 +1250,7 @@ export const Chat = () => {
   const handleSearchUserModalOpen = useCallback(() => {
     if (!!editedMessage.assignedTo) {
       toast({
-        position: 'top-left',
+        position: 'top',
         title: 'Sorry',
         description: `Already assigned to ${editedMessage.assignedTo.join(', ')}`,
         status: 'warning',
@@ -1295,7 +1308,7 @@ export const Chat = () => {
     if (isConnected) {
       // NOTE: При реконнекте нужно обнновить контент - проще всего очистить и начать загружать заново
       setMessages([])
-      // toast({ position: 'top-left', description: `Connect ${rendCounter.current}`, status: 'info', duration: 10000, isClosable: true })
+      // toast({ position: 'top', description: `Connect ${rendCounter.current}`, status: 'info', duration: 10000, isClosable: true })
     }
   }, [isConnected])
 
@@ -1397,7 +1410,7 @@ export const Chat = () => {
       .catch((err: any) => err)
 
     if (jwtLogout.ok) {
-      toast({ position: 'top-left', description: jwtLogout?.message || 'Unlogged', status: 'info', duration: 3000, isClosable: true })
+      toast({ position: 'top', description: jwtLogout?.message || 'Unlogged', status: 'info', duration: 3000, isClosable: true })
     }
 
     if (!!socket) socket.emit('logout', { name, room })
@@ -1531,7 +1544,7 @@ export const Chat = () => {
   const onUserAssign = useCallback((name: string) => {
     if (!!editedMessageRef.current?.assignedTo && Array.isArray(editedMessageRef.current.assignedTo) && editedMessageRef.current.assignedTo.length > 0) {
       toast({
-        position: 'top-left',
+        position: 'top',
         title: 'Sorry',
         description: 'For one user only',
         status: 'warning',
@@ -1545,7 +1558,7 @@ export const Chat = () => {
       handleSaveEditedMessage({ assignedTo: [name] }, () => {
         handleSearchUserModalClose()
         toast({
-          position: 'top-left',
+          position: 'top',
           title: 'Assigned',
           description: `to ${name}`,
           status: 'success',
@@ -1569,7 +1582,7 @@ export const Chat = () => {
         if (newAssignedArr.length > 0) newData.assignedTo = newAssignedArr
       }
 
-      socket.emit('editMessage', { newData, ts: message.ts, room: roomRef.current, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top-left', description: errMsg, status: 'error', duration: 7000, isClosable: true, variant: 'solid' }) })
+      socket.emit('editMessage', { newData, ts: message.ts, room: roomRef.current, name }, (errMsg: string) => { if (!!errMsg) toast({ position: 'top', description: errMsg, status: 'error', duration: 7000, isClosable: true, variant: 'solid' }) })
     }
   }, [socket, name])
 
@@ -1844,7 +1857,7 @@ export const Chat = () => {
 
     if (!isLogged) {
       toast({
-        position: 'top-left',
+        position: 'top',
         title: 'Sorry',
         description: 'For logged users only!',
         status: 'error',
@@ -1854,7 +1867,7 @@ export const Chat = () => {
     }
     if (card.user === 'pravosleva' && card.user !== name) {
       toast({
-        position: 'top-left',
+        position: 'top',
         title: 'Sorry',
         description: `Allowed for author - ${card.user}`,
         status: 'error',
@@ -2395,7 +2408,7 @@ export const Chat = () => {
                           text={`https://pravosleva.pro/express-helper/chat/#/?room=${room}`}
                           onCopy={() => {
                             toast({
-                              position: 'top-left',
+                              position: 'top',
                               title: 'Link copied',
                               description: `https://pravosleva.pro/express-helper/chat/#/?room=${room}`,
                               status: 'success',

@@ -129,7 +129,7 @@ export const Login = () => {
     setIsLoading1(true)
     // if (isDev || name === 'pravosleva') {
     //   toast({
-    //     position: 'top-left',
+    //     position: 'top',
     //     title: '/check-jwt',
     //     // description: error,
     //     status: 'warning',
@@ -155,7 +155,7 @@ export const Login = () => {
         console.dir(jwtResponse)
         // NOTE: Fail cases:
         if (isDev) toast({
-          position: 'bottom-left',
+          position: 'bottom',
           title: jwtResponse?.message || jwtResponse?.code || '!jwtResponse?.ok',
           status: 'warning',
           description: `Debug${!!jwtResponse?.code ? `: ${jwtResponse.code}` : ''}`,
@@ -265,7 +265,7 @@ export const Login = () => {
               return
             }
             toast({
-              position: 'top-left',
+              position: 'top',
               title: 'Error by socket',
               description: error,
               status: 'error',
@@ -301,7 +301,7 @@ export const Login = () => {
   // const [myPassword, setMyPassword] = useState<{ password: string }>({ password: '' })
   const _handleTryLoginWidthPassword = async (pas?: string) => {
     if (isDev || name === 'pravosleva') toast({
-      position: 'top-left',
+      position: 'top',
       title: '/login',
       // description: error,
       status: 'warning',
@@ -332,7 +332,7 @@ export const Login = () => {
           if (!!err) {
             // console.log('- this case')
             console.log(err)
-            toast({ description: err, status: 'error', duration: 2000, isClosable: true, position: 'top-left' })
+            toast({ description: err, status: 'error', duration: 2000, isClosable: true, position: 'top' })
             setIsLoading2(false)
             setIsLoading1(false)
             return

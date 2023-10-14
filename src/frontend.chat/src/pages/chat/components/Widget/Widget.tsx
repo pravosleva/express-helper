@@ -6,7 +6,7 @@ import { useColorMode } from '@chakra-ui/react'
 
 type TProps = {
   children: React.ReactElement;
-  position: 'top-left' | 'top-right' | 'bottom-left';
+  position: 'top-left' | 'top' | 'top-right' | 'bottom-left';
   isHalfHeight?: boolean
 }
 

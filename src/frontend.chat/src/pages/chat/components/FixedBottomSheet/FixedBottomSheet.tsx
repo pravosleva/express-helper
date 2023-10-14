@@ -50,7 +50,7 @@ export const FixedBottomSheet = memo(({ isOpened, onClose, children, mainSpaceRe
             icon={<BsInfo size={15} />}
             onClick={() => {
               toast({
-                position: 'top-left',
+                position: 'top',
                 title: 'In progress...',
                 // description,
                 status: 'info',

@@ -39,6 +39,7 @@ export const SocketProvider =
     const socket: Socket = useMemo(() => io(REACT_APP_WS_API_URL, {
       reconnection: true,
       transports: ['websocket', 'polling'],
+      secure: false,
     }), [])
     // const toast = useToast()
     const [roomData, setRoomData] = useState<TRoomData>([])
@@ -54,7 +55,7 @@ export const SocketProvider =
     useLayoutEffect(() => {
       // console.log(`EFF: isConnected= ${isConnected}`)
       if (isConnected) toast({
-        position: 'top-left',
+        position: 'top',
         title: 'Connected...',
         // description: notif?.description,
         status: 'success',
@@ -62,7 +63,7 @@ export const SocketProvider =
         variant: 'solid',
       })
       else toast({
-        position: 'top-left',
+        position: 'top',
         title: 'Connection lost...',
         // description: notif?.description,
         status: 'error',

@@ -253,7 +253,7 @@ export const MemoizedOtherMessage = React.memo(({
                   text={link}
                   onCopy={() => {
                     toast({
-                      position: 'top-left',
+                      position: 'top',
                       title: 'Link copied',
                       description: link,
                       status: 'success',

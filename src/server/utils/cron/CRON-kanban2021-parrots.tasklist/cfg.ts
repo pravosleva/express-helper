@@ -108,7 +108,7 @@ export const cfg: TCfg = [
                 )
                 break
             }
-            specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
+            specialMsgs.push(`[Chat ${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
@@ -160,7 +160,7 @@ export const cfg: TCfg = [
 
             // -- NOTE: Custom msg
             const specialMsgs: string[] = []
-            specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
+            specialMsgs.push(`[Chat ${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
@@ -211,7 +211,7 @@ export const cfg: TCfg = [
 
             // -- NOTE: Custom msg
             const specialMsgs: string[] = []
-            specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
+            specialMsgs.push(`[Chat ${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
@@ -309,7 +309,7 @@ export const cfg: TCfg = [
                 )
                 break
             }
-            specialMsgs.push(`[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`)
+            specialMsgs.push(`[Chat ${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
