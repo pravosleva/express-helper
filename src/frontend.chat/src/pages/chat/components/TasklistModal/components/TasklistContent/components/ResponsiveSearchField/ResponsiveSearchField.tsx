@@ -188,10 +188,10 @@ export const ResponsiveSearchField = ({
             style={{
               display: 'flex',
               flexDirection: 'row',
+              justifyContent: 'center',
               flexWrap: 'wrap',
               gap: 'var(--chakra-space-2)',
-              paddingTop: 'var(--chakra-space-2)',
-              paddingBottom: 'var(--chakra-space-2)',
+              padding: 'var(--chakra-space-2)',
               // maxHeight: '105px',
               maxHeight: '300px',
               overflowY: 'auto',
@@ -231,7 +231,7 @@ export const ResponsiveSearchField = ({
                     <Button
                       size='sm'
                       colorScheme='blue'
-                      variant='link' 
+                      variant='unstyled' 
                       // leftIcon={<FcGallery color='#FFF' size={18} />}
                       onClick={() => {
                         setIsShowMoreEnabled(true)
@@ -245,7 +245,7 @@ export const ResponsiveSearchField = ({
                     <Button
                       size='sm'
                       colorScheme='blue'
-                      variant='link' 
+                      variant='unstyled' 
                       // leftIcon={<FcGallery color='#FFF' size={18} />}
                       onClick={() => {
                         setIsShowMoreEnabled(false)

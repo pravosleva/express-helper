@@ -21,8 +21,6 @@ export const StickyAccordionButton = memo(({ children }: TProps) => {
         _focus: {
           boxShadow: 'none',
         },
-      }}
-      style={{
         position: 'sticky',
         top: '0px',
         // backgroundColor: bgColor,

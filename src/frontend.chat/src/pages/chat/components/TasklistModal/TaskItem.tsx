@@ -311,7 +311,7 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
       <Box p={5} pl={0} pr={0} fontSize='15px' as='div'>
         <div>
           <Editable
-            border='2px dashed lightgray'
+            border='2px dashed rgba(211,211,211,0.3)'
             style={{ width: 'auto' }}
             pl={2}
             pr={2}

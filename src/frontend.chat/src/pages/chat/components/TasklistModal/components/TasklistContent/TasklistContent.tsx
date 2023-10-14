@@ -192,13 +192,13 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     if (!data) return null
     switch(radioValue) {
       case 'checked': return (
-        <span style={{ color: 'var(--chakra-colors-blue-400)' }}>Done: {completedTasksLen}</span>
+        <span style={{ color: 'var(--chakra-colors-blue-400)' }}>Done {completedTasksLen}</span>
       )
       case 'unchecked': return (
-        <span style={{ color: 'var(--chakra-colors-blue-400)' }}>In progress: {data.length - completedTasksLen}</span>
+        <span style={{ color: 'var(--chakra-colors-blue-400)' }}>In progress {data.length - completedTasksLen}</span>
       )
       default: return ( // all
-        <span style={{ color: 'var(--chakra-colors-blue-400)' }}>Total: {data.length}</span>
+        <span style={{ color: 'var(--chakra-colors-blue-400)' }}>Total {data.length}</span>
       )
     }
   }, [radioValue, completedTasksLen, useCompare([data])])
