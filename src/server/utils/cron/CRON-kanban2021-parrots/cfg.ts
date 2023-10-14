@@ -190,10 +190,10 @@ export const cfg: TCfg = [
     isEnabled: true,
     cronSetting: '1 2 18 * * *', // Every day at 18:02:01
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
-    targetRooms: ['sp.pravosleva'],
+    targetRooms: ['magaz', 'auto.pravosleva', 'sp.pravosleva'],
     targetHashtags: [],
     targetStatuses: [
-      // EMessageStatus.Danger,
+      EMessageStatus.Danger,
       EMessageStatus.Success,
       EMessageStatus.Warn,
     ],
@@ -410,7 +410,7 @@ export const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `*Спринты* (о чем-то запланированном): ${msgs.length > 0 ? `в ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return `*Спринты* (каждый понедельник): ${msgs.length > 0 ? `в ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           msgs,
