@@ -1,17 +1,29 @@
 import fs from 'fs'
 
-export const removeFileIfNecessary = (storagePath: string): void => {
-  const isStorageFileExists = fs.existsSync(storagePath)
+export const removeFileIfNecessary = ({
+  filePath,
+  cb,
+}: {
+  filePath: string;
+  cb?: {
+    onSuccess: (_arg: any) => void;
+    onError: (_arg: any) => void;
+  };
+}): void => {
+  const isFileExists = fs.existsSync(filePath)
 
-  if (isStorageFileExists) {
+  if (isFileExists) {
     try {
       // fs.appendFileSync(storagePath, `{"data":{},"ts":${ts}}`, 'utf8')
-      fs.unlink(storagePath, (err) => {
-        console.log(err)
+      fs.unlink(filePath, (err) => {
+        if (!!cb) {
+          if (!!err) cb.onError(err)
+          else cb.onSuccess(err)
+        }
       })
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.log(err)
+      if (!!cb) cb.onError(err)
     }
-  }
+  } else if (!!cb) cb.onError(new Error('File does not exists'))
 }

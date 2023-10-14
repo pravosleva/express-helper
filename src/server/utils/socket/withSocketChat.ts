@@ -1,6 +1,6 @@
 import { instrument } from '@socket.io/admin-ui'
 import { Socket } from 'socket.io'
-import bcrypt from 'bcryptjs'
+// import bcrypt from 'bcryptjs'
 import { binarySearchTsIndex } from '~/utils/binarySearch'
 import {
   roomsMapInstance as roomsMap,
@@ -21,7 +21,7 @@ import path from 'path'
 import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
 import { removeFileIfNecessary } from '~/utils/fs-tools/removeFileIfNecessary'
 import { getParsedUserAgent, standardResultHandler } from './utils'
-// import { Log } from '~/utils/socket/utils/Log'
+import { Log } from '~/utils/socket/utils/Log'
 import { moveFile } from '~/utils/fs-tools/moveFile'
 
 // --- NOTE: Run CRON for anything
@@ -50,6 +50,9 @@ const getMapUnigueValues = (myMap: Map<any, string>) => {
   for (const [_key, value] of myMap.entries()) vals.push(value)
   return [...new Set(vals)]
 }
+
+const isDev = process.env.NODE_ENV === 'development'
+const logger = new Log({ isDev })
 
 export const withSocketChat = (io: Socket) => {
   // @ts-ignore
@@ -204,7 +207,7 @@ export const withSocketChat = (io: Socket) => {
           // NOTE: Удаляем файл, если его успели сохранить
           try {
             const savedFilePath = path.join(uploadsPath, event.file.name)
-            removeFileIfNecessary(savedFilePath)
+            removeFileIfNecessary({ filePath: savedFilePath })
           } catch (err2) {
             socket.emit('notification', { status: 'error', title: 'DEBUG: err2', description: !!err2.message ? `${err2.message || 'Unknown err'}` : 'Server error' })
           }
@@ -617,11 +620,30 @@ export const withSocketChat = (io: Socket) => {
             const storagePath = uploadsPath
 
             if (!!result.targetMessage.file?.filePath) {
-              console.log('DELETED: filePath')
-              removeFileIfNecessary(path.join(storagePath, result.targetMessage.file?.filePath))
+              // console.log('DELETED: filePath')
+              removeFileIfNecessary({
+                filePath: path.join(storagePath, result.targetMessage.file?.filePath),
+                cb: {
+                  onSuccess: (_ps) => {
+                    logger.sendDevTgReport({ title: 'File deleted successfully (case 1)', md: `\`\`\`\n${JSON.stringify(result, null, 2)}\n\`\`\`` })
+                  },
+                  onError: (err) => {
+                    logger.sendDevTgReport({ title: 'Delete file errored (case 1)', md: `${err.message || 'No err.message'}` })
+                  },
+                },
+              })
             } else if (!!result.targetMessage.file?.fileName) {
-              console.log('DELETED: fileName')
-              removeFileIfNecessary(path.join(storagePath, result.targetMessage.file?.fileName))
+              removeFileIfNecessary({
+                filePath: path.join(storagePath, result.targetMessage.file?.fileName),
+                cb: {
+                  onSuccess: (_ps) => {
+                    logger.sendDevTgReport({ title: 'File deleted successfully (case 2)', md: `\`\`\`\n${JSON.stringify(result, null, 2)}\n\`\`\`` })
+                  },
+                  onError: (err) => {
+                    logger.sendDevTgReport({ title: 'Delete file errored (case 2)', md: `${err.message || 'No err.message'}` })
+                  },
+                },
+              })
             }
           }
           // --
