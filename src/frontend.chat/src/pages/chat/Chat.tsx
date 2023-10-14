@@ -2929,13 +2929,13 @@ export const Chat = () => {
           }</>
         )
       }
-      {
+      {/*
         upToLg && (
           <Widget position='top-left' isHalfHeight>
             {AccordionStuff}
           </Widget>
         )
-      }
+      */}
       {/*
         upToLg && (
           <Widget position='bottom-left' isHalfHeight>
@@ -2947,7 +2947,7 @@ export const Chat = () => {
       */}
       {
         upToLg && (
-          <Widget position='bottom-left' isHalfHeight>
+          <Widget position='top-left'>
             <TasklistContent data={tasklist} />
           </Widget>
         )

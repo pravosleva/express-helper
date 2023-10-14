@@ -62,6 +62,7 @@ $widgetBgLight: #FFF; // var(--chakra-colors-gray-300);
 
     .abs-box {
       position: fixed;
+      z-index: 3;
       width: calc(100% - #{$pad} - #{$pad});
       &_bottom {
         bottom: 0;
@@ -77,6 +78,10 @@ $widgetBgLight: #FFF; // var(--chakra-colors-gray-300);
       max-height: calc(100vh - #{$pad} - #{$pad});
       padding: #{$padInternal};
       overflow-y: auto;
+
+      display: flex;
+      flex-direction: column;
+      gap: #{$pad};
     }
     .half-height {
       max-height: calc(50vh - #{$pad} - #{$pad}/2);
