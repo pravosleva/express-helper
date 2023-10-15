@@ -1,0 +1,43 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 19339,
+      "name": "Hi-topic",
+      "mark_id": 8,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "007000525",
+      "generations": []
+    },
+    {
+      "id": 59,
+      "name": "Rocsta",
+      "mark_id": 8,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "007000527",
+      "generations": [
+        {
+          "id": 151,
+          "mark_name": "Asia",
+          "model_name": "Rocsta",
+          "generation_name": "1989 – 1998",
+          "start_year": 1989,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c3/5a/c35a5edf4e3150cfa03d3d633c7fbcff.png",
+          "images": [
+            {
+              "id": 442087,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442087/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442087/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c3/5a/c35a5edf4e3150cfa03d3d633c7fbcff.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

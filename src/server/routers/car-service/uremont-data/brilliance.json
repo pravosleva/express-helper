@@ -1,0 +1,264 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 172,
+      "name": "BS2",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 174,
+      "name": "BS4",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "045021026",
+      "generations": []
+    },
+    {
+      "id": 19782,
+      "name": "BS6",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "045021027",
+      "generations": []
+    },
+    {
+      "id": 19137,
+      "name": "H230",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": "045022097",
+      "generations": [
+        {
+          "id": 430,
+          "mark_name": "Brilliance",
+          "model_name": "H230",
+          "generation_name": "2012 – 2017",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9c/19/9c1975491b2eef7ed090ab8e8d098d18.png",
+          "images": [
+            {
+              "id": 442264,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442264/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442264/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9c/19/9c1975491b2eef7ed090ab8e8d098d18.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2290,
+      "name": "H530",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "045022000",
+      "generations": [
+        {
+          "id": 431,
+          "mark_name": "Brilliance",
+          "model_name": "H530",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f4/ce/f4ce4df7e4f2f2bba34bc9b4740b6dc1.png",
+          "images": [
+            {
+              "id": 442265,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442265/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442265/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f4/ce/f4ce4df7e4f2f2bba34bc9b4740b6dc1.png"
+            }
+          ]
+        },
+        {
+          "id": 432,
+          "mark_name": "Brilliance",
+          "model_name": "H530",
+          "generation_name": "I",
+          "start_year": 2011,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/55/a655f61267c3c9eb5e9a37f8ba282416.png",
+          "images": [
+            {
+              "id": 442266,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442266/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442266/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a6/55/a655f61267c3c9eb5e9a37f8ba282416.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "name": "M1",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "760022416",
+      "generations": [
+        {
+          "id": 5158,
+          "mark_name": "Brilliance",
+          "model_name": "M1",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/b8/a1b8ba6a8a1a7a1bdd5d0213659528d6.png",
+          "images": [
+            {
+              "id": 444364,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444364/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444364/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/b8/a1b8ba6a8a1a7a1bdd5d0213659528d6.png"
+            }
+          ]
+        },
+        {
+          "id": 5159,
+          "mark_name": "Brilliance",
+          "model_name": "M1",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/46/f5/46f5a030ca3ff35471fbfca26e42982c.png",
+          "images": [
+            {
+              "id": 444365,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444365/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444365/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/46/f5/46f5a030ca3ff35471fbfca26e42982c.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19783,
+      "name": "M2",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 33,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5160,
+          "mark_name": "Brilliance",
+          "model_name": "M2",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b6/b7/b6b7e20e9fda07c002525f729b4d1171.png",
+          "images": [
+            {
+              "id": 444366,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444366/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444366/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b6/b7/b6b7e20e9fda07c002525f729b4d1171.png"
+            }
+          ]
+        },
+        {
+          "id": 5161,
+          "mark_name": "Brilliance",
+          "model_name": "M2",
+          "generation_name": "I",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/f0/cdf03f73bf10fa79ad5947ef1de1cd19.png",
+          "images": [
+            {
+              "id": 444367,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444367/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444367/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/f0/cdf03f73bf10fa79ad5947ef1de1cd19.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 175,
+      "name": "M3",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "866022304",
+      "generations": [
+        {
+          "id": 5162,
+          "mark_name": "Brilliance",
+          "model_name": "M3",
+          "generation_name": "2007 – 2011",
+          "start_year": 2007,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 176,
+      "name": "V5",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 23,
+      "is_seo_active": 0,
+      "rgs_code": "782022466",
+      "generations": [
+        {
+          "id": 433,
+          "mark_name": "Brilliance",
+          "model_name": "V5",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/06/f2/06f23427ec196744e6ec8a6c4a4534e1.png",
+          "images": [
+            {
+              "id": 442267,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442267/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442267/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/06/f2/06f23427ec196744e6ec8a6c4a4534e1.png"
+            }
+          ]
+        },
+        {
+          "id": 434,
+          "mark_name": "Brilliance",
+          "model_name": "V5",
+          "generation_name": "I",
+          "start_year": 2011,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/3c/193ccadce83a75c6d404684efa4a69e0.png",
+          "images": [
+            {
+              "id": 442268,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442268/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442268/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/3c/193ccadce83a75c6d404684efa4a69e0.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 517,
+      "name": "Assol",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "541017770",
+      "generations": [
+        {
+          "id": 1138,
+          "mark_name": "Doninvest",
+          "model_name": "Assol",
+          "generation_name": "1998 – 2002",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 518,
+      "name": "Kondor",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "541017773",
+      "generations": [
+        {
+          "id": 1139,
+          "mark_name": "Doninvest",
+          "model_name": "Kondor",
+          "generation_name": "1998 – 2002",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 519,
+      "name": "Orion",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "541017775",
+      "generations": [
+        {
+          "id": 1140,
+          "mark_name": "Doninvest",
+          "model_name": "Orion",
+          "generation_name": "1998 – 2002",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19993,
+      "name": "Orion M",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

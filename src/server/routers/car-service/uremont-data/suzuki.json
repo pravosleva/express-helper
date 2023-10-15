@@ -1,0 +1,2249 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1736,
+      "name": "Aerio",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 62,
+      "is_seo_active": 0,
+      "rgs_code": "372014146",
+      "generations": [
+        {
+          "id": 4177,
+          "mark_name": "Suzuki",
+          "model_name": "Aerio",
+          "generation_name": "2001 – 2007",
+          "start_year": 2001,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1738,
+      "name": "Baleno",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 44,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4187,
+          "mark_name": "Suzuki",
+          "model_name": "Baleno",
+          "generation_name": "II",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c8/8e/c88e1df1baa87afa7b0d42f3f51e0369.png",
+          "images": [
+            {
+              "id": 443927,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443927/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443927/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c8/8e/c88e1df1baa87afa7b0d42f3f51e0369.png"
+            }
+          ]
+        },
+        {
+          "id": 4188,
+          "mark_name": "Suzuki",
+          "model_name": "Baleno",
+          "generation_name": "I",
+          "start_year": 1995,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/be/65be1c3e934c28fe946278e47e0f0154.png",
+          "images": [
+            {
+              "id": 443928,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443928/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443928/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/be/65be1c3e934c28fe946278e47e0f0154.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1742,
+      "name": "Escudo",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 92,
+      "is_seo_active": 0,
+      "rgs_code": "372020160",
+      "generations": [
+        {
+          "id": 4205,
+          "mark_name": "Suzuki",
+          "model_name": "Escudo",
+          "generation_name": "IV",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4206,
+          "mark_name": "Suzuki",
+          "model_name": "Escudo",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/29/ae/29ae531a8ba8c96948cdeb136ed9bbee.png",
+          "images": [
+            {
+              "id": 443942,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443942/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443942/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/29/ae/29ae531a8ba8c96948cdeb136ed9bbee.png"
+            }
+          ]
+        },
+        {
+          "id": 4207,
+          "mark_name": "Suzuki",
+          "model_name": "Escudo",
+          "generation_name": "III",
+          "start_year": 2005,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4208,
+          "mark_name": "Suzuki",
+          "model_name": "Escudo",
+          "generation_name": "II",
+          "start_year": 1997,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4209,
+          "mark_name": "Suzuki",
+          "model_name": "Escudo",
+          "generation_name": "I",
+          "start_year": 1988,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1745,
+      "name": "Grand Vitara",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 1434,
+      "is_seo_active": 0,
+      "rgs_code": "372014193",
+      "generations": [
+        {
+          "id": 4217,
+          "mark_name": "Suzuki",
+          "model_name": "Grand Vitara",
+          "generation_name": "III Рестайлинг 2",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4218,
+          "mark_name": "Suzuki",
+          "model_name": "Grand Vitara",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/62/9d62332cb304c113e1faf4d3462750a3.png",
+          "images": [
+            {
+              "id": 443950,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443950/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443950/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/62/9d62332cb304c113e1faf4d3462750a3.png"
+            }
+          ]
+        },
+        {
+          "id": 4219,
+          "mark_name": "Suzuki",
+          "model_name": "Grand Vitara",
+          "generation_name": "III",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ee/df/eedfcccaf972339a84c4fd8844913416.png",
+          "images": [
+            {
+              "id": 443951,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443951/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443951/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ee/df/eedfcccaf972339a84c4fd8844913416.png"
+            }
+          ]
+        },
+        {
+          "id": 4220,
+          "mark_name": "Suzuki",
+          "model_name": "Grand Vitara",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2000,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4221,
+          "mark_name": "Suzuki",
+          "model_name": "Grand Vitara",
+          "generation_name": "II",
+          "start_year": 1997,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1746,
+      "name": "Ignis",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 114,
+      "is_seo_active": 0,
+      "rgs_code": "372014211",
+      "generations": [
+        {
+          "id": 4224,
+          "mark_name": "Suzuki",
+          "model_name": "Ignis",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/f1/21f1368e8b4c7aa629e20f8d92f4e419.png",
+          "images": [
+            {
+              "id": 443953,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443953/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443953/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/f1/21f1368e8b4c7aa629e20f8d92f4e419.png"
+            }
+          ]
+        },
+        {
+          "id": 4225,
+          "mark_name": "Suzuki",
+          "model_name": "Ignis",
+          "generation_name": "III",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/d3/21d318b511959049111acb5bb548888d.png",
+          "images": [
+            {
+              "id": 443954,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443954/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443954/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/d3/21d318b511959049111acb5bb548888d.png"
+            }
+          ]
+        },
+        {
+          "id": 4226,
+          "mark_name": "Suzuki",
+          "model_name": "Ignis",
+          "generation_name": "II (HR)",
+          "start_year": 2003,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/aa/65/aa651cd33589a2cf6c45d86d79d45513.png",
+          "images": [
+            {
+              "id": 443955,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443955/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443955/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/aa/65/aa651cd33589a2cf6c45d86d79d45513.png"
+            }
+          ]
+        },
+        {
+          "id": 4227,
+          "mark_name": "Suzuki",
+          "model_name": "Ignis",
+          "generation_name": "I (HT)",
+          "start_year": 2000,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/80/ca/80ca44b01ab69aa0f8e4d4f98ed91b40.png",
+          "images": [
+            {
+              "id": 443956,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443956/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443956/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/80/ca/80ca44b01ab69aa0f8e4d4f98ed91b40.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1747,
+      "name": "Jimny",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 98,
+      "is_seo_active": 0,
+      "rgs_code": "372014214",
+      "generations": [
+        {
+          "id": 4228,
+          "mark_name": "Suzuki",
+          "model_name": "Jimny",
+          "generation_name": "IV",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/ee/5fee40f866432ba0b8cbbeaef4943434.png",
+          "images": [
+            {
+              "id": 443957,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443957/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443957/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/ee/5fee40f866432ba0b8cbbeaef4943434.png"
+            }
+          ]
+        },
+        {
+          "id": 4229,
+          "mark_name": "Suzuki",
+          "model_name": "Jimny",
+          "generation_name": "III Рестайлинг 2",
+          "start_year": 2012,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1f/4c/1f4c1afbaf3b905dfc09741094f6f215.png",
+          "images": [
+            {
+              "id": 443958,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443958/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443958/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1f/4c/1f4c1afbaf3b905dfc09741094f6f215.png"
+            }
+          ]
+        },
+        {
+          "id": 4230,
+          "mark_name": "Suzuki",
+          "model_name": "Jimny",
+          "generation_name": "III Рестайлинг 1",
+          "start_year": 2005,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/69/5c/695c0730ffa08121eb13d6391b1c2733.png",
+          "images": [
+            {
+              "id": 443959,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443959/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443959/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/69/5c/695c0730ffa08121eb13d6391b1c2733.png"
+            }
+          ]
+        },
+        {
+          "id": 4231,
+          "mark_name": "Suzuki",
+          "model_name": "Jimny",
+          "generation_name": "III",
+          "start_year": 1998,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/86/74/8674132b34cedae149d8858fb18769ac.png",
+          "images": [
+            {
+              "id": 443960,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443960/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443960/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/86/74/8674132b34cedae149d8858fb18769ac.png"
+            }
+          ]
+        },
+        {
+          "id": 4232,
+          "mark_name": "Suzuki",
+          "model_name": "Jimny",
+          "generation_name": "II",
+          "start_year": 1981,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4233,
+          "mark_name": "Suzuki",
+          "model_name": "Jimny",
+          "generation_name": "I",
+          "start_year": 1970,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1751,
+      "name": "Liana",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 305,
+      "is_seo_active": 0,
+      "rgs_code": "372014225",
+      "generations": [
+        {
+          "id": 4240,
+          "mark_name": "Suzuki",
+          "model_name": "Liana",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/50/ef5073ca6b8514e787a29e315a70345b.png",
+          "images": [
+            {
+              "id": 443967,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443967/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443967/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/50/ef5073ca6b8514e787a29e315a70345b.png"
+            }
+          ]
+        },
+        {
+          "id": 4241,
+          "mark_name": "Suzuki",
+          "model_name": "Liana",
+          "generation_name": "I",
+          "start_year": 2001,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f0/32/f032f67d34d72a6af1dfa7728261209e.png",
+          "images": [
+            {
+              "id": 443968,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443968/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443968/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f0/32/f032f67d34d72a6af1dfa7728261209e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1758,
+      "name": "Swift",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 367,
+      "is_seo_active": 0,
+      "rgs_code": "372014258",
+      "generations": [
+        {
+          "id": 4255,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "V",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/60/bc602d9faa2f4f0bb527284fd6098d86.png",
+          "images": [
+            {
+              "id": 443982,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443982/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443982/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/60/bc602d9faa2f4f0bb527284fd6098d86.png"
+            }
+          ]
+        },
+        {
+          "id": 4256,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/2b/ea2b780c2c9d9a0010d0dfc2b8f64292.png",
+          "images": [
+            {
+              "id": 443983,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443983/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443983/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/2b/ea2b780c2c9d9a0010d0dfc2b8f64292.png"
+            }
+          ]
+        },
+        {
+          "id": 4257,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "IV",
+          "start_year": 2011,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/49/2e497d5e8fa7d992c44bd0d5771607f4.png",
+          "images": [
+            {
+              "id": 443984,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443984/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443984/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/49/2e497d5e8fa7d992c44bd0d5771607f4.png"
+            }
+          ]
+        },
+        {
+          "id": 4258,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "III",
+          "start_year": 2004,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dd/82/dd82184cbbe06fae025aad94528112e1.png",
+          "images": [
+            {
+              "id": 443985,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443985/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443985/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dd/82/dd82184cbbe06fae025aad94528112e1.png"
+            }
+          ]
+        },
+        {
+          "id": 4259,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "I (Japan)",
+          "start_year": 2000,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/72/b7720372ebcea3838b008f798e1c5252.png",
+          "images": [
+            {
+              "id": 443986,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443986/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443986/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/72/b7720372ebcea3838b008f798e1c5252.png"
+            }
+          ]
+        },
+        {
+          "id": 4260,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "II Рестайлинг",
+          "start_year": 1995,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/cf/4fcf8024e085ce36a8f61fca22b9e88f.png",
+          "images": [
+            {
+              "id": 443987,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443987/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443987/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/cf/4fcf8024e085ce36a8f61fca22b9e88f.png"
+            }
+          ]
+        },
+        {
+          "id": 4261,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "II",
+          "start_year": 1989,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/7c/ed7c6e7f2fcfbbcf86ea9cff44bdf12e.png",
+          "images": [
+            {
+              "id": 443988,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443988/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443988/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/7c/ed7c6e7f2fcfbbcf86ea9cff44bdf12e.png"
+            }
+          ]
+        },
+        {
+          "id": 4262,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "I",
+          "start_year": 1983,
+          "finish_year": 1989,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/d5/5dd5d772b148c3b9e70a2e52b216b7d6.png",
+          "images": [
+            {
+              "id": 443989,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443989/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443989/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/d5/5dd5d772b148c3b9e70a2e52b216b7d6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1759,
+      "name": "SX4",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 648,
+      "is_seo_active": 0,
+      "rgs_code": "372020167",
+      "generations": [
+        {
+          "id": 4263,
+          "mark_name": "Suzuki",
+          "model_name": "SX4",
+          "generation_name": "II (S-Cross) Рестайлинг",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4264,
+          "mark_name": "Suzuki",
+          "model_name": "SX4",
+          "generation_name": "II (S-Cross)",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a4/76/a476bb502a79e4c3f7f6d3480f723037.png",
+          "images": [
+            {
+              "id": 443990,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443990/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443990/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a4/76/a476bb502a79e4c3f7f6d3480f723037.png"
+            }
+          ]
+        },
+        {
+          "id": 4265,
+          "mark_name": "Suzuki",
+          "model_name": "SX4",
+          "generation_name": "I (Classic) Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/98/4b981f4aab16db7b2e1f0283f6651dc9.png",
+          "images": [
+            {
+              "id": 443991,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443991/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443991/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/98/4b981f4aab16db7b2e1f0283f6651dc9.png"
+            }
+          ]
+        },
+        {
+          "id": 4266,
+          "mark_name": "Suzuki",
+          "model_name": "SX4",
+          "generation_name": "I (Classic)",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a8/84/a884fa83061685f789b3b3fabbef372e.png",
+          "images": [
+            {
+              "id": 443992,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443992/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443992/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a8/84/a884fa83061685f789b3b3fabbef372e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2251,
+      "name": "Vitara",
+      "mark_id": 167,
+      "sort_id": 1,
+      "rating": 107,
+      "is_seo_active": 0,
+      "rgs_code": "372014283",
+      "generations": [
+        {
+          "id": 4268,
+          "mark_name": "Suzuki",
+          "model_name": "Vitara",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b1/59/b159fc5922c1583af81044375a38478a.png",
+          "images": [
+            {
+              "id": 443994,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443994/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443994/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b1/59/b159fc5922c1583af81044375a38478a.png"
+            }
+          ]
+        },
+        {
+          "id": 4269,
+          "mark_name": "Suzuki",
+          "model_name": "Vitara",
+          "generation_name": "II",
+          "start_year": 2014,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/6c/a36cd8d5d2c002f1e3437c344d1487f3.png",
+          "images": [
+            {
+              "id": 443995,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443995/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443995/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a3/6c/a36cd8d5d2c002f1e3437c344d1487f3.png"
+            }
+          ]
+        },
+        {
+          "id": 4270,
+          "mark_name": "Suzuki",
+          "model_name": "Vitara",
+          "generation_name": "I",
+          "start_year": 1988,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/5c/995ca8d225cd353b73a902d220cacffb.png",
+          "images": [
+            {
+              "id": 443996,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443996/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443996/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/99/5c/995ca8d225cd353b73a902d220cacffb.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1737,
+      "name": "Alto",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 36,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4178,
+          "mark_name": "Suzuki",
+          "model_name": "Alto",
+          "generation_name": "VIII (HA36)",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/62/606245b82d584eec46c9521ee9d2c22c.png",
+          "images": [
+            {
+              "id": 443918,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443918/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443918/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/62/606245b82d584eec46c9521ee9d2c22c.png"
+            }
+          ]
+        },
+        {
+          "id": 4179,
+          "mark_name": "Suzuki",
+          "model_name": "Alto",
+          "generation_name": "VII (HA25)",
+          "start_year": 2009,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/87/83875c12eed5a65e9be370e2e868567a.png",
+          "images": [
+            {
+              "id": 443919,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443919/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443919/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/87/83875c12eed5a65e9be370e2e868567a.png"
+            }
+          ]
+        },
+        {
+          "id": 4180,
+          "mark_name": "Suzuki",
+          "model_name": "Alto",
+          "generation_name": "VI (HA24)",
+          "start_year": 2004,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a4/41/a4413ceca49ca71d8576a77ad71d6024.png",
+          "images": [
+            {
+              "id": 443920,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443920/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443920/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a4/41/a4413ceca49ca71d8576a77ad71d6024.png"
+            }
+          ]
+        },
+        {
+          "id": 4181,
+          "mark_name": "Suzuki",
+          "model_name": "Alto",
+          "generation_name": "V",
+          "start_year": 1998,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/67/80/67806f6565a5b16269a61e7d6b8bfd4c.png",
+          "images": [
+            {
+              "id": 443921,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443921/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443921/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/67/80/67806f6565a5b16269a61e7d6b8bfd4c.png"
+            }
+          ]
+        },
+        {
+          "id": 4182,
+          "mark_name": "Suzuki",
+          "model_name": "Alto",
+          "generation_name": "IV",
+          "start_year": 1994,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/d3/3dd36e50963dc785276d00fde411a8fd.png",
+          "images": [
+            {
+              "id": 443922,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443922/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443922/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/d3/3dd36e50963dc785276d00fde411a8fd.png"
+            }
+          ]
+        },
+        {
+          "id": 4183,
+          "mark_name": "Suzuki",
+          "model_name": "Alto",
+          "generation_name": "III",
+          "start_year": 1988,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/34/34340f39d01eb61f8ab4945a4dd5fc44.png",
+          "images": [
+            {
+              "id": 443923,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443923/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443923/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/34/34340f39d01eb61f8ab4945a4dd5fc44.png"
+            }
+          ]
+        },
+        {
+          "id": 4184,
+          "mark_name": "Suzuki",
+          "model_name": "Alto",
+          "generation_name": "II",
+          "start_year": 1984,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/b5/edb5a02f723d2fe38c70af2cb5ccfa91.png",
+          "images": [
+            {
+              "id": 443924,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443924/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443924/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/b5/edb5a02f723d2fe38c70af2cb5ccfa91.png"
+            }
+          ]
+        },
+        {
+          "id": 4185,
+          "mark_name": "Suzuki",
+          "model_name": "Alto",
+          "generation_name": "I",
+          "start_year": 1979,
+          "finish_year": 1984,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ee/19/ee1982e1d00c148aa123e11a214c4c4c.png",
+          "images": [
+            {
+              "id": 443925,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443925/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443925/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ee/19/ee1982e1d00c148aa123e11a214c4c4c.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20588,
+      "name": "APV",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4186,
+          "mark_name": "Suzuki",
+          "model_name": "APV",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/1b/3c1b9743715b8c971d29e14d31d427db.png",
+          "images": [
+            {
+              "id": 443926,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443926/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443926/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/1b/3c1b9743715b8c971d29e14d31d427db.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20589,
+      "name": "Beidouxing",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1739,
+      "name": "Cappuccino",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "372014176",
+      "generations": [
+        {
+          "id": 4189,
+          "mark_name": "Suzuki",
+          "model_name": "Cappuccino",
+          "generation_name": "1990 – 1997",
+          "start_year": 1990,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/f5/21f52ae703f272a7fff31ec036426d23.png",
+          "images": [
+            {
+              "id": 443929,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443929/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443929/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/f5/21f52ae703f272a7fff31ec036426d23.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20590,
+      "name": "Carry",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4190,
+          "mark_name": "Suzuki",
+          "model_name": "Carry",
+          "generation_name": "IX",
+          "start_year": 1991,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/cb/28cb61a528ffc025e7b07fd5aaaaf9b0.png",
+          "images": [
+            {
+              "id": 443930,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443930/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443930/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/cb/28cb61a528ffc025e7b07fd5aaaaf9b0.png"
+            }
+          ]
+        },
+        {
+          "id": 4191,
+          "mark_name": "Suzuki",
+          "model_name": "Carry",
+          "generation_name": "VIII",
+          "start_year": 1985,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3e/96/3e9694163fb44fd205c0727479e25072.png",
+          "images": [
+            {
+              "id": 443931,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443931/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443931/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3e/96/3e9694163fb44fd205c0727479e25072.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1740,
+      "name": "Cervo",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "372020157",
+      "generations": [
+        {
+          "id": 4192,
+          "mark_name": "Suzuki",
+          "model_name": "Cervo",
+          "generation_name": "V",
+          "start_year": 2006,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/21/40219c2f962af1ba53719a3d8c90e50e.png",
+          "images": [
+            {
+              "id": 443932,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443932/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443932/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/21/40219c2f962af1ba53719a3d8c90e50e.png"
+            }
+          ]
+        },
+        {
+          "id": 4193,
+          "mark_name": "Suzuki",
+          "model_name": "Cervo",
+          "generation_name": "IV Рестайлинг 2",
+          "start_year": 1997,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4194,
+          "mark_name": "Suzuki",
+          "model_name": "Cervo",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 1995,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4195,
+          "mark_name": "Suzuki",
+          "model_name": "Cervo",
+          "generation_name": "IV",
+          "start_year": 1990,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/d0/aed086ddf5f537048643251d7d11734f.png",
+          "images": [
+            {
+              "id": 443933,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443933/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443933/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/d0/aed086ddf5f537048643251d7d11734f.png"
+            }
+          ]
+        },
+        {
+          "id": 4196,
+          "mark_name": "Suzuki",
+          "model_name": "Cervo",
+          "generation_name": "III",
+          "start_year": 1988,
+          "finish_year": 1990,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/b6/e3b6a9f16dda116eeeda26e58294a3ed.png",
+          "images": [
+            {
+              "id": 443934,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443934/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443934/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/b6/e3b6a9f16dda116eeeda26e58294a3ed.png"
+            }
+          ]
+        },
+        {
+          "id": 4197,
+          "mark_name": "Suzuki",
+          "model_name": "Cervo",
+          "generation_name": "I",
+          "start_year": 1977,
+          "finish_year": 1982,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/eb/eaebd61f924b1fdb86ca0c5c257c9cd0.png",
+          "images": [
+            {
+              "id": 443935,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443935/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443935/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/eb/eaebd61f924b1fdb86ca0c5c257c9cd0.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20591,
+      "name": "Cultus",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 17,
+      "is_seo_active": 0,
+      "rgs_code": "372020159",
+      "generations": [
+        {
+          "id": 4198,
+          "mark_name": "Suzuki",
+          "model_name": "Cultus",
+          "generation_name": "III Рестайлинг",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4199,
+          "mark_name": "Suzuki",
+          "model_name": "Cultus",
+          "generation_name": "III",
+          "start_year": 1995,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4e/55/4e557ef8b97ac1eca34f9badadbb90b7.png",
+          "images": [
+            {
+              "id": 443936,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443936/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443936/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4e/55/4e557ef8b97ac1eca34f9badadbb90b7.png"
+            }
+          ]
+        },
+        {
+          "id": 4200,
+          "mark_name": "Suzuki",
+          "model_name": "Cultus",
+          "generation_name": "II",
+          "start_year": 1988,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/01/27/0127ff39d3fbca1783774d3e94f27d68.png",
+          "images": [
+            {
+              "id": 443937,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443937/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443937/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/01/27/0127ff39d3fbca1783774d3e94f27d68.png"
+            }
+          ]
+        },
+        {
+          "id": 4201,
+          "mark_name": "Suzuki",
+          "model_name": "Cultus",
+          "generation_name": "I",
+          "start_year": 1983,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/84/f6/84f6df2e57f483711743828a8d183a12.png",
+          "images": [
+            {
+              "id": 443938,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443938/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443938/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/84/f6/84f6df2e57f483711743828a8d183a12.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20592,
+      "name": "Cultus Crescent",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20593,
+      "name": "Equator",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4202,
+          "mark_name": "Suzuki",
+          "model_name": "Equator",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/8c/0a8cd1796aa9927983eef32a5d54071d.png",
+          "images": [
+            {
+              "id": 443939,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443939/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443939/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/8c/0a8cd1796aa9927983eef32a5d54071d.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1741,
+      "name": "Ertiga",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4203,
+          "mark_name": "Suzuki",
+          "model_name": "Ertiga",
+          "generation_name": "II",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/79/40/79401458802b24b7d5829bda68792fad.png",
+          "images": [
+            {
+              "id": 443940,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443940/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443940/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/79/40/79401458802b24b7d5829bda68792fad.png"
+            }
+          ]
+        },
+        {
+          "id": 4204,
+          "mark_name": "Suzuki",
+          "model_name": "Ertiga",
+          "generation_name": "I",
+          "start_year": 2012,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3a/bc/3abcdd2caa90923549b18724ff2294a8.png",
+          "images": [
+            {
+              "id": 443941,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443941/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443941/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3a/bc/3abcdd2caa90923549b18724ff2294a8.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20594,
+      "name": "Esteem",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4210,
+          "mark_name": "Suzuki",
+          "model_name": "Esteem",
+          "generation_name": "1995 – 2004",
+          "start_year": 1995,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/ce/a1ce221cfb5fe702a2e84ad22e0196d3.png",
+          "images": [
+            {
+              "id": 443943,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443943/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443943/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/ce/a1ce221cfb5fe702a2e84ad22e0196d3.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1743,
+      "name": "Every",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "372014189",
+      "generations": [
+        {
+          "id": 4211,
+          "mark_name": "Suzuki",
+          "model_name": "Every",
+          "generation_name": "VI",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/f1/2af1238c1de61245ffbe06ad5dc00aa4.png",
+          "images": [
+            {
+              "id": 443944,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443944/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443944/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/f1/2af1238c1de61245ffbe06ad5dc00aa4.png"
+            }
+          ]
+        },
+        {
+          "id": 4212,
+          "mark_name": "Suzuki",
+          "model_name": "Every",
+          "generation_name": "V",
+          "start_year": 2005,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/73/5f732ac668acc6117ffd9e412f5460bd.png",
+          "images": [
+            {
+              "id": 443945,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443945/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443945/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/73/5f732ac668acc6117ffd9e412f5460bd.png"
+            }
+          ]
+        },
+        {
+          "id": 4213,
+          "mark_name": "Suzuki",
+          "model_name": "Every",
+          "generation_name": "IV",
+          "start_year": 1999,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/12/3d12717cbcd08c55d52b2af7b6d1759c.png",
+          "images": [
+            {
+              "id": 443946,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443946/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443946/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/12/3d12717cbcd08c55d52b2af7b6d1759c.png"
+            }
+          ]
+        },
+        {
+          "id": 4214,
+          "mark_name": "Suzuki",
+          "model_name": "Every",
+          "generation_name": "II",
+          "start_year": 1985,
+          "finish_year": 1990,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c1/58/c1582b6d48f38962cf85412d2dc4ad59.png",
+          "images": [
+            {
+              "id": 443947,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443947/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443947/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c1/58/c1582b6d48f38962cf85412d2dc4ad59.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1744,
+      "name": "Forenza",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "372021341",
+      "generations": [
+        {
+          "id": 4215,
+          "mark_name": "Suzuki",
+          "model_name": "Forenza",
+          "generation_name": "2003 – 2008",
+          "start_year": 2003,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/2e/402ee763abdefeb354b727f39f8a179f.png",
+          "images": [
+            {
+              "id": 443948,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443948/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443948/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/2e/402ee763abdefeb354b727f39f8a179f.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20595,
+      "name": "Forsa",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20596,
+      "name": "Fronte",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4216,
+          "mark_name": "Suzuki",
+          "model_name": "Fronte",
+          "generation_name": "CB72",
+          "start_year": 1986,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cf/56/cf563964588c365814129affb5258175.png",
+          "images": [
+            {
+              "id": 443949,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443949/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443949/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cf/56/cf563964588c365814129affb5258175.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20597,
+      "name": "Fun",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20598,
+      "name": "Grand Escudo",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 16,
+      "is_seo_active": 0,
+      "rgs_code": "372021342",
+      "generations": []
+    },
+    {
+      "id": 20599,
+      "name": "Grand Nomade",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 22360,
+      "name": "Hustler",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4222,
+          "mark_name": "Suzuki",
+          "model_name": "Hustler",
+          "generation_name": "II",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4223,
+          "mark_name": "Suzuki",
+          "model_name": "Hustler",
+          "generation_name": "I",
+          "start_year": 2014,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/2c/852c6f58e721de2dc7e16c8d8b9caca7.png",
+          "images": [
+            {
+              "id": 443952,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443952/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443952/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/2c/852c6f58e721de2dc7e16c8d8b9caca7.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20600,
+      "name": "Karimun Estilo",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1748,
+      "name": "Kei",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 18,
+      "is_seo_active": 0,
+      "rgs_code": "372014222",
+      "generations": [
+        {
+          "id": 4234,
+          "mark_name": "Suzuki",
+          "model_name": "Kei",
+          "generation_name": "1998 – 2009",
+          "start_year": 1998,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/f3/59f336a6a29dfeb8329479c721b2c9b8.png",
+          "images": [
+            {
+              "id": 443961,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443961/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443961/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/f3/59f336a6a29dfeb8329479c721b2c9b8.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20601,
+      "name": "Khyber",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1749,
+      "name": "Kizashi",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 18,
+      "is_seo_active": 0,
+      "rgs_code": "372021586",
+      "generations": [
+        {
+          "id": 4235,
+          "mark_name": "Suzuki",
+          "model_name": "Kizashi",
+          "generation_name": "2009 – 2014",
+          "start_year": 2009,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/33/64/3364526eddd8de0e4e4827a727e6a10f.png",
+          "images": [
+            {
+              "id": 443962,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443962/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443962/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/33/64/3364526eddd8de0e4e4827a727e6a10f.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1750,
+      "name": "Landy",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "372022152",
+      "generations": [
+        {
+          "id": 4236,
+          "mark_name": "Suzuki",
+          "model_name": "Landy",
+          "generation_name": "III",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/40/4940c4df2fd63eb9c6e20b5da0d3bdce.png",
+          "images": [
+            {
+              "id": 443963,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443963/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443963/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/40/4940c4df2fd63eb9c6e20b5da0d3bdce.png"
+            }
+          ]
+        },
+        {
+          "id": 4237,
+          "mark_name": "Suzuki",
+          "model_name": "Landy",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/b1/b4b17b9ba391dbf7e1b3883aed296214.png",
+          "images": [
+            {
+              "id": 443964,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443964/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443964/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/b1/b4b17b9ba391dbf7e1b3883aed296214.png"
+            }
+          ]
+        },
+        {
+          "id": 4238,
+          "mark_name": "Suzuki",
+          "model_name": "Landy",
+          "generation_name": "II",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/a6/57a6fc2f9bced7d958d3e5ee95ca2012.png",
+          "images": [
+            {
+              "id": 443965,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443965/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443965/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/57/a6/57a6fc2f9bced7d958d3e5ee95ca2012.png"
+            }
+          ]
+        },
+        {
+          "id": 4239,
+          "mark_name": "Suzuki",
+          "model_name": "Landy",
+          "generation_name": "I",
+          "start_year": 2007,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/45/7b/457b5f4a68681221b4fe6d12f7da490a.png",
+          "images": [
+            {
+              "id": 443966,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443966/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443966/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/45/7b/457b5f4a68681221b4fe6d12f7da490a.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20602,
+      "name": "Lapin",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20603,
+      "name": "Margalla",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20604,
+      "name": "Mehran",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20605,
+      "name": "Mighty Boy",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1752,
+      "name": "MR Wagon",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "372014235",
+      "generations": [
+        {
+          "id": 4242,
+          "mark_name": "Suzuki",
+          "model_name": "MR Wagon",
+          "generation_name": "III",
+          "start_year": 2011,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/4f/0e4fd2530088587cb356f1d620b06137.png",
+          "images": [
+            {
+              "id": 443969,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443969/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443969/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/4f/0e4fd2530088587cb356f1d620b06137.png"
+            }
+          ]
+        },
+        {
+          "id": 4243,
+          "mark_name": "Suzuki",
+          "model_name": "MR Wagon",
+          "generation_name": "II",
+          "start_year": 2005,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/27/64/2764190e2d02019ee83ba084f3b3ee1e.png",
+          "images": [
+            {
+              "id": 443970,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443970/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443970/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/27/64/2764190e2d02019ee83ba084f3b3ee1e.png"
+            }
+          ]
+        },
+        {
+          "id": 4244,
+          "mark_name": "Suzuki",
+          "model_name": "MR Wagon",
+          "generation_name": "I",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c8/10/c81069324a240701b4d36b6ab8c8b4ca.png",
+          "images": [
+            {
+              "id": 443971,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443971/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443971/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c8/10/c81069324a240701b4d36b6ab8c8b4ca.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1753,
+      "name": "Palette",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "372022140",
+      "generations": [
+        {
+          "id": 4245,
+          "mark_name": "Suzuki",
+          "model_name": "Palette",
+          "generation_name": "2008 – 2013",
+          "start_year": 2008,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/81/5281c38bc09119dc7a99136af9a59338.png",
+          "images": [
+            {
+              "id": 443972,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443972/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443972/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/81/5281c38bc09119dc7a99136af9a59338.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20606,
+      "name": "Potohar",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1754,
+      "name": "Reno",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "372021343",
+      "generations": [
+        {
+          "id": 4246,
+          "mark_name": "Suzuki",
+          "model_name": "Reno",
+          "generation_name": "2004 – 2008",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/12/05/1205e31e15388dcb94c7f1db501317fd.png",
+          "images": [
+            {
+              "id": 443973,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443973/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443973/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/12/05/1205e31e15388dcb94c7f1db501317fd.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2372,
+      "name": "Samurai",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "372014238",
+      "generations": [
+        {
+          "id": 4247,
+          "mark_name": "Suzuki",
+          "model_name": "Samurai",
+          "generation_name": "1981 – 2003",
+          "start_year": 1981,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7f/7f/7f7f2f91307dad8730c0e47739c19407.png",
+          "images": [
+            {
+              "id": 443974,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443974/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443974/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7f/7f/7f7f2f91307dad8730c0e47739c19407.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20607,
+      "name": "Santana",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20608,
+      "name": "SC100",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20609,
+      "name": "Sidekick",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "372021466",
+      "generations": [
+        {
+          "id": 4248,
+          "mark_name": "Suzuki",
+          "model_name": "Sidekick",
+          "generation_name": "I",
+          "start_year": 1988,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/4f/c24f766c2df40fddd90564bd4d2d517e.png",
+          "images": [
+            {
+              "id": 443975,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443975/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443975/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/4f/c24f766c2df40fddd90564bd4d2d517e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20610,
+      "name": "Sierra",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1755,
+      "name": "Solio",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 30,
+      "is_seo_active": 0,
+      "rgs_code": "372021682",
+      "generations": [
+        {
+          "id": 4249,
+          "mark_name": "Suzuki",
+          "model_name": "Solio",
+          "generation_name": "III",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/ec/60ec179d1b62f69771fd20b7564e7625.png",
+          "images": [
+            {
+              "id": 443976,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443976/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443976/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/ec/60ec179d1b62f69771fd20b7564e7625.png"
+            }
+          ]
+        },
+        {
+          "id": 4250,
+          "mark_name": "Suzuki",
+          "model_name": "Solio",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/08/ef084c3fe36140217ba67c37d5466e45.png",
+          "images": [
+            {
+              "id": 443977,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443977/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443977/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/08/ef084c3fe36140217ba67c37d5466e45.png"
+            }
+          ]
+        },
+        {
+          "id": 4251,
+          "mark_name": "Suzuki",
+          "model_name": "Solio",
+          "generation_name": "II",
+          "start_year": 2011,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5c/3a/5c3a0b2f4738ad560a2260524ab64b71.png",
+          "images": [
+            {
+              "id": 443978,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443978/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443978/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5c/3a/5c3a0b2f4738ad560a2260524ab64b71.png"
+            }
+          ]
+        },
+        {
+          "id": 4252,
+          "mark_name": "Suzuki",
+          "model_name": "Solio",
+          "generation_name": "I",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7d/fc/7dfc49e5e6289859143e933249662caa.png",
+          "images": [
+            {
+              "id": 443979,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443979/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443979/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7d/fc/7dfc49e5e6289859143e933249662caa.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1757,
+      "name": "Splash",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 34,
+      "is_seo_active": 0,
+      "rgs_code": "372021344",
+      "generations": [
+        {
+          "id": 4253,
+          "mark_name": "Suzuki",
+          "model_name": "Splash",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/b3/4bb35e183d14e1ea406a057b23c0ccc0.png",
+          "images": [
+            {
+              "id": 443980,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443980/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443980/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/b3/4bb35e183d14e1ea406a057b23c0ccc0.png"
+            }
+          ]
+        },
+        {
+          "id": 4254,
+          "mark_name": "Suzuki",
+          "model_name": "Splash",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/ea/0eea7d3217662b9141fe6b5533f41754.png",
+          "images": [
+            {
+              "id": 443981,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443981/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443981/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/ea/0eea7d3217662b9141fe6b5533f41754.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1760,
+      "name": "Verona",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4267,
+          "mark_name": "Suzuki",
+          "model_name": "Verona",
+          "generation_name": "2003 – 2006",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a5/0a/a50aa1403f9c0178868c4edd8677823d.png",
+          "images": [
+            {
+              "id": 443993,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443993/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443993/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a5/0a/a50aa1403f9c0178868c4edd8677823d.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1761,
+      "name": "Wagon R",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 28,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4271,
+          "mark_name": "Suzuki",
+          "model_name": "Wagon R",
+          "generation_name": "VI",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/e1/43e10f5f7021e604952033540062e007.png",
+          "images": [
+            {
+              "id": 443997,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443997/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443997/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/e1/43e10f5f7021e604952033540062e007.png"
+            }
+          ]
+        },
+        {
+          "id": 4272,
+          "mark_name": "Suzuki",
+          "model_name": "Wagon R",
+          "generation_name": "V Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/04/ff/04ff0953c2f96fe842011bd679fdad56.png",
+          "images": [
+            {
+              "id": 443998,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443998/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443998/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/04/ff/04ff0953c2f96fe842011bd679fdad56.png"
+            }
+          ]
+        },
+        {
+          "id": 4273,
+          "mark_name": "Suzuki",
+          "model_name": "Wagon R",
+          "generation_name": "V",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/a0/4fa0ba4e6b9d381214c7e268811932d4.png",
+          "images": [
+            {
+              "id": 443999,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443999/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443999/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/a0/4fa0ba4e6b9d381214c7e268811932d4.png"
+            }
+          ]
+        },
+        {
+          "id": 4274,
+          "mark_name": "Suzuki",
+          "model_name": "Wagon R",
+          "generation_name": "IV",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/88/5d88f2341ed9593153181e9209d78998.png",
+          "images": [
+            {
+              "id": 444000,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444000/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444000/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/88/5d88f2341ed9593153181e9209d78998.png"
+            }
+          ]
+        },
+        {
+          "id": 4275,
+          "mark_name": "Suzuki",
+          "model_name": "Wagon R",
+          "generation_name": "III",
+          "start_year": 2003,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/ff/3dffd0fe6f51703a1f6b9838a7038785.png",
+          "images": [
+            {
+              "id": 444001,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444001/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444001/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/ff/3dffd0fe6f51703a1f6b9838a7038785.png"
+            }
+          ]
+        },
+        {
+          "id": 4276,
+          "mark_name": "Suzuki",
+          "model_name": "Wagon R",
+          "generation_name": "II",
+          "start_year": 1998,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e8/39/e8395e75647a76560ed37965d5f0d0e2.png",
+          "images": [
+            {
+              "id": 444002,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444002/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444002/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e8/39/e8395e75647a76560ed37965d5f0d0e2.png"
+            }
+          ]
+        },
+        {
+          "id": 4277,
+          "mark_name": "Suzuki",
+          "model_name": "Wagon R",
+          "generation_name": "I",
+          "start_year": 1993,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/77/5b/775bf13d9aad5134442369d7379aea23.png",
+          "images": [
+            {
+              "id": 444003,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444003/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444003/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/77/5b/775bf13d9aad5134442369d7379aea23.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1762,
+      "name": "Wagon R+",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 44,
+      "is_seo_active": 0,
+      "rgs_code": "372014299",
+      "generations": [
+        {
+          "id": 4278,
+          "mark_name": "Suzuki",
+          "model_name": "Wagon R+",
+          "generation_name": "II",
+          "start_year": 2000,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4279,
+          "mark_name": "Suzuki",
+          "model_name": "Wagon R+",
+          "generation_name": "I",
+          "start_year": 1997,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1763,
+      "name": "X-90",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "372014305",
+      "generations": [
+        {
+          "id": 4280,
+          "mark_name": "Suzuki",
+          "model_name": "X-90",
+          "generation_name": "1995 – 2000",
+          "start_year": 1995,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/f4/eff4df064eba553ae22646e66381cd1f.png",
+          "images": [
+            {
+              "id": 444004,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444004/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444004/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/f4/eff4df064eba553ae22646e66381cd1f.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1764,
+      "name": "XL7",
+      "mark_id": 167,
+      "sort_id": 0,
+      "rating": 40,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4281,
+          "mark_name": "Suzuki",
+          "model_name": "XL7",
+          "generation_name": "2007 – 2009",
+          "start_year": 2007,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/c1/0cc17694e93424fc035faa6cabeb9d9f.png",
+          "images": [
+            {
+              "id": 444005,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444005/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444005/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/c1/0cc17694e93424fc035faa6cabeb9d9f.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

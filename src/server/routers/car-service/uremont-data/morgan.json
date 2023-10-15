@@ -1,0 +1,99 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1337,
+      "name": "4/4",
+      "mark_id": 125,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3065,
+          "mark_name": "Morgan",
+          "model_name": "4/4",
+          "generation_name": "1962 – 2019",
+          "start_year": 1962,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1338,
+      "name": "Aero 8",
+      "mark_id": 125,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "237009887",
+      "generations": [
+        {
+          "id": 3066,
+          "mark_name": "Morgan",
+          "model_name": "Aero 8",
+          "generation_name": "2001 – 2010",
+          "start_year": 2001,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1342,
+      "name": "Plus 4",
+      "mark_id": 125,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3067,
+          "mark_name": "Morgan",
+          "model_name": "Plus 4",
+          "generation_name": "1950 – 2020",
+          "start_year": 1950,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1343,
+      "name": "Plus 8",
+      "mark_id": 125,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3068,
+          "mark_name": "Morgan",
+          "model_name": "Plus 8",
+          "generation_name": "II",
+          "start_year": 2012,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3069,
+          "mark_name": "Morgan",
+          "model_name": "Plus 8",
+          "generation_name": "I",
+          "start_year": 1968,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

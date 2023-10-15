@@ -1,0 +1,47 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 19302,
+      "name": "T600",
+      "mark_id": 192,
+      "sort_id": 1,
+      "rating": 52,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5033,
+          "mark_name": "Zotye",
+          "model_name": "T600",
+          "generation_name": "2013 – н.в.",
+          "start_year": 2013,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19303,
+      "name": "Z300",
+      "mark_id": 192,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5034,
+          "mark_name": "Zotye",
+          "model_name": "Z300",
+          "generation_name": "2012 – 2017",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

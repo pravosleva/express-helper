@@ -1,0 +1,335 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20304,
+      "name": "2-Eleven",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1050,
+      "name": "340R",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2440,
+          "mark_name": "Lotus",
+          "model_name": "340R",
+          "generation_name": "2000 – 2000",
+          "start_year": 2000,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20305,
+      "name": "7",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20306,
+      "name": "Carlton",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1051,
+      "name": "Eclat",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "208007833",
+      "generations": [
+        {
+          "id": 2441,
+          "mark_name": "Lotus",
+          "model_name": "Eclat",
+          "generation_name": "1975 – 1986",
+          "start_year": 1975,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1052,
+      "name": "Elan",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2442,
+          "mark_name": "Lotus",
+          "model_name": "Elan",
+          "generation_name": "1989 – 1995",
+          "start_year": 1989,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1053,
+      "name": "Elise",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "208007840",
+      "generations": [
+        {
+          "id": 2443,
+          "mark_name": "Lotus",
+          "model_name": "Elise",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2010,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2444,
+          "mark_name": "Lotus",
+          "model_name": "Elise",
+          "generation_name": "II",
+          "start_year": 2000,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2445,
+          "mark_name": "Lotus",
+          "model_name": "Elise",
+          "generation_name": "I",
+          "start_year": 1995,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1054,
+      "name": "Elite",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "208007846",
+      "generations": [
+        {
+          "id": 2446,
+          "mark_name": "Lotus",
+          "model_name": "Elite",
+          "generation_name": "II",
+          "start_year": 1974,
+          "finish_year": 1982,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1055,
+      "name": "Esprit",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "208007849",
+      "generations": [
+        {
+          "id": 2447,
+          "mark_name": "Lotus",
+          "model_name": "Esprit",
+          "generation_name": "V",
+          "start_year": 1993,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2448,
+          "mark_name": "Lotus",
+          "model_name": "Esprit",
+          "generation_name": "IV",
+          "start_year": 1987,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2449,
+          "mark_name": "Lotus",
+          "model_name": "Esprit",
+          "generation_name": "III",
+          "start_year": 1981,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2450,
+          "mark_name": "Lotus",
+          "model_name": "Esprit",
+          "generation_name": "II",
+          "start_year": 1978,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2451,
+          "mark_name": "Lotus",
+          "model_name": "Esprit",
+          "generation_name": "I",
+          "start_year": 1976,
+          "finish_year": 1979,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1056,
+      "name": "Europa",
+      "mark_id": 103,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "208007858",
+      "generations": [
+        {
+          "id": 2452,
+          "mark_name": "Lotus",
+          "model_name": "Europa",
+          "generation_name": "1970 – 1976",
+          "start_year": 1970,
+          "finish_year": 1976,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1058,
+      "name": "Evora",
+      "mark_id": 103,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2453,
+          "mark_name": "Lotus",
+          "model_name": "Evora",
+          "generation_name": "2009 – н.в.",
+          "start_year": 2009,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1059,
+      "name": "Excel",
+      "mark_id": 103,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2454,
+          "mark_name": "Lotus",
+          "model_name": "Excel",
+          "generation_name": "1982 – 1992",
+          "start_year": 1982,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1060,
+      "name": "Exige",
+      "mark_id": 103,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "208007862",
+      "generations": [
+        {
+          "id": 2455,
+          "mark_name": "Lotus",
+          "model_name": "Exige",
+          "generation_name": "III",
+          "start_year": 2011,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2456,
+          "mark_name": "Lotus",
+          "model_name": "Exige",
+          "generation_name": "II",
+          "start_year": 2004,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2457,
+          "mark_name": "Lotus",
+          "model_name": "Exige",
+          "generation_name": "I",
+          "start_year": 2001,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20307,
+      "name": "Omega",
+      "mark_id": 103,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20990,
+      "name": "820",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 12,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1032,
+      "name": "Breez",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 132,
+      "is_seo_active": 0,
+      "rgs_code": "211020993",
+      "generations": [
+        {
+          "id": 5278,
+          "mark_name": "Lifan",
+          "model_name": "Breez",
+          "generation_name": "2007 – 2014",
+          "start_year": 2007,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4c/e3/4ce346342dde05fe177f5367f63c6703.png",
+          "images": [
+            {
+              "id": 444417,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444417/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444417/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4c/e3/4ce346342dde05fe177f5367f63c6703.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1033,
+      "name": "Cebrium",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 45,
+      "is_seo_active": 0,
+      "rgs_code": "211021946",
+      "generations": [
+        {
+          "id": 5279,
+          "mark_name": "Lifan",
+          "model_name": "Cebrium",
+          "generation_name": "2014 – 2018",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2113,
+      "name": "Celliya",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5280,
+          "mark_name": "Lifan",
+          "model_name": "Celliya",
+          "generation_name": "2014 – 2018",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/4d/404d9b1b1dcb3bc5ae6d25e5e743377e.png",
+          "images": [
+            {
+              "id": 444418,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444418/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444418/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/4d/404d9b1b1dcb3bc5ae6d25e5e743377e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20293,
+      "name": "Foison",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20966,
+      "name": "MyWay",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 25,
+      "is_seo_active": 0,
+      "rgs_code": "211022272",
+      "generations": [
+        {
+          "id": 2389,
+          "mark_name": "Lifan",
+          "model_name": "MyWay",
+          "generation_name": "2016 – н.в.",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2270,
+      "name": "Smily",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 237,
+      "is_seo_active": 0,
+      "rgs_code": "211021643",
+      "generations": [
+        {
+          "id": 2390,
+          "mark_name": "Lifan",
+          "model_name": "Smily",
+          "generation_name": "I Рестайлинг (330)",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/54/6b/546b7c4a325d36c5f90d88ec64f3210c.png",
+          "images": [
+            {
+              "id": 443119,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443119/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443119/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/54/6b/546b7c4a325d36c5f90d88ec64f3210c.png"
+            }
+          ]
+        },
+        {
+          "id": 2391,
+          "mark_name": "Lifan",
+          "model_name": "Smily",
+          "generation_name": "I (320)",
+          "start_year": 2008,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7c/7f/7c7ff1ff280725358c8983734797cf20.png",
+          "images": [
+            {
+              "id": 443120,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443120/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443120/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7c/7f/7c7ff1ff280725358c8983734797cf20.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2279,
+      "name": "Solano",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 825,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2392,
+          "mark_name": "Lifan",
+          "model_name": "Solano",
+          "generation_name": "II",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1e/ef/1eefc662546725ad8f6ba3f44c7da415.png",
+          "images": [
+            {
+              "id": 443121,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443121/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443121/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1e/ef/1eefc662546725ad8f6ba3f44c7da415.png"
+            }
+          ]
+        },
+        {
+          "id": 2393,
+          "mark_name": "Lifan",
+          "model_name": "Solano",
+          "generation_name": "I Рестайлинг (630)",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/67/6e/676e99ec6f51fb38267719ae6a3ae0bc.png",
+          "images": [
+            {
+              "id": 443122,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443122/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443122/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/67/6e/676e99ec6f51fb38267719ae6a3ae0bc.png"
+            }
+          ]
+        },
+        {
+          "id": 2394,
+          "mark_name": "Lifan",
+          "model_name": "Solano",
+          "generation_name": "I (620)",
+          "start_year": 2008,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/15/0e/150e95bca0db37938a1c04361fd6df0a.png",
+          "images": [
+            {
+              "id": 443123,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443123/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443123/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/15/0e/150e95bca0db37938a1c04361fd6df0a.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19142,
+      "name": "x50",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 128,
+      "is_seo_active": 0,
+      "rgs_code": "211022101",
+      "generations": [
+        {
+          "id": 2395,
+          "mark_name": "Lifan",
+          "model_name": "x50",
+          "generation_name": "2015 – н.в.",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1036,
+      "name": "X60",
+      "mark_id": 101,
+      "sort_id": 1,
+      "rating": 702,
+      "is_seo_active": 0,
+      "rgs_code": "211021702",
+      "generations": [
+        {
+          "id": 2396,
+          "mark_name": "Lifan",
+          "model_name": "X60",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2397,
+          "mark_name": "Lifan",
+          "model_name": "X60",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2398,
+          "mark_name": "Lifan",
+          "model_name": "X60",
+          "generation_name": "I",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20294,
+      "name": "Mini Truck",
+      "mark_id": 101,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

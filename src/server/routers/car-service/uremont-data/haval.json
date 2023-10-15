@@ -1,0 +1,130 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 22363,
+      "name": "F7",
+      "mark_id": 290,
+      "sort_id": 1,
+      "rating": 86,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1555,
+          "mark_name": "Haval",
+          "model_name": "F7",
+          "generation_name": "I",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19078,
+      "name": "H2",
+      "mark_id": 290,
+      "sort_id": 1,
+      "rating": 24,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1556,
+          "mark_name": "Haval",
+          "model_name": "H2",
+          "generation_name": "2014 – 2020",
+          "start_year": 2014,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2289,
+      "name": "H6",
+      "mark_id": 290,
+      "sort_id": 1,
+      "rating": 101,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1557,
+          "mark_name": "Haval",
+          "model_name": "H6",
+          "generation_name": "2014 – 2020",
+          "start_year": 2014,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19079,
+      "name": "H8",
+      "mark_id": 290,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "851022170",
+      "generations": [
+        {
+          "id": 1558,
+          "mark_name": "Haval",
+          "model_name": "H8",
+          "generation_name": "2014 – 2017",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19211,
+      "name": "H9",
+      "mark_id": 290,
+      "sort_id": 1,
+      "rating": 38,
+      "is_seo_active": 0,
+      "rgs_code": "851022122",
+      "generations": [
+        {
+          "id": 1559,
+          "mark_name": "Haval",
+          "model_name": "H9",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1560,
+          "mark_name": "Haval",
+          "model_name": "H9",
+          "generation_name": "I",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 22431,
+      "name": "Jolion",
+      "mark_id": 290,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

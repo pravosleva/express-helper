@@ -1,0 +1,35 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 19945,
+      "name": "DH27",
+      "mark_id": 45,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19946,
+      "name": "Super Eight",
+      "mark_id": 45,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19947,
+      "name": "V8",
+      "mark_id": 45,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "075003450",
+      "generations": []
+    }
+  ]
+}

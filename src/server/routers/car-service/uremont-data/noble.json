@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1406,
+      "name": "M12 GTO",
+      "mark_id": 128,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "719021287",
+      "generations": [
+        {
+          "id": 3403,
+          "mark_name": "Noble",
+          "model_name": "M12 GTO",
+          "generation_name": "2000 – 2007",
+          "start_year": 2000,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

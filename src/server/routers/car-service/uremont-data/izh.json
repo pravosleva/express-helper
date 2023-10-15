@@ -1,0 +1,192 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 2051,
+      "name": "2125",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": "641021502",
+      "generations": [
+        {
+          "id": 5540,
+          "mark_name": "ИЖ",
+          "model_name": "2125",
+          "generation_name": "1973 – 1997",
+          "start_year": 1973,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2053,
+      "name": "2126",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 187,
+      "is_seo_active": 0,
+      "rgs_code": "561017799",
+      "generations": [
+        {
+          "id": 5541,
+          "mark_name": "ИЖ",
+          "model_name": "2126",
+          "generation_name": "1990 – 2005",
+          "start_year": 1990,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20726,
+      "name": "21261",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 14,
+      "is_seo_active": 0,
+      "rgs_code": "561017811",
+      "generations": [
+        {
+          "id": 5542,
+          "mark_name": "ИЖ",
+          "model_name": "21261",
+          "generation_name": "2004 – 2005",
+          "start_year": 2004,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20727,
+      "name": "2715",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 11,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5543,
+          "mark_name": "ИЖ",
+          "model_name": "2715",
+          "generation_name": "I Рестайлинг",
+          "start_year": 1982,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5544,
+          "mark_name": "ИЖ",
+          "model_name": "2715",
+          "generation_name": "I",
+          "start_year": 1972,
+          "finish_year": 1982,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2054,
+      "name": "2717",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 37,
+      "is_seo_active": 0,
+      "rgs_code": "561017789",
+      "generations": [
+        {
+          "id": 5545,
+          "mark_name": "ИЖ",
+          "model_name": "2717",
+          "generation_name": "1999 – 2005",
+          "start_year": 1999,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20728,
+      "name": "27175",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 17,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5546,
+          "mark_name": "ИЖ",
+          "model_name": "27175",
+          "generation_name": "2005 – 2012",
+          "start_year": 2005,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20729,
+      "name": "403",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20730,
+      "name": "408",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20731,
+      "name": "410",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 2055,
+      "name": "412",
+      "mark_id": 219,
+      "sort_id": 1,
+      "rating": 38,
+      "is_seo_active": 0,
+      "rgs_code": "641017965",
+      "generations": [
+        {
+          "id": 5547,
+          "mark_name": "ИЖ",
+          "model_name": "412",
+          "generation_name": "1967 – 1998",
+          "start_year": 1967,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

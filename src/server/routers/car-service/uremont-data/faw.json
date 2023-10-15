@@ -1,0 +1,484 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 19995,
+      "name": "1020",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20935,
+      "name": "1031",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19996,
+      "name": "1041",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 8,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 530,
+      "name": "Besturn B50",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 53,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1152,
+          "mark_name": "FAW",
+          "model_name": "Besturn B50",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1153,
+          "mark_name": "FAW",
+          "model_name": "Besturn B50",
+          "generation_name": "I",
+          "start_year": 2009,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 22364,
+      "name": "Besturn X40",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1155,
+          "mark_name": "FAW",
+          "model_name": "Besturn X40",
+          "generation_name": "I",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2257,
+      "name": "Besturn X80",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 39,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1156,
+          "mark_name": "FAW",
+          "model_name": "Besturn X80",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1157,
+          "mark_name": "FAW",
+          "model_name": "Besturn X80",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 536,
+      "name": "Oley",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "101021973",
+      "generations": [
+        {
+          "id": 1159,
+          "mark_name": "FAW",
+          "model_name": "Oley",
+          "generation_name": "2012 – 2015",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 537,
+      "name": "V2",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": "101021703",
+      "generations": [
+        {
+          "id": 1160,
+          "mark_name": "FAW",
+          "model_name": "V2",
+          "generation_name": "2010 – 2015",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 538,
+      "name": "V5",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 40,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1161,
+          "mark_name": "FAW",
+          "model_name": "V5",
+          "generation_name": "2012 – 2017",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 539,
+      "name": "Vita",
+      "mark_id": 59,
+      "sort_id": 1,
+      "rating": 9,
+      "is_seo_active": 0,
+      "rgs_code": "272021292",
+      "generations": [
+        {
+          "id": 1162,
+          "mark_name": "FAW",
+          "model_name": "Vita",
+          "generation_name": "2007 – 2010",
+          "start_year": 2007,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19994,
+      "name": "1011",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20936,
+      "name": "1047",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20937,
+      "name": "1051",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19997,
+      "name": "6371",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 529,
+      "name": "Audi 100",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "101003665",
+      "generations": []
+    },
+    {
+      "id": 528,
+      "name": "Audi A6",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 22359,
+      "name": "Aveo",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 531,
+      "name": "Besturn B70",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1154,
+          "mark_name": "FAW",
+          "model_name": "Besturn B70",
+          "generation_name": "2006 – 2014",
+          "start_year": 2006,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19998,
+      "name": "Besturn B90",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19999,
+      "name": "C131",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20000,
+      "name": "Jiabao",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 535,
+      "name": "Jinn",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "101020956",
+      "generations": [
+        {
+          "id": 1158,
+          "mark_name": "FAW",
+          "model_name": "Jinn",
+          "generation_name": "2005 – 2009",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20951,
+      "name": "Junpai D60",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20001,
+      "name": "Kun Cheng",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20002,
+      "name": "M80",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20003,
+      "name": "S80",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20004,
+      "name": "Sirius S80",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20005,
+      "name": "T51",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20006,
+      "name": "T57",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20007,
+      "name": "Vela",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 532,
+      "name": "Volkswagen Bora",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 533,
+      "name": "Volkswagen City Golf",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 534,
+      "name": "Volkswagen Jetta",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20008,
+      "name": "Xiali N3",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20009,
+      "name": "Xiali N5",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20010,
+      "name": "Xiali N7",
+      "mark_id": 59,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

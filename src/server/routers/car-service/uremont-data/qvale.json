@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1568,
+      "name": "Mangusta",
+      "mark_id": 145,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3744,
+          "mark_name": "Qvale",
+          "model_name": "Mangusta",
+          "generation_name": "1999 – 2002",
+          "start_year": 1999,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

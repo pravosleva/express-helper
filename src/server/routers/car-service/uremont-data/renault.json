@@ -1,0 +1,2801 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1588,
+      "name": "Clio",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 283,
+      "is_seo_active": 0,
+      "rgs_code": "341012744",
+      "generations": [
+        {
+          "id": 3775,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "V",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e8/cd/e8cdc22652c641dbba7bed97b9ebc9b1.png",
+          "images": [
+            {
+              "id": 443722,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443722/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443722/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e8/cd/e8cdc22652c641dbba7bed97b9ebc9b1.png"
+            }
+          ]
+        },
+        {
+          "id": 3776,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ce/21/ce21b0e8673a02b8b83b61257931d5d1.png",
+          "images": [
+            {
+              "id": 443723,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443723/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443723/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ce/21/ce21b0e8673a02b8b83b61257931d5d1.png"
+            }
+          ]
+        },
+        {
+          "id": 3777,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "IV",
+          "start_year": 2012,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/9f/839fada8330feb8fac0c593eacefdf77.png",
+          "images": [
+            {
+              "id": 443724,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443724/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443724/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/9f/839fada8330feb8fac0c593eacefdf77.png"
+            }
+          ]
+        },
+        {
+          "id": 3778,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/02/cd0245e3a9c9b4a58a257ce53f1fc84d.png",
+          "images": [
+            {
+              "id": 443725,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443725/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443725/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/02/cd0245e3a9c9b4a58a257ce53f1fc84d.png"
+            }
+          ]
+        },
+        {
+          "id": 3779,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "III",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d1/9e/d19eddfc3847f79fbe3ebc9a31306025.png",
+          "images": [
+            {
+              "id": 443726,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443726/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443726/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d1/9e/d19eddfc3847f79fbe3ebc9a31306025.png"
+            }
+          ]
+        },
+        {
+          "id": 3780,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "II Рестайлинг 2",
+          "start_year": 2003,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3f/e4/3fe489e49b35272d8bb1c0736d4dd55b.png",
+          "images": [
+            {
+              "id": 443727,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443727/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443727/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3f/e4/3fe489e49b35272d8bb1c0736d4dd55b.png"
+            }
+          ]
+        },
+        {
+          "id": 3781,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2001,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/92/05/920596996b1306af1919e3b09f616948.png",
+          "images": [
+            {
+              "id": 443728,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443728/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443728/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/92/05/920596996b1306af1919e3b09f616948.png"
+            }
+          ]
+        },
+        {
+          "id": 3782,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "II",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2d/21/2d21d3e7ea91806c9826cf21d1071f8e.png",
+          "images": [
+            {
+              "id": 443729,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443729/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443729/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2d/21/2d21d3e7ea91806c9826cf21d1071f8e.png"
+            }
+          ]
+        },
+        {
+          "id": 3783,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "I",
+          "start_year": 1990,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/e5/68e5ac417fec9654a56bf72bb262325b.png",
+          "images": [
+            {
+              "id": 443730,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443730/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443730/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/e5/68e5ac417fec9654a56bf72bb262325b.png"
+            }
+          ]
+        },
+        {
+          "id": 5451,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5452,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "IV",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5453,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5454,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "III",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5455,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5456,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "II",
+          "start_year": 2000,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5457,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "2001 – 2005",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1589,
+      "name": "Duster",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 2359,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3785,
+          "mark_name": "Renault",
+          "model_name": "Duster",
+          "generation_name": "II",
+          "start_year": 2021,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/ac/60ac7cdc887925289d5e9293dd7013c1.png",
+          "images": [
+            {
+              "id": 443731,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443731/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443731/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/ac/60ac7cdc887925289d5e9293dd7013c1.png"
+            }
+          ]
+        },
+        {
+          "id": 3786,
+          "mark_name": "Renault",
+          "model_name": "Duster",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/c5/d8c5f71491fc1feb494b75dd1fe1b838.png",
+          "images": [
+            {
+              "id": 443732,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443732/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443732/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/c5/d8c5f71491fc1feb494b75dd1fe1b838.png"
+            }
+          ]
+        },
+        {
+          "id": 3787,
+          "mark_name": "Renault",
+          "model_name": "Duster",
+          "generation_name": "I",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b6/60/b660b028f18baf19fb2102abb52afb60.png",
+          "images": [
+            {
+              "id": 443733,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443733/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443733/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b6/60/b660b028f18baf19fb2102abb52afb60.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1592,
+      "name": "Fluence",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 980,
+      "is_seo_active": 0,
+      "rgs_code": "341021569",
+      "generations": [
+        {
+          "id": 3797,
+          "mark_name": "Renault",
+          "model_name": "Fluence",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/8f/e38f71b0b488e261d594f0403500f826.png",
+          "images": [
+            {
+              "id": 443741,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443741/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443741/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/8f/e38f71b0b488e261d594f0403500f826.png"
+            }
+          ]
+        },
+        {
+          "id": 3798,
+          "mark_name": "Renault",
+          "model_name": "Fluence",
+          "generation_name": "I",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e2/eb/e2eb571b1ecc44da973325047114f652.png",
+          "images": [
+            {
+              "id": 443742,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443742/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443742/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e2/eb/e2eb571b1ecc44da973325047114f652.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1594,
+      "name": "Kangoo",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 375,
+      "is_seo_active": 0,
+      "rgs_code": "341012829",
+      "generations": [
+        {
+          "id": 3801,
+          "mark_name": "Renault",
+          "model_name": "Kangoo",
+          "generation_name": "III",
+          "start_year": 2021,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f7/84/f784967bedc37f6375a10b68729a241c.png",
+          "images": [
+            {
+              "id": 443743,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443743/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443743/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f7/84/f784967bedc37f6375a10b68729a241c.png"
+            }
+          ]
+        },
+        {
+          "id": 3802,
+          "mark_name": "Renault",
+          "model_name": "Kangoo",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2013,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/41/44/4144adfa97d03d7d16bdddd9438f2623.png",
+          "images": [
+            {
+              "id": 443744,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443744/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443744/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/41/44/4144adfa97d03d7d16bdddd9438f2623.png"
+            }
+          ]
+        },
+        {
+          "id": 3803,
+          "mark_name": "Renault",
+          "model_name": "Kangoo",
+          "generation_name": "II",
+          "start_year": 2008,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/89/9789e4467f80b6e449907ba82ecf6ced.png",
+          "images": [
+            {
+              "id": 443745,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443745/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443745/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/89/9789e4467f80b6e449907ba82ecf6ced.png"
+            }
+          ]
+        },
+        {
+          "id": 3804,
+          "mark_name": "Renault",
+          "model_name": "Kangoo",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2003,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/26/2d/262db672060b000716d0e763964378fd.png",
+          "images": [
+            {
+              "id": 443746,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443746/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443746/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/26/2d/262db672060b000716d0e763964378fd.png"
+            }
+          ]
+        },
+        {
+          "id": 3805,
+          "mark_name": "Renault",
+          "model_name": "Kangoo",
+          "generation_name": "I",
+          "start_year": 1997,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/87/a1/87a10440cafa8444e0d82de37edc7a61.png",
+          "images": [
+            {
+              "id": 443747,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443747/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443747/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/87/a1/87a10440cafa8444e0d82de37edc7a61.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1596,
+      "name": "Laguna",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 581,
+      "is_seo_active": 0,
+      "rgs_code": "341012855",
+      "generations": [
+        {
+          "id": 3813,
+          "mark_name": "Renault",
+          "model_name": "Laguna",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/81/d6819a7e5a722bac105e9bde5cec2b1c.png",
+          "images": [
+            {
+              "id": 443755,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443755/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443755/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/81/d6819a7e5a722bac105e9bde5cec2b1c.png"
+            }
+          ]
+        },
+        {
+          "id": 3814,
+          "mark_name": "Renault",
+          "model_name": "Laguna",
+          "generation_name": "III",
+          "start_year": 2007,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/da/8dda11ef157efe3b01a49ae7993b0a3d.png",
+          "images": [
+            {
+              "id": 443756,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443756/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443756/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/da/8dda11ef157efe3b01a49ae7993b0a3d.png"
+            }
+          ]
+        },
+        {
+          "id": 3815,
+          "mark_name": "Renault",
+          "model_name": "Laguna",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/af/0aafb931d94b26c0f5adcb24606890cd.png",
+          "images": [
+            {
+              "id": 443757,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443757/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443757/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/af/0aafb931d94b26c0f5adcb24606890cd.png"
+            }
+          ]
+        },
+        {
+          "id": 3816,
+          "mark_name": "Renault",
+          "model_name": "Laguna",
+          "generation_name": "II",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1e/df/1edf572b1791e14251d142b38e3fd525.png",
+          "images": [
+            {
+              "id": 443758,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443758/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443758/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1e/df/1edf572b1791e14251d142b38e3fd525.png"
+            }
+          ]
+        },
+        {
+          "id": 3817,
+          "mark_name": "Renault",
+          "model_name": "Laguna",
+          "generation_name": "I",
+          "start_year": 1993,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/9f/539f2ff8b497aba60bfbc4d6f728de0c.png",
+          "images": [
+            {
+              "id": 443759,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443759/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443759/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/9f/539f2ff8b497aba60bfbc4d6f728de0c.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1598,
+      "name": "Logan",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 4527,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3820,
+          "mark_name": "Renault",
+          "model_name": "Logan",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b6/3b/b63b8a6d5c1b2c3805a7f627e12fce2b.png",
+          "images": [
+            {
+              "id": 443762,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443762/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443762/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b6/3b/b63b8a6d5c1b2c3805a7f627e12fce2b.png"
+            }
+          ]
+        },
+        {
+          "id": 3821,
+          "mark_name": "Renault",
+          "model_name": "Logan",
+          "generation_name": "II",
+          "start_year": 2012,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5e/2a/5e2a4c6be39a97caa849c068b264c05a.png",
+          "images": [
+            {
+              "id": 443763,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443763/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443763/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5e/2a/5e2a4c6be39a97caa849c068b264c05a.png"
+            }
+          ]
+        },
+        {
+          "id": 3822,
+          "mark_name": "Renault",
+          "model_name": "Logan",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c9/ac/c9acdd6f80b902dfecdec32f493edb74.png",
+          "images": [
+            {
+              "id": 443764,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443764/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443764/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c9/ac/c9acdd6f80b902dfecdec32f493edb74.png"
+            }
+          ]
+        },
+        {
+          "id": 3823,
+          "mark_name": "Renault",
+          "model_name": "Logan",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/9c/289cc4858a6c6b78522bf94a9d5a6737.png",
+          "images": [
+            {
+              "id": 443765,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443765/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443765/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/28/9c/289cc4858a6c6b78522bf94a9d5a6737.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1599,
+      "name": "Megane",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 2684,
+      "is_seo_active": 0,
+      "rgs_code": "341012940",
+      "generations": [
+        {
+          "id": 3824,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/69/dc/69dca02c74ce4d3a4f96ed8bea418ea4.png",
+          "images": [
+            {
+              "id": 443766,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443766/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443766/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/69/dc/69dca02c74ce4d3a4f96ed8bea418ea4.png"
+            }
+          ]
+        },
+        {
+          "id": 3825,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "IV",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/eb/09/eb09083e0fe14045c1b6600ee5c35dc1.png",
+          "images": [
+            {
+              "id": 443767,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443767/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443767/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/eb/09/eb09083e0fe14045c1b6600ee5c35dc1.png"
+            }
+          ]
+        },
+        {
+          "id": 3826,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "III Рестайлинг 2",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/5b/c25b0ed72c3c1be2d4b7aace5d42b0db.png",
+          "images": [
+            {
+              "id": 443768,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443768/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443768/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/5b/c25b0ed72c3c1be2d4b7aace5d42b0db.png"
+            }
+          ]
+        },
+        {
+          "id": 3827,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/88/6c/886c22b376e80738f77cbab696a69d76.png",
+          "images": [
+            {
+              "id": 443769,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443769/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443769/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/88/6c/886c22b376e80738f77cbab696a69d76.png"
+            }
+          ]
+        },
+        {
+          "id": 3828,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "III",
+          "start_year": 2008,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/df/63df9582d04a06d4875125b4fea0d26c.png",
+          "images": [
+            {
+              "id": 443770,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443770/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443770/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/df/63df9582d04a06d4875125b4fea0d26c.png"
+            }
+          ]
+        },
+        {
+          "id": 3829,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/56/bc561f139e98636a64654286f48b958f.png",
+          "images": [
+            {
+              "id": 443771,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443771/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443771/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/56/bc561f139e98636a64654286f48b958f.png"
+            }
+          ]
+        },
+        {
+          "id": 3830,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "II",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/73/d673ec5ea4c88bce736a9563fc5971fe.png",
+          "images": [
+            {
+              "id": 443772,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443772/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443772/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/73/d673ec5ea4c88bce736a9563fc5971fe.png"
+            }
+          ]
+        },
+        {
+          "id": 3831,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "I Рестайлинг",
+          "start_year": 1999,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/29/e0/29e09b5fb737218e0ede3f271245f009.png",
+          "images": [
+            {
+              "id": 443773,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443773/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443773/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/29/e0/29e09b5fb737218e0ede3f271245f009.png"
+            }
+          ]
+        },
+        {
+          "id": 3832,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "I",
+          "start_year": 1995,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/c3/0cc3a08a44bd6082da791651bffb13c3.png",
+          "images": [
+            {
+              "id": 443774,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443774/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443774/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/c3/0cc3a08a44bd6082da791651bffb13c3.png"
+            }
+          ]
+        },
+        {
+          "id": 5459,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "IV",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5460,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5461,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "III",
+          "start_year": 2011,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5462,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5463,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "II",
+          "start_year": 2004,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1603,
+      "name": "Sandero",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 1698,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3840,
+          "mark_name": "Renault",
+          "model_name": "Sandero",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/00/5900a6e3b1c8320ebf79aaa5b83bfa8f.png",
+          "images": [
+            {
+              "id": 443780,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443780/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443780/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/00/5900a6e3b1c8320ebf79aaa5b83bfa8f.png"
+            }
+          ]
+        },
+        {
+          "id": 3841,
+          "mark_name": "Renault",
+          "model_name": "Sandero",
+          "generation_name": "II",
+          "start_year": 2013,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3f/01/3f01a663d8f96e2ad67c2a5b463469fa.png",
+          "images": [
+            {
+              "id": 443781,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443781/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443781/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3f/01/3f01a663d8f96e2ad67c2a5b463469fa.png"
+            }
+          ]
+        },
+        {
+          "id": 3842,
+          "mark_name": "Renault",
+          "model_name": "Sandero",
+          "generation_name": "I",
+          "start_year": 2009,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/1b/de1b890041c5931d816ffe9d959c5c76.png",
+          "images": [
+            {
+              "id": 443782,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443782/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443782/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/1b/de1b890041c5931d816ffe9d959c5c76.png"
+            }
+          ]
+        },
+        {
+          "id": 5464,
+          "mark_name": "Renault",
+          "model_name": "Sandero",
+          "generation_name": "2015 – н.в.",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1604,
+      "name": "Scenic",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 600,
+      "is_seo_active": 0,
+      "rgs_code": "341013043",
+      "generations": [
+        {
+          "id": 3843,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "IV",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/70/38/7038722e3f8fadcf534e884c9fb3e2bf.png",
+          "images": [
+            {
+              "id": 443783,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443783/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443783/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/70/38/7038722e3f8fadcf534e884c9fb3e2bf.png"
+            }
+          ]
+        },
+        {
+          "id": 3844,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "III Рестайлинг 2",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2d/e7/2de74bbdb838bde05cf8712ebb30c5e7.png",
+          "images": [
+            {
+              "id": 443784,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443784/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443784/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2d/e7/2de74bbdb838bde05cf8712ebb30c5e7.png"
+            }
+          ]
+        },
+        {
+          "id": 3845,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/6f/836f0e73413423e3fc1d40249477c3dd.png",
+          "images": [
+            {
+              "id": 443785,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443785/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443785/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/6f/836f0e73413423e3fc1d40249477c3dd.png"
+            }
+          ]
+        },
+        {
+          "id": 3846,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "III",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/74/cd74456598b92eb08b639c71b48a6006.png",
+          "images": [
+            {
+              "id": 443786,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443786/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443786/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/74/cd74456598b92eb08b639c71b48a6006.png"
+            }
+          ]
+        },
+        {
+          "id": 3847,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/0a/3c0a6be3c8975535e538705c6a463bce.png",
+          "images": [
+            {
+              "id": 443787,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443787/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443787/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/0a/3c0a6be3c8975535e538705c6a463bce.png"
+            }
+          ]
+        },
+        {
+          "id": 3848,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "II",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/27/ec/27ec4f5728ef9f8279bc38dd3c99ce20.png",
+          "images": [
+            {
+              "id": 443788,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443788/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443788/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/27/ec/27ec4f5728ef9f8279bc38dd3c99ce20.png"
+            }
+          ]
+        },
+        {
+          "id": 3849,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "I Рестайлинг",
+          "start_year": 1999,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/3a/d03aae6b282f65a79d8fc38800fb65cc.png",
+          "images": [
+            {
+              "id": 443789,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443789/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443789/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d0/3a/d03aae6b282f65a79d8fc38800fb65cc.png"
+            }
+          ]
+        },
+        {
+          "id": 3850,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "I",
+          "start_year": 1996,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f5/db/f5db5da9f3ee54d905acdf0c8eb73758.png",
+          "images": [
+            {
+              "id": 443790,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443790/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443790/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f5/db/f5db5da9f3ee54d905acdf0c8eb73758.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1606,
+      "name": "Symbol",
+      "mark_id": 147,
+      "sort_id": 1,
+      "rating": 813,
+      "is_seo_active": 0,
+      "rgs_code": "341013083",
+      "generations": [
+        {
+          "id": 3852,
+          "mark_name": "Renault",
+          "model_name": "Symbol",
+          "generation_name": "ll",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/ec/2eecf1f1d3355e8f4d110eeb0be38c35.png",
+          "images": [
+            {
+              "id": 443791,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443791/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443791/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/ec/2eecf1f1d3355e8f4d110eeb0be38c35.png"
+            }
+          ]
+        },
+        {
+          "id": 3853,
+          "mark_name": "Renault",
+          "model_name": "Symbol",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2006,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/22/57/225709974a74aeb4a26c49b3d253aef1.png",
+          "images": [
+            {
+              "id": 443792,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443792/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443792/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/22/57/225709974a74aeb4a26c49b3d253aef1.png"
+            }
+          ]
+        },
+        {
+          "id": 3854,
+          "mark_name": "Renault",
+          "model_name": "Symbol",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/c8/60c87facb6dc92d673cc3facc4364e16.png",
+          "images": [
+            {
+              "id": 443793,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443793/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443793/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/c8/60c87facb6dc92d673cc3facc4364e16.png"
+            }
+          ]
+        },
+        {
+          "id": 3855,
+          "mark_name": "Renault",
+          "model_name": "Symbol",
+          "generation_name": "I",
+          "start_year": 1999,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/fa/55fa36e9da25c5b17bd3d46f3287a35e.png",
+          "images": [
+            {
+              "id": 443794,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443794/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443794/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/fa/55fa36e9da25c5b17bd3d46f3287a35e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19730,
+      "name": "10",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3749,
+          "mark_name": "Renault",
+          "model_name": "10",
+          "generation_name": "1962 – 1973",
+          "start_year": 1962,
+          "finish_year": 1973,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1570,
+      "name": "11",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "341012562",
+      "generations": [
+        {
+          "id": 3750,
+          "mark_name": "Renault",
+          "model_name": "11",
+          "generation_name": "1983 – 1989",
+          "start_year": 1983,
+          "finish_year": 1989,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1571,
+      "name": "12",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341012578",
+      "generations": [
+        {
+          "id": 3751,
+          "mark_name": "Renault",
+          "model_name": "12",
+          "generation_name": "1969 – 1980",
+          "start_year": 1969,
+          "finish_year": 1980,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1572,
+      "name": "14",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "521017606",
+      "generations": [
+        {
+          "id": 3752,
+          "mark_name": "Renault",
+          "model_name": "14",
+          "generation_name": "1976 – 1983",
+          "start_year": 1976,
+          "finish_year": 1983,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1573,
+      "name": "15",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "341012592",
+      "generations": [
+        {
+          "id": 3753,
+          "mark_name": "Renault",
+          "model_name": "15",
+          "generation_name": "1972 – 1980",
+          "start_year": 1972,
+          "finish_year": 1980,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1574,
+      "name": "16",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341012595",
+      "generations": [
+        {
+          "id": 3754,
+          "mark_name": "Renault",
+          "model_name": "16",
+          "generation_name": "1965 – 1980",
+          "start_year": 1965,
+          "finish_year": 1980,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1575,
+      "name": "17",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341012602",
+      "generations": [
+        {
+          "id": 3755,
+          "mark_name": "Renault",
+          "model_name": "17",
+          "generation_name": "1972 – 1980",
+          "start_year": 1972,
+          "finish_year": 1980,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1576,
+      "name": "18",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "341012605",
+      "generations": [
+        {
+          "id": 3756,
+          "mark_name": "Renault",
+          "model_name": "18",
+          "generation_name": "1978 – 1986",
+          "start_year": 1978,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1577,
+      "name": "19",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 32,
+      "is_seo_active": 0,
+      "rgs_code": "341012626",
+      "generations": [
+        {
+          "id": 3757,
+          "mark_name": "Renault",
+          "model_name": "19",
+          "generation_name": "II",
+          "start_year": 1992,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3758,
+          "mark_name": "Renault",
+          "model_name": "19",
+          "generation_name": "I",
+          "start_year": 1988,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1578,
+      "name": "20",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "521020829",
+      "generations": [
+        {
+          "id": 3759,
+          "mark_name": "Renault",
+          "model_name": "20",
+          "generation_name": "1975 – 1983",
+          "start_year": 1975,
+          "finish_year": 1983,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1579,
+      "name": "21",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3760,
+          "mark_name": "Renault",
+          "model_name": "21",
+          "generation_name": "1986 – 1995",
+          "start_year": 1986,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1580,
+      "name": "25",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "816021687",
+      "generations": [
+        {
+          "id": 3761,
+          "mark_name": "Renault",
+          "model_name": "25",
+          "generation_name": "1983 – 1992",
+          "start_year": 1983,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20515,
+      "name": "3",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1581,
+      "name": "30",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341012734",
+      "generations": [
+        {
+          "id": 3762,
+          "mark_name": "Renault",
+          "model_name": "30",
+          "generation_name": "1975 – 1986",
+          "start_year": 1975,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1582,
+      "name": "4",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "341012519",
+      "generations": [
+        {
+          "id": 3763,
+          "mark_name": "Renault",
+          "model_name": "4",
+          "generation_name": "1962 – 1991",
+          "start_year": 1962,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1583,
+      "name": "5",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3764,
+          "mark_name": "Renault",
+          "model_name": "5",
+          "generation_name": "II",
+          "start_year": 1984,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3765,
+          "mark_name": "Renault",
+          "model_name": "5",
+          "generation_name": "I",
+          "start_year": 1972,
+          "finish_year": 1985,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1584,
+      "name": "6",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3766,
+          "mark_name": "Renault",
+          "model_name": "6",
+          "generation_name": "1970 – 1987",
+          "start_year": 1970,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20516,
+      "name": "7",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19732,
+      "name": "8",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3767,
+          "mark_name": "Renault",
+          "model_name": "8",
+          "generation_name": "1962 – 1973",
+          "start_year": 1962,
+          "finish_year": 1973,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1585,
+      "name": "9",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341012547",
+      "generations": [
+        {
+          "id": 3768,
+          "mark_name": "Renault",
+          "model_name": "9",
+          "generation_name": "1981 – 1989",
+          "start_year": 1981,
+          "finish_year": 1989,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20517,
+      "name": "Alliance",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 22388,
+      "name": "Arkana",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3769,
+          "mark_name": "Renault",
+          "model_name": "Arkana",
+          "generation_name": "I",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/c1/55c1755eea2685c11f1a6f05be6010e6.png",
+          "images": [
+            {
+              "id": 443717,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443717/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443717/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/c1/55c1755eea2685c11f1a6f05be6010e6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1586,
+      "name": "Avantime",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "341012740",
+      "generations": [
+        {
+          "id": 3770,
+          "mark_name": "Renault",
+          "model_name": "Avantime",
+          "generation_name": "2001 – 2003",
+          "start_year": 2001,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/74/1d748f5c5fabdfafebe499482904437b.png",
+          "images": [
+            {
+              "id": 443718,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443718/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443718/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/74/1d748f5c5fabdfafebe499482904437b.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1587,
+      "name": "Captur",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 118,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3771,
+          "mark_name": "Renault",
+          "model_name": "Captur",
+          "generation_name": "II",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/a4/00a4750c71c90bac943f3f4da86ae4a6.png",
+          "images": [
+            {
+              "id": 443719,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443719/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443719/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/00/a4/00a4750c71c90bac943f3f4da86ae4a6.png"
+            }
+          ]
+        },
+        {
+          "id": 3772,
+          "mark_name": "Renault",
+          "model_name": "Captur",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2017,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/e4/21e4892c65240a7253a2a6edda4568b7.png",
+          "images": [
+            {
+              "id": 443720,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443720/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443720/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/e4/21e4892c65240a7253a2a6edda4568b7.png"
+            }
+          ]
+        },
+        {
+          "id": 3773,
+          "mark_name": "Renault",
+          "model_name": "Captur",
+          "generation_name": "I",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/87/d78716758e2f95b4919c217214fb81c0.png",
+          "images": [
+            {
+              "id": 443721,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443721/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443721/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/87/d78716758e2f95b4919c217214fb81c0.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19733,
+      "name": "Caravelle",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3774,
+          "mark_name": "Renault",
+          "model_name": "Caravelle",
+          "generation_name": "1958 – 1968",
+          "start_year": 1958,
+          "finish_year": 1968,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20518,
+      "name": "Celtaquatre",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20519,
+      "name": "Colorale",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19734,
+      "name": "Dauphine",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3784,
+          "mark_name": "Renault",
+          "model_name": "Dauphine",
+          "generation_name": "1956 – 1967",
+          "start_year": 1956,
+          "finish_year": 1967,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1590,
+      "name": "Espace",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 57,
+      "is_seo_active": 0,
+      "rgs_code": "341012776",
+      "generations": [
+        {
+          "id": 3788,
+          "mark_name": "Renault",
+          "model_name": "Espace",
+          "generation_name": "V Рестайлинг",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9b/a7/9ba7931536ea4863ccd139c13d37585b.png",
+          "images": [
+            {
+              "id": 443734,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443734/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443734/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9b/a7/9ba7931536ea4863ccd139c13d37585b.png"
+            }
+          ]
+        },
+        {
+          "id": 3789,
+          "mark_name": "Renault",
+          "model_name": "Espace",
+          "generation_name": "V",
+          "start_year": 2015,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8b/e9/8be9465c752833e359ee9ad7151f234a.png",
+          "images": [
+            {
+              "id": 443735,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443735/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443735/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8b/e9/8be9465c752833e359ee9ad7151f234a.png"
+            }
+          ]
+        },
+        {
+          "id": 3790,
+          "mark_name": "Renault",
+          "model_name": "Espace",
+          "generation_name": "IV Рестайлинг 2",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/4c/134c2f147a39768fe7ee3a68434d3bba.png",
+          "images": [
+            {
+              "id": 443736,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443736/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443736/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/4c/134c2f147a39768fe7ee3a68434d3bba.png"
+            }
+          ]
+        },
+        {
+          "id": 3791,
+          "mark_name": "Renault",
+          "model_name": "Espace",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/ee/55eedb048a72700f9b7117669c257ce8.png",
+          "images": [
+            {
+              "id": 443737,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443737/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443737/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/ee/55eedb048a72700f9b7117669c257ce8.png"
+            }
+          ]
+        },
+        {
+          "id": 3792,
+          "mark_name": "Renault",
+          "model_name": "Espace",
+          "generation_name": "IV",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/10/b910e9111efd5aa1c7b4d5ce92479712.png",
+          "images": [
+            {
+              "id": 443738,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443738/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443738/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/10/b910e9111efd5aa1c7b4d5ce92479712.png"
+            }
+          ]
+        },
+        {
+          "id": 3793,
+          "mark_name": "Renault",
+          "model_name": "Espace",
+          "generation_name": "III",
+          "start_year": 1996,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/20/44207c06be7b3ebfd1c61f60c89fc0b2.png",
+          "images": [
+            {
+              "id": 443739,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443739/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443739/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/20/44207c06be7b3ebfd1c61f60c89fc0b2.png"
+            }
+          ]
+        },
+        {
+          "id": 3794,
+          "mark_name": "Renault",
+          "model_name": "Espace",
+          "generation_name": "II",
+          "start_year": 1991,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3795,
+          "mark_name": "Renault",
+          "model_name": "Espace",
+          "generation_name": "I",
+          "start_year": 1984,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/37/49/37496d3f30b27b1f91bb26371a50e300.png",
+          "images": [
+            {
+              "id": 443740,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443740/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443740/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/37/49/37496d3f30b27b1f91bb26371a50e300.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1591,
+      "name": "Estafette",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341012811",
+      "generations": []
+    },
+    {
+      "id": 20520,
+      "name": "Express",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19735,
+      "name": "Floride",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3796,
+          "mark_name": "Renault",
+          "model_name": "Floride",
+          "generation_name": "1958 – 1968",
+          "start_year": 1958,
+          "finish_year": 1968,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19736,
+      "name": "Fregate",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3799,
+          "mark_name": "Renault",
+          "model_name": "Fregate",
+          "generation_name": "1951 – 1960",
+          "start_year": 1951,
+          "finish_year": 1960,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1593,
+      "name": "Fuego",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341012814",
+      "generations": [
+        {
+          "id": 3800,
+          "mark_name": "Renault",
+          "model_name": "Fuego",
+          "generation_name": "1980 – 1985",
+          "start_year": 1980,
+          "finish_year": 1985,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20521,
+      "name": "Juvaquatre",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19737,
+      "name": "Kaptur",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 233,
+      "is_seo_active": 0,
+      "rgs_code": "341022206",
+      "generations": [
+        {
+          "id": 3806,
+          "mark_name": "Renault",
+          "model_name": "Kaptur",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/5e/a25ea6d3b32a23c1bdaf6f5a7505bd14.png",
+          "images": [
+            {
+              "id": 443748,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443748/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443748/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/5e/a25ea6d3b32a23c1bdaf6f5a7505bd14.png"
+            }
+          ]
+        },
+        {
+          "id": 3807,
+          "mark_name": "Renault",
+          "model_name": "Kaptur",
+          "generation_name": "I",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/5f/3d5f460a7d22079d659f68cfd5255b6a.png",
+          "images": [
+            {
+              "id": 443749,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443749/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443749/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3d/5f/3d5f460a7d22079d659f68cfd5255b6a.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1595,
+      "name": "Koleos",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 209,
+      "is_seo_active": 0,
+      "rgs_code": "341021301",
+      "generations": [
+        {
+          "id": 3808,
+          "mark_name": "Renault",
+          "model_name": "Koleos",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/bb/fcbb93a43ae3a8bca81eb51e517092d3.png",
+          "images": [
+            {
+              "id": 443750,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443750/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443750/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/bb/fcbb93a43ae3a8bca81eb51e517092d3.png"
+            }
+          ]
+        },
+        {
+          "id": 3809,
+          "mark_name": "Renault",
+          "model_name": "Koleos",
+          "generation_name": "II",
+          "start_year": 2016,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ec/6b/ec6b44bb1fd1b9eadcd2b6499937ee6b.png",
+          "images": [
+            {
+              "id": 443751,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443751/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443751/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ec/6b/ec6b44bb1fd1b9eadcd2b6499937ee6b.png"
+            }
+          ]
+        },
+        {
+          "id": 3810,
+          "mark_name": "Renault",
+          "model_name": "Koleos",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/78/7b78d607b37044bba3095b10582d191d.png",
+          "images": [
+            {
+              "id": 443752,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443752/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443752/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/78/7b78d607b37044bba3095b10582d191d.png"
+            }
+          ]
+        },
+        {
+          "id": 3811,
+          "mark_name": "Renault",
+          "model_name": "Koleos",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2011,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f0/f9/f0f9baf761c561b89de331ac9c7b07ca.png",
+          "images": [
+            {
+              "id": 443753,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443753/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443753/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f0/f9/f0f9baf761c561b89de331ac9c7b07ca.png"
+            }
+          ]
+        },
+        {
+          "id": 3812,
+          "mark_name": "Renault",
+          "model_name": "Koleos",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7d/99/7d99a725cd9b6c5a691436613665c494.png",
+          "images": [
+            {
+              "id": 443754,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443754/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443754/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7d/99/7d99a725cd9b6c5a691436613665c494.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1597,
+      "name": "Latitude",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 68,
+      "is_seo_active": 0,
+      "rgs_code": "341021590",
+      "generations": [
+        {
+          "id": 3818,
+          "mark_name": "Renault",
+          "model_name": "Latitude",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/b8/cbb8062e2a4d75100c420bc635a139c4.png",
+          "images": [
+            {
+              "id": 443760,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443760/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443760/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/b8/cbb8062e2a4d75100c420bc635a139c4.png"
+            }
+          ]
+        },
+        {
+          "id": 3819,
+          "mark_name": "Renault",
+          "model_name": "Latitude",
+          "generation_name": "I",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/9c/0e9c304478b5136ff3b57ad7638daf27.png",
+          "images": [
+            {
+              "id": 443761,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443761/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443761/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0e/9c/0e9c304478b5136ff3b57ad7638daf27.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20522,
+      "name": "Le Car",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20523,
+      "name": "Lutecia",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20524,
+      "name": "Mascott",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 11,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20525,
+      "name": "Master",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 117,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20526,
+      "name": "Maxity",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "341021704",
+      "generations": []
+    },
+    {
+      "id": 1600,
+      "name": "Modus",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "341020126",
+      "generations": [
+        {
+          "id": 3833,
+          "mark_name": "Renault",
+          "model_name": "Modus",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/2e/ef2e549d902398cc09107423ba4a5797.png",
+          "images": [
+            {
+              "id": 443775,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443775/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443775/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/2e/ef2e549d902398cc09107423ba4a5797.png"
+            }
+          ]
+        },
+        {
+          "id": 3834,
+          "mark_name": "Renault",
+          "model_name": "Modus",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/da/a7daa7006cfe3a7fb2ccfed9ccc04b05.png",
+          "images": [
+            {
+              "id": 443776,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443776/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443776/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/da/a7daa7006cfe3a7fb2ccfed9ccc04b05.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20527,
+      "name": "Monaquatre",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20528,
+      "name": "Primaquatre",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20529,
+      "name": "Pulse",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1601,
+      "name": "Rodeo",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3835,
+          "mark_name": "Renault",
+          "model_name": "Rodeo",
+          "generation_name": "II",
+          "start_year": 1981,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3836,
+          "mark_name": "Renault",
+          "model_name": "Rodeo",
+          "generation_name": "I",
+          "start_year": 1971,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1602,
+      "name": "Safrane",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 21,
+      "is_seo_active": 0,
+      "rgs_code": "341013031",
+      "generations": [
+        {
+          "id": 3837,
+          "mark_name": "Renault",
+          "model_name": "Safrane",
+          "generation_name": "II",
+          "start_year": 2008,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c7/51/c751bf74b74f7209c9d7720434884172.png",
+          "images": [
+            {
+              "id": 443777,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443777/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443777/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c7/51/c751bf74b74f7209c9d7720434884172.png"
+            }
+          ]
+        },
+        {
+          "id": 3838,
+          "mark_name": "Renault",
+          "model_name": "Safrane",
+          "generation_name": "I Рестайлинг",
+          "start_year": 1996,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/bb/0abb2276070fa9df37aa9cc3f5e844c7.png",
+          "images": [
+            {
+              "id": 443778,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443778/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443778/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0a/bb/0abb2276070fa9df37aa9cc3f5e844c7.png"
+            }
+          ]
+        },
+        {
+          "id": 3839,
+          "mark_name": "Renault",
+          "model_name": "Safrane",
+          "generation_name": "I",
+          "start_year": 1992,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ec/85/ec851dbfb4ea7dc70fd460e8bbc6d244.png",
+          "images": [
+            {
+              "id": 443779,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443779/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443779/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ec/85/ec851dbfb4ea7dc70fd460e8bbc6d244.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20530,
+      "name": "Scala",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1605,
+      "name": "Sport Spider",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341013067",
+      "generations": [
+        {
+          "id": 3851,
+          "mark_name": "Renault",
+          "model_name": "Sport Spider",
+          "generation_name": "1995 – 2000",
+          "start_year": 1995,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19234,
+      "name": "Talisman",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3856,
+          "mark_name": "Renault",
+          "model_name": "Talisman",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/9f/d79f1880b5fa937d6a4b2b567ae77472.png",
+          "images": [
+            {
+              "id": 443795,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443795/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443795/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d7/9f/d79f1880b5fa937d6a4b2b567ae77472.png"
+            }
+          ]
+        },
+        {
+          "id": 3857,
+          "mark_name": "Renault",
+          "model_name": "Talisman",
+          "generation_name": "2015 – 2020",
+          "start_year": 2015,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/17/23176360328eddfd2e3b69a5971e6666.png",
+          "images": [
+            {
+              "id": 443796,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443796/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443796/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/17/23176360328eddfd2e3b69a5971e6666.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20531,
+      "name": "Thalia",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20532,
+      "name": "Torino",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 2230,
+      "name": "Trafic",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 37,
+      "is_seo_active": 0,
+      "rgs_code": "341013088",
+      "generations": [
+        {
+          "id": 3858,
+          "mark_name": "Renault",
+          "model_name": "Trafic",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2021,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/97/f9972d72ec837d1b686e16f4f62fe269.png",
+          "images": [
+            {
+              "id": 443797,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443797/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443797/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/97/f9972d72ec837d1b686e16f4f62fe269.png"
+            }
+          ]
+        },
+        {
+          "id": 3859,
+          "mark_name": "Renault",
+          "model_name": "Trafic",
+          "generation_name": "III",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1b/93/1b93a50109719fc628e453586401f10f.png",
+          "images": [
+            {
+              "id": 443798,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443798/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443798/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1b/93/1b93a50109719fc628e453586401f10f.png"
+            }
+          ]
+        },
+        {
+          "id": 3860,
+          "mark_name": "Renault",
+          "model_name": "Trafic",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6c/44/6c44e87338e410ed4c42c5f1396832c4.png",
+          "images": [
+            {
+              "id": 443799,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443799/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443799/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6c/44/6c44e87338e410ed4c42c5f1396832c4.png"
+            }
+          ]
+        },
+        {
+          "id": 3861,
+          "mark_name": "Renault",
+          "model_name": "Trafic",
+          "generation_name": "II",
+          "start_year": 2001,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/20/b2/20b24342a491ee74856dd2dfd1c63a1f.png",
+          "images": [
+            {
+              "id": 443800,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443800/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443800/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/20/b2/20b24342a491ee74856dd2dfd1c63a1f.png"
+            }
+          ]
+        },
+        {
+          "id": 3862,
+          "mark_name": "Renault",
+          "model_name": "Trafic",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 1994,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1607,
+      "name": "Twingo",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 21,
+      "is_seo_active": 0,
+      "rgs_code": "341013127",
+      "generations": [
+        {
+          "id": 3863,
+          "mark_name": "Renault",
+          "model_name": "Twingo",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/cd/e5cd8db16d9bdff053f4dec76c815246.png",
+          "images": [
+            {
+              "id": 443801,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443801/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443801/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/cd/e5cd8db16d9bdff053f4dec76c815246.png"
+            }
+          ]
+        },
+        {
+          "id": 3864,
+          "mark_name": "Renault",
+          "model_name": "Twingo",
+          "generation_name": "III",
+          "start_year": 2014,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/d7/43d7cea8f9fdb7fd79e2e73a67f2a667.png",
+          "images": [
+            {
+              "id": 443802,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443802/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443802/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/d7/43d7cea8f9fdb7fd79e2e73a67f2a667.png"
+            }
+          ]
+        },
+        {
+          "id": 3865,
+          "mark_name": "Renault",
+          "model_name": "Twingo",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2011,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7d/92/7d92dc275ce281bf62b163f0a7f15af9.png",
+          "images": [
+            {
+              "id": 443803,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443803/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443803/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7d/92/7d92dc275ce281bf62b163f0a7f15af9.png"
+            }
+          ]
+        },
+        {
+          "id": 3866,
+          "mark_name": "Renault",
+          "model_name": "Twingo",
+          "generation_name": "II",
+          "start_year": 2007,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/47/6047fda050cfc732fc082dcef6ddf08c.png",
+          "images": [
+            {
+              "id": 443804,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443804/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443804/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/47/6047fda050cfc732fc082dcef6ddf08c.png"
+            }
+          ]
+        },
+        {
+          "id": 3867,
+          "mark_name": "Renault",
+          "model_name": "Twingo",
+          "generation_name": "I",
+          "start_year": 1993,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/74/40/744000e60b92da3f647290a6c8614323.png",
+          "images": [
+            {
+              "id": 443805,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443805/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443805/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/74/40/744000e60b92da3f647290a6c8614323.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1608,
+      "name": "Twizy",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341022226",
+      "generations": [
+        {
+          "id": 3868,
+          "mark_name": "Renault",
+          "model_name": "Twizy",
+          "generation_name": "2011 – н.в.",
+          "start_year": 2011,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/b8/f1b889463cd01d54f98442aa2f46773a.png",
+          "images": [
+            {
+              "id": 443806,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443806/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443806/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/b8/f1b889463cd01d54f98442aa2f46773a.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1609,
+      "name": "Vel Satis",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 33,
+      "is_seo_active": 0,
+      "rgs_code": "341013135",
+      "generations": [
+        {
+          "id": 3869,
+          "mark_name": "Renault",
+          "model_name": "Vel Satis",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/b4/cbb43851418ecb5e4926afc91da5031e.png",
+          "images": [
+            {
+              "id": 443807,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443807/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443807/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cb/b4/cbb43851418ecb5e4926afc91da5031e.png"
+            }
+          ]
+        },
+        {
+          "id": 3870,
+          "mark_name": "Renault",
+          "model_name": "Vel Satis",
+          "generation_name": "I",
+          "start_year": 2002,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fd/9b/fd9bad56f482417b4815e0f79ded1c5d.png",
+          "images": [
+            {
+              "id": 443808,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443808/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443808/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fd/9b/fd9bad56f482417b4815e0f79ded1c5d.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1610,
+      "name": "Wind",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3871,
+          "mark_name": "Renault",
+          "model_name": "Wind",
+          "generation_name": "2010 – 2013",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/58/64/58644137580eb75a625d5b74d527c08d.png",
+          "images": [
+            {
+              "id": 443809,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443809/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443809/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/58/64/58644137580eb75a625d5b74d527c08d.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1611,
+      "name": "Zoe",
+      "mark_id": 147,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3872,
+          "mark_name": "Renault",
+          "model_name": "Zoe",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/80/6a/806af9eb6d8c0abfb45e2f309aeaade6.png",
+          "images": [
+            {
+              "id": 443810,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443810/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443810/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/80/6a/806af9eb6d8c0abfb45e2f309aeaade6.png"
+            }
+          ]
+        },
+        {
+          "id": 3873,
+          "mark_name": "Renault",
+          "model_name": "Zoe",
+          "generation_name": "I",
+          "start_year": 2012,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/31/753186c5a0ca6dec1bb301c691bfd194.png",
+          "images": [
+            {
+              "id": 443811,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443811/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443811/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/31/753186c5a0ca6dec1bb301c691bfd194.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

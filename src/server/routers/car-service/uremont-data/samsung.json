@@ -1,0 +1,98 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1612,
+      "name": "SM3",
+      "mark_id": 148,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "363013533",
+      "generations": [
+        {
+          "id": 3874,
+          "mark_name": "Samsung",
+          "model_name": "SM3",
+          "generation_name": "II",
+          "start_year": 2009,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3875,
+          "mark_name": "Samsung",
+          "model_name": "SM3",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3876,
+          "mark_name": "Samsung",
+          "model_name": "SM3",
+          "generation_name": "I",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1613,
+      "name": "SM5",
+      "mark_id": 148,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "363013535",
+      "generations": [
+        {
+          "id": 3877,
+          "mark_name": "Samsung",
+          "model_name": "SM5",
+          "generation_name": "II",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3878,
+          "mark_name": "Samsung",
+          "model_name": "SM5",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1614,
+      "name": "SM7",
+      "mark_id": 148,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "363021307",
+      "generations": [
+        {
+          "id": 3879,
+          "mark_name": "Samsung",
+          "model_name": "SM7",
+          "generation_name": "2004 – 2011",
+          "start_year": 2004,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

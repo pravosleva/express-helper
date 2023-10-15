@@ -1,0 +1,305 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1869,
+      "name": "Adam",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4813,
+          "mark_name": "Vauxhall",
+          "model_name": "Adam",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1871,
+      "name": "Astra",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4814,
+          "mark_name": "Vauxhall",
+          "model_name": "Astra",
+          "generation_name": "J",
+          "start_year": 2009,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4815,
+          "mark_name": "Vauxhall",
+          "model_name": "Astra",
+          "generation_name": "H",
+          "start_year": 2004,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4816,
+          "mark_name": "Vauxhall",
+          "model_name": "Astra",
+          "generation_name": "G",
+          "start_year": 1998,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4817,
+          "mark_name": "Vauxhall",
+          "model_name": "Astra",
+          "generation_name": "F",
+          "start_year": 1991,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4818,
+          "mark_name": "Vauxhall",
+          "model_name": "Astra",
+          "generation_name": "E",
+          "start_year": 1984,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4819,
+          "mark_name": "Vauxhall",
+          "model_name": "Astra",
+          "generation_name": "D",
+          "start_year": 1979,
+          "finish_year": 1984,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1873,
+      "name": "Carlton",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4820,
+          "mark_name": "Vauxhall",
+          "model_name": "Carlton",
+          "generation_name": "1984 – 1994",
+          "start_year": 1984,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1882,
+      "name": "Royale",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4821,
+          "mark_name": "Vauxhall",
+          "model_name": "Royale",
+          "generation_name": "1978 – 1987",
+          "start_year": 1978,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1886,
+      "name": "Vectra",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4823,
+          "mark_name": "Vauxhall",
+          "model_name": "Vectra",
+          "generation_name": "C",
+          "start_year": 2003,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4824,
+          "mark_name": "Vauxhall",
+          "model_name": "Vectra",
+          "generation_name": "B",
+          "start_year": 1995,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1887,
+      "name": "Ventora",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "421016063",
+      "generations": [
+        {
+          "id": 4825,
+          "mark_name": "Vauxhall",
+          "model_name": "Ventora",
+          "generation_name": "1969 – 1976",
+          "start_year": 1969,
+          "finish_year": 1976,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1888,
+      "name": "Viceroy",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "421016065",
+      "generations": [
+        {
+          "id": 4826,
+          "mark_name": "Vauxhall",
+          "model_name": "Viceroy",
+          "generation_name": "1978 – 1982",
+          "start_year": 1978,
+          "finish_year": 1982,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1889,
+      "name": "Victor",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "806021174",
+      "generations": [
+        {
+          "id": 4827,
+          "mark_name": "Vauxhall",
+          "model_name": "Victor",
+          "generation_name": "FE",
+          "start_year": 1972,
+          "finish_year": 1978,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4828,
+          "mark_name": "Vauxhall",
+          "model_name": "Victor",
+          "generation_name": "FD",
+          "start_year": 1967,
+          "finish_year": 1972,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1890,
+      "name": "Viva",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "421016076",
+      "generations": [
+        {
+          "id": 4829,
+          "mark_name": "Vauxhall",
+          "model_name": "Viva",
+          "generation_name": "HC",
+          "start_year": 1970,
+          "finish_year": 1979,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4830,
+          "mark_name": "Vauxhall",
+          "model_name": "Viva",
+          "generation_name": "HB",
+          "start_year": 1965,
+          "finish_year": 1971,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4831,
+          "mark_name": "Vauxhall",
+          "model_name": "Viva",
+          "generation_name": "HA",
+          "start_year": 1963,
+          "finish_year": 1966,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1891,
+      "name": "VXR8",
+      "mark_id": 181,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4822,
+          "mark_name": "Vauxhall",
+          "model_name": "VXR8",
+          "generation_name": "2007 – 2009",
+          "start_year": 2007,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

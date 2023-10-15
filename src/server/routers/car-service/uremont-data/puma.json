@@ -1,0 +1,25 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20513,
+      "name": "AM4",
+      "mark_id": 143,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "721020724",
+      "generations": []
+    },
+    {
+      "id": 20514,
+      "name": "AMV",
+      "mark_id": 143,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "721020725",
+      "generations": []
+    }
+  ]
+}

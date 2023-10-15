@@ -1,0 +1,178 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1788,
+      "name": "131",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20618,
+      "name": "Albea",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20619,
+      "name": "Brava",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20620,
+      "name": "Bravo",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20621,
+      "name": "Doblo",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1786,
+      "name": "Dogan",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "393014644",
+      "generations": []
+    },
+    {
+      "id": 1787,
+      "name": "Kartal",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "393014649",
+      "generations": [
+        {
+          "id": 4307,
+          "mark_name": "Tofas",
+          "model_name": "Kartal",
+          "generation_name": "1985 – 2003",
+          "start_year": 1985,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20622,
+      "name": "Palio",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1789,
+      "name": "Sahin",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "393014666",
+      "generations": [
+        {
+          "id": 4308,
+          "mark_name": "Tofas",
+          "model_name": "Sahin",
+          "generation_name": "III",
+          "start_year": 1990,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1790,
+      "name": "Serce",
+      "mark_id": 175,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "393014672",
+      "generations": [
+        {
+          "id": 4309,
+          "mark_name": "Tofas",
+          "model_name": "Serce",
+          "generation_name": "1985 – 1996",
+          "start_year": 1985,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20623,
+      "name": "Siena",
+      "mark_id": 175,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20624,
+      "name": "Tempra",
+      "mark_id": 175,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20625,
+      "name": "Tipo",
+      "mark_id": 175,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20626,
+      "name": "UNO",
+      "mark_id": 175,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

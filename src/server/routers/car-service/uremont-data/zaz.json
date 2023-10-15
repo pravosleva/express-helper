@@ -1,0 +1,313 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 2038,
+      "name": "1102",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 26,
+      "is_seo_active": 0,
+      "rgs_code": "581017840",
+      "generations": [
+        {
+          "id": 5537,
+          "mark_name": "ЗАЗ",
+          "model_name": "1102",
+          "generation_name": "1988 – 2009",
+          "start_year": 1988,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/54/a6/54a686eb9ec909489517b990f75770a8.png",
+          "images": [
+            {
+              "id": 444473,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444473/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444473/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/54/a6/54a686eb9ec909489517b990f75770a8.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2039,
+      "name": "1103",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 31,
+      "is_seo_active": 0,
+      "rgs_code": "581017850",
+      "generations": [
+        {
+          "id": 5538,
+          "mark_name": "ЗАЗ",
+          "model_name": "1103",
+          "generation_name": "1999 – 2011",
+          "start_year": 1999,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/24/ae2426132e118e785224dd90aee4031e.png",
+          "images": [
+            {
+              "id": 444474,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444474/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444474/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/24/ae2426132e118e785224dd90aee4031e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2040,
+      "name": "1105",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "581017857",
+      "generations": [
+        {
+          "id": 5539,
+          "mark_name": "ЗАЗ",
+          "model_name": "1105",
+          "generation_name": "1994 – 2010",
+          "start_year": 1994,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/08/ed0887b38796ed60bbb87adfb0cd7c76.png",
+          "images": [
+            {
+              "id": 444475,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444475/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444475/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/08/ed0887b38796ed60bbb87adfb0cd7c76.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2041,
+      "name": "965",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "581017833",
+      "generations": [
+        {
+          "id": 5039,
+          "mark_name": "ЗАЗ",
+          "model_name": "965",
+          "generation_name": "1960 – 1970",
+          "start_year": 1960,
+          "finish_year": 1970,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/94/30/9430bb8905ad9d7dcd33be62a235cc5d.png",
+          "images": [
+            {
+              "id": 444303,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444303/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444303/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/94/30/9430bb8905ad9d7dcd33be62a235cc5d.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2042,
+      "name": "966",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "581021424",
+      "generations": [
+        {
+          "id": 5040,
+          "mark_name": "ЗАЗ",
+          "model_name": "966",
+          "generation_name": "1967 – 1972",
+          "start_year": 1967,
+          "finish_year": 1972,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/3b/d83b624165c9132735c133eddbf38109.png",
+          "images": [
+            {
+              "id": 444304,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444304/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444304/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/3b/d83b624165c9132735c133eddbf38109.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2043,
+      "name": "968",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 39,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5041,
+          "mark_name": "ЗАЗ",
+          "model_name": "968",
+          "generation_name": "1972 – 1994",
+          "start_year": 1972,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/89/16/89169f54dd9783cd63ddf5fb43c79975.png",
+          "images": [
+            {
+              "id": 444305,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444305/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444305/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/89/16/89169f54dd9783cd63ddf5fb43c79975.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2044,
+      "name": "Chance",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 539,
+      "is_seo_active": 0,
+      "rgs_code": "581021557",
+      "generations": [
+        {
+          "id": 5042,
+          "mark_name": "ЗАЗ",
+          "model_name": "Chance",
+          "generation_name": "2009 – 2014",
+          "start_year": 2009,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/14/f7/14f7c46f42ee9d45c19911964381661e.png",
+          "images": [
+            {
+              "id": 444306,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444306/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444306/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/14/f7/14f7c46f42ee9d45c19911964381661e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20723,
+      "name": "Lanos",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 13,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5044,
+          "mark_name": "ЗАЗ",
+          "model_name": "Lanos",
+          "generation_name": "2004 – 2015",
+          "start_year": 2004,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/48/1c/481cd33196e01dc93c3fd7a821c2383a.png",
+          "images": [
+            {
+              "id": 444308,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444308/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444308/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/48/1c/481cd33196e01dc93c3fd7a821c2383a.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2046,
+      "name": "Sens",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 168,
+      "is_seo_active": 0,
+      "rgs_code": "581021425",
+      "generations": [
+        {
+          "id": 5045,
+          "mark_name": "ЗАЗ",
+          "model_name": "Sens",
+          "generation_name": "2004 – 2017",
+          "start_year": 2004,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/71/0d710b8145ac8319deb6f1fdcb5913a0.png",
+          "images": [
+            {
+              "id": 444309,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444309/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444309/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/71/0d710b8145ac8319deb6f1fdcb5913a0.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2047,
+      "name": "Vida",
+      "mark_id": 217,
+      "sort_id": 1,
+      "rating": 19,
+      "is_seo_active": 0,
+      "rgs_code": "581021677",
+      "generations": [
+        {
+          "id": 5046,
+          "mark_name": "ЗАЗ",
+          "model_name": "Vida",
+          "generation_name": "2012 – 2016",
+          "start_year": 2012,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d2/d5/d2d577d12913f3095ffceed1cefbdf81.png",
+          "images": [
+            {
+              "id": 444310,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444310/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444310/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d2/d5/d2d577d12913f3095ffceed1cefbdf81.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2045,
+      "name": "Forza",
+      "mark_id": 217,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "581022234",
+      "generations": [
+        {
+          "id": 5043,
+          "mark_name": "ЗАЗ",
+          "model_name": "Forza",
+          "generation_name": "2011 – 2014",
+          "start_year": 2011,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0f/4b/0f4bffe99dafeaf5b7f59d086bd43924.png",
+          "images": [
+            {
+              "id": 444307,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444307/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444307/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0f/4b/0f4bffe99dafeaf5b7f59d086bd43924.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1254,
+      "name": "TF 1800",
+      "mark_id": 121,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "234009320",
+      "generations": [
+        {
+          "id": 2855,
+          "mark_name": "Minelli",
+          "model_name": "TF 1800",
+          "generation_name": "1998 – 2001",
+          "start_year": 1998,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

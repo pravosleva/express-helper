@@ -1,0 +1,2378 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 939,
+      "name": "Cee'd",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 6555,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5265,
+          "mark_name": "Kia",
+          "model_name": "Cee'd",
+          "generation_name": "III",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/82/1d82c38f86c8968aa86b73d6e7dd11db.png",
+          "images": [
+            {
+              "id": 444409,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444409/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444409/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1d/82/1d82c38f86c8968aa86b73d6e7dd11db.png"
+            }
+          ]
+        },
+        {
+          "id": 5266,
+          "mark_name": "Kia",
+          "model_name": "Cee'd",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/92/f192088a4d8e528393de2a7933e98185.png",
+          "images": [
+            {
+              "id": 444410,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444410/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444410/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f1/92/f192088a4d8e528393de2a7933e98185.png"
+            }
+          ]
+        },
+        {
+          "id": 5267,
+          "mark_name": "Kia",
+          "model_name": "Cee'd",
+          "generation_name": "II",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/ed/53ed17033535e0d5ae0c578063b8f16e.png",
+          "images": [
+            {
+              "id": 444411,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444411/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444411/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/53/ed/53ed17033535e0d5ae0c578063b8f16e.png"
+            }
+          ]
+        },
+        {
+          "id": 5268,
+          "mark_name": "Kia",
+          "model_name": "Cee'd",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/3c/fe3cab54b22e0bb4e2b73a3ceac66c44.png",
+          "images": [
+            {
+              "id": 444412,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444412/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444412/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/3c/fe3cab54b22e0bb4e2b73a3ceac66c44.png"
+            }
+          ]
+        },
+        {
+          "id": 5269,
+          "mark_name": "Kia",
+          "model_name": "Cee'd",
+          "generation_name": "I",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ff/35/ff35cd6a7bd071ee750ed57cb9a7d8c5.png",
+          "images": [
+            {
+              "id": 444413,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444413/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444413/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ff/35/ff35cd6a7bd071ee750ed57cb9a7d8c5.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940,
+      "name": "Cerato",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 3569,
+      "is_seo_active": 0,
+      "rgs_code": "181020551",
+      "generations": [
+        {
+          "id": 2089,
+          "mark_name": "Kia",
+          "model_name": "Cerato",
+          "generation_name": "IV",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fa/dc/fadca61dce960a5a9304e5031b19f9e0.png",
+          "images": [
+            {
+              "id": 442953,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442953/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442953/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fa/dc/fadca61dce960a5a9304e5031b19f9e0.png"
+            }
+          ]
+        },
+        {
+          "id": 2090,
+          "mark_name": "Kia",
+          "model_name": "Cerato",
+          "generation_name": "III Рестайлинг (Classic)",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/72/3d/723d15fc70ff88eeaa240eb90e342a6f.png",
+          "images": [
+            {
+              "id": 442954,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442954/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442954/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/72/3d/723d15fc70ff88eeaa240eb90e342a6f.png"
+            }
+          ]
+        },
+        {
+          "id": 2091,
+          "mark_name": "Kia",
+          "model_name": "Cerato",
+          "generation_name": "III",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/0f/ef0f62694eef365bfa4805c3e07e49ab.png",
+          "images": [
+            {
+              "id": 442955,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442955/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442955/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ef/0f/ef0f62694eef365bfa4805c3e07e49ab.png"
+            }
+          ]
+        },
+        {
+          "id": 2092,
+          "mark_name": "Kia",
+          "model_name": "Cerato",
+          "generation_name": "II",
+          "start_year": 2008,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/38/37/3837fe148ccaf975ef07ef4281f2be40.png",
+          "images": [
+            {
+              "id": 442956,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442956/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442956/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/38/37/3837fe148ccaf975ef07ef4281f2be40.png"
+            }
+          ]
+        },
+        {
+          "id": 2093,
+          "mark_name": "Kia",
+          "model_name": "Cerato",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/d2/19d2d528c4a5524d24be9b19899d90e1.png",
+          "images": [
+            {
+              "id": 442957,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442957/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442957/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/d2/19d2d528c4a5524d24be9b19899d90e1.png"
+            }
+          ]
+        },
+        {
+          "id": 2094,
+          "mark_name": "Kia",
+          "model_name": "Cerato",
+          "generation_name": "I",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/5e/fe5e938e695fac11888833ebe0a741c0.png",
+          "images": [
+            {
+              "id": 442958,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442958/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442958/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/5e/fe5e938e695fac11888833ebe0a741c0.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 946,
+      "name": "Magentis",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 428,
+      "is_seo_active": 0,
+      "rgs_code": "181007179",
+      "generations": [
+        {
+          "id": 2119,
+          "mark_name": "Kia",
+          "model_name": "Magentis",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bf/1f/bf1ff31c3014be39eb0a359860ba1512.png",
+          "images": [
+            {
+              "id": 442963,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442963/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442963/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bf/1f/bf1ff31c3014be39eb0a359860ba1512.png"
+            }
+          ]
+        },
+        {
+          "id": 2120,
+          "mark_name": "Kia",
+          "model_name": "Magentis",
+          "generation_name": "II",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/88/e58818c8ebe0602921d8e17dde059def.png",
+          "images": [
+            {
+              "id": 442964,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442964/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442964/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/88/e58818c8ebe0602921d8e17dde059def.png"
+            }
+          ]
+        },
+        {
+          "id": 2121,
+          "mark_name": "Kia",
+          "model_name": "Magentis",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/4c/7b4c406d7dd9bb1e4009326e915d1143.png",
+          "images": [
+            {
+              "id": 442965,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442965/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442965/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7b/4c/7b4c406d7dd9bb1e4009326e915d1143.png"
+            }
+          ]
+        },
+        {
+          "id": 2122,
+          "mark_name": "Kia",
+          "model_name": "Magentis",
+          "generation_name": "I",
+          "start_year": 2000,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/18/a11829afb2eede610c630442a294cbc8.png",
+          "images": [
+            {
+              "id": 442966,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442966/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442966/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/18/a11829afb2eede610c630442a294cbc8.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 949,
+      "name": "Optima",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 1496,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2134,
+          "mark_name": "Kia",
+          "model_name": "Optima",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2018,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a8/62/a862cfef0c109ba2824c51ada7770f92.png",
+          "images": [
+            {
+              "id": 442967,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442967/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442967/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a8/62/a862cfef0c109ba2824c51ada7770f92.png"
+            }
+          ]
+        },
+        {
+          "id": 2135,
+          "mark_name": "Kia",
+          "model_name": "Optima",
+          "generation_name": "IV",
+          "start_year": 2015,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/eb/ea/ebead433087f7c1a06e9e77f402a38c0.png",
+          "images": [
+            {
+              "id": 442968,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442968/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442968/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/eb/ea/ebead433087f7c1a06e9e77f402a38c0.png"
+            }
+          ]
+        },
+        {
+          "id": 2136,
+          "mark_name": "Kia",
+          "model_name": "Optima",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/91/3a/913a49f6a360d5ae641397a117ae2f26.png",
+          "images": [
+            {
+              "id": 442969,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442969/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442969/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/91/3a/913a49f6a360d5ae641397a117ae2f26.png"
+            }
+          ]
+        },
+        {
+          "id": 2137,
+          "mark_name": "Kia",
+          "model_name": "Optima",
+          "generation_name": "III",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/2d/0c2d3970349cd476eb7f96a03febc828.png",
+          "images": [
+            {
+              "id": 442970,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442970/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442970/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/2d/0c2d3970349cd476eb7f96a03febc828.png"
+            }
+          ]
+        },
+        {
+          "id": 2138,
+          "mark_name": "Kia",
+          "model_name": "Optima",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e2/9d/e29d16c7094c0bcd519cf3e0ad656cc1.png",
+          "images": [
+            {
+              "id": 442971,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442971/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442971/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e2/9d/e29d16c7094c0bcd519cf3e0ad656cc1.png"
+            }
+          ]
+        },
+        {
+          "id": 2139,
+          "mark_name": "Kia",
+          "model_name": "Optima",
+          "generation_name": "II",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/6c/496c1d8896fd61e2d6bcedc7c8b1bdff.png",
+          "images": [
+            {
+              "id": 442972,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442972/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442972/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/6c/496c1d8896fd61e2d6bcedc7c8b1bdff.png"
+            }
+          ]
+        },
+        {
+          "id": 2140,
+          "mark_name": "Kia",
+          "model_name": "Optima",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2002,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/9b/499bd0cf2d34106cdda58d3bf6b1e3a2.png",
+          "images": [
+            {
+              "id": 442973,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442973/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442973/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/9b/499bd0cf2d34106cdda58d3bf6b1e3a2.png"
+            }
+          ]
+        },
+        {
+          "id": 2141,
+          "mark_name": "Kia",
+          "model_name": "Optima",
+          "generation_name": "I",
+          "start_year": 2000,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e2/a1/e2a1107076833e401a70e6f921f67c16.png",
+          "images": [
+            {
+              "id": 442974,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442974/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442974/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e2/a1/e2a1107076833e401a70e6f921f67c16.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 950,
+      "name": "Picanto",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 389,
+      "is_seo_active": 0,
+      "rgs_code": "181020555",
+      "generations": [
+        {
+          "id": 2142,
+          "mark_name": "Kia",
+          "model_name": "Picanto",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2021,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2143,
+          "mark_name": "Kia",
+          "model_name": "Picanto",
+          "generation_name": "III",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/fb/eafb0479e39fc9c2d3c7da2f6c630c3f.png",
+          "images": [
+            {
+              "id": 442975,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442975/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442975/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/fb/eafb0479e39fc9c2d3c7da2f6c630c3f.png"
+            }
+          ]
+        },
+        {
+          "id": 2144,
+          "mark_name": "Kia",
+          "model_name": "Picanto",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2145,
+          "mark_name": "Kia",
+          "model_name": "Picanto",
+          "generation_name": "II",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/65/2e65a2924f43ef3bfba01156c4dcacd4.png",
+          "images": [
+            {
+              "id": 442976,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442976/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442976/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/65/2e65a2924f43ef3bfba01156c4dcacd4.png"
+            }
+          ]
+        },
+        {
+          "id": 2146,
+          "mark_name": "Kia",
+          "model_name": "Picanto",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2147,
+          "mark_name": "Kia",
+          "model_name": "Picanto",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/42/7542a0ebf29d1941ac9e2370acf5f5e5.png",
+          "images": [
+            {
+              "id": 442977,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442977/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442977/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/42/7542a0ebf29d1941ac9e2370acf5f5e5.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 956,
+      "name": "Rio",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 9594,
+      "is_seo_active": 0,
+      "rgs_code": "181007204",
+      "generations": [
+        {
+          "id": 2160,
+          "mark_name": "Kia",
+          "model_name": "Rio",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/7a/0d7a829109018e0f170dd10815517745.png",
+          "images": [
+            {
+              "id": 442981,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442981/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442981/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/7a/0d7a829109018e0f170dd10815517745.png"
+            }
+          ]
+        },
+        {
+          "id": 2161,
+          "mark_name": "Kia",
+          "model_name": "Rio",
+          "generation_name": "IV",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/01/81/0181e7d392e70cf4ed8ac82494548a30.png",
+          "images": [
+            {
+              "id": 442982,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442982/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442982/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/01/81/0181e7d392e70cf4ed8ac82494548a30.png"
+            }
+          ]
+        },
+        {
+          "id": 2162,
+          "mark_name": "Kia",
+          "model_name": "Rio",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/ee/30eeb1e6387a404d7fc892593074237c.png",
+          "images": [
+            {
+              "id": 442983,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442983/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442983/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/ee/30eeb1e6387a404d7fc892593074237c.png"
+            }
+          ]
+        },
+        {
+          "id": 2163,
+          "mark_name": "Kia",
+          "model_name": "Rio",
+          "generation_name": "III",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/99/e599cdd624c282837eb4285bf6f073cb.png",
+          "images": [
+            {
+              "id": 442984,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442984/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442984/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/99/e599cdd624c282837eb4285bf6f073cb.png"
+            }
+          ]
+        },
+        {
+          "id": 2164,
+          "mark_name": "Kia",
+          "model_name": "Rio",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/12/ed/12ed1d170b955ad176d10bd46b20f2a6.png",
+          "images": [
+            {
+              "id": 442985,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442985/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442985/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/12/ed/12ed1d170b955ad176d10bd46b20f2a6.png"
+            }
+          ]
+        },
+        {
+          "id": 2165,
+          "mark_name": "Kia",
+          "model_name": "Rio",
+          "generation_name": "II",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/16/c6/16c608d62d4de377a6f62db7c97feaea.png",
+          "images": [
+            {
+              "id": 442986,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442986/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442986/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/16/c6/16c608d62d4de377a6f62db7c97feaea.png"
+            }
+          ]
+        },
+        {
+          "id": 2166,
+          "mark_name": "Kia",
+          "model_name": "Rio",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2002,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/25/5225de74e37623595185d7ca6d66f293.png",
+          "images": [
+            {
+              "id": 442987,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442987/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442987/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/25/5225de74e37623595185d7ca6d66f293.png"
+            }
+          ]
+        },
+        {
+          "id": 2167,
+          "mark_name": "Kia",
+          "model_name": "Rio",
+          "generation_name": "I",
+          "start_year": 1999,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/24/c8/24c8b4c0de190703d7933b4236022a23.png",
+          "images": [
+            {
+              "id": 442988,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442988/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442988/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/24/c8/24c8b4c0de190703d7933b4236022a23.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 960,
+      "name": "Sorento",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 1895,
+      "is_seo_active": 0,
+      "rgs_code": "181007251",
+      "generations": [
+        {
+          "id": 2178,
+          "mark_name": "Kia",
+          "model_name": "Sorento",
+          "generation_name": "IV",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2179,
+          "mark_name": "Kia",
+          "model_name": "Sorento",
+          "generation_name": "III Prime Рестайлинг",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2180,
+          "mark_name": "Kia",
+          "model_name": "Sorento",
+          "generation_name": "III Prime",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2181,
+          "mark_name": "Kia",
+          "model_name": "Sorento",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2012,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2182,
+          "mark_name": "Kia",
+          "model_name": "Sorento",
+          "generation_name": "II",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2183,
+          "mark_name": "Kia",
+          "model_name": "Sorento",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2184,
+          "mark_name": "Kia",
+          "model_name": "Sorento",
+          "generation_name": "I",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 961,
+      "name": "Soul",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 569,
+      "is_seo_active": 0,
+      "rgs_code": "181021246",
+      "generations": [
+        {
+          "id": 2185,
+          "mark_name": "Kia",
+          "model_name": "Soul",
+          "generation_name": "III",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2186,
+          "mark_name": "Kia",
+          "model_name": "Soul",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2187,
+          "mark_name": "Kia",
+          "model_name": "Soul",
+          "generation_name": "II",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2188,
+          "mark_name": "Kia",
+          "model_name": "Soul",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2011,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2189,
+          "mark_name": "Kia",
+          "model_name": "Soul",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 962,
+      "name": "Spectra",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 2411,
+      "is_seo_active": 0,
+      "rgs_code": "181020556",
+      "generations": [
+        {
+          "id": 2190,
+          "mark_name": "Kia",
+          "model_name": "Spectra",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2004,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/8b/1a8b569bbbed6ddf05253343494e0209.png",
+          "images": [
+            {
+              "id": 442989,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442989/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442989/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/8b/1a8b569bbbed6ddf05253343494e0209.png"
+            }
+          ]
+        },
+        {
+          "id": 2191,
+          "mark_name": "Kia",
+          "model_name": "Spectra",
+          "generation_name": "II",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ee/c8/eec890f3cc1c359f085125030b68c59c.png",
+          "images": [
+            {
+              "id": 442990,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442990/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442990/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ee/c8/eec890f3cc1c359f085125030b68c59c.png"
+            }
+          ]
+        },
+        {
+          "id": 2192,
+          "mark_name": "Kia",
+          "model_name": "Spectra",
+          "generation_name": "I Рестайлинг 1",
+          "start_year": 2001,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/37/41/3741bca89d4478e2ff3fd516e7fb4939.png",
+          "images": [
+            {
+              "id": 442991,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442991/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442991/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/37/41/3741bca89d4478e2ff3fd516e7fb4939.png"
+            }
+          ]
+        },
+        {
+          "id": 2193,
+          "mark_name": "Kia",
+          "model_name": "Spectra",
+          "generation_name": "I",
+          "start_year": 2000,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ba/c1/bac1aaad85ccfd67283e548c3c81a9f2.png",
+          "images": [
+            {
+              "id": 442992,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442992/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442992/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ba/c1/bac1aaad85ccfd67283e548c3c81a9f2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 963,
+      "name": "Sportage",
+      "mark_id": 92,
+      "sort_id": 1,
+      "rating": 3255,
+      "is_seo_active": 0,
+      "rgs_code": "181007257",
+      "generations": [
+        {
+          "id": 2194,
+          "mark_name": "Kia",
+          "model_name": "Sportage",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2195,
+          "mark_name": "Kia",
+          "model_name": "Sportage",
+          "generation_name": "IV",
+          "start_year": 2016,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2196,
+          "mark_name": "Kia",
+          "model_name": "Sportage",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2197,
+          "mark_name": "Kia",
+          "model_name": "Sportage",
+          "generation_name": "III",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2198,
+          "mark_name": "Kia",
+          "model_name": "Sportage",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2199,
+          "mark_name": "Kia",
+          "model_name": "Sportage",
+          "generation_name": "II",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2200,
+          "mark_name": "Kia",
+          "model_name": "Sportage",
+          "generation_name": "I",
+          "start_year": 1993,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20258,
+      "name": "Amanti",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 934,
+      "name": "Avella",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 25,
+      "is_seo_active": 0,
+      "rgs_code": "181020547",
+      "generations": [
+        {
+          "id": 2072,
+          "mark_name": "Kia",
+          "model_name": "Avella",
+          "generation_name": "1994 – 2000",
+          "start_year": 1994,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/7e/ea7e2f92d53d41e851d3ead347edef57.png",
+          "images": [
+            {
+              "id": 442948,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442948/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442948/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/7e/ea7e2f92d53d41e851d3ead347edef57.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20259,
+      "name": "Besta",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20260,
+      "name": "Bongo",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 148,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 947,
+      "name": "Borrego",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 15,
+      "is_seo_active": 0,
+      "rgs_code": "181020985",
+      "generations": [
+        {
+          "id": 2073,
+          "mark_name": "Kia",
+          "model_name": "Borrego",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20261,
+      "name": "Brisa",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 935,
+      "name": "Cadenza",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2074,
+          "mark_name": "Kia",
+          "model_name": "Cadenza",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2075,
+          "mark_name": "Kia",
+          "model_name": "Cadenza",
+          "generation_name": "II",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2076,
+          "mark_name": "Kia",
+          "model_name": "Cadenza",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2077,
+          "mark_name": "Kia",
+          "model_name": "Cadenza",
+          "generation_name": "I",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 936,
+      "name": "Capital",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "181020550",
+      "generations": [
+        {
+          "id": 2078,
+          "mark_name": "Kia",
+          "model_name": "Capital",
+          "generation_name": "1989 – 1996",
+          "start_year": 1989,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 937,
+      "name": "Carens",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 163,
+      "is_seo_active": 0,
+      "rgs_code": "181007146",
+      "generations": [
+        {
+          "id": 2079,
+          "mark_name": "Kia",
+          "model_name": "Carens",
+          "generation_name": "III (RP)",
+          "start_year": 2013,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/80/3e/803ed2e2cada547c2f54e58040113ec4.png",
+          "images": [
+            {
+              "id": 442949,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442949/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442949/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/80/3e/803ed2e2cada547c2f54e58040113ec4.png"
+            }
+          ]
+        },
+        {
+          "id": 2080,
+          "mark_name": "Kia",
+          "model_name": "Carens",
+          "generation_name": "II (UN)",
+          "start_year": 2006,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/84/ab84b4d230064ae12f279726152b8dca.png",
+          "images": [
+            {
+              "id": 442950,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442950/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442950/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/84/ab84b4d230064ae12f279726152b8dca.png"
+            }
+          ]
+        },
+        {
+          "id": 2081,
+          "mark_name": "Kia",
+          "model_name": "Carens",
+          "generation_name": "I (RS) Рестайлинг",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/aa/83aa2787065a3fa4c63b4cd8a31599d4.png",
+          "images": [
+            {
+              "id": 442951,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442951/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442951/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/aa/83aa2787065a3fa4c63b4cd8a31599d4.png"
+            }
+          ]
+        },
+        {
+          "id": 2082,
+          "mark_name": "Kia",
+          "model_name": "Carens",
+          "generation_name": "I",
+          "start_year": 1999,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/39/22/392291acc5669987e280db34cf5fb5e2.png",
+          "images": [
+            {
+              "id": 442952,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442952/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442952/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/39/22/392291acc5669987e280db34cf5fb5e2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 938,
+      "name": "Carnival",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 130,
+      "is_seo_active": 0,
+      "rgs_code": "181007153",
+      "generations": [
+        {
+          "id": 2083,
+          "mark_name": "Kia",
+          "model_name": "Carnival",
+          "generation_name": "IV",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2084,
+          "mark_name": "Kia",
+          "model_name": "Carnival",
+          "generation_name": "III",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2085,
+          "mark_name": "Kia",
+          "model_name": "Carnival",
+          "generation_name": "II",
+          "start_year": 2006,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2086,
+          "mark_name": "Kia",
+          "model_name": "Carnival",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2087,
+          "mark_name": "Kia",
+          "model_name": "Carnival",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20262,
+      "name": "Carstar",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2088,
+          "mark_name": "Kia",
+          "model_name": "Carstar",
+          "generation_name": "I",
+          "start_year": 1999,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 941,
+      "name": "Clarus",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 44,
+      "is_seo_active": 0,
+      "rgs_code": "181007163",
+      "generations": [
+        {
+          "id": 2095,
+          "mark_name": "Kia",
+          "model_name": "Clarus",
+          "generation_name": "II",
+          "start_year": 1998,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2096,
+          "mark_name": "Kia",
+          "model_name": "Clarus",
+          "generation_name": "I",
+          "start_year": 1996,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 942,
+      "name": "Concord",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "181020552",
+      "generations": [
+        {
+          "id": 2097,
+          "mark_name": "Kia",
+          "model_name": "Concord",
+          "generation_name": "1987 – 1995",
+          "start_year": 1987,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20263,
+      "name": "Credos",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 943,
+      "name": "Elan",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "208007836",
+      "generations": [
+        {
+          "id": 2098,
+          "mark_name": "Kia",
+          "model_name": "Elan",
+          "generation_name": "1996 – 1999",
+          "start_year": 1996,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 944,
+      "name": "Enterprise",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "181007170",
+      "generations": [
+        {
+          "id": 2099,
+          "mark_name": "Kia",
+          "model_name": "Enterprise",
+          "generation_name": "1997 – 2002",
+          "start_year": 1997,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20264,
+      "name": "Forte",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 36,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2100,
+          "mark_name": "Kia",
+          "model_name": "Forte",
+          "generation_name": "III",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2101,
+          "mark_name": "Kia",
+          "model_name": "Forte",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2102,
+          "mark_name": "Kia",
+          "model_name": "Forte",
+          "generation_name": "II",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2103,
+          "mark_name": "Kia",
+          "model_name": "Forte",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 945,
+      "name": "Joice",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "752022339",
+      "generations": [
+        {
+          "id": 2104,
+          "mark_name": "Kia",
+          "model_name": "Joice",
+          "generation_name": "1999 – 2004",
+          "start_year": 1999,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20265,
+      "name": "K2",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 26,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20266,
+      "name": "K3",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 15,
+      "is_seo_active": 0,
+      "rgs_code": "082022374",
+      "generations": [
+        {
+          "id": 2105,
+          "mark_name": "Kia",
+          "model_name": "K3",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2106,
+          "mark_name": "Kia",
+          "model_name": "K3",
+          "generation_name": "I",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20267,
+      "name": "K5",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 99,
+      "is_seo_active": 0,
+      "rgs_code": "769022437",
+      "generations": [
+        {
+          "id": 2107,
+          "mark_name": "Kia",
+          "model_name": "K5",
+          "generation_name": "III",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9f/8f/9f8f54823db8f89ce6de55053a1fbc8c.png",
+          "images": [
+            {
+              "id": 442959,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442959/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442959/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9f/8f/9f8f54823db8f89ce6de55053a1fbc8c.png"
+            }
+          ]
+        },
+        {
+          "id": 2108,
+          "mark_name": "Kia",
+          "model_name": "K5",
+          "generation_name": "II",
+          "start_year": 2015,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/18/48/1848b36d52fcc340046497b66d2b9b05.png",
+          "images": [
+            {
+              "id": 442960,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442960/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442960/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/18/48/1848b36d52fcc340046497b66d2b9b05.png"
+            }
+          ]
+        },
+        {
+          "id": 2109,
+          "mark_name": "Kia",
+          "model_name": "K5",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/60/85605061b618aec01ca5e4eceeeb2c6c.png",
+          "images": [
+            {
+              "id": 442961,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442961/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442961/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/85/60/85605061b618aec01ca5e4eceeeb2c6c.png"
+            }
+          ]
+        },
+        {
+          "id": 2110,
+          "mark_name": "Kia",
+          "model_name": "K5",
+          "generation_name": "I",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/11/681159116a453f438e336ee5361453c4.png",
+          "images": [
+            {
+              "id": 442962,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442962/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442962/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/11/681159116a453f438e336ee5361453c4.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20268,
+      "name": "K7",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "181022001",
+      "generations": [
+        {
+          "id": 2111,
+          "mark_name": "Kia",
+          "model_name": "K7",
+          "generation_name": "VG (II)",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2112,
+          "mark_name": "Kia",
+          "model_name": "K7",
+          "generation_name": "VG (I) Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2113,
+          "mark_name": "Kia",
+          "model_name": "K7",
+          "generation_name": "VG (I)",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20269,
+      "name": "K9",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2114,
+          "mark_name": "Kia",
+          "model_name": "K9",
+          "generation_name": "I (KH) Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2115,
+          "mark_name": "Kia",
+          "model_name": "K9",
+          "generation_name": "I (KH)",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20270,
+      "name": "Lotze",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2116,
+          "mark_name": "Kia",
+          "model_name": "Lotze",
+          "generation_name": "MG Innovation",
+          "start_year": 2008,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2117,
+          "mark_name": "Kia",
+          "model_name": "Lotze",
+          "generation_name": "MG Advance",
+          "start_year": 2007,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2118,
+          "mark_name": "Kia",
+          "model_name": "Lotze",
+          "generation_name": "MG",
+          "start_year": 2005,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20271,
+      "name": "Mohave",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 106,
+      "is_seo_active": 0,
+      "rgs_code": "181021551",
+      "generations": [
+        {
+          "id": 2123,
+          "mark_name": "Kia",
+          "model_name": "Mohave",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2124,
+          "mark_name": "Kia",
+          "model_name": "Mohave",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2125,
+          "mark_name": "Kia",
+          "model_name": "Mohave",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20272,
+      "name": "Morning",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "181021713",
+      "generations": [
+        {
+          "id": 2126,
+          "mark_name": "Kia",
+          "model_name": "Morning",
+          "generation_name": "III",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2127,
+          "mark_name": "Kia",
+          "model_name": "Morning",
+          "generation_name": "II",
+          "start_year": 2011,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2128,
+          "mark_name": "Kia",
+          "model_name": "Morning",
+          "generation_name": "I Рестайлинг 3",
+          "start_year": 2010,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2129,
+          "mark_name": "Kia",
+          "model_name": "Morning",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2008,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2130,
+          "mark_name": "Kia",
+          "model_name": "Morning",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2131,
+          "mark_name": "Kia",
+          "model_name": "Morning",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 948,
+      "name": "Opirus",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 73,
+      "is_seo_active": 0,
+      "rgs_code": "181020554",
+      "generations": [
+        {
+          "id": 2132,
+          "mark_name": "Kia",
+          "model_name": "Opirus",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2133,
+          "mark_name": "Kia",
+          "model_name": "Opirus",
+          "generation_name": "I",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20273,
+      "name": "Parktown",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 951,
+      "name": "Potentia",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "181007182",
+      "generations": [
+        {
+          "id": 2148,
+          "mark_name": "Kia",
+          "model_name": "Potentia",
+          "generation_name": "1992 – 2001",
+          "start_year": 1992,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20274,
+      "name": "Pregio",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2149,
+          "mark_name": "Kia",
+          "model_name": "Pregio",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2150,
+          "mark_name": "Kia",
+          "model_name": "Pregio",
+          "generation_name": "I",
+          "start_year": 1995,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 952,
+      "name": "Pride",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "181007189",
+      "generations": [
+        {
+          "id": 2151,
+          "mark_name": "Kia",
+          "model_name": "Pride",
+          "generation_name": "III",
+          "start_year": 2011,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2152,
+          "mark_name": "Kia",
+          "model_name": "Pride",
+          "generation_name": "II",
+          "start_year": 2005,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2153,
+          "mark_name": "Kia",
+          "model_name": "Pride",
+          "generation_name": "I",
+          "start_year": 1990,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 953,
+      "name": "Quoris",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 42,
+      "is_seo_active": 0,
+      "rgs_code": "181021695",
+      "generations": [
+        {
+          "id": 2154,
+          "mark_name": "Kia",
+          "model_name": "Quoris",
+          "generation_name": "I Ресталинг 2",
+          "start_year": 2015,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/e7/3ce7a274234e6f115d52fd4b92b9328e.png",
+          "images": [
+            {
+              "id": 442978,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442978/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442978/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/e7/3ce7a274234e6f115d52fd4b92b9328e.png"
+            }
+          ]
+        },
+        {
+          "id": 2155,
+          "mark_name": "Kia",
+          "model_name": "Quoris",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/64/4464b01fdf9194a69299c36217f6badc.png",
+          "images": [
+            {
+              "id": 442979,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442979/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442979/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/64/4464b01fdf9194a69299c36217f6badc.png"
+            }
+          ]
+        },
+        {
+          "id": 2156,
+          "mark_name": "Kia",
+          "model_name": "Quoris",
+          "generation_name": "I",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/da/e0/dae07d1c07d6a7dd17853e1638952eb8.png",
+          "images": [
+            {
+              "id": 442980,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442980/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442980/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/da/e0/dae07d1c07d6a7dd17853e1638952eb8.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 954,
+      "name": "Ray",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "717020717",
+      "generations": [
+        {
+          "id": 2157,
+          "mark_name": "Kia",
+          "model_name": "Ray",
+          "generation_name": "2011 – н.в.",
+          "start_year": 2011,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 955,
+      "name": "Retona",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "181007197",
+      "generations": [
+        {
+          "id": 2158,
+          "mark_name": "Kia",
+          "model_name": "Retona",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2000,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2159,
+          "mark_name": "Kia",
+          "model_name": "Retona",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20275,
+      "name": "Rondo",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 957,
+      "name": "Sedona",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "181007219",
+      "generations": [
+        {
+          "id": 2168,
+          "mark_name": "Kia",
+          "model_name": "Sedona",
+          "generation_name": "III",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2169,
+          "mark_name": "Kia",
+          "model_name": "Sedona",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2170,
+          "mark_name": "Kia",
+          "model_name": "Sedona",
+          "generation_name": "II",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2171,
+          "mark_name": "Kia",
+          "model_name": "Sedona",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 22407,
+      "name": "Seltos",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 958,
+      "name": "Sephia",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 40,
+      "is_seo_active": 0,
+      "rgs_code": "181007222",
+      "generations": [
+        {
+          "id": 2172,
+          "mark_name": "Kia",
+          "model_name": "Sephia",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2001,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2173,
+          "mark_name": "Kia",
+          "model_name": "Sephia",
+          "generation_name": "II",
+          "start_year": 1997,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2174,
+          "mark_name": "Kia",
+          "model_name": "Sephia",
+          "generation_name": "I Рестайлинг",
+          "start_year": 1994,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2175,
+          "mark_name": "Kia",
+          "model_name": "Sephia",
+          "generation_name": "I",
+          "start_year": 1992,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 959,
+      "name": "Shuma",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 111,
+      "is_seo_active": 0,
+      "rgs_code": "181007238",
+      "generations": [
+        {
+          "id": 2176,
+          "mark_name": "Kia",
+          "model_name": "Shuma",
+          "generation_name": "II",
+          "start_year": 2001,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2177,
+          "mark_name": "Kia",
+          "model_name": "Shuma",
+          "generation_name": "I",
+          "start_year": 1996,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 21005,
+      "name": "Stinger",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 78,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2201,
+          "mark_name": "Kia",
+          "model_name": "Stinger",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/8d/2f8d280102ac203eca1bf7b8eeaff8ed.png",
+          "images": [
+            {
+              "id": 442993,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442993/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442993/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2f/8d/2f8d280102ac203eca1bf7b8eeaff8ed.png"
+            }
+          ]
+        },
+        {
+          "id": 2202,
+          "mark_name": "Kia",
+          "model_name": "Stinger",
+          "generation_name": "I",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/50/b750ac22f6593185f0cf3038deeb3ee2.png",
+          "images": [
+            {
+              "id": 442994,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442994/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442994/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/50/b750ac22f6593185f0cf3038deeb3ee2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20276,
+      "name": "Towner",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2203,
+          "mark_name": "Kia",
+          "model_name": "Towner",
+          "generation_name": "1999 – 2002",
+          "start_year": 1999,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 964,
+      "name": "Venga",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 131,
+      "is_seo_active": 0,
+      "rgs_code": "181021614",
+      "generations": [
+        {
+          "id": 2204,
+          "mark_name": "Kia",
+          "model_name": "Venga",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d2/65/d2654515734ce04a9a1b8dcdb78f7838.png",
+          "images": [
+            {
+              "id": 442995,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442995/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442995/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d2/65/d2654515734ce04a9a1b8dcdb78f7838.png"
+            }
+          ]
+        },
+        {
+          "id": 2205,
+          "mark_name": "Kia",
+          "model_name": "Venga",
+          "generation_name": "I",
+          "start_year": 2009,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/d3/e6d324c62e101c0d7528f1d2d40d83d4.png",
+          "images": [
+            {
+              "id": 442996,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442996/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442996/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/d3/e6d324c62e101c0d7528f1d2d40d83d4.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 965,
+      "name": "Visto",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "181007274",
+      "generations": [
+        {
+          "id": 2206,
+          "mark_name": "Kia",
+          "model_name": "Visto",
+          "generation_name": "1999 – 2004",
+          "start_year": 1999,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 966,
+      "name": "X-Trek",
+      "mark_id": 92,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2207,
+          "mark_name": "Kia",
+          "model_name": "X-Trek",
+          "generation_name": "2003 – 2006",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

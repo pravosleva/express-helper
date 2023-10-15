@@ -1,0 +1,35 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1974,
+      "name": "PICKUP X3",
+      "mark_id": 190,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "729020730",
+      "generations": []
+    },
+    {
+      "id": 1975,
+      "name": "SR-V X3",
+      "mark_id": 190,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "729020731",
+      "generations": []
+    },
+    {
+      "id": 1976,
+      "name": "SUV X3",
+      "mark_id": 190,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "729020732",
+      "generations": []
+    }
+  ]
+}

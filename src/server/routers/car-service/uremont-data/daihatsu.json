@@ -1,0 +1,1474 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 422,
+      "name": "Atrai",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": "074003255",
+      "generations": [
+        {
+          "id": 954,
+          "mark_name": "Daihatsu",
+          "model_name": "Atrai",
+          "generation_name": "V Рестайлинг 2",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 955,
+          "mark_name": "Daihatsu",
+          "model_name": "Atrai",
+          "generation_name": "V Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 956,
+          "mark_name": "Daihatsu",
+          "model_name": "Atrai",
+          "generation_name": "V",
+          "start_year": 2005,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 957,
+          "mark_name": "Daihatsu",
+          "model_name": "Atrai",
+          "generation_name": "IV",
+          "start_year": 1999,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 958,
+          "mark_name": "Daihatsu",
+          "model_name": "Atrai",
+          "generation_name": "I",
+          "start_year": 1981,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19930,
+      "name": "Boon Luminas",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 964,
+          "mark_name": "Daihatsu",
+          "model_name": "Boon Luminas",
+          "generation_name": "2008 – 2012",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19937,
+      "name": "Hijet",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 986,
+          "mark_name": "Daihatsu",
+          "model_name": "Hijet",
+          "generation_name": "X",
+          "start_year": 2004,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 987,
+          "mark_name": "Daihatsu",
+          "model_name": "Hijet",
+          "generation_name": "IX",
+          "start_year": 1999,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 988,
+          "mark_name": "Daihatsu",
+          "model_name": "Hijet",
+          "generation_name": "VIII",
+          "start_year": 1990,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 439,
+      "name": "Mira",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 31,
+      "is_seo_active": 0,
+      "rgs_code": "074021679",
+      "generations": [
+        {
+          "id": 995,
+          "mark_name": "Daihatsu",
+          "model_name": "Mira",
+          "generation_name": "VII",
+          "start_year": 2006,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 996,
+          "mark_name": "Daihatsu",
+          "model_name": "Mira",
+          "generation_name": "VI",
+          "start_year": 2002,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 997,
+          "mark_name": "Daihatsu",
+          "model_name": "Mira",
+          "generation_name": "V",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 998,
+          "mark_name": "Daihatsu",
+          "model_name": "Mira",
+          "generation_name": "IV",
+          "start_year": 1994,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 440,
+      "name": "Move",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 12,
+      "is_seo_active": 0,
+      "rgs_code": "074003364",
+      "generations": [
+        {
+          "id": 1001,
+          "mark_name": "Daihatsu",
+          "model_name": "Move",
+          "generation_name": "VI",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1002,
+          "mark_name": "Daihatsu",
+          "model_name": "Move",
+          "generation_name": "V",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1003,
+          "mark_name": "Daihatsu",
+          "model_name": "Move",
+          "generation_name": "IV",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1004,
+          "mark_name": "Daihatsu",
+          "model_name": "Move",
+          "generation_name": "III",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1005,
+          "mark_name": "Daihatsu",
+          "model_name": "Move",
+          "generation_name": "II",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1006,
+          "mark_name": "Daihatsu",
+          "model_name": "Move",
+          "generation_name": "I",
+          "start_year": 1995,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 443,
+      "name": "Pyzar",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 10,
+      "is_seo_active": 0,
+      "rgs_code": "074021090",
+      "generations": [
+        {
+          "id": 1010,
+          "mark_name": "Daihatsu",
+          "model_name": "Pyzar",
+          "generation_name": "I Рестайлинг",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1011,
+          "mark_name": "Daihatsu",
+          "model_name": "Pyzar",
+          "generation_name": "I",
+          "start_year": 1996,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 445,
+      "name": "Sirion",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 22,
+      "is_seo_active": 0,
+      "rgs_code": "074003389",
+      "generations": [
+        {
+          "id": 1015,
+          "mark_name": "Daihatsu",
+          "model_name": "Sirion",
+          "generation_name": "II (M3) Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1016,
+          "mark_name": "Daihatsu",
+          "model_name": "Sirion",
+          "generation_name": "II (M3)",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1017,
+          "mark_name": "Daihatsu",
+          "model_name": "Sirion",
+          "generation_name": "I (M1)",
+          "start_year": 1998,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 447,
+      "name": "Storia",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 11,
+      "is_seo_active": 0,
+      "rgs_code": "074020479",
+      "generations": [
+        {
+          "id": 1019,
+          "mark_name": "Daihatsu",
+          "model_name": "Storia",
+          "generation_name": "1998 – 2004",
+          "start_year": 1998,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 450,
+      "name": "Terios",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 68,
+      "is_seo_active": 0,
+      "rgs_code": "074003406",
+      "generations": [
+        {
+          "id": 1026,
+          "mark_name": "Daihatsu",
+          "model_name": "Terios",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2009,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1027,
+          "mark_name": "Daihatsu",
+          "model_name": "Terios",
+          "generation_name": "II",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1028,
+          "mark_name": "Daihatsu",
+          "model_name": "Terios",
+          "generation_name": "I",
+          "start_year": 1997,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 454,
+      "name": "YRV",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 73,
+      "is_seo_active": 0,
+      "rgs_code": "074003419",
+      "generations": [
+        {
+          "id": 1032,
+          "mark_name": "Daihatsu",
+          "model_name": "YRV",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2002,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1033,
+          "mark_name": "Daihatsu",
+          "model_name": "YRV",
+          "generation_name": "I",
+          "start_year": 2000,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19928,
+      "name": "55 Wide",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 420,
+      "name": "Altis",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "074003244",
+      "generations": [
+        {
+          "id": 944,
+          "mark_name": "Daihatsu",
+          "model_name": "Altis",
+          "generation_name": "V",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 945,
+          "mark_name": "Daihatsu",
+          "model_name": "Altis",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 946,
+          "mark_name": "Daihatsu",
+          "model_name": "Altis",
+          "generation_name": "IV (SXV50)",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 947,
+          "mark_name": "Daihatsu",
+          "model_name": "Altis",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 948,
+          "mark_name": "Daihatsu",
+          "model_name": "Altis",
+          "generation_name": "III (SXV40)",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 949,
+          "mark_name": "Daihatsu",
+          "model_name": "Altis",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2004,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 950,
+          "mark_name": "Daihatsu",
+          "model_name": "Altis",
+          "generation_name": "II (SXV30)",
+          "start_year": 2001,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 951,
+          "mark_name": "Daihatsu",
+          "model_name": "Altis",
+          "generation_name": "I (SXV20)",
+          "start_year": 2000,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 421,
+      "name": "Applause",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "074003249",
+      "generations": [
+        {
+          "id": 952,
+          "mark_name": "Daihatsu",
+          "model_name": "Applause",
+          "generation_name": "I Рестайлинг",
+          "start_year": 1997,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 953,
+          "mark_name": "Daihatsu",
+          "model_name": "Applause",
+          "generation_name": "I",
+          "start_year": 1989,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19929,
+      "name": "Ayla",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 423,
+      "name": "Be-go",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 959,
+          "mark_name": "Daihatsu",
+          "model_name": "Be-go",
+          "generation_name": "2006 – 2016",
+          "start_year": 2006,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 424,
+      "name": "Boon",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "074021525",
+      "generations": [
+        {
+          "id": 960,
+          "mark_name": "Daihatsu",
+          "model_name": "Boon",
+          "generation_name": "III",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 961,
+          "mark_name": "Daihatsu",
+          "model_name": "Boon",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 962,
+          "mark_name": "Daihatsu",
+          "model_name": "Boon",
+          "generation_name": "II",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 963,
+          "mark_name": "Daihatsu",
+          "model_name": "Boon",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 425,
+      "name": "Ceria",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 965,
+          "mark_name": "Daihatsu",
+          "model_name": "Ceria",
+          "generation_name": "2001 – 2006",
+          "start_year": 2001,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 426,
+      "name": "Charade",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "074003261",
+      "generations": [
+        {
+          "id": 966,
+          "mark_name": "Daihatsu",
+          "model_name": "Charade",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 1996,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 967,
+          "mark_name": "Daihatsu",
+          "model_name": "Charade",
+          "generation_name": "IV",
+          "start_year": 1993,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 968,
+          "mark_name": "Daihatsu",
+          "model_name": "Charade",
+          "generation_name": "III",
+          "start_year": 1987,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 969,
+          "mark_name": "Daihatsu",
+          "model_name": "Charade",
+          "generation_name": "II",
+          "start_year": 1983,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 970,
+          "mark_name": "Daihatsu",
+          "model_name": "Charade",
+          "generation_name": "I",
+          "start_year": 1977,
+          "finish_year": 1983,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 427,
+      "name": "Charmant",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074003289",
+      "generations": [
+        {
+          "id": 971,
+          "mark_name": "Daihatsu",
+          "model_name": "Charmant",
+          "generation_name": "1981 – 1987",
+          "start_year": 1981,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19931,
+      "name": "Compagno",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19932,
+      "name": "Consorte",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 428,
+      "name": "Coo",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 972,
+          "mark_name": "Daihatsu",
+          "model_name": "Coo",
+          "generation_name": "2006 – 2013",
+          "start_year": 2006,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 429,
+      "name": "Copen",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "074022036",
+      "generations": [
+        {
+          "id": 973,
+          "mark_name": "Daihatsu",
+          "model_name": "Copen",
+          "generation_name": "II",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 974,
+          "mark_name": "Daihatsu",
+          "model_name": "Copen",
+          "generation_name": "I",
+          "start_year": 2002,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 430,
+      "name": "Cuore",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "074003295",
+      "generations": [
+        {
+          "id": 975,
+          "mark_name": "Daihatsu",
+          "model_name": "Cuore",
+          "generation_name": "VII (L276)",
+          "start_year": 2007,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 976,
+          "mark_name": "Daihatsu",
+          "model_name": "Cuore",
+          "generation_name": "VI (L251)",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 977,
+          "mark_name": "Daihatsu",
+          "model_name": "Cuore",
+          "generation_name": "V (L700)",
+          "start_year": 1999,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 978,
+          "mark_name": "Daihatsu",
+          "model_name": "Cuore",
+          "generation_name": "IV (L500)",
+          "start_year": 1995,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 979,
+          "mark_name": "Daihatsu",
+          "model_name": "Cuore",
+          "generation_name": "III (L200)",
+          "start_year": 1990,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 980,
+          "mark_name": "Daihatsu",
+          "model_name": "Cuore",
+          "generation_name": "II (L70)",
+          "start_year": 1985,
+          "finish_year": 1990,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 981,
+          "mark_name": "Daihatsu",
+          "model_name": "Cuore",
+          "generation_name": "I (L55)",
+          "start_year": 1980,
+          "finish_year": 1985,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 431,
+      "name": "Delta",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "203007493",
+      "generations": []
+    },
+    {
+      "id": 19933,
+      "name": "Domino",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 432,
+      "name": "Esse",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074021678",
+      "generations": [
+        {
+          "id": 982,
+          "mark_name": "Daihatsu",
+          "model_name": "Esse",
+          "generation_name": "2005 – 2011",
+          "start_year": 2005,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19934,
+      "name": "Extol",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074003315",
+      "generations": [
+        {
+          "id": 983,
+          "mark_name": "Daihatsu",
+          "model_name": "Extol",
+          "generation_name": "1999 – 2004",
+          "start_year": 1999,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 433,
+      "name": "Feroza",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074003321",
+      "generations": [
+        {
+          "id": 984,
+          "mark_name": "Daihatsu",
+          "model_name": "Feroza",
+          "generation_name": "1989 – 1999",
+          "start_year": 1989,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19935,
+      "name": "Fourtrak",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19936,
+      "name": "Gran Max",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 434,
+      "name": "Gran Move",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074003325",
+      "generations": [
+        {
+          "id": 985,
+          "mark_name": "Daihatsu",
+          "model_name": "Gran Move",
+          "generation_name": "1996 – 2002",
+          "start_year": 1996,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 435,
+      "name": "Leeza",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074003351",
+      "generations": [
+        {
+          "id": 989,
+          "mark_name": "Daihatsu",
+          "model_name": "Leeza",
+          "generation_name": "I",
+          "start_year": 1986,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19938,
+      "name": "Luxio",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 436,
+      "name": "Materia",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "074020481",
+      "generations": [
+        {
+          "id": 990,
+          "mark_name": "Daihatsu",
+          "model_name": "Materia",
+          "generation_name": "2006 – 2013",
+          "start_year": 2006,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 437,
+      "name": "MAX",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "074003356",
+      "generations": [
+        {
+          "id": 991,
+          "mark_name": "Daihatsu",
+          "model_name": "MAX",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2003,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 992,
+          "mark_name": "Daihatsu",
+          "model_name": "MAX",
+          "generation_name": "I",
+          "start_year": 2000,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19939,
+      "name": "Mebius",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 993,
+          "mark_name": "Daihatsu",
+          "model_name": "Mebius",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 994,
+          "mark_name": "Daihatsu",
+          "model_name": "Mebius",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19940,
+      "name": "Mira Cocoa",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 438,
+      "name": "Mira Gino",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 999,
+          "mark_name": "Daihatsu",
+          "model_name": "Mira Gino",
+          "generation_name": "II",
+          "start_year": 2004,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1000,
+          "mark_name": "Daihatsu",
+          "model_name": "Mira Gino",
+          "generation_name": "I",
+          "start_year": 1999,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 441,
+      "name": "Naked",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074003369",
+      "generations": [
+        {
+          "id": 1007,
+          "mark_name": "Daihatsu",
+          "model_name": "Naked",
+          "generation_name": "2000 – 2004",
+          "start_year": 2000,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 442,
+      "name": "Opti",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1008,
+          "mark_name": "Daihatsu",
+          "model_name": "Opti",
+          "generation_name": "II",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1009,
+          "mark_name": "Daihatsu",
+          "model_name": "Opti",
+          "generation_name": "I",
+          "start_year": 1992,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 444,
+      "name": "Rocky",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "074003374",
+      "generations": [
+        {
+          "id": 1012,
+          "mark_name": "Daihatsu",
+          "model_name": "Rocky",
+          "generation_name": "1989 – 1998",
+          "start_year": 1989,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19699,
+      "name": "Rugger",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074020477",
+      "generations": [
+        {
+          "id": 1013,
+          "mark_name": "Daihatsu",
+          "model_name": "Rugger",
+          "generation_name": "II",
+          "start_year": 1993,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1014,
+          "mark_name": "Daihatsu",
+          "model_name": "Rugger",
+          "generation_name": "I",
+          "start_year": 1984,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 446,
+      "name": "Sonica",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074022235",
+      "generations": [
+        {
+          "id": 1018,
+          "mark_name": "Daihatsu",
+          "model_name": "Sonica",
+          "generation_name": "2006 – 2009",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19941,
+      "name": "Sportrak",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 448,
+      "name": "Taft",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1020,
+          "mark_name": "Daihatsu",
+          "model_name": "Taft",
+          "generation_name": "1974 – 1984",
+          "start_year": 1974,
+          "finish_year": 1984,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 449,
+      "name": "Tanto",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "074022051",
+      "generations": [
+        {
+          "id": 1021,
+          "mark_name": "Daihatsu",
+          "model_name": "Tanto",
+          "generation_name": "IV",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1022,
+          "mark_name": "Daihatsu",
+          "model_name": "Tanto",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1023,
+          "mark_name": "Daihatsu",
+          "model_name": "Tanto",
+          "generation_name": "III",
+          "start_year": 2013,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1024,
+          "mark_name": "Daihatsu",
+          "model_name": "Tanto",
+          "generation_name": "II",
+          "start_year": 2007,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1025,
+          "mark_name": "Daihatsu",
+          "model_name": "Tanto",
+          "generation_name": "I",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19942,
+      "name": "Taruna",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 451,
+      "name": "Trevis",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1029,
+          "mark_name": "Daihatsu",
+          "model_name": "Trevis",
+          "generation_name": "2006 – 2011",
+          "start_year": 2006,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19943,
+      "name": "Valera",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 452,
+      "name": "Wildcat",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "074003414",
+      "generations": [
+        {
+          "id": 1030,
+          "mark_name": "Daihatsu",
+          "model_name": "Wildcat",
+          "generation_name": "1985 – 1987",
+          "start_year": 1985,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 453,
+      "name": "Xenia",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1031,
+          "mark_name": "Daihatsu",
+          "model_name": "Xenia",
+          "generation_name": "2003 – 2011",
+          "start_year": 2003,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19944,
+      "name": "Zebra",
+      "mark_id": 44,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

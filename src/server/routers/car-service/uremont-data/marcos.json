@@ -1,0 +1,15 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1079,
+      "name": "TS",
+      "mark_id": 107,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

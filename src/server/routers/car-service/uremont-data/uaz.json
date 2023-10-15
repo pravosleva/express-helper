@@ -1,0 +1,432 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20740,
+      "name": "2206",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 54,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 2093,
+      "name": "3151",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 99,
+      "is_seo_active": 0,
+      "rgs_code": "701018092",
+      "generations": [
+        {
+          "id": 5077,
+          "mark_name": "УАЗ",
+          "model_name": "3151",
+          "generation_name": "1985 – 2013",
+          "start_year": 1985,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/77/30/7730d8dfee4c48153927ce003c984a59.png",
+          "images": [
+            {
+              "id": 444311,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444311/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444311/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/77/30/7730d8dfee4c48153927ce003c984a59.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20746,
+      "name": "3909",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 43,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20747,
+      "name": "39094",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 23,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20748,
+      "name": "39625",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 31,
+      "is_seo_active": 0,
+      "rgs_code": "701020706",
+      "generations": []
+    },
+    {
+      "id": 20749,
+      "name": "452",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 35,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 2098,
+      "name": "469",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 47,
+      "is_seo_active": 0,
+      "rgs_code": "701018082",
+      "generations": [
+        {
+          "id": 5080,
+          "mark_name": "УАЗ",
+          "model_name": "469",
+          "generation_name": "1972 – 2011",
+          "start_year": 1972,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2d/a8/2da82865757951fc22299024dbd61a71.png",
+          "images": [
+            {
+              "id": 444313,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444313/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444313/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2d/a8/2da82865757951fc22299024dbd61a71.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2099,
+      "name": "Hunter",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 79,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5081,
+          "mark_name": "УАЗ",
+          "model_name": "Hunter",
+          "generation_name": "2003 – н.в.",
+          "start_year": 2003,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/67/cc671b70f94e00ba5d93103121f5f632.png",
+          "images": [
+            {
+              "id": 444314,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444314/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444314/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/67/cc671b70f94e00ba5d93103121f5f632.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2100,
+      "name": "Patriot",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 996,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5082,
+          "mark_name": "УАЗ",
+          "model_name": "Patriot",
+          "generation_name": "I Рестайлинг 3",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/a4/a2a443f052f37985b5b24219f52d2e6a.png",
+          "images": [
+            {
+              "id": 444315,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444315/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444315/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a2/a4/a2a443f052f37985b5b24219f52d2e6a.png"
+            }
+          ]
+        },
+        {
+          "id": 5083,
+          "mark_name": "УАЗ",
+          "model_name": "Patriot",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/c9/ccc91a2c42eb16f28db7240b6c849f4c.png",
+          "images": [
+            {
+              "id": 444316,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444316/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444316/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cc/c9/ccc91a2c42eb16f28db7240b6c849f4c.png"
+            }
+          ]
+        },
+        {
+          "id": 5084,
+          "mark_name": "УАЗ",
+          "model_name": "Patriot",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/66/e6665fd293abd980c66804e96df606d7.png",
+          "images": [
+            {
+              "id": 444317,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444317/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444317/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e6/66/e6665fd293abd980c66804e96df606d7.png"
+            }
+          ]
+        },
+        {
+          "id": 5085,
+          "mark_name": "УАЗ",
+          "model_name": "Patriot",
+          "generation_name": "I",
+          "start_year": 2005,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/35/91/35911e2f75e969131269b92c5079d688.png",
+          "images": [
+            {
+              "id": 444318,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444318/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444318/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/35/91/35911e2f75e969131269b92c5079d688.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2101,
+      "name": "Pickup",
+      "mark_id": 227,
+      "sort_id": 1,
+      "rating": 86,
+      "is_seo_active": 0,
+      "rgs_code": "366020143",
+      "generations": [
+        {
+          "id": 5086,
+          "mark_name": "УАЗ",
+          "model_name": "Pickup",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/e5/31e56498754688f5f1fcbe96d984958f.png",
+          "images": [
+            {
+              "id": 444319,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444319/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444319/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/31/e5/31e56498754688f5f1fcbe96d984958f.png"
+            }
+          ]
+        },
+        {
+          "id": 5087,
+          "mark_name": "УАЗ",
+          "model_name": "Pickup",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/78/1a78715eb001a47fbaba5b92675f5edb.png",
+          "images": [
+            {
+              "id": 444320,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444320/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444320/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/78/1a78715eb001a47fbaba5b92675f5edb.png"
+            }
+          ]
+        },
+        {
+          "id": 5088,
+          "mark_name": "УАЗ",
+          "model_name": "Pickup",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6b/e6/6be64c609e4f1ed0fa0f7ed1b9ce4fbf.png",
+          "images": [
+            {
+              "id": 444321,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444321/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444321/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6b/e6/6be64c609e4f1ed0fa0f7ed1b9ce4fbf.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20741,
+      "name": "2360",
+      "mark_id": 227,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20742,
+      "name": "23602 \"Cargo\"",
+      "mark_id": 227,
+      "sort_id": 0,
+      "rating": 12,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 22347,
+      "name": "3128 \"Астеро\"",
+      "mark_id": 227,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5553,
+          "mark_name": "УАЗ",
+          "model_name": "3128 \"Астеро\"",
+          "generation_name": "1997 – 1999",
+          "start_year": 1997,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2094,
+      "name": "3153",
+      "mark_id": 227,
+      "sort_id": 0,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": "701018110",
+      "generations": [
+        {
+          "id": 5078,
+          "mark_name": "УАЗ",
+          "model_name": "3153",
+          "generation_name": "1996 – 2006",
+          "start_year": 1996,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 18972,
+      "name": "3159 \"Барс\"",
+      "mark_id": 227,
+      "sort_id": 0,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5551,
+          "mark_name": "УАЗ",
+          "model_name": "3159 \"Барс\"",
+          "generation_name": "1999 – 2010",
+          "start_year": 1999,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2096,
+      "name": "3160",
+      "mark_id": 227,
+      "sort_id": 0,
+      "rating": 12,
+      "is_seo_active": 0,
+      "rgs_code": "701018115",
+      "generations": [
+        {
+          "id": 5079,
+          "mark_name": "УАЗ",
+          "model_name": "3160",
+          "generation_name": "1997 – 2004",
+          "start_year": 1997,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f3/e9/f3e9a06f2f0009cb75598a3990ba6293.png",
+          "images": [
+            {
+              "id": 444312,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444312/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444312/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f3/e9/f3e9a06f2f0009cb75598a3990ba6293.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20743,
+      "name": "3162 \"Simbir\"",
+      "mark_id": 227,
+      "sort_id": 0,
+      "rating": 8,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5552,
+          "mark_name": "УАЗ",
+          "model_name": "3162 \"Simbir\"",
+          "generation_name": "1999 – 2005",
+          "start_year": 1999,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20744,
+      "name": "3303",
+      "mark_id": 227,
+      "sort_id": 0,
+      "rating": 9,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20745,
+      "name": "3741",
+      "mark_id": 227,
+      "sort_id": 0,
+      "rating": 10,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

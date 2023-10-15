@@ -1,0 +1,785 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 396,
+      "name": "Espero",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 105,
+      "is_seo_active": 0,
+      "rgs_code": "072002971",
+      "generations": [
+        {
+          "id": 914,
+          "mark_name": "Daewoo",
+          "model_name": "Espero",
+          "generation_name": "1990 – 1999",
+          "start_year": 1990,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 399,
+      "name": "Gentra",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 448,
+      "is_seo_active": 0,
+      "rgs_code": "856022161",
+      "generations": [
+        {
+          "id": 917,
+          "mark_name": "Daewoo",
+          "model_name": "Gentra",
+          "generation_name": "II",
+          "start_year": 2013,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 918,
+          "mark_name": "Daewoo",
+          "model_name": "Gentra",
+          "generation_name": "I",
+          "start_year": 2005,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 402,
+      "name": "Lacetti",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 18,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 921,
+          "mark_name": "Daewoo",
+          "model_name": "Lacetti",
+          "generation_name": "2002 – 2010",
+          "start_year": 2002,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 403,
+      "name": "Lanos",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 102,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 923,
+          "mark_name": "Daewoo",
+          "model_name": "Lanos",
+          "generation_name": "1997 – 2008",
+          "start_year": 1997,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 405,
+      "name": "Leganza",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 59,
+      "is_seo_active": 0,
+      "rgs_code": "072003021",
+      "generations": [
+        {
+          "id": 925,
+          "mark_name": "Daewoo",
+          "model_name": "Leganza",
+          "generation_name": "1997 – 2008",
+          "start_year": 1997,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 406,
+      "name": "Magnus",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 22,
+      "is_seo_active": 0,
+      "rgs_code": "072003030",
+      "generations": [
+        {
+          "id": 926,
+          "mark_name": "Daewoo",
+          "model_name": "Magnus",
+          "generation_name": "2000 – 2006",
+          "start_year": 2000,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "name": "Matiz",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 2035,
+      "is_seo_active": 0,
+      "rgs_code": "856022160",
+      "generations": [
+        {
+          "id": 927,
+          "mark_name": "Daewoo",
+          "model_name": "Matiz",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2000,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 928,
+          "mark_name": "Daewoo",
+          "model_name": "Matiz",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 409,
+      "name": "Nexia",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 3693,
+      "is_seo_active": 0,
+      "rgs_code": "856022162",
+      "generations": [
+        {
+          "id": 930,
+          "mark_name": "Daewoo",
+          "model_name": "Nexia",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 931,
+          "mark_name": "Daewoo",
+          "model_name": "Nexia",
+          "generation_name": "I",
+          "start_year": 1994,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 410,
+      "name": "Nubira",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 70,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 932,
+          "mark_name": "Daewoo",
+          "model_name": "Nubira",
+          "generation_name": "III",
+          "start_year": 2003,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7d/6d/7d6dde08d54c8ec04313f967aff459cc.png",
+          "images": [
+            {
+              "id": 442487,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442487/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442487/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7d/6d/7d6dde08d54c8ec04313f967aff459cc.png"
+            }
+          ]
+        },
+        {
+          "id": 933,
+          "mark_name": "Daewoo",
+          "model_name": "Nubira",
+          "generation_name": "II",
+          "start_year": 1999,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f6/07/f6076f57a63cf94e6fe32f737e487d40.png",
+          "images": [
+            {
+              "id": 442488,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442488/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442488/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f6/07/f6076f57a63cf94e6fe32f737e487d40.png"
+            }
+          ]
+        },
+        {
+          "id": 934,
+          "mark_name": "Daewoo",
+          "model_name": "Nubira",
+          "generation_name": "I",
+          "start_year": 1997,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/b6/19b6038844c935d4852b20988e79580d.png",
+          "images": [
+            {
+              "id": 442489,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442489/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442489/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/b6/19b6038844c935d4852b20988e79580d.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 417,
+      "name": "Winstorm",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 27,
+      "is_seo_active": 0,
+      "rgs_code": "072021489",
+      "generations": [
+        {
+          "id": 943,
+          "mark_name": "Daewoo",
+          "model_name": "Winstorm",
+          "generation_name": "2006 – 2011",
+          "start_year": 2006,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19916,
+      "name": "Alpheon",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 909,
+          "mark_name": "Daewoo",
+          "model_name": "Alpheon",
+          "generation_name": "2010 – 2015",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19917,
+      "name": "Aranos",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 393,
+      "name": "Arcadia",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "072002962",
+      "generations": [
+        {
+          "id": 910,
+          "mark_name": "Daewoo",
+          "model_name": "Arcadia",
+          "generation_name": "1994 – 1999",
+          "start_year": 1994,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19918,
+      "name": "Brougham",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 394,
+      "name": "Chairman",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "370013951",
+      "generations": [
+        {
+          "id": 911,
+          "mark_name": "Daewoo",
+          "model_name": "Chairman",
+          "generation_name": "1999 – 2002",
+          "start_year": 1999,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19919,
+      "name": "Cielo",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 9,
+      "is_seo_active": 0,
+      "rgs_code": "072002964",
+      "generations": []
+    },
+    {
+      "id": 395,
+      "name": "Damas",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "072002969",
+      "generations": [
+        {
+          "id": 912,
+          "mark_name": "Daewoo",
+          "model_name": "Damas",
+          "generation_name": "II",
+          "start_year": 2003,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 913,
+          "mark_name": "Daewoo",
+          "model_name": "Damas",
+          "generation_name": "I",
+          "start_year": 1991,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 397,
+      "name": "Evanda",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 915,
+          "mark_name": "Daewoo",
+          "model_name": "Evanda",
+          "generation_name": "2002 – 2005",
+          "start_year": 2002,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19920,
+      "name": "Fantasy",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 398,
+      "name": "G2X",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 916,
+          "mark_name": "Daewoo",
+          "model_name": "G2X",
+          "generation_name": "2007 – 2008",
+          "start_year": 2007,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19921,
+      "name": "Imperial",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 400,
+      "name": "Kalos",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 919,
+          "mark_name": "Daewoo",
+          "model_name": "Kalos",
+          "generation_name": "2002 – 2007",
+          "start_year": 2002,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 401,
+      "name": "Korando",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "370013964",
+      "generations": [
+        {
+          "id": 920,
+          "mark_name": "Daewoo",
+          "model_name": "Korando",
+          "generation_name": "1999 – 2001",
+          "start_year": 1999,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19922,
+      "name": "Labo",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19923,
+      "name": "Lacetti Premiere",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 922,
+          "mark_name": "Daewoo",
+          "model_name": "Lacetti Premiere",
+          "generation_name": "J300",
+          "start_year": 2008,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 404,
+      "name": "LeMans",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 924,
+          "mark_name": "Daewoo",
+          "model_name": "LeMans",
+          "generation_name": "1986 – 1994",
+          "start_year": 1986,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19924,
+      "name": "Maepsy",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 408,
+      "name": "Musso",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "370013976",
+      "generations": [
+        {
+          "id": 929,
+          "mark_name": "Daewoo",
+          "model_name": "Musso",
+          "generation_name": "1999 – 2002",
+          "start_year": 1999,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19925,
+      "name": "Pointer",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 411,
+      "name": "Prince",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "072003094",
+      "generations": [
+        {
+          "id": 935,
+          "mark_name": "Daewoo",
+          "model_name": "Prince",
+          "generation_name": "1991 – 1999",
+          "start_year": 1991,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 412,
+      "name": "Racer",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "072020388",
+      "generations": [
+        {
+          "id": 936,
+          "mark_name": "Daewoo",
+          "model_name": "Racer",
+          "generation_name": "I",
+          "start_year": 1986,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "name": "Rezzo",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 937,
+          "mark_name": "Daewoo",
+          "model_name": "Rezzo",
+          "generation_name": "2000 – 2008",
+          "start_year": 2000,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19926,
+      "name": "Royale",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 938,
+          "mark_name": "Daewoo",
+          "model_name": "Royale",
+          "generation_name": "1981 – 1992",
+          "start_year": 1981,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19698,
+      "name": "Sens",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 939,
+          "mark_name": "Daewoo",
+          "model_name": "Sens",
+          "generation_name": "I",
+          "start_year": 2002,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 414,
+      "name": "Tacuma",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "072003112",
+      "generations": [
+        {
+          "id": 940,
+          "mark_name": "Daewoo",
+          "model_name": "Tacuma",
+          "generation_name": "2000 – 2011",
+          "start_year": 2000,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 415,
+      "name": "Tico",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 14,
+      "is_seo_active": 0,
+      "rgs_code": "072003108",
+      "generations": [
+        {
+          "id": 941,
+          "mark_name": "Daewoo",
+          "model_name": "Tico",
+          "generation_name": "1991 – 2001",
+          "start_year": 1991,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 416,
+      "name": "Tosca",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 942,
+          "mark_name": "Daewoo",
+          "model_name": "Tosca",
+          "generation_name": "2006 – 2011",
+          "start_year": 2006,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19927,
+      "name": "Veritas",
+      "mark_id": 42,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

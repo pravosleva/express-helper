@@ -1,0 +1,202 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1772,
+      "name": "Estate",
+      "mark_id": 169,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "392014597",
+      "generations": [
+        {
+          "id": 4283,
+          "mark_name": "Tata",
+          "model_name": "Estate",
+          "generation_name": "1993 – 2000",
+          "start_year": 1993,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1773,
+      "name": "Indica",
+      "mark_id": 169,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "392014599",
+      "generations": [
+        {
+          "id": 4284,
+          "mark_name": "Tata",
+          "model_name": "Indica",
+          "generation_name": "II Vista",
+          "start_year": 2008,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4285,
+          "mark_name": "Tata",
+          "model_name": "Indica",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1774,
+      "name": "Indigo",
+      "mark_id": 169,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "392021346",
+      "generations": [
+        {
+          "id": 4286,
+          "mark_name": "Tata",
+          "model_name": "Indigo",
+          "generation_name": "II Manza",
+          "start_year": 2009,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4287,
+          "mark_name": "Tata",
+          "model_name": "Indigo",
+          "generation_name": "I",
+          "start_year": 2002,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20611,
+      "name": "Mint",
+      "mark_id": 169,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1776,
+      "name": "Safari",
+      "mark_id": 169,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4288,
+          "mark_name": "Tata",
+          "model_name": "Safari",
+          "generation_name": "II Storme",
+          "start_year": 2012,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4289,
+          "mark_name": "Tata",
+          "model_name": "Safari",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1777,
+      "name": "Sierra",
+      "mark_id": 169,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4290,
+          "mark_name": "Tata",
+          "model_name": "Sierra",
+          "generation_name": "1993 – 2001",
+          "start_year": 1993,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1778,
+      "name": "Sumo",
+      "mark_id": 169,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "392014619",
+      "generations": [
+        {
+          "id": 4291,
+          "mark_name": "Tata",
+          "model_name": "Sumo",
+          "generation_name": "1996 – 2004",
+          "start_year": 1996,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20946,
+      "name": "Super Ace",
+      "mark_id": 169,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20964,
+      "name": "Telcoline",
+      "mark_id": 169,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4292,
+          "mark_name": "Tata",
+          "model_name": "Telcoline",
+          "generation_name": "2005 – 2007",
+          "start_year": 2005,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

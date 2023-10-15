@@ -1,0 +1,129 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1555,
+      "name": "Juara",
+      "mark_id": 141,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "299020105",
+      "generations": [
+        {
+          "id": 3738,
+          "mark_name": "Proton",
+          "model_name": "Juara",
+          "generation_name": "2001 – 2003",
+          "start_year": 2001,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1556,
+      "name": "Perdana",
+      "mark_id": 141,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "299012441",
+      "generations": [
+        {
+          "id": 3739,
+          "mark_name": "Proton",
+          "model_name": "Perdana",
+          "generation_name": "1995 – 2010",
+          "start_year": 1995,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1557,
+      "name": "Persona 300 Compact",
+      "mark_id": 141,
+      "sort_id": 1,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": "299012444",
+      "generations": []
+    },
+    {
+      "id": 20511,
+      "name": "Persona 400",
+      "mark_id": 141,
+      "sort_id": 1,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": "299012449",
+      "generations": []
+    },
+    {
+      "id": 1559,
+      "name": "Saga",
+      "mark_id": 141,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "299020106",
+      "generations": [
+        {
+          "id": 3740,
+          "mark_name": "Proton",
+          "model_name": "Saga",
+          "generation_name": "II",
+          "start_year": 2008,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3741,
+          "mark_name": "Proton",
+          "model_name": "Saga",
+          "generation_name": "I",
+          "start_year": 1985,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20512,
+      "name": "Saloon",
+      "mark_id": 141,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "299020107",
+      "generations": []
+    },
+    {
+      "id": 1561,
+      "name": "Waja",
+      "mark_id": 141,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3742,
+          "mark_name": "Proton",
+          "model_name": "Waja",
+          "generation_name": "2000 – 2011",
+          "start_year": 2000,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

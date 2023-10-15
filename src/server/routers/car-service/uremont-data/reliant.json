@@ -1,0 +1,15 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1569,
+      "name": "Scimitar SS1",
+      "mark_id": 146,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

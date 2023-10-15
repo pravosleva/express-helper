@@ -1,0 +1,46 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1061,
+      "name": "TX",
+      "mark_id": 104,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "209007865",
+      "generations": [
+        {
+          "id": 2458,
+          "mark_name": "LTI",
+          "model_name": "TX",
+          "generation_name": "TX4 III",
+          "start_year": 2006,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2459,
+          "mark_name": "LTI",
+          "model_name": "TX",
+          "generation_name": "II",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2460,
+          "mark_name": "LTI",
+          "model_name": "TX",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

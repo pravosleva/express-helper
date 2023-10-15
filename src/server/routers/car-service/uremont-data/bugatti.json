@@ -1,0 +1,113 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 19692,
+      "name": "Chiron",
+      "mark_id": 24,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 439,
+          "mark_name": "Bugatti",
+          "model_name": "Chiron",
+          "generation_name": "2016 – н.в.",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/09/65094e3101b8dad688bf77c3afeea866.png",
+          "images": [
+            {
+              "id": 442273,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442273/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442273/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/09/65094e3101b8dad688bf77c3afeea866.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 182,
+      "name": "EB 110",
+      "mark_id": 24,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "038001721",
+      "generations": [
+        {
+          "id": 440,
+          "mark_name": "Bugatti",
+          "model_name": "EB 110",
+          "generation_name": "1991 – 1995",
+          "start_year": 1991,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 183,
+      "name": "EB 112",
+      "mark_id": 24,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "038001724",
+      "generations": [
+        {
+          "id": 441,
+          "mark_name": "Bugatti",
+          "model_name": "EB 112",
+          "generation_name": "1993 – 1998",
+          "start_year": 1993,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/6b/346bb49cdc8a6d16aba0240b48a6b119.png",
+          "images": [
+            {
+              "id": 442274,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442274/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442274/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/34/6b/346bb49cdc8a6d16aba0240b48a6b119.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19784,
+      "name": "Type 57",
+      "mark_id": 24,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 18960,
+      "name": "Veyron",
+      "mark_id": 24,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5164,
+          "mark_name": "Bugatti",
+          "model_name": "Veyron",
+          "generation_name": "2003 – 2015",
+          "start_year": 2003,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

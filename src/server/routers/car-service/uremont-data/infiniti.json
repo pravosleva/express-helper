@@ -1,0 +1,659 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 861,
+      "name": "EX-Series",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 97,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5234,
+          "mark_name": "Infiniti",
+          "model_name": "EX-Series",
+          "generation_name": "I (J50)",
+          "start_year": 2007,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 862,
+      "name": "FX-Series",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 989,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5235,
+          "mark_name": "Infiniti",
+          "model_name": "FX-Series",
+          "generation_name": "II (S51) Рестайлинг",
+          "start_year": 2011,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5236,
+          "mark_name": "Infiniti",
+          "model_name": "FX-Series",
+          "generation_name": "II (S51)",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5237,
+          "mark_name": "Infiniti",
+          "model_name": "FX-Series",
+          "generation_name": "I (S50) Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5238,
+          "mark_name": "Infiniti",
+          "model_name": "FX-Series",
+          "generation_name": "I (S50)",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 864,
+      "name": "G-Series",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 489,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5239,
+          "mark_name": "Infiniti",
+          "model_name": "G-Series",
+          "generation_name": "IV",
+          "start_year": 2006,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e9/39/e93932214bdb968cc6d2e17489bcd6a8.png",
+          "images": [
+            {
+              "id": 444401,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444401/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444401/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e9/39/e93932214bdb968cc6d2e17489bcd6a8.png"
+            }
+          ]
+        },
+        {
+          "id": 5240,
+          "mark_name": "Infiniti",
+          "model_name": "G-Series",
+          "generation_name": "III",
+          "start_year": 2002,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/74/b8/74b80f2973eb33d472329438ba385313.png",
+          "images": [
+            {
+              "id": 444402,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444402/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444402/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/74/b8/74b80f2973eb33d472329438ba385313.png"
+            }
+          ]
+        },
+        {
+          "id": 5241,
+          "mark_name": "Infiniti",
+          "model_name": "G-Series",
+          "generation_name": "II",
+          "start_year": 1999,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5242,
+          "mark_name": "Infiniti",
+          "model_name": "G-Series",
+          "generation_name": "I",
+          "start_year": 1991,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/51/54/5154d2aadeadb8ac1a5b1b78ddf6bd33.png",
+          "images": [
+            {
+              "id": 444403,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444403/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444403/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/51/54/5154d2aadeadb8ac1a5b1b78ddf6bd33.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 866,
+      "name": "JX-Series",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 56,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5246,
+          "mark_name": "Infiniti",
+          "model_name": "JX-Series",
+          "generation_name": "2012 – 2014",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 867,
+      "name": "M-Series",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 250,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5247,
+          "mark_name": "Infiniti",
+          "model_name": "M-Series",
+          "generation_name": "IV",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/5a/835add2a1469a3149094a3a37c5b3523.png",
+          "images": [
+            {
+              "id": 444404,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444404/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444404/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/5a/835add2a1469a3149094a3a37c5b3523.png"
+            }
+          ]
+        },
+        {
+          "id": 5248,
+          "mark_name": "Infiniti",
+          "model_name": "M-Series",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/39/3a/393ae1a04c040211bf7245a713faaa1f.png",
+          "images": [
+            {
+              "id": 444405,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444405/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444405/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/39/3a/393ae1a04c040211bf7245a713faaa1f.png"
+            }
+          ]
+        },
+        {
+          "id": 5249,
+          "mark_name": "Infiniti",
+          "model_name": "M-Series",
+          "generation_name": "III",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/8f/ab8f009f1bd26a787b58eff8b5d1663d.png",
+          "images": [
+            {
+              "id": 444406,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444406/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444406/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ab/8f/ab8f009f1bd26a787b58eff8b5d1663d.png"
+            }
+          ]
+        },
+        {
+          "id": 5250,
+          "mark_name": "Infiniti",
+          "model_name": "M-Series",
+          "generation_name": "II",
+          "start_year": 2002,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6d/5f/6d5fda95ef6a9cea9d4d7133d251dcf6.png",
+          "images": [
+            {
+              "id": 444407,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444407/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444407/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6d/5f/6d5fda95ef6a9cea9d4d7133d251dcf6.png"
+            }
+          ]
+        },
+        {
+          "id": 5251,
+          "mark_name": "Infiniti",
+          "model_name": "M-Series",
+          "generation_name": "I",
+          "start_year": 1989,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ee/f3/eef352ad7a2c95c9430474f2f1bc242b.png",
+          "images": [
+            {
+              "id": 444408,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444408/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444408/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ee/f3/eef352ad7a2c95c9430474f2f1bc242b.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 869,
+      "name": "Q50",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 111,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1947,
+          "mark_name": "Infiniti",
+          "model_name": "Q50",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/61/d6/61d6650f94b2d34b911dd11308e586d5.png",
+          "images": [
+            {
+              "id": 442918,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442918/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442918/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/61/d6/61d6650f94b2d34b911dd11308e586d5.png"
+            }
+          ]
+        },
+        {
+          "id": 1948,
+          "mark_name": "Infiniti",
+          "model_name": "Q50",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/71/a0/71a0865bdb92256f04213af46b6e84f1.png",
+          "images": [
+            {
+              "id": 442919,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442919/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442919/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/71/a0/71a0865bdb92256f04213af46b6e84f1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 871,
+      "name": "QX-Series",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 70,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 873,
+      "name": "QX60",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 59,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1957,
+          "mark_name": "Infiniti",
+          "model_name": "QX60",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1958,
+          "mark_name": "Infiniti",
+          "model_name": "QX60",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 874,
+      "name": "QX70",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 62,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1959,
+          "mark_name": "Infiniti",
+          "model_name": "QX70",
+          "generation_name": "2013 – 2017",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 875,
+      "name": "QX80",
+      "mark_id": 80,
+      "sort_id": 1,
+      "rating": 58,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1960,
+          "mark_name": "Infiniti",
+          "model_name": "QX80",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1961,
+          "mark_name": "Infiniti",
+          "model_name": "QX80",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1962,
+          "mark_name": "Infiniti",
+          "model_name": "QX80",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20214,
+      "name": "I-Series",
+      "mark_id": 80,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5243,
+          "mark_name": "Infiniti",
+          "model_name": "I-Series",
+          "generation_name": "II",
+          "start_year": 2000,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5244,
+          "mark_name": "Infiniti",
+          "model_name": "I-Series",
+          "generation_name": "I",
+          "start_year": 1995,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 865,
+      "name": "J30",
+      "mark_id": 80,
+      "sort_id": 0,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5245,
+          "mark_name": "Infiniti",
+          "model_name": "J30",
+          "generation_name": "1992 – 1997",
+          "start_year": 1992,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19343,
+      "name": "Q30",
+      "mark_id": 80,
+      "sort_id": 0,
+      "rating": 21,
+      "is_seo_active": 0,
+      "rgs_code": "141022222",
+      "generations": [
+        {
+          "id": 1946,
+          "mark_name": "Infiniti",
+          "model_name": "Q30",
+          "generation_name": "2015 – 2019",
+          "start_year": 2015,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 868,
+      "name": "Q45",
+      "mark_id": 80,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 870,
+      "name": "Q60",
+      "mark_id": 80,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "141006645",
+      "generations": [
+        {
+          "id": 1949,
+          "mark_name": "Infiniti",
+          "model_name": "Q60",
+          "generation_name": "II",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/38/d4/38d4d48ac3d84fa05d8601e8a8fe6c44.png",
+          "images": [
+            {
+              "id": 442920,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442920/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442920/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/38/d4/38d4d48ac3d84fa05d8601e8a8fe6c44.png"
+            }
+          ]
+        },
+        {
+          "id": 1950,
+          "mark_name": "Infiniti",
+          "model_name": "Q60",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/6d/e36d1da7a8e9cc4a8b1db1861499752d.png",
+          "images": [
+            {
+              "id": 442921,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442921/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442921/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e3/6d/e36d1da7a8e9cc4a8b1db1861499752d.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2112,
+      "name": "Q70",
+      "mark_id": 80,
+      "sort_id": 0,
+      "rating": 36,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1951,
+          "mark_name": "Infiniti",
+          "model_name": "Q70",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/71/2a7168376ca32e0316afa4a68f07239a.png",
+          "images": [
+            {
+              "id": 442922,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442922/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442922/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2a/71/2a7168376ca32e0316afa4a68f07239a.png"
+            }
+          ]
+        },
+        {
+          "id": 1952,
+          "mark_name": "Infiniti",
+          "model_name": "Q70",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/c9/3cc93a4c668ef49cd897336a119e633a.png",
+          "images": [
+            {
+              "id": 442923,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442923/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442923/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3c/c9/3cc93a4c668ef49cd897336a119e633a.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19516,
+      "name": "QX30",
+      "mark_id": 80,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "141022223",
+      "generations": [
+        {
+          "id": 1953,
+          "mark_name": "Infiniti",
+          "model_name": "QX30",
+          "generation_name": "2015 – 2019",
+          "start_year": 2015,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 872,
+      "name": "QX50",
+      "mark_id": 80,
+      "sort_id": 0,
+      "rating": 41,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1954,
+          "mark_name": "Infiniti",
+          "model_name": "QX50",
+          "generation_name": "II",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1955,
+          "mark_name": "Infiniti",
+          "model_name": "QX50",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1956,
+          "mark_name": "Infiniti",
+          "model_name": "QX50",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 22409,
+      "name": "QX56",
+      "mark_id": 80,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

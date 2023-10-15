@@ -1,0 +1,36 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20700,
+      "name": "Megabusa",
+      "mark_id": 188,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1971,
+      "name": "Seight",
+      "mark_id": 188,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5031,
+          "mark_name": "Westfield",
+          "model_name": "Seight",
+          "generation_name": "1991 – 2010",
+          "start_year": 1991,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

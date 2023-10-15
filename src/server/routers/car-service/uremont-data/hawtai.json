@@ -1,0 +1,57 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20975,
+      "name": "A25",
+      "mark_id": 282,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20976,
+      "name": "B21",
+      "mark_id": 282,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1561,
+          "mark_name": "Hawtai",
+          "model_name": "B21",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2271,
+      "name": "Boliger",
+      "mark_id": 282,
+      "sort_id": 1,
+      "rating": 9,
+      "is_seo_active": 0,
+      "rgs_code": "845022004",
+      "generations": [
+        {
+          "id": 1562,
+          "mark_name": "Hawtai",
+          "model_name": "Boliger",
+          "generation_name": "2011 – 2020",
+          "start_year": 2011,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

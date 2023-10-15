@@ -1,0 +1,454 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20241,
+      "name": "240/340",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 914,
+      "name": "E-Type",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 10,
+      "is_seo_active": 0,
+      "rgs_code": "161006918",
+      "generations": [
+        {
+          "id": 2014,
+          "mark_name": "Jaguar",
+          "model_name": "E-Type",
+          "generation_name": "Series 3",
+          "start_year": 1971,
+          "finish_year": 1975,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2015,
+          "mark_name": "Jaguar",
+          "model_name": "E-Type",
+          "generation_name": "Series 2",
+          "start_year": 1968,
+          "finish_year": 1971,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2016,
+          "mark_name": "Jaguar",
+          "model_name": "E-Type",
+          "generation_name": "Series 1",
+          "start_year": 1961,
+          "finish_year": 1968,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19346,
+      "name": "F-Pace",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 13,
+      "is_seo_active": 0,
+      "rgs_code": "161022205",
+      "generations": [
+        {
+          "id": 2017,
+          "mark_name": "Jaguar",
+          "model_name": "F-Pace",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2018,
+          "mark_name": "Jaguar",
+          "model_name": "F-Pace",
+          "generation_name": "I",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 915,
+      "name": "F-Type",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "161021710",
+      "generations": [
+        {
+          "id": 2019,
+          "mark_name": "Jaguar",
+          "model_name": "F-Type",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2020,
+          "mark_name": "Jaguar",
+          "model_name": "F-Type",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2017,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2021,
+          "mark_name": "Jaguar",
+          "model_name": "F-Type",
+          "generation_name": "I",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 916,
+      "name": "S-Type",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 39,
+      "is_seo_active": 0,
+      "rgs_code": "161006933",
+      "generations": [
+        {
+          "id": 2022,
+          "mark_name": "Jaguar",
+          "model_name": "S-Type",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2023,
+          "mark_name": "Jaguar",
+          "model_name": "S-Type",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 917,
+      "name": "X-Type",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 142,
+      "is_seo_active": 0,
+      "rgs_code": "161006945",
+      "generations": [
+        {
+          "id": 2024,
+          "mark_name": "Jaguar",
+          "model_name": "X-Type",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2025,
+          "mark_name": "Jaguar",
+          "model_name": "X-Type",
+          "generation_name": "I",
+          "start_year": 2001,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2286,
+      "name": "XE",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 27,
+      "is_seo_active": 0,
+      "rgs_code": "161022098",
+      "generations": [
+        {
+          "id": 2026,
+          "mark_name": "Jaguar",
+          "model_name": "XE",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2027,
+          "mark_name": "Jaguar",
+          "model_name": "XE",
+          "generation_name": "I",
+          "start_year": 2015,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 918,
+      "name": "XF",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 227,
+      "is_seo_active": 0,
+      "rgs_code": "161020431",
+      "generations": [
+        {
+          "id": 2028,
+          "mark_name": "Jaguar",
+          "model_name": "XF",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2029,
+          "mark_name": "Jaguar",
+          "model_name": "XF",
+          "generation_name": "II",
+          "start_year": 2015,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2030,
+          "mark_name": "Jaguar",
+          "model_name": "XF",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2031,
+          "mark_name": "Jaguar",
+          "model_name": "XF",
+          "generation_name": "I",
+          "start_year": 2007,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 919,
+      "name": "XJ",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 50,
+      "is_seo_active": 0,
+      "rgs_code": "161006952",
+      "generations": [
+        {
+          "id": 2032,
+          "mark_name": "Jaguar",
+          "model_name": "XJ",
+          "generation_name": "IV (X351) Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2033,
+          "mark_name": "Jaguar",
+          "model_name": "XJ",
+          "generation_name": "IV (X351)",
+          "start_year": 2009,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2034,
+          "mark_name": "Jaguar",
+          "model_name": "XJ",
+          "generation_name": "III (X350/X358)",
+          "start_year": 2003,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2035,
+          "mark_name": "Jaguar",
+          "model_name": "XJ",
+          "generation_name": "II (X308)",
+          "start_year": 1997,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2036,
+          "mark_name": "Jaguar",
+          "model_name": "XJ",
+          "generation_name": "II (X300)",
+          "start_year": 1994,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2037,
+          "mark_name": "Jaguar",
+          "model_name": "XJ",
+          "generation_name": "II (XJ40)",
+          "start_year": 1986,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2038,
+          "mark_name": "Jaguar",
+          "model_name": "XJ",
+          "generation_name": "I (Series 3)",
+          "start_year": 1979,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2039,
+          "mark_name": "Jaguar",
+          "model_name": "XJ",
+          "generation_name": "I (Series 2)",
+          "start_year": 1973,
+          "finish_year": 1979,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2040,
+          "mark_name": "Jaguar",
+          "model_name": "XJ",
+          "generation_name": "I (Series 1)",
+          "start_year": 1968,
+          "finish_year": 1973,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 922,
+      "name": "XK",
+      "mark_id": 88,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20242,
+      "name": "420",
+      "mark_id": 88,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20243,
+      "name": "Mark",
+      "mark_id": 88,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "395020214",
+      "generations": []
+    },
+    {
+      "id": 20244,
+      "name": "SS",
+      "mark_id": 88,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 921,
+      "name": "XJS",
+      "mark_id": 88,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2041,
+          "mark_name": "Jaguar",
+          "model_name": "XJS",
+          "generation_name": "Series 3",
+          "start_year": 1991,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2042,
+          "mark_name": "Jaguar",
+          "model_name": "XJS",
+          "generation_name": "Series 2",
+          "start_year": 1981,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2043,
+          "mark_name": "Jaguar",
+          "model_name": "XJS",
+          "generation_name": "Series 1",
+          "start_year": 1975,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

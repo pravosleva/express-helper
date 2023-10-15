@@ -1,0 +1,45 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20800,
+      "name": "2110",
+      "mark_id": 3776,
+      "sort_id": 1,
+      "rating": 30,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20801,
+      "name": "2111",
+      "mark_id": 3776,
+      "sort_id": 1,
+      "rating": 9,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20802,
+      "name": "2310",
+      "mark_id": 3776,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "810021597",
+      "generations": []
+    },
+    {
+      "id": 20803,
+      "name": "2312",
+      "mark_id": 3776,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "810021971",
+      "generations": []
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 378,
+      "name": "V16T",
+      "mark_id": 38,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 885,
+          "mark_name": "Cizeta",
+          "model_name": "V16T",
+          "generation_name": "1991 – 1995",
+          "start_year": 1991,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1f/84/1f84ae5ee90ee0d710fea3035c427b4a.png",
+          "images": [
+            {
+              "id": 442469,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442469/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442469/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1f/84/1f84ae5ee90ee0d710fea3035c427b4a.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

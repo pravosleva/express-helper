@@ -1,0 +1,262 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20118,
+      "name": "2",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1545,
+          "mark_name": "Haima",
+          "model_name": "2",
+          "generation_name": "I",
+          "start_year": 2009,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 731,
+      "name": "3",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 67,
+      "is_seo_active": 0,
+      "rgs_code": "837022454",
+      "generations": [
+        {
+          "id": 1546,
+          "mark_name": "Haima",
+          "model_name": "3",
+          "generation_name": "2010 – 2013",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 732,
+      "name": "7",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "760021884",
+      "generations": [
+        {
+          "id": 1547,
+          "mark_name": "Haima",
+          "model_name": "7",
+          "generation_name": "2013 – 2016",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20119,
+      "name": "CX20",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "752022341",
+      "generations": []
+    },
+    {
+      "id": 20120,
+      "name": "Family",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "760021181",
+      "generations": [
+        {
+          "id": 1548,
+          "mark_name": "Haima",
+          "model_name": "Family",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1549,
+          "mark_name": "Haima",
+          "model_name": "Family",
+          "generation_name": "II",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1550,
+          "mark_name": "Haima",
+          "model_name": "Family",
+          "generation_name": "I",
+          "start_year": 2000,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20121,
+      "name": "Freema",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "760021182",
+      "generations": [
+        {
+          "id": 1551,
+          "mark_name": "Haima",
+          "model_name": "Freema",
+          "generation_name": "II",
+          "start_year": 2010,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1552,
+          "mark_name": "Haima",
+          "model_name": "Freema",
+          "generation_name": "I",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20122,
+      "name": "Fstar",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20123,
+      "name": "H2",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20124,
+      "name": "M11",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 733,
+      "name": "M3",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1553,
+          "mark_name": "Haima",
+          "model_name": "M3",
+          "generation_name": "2014 – 2017",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20125,
+      "name": "M6",
+      "mark_id": 73,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20126,
+      "name": "M8",
+      "mark_id": 73,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20127,
+      "name": "S3",
+      "mark_id": 73,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19279,
+      "name": "S5",
+      "mark_id": 73,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1554,
+          "mark_name": "Haima",
+          "model_name": "S5",
+          "generation_name": "2014 – 2017",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20128,
+      "name": "S7",
+      "mark_id": 73,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20612,
+      "name": "Beta",
+      "mark_id": 170,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20613,
+      "name": "T600",
+      "mark_id": 170,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4293,
+          "mark_name": "Tatra",
+          "model_name": "T600",
+          "generation_name": "1946 – 1952",
+          "start_year": 1946,
+          "finish_year": 1952,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20614,
+      "name": "T603",
+      "mark_id": 170,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4294,
+          "mark_name": "Tatra",
+          "model_name": "T603",
+          "generation_name": "II",
+          "start_year": 1968,
+          "finish_year": 1975,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4295,
+          "mark_name": "Tatra",
+          "model_name": "T603",
+          "generation_name": "I",
+          "start_year": 1956,
+          "finish_year": 1968,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1779,
+      "name": "T613",
+      "mark_id": 170,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4296,
+          "mark_name": "Tatra",
+          "model_name": "T613",
+          "generation_name": "1973 – 1996",
+          "start_year": 1973,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1780,
+      "name": "T700",
+      "mark_id": 170,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "860022481",
+      "generations": [
+        {
+          "id": 4297,
+          "mark_name": "Tatra",
+          "model_name": "T700",
+          "generation_name": "1996 – 1999",
+          "start_year": 1996,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20615,
+      "name": "T87",
+      "mark_id": 170,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

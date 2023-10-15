@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 478,
+      "name": "DMC-12",
+      "mark_id": 49,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "077003470",
+      "generations": [
+        {
+          "id": 1050,
+          "mark_name": "DeLorean",
+          "model_name": "DMC-12",
+          "generation_name": "1981 – 1982",
+          "start_year": 1981,
+          "finish_year": 1982,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

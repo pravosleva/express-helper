@@ -1,0 +1,67 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1982,
+      "name": "Admiral",
+      "mark_id": 193,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5035,
+          "mark_name": "ZX",
+          "model_name": "Admiral",
+          "generation_name": "2005 – 2009",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1983,
+      "name": "GrandTiger",
+      "mark_id": 193,
+      "sort_id": 1,
+      "rating": 8,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1984,
+      "name": "Landmark",
+      "mark_id": 193,
+      "sort_id": 1,
+      "rating": 13,
+      "is_seo_active": 0,
+      "rgs_code": "186020561",
+      "generations": [
+        {
+          "id": 5036,
+          "mark_name": "ZX",
+          "model_name": "Landmark",
+          "generation_name": "I (V5) Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5037,
+          "mark_name": "ZX",
+          "model_name": "Landmark",
+          "generation_name": "I",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

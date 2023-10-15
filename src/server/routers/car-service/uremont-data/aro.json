@@ -1,0 +1,64 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 56,
+      "name": "10",
+      "mark_id": 7,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "006000487",
+      "generations": [
+        {
+          "id": 149,
+          "mark_name": "Aro",
+          "model_name": "10",
+          "generation_name": "1984 – 2006",
+          "start_year": 1984,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e7/40/e740d89170b002ab83da076b81f30005.png",
+          "images": [
+            {
+              "id": 442086,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442086/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442086/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e7/40/e740d89170b002ab83da076b81f30005.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "name": "24",
+      "mark_id": 7,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "521017611",
+      "generations": [
+        {
+          "id": 150,
+          "mark_name": "Aro",
+          "model_name": "24",
+          "generation_name": "1972 – 2006",
+          "start_year": 1972,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19762,
+      "name": "Spartana",
+      "mark_id": 7,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "006000519",
+      "generations": []
+    }
+  ]
+}

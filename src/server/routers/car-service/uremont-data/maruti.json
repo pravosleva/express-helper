@@ -1,0 +1,215 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1088,
+      "name": "1000",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "226008044",
+      "generations": [
+        {
+          "id": 2470,
+          "mark_name": "Maruti",
+          "model_name": "1000",
+          "generation_name": "1990 – 2000",
+          "start_year": 1990,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1089,
+      "name": "800",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "344013305",
+      "generations": [
+        {
+          "id": 2471,
+          "mark_name": "Maruti",
+          "model_name": "800",
+          "generation_name": "1983 – 2012",
+          "start_year": 1983,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1090,
+      "name": "Alto",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "372014148",
+      "generations": [
+        {
+          "id": 2472,
+          "mark_name": "Maruti",
+          "model_name": "Alto",
+          "generation_name": "2000 – 2012",
+          "start_year": 2000,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1091,
+      "name": "Baleno",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "372014155",
+      "generations": [
+        {
+          "id": 2473,
+          "mark_name": "Maruti",
+          "model_name": "Baleno",
+          "generation_name": "1999 – 2007",
+          "start_year": 1999,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1092,
+      "name": "Esteem",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 11,
+      "is_seo_active": 0,
+      "rgs_code": "372021476",
+      "generations": [
+        {
+          "id": 2474,
+          "mark_name": "Maruti",
+          "model_name": "Esteem",
+          "generation_name": "1994 – 2007",
+          "start_year": 1994,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1093,
+      "name": "Gypsy",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "223007942",
+      "generations": [
+        {
+          "id": 2475,
+          "mark_name": "Maruti",
+          "model_name": "Gypsy",
+          "generation_name": "1983 – 2019",
+          "start_year": 1983,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1094,
+      "name": "Omni",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2476,
+          "mark_name": "Maruti",
+          "model_name": "Omni",
+          "generation_name": "1984 – 2019",
+          "start_year": 1984,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1095,
+      "name": "Versa",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "261020598",
+      "generations": [
+        {
+          "id": 2477,
+          "mark_name": "Maruti",
+          "model_name": "Versa",
+          "generation_name": "2001 – 2009",
+          "start_year": 2001,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1096,
+      "name": "Wagon R",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "372020165",
+      "generations": [
+        {
+          "id": 2478,
+          "mark_name": "Maruti",
+          "model_name": "Wagon R",
+          "generation_name": "1999 – н.в.",
+          "start_year": 1999,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1097,
+      "name": "Zen",
+      "mark_id": 110,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "223007958",
+      "generations": [
+        {
+          "id": 2479,
+          "mark_name": "Maruti",
+          "model_name": "Zen",
+          "generation_name": "1993 – 2006",
+          "start_year": 1993,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}
