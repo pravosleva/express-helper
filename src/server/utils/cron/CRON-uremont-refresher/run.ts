@@ -115,7 +115,7 @@ const baseFn = async () => {
             chat_id: 432590698, // NOTE: Den Pol
             ts: new Date().getTime(),
             eventCode: 'aux_service',
-            about: `\`/express-helper\`\n✅ Uremont models sync (${max}) is ok!\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
+            about: `\`/express-helper\`\n✅ Uremont models sync (${state.success.value} of ${max}) is ok!\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
             targetMD: `\`\`\`\n${JSON.stringify(
               state,
               null,
