@@ -84,6 +84,8 @@ server-dist/*
 # files
 storage/*
 !storage/.gitkeep
+!storage/uploads/.gitkeep
+!storage/uremont-data/.gitkeep
 backup/*
 
 # access

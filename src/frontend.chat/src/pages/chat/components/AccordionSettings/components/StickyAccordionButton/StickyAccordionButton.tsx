@@ -25,6 +25,7 @@ export const StickyAccordionButton = memo(({ children }: TProps) => {
         top: '0px',
         // backgroundColor: bgColor,
         zIndex: 1,
+        fontWeight: 'bold',
       }}
       className='backdrop-blur--transparent'
     >

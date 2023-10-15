@@ -16,15 +16,6 @@ import {
   MenuList,
   MenuItem,
   Textarea,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
-  // FormLabel,
-  FormControl,
-  ModalFooter,
   MenuOptionGroup,
   // MenuItemOption,
   MenuDivider,
@@ -1798,7 +1789,7 @@ export const Chat = () => {
             ),
             accordionButtonContent: (
               <Flex alignItems="center">
-                <Text fontWeight="400" fontSize="md" letterSpacing="0">
+                <Text letterSpacing="0">
                   My Rooms
                 </Text>
                 {hasNews && <Box ml={2} h={2} w={2} borderRadius="100px" bg='green.300'></Box>}
@@ -2625,7 +2616,6 @@ export const Chat = () => {
               </Flex>
             ) : (
               <Flex p={4} ref={inViewRef2} skip={inView || showLoadMoreBtn} alignItems="center" justifyContent='center' width='100%' opacity=".35">
-                <Box mr="2">---</Box>
                 {/* !!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" /> */}
                 <Text fontWeight="400">
                   {!!tsPoint
@@ -2633,7 +2623,6 @@ export const Chat = () => {
                     : 'Больше ничего нет'
                   }
                 </Text>
-                <Box ml="2">---</Box>
               </Flex>
             )}
             {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, _i, _arr) => {
@@ -2945,13 +2934,13 @@ export const Chat = () => {
           </Widget>
         )
       */}
-      {
+      {/*
         upToLg && (
           <Widget position='top-left'>
             <TasklistContent data={tasklist} />
           </Widget>
         )
-      }
+      */}
       {
         upToSm && (
           <FixedBottomSheet

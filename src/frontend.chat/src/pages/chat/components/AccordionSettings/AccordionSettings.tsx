@@ -261,7 +261,7 @@ export const AccordionSettings = memo(({
                 <StickyAccordionButton>
                   <Box flex='1' textAlign='left'>
                     <Flex alignItems="center">
-                      <Text fontWeight="400" fontSize="md" letterSpacing="0">
+                      <Text letterSpacing="0">
                         Assignment filters
                       </Text>
                       {hasEnabledFilters && <Box ml={2} h={2} w={2} borderRadius="100px" bg='blue.300'></Box>}
@@ -344,7 +344,7 @@ export const AccordionSettings = memo(({
                 <StickyAccordionButton>
                   <Box flex='1' textAlign='left'>
                     <Flex alignItems="center">
-                      <Text fontWeight="400" fontSize="md" letterSpacing="0">
+                      <Text letterSpacing="0">
                         Sprint
                       </Text>
                       {

@@ -1,8 +1,10 @@
 import { Request as IRequest, Response as IResponse } from 'express'
 import { getStaticJSONSync } from '~/utils/fs-tools/getStaticJSONSync'
 import path from 'path'
+import slugify from 'slugify'
 
-const uremontSamplesDir = path.join(__dirname, './')
+// const uremontSamplesDir = path.join(__dirname, './')
+const uremontSamplesDir = path.join(__dirname, '../../../storage')
 const storageUremontSamplesFilePath = path.join(uremontSamplesDir, '/uremont-data')
 
 const modelsMap = new Map()
@@ -38,7 +40,7 @@ export const getModels = async (req: IRequest & { autopark2022StorageFilePath: s
       ok: false,
       _originalQuery: req.query,
     }
-    const modifiedVendorKey = vendor.toLocaleLowerCase()
+    const modifiedVendorKey = slugify(vendor.toLowerCase())
     if (!modelsMap.has(modifiedVendorKey)) {
       // - NOTE: Try to read
       const vendorData = getStaticJSONSync(path.join(storageUremontSamplesFilePath, `/${modifiedVendorKey}.json`))
