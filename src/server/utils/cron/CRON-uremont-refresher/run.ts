@@ -49,7 +49,16 @@ const state: TState = {
   },
 }
 
+const cleanupState = () => {
+  state.error.responses = []
+  state.error.value = 0
+
+  state.success.value = 0
+}
+
 const baseFn = async () => {
+  cleanupState()
+
   state.ts.start = new Date().getTime()
   const markListRes = await axios.post('https://api-frontend.uservice.io/car/mark/get-list/',  {
     type_id: 1,
@@ -106,7 +115,7 @@ const baseFn = async () => {
             chat_id: 432590698, // NOTE: Den Pol
             ts: new Date().getTime(),
             eventCode: 'aux_service',
-            about: `\`/express-helper\`\n✅ Uremont models sync (${max}) is ok!\n${timeDiff.details} (${getTimeAgo(state.ts.end)})`,
+            about: `\`/express-helper\`\n✅ Uremont models sync (${max}) is ok!\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
             targetMD: `\`\`\`\n${JSON.stringify(
               state,
               null,
@@ -132,7 +141,7 @@ const baseFn = async () => {
         chat_id: 432590698, // NOTE: Den Pol
         ts: new Date().getTime(),
         eventCode: 'aux_service',
-        about: `\`/express-helper\`\n⛔ Uremont models sync errored...\n${timeDiff.details} (${getTimeAgo(state.ts.end)})`,
+        about: `\`/express-helper\`\n⛔ Uremont models sync errored...\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
         targetMD: `\`\`\`\n${JSON.stringify(
           state,
           null,
@@ -147,7 +156,7 @@ const baseFn = async () => {
             chat_id: 432590698, // NOTE: Den Pol
             ts: new Date().getTime(),
             eventCode: 'aux_service',
-            about: `\`/express-helper\`\n⛔ Uremont models sync errored + Report ERR\n${timeDiff.details} (${getTimeAgo(state.ts.end)})`,
+            about: `\`/express-helper\`\n⛔ Uremont models sync errored + Report ERR\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
             targetMD: err.message || 'No err.message',
           })
       })
@@ -155,7 +164,7 @@ const baseFn = async () => {
 }
 
 cron.schedule(
-  isDev ? '01 45 04 * * *' : '01 59 08 * * Mon', // Every Mon at 08:59:01
+  isDev ? '01 45 04 * * *' : '01 05 09 * * Mon', // Every Mon at 09:05:01
   baseFn,
   {
     scheduled: true,
