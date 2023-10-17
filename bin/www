@@ -55,7 +55,13 @@ const server = http.createServer(app)
 /**
  * Chat.
  */
-require('~/utils/socket/withSocketChat').withSocketChat(require('socket.io')(server))
+require('~/utils/socket/withSocketChat').withSocketChat(
+  require('socket.io')(server, {
+    cors: {
+      origin: 'https://pravosleva.pro',
+    },
+  })
+)
 // require('~/utils/socket/withSocketChat').withSocketChat(require('socket.io')(httpsServer))
 
 /**
