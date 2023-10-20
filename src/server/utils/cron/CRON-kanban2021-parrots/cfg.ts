@@ -112,7 +112,7 @@ export const cfg: TCfg = [
     cronSetting: '5 0 21 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 21:00:05
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
-    targetHashtags: ['#ssr'],
+    targetHashtags: ['#ssr', '#eveningDailyReminder'],
     targetStatuses: [EMessageStatus.Danger],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
