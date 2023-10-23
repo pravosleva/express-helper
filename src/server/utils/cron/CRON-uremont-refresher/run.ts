@@ -115,7 +115,7 @@ const baseFn = async () => {
             chat_id: 432590698, // NOTE: Den Pol
             ts: new Date().getTime(),
             eventCode: 'aux_service',
-            about: `\`/express-helper\`\n✅ Uremont models sync (${state.success.value} of ${max}) is ok!\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
+            about: `\`/express-helper\`\n✅ #uremont models sync (${state.success.value} of ${max}) is ok!\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
             targetMD: `\`\`\`\n${JSON.stringify(
               state,
               null,
@@ -141,7 +141,7 @@ const baseFn = async () => {
         chat_id: 432590698, // NOTE: Den Pol
         ts: new Date().getTime(),
         eventCode: 'aux_service',
-        about: `\`/express-helper\`\n⛔ Uremont models sync errored...\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
+        about: `\`/express-helper\`\n⛔ #uremont models sync errored...\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
         targetMD: `\`\`\`\n${JSON.stringify(
           state,
           null,
@@ -156,7 +156,7 @@ const baseFn = async () => {
             chat_id: 432590698, // NOTE: Den Pol
             ts: new Date().getTime(),
             eventCode: 'aux_service',
-            about: `\`/express-helper\`\n⛔ Uremont models sync errored + Report ERR\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
+            about: `\`/express-helper\`\n⛔ #uremont models sync errored + Report ERR\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
             targetMD: err.message || 'No err.message',
           })
       })
