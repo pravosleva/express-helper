@@ -38,6 +38,9 @@ export const cfg: TCfg = [
 
       if (!uncheckTs || !fixedDiff) return false
 
+      const isFirstLoopRunning = !(!!checkTs && !!uncheckTs)
+      if (!isCompleted && isFirstLoopRunning) return false
+
       // const targetDate = new Date(task.uncheckTs + task.fixedDiff)
       const timeEnd = checkTs + (checkTs - uncheckTs)
       const diff = getTimeDiff({
@@ -124,7 +127,10 @@ export const cfg: TCfg = [
     isEnabled: true,
     cronSetting: '30 1 10 * * *', // Every day at 10:01:30
     validateBeforeRequest: ({ tasks }) => tasks.length > 0,
-    _specialMsgValidator: (task) => !task.isCompleted,
+    _specialMsgValidator: (task) => {
+      const isFirstLoopRunning = !(!!task.checkTs && !!task.uncheckTs)
+      return !task.isCompleted && !isFirstLoopRunning
+    },
     targetRooms: ['magaz'],
     targetHashtags: [],
     ignoredHashTags: ['#кот'],
@@ -176,7 +182,10 @@ export const cfg: TCfg = [
     isEnabled: true,
     cronSetting: '01 05 09 * * *', // Every day at 09:05:01
     validateBeforeRequest: ({ tasks }) => tasks.length > 0,
-    _specialMsgValidator: (task) => !task.isCompleted,
+    _specialMsgValidator: (task) => {
+      const isFirstLoopRunning = !(!!task.checkTs && !!task.uncheckTs)
+      return !task.isCompleted && !isFirstLoopRunning
+    },
     targetRooms: ['magaz'],
     targetHashtags: ['#кот'],
     req: {
@@ -238,6 +247,9 @@ export const cfg: TCfg = [
       } = task
 
       if (!uncheckTs || !fixedDiff) return false
+
+      const isFirstLoopRunning = !(!!checkTs && !!uncheckTs)
+      if (!isCompleted && isFirstLoopRunning) return false
 
       // const targetDate = new Date(task.uncheckTs + task.fixedDiff)
       const timeEnd = checkTs + (checkTs - uncheckTs)
