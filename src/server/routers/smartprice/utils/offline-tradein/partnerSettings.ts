@@ -58,11 +58,15 @@ const cfg: {
   },
   mtsmain2023: {
     // Required in Frontend
-    t_offline_buyout_sms: false,
+    // t_offline_buyout_sms: false,
     partner_is_sberlike: false,
     t_require_iin: false,
     // Required in Backend only
     // NOTE: Как настроен mtsmain (их там нет, wtf?): https://t.me/c/1482327140/17118
+  },
+  tstSample: {
+    enabled: true,
+    disabled: false,
   },
 }
 
@@ -104,35 +108,40 @@ export class Singleton {
   }
   getJSONDiffs({ obj1, obj2 }) {
     const result = {}
-    if (Object.is(obj1, obj2)) {
-      return undefined
-    }
-    if (!obj2 || typeof obj2 !== 'object') {
-      return obj2
-    }
+    if (Object.is(obj1, obj2)) return undefined
+
+    if (!obj2 || typeof obj2 !== 'object') return obj2
+
     Object.keys(obj1 || {})
       .concat(Object.keys(obj2 || {}))
       .forEach((key) => {
-        if (Array.isArray(obj1[key]) || Array.isArray(obj2[key])) {
-          if (!Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
-            result[key] = obj2[key]
-            return
-          } else if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
-            const arr = obj2[key].reduce((acc, item) => {
-              if (!obj1[key].includes(item)) acc.push(item)
-              return acc
-            }, [])
-            if (arr.length > 0) result[key] = arr
-            return
-          }
-        }
-        if (obj2[key] !== obj1[key] && !Object.is(obj1[key], obj2[key])) {
-          result[key] = obj2[key]
-          return
-        }
-        if (typeof obj2[key] === 'object' && typeof obj1[key] === 'object') {
-          const value = this.getJSONDiffs({ obj1: obj1[key], obj2: obj2[key] })
-          if (!!value) result[key] = value
+        switch (true) {
+          // NOTE: 
+          case Array.isArray(obj1[key]) || Array.isArray(obj2[key]):
+            if (!Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
+              result[key] = obj2[key]
+              return
+            } else if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
+              const arr = obj2[key].reduce((acc, item) => {
+                if (!obj1[key].includes(item)) acc.push(item)
+                return acc
+              }, [])
+              if (arr.length > 0) result[key] = arr
+              return
+            } else {
+              // TODO:
+            }
+            break
+          case obj2[key] !== obj1[key] && !Object.is(obj1[key], obj2[key]):
+            result[key] = obj2[key] || `⚡ ${String(obj2[key])} (${typeof obj2[key]})`
+            // return
+            break
+          case typeof obj2[key] === 'object' && typeof obj1[key] === 'object':
+            const value = this.getJSONDiffs({ obj1: obj1[key], obj2: obj2[key] })
+            if (!!value) result[key] = value || `⚡ ${String(obj2[key])} (${typeof obj2[key]}) #2`
+            break
+          default:
+            break
         }
       })
     return result
