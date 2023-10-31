@@ -132,8 +132,11 @@ export class Singleton {
               // TODO:
             }
             break
+          case typeof obj1[key] === 'undefined':
+            // NOTE: Nothing?
+            break
           case obj2[key] !== obj1[key] && !Object.is(obj1[key], obj2[key]):
-            result[key] = obj2[key] || `⚡ ${String(obj2[key])} (${typeof obj2[key]})`
+            result[key] = obj2[key] || (typeof obj2[key] !== 'boolean' ? `⚡ ${String(obj2[key])} (${typeof obj2[key]})` : obj2[key])
             // return
             break
           case typeof obj2[key] === 'object' && typeof obj1[key] === 'object':

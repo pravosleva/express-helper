@@ -2,7 +2,7 @@
 import { partnerSettings } from '../../../server/routers/smartprice/utils/offline-tradein/partnerSettings.ts'
 
 describe('partnerSettings', () => {
-  test('case OK', () => {
+  test('tst case OK', () => {
     const tested = {
       x: 1,
     }
@@ -13,7 +13,7 @@ describe('partnerSettings', () => {
     expect(tested).toEqual(expected)
   })
 
-  test('Unknown case (is valid by default)', () => {
+  test('OK (!exists): Unknown case (is valid by default)', () => {
     const testedSettings = {
       // t_offline_buyout_sms: true,
       partner_is_sberlike: false,
@@ -29,7 +29,47 @@ describe('partnerSettings', () => {
     expect(testedAnalysis).toEqual(expectedAnalysis)
   })
 
-  test('getAnalysis OK', () => {
+  test('OK (exists): Add unnecessary prop:false', () => {
+    const testedSettings = {
+      _unnecessary: false,
+      partner_is_sberlike: false,
+      t_require_iin: false,
+    }
+    const testedAnalysis = partnerSettings.getAnalysis({ namespace: 'mtsmain2023', testedSettings })
+    const expectedAnalysis = {
+      expected: {
+        partner_is_sberlike: false,
+        t_require_iin: false,
+      },
+      message: 'Есть с чем сравнить переданный объект',
+      namespace: 'mtsmain2023',
+      ok: true,
+    }
+
+    expect(testedAnalysis).toEqual(expectedAnalysis)
+  })
+
+  test('OK (exists): Add unnecessary prop:true', () => {
+    const testedSettings = {
+      _unnecessary: true,
+      partner_is_sberlike: false,
+      t_require_iin: false,
+    }
+    const testedAnalysis = partnerSettings.getAnalysis({ namespace: 'mtsmain2023', testedSettings })
+    const expectedAnalysis = {
+      expected: {
+        partner_is_sberlike: false,
+        t_require_iin: false,
+      },
+      message: 'Есть с чем сравнить переданный объект',
+      namespace: 'mtsmain2023',
+      ok: true,
+    }
+
+    expect(testedAnalysis).toEqual(expectedAnalysis)
+  })
+
+  test('OK (exists): getAnalysis #1', () => {
     const testedSettings = {
       // t_offline_buyout_sms: true,
       partner_is_sberlike: false,
@@ -49,7 +89,7 @@ describe('partnerSettings', () => {
     expect(testedAnalysis).toEqual(expectedAnalysis)
   })
 
-  test('getAnalysis NOT OK 2', () => {
+  test('!OK (exists): getAnalysis #2', () => {
     const testedSettings = {
       // t_offline_buyout_sms: true,
       partner_is_sberlike: true,
@@ -72,7 +112,7 @@ describe('partnerSettings', () => {
     expect(testedAnalysis).toEqual(expectedAnalysis)
   })
 
-  test('getAnalysis NOT OK (no prop false)', () => {
+  test('!OK (exists): getAnalysis #3 (no prop:false)', () => {
     const testedSettings = {
       // t_offline_buyout_sms: false,
       // partner_is_sberlike: false,
@@ -95,7 +135,7 @@ describe('partnerSettings', () => {
     expect(testedAnalysis).toEqual(expectedAnalysis)
   })
 
-  test('getAnalysis NOT OK (no prop true)', () => {
+  test('!OK (exists): getAnalysis #3 (no prop:true)', () => {
     const testedSettings = {
       disabled: false,
     }
