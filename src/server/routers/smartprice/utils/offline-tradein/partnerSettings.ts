@@ -159,7 +159,7 @@ export class Singleton {
       result.message = 'Есть с чем сравнить переданный объект'
       result.expected = targetState
 
-      const diffObj = this.getJSONDiffs2({
+      const diffObj = this.getJSONDiffs({
         obj1: targetState,
         obj2: testedSettings,
       })
