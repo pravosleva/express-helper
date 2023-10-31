@@ -3,6 +3,7 @@ import { Response as IResponse, NextFunction as INextFunction } from 'express'
 import { google } from 'googleapis'
 import { TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 import { getTimeDiff, getZero } from '~/utils/getTimeDiff'
+import { getNumsReplacedToPlainText } from '~/utils/string-ops/getNumsReplacedToPlainText'
 
 export const rules = {
   params: {
@@ -66,11 +67,12 @@ const getRowsByTradeinId = ({ tradeinId, gRes }: { tradeinId: number, gRes: any 
 }
 type TMsg = {
   header: string;
-  body: string;
+  // body: string;
   details?: string;
+  footer: string;
 }
 const getRowDetails = ({ row }): string => {
-  let result = ''
+  const msgs: string[] = []
   try {
     const eventCode = row[2]
     switch (true) {
@@ -80,11 +82,12 @@ const getRowDetails = ({ row }): string => {
         switch (true) {
           case !!row[4] && !!row[8] && row[4] === row[8]:
             // NOTE: Загружено последнее фото
-            result = `✅ (${row[4]} of ${row[8]}) ${photoType}: Количество загруженных фото соответствует требуемому на загруженной странице`
+            msgs.push(`\t• ${photoType} (${row[4]} of ${row[8]})`)
+            msgs.push('\t• ✅ Количество загруженных фото соответствует требуемому на загруженной странице')
             break
           case !!row[4] && !!row[8] && row[4] !== row[8]:
             // NOTE: Не последнее
-            result = `✅ (${row[4]} of ${row[8]}) ${photoType}`
+            msgs.push(`\t• ${photoType} (${row[4]} of ${row[8]})`)
             break
           default:
             break
@@ -98,7 +101,7 @@ const getRowDetails = ({ row }): string => {
     console.log('- ERR: getAddSymbol')
     console.log(err)
   }
-  return result
+  return msgs.join('\n')
 }
 
 const getMarkdown = ({ rows }): string => {
@@ -129,13 +132,16 @@ const getMarkdown = ({ rows }): string => {
     mainPage: [
       'accept_ok',
       'accept_err',
+      'bought_device_err',
+      'bought_device_ok',
+      'mtsmain2023_personal',
+      'mtsmain2023_upload_waiting_modal',
+      'mtsmain2023_verified_ok',
       'status_bad_quality',
-      'status_ok',
       'status_fake',
       'status_not_checked_started',
       'status_null',
-      'bought_device_err',
-      'bought_device_ok',
+      'status_ok',
     ],
   }
   const _fixReload = ({ row }): void => {
@@ -161,14 +167,14 @@ const getMarkdown = ({ rows }): string => {
   for (let i = 0, max = rows.length; i < max; i++) {
     const row = rows[i]
     const msg: TMsg = {
-      header: 'h',
-      body: 'b',
+      header: 'h:init:1',
+      footer: 'f:init:1',
     }
 
     switch (i) {
       case 0: {
-        msg.header = `${getZero(i + 1)}. ${row[2]}`
-        msg.body = 'Начало анализа'
+        msg.header = `${getNumsReplacedToPlainText(getZero(i + 1))} ${row[2]}`
+        msg.footer = 'Начало анализа'
 
         const details = getRowDetails({ row })
         if (!!details) msg.details = details
@@ -179,8 +185,8 @@ const getMarkdown = ({ rows }): string => {
       default: {
         const date = new Date(row[0])
         const timeDiff = getTimeDiff({ startDate: prevTimeDate, finishDate: date })
-        msg.header = `${getZero(i + 1)}. ${row[2]}`
-        msg.body = timeDiff.message
+        msg.header = `${getNumsReplacedToPlainText(getZero(i + 1))} ${row[2]}`
+        msg.footer = timeDiff.message
 
         const details = getRowDetails({ row })
         if (!!details) msg.details = details
@@ -199,8 +205,8 @@ const getMarkdown = ({ rows }): string => {
     for (let i = 0, max = msgs.length; i < max; i++) {
       const originalMsg = msgs[i]
       const msg: TMsg = {
-        header: 'h',
-        body: 'b',
+        header: 'h:init:2',
+        footer: '',
       }
 
       switch (true) {
@@ -208,14 +214,14 @@ const getMarkdown = ({ rows }): string => {
           const nextMsg = msgs[i + 1]
           
           msg.header = originalMsg.header
-          msg.body = `-> ${nextMsg.body}`
+          msg.footer = `\t• Клиент ждет ${nextMsg.footer}`
           if (!!originalMsg.details) msg.details = originalMsg.details
           break
         }
         default:
           // LAST
           msg.header = originalMsg.header
-          msg.body = '' // `-> Конец анализа`
+          // msg.footer = '-> Конец анализа'
           if (!!originalMsg.details) msg.details = originalMsg.details
           break
       }
@@ -224,7 +230,7 @@ const getMarkdown = ({ rows }): string => {
     }
   } else finalFormattedMsgs = [...msgs]
 
-  return `${finalFormattedMsgs.map(({ header, body, details }) => `\`${header}${!!body ? ` ${body}` : ''}\`${!!details ? `\n\t${details}` : ''}`).join('\n')}\n\nРезультат:\n\t- Общее время: \`${totalTtimeDiff.message}\`${!!clientData.uploadPage.keys.size ? `\n\t- UI загрузки фото: загружена ${clientData.uploadPage.keys.size} раз` : ''}${!!clientData.mainPage.keys.size ? `\n\t- Основной UI: загружена ${clientData.mainPage.keys.size} раз` : ''}`
+  return `${finalFormattedMsgs.map(({ header, footer, details }) => `\`${header}\`${!!details ? `\n${details}` : ''}${!!footer ? `\n${footer}` : ''}`).join('\n')}\n\nРезультат:\n\t- Общее время: \`${totalTtimeDiff.message}\`${!!clientData.uploadPage.keys.size ? `\n\t- UI загрузки фото: загружена ${clientData.uploadPage.keys.size} раз` : ''}${!!clientData.mainPage.keys.size ? `\n\t- Основной UI: загружена ${clientData.mainPage.keys.size} раз` : ''}`
 }
 
 export const getAnalysis = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
