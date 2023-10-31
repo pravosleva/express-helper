@@ -116,7 +116,7 @@ const baseFn = async () => {
             ts: new Date().getTime(),
             eventCode: 'aux_service',
             about: `\`/express-helper\`\n✅ #uremont models sync (${state.success.value} of ${max}) is ok!\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
-            targetMD: `\`\`\`\n${JSON.stringify(
+            targetMD: `\`\`\`json\n${JSON.stringify(
               state,
               null,
               2
@@ -142,7 +142,7 @@ const baseFn = async () => {
         ts: new Date().getTime(),
         eventCode: 'aux_service',
         about: `\`/express-helper\`\n⛔ #uremont models sync errored...\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
-        targetMD: `\`\`\`\n${JSON.stringify(
+        targetMD: `\`\`\`json\n${JSON.stringify(
           state,
           null,
           2
