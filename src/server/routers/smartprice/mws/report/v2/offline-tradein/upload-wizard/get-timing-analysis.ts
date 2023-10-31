@@ -4,6 +4,7 @@ import { google } from 'googleapis'
 import { TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 import { getTimeDiff, getZero } from '~/utils/getTimeDiff'
 import { getNumsReplacedToPlainText } from '~/utils/string-ops/getNumsReplacedToPlainText'
+import plural from 'plural-ru'
 
 export const rules = {
   params: {
@@ -82,12 +83,12 @@ const getRowDetails = ({ row }): string => {
         switch (true) {
           case !!row[4] && !!row[8] && row[4] === row[8]:
             // NOTE: Загружено последнее фото
-            msgs.push(`\t• ${photoType} (${row[4]} of ${row[8]})`)
+            msgs.push(`\t• \`${photoType}\` (${row[4]} of ${row[8]})`)
             msgs.push('\t• ✅ Количество загруженных фото соответствует требуемому на загруженной странице')
             break
           case !!row[4] && !!row[8] && row[4] !== row[8]:
             // NOTE: Не последнее
-            msgs.push(`\t• ${photoType} (${row[4]} of ${row[8]})`)
+            msgs.push(`\t• \`${photoType}\` (${row[4]} of ${row[8]})`)
             break
           default:
             break
@@ -230,7 +231,7 @@ const getMarkdown = ({ rows }): string => {
     }
   } else finalFormattedMsgs = [...msgs]
 
-  return `${finalFormattedMsgs.map(({ header, footer, details }) => `\`${header}\`${!!details ? `\n${details}` : ''}${!!footer ? `\n${footer}` : ''}`).join('\n')}\n\nРезультат:\n\t- Общее время: \`${totalTtimeDiff.message}\`${!!clientData.uploadPage.keys.size ? `\n\t- UI загрузки фото: загружена ${clientData.uploadPage.keys.size} раз` : ''}${!!clientData.mainPage.keys.size ? `\n\t- Основной UI: загружена ${clientData.mainPage.keys.size} раз` : ''}`
+  return `${finalFormattedMsgs.map(({ header, footer, details }) => `\`${header}\`${!!details ? `\n${details}` : ''}${!!footer ? `\n${footer}` : ''}`).join('\n')}\n\nРезультат:\n\t• Общее время: \`${totalTtimeDiff.message}\`${!!clientData.uploadPage.keys.size ? `\n\t• UI загрузки фото: загружена ${plural(clientData.uploadPage.keys.size, '%d раз', '%d раза', '%d раз')}` : ''}${!!clientData.mainPage.keys.size ? `\n\t• Основной UI: загружена ${plural(clientData.mainPage.keys.size, '%d раз', '%d раза', '%d раз')}` : ''}`
 }
 
 export const getAnalysis = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
