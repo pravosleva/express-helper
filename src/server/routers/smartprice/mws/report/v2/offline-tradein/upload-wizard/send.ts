@@ -95,7 +95,13 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     })
   }
 
-  const result: any = {
+  const result: {
+    id: number;
+    ok: boolean;
+    message?: string;
+    gRes?: any;
+  } = {
+    id: 0,
     ok: true,
   }
   if (!!gRes) {
@@ -111,8 +117,11 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
       result.id = lastRow
     } catch (err) {
       result.message = err.message || 'Не удалось распарсить до id'
-      result.id = counter.next().value
+      result.id = counter.next().value || new Date().getTime()
     }
+  } else {
+    result.id = counter.next().value || new Date().getTime()
+    result.message = '!gRes #wtf0'
   }
 
   req.smartprice.report = {
