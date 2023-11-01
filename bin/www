@@ -130,7 +130,7 @@ function onListening() {
       chat_id: 432590698, // NOTE: Den Pol
       ts: new Date().getTime(),
       eventCode: 'aux_service',
-      about: `\`/express-helper\`\n🚀 Started on TCP ${PORT}...`,
+      about: `\`/express-helper\`\n🚀 Started on TCP ${PORT}`,
       targetMD: `\`\`\`json\n${JSON.stringify(
         {
           NODE_ENV: process.env.NODE_ENV,

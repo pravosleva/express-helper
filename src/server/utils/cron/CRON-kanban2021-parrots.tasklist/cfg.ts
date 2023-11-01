@@ -38,7 +38,7 @@ export const cfg: TCfg = [
 
       if (!uncheckTs || !fixedDiff) return false
 
-      const isFirstLoopRunning = !(!!checkTs && !!uncheckTs)
+      const isFirstLoopRunning = isLooped && !(!!checkTs && !!uncheckTs)
       if (!isCompleted && isFirstLoopRunning) return false
 
       // const targetDate = new Date(task.uncheckTs + task.fixedDiff)
@@ -128,8 +128,9 @@ export const cfg: TCfg = [
     cronSetting: '30 1 10 * * *', // Every day at 10:01:30
     validateBeforeRequest: ({ tasks }) => tasks.length > 0,
     _specialMsgValidator: (task) => {
-      const isFirstLoopRunning = !(!!task.checkTs && !!task.uncheckTs)
-      return !task.isCompleted && !isFirstLoopRunning
+      const { isLooped, checkTs, uncheckTs, isCompleted } = task
+      const isFirstLoopRunning = isLooped && !(!!checkTs && !!uncheckTs)
+      return !isCompleted && !isFirstLoopRunning
     },
     targetRooms: ['magaz'],
     targetHashtags: [],
@@ -183,8 +184,9 @@ export const cfg: TCfg = [
     cronSetting: '01 05 09 * * *', // Every day at 09:05:01
     validateBeforeRequest: ({ tasks }) => tasks.length > 0,
     _specialMsgValidator: (task) => {
-      const isFirstLoopRunning = !(!!task.checkTs && !!task.uncheckTs)
-      return !task.isCompleted && !isFirstLoopRunning
+      const { isLooped, checkTs, uncheckTs, isCompleted } = task
+      const isFirstLoopRunning = isLooped && !(!!checkTs && !!uncheckTs)
+      return !isCompleted && !isFirstLoopRunning
     },
     targetRooms: ['magaz'],
     targetHashtags: ['#кот'],
@@ -248,7 +250,7 @@ export const cfg: TCfg = [
 
       if (!uncheckTs || !fixedDiff) return false
 
-      const isFirstLoopRunning = !(!!checkTs && !!uncheckTs)
+      const isFirstLoopRunning = isLooped && !(!!checkTs && !!uncheckTs)
       if (!isCompleted && isFirstLoopRunning) return false
 
       // const targetDate = new Date(task.uncheckTs + task.fixedDiff)

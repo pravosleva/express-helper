@@ -28,7 +28,7 @@ import { moveFile } from '~/utils/fs-tools/moveFile'
 require('~/utils/cron/CRON-backup-runner')
 require('~/utils/cron/CRON-kanban2021-parrots')
 require('~/utils/cron/CRON-kanban2021-parrots.tasklist')
-require('~/utils/cron/CRON-kanban2021-single/run')
+require('~/utils/cron/CRON-kanban2021-parrots.single/run')
 require('~/utils/cron/CRON-uremont-refresher/run')
 // ---
 
