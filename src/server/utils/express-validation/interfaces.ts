@@ -13,22 +13,22 @@ export type THelp = {
   params: {
     body?: {
       [key: string]: {
-        type: string
-        descr: string
-        required: boolean
+        type: string;
+        descr: string;
+        required: boolean;
         validate: (val: any) => TValidationResult;
       }
     }
     query?: {
       [key: string]: {
-        type: string
-        descr: string
-        required: boolean
+        type: string;
+        descr: string;
+        required: boolean;
         validate: (val: any) => TValidationResult;
       }
     }
   }
   res?: {
-    [key: string]: any
+    [key: string]: any;
   }
 }

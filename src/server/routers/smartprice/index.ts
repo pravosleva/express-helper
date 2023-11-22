@@ -55,7 +55,7 @@ import { EAccessCode, redirect } from '../auth/cfg'
 import redirectIfUnloggedMw from '../auth/mws/redirect-if-unlogged'
 
 import partnerApiTradeInIMEI from './mws/partner_api/tradein/imei'
-import partnerApiTradeInPhoneCheck from './mws/partner_api/tradein/phone/check'
+import { partnerApiTradeInPhoneCheck, rules as checkPhoneRules } from './mws/partner_api/tradein/phone/check'
 import partnerApiTradeInPhotoLink from './mws/partner_api/photo/link'
 import partnerApiTradeInPhotoStatus from './mws/partner_api/photo/status'
 import partnerApiTradeInPhotoUpload from './mws/partner_api/photo/upload'
@@ -76,6 +76,7 @@ import { policyConfirmationSMS } from './mws/partner_api/tradein/personal_data_p
 import { signBySMSCode as signBySMSCode2 } from './mws/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_code'
 import { waitForVerified } from './mws/partner_api/tradein/wait_for/verified'
 import { boughtDevice } from './mws/partner_api/tradein/bought_device'
+import { me, rules as meRules } from './mws/_tmp/me'
 
 import cors from 'cors'
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
@@ -176,7 +177,9 @@ spApi.post('/otapi/v1/:partnerName/get_subsidies', getSubsidiesRoute)
 
 // 5. RINGEO: Offline Trade-in API imitation
 spApi.post('/partner_api/tradein/imei', partnerApiTradeInIMEI)
-spApi.post('/partner_api/tradein/phone/check', partnerApiTradeInPhoneCheck)
+spApi.post('/partner_api/tradein/phone/check', withReqParamsValidationMW({
+  rules: checkPhoneRules,
+}), partnerApiTradeInPhoneCheck)
 spApi.post('/partner_api/photo/link', partnerApiTradeInPhotoLink)
 spApi.post('/partner_api/photo/status', partnerApiTradeInPhotoStatus)
 spApi.post('/partner_api/photo/upload', partnerApiTradeInPhotoUpload)
@@ -205,5 +208,8 @@ spApi.post('/report/add', reportAddAPI)
 spApi.get('/report/get-state', reportGetStateAPI)
 spApi.get('/report/resolve-issue', reportResolveIssueAPI)
 spApi.use('/report/v2', reportV2)
+spApi.post('/_tmp/me', jsonParser, withReqParamsValidationMW({
+  rules: meRules,
+}), me)
 
 export default spApi

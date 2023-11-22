@@ -2,6 +2,7 @@
 // import { getRandomInteger } from '~/utils/getRandomInteger'
 import { THelp } from '~/utils/interfaces'
 import kzSuccess2022 from './fake-data/kz-2023.0-dev-exp.imei.json'
+import { mutateObject } from '~/utils/mutateObject'
 
 // const { SUCCESS_ANYWAY } = process.env
 
@@ -230,7 +231,7 @@ const toClient = [
 
 export default async (req, res) => {
   const errs: string[] = []
-  const { memory_value, color_value, vendor_value, kz_2022, _err_tst } = req.body
+  const { memory_value, color_value, vendor_value, kz_2022, _err_tst, _add_data } = req.body
 
   for (const key in _help.params.body) {
     if (_help.params.body[key]?.required && !req.body[key]) {
@@ -271,6 +272,9 @@ export default async (req, res) => {
   }
 
   result = { ...result, ...adds }
+
+  if (!!_add_data && typeof _add_data === 'object' && Object.keys(_add_data).length > 0)
+    mutateObject({ target: result, source: _add_data })
 
   setTimeout(() => {
     res.status(200).send(result)

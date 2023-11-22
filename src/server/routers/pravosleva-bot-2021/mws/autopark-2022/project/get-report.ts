@@ -1,6 +1,6 @@
 import { Request as IRequest, Response as IResponse, NextFunction as INextFunction } from 'express'
 // import { mutateReqIfLogged } from '~/routers/chat/mws/api/auth/mutate-req-if-logged.middle';
-import { EAPIUserCode } from '~/routers/chat/mws/api/types';
+import { EAPIUserCode } from '~/routers/chat/mws/api/types'
 import { getStaticJSONSync } from '~/utils/fs-tools'
 import { sort } from '~/utils/sort-array-objects@3.0.0'
 
