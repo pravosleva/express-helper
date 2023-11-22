@@ -2,7 +2,10 @@
 import { Request as IRequest, Response as IResponse } from 'express'
 import { getStaticJSONSync } from '~/utils/fs-tools'
 
-export const getUsersMap = async (req: IRequest & { chatUsersStorageFilePath: string, chatRoomsStorageFilePath: string }, res: IResponse) => {
+export const getUsersMap = async (req: IRequest & {
+  chatUsersStorageFilePath: string;
+  chatRoomsStorageFilePath: string;
+}, res: IResponse) => {
   try {
     const _staticUsersData = getStaticJSONSync(req.chatUsersStorageFilePath)
     const _staticRoomData = getStaticJSONSync(req.chatRoomsStorageFilePath)

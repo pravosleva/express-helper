@@ -3,6 +3,7 @@
 export type SortOrder = 1 | -1;
 
 function compare<T, K extends keyof T>(a: T, b: T, key: K, order: SortOrder) {
+  // @ts-ignore
   if (key in a && key in b) {
     if (a[key] < b[key]) return -order;
     if (a[key] > b[key]) return order;

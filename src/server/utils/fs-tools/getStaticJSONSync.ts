@@ -13,8 +13,7 @@ export const getStaticJSONSync = (storageFilePath: string): any => {
   }
 
   let data = {}
-  if (isValidJsonString(text)) {
-    data = JSON.parse(text)
-  }
+  if (isValidJsonString(text)) data = JSON.parse(text)
+
   return data
 }

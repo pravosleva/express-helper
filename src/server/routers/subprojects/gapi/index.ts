@@ -22,8 +22,10 @@ if (!fs.existsSync(path.join(projectRootDir, 'server-dist/routers/subprojects/ga
 
 const router = express.Router()
 
+// NOTE: Viselitsa game as Google Sheets exp
 router.post('/viselitsa-2023/get-items', jsonParser, getItems)
 
+// NOTE: Desktop app Audit Helper 2023
 router.post('/audit-helper-2023/get-dict-1', jsonParser, getDict)
 router.post('/audit-helper-2023/get-dict-2', jsonParser, getDict2)
 router.post('/audit-helper-2023/main-report', jsonParser, mainReport)
@@ -31,6 +33,7 @@ router.post('/audit-helper-2023/get-links-for-parser', jsonParser, getLinksForPa
 router.post('/audit-helper-2023/notify/send', jsonParser, sendAuditHelper2023Notify)
 router.post('/audit-helper-2023/notify/send-2', jsonParser, sendAuditHelper2023NotifyV2)
 
+// NOTE: Joblist in Google Sheets
 router.post('/todo-2023/jobs', jsonParser, getJobs) // NOTE: Deprecated
 router.post('/audit-list/jobs', jsonParser, getJobs)
 

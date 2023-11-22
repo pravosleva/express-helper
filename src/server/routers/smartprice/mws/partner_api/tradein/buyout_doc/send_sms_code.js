@@ -1,6 +1,6 @@
-import { getRandomInteger } from '~/utils/getRandomInteger'
+// import { getRandomInteger } from '~/utils/getRandomInteger'
 
-const SUCCESS_ANYWAY = process.env.SUCCESS_ANYWAY === '1'
+// const SUCCESS_ANYWAY = process.env.SUCCESS_ANYWAY === '1'
 
 const toClient = [
   {

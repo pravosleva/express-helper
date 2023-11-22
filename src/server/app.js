@@ -51,7 +51,7 @@ app.use(addRequestId) // NOTE: New additional field req.id
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(cookieParser())
+app.use(cookieParser()) // {limit: '50mb'}
 app.use((req, _res, next) => {
   req.loggedMap = addsDevicesLoggedStateInstance
   next()

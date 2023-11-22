@@ -10,10 +10,10 @@ import {
   EMessageStatus,
 } from './types'
 import { binarySearchTsIndex } from '~/utils/binarySearch'
-import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
-import { moveFileIfExists, moveFileSync } from '~/utils/fs-tools/moveFile'
+// import { createDirIfNecessary } from '~/utils/fs-tools/createDirIfNecessary'
+// import { moveFileIfExists, moveFileSync } from '~/utils/fs-tools/moveFile'
 import { getFiles, getDirectories } from '~/utils/fs-tools'
-import delay from '~/utils/delay'
+// import delay from '~/utils/delay'
 import { sortByTs } from '~/utils/sortByTs'
 import { getUniqueItemsByProperties } from '~/utils/socket/utils/getUniqueItemsByProperties'
 
@@ -26,7 +26,7 @@ const storageRoomsFilePath = path.join(storageDir, CHAT_ROOMS_STATE_FILE_NAME)
 const counter = Counter()
 
 const overwriteMerge = (_target, source, _options) => source
-const concatArrsMerge = (target, source, _options) => [...target, ...source]
+// const concatArrsMerge = (target, source, _options) => [...target, ...source]
 
 const isStatusChanged = (oldData: TMessage, newData: Partial<TMessage>) => oldData.status !== newData.status
 
@@ -605,20 +605,20 @@ const syncRoomsMap = () => {
 
           // 6. Read dirs in /uploads/[roomName]/* and set old msgs if necessary
           const dirs = getDirectories(uploadsDir)
-          console.log(`--- ${uploadsDir}`)
-          console.log(dirs)
+          // console.log(`--- ${uploadsDir}`)
+          // console.log(dirs)
           for (const room of dirs) {
             // Object.keys(staticData).forEach((roomName: string) => {})
             const isRoomExists = !!staticData[room]
             if (!isRoomExists) {
               staticData[room] = []
             }
-            console.log(`-- ${room}`)
+            // console.log(`-- ${room}`)
             const files = getFiles(path.join(projectRootDir, '/storage/uploads', room))
             // NOTE: Set msg if msg.ts does not exists
             
             files.forEach((fileName) => {
-              console.log(fileName)
+              // console.log(fileName)
 
               try {
                 const ts = Number(fileName.split('.')[0])
@@ -629,15 +629,15 @@ const syncRoomsMap = () => {
                 const isMsgExists = theMessageIndex !== -1
                 if (!isMsgExists) {
                   roomsMapInstance._addFileAsMsg({ fileName, room, user: 'pravosleva' })
-                  console.log('file added.')
+                  // console.log('file added.')
                 }
               } catch (err) {
                 console.log(err)
               }
             })
-            console.log(`-- END: ${room}`)
+            // console.log(`-- END: ${room}`)
           }
-          console.log('---')
+          // console.log('---')
         })
 
         // 5. Read dirs in /uploads/* and set old msgs if necessary
@@ -686,7 +686,7 @@ const syncRoomsMap = () => {
 // NOTE: Start polling
 createPollingByConditions({
   cb: () => {
-    console.log('cb called')
+    // console.log('cb called')
   },
   interval: 30 * 1000,
   callbackAsResolve: () => {

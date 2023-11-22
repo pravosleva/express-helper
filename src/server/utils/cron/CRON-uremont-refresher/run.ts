@@ -85,7 +85,7 @@ const baseFn = async () => {
               break
             default:
               // file written successfully
-              console.log(`OK: ${name} (${i + 1} of ${max})`)
+              // console.log(`OK: ${name} (${i + 1} of ${max})`)
               break
           }
         })
