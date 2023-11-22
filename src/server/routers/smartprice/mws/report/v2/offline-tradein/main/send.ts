@@ -3,7 +3,7 @@ import { Response as IResponse, NextFunction as INextFunction } from 'express'
 import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 import axios from 'axios'
-import { Counter } from '~/utils/counter'
+import { Counter } from '~/utils/Counter'
 
 const counter = Counter()
 

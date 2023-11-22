@@ -1,5 +1,5 @@
 import { getRandomInteger } from '~/utils/getRandomInteger'
-import { Counter } from '~/utils/counter'
+import { Counter } from '~/utils/Counter'
 import { THelp } from '~/utils/interfaces'
 
 const counter = Counter()

@@ -1,7 +1,7 @@
 import { Request as IRequest, Response as IResponse } from 'express'
 // @ts-ignore
 import { google } from 'googleapis'
-import { IJob } from '~/utils/todo-2023/types'
+import { IJob } from '~/utils/audit-list/types'
 
 const _getJobs = ({
   sheetData: rows,

@@ -2,7 +2,7 @@
 // @ts-ignore
 import { getRandomInteger } from '~/utils/getRandomInteger'
 // @ts-ignore
-// import { Counter } from '~/utils/counter'
+// import { Counter } from '~/utils/Counter'
 import { THelp } from '~/utils/interfaces'
 
 // const { SUCCESS_ANYWAY } = process.env

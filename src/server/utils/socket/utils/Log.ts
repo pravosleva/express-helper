@@ -1,5 +1,5 @@
 import { Socket } from 'socket.io'
-import { Counter } from '~/utils/counter'
+import { Counter } from '~/utils/Counter'
 import axios from 'axios'
 
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''

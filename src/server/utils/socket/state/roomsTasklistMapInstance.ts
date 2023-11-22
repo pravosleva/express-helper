@@ -1,5 +1,5 @@
 import { createPollingByConditions } from './createPollingByConditions'
-import { Counter } from '~/utils/counter'
+import { Counter } from '~/utils/Counter'
 import path from 'path'
 import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
 import merge2 from 'deepmerge'

@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { getRandomInteger } from '~/utils/getRandomInteger'
-import { Counter } from '~/utils/counter'
+import { Counter } from '~/utils/Counter'
 
 const { SUCCESS_ANYWAY } = process.env
 
