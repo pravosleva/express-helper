@@ -9,7 +9,7 @@ import bodyParser from 'body-parser'
 import { getLinksForParser } from './audit-helper-2023/get-links-for-parser'
 import { sendNotifyMW as sendAuditHelper2023Notify } from './audit-helper-2023/notify/send'
 import { sendNotify2MW as sendAuditHelper2023NotifyV2 } from './audit-helper-2023/notify/send-2'
-import { getJobs } from './todo-2023/jobs'
+import { getJobs } from './audit-list/jobs'
 
 const jsonParser = bodyParser.json()
 
@@ -31,6 +31,7 @@ router.post('/audit-helper-2023/get-links-for-parser', jsonParser, getLinksForPa
 router.post('/audit-helper-2023/notify/send', jsonParser, sendAuditHelper2023Notify)
 router.post('/audit-helper-2023/notify/send-2', jsonParser, sendAuditHelper2023NotifyV2)
 
-router.post('/todo-2023/jobs', jsonParser, getJobs)
+router.post('/todo-2023/jobs', jsonParser, getJobs) // NOTE: Deprecated
+router.post('/audit-list/jobs', jsonParser, getJobs)
 
 export const gapiRouter = router

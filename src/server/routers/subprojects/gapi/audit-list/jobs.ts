@@ -86,7 +86,7 @@ export const getJobs = async (req: IRequest, res: IResponse) => {
     gRes = await googleSheets.spreadsheets.values.get({
       auth,
       spreadsheetId,
-      range: `/todo-2023/jobs!A3:E${2 + modifiedLimit}`,
+      range: `/audit-list/jobs!A3:E${2 + modifiedLimit}`,
     })
   } catch (err) {
     console.log(err)
