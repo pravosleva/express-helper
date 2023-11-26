@@ -19,6 +19,7 @@ import { scrollIntoView } from '~/utils/scrollTo'
 import styles from './NotifItem.module.scss'
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi'
 import { BiRefresh } from 'react-icons/bi'
+import { getNormalizedDateShortYear } from '~/utils/timeConverter'
 
 // const isDev = process.env.NODE_ENV === 'development'
 
@@ -53,6 +54,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
   }
   const toast = useToast()
   const isMyMessage = useMemo(() => original?.user === name, [name, original?.user])
+  const targetLabel = useMemo(() => getNormalizedDateShortYear(tsTarget), [])
   
   // <Grid templateColumns='auto 50px' gap={2}>
   return (
@@ -73,13 +75,19 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
       <Box mb={3}>
         <Flex justifyContent='space-between' alignItems='center'>
           <span
-            // style={{ marginLeft: 'var(--chakra-space-2)' }}
+            style={{
+              // marginLeft: 'var(--chakra-space-2)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'var(--chakra-space-1)',
+            }}
           >
             <Countdown
               date={tsTarget}
               renderer={CountdownRenderer}
               onComplete={!!onComplete ? () => onComplete({ ts, text }) : undefined}
             />
+            <span>{targetLabel}</span>
           </span>
           <Flex className={styles['controls-btns']}>
             {
@@ -162,11 +170,13 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           // borderImage: `linear-gradient(to bottom, var(--chakra-colors-gray-200), rgba(0, 0, 0, 0)) 1 100%`,
           
           borderLeft: '4px solid var(--chakra-colors-gray-200)',
-          borderTop: '1px solid var(--chakra-colors-gray-200)', // `1px ${isClosable ? isOpened ? 'solid' : 'dashed' : 'solid'} var(--chakra-colors-gray-200)`,
+          // borderTop: '1px solid var(--chakra-colors-gray-200)', // `1px ${isClosable ? isOpened ? 'solid' : 'dashed' : 'solid'} var(--chakra-colors-gray-200)`,
+          borderBottom: '1px solid var(--chakra-colors-gray-200)',
           // border: '1px solid var(--chakra-colors-gray-200)',
           // borderLeft: '5px solid var(--chakra-colors-gray-200)',
           
-          paddingTop: 'var(--chakra-space-1)',
+          // paddingTop: 'var(--chakra-space-1)',
+          paddingBottom: 'var(--chakra-space-2)',
           paddingLeft: 'var(--chakra-space-3)',
           // padding: 'var(--chakra-space-1) var(--chakra-space-3)',
 

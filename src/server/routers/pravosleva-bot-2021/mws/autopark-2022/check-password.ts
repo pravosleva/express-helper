@@ -43,7 +43,7 @@ export const checkAutoparkUserPassword = async (req: IRequest & { autopark2022St
         response.ok = true
 
         // 2. --- Password correct -> set jwt to cookie
-        const daysLimit: number = 3
+        const daysLimit: number = 30
         const jwt4Cookie = jwt.sign({ chat_id }, jwtSecret, { expiresIn: 60 * 60 * 24 * daysLimit })
         const maxAge = getMsByDays(daysLimit)
 
