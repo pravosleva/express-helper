@@ -16,7 +16,9 @@ export const checkJWT = async (req: IRequest, res: IResponse, next: INextFunctio
   const response: any = { ok: false }
 
   try {
+    res.startTime('jwt_verify', jwtCookieName)
     const jwtParsed: any = jwt.verify(req.cookies[jwtCookieName], jwtSecret)
+    res.endTime('jwt_verify')
 
     if (jwtParsed.chat_id !== tested_chat_id) {
       response.ok = false

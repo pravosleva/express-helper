@@ -19,7 +19,7 @@ const _help: THelp = {
   },
 }
 
-const baseUrl = 'https://pravosleva.pro/express-helper'
+const baseUrl = 'https://pravosleva.pro'
 
 export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse) => {
   const errs: string[] = []
