@@ -112,7 +112,7 @@ export const Image = memo(({
           )}
         </div>
       </Box>
-      {isNextOneBtnEnabled && <div className={stylesBase['centered-box']}><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-sm'], stylesBase['dark-btn'])} onClick={() => { onAddAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
+      {isNextOneBtnEnabled && !!_next?.ts && <div className={stylesBase['centered-box']}><button className={clsx(stylesBase['special-btn'], stylesBase['special-btn-sm'], stylesBase['dark-btn'])} onClick={() => { onAddAdditionalTsToShow(_next.ts) }}>Next One</button></div>}
     </Fragment>
   )
 })

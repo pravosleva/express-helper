@@ -36,7 +36,7 @@ type TProps = {
 }
 
 export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete, original, onEdit, onRestore }: TProps) => {
-  const { userInfoProxy, sprintFeatureProxy, name, isAdmin } = useMainContext()
+  const { userInfoProxy, name, isAdmin } = useMainContext()
   const userInfoSnap = useSnapshot(userInfoProxy)
   // const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
   const isLogged = useMemo<boolean>(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
@@ -82,12 +82,12 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
               gap: 'var(--chakra-space-1)',
             }}
           >
+            <span>{targetLabel}</span>
             <Countdown
               date={tsTarget}
               renderer={CountdownRenderer}
               onComplete={!!onComplete ? () => onComplete({ ts, text }) : undefined}
             />
-            <span>{targetLabel}</span>
           </span>
           <Flex className={styles['controls-btns']}>
             {
