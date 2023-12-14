@@ -1,0 +1,326 @@
+[
+  {
+    "id": "vladimir-_-dereventsov.__-__-19__",
+    "gender": "male",
+    "parents": [],
+    "siblings": [
+      {
+        "id": "ury-_-dereventsov.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "ulia-_-garbuzova.__-__-19__",
+        "type": "divorced"
+      }
+    ],
+    "children": [
+      {
+        "id": "elena-vladimir-der.29-03-1964",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "ury-_-dereventsov.__-__-19__",
+    "gender": "male",
+    "parents": [],
+    "siblings": [
+      {
+        "id": "vladimir-_-dereventsov.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "ulia-_-garbuzova.__-__-19__",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "vladimir-_-dereventsov.__-__-19__",
+        "type": "divorced"
+      },
+      {
+        "id": "valentin-_-garbuzov.__-__-19__",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "elena-vladimir-der.29-03-1964",
+        "type": "blood"
+      },
+      {
+        "id": "sveta-valentin-garbuzova.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "valentin-_-garbuzov.__-__-19__",
+    "gender": "male",
+    "parents": [],
+    "children": [
+      {
+        "id": "sveta-valentin-garbuzova.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "ulia-_-garbuzova.__-__-19__",
+        "type": "married"
+      }
+    ],
+    "siblings": []
+  },
+  {
+    "id": "nin-nik-ves.30-07-1955",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "lid-alex-pol.17.10.1990",
+        "type": "blood"
+      },
+      {
+        "id": "dmit-alex-ves.12-07-1983",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "alex-ivan-ves.04-03-1950",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "alex-ivan-ves.04-03-1950",
+    "gender": "male",
+    "parents": [],
+    "children": [
+      {
+        "id": "lid-alex-pol.17.10.1990",
+        "type": "blood"
+      },
+      {
+        "id": "dmit-alex-ves.12-07-1983",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "vik-step-lyalin.29-07-1952",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "elena-vladimir-der.29-03-1964",
+        "type": "divorced"
+      }
+    ],
+    "children": []
+  },
+  {
+    "id": "vladimir-vladimir-pol.10-11-1961",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "elena-vladimir-der.29-03-1964",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "den-vladimir-pol.13-04-1986",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "elena-vladimir-der.29-03-1964",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "vladimir-_-dereventsov.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "ulia-_-garbuzova.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "vladimir-vladimir-pol.10-11-1961",
+        "type": "married"
+      },
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "divorced"
+      }
+    ],
+    "children": [
+      {
+        "id": "den-vladimir-pol.13-04-1986",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "sveta-valentin-garbuzova.__-__-19__",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "ulia-_-garbuzova.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "valentin-_-garbuzov.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "yan-albert-grishin.__-__-19__",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "yana-yan-garbuzova.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "yan-albert-grishin.__-__-19__",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "sveta-valentin-garbuzova.__-__-19__",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "yana-yan-garbuzova.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "den-vladimir-pol.13-04-1986",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "vladimir-vladimir-pol.10-11-1961",
+        "type": "blood"
+      },
+      {
+        "id": "elena-vladimir-der.29-03-1964",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "yana-yan-garbuzova.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "lid-alex-pol.17.10.1990",
+        "type": "married"
+      }
+    ],
+    "children": []
+  },
+  {
+    "id": "lid-alex-pol.17.10.1990",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "blood"
+      },
+      {
+        "id": "alex-ivan-ves.04-03-1950",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [
+      {
+        "id": "dmit-alex-ves.12-07-1983",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "den-vladimir-pol.13-04-1986",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "yana-yan-garbuzova.__-__-19__",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "sveta-valentin-garbuzova.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "yan-albert-grishin.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "dmit-alex-ves.12-07-1983",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "blood"
+      },
+      {
+        "id": "alex-ivan-ves.04-03-1950",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [
+      {
+        "id": "lid-alex-pol.17.10.1990",
+        "type": "blood"
+      }
+    ],
+    "spouses": []
+  }
+]

@@ -90,7 +90,7 @@ export const getDict = async (req: IRequest, res: IResponse) => {
   }
 
   if (!!gRes?.data?.values) {
-    console.log(gRes)
+    // console.log(gRes)
     result.ok = true
     result.gRes = gRes
     result._details = getItemsArr({

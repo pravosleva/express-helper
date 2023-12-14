@@ -7,6 +7,7 @@ import {
   rules as feedbackRules,
   feedback as blogFeedback,
 } from './mws/gapi/blog/feedback'
+import { getSinglePersonInfo, rules as singlePersonInfoRues } from './mws/gapi/family-tree-2023/v1/get-single-person-info'
 
 const projectRootDir = path.join(__dirname, '../../../')
 
@@ -53,6 +54,13 @@ router.post(
     rules: feedbackRules,
   }),
   blogFeedback,
+)
+router.post(
+  '/family-tree-2023/v1/get-single-person-info',
+  withReqParamsValidationMW({
+    rules: singlePersonInfoRues,
+  }),
+  getSinglePersonInfo,
 )
 
 export const pravoslevaBlod2023Api = router

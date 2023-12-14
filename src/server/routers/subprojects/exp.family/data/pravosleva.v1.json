@@ -1,0 +1,170 @@
+[
+  {
+    "id": "nin-nik-ves.30-07-1955",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "lid-alex-pol.17.10.1990",
+        "type": "blood"
+      },
+      {
+        "id": "dmit-alex-ves.12-07-1983",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "alex-ivan-ves.04-03-1950",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "alex-ivan-ves.04-03-1950",
+    "gender": "male",
+    "parents": [],
+    "children": [
+      {
+        "id": "lid-alex-pol.17.10.1990",
+        "type": "blood"
+      },
+      {
+        "id": "dmit-alex-ves.12-07-1983",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "vik-step-lyalin.29-07-1952",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "elena-vladimir-der.29-03-1964",
+        "type": "married"
+      }
+    ],
+    "children": []
+  },
+  {
+    "id": "vladimir-vladimir-pol.10-11-1961",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "elena-vladimir-der.29-03-1964",
+        "type": "divorced"
+      }
+    ],
+    "children": [
+      {
+        "id": "den-vladimir-pol.13-04-1986",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "elena-vladimir-der.29-03-1964",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "vladimir-vladimir-pol.10-11-1961",
+        "type": "divorced"
+      },
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "den-vladimir-pol.13-04-1986",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "den-vladimir-pol.13-04-1986",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "vladimir-vladimir-pol.10-11-1961",
+        "type": "blood"
+      },
+      {
+        "id": "elena-vladimir-der.29-03-1964",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "lid-alex-pol.17.10.1990",
+        "type": "married"
+      }
+    ],
+    "children": []
+  },
+  {
+    "id": "lid-alex-pol.17.10.1990",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "blood"
+      },
+      {
+        "id": "alex-ivan-ves.04-03-1950",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [
+      {
+        "id": "dmit-alex-ves.12-07-1983",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "den-vladimir-pol.13-04-1986",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "dmit-alex-ves.12-07-1983",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "blood"
+      },
+      {
+        "id": "alex-ivan-ves.04-03-1950",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [
+      {
+        "id": "lid-alex-pol.17.10.1990",
+        "type": "blood"
+      }
+    ],
+    "spouses": []
+  }
+]

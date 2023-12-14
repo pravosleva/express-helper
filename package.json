@@ -7,6 +7,7 @@
     "_test-env:p": "bash test-env.sh pravosleva",
     "take-backup:15": "bash quaint-files-copy.sh backup/backup-15min/ storage/ json",
     "take-backup:20": "bash quaint-files-copy.sh backup/backup-20min/ storage/ json",
+    "take-backup:20:imgs": "bash quaint-files-copy.sh backup/backup-20min/ storage/ png && bash quaint-files-copy.sh backup/backup-20min/ storage/ jpg && bash quaint-files-copy.sh backup/backup-20min/ storage/ jpeg",
     "make-backup:backup-15min": "bash dir-copy.sh storage /backup/backup-15min",
     "make-backup:backup-20min": "bash dir-copy.sh storage /backup/backup-20min",
     "deploy2:smartprice:copy-chat-build": "bash src/set-front.chat-env.sh prod smartprice && yarn --cwd src/frontend.chat build && bash deploy2.prod.chat.front.sh smartprice",
