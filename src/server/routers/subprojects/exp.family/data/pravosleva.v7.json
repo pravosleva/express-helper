@@ -187,9 +187,70 @@
     "siblings": []
   },
   {
-    "id": "nin-nik-ves.30-07-1955",
+    "id": "nikolay-ivan-malyshev.02-10-1920",
+    "gender": "male",
+    "parents": [],
+    "children": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "blood"
+      },
+      {
+        "id": "elena-nik-solovieva.01-02-1953",
+        "type": "blood"
+      },
+      {
+        "id": "nikolay-nik-malyshev.19-11-1948",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "lidia-vas-malysheva.26-12-1921",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "lidia-vas-malysheva.26-12-1921",
     "gender": "female",
     "parents": [],
+    "children": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "blood"
+      },
+      {
+        "id": "elena-nik-solovieva.01-02-1953",
+        "type": "blood"
+      },
+      {
+        "id": "nikolay-nik-malyshev.19-11-1948",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "nin-nik-ves.30-07-1955",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "type": "blood"
+      },
+      {
+        "id": "lidia-vas-malysheva.26-12-1921",
+        "type": "blood"
+      }
+    ],
     "children": [
       {
         "id": "lid-alex-pol.17.10.1990",
@@ -200,13 +261,74 @@
         "type": "blood"
       }
     ],
-    "siblings": [],
+    "siblings": [
+      {
+        "id": "elena-nik-solovieva.01-02-1953",
+        "type": "blood"
+      },
+      {
+        "id": "nikolay-nik-malyshev.19-11-1948",
+        "type": "blood"
+      }
+    ],
     "spouses": [
       {
         "id": "alexander-ivan-ves.04-03-1950",
         "type": "married"
       }
     ]
+  },
+  {
+    "id": "elena-nik-solovieva.01-02-1953",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "type": "blood"
+      },
+      {
+        "id": "lidia-vas-malysheva.26-12-1921",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "blood"
+      },
+      {
+        "id": "nikolay-nik-malyshev.19-11-1948",
+        "type": "blood"
+      }
+    ],
+    "spouses": []
+  },
+  {
+    "id": "nikolay-nik-malyshev.19-11-1948",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "type": "blood"
+      },
+      {
+        "id": "lidia-vas-malysheva.26-12-1921",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [
+      {
+        "id": "nin-nik-ves.30-07-1955",
+        "type": "blood"
+      },
+      {
+        "id": "elena-nik-solovieva.01-02-1953",
+        "type": "blood"
+      }
+    ],
+    "spouses": []
   },
   {
     "id": "alexander-ivan-ves.04-03-1950",
@@ -253,8 +375,87 @@
       {
         "id": "elena-vladimir-der.29-03-1964",
         "type": "divorced"
+      },
+      {
+        "id": "_-_-lyalina[vik-exwife].__-__-19__",
+        "type": "divorced"
       }
     ],
+    "children": [
+      {
+        "id": "alexey-vik-lyalin.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "vladimir-vik-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-lyalina[vik-exwife].__-__-19__",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "divorced"
+      }
+    ],
+    "children": [
+      {
+        "id": "alexey-vik-lyalin.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "vladimir-vik-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "alexey-vik-lyalin.__-__-19__",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-lyalina[vik-exwife].__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "vladimir-vik-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "vladimir-vik-lyalin.__-__-19__",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-lyalina[vik-exwife].__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "alexey-vik-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
     "children": []
   },
   {

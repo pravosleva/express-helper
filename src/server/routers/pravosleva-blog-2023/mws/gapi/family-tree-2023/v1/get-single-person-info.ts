@@ -168,8 +168,8 @@ const persons = {
       lastName: 'Veselova',
     },
   },
-  'alex-ivan-ves.04-03-1950': {
-    id: 'alex-ivan-ves.04-03-1950',
+  'alexander-ivan-ves.04-03-1950': {
+    id: 'alexander-ivan-ves.04-03-1950',
     baseInfo: {
       firstName: 'Alexandr',
       middleName: 'Ivanovich',
@@ -182,6 +182,54 @@ const persons = {
       firstName: 'Dmitry',
       middleName: 'Alexandrovich',
       lastName: 'Veselov',
+    },
+  },
+  'lidia-vas-malysheva.26-12-1921': {
+    id: 'lidia-vas-malysheva.26-12-1921',
+    baseInfo: {
+      firstName: 'Lidia',
+      middleName: 'Vasilievna',
+      lastName: 'Malysheva',
+    },
+  },
+  'nikolay-ivan-malyshev.02-10-1920': {
+    id: 'nikolay-ivan-malyshev.02-10-1920',
+    baseInfo: {
+      firstName: 'Nikolay',
+      middleName: 'Ivanovich',
+      lastName: 'Malyshev',
+    },
+  },
+  'alevtina-vas-krupina.16-07-1918': {
+    id: 'alevtina-vas-krupina.16-07-1918',
+    baseInfo: {
+      firstName: 'Alevtina',
+      middleName: 'Vasilievna',
+      lastName: 'Krupina',
+    },
+  },
+  'ivan-fedor-veselov.__-12-1911': {
+    id: 'ivan-fedor-veselov.__-12-1911',
+    baseInfo: {
+      firstName: 'Ivan',
+      middleName: 'Fedorovich',
+      lastName: 'Veselov',
+    },
+  },
+  'elena-nik-solovieva.01-02-1953': {
+    id: 'elena-nik-solovieva.01-02-1953',
+    baseInfo: {
+      firstName: 'Elena',
+      middleName: 'Nikolaevna',
+      lastName: 'Solovieva',
+    },
+  },
+  'nikolay-nik-malyshev.19-11-1948': {
+    id: 'nikolay-nik-malyshev.19-11-1948',
+    baseInfo: {
+      firstName: 'Nikolay',
+      middleName: 'Nokolaevich',
+      lastName: 'Malishev',
     },
   },
 }

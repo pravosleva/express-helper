@@ -233,20 +233,307 @@
   {
     "id": "vik-step-lyalin.29-07-1952",
     "gender": "male",
-    "parents": [],
-    "siblings": [],
+    "parents": [
+      {
+        "id": "step-_-lyalin.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-lyalina.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "alexey-step-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ],
     "spouses": [
       {
         "id": "elena-vladimir-der.29-03-1964",
         "type": "divorced"
+      },
+      {
+        "id": "_-_-lyalina[vik-exwife].__-__-19__",
+        "type": "divorced"
       }
     ],
+    "children": [
+      {
+        "id": "alexey-vik-lyalin.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "vladimir-vik-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-lyalina[vik-exwife].__-__-19__",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "divorced"
+      }
+    ],
+    "children": [
+      {
+        "id": "alexey-vik-lyalin.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "vladimir-vik-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "alexey-vik-lyalin.__-__-19__",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-lyalina[vik-exwife].__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "vladimir-vik-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
     "children": []
   },
   {
-    "id": "vladimir-vladimir-pol.10-11-1961",
+    "id": "vladimir-vik-lyalin.__-__-19__",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-lyalina[vik-exwife].__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "alexey-vik-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "alexey-step-lyalin.__-__-19__",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "step-_-lyalin.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-lyalina.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "step-_-lyalin.__-__-19__",
     "gender": "male",
     "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-lyalina.__-__-19__",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "blood"
+      },
+      {
+        "id": "alexey-step-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-lyalina.__-__-19__",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "step-_-lyalin.__-__-19__",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "vik-step-lyalin.29-07-1952",
+        "type": "blood"
+      },
+      {
+        "id": "alexey-step-lyalin.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+
+  {
+    "id": "fedor-michailovich-izvekov.__-__-1909",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-solovieva.__-__-19__",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "lubov-fedorovna-pol.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "valentina-fedorovna-solovieva.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-solovieva.__-__-19__",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "fedor-michailovich-izvekov.__-__-1909",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "lubov-fedorovna-pol.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "valentina-fedorovna-solovieva.__-__-19__",
+        "type": "blood"
+      }
+    ]
+  },
+
+  {
+    "id": "valentina-fedorovna-solovieva.__-__-19__",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "fedor-michailovich-izvekov.__-__-1909",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-solovieva.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "lubov-fedorovna-pol.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "lubov-fedorovna-pol.__-__-19__",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "fedor-michailovich-izvekov.__-__-1909",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-solovieva.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "valentina-fedorovna-solovieva.__-__-19__",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "vladimir-vladimir-pol.__-__-19__",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "vladimir-vladimir-pol.10-11-1961",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "vladimir-vladimir-pol.__-__-19__",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "lubov-fedorovna-pol.__-__-19__",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "vladimir-vladimir-pol.10-11-1961",
+        "type": "blood"
+      }
+    ]
+  },
+  
+  {
+    "id": "vladimir-vladimir-pol.10-11-1961",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "lubov-fedorovna-pol.__-__-19__",
+        "type": "blood"
+      },
+      {
+        "id": "vladimir-vladimir-pol.__-__-19__",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
