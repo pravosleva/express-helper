@@ -232,6 +232,78 @@ const persons = {
       lastName: 'Malishev',
     },
   },
+  'sekleteya-alekseevna-kyzmina.__-__-1___': {
+    id: 'sekleteya-alekseevna-kyzmina.__-__-1___',
+    baseInfo: {
+      firstName: 'Sekleteya',
+      middleName: 'Alekseenva',
+      lastName: 'Kyzmina',
+    },
+  },
+  'vasily-ivan-kyzmin.__-__-1___': {
+    id: 'vasily-ivan-kyzmin.__-__-1___',
+    baseInfo: {
+      firstName: 'Vasily',
+      middleName: 'Ivanovich',
+      lastName: 'Kyzmin',
+    },
+  },
+  'maria-efim-malysheva.__-__-1___': {
+    id: 'maria-efim-malysheva.__-__-1___',
+    baseInfo: {
+      firstName: 'Maria',
+      middleName: 'Efimovna',
+      lastName: 'Malysheva',
+    },
+  },
+  'ivan-fedor-malyshev.__-__-1___': {
+    id: 'ivan-fedor-malyshev.__-__-1___',
+    baseInfo: {
+      firstName: 'Ivan',
+      middleName: 'Fedorovich',
+      lastName: 'Malyshev',
+    },
+  },
+  'pelageya-porfiry-krupina.__-__-18__': {
+    id: 'pelageya-porfiry-krupina.__-__-18__',
+    baseInfo: {
+      firstName: 'Pelageya',
+      middleName: 'Porfirievna',
+      lastName: 'Krupina',
+    },
+  },
+  'vas-archip-krupin.__-__-18__': {
+    id: 'vas-archip-krupin.__-__-18__',
+    baseInfo: {
+      firstName: 'Vasily',
+      middleName: 'Archipovich',
+      lastName: 'Krupin',
+    },
+  },
+  'alexandra-_-kuzmina.17-02-1916': {
+    id: 'alexandra-_-kuzmina.17-02-1916',
+    baseInfo: {
+      firstName: 'Alexandra',
+      middleName: '_',
+      lastName: 'Kuzmina',
+    },
+  },
+  'nik-anatoly-soloviev.22-05-1956': {
+    id: 'nik-anatoly-soloviev.22-05-1956',
+    baseInfo: {
+      firstName: 'Nikolay',
+      middleName: 'Anatolievich',
+      lastName: 'Soloviev',
+    },
+  },
+  'oleg-nik-soloviev.10-04-1977': {
+    id: 'oleg-nik-soloviev.10-04-1977',
+    baseInfo: {
+      firstName: 'Oleg',
+      middleName: 'Nikolaevich',
+      lastName: 'Soloviev',
+    },
+  },
 }
 
 const cache: {
