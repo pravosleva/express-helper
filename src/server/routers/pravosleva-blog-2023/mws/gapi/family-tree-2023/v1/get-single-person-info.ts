@@ -328,6 +328,54 @@ const persons = {
       lastName: 'Soloviev',
     },
   },
+  'nik-_-dereventsov[elena-f-f].__-__-1___': {
+    id: 'nik-_-dereventsov[elena-f-f].__-__-1___',
+    baseInfo: {
+      firstName: 'Nikolay',
+      middleName: '_',
+      lastName: 'Dereventsov',
+    },
+  },
+  'vladimir-nik-dereventsov.01-09-1940': {
+    id: 'vladimir-nik-dereventsov.01-09-1940',
+    baseInfo: {
+      firstName: 'Vladimir',
+      middleName: 'Nikolaevich',
+      lastName: 'Dereventsov',
+    },
+  },
+  'ury-nik-dereventsov.06-07-1947': {
+    id: 'ury-nik-dereventsov.06-07-1947',
+    baseInfo: {
+      firstName: 'Ury',
+      middleName: 'Nikolaevich',
+      lastName: 'Dereventsov',
+    },
+  },
+  'marya-roman-chigrina.06-03-1997': {
+    id: 'marya-roman-chigrina.06-03-1997',
+    baseInfo: {
+      firstName: 'Maria',
+      middleName: 'Romanovna',
+      lastName: 'Garbuzova',
+    },
+  },
+  'bogdan-sergey-chigrin.07-08-2019': {
+    id: 'bogdan-sergey-chigrin.07-08-2019',
+    baseInfo: {
+      firstName: 'Bogdan',
+      middleName: 'Sergeevich',
+      lastName: '_',
+    },
+  },
+  'eva-sergey-chigrina.05-10-2023': {
+    id: 'eva-sergey-chigrina.05-10-2023',
+    baseInfo: {
+      firstName: 'Eva',
+      middleName: 'Sergeevna',
+      lastName: '_',
+    },
+  },
 }
 
 const cache: {
