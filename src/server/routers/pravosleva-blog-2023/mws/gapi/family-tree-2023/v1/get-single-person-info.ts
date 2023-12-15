@@ -104,8 +104,8 @@ const persons = {
       lastName: 'Dereventsov',
     },
   },
-  'ulia-vas-garbuzova.__-__-19__': {
-    id: 'ulia-vas-garbuzova.__-__-19__',
+  'ulia-vas-garbuzova.24-07-1941-05-12-2023': {
+    id: 'ulia-vas-garbuzova.24-07-1941-05-12-2023',
     baseInfo: {
       firstName: 'Ulia',
       middleName: 'Vasilievna',
@@ -120,8 +120,8 @@ const persons = {
       lastName: 'Garbuzova',
     },
   },
-  'valentin-alexey-garbuzov.__-__-19__': {
-    id: 'valentin-alexey-garbuzov.__-__-19__',
+  'valentin-alexey-garbuzov.29-04-1940-10-04-2013': {
+    id: 'valentin-alexey-garbuzov.29-04-1940-10-04-2013',
     baseInfo: {
       firstName: 'Valentin',
       middleName: 'Alexeevich',
@@ -184,6 +184,14 @@ const persons = {
       lastName: 'Poltoratsky',
     },
   },
+  // 'vladimir-vladimir-pol.__-__-19__': {
+  //   id: 'vladimir-vladimir-pol.__-__-19__',
+  //   baseInfo: {
+  //     firstName: 'Vladimir',
+  //     middleName: 'Vladimirovich',
+  //     lastName: 'Poltoratsky',
+  //   },
+  // },
   'nin-nik-ves.30-07-1955': {
     id: 'nin-nik-ves.30-07-1955',
     baseInfo: {
@@ -328,11 +336,11 @@ const persons = {
       lastName: 'Soloviev',
     },
   },
-  'nik-_-dereventsov[elena-f-f].__-__-1___': {
-    id: 'nik-_-dereventsov[elena-f-f].__-__-1___',
+  'nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978': {
+    id: 'nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978',
     baseInfo: {
       firstName: 'Nikolay',
-      middleName: '_',
+      middleName: 'Ivanovich',
       lastName: 'Dereventsov',
     },
   },
@@ -344,6 +352,14 @@ const persons = {
       lastName: 'Dereventsov',
     },
   },
+  'tatyana-ignat-dereventsova.05-10-1947': {
+    id: 'tatyana-ignat-dereventsova.05-10-1947',
+    baseInfo: {
+      firstName: 'Tatyana',
+      middleName: 'Ignatievna',
+      lastName: 'Dereventsova',
+    },
+  },
   'ury-nik-dereventsov.06-07-1947': {
     id: 'ury-nik-dereventsov.06-07-1947',
     baseInfo: {
@@ -352,12 +368,20 @@ const persons = {
       lastName: 'Dereventsov',
     },
   },
+  'lyuba-vladimir-garbuzova.28-04-1976': {
+    id: 'lyuba-vladimir-garbuzova.28-04-1976',
+    baseInfo: {
+      firstName: 'Lubov',
+      middleName: 'Vladimirovna',
+      lastName: 'Garbuzova',
+    },
+  },
   'marya-roman-chigrina.06-03-1997': {
     id: 'marya-roman-chigrina.06-03-1997',
     baseInfo: {
       firstName: 'Maria',
       middleName: 'Romanovna',
-      lastName: 'Garbuzova',
+      lastName: 'Chigrina',
     },
   },
   'bogdan-sergey-chigrin.07-08-2019': {
@@ -365,7 +389,7 @@ const persons = {
     baseInfo: {
       firstName: 'Bogdan',
       middleName: 'Sergeevich',
-      lastName: '_',
+      lastName: 'Chigrin',
     },
   },
   'eva-sergey-chigrina.05-10-2023': {
@@ -373,7 +397,7 @@ const persons = {
     baseInfo: {
       firstName: 'Eva',
       middleName: 'Sergeevna',
-      lastName: '_',
+      lastName: 'Chigrina',
     },
   },
 }

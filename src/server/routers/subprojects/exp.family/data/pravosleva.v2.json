@@ -11,7 +11,7 @@
     ],
     "spouses": [
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "divorced"
       }
     ],
@@ -36,7 +36,7 @@
     "children": []
   },
   {
-    "id": "ulia-vas-garbuzova.__-__-19__",
+    "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
     "gender": "female",
     "parents": [],
     "siblings": [],
@@ -46,7 +46,7 @@
         "type": "divorced"
       },
       {
-        "id": "valentin-alexey-garbuzov.__-__-19__",
+        "id": "valentin-alexey-garbuzov.29-04-1940-10-04-2013",
         "type": "married"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   {
-    "id": "valentin-alexey-garbuzov.__-__-19__",
+    "id": "valentin-alexey-garbuzov.29-04-1940-10-04-2013",
     "gender": "male",
     "parents": [],
     "children": [
@@ -73,7 +73,7 @@
     ],
     "spouses": [
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "married"
       }
     ],
@@ -163,7 +163,7 @@
         "type": "blood"
       },
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "blood"
       }
     ],
@@ -190,11 +190,11 @@
     "gender": "female",
     "parents": [
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "blood"
       },
       {
-        "id": "valentin-alexey-garbuzov.__-__-19__",
+        "id": "valentin-alexey-garbuzov.29-04-1940-10-04-2013",
         "type": "blood"
       }
     ],

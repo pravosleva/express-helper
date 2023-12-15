@@ -1,12 +1,12 @@
 [
   {
-    "id": "nik-_-dereventsov[elena-f-f].__-__-1___",
+    "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-dereventsov[elena-f-m].__-__-1___",
+        "id": "_-_-dereventsova[elena-f-m].__-__-1___",
         "type": "married"
       }
     ],
@@ -22,13 +22,13 @@
     ]
   },
   {
-    "id": "_-_-dereventsov[elena-f-m].__-__-1___",
+    "id": "_-_-dereventsova[elena-f-m].__-__-1___",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "nik-_-dereventsov[elena-f-f].__-__-1___",
+        "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
         "type": "married"
       }
     ],
@@ -56,7 +56,7 @@
     ],
     "children": [
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "blood"
       }
     ]
@@ -74,7 +74,7 @@
     ],
     "children": [
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "blood"
       }
     ]
@@ -84,11 +84,11 @@
     "gender": "male",
     "parents": [
       {
-        "id": "nik-_-dereventsov[elena-f-f].__-__-1___",
+        "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
         "type": "blood"
       },
       {
-        "id": "_-_-dereventsov[elena-f-m].__-__-1___",
+        "id": "_-_-dereventsova[elena-f-m].__-__-1___",
         "type": "blood"
       }
     ],
@@ -106,11 +106,11 @@
     "gender": "male",
     "parents": [
       {
-        "id": "nik-_-dereventsov[elena-f-f].__-__-1___",
+        "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
         "type": "blood"
       },
       {
-        "id": "_-_-dereventsov[elena-f-m].__-__-1___",
+        "id": "_-_-dereventsova[elena-f-m].__-__-1___",
         "type": "blood"
       }
     ],
@@ -122,11 +122,11 @@
     ],
     "spouses": [
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "divorced"
       },
       {
-        "id": "_-_-_[elena-f-wife].__-__-19__",
+        "id": "tatyana-ignat-dereventsova.05-10-1947",
         "type": "married"
       }
     ],
@@ -136,13 +136,13 @@
         "type": "blood"
       },
       {
-        "id": "lyuba-vladimir-der.__-__-19__",
+        "id": "lyuba-vladimir-garbuzova.28-04-1976",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "ulia-vas-garbuzova.__-__-19__",
+    "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
     "gender": "female",
     "parents": [
       {
@@ -161,7 +161,7 @@
         "type": "divorced"
       },
       {
-        "id": "valentin-alexey-garbuzov.__-__-19__",
+        "id": "valentin-alexey-garbuzov.29-04-1940-10-04-2013",
         "type": "married"
       }
     ],
@@ -177,7 +177,7 @@
     ]
   },
   {
-    "id": "valentin-alexey-garbuzov.__-__-19__",
+    "id": "valentin-alexey-garbuzov.29-04-1940-10-04-2013",
     "gender": "male",
     "parents": [],
     "children": [
@@ -188,7 +188,7 @@
     ],
     "spouses": [
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "married"
       }
     ],
@@ -988,7 +988,7 @@
     ]
   },
   {
-    "id": "_-_-_[elena-f-wife].__-__-19__",
+    "id": "tatyana-ignat-dereventsova.05-10-1947",
     "gender": "female",
     "parents": [],
     "siblings": [],
@@ -1000,7 +1000,7 @@
     ],
     "children": [
       {
-        "id": "lyuba-vladimir-der.__-__-19__",
+        "id": "lyuba-vladimir-garbuzova.28-04-1976",
         "type": "blood"
       }
     ]
@@ -1014,13 +1014,13 @@
         "type": "blood"
       },
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "lyuba-vladimir-der.__-__-19__"
+        "id": "lyuba-vladimir-garbuzova.28-04-1976"
       }
     ],
     "spouses": [
@@ -1041,7 +1041,7 @@
     ]
   },
   {
-    "id": "lyuba-vladimir-der.__-__-19__",
+    "id": "lyuba-vladimir-garbuzova.28-04-1976",
     "gender": "female",
     "parents": [
       {
@@ -1049,7 +1049,7 @@
         "type": "blood"
       },
       {
-        "id": "_-_-_[elena-f-wife].__-__-19__",
+        "id": "tatyana-ignat-dereventsova.05-10-1947",
         "type": "blood"
       }
     ],
@@ -1078,7 +1078,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "lyuba-vladimir-der.__-__-19__",
+        "id": "lyuba-vladimir-garbuzova.28-04-1976",
         "type": "married"
       }
     ],
@@ -1098,7 +1098,7 @@
         "type": "blood"
       },
       {
-        "id": "lyuba-vladimir-der.__-__-19__",
+        "id": "lyuba-vladimir-garbuzova.28-04-1976",
         "type": "blood"
       }
     ],
@@ -1181,11 +1181,11 @@
     "gender": "female",
     "parents": [
       {
-        "id": "ulia-vas-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
         "type": "blood"
       },
       {
-        "id": "valentin-alexey-garbuzov.__-__-19__",
+        "id": "valentin-alexey-garbuzov.29-04-1940-10-04-2013",
         "type": "blood"
       }
     ],
