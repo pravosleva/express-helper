@@ -11,7 +11,7 @@
     ],
     "spouses": [
       {
-        "id": "ulia-_-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.__-__-19__",
         "type": "divorced"
       }
     ],
@@ -36,7 +36,7 @@
     "children": []
   },
   {
-    "id": "ulia-_-garbuzova.__-__-19__",
+    "id": "ulia-vas-garbuzova.__-__-19__",
     "gender": "female",
     "parents": [],
     "siblings": [],
@@ -46,7 +46,7 @@
         "type": "divorced"
       },
       {
-        "id": "valentin-_-garbuzov.__-__-19__",
+        "id": "valentin-alexey-garbuzov.__-__-19__",
         "type": "married"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   {
-    "id": "valentin-_-garbuzov.__-__-19__",
+    "id": "valentin-alexey-garbuzov.__-__-19__",
     "gender": "male",
     "parents": [],
     "children": [
@@ -73,7 +73,7 @@
     ],
     "spouses": [
       {
-        "id": "ulia-_-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.__-__-19__",
         "type": "married"
       }
     ],
@@ -163,7 +163,7 @@
         "type": "blood"
       },
       {
-        "id": "ulia-_-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.__-__-19__",
         "type": "blood"
       }
     ],
@@ -190,11 +190,11 @@
     "gender": "female",
     "parents": [
       {
-        "id": "ulia-_-garbuzova.__-__-19__",
+        "id": "ulia-vas-garbuzova.__-__-19__",
         "type": "blood"
       },
       {
-        "id": "valentin-_-garbuzov.__-__-19__",
+        "id": "valentin-alexey-garbuzov.__-__-19__",
         "type": "blood"
       }
     ],
@@ -207,7 +207,7 @@
     ],
     "children": [
       {
-        "id": "yana-yan-garbuzova.__-__-19__",
+        "id": "yana-yan-garbuzova.07-03-199_",
         "type": "blood"
       }
     ]
@@ -225,7 +225,7 @@
     ],
     "children": [
       {
-        "id": "yana-yan-garbuzova.__-__-19__",
+        "id": "yana-yan-garbuzova.07-03-199_",
         "type": "blood"
       }
     ]
@@ -245,7 +245,7 @@
     ],
     "siblings": [
       {
-        "id": "yana-yan-garbuzova.__-__-19__",
+        "id": "yana-yan-garbuzova.07-03-199_",
         "type": "blood"
       }
     ],
@@ -285,7 +285,7 @@
     ]
   },
   {
-    "id": "yana-yan-garbuzova.__-__-19__",
+    "id": "yana-yan-garbuzova.07-03-199_",
     "gender": "female",
     "parents": [
       {

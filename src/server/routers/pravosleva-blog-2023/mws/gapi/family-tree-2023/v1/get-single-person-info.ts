@@ -104,8 +104,8 @@ const persons = {
       lastName: 'Dereventsov',
     },
   },
-  'ulia-_-garbuzova.__-__-19__': {
-    id: 'ulia-_-garbuzova.__-__-19__',
+  'ulia-vas-garbuzova.__-__-19__': {
+    id: 'ulia-vas-garbuzova.__-__-19__',
     baseInfo: {
       firstName: 'Ulia',
       middleName: 'Vasilievna',
@@ -120,8 +120,16 @@ const persons = {
       lastName: 'Garbuzova',
     },
   },
-  'yana-yan-garbuzova.__-__-19__': {
-    id: 'yana-yan-garbuzova.__-__-19__',
+  'valentin-alexey-garbuzov.__-__-19__': {
+    id: 'valentin-alexey-garbuzov.__-__-19__',
+    baseInfo: {
+      firstName: 'Valentin',
+      middleName: 'Alexeevich',
+      lastName: 'Garbuzov',
+    },
+  },
+  'yana-yan-garbuzova.07-03-199_': {
+    id: 'yana-yan-garbuzova.07-03-199_',
     baseInfo: {
       firstName: 'Yana',
       middleName: 'Yanovna',
@@ -134,6 +142,22 @@ const persons = {
       firstName: 'Yan',
       middleName: 'Albertovich',
       lastName: 'Grishin',
+    },
+  },
+  'albert-yakov-grishin.__-__-19__': {
+    id: 'albert-yakov-grishin.__-__-19__',
+    baseInfo: {
+      firstName: 'Albert',
+      middleName: 'Yakovlevich',
+      lastName: 'Grishin',
+    },
+  },
+  'alevtina-nik-grishina.__-__-19__': {
+    id: 'alevtina-nik-grishina.__-__-19__',
+    baseInfo: {
+      firstName: 'Alevtina',
+      middleName: 'Nikolaevna',
+      lastName: 'Grishina',
     },
   },
   'fedor-michailovich-izvekov.__-__-1909': {
