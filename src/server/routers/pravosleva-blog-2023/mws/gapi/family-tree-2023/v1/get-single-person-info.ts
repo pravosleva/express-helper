@@ -260,7 +260,7 @@ const persons = {
     id: 'nikolay-nik-malyshev.[19-11-1948]',
     baseInfo: {
       firstName: 'Nikolay',
-      middleName: 'Nokolaevich',
+      middleName: 'Nikolaevich',
       lastName: 'Malishev',
     },
   },
