@@ -344,6 +344,22 @@ const persons = {
       lastName: 'Dereventsov',
     },
   },
+  'vasily-ivan-dereventsov[elena-f-fs].__-__-19__-__-__-1984': {
+    id: 'vasily-ivan-dereventsov[elena-f-fs].__-__-19__-__-__-1984',
+    baseInfo: {
+      firstName: 'Vasily',
+      middleName: 'Ivanovich',
+      lastName: 'Dereventsov',
+    },
+  },
+  'irina-kirillovna-dereventsova[elena-f-m].__-__-1___': {
+    id: 'irina-kirillovna-dereventsova[elena-f-m].__-__-1___',
+    baseInfo: {
+      firstName: 'Irina',
+      middleName: 'Kirillovna',
+      lastName: 'Dereventsova',
+    },
+  },
   'vladimir-nik-dereventsov.01-09-1940': {
     id: 'vladimir-nik-dereventsov.01-09-1940',
     baseInfo: {
@@ -365,6 +381,30 @@ const persons = {
     baseInfo: {
       firstName: 'Ury',
       middleName: 'Nikolaevich',
+      lastName: 'Dereventsov',
+    },
+  },
+  'andrey-ury-dereventsov.__-__-19__': {
+    id: 'andrey-ury-dereventsov.__-__-19__',
+    baseInfo: {
+      firstName: 'Andrey',
+      middleName: 'Urievich',
+      lastName: 'Dereventsov',
+    },
+  },
+  'nikolay-ury-dereventsov.__-__-19__': {
+    id: 'nikolay-ury-dereventsov.__-__-19__',
+    baseInfo: {
+      firstName: 'Nikolay',
+      middleName: 'Urievich',
+      lastName: 'Dereventsov',
+    },
+  },
+  'michail-ury-dereventsov.__-__-19__': {
+    id: 'michail-ury-dereventsov.__-__-19__',
+    baseInfo: {
+      firstName: 'Michail',
+      middleName: 'Urievich',
       lastName: 'Dereventsov',
     },
   },
