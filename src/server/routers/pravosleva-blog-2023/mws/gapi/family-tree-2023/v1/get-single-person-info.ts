@@ -64,32 +64,32 @@ enum ROW_INDEX {
 // TODO: const cache = {}
 
 const persons = {
-  'den-vladimir-pol.13-04-1986': {
-    id: 'den-vladimir-pol.13-04-1986',
+  'den-vladimir-pol.[13-04-1986]': {
+    id: 'den-vladimir-pol.[13-04-1986]',
     baseInfo: {
       firstName: 'Denis',
       middleName: 'Vladimirovich',
       lastName: 'Poltoratsky',
     },
   },
-  'lid-alex-pol.17.10.1990': {
-    id: 'lid-alex-pol.17.10.1990',
+  'lidya-alex-pol.[17.10.1990]': {
+    id: 'lidya-alex-pol.[17.10.1990]',
     baseInfo: {
       firstName: 'Lidia',
       middleName: 'Aleksandrovna',
       lastName: 'Poltoratskaya',
     },
   },
-  'vik-step-lyalin.29-07-1952': {
-    id: 'vik-step-lyalin.29-07-1952',
+  'viktor-step-lyalin.[29-07-1952]': {
+    id: 'viktor-step-lyalin.[29-07-1952]',
     baseInfo: {
       firstName: 'Viktor',
       middleName: 'Stepanovich',
       lastName: 'Lyalin',
     },
   },
-  'elena-vladimir-der.29-03-1964': {
-    id: 'elena-vladimir-der.29-03-1964',
+  'elena-vladimir-der.[29-03-1964]': {
+    id: 'elena-vladimir-der.[29-03-1964]',
     baseInfo: {
       firstName: 'Elena',
       middleName: 'Vladimirovna',
@@ -104,336 +104,336 @@ const persons = {
       lastName: 'Dereventsov',
     },
   },
-  'ulia-vas-garbuzova.24-07-1941-05-12-2023': {
-    id: 'ulia-vas-garbuzova.24-07-1941-05-12-2023',
+  'ulia-vas-garbuzova.[24-07-1941][05-12-2023]': {
+    id: 'ulia-vas-garbuzova.[24-07-1941][05-12-2023]',
     baseInfo: {
       firstName: 'Ulia',
       middleName: 'Vasilievna',
       lastName: 'Garbuzova',
     },
   },
-  'sveta-valentin-garbuzova.__-__-19__': {
-    id: 'sveta-valentin-garbuzova.__-__-19__',
+  'sveta-valentin-garbuzova.[__-__-19__]': {
+    id: 'sveta-valentin-garbuzova.[__-__-19__]',
     baseInfo: {
       firstName: 'Svetlana',
       middleName: 'Valentinovna',
       lastName: 'Garbuzova',
     },
   },
-  'valentin-alexey-garbuzov.29-04-1940-10-04-2013': {
-    id: 'valentin-alexey-garbuzov.29-04-1940-10-04-2013',
+  'valentin-alexey-garbuzov.[29-04-1940][10-04-2013]': {
+    id: 'valentin-alexey-garbuzov.[29-04-1940][10-04-2013]',
     baseInfo: {
       firstName: 'Valentin',
       middleName: 'Alexeevich',
       lastName: 'Garbuzov',
     },
   },
-  'yana-yan-garbuzova.07-03-199_': {
-    id: 'yana-yan-garbuzova.07-03-199_',
+  'yana-yan-garbuzova.[07-03-199_]': {
+    id: 'yana-yan-garbuzova.[07-03-199_]',
     baseInfo: {
       firstName: 'Yana',
       middleName: 'Yanovna',
       lastName: 'Grishina',
     },
   },
-  'yan-albert-grishin.__-__-19__': {
-    id: 'yan-albert-grishin.__-__-19__',
+  'yan-albert-grishin.[__-__-19__][__-__-19__]': {
+    id: 'yan-albert-grishin.[__-__-19__][__-__-19__]',
     baseInfo: {
       firstName: 'Yan',
       middleName: 'Albertovich',
       lastName: 'Grishin',
     },
   },
-  'albert-yakov-grishin.__-__-19__': {
-    id: 'albert-yakov-grishin.__-__-19__',
+  'albert-yakov-grishin.[__-__-19__][__-__-19__]': {
+    id: 'albert-yakov-grishin.[__-__-19__][__-__-19__]',
     baseInfo: {
       firstName: 'Albert',
       middleName: 'Yakovlevich',
       lastName: 'Grishin',
     },
   },
-  'alevtina-nik-grishina.__-__-19__': {
-    id: 'alevtina-nik-grishina.__-__-19__',
+  'alevtina-nik-grishina.[__-__-19__][__-__-____]': {
+    id: 'alevtina-nik-grishina.[__-__-19__][__-__-____]',
     baseInfo: {
       firstName: 'Alevtina',
       middleName: 'Nikolaevna',
       lastName: 'Grishina',
     },
   },
-  'fedor-michailovich-izvekov.__-__-1909': {
-    id: 'fedor-michailovich-izvekov.__-__-1909',
+  'fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]': {
+    id: 'fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]',
     baseInfo: {
       firstName: 'Izvekov',
       middleName: 'Fedor',
       lastName: 'Mikhailovich',
     },
   },
-  'lubov-fedorovna-pol.__-__-19__': {
-    id: 'lubov-fedorovna-pol.__-__-19__',
+  'lubov-fedor-pol.[__-__-1936]': {
+    id: 'lubov-fedor-pol.[__-__-1936]',
     baseInfo: {
       firstName: 'Lubov',
       middleName: 'Fedorovna',
       lastName: 'Poltoratskaya',
     },
   },
-  'vladimir-vladimir-pol.10-11-1961': {
-    id: 'vladimir-vladimir-pol.10-11-1961',
+  'vladimir-vladimir-pol.[10-11-1961][27-12-2014]': {
+    id: 'vladimir-vladimir-pol.[10-11-1961][27-12-2014]',
     baseInfo: {
       firstName: 'Vladimir',
       middleName: 'Vladimirovich',
       lastName: 'Poltoratsky',
     },
   },
-  // 'vladimir-vladimir-pol.__-__-19__': {
-  //   id: 'vladimir-vladimir-pol.__-__-19__',
+  // 'vladimir-vladimir-pol.[__-__-19__]': {
+  //   id: 'vladimir-vladimir-pol.[__-__-19__]',
   //   baseInfo: {
   //     firstName: 'Vladimir',
   //     middleName: 'Vladimirovich',
   //     lastName: 'Poltoratsky',
   //   },
   // },
-  'nin-nik-ves.30-07-1955': {
-    id: 'nin-nik-ves.30-07-1955',
+  'nina-nik-veselova.[30-07-1955]': {
+    id: 'nina-nik-veselova.[30-07-1955]',
     baseInfo: {
       firstName: 'Nina',
       middleName: 'Nikolaevna',
       lastName: 'Veselova',
     },
   },
-  'alexander-ivan-ves.04-03-1950': {
-    id: 'alexander-ivan-ves.04-03-1950',
+  'alexander-ivan-ves.[04-03-1950]': {
+    id: 'alexander-ivan-ves.[04-03-1950]',
     baseInfo: {
       firstName: 'Alexandr',
       middleName: 'Ivanovich',
       lastName: 'Veselov',
     },
   },
-  'dmit-alex-ves.12-07-1983': {
-    id: 'dmit-alex-ves.12-07-1983',
+  'dmitry-alex-veselov.[12-07-1983]': {
+    id: 'dmitry-alex-veselov.[12-07-1983]',
     baseInfo: {
       firstName: 'Dmitry',
       middleName: 'Alexandrovich',
       lastName: 'Veselov',
     },
   },
-  'lidia-vas-malysheva.26-12-1921': {
-    id: 'lidia-vas-malysheva.26-12-1921',
+  'lidya-vas-malysheva.[26-12-1921]': {
+    id: 'lidya-vas-malysheva.[26-12-1921]',
     baseInfo: {
       firstName: 'Lidia',
       middleName: 'Vasilievna',
       lastName: 'Malysheva',
     },
   },
-  'nikolay-ivan-malyshev.02-10-1920': {
-    id: 'nikolay-ivan-malyshev.02-10-1920',
+  'nikolay-ivan-malyshev.[02-10-1920]': {
+    id: 'nikolay-ivan-malyshev.[02-10-1920]',
     baseInfo: {
       firstName: 'Nikolay',
       middleName: 'Ivanovich',
       lastName: 'Malyshev',
     },
   },
-  'alevtina-vas-krupina.16-07-1918': {
-    id: 'alevtina-vas-krupina.16-07-1918',
+  'alevtina-vas-krupina.[16-07-1918]': {
+    id: 'alevtina-vas-krupina.[16-07-1918]',
     baseInfo: {
       firstName: 'Alevtina',
       middleName: 'Vasilievna',
       lastName: 'Krupina',
     },
   },
-  'ivan-fedor-veselov.__-12-1911': {
-    id: 'ivan-fedor-veselov.__-12-1911',
+  'ivan-fedor-veselov.[__-12-1911]': {
+    id: 'ivan-fedor-veselov.[__-12-1911]',
     baseInfo: {
       firstName: 'Ivan',
       middleName: 'Fedorovich',
       lastName: 'Veselov',
     },
   },
-  'elena-nik-solovieva.01-02-1953': {
-    id: 'elena-nik-solovieva.01-02-1953',
+  'elena-nik-solovieva.[01-02-1953]': {
+    id: 'elena-nik-solovieva.[01-02-1953]',
     baseInfo: {
       firstName: 'Elena',
       middleName: 'Nikolaevna',
       lastName: 'Solovieva',
     },
   },
-  'nikolay-nik-malyshev.19-11-1948': {
-    id: 'nikolay-nik-malyshev.19-11-1948',
+  'nikolay-nik-malyshev.[19-11-1948]': {
+    id: 'nikolay-nik-malyshev.[19-11-1948]',
     baseInfo: {
       firstName: 'Nikolay',
       middleName: 'Nokolaevich',
       lastName: 'Malishev',
     },
   },
-  'sekleteya-alekseevna-kyzmina.__-__-1___': {
-    id: 'sekleteya-alekseevna-kyzmina.__-__-1___',
+  'sekleteya-alekseevna-kyzmina.[__-__-1___]': {
+    id: 'sekleteya-alekseevna-kyzmina.[__-__-1___]',
     baseInfo: {
       firstName: 'Sekleteya',
       middleName: 'Alekseenva',
       lastName: 'Kyzmina',
     },
   },
-  'vasily-ivan-kyzmin.__-__-1___': {
-    id: 'vasily-ivan-kyzmin.__-__-1___',
+  'vasily-ivan-kyzmin.[__-__-1___]': {
+    id: 'vasily-ivan-kyzmin.[__-__-1___]',
     baseInfo: {
       firstName: 'Vasily',
       middleName: 'Ivanovich',
       lastName: 'Kyzmin',
     },
   },
-  'maria-efim-malysheva.__-__-1___': {
-    id: 'maria-efim-malysheva.__-__-1___',
+  'maria-efim-malysheva.[__-__-1___]': {
+    id: 'maria-efim-malysheva.[__-__-1___]',
     baseInfo: {
       firstName: 'Maria',
       middleName: 'Efimovna',
       lastName: 'Malysheva',
     },
   },
-  'ivan-fedor-malyshev.__-__-1___': {
-    id: 'ivan-fedor-malyshev.__-__-1___',
+  'ivan-fedor-malyshev.[__-__-1___]': {
+    id: 'ivan-fedor-malyshev.[__-__-1___]',
     baseInfo: {
       firstName: 'Ivan',
       middleName: 'Fedorovich',
       lastName: 'Malyshev',
     },
   },
-  'pelageya-porfiry-krupina.__-__-18__': {
-    id: 'pelageya-porfiry-krupina.__-__-18__',
+  'pelageya-porfiry-krupina.[__-__-18__]': {
+    id: 'pelageya-porfiry-krupina.[__-__-18__]',
     baseInfo: {
       firstName: 'Pelageya',
       middleName: 'Porfirievna',
       lastName: 'Krupina',
     },
   },
-  'vas-archip-krupin.__-__-18__': {
-    id: 'vas-archip-krupin.__-__-18__',
+  'vas-archip-krupin.[__-__-18__]': {
+    id: 'vas-archip-krupin.[__-__-18__]',
     baseInfo: {
       firstName: 'Vasily',
       middleName: 'Archipovich',
       lastName: 'Krupin',
     },
   },
-  'alexandra-_-kuzmina.17-02-1916': {
-    id: 'alexandra-_-kuzmina.17-02-1916',
+  'alexandra-_-kuzmina.[17-02-1916]': {
+    id: 'alexandra-_-kuzmina.[17-02-1916]',
     baseInfo: {
       firstName: 'Alexandra',
       middleName: '_',
       lastName: 'Kuzmina',
     },
   },
-  'nik-anatoly-soloviev.22-05-1956': {
-    id: 'nik-anatoly-soloviev.22-05-1956',
+  'nikolay-anatoly-soloviev.[22-05-1956]': {
+    id: 'nikolay-anatoly-soloviev.[22-05-1956]',
     baseInfo: {
       firstName: 'Nikolay',
       middleName: 'Anatolievich',
       lastName: 'Soloviev',
     },
   },
-  'oleg-nik-soloviev.10-04-1977': {
-    id: 'oleg-nik-soloviev.10-04-1977',
+  'oleg-nik-soloviev.[10-04-1977]': {
+    id: 'oleg-nik-soloviev.[10-04-1977]',
     baseInfo: {
       firstName: 'Oleg',
       middleName: 'Nikolaevich',
       lastName: 'Soloviev',
     },
   },
-  'nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978': {
-    id: 'nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978',
+  'nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]': {
+    id: 'nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]',
     baseInfo: {
       firstName: 'Nikolay',
       middleName: 'Ivanovich',
       lastName: 'Dereventsov',
     },
   },
-  'vasily-ivan-dereventsov[elena-f-fs].__-__-19__-__-__-1984': {
-    id: 'vasily-ivan-dereventsov[elena-f-fs].__-__-19__-__-__-1984',
+  'vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]': {
+    id: 'vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]',
     baseInfo: {
       firstName: 'Vasily',
       middleName: 'Ivanovich',
       lastName: 'Dereventsov',
     },
   },
-  'irina-kirillovna-dereventsova[elena-f-m].__-__-1___': {
-    id: 'irina-kirillovna-dereventsova[elena-f-m].__-__-1___',
+  'irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]': {
+    id: 'irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]',
     baseInfo: {
       firstName: 'Irina',
       middleName: 'Kirillovna',
       lastName: 'Dereventsova',
     },
   },
-  'vladimir-nik-dereventsov.01-09-1940': {
-    id: 'vladimir-nik-dereventsov.01-09-1940',
+  'vladimir-nik-dereventsov.[01-09-1940][__-__-____]': {
+    id: 'vladimir-nik-dereventsov.[01-09-1940][__-__-____]',
     baseInfo: {
       firstName: 'Vladimir',
       middleName: 'Nikolaevich',
       lastName: 'Dereventsov',
     },
   },
-  'tatyana-ignat-dereventsova.05-10-1947': {
-    id: 'tatyana-ignat-dereventsova.05-10-1947',
+  'tatyana-ignat-dereventsova.[05-10-1947]': {
+    id: 'tatyana-ignat-dereventsova.[05-10-1947]',
     baseInfo: {
       firstName: 'Tatyana',
       middleName: 'Ignatievna',
       lastName: 'Dereventsova',
     },
   },
-  'ury-nik-dereventsov.06-07-1947': {
-    id: 'ury-nik-dereventsov.06-07-1947',
+  'ury-nik-dereventsov.[06-07-1947]': {
+    id: 'ury-nik-dereventsov.[06-07-1947]',
     baseInfo: {
       firstName: 'Ury',
       middleName: 'Nikolaevich',
       lastName: 'Dereventsov',
     },
   },
-  'andrey-ury-dereventsov.__-__-19__': {
-    id: 'andrey-ury-dereventsov.__-__-19__',
+  'andrey-ury-dereventsov.[__-__-19__]': {
+    id: 'andrey-ury-dereventsov.[__-__-19__]',
     baseInfo: {
       firstName: 'Andrey',
       middleName: 'Urievich',
       lastName: 'Dereventsov',
     },
   },
-  'nikolay-ury-dereventsov.__-__-19__': {
-    id: 'nikolay-ury-dereventsov.__-__-19__',
+  'nikolay-ury-dereventsov.[__-__-19__]': {
+    id: 'nikolay-ury-dereventsov.[__-__-19__]',
     baseInfo: {
       firstName: 'Nikolay',
       middleName: 'Urievich',
       lastName: 'Dereventsov',
     },
   },
-  'michail-ury-dereventsov.__-__-19__': {
-    id: 'michail-ury-dereventsov.__-__-19__',
+  'michail-ury-dereventsov.[__-__-19__][__-__-19__]': {
+    id: 'michail-ury-dereventsov.[__-__-19__][__-__-19__]',
     baseInfo: {
       firstName: 'Michail',
       middleName: 'Urievich',
       lastName: 'Dereventsov',
     },
   },
-  'lyuba-vladimir-garbuzova.28-04-1976': {
-    id: 'lyuba-vladimir-garbuzova.28-04-1976',
+  'lyuba-vladimir-garbuzova.[28-04-1976]': {
+    id: 'lyuba-vladimir-garbuzova.[28-04-1976]',
     baseInfo: {
       firstName: 'Lubov',
       middleName: 'Vladimirovna',
       lastName: 'Garbuzova',
     },
   },
-  'marya-roman-chigrina.06-03-1997': {
-    id: 'marya-roman-chigrina.06-03-1997',
+  'marya-roman-chigrina.[06-03-1997]': {
+    id: 'marya-roman-chigrina.[06-03-1997]',
     baseInfo: {
       firstName: 'Maria',
       middleName: 'Romanovna',
       lastName: 'Chigrina',
     },
   },
-  'bogdan-sergey-chigrin.07-08-2019': {
-    id: 'bogdan-sergey-chigrin.07-08-2019',
+  'bogdan-sergey-chigrin.[07-08-2019]': {
+    id: 'bogdan-sergey-chigrin.[07-08-2019]',
     baseInfo: {
       firstName: 'Bogdan',
       middleName: 'Sergeevich',
       lastName: 'Chigrin',
     },
   },
-  'eva-sergey-chigrina.05-10-2023': {
-    id: 'eva-sergey-chigrina.05-10-2023',
+  'eva-sergey-chigrina.[05-10-2023]': {
+    id: 'eva-sergey-chigrina.[05-10-2023]',
     baseInfo: {
       firstName: 'Eva',
       middleName: 'Sergeevna',

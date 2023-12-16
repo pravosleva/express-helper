@@ -1,100 +1,100 @@
 [
   {
-    "id": "ivan-_-_[elena-f-f-f].__-__-1___",
+    "id": "ivan-_-_[elena-f-f-f].[__-__-1___]",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-_[elena-f-f-m].__-__-1___",
+        "id": "_-_-_[elena-f-f-m].[__-__-1___]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
+        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "vasily-ivan-dereventsov[elena-f-fs].__-__-19__-__-__-1984",
+        "id": "vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "_-_-_[elena-f-f-m].__-__-1___",
+    "id": "_-_-_[elena-f-f-m].[__-__-1___]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "ivan-_-_[elena-f-f-f].__-__-1___",
+        "id": "ivan-_-_[elena-f-f-f].[__-__-1___]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
+        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "vasily-ivan-dereventsov[elena-f-fs].__-__-19__-__-__-1984",
+        "id": "vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
+    "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
     "gender": "male",
     "parents": [
       {
-        "id": "ivan-_-_[elena-f-f-f].__-__-1___",
+        "id": "ivan-_-_[elena-f-f-f].[__-__-1___]",
         "type": "blood"
       },
       {
-        "id": "_-_-_[elena-f-f-m].__-__-1___",
+        "id": "_-_-_[elena-f-f-m].[__-__-1___]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "vasily-ivan-dereventsov[elena-f-fs].__-__-19__-__-__-1984",
+        "id": "vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "irina-kirillovna-dereventsova[elena-f-m].__-__-1___",
+        "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "vladimir-nik-dereventsov.01-09-1940",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
         "type": "blood"
       },
       {
-        "id": "ury-nik-dereventsov.06-07-1947",
+        "id": "ury-nik-dereventsov.[06-07-1947]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "vasily-ivan-dereventsov[elena-f-fs].__-__-19__-__-__-1984",
+    "id": "vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]",
     "gender": "male",
     "parents": [
       {
-        "id": "ivan-_-_[elena-f-f-f].__-__-1___",
+        "id": "ivan-_-_[elena-f-f-f].[__-__-1___]",
         "type": "blood"
       },
       {
-        "id": "_-_-_[elena-f-f-m].__-__-1___",
+        "id": "_-_-_[elena-f-f-m].[__-__-1___]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
+        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
         "type": "blood"
       }
     ],
@@ -102,149 +102,149 @@
     "children": []
   },
   {
-    "id": "irina-kirillovna-dereventsova[elena-f-m].__-__-1___",
+    "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
+        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "vladimir-nik-dereventsov.01-09-1940",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
         "type": "blood"
       },
       {
-        "id": "ury-nik-dereventsov.06-07-1947",
+        "id": "ury-nik-dereventsov.[06-07-1947]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "varya-_-_[elena-m-m].__-__-1___",
+    "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-_[elena-m-f].__-__-1___",
+        "id": "_-_-_[elena-m-f].[__-__-1___]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
+        "id": "ulia-vas-garbuzova.[24-07-1941][05-12-2023]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "_-_-_[elena-m-f].__-__-1___",
+    "id": "_-_-_[elena-m-f].[__-__-1___]",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "varya-_-_[elena-m-m].__-__-1___",
+        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
+        "id": "ulia-vas-garbuzova.[24-07-1941][05-12-2023]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "ury-nik-dereventsov.06-07-1947",
+    "id": "ury-nik-dereventsov.[06-07-1947]",
     "gender": "male",
     "parents": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
+        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "irina-kirillovna-dereventsova[elena-f-m].__-__-1___",
+        "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "vladimir-nik-dereventsov.01-09-1940",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "_-_-dereventsova[elena-fbwife].__-__-19__",
+        "id": "_-_-dereventsova[elena-fswife].[__-__-19__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "andrey-ury-dereventsov.__-__-19__",
+        "id": "andrey-ury-dereventsov.[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "nikolay-ury-dereventsov.__-__-19__",
+        "id": "nikolay-ury-dereventsov.[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "michail-ury-dereventsov.__-__-19__",
+        "id": "michail-ury-dereventsov.[__-__-19__][__-__-19__]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "_-_-dereventsova[elena-fbwife].__-__-19__",
+    "id": "_-_-dereventsova[elena-fswife].[__-__-19__]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "ury-nik-dereventsov.06-07-1947",
+        "id": "ury-nik-dereventsov.[06-07-1947]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "andrey-ury-dereventsov.__-__-19__",
+        "id": "andrey-ury-dereventsov.[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "nikolay-ury-dereventsov.__-__-19__",
+        "id": "nikolay-ury-dereventsov.[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "michail-ury-dereventsov.__-__-19__",
+        "id": "michail-ury-dereventsov.[__-__-19__][__-__-19__]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "andrey-ury-dereventsov.__-__-19__",
+    "id": "andrey-ury-dereventsov.[__-__-19__]",
     "gender": "male",
     "parents": [
       {
-        "id": "ury-nik-dereventsov.06-07-1947",
+        "id": "ury-nik-dereventsov.[06-07-1947]",
         "type": "blood"
       },
       {
-        "id": "_-_-dereventsova[elena-fbwife].__-__-19__",
+        "id": "_-_-dereventsova[elena-fswife].[__-__-19__]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "nikolay-ury-dereventsov.__-__-19__",
+        "id": "nikolay-ury-dereventsov.[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "michail-ury-dereventsov.__-__-19__",
+        "id": "michail-ury-dereventsov.[__-__-19__][__-__-19__]",
         "type": "blood"
       }
     ],
@@ -252,25 +252,25 @@
     "children": []
   },
   {
-    "id": "nikolay-ury-dereventsov.__-__-19__",
+    "id": "nikolay-ury-dereventsov.[__-__-19__]",
     "gender": "male",
     "parents": [
       {
-        "id": "ury-nik-dereventsov.06-07-1947",
+        "id": "ury-nik-dereventsov.[06-07-1947]",
         "type": "blood"
       },
       {
-        "id": "_-_-dereventsova[elena-fbwife].__-__-19__",
+        "id": "_-_-dereventsova[elena-fswife].[__-__-19__]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "andrey-ury-dereventsov.__-__-19__",
+        "id": "andrey-ury-dereventsov.[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "michail-ury-dereventsov.__-__-19__",
+        "id": "michail-ury-dereventsov.[__-__-19__][__-__-19__]",
         "type": "blood"
       }
     ],
@@ -278,25 +278,25 @@
     "children": []
   },
   {
-    "id": "michail-ury-dereventsov.__-__-19__",
+    "id": "michail-ury-dereventsov.[__-__-19__][__-__-19__]",
     "gender": "male",
     "parents": [
       {
-        "id": "ury-nik-dereventsov.06-07-1947",
+        "id": "ury-nik-dereventsov.[06-07-1947]",
         "type": "blood"
       },
       {
-        "id": "_-_-dereventsova[elena-fbwife].__-__-19__",
+        "id": "_-_-dereventsova[elena-fswife].[__-__-19__]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "andrey-ury-dereventsov.__-__-19__",
+        "id": "andrey-ury-dereventsov.[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "nikolay-ury-dereventsov.__-__-19__",
+        "id": "nikolay-ury-dereventsov.[__-__-19__]",
         "type": "blood"
       }
     ],
@@ -304,93 +304,93 @@
     "children": []
   },
   {
-    "id": "vladimir-nik-dereventsov.01-09-1940",
+    "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
     "gender": "male",
     "parents": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].__-__-1909-__-__-1978",
+        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "irina-kirillovna-dereventsova[elena-f-m].__-__-1___",
+        "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "ury-nik-dereventsov.06-07-1947",
+        "id": "ury-nik-dereventsov.[06-07-1947]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
+        "id": "ulia-vas-garbuzova.[24-07-1941][05-12-2023]",
         "type": "divorced"
       },
       {
-        "id": "tatyana-ignat-dereventsova.05-10-1947",
+        "id": "tatyana-ignat-dereventsova.[05-10-1947]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "elena-vladimir-der.29-03-1964",
+        "id": "elena-vladimir-der.[29-03-1964]",
         "type": "blood"
       },
       {
-        "id": "lyuba-vladimir-garbuzova.28-04-1976",
+        "id": "lyuba-vladimir-garbuzova.[28-04-1976]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
+    "id": "ulia-vas-garbuzova.[24-07-1941][05-12-2023]",
     "gender": "female",
     "parents": [
       {
-        "id": "varya-_-_[elena-m-m].__-__-1___",
+        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       },
       {
-        "id": "_-_-_[elena-m-f].__-__-1___",
+        "id": "_-_-_[elena-m-f].[__-__-1___]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "vladimir-nik-dereventsov.01-09-1940",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
         "type": "divorced"
       },
       {
-        "id": "valentin-alexey-garbuzov.29-04-1940-10-04-2013",
+        "id": "valentin-alexey-garbuzov.[29-04-1940][10-04-2013]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "elena-vladimir-der.29-03-1964",
+        "id": "elena-vladimir-der.[29-03-1964]",
         "type": "blood"
       },
       {
-        "id": "sveta-valentin-garbuzova.__-__-19__",
+        "id": "sveta-valentin-garbuzova.[__-__-19__]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "valentin-alexey-garbuzov.29-04-1940-10-04-2013",
+    "id": "valentin-alexey-garbuzov.[29-04-1940][10-04-2013]",
     "gender": "male",
     "parents": [],
     "children": [
       {
-        "id": "sveta-valentin-garbuzova.__-__-19__",
+        "id": "sveta-valentin-garbuzova.[__-__-19__]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
+        "id": "ulia-vas-garbuzova.[24-07-1941][05-12-2023]",
         "type": "married"
       }
     ],
@@ -398,95 +398,95 @@
   },
 
   {
-    "id": "maria-efim-malysheva.__-__-1___",
+    "id": "maria-efim-malysheva.[__-__-1___]",
     "gender": "female",
     "parents": [],
     "children": [
       {
-        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "id": "nikolay-ivan-malyshev.[02-10-1920]",
         "type": "blood"
       },
       {
-        "id": "praskoviya-ivan-smirnova.__-__-19__",
+        "id": "praskoviya-ivan-smirnova.[__-__-19__]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "ivan-fedor-malyshev.__-__-1___",
+        "id": "ivan-fedor-malyshev.[__-__-1___]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "ivan-fedor-malyshev.__-__-1___",
+    "id": "ivan-fedor-malyshev.[__-__-1___]",
     "gender": "male",
     "parents": [],
     "children": [
       {
-        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "id": "nikolay-ivan-malyshev.[02-10-1920]",
         "type": "blood"
       },
       {
-        "id": "praskoviya-ivan-smirnova.__-__-19__",
+        "id": "praskoviya-ivan-smirnova.[__-__-19__]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "maria-efim-malysheva.__-__-1___",
+        "id": "maria-efim-malysheva.[__-__-1___]",
         "type": "married"
       }
     ]
   },
 
   {
-    "id": "nikolay-ivan-malyshev.02-10-1920",
+    "id": "nikolay-ivan-malyshev.[02-10-1920]",
     "gender": "male",
     "parents": [
       {
-        "id": "ivan-fedor-malyshev.__-__-1___",
+        "id": "ivan-fedor-malyshev.[__-__-1___]",
         "type": "blood"
       },
       {
-        "id": "maria-efim-malysheva.__-__-1___",
+        "id": "maria-efim-malysheva.[__-__-1___]",
         "type": "blood"
       }
     ],
     "children": [
       {
-        "id": "nin-nik-ves.30-07-1955",
+        "id": "nina-nik-veselova.[30-07-1955]",
         "type": "blood"
       },
       {
-        "id": "elena-nik-solovieva.01-02-1953",
+        "id": "elena-nik-solovieva.[01-02-1953]",
         "type": "blood"
       },
       {
-        "id": "nikolay-nik-malyshev.19-11-1948",
+        "id": "nikolay-nik-malyshev.[19-11-1948]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "lidia-vas-malysheva.26-12-1921",
+        "id": "lidya-vas-malysheva.[26-12-1921]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "praskoviya-ivan-smirnova.__-__-19__",
+    "id": "praskoviya-ivan-smirnova.[__-__-19__]",
     "gender": "female",
     "parents": [
       {
-        "id": "ivan-fedor-malyshev.__-__-1___",
+        "id": "ivan-fedor-malyshev.[__-__-1___]",
         "type": "blood"
       },
       {
-        "id": "maria-efim-malysheva.__-__-1___",
+        "id": "maria-efim-malysheva.[__-__-1___]",
         "type": "blood"
       }
     ],
@@ -494,235 +494,235 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "ivan-vas-smirnov.__-__-19__",
+        "id": "ivan-vas-smirnov.[__-__-19__]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "ivan-vas-smirnov.__-__-19__",
+    "id": "ivan-vas-smirnov.[__-__-19__]",
     "gender": "male",
     "parents": [],
     "children": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "praskoviya-ivan-smirnova.__-__-19__",
+        "id": "praskoviya-ivan-smirnova.[__-__-19__]",
         "type": "married"
       }
     ]
   },
 
   {
-    "id": "vasily-ivan-kyzmin.__-__-1___",
+    "id": "vasily-ivan-kyzmin.[__-__-1___]",
     "gender": "male",
     "parents": [],
     "children": [
       {
-        "id": "lidia-vas-malysheva.26-12-1921",
+        "id": "lidya-vas-malysheva.[26-12-1921]",
         "type": "blood"
       },
       {
-        "id": "alexandra-_-kuzmina.17-02-1916",
+        "id": "alexandra-_-kuzmina.[17-02-1916]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "sekleteya-alekseevna-kyzmina.__-__-1___",
+        "id": "sekleteya-alekseevna-kyzmina.[__-__-1___]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "sekleteya-alekseevna-kyzmina.__-__-1___",
+    "id": "sekleteya-alekseevna-kyzmina.[__-__-1___]",
     "gender": "female",
     "parents": [],
     "children": [
       {
-        "id": "lidia-vas-malysheva.26-12-1921",
+        "id": "lidya-vas-malysheva.[26-12-1921]",
         "type": "blood"
       },
       {
-        "id": "alexandra-_-kuzmina.17-02-1916",
+        "id": "alexandra-_-kuzmina.[17-02-1916]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "vasily-ivan-kyzmin.__-__-1___",
+        "id": "vasily-ivan-kyzmin.[__-__-1___]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "alexandra-_-kuzmina.17-02-1916",
+    "id": "alexandra-_-kuzmina.[17-02-1916]",
     "gender": "female",
     "parents": [
       {
-        "id": "sekleteya-alekseevna-kyzmina.__-__-1___",
+        "id": "sekleteya-alekseevna-kyzmina.[__-__-1___]",
         "type": "blood"
       },
       {
-        "id": "vasily-ivan-kyzmin.__-__-1___",
+        "id": "vasily-ivan-kyzmin.[__-__-1___]",
         "type": "blood"
       }
     ],
     "children": [],
     "siblings": [
       {
-        "id": "lidia-vas-malysheva.26-12-1921",
+        "id": "lidya-vas-malysheva.[26-12-1921]",
         "type": "blood"
       }
     ],
     "spouses": []
   },
   {
-    "id": "lidia-vas-malysheva.26-12-1921",
+    "id": "lidya-vas-malysheva.[26-12-1921]",
     "gender": "female",
     "parents": [
       {
-        "id": "sekleteya-alekseevna-kyzmina.__-__-1___",
+        "id": "sekleteya-alekseevna-kyzmina.[__-__-1___]",
         "type": "blood"
       },
       {
-        "id": "vasily-ivan-kyzmin.__-__-1___",
+        "id": "vasily-ivan-kyzmin.[__-__-1___]",
         "type": "blood"
       }
     ],
     "children": [
       {
-        "id": "nin-nik-ves.30-07-1955",
+        "id": "nina-nik-veselova.[30-07-1955]",
         "type": "blood"
       },
       {
-        "id": "elena-nik-solovieva.01-02-1953",
+        "id": "elena-nik-solovieva.[01-02-1953]",
         "type": "blood"
       },
       {
-        "id": "nikolay-nik-malyshev.19-11-1948",
+        "id": "nikolay-nik-malyshev.[19-11-1948]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "alexandra-_-kuzmina.17-02-1916",
+        "id": "alexandra-_-kuzmina.[17-02-1916]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "id": "nikolay-ivan-malyshev.[02-10-1920]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "nin-nik-ves.30-07-1955",
+    "id": "nina-nik-veselova.[30-07-1955]",
     "gender": "female",
     "parents": [
       {
-        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "id": "nikolay-ivan-malyshev.[02-10-1920]",
         "type": "blood"
       },
       {
-        "id": "lidia-vas-malysheva.26-12-1921",
+        "id": "lidya-vas-malysheva.[26-12-1921]",
         "type": "blood"
       }
     ],
     "children": [
       {
-        "id": "lid-alex-pol.17.10.1990",
+        "id": "lidya-alex-pol.[17.10.1990]",
         "type": "blood"
       },
       {
-        "id": "dmit-alex-ves.12-07-1983",
+        "id": "dmitry-alex-veselov.[12-07-1983]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "elena-nik-solovieva.01-02-1953",
+        "id": "elena-nik-solovieva.[01-02-1953]",
         "type": "blood"
       },
       {
-        "id": "nikolay-nik-malyshev.19-11-1948",
+        "id": "nikolay-nik-malyshev.[19-11-1948]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "alexander-ivan-ves.04-03-1950",
+        "id": "alexander-ivan-ves.[04-03-1950]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "elena-nik-solovieva.01-02-1953",
+    "id": "elena-nik-solovieva.[01-02-1953]",
     "gender": "female",
     "parents": [
       {
-        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "id": "nikolay-ivan-malyshev.[02-10-1920]",
         "type": "blood"
       },
       {
-        "id": "lidia-vas-malysheva.26-12-1921",
+        "id": "lidya-vas-malysheva.[26-12-1921]",
         "type": "blood"
       }
     ],
     "children": [
       {
-        "id": "oleg-nik-soloviev.10-04-1977",
+        "id": "oleg-nik-soloviev.[10-04-1977]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "nin-nik-ves.30-07-1955",
+        "id": "nina-nik-veselova.[30-07-1955]",
         "type": "blood"
       },
       {
-        "id": "nikolay-nik-malyshev.19-11-1948",
+        "id": "nikolay-nik-malyshev.[19-11-1948]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "nik-anatoly-soloviev.22-05-1956",
+        "id": "nikolay-anatoly-soloviev.[22-05-1956]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "nik-anatoly-soloviev.22-05-1956",
+    "id": "nikolay-anatoly-soloviev.[22-05-1956]",
     "gender": "male",
     "parents": [],
     "children": [
       {
-        "id": "oleg-nik-soloviev.10-04-1977",
+        "id": "oleg-nik-soloviev.[10-04-1977]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "elena-nik-solovieva.01-02-1953",
+        "id": "elena-nik-solovieva.[01-02-1953]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "oleg-nik-soloviev.10-04-1977",
+    "id": "oleg-nik-soloviev.[10-04-1977]",
     "gender": "male",
     "parents": [
       {
-        "id": "nik-anatoly-soloviev.22-05-1956",
+        "id": "nikolay-anatoly-soloviev.[22-05-1956]",
         "type": "blood"
       },
       {
-        "id": "elena-nik-solovieva.01-02-1953",
+        "id": "elena-nik-solovieva.[01-02-1953]",
         "type": "blood"
       }
     ],
@@ -732,379 +732,379 @@
   },
 
   {
-    "id": "nikolay-nik-malyshev.19-11-1948",
+    "id": "nikolay-nik-malyshev.[19-11-1948]",
     "gender": "male",
     "parents": [
       {
-        "id": "nikolay-ivan-malyshev.02-10-1920",
+        "id": "nikolay-ivan-malyshev.[02-10-1920]",
         "type": "blood"
       },
       {
-        "id": "lidia-vas-malysheva.26-12-1921",
+        "id": "lidya-vas-malysheva.[26-12-1921]",
         "type": "blood"
       }
     ],
     "children": [],
     "siblings": [
       {
-        "id": "nin-nik-ves.30-07-1955",
+        "id": "nina-nik-veselova.[30-07-1955]",
         "type": "blood"
       },
       {
-        "id": "elena-nik-solovieva.01-02-1953",
+        "id": "elena-nik-solovieva.[01-02-1953]",
         "type": "blood"
       }
     ],
     "spouses": []
   },
   {
-    "id": "ivan-fedor-veselov.__-12-1911",
+    "id": "ivan-fedor-veselov.[__-12-1911]",
     "gender": "male",
     "parents": [],
     "children": [
       {
-        "id": "alexander-ivan-ves.04-03-1950",
+        "id": "alexander-ivan-ves.[04-03-1950]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "alevtina-vas-krupina.16-07-1918",
+        "id": "alevtina-vas-krupina.[16-07-1918]",
         "type": "married"
       }
     ]
   },
 
   {
-    "id": "vas-archip-krupin.__-__-18__",
+    "id": "vas-archip-krupin.[__-__-18__]",
     "gender": "male",
     "parents": [],
     "children": [
       {
-        "id": "alevtina-vas-krupina.16-07-1918",
+        "id": "alevtina-vas-krupina.[16-07-1918]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "pelageya-porfiry-krupina.__-__-18__",
+        "id": "pelageya-porfiry-krupina.[__-__-18__]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "pelageya-porfiry-krupina.__-__-18__",
+    "id": "pelageya-porfiry-krupina.[__-__-18__]",
     "gender": "female",
     "parents": [],
     "children": [
       {
-        "id": "alevtina-vas-krupina.16-07-1918",
+        "id": "alevtina-vas-krupina.[16-07-1918]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "vas-archip-krupin.__-__-18__",
+        "id": "vas-archip-krupin.[__-__-18__]",
         "type": "married"
       }
     ]
   },
 
   {
-    "id": "alevtina-vas-krupina.16-07-1918",
+    "id": "alevtina-vas-krupina.[16-07-1918]",
     "gender": "female",
     "parents": [
       {
-        "id": "vas-archip-krupin.__-__-18__",
+        "id": "vas-archip-krupin.[__-__-18__]",
         "type": "blood"
       },
       {
-        "id": "pelageya-porfiry-krupina.__-__-18__",
+        "id": "pelageya-porfiry-krupina.[__-__-18__]",
         "type": "blood"
       }
     ],
     "children": [
       {
-        "id": "alexander-ivan-ves.04-03-1950",
+        "id": "alexander-ivan-ves.[04-03-1950]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "ivan-fedor-veselov.__-12-1911",
+        "id": "ivan-fedor-veselov.[__-12-1911]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "alexander-ivan-ves.04-03-1950",
+    "id": "alexander-ivan-ves.[04-03-1950]",
     "gender": "male",
     "parents": [
       {
-        "id": "alevtina-vas-krupina.16-07-1918",
+        "id": "alevtina-vas-krupina.[16-07-1918]",
         "type": "blood"
       },
       {
-        "id": "ivan-fedor-veselov.__-12-1911",
+        "id": "ivan-fedor-veselov.[__-12-1911]",
         "type": "blood"
       }
     ],
     "children": [
       {
-        "id": "lid-alex-pol.17.10.1990",
+        "id": "lidya-alex-pol.[17.10.1990]",
         "type": "blood"
       },
       {
-        "id": "dmit-alex-ves.12-07-1983",
+        "id": "dmitry-alex-veselov.[12-07-1983]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "nin-nik-ves.30-07-1955",
+        "id": "nina-nik-veselova.[30-07-1955]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "vik-step-lyalin.29-07-1952",
+    "id": "viktor-step-lyalin.[29-07-1952]",
     "gender": "male",
     "parents": [
       {
-        "id": "step-_-lyalin[vik-f].__-__-19__",
+        "id": "stepan-_-lyalin[viktor-f].[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "_-_-lyalina[vik-m].__-__-19__",
+        "id": "_-_-lyalina[viktor-m].[__-__-19__]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "alexey-step-lyalin.__-__-19__",
+        "id": "alexey-step-lyalin.[__-__-19__]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "elena-vladimir-der.29-03-1964",
+        "id": "elena-vladimir-der.[29-03-1964]",
         "type": "divorced"
       },
       {
-        "id": "_-_-lyalina[vik-exwife].__-__-19__",
-        "type": "divorced"
-      }
-    ],
-    "children": [
-      {
-        "id": "alexey-vik-lyalin.__-__-19__",
-        "type": "blood"
-      },
-      {
-        "id": "vladimir-vik-lyalin.__-__-19__",
-        "type": "blood"
-      }
-    ]
-  },
-  {
-    "id": "_-_-lyalina[vik-exwife].__-__-19__",
-    "gender": "female",
-    "parents": [],
-    "siblings": [],
-    "spouses": [
-      {
-        "id": "vik-step-lyalin.29-07-1952",
+        "id": "_-_-lyalina[vik-exwife].[__-__-19__]",
         "type": "divorced"
       }
     ],
     "children": [
       {
-        "id": "alexey-vik-lyalin.__-__-19__",
+        "id": "alexey-vik-lyalin.[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "vladimir-vik-lyalin.__-__-19__",
+        "id": "vladimir-vik-lyalin.[__-__-19__]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "alexey-vik-lyalin.__-__-19__",
-    "gender": "male",
-    "parents": [
-      {
-        "id": "vik-step-lyalin.29-07-1952",
-        "type": "blood"
-      },
-      {
-        "id": "_-_-lyalina[vik-exwife].__-__-19__",
-        "type": "blood"
-      }
-    ],
-    "siblings": [
-      {
-        "id": "vladimir-vik-lyalin.__-__-19__",
-        "type": "blood"
-      }
-    ],
-    "spouses": [],
-    "children": []
-  },
-  {
-    "id": "vladimir-vik-lyalin.__-__-19__",
-    "gender": "male",
-    "parents": [
-      {
-        "id": "vik-step-lyalin.29-07-1952",
-        "type": "blood"
-      },
-      {
-        "id": "_-_-lyalina[vik-exwife].__-__-19__",
-        "type": "blood"
-      }
-    ],
-    "siblings": [
-      {
-        "id": "alexey-vik-lyalin.__-__-19__",
-        "type": "blood"
-      }
-    ],
-    "spouses": [],
-    "children": []
-  },
-  {
-    "id": "alexey-step-lyalin.__-__-19__",
-    "gender": "male",
-    "parents": [
-      {
-        "id": "step-_-lyalin[vik-f].__-__-19__",
-        "type": "blood"
-      },
-      {
-        "id": "_-_-lyalina[vik-m].__-__-19__",
-        "type": "blood"
-      }
-    ],
-    "siblings": [
-      {
-        "id": "vik-step-lyalin.29-07-1952",
-        "type": "blood"
-      }
-    ],
-    "spouses": [],
-    "children": []
-  },
-  {
-    "id": "step-_-lyalin[vik-f].__-__-19__",
-    "gender": "male",
-    "parents": [],
-    "siblings": [],
-    "spouses": [
-      {
-        "id": "_-_-lyalina[vik-m].__-__-19__",
-        "type": "married"
-      }
-    ],
-    "children": [
-      {
-        "id": "vik-step-lyalin.29-07-1952",
-        "type": "blood"
-      },
-      {
-        "id": "alexey-step-lyalin.__-__-19__",
-        "type": "blood"
-      }
-    ]
-  },
-  {
-    "id": "_-_-lyalina[vik-m].__-__-19__",
+    "id": "_-_-lyalina[vik-exwife].[__-__-19__]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "step-_-lyalin[vik-f].__-__-19__",
+        "id": "viktor-step-lyalin.[29-07-1952]",
+        "type": "divorced"
+      }
+    ],
+    "children": [
+      {
+        "id": "alexey-vik-lyalin.[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "vladimir-vik-lyalin.[__-__-19__]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "alexey-vik-lyalin.[__-__-19__]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "viktor-step-lyalin.[29-07-1952]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-lyalina[vik-exwife].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "vladimir-vik-lyalin.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "vladimir-vik-lyalin.[__-__-19__]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "viktor-step-lyalin.[29-07-1952]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-lyalina[vik-exwife].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "alexey-vik-lyalin.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "alexey-step-lyalin.[__-__-19__]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "stepan-_-lyalin[viktor-f].[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-lyalina[viktor-m].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "viktor-step-lyalin.[29-07-1952]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "stepan-_-lyalin[viktor-f].[__-__-19__]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-lyalina[viktor-m].[__-__-19__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "vik-step-lyalin.29-07-1952",
+        "id": "viktor-step-lyalin.[29-07-1952]",
         "type": "blood"
       },
       {
-        "id": "alexey-step-lyalin.__-__-19__",
+        "id": "alexey-step-lyalin.[__-__-19__]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-lyalina[viktor-m].[__-__-19__]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "stepan-_-lyalin[viktor-f].[__-__-19__]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "viktor-step-lyalin.[29-07-1952]",
+        "type": "blood"
+      },
+      {
+        "id": "alexey-step-lyalin.[__-__-19__]",
         "type": "blood"
       }
     ]
   },
 
   {
-    "id": "fedor-michailovich-izvekov.__-__-1909",
+    "id": "fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-solovieva.__-__-19__",
+        "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "lubov-fedorovna-pol.__-__-19__",
+        "id": "lubov-fedor-pol.[__-__-1936]",
         "type": "blood"
       },
       {
-        "id": "valentina-fedorovna-solovieva.__-__-19__",
+        "id": "valentina-fedorovna-solovieva.[31-07-19__]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "_-_-solovieva.__-__-19__",
+    "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "fedor-michailovich-izvekov.__-__-1909",
+        "id": "fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "lubov-fedorovna-pol.__-__-19__",
+        "id": "lubov-fedor-pol.[__-__-1936]",
         "type": "blood"
       },
       {
-        "id": "valentina-fedorovna-solovieva.__-__-19__",
+        "id": "valentina-fedorovna-solovieva.[31-07-19__]",
         "type": "blood"
       }
     ]
   },
 
   {
-    "id": "valentina-fedorovna-solovieva.__-__-19__",
+    "id": "valentina-fedorovna-solovieva.[31-07-19__]",
     "gender": "female",
     "parents": [
       {
-        "id": "fedor-michailovich-izvekov.__-__-1909",
+        "id": "fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]",
         "type": "blood"
       },
       {
-        "id": "_-_-solovieva.__-__-19__",
+        "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "lubov-fedorovna-pol.__-__-19__",
+        "id": "lubov-fedor-pol.[__-__-1936]",
         "type": "blood"
       }
     ],
@@ -1112,248 +1112,248 @@
     "children": []
   },
   {
-    "id": "lubov-fedorovna-pol.__-__-19__",
+    "id": "lubov-fedor-pol.[__-__-1936]",
     "gender": "female",
     "parents": [
       {
-        "id": "fedor-michailovich-izvekov.__-__-1909",
+        "id": "fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]",
         "type": "blood"
       },
       {
-        "id": "_-_-solovieva.__-__-19__",
+        "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "valentina-fedorovna-solovieva.__-__-19__",
+        "id": "valentina-fedorovna-solovieva.[31-07-19__]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "vladimir-vladimir-pol.__-__-19__",
+        "id": "vladimir-vladimir-pol.[__-__-19__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "vladimir-vladimir-pol.10-11-1961",
+        "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "vladimir-vladimir-pol.__-__-19__",
+    "id": "vladimir-vladimir-pol.[__-__-19__]",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "lubov-fedorovna-pol.__-__-19__",
+        "id": "lubov-fedor-pol.[__-__-1936]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "vladimir-vladimir-pol.10-11-1961",
+        "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
         "type": "blood"
       }
     ]
   },
   
   {
-    "id": "vladimir-vladimir-pol.10-11-1961",
+    "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
     "gender": "male",
     "parents": [
       {
-        "id": "lubov-fedorovna-pol.__-__-19__",
+        "id": "lubov-fedor-pol.[__-__-1936]",
         "type": "blood"
       },
       {
-        "id": "vladimir-vladimir-pol.__-__-19__",
+        "id": "vladimir-vladimir-pol.[__-__-19__]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "elena-vladimir-der.29-03-1964",
+        "id": "elena-vladimir-der.[29-03-1964]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "den-vladimir-pol.13-04-1986",
+        "id": "den-vladimir-pol.[13-04-1986]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "tatyana-ignat-dereventsova.05-10-1947",
+    "id": "tatyana-ignat-dereventsova.[05-10-1947]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "vladimir-nik-dereventsov.01-09-1940",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
         "type": "divorced"
       }
     ],
     "children": [
       {
-        "id": "lyuba-vladimir-garbuzova.28-04-1976",
+        "id": "lyuba-vladimir-garbuzova.[28-04-1976]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "elena-vladimir-der.29-03-1964",
+    "id": "elena-vladimir-der.[29-03-1964]",
     "gender": "female",
     "parents": [
       {
-        "id": "vladimir-nik-dereventsov.01-09-1940",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
         "type": "blood"
       },
       {
-        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
+        "id": "ulia-vas-garbuzova.[24-07-1941][05-12-2023]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "lyuba-vladimir-garbuzova.28-04-1976"
+        "id": "lyuba-vladimir-garbuzova.[28-04-1976]"
       }
     ],
     "spouses": [
       {
-        "id": "vladimir-vladimir-pol.10-11-1961",
+        "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
         "type": "married"
       },
       {
-        "id": "vik-step-lyalin.29-07-1952",
+        "id": "viktor-step-lyalin.[29-07-1952]",
         "type": "divorced"
       }
     ],
     "children": [
       {
-        "id": "den-vladimir-pol.13-04-1986",
+        "id": "den-vladimir-pol.[13-04-1986]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "lyuba-vladimir-garbuzova.28-04-1976",
+    "id": "lyuba-vladimir-garbuzova.[28-04-1976]",
     "gender": "female",
     "parents": [
       {
-        "id": "vladimir-nik-dereventsov.01-09-1940",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
         "type": "blood"
       },
       {
-        "id": "tatyana-ignat-dereventsova.05-10-1947",
+        "id": "tatyana-ignat-dereventsova.[05-10-1947]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "elena-vladimir-der.29-03-1964"
+        "id": "elena-vladimir-der.[29-03-1964]"
       }
     ],
     "spouses": [
       {
-        "id": "roman-_-_[luba-husb].__-__-19__",
+        "id": "roman-_-_[lyuba-husb].[__-__-19__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "marya-roman-chigrina.06-03-1997",
+        "id": "marya-roman-chigrina.[06-03-1997]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "roman-_-_[luba-husb].__-__-19__",
+    "id": "roman-_-_[lyuba-husb].[__-__-19__]",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "lyuba-vladimir-garbuzova.28-04-1976",
+        "id": "lyuba-vladimir-garbuzova.[28-04-1976]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "marya-roman-chigrina.06-03-1997",
+        "id": "marya-roman-chigrina.[06-03-1997]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "marya-roman-chigrina.06-03-1997",
+    "id": "marya-roman-chigrina.[06-03-1997]",
     "gender": "female",
     "parents": [
       {
-        "id": "roman-_-_[luba-husb].__-__-19__",
+        "id": "roman-_-_[lyuba-husb].[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "lyuba-vladimir-garbuzova.28-04-1976",
+        "id": "lyuba-vladimir-garbuzova.[28-04-1976]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "sergey-_-_[mary-husb].__-__-19__",
+        "id": "sergey-_-_[maria-husb].[__-__-19__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "bogdan-sergey-chigrin.07-08-2019",
+        "id": "bogdan-sergey-chigrin.[07-08-2019]",
         "type": "blood"
       },
       {
-        "id": "eva-sergey-chigrina.05-10-2023",
+        "id": "eva-sergey-chigrina.[05-10-2023]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "sergey-_-_[mary-husb].__-__-19__",
+    "id": "sergey-_-_[maria-husb].[__-__-19__]",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "marya-roman-chigrina.06-03-1997",
+        "id": "marya-roman-chigrina.[06-03-1997]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "bogdan-sergey-chigrin.07-08-2019",
+        "id": "bogdan-sergey-chigrin.[07-08-2019]",
         "type": "blood"
       },
       {
-        "id": "eva-sergey-chigrina.05-10-2023",
+        "id": "eva-sergey-chigrina.[05-10-2023]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "bogdan-sergey-chigrin.07-08-2019",
+    "id": "bogdan-sergey-chigrin.[07-08-2019]",
     "gender": "male",
     "parents": [
       {
-        "id": "marya-roman-chigrina.06-03-1997",
+        "id": "marya-roman-chigrina.[06-03-1997]",
         "type": "blood"
       },
       {
-        "id": "sergey-_-_[mary-husb].__-__-19__",
+        "id": "sergey-_-_[maria-husb].[__-__-19__]",
         "type": "blood"
       }
     ],
@@ -1362,15 +1362,15 @@
     "children": []
   },
   {
-    "id": "eva-sergey-chigrina.05-10-2023",
+    "id": "eva-sergey-chigrina.[05-10-2023]",
     "gender": "female",
     "parents": [
       {
-        "id": "marya-roman-chigrina.06-03-1997",
+        "id": "marya-roman-chigrina.[06-03-1997]",
         "type": "blood"
       },
       {
-        "id": "sergey-_-_[mary-husb].__-__-19__",
+        "id": "sergey-_-_[maria-husb].[__-__-19__]",
         "type": "blood"
       }
     ],
@@ -1379,160 +1379,160 @@
     "children": []
   },
   {
-    "id": "sveta-valentin-garbuzova.__-__-19__",
+    "id": "sveta-valentin-garbuzova.[__-__-19__]",
     "gender": "female",
     "parents": [
       {
-        "id": "ulia-vas-garbuzova.24-07-1941-05-12-2023",
+        "id": "ulia-vas-garbuzova.[24-07-1941][05-12-2023]",
         "type": "blood"
       },
       {
-        "id": "valentin-alexey-garbuzov.29-04-1940-10-04-2013",
+        "id": "valentin-alexey-garbuzov.[29-04-1940][10-04-2013]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "yan-albert-grishin.__-__-19__",
+        "id": "yan-albert-grishin.[__-__-19__][__-__-19__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "yana-yan-garbuzova.07-03-199_",
+        "id": "yana-yan-garbuzova.[07-03-199_]",
         "type": "blood"
       }
     ]
   },
 
   {
-    "id": "albert-yakov-grishin.__-__-19__",
+    "id": "albert-yakov-grishin.[__-__-19__][__-__-19__]",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "alevtina-nik-grishina.__-__-19__",
+        "id": "alevtina-nik-grishina.[__-__-19__][__-__-____]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "yan-albert-grishin.__-__-19__",
+        "id": "yan-albert-grishin.[__-__-19__][__-__-19__]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "alevtina-nik-grishina.__-__-19__",
+    "id": "alevtina-nik-grishina.[__-__-19__][__-__-____]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "albert-yakov-grishin.__-__-19__",
+        "id": "albert-yakov-grishin.[__-__-19__][__-__-19__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "yan-albert-grishin.__-__-19__",
+        "id": "yan-albert-grishin.[__-__-19__][__-__-19__]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "yan-albert-grishin.__-__-19__",
+    "id": "yan-albert-grishin.[__-__-19__][__-__-19__]",
     "gender": "male",
     "parents": [
       {
-        "id": "albert-yakov-grishin.__-__-19__",
+        "id": "albert-yakov-grishin.[__-__-19__][__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "alevtina-nik-grishina.__-__-19__",
+        "id": "alevtina-nik-grishina.[__-__-19__][__-__-____]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "sveta-valentin-garbuzova.__-__-19__",
+        "id": "sveta-valentin-garbuzova.[__-__-19__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "yana-yan-garbuzova.07-03-199_",
+        "id": "yana-yan-garbuzova.[07-03-199_]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "den-vladimir-pol.13-04-1986",
+    "id": "den-vladimir-pol.[13-04-1986]",
     "gender": "male",
     "parents": [
       {
-        "id": "vladimir-vladimir-pol.10-11-1961",
+        "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
         "type": "blood"
       },
       {
-        "id": "elena-vladimir-der.29-03-1964",
+        "id": "elena-vladimir-der.[29-03-1964]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "yana-yan-garbuzova.07-03-199_",
+        "id": "yana-yan-garbuzova.[07-03-199_]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "lid-alex-pol.17.10.1990",
+        "id": "lidya-alex-pol.[17.10.1990]",
         "type": "married"
       }
     ],
     "children": []
   },
   {
-    "id": "lid-alex-pol.17.10.1990",
+    "id": "lidya-alex-pol.[17.10.1990]",
     "gender": "female",
     "parents": [
       {
-        "id": "nin-nik-ves.30-07-1955",
+        "id": "nina-nik-veselova.[30-07-1955]",
         "type": "blood"
       },
       {
-        "id": "alexander-ivan-ves.04-03-1950",
+        "id": "alexander-ivan-ves.[04-03-1950]",
         "type": "blood"
       }
     ],
     "children": [],
     "siblings": [
       {
-        "id": "dmit-alex-ves.12-07-1983",
+        "id": "dmitry-alex-veselov.[12-07-1983]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "den-vladimir-pol.13-04-1986",
+        "id": "den-vladimir-pol.[13-04-1986]",
         "type": "married"
       }
     ]
   },
   {
-    "id": "yana-yan-garbuzova.07-03-199_",
+    "id": "yana-yan-garbuzova.[07-03-199_]",
     "gender": "female",
     "parents": [
       {
-        "id": "sveta-valentin-garbuzova.__-__-19__",
+        "id": "sveta-valentin-garbuzova.[__-__-19__]",
         "type": "blood"
       },
       {
-        "id": "yan-albert-grishin.__-__-19__",
+        "id": "yan-albert-grishin.[__-__-19__][__-__-19__]",
         "type": "blood"
       }
     ],
@@ -1541,22 +1541,22 @@
     "children": []
   },
   {
-    "id": "dmit-alex-ves.12-07-1983",
+    "id": "dmitry-alex-veselov.[12-07-1983]",
     "gender": "male",
     "parents": [
       {
-        "id": "nin-nik-ves.30-07-1955",
+        "id": "nina-nik-veselova.[30-07-1955]",
         "type": "blood"
       },
       {
-        "id": "alexander-ivan-ves.04-03-1950",
+        "id": "alexander-ivan-ves.[04-03-1950]",
         "type": "blood"
       }
     ],
     "children": [],
     "siblings": [
       {
-        "id": "lid-alex-pol.17.10.1990",
+        "id": "lidya-alex-pol.[17.10.1990]",
         "type": "blood"
       }
     ],
