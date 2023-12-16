@@ -6,7 +6,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
         "type": "married"
       }
     ],
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
+    "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
     "gender": "female",
     "parents": [],
     "siblings": [],
@@ -88,7 +88,7 @@
         "type": "blood"
       },
       {
-        "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
         "type": "blood"
       }
     ],
@@ -110,7 +110,7 @@
         "type": "blood"
       },
       {
-        "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
         "type": "blood"
       }
     ],
@@ -587,7 +587,7 @@
         "type": "blood"
       },
       {
-        "id": "valentina-fedorovna-solovieva.[31-07-19__]",
+        "id": "valentina-fedor-solovieva.[31-07-19__]",
         "type": "blood"
       }
     ]
@@ -609,14 +609,14 @@
         "type": "blood"
       },
       {
-        "id": "valentina-fedorovna-solovieva.[31-07-19__]",
+        "id": "valentina-fedor-solovieva.[31-07-19__]",
         "type": "blood"
       }
     ]
   },
 
   {
-    "id": "valentina-fedorovna-solovieva.[31-07-19__]",
+    "id": "valentina-fedor-solovieva.[31-07-19__]",
     "gender": "female",
     "parents": [
       {
@@ -652,7 +652,7 @@
     ],
     "siblings": [
       {
-        "id": "valentina-fedorovna-solovieva.[31-07-19__]",
+        "id": "valentina-fedor-solovieva.[31-07-19__]",
         "type": "blood"
       }
     ],

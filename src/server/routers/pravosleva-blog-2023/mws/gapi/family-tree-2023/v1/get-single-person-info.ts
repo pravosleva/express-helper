@@ -336,8 +336,8 @@ const persons = {
       lastName: 'Soloviev',
     },
   },
-  'nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]': {
-    id: 'nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]',
+  'nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]': {
+    id: 'nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]',
     baseInfo: {
       firstName: 'Nikolay',
       middleName: 'Ivanovich',
@@ -352,8 +352,40 @@ const persons = {
       lastName: 'Dereventsov',
     },
   },
-  'irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]': {
-    id: 'irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]',
+  'ivan-vas-smirnov.[__-__-19__]': {
+    id: 'ivan-vas-smirnov.[__-__-19__]',
+    baseInfo: {
+      firstName: 'Ivan',
+      middleName: 'Vasilievich',
+      lastName: 'Smirnov',
+    },
+  },
+  'praskoviya-ivan-smirnova.[__-__-19__]': {
+    id: 'praskoviya-ivan-smirnova.[__-__-19__]',
+    baseInfo: {
+      firstName: 'Praskoviya',
+      middleName: 'Ivanovna',
+      lastName: 'Smirnova',
+    },
+  },
+  'nina-ivan-balykina.[14-11-1951]': {
+    id: 'nina-ivan-balykina.[14-11-1951]',
+    baseInfo: {
+      firstName: 'Nina',
+      middleName: 'Ivanovna',
+      lastName: 'Balykina',
+    },
+  },
+  'nikolay-ivan-smirnov[nina-fsc].[__-__-19__]': {
+    id: 'nikolay-ivan-smirnov[nina-fsc].[__-__-19__]',
+    baseInfo: {
+      firstName: 'Nikolay',
+      middleName: 'Ivanovich',
+      lastName: 'Smirnov',
+    },
+  },
+  'irina-kirill-dereventsova[elena-f-m].[__-__-1___]': {
+    id: 'irina-kirill-dereventsova[elena-f-m].[__-__-1___]',
     baseInfo: {
       firstName: 'Irina',
       middleName: 'Kirillovna',

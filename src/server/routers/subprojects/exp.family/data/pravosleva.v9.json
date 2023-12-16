@@ -12,7 +12,7 @@
     ],
     "children": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
         "type": "blood"
       },
       {
@@ -34,7 +34,7 @@
     ],
     "children": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
         "type": "blood"
       },
       {
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
+    "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
     "gender": "male",
     "parents": [
       {
@@ -64,7 +64,7 @@
     ],
     "spouses": [
       {
-        "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
         "type": "married"
       }
     ],
@@ -94,7 +94,7 @@
     ],
     "siblings": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
         "type": "blood"
       }
     ],
@@ -102,13 +102,58 @@
     "children": []
   },
   {
-    "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
+    "id": "kirill-_-_[elena-f-m-f].[__-__-1___]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-f-m-m].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[elena-f-m-m].[__-__-1___]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
+        "id": "kirill-_-_[elena-f-m-f].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "kirill-_-_[elena-f-m-f].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[elena-f-m-m].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
         "type": "married"
       }
     ],
@@ -164,11 +209,11 @@
     "gender": "male",
     "parents": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
         "type": "blood"
       }
     ],
@@ -308,11 +353,11 @@
     "gender": "male",
     "parents": [
       {
-        "id": "nikolay-ivan-dereventsov[elena-f-f].[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "irina-kirillovna-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
         "type": "blood"
       }
     ],
@@ -490,7 +535,16 @@
         "type": "blood"
       }
     ],
-    "children": [],
+    "children": [
+      {
+        "id": "nina-ivan-balykina.[14-11-1951]",
+        "type": "blood"
+      },
+      {
+        "id": "nikolay-ivan-smirnov[nina-fsc].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
@@ -503,7 +557,16 @@
     "id": "ivan-vas-smirnov.[__-__-19__]",
     "gender": "male",
     "parents": [],
-    "children": [],
+    "children": [
+      {
+        "id": "nina-ivan-balykina.[14-11-1951]",
+        "type": "blood"
+      },
+      {
+        "id": "nikolay-ivan-smirnov[nina-fsc].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
@@ -511,6 +574,95 @@
         "type": "married"
       }
     ]
+  },
+  {
+    "id": "nina-ivan-balykina.[14-11-1951]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "ivan-vas-smirnov.[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "praskoviya-ivan-smirnova.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [
+      {
+        "id": "nikolay-ivan-smirnov[nina-fsc].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "spouses": []
+  },
+  {
+    "id": "nikolay-ivan-smirnov[nina-fsc].[__-__-19__]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "ivan-vas-smirnov.[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "praskoviya-ivan-smirnova.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "children": [
+      {
+        "id": "evgenia-nik-_[nina-fscwc].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "nina-ivan-balykina.[14-11-1951]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "_-_-_[nina-fscw].[__-__-19__]",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[nina-fscw].[__-__-19__]",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "evgenia-nik-_[nina-fscwc].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "nikolay-ivan-smirnov[nina-fsc].[__-__-19__]",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "evgenia-nik-_[nina-fscwc].[__-__-19__]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "nikolay-ivan-smirnov[nina-fsc].[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[nina-fscw].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [],
+    "spouses": []
   },
 
   {
@@ -723,6 +875,111 @@
       },
       {
         "id": "elena-nik-solovieva.[01-02-1953]",
+        "type": "blood"
+      }
+    ],
+    "children": [
+      {
+        "id": "dmitry-oleg-soloviev.[03-05-2002]",
+        "type": "blood"
+      },
+      {
+        "id": "darya-oleg-solovieva.[03-05-1999]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[nina-selena-cw1].[__-__-19__]",
+        "type": "divorced"
+      },
+      {
+        "id": "galina-_-kirpichnikova[nina-selena-cw2].[__-__-19__]",
+        "type": "divorced"
+      },
+      {
+        "id": "_-_-_[nina-selena-cw3].[__-__-19__]",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[nina-selena-cw1].[__-__-19__]",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "darya-oleg-solovieva.[03-05-1999]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "oleg-nik-soloviev.[10-04-1977]",
+        "type": "divorced"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[nina-selena-cw3].[__-__-19__]",
+    "gender": "female",
+    "parents": [],
+    "children": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "oleg-nik-soloviev.[10-04-1977]",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "galina-_-kirpichnikova[nina-selena-cw2].[__-__-19__]",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "dmitry-oleg-soloviev.[03-05-2002]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "oleg-nik-soloviev.[10-04-1977]",
+        "type": "divorced"
+      }
+    ]
+  },
+  {
+    "id": "darya-oleg-solovieva.[03-05-1999]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "_-_-_[nina-selena-cw1].[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "oleg-nik-soloviev.[10-04-1977]",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [],
+    "spouses": []
+  },
+  {
+    "id": "dmitry-oleg-soloviev.[03-05-2002]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "galina-_-kirpichnikova[nina-selena-cw2].[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "oleg-nik-soloviev.[10-04-1977]",
         "type": "blood"
       }
     ],
@@ -1061,7 +1318,7 @@
         "type": "blood"
       },
       {
-        "id": "valentina-fedorovna-solovieva.[31-07-19__]",
+        "id": "valentina-fedor-solovieva.[31-07-19__]",
         "type": "blood"
       }
     ]
@@ -1083,14 +1340,14 @@
         "type": "blood"
       },
       {
-        "id": "valentina-fedorovna-solovieva.[31-07-19__]",
+        "id": "valentina-fedor-solovieva.[31-07-19__]",
         "type": "blood"
       }
     ]
   },
 
   {
-    "id": "valentina-fedorovna-solovieva.[31-07-19__]",
+    "id": "valentina-fedor-solovieva.[31-07-19__]",
     "gender": "female",
     "parents": [
       {
@@ -1126,7 +1383,7 @@
     ],
     "siblings": [
       {
-        "id": "valentina-fedorovna-solovieva.[31-07-19__]",
+        "id": "valentina-fedor-solovieva.[31-07-19__]",
         "type": "blood"
       }
     ],
