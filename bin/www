@@ -12,6 +12,7 @@ const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '../server-dist/.env') })
 
 const axios = require('axios')
+const packageJson = require('../package.json')
 
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 // const https = require('https')
@@ -86,11 +87,11 @@ function onError(error) {
   state.errsCounter += 1
   axios
     .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, {
-      resultId: state.errsCounter,
+      resultId: new Date().getTime(),
       chat_id: 432590698, // NOTE: Den Pol
       ts: new Date().getTime(),
       eventCode: 'aux_service',
-      about: '`/express-helper`\n⛔ Error',
+      about: `\`/express-helper@${packageJson.version}\`\n⛔ Error`,
       targetMD: `${error.code || 'No error.code'}\n\n\`\`\`json\n${JSON.stringify(error, null, 2)}\n\`\`\``,
     })
     .then((res) => res.data)
@@ -126,11 +127,12 @@ function onListening() {
 
   axios
     .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, {
-      resultId: state.startsCounter,
+      resultId: new Date().getTime(),
       chat_id: 432590698, // NOTE: Den Pol
       ts: new Date().getTime(),
       eventCode: 'aux_service',
-      about: `\`/express-helper\`\n🚀 Started on TCP ${PORT}`,
+      // about: `\`/express-helper\`\n🚀 Started on TCP ${PORT}`,
+      about: `\`/express-helper@${packageJson.version}\`\n🚀 Started on TCP ${PORT}`,
       targetMD: `\`\`\`json\n${JSON.stringify(
         {
           NODE_ENV: process.env.NODE_ENV,

@@ -168,10 +168,56 @@
       }
     ]
   },
+
+  {
+    "id": "_-_-_[elena-m-m-f].[__-__-1___][__-__-1___]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-m-m-m].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[elena-m-m-m].[__-__-1___][__-__-1___]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-m-m-f].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
   {
     "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
     "gender": "female",
-    "parents": [],
+    "parents": [
+      {
+        "id": "_-_-_[elena-m-m-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[elena-m-m-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
@@ -186,10 +232,56 @@
       }
     ]
   },
+
+  {
+    "id": "_-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-m-f-m].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "vasily-_-_[elena-m-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[elena-m-f-m].[__-__-1___][__-__-1___]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "vasily-_-_[elena-m-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
   {
     "id": "vasily-_-_[elena-m-f].[__-__-1___][__-__-1___]",
     "gender": "male",
-    "parents": [],
+    "parents": [
+      {
+        "id": "_-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[elena-m-f-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
@@ -847,17 +939,145 @@
       }
     ]
   },
+
+  {
+    "id": "anatoly-_-soloviev.[__-__-19__]",
+    "gender": "male",
+    "parents": [],
+    "children": [
+      {
+        "id": "nikolay-anatoly-soloviev.[22-05-1956]",
+        "type": "blood"
+      },
+      {
+        "id": "alexander-anatoly-soloviev.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-solovieva.[__-__-19__]",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "_-_-solovieva.[__-__-19__]",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "nikolay-anatoly-soloviev.[22-05-1956]",
+        "type": "blood"
+      },
+      {
+        "id": "alexander-anatoly-soloviev.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "anatoly-_-soloviev.[__-__-19__]",
+        "type": "married"
+      }
+    ]
+  },
+
+  {
+    "id": "alexander-anatoly-soloviev.[__-__-19__]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "anatoly-_-soloviev.[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-solovieva.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "children": [
+      {
+        "id": "maria-alex-solovieva.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "nikolay-anatoly-soloviev.[22-05-1956]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "tatyana-_-solovieva.[__-__-19__]",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "tatyana-_-solovieva.[__-__-19__]",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "maria-alex-solovieva.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "alexander-anatoly-soloviev.[__-__-19__]",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "maria-alex-solovieva.[__-__-19__]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "alexander-anatoly-soloviev.[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "tatyana-_-solovieva.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [],
+    "spouses": []
+  },
+
   {
     "id": "nikolay-anatoly-soloviev.[22-05-1956]",
     "gender": "male",
-    "parents": [],
+    "parents": [
+      {
+        "id": "anatoly-_-soloviev.[__-__-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-solovieva.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
     "children": [
       {
         "id": "oleg-nik-soloviev.[10-04-1977]",
         "type": "blood"
       }
     ],
-    "siblings": [],
+    "siblings": [
+      {
+        "id": "alexander-anatoly-soloviev.[__-__-19__]",
+        "type": "blood"
+      }
+    ],
     "spouses": [
       {
         "id": "elena-nik-solovieva.[01-02-1953]",
