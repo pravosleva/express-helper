@@ -52,7 +52,7 @@ const versions = {
   // '3': v3,
   // '2': v2,
   // '1': v1,
-  '0': example,
+  // '0': example,
   'incorrect-0': sample_incorrect_0,
 }
 
