@@ -192,7 +192,7 @@
     "parents": [],
     "children": [
       {
-        "id": "lidya-alex-pol.[17.10.1990]",
+        "id": "lidya-alex-pol.[17-10-1990]",
         "type": "blood"
       },
       {
@@ -214,7 +214,7 @@
     "parents": [],
     "children": [
       {
-        "id": "lidya-alex-pol.[17.10.1990]",
+        "id": "lidya-alex-pol.[17-10-1990]",
         "type": "blood"
       },
       {
@@ -337,7 +337,7 @@
     ],
     "children": [
       {
-        "id": "lubov-fedor-pol.[__-__-1936]",
+        "id": "lubov-fedor-poltoratskaya.[19-06-1936][29-01-2022]",
         "type": "blood"
       },
       {
@@ -359,7 +359,7 @@
     ],
     "children": [
       {
-        "id": "lubov-fedor-pol.[__-__-1936]",
+        "id": "lubov-fedor-poltoratskaya.[19-06-1936][29-01-2022]",
         "type": "blood"
       },
       {
@@ -384,7 +384,7 @@
     ],
     "siblings": [
       {
-        "id": "lubov-fedor-pol.[__-__-1936]",
+        "id": "lubov-fedor-poltoratskaya.[19-06-1936][29-01-2022]",
         "type": "blood"
       }
     ],
@@ -392,7 +392,7 @@
     "children": []
   },
   {
-    "id": "lubov-fedor-pol.[__-__-1936]",
+    "id": "lubov-fedor-poltoratskaya.[19-06-1936][29-01-2022]",
     "gender": "female",
     "parents": [
       {
@@ -418,7 +418,7 @@
     ],
     "children": [
       {
-        "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
+        "id": "vladimir-vladimir-poltoratsky.[10-11-1961][27-12-2014]",
         "type": "blood"
       }
     ]
@@ -430,24 +430,24 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "lubov-fedor-pol.[__-__-1936]",
+        "id": "lubov-fedor-poltoratskaya.[19-06-1936][29-01-2022]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
+        "id": "vladimir-vladimir-poltoratsky.[10-11-1961][27-12-2014]",
         "type": "blood"
       }
     ]
   },
   
   {
-    "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
+    "id": "vladimir-vladimir-poltoratsky.[10-11-1961][27-12-2014]",
     "gender": "male",
     "parents": [
       {
-        "id": "lubov-fedor-pol.[__-__-1936]",
+        "id": "lubov-fedor-poltoratskaya.[19-06-1936][29-01-2022]",
         "type": "blood"
       },
       {
@@ -485,7 +485,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
+        "id": "vladimir-vladimir-poltoratsky.[10-11-1961][27-12-2014]",
         "type": "married"
       },
       {
@@ -550,7 +550,7 @@
     "gender": "male",
     "parents": [
       {
-        "id": "vladimir-vladimir-pol.[10-11-1961][27-12-2014]",
+        "id": "vladimir-vladimir-poltoratsky.[10-11-1961][27-12-2014]",
         "type": "blood"
       },
       {
@@ -566,14 +566,14 @@
     ],
     "spouses": [
       {
-        "id": "lidya-alex-pol.[17.10.1990]",
+        "id": "lidya-alex-pol.[17-10-1990]",
         "type": "married"
       }
     ],
     "children": []
   },
   {
-    "id": "lidya-alex-pol.[17.10.1990]",
+    "id": "lidya-alex-pol.[17-10-1990]",
     "gender": "female",
     "parents": [
       {
@@ -632,7 +632,7 @@
     "children": [],
     "siblings": [
       {
-        "id": "lidya-alex-pol.[17.10.1990]",
+        "id": "lidya-alex-pol.[17-10-1990]",
         "type": "blood"
       }
     ],

@@ -1,8 +1,54 @@
 [
   {
-    "id": "ivan-_-dereventsov[elena-f-f-f].[__-__-1___]",
+    "id": "leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]",
     "gender": "male",
     "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-dereventsova[elena-f-f-f-m].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "ivan-_-dereventsov[elena-f-f-f].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-dereventsova[elena-f-f-f-m].[__-__-1___]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "ivan-_-dereventsov[elena-f-f-f].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+
+  {
+    "id": "ivan-_-dereventsov[elena-f-f-f].[__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-dereventsova[elena-f-f-f-m].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {

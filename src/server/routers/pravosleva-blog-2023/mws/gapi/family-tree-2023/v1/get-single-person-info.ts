@@ -72,8 +72,8 @@ const persons = {
       lastName: 'Poltoratsky',
     },
   },
-  'lidya-alex-pol.[17.10.1990]': {
-    id: 'lidya-alex-pol.[17.10.1990]',
+  'lidya-alex-pol.[17-10-1990]': {
+    id: 'lidya-alex-pol.[17-10-1990]',
     baseInfo: {
       firstName: 'Lidia',
       middleName: 'Aleksandrovna',
@@ -94,14 +94,6 @@ const persons = {
       firstName: 'Elena',
       middleName: 'Vladimirovna',
       lastName: 'Dereventsova',
-    },
-  },
-  'vladimir-_-dereventsov.__-__-19__': {
-    id: 'vladimir-_-dereventsov.__-__-19__',
-    baseInfo: {
-      firstName: 'Vladimir',
-      middleName: '_',
-      lastName: 'Dereventsov',
     },
   },
   'ulia-vas-garbuzova.[24-07-1941][05-12-2023]': {
@@ -165,19 +157,19 @@ const persons = {
     baseInfo: {
       firstName: 'Izvekov',
       middleName: 'Fedor',
-      lastName: 'Mikhailovich',
+      lastName: 'Michailovich',
     },
   },
-  'lubov-fedor-pol.[__-__-1936]': {
-    id: 'lubov-fedor-pol.[__-__-1936]',
+  'lubov-fedor-poltoratskaya.[19-06-1936][29-01-2022]': {
+    id: 'lubov-fedor-poltoratskaya.[19-06-1936][29-01-2022]',
     baseInfo: {
       firstName: 'Lubov',
       middleName: 'Fedorovna',
       lastName: 'Poltoratskaya',
     },
   },
-  'vladimir-vladimir-pol.[10-11-1961][27-12-2014]': {
-    id: 'vladimir-vladimir-pol.[10-11-1961][27-12-2014]',
+  'vladimir-vladimir-poltoratsky.[10-11-1961][27-12-2014]': {
+    id: 'vladimir-vladimir-poltoratsky.[10-11-1961][27-12-2014]',
     baseInfo: {
       firstName: 'Vladimir',
       middleName: 'Vladimirovich',
