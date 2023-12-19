@@ -64,6 +64,22 @@ enum ROW_INDEX {
 // TODO: const cache = {}
 
 const persons = {
+  'leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]': {
+    id: 'leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]',
+    baseInfo: {
+      firstName: 'Leonty',
+      middleName: 'Egorievich',
+      lastName: 'Dereventsov',
+    },
+  },
+  'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]': {
+    id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
+    baseInfo: {
+      firstName: 'Ivan',
+      middleName: 'Leontievich',
+      lastName: 'Dereventsov',
+    },
+  },
   'den-vladimir-pol.[13-04-1986]': {
     id: 'den-vladimir-pol.[13-04-1986]',
     baseInfo: {
@@ -440,12 +456,28 @@ const persons = {
       lastName: 'Garbuzova',
     },
   },
+  'roman-nik-garbuzov[lyuba-husb].[26-08-1976]': {
+    id: 'roman-nik-garbuzov[lyuba-husb].[26-08-1976]',
+    baseInfo: {
+      firstName: 'Roman',
+      middleName: 'Nikolaevich',
+      lastName: 'Garbuzov',
+    },
+  },
   'marya-roman-chigrina.[06-03-1997]': {
     id: 'marya-roman-chigrina.[06-03-1997]',
     baseInfo: {
       firstName: 'Maria',
       middleName: 'Romanovna',
       lastName: 'Chigrina',
+    },
+  },
+  'ivan-roman-garbuzov.[16-05-2012]': {
+    id: 'ivan-roman-garbuzov.[16-05-2012]',
+    baseInfo: {
+      firstName: 'Ivan',
+      middleName: 'Romanovich',
+      lastName: 'Garbuzov',
     },
   },
   'bogdan-sergey-chigrin.[07-08-2019]': {

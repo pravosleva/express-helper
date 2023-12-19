@@ -1,6 +1,7 @@
 import { Request as IRequest, Response as IResponse, NextFunction as INextFunction } from 'express'
 import { THelp } from '~/utils/express-validation'
 
+import v10 from './data/pravosleva.v10.json'
 import v9 from './data/pravosleva.v9.json'
 // import v8 from './data/pravosleva.v8.json'
 // import v7 from './data/pravosleva.v7.json'
@@ -16,6 +17,7 @@ import { testTextByAnyWord } from '~/utils/string-ops'
 // import example from './data/average-sample.json'
 
 const versions = {
+  '10': v10,
   '9': v9,
   // '8': v8,
   // '7': v7,

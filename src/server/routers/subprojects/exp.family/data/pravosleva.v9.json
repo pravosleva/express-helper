@@ -1,6 +1,6 @@
 [
   {
-    "id": "ivan-_-dereventsov[elena-f-f-f].[__-__-1___]",
+    "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
     "gender": "male",
     "parents": [],
     "siblings": [],
@@ -28,7 +28,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "ivan-_-dereventsov[elena-f-f-f].[__-__-1___]",
+        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
         "type": "married"
       }
     ],
@@ -48,7 +48,7 @@
     "gender": "male",
     "parents": [
       {
-        "id": "ivan-_-dereventsov[elena-f-f-f].[__-__-1___]",
+        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
         "type": "blood"
       },
       {
@@ -84,7 +84,7 @@
     "gender": "male",
     "parents": [
       {
-        "id": "ivan-_-dereventsov[elena-f-f-f].[__-__-1___]",
+        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
         "type": "blood"
       },
       {
@@ -1739,7 +1739,7 @@
     ],
     "spouses": [
       {
-        "id": "roman-_-_[lyuba-husb].[__-__-19__]",
+        "id": "roman-nik-garbuzov[lyuba-husb].[26-08-1976]",
         "type": "married"
       }
     ],
@@ -1751,7 +1751,7 @@
     ]
   },
   {
-    "id": "roman-_-_[lyuba-husb].[__-__-19__]",
+    "id": "roman-nik-garbuzov[lyuba-husb].[26-08-1976]",
     "gender": "male",
     "parents": [],
     "siblings": [],
@@ -1773,7 +1773,7 @@
     "gender": "female",
     "parents": [
       {
-        "id": "roman-_-_[lyuba-husb].[__-__-19__]",
+        "id": "roman-nik-garbuzov[lyuba-husb].[26-08-1976]",
         "type": "blood"
       },
       {

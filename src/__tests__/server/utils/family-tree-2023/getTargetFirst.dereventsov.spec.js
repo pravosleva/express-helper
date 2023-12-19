@@ -16,7 +16,7 @@ const nodes = [
     ],
     children: [
       {
-        id: 'ivan-_-dereventsov[elena-f-f-f].[__-__-1___]',
+        id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
         type: 'blood',
       },
     ],
@@ -34,14 +34,14 @@ const nodes = [
     ],
     children: [
       {
-        id: 'ivan-_-dereventsov[elena-f-f-f].[__-__-1___]',
+        id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
         type: 'blood',
       },
     ],
   },
 
   {
-    id: 'ivan-_-dereventsov[elena-f-f-f].[__-__-1___]',
+    id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
     gender: 'male',
     parents: [
       {
@@ -95,7 +95,7 @@ describe('family-tree/utils/v2023', () => {
       ],
       children: [
         {
-          id: 'ivan-_-dereventsov[elena-f-f-f].[__-__-1___]',
+          id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
           type: 'blood',
         },
       ],
@@ -113,13 +113,13 @@ describe('family-tree/utils/v2023', () => {
       ],
       children: [
         {
-          id: 'ivan-_-dereventsov[elena-f-f-f].[__-__-1___]',
+          id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
           type: 'blood',
         },
       ],
     })
     expect(tested[2]).toEqual({
-      id: 'ivan-_-dereventsov[elena-f-f-f].[__-__-1___]',
+      id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
       gender: 'male',
       parents: [
         {
