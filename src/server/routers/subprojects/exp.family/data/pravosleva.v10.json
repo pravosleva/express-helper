@@ -12,7 +12,7 @@
     ],
     "children": [
       {
-        "id": "leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]",
+        "id": "leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]",
         "type": "blood"
       }
     ]
@@ -30,14 +30,14 @@
     ],
     "children": [
       {
-        "id": "leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]",
+        "id": "leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]",
         "type": "blood"
       }
     ]
   },
 
   {
-    "id": "leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]",
+    "id": "leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]",
     "gender": "male",
     "parents": [
       {
@@ -52,111 +52,156 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-dereventsova[elena-f-f-f-m].[__-__-1___]",
+        "id": "_-_-dereventsova[elena-f-f-f-m].[__-__-18__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
+        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "_-_-dereventsova[elena-f-f-f-m].[__-__-1___]",
-    "gender": "female",
+    "id": "stepan-_-_[elena-f-f-f-m-f].[__-__-18__]",
+    "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]",
+        "id": "_-_-_[elena-f-f-f-m-m].[__-__-18__]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
+        "id": "marfa-stepan-dereventsova[elena-f-f-m].[__-__-1875]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[elena-f-f-f-m-m].[__-__-18__]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "stepan-_-_[elena-f-f-f-m-f].[__-__-18__]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "marfa-stepan-dereventsova[elena-f-f-m].[__-__-1875]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-dereventsova[elena-f-f-f-m].[__-__-18__]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]",
         "type": "blood"
       }
     ]
   },
 
   {
-    "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
+    "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]",
     "gender": "male",
     "parents": [
       {
-        "id": "leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]",
+        "id": "leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]",
         "type": "blood"
       },
       {
-        "id": "_-_-dereventsova[elena-f-f-f-m].[__-__-1___]",
+        "id": "_-_-dereventsova[elena-f-f-f-m].[__-__-18__]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-dereventsova[elena-f-f-m].[__-__-1___]",
+        "id": "marfa-stepan-dereventsova[elena-f-f-m].[__-__-1875]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[30-12-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]",
+        "id": "vasily-ivan-dereventsov[elena-f-fs].[10-08-1913][__-__-1984]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "_-_-dereventsova[elena-f-f-m].[__-__-1___]",
+    "id": "marfa-stepan-dereventsova[elena-f-f-m].[__-__-1875]",
     "gender": "female",
-    "parents": [],
+    "parents": [
+      {
+        "id": "stepan-_-_[elena-f-f-f-m-f].[__-__-18__]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[elena-f-f-f-m-m].[__-__-18__]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
-        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
+        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[30-12-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]",
+        "id": "vasily-ivan-dereventsov[elena-f-fs].[10-08-1913][__-__-1984]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
+    "id": "nikolay-ivan-dereventsov.[30-12-1909][__-__-1978]",
     "gender": "male",
     "parents": [
       {
-        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
+        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]",
         "type": "blood"
       },
       {
-        "id": "_-_-dereventsova[elena-f-f-m].[__-__-1___]",
+        "id": "marfa-stepan-dereventsova[elena-f-f-m].[__-__-1875]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]",
+        "id": "vasily-ivan-dereventsov[elena-f-fs].[10-08-1913][__-__-1984]",
         "type": "blood"
       }
     ],
     "spouses": [
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
         "type": "married"
       }
     ],
@@ -172,21 +217,21 @@
     ]
   },
   {
-    "id": "vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]",
+    "id": "vasily-ivan-dereventsov[elena-f-fs].[10-08-1913][__-__-1984]",
     "gender": "male",
     "parents": [
       {
-        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]",
+        "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]",
         "type": "blood"
       },
       {
-        "id": "_-_-dereventsova[elena-f-f-m].[__-__-1___]",
+        "id": "marfa-stepan-dereventsova[elena-f-f-m].[__-__-1875]",
         "type": "blood"
       }
     ],
     "siblings": [
       {
-        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[30-12-1909][__-__-1978]",
         "type": "blood"
       }
     ],
@@ -206,7 +251,7 @@
     ],
     "children": [
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
         "type": "blood"
       }
     ]
@@ -224,13 +269,13 @@
     ],
     "children": [
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
+    "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
     "gender": "female",
     "parents": [
       {
@@ -245,7 +290,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[30-12-1909][__-__-1978]",
         "type": "married"
       }
     ],
@@ -393,11 +438,11 @@
     "gender": "male",
     "parents": [
       {
-        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[30-12-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
         "type": "blood"
       }
     ],
@@ -415,11 +460,11 @@
     ],
     "children": [
       {
-        "id": "andrey-ury-dereventsov.[__-__-19__]",
+        "id": "andrey-ury-dereventsov.[02-08-1973]",
         "type": "blood"
       },
       {
-        "id": "nikolay-ury-dereventsov.[__-__-19__]",
+        "id": "nikolay-ury-dereventsov.[11-06-1979]",
         "type": "blood"
       },
       {
@@ -441,11 +486,11 @@
     ],
     "children": [
       {
-        "id": "andrey-ury-dereventsov.[__-__-19__]",
+        "id": "andrey-ury-dereventsov.[02-08-1973]",
         "type": "blood"
       },
       {
-        "id": "nikolay-ury-dereventsov.[__-__-19__]",
+        "id": "nikolay-ury-dereventsov.[11-06-1979]",
         "type": "blood"
       },
       {
@@ -455,7 +500,7 @@
     ]
   },
   {
-    "id": "andrey-ury-dereventsov.[__-__-19__]",
+    "id": "andrey-ury-dereventsov.[02-08-1973]",
     "gender": "male",
     "parents": [
       {
@@ -469,11 +514,69 @@
     ],
     "siblings": [
       {
-        "id": "nikolay-ury-dereventsov.[__-__-19__]",
+        "id": "nikolay-ury-dereventsov.[11-06-1979]",
         "type": "blood"
       },
       {
         "id": "michail-ury-dereventsov.[__-__-19__][__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "tatyana-vik-dereventsova.[26-02-1973]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "anastasia-andrey-dereventsova.[06-07-1998]",
+        "type": "blood"
+      },
+      {
+        "id": "demid-andrey-dereventsova.[28-10-2005]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "tatyana-vik-dereventsova.[26-02-1973]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "andrey-ury-dereventsov.[02-08-1973]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "anastasia-andrey-dereventsova.[06-07-1998]",
+        "type": "blood"
+      },
+      {
+        "id": "demid-andrey-dereventsova.[28-10-2005]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "anastasia-andrey-dereventsova.[06-07-1998]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "andrey-ury-dereventsov.[02-08-1973]",
+        "type": "blood"
+      },
+      {
+        "id": "tatyana-vik-dereventsova.[26-02-1973]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "demid-andrey-dereventsova.[28-10-2005]",
         "type": "blood"
       }
     ],
@@ -481,7 +584,30 @@
     "children": []
   },
   {
-    "id": "nikolay-ury-dereventsov.[__-__-19__]",
+    "id": "demid-andrey-dereventsova.[28-10-2005]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "andrey-ury-dereventsov.[02-08-1973]",
+        "type": "blood"
+      },
+      {
+        "id": "tatyana-vik-dereventsova.[26-02-1973]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "anastasia-andrey-dereventsova.[06-07-1998]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+
+  {
+    "id": "nikolay-ury-dereventsov.[11-06-1979]",
     "gender": "male",
     "parents": [
       {
@@ -495,7 +621,7 @@
     ],
     "siblings": [
       {
-        "id": "andrey-ury-dereventsov.[__-__-19__]",
+        "id": "andrey-ury-dereventsov.[02-08-1973]",
         "type": "blood"
       },
       {
@@ -503,9 +629,90 @@
         "type": "blood"
       }
     ],
+    "spouses": [
+      {
+        "id": "svetlana-ivan-dereventsova.[08-12-1978]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "pavel-nik-dereventsov.[21-03-2005]",
+        "type": "blood"
+      },
+      {
+        "id": "polina-nik-dereventsova.[15-01-2008]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "svetlana-ivan-dereventsova.[08-12-1978]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "nikolay-ury-dereventsov.[11-06-1979]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "pavel-nik-dereventsov.[21-03-2005]",
+        "type": "blood"
+      },
+      {
+        "id": "polina-nik-dereventsova.[15-01-2008]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "pavel-nik-dereventsov.[21-03-2005]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "nikolay-ury-dereventsov.[11-06-1979]",
+        "type": "blood"
+      },
+      {
+        "id": "svetlana-ivan-dereventsova.[08-12-1978]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "polina-nik-dereventsova.[15-01-2008]",
+        "type": "blood"
+      }
+    ],
     "spouses": [],
     "children": []
   },
+  {
+    "id": "polina-nik-dereventsova.[15-01-2008]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "nikolay-ury-dereventsov.[11-06-1979]",
+        "type": "blood"
+      },
+      {
+        "id": "svetlana-ivan-dereventsova.[08-12-1978]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "pavel-nik-dereventsov.[21-03-2005]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+
   {
     "id": "michail-ury-dereventsov.[__-__-19__][__-__-19__]",
     "gender": "male",
@@ -521,11 +728,11 @@
     ],
     "siblings": [
       {
-        "id": "andrey-ury-dereventsov.[__-__-19__]",
+        "id": "andrey-ury-dereventsov.[02-08-1973]",
         "type": "blood"
       },
       {
-        "id": "nikolay-ury-dereventsov.[__-__-19__]",
+        "id": "nikolay-ury-dereventsov.[11-06-1979]",
         "type": "blood"
       }
     ],
@@ -537,11 +744,11 @@
     "gender": "male",
     "parents": [
       {
-        "id": "nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]",
+        "id": "nikolay-ivan-dereventsov.[30-12-1909][__-__-1978]",
         "type": "blood"
       },
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[__-__-1___]",
+        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
         "type": "blood"
       }
     ],

@@ -4,69 +4,69 @@ import { testTextByAnyWord } from '../../../../server/utils/string-ops/testTextB
 
 const nodes = [
   {
-    id: 'leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]',
+    id: 'leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]',
     gender: 'male',
     parents: [],
     siblings: [],
     spouses: [
       {
-        id: '_-_-dereventsova[elena-f-f-f-m].[__-__-1___]',
+        id: '_-_-dereventsova[elena-f-f-f-m].[__-__-18__]',
         type: 'married',
       },
     ],
     children: [
       {
-        id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
+        id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]',
         type: 'blood',
       },
     ],
   },
   {
-    id: '_-_-dereventsova[elena-f-f-f-m].[__-__-1___]',
+    id: '_-_-dereventsova[elena-f-f-f-m].[__-__-18__]',
     gender: 'female',
     parents: [],
     siblings: [],
     spouses: [
       {
-        id: 'leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]',
+        id: 'leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]',
         type: 'married',
       },
     ],
     children: [
       {
-        id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
+        id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]',
         type: 'blood',
       },
     ],
   },
 
   {
-    id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
+    id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]',
     gender: 'male',
     parents: [
       {
-        id: 'leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]',
+        id: 'leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]',
         type: 'blood',
       },
       {
-        id: '_-_-dereventsova[elena-f-f-f-m].[__-__-1___]',
+        id: '_-_-dereventsova[elena-f-f-f-m].[__-__-18__]',
         type: 'blood',
       },
     ],
     siblings: [],
     spouses: [
       {
-        id: '_-_-dereventsova[elena-f-f-m].[__-__-1___]',
+        id: 'marfa-stepan-dereventsova[elena-f-f-m].[__-__-1875]',
         type: 'married',
       },
     ],
     children: [
       {
-        id: 'nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]',
+        id: 'nikolay-ivan-dereventsov.[30-12-1909][__-__-1978]',
         type: 'blood',
       },
       {
-        id: 'vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]',
+        id: 'vasily-ivan-dereventsov[elena-f-fs].[10-08-1913][__-__-1984]',
         type: 'blood',
       },
     ],
@@ -83,68 +83,68 @@ describe('family-tree/utils/v2023', () => {
 
     expect(tested).toHaveLength(nodes.length)
     expect(tested[0]).toEqual({
-      id: 'leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]',
+      id: 'leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]',
       gender: 'male',
       parents: [],
       siblings: [],
       spouses: [
         {
-          id: '_-_-dereventsova[elena-f-f-f-m].[__-__-1___]',
+          id: '_-_-dereventsova[elena-f-f-f-m].[__-__-18__]',
           type: 'married',
         },
       ],
       children: [
         {
-          id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
+          id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]',
           type: 'blood',
         },
       ],
     })
     expect(tested[1]).toEqual({
-      id: '_-_-dereventsova[elena-f-f-f-m].[__-__-1___]',
+      id: '_-_-dereventsova[elena-f-f-f-m].[__-__-18__]',
       gender: 'female',
       parents: [],
       siblings: [],
       spouses: [
         {
-          id: 'leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]',
+          id: 'leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]',
           type: 'married',
         },
       ],
       children: [
         {
-          id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
+          id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]',
           type: 'blood',
         },
       ],
     })
     expect(tested[2]).toEqual({
-      id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1___]',
+      id: 'ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]',
       gender: 'male',
       parents: [
         {
-          id: 'leonty-egorievich-dereventsov[elena-f-f-f-f].[__-__-1___]',
+          id: 'leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]',
           type: 'blood',
         },
         {
-          id: '_-_-dereventsova[elena-f-f-f-m].[__-__-1___]',
+          id: '_-_-dereventsova[elena-f-f-f-m].[__-__-18__]',
           type: 'blood',
         },
       ],
       siblings: [],
       spouses: [
         {
-          id: '_-_-dereventsova[elena-f-f-m].[__-__-1___]',
+          id: 'marfa-stepan-dereventsova[elena-f-f-m].[__-__-1875]',
           type: 'married',
         },
       ],
       children: [
         {
-          id: 'nikolay-ivan-dereventsov.[__-__-1909][__-__-1978]',
+          id: 'nikolay-ivan-dereventsov.[30-12-1909][__-__-1978]',
           type: 'blood',
         },
         {
-          id: 'vasily-ivan-dereventsov[elena-f-fs].[__-__-19__][__-__-1984]',
+          id: 'vasily-ivan-dereventsov[elena-f-fs].[10-08-1913][__-__-1984]',
           type: 'blood',
         },
       ],
