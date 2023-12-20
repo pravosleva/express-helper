@@ -79,7 +79,10 @@ export class FamilyTreePhotoGoogleSheetCache extends GoogleSheetCache {
     const gDataFromCache = this.getGDataFromCache({ tsLimit: 30 * 1000 })
 
     if (gDataFromCache.ok && !!gDataFromCache.gResValues)
-      return { ...this._getPersonData({ sheetData: gDataFromCache.gResValues, personId }), _service: gDataFromCache._service }
+      return {
+        ...this._getPersonData({ sheetData: gDataFromCache.gResValues, personId }),
+        _service: gDataFromCache._service,
+      }
     else {
       type TGRes = {
         data?: {
