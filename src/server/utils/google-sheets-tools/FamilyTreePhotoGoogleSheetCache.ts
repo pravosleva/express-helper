@@ -23,7 +23,7 @@ export class FamilyTreePhotoGoogleSheetCache extends GoogleSheetCache {
     super(ps)
   }
   public _getPersonData({ sheetData: rows, personId }: {
-    sheetData: any;
+    sheetData: [string, string, string];
     personId: string;
   }): TPersonData {
     const res: TPersonData = {
@@ -81,12 +81,14 @@ export class FamilyTreePhotoGoogleSheetCache extends GoogleSheetCache {
     if (gDataFromCache.ok && !!gDataFromCache.gResValues)
       return { ...this._getPersonData({ sheetData: gDataFromCache.gResValues, personId }), _service: gDataFromCache._service }
     else {
-      let gRes: any
+      type TGRes = {
+        data?: {
+          values: [string, string, string];
+        };
+      }
+      let gRes: TGRes
       try {
-        gRes = await this.getValues({
-          pageName,
-          columns,
-        })
+        gRes = await this.getValues<TGRes>({ pageName, columns })
       } catch (err) {
         return {
           id: personId,
