@@ -1,6 +1,7 @@
 import { Request as IRequest } from 'express'
 import { GoogleAuth } from 'google-auth-library'
 import { JSONClient } from 'google-auth-library/build/src/auth/googleauth'
+import { FamilyTreePhotoGoogleSheetCache } from '~/utils/google-sheets-tools/FamilyTreePhotoGoogleSheetCache';
 
 export enum EInsertDataOption {
   INSERT_ROWS = 'INSERT_ROWS', // Будет дописывать в первый свободный "пробел" в таблице и добавлять пустую строку под ней
@@ -30,6 +31,9 @@ export type TWithBlogRequest = IRequest & {
       message?: string;
     }
   };
+  // - NOTE: GoogleSheets 3/3 FamilyTree page
+  familyTreeGoogleSheetCache: FamilyTreePhotoGoogleSheetCache;
+  // -
 }
 
 export enum ENamespaces {

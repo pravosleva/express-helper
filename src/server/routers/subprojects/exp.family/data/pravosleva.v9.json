@@ -64,7 +64,7 @@
     ],
     "spouses": [
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
+        "id": "irina-kirill-dereventsova.[22-04-1910]",
         "type": "married"
       }
     ],
@@ -114,7 +114,7 @@
     ],
     "children": [
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
+        "id": "irina-kirill-dereventsova.[22-04-1910]",
         "type": "blood"
       }
     ]
@@ -132,13 +132,13 @@
     ],
     "children": [
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
+        "id": "irina-kirill-dereventsova.[22-04-1910]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
+    "id": "irina-kirill-dereventsova.[22-04-1910]",
     "gender": "female",
     "parents": [
       {
@@ -305,7 +305,7 @@
         "type": "blood"
       },
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
+        "id": "irina-kirill-dereventsova.[22-04-1910]",
         "type": "blood"
       }
     ],
@@ -449,7 +449,7 @@
         "type": "blood"
       },
       {
-        "id": "irina-kirill-dereventsova[elena-f-m].[22-04-1910]",
+        "id": "irina-kirill-dereventsova.[22-04-1910]",
         "type": "blood"
       }
     ],
@@ -1739,7 +1739,7 @@
     ],
     "spouses": [
       {
-        "id": "roman-nik-garbuzov[lyuba-husb].[26-08-1976]",
+        "id": "roman-nik-garbuzov.[26-08-1976]",
         "type": "married"
       }
     ],
@@ -1751,7 +1751,7 @@
     ]
   },
   {
-    "id": "roman-nik-garbuzov[lyuba-husb].[26-08-1976]",
+    "id": "roman-nik-garbuzov.[26-08-1976]",
     "gender": "male",
     "parents": [],
     "siblings": [],
@@ -1773,7 +1773,7 @@
     "gender": "female",
     "parents": [
       {
-        "id": "roman-nik-garbuzov[lyuba-husb].[26-08-1976]",
+        "id": "roman-nik-garbuzov.[26-08-1976]",
         "type": "blood"
       },
       {

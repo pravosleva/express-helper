@@ -8,6 +8,7 @@ import {
   feedback as blogFeedback,
 } from './mws/gapi/blog/feedback'
 import { getSinglePersonInfo, rules as singlePersonInfoRues } from './mws/gapi/family-tree-2023/v1/get-single-person-info'
+import { FamilyTreePhotoGoogleSheetCache } from '~/utils/google-sheets-tools'
 
 const projectRootDir = path.join(__dirname, '../../../')
 
@@ -35,14 +36,27 @@ for (const key in consoleCloudGoogleCredentialFiles) {
 
 const router = express.Router()
 
+const auth = new google.auth.GoogleAuth({
+  keyFile: consoleCloudGoogleCredentialFiles.pravoslevaBlog2023.distPath,
+  scopes: 'https://www.googleapis.com/auth/spreadsheets',
+})
+
+// - NOTE: GoogleSheets 1/3 FamilyTree page
+const familyTreeGoogleSheetCache = new FamilyTreePhotoGoogleSheetCache({
+  auth,
+  spreadsheetId: '1mMA2t1i5IcOyyfMQlk2nV4GL0hYJ8Kje7Ot59qHBvsY',
+  rowsLimit: 1000,
+  rowsOffset: 2,
+})
+// -
+
 const blog2023GoogleSheetsAuth = (req, _res, next) => {
-  const auth = new google.auth.GoogleAuth({
-    keyFile: consoleCloudGoogleCredentialFiles.pravoslevaBlog2023.distPath,
-    scopes: 'https://www.googleapis.com/auth/spreadsheets',
-  })
   req.pravoslevaBlog2023 = {
     googleSheetsAuth: auth,
   }
+  // - NOTE: GoogleSheets 2/3 FamilyTree page
+  req.familyTreeGoogleSheetCache = familyTreeGoogleSheetCache
+  // -
   next()
 }
 router.use(blog2023GoogleSheetsAuth)

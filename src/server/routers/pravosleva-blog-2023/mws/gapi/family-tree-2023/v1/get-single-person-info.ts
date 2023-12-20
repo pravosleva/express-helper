@@ -1,21 +1,9 @@
 import { TWithBlogRequest } from '~/routers/pravosleva-blog-2023/types'
 import { THelp } from '~/utils/express-validation'
-import { google } from 'googleapis'
-
-// NOTE: page 1mMA2t1i5IcOyyfMQlk2nV4GL0hYJ8Kje7Ot59qHBvsY
 
 export const rules: THelp = {
   params: {
     body: {
-      limit: {
-        type: 'number',
-        descr: 'Google Sheets rows limit (optional)',
-        required: false,
-        validate: (val: any) => ({
-          ok: typeof val === 'number' && val > 0,
-          reason: 'Should be number (more than 0)',
-        }),
-      },
       personId: {
         type: 'string',
         descr: 'Person id',
@@ -54,14 +42,6 @@ type TResponse = {
     };
   };
 }
-
-enum ROW_INDEX {
-  PERSON_ID = 0,
-  MAIN_GALLERY_ITEM_PHOTO_URL = 1,
-  MAIN_GALLERY_ITEM_PHOTO_DESCR = 2,
-}
-
-// TODO: const cache = {}
 
 const persons = {
   'leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]': {
@@ -400,8 +380,8 @@ const persons = {
       lastName: 'Smirnov',
     },
   },
-  'irina-kirill-dereventsova[elena-f-m].[22-04-1910]': {
-    id: 'irina-kirill-dereventsova[elena-f-m].[22-04-1910]',
+  'irina-kirill-dereventsova.[22-04-1910]': {
+    id: 'irina-kirill-dereventsova.[22-04-1910]',
     baseInfo: {
       firstName: 'Irina',
       middleName: 'Kirillovna',
@@ -512,8 +492,8 @@ const persons = {
       lastName: 'Garbuzova',
     },
   },
-  'roman-nik-garbuzov[lyuba-husb].[26-08-1976]': {
-    id: 'roman-nik-garbuzov[lyuba-husb].[26-08-1976]',
+  'roman-nik-garbuzov.[26-08-1976]': {
+    id: 'roman-nik-garbuzov.[26-08-1976]',
     baseInfo: {
       firstName: 'Roman',
       middleName: 'Nikolaevich',
@@ -554,73 +534,8 @@ const persons = {
   },
 }
 
-const cache: {
-  gResValues: any;
-  ts: number;
-} = { gResValues: null, ts: 0 }
-const isTsActual = ({ limit, ts }) => {
-  const nowTs = new Date().getTime()
-  return nowTs - ts <= limit
-}
-type TGDataFromCache = { ok: boolean; gResValues: any }
-const getGDataFromCache = ({ tsLimit = 30 * 1000 }: { tsLimit?: number }): TGDataFromCache => {
-  let res: TGDataFromCache = {
-    ok: false,
-    gResValues: null,
-  }
-  const isCacheActual = !!cache.gResValues && isTsActual({ limit: tsLimit, ts: cache.ts })
-  if (isCacheActual) {
-    res.ok = true
-    res.gResValues = cache.gResValues
-  }
-  return res
-}
-
-const _getPersonData = ({ sheetData: rows, personId }: {
-  sheetData: any;
-  personId: string;
-}): TPersonData => {
-  const res: TPersonData = {
-    id: personId,
-    mainGallery: [],
-    ok: false,
-  }
-  let _isPersonDetected = false
-  let _isTargetPersonBlockIteration= false
-
-  for (const row of rows) {
-    if (!!row[0]) {
-      if (_isPersonDetected && _isTargetPersonBlockIteration) break
-
-      if (row[ROW_INDEX.PERSON_ID] === personId) {
-        _isPersonDetected = true
-        _isTargetPersonBlockIteration = true
-        // NOTE: First row for the person
-        res.mainGallery.push({
-          url: row[ROW_INDEX.MAIN_GALLERY_ITEM_PHOTO_URL],
-          descr: row[ROW_INDEX.MAIN_GALLERY_ITEM_PHOTO_DESCR],
-        })
-        res.ok = true // NOTE: Как минимум, одно фото уже есть
-      } else {
-        _isTargetPersonBlockIteration = false
-      }
-    }
-    else if (!row[0] && _isTargetPersonBlockIteration) {
-      // NOTE: Next row for the person
-      if (!!row[1]) res.mainGallery.push({
-        url: row[ROW_INDEX.MAIN_GALLERY_ITEM_PHOTO_URL],
-        descr: row[ROW_INDEX.MAIN_GALLERY_ITEM_PHOTO_DESCR],
-      })
-    }
-  }
-  if (!_isPersonDetected) res.message = 'Нет данных'
-  return res
-}
-
 export const getSinglePersonInfo = async (req: TWithBlogRequest, res, _next) => {
-  const { limit = 1000, personId } = req.body
-  const maxLimit = 1000
-  const modifiedLimit = limit <= maxLimit ? limit : maxLimit
+  const { personId } = req.body
   const result: TResponse = {
     ok: false,
     data: { id: personId },
@@ -636,57 +551,14 @@ export const getSinglePersonInfo = async (req: TWithBlogRequest, res, _next) => 
   }
   // --
 
-  const gDataFromCache = getGDataFromCache({})
+  const gPersonData = await req.familyTreeGoogleSheetCache.getPersonData({ personId, pageName: '/family-tree-2023', columns: ['A', 'E'] })
 
-  if (gDataFromCache.ok && !!gDataFromCache.gResValues) {
-    const _res = _getPersonData({ sheetData: gDataFromCache.gResValues, personId })
-
-    // result.ok = _res.ok
-    if (!_res.ok) result.message = _res.message || 'Не удалось ничего найти в Google Sheets'
-    // result.gRes = gRes
-    result.data.id = personId
-    result.data.googleSheets = {
-      ok: true,
-      data: _res,
-    }
-  } else {
-    let auth: any
-    try {
-      auth = req.pravoslevaBlog2023.googleSheetsAuth
-    } catch (err) {
-      return res.status(200).send({ ok: false, message: err.message || 'No err.message' })
-    }
-
-    // Create client instance for auth
-    const client = await auth.getClient()
-    // Instance of Google Sheets API
-    const googleSheets = google.sheets({ version: 'v4', auth: client })
-    const spreadsheetId = '1mMA2t1i5IcOyyfMQlk2nV4GL0hYJ8Kje7Ot59qHBvsY'
-
-    let gRes: any
-    try {
-      gRes = await googleSheets.spreadsheets.values.get({ auth, spreadsheetId, range: `/family-tree-v1!A1:E${2 + modifiedLimit}` })
-    } catch (err) {
-      return res.status(500).send({ ok: false, message: `By Google: ${err.message || 'No err.message'}` })
-    }
-    
-    if (!!gRes?.data?.values) {
-      const _res = _getPersonData({ sheetData: gRes.data.values, personId })
-
-      // NOTE: Put new data to cache
-      if (_res.ok) {
-        cache.gResValues = gRes.data.values
-        cache.ts = new Date().getTime()
-      }
-
-      if (!_res.ok) result.message = _res.message || 'Не удалось ничего найти в Google Sheets'
-      // result.gRes = gRes
-      result.data.googleSheets = {
-        ok: true,
-        data: _res,
-      }
-    } else result.message = 'No gRes?.data?.values'
+  result.data.googleSheets = {
+    ok: true,
+    data: gPersonData,
   }
+
+  if (!gPersonData.ok) result.message = gPersonData.message || 'Не удалось ничего найти в Google Sheets'
 
   return res.status(200).send(result)
 }
