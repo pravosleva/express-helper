@@ -1522,7 +1522,7 @@
   },
 
   {
-    "id": "fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]",
+    "id": "fedor-michail-izvekov.[__-__-1909][__-__-____]",
     "gender": "male",
     "parents": [],
     "siblings": [],
@@ -1550,7 +1550,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]",
+        "id": "fedor-michail-izvekov.[__-__-1909][__-__-____]",
         "type": "married"
       }
     ],
@@ -1571,7 +1571,7 @@
     "gender": "female",
     "parents": [
       {
-        "id": "fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]",
+        "id": "fedor-michail-izvekov.[__-__-1909][__-__-____]",
         "type": "blood"
       },
       {
@@ -1593,7 +1593,7 @@
     "gender": "female",
     "parents": [
       {
-        "id": "fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]",
+        "id": "fedor-michail-izvekov.[__-__-1909][__-__-____]",
         "type": "blood"
       },
       {

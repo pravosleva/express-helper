@@ -156,8 +156,8 @@ const persons = {
       lastName: 'Grishina',
     },
   },
-  'fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]': {
-    id: 'fedor-michail-izvekov[vladimir-m-f].[__-__-1909][__-__-____]',
+  'fedor-michail-izvekov.[__-__-1909][__-__-____]': {
+    id: 'fedor-michail-izvekov.[__-__-1909][__-__-____]',
     baseInfo: {
       firstName: 'Izvekov',
       middleName: 'Fedor',
