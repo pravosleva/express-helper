@@ -532,6 +532,22 @@ const persons = {
       lastName: 'Chigrina',
     },
   },
+  'nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]': {
+    id: 'nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]',
+    baseInfo: {
+      firstName: 'Nikita',
+      middleName: 'Fandeevich',
+      lastName: 'Razumny',
+    },
+  },
+  'varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]': {
+    id: 'varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]',
+    baseInfo: {
+      firstName: 'Varvara',
+      middleName: 'Nikitishna',
+      lastName: 'Razumnaya',
+    },
+  },
 }
 
 export const getSinglePersonInfo = async (req: TWithBlogRequest, res, _next) => {

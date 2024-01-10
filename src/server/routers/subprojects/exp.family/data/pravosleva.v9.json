@@ -170,7 +170,7 @@
   },
 
   {
-    "id": "_-_-_[elena-m-m-f].[__-__-1___][__-__-1___]",
+    "id": "nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]",
     "gender": "male",
     "parents": [],
     "siblings": [],
@@ -182,7 +182,7 @@
     ],
     "children": [
       {
-        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ]
@@ -194,23 +194,23 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-_[elena-m-m-f].[__-__-1___][__-__-1___]",
+        "id": "nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+    "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
     "gender": "female",
     "parents": [
       {
-        "id": "_-_-_[elena-m-m-f].[__-__-1___][__-__-1___]",
+        "id": "nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]",
         "type": "blood"
       },
       {
@@ -285,7 +285,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "married"
       }
     ],
@@ -485,7 +485,7 @@
     "gender": "female",
     "parents": [
       {
-        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       },
       {

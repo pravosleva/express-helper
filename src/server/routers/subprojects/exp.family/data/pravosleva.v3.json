@@ -44,7 +44,7 @@
     ]
   },
   {
-    "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+    "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
     "gender": "female",
     "parents": [],
     "siblings": [],
@@ -68,7 +68,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "married"
       }
     ],
@@ -138,7 +138,7 @@
     "gender": "female",
     "parents": [
       {
-        "id": "varya-_-_[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       },
       {
