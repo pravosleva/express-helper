@@ -1,10 +1,17 @@
-.modal-footer-btns-wrapper{
+.modal-footer-btns-wrapper {
   display: flex;
   align-items: center;
   & button:not(:last-child) {
     margin-right: var(--chakra-space-2);
   }
   flex-wrap: wrap;
+
+  &_dark {
+    border-top: 2px solid var(--chakra-colors-gray-400);
+  }
+  &_light {
+    border-top: 2px solid var(--chakra-colors-whiteAlpha-100);
+  }
 }
 .red {
   border: 1px dashed red;

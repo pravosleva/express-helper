@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 type TProps = {
   resValidator: (data: any) => boolean;
@@ -14,9 +14,10 @@ export const PollingComponent = ({
   promise,
 }: TProps) => {
   const timeoutRef = useRef<any>(null);
-  const [count, setCount] = useState<number>(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_count, setCount] = useState<number>(0);
 
-  const updateCounterIfNecessary = async () => {
+  const updateCounterIfNecessary = useCallback(async () => {
     await promise()
       .then((data) => {
         if (resValidator(data)) onSuccess();
@@ -26,7 +27,7 @@ export const PollingComponent = ({
         if (!!onFail) onFail(err)
         setCount((c) => c + 1);
       });
-  };
+  }, [setCount, onFail, onSuccess, resValidator, promise]);
 
   useEffect(() => {
     if (!!timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -36,7 +37,7 @@ export const PollingComponent = ({
       return () => {
         clearTimeout(timeoutRef.current);
       };
-  }, [count]);
+  }, [updateCounterIfNecessary]);
 
   return null;
   // return <div style={{ border: '1px solid red' }}>POLLING COMPONENT: {count}, {timeoutRef.current}</div>

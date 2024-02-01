@@ -21,7 +21,23 @@ export const TotalSum = () => {
     month6: 0,
     'month0.5': 0,
   }
-  const [sum, setSum] = useState<{[key: string]: number}>(initialMothSum)
+  const initialOptionalPlannedInProgress = {
+    plannedInProgress: {
+      // month1: 0,
+      // month2: 0,
+      // month3: 0,
+      // month6: 0,
+      'month0.5': 0,
+    },
+  }
+  const [sum, setSum] = useState<{
+    [key: string]: number;
+  }>(initialMothSum)
+  const [optional, setOptional] = useState<{
+    plannedInProgress: {
+      [key: string]: number;
+    };
+  }>(initialOptionalPlannedInProgress)
   // Новый хук Реакт 18 useTransition
   // const [startTransition, _isPending] = useTransition({
   //   timeoutMs: 500 // Время, отведенное на переход
@@ -35,6 +51,7 @@ export const TotalSum = () => {
           case 'getSumLastMonths':
             // startTransition(() => { setSum($event.data.sum) })
             setSum($event.data.sum)
+            setOptional($event.data.optional)
             break;
           default: break;
         }
@@ -55,10 +72,21 @@ export const TotalSum = () => {
   }, [sum])
 
   return (
-    <Stack marginRight='auto'>
+    <Stack
+      marginRight='auto'
+    >
       {!!sum['month0.5'] && (
         // <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
-        <Text fontSize="sm" fontWeight='bold' display='flex'><span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag colorScheme='green'>Ready</Tag>&nbsp;&&nbsp;🔲 ={getPrettyPrice(sum['month0.5'])}</Text>
+        <Text fontSize="sm" fontWeight='bold' display='flex'>
+          <span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag rounded='2xl' colorScheme='green'>Ready</Tag>&nbsp;&&nbsp;🔲 ={getPrettyPrice(sum['month0.5'])}
+        </Text>
+        // <span><TiArrowLoop size={19} /></span>&nbsp;
+      )}
+      {!!optional.plannedInProgress['month0.5'] && (
+        // <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
+        <Text fontSize="sm" fontWeight='bold' display='flex'>
+          <span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag rounded='2xl' colorScheme='yellow'>Not ready</Tag>&nbsp;={getPrettyPrice(optional.plannedInProgress['month0.5'])}
+        </Text>
         // <span><TiArrowLoop size={19} /></span>&nbsp;
       )}
       {!!sum.month3 && (

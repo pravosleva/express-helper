@@ -51,28 +51,48 @@ var getSumLastMonths = ({ months, currDate, tasklist }) => {
     return result
   }
 
-  if (!tasklist) return 0
-  return tasklist.reduce((acc, task) => {
-    if (
-      !!task.uncheckTs
-      && !!task.checkTs
+  if (!tasklist) return {
+    isDoneOrNotCompleted: 0,
+    plannedInProgress: 0,
+  }
 
-      // 1. Base requirements:
-      // && task.isLooped
-      && !!task.fixedDiff
+  return {
+    isDoneOrNotCompleted: tasklist.reduce((acc, task) => {
+      if (
+        !!task.uncheckTs
+        && !!task.checkTs
 
-      // 2. NOTE: Waiting time (not asap)
-      // Counter is done OR incompleted:
-      && ((isTaskCounterDone(task) && task.isCompleted && task.isLooped) || (!task.isCompleted))
-      // INCORRECT CONDITION: && !task.isCompleted // Task in progress
-      
-      // 3. Valid range:
-      // && task.checkTs <= targetDate // Global (montn 1, 2, 3, 6)
-    ) {
-      return acc + (task.price || 0)
-    } else if (!!task.price && !task.isCompleted) {
-      return acc + (task.price || 0)
-    }
-    return acc
-  }, 0)
+        // 1. Base requirements:
+        // && task.isLooped
+        && !!task.fixedDiff
+
+        // 2. NOTE: Waiting time (not asap)
+        // Counter is done OR incompleted:
+        && ((isTaskCounterDone(task) && task.isCompleted && task.isLooped) || (!task.isCompleted))
+        // INCORRECT CONDITION: && !task.isCompleted // Task in progress
+        
+        // 3. Valid range:
+        // && task.checkTs <= targetDate // Global (montn 1, 2, 3, 6)
+      ) {
+        return acc + (task.price || 0)
+      } else if (!!task.price && !task.isCompleted) {
+        return acc + (task.price || 0)
+      }
+      return acc
+    }, 0),
+    plannedInProgress: tasklist.reduce((acc, task) => {
+      // NOTE: 1. isCompleted & Looped & Not ready
+      if (
+        !!task.uncheckTs
+        && !!task.checkTs
+        && task.isLooped
+        && !!task.fixedDiff
+        && task.isCompleted
+      ) return acc + (task.price || 0)
+      // NOTE: Nothing else
+      // else if (!!task.price && !task.isCompleted) return acc + (task.price || 0);
+
+      return acc
+    }, 0),
+  }
 }

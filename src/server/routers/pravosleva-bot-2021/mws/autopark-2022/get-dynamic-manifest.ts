@@ -15,11 +15,16 @@ const _help: THelp = {
         descr: 'Project ID',
         required: false,
       },
+      project_name: {
+        type: 'string',
+        descr: 'Project name',
+        required: false,
+      },
     },
   },
 }
 
-const baseUrl = 'https://pravosleva.pro'
+// const baseUrl = 'https://pravosleva.pro'
 
 export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse) => {
   const errs: string[] = []
@@ -37,7 +42,7 @@ export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFi
       _help,
     })
 
-  const { project_id, chat_id } = req.query
+  const { project_id, chat_id, project_name } = req.query
   try {
     const manifest = {
       "name": "Pravosleva",
@@ -48,7 +53,7 @@ export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFi
       "display": "fullscreen",
       "orientation": "portrait",
       "scope": "/",
-      "start_url": `${baseUrl}/`,
+      "start_url": `/autopark-2022/${chat_id}`, // `${baseUrl}/`,
       "icons": [
         {
           "src": "icons/icon-72x72.png",
@@ -93,8 +98,12 @@ export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFi
       ],
       "splash_pages": null
     }
-    manifest.start_url = `${baseUrl}/autopark-2022/${chat_id}`
-    if (!!project_id) manifest.start_url += `/${project_id}`
+    if (!!project_id) manifest.start_url = `/autopark-2022/${chat_id}/${project_id}/report`
+    if (!!project_name && typeof project_name === 'string') {
+      manifest.name = project_name
+      manifest.short_name = project_name
+    }
+
     return res.status(200).send(JSON.stringify(manifest))
   } catch (err) {
     return res.status(500).json({ success: false, message: err.message || 'No err message' })

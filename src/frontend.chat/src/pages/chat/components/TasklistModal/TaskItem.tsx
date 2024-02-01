@@ -1,6 +1,6 @@
-import React, { useRef, useState, useMemo, useCallback, memo } from "react"
+import React, { useRef, useMemo, memo } from "react"
 import {
-  Td, Tr, Editable, EditablePreview, EditableInput,
+  Editable, EditablePreview, EditableInput,
   IconButton,
   // useEditableControls, ButtonGroup, Flex,
   Menu,
@@ -11,10 +11,10 @@ import {
   MenuDivider,
   MenuOptionGroup,
   Flex,
-  Tooltip,
+  // Tooltip,
   Box,
   Tag,
-  Stack,
+  // Stack,
   useColorMode,
 } from "@chakra-ui/react"
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
@@ -25,16 +25,18 @@ import { TiArrowLoop } from 'react-icons/ti'
 // <TiArrowLoop size={19} />
 // import { useDiffTime } from '~/common/hooks/useDiffTime'
 // import { AiOutlineFire } from 'react-icons/ai'
-import { MdTimer, MdTimerOff, MdAttachMoney, MdMoneyOff } from 'react-icons/md'
+import {
+  // MdTimer, MdTimerOff,
+  MdAttachMoney, MdMoneyOff,
+} from 'react-icons/md'
 // import { GiDynamite } from 'react-icons/gi'
 import { FaTrashAlt } from 'react-icons/fa'
-import { PriceModal } from './components'
+// import { PriceModal } from './components'
 import { TTask } from './types'
 import { getPrettyPrice } from '~/utils/getPrettyPrice'
 import Countdown, { zeroPad } from 'react-countdown'
 // import { BsFillCalendarFill } from 'react-icons/bs'
 import styles from './TaskItem.module.scss'
-
 
 type TProps = {
   char: string
@@ -108,6 +110,12 @@ const constants: {
   },
 }
 
+const getColorByDays = (days: number) => days <= 7
+    ? days <= 3
+    ? 'red'
+    : 'yellow'
+    : 'gray'
+
 export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker, onPriceModalOpen, onResetExpenses, char }: TProps) => {
   const {
     title,
@@ -136,7 +144,7 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
     )
   
     return (
-      <Tag rounded='2xl' style={{ fontFamily: 'system-ui' }}>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
+      <Tag rounded='2xl' colorScheme={getColorByDays(days)} style={{ fontFamily: 'system-ui' }}>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
     )
   }
   const timeEnd: any = !!checkTs && !!uncheckTs && isCompleted && isLooped ? checkTs + (checkTs - uncheckTs) : null

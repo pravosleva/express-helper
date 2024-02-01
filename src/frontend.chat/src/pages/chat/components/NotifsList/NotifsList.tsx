@@ -35,14 +35,14 @@ export type TRoomNotifs = {
   tsUpdate: number
   data: TData
 }
-type TRes = {
-  ok: boolean
-  code: string
-  message: string
-  tsUpdate?: number
-  state?: any
-  ts?: number
-}
+// type TRes = {
+//   ok: boolean
+//   code: string
+//   message: string
+//   tsUpdate?: number
+//   state?: any
+//   ts?: number
+// }
 
 function dynamicSort(property: string) {
   var sortOrder = 1;

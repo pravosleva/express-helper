@@ -49,7 +49,7 @@ type TProps = {
 //   return [...new Set(res)].sort(abSort)
 // }
 
-const defaultTagsLimit: number = 5
+const defaultTagsLimit: number = 0
 export const ResponsiveSearchField = ({
   data,
   initialState,
@@ -233,13 +233,12 @@ export const ResponsiveSearchField = ({
                       colorScheme='blue'
                       variant='unstyled' 
                       // leftIcon={<FcGallery color='#FFF' size={18} />}
-                      onClick={() => {
-                        setIsShowMoreEnabled(true)
-                      }}
+                      onClick={() => setIsShowMoreEnabled(true)}
                       // mr={2}
-                      // rounded='3xl'
+                      rounded='3xl'
+                      isFullWidth
                     >
-                      Show more
+                      Show {tagList.length} tags
                     </Button>
                   ) : (
                     <Button
@@ -247,11 +246,12 @@ export const ResponsiveSearchField = ({
                       colorScheme='blue'
                       variant='unstyled' 
                       // leftIcon={<FcGallery color='#FFF' size={18} />}
-                      onClick={() => {
-                        setIsShowMoreEnabled(false)
-                      }}
+                      onClick={() => setIsShowMoreEnabled(false)}
                       // mr={2}
-                      // rounded='3xl'
+                      rounded='3xl'
+                      style={{
+                        padding: '0 var(--chakra-space-3)'
+                      }}
                     >
                       Collapse
                     </Button>

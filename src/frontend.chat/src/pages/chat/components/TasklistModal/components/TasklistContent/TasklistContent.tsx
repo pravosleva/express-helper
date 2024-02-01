@@ -1,15 +1,16 @@
-import { useState, useCallback, useMemo, memo } from 'react'
+import { useState, useCallback, useMemo, memo, useLayoutEffect } from 'react'
 import { useSocketContext } from '~/context/socketContext'
 import { useMainContext } from '~/context/mainContext'
 import {
   Box,
   useToast,
   FormControl,
-  FormLabel,
+  // FormLabel,
   Input,
-  Table,
-  TableCaption,
-  Tbody,
+  // Table,
+  // TableCaption,
+  Tag,
+  // Tbody,
   Text,
   Stack,
   RadioGroup,
@@ -19,9 +20,9 @@ import {
   ModalFooter,
   ModalBody,
   useColorMode,
-  Thead,
-  Tr,
-  Th,
+  // Thead,
+  // Tr,
+  // Th,
   Divider,
   Flex,
 } from '@chakra-ui/react'
@@ -41,6 +42,10 @@ type TTask = {
   editTs?: number;
   title: string;
   isCompleted: boolean;
+
+  isLooped?: boolean;
+  checkTs?: number;
+  uncheckTs?: number;
 }
 type TProps = {
   data: TTask[]
@@ -51,7 +56,12 @@ type TProps = {
 type TMemoizedGroupProps = {
   asModal: boolean;
   colorMode: any;
-  abDataVersion: any;
+  abDataVersion: {
+    [key: string]: TTask[];
+  };
+  abReadyMapping: {
+    [key: string]: number;
+  };
   char: any;
   radioValue: any;
   handleCompleteToggle: any;
@@ -62,10 +72,22 @@ type TMemoizedGroupProps = {
   handleTaskEdit: any;
 }
 
+const getIsTaskReady = (task: TTask): boolean => {
+  const nowTs = new Date().getTime()
+  return (
+    task.isCompleted
+    && task.isLooped
+    && !!task.checkTs
+    && !!task.uncheckTs
+    && (nowTs - (task.checkTs + (task.checkTs - task.uncheckTs)) > 0)
+  ) || false
+}
+
 const MemoizedGroup = memo(({
   asModal,
   colorMode, // mode.colorMode
   abDataVersion,
+  abReadyMapping,
   char: key, // key
   radioValue,
   handleCompleteToggle,
@@ -75,18 +97,34 @@ const MemoizedGroup = memo(({
   handleTaskDelete,
   handleTaskEdit,
 }: TMemoizedGroupProps) => {
+  
   return (
     <div>
       {asModal && <Divider marginTop="0px" marginBottom='0px' />}
 
       <Flex direction='column'>
 
-        <div className={clsx(styles.abHeader, styles[`abHeader_${colorMode}`], { [styles[`abHeader_topRadius`]]: !asModal })}>
-          {key.toUpperCase()}
-        </div>
+        {
+          radioValue === 'ready'
+          ? (
+            abReadyMapping[key] > 0
+            ? (
+              <div className={clsx(styles.abHeader, styles[`abHeader_${colorMode}`], { [styles[`abHeader_topRadius`]]: !asModal })}>
+                {key.toUpperCase()}
+              </div>
+            )
+            : null
+          ) : (
+            <div className={clsx(styles.abHeader, styles[`abHeader_${colorMode}`], { [styles[`abHeader_topRadius`]]: !asModal })}>
+            {key.toUpperCase()}
+          </div>
+          )
+        }
+        
         
         <div style={{ zIndex: 1 }} className={clsx(styles.itemsList)}>
-          {abDataVersion[key].map((data: any) => {
+          {abDataVersion[key].map((data) => {
+            
             switch (radioValue) {
               case 'all': break;
               case 'checked':
@@ -94,6 +132,9 @@ const MemoizedGroup = memo(({
                 break;
               case 'unchecked':
                 if (data.isCompleted) return null;
+                break;
+              case 'ready':
+                if (!getIsTaskReady(data)) return null;
                 break;
               default: break;
             }
@@ -293,6 +334,35 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
       </>
     )
   }, [isCreateTaskFormOpened, formData.title, handleInputChange, handkeKeyUp])
+
+  const [_readyCalcTick, set_readyCalcTick] = useState<number>(0)
+  const set_readyCalcTickInc = useCallback(() => {
+    set_readyCalcTick((c) => c + 1)
+  }, [set_readyCalcTick])
+  useLayoutEffect(() => {
+    const timer = setInterval(set_readyCalcTickInc, 1000)
+    return () => clearInterval(timer)
+  }, [set_readyCalcTickInc])
+  const abReadyMapping = useMemo<{
+    [key: string]: number;
+  }>(() => {
+    return Object.keys(abDataVersion).reduce((acc, curKey) => {
+      const completedCounter = abDataVersion[curKey].reduce((counter, task) => {
+        if (getIsTaskReady(task)) counter += 1
+        return counter
+      }, 0)
+      // @ts-ignore
+      acc[curKey] = completedCounter
+      return acc
+    }, {})
+  }, [abDataVersion, _readyCalcTick])
+  const hasAnyReady = useMemo<boolean>(() => {
+    return Object.values(abReadyMapping).some((val) => val > 0)
+  }, [abReadyMapping, _readyCalcTick])
+  const readyCounter = useMemo<number>(() => {
+    return Object.values(abReadyMapping).reduce((acc, val) => acc + val, 0)
+  }, [abReadyMapping, _readyCalcTick])
+
   const Body = useMemo(() => {
     return (
       <>
@@ -412,6 +482,9 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                     // if (data.isCompleted) return null;
                     if (abDataVersion[key].every((data) => data.isCompleted)) return null;
                     break;
+                  case 'ready':
+                    if (abDataVersion[key].every((data) => !getIsTaskReady(data))) return null;
+                    break;
                   default: break;
                 }
 
@@ -421,6 +494,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                     asModal={asModal || false}
                     colorMode={mode.colorMode}
                     abDataVersion={abDataVersion}
+                    abReadyMapping={abReadyMapping}
                     char={key}
                     radioValue={radioValue}
                     handleCompleteToggle={handleCompleteToggle}
@@ -490,10 +564,15 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
                 </Box>
                 <Box>
                   <RadioGroup onChange={setRadioValue} value={radioValue}>
-                    <Stack direction='row'>
-                      <Radio value='all'>All</Radio>
-                      <Radio value='checked'>Checked only</Radio>
-                      <Radio value='unchecked'>Unchecked only</Radio>
+                    <Stack
+                      direction='row'
+                      justifyContent='center'
+                      alignItems='center'
+                    >
+                      <Radio value='all'><Tag colorScheme='gray' rounded='2xl' style={{ fontFamily: 'system-ui' }}>All</Tag></Radio>
+                      <Radio value='checked'><Tag colorScheme='gray' rounded='2xl' style={{ fontFamily: 'system-ui' }}>Checked</Tag></Radio>
+                      <Radio value='unchecked'><Tag colorScheme='gray' rounded='2xl' style={{ fontFamily: 'system-ui' }}>Unchecked</Tag></Radio>
+                      <Radio value='ready' readOnly={!hasAnyReady}><Tag colorScheme={hasAnyReady ? 'green' : 'gray'} rounded='2xl' style={{ fontFamily: 'system-ui' }}>Ready {readyCounter}</Tag></Radio>
                     </Stack>
                   </RadioGroup>
                 </Box>
@@ -516,7 +595,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         asModal
         ? (
           <>
-            <ModalFooter className={clsx(styles['modal-footer-btns-wrapper'])}>
+            <ModalFooter className={clsx(styles['modal-footer-btns-wrapper'], styles[`modal-footer-btns-wrapper_${mode.colorMode}`])}>
               {Controls}
             </ModalFooter>
           </>

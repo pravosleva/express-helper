@@ -40,20 +40,26 @@ self.onmessage = ($event) => {
     case !!data && data.action === 'getSumLastMonths':
       const currDate = new Date();
       const sum = {};
+      const optional = {
+        plannedInProgress: {},
+      };
       [
         // 1,
         // 2, 3, 6,
         0.5
       ].forEach(m => {
-        sum[`month${m}`] = getSumLastMonths({
+        const { isDoneOrNotCompleted, plannedInProgress } = getSumLastMonths({
           months: m,
           currDate,
           tasklist: data.tasklist
         });
+        sum[`month${m}`] = isDoneOrNotCompleted;
+        optional.plannedInProgress[`month${m}`] = plannedInProgress;
       });
 
       result = {
         sum,
+        optional,
         actionCode: 'getSumLastMonths',
       }
 

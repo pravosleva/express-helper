@@ -1,11 +1,15 @@
 import { useState, useMemo } from 'react'
-import { Box, Button, Flex, Grid, Text, useToast, IconButton, Tooltip } from "@chakra-ui/react"
+import { Box, Button, Flex, useToast, IconButton, Tooltip } from "@chakra-ui/react"
 // import { getNormalizedDate, getDayMonth } from '~/utils/timeConverter'
 // import { FaTrashAlt } from 'react-icons/fa'
-import Countdown, { zeroPad } from 'react-countdown'
+import Countdown from 'react-countdown'
 import { useSnapshot } from 'valtio'
 import { useMainContext } from '~/context/mainContext'
-import { ERegistryLevel, TMessage, EMessageStatus } from '~/utils/interfaces'
+import {
+  ERegistryLevel,
+  TMessage,
+  // EMessageStatus,
+} from '~/utils/interfaces'
 // import { AssignedBox } from '~/pages/chat/components/AssignedBox'
 import { UserAva } from '~/pages/chat/components/UserAva'
 import { IoMdClose } from 'react-icons/io'
@@ -54,7 +58,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
   }
   const toast = useToast()
   const isMyMessage = useMemo(() => original?.user === name, [name, original?.user])
-  const targetLabel = useMemo(() => getNormalizedDateShortYear(tsTarget), [])
+  const targetLabel = useMemo(() => getNormalizedDateShortYear(tsTarget), [tsTarget])
   
   // <Grid templateColumns='auto 50px' gap={2}>
   return (

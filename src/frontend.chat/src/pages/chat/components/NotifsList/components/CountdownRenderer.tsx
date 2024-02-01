@@ -10,7 +10,11 @@ export const CountdownRenderer = ({ days, hours, minutes, seconds, completed, to
       <Tag rounded='2xl' colorScheme='red' style={{ fontFamily: 'system-ui' }}>{getTimeAgo(props.date)}</Tag>
     </Tooltip>
   )
-  const getColorByDays = (days: number) => days <= 2 ? 'red' : 'gray'
+  const getColorByDays = (days: number) => days <= 7
+    ? days <= 3
+    ? 'red'
+    : 'yellow'
+    : 'gray'
   const color = getColorByDays(days)
 
   return (
