@@ -11,7 +11,8 @@
 }
 
 body {
-  overflow-y: hidden;;
+  overflow-y: hidden;
+  max-height: 100svh;;
 }
 
 /* @keyframes fadeIn {

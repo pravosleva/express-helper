@@ -36,6 +36,7 @@ import clsx from 'clsx'
 import { useCompare } from '~/common/hooks/useDeepEffect'
 import { getABSortedObjByObjects } from './getABSortedObjByObjects'
 import { ResponsiveSearchField } from './components'
+import { getPrettyPrice } from '~/utils/getPrettyPrice'
 
 type TTask = {
   ts: number;
@@ -60,7 +61,10 @@ type TMemoizedGroupProps = {
     [key: string]: TTask[];
   };
   abReadyMapping: {
-    [key: string]: number;
+    [key: string]: {
+      counter: number;
+      price: number;
+    };
   };
   char: any;
   radioValue: any;
@@ -107,7 +111,7 @@ const MemoizedGroup = memo(({
         {
           radioValue === 'ready'
           ? (
-            abReadyMapping[key] > 0
+            abReadyMapping[key].counter > 0
             ? (
               <div className={clsx(styles.abHeader, styles[`abHeader_${colorMode}`], { [styles[`abHeader_topRadius`]]: !asModal })}>
                 {key.toUpperCase()}
@@ -335,33 +339,67 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     )
   }, [isCreateTaskFormOpened, formData.title, handleInputChange, handkeKeyUp])
 
-  const [_readyCalcTick, set_readyCalcTick] = useState<number>(0)
-  const set_readyCalcTickInc = useCallback(() => {
-    set_readyCalcTick((c) => c + 1)
-  }, [set_readyCalcTick])
+  const [_auxCalcTick, set_auxCalcTick] = useState<number>(0)
+  const set_auxCalcTickInc = useCallback(() => {
+    set_auxCalcTick((c) => c + 1)
+  }, [set_auxCalcTick])
   useLayoutEffect(() => {
-    const timer = setInterval(set_readyCalcTickInc, 1000)
+    const timer = setInterval(set_auxCalcTickInc, 1000)
     return () => clearInterval(timer)
-  }, [set_readyCalcTickInc])
+  }, [set_auxCalcTickInc])
   const abReadyMapping = useMemo<{
-    [key: string]: number;
+    [key: string]: {
+      counter: number;
+      price: number;
+    };
   }>(() => {
     return Object.keys(abDataVersion).reduce((acc, curKey) => {
-      const completedCounter = abDataVersion[curKey].reduce((counter, task) => {
-        if (getIsTaskReady(task)) counter += 1
-        return counter
-      }, 0)
+      const completedCounter = abDataVersion[curKey].reduce((data, task) => {
+        if (getIsTaskReady(task)) {
+          data.counter += 1
+          if (!!task.price) data.price += task.price
+        }
+        return data
+      }, { counter: 0, price: 0 })
       // @ts-ignore
       acc[curKey] = completedCounter
       return acc
     }, {})
-  }, [abDataVersion, _readyCalcTick])
+  }, [abDataVersion, _auxCalcTick])
+  const abUncheckedMapping = useMemo<{
+    [key: string]: {
+      counter: number;
+      price: number;
+    };
+  }>(() => {
+    return Object.keys(abDataVersion).reduce((acc, curKey) => {
+      const uncheckedCounter = abDataVersion[curKey].reduce((data, task) => {
+        if (!task.isCompleted) {
+          data.counter += 1
+          if (!!task.price) data.price += task.price
+        }
+        return data
+      }, { counter: 0, price: 0 })
+      // @ts-ignore
+      acc[curKey] = uncheckedCounter
+      return acc
+    }, {})
+  }, [abDataVersion, _auxCalcTick])
   const hasAnyReady = useMemo<boolean>(() => {
-    return Object.values(abReadyMapping).some((val) => val > 0)
-  }, [abReadyMapping, _readyCalcTick])
+    return Object.values(abReadyMapping).some((keySpace) => keySpace.counter > 0)
+  }, [abReadyMapping, _auxCalcTick])
   const readyCounter = useMemo<number>(() => {
-    return Object.values(abReadyMapping).reduce((acc, val) => acc + val, 0)
-  }, [abReadyMapping, _readyCalcTick])
+    return Object.values(abReadyMapping).reduce((acc, keySpace) => acc + keySpace.counter, 0)
+  }, [abReadyMapping, _auxCalcTick])
+  const readyTotalPrice = useMemo<number>(() => {
+    return Object.values(abReadyMapping).reduce((acc, keySpace) => acc + keySpace.price || 0, 0)
+  }, [abReadyMapping, _auxCalcTick])
+  // const uncheckedTotalCounter = useMemo<number>(() => {
+  //   return Object.values(abUncheckedMapping).reduce((acc, keySpace) => acc + keySpace.counter || 0, 0)
+  // }, [abUncheckedMapping, _auxCalcTick])
+  const uncheckedTotalPrice = useMemo<number>(() => {
+    return Object.values(abUncheckedMapping).reduce((acc, keySpace) => acc + keySpace.price || 0, 0)
+  }, [abUncheckedMapping, _auxCalcTick])
 
   const Body = useMemo(() => {
     return (
@@ -541,73 +579,109 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
         onSubmit={handlePriceModalSubmit}
         initialPrice={editedTask2?.price || 0}
       />
-      {
-        asModal && !!data && (
-          <ModalHeader>
-            {modalHeader || null}
-            <Box>
-              <Stack>
-                <Box>
-                  {data.length > 0 ? <><span style={{ color: 'var(--chakra-colors-green-400)' }}>{percentage}%</span> | {completedTasksLen} of {data.length} |</> : ''} {MemoCurrentShortStateByRadio}
-                </Box>
-                <Box
-                  pt={2}
-                  pb={2}
-                >
-                  <ResponsiveSearchField
-                    initialState={searchString}
-                    onChange={handleSearchChange}
-                    onClear={handleSearchClear}
-                    isCreateNewDisabled={hasSearchInData}
-                    data={data}
-                  />
-                </Box>
-                <Box>
-                  <RadioGroup onChange={setRadioValue} value={radioValue}>
-                    <Stack
-                      direction='row'
-                      justifyContent='center'
-                      alignItems='center'
-                    >
-                      <Radio value='all'><Tag colorScheme='gray' rounded='2xl' style={{ fontFamily: 'system-ui' }}>All</Tag></Radio>
-                      <Radio value='checked'><Tag colorScheme='gray' rounded='2xl' style={{ fontFamily: 'system-ui' }}>Checked</Tag></Radio>
-                      <Radio value='unchecked'><Tag colorScheme='gray' rounded='2xl' style={{ fontFamily: 'system-ui' }}>Unchecked</Tag></Radio>
-                      <Radio value='ready' readOnly={!hasAnyReady}><Tag colorScheme={hasAnyReady ? 'green' : 'gray'} rounded='2xl' style={{ fontFamily: 'system-ui' }}>Ready {readyCounter}</Tag></Radio>
-                    </Stack>
-                  </RadioGroup>
-                </Box>
-              </Stack>
-            </Box>
-          </ModalHeader>
-        )
-      }
-      {
-        asModal
-        ? (
-          <>
-            <ModalBody pb={0} pl={0} pr={0} pt={0}>
-              {Body}
-            </ModalBody>
-          </>
-        ) : Body
-      }
-      {
-        asModal
-        ? (
-          <>
-            <ModalFooter className={clsx(styles['modal-footer-btns-wrapper'], styles[`modal-footer-btns-wrapper_${mode.colorMode}`])}>
+      <>
+        {
+          asModal && !!data && (
+            <ModalHeader>
+              {modalHeader || null}
+              <Box>
+                <Stack>
+                  <Box>
+                    {data.length > 0 ? <><span style={{ color: 'var(--chakra-colors-green-400)' }}>{percentage}%</span> | {completedTasksLen} of {data.length} |</> : ''} {MemoCurrentShortStateByRadio}
+                  </Box>
+                  <Box
+                    pt={2}
+                    pb={2}
+                  >
+                    <ResponsiveSearchField
+                      initialState={searchString}
+                      onChange={handleSearchChange}
+                      onClear={handleSearchClear}
+                      isCreateNewDisabled={hasSearchInData}
+                      data={data}
+                    />
+                  </Box>
+                  <Box>
+                    <RadioGroup onChange={setRadioValue} value={radioValue}>
+                      <Stack
+                        direction='row'
+                        justifyContent='center'
+                        alignItems='center'
+                      >
+                        <Radio value='all'><Tag colorScheme='gray' rounded='2xl' style={{ fontFamily: 'system-ui' }}>All</Tag></Radio>
+                        <Radio value='checked'><Tag colorScheme='gray' rounded='2xl' style={{ fontFamily: 'system-ui' }}>Checked</Tag></Radio>
+                        <Radio value='unchecked'><Tag colorScheme='gray' rounded='2xl' style={{ fontFamily: 'system-ui' }}>Unchecked</Tag></Radio>
+                        <Radio
+                          value='ready'
+                          // readOnly={!hasAnyReady}
+                          disabled={!hasAnyReady}
+                          isDisabled={!hasAnyReady}
+                        ><Tag colorScheme={hasAnyReady ? 'green' : 'gray'} rounded='2xl' style={{ fontFamily: 'system-ui' }}>{`Ready${!!readyCounter ? ` ${readyCounter}` : ''}`}</Tag></Radio>
+                      </Stack>
+                    </RadioGroup>
+                  </Box>
+
+                  {
+                    radioValue === 'ready' && readyTotalPrice > 0 && (
+                      <Box
+                        mt={2}
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
+                      >
+                        ={getPrettyPrice(readyTotalPrice)}
+                      </Box>
+                    )
+                  }
+                  {
+                    radioValue === 'unchecked' && uncheckedTotalPrice > 0 && (
+                      <Box
+                        mt={2}
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
+                      >
+                        ={getPrettyPrice(uncheckedTotalPrice)}
+                      </Box>
+                    )
+                  }
+                </Stack>
+              </Box>
+            </ModalHeader>
+          )
+        }
+        {
+          asModal
+          ? (
+            <>
+              <ModalBody pb={0} pl={0} pr={0} pt={0}>
+                {Body}
+              </ModalBody>
+            </>
+          ) : Body
+        }
+        {
+          asModal
+          ? (
+            <>
+              <ModalFooter className={clsx(styles['modal-footer-btns-wrapper'], styles[`modal-footer-btns-wrapper_${mode.colorMode}`])}>
+                {Controls}
+              </ModalFooter>
+            </>
+          ) : (
+            <Box
+              pl={5}
+              pr={5}
+              className={clsx(styles['modal-footer-btns-wrapper'], styles['control-box'], styles['sticky-footer'], styles[`themed-bg_${mode.colorMode}`], styles[`themed-bg_${mode.colorMode}_backdrop-blur`], styles[`themed-bordered_${mode.colorMode}`])}>
               {Controls}
-            </ModalFooter>
-          </>
-        ) : (
-          <Box
-            pl={5}
-            pr={5}
-            className={clsx(styles['modal-footer-btns-wrapper'], styles['control-box'], styles['sticky-footer'], styles[`themed-bg_${mode.colorMode}`], styles[`themed-bg_${mode.colorMode}_backdrop-blur`], styles[`themed-bordered_${mode.colorMode}`])}>
-            {Controls}
-          </Box>
-        )
-      }
+            </Box>
+          )
+        }
+      </>
     </>
   )
 }

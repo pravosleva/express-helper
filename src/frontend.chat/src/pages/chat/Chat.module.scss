@@ -30,7 +30,7 @@
 }
 
 .main-wrapper {
-  height: 100dvh;
+  height: 100svh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -113,8 +113,8 @@
     }
     @media (max-width: #{$sm}px) {
       // NOTE: Full - header space - progress bar - bnts - textarea
-      max-height: calc(100dvh - 69px - var(--chakra-sizes-1) - 50px - 80px);
-      min-height: calc(100dvh - 69px - var(--chakra-sizes-1) - 50px - 80px);
+      max-height: calc(100svh - 69px - var(--chakra-sizes-1) - 50px - 80px);
+      min-height: calc(100svh - 69px - var(--chakra-sizes-1) - 50px - 80px);
     }
 
     & > * {
@@ -351,12 +351,12 @@
   }
   .height-full-auto-sm > div {
     // min-height:100px;
-    min-height: calc(100dvh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
-    max-height: calc(100dvh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
+    min-height: calc(100svh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
+    max-height: calc(100svh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
   }
   .height-limited-md > div {
-    min-height: calc(100dvh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
-    max-height: calc(100dvh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
+    min-height: calc(100svh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
+    max-height: calc(100svh - 69px - 80px - #{$tools-section-height} - var(--chakra-sizes-1));
     // border: 1px solid green;
   }
   .form {

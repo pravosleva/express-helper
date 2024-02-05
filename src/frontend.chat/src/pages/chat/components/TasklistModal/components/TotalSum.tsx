@@ -85,7 +85,7 @@ export const TotalSum = () => {
       {!!optional.plannedInProgress['month0.5'] && (
         // <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
         <Text fontSize="sm" fontWeight='bold' display='flex'>
-          <span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag rounded='2xl' colorScheme='yellow'>Not ready</Tag>&nbsp;={getPrettyPrice(optional.plannedInProgress['month0.5'])}
+          <span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag rounded='2xl' colorScheme='gray'>Not ready</Tag>&nbsp;={getPrettyPrice(optional.plannedInProgress['month0.5'])}
         </Text>
         // <span><TiArrowLoop size={19} /></span>&nbsp;
       )}

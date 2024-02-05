@@ -29,13 +29,15 @@ export const TasklistModal = memo(({ isOpened, onClose, data }: TProps) => {
   return (
     <>
       <Modal
-        size={downToSm ? "full" : 'sm'}
+        size={downToSm ? 'lg' : 'sm'}
         isOpen={isOpened}
         onClose={onClose}
         scrollBehavior='inside'
       >
-        <ModalOverlay />
-        <ModalContent rounded='2xl'>
+        <ModalOverlay className='backdrop-blur--transparent' />
+        <ModalContent
+          rounded='2xl'
+        >
           <ModalCloseButton rounded='3xl' />
           <TasklistContent
             data={data}

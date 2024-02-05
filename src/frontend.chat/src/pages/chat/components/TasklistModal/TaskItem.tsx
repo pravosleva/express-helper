@@ -110,7 +110,7 @@ const constants: {
   },
 }
 
-const getColorByDays = (days: number) => days <= 7
+const getColorByDays = (days: number) => days <= 14
     ? days <= 3
     ? 'red'
     : 'yellow'

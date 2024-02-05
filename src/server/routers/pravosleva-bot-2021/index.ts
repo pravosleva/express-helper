@@ -16,8 +16,9 @@ import { removeAutoparkProject } from './mws/autopark-2022/project/remove'
 import { getUserProjects } from './mws/autopark-2022/get-user-projects'
 import { getProjectReport } from './mws/autopark-2022/project/get-report'
 import { updateAutoparkProjectItem } from './mws/autopark-2022/project/update-item'
-import { getDynamicManifest } from './mws/autopark-2022/get-dynamic-manifest'
+import { getDynamicManifest, rules as dynamicManifestRules } from './mws/autopark-2022/get-dynamic-manifest'
 import { checkJWT } from './mws/autopark-2022/check-jwt'
+import { withReqParamsValidationMW } from '~/utils/express-validation/withReqParamsValidationMW'
 
 const botApi = express()
 const bodyParser = require('body-parser')
@@ -62,7 +63,13 @@ botApi.post('/autopark-2022/project/remove', removeAutoparkProject)
 botApi.post('/autopark-2022/get-user-projects', getUserProjects)
 botApi.post('/autopark-2022/project/get-report', getProjectReport)
 botApi.post('/autopark-2022/project/update-item', updateAutoparkProjectItem)
-botApi.get('/get-dynamic-manifest', getDynamicManifest)
+botApi.get(
+  '/autopark-2022/get-dynamic-manifest',
+  withReqParamsValidationMW({
+    rules: dynamicManifestRules,
+  }),
+  getDynamicManifest,
+)
 botApi.post('/autopark-2022/check-jwt', checkJWT)
 
 export const pravoslevaBot2021Router = botApi
