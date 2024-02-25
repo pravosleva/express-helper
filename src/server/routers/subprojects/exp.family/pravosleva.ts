@@ -1,17 +1,17 @@
 import { Request as IRequest, Response as IResponse, NextFunction as INextFunction } from 'express'
 import { THelp } from '~/utils/express-validation'
 
+import v12 from './data/pravosleva.v12.json'
 import v11 from './data/pravosleva.v11.json'
-import v10 from './data/pravosleva.v10.json'
-// import v9 from './data/pravosleva.v9.json'
 import sample_incorrect_0 from './data/incorrect.0.json'
 import { getTargetFirst } from '~/utils/family-tree/v2023/getTargetFirst'
 import { testTextByAnyWord } from '~/utils/string-ops'
 // import example from './data/average-sample.json'
 
 const versions = {
+  '12': v12,
   '11': v11,
-  '10': v10,
+  // '10': v10,
   // '9': v9,
   // '0': example,
   'incorrect-0': sample_incorrect_0,

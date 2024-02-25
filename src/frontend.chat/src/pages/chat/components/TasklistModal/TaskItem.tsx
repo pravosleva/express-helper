@@ -47,7 +47,7 @@ type TProps = {
   onLoopSwitch: () => void
   onOpenDatePicker: (oldData: any) => void
   onPriceModalOpen: (data: any) => void
-  onResetExpenses: () => void
+  onResetExpenses: (data: any) => void
 }
 
 const constants: {
@@ -275,7 +275,7 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
                 !!price && (
                   <MenuItem
                     minH="40px"
-                    onClick={onResetExpenses}
+                    onClick={() => onResetExpenses(data)}
                   >
                     <Flex display="flex" alignItems="center">
                       <Text fontSize="md" fontWeight='bold' mr={4}><MdMoneyOff size={18} /></Text>

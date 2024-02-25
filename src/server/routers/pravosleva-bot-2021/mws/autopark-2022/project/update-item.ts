@@ -103,7 +103,15 @@ export const updateAutoparkProjectItem = async (req: IRequest & { autopark2022St
 
       writeStaticJSONAsync(req.autopark2022StorageFilePath, staticData)
 
-      return res.status(200).json({ ok: true, staticData, code: EAPIUserCode.Created, projects: myNewData.projects })
+      const result = {
+        ok: true,
+        staticData: null,
+        code: EAPIUserCode.Created,
+        projects: myNewData.projects,
+      }
+      if (chat_id === '432590698') result.staticData = staticData
+
+      return res.status(200).json(result)
     } catch (err) {
       console.log(err)
       return res.status(500).send({

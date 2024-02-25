@@ -170,13 +170,13 @@
   },
 
   {
-    "id": "nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]",
+    "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-_[elena-m-m-m].[__-__-1___][__-__-1___]",
+        "id": "darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]",
         "type": "married"
       }
     ],
@@ -188,13 +188,13 @@
     ]
   },
   {
-    "id": "_-_-_[elena-m-m-m].[__-__-1___][__-__-1___]",
+    "id": "darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]",
     "gender": "female",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]",
+        "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
         "type": "married"
       }
     ],
@@ -210,18 +210,18 @@
     "gender": "female",
     "parents": [
       {
-        "id": "nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]",
+        "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
         "type": "blood"
       },
       {
-        "id": "_-_-_[elena-m-m-m].[__-__-1___][__-__-1___]",
+        "id": "darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]",
         "type": "blood"
       }
     ],
     "siblings": [],
     "spouses": [
       {
-        "id": "vasily-_-_[elena-m-f].[__-__-1___][__-__-1___]",
+        "id": "vasily-panteleevich-chernokalov[elena-m-f].[__-__-1___][__-__-1___]",
         "type": "married"
       }
     ],
@@ -234,7 +234,7 @@
   },
 
   {
-    "id": "_-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
+    "id": "panteley-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
     "gender": "male",
     "parents": [],
     "siblings": [],
@@ -246,7 +246,7 @@
     ],
     "children": [
       {
-        "id": "vasily-_-_[elena-m-f].[__-__-1___][__-__-1___]",
+        "id": "vasily-panteleevich-chernokalov[elena-m-f].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ]
@@ -258,23 +258,23 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
+        "id": "panteley-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
         "type": "married"
       }
     ],
     "children": [
       {
-        "id": "vasily-_-_[elena-m-f].[__-__-1___][__-__-1___]",
+        "id": "vasily-panteleevich-chernokalov[elena-m-f].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "vasily-_-_[elena-m-f].[__-__-1___][__-__-1___]",
+    "id": "vasily-panteleevich-chernokalov[elena-m-f].[__-__-1___][__-__-1___]",
     "gender": "male",
     "parents": [
       {
-        "id": "_-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
+        "id": "panteley-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
         "type": "blood"
       },
       {
@@ -489,7 +489,7 @@
         "type": "blood"
       },
       {
-        "id": "vasily-_-_[elena-m-f].[__-__-1___][__-__-1___]",
+        "id": "vasily-panteleevich-chernokalov[elena-m-f].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ],

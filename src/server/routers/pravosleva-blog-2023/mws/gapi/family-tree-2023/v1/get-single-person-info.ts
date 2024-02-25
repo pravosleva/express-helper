@@ -532,8 +532,8 @@ const persons = {
       lastName: 'Chigrina',
     },
   },
-  'nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]': {
-    id: 'nikita-fandeevich-razumny[elena-m-m-f].[__-__-1___][__-__-1___]',
+  'nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]': {
+    id: 'nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]',
     baseInfo: {
       firstName: 'Nikita',
       middleName: 'Fandeevich',
@@ -546,6 +546,54 @@ const persons = {
       firstName: 'Varvara',
       middleName: 'Nikitishna',
       lastName: 'Razumnaya',
+    },
+  },
+  'darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]': {
+    id: 'darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]',
+    baseInfo: {
+      firstName: 'Daria',
+      middleName: 'Semenovna',
+      lastName: 'Razumnaya',
+    },
+  },
+  'vasily-panteleevich-chernokalov[elena-m-f].[__-__-1___][__-__-1___]': {
+    id: 'vasily-panteleevich-chernokalov[elena-m-f].[__-__-1___][__-__-1___]',
+    baseInfo: {
+      firstName: 'Vasily',
+      middleName: 'Panteleevich',
+      lastName: 'Chernokalov',
+    },
+  },
+  'fandey-samilovich-razumny[elena-m-m-f-f].[__-__-1___][__-__-1___]': {
+    id: 'fandey-samilovich-razumny[elena-m-m-f-f].[__-__-1___][__-__-1___]',
+    baseInfo: {
+      firstName: 'Razumny',
+      middleName: 'Fandey',
+      lastName: 'Samilovich',
+    },
+  },
+  'haritina-nik-razumnaya[elena-m-m-f-m].[__-__-1___][__-__-1___]': {
+    id: 'haritina-nik-razumnaya[elena-m-m-f-m].[__-__-1___][__-__-1___]',
+    baseInfo: {
+      firstName: 'Razumnaya',
+      middleName: 'Haritina',
+      lastName: 'Nikolaevna',
+    },
+  },
+  'semen-yakovlevich-hotnyansky[elena-m-m-m-f].[__-__-1___][__-__-1___]': {
+    id: 'semen-yakovlevich-hotnyansky[elena-m-m-m-f].[__-__-1___][__-__-1___]',
+    baseInfo: {
+      firstName: 'Hotnyansky',
+      middleName: 'Semen',
+      lastName: 'Yakovlevich',
+    },
+  },
+  'ulyana-petr-hotnyanskaya[elena-m-m-m-m].[__-__-1___][__-__-1___]': {
+    id: 'ulyana-petr-hotnyanskaya[elena-m-m-m-m].[__-__-1___][__-__-1___]',
+    baseInfo: {
+      firstName: 'Hotnyanskaya',
+      middleName: 'Ulyana',
+      lastName: 'Petrovna',
     },
   },
 }

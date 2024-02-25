@@ -86,6 +86,16 @@ const getIsTaskReady = (task: TTask): boolean => {
     && (nowTs - (task.checkTs + (task.checkTs - task.uncheckTs)) > 0)
   ) || false
 }
+const getIsTaskLoopedAndReady = (task: TTask): boolean => {
+  const nowTs = new Date().getTime()
+  return (
+    task.isCompleted
+    && task.isLooped
+    && !!task.checkTs
+    && !!task.uncheckTs
+    && (nowTs - (task.checkTs + (task.checkTs - task.uncheckTs)) < 0)
+  ) || false
+}
 
 const MemoizedGroup = memo(({
   asModal,
@@ -214,6 +224,8 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
   const handleTaskEdit = useCallback((newData: any) => {
     if (!!socket) socket?.emit('updateTask', { room, ...newData }, (errMsg?: string) => {
       if (!!errMsg) {
+        console.log('- data update error details below:')
+        console.warn(newData)
         toast({ title: errMsg, status: 'error', duration: 5000, isClosable: true })
       }
     })
@@ -270,7 +282,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
   const handleOpenPriceModal = useCallback((data: any) => {
     setEditedTask2(data) 
     setIsPriceModalOpened(true)
-  }, [setIsPriceModalOpened, setEditedTask2])
+  }, [setIsPriceModalOpened, useCompare([editedTask2])])
   const handleClosePriceModal = useCallback(() => {
     setIsPriceModalOpened(false)
   }, [setIsPriceModalOpened])
@@ -281,10 +293,17 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     } else {
       toast({ title: 'ERR#1', description: 'FUCKUP COND: !!activeTaskRef.current && Number.isInteger(price)', status: 'error', duration: 5000, isClosable: true })
     }
-  }, [handleTaskEdit, editedTask2, handleClosePriceModal])
-  const handleResetExpenses = useCallback(() => {
-    handleTaskEdit({ ...editedTask2, price: 0 })
-  }, [handleTaskEdit, editedTask2])
+  }, [handleTaskEdit, useCompare([editedTask2]), handleClosePriceModal])
+  const handleResetExpenses = useCallback((oldData) => {
+    handleTaskEdit({
+      // ...editedTask2,
+      ...oldData,
+      price: 0,
+    })
+  }, [
+    handleTaskEdit,
+    // useCompare([editedTask2])
+  ])
   // --
 
   const [searchString, setSearchString] = useState<string>('')
@@ -299,19 +318,103 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     return data.findIndex(({ title }) => title.toLowerCase() === searchString.toLowerCase()) !== -1
   }, [data, searchString])
 
+  const [_auxCalcTick, set_auxCalcTick] = useState<number>(0)
+  const set_auxCalcTickInc = useCallback(() => {
+    set_auxCalcTick((c) => c + 1)
+  }, [set_auxCalcTick])
+  useLayoutEffect(() => {
+    const timer = setInterval(set_auxCalcTickInc, 1000)
+    return () => clearInterval(timer)
+  }, [set_auxCalcTickInc])
+  const abUncheckedMapping = useMemo<{
+    [key: string]: {
+      counter: number;
+      price: number;
+    };
+  }>(() => {
+    return Object.keys(abDataVersion).reduce((acc, curKey) => {
+      const uncheckedCounter = abDataVersion[curKey].reduce((data, task) => {
+        if (!task.isCompleted) {
+          data.counter += 1
+          if (!!task.price) data.price += task.price
+        }
+        return data
+      }, { counter: 0, price: 0 })
+      // @ts-ignore
+      acc[curKey] = uncheckedCounter
+      return acc
+    }, {})
+  }, [useCompare([abDataVersion]), _auxCalcTick])
+  const abReadyMapping = useMemo<{
+    [key: string]: {
+      counter: number;
+      price: number;
+    };
+  }>(() => {
+    return Object.keys(abDataVersion).reduce((acc, curKey) => {
+      const completedCounter = abDataVersion[curKey].reduce((data, task) => {
+        if (getIsTaskReady(task)) {
+          data.counter += 1
+          if (!!task.price) data.price += task.price
+        }
+        return data
+      }, { counter: 0, price: 0 })
+      // @ts-ignore
+      acc[curKey] = completedCounter
+      return acc
+    }, {})
+  }, [useCompare([abDataVersion]), _auxCalcTick])
+  const abNotReadyMapping = useMemo<{
+    [key: string]: {
+      counter: number;
+      price: number;
+    };
+  }>(() => {
+    return Object.keys(abDataVersion).reduce((acc, curKey) => {
+      const completedCounter = abDataVersion[curKey].reduce((data, task) => {
+        if (getIsTaskLoopedAndReady(task)) {
+          data.counter += 1
+          if (!!task.price) data.price += task.price
+        }
+        return data
+      }, { counter: 0, price: 0 })
+      // @ts-ignore
+      acc[curKey] = completedCounter
+      return acc
+    }, {})
+  }, [useCompare([abDataVersion]), _auxCalcTick])
+  const hasAnyReady = useMemo<boolean>(() => {
+    return Object.values(abReadyMapping).some((keySpace) => keySpace.counter > 0)
+  }, [useCompare([abReadyMapping]), _auxCalcTick])
+  const readyCounter = useMemo<number>(() => {
+    return Object.values(abReadyMapping).reduce((acc, keySpace) => acc + keySpace.counter, 0)
+  }, [useCompare([abReadyMapping]), _auxCalcTick])
+  const readyTotalPrice = useMemo<number>(() => {
+    return Object.values(abReadyMapping).reduce((acc, keySpace) => acc + keySpace.price || 0, 0)
+  }, [useCompare([abReadyMapping]), _auxCalcTick])
+  const uncheckedTotalCounter = useMemo<number>(() => {
+    return Object.values(abUncheckedMapping).reduce((acc, keySpace) => acc + keySpace.counter || 0, 0)
+  }, [useCompare([abUncheckedMapping]), _auxCalcTick])
+  const uncheckedTotalPrice = useMemo<number>(() => {
+    return Object.values(abUncheckedMapping).reduce((acc, keySpace) => acc + keySpace.price || 0, 0)
+  }, [useCompare([abUncheckedMapping]), _auxCalcTick])
+  const notReadyCounter = useMemo<number>(() => {
+    return Object.values(abNotReadyMapping).reduce((acc, keySpace) => acc + keySpace.counter || 0, 0)
+  }, [useCompare([abNotReadyMapping]), _auxCalcTick])
+  const notReadyTotalPrice = useMemo<number>(() => {
+    return Object.values(abNotReadyMapping).reduce((acc, keySpace) => acc + keySpace.price || 0, 0)
+  }, [useCompare([abNotReadyMapping]), _auxCalcTick])
   const Controls = useMemo(() => {
     return (
       <>
-        {
-          !isCreateTaskFormOpened && <TotalSum />
-        }
+        {!isCreateTaskFormOpened && <TotalSum uncheckedTotalCounter={uncheckedTotalCounter} readyCounter={readyCounter} notReadyCounter={notReadyCounter} notReadyTotalPrice={notReadyTotalPrice} />}
         {!isCreateTaskFormOpened && <Button size='sm' rounded='2xl' onClick={handleCreateFormOpen} leftIcon={<IoMdAdd />}>New</Button>}
         {isCreateTaskFormOpened && <Button size='sm' rounded='2xl' onClick={handleCreateFormClose} leftIcon={<IoMdClose />}>Cancel</Button>}
         {isCreateTaskFormOpened && !!formData.title && <Button size='sm' rounded='2xl' onClick={handleCreateSubmit} color='green.500' variant='solid'>Create</Button>}
         {/* <Button size='sm' rounded='2xl' onClick={onClose} variant='ghost' color='red.500'>Close</Button> */}
       </>
     )
-  }, [isCreateTaskFormOpened, formData.title, handleCreateFormOpen, handleCreateFormClose, handleCreateSubmit])
+  }, [isCreateTaskFormOpened, formData.title, handleCreateFormOpen, handleCreateFormClose, handleCreateSubmit, uncheckedTotalCounter, readyCounter])
   const mode = useColorMode()
   const EnterText = useMemo(() => {
     return (
@@ -338,68 +441,6 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
       </>
     )
   }, [isCreateTaskFormOpened, formData.title, handleInputChange, handkeKeyUp])
-
-  const [_auxCalcTick, set_auxCalcTick] = useState<number>(0)
-  const set_auxCalcTickInc = useCallback(() => {
-    set_auxCalcTick((c) => c + 1)
-  }, [set_auxCalcTick])
-  useLayoutEffect(() => {
-    const timer = setInterval(set_auxCalcTickInc, 1000)
-    return () => clearInterval(timer)
-  }, [set_auxCalcTickInc])
-  const abReadyMapping = useMemo<{
-    [key: string]: {
-      counter: number;
-      price: number;
-    };
-  }>(() => {
-    return Object.keys(abDataVersion).reduce((acc, curKey) => {
-      const completedCounter = abDataVersion[curKey].reduce((data, task) => {
-        if (getIsTaskReady(task)) {
-          data.counter += 1
-          if (!!task.price) data.price += task.price
-        }
-        return data
-      }, { counter: 0, price: 0 })
-      // @ts-ignore
-      acc[curKey] = completedCounter
-      return acc
-    }, {})
-  }, [abDataVersion, _auxCalcTick])
-  const abUncheckedMapping = useMemo<{
-    [key: string]: {
-      counter: number;
-      price: number;
-    };
-  }>(() => {
-    return Object.keys(abDataVersion).reduce((acc, curKey) => {
-      const uncheckedCounter = abDataVersion[curKey].reduce((data, task) => {
-        if (!task.isCompleted) {
-          data.counter += 1
-          if (!!task.price) data.price += task.price
-        }
-        return data
-      }, { counter: 0, price: 0 })
-      // @ts-ignore
-      acc[curKey] = uncheckedCounter
-      return acc
-    }, {})
-  }, [abDataVersion, _auxCalcTick])
-  const hasAnyReady = useMemo<boolean>(() => {
-    return Object.values(abReadyMapping).some((keySpace) => keySpace.counter > 0)
-  }, [abReadyMapping, _auxCalcTick])
-  const readyCounter = useMemo<number>(() => {
-    return Object.values(abReadyMapping).reduce((acc, keySpace) => acc + keySpace.counter, 0)
-  }, [abReadyMapping, _auxCalcTick])
-  const readyTotalPrice = useMemo<number>(() => {
-    return Object.values(abReadyMapping).reduce((acc, keySpace) => acc + keySpace.price || 0, 0)
-  }, [abReadyMapping, _auxCalcTick])
-  // const uncheckedTotalCounter = useMemo<number>(() => {
-  //   return Object.values(abUncheckedMapping).reduce((acc, keySpace) => acc + keySpace.counter || 0, 0)
-  // }, [abUncheckedMapping, _auxCalcTick])
-  const uncheckedTotalPrice = useMemo<number>(() => {
-    return Object.values(abUncheckedMapping).reduce((acc, keySpace) => acc + keySpace.price || 0, 0)
-  }, [abUncheckedMapping, _auxCalcTick])
 
   const Body = useMemo(() => {
     return (

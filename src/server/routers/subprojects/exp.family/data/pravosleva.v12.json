@@ -2163,6 +2163,10 @@
     "spouses": [
       {
         "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
+        "type": "married"
+      },
+      {
+        "id": "_-_-_[tatyana-exhusb].[__-__-19__]",
         "type": "divorced"
       }
     ],
@@ -2170,8 +2174,90 @@
       {
         "id": "lyuba-vladimir-garbuzova.[28-04-1976]",
         "type": "blood"
+      },
+      {
+        "id": "maya-_-badulya.[28-03-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "igor-_-dereventsov.[13-04-19__]",
+        "type": "blood"
       }
     ]
+  },
+  {
+    "id": "_-_-_[tatyana-exhusb].[__-__-19__]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "tatyana-ignat-dereventsova.[05-10-1947]",
+        "type": "divorced"
+      }
+    ],
+    "children": [
+      {
+        "id": "maya-_-badulya.[28-03-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "igor-_-dereventsov.[13-04-19__]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "maya-_-badulya.[28-03-19__]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "tatyana-ignat-dereventsova.[05-10-1947]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[tatyana-exhusb].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "lyuba-vladimir-garbuzova.[28-04-1976]",
+        "type": "half"
+      },
+      {
+        "id": "igor-_-dereventsov.[13-04-19__]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "igor-_-dereventsov.[13-04-19__]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "tatyana-ignat-dereventsova.[05-10-1947]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[tatyana-exhusb].[__-__-19__]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "lyuba-vladimir-garbuzova.[28-04-1976]",
+        "type": "half"
+      },
+      {
+        "id": "maya-_-badulya.[28-03-19__]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
   },
   {
     "id": "elena-vladimir-der.[29-03-1964]",
@@ -2188,7 +2274,8 @@
     ],
     "siblings": [
       {
-        "id": "lyuba-vladimir-garbuzova.[28-04-1976]"
+        "id": "lyuba-vladimir-garbuzova.[28-04-1976]",
+        "type": "half"
       }
     ],
     "spouses": [
@@ -2223,7 +2310,8 @@
     ],
     "siblings": [
       {
-        "id": "elena-vladimir-der.[29-03-1964]"
+        "id": "elena-vladimir-der.[29-03-1964]",
+        "type": "half"
       }
     ],
     "spouses": [

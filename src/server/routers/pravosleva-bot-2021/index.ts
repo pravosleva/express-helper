@@ -7,7 +7,7 @@ import { addAutoparkUser } from './mws/autopark-2022/add-user'
 import { getAutoparkUsersMap } from './mws/autopark-2022/get-users-map'
 import { checkAutoparkUser } from './mws/autopark-2022/check-user'
 import { checkAutoparkUserPassword } from './mws/autopark-2022/check-password'
-import { createAutoparkProject } from './mws/autopark-2022/project/create'
+import { createAutoparkProject, rules as createAutoparkProjectRules } from './mws/autopark-2022/project/create'
 import { createAutoparkProjectItem } from './mws/autopark-2022/project/add-item'
 import { getAutoparkProject } from './mws/autopark-2022/project/get-data'
 import { updateAutoparkProject } from './mws/autopark-2022/project/update'
@@ -54,7 +54,13 @@ botApi.post('/autopark-2022/add-user', addAutoparkUser)
 botApi.get('/autopark-2022/get-users-map', getAutoparkUsersMap)
 botApi.post('/autopark-2022/check-user', checkAutoparkUser)
 botApi.post('/autopark-2022/check-password', checkAutoparkUserPassword)
-botApi.post('/autopark-2022/project/create', createAutoparkProject)
+botApi.post(
+  '/autopark-2022/project/create',
+  withReqParamsValidationMW({
+    rules: createAutoparkProjectRules,
+  }),
+  createAutoparkProject,
+)
 botApi.post('/autopark-2022/project/add-item', createAutoparkProjectItem)
 botApi.post('/autopark-2022/project/get-data', getAutoparkProject)
 botApi.post('/autopark-2022/project/update', updateAutoparkProject)

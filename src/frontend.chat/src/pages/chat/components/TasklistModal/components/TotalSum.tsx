@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect, useContext } from 'react'
+import { useState, useCallback, useRef, useEffect, useContext, memo } from 'react'
 import {
   Text,
   Stack,
@@ -12,7 +12,14 @@ import { useCompare } from '~/common/hooks/useDeepEffect'
 const PUBLIC_URL = process.env.PUBLIC_URL || '.'
 const worker: any = new Worker(`${PUBLIC_URL}/web-worker/main.js`)
 
-export const TotalSum = () => {
+type TProps = {
+  uncheckedTotalCounter: number;
+  readyCounter: number;
+  notReadyCounter: number;
+  notReadyTotalPrice: number;
+}
+
+export const TotalSum = memo(({ uncheckedTotalCounter, readyCounter, notReadyCounter, notReadyTotalPrice }: TProps) => {
   const { tasklist } = useContext(UsersContext)
   const initialMothSum = {
     month1: 0,
@@ -78,14 +85,15 @@ export const TotalSum = () => {
       {!!sum['month0.5'] && (
         // <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
         <Text fontSize="sm" fontWeight='bold' display='flex'>
-          <span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag rounded='2xl' colorScheme='green'>Ready</Tag>&nbsp;&&nbsp;🔲 ={getPrettyPrice(sum['month0.5'])}
+          <span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag rounded='2xl' colorScheme='green'>Ready ({readyCounter})</Tag>&nbsp;&&nbsp;🔲 ({uncheckedTotalCounter}) ={getPrettyPrice(sum['month0.5'])}
         </Text>
         // <span><TiArrowLoop size={19} /></span>&nbsp;
       )}
-      {!!optional.plannedInProgress['month0.5'] && (
+      {!!notReadyCounter && (
         // <Text fontSize="sm" fontWeight='bold'>2w ={getPrettyPrice(sum['month0.5'])}</Text>
         <Text fontSize="sm" fontWeight='bold' display='flex'>
-          <span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag rounded='2xl' colorScheme='gray'>Not ready</Tag>&nbsp;={getPrettyPrice(optional.plannedInProgress['month0.5'])}
+          <span><TiArrowLoop size={19} /></span>&nbsp;✅&nbsp;<Tag rounded='2xl' colorScheme='gray'>Not ready ({notReadyCounter})</Tag>&nbsp;={getPrettyPrice(notReadyTotalPrice)}
+          {/* NOTE: Incorrect? optional.plannedInProgress['month0.5'] */}
         </Text>
         // <span><TiArrowLoop size={19} /></span>&nbsp;
       )}
@@ -97,4 +105,4 @@ export const TotalSum = () => {
       )*/}
     </Stack>
   )
-}
+})

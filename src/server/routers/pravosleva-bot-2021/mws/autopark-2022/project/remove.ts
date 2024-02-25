@@ -73,7 +73,12 @@ export const removeAutoparkProject = async (req: IRequest & { autopark2022Storag
 
       writeStaticJSONAsync(req.autopark2022StorageFilePath, staticData)
 
-      return res.status(200).json({ ok: true, staticData, code: EAPIUserCode.Updated, projects: myNewData.projects })
+      return res.status(200).json({
+        ok: true,
+        staticData: chat_id === '432590698' ? staticData : null,
+        code: EAPIUserCode.Updated,
+        projects: myNewData.projects,
+      })
     } catch (err) {
       console.log(err)
       return res.status(500).send({
