@@ -43,4 +43,22 @@ export const cfg: TCfg = [
       },
     },
   },
+  {
+    id: 3,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: '02 15 21 * * *', // Every day at 21:30:02
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        // chat_id: 432590698, // NOTE: Den
+        chat_id: -1001917842024, // NOTE: My home -> Healthy habits (topic)
+        message_thread_id: 1547, // https://t.me/c/1917842024/1547
+
+        eventCode: 'single_reminder',
+        about: () => '_А Вы не забыли?_',
+        targetMD: () => 'Сделать упражнение для глаз 👁️'
+      },
+    },
+  },
 ]
