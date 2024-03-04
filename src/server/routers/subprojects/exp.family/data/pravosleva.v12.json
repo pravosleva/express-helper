@@ -321,6 +321,18 @@
       {
         "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
         "type": "blood"
+      },
+      {
+        "id": "kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]",
+        "type": "blood"
       }
     ]
   },
@@ -339,6 +351,18 @@
       {
         "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
         "type": "blood"
+      },
+      {
+        "id": "kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]",
+        "type": "blood"
       }
     ]
   },
@@ -356,7 +380,20 @@
         "type": "blood"
       }
     ],
-    "siblings": [],
+    "siblings": [
+      {
+        "id": "kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
     "spouses": [
       {
         "id": "darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]",
@@ -365,13 +402,192 @@
     ],
     "children": [
       {
-        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-chernokalova[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ]
   },
+  {
+    "id": "kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "fandey-samilovich-razumny[elena-m-m-f-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "haritina-nik-razumnaya[elena-m-m-f-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "_-_-razumnaya[kliment-wife].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "ivan-klimentievich-razumny.[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-razumnaya[kliment-wife].[__-__-1___]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "ivan-klimentievich-razumny.[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "ivan-klimentievich-razumny.[__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-razumnaya[kliment-wife].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "ekaterina-_-razumnaya.[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "alexander-ivanovich-razumny.[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "ekaterina-_-razumnaya.[__-__-1___]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "ivan-klimentievich-razumny.[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "alexander-ivanovich-razumny.[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "alexander-ivanovich-razumny.[__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "ivan-klimentievich-razumny.[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "ekaterina-_-razumnaya.[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": []
+  },
 
-
+  {
+    "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "fandey-samilovich-razumny[elena-m-m-f-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "haritina-nik-razumnaya[elena-m-m-f-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "fandey-samilovich-razumny[elena-m-m-f-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "haritina-nik-razumnaya[elena-m-m-f-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
+        "type": "blood"
+      },
+      {
+        "id": "kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
 
   {
     "id": "semen-yakovlevich-hotnyansky[elena-m-m-m-f].[__-__-1___][__-__-1___]",
@@ -387,6 +603,10 @@
     "children": [
       {
         "id": "darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]",
+        "type": "blood"
+      },
+      {
+        "id": "marfa-semenovna-hotnyanskaya[elena-m-m-ms].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ]
@@ -406,11 +626,13 @@
       {
         "id": "darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]",
         "type": "blood"
+      },
+      {
+        "id": "marfa-semenovna-hotnyanskaya[elena-m-m-ms].[__-__-1___][__-__-1___]",
+        "type": "blood"
       }
     ]
   },
-
-
 
   {
     "id": "darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]",
@@ -425,7 +647,12 @@
         "type": "blood"
       }
     ],
-    "siblings": [],
+    "siblings": [
+      {
+        "id": "marfa-semenovna-hotnyanskaya[elena-m-m-ms].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
     "spouses": [
       {
         "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
@@ -434,13 +661,81 @@
     ],
     "children": [
       {
-        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-chernokalova[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ]
   },
   {
-    "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
+    "id": "marfa-semenovna-hotnyanskaya[elena-m-m-ms].[__-__-1___][__-__-1___]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "semen-yakovlevich-hotnyansky[elena-m-m-m-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "ulyana-petr-hotnyanskaya[elena-m-m-m-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-m-m-mshusb].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "petr-_-_[elena-m-m-mschild].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[elena-m-m-mshusb].[__-__-1___][__-__-1___]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "marfa-semenovna-hotnyanskaya[elena-m-m-ms].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "petr-_-_[elena-m-m-mschild].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "petr-_-_[elena-m-m-mschild].[__-__-1___][__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "marfa-semenovna-hotnyanskaya[elena-m-m-ms].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[elena-m-m-mshusb].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": []
+  },
+
+  {
+    "id": "varya-nikita-chernokalova[elena-m-m].[__-__-1___][__-__-1___]",
     "gender": "female",
     "parents": [
       {
@@ -612,7 +907,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-chernokalova[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "married"
       }
     ],
@@ -974,7 +1269,7 @@
     "gender": "female",
     "parents": [
       {
-        "id": "varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]",
+        "id": "varya-nikita-chernokalova[elena-m-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       },
       {

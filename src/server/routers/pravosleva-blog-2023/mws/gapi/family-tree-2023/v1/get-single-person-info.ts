@@ -540,12 +540,60 @@ const persons = {
       lastName: 'Razumny',
     },
   },
-  'varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]': {
-    id: 'varya-nikita-razumnaya[elena-m-m].[__-__-1___][__-__-1___]',
+  'kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]': {
+    id: 'kliment-fandeevich-razumny[elena-m-m-fb1].[__-__-1___]',
+    baseInfo: {
+      firstName: 'Kliment',
+      middleName: 'Fandeevich',
+      lastName: 'Razumny',
+    },
+  },
+  'ivan-klimentievich-razumny.[__-__-1___]': {
+    id: 'ivan-klimentievich-razumny.[__-__-1___]',
+    baseInfo: {
+      firstName: 'Ivan',
+      middleName: 'Klimentievich',
+      lastName: 'Razumny',
+    },
+  },
+  'ekaterina-_-razumnaya.[__-__-1___]': {
+    id: 'ekaterina-_-razumnaya.[__-__-1___]',
+    baseInfo: {
+      firstName: 'Ekaterina',
+      middleName: '_',
+      lastName: 'Razumnaya',
+    },
+  },
+  'alexander-ivanovich-razumny.[__-__-1___]': {
+    id: 'alexander-ivanovich-razumny.[__-__-1___]',
+    baseInfo: {
+      firstName: 'Alexander',
+      middleName: 'Ivanovich',
+      lastName: 'Razumny',
+    },
+  },
+  'egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]': {
+    id: 'egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]',
+    baseInfo: {
+      firstName: 'Egor',
+      middleName: 'Fandeevich',
+      lastName: 'Razumny',
+    },
+  },
+  'paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]': {
+    id: 'paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]',
+    baseInfo: {
+      firstName: 'Praskeva',
+      middleName: 'Fandeevna',
+      lastName: 'Razumnaya',
+    },
+  },
+  'varya-nikita-chernokalova[elena-m-m].[__-__-1___][__-__-1___]': {
+    id: 'varya-nikita-chernokalova[elena-m-m].[__-__-1___][__-__-1___]',
     baseInfo: {
       firstName: 'Varvara',
       middleName: 'Nikitishna',
-      lastName: 'Razumnaya',
+      lastName: 'Chernokalova (Razumnaya)',
     },
   },
   'darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]': {
@@ -594,6 +642,14 @@ const persons = {
       firstName: 'Hotnyanskaya',
       middleName: 'Ulyana',
       lastName: 'Petrovna',
+    },
+  },
+  'marfa-semenovna-hotnyanskaya[elena-m-m-ms].[__-__-1___][__-__-1___]': {
+    id: 'marfa-semenovna-hotnyanskaya[elena-m-m-ms].[__-__-1___][__-__-1___]',
+    baseInfo: {
+      firstName: 'Marfa',
+      middleName: 'Semenovna',
+      lastName: 'Hotnyanskaya',
     },
   },
 }
