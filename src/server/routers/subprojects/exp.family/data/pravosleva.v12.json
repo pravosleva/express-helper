@@ -555,9 +555,261 @@
         "type": "blood"
       }
     ],
+    "spouses": [
+      {
+        "id": "_-_-razumnaya[elena-m-m-fb2w].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "nikolay-egorovich-razumny[elena-m-m-fb2son].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "lyuba-egorovna-razumnaya[elena-m-m-fb2daughter].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-razumnaya[elena-m-m-fb2w].[__-__-1___]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "nikolay-egorovich-razumny[elena-m-m-fb2son].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "lyuba-egorovna-razumnaya[elena-m-m-fb2daughter].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "nikolay-egorovich-razumny[elena-m-m-fb2son].[__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-razumnaya[elena-m-m-fb2w].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "lyuba-egorovna-razumnaya[elena-m-m-fb2daughter].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "nina-_-razumnaya[elena-m-m-fb2sonw].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "alexander-nik-razumny[elena-m-m-fb2sonson].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "nina-_-razumnaya[elena-m-m-fb2sonw].[__-__-1___]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "nikolay-egorovich-razumny[elena-m-m-fb2son].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "alexander-nik-razumny[elena-m-m-fb2sonson].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "alexander-nik-razumny[elena-m-m-fb2sonson].[__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "nikolay-egorovich-razumny[elena-m-m-fb2son].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "nina-_-razumnaya[elena-m-m-fb2sonw].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
     "spouses": [],
     "children": []
   },
+
+  {
+    "id": "lyuba-egorovna-razumnaya[elena-m-m-fb2daughter].[__-__-1___][__-__-1___]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-razumnaya[elena-m-m-fb2w].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "nikolay-egorovich-razumny[elena-m-m-fb2son].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-m-m-fb2daughterhusb].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "valentina-_-_[elena-m-m-fb2daughterhusb-daughter].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[elena-m-m-fb2daughterhusb].[__-__-1___]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "lyuba-egorovna-razumnaya[elena-m-m-fb2daughter].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "valentina-_-_[elena-m-m-fb2daughterhusb-daughter].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "valentina-_-_[elena-m-m-fb2daughterhusb-daughter].[__-__-1___]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "lyuba-egorovna-razumnaya[elena-m-m-fb2daughter].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[elena-m-m-fb2daughterhusb].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-m-m-fb2daughterhusb-daughterhusb].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "andrey-_-_[elena-m-m-fb2daughterhusb-daughterhusb-son1].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "nikolay-_-_[elena-m-m-fb2daughterhusb-daughterhusb-son2].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[elena-m-m-fb2daughterhusb-daughterhusb].[__-__-1___]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "valentina-_-_[elena-m-m-fb2daughterhusb-daughter].[__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "andrey-_-_[elena-m-m-fb2daughterhusb-daughterhusb-son1].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "nikolay-_-_[elena-m-m-fb2daughterhusb-daughterhusb-son2].[__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "andrey-_-_[elena-m-m-fb2daughterhusb-daughterhusb-son1].[__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "_-_-_[elena-m-m-fb2daughterhusb-daughterhusb].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "valentina-_-_[elena-m-m-fb2daughterhusb-daughter].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "nikolay-_-_[elena-m-m-fb2daughterhusb-daughterhusb-son2].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "nikolay-_-_[elena-m-m-fb2daughterhusb-daughterhusb-son2].[__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "_-_-_[elena-m-m-fb2daughterhusb-daughterhusb].[__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "valentina-_-_[elena-m-m-fb2daughterhusb-daughter].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "andrey-_-_[elena-m-m-fb2daughterhusb-daughterhusb-son1].[__-__-1___]",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+
   {
     "id": "paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]",
     "gender": "female",
