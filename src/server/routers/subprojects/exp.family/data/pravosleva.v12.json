@@ -307,9 +307,54 @@
   },
 
   {
-    "id": "fandey-samilovich-razumny[elena-m-m-f-f].[__-__-1___][__-__-1___]",
+    "id": "samil-_-razumny[elena-m-m-f-f-f].[__-__-1___][__-__-1___]",
     "gender": "male",
     "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-razumnaya[elena-m-m-f-f-m].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "fandey-samilovich-razumny[elena-m-m-f-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-razumnaya[elena-m-m-f-f-m].[__-__-1___][__-__-1___]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "samil-_-razumny[elena-m-m-f-f-f].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "fandey-samilovich-razumny[elena-m-m-f-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "fandey-samilovich-razumny[elena-m-m-f-f].[__-__-1___][__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "samil-_-razumny[elena-m-m-f-f-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-razumnaya[elena-m-m-f-f-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
@@ -337,9 +382,54 @@
     ]
   },
   {
-    "id": "haritina-nik-razumnaya[elena-m-m-f-m].[__-__-1___][__-__-1___]",
+    "id": "nikolay-_-_[elena-m-m-f-m-f].[__-__-1___][__-__-1___]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-m-m-f-m-m].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "haritina-nik-razumnaya[elena-m-m-f-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[elena-m-m-f-m-m].[__-__-1___][__-__-1___]",
     "gender": "female",
     "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "nikolay-_-_[elena-m-m-f-m-f].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "haritina-nik-razumnaya[elena-m-m-f-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "haritina-nik-razumnaya[elena-m-m-f-m].[__-__-1___][__-__-1___]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "nikolay-_-_[elena-m-m-f-m-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[elena-m-m-f-m-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
@@ -842,9 +932,54 @@
   },
 
   {
-    "id": "semen-yakovlevich-hotnyansky[elena-m-m-m-f].[__-__-1___][__-__-1___]",
+    "id": "yakov-_-hotnyansky[elena-m-m-m-f-f].[__-__-1___][__-__-1___]",
     "gender": "male",
     "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-hotnyanskaya[elena-m-m-m-f-m].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "semen-yakovlevich-hotnyansky[elena-m-m-m-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-hotnyanskaya[elena-m-m-m-f-m].[__-__-1___][__-__-1___]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "yakov-_-hotnyansky[elena-m-m-m-f-f].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "semen-yakovlevich-hotnyansky[elena-m-m-m-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "semen-yakovlevich-hotnyansky[elena-m-m-m-f].[__-__-1___][__-__-1___]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "yakov-_-hotnyansky[elena-m-m-m-f-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-hotnyanskaya[elena-m-m-m-f-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
@@ -864,9 +999,54 @@
     ]
   },
   {
-    "id": "ulyana-petr-hotnyanskaya[elena-m-m-m-m].[__-__-1___][__-__-1___]",
+    "id": "petr-_-_[elena-m-m-m-m-f].[__-__-1___][__-__-1___]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[elena-m-m-m-m-m].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "ulyana-petr-hotnyanskaya[elena-m-m-m-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[elena-m-m-m-m-m].[__-__-1___][__-__-1___]",
     "gender": "female",
     "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "petr-_-_[elena-m-m-m-m-f].[__-__-1___][__-__-1___]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "ulyana-petr-hotnyanskaya[elena-m-m-m-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "ulyana-petr-hotnyanskaya[elena-m-m-m-m].[__-__-1___][__-__-1___]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "petr-_-_[elena-m-m-m-m-f].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[elena-m-m-m-m-m].[__-__-1___][__-__-1___]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
@@ -1067,7 +1247,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-_[elena-m-f-m].[__-__-1___][__-__-1___]",
+        "id": "_-karimovna-_[elena-m-f-m].[__-__-1___][__-__-1___]",
         "type": "married"
       }
     ],
@@ -1092,7 +1272,7 @@
     ],
     "children": [
       {
-        "id": "_-_-_[elena-m-f-m].[__-__-1___][__-__-1___]",
+        "id": "_-karimovna-_[elena-m-f-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ]
@@ -1110,14 +1290,14 @@
     ],
     "children": [
       {
-        "id": "_-_-_[elena-m-f-m].[__-__-1___][__-__-1___]",
+        "id": "_-karimovna-_[elena-m-f-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ]
   },
 
   {
-    "id": "_-_-_[elena-m-f-m].[__-__-1___][__-__-1___]",
+    "id": "_-karimovna-_[elena-m-f-m].[__-__-1___][__-__-1___]",
     "gender": "female",
     "parents": [
       {
@@ -1152,7 +1332,7 @@
         "type": "blood"
       },
       {
-        "id": "_-_-_[elena-m-f-m].[__-__-1___][__-__-1___]",
+        "id": "_-karimovna-_[elena-m-f-m].[__-__-1___][__-__-1___]",
         "type": "blood"
       }
     ],
