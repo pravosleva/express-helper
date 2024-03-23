@@ -86,7 +86,7 @@ export const withSocketChat = (io: Socket) => {
     // -- Uploader init (part 2/2)
     const uploader = new siofu()
     uploader.dir = uploadsPath
-    const UPLOAD_FILE_SIZE_LIMIT_MB = 5
+    const UPLOAD_FILE_SIZE_LIMIT_MB = 10
     uploader.maxFileSize = UPLOAD_FILE_SIZE_LIMIT_MB * 1024 * 1024;
     uploader.listen(socket)
     uploader.on("start", function(event: TUploadFileEvent) {

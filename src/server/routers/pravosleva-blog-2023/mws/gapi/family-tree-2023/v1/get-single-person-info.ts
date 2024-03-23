@@ -636,8 +636,8 @@ const persons = {
       lastName: '_',
     },
   },
-  'paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]': {
-    id: 'paskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]',
+  'praskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]': {
+    id: 'praskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]',
     baseInfo: {
       firstName: 'Praskeva',
       middleName: 'Fandeevna',
