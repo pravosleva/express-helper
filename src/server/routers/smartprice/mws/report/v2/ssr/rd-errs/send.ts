@@ -3,9 +3,13 @@ import { Response as IResponse } from 'express'
 import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 import { TValidationResult } from '~/utils/express-validation'
+import axios from 'axios'
+
+const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
+
+if (!tgBotApiUrl) throw new Error('⛔ process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL should be provided from .env!')
 
 const expectedPropsLenTotal = 13
-
 const userAgentIgnoreList = [
   'Python/3.8 aiohttp/3.8.1', // NOTE: Предположительно, чей-то скрипт
   'Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/)', // NOTE: Majestic; https://www.mj12bot.com/
@@ -117,7 +121,20 @@ export const sendReport = async (req: TSPRequest, res: IResponse) => {
         values: [rowValues],
       },
     })
+    if (!gRes) throw new Error(`Case 001: typeof gRes is ${typeof gRes}`)
   } catch (err) {
+    axios
+      .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, {
+        resultId: new Date().getTime(),
+        chat_id: 432590698, // NOTE: Den Pol
+        ts: new Date().getTime(),
+        eventCode: 'aux_service',
+        about: '⛔ SP SSR Report Error',
+        targetMD: `${err.message || 'No error.message'}`,
+      })
+      .then((res) => res.data)
+      .catch((err) => err)
+
     return res.status(200).send({
       ok: false,
       message: `By Google: ${err.message || 'No err.message'}`
