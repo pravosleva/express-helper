@@ -100,7 +100,7 @@ export const feedback = async (req: TWithBlogRequest, res, _next) => {
 
       const lastRow = Number(lastCell.replace( /[^\d\.]*/g, ''))
       result.id = lastRow
-      result.message = `Ваше обращение #{lastRow}`
+      result.message = `Ваше обращение #${lastRow}`
     } catch (err) {
       result.message = err.message || 'Не удалось распарсить до id'
     }
