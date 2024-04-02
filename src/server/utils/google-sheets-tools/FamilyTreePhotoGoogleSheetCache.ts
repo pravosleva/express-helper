@@ -12,7 +12,7 @@ type TPersonData = {
   mainGallery: TMainGalleryItem[];
 }
 
-enum ROW_INDEX {
+enum COLUMN_INDEX {
   PERSON_ID = 0,
   MAIN_GALLERY_ITEM_PHOTO_URL = 1,
   MAIN_GALLERY_ITEM_PHOTO_DESCR = 2,
@@ -39,14 +39,14 @@ export class FamilyTreePhotoGoogleSheetCache extends GoogleSheetCache {
       if (!!row[0]) {
         if (_isPersonDetected && _isTargetPersonBlockIteration) break
   
-        if (row[ROW_INDEX.PERSON_ID] === personId) {
+        if (row[COLUMN_INDEX.PERSON_ID] === personId) {
           _isPersonDetected = true
           _isTargetPersonBlockIteration = true
 
           // NOTE: First row for the person
           res.mainGallery.push({
-            url: row[ROW_INDEX.MAIN_GALLERY_ITEM_PHOTO_URL],
-            descr: row[ROW_INDEX.MAIN_GALLERY_ITEM_PHOTO_DESCR],
+            url: row[COLUMN_INDEX.MAIN_GALLERY_ITEM_PHOTO_URL],
+            descr: row[COLUMN_INDEX.MAIN_GALLERY_ITEM_PHOTO_DESCR],
           })
           res.ok = true // NOTE: Как минимум, одно фото уже есть
         } else {
@@ -58,8 +58,8 @@ export class FamilyTreePhotoGoogleSheetCache extends GoogleSheetCache {
         // NOTE: Next row for the person
         if (!!row[1]) {
           res.mainGallery.push({
-            url: row[ROW_INDEX.MAIN_GALLERY_ITEM_PHOTO_URL],
-            descr: row[ROW_INDEX.MAIN_GALLERY_ITEM_PHOTO_DESCR],
+            url: row[COLUMN_INDEX.MAIN_GALLERY_ITEM_PHOTO_URL],
+            descr: row[COLUMN_INDEX.MAIN_GALLERY_ITEM_PHOTO_DESCR],
           })
         }
       }
