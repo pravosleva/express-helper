@@ -77,4 +77,4 @@ router.post(
   getSinglePersonInfo,
 )
 
-export const pravoslevaBlod2023Api = router
+export const pravoslevaBlog2023Api = router
