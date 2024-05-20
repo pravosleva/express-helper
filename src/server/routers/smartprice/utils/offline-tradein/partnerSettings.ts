@@ -68,6 +68,10 @@ const cfg: {
     enabled: true,
     disabled: false,
   },
+  mtsmain2024: {
+    isPartnerMtsmain: true,
+    isPartnerMtsmainSubsWay: true,
+  },
 }
 
 /**

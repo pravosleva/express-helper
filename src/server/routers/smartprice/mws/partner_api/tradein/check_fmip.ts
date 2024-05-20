@@ -30,6 +30,13 @@ export const checkFMIP = async (req, res) => {
     })
   }
 
+  if (req.body.is_errored) {
+    return res.status(200).send({
+      ...toClient[0],
+      _originalBody: req.body,
+    })
+  }
+
   const toBeOrNotToBe = 1 // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
 
   return setTimeout(() => {
