@@ -76,7 +76,7 @@ import { policyConfirmationSMS } from './mws/partner_api/tradein/personal_data_p
 import { signBySMSCode as signBySMSCode2 } from './mws/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_code'
 import { waitForVerified } from './mws/partner_api/tradein/wait_for/verified'
 import { boughtDevice } from './mws/partner_api/tradein/bought_device'
-import { me, rules as meRules } from './mws/_tmp/me'
+import { me, rules as meRules } from './mws/partner_api/tradein/me'
 
 import cors from 'cors'
 import { reportAddAPI, reportGetStateAPI, reportResolveIssueAPI } from './mws/report'
