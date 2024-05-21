@@ -2,16 +2,21 @@ import express from 'express'
 import { sendReport as sendSsrRdErrorGoogleSheetsReport, rules as ssrRdErrorGoogleSheetsReportRules } from './ssr/rd-errs/send'
 import {
   sendReport as sendOfflineTradeInUploadPhotoGoogleSheetsReport,
-  spNotifyMW as spOfflineTradeInTelegramNotifyMW,
   rules as uploadWizardReportRules,
+  spNotifyMW as offlineTradeInTelegramNotifyMW,
 } from './offline-tradein/upload-wizard/send'
+import {
+  sendReport as sendOfflineTradeInMtsmain2024GoogleSheetsReport,
+  rules as offlineTradeInMtsmain2024ReportRules,
+  spNotifyMW as offlineTradeInMtsmain2024TelegramNotifyMW,
+} from './offline-tradein/mtsmain2024/send'
 import {
   getAnalysis as sendOfflineTradeInGetAnalysis,
   rules as getTimingAnalysisRules,
 } from './offline-tradein/upload-wizard/get-timing-analysis'
 import {
   sendReport as sendOfflineTradeInMainGoogleSheetsReport,
-  spRetranslateToUploadWizardMW as spOfflineTradeInRetranslateToUploadWizardMW,
+  spRetranslateToUploadWizardMW as offlineTradeInRetranslateToUploadWizardMW,
 } from './offline-tradein/main/send'
 import { getRandom as getRandomIMEI } from './imei/usable/get-random'
 import { markAsUsed as markIMEIAsUsed } from './imei/usable/mark-as-used'
@@ -107,7 +112,7 @@ router.post(
     rules: uploadWizardReportRules,
   }),
   sendOfflineTradeInUploadPhotoGoogleSheetsReport,
-  spOfflineTradeInTelegramNotifyMW,
+  offlineTradeInTelegramNotifyMW,
 )
 router.post(
   '/offline-tradein/upload-wizard/get-timing-analysis',
@@ -119,7 +124,15 @@ router.post(
 router.post(
   '/offline-tradein/main/send',
   sendOfflineTradeInMainGoogleSheetsReport,
-  spOfflineTradeInRetranslateToUploadWizardMW,
+  offlineTradeInRetranslateToUploadWizardMW,
+)
+router.post(
+  '/offline-tradein/mtsmain2024/send',
+  withReqParamsValidationMW({
+    rules: offlineTradeInMtsmain2024ReportRules,
+  }),
+  sendOfflineTradeInMtsmain2024GoogleSheetsReport,
+  offlineTradeInMtsmain2024TelegramNotifyMW,
 )
 
 // CRM
