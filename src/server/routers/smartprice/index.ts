@@ -199,6 +199,9 @@ spApi.post('/partner_api/tradein/personal_data_processing_agreement/send_sms_cod
 spApi.post('/partner_api/tradein/personal_data_processing_agreement/sign_by_sms_code', signBySMSCode2)
 spApi.post('/partner_api/tradein/wait_for/verified', waitForVerified)
 spApi.post('/partner_api/tradein/bought_device', boughtDevice)
+spApi.post('/partner_api/tradein/me', jsonParser, withReqParamsValidationMW({
+  rules: meRules,
+}), me)
 
 // 6. SSR: New OT landing
 spApi.post('/ot-web/fizot-landing-form', otWebApiFizotLandingForm)
@@ -208,8 +211,5 @@ spApi.post('/report/add', reportAddAPI)
 spApi.get('/report/get-state', reportGetStateAPI)
 spApi.get('/report/resolve-issue', reportResolveIssueAPI)
 spApi.use('/report/v2', reportV2)
-spApi.post('/_tmp/me', jsonParser, withReqParamsValidationMW({
-  rules: meRules,
-}), me)
 
 export default spApi
