@@ -306,6 +306,33 @@ export const rules = {
           return result
         }
       },
+      gitSHA1: {
+        type: 'string',
+        descr: 'gitSHA1 repo value',
+        required: false,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+          
+          switch (true) {
+            case typeof val !== 'string':
+              result.ok = false
+              result.reason = `Should be string, received ${typeof val}`
+              break
+            case !val:
+              result.ok = false
+              result.reason = 'Should be not empty string'
+              break
+            default:
+              break
+          }
+          return result
+        }
+      },
       // TODO?
       // _wService?: {
       //   _perfInfo: {
@@ -321,6 +348,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     tradeinId, ts, imei, room, appVersion, metrixEventType, reportType, stateValue, stepDetails, eventCode,
     uniquePageLoadKey, uniqueUserDataLoadKey,
     // _wService,
+    gitSHA1,
   } = req.body
 
   const ignoreStateValuesForGoogleSheetReport = [
@@ -349,8 +377,8 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   rowValues.push(uniquePageLoadKey)
   rowValues.push(uniqueUserDataLoadKey)
   rowValues.push(metrixEventType)
-  
   rowValues.push(eventCode)
+  rowValues.push(gitSHA1)
 
   let auth: any
   try {
