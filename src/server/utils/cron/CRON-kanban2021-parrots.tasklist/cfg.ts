@@ -236,7 +236,7 @@ export const cfg: TCfg = [
     id: 4,
     _descr: `Тишка: ${daysRangeHalf} days perspective: !isCompleted || (isLooped & isCompleted & Will be ready soon (or ready in ${daysRangeHalf} days))`,
     isEnabled: true,
-    cronSetting: '01 06 09 * * *', // Every day at 09:06:01
+    cronSetting: '10 05 09 * * *', // Every day at 09:05:10
     validateBeforeRequest: ({ tasks }) => tasks.length > 0,
     _specialMsgValidator(task) {
       // NOTE: Интересуют только те задачи, до uncheck которых осталось менее daysRangeHalf дней

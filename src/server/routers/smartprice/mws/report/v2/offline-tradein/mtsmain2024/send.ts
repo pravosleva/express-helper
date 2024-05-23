@@ -464,12 +464,28 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
     const stateValuesForTelegramNotifs = [
       'sm:act-print',
     ]
-    const [uiDate, _ts, _reportType, _imei, appVersion, tradeinId, stateValue, stepDetailsJSON] = req.smartprice.report.rowValues
-    const targetMDMsgs = [`**${stateValue}**\n${uiDate}\n#tradein${tradeinId}`]
+    const [
+      uiDate,
+      _ts,
+      _reportType,
+      _imei,
+      appVersion,
+      tradeinId,
+      stateValue,
+      stepDetailsJSON,
+      _room,
+      _uniquePageLoadKey,
+      _uniqueUserDataLoadKey,
+      _metrixEventType,
+      _eventCode,
+      gitSHA1,
+    ] = req.smartprice.report.rowValues
+
+    const targetMDMsgs = [`**${stateValue}**\n${uiDate}\n#tradein_${tradeinId} #gitSHA1_${gitSHA1}\nreport ${resultId}`]
     if (!!stepDetailsJSON) {
       try {
         const _parsed = JSON.parse(stepDetailsJSON)
-        targetMDMsgs.push(`\`\`\`json\n${JSON.stringify(_parsed, null, 2)}\n\`\`\``)
+        targetMDMsgs.push(`\`\`\`json\n${JSON.stringify(_parsed, null, 2)}\`\`\``)
       } catch (err) {
         targetMDMsgs.push(`Не удалось распарсить stepDetails: ${err.message || 'No message'}`)
       }
