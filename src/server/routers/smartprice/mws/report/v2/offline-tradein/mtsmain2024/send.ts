@@ -345,10 +345,8 @@ export const rules = {
 
 export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
   const {
-    tradeinId, ts, imei, room, appVersion, metrixEventType, reportType, stateValue, stepDetails, eventCode,
-    uniquePageLoadKey, uniqueUserDataLoadKey,
+    tradeinId, ts, imei, room, appVersion, metrixEventType, reportType, stateValue, stepDetails, eventCode, uniquePageLoadKey, uniqueUserDataLoadKey, gitSHA1,
     // _wService,
-    gitSHA1,
   } = req.body
 
   const ignoreStateValuesForGoogleSheetReport = [
@@ -399,7 +397,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     gRes = await googleSheets.spreadsheets.values.append({
       auth,
       spreadsheetId,
-      range: '/offline-tradein/mtsmain2024!A2',
+      range: '/offline-tradein/mtsmain2024!A3',
       valueInputOption: 'USER_ENTERED',
       insertDataOption: EInsertDataOption.INSERT_ROWS,
       requestBody: {
@@ -468,7 +466,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       uiDate,
       _ts,
       _reportType,
-      _imei,
+      imei,
       appVersion,
       tradeinId,
       stateValue,
@@ -481,7 +479,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       gitSHA1,
     ] = req.smartprice.report.rowValues
 
-    const targetMDMsgs = [`**${stateValue}**\n${uiDate}\n#tradein_${tradeinId} #gitSHA1_${gitSHA1}\nreport ${resultId}`]
+    const targetMDMsgs = [`**${stateValue}**\n#imei${imei}\n#tradein${tradeinId} #gitSHA1${gitSHA1}\n${uiDate}\nreport ${resultId}`]
     if (!!stepDetailsJSON) {
       try {
         const _parsed = JSON.parse(stepDetailsJSON)

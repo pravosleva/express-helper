@@ -368,7 +368,7 @@ export const cfg: TCfg = [
     id: 5,
     _descr: 'Спринт (magaz) Weekly reminder',
     isEnabled: true,
-    cronSetting: '3 2 18 * * Mon', // Every Mon at 18:02:03
+    cronSetting: '5 7 18 * * Mon', // Every Mon at 18:07:05
     _useSprintOnly: true,
     _specialMsgValidator: (msg: TMessage & Partial<NNotifs.TNotifItem>) => {
       let result = false
