@@ -463,8 +463,8 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       'sm:act-print',
     ]
     const [
-      uiDate,
-      _ts,
+      _uiDate,
+      ts,
       _reportType,
       imei,
       appVersion,
@@ -479,13 +479,17 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       gitSHA1,
     ] = req.smartprice.report.rowValues
 
-    const targetMDMsgs = [`**${stateValue}**\n#imei${imei}\n#tradein${tradeinId} #gitSHA1${gitSHA1}\n${uiDate}\nreport ${resultId}`]
+    const timeZone = 'Europe/Moscow'
+    const uiDate = new Date(ts).toLocaleString('ru-RU', { timeZone })
+    // NOTE: See also https://stackoverflow.com/a/54453990
+
+    const targetMDMsgs = [`*${stateValue}*\n#imei${imei}\n#tradein${tradeinId}\n${uiDate} (${timeZone})\nreport ${resultId}`]
     if (!!stepDetailsJSON) {
       try {
         const _parsed = JSON.parse(stepDetailsJSON)
         targetMDMsgs.push(`\`\`\`json\n${JSON.stringify(_parsed, null, 2)}\`\`\``)
       } catch (err) {
-        targetMDMsgs.push(`Не удалось распарсить stepDetails: ${err.message || 'No message'}`)
+        targetMDMsgs.push(`⚠️ Не удалось распарсить stepDetails: ${err.message || 'No message'}`)
       }
     }
 
@@ -510,7 +514,10 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
           //   SINGLE_REMINDER = 'single_reminder',
           // }
           // --
-          about: `Offline Trade-In mtsmain2024 ${appVersion}`,
+          about: [
+            `SP Offline Trade-In \`v${appVersion}\``,
+            `\`gitSHA1 ${gitSHA1}\``,
+          ].join('\n'),
           targetMD: targetMDMsgs.join('\n\n'),
         }
 
