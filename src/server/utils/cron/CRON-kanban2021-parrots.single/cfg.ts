@@ -81,4 +81,20 @@ export const cfg: TCfg = [
       },
     },
   },
+  {
+    id: 5,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 11 20 * *', // NOTE: Every month 20ty at 11:01:15
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: -1001917842024, // NOTE: My home -> Rjev, Kosarova, 64 (topic)
+        message_thread_id: 1021, // https://t.me/c/1917842024/1021
+        eventCode: 'single_reminder',
+        about: () => '_Не забудьте_',
+        targetMD: () => 'Счетчики в г. Ржев, Косарова, 64 (c 20 по 25 числа).\nПриложения:\n1) АтомЭнергоСбыт (электричество);2) БРИС ЖКХ (туда приходит квитанция)',
+      },
+    },
+  },
 ]
