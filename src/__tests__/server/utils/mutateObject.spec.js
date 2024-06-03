@@ -162,4 +162,99 @@ describe('mutateObject', () => {
 
     expect(tested).toEqual(expected)
   })
+
+  test('lvl 3 (tradein2024@4.x Case 1: delete value if removeIfUndefined option enabled)', () => {
+    const target = {
+      id: 0,
+      phone: {
+        color: 'red',
+        memory: '',
+        memory_choices: ['1 GB'],
+      },
+    }
+    const tested = mutateObject({
+      removeIfUndefined: true,
+      target,
+      source: {
+        id: 0,
+        phone: {
+          color: 'red',
+          memory: '',
+          // memory_choices: undefined,
+        },
+      },
+    })
+    const expected = {
+      id: 0,
+      phone: {
+        color: 'red',
+        memory: '',
+      },
+    }
+
+    expect(tested).toEqual(expected)
+  })
+
+  test('lvl 3 (tradein2024@4.x Case 2: delete value if removeIfUndefined option enabled)', () => {
+    const target = {
+      total: {
+        pending: 0,
+        rejected_req: 0,
+        rejected_res: 1,
+        fulfilled: 2,
+      },
+      state: {
+        '/me': {
+          '1': {
+            code: 'fulfilled',
+            __details: {
+              status: 200,
+              res: {
+                ok: true,
+                user_data: {
+                  display_name: 'Tester',
+                },
+              },
+            },
+          },
+          '2': {
+            code: 'fulfilled',
+            __details: {
+              status: 200,
+              res: {
+                ok: true,
+                user_data: {
+                  display_name: 'Tester',
+                },
+              },
+            },
+          },
+        },
+      },
+    }
+    const tested = mutateObject({
+      removeIfUndefined: true,
+      target,
+      source: {
+        total: {
+          pending: 0,
+          rejected_req: 0,
+          rejected_res: 0,
+          fulfilled: 0,
+        },
+        state: null,
+      },
+    })
+    const expected = {
+      total: {
+        pending: 0,
+        rejected_req: 0,
+        rejected_res: 0,
+        fulfilled: 0,
+      },
+      state: null,
+    }
+
+    expect(tested).toEqual(expected)
+  })
 })

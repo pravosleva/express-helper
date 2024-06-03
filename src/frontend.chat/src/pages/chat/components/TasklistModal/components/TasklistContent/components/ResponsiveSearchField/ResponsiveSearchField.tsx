@@ -231,7 +231,7 @@ export const ResponsiveSearchField = ({
                     <Button
                       size='sm'
                       colorScheme='blue'
-                      variant='unstyled' 
+                      variant='unstyled'
                       // leftIcon={<FcGallery color='#FFF' size={18} />}
                       onClick={() => setIsShowMoreEnabled(true)}
                       // mr={2}
@@ -244,7 +244,8 @@ export const ResponsiveSearchField = ({
                     <Button
                       size='sm'
                       colorScheme='blue'
-                      variant='unstyled' 
+                      // variant='unstyled'
+                      variant='outline'
                       // leftIcon={<FcGallery color='#FFF' size={18} />}
                       onClick={() => setIsShowMoreEnabled(false)}
                       // mr={2}
