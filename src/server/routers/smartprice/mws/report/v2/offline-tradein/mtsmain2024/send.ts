@@ -483,7 +483,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
     const uiDate = new Date(ts).toLocaleString('ru-RU', { timeZone })
     // NOTE: See also https://stackoverflow.com/a/54453990
 
-    const targetMDMsgs = [`*${stateValue}*\n#imei${imei}\n#tradein${tradeinId}\n${uiDate} (${timeZone})\nreport ${resultId}`]
+    const targetMDMsgs = [`*${stateValue}*\n#imei${imei}\n#tradein${tradeinId}\nreport ${resultId}`]
     if (!!stepDetailsJSON) {
       try {
         const _parsed = JSON.parse(stepDetailsJSON)
@@ -492,6 +492,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
         targetMDMsgs.push(`⚠️ Не удалось распарсить stepDetails: ${err.message || 'No message'}`)
       }
     }
+    targetMDMsgs.push(`${uiDate} (${timeZone})`)
 
     try {
       if (stateValuesForTelegramNotifs.includes(stateValue)) {
@@ -515,7 +516,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
           // }
           // --
           about: [
-            `SP Offline Trade-In \`v${appVersion}\``,
+            `SP Offline Trade-In\n\`v${appVersion}\`\n\`${imei}\``,
             `\`gitSHA1 ${gitSHA1}\``,
           ].join('\n'),
           targetMD: targetMDMsgs.join('\n\n'),
