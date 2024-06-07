@@ -26,6 +26,7 @@ export type TCfg = {
         targetHashtags: string[];
         targetStatuses: EMessageStatus[];
         targetRooms: string[];
+        _descr: string;
       }) => string;
       targetMD: ({}: {
         msgs: TMessage[];

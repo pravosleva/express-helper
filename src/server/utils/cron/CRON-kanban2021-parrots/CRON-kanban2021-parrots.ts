@@ -29,6 +29,7 @@ for(const parrot of cfg) {
           id,
           _specialMsgValidator,
           _useSprintOnly,
+          _descr,
         } = parrot
 
         const _roomsData = {}
@@ -144,7 +145,7 @@ for(const parrot of cfg) {
             ts: new Date().getTime(),
             eventCode: req.body.eventCode,
             about: typeof req.body.about === 'function'
-              ? req.body.about({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms })
+              ? req.body.about({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms, _descr })
               : typeof req.body.about === 'string'
                 ? req.body.about || '[about: empty]'
                 : '[about: incorrect format]',

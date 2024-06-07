@@ -18,7 +18,7 @@ const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 export const cfg: TCfg = [
   {
     id: 1,
-    _descr: 'Еженедельная напоминалка по выполненным задачам SmartPrice',
+    _descr: 'Еженедельная напоминалка по выполненным задачам SmartPrice (на тестировании)',
     isEnabled: true,
     // cronSetting: '0 11 * * Mon', // Every Mon at 11:00
     cronSetting: '5 10 * * *', // Every day at 10:05
@@ -26,7 +26,7 @@ export const cfg: TCfg = [
     // cronSetting: isDev ? '*/10 * * * * Thu', // NOTE: Every 10 secs for isDev
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
-    targetHashtags: ['#marketing', '#ringeo', '#mtsmain2024'],
+    targetHashtags: ['#marketing', '#ringeo', '#mtsmain2024', '#ssr'],
     targetStatuses: [EMessageStatus.Success],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
@@ -38,8 +38,14 @@ export const cfg: TCfg = [
           targetHashtags,
           targetStatuses,
           targetRooms,
+          _descr,
         }) => {
-          return `Контроль статуса задач${targetHashtags.length > 0 ? ` *${targetHashtags.join(' ')}*` : ''}`
+          const finalMsgs: string[] = []
+          
+          finalMsgs.push(_descr)
+          if (targetHashtags.length > 0) finalMsgs.push(`*${targetHashtags.join(' ')}*`)
+
+          return finalMsgs.join('\n')
         },
         targetMD: ({
           msgs,
@@ -107,7 +113,7 @@ export const cfg: TCfg = [
   },
   {
     id: 2,
-    _descr: 'Reminder for me (daily deploy after 21:00)',
+    _descr: 'Ежедневная напоминалка по задачам SmartPrice (daily deploy after 21:00)',
     isEnabled: true,
     cronSetting: '5 0 21 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 21:00:05
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
@@ -124,8 +130,25 @@ export const cfg: TCfg = [
           targetHashtags,
           targetStatuses,
           targetRooms,
+          _descr,
         }) => {
-          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          const finalMsgs: string[] = []
+
+          finalMsgs.push(_descr)
+
+          if (msgs.length > 0) {
+            finalMsgs.push(`В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}`)
+            finalMsgs.push(`есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:`)
+            finalMsgs.push(`*${[...targetStatuses.map(getStatusTranslated)].join(' ')}*`)
+          } else {
+            finalMsgs.push(`Impossible case? ${[...targetStatuses].join(' / ')}`)
+          }
+
+          if (targetHashtags.length > 0) {
+            finalMsgs.push(`*${targetHashtags.join(' ')}*`)
+          }
+
+          return finalMsgs.join('\n')
         },
         targetMD: ({
           msgs,
@@ -300,12 +323,17 @@ export const cfg: TCfg = [
           targetHashtags,
           // targetStatuses,
           targetRooms,
+          _descr,
         }) => {
+          const finalMsgs: string[] = []
+
+          if (msgs.length > 0) {
+            finalMsgs.push(_descr)
+            finalMsgs.push(`Current state of affairs in ${targetRooms.map((room) => `[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`)
+          }
+
           // return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
-          return `${
-            msgs.length > 0
-            ? `Current state of affairs in ${targetRooms.map((room) => `[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
-            : ''}`
+          return finalMsgs.join('\n')
         },
         targetMD: ({
           msgs,
