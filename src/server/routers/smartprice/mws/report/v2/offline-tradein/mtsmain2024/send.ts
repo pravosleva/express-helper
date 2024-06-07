@@ -333,6 +333,33 @@ export const rules = {
           return result
         }
       },
+      specialClientKey: {
+        type: 'string',
+        descr: 'Client data set',
+        required: false,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+          
+          switch (true) {
+            case typeof val !== 'string':
+              result.ok = false
+              result.reason = `Should be string, received ${typeof val}`
+              break
+            case !val:
+              result.ok = false
+              result.reason = 'Should be not empty string'
+              break
+            default:
+              break
+          }
+          return result
+        }
+      },
       // TODO?
       // _wService?: {
       //   _perfInfo: {
@@ -345,7 +372,9 @@ export const rules = {
 
 export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
   const {
-    tradeinId, ts, imei, room, appVersion, metrixEventType, reportType, stateValue, stepDetails, eventCode, uniquePageLoadKey, uniqueUserDataLoadKey, gitSHA1,
+    tradeinId, ts, imei, room, appVersion, metrixEventType, reportType,
+    stateValue, stepDetails, eventCode, uniquePageLoadKey, uniqueUserDataLoadKey,
+    gitSHA1, specialClientKey,
     // _wService,
   } = req.body
 
@@ -377,6 +406,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   rowValues.push(metrixEventType)
   rowValues.push(eventCode)
   rowValues.push(gitSHA1)
+  rowValues.push(specialClientKey)
 
   let auth: any
   try {
@@ -477,6 +507,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       _metrixEventType,
       _eventCode,
       gitSHA1,
+      specialClientKey,
     ] = req.smartprice.report.rowValues
 
     const timeZone = 'Europe/Moscow'
@@ -493,6 +524,24 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       }
     }
     targetMDMsgs.push(`${uiDate} (${timeZone})`)
+
+    // -- NOTE: Temporal solution
+    try {
+      if (!specialClientKey) throw new Error('Client wasnt detected')
+
+      const parsedClientDataArr = specialClientKey.replace(/_/g, ' ').split('//')
+      const clientDataNotes = []
+
+      if (parsedClientDataArr.length > 0) {
+        for (const str of parsedClientDataArr) {
+          if (!!str) clientDataNotes.push(str)
+        }
+        if (clientDataNotes.length > 0) targetMDMsgs.push(clientDataNotes.join('\n'))
+      } else throw new Error('Не удалось определить данные клиента')
+    } catch (err) {
+      targetMDMsgs.push(err.message || 'Incorrect client data')
+    }
+    // --
 
     try {
       if (stateValuesForTelegramNotifs.includes(stateValue)) {
