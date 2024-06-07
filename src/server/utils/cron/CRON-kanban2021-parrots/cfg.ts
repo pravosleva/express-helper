@@ -18,15 +18,15 @@ const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 export const cfg: TCfg = [
   {
     id: 1,
-    _descr: 'Напоминалка для Алексея',
+    _descr: 'Еженедельная напоминалка по выполненным задачам SmartPrice',
     isEnabled: true,
     // cronSetting: '0 11 * * Mon', // Every Mon at 11:00
-    cronSetting: '5 11 * * *', // Every day at 11:05
+    cronSetting: '5 10 * * *', // Every day at 10:05
     // cronSetting: '44 13 * * Thu',
     // cronSetting: isDev ? '*/10 * * * * Thu', // NOTE: Every 10 secs for isDev
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
-    targetHashtags: ['#marketing'],
+    targetHashtags: ['#marketing', '#ringeo', '#mtsmain2024'],
     targetStatuses: [EMessageStatus.Success],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
@@ -112,7 +112,7 @@ export const cfg: TCfg = [
     cronSetting: '5 0 21 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 21:00:05
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
-    targetHashtags: ['#ssr', '#eveningDailyReminder'],
+    targetHashtags: ['#ssr', '#eveningDailyReminder', '#ringeo', '#mtsmain2024'],
     targetStatuses: [EMessageStatus.Danger],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
