@@ -523,7 +523,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
     ]
     const [
       _uiDate,
-      ts,
+      _ts,
       _reportType,
       imei,
       appVersion,
@@ -540,11 +540,11 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       ip,
     ] = req.smartprice.report.rowValues
 
-    const timeZone = 'Europe/Moscow'
-    const uiDate = new Date(ts).toLocaleString('ru-RU', { timeZone })
+    // const timeZone = 'Europe/Moscow'
+    // const uiDate = new Date(ts).toLocaleString('ru-RU', { timeZone })
     // NOTE: See also https://stackoverflow.com/a/54453990
 
-    const targetMDMsgs = [`*${stateValue}*\n#imei${imei}\n#tradein${tradeinId}\nreport ${resultId}`]
+    const targetMDMsgs = [`*${stateValue}*`]
     if (!!stepDetailsJSON) {
       try {
         const _parsed = JSON.parse(stepDetailsJSON)
@@ -553,7 +553,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
         targetMDMsgs.push(`⚠️ Не удалось распарсить stepDetails: ${err.message || 'No message'}`)
       }
     }
-    targetMDMsgs.push(`${uiDate} (${timeZone})`)
+    // targetMDMsgs.push(`${uiDate} (${timeZone})`)
 
     // -- NOTE: Temporal solution
     try {
@@ -572,6 +572,8 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       targetMDMsgs.push(err.message || 'Incorrect client data')
     }
     // --
+
+    targetMDMsgs.push(`#imei${imei}\n#tradein${tradeinId}`)
 
     try {
       if (stateValuesForTelegramNotifs.includes(stateValue)) {
@@ -595,7 +597,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
           // }
           // --
           about: [
-            'SP Offline Trade-In',
+            `SP Offline Trade-In report ${resultId}`,
             `\`IP: ${ip}\``,
             `\`App version: ${appVersion}\``,
             `\`IMEI: ${imei}\``,
