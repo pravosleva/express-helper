@@ -360,6 +360,33 @@ export const rules = {
           return result
         }
       },
+      ip: {
+        type: 'string',
+        descr: 'IP adress',
+        required: false,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+          
+          switch (true) {
+            case typeof val !== 'string':
+              result.ok = false
+              result.reason = `Should be string, received ${typeof val}`
+              break
+            // case !val:
+            //   result.ok = false
+            //   result.reason = 'Should be not empty string'
+            //   break
+            default:
+              break
+          }
+          return result
+        }
+      },
       // TODO?
       // _wService?: {
       //   _perfInfo: {
@@ -375,6 +402,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     tradeinId, ts, imei, room, appVersion, metrixEventType, reportType,
     stateValue, stepDetails, eventCode, uniquePageLoadKey, uniqueUserDataLoadKey,
     gitSHA1, specialClientKey,
+    ip,
     // _wService,
   } = req.body
 
@@ -407,6 +435,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   rowValues.push(eventCode)
   rowValues.push(gitSHA1)
   rowValues.push(specialClientKey)
+  if (!!ip) rowValues.push(ip)
 
   let auth: any
   try {
@@ -508,6 +537,7 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       _eventCode,
       gitSHA1,
       specialClientKey,
+      ip,
     ] = req.smartprice.report.rowValues
 
     const timeZone = 'Europe/Moscow'
@@ -565,8 +595,11 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
           // }
           // --
           about: [
-            `SP Offline Trade-In\n\`v${appVersion}\`\n\`${imei}\``,
-            `\`gitSHA1 ${gitSHA1}\``,
+            'SP Offline Trade-In',
+            `\`IP: ${ip}\``,
+            `\`App version: ${appVersion}\``,
+            `\`IMEI: ${imei}\``,
+            `\`GIT SHA1: ${gitSHA1}\``,
           ].join('\n'),
           targetMD: targetMDMsgs.join('\n\n'),
         }
