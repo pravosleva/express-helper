@@ -387,6 +387,33 @@ export const rules = {
           return result
         }
       },
+      userAgent: {
+        type: 'string',
+        descr: 'user-agent (could be taken from req headers)',
+        required: false,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+          
+          switch (true) {
+            case typeof val !== 'string':
+              result.ok = false
+              result.reason = `Should be string, received ${typeof val}`
+              break
+            // case !val:
+            //   result.ok = false
+            //   result.reason = 'Should be not empty string'
+            //   break
+            default:
+              break
+          }
+          return result
+        }
+      },
       // TODO?
       // _wService?: {
       //   _perfInfo: {
@@ -401,8 +428,10 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   const {
     tradeinId, ts, imei, room, appVersion, metrixEventType, reportType,
     stateValue, stepDetails, eventCode, uniquePageLoadKey, uniqueUserDataLoadKey,
-    gitSHA1, specialClientKey,
+    gitSHA1,
+    // specialClientKey,
     ip,
+    userAgent,
     // _wService,
   } = req.body
 
@@ -434,7 +463,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   rowValues.push(metrixEventType)
   rowValues.push(eventCode)
   rowValues.push(gitSHA1)
-  rowValues.push(specialClientKey)
+  rowValues.push(userAgent)
   if (!!ip) rowValues.push(ip)
 
   let auth: any
@@ -510,7 +539,9 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   next()
 }
 
-export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFunction) => {
+export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFunction) => {
+  if (!tgBotApiUrl) next()
+
   if (!!req.smartprice.report?.rowValues) {
     const rowValues = req.smartprice.report.rowValues
 
@@ -518,9 +549,15 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
 
     const resultId = req.smartprice.report.resultId
 
-    const stateValuesForTelegramNotifs = [
+    const metrixEventTypesForTelegramNotifs = [
+      'sp-mx:offline-tradein:c:event',
+      'sp-history:offline-tradein:c:report',
+    ]
+    const stateValuesForCorpTelegramNotifs = [
+      // 'sm:enter-imei',
       'sm:act-print',
     ]
+    
     const [
       _uiDate,
       _ts,
@@ -533,18 +570,19 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
       _room,
       _uniquePageLoadKey,
       _uniqueUserDataLoadKey,
-      _metrixEventType,
+      metrixEventType,
       _eventCode,
       gitSHA1,
       specialClientKey,
       ip,
+      userAgent,
     ] = req.smartprice.report.rowValues
 
     // const timeZone = 'Europe/Moscow'
     // const uiDate = new Date(ts).toLocaleString('ru-RU', { timeZone })
     // NOTE: See also https://stackoverflow.com/a/54453990
 
-    const targetMDMsgs = [`*${stateValue}*`]
+    const targetMDMsgs = []
     if (!!stepDetailsJSON) {
       try {
         const _parsed = JSON.parse(stepDetailsJSON)
@@ -556,64 +594,145 @@ export const spNotifyMW = async (req: TSPRequest, _res: IResponse, next: INextFu
     // targetMDMsgs.push(`${uiDate} (${timeZone})`)
 
     // -- NOTE: Temporal solution
+    // try {
+    //   if (!specialClientKey) throw new Error('Client wasnt detected')
+
+    //   const parsedClientDataArr = specialClientKey.replace(/_/g, ' ').split('//')
+    //   const clientDataNotes = []
+
+    //   if (parsedClientDataArr.length > 0) {
+    //     for (const str of parsedClientDataArr) {
+    //       if (!!str) clientDataNotes.push(str)
+    //     }
+    //     if (clientDataNotes.length > 0) targetMDMsgs.push(clientDataNotes.join('\n'))
+    //   } else throw new Error('Не удалось определить данные клиента')
+    // } catch (err) {
+    //   targetMDMsgs.push(err.message || 'Incorrect client data')
+    // }
+
     try {
-      if (!specialClientKey) throw new Error('Client wasnt detected')
+      if (!userAgent) throw new Error('user-agent wasnt detected')
 
-      const parsedClientDataArr = specialClientKey.replace(/_/g, ' ').split('//')
-      const clientDataNotes = []
-
-      if (parsedClientDataArr.length > 0) {
-        for (const str of parsedClientDataArr) {
-          if (!!str) clientDataNotes.push(str)
-        }
-        if (clientDataNotes.length > 0) targetMDMsgs.push(clientDataNotes.join('\n'))
-      } else throw new Error('Не удалось определить данные клиента')
+      targetMDMsgs.push(userAgent.replace(/_/g, ' '))
     } catch (err) {
       targetMDMsgs.push(err.message || 'Incorrect client data')
     }
     // --
 
-    targetMDMsgs.push(`#imei${imei}\n#tradein${tradeinId}`)
+    const _tagsSectionMsgs = []
+    if (!!imei) _tagsSectionMsgs.push(`#imei${imei}`)
+    if (!!tradeinId) _tagsSectionMsgs.push(`#tradein${tradeinId}`)
+
+    if (_tagsSectionMsgs.length > 0) targetMDMsgs.push(_tagsSectionMsgs.join('\n'))
 
     try {
-      if (stateValuesForTelegramNotifs.includes(stateValue)) {
-        const opts: any = {
-          resultId,
-          // chat_id: 432590698,
+      const TG_CHATS: {
+        [key: string]: {
+          chat_id: number;
+          // TODO: thread?
+        };
+      } ={
+        SPDevs: {
           chat_id: -1001615277747,
-          ts: req.smartprice.report.ts || new Date().getTime(),
-          eventCode: 'aux_service',
-          // -- NOTE: Possible values
-          // export enum EEventCodes {
-          //   MAGAZ_REMINDER_DAILY = 'magaz_reminder_daily',
-          //   MAGAZ_REMINDER_WEEKLY = 'magaz_reminder_weekly',
-          //   MAGAZ_SPRINT_REMINDER_WEEKLY = 'magaz_sprint_reminder_weekly',
-          //   MAGAZ_REMINDER_MONTHLY = 'magaz_reminder_monthly',
-          //   SP_REMINDER_DAILY = 'sp_reminder_daily',
-          //   SP_REMINDER_WEEKLY = 'sp_reminder_weekly',
-          //   TASKLIST_REMINDER_DAILY = 'tasklist_reminder_daily',
-          //   AUX_SERVICE = 'aux_service',
-          //   SINGLE_REMINDER = 'single_reminder',
-          // }
-          // --
-          about: [
-            `SP Offline Trade-In report ${resultId}`,
-            `\`IP: ${ip}\``,
-            `\`App version: ${appVersion}\``,
-            `\`IMEI: ${imei}\``,
-            `\`GIT SHA1: ${gitSHA1}\``,
-          ].join('\n'),
-          targetMD: targetMDMsgs.join('\n\n'),
-        }
-
-        if (!tgBotApiUrl) next()
-        axios
-          .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, opts)
-          .then((res) => res.data)
-          .catch((err) => err)
+        },
+        Pravosleva: {
+          chat_id: 432590698,
+        },
       }
-    } catch (err) {
+      let targetChatSettings: {
+        chat_id: number;
+        // TODO: thread?
+      } = TG_CHATS.Pravosleva
+
+      const opts = {
+        resultId,
+        // chat_id: 432590698,
+        chat_id: -1001615277747,
+        ts: req.smartprice.report.ts || new Date().getTime(),
+        eventCode: 'aux_service',
+        // -- NOTE: Possible values
+        // export enum EEventCodes {
+        //   MAGAZ_REMINDER_DAILY = 'magaz_reminder_daily',
+        //   MAGAZ_REMINDER_WEEKLY = 'magaz_reminder_weekly',
+        //   MAGAZ_SPRINT_REMINDER_WEEKLY = 'magaz_sprint_reminder_weekly',
+        //   MAGAZ_REMINDER_MONTHLY = 'magaz_reminder_monthly',
+        //   SP_REMINDER_DAILY = 'sp_reminder_daily',
+        //   SP_REMINDER_WEEKLY = 'sp_reminder_weekly',
+        //   TASKLIST_REMINDER_DAILY = 'tasklist_reminder_daily',
+        //   AUX_SERVICE = 'aux_service',
+        //   SINGLE_REMINDER = 'single_reminder',
+        // }
+        // --
+        about: [
+          `SP Offline Trade-In report ${resultId}`,
+          `*${stateValue}*`,
+          '',
+          `\`IP: ${ip || 'No'}\``,
+          `\`App version: ${appVersion || 'No'}\``,
+          `\`IMEI: ${imei || 'No'}\``,
+          `\`GIT SHA1: ${gitSHA1 || 'No'}\``,
+        ].join('\n'),
+        targetMD: targetMDMsgs.join('\n\n'),
+      }
+
+      // NOTE: Check level 1
+      switch (true) {
+        case metrixEventTypesForTelegramNotifs.includes(metrixEventType):
+          switch (metrixEventType) {
+            case 'sp-mx:offline-tradein:c:event':
+              // NOTE: Check level 2
+              switch (true) {
+                case stateValuesForCorpTelegramNotifs.includes(stateValue):
+                  targetChatSettings = TG_CHATS.Pravosleva
+                  // NOTE: Go on...
+                  break
+                default:
+                  throw new Error(`Отправка stateValue в TG чат не предусмотрена: ${stateValue}`)
+              }
+              break
+            case 'sp-history:offline-tradein:c:report':
+              targetChatSettings = TG_CHATS.Pravosleva
+              opts.about = [
+                `⚠️ SP Offline Trade-In report ${resultId} (sent by user)`,
+                `*${stateValue}*`,
+                '',
+                `\`IP: ${ip || 'No'}\``,
+                `\`App version: ${appVersion || 'No'}\``,
+                `\`IMEI: ${imei || 'No'}\``,
+                `\`GIT SHA1: ${gitSHA1 || 'No'}\``,
+              ].join('\n')
+              break
+            default:
+              // NOTE: Go on?
+              break
+          }
+          break
+        default:
+          throw new Error(`Отправка metrixEventType в TG чат не предусмотрена: ${metrixEventType}`)
+      }
+
+      // NTOE: Final
+      for (const key in targetChatSettings) opts[key] = targetChatSettings[key]
+      // const tgBotResult =
+      axios
+        .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, opts)
+        .then((res) => res.data)
+        .catch((err) => err)
+
+      // const _finalMsgs = [
+      //   `Отправлено из spNotifyMW без ожидания ответа: ${tgBotApiUrl}/kanban-2021/reminder/send`,
+      // ]
+      // if (typeof tgBotResult?.message === 'string') _finalMsgs.push(tgBotResult?.message)
+      // res.status(200).send({
+      //   ok: true,
+      //   message: _finalMsgs.join(' // '),
+      // })
+    } catch (err: any) {
       console.log(err)
+      // res.status(200).send({
+      //   ok: false,
+      //   message: `ERR in spNotifyMW: ${err.message || 'No message'}`,
+      // })
     }
   }
   else next()

@@ -11,16 +11,10 @@ export namespace NEvent {
     data?: {
       __eType: string;
       input: {
-        // ts: string;
         room: string;
-        // reportType: EReportType;
         appVersion: string;
         metrixEventType: string;
         stateValue: string;
-        // imei: string;
-        stepDetails?: {
-          [key: string]: any;
-        };
       };
     };
   }
@@ -38,6 +32,14 @@ export namespace NEvent {
     reportType: EReportType;
     stateValue: string;
     imei: string;
+    // imei: string;
+    stepDetails?: {
+      [key: string]: any;
+    };
+    specialClientKey?: string;
+    ip?: string;
+    userAgent?: string;
+
     _wService?: {
       _perfInfo: {
         tsList: TPerfInfoItem[];

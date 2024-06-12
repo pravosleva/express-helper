@@ -92,7 +92,7 @@ function onError(error) {
       ts: new Date().getTime(),
       eventCode: 'aux_service',
       about: `\`/express-helper@${packageJson.version}\`\n⛔ Error`,
-      targetMD: `${error.code || 'No error.code'}\n\n\`\`\`json\n${JSON.stringify(error, null, 2)}\n\`\`\``,
+      targetMD: `${error.code || 'No error.code'}\n\n\`\`\`json\n${JSON.stringify(error, null, 2)}\`\`\``,
     })
     .then((res) => res.data)
     .catch((err) => err)
@@ -140,7 +140,7 @@ function onListening() {
         },
         null,
         2
-      )}\n\`\`\``,
+      )}\`\`\``,
     })
     .then((res) => res.data)
     .catch((err) => err)
