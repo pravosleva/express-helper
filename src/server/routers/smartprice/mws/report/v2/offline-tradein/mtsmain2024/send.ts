@@ -42,7 +42,7 @@ export const rules = {
       },
       uniqueUserDataLoadKey: {
         type: 'string',
-        descr: 'Page load key',
+        descr: 'User data load key',
         required: false,
         validate: (val: any) => {
           const result: {
@@ -308,7 +308,7 @@ export const rules = {
       },
       gitSHA1: {
         type: 'string',
-        descr: 'gitSHA1 repo value',
+        descr: 'GIT SHA1 repo value',
         required: false,
         validate: (val: any) => {
           const result: {
@@ -551,6 +551,7 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
 
     const metrixEventTypesForTelegramNotifs = [
       'sp-mx:offline-tradein:c:event',
+      'sp-xhr-history:offline-tradein:c:report', // NOTE: Deprecated 
       'sp-history:offline-tradein:c:report',
     ]
     const stateValuesForCorpTelegramNotifs = [
@@ -667,7 +668,7 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
           `*${stateValue}*`,
           '',
           `\`IP: ${ip || 'No'}\``,
-          `\`App version: ${appVersion || 'No'}\``,
+          `\`Client app version: ${appVersion || 'No'}\``,
           `\`IMEI: ${imei || 'No'}\``,
           `\`GIT SHA1: ${gitSHA1 || 'No'}\``,
         ].join('\n'),
@@ -689,14 +690,15 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
                   throw new Error(`Отправка stateValue в TG чат не предусмотрена: ${stateValue}`)
               }
               break
+            case 'sp-xhr-history:offline-tradein:c:report': // NOTE: Deprecated
             case 'sp-history:offline-tradein:c:report':
-              targetChatSettings = TG_CHATS.SPDevs
+              targetChatSettings = TG_CHATS.Pravosleva
               opts.about = [
                 `⚠️ SP Offline Trade-In report ${resultId} (sent by user)`,
                 `*${stateValue}*`,
                 '',
                 `\`IP: ${ip || 'No'}\``,
-                `\`App version: ${appVersion || 'No'}\``,
+                `\`Client app version: ${appVersion || 'No'}\``,
                 `\`IMEI: ${imei || 'No'}\``,
                 `\`GIT SHA1: ${gitSHA1 || 'No'}\``,
               ].join('\n')
