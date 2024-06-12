@@ -464,7 +464,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   rowValues.push(eventCode)
   rowValues.push(gitSHA1)
   rowValues.push(userAgent)
-  if (!!ip) rowValues.push(ip)
+  rowValues.push(ip)
 
   let auth: any
   try {
@@ -573,9 +573,8 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
       metrixEventType,
       _eventCode,
       gitSHA1,
-      specialClientKey,
-      ip,
       userAgent,
+      ip,
     ] = req.smartprice.report.rowValues
 
     // const timeZone = 'Europe/Moscow'
@@ -683,7 +682,7 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
               // NOTE: Check level 2
               switch (true) {
                 case stateValuesForCorpTelegramNotifs.includes(stateValue):
-                  targetChatSettings = TG_CHATS.Pravosleva
+                  targetChatSettings = TG_CHATS.SPDevs
                   // NOTE: Go on...
                   break
                 default:
@@ -691,7 +690,7 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
               }
               break
             case 'sp-history:offline-tradein:c:report':
-              targetChatSettings = TG_CHATS.Pravosleva
+              targetChatSettings = TG_CHATS.SPDevs
               opts.about = [
                 `⚠️ SP Offline Trade-In report ${resultId} (sent by user)`,
                 `*${stateValue}*`,
