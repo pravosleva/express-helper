@@ -590,12 +590,15 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   }
 
   const _modifiedRowValues = [...rowValues]
-  if (isObviouslyBig) _modifiedRowValues[EColumn.StepDetails] = undefined
+  if (isObviouslyBig) {
+    _modifiedRowValues[EColumn.StepDetails] = undefined
+  }
 
   req.smartprice.report = {
     rowValues: _modifiedRowValues,
     resultId: result.id,
     ts,
+    specialComment: stepDetails?.commentByUser || undefined
   }
 
   res.status(200).send(result)
@@ -656,6 +659,9 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
         targetMDMsgs.push(`⚠️ Не удалось распарсить stepDetails: ${err.message || 'No message'}`)
       }
     }
+
+    if (!!req.smartprice.report.specialComment) targetMDMsgs.push(`Special comment:\n\`\`\`\n${req.smartprice.report.specialComment}\`\`\``)
+
     // targetMDMsgs.push(`${uiDate} (${timeZone})`)
 
     // -- NOTE: Temporal solution

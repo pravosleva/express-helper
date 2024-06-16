@@ -15,6 +15,7 @@ export type TSPRequest = IRequest & {
       rowValues?: any[];
       resultId?: number;
       ts?: number;
+      specialComment?: string;
     };
     partnerSettingsAnalysis?: {
       ok: boolean;
