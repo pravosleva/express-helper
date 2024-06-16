@@ -39,6 +39,7 @@ export namespace NEvent {
     specialClientKey?: string;
     ip?: string;
     userAgent?: string;
+    clientReferer?: string;
 
     _wService?: {
       _perfInfo: {

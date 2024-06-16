@@ -414,6 +414,33 @@ export const rules = {
           return result
         }
       },
+      clientReferer: {
+        type: 'string',
+        descr: 'clientReferer (could be taken from socket.handshake.headers.referer)',
+        required: false,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+          
+          switch (true) {
+            case typeof val !== 'string':
+              result.ok = false
+              result.reason = `Should be string, received ${typeof val}`
+              break
+            // case !val:
+            //   result.ok = false
+            //   result.reason = 'Should be not empty string'
+            //   break
+            default:
+              break
+          }
+          return result
+        }
+      },
       // TODO?
       // _wService?: {
       //   _perfInfo: {
@@ -431,7 +458,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     gitSHA1,
     // specialClientKey,
     ip,
-    userAgent,
+    userAgent, clientReferer,
     // _wService,
   } = req.body
 
@@ -465,6 +492,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   rowValues.push(gitSHA1)
   rowValues.push(userAgent)
   rowValues.push(ip)
+  rowValues.push(clientReferer)
 
   let auth: any
   try {
@@ -576,6 +604,7 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
       gitSHA1,
       userAgent,
       ip,
+      clientReferer,
     ] = req.smartprice.report.rowValues
 
     // const timeZone = 'Europe/Moscow'
@@ -664,13 +693,10 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
         // }
         // --
         about: [
-          `SP Offline Trade-In report ${resultId}`,
+          `SP Offline Trade-In #report${resultId}`,
           `*${stateValue}*`,
           '',
-          `\`IP: ${ip || 'No'}\``,
-          `\`Client app version: ${appVersion || 'No'}\``,
-          `\`IMEI: ${imei || 'No'}\``,
-          `\`GIT SHA1: ${gitSHA1 || 'No'}\``,
+          `\`\`\`\nIP: ${ip || 'No'}\nClient app version: ${appVersion || 'No'}\nIMEI: ${imei || 'No'}\nGIT SHA1: ${gitSHA1 || 'No'}\`\`\``,
         ].join('\n'),
         targetMD: targetMDMsgs.join('\n\n'),
       }
@@ -694,13 +720,10 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
             case 'sp-history:offline-tradein:c:report':
               targetChatSettings = TG_CHATS.Pravosleva
               opts.about = [
-                `⚠️ SP Offline Trade-In report ${resultId} (sent by user)`,
+                `⚠️ SP Offline Trade-In #report${resultId} (sent by user)`,
                 `*${stateValue}*`,
                 '',
-                `\`IP: ${ip || 'No'}\``,
-                `\`Client app version: ${appVersion || 'No'}\``,
-                `\`IMEI: ${imei || 'No'}\``,
-                `\`GIT SHA1: ${gitSHA1 || 'No'}\``,
+                `\`\`\`\nIP: ${ip || 'No'}\nClient app version: ${appVersion || 'No'}\nIMEI: ${imei || 'No'}\nGIT SHA1: ${gitSHA1 || 'No'}\nClient referer: ${clientReferer || 'No'}\`\`\``,
               ].join('\n')
               break
             default:
@@ -717,8 +740,18 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
       // const tgBotResult =
       axios
         .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, opts)
-        .then((res) => res.data)
-        .catch((err) => err)
+        .then((res) => {
+          if (!res?.data.ok) {
+            for (const key in TG_CHATS.Pravosleva) opts[key] = TG_CHATS.Pravosleva[key]
+            axios
+              .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, { ...opts, targetMD: `ERR1: ${res?.data?.message || 'No res?.data?.message'} (received from: ${clientReferer})` })
+          }
+        })
+        .catch((err) => {
+          for (const key in TG_CHATS.Pravosleva) opts[key] = TG_CHATS.Pravosleva[key]
+          axios
+            .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, { ...opts, targetMD: `ERR2: ${err.message || 'No err.message'} (received from: ${clientReferer})` })
+        })
 
       // const _finalMsgs = [
       //   `Отправлено из spNotifyMW без ожидания ответа: ${tgBotApiUrl}/kanban-2021/reminder/send`,
