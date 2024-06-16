@@ -14,6 +14,10 @@ const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 
 // const expectedPropsLenTotal: number = 12
 
+enum EColumn {
+  StepDetails = 7,
+}
+
 export const rules = {
   params: {
     body: {
@@ -441,6 +445,33 @@ export const rules = {
           return result
         }
       },
+      isObviouslyBig: {
+        type: 'boolean',
+        descr: 'Является ли сообщение заведомо большим',
+        required: false,
+        validate: (val: any) => {
+          const result: {
+            ok: boolean;
+            reason?: string;
+          } = {
+            ok: true,
+          }
+          
+          switch (true) {
+            case typeof val !== 'boolean':
+              result.ok = false
+              result.reason = `Should be boolean, received ${typeof val}`
+              break
+            // case !val:
+            //   result.ok = false
+            //   result.reason = 'Should be not empty string'
+            //   break
+            default:
+              break
+          }
+          return result
+        }
+      },
       // TODO?
       // _wService?: {
       //   _perfInfo: {
@@ -460,6 +491,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     ip,
     userAgent, clientReferer,
     // _wService,
+    isObviouslyBig,
   } = req.body
 
   const ignoreStateValuesForGoogleSheetReport = [
@@ -557,13 +589,17 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     result.message = '!gRes #wtf0'
   }
 
+  const _modifiedRowValues = [...rowValues]
+  if (isObviouslyBig) _modifiedRowValues[EColumn.StepDetails] = undefined
+
   req.smartprice.report = {
-    rowValues,
+    rowValues: _modifiedRowValues,
     resultId: result.id,
     ts,
   }
 
   res.status(200).send(result)
+
   next()
 }
 
@@ -658,25 +694,33 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
       const TG_CHATS: {
         [key: string]: {
           chat_id: number;
-          // TODO: thread?
+          message_thread_id?: number;
         };
       } ={
-        SPDevs: {
-          chat_id: -1001615277747,
-        },
+        // SPDevs: {
+        //   chat_id: -1001615277747,
+        // },
         Pravosleva: {
           chat_id: 432590698,
+        },
+        SPReport: {
+          chat_id: -1002189284187,
+          // message_thread_id: 1,
+        },
+        SPReportOfflineTradeinMtsmain: {
+          chat_id: -1002189284187,
+          message_thread_id: 2,
         },
       }
       let targetChatSettings: {
         chat_id: number;
-        // TODO: thread?
+        message_thread_id?: number;
       } = TG_CHATS.Pravosleva
 
       const opts = {
         resultId,
         // chat_id: 432590698,
-        chat_id: -1001615277747,
+        chat_id: -1002189284187,
         ts: req.smartprice.report.ts || new Date().getTime(),
         eventCode: 'aux_service',
         // -- NOTE: Possible values
@@ -709,7 +753,7 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
               // NOTE: Check level 2
               switch (true) {
                 case stateValuesForCorpTelegramNotifs.includes(stateValue):
-                  targetChatSettings = TG_CHATS.SPDevs
+                  targetChatSettings = TG_CHATS.SPReportOfflineTradeinMtsmain
                   // NOTE: Go on...
                   break
                 default:
@@ -718,7 +762,7 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
               break
             case 'sp-xhr-history:offline-tradein:c:report': // NOTE: Deprecated
             case 'sp-history:offline-tradein:c:report':
-              targetChatSettings = TG_CHATS.Pravosleva
+              targetChatSettings = TG_CHATS.SPReportOfflineTradeinMtsmain
               opts.about = [
                 `⚠️ SP Offline Trade-In #report${resultId} (sent by user)`,
                 `*${stateValue}*`,
@@ -742,13 +786,13 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
         .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, opts)
         .then((res) => {
           if (!res?.data.ok) {
-            for (const key in TG_CHATS.Pravosleva) opts[key] = TG_CHATS.Pravosleva[key]
+            for (const key in TG_CHATS.SPReport) opts[key] = TG_CHATS.SPReport[key]
             axios
               .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, { ...opts, targetMD: `ERR1: ${res?.data?.message || 'No res?.data?.message'} (received from: ${clientReferer})` })
           }
         })
         .catch((err) => {
-          for (const key in TG_CHATS.Pravosleva) opts[key] = TG_CHATS.Pravosleva[key]
+          for (const key in TG_CHATS.SPReport) opts[key] = TG_CHATS.SPReport[key]
           axios
             .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, { ...opts, targetMD: `ERR2: ${err.message || 'No err.message'} (received from: ${clientReferer})` })
         })
