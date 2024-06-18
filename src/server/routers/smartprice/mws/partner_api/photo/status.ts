@@ -16,6 +16,11 @@ const _help: THelp = {
         descr: 'Special scenario odj; Example: {"status":{"not_checked":5,"ok":20},"started": 10,"success": 2}',
         required: false,
       },
+      _slow_server_imitation: {
+        type: 'boolean',
+        descr: 'Slow server imitation (you will have response in 500-3000 ms',
+        required: false,
+      },
     },
   },
 }
@@ -60,7 +65,7 @@ type TScenario = {
 const responseScenarioMap = new Map<[key: string], TScenario>()
 
 export default async (req, res) => {
-  const { _odd_scenario, _add_data } = req.body
+  const { _odd_scenario, _add_data, _slow_server_imitation } = req.body
 
   const result: any = {
     // Default:
@@ -242,7 +247,19 @@ export default async (req, res) => {
         result[key] = _add_data[key]
       })
 
-      return res.status(200).send(result)
+      switch (true) {
+        case _slow_server_imitation: {
+          // v2
+          const repronseTime = getRandomInteger(500, 3000)
+
+          return setTimeout(() => {
+            res.status(200).send(result)
+          }, repronseTime)
+        }
+        default:
+          // v1
+          return res.status(200).send(result)
+      }
     }
   } catch (err) {
     return res.status(500).send({
