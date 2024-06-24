@@ -622,8 +622,14 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
       'sp-history:offline-tradein:c:report',
     ]
     const stateValuesForCorpTelegramNotifs = [
-      // 'sm:enter-imei',
+      // NOTE: PODPISKA_MTS
       'sm:act-print',
+      'act-print',
+
+      // NOTE: CLASSIC_TRADEIN
+      // 'sm:enter-imei',
+      'sm:tradein-final',
+      'tradein-final',
     ]
     
     const [

@@ -97,4 +97,42 @@ export const cfg: TCfg = [
       },
     },
   },
+  {
+    id: 6,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 11 30 * *', // NOTE: Every month 30ty at 11:01:15
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: -1001917842024, // NOTE: My home -> Fryazino, Mira, 19 (topic)
+        message_thread_id: 152, // https://t.me/c/1917842024/152
+        eventCode: 'single_reminder',
+        about: () => '_Не забудьте_',
+        targetMD: () => [
+          'Квартплата (квитанция обычно приходит c 30 по 1 числа)',
+          'Фрязино, Мира, 19-328',
+        ].join('\n'),
+      },
+    },
+  },
+  {
+    id: 7,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 2 11 30 * *', // NOTE: Every month 30ty at 11:02:15
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: -1001917842024, // NOTE: My home -> Fryazino, Des, 3 (topic)
+        message_thread_id: 150, // https://t.me/c/1917842024/150
+        eventCode: 'single_reminder',
+        about: () => '_Не забудьте_',
+        targetMD: () => [
+          'Квартплата (квитанция обычно приходит c 30 по 1 числа)',
+          'Фрязино, Десантников, 3-112',
+        ].join('\n'),
+      },
+    },
+  },
 ]

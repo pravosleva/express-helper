@@ -85,8 +85,12 @@ const toClient = [
     ok: true,
     phone: {
       vendor: 'Samsung',
-      type: 'mobile_phone',
       model: 'Galaxy S10 plus',
+
+      // vendor: 'Apple',
+      // model: 'iPhone 13',
+
+      type: 'mobile_phone',
       memory: '',
       memory_choices: ['512 GB', '128 GB', '1024 GB'],
       color: '',
