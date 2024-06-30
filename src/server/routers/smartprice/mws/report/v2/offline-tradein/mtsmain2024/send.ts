@@ -598,7 +598,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     rowValues: _modifiedRowValues,
     resultId: result.id,
     ts,
-    specialComment: stepDetails?.commentByUser || undefined
+    specialComment: stepDetails?.comment || undefined
   }
 
   res.status(200).send(result)
