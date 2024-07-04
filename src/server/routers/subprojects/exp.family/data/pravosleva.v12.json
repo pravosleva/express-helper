@@ -2738,13 +2738,58 @@
   },
 
   {
-    "id": "fedor-michail-izvekov.[__-__-1909][__-__-____]",
+    "id": "michail-_-_[vladimir-m-f-f].[__-__-____][__-__-____]",
     "gender": "male",
     "parents": [],
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
+        "id": "_-_-_[vladimir-m-f-m].[__-__-____][__-__-____]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "fedor-michail-izvekov.[__-__-1909][__-__-____]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[vladimir-m-f-m].[__-__-____][__-__-____]",
+    "gender": "female",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "michail-_-_[vladimir-m-f-f].[__-__-____][__-__-____]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "fedor-michail-izvekov.[__-__-1909][__-__-____]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "fedor-michail-izvekov.[__-__-1909][__-__-____]",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "michail-_-_[vladimir-m-f-f].[__-__-____][__-__-____]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[vladimir-m-f-m].[__-__-____][__-__-____]",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
         "type": "married"
       }
     ],
@@ -2760,9 +2805,54 @@
     ]
   },
   {
-    "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
+    "id": "sergey-_-_[vladimir-m-m-f].[__-__-____][__-__-____]",
+    "gender": "male",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "_-_-_[vladimir-m-m-m].[__-__-____][__-__-____]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "_-_-_[vladimir-m-m-m].[__-__-____][__-__-____]",
     "gender": "female",
     "parents": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "sergey-_-_[vladimir-m-m-f].[__-__-____][__-__-____]",
+        "type": "married"
+      }
+    ],
+    "children": [
+      {
+        "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
+        "type": "blood"
+      }
+    ]
+  },
+  {
+    "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "sergey-_-_[vladimir-m-m-f].[__-__-____][__-__-____]",
+        "type": "blood"
+      },
+      {
+        "id": "_-_-_[vladimir-m-m-m].[__-__-____][__-__-____]",
+        "type": "blood"
+      }
+    ],
     "siblings": [],
     "spouses": [
       {
@@ -2791,7 +2881,7 @@
         "type": "blood"
       },
       {
-        "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
+        "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
         "type": "blood"
       }
     ],
@@ -2813,7 +2903,7 @@
         "type": "blood"
       },
       {
-        "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
+        "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
         "type": "blood"
       }
     ],
@@ -2825,7 +2915,7 @@
     ],
     "spouses": [
       {
-        "id": "vladimir-vladimir-pol.[__-__-19__]",
+        "id": "vladimir-stepan-poltoratsky.[__-__-19__]",
         "type": "married"
       }
     ],
@@ -2837,7 +2927,7 @@
     ]
   },
   {
-    "id": "vladimir-vladimir-pol.[__-__-19__]",
+    "id": "vladimir-stepan-poltoratsky.[__-__-19__]",
     "gender": "male",
     "parents": [],
     "siblings": [],
@@ -2864,7 +2954,7 @@
         "type": "blood"
       },
       {
-        "id": "vladimir-vladimir-pol.[__-__-19__]",
+        "id": "vladimir-stepan-poltoratsky.[__-__-19__]",
         "type": "blood"
       }
     ],

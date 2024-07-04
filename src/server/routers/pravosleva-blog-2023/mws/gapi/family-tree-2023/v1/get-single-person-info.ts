@@ -180,8 +180,8 @@ const persons = {
       lastName: 'Poltoratsky',
     },
   },
-  // 'vladimir-vladimir-pol.[__-__-19__]': {
-  //   id: 'vladimir-vladimir-pol.[__-__-19__]',
+  // 'vladimir-stepan-poltoratsky.[__-__-19__]': {
+  //   id: 'vladimir-stepan-poltoratsky.[__-__-19__]',
   //   baseInfo: {
   //     firstName: 'Vladimir',
   //     middleName: 'Vladimirovich',
@@ -706,6 +706,30 @@ const persons = {
       firstName: 'Marfa',
       middleName: 'Semenovna',
       lastName: 'Hotnyanskaya',
+    },
+  },
+  'ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]': {
+    id: 'ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]',
+    baseInfo: {
+      firstName: 'Ekaterina',
+      middleName: 'Sergeevna',
+      lastName: 'Drugoveiko',
+    },
+  },
+  'valentina-fedor-solovieva.[31-07-19__]': {
+    id: 'valentina-fedor-solovieva.[31-07-19__]',
+    baseInfo: {
+      firstName: 'Valentina',
+      middleName: 'Fedorovna',
+      lastName: 'Solovieva',
+    },
+  },
+  'vladimir-stepan-poltoratsky.[__-__-19__]': {
+    id: 'vladimir-stepan-poltoratsky.[__-__-19__]',
+    baseInfo: {
+      firstName: 'Vladimir',
+      middleName: 'Stepanovich',
+      lastName: 'Poltoratsky',
     },
   },
 }

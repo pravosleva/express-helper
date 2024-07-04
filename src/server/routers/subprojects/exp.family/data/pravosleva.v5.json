@@ -410,7 +410,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
+        "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
         "type": "married"
       }
     ],
@@ -426,7 +426,7 @@
     ]
   },
   {
-    "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
+    "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
     "gender": "female",
     "parents": [],
     "siblings": [],
@@ -457,7 +457,7 @@
         "type": "blood"
       },
       {
-        "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
+        "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
         "type": "blood"
       }
     ],
@@ -479,7 +479,7 @@
         "type": "blood"
       },
       {
-        "id": "_-_-solovieva[vladimir-m-m].[__-__-19__][__-__-19__]",
+        "id": "ekaterina-sergey-drugoveiko[vladimir-m-m].[25-01-1914][22-04-2002]",
         "type": "blood"
       }
     ],
@@ -491,7 +491,7 @@
     ],
     "spouses": [
       {
-        "id": "vladimir-vladimir-pol.[__-__-19__]",
+        "id": "vladimir-stepan-poltoratsky.[__-__-19__]",
         "type": "married"
       }
     ],
@@ -503,7 +503,7 @@
     ]
   },
   {
-    "id": "vladimir-vladimir-pol.[__-__-19__]",
+    "id": "vladimir-stepan-poltoratsky.[__-__-19__]",
     "gender": "male",
     "parents": [],
     "siblings": [],
@@ -530,7 +530,7 @@
         "type": "blood"
       },
       {
-        "id": "vladimir-vladimir-pol.[__-__-19__]",
+        "id": "vladimir-stepan-poltoratsky.[__-__-19__]",
         "type": "blood"
       }
     ],
