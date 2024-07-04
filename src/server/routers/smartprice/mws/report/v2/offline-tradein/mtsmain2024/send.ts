@@ -4,7 +4,10 @@ import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 import axios from 'axios'
 import { Counter } from '~/utils/Counter'
+import { capitalCase } from 'change-case'
+
 import { NEvent } from './types'
+import { replaceWords } from '~/utils/string-ops'
 
 const counter = Counter()
 
@@ -496,8 +499,11 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
 
   const ignoreStateValuesForGoogleSheetReport = [
     'sm:app-init',
+    'app-init',
     'sm:check-fmip',
+    'check-fmip',
     'sm:upload-photo:in-progress',
+    'upload-photo:in-progress',
   ]
   if (ignoreStateValuesForGoogleSheetReport.includes(stateValue)) {
     return res.status(200).send({
@@ -750,9 +756,14 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
         // --
         about: [
           `SP Offline Trade-In #report${resultId}`,
-          `*${stateValue}*`,
+          `State Machine: *${replaceWords({ cfg: { imei: 'IMEI', tradein: 'Trade-In' }, input: capitalCase(stateValue.replace(/sm:/g, '')) })}*`,
           '',
-          `\`\`\`\nIP: ${ip || 'No'}\nClient app version: ${appVersion || 'No'}\nIMEI: ${imei || 'No'}\nGIT SHA1: ${gitSHA1 || 'No'}\`\`\``,
+          `\`\`\`\n${[
+            `IP: ${ip || 'No'}`,
+            `Client app version: ${appVersion || 'No'}`,
+            `IMEI: ${imei || 'No'}`,
+            `GIT SHA1: ${gitSHA1 || 'No'}`,
+          ].join('\n')}\`\`\``,
         ].join('\n'),
         targetMD: targetMDMsgs.join('\n\n'),
       }
@@ -777,9 +788,15 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
               targetChatSettings = TG_CHATS.SPReportOfflineTradeinMtsmain
               opts.about = [
                 `⚠️ SP Offline Trade-In #report${resultId} (sent by user)`,
-                `*${stateValue}*`,
+                `State Machine: *${replaceWords({ cfg: { imei: 'IMEI', tradein: 'Trade-In' }, input: capitalCase(stateValue.replace(/sm:/g, '')) })}*`,
                 '',
-                `\`\`\`\nIP: ${ip || 'No'}\nClient app version: ${appVersion || 'No'}\nIMEI: ${imei || 'No'}\nGIT SHA1: ${gitSHA1 || 'No'}\nClient referer: ${clientReferer || 'No'}\`\`\``,
+                `\`\`\`\n${[
+                  `IP: ${ip || 'No'}`,
+                  `Client app version: ${appVersion || 'No'}`,
+                  `IMEI: ${imei || 'No'}`,
+                  `GIT SHA1: ${gitSHA1 || 'No'}`,
+                  `Client referer: ${clientReferer || 'No'}`,
+                ].join('\n')}\`\`\``,
               ].join('\n')
               break
             default:

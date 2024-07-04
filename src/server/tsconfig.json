@@ -22,6 +22,7 @@
   ],
   "exclude": [
     "tsconfig.json",
-    "**/tsconfig.json"
+    "**/tsconfig.json",
+    "**/routers/chat/@socket.io/admin-ui-*/**/*.ts"
   ]
 }
