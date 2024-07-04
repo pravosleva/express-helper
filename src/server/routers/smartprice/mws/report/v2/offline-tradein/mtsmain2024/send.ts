@@ -4,10 +4,8 @@ import { google } from 'googleapis'
 import { EInsertDataOption, TSPRequest } from '~/routers/smartprice/mws/report/v2/types'
 import axios from 'axios'
 import { Counter } from '~/utils/Counter'
-import { capitalCase } from 'change-case'
-
+import { capitalCase, replaceWords } from '~/utils/string-ops'
 import { NEvent } from './types'
-import { replaceWords } from '~/utils/string-ops'
 
 const counter = Counter()
 
