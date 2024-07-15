@@ -10,6 +10,7 @@ import { testTextByAnyWord } from '~/utils/string-ops'
 
 const versions = {
   '12': v12,
+  // 'temporal': v12,
   '11': v11,
   // '10': v10,
   // '9': v9,
@@ -61,10 +62,10 @@ export const rules: THelp = {
               result.ok = false
               result.reason = 'req.query.target shoud be not empty string (but isnt required param)'
               break
-            case !/^[a-zA-Z]+$/.test(val):
-              result.ok = false
-              result.reason = 'req.query.target shoud have letters only (numbers is not allowed)'
-              break
+            // case !/^[a-zA-Z]+$/.test(val):
+            //   result.ok = false
+            //   result.reason = 'req.query.target shoud have letters only (numbers is not allowed)'
+            //   break
             // TODO: Others...
             default:
               break
