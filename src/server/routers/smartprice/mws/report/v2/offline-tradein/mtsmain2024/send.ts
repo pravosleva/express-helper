@@ -558,9 +558,16 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     })
   } catch (err) {
     console.log(err)
+    const msgs = ['Ошибка при попытке добавить запись в Google Sheets']
+    try {
+      if (Array.isArray(err?.errors) && typeof err?.errors?.[0]?.message === 'string')
+        msgs.push(err?.errors?.[0]?.message)
+    } catch (err) {
+      msgs.push(err.message || 'No err.message')
+    }
     return res.status(200).send({
       ok: false,
-      message: err.message || 'No err.message'
+      message: msgs.join('; ')
     })
   }
 
