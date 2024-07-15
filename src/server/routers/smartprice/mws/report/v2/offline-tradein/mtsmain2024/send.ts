@@ -534,7 +534,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
   try {
     auth = req.smartprice.googleSheetsAuth
   } catch (err) {
-    return res.status(500).send({
+    return res.status(200).send({
       ok: false,
       message: err.message || 'No err.message'
     })
@@ -558,7 +558,7 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     })
   } catch (err) {
     console.log(err)
-    return res.status(500).send({
+    return res.status(200).send({
       ok: false,
       message: err.message || 'No err.message'
     })
