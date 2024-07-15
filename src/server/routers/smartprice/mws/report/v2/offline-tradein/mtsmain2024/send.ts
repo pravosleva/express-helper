@@ -259,7 +259,7 @@ export const rules = {
       },
       stepDetails: {
         type: 'object',
-        descr: 'Step Details as JSON',
+        descr: 'Step Details as custom object',
         required: false,
         validate: (val: any) => {
           const result: {
@@ -560,14 +560,20 @@ export const sendReport = async (req: TSPRequest, res: IResponse, next: INextFun
     console.log(err)
     const msgs = ['Ошибка при попытке добавить запись в Google Sheets']
     try {
-      if (Array.isArray(err?.errors) && typeof err?.errors?.[0]?.message === 'string')
+      if (typeof err?.message === 'string' && !!err?.message)
+        msgs.push(err.message)
+      if (
+        Array.isArray(err?.errors)
+        && typeof err?.errors?.[0]?.message === 'string'
+        && !!err?.errors?.[0]?.message
+      )
         msgs.push(err?.errors?.[0]?.message)
     } catch (err) {
       msgs.push(err.message || 'No err.message')
     }
     return res.status(200).send({
       ok: false,
-      message: msgs.join('; ')
+      message: msgs.join(' • ')
     })
   }
 
@@ -759,9 +765,9 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
         //   SINGLE_REMINDER = 'single_reminder',
         // }
         // --
+        header: `SP | Offline Trade-In #report${resultId}`,
         about: [
-          `SP Offline Trade-In #report${resultId}`,
-          `State Machine: *${replaceWords({ cfg: { imei: 'IMEI', tradein: 'Trade-In' }, input: capitalCase(stateValue.replace(/sm:/g, '')) })}*`,
+          `FSM: *${replaceWords({ cfg: { imei: 'IMEI', tradein: 'Trade-In' }, input: capitalCase(stateValue.replace(/sm:/g, '')) })}*`,
           '',
           `\`\`\`\n${[
             `IP: ${ip || 'No'}`,
@@ -791,9 +797,9 @@ export const spNotifyMW = async (req: TSPRequest, res: IResponse, next: INextFun
             case 'sp-xhr-history:offline-tradein:c:report': // NOTE: Deprecated
             case 'sp-history:offline-tradein:c:report':
               targetChatSettings = TG_CHATS.SPReportOfflineTradeinMtsmain
+              opts.header = `SP | Offline Trade-In #report${resultId}\n⚠️ User report`
               opts.about = [
-                `⚠️ SP Offline Trade-In #report${resultId} (sent by user)`,
-                `State Machine: *${replaceWords({ cfg: { imei: 'IMEI', tradein: 'Trade-In' }, input: capitalCase(stateValue.replace(/sm:/g, '')) })}*`,
+                `FSM: *${replaceWords({ cfg: { imei: 'IMEI', tradein: 'Trade-In' }, input: capitalCase(stateValue.replace(/sm:/g, '')) })}*`,
                 '',
                 `\`\`\`\n${[
                   `IP: ${ip || 'No'}`,
