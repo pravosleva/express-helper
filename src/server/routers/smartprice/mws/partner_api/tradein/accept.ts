@@ -16,7 +16,7 @@ export const acceptApi = async (req, res) => {
   if (!req.body.id) { // !req.body.retailer_personnel_number ||
     return res.status(200).send({
       ok: false,
-      message: 'Required fields in req: retailer_personnel_number, id',
+      message: 'Required fields in req: id',
       _originalBody: req.body,
     })
   }
