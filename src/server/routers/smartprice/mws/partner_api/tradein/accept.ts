@@ -1,4 +1,5 @@
 // import { getRandomInteger } from '~/utils/getRandomInteger'
+import { mutateObject } from '~/utils/mutateObject'
 
 // const { SUCCESS_ANYWAY } = process.env
 
@@ -22,11 +23,16 @@ export const acceptApi = async (req, res) => {
   }
 
   const toBeOrNotToBe = 1 // SUCCESS_ANYWAY ? 1 : getRandomInteger(0, 1)
+  const result = {
+    ...toClient[toBeOrNotToBe],
+    _originalBody: req.body,
+  }
+  const { _add_data } = req.body
+
+  if (!!_add_data && typeof _add_data === 'object' && Object.keys(_add_data).length > 0)
+    mutateObject({ target: result, source: _add_data })
 
   return setTimeout(() => {
-    res.status(200).send({
-      ...toClient[toBeOrNotToBe],
-      _originalBody: req.body,
-    })
+    res.status(200).send(result)
   }, 5000)
 }
