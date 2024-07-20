@@ -63,10 +63,12 @@ export const clientData = (req: any, res: any) => {
   }
 
   const toBeOrNotToBe = random_success ? getRandomInteger(0, 1) : 1
-
-  return res.status(200).send({
+  const result: any = {
     ...toClient[toBeOrNotToBe],
     _originalBody: req.body,
     _help,
-  })
+  }
+  if (!toBeOrNotToBe) result.message = 'Err tetsing'
+
+  return res.status(200).send(result)
 }
