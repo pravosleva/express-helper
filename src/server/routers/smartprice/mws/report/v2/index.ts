@@ -1,5 +1,8 @@
 import express from 'express'
-import { sendReport as sendSsrRdErrorGoogleSheetsReport, rules as ssrRdErrorGoogleSheetsReportRules } from './ssr/rd-errs/send'
+import {
+  rules as ssrRdErrorGoogleSheetsReportRules,
+  // sendReport as sendSsrRdErrorGoogleSheetsReport,
+} from './ssr/rd-errs/send'
 import {
   sendReport as sendOfflineTradeInUploadPhotoGoogleSheetsReport,
   rules as uploadWizardReportRules,
@@ -96,14 +99,17 @@ router.use(spOfflineTradeInPartnerSettingsAnalysis)
 router.post('/run-tg-extra-notifs', runTGExtraNotifs)
 
 // SSR
-router.post('/gapi-rd-errors/send', sendSsrRdErrorGoogleSheetsReport) // Deprecated
+// router.post('/gapi-rd-errors/send', sendSsrRdErrorGoogleSheetsReport) // NOTE: Deprecated
 router.post(
   '/ssr/rd-errs/send',
   withReqParamsValidationMW({
     rules: ssrRdErrorGoogleSheetsReportRules,
   }),
-  sendSsrRdErrorGoogleSheetsReport,
-  )
+  // sendSsrRdErrorGoogleSheetsReport,
+  (_req, res) => {
+    res.status(200).send({ ok: false, message: 'Not supported' })
+  },
+)
 
 // OFFLINE TRADE-IN
 router.post(
