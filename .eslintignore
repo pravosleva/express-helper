@@ -4,3 +4,4 @@ src/frontend.*/*
 node_modules/*
 ./node_modules/**
 **/node_modules/**
+**/google-api-nodejs-client@110.0.0/*
