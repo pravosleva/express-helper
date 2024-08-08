@@ -9,6 +9,7 @@ info:
 host: pravosleva.pro
 basePath: /express-helper/smartprice/otapi/v1/svyaznoy
 schemes:
+  - https
   - http
 tags:
   - name: step1
