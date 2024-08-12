@@ -21,10 +21,10 @@ const isModelsDataValid = (models: any[]) => Array.isArray(models) &&  models.ev
 
 type TState = {
   success: {
-    value: number;
+    counter: number;
   },
   error: {
-    value: number;
+    counter: number;
     // messages: string[],
     responses: any[];
   },
@@ -36,10 +36,10 @@ type TState = {
 
 const state: TState = {
   success: {
-    value: 0,
+    counter: 0,
   },
   error: {
-    value: 0,
+    counter: 0,
     // messages: [],
     responses: [],
   },
@@ -51,9 +51,8 @@ const state: TState = {
 
 const cleanupState = () => {
   state.error.responses = []
-  state.error.value = 0
-
-  state.success.value = 0
+  state.error.counter = 0
+  state.success.counter = 0
 }
 
 const baseFn = async () => {
@@ -73,10 +72,19 @@ const baseFn = async () => {
       const modelsRes = await axios.post('https://api-frontend.uservice.io/car/model/get-list/', {
         mark_id: id,
         lang: 'ru',
-      }).then((r) => r.data)
+      })
+        .then((r) => r.data)
+        .catch((err) => {
+          console.log(err)
+          return {
+            id,
+            name,
+            res: err?.data || 'No data',
+          }
+        })
   
-      if (modelsRes.success === 1 && isModelsDataValid(modelsRes.models)) {
-        state.success.value += 1
+      if (modelsRes.success === 1 && isModelsDataValid(modelsRes?.models)) {
+        state.success.counter += 1
         fs.writeFile(path.join(storagePath, `/${slugify(name.toLowerCase())}.json`), JSON.stringify(modelsRes, null, 2), err => {
           switch (true) {
             case !!err:
@@ -89,9 +97,8 @@ const baseFn = async () => {
               break
           }
         })
-        
       } else {
-        state.error.value += 1
+        state.error.counter += 1
         // state.error.messages.push(`name: ${name}, id: ${id}`)
         state.error.responses.push({
           id,
@@ -115,12 +122,12 @@ const baseFn = async () => {
             chat_id: 432590698, // NOTE: Den Pol
             ts: new Date().getTime(),
             eventCode: 'aux_service',
-            about: `\`/express-helper\`\n✅ #uremont models sync (${state.success.value} of ${max}) is ok!\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
+            about: `\`/express-helper\`\n✅ #uremont models sync (${state.success.counter} of ${max}) is ok!\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
             targetMD: `\`\`\`json\n${JSON.stringify(
               state,
               null,
               2
-            )}\n\`\`\``,
+            )}\`\`\``,
           })
           .then((res) => res.data)
           .catch((err) => err)
@@ -141,12 +148,12 @@ const baseFn = async () => {
         chat_id: 432590698, // NOTE: Den Pol
         ts: new Date().getTime(),
         eventCode: 'aux_service',
-        about: `\`/express-helper\`\n⛔ #uremont models sync errored...\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
+        about: `\`/express-helper\`\n⛔ #uremont models sync errored\n${timeDiff.details} (started ${getTimeAgo(state.ts.start)})`,
         targetMD: `\`\`\`json\n${JSON.stringify(
           state,
           null,
           2
-        )}\n\`\`\``,
+        )}\`\`\``,
       })
       .then((res) => res.data)
       .catch((err) => {
@@ -164,7 +171,7 @@ const baseFn = async () => {
 }
 
 cron.schedule(
-  isDev ? '01 45 04 * * *' : '01 05 09 * * Mon', // Every Mon at 09:05:01
+  isDev ? '01 45 04 * * *' : '01 29 10 * * Mon', // Every Mon at 10:29:01
   baseFn,
   {
     scheduled: true,

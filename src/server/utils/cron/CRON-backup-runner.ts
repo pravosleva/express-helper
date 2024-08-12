@@ -22,13 +22,13 @@ const counter = Counter()
     "make-backup:backup-15min": "bash dir-copy.sh storage /backup/backup-15min",
 } */
 const cfg = {
-    // 'backup-15min': '15,30,45,0 * * * *', // Every 15 min
-    'backup-20min': '20,40,59 * * * *',
-    // 'backup-1hour': '59 15 * * *', // Every day at 15:59
-    // 'backup-24h': '2 1 * * *', // Every day at 01:02
-    // 'backup-1month': '* * 20 * *', // Every 20 day of moth
-    // 'backup-sun': '* * * Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec Sun', // Running on Sundays of all months
-    // 'backup-2months': '* * * Jan,Mar,May,Jul,Sep,Nov *',
+  // 'backup-15min': '15,30,45,0 * * * *', // Every 15 min
+  'backup-20min': '20,40,59 * * * *',
+  // 'backup-1hour': '59 15 * * *', // Every day at 15:59
+  // 'backup-24h': '2 1 * * *', // Every day at 01:02
+  // 'backup-1month': '* * 20 * *', // Every 20 day of moth
+  // 'backup-sun': '* * * Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec Sun', // Running on Sundays of all months
+  // 'backup-2months': '* * * Jan,Mar,May,Jul,Sep,Nov *',
 }
 // ---
 
@@ -140,58 +140,58 @@ Object.keys(cfg).forEach((dirName, i) => {
 })
 
 const syncBackupState = () => {
-    createFileIfNecessary(backupStateFilePath)
+  createFileIfNecessary(backupStateFilePath)
 
-    const isFirstScriptRun = counter.next().value === 0
+  const isFirstScriptRun = counter.next().value === 0
 
-    let oldStatic: { data: { [key: string]: any }, ts: number, locked: string | null }
-    try {
-        oldStatic = getStaticJSONSync(backupStateFilePath)
-        // console.log(oldStatic.data)
-        if (!oldStatic?.data || !oldStatic.ts) throw new Error('#ERR20220217-15:49 Incorrect static data')
-    } catch (err) {
-        // TODO: Сделать нормальные логи
-        console.log('ERR#CHAT-BACKUP-STATE')
-        console.log(err)
+  let oldStatic: { data: { [key: string]: any }, ts: number, locked: string | null }
+  try {
+    oldStatic = getStaticJSONSync(backupStateFilePath)
+    // console.log(oldStatic.data)
+    if (!oldStatic?.data || !oldStatic.ts) throw new Error('#ERR20220217-15:49 Incorrect static data')
+  } catch (err) {
+    // TODO: Сделать нормальные логи
+    console.log('ERR#CHAT-BACKUP-STATE')
+    console.log(err)
 
-        // --- NOTE: lock latest
-        const lockedLatestBackup = cronStateInstance.lockLatest()
-        if (!!lockedLatestBackup) console.log(`LOCKED BACKUP: ${lockedLatestBackup}`)
+    // --- NOTE: lock latest
+    const lockedLatestBackup = cronStateInstance.lockLatest()
+    if (!!lockedLatestBackup) console.log(`LOCKED BACKUP: ${lockedLatestBackup}`)
 
-        // TODO: Отправить Денису в телегу "Плохие и хорошие новости! Бэкап ${lockedLatestBackup} пригодится")
-        // ---
+    // TODO: Отправить Денису в телегу "Плохие и хорошие новости! Бэкап ${lockedLatestBackup} пригодится")
+    // ---
 
-        oldStatic = { data: {}, ts: 0, locked: null }
-    }
-    const staticData: { [key: string]: { ts: number, descr: string } } = oldStatic.data
-    const oldLocked: string | null = oldStatic.locked
-    const ts = new Date().getTime()
+    oldStatic = { data: {}, ts: 0, locked: null }
+  }
+  const staticData: { [key: string]: { ts: number, descr: string } } = oldStatic.data
+  const oldLocked: string | null = oldStatic.locked
+  const ts = new Date().getTime()
 
-    if (isFirstScriptRun) {
-        // NOTE: Sync with old state:
-        Object.keys(staticData).forEach((name: string) => {
-          const modifiedState: { ts: number, descr: string } = staticData[name]
-          
-          cronStateInstance.set(name, modifiedState)
-        })
-    }
+  if (isFirstScriptRun) {
+    // NOTE: Sync with old state:
+    Object.keys(staticData).forEach((name: string) => {
+      const modifiedState: { ts: number, descr: string } = staticData[name]
+      
+      cronStateInstance.set(name, modifiedState)
+    })
+  }
 
-    const currentBackupState: { [key: string]: { ts: number, descr: string } } = [...cronStateInstance.keys()].reduce((acc, backupName: string) => { acc[backupName] = cronStateInstance.get(backupName); return acc }, {})
-    const newStaticData = merge(staticData, currentBackupState)
+  const currentBackupState: { [key: string]: { ts: number, descr: string } } = [...cronStateInstance.keys()].reduce((acc, backupName: string) => { acc[backupName] = cronStateInstance.get(backupName); return acc }, {})
+  const newStaticData = merge(staticData, currentBackupState)
 
-    writeStaticJSONAsync(backupStateFilePath, { data: newStaticData, ts, locked: cronStateInstance.getLocked() || oldLocked || null }, true)
+  writeStaticJSONAsync(backupStateFilePath, { data: newStaticData, ts, locked: cronStateInstance.getLocked() || oldLocked || null }, true)
 }
 
 createPollingByConditions({
-    cb: () => {
-      console.log('cb called')
-    },
-    interval: 60000,
-    callbackAsResolve: () => {
-      syncBackupState()
-    },
-    toBeOrNotToBe: () => true, // Need to retry again
-    callbackAsReject: () => {
-      console.log('NOWHERE')
-    },
+  cb: () => {
+    console.log('cb called')
+  },
+  interval: 60000,
+  callbackAsResolve: () => {
+    syncBackupState()
+  },
+  toBeOrNotToBe: () => true, // Need to retry again
+  callbackAsReject: () => {
+    console.log('NOWHERE')
+  },
 })
