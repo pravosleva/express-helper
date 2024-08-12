@@ -75,11 +75,18 @@ const baseFn = async () => {
       })
         .then((r) => r.data)
         .catch((err) => {
-          console.log(err)
+          if (typeof err?.toJSON === 'function') {
+            const resAsJson = err?.toJSON()
+
+            return {
+              success: 0,
+              details: resAsJson.message,
+            }
+          } else console.log(err)
+          // NOTE: Custom result
           return {
-            id,
-            name,
-            res: err?.data || 'No data',
+            success: 0,
+            details: err?.response?.status || err?.message || `Не удалось обработать данные (err?.data is ${typeof err?.data})`,
           }
         })
   
@@ -171,7 +178,7 @@ const baseFn = async () => {
 }
 
 cron.schedule(
-  isDev ? '01 45 04 * * *' : '01 29 10 * * Mon', // Every Mon at 10:29:01
+  isDev ? '01 45 04 * * *' : '01 10 11 * * Mon', // Every Mon at 11:10:01
   baseFn,
   {
     scheduled: true,
