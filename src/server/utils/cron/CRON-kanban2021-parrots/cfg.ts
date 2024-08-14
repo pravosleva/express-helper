@@ -19,7 +19,7 @@ export const cfg: TCfg = [
   {
     id: 1,
     _descr: 'Еженедельная напоминалка по выполненным задачам SmartPrice (на тестировании)',
-    isEnabled: true,
+    isEnabled: false,
     // cronSetting: '0 11 * * Mon', // Every Mon at 11:00
     cronSetting: '5 10 * * *', // Every day at 10:05
     // cronSetting: '44 13 * * Thu',
@@ -114,7 +114,7 @@ export const cfg: TCfg = [
   {
     id: 2,
     _descr: 'Ежедневная напоминалка по задачам SmartPrice (daily deploy after 21:00)',
-    isEnabled: true,
+    isEnabled: false,
     cronSetting: '5 0 21 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 21:00:05
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['sp.pravosleva'],
@@ -224,7 +224,7 @@ export const cfg: TCfg = [
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         chat_id: 432590698, // NOTE: Den Pol
-        eventCode: 'sp_reminder_daily',
+        eventCode: 'magaz_reminder_daily',
         about: ({
           msgs,
           targetHashtags,
@@ -414,8 +414,8 @@ export const cfg: TCfg = [
       return result
     },
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
-    targetRooms: ['magaz'],
-    targetHashtags: ['#sprintWeeklyReminder', '#краснаяАкула'],
+    targetRooms: ['magaz', 'sp.pravosleva'],
+    targetHashtags: [], // ['#sprintWeeklyReminder', '#краснаяАкула'],
     targetStatuses: [EMessageStatus.Info, EMessageStatus.Warn, EMessageStatus.Danger],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
