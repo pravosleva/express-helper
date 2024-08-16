@@ -178,7 +178,7 @@ const baseFn = async () => {
 }
 
 cron.schedule(
-  isDev ? '01 45 04 * * *' : '01 10 11 * * Mon', // Every Mon at 11:10:01
+  isDev ? '01 45 04 * * *' : '01 02 09 * * Mon', // Every Mon at 09:02:01
   baseFn,
   {
     scheduled: true,
