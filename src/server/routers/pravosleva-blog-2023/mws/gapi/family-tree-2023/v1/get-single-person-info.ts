@@ -404,8 +404,8 @@ const persons = {
       lastName: 'Dereventsova',
     },
   },
-  'ury-nik-dereventsov.[06-07-1947]': {
-    id: 'ury-nik-dereventsov.[06-07-1947]',
+  'ury-nik-dereventsov.[06-07-1947][08-09-2024]': {
+    id: 'ury-nik-dereventsov.[06-07-1947][08-09-2024]',
     baseInfo: {
       firstName: 'Ury',
       middleName: 'Nikolaevich',
