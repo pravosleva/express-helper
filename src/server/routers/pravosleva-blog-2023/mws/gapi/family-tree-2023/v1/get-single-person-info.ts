@@ -649,7 +649,7 @@ const persons = {
     baseInfo: {
       firstName: 'Varvara',
       middleName: 'Nikitishna',
-      lastName: 'Chernokalova (Razumnaya)',
+      lastName: 'Chernokalova',
     },
   },
   'darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]': {

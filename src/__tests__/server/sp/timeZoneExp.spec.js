@@ -14,7 +14,8 @@ describe('timeZoneExp', () => {
     }
     const expected = {
       ts: 1716750960475,
-      uiDate: '2024-5-26 22:16:00',
+      // uiDate: '2024-5-26 22:16:00', // NOTE: node@12.17.0
+      uiDate: '26.05.2024, 22:16:00', // NOTE: node@18.14.0
     }
 
     expect(tested).toEqual(expected)
