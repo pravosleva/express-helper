@@ -101,7 +101,7 @@ export const cfg: TCfg = [
     id: 6,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 11 30 * *', // NOTE: Every month 30ty at 11:01:15
+    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 11 1 * *', // NOTE: Every month 1 at 11:01:15
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
@@ -112,6 +112,7 @@ export const cfg: TCfg = [
         targetMD: () => [
           'Квартплата (квитанция обычно приходит c 30 по 1 числа)',
           'Фрязино, Мира, 19-328',
+          'Сдвинули напоминалку на 1 число, а то приходили до момета, когда в сбербанке счета сформированы',
         ].join('\n'),
       },
     },
@@ -120,7 +121,7 @@ export const cfg: TCfg = [
     id: 7,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 2 11 30 * *', // NOTE: Every month 30ty at 11:02:15
+    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 2 11 1 * *', // NOTE: Every month 1 at 11:02:15
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
@@ -131,6 +132,7 @@ export const cfg: TCfg = [
         targetMD: () => [
           'Квартплата (квитанция обычно приходит c 30 по 1 числа)',
           'Фрязино, Десантников, 3-112',
+          'Сдвинули напоминалку на 1 число, а то приходили до момета, когда в сбербанке счета сформированы',
         ].join('\n'),
       },
     },
