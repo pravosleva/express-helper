@@ -36,7 +36,7 @@ export const addEntryRoute = async (req: IRequest & { botStorageFilePath: string
       res.startTime('read_storage_file_sync', req.botStorageFilePath);
       const { entryData: { contact: { user_id } } } = userState
   
-      const staticData: TStaticData = getStaticJSONSync(req.botStorageFilePath)
+      const staticData: TStaticData = getStaticJSONSync<TStaticData>(req.botStorageFilePath, {})
       res.endTime('read_storage_file_sync');
       const ts = new Date().getTime()
       let myNewData: TUserData = { ...userState }

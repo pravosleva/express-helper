@@ -56,7 +56,7 @@ export const getProjectReport = async (req: IRequest & { autopark2022StorageFile
   if (!!req.autopark2022StorageFilePath) {
     try {
       res.startTime('read_storage_file_sync_1', 'Read static file')
-      const staticData: TStaticData = getStaticJSONSync(req.autopark2022StorageFilePath)
+      const staticData: TStaticData = getStaticJSONSync<TStaticData>(req.autopark2022StorageFilePath, {})
       res.endTime('read_storage_file_sync_1')
       res.setMetric('db', 100.0, 'Database metric');
       const userData: TUserData = staticData[String(chat_id)]

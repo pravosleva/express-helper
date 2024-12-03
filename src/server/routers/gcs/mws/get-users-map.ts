@@ -26,7 +26,7 @@ export const getUsersMap = async (req: IRequest & { gcsUsersMapInstance: UsersMa
 
   try {
     const state = req.gcsUsersMapInstance.getState()
-    const _staticData = getStaticJSONSync(req.gcsStorageFilePath)
+    const _staticData = getStaticJSONSync<any>(req.gcsStorageFilePath, {})
 
     return res.status(200).json({
       success: true,

@@ -90,14 +90,16 @@ const mergeData = (oldData: { data: TData, tsUpdate: number }, freshData: { data
   }
 }
 
+type TState = { data?: { [key: string]: TRoomNotifs }, ts?: number }
+
 const syncRegistryMap = () => {
   const isFirstScriptRun = counter.next().value === 0
 
   try {
     if (!!storageCommonNotifsMapFilePath) {
-      let oldStatic: { data: { [key: string]: TRoomNotifs }, ts: number }
+      let oldStatic: TState
       try {
-        oldStatic = getStaticJSONSync(storageCommonNotifsMapFilePath)
+        oldStatic = getStaticJSONSync<TState>(storageCommonNotifsMapFilePath, {})
         // console.log(oldStatic.data)
         if (!oldStatic?.data || !oldStatic.ts) {
           console.log(oldStatic)

@@ -35,7 +35,7 @@ export const checkAutoparkUserPassword = async (req: IRequest & { autopark2022St
 
   if (!!req.autopark2022StorageFilePath) {
     try {
-      const staticData: TStaticData = getStaticJSONSync(req.autopark2022StorageFilePath)
+      const staticData: TStaticData = getStaticJSONSync<TStaticData>(req.autopark2022StorageFilePath, {})
       const isUserExists = !!staticData[String(chat_id)]
       const response: any = { ok: false }
 

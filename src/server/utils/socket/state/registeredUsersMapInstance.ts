@@ -81,6 +81,8 @@ class Singleton {
   }
 }
 
+type TState = { data: { [key: string]: { passwordHash: string, registryLevel?: ERegistryLevel, tokens?: string[] } }, ts: number }
+
 export const registeredUsersMapInstance = Singleton.getInstance()
 
 const syncRegistryMap = () => {
@@ -88,9 +90,9 @@ const syncRegistryMap = () => {
 
   try {
     if (!!storageRegistryMapFilePath) {
-      let oldStatic: { data: { [key: string]: { passwordHash: string, registryLevel?: ERegistryLevel, tokens?: string[] } }, ts: number }
+      let oldStatic: TState
       try {
-        oldStatic = getStaticJSONSync(storageRegistryMapFilePath)
+        oldStatic = getStaticJSONSync<TState>(storageRegistryMapFilePath, { data:{}, ts: 1 })
         if (!oldStatic?.data || !oldStatic.ts) {
           console.log(oldStatic)
           throw new Error('ERR#CHAT.SOCKET_121.2: incorrect static data')

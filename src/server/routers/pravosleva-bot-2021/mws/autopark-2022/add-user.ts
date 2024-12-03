@@ -30,7 +30,7 @@ export const addAutoparkUser = async (req: IRequest & { autopark2022StorageFileP
     try {
       const { chat_id } = tg
   
-      const staticData: TStaticData = getStaticJSONSync(req.autopark2022StorageFilePath)
+      const staticData: TStaticData = getStaticJSONSync<TStaticData>(req.autopark2022StorageFilePath, {})
       const ts = new Date().getTime()
       const password = getRandomInteger(1000, 9999)
       let myNewData: TUserData = { tg, ts, password }

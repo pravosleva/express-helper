@@ -7,7 +7,37 @@ import slugify from 'slugify'
 const uremontSamplesDir = path.join(__dirname, '../../../storage')
 const storageUremontSamplesFilePath = path.join(uremontSamplesDir, '/uremont-data')
 
-const modelsMap = new Map()
+type TVendorInfo = {
+  success: 1;
+  models: {
+    "id": number;
+    "name": string;
+    "mark_id": number;
+    "sort_id": number;
+    "rating": number;
+    "is_seo_active": number;
+    "rgs_code": string;
+    "generations": {
+      "id": number;
+      "mark_name": string;
+      "model_name": string;
+      "generation_name": string;
+      "start_year": number;
+      "finish_year": number;
+      "image": string;
+      "images": [
+        {
+          "id": number;
+          "thumb_140_140": string;
+          "thumb_34_34": string;
+          "file_url": string;
+        }
+      ]
+    }[];
+  }[];
+}
+
+const modelsMap = new Map<string, TVendorInfo>()
 const getModifiedModelList = (vendorData) => vendorData.models.reduce((acc, cur) => {
   if (!acc.includes(cur.name)) acc.push(cur.name)
   return acc
@@ -43,7 +73,10 @@ export const getModels = async (req: IRequest & { autopark2022StorageFilePath: s
     const modifiedVendorKey = slugify(vendor.toLowerCase())
     if (!modelsMap.has(modifiedVendorKey)) {
       // - NOTE: Try to read
-      const vendorData = getStaticJSONSync(path.join(storageUremontSamplesFilePath, `/${modifiedVendorKey}.json`))
+      const vendorData = getStaticJSONSync<TVendorInfo>(
+        path.join(storageUremontSamplesFilePath,`/${modifiedVendorKey}.json`),
+        null
+      )
 
       if (!!vendorData) modelsMap.set(modifiedVendorKey, vendorData)
       // -

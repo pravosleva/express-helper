@@ -46,14 +46,16 @@ export const roomsTasklistMapInstance = Singleton.getInstance()
 
 const overwriteMerge = (_target, source, _options) => source
 
+type TState = { data: { [roomName: string]: TRoomTasklist }, ts: number }
+
 const syncRoomsTasklistMap = () => {
   const isFirstScriptRun = counter.next().value === 0
 
   try {
     if (!!storageRoomsTasklistMapFilePath) {
-      let oldStatic: { data: { [roomName: string]: TRoomTasklist }, ts: number }
+      let oldStatic: TState
       try {
-        oldStatic = getStaticJSONSync(storageRoomsTasklistMapFilePath)
+        oldStatic = getStaticJSONSync<TState>(storageRoomsTasklistMapFilePath, { data: {}, ts: 1 })
         if (!oldStatic?.data || !oldStatic.ts) {
           console.log(oldStatic)
           throw new Error('ERR#CHAT.SOCKET_131.2: incorrect static data')

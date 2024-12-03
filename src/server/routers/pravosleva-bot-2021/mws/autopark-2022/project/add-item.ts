@@ -66,7 +66,7 @@ export const createAutoparkProjectItem = async (req: IRequest & { autopark2022St
   if (!!req.autopark2022StorageFilePath) {
     try {
       res.startTime('read_storage_file_sync', req.autopark2022StorageFilePath)
-      const staticData: TStaticData = getStaticJSONSync(req.autopark2022StorageFilePath)
+      const staticData: TStaticData = getStaticJSONSync<any>(req.autopark2022StorageFilePath, {})
       res.endTime('read_storage_file_sync')
       const ts = new Date().getTime()
       const oldProjects = !!staticData[String(chat_id)] ? staticData[String(chat_id)].projects : {}

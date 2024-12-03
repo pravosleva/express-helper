@@ -38,7 +38,7 @@ export const getUserProjects = async (req: IRequest & { autopark2022StorageFileP
       const { chat_id } = tg
       
       res.startTime('read_storage_file_sync', req.autopark2022StorageFilePath)
-      const staticData: TStaticData = getStaticJSONSync(req.autopark2022StorageFilePath)
+      const staticData: TStaticData = getStaticJSONSync<TStaticData>(req.autopark2022StorageFilePath, {})
       res.endTime('read_storage_file_sync')
 
       if (!staticData[String(chat_id)]) return res.status(200).json({

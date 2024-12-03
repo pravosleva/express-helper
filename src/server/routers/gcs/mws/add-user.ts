@@ -34,7 +34,7 @@ export const addUser = async (req: IRequest & { gcsUsersMapInstance: UsersMapSin
   const storageFilePath = getStorageFilePath(from)
 
   if (!!storageFilePath) {
-    const staticData = getStaticJSONSync(storageFilePath)
+    const staticData = getStaticJSONSync<any>(storageFilePath, {})
     const ts = new Date().getTime()
     let myNewData: any = { ...chatData }
     const myOldData = staticData[uniqueKey]

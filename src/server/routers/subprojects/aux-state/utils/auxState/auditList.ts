@@ -6,6 +6,13 @@ import { NAuditList } from '~/routers/subprojects/aux-state/types'
 
 type TGlobalStateFormat = Map<number, NAuditList.TAudit[]>
 
+type TState = {
+  data: {
+    [key: string]: NAuditList.TAudit[];
+  };
+  ts: number;
+}
+
 class Singleton {
   private static instance: Singleton;
   state: TGlobalStateFormat;
@@ -18,17 +25,14 @@ class Singleton {
     this.state = new Map()
     // NOTE: Init cache
     try {
-      const json: {
-        data: {
-          [key: string]: NAuditList.TAudit[];
-        };
-        ts: number;
-      } = getStaticJSONSync(this.rootStorageFile)
+      const json: TState = getStaticJSONSync<TState | null>(this.rootStorageFile, null)
+
+      if (!json) throw new Error('Неожиданное содержимое файла')
 
       for (const key in json.data) this.state.set(Number(key), json.data[key])
-    } catch (err) {
+    } catch (err: any) {
       console.log(err)
-      throw new Error('⛔ Что-то пошло не так')
+      throw new Error(`⛔ Что-то пошло не так: ${err?.message || 'No err?.message'}`)
     }
   }
 

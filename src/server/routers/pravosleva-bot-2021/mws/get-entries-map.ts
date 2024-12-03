@@ -4,7 +4,7 @@ import { getStaticJSONSync } from '../../../utils/fs-tools'
 
 export const getEntriesMapRoute = async (req: IRequest & { botStorageFilePath: string }, res: IResponse) => {
   try {
-    const staticData = getStaticJSONSync(req.botStorageFilePath)
+    const staticData = getStaticJSONSync<any>(req.botStorageFilePath, {})
 
     return res.status(200).json({
       success: true,

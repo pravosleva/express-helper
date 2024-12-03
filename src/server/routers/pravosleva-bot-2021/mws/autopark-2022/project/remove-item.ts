@@ -61,7 +61,7 @@ export const removeAutoparkProjectItem = async (req: IRequest & { autopark2022St
 
   if (!!req.autopark2022StorageFilePath) {
     try {
-      const staticData: TStaticData = getStaticJSONSync(req.autopark2022StorageFilePath)
+      const staticData: TStaticData = getStaticJSONSync<TStaticData>(req.autopark2022StorageFilePath, {})
       const ts = new Date().getTime()
       const oldProjects = !!staticData[String(chat_id)] ? staticData[String(chat_id)].projects : []
       const myNewData: TUserData = { ...staticData[String(chat_id)], projects: oldProjects }

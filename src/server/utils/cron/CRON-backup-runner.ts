@@ -139,16 +139,18 @@ Object.keys(cfg).forEach((dirName, i) => {
   })
 })
 
+type TState = { data: { [key: string]: any }, ts: number, locked: string | null }
+
 const syncBackupState = () => {
   createFileIfNecessary(backupStateFilePath)
 
   const isFirstScriptRun = counter.next().value === 0
 
-  let oldStatic: { data: { [key: string]: any }, ts: number, locked: string | null }
+  let oldStatic: TState | null
   try {
-    oldStatic = getStaticJSONSync(backupStateFilePath)
+    oldStatic = getStaticJSONSync<TState>(backupStateFilePath, null)
     // console.log(oldStatic.data)
-    if (!oldStatic?.data || !oldStatic.ts) throw new Error('#ERR20220217-15:49 Incorrect static data')
+    if (!oldStatic?.data || !oldStatic.ts) throw new Error('#ERR20220217-15:49 [BACKUP ERROR] Incorrect static data')
   } catch (err) {
     // TODO: Сделать нормальные логи
     console.log('ERR#CHAT-BACKUP-STATE')
@@ -158,10 +160,13 @@ const syncBackupState = () => {
     const lockedLatestBackup = cronStateInstance.lockLatest()
     if (!!lockedLatestBackup) console.log(`LOCKED BACKUP: ${lockedLatestBackup}`)
 
-    // TODO: Отправить Денису в телегу "Плохие и хорошие новости! Бэкап ${lockedLatestBackup} пригодится")
+    // const lockedBackupName = dirName === 'backup-20min' ? 'backup-15min' : 'backup-20min'
+    const locked = cronStateInstance.getLocked()
+
+    // TODO: Отправить админу в телегу "Плохие и хорошие новости! Бэкап ${lockedLatestBackup} пригодится")
     // ---
 
-    oldStatic = { data: {}, ts: 0, locked: null }
+    oldStatic = { data: {}, ts: 0, locked }
   }
   const staticData: { [key: string]: { ts: number, descr: string } } = oldStatic.data
   const oldLocked: string | null = oldStatic.locked

@@ -516,14 +516,16 @@ class Singleton {
 export const roomsMapInstance = Singleton.getInstance()
 // const tsSortDEC = (e1: TMessage, e2: TMessage) => e1.ts - e2.ts
 
+type TState = { data: { [roomName: string]: TRoomData }, ts: number }
+
 const syncRoomsMap = () => {
   const isFirstScriptRun = counter.next().value === 0
 
   try {
     if (!!storageRoomsFilePath) {
-      let oldStatic: { data: { [roomName: string]: TRoomData }, ts: number }
+      let oldStatic: TState
       try {
-        oldStatic = getStaticJSONSync(storageRoomsFilePath)
+        oldStatic = getStaticJSONSync<TState>(storageRoomsFilePath, { data: {}, ts: 1 })
         if (!oldStatic?.data || !oldStatic.ts) {
           console.log(oldStatic)
           throw new Error('ERR#CHAT.SOCKET_111.2: incorrect static data')

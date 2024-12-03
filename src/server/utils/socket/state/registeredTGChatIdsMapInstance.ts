@@ -57,6 +57,8 @@ class Singleton {
   }
 }
 
+type TState = { data: { [key: string]: string }, ts: number }
+
 export const registeredTGChatIdsMapInstance = Singleton.getInstance()
 
 const syncRegistryMap = () => {
@@ -66,7 +68,7 @@ const syncRegistryMap = () => {
     if (!!storageTGChatIdsMapFilePath) {
       let oldStatic: { data: { [key: string]: string }, ts: number }
       try {
-        oldStatic = getStaticJSONSync(storageTGChatIdsMapFilePath)
+        oldStatic = getStaticJSONSync<TState>(storageTGChatIdsMapFilePath, { data: {}, ts: 1 })
         if (!oldStatic?.data || !oldStatic.ts) {
           console.log(oldStatic)
           throw new Error('#ERR2021121816:03 Incorrect static data')
