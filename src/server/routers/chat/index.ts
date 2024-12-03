@@ -30,23 +30,24 @@ const storageRoomsFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_ST
 const storageRegistryMapFilePath = path.join(projectRootDir, '/storage', CHAT_PASSWORD_HASHES_MAP_FILE_NAME)
 const storageRoomsTasklistMapFilePath = path.join(projectRootDir, '/storage', CHAT_ROOMS_TASKLIST_MAP_FILE_NAME)
 
-const createFileIfNecessary = (storageUsersFilePath: string): void => {
-  const isStorageFileExists = fs.existsSync(storageUsersFilePath)
+const createFileIfNecessary = (storageFilePath: string): void => {
+  const isStorageFileExists = fs.existsSync(storageFilePath)
 
   if (!isStorageFileExists) {
     const ts = new Date().getTime()
     try {
-      fs.appendFileSync(storageUsersFilePath, `{"data":{},"ts":${ts}}`, 'utf8')
+      fs.appendFileSync(storageFilePath, `{"data":{},"ts":${ts}}`, 'utf8')
     } catch (err) {
       // eslint-disable-next-line no-console
       console.log(err)
       throw err
     }
-  }
+  } else console.log(`File exists: ${storageFilePath}`)
 }
 
 try {
   [
+    storageUsersFilePath,
     storageRoomsFilePath,
     storageRegistryMapFilePath,
     storageRoomsTasklistMapFilePath,

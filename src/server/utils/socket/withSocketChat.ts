@@ -231,20 +231,27 @@ export const withSocketChat = (io: Socket) => {
     // --
 
     socket.on('setMeAgain', ({ name, room, token }, cb) => {
-      // ---
-      const myRegData = registeredUsersMap.get(name)
+      try {
+        if (!name || !room)
+          throw new Error('Попробуйте перезайти')
 
-      // @ts-ignore
-      var rooms = io.sockets.adapter.sids[socket.id]
-      for (let r in rooms) socket.leave(r)
-      // --
+        // ---
+        const myRegData = registeredUsersMap.get(name)
 
-      const { passwordHash, ...restRegData } = myRegData
+        if (!myRegData)
+          throw new Error('Данные пользователя не обнаружены')
 
-      socket.emit('my.user-data', !!myRegData ? { ...restRegData, _frontMinorVersionSupport: Number(frontMinorVersionSupport) } : null)
-      // ---
-      if (!name || !room) {
-        cb('Попробуйте перезайти')
+        // @ts-ignore
+        var rooms = io.sockets.adapter.sids[socket.id]
+        for (let r in rooms) socket.leave(r)
+        // --
+
+        const { passwordHash, ...restRegData } = myRegData
+
+        socket.emit('my.user-data', !!myRegData ? { ...restRegData, _frontMinorVersionSupport: Number(frontMinorVersionSupport) } : null)
+        // ---
+      } catch (err) {
+        cb(`ERR: ${err?.message || 'No err?.message'}`)
         return
       }
 
