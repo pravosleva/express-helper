@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { isValidJsonString } from '../validator'
 
-export const getStaticJSONSync = (storageFilePath: string): any => {
+export const getStaticJSONSync = (storageFilePath: string) => {
   let text: string = ''
 
   try {
@@ -12,7 +12,10 @@ export const getStaticJSONSync = (storageFilePath: string): any => {
     console.log(err)
   }
 
-  let data = {}
+  let data = {
+    data: {},
+    ts: 1,
+  }
   if (isValidJsonString(text)) data = JSON.parse(text)
 
   return data
