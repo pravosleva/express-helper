@@ -141,14 +141,17 @@ export const cfg: TCfg = [
     id: 8,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: '01 40 14 * * *', // Every day at 14:40:01
+    cronSetting: '01 40 14 * * monday-friday', // Every weekday at 14:40:01
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         chat_id: 432590698, // NOTE: Den
         eventCode: 'single_reminder',
-        about: () => '_Reminder_',
-        targetMD: () => '[Daily Meeting](https://telemost.yandex.ru/j/0580104877) 15:00'
+        about: () => '_Daily Meeting 15-15:30_',
+        targetMD: () => [
+          '[Daily Meeting](https://telemost.yandex.ru/j/0580104877) 15:00\n',
+          'На встрече обсуждаем что сделали, что планируем сделать, с какими трудностями столкнулись в процессе выполнения работы.',
+        ].join('\n')
       },
     },
   },
@@ -165,6 +168,49 @@ export const cfg: TCfg = [
         eventCode: 'single_reminder',
         about: () => '_Reminder_',
         targetMD: () => 'Weekly Meeting [Mains Lab - General] 16:00'
+      },
+    },
+  },
+  {
+    id: 10,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: '01 45 11 * * friday', // Every friday at 11:45:01
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: 432590698, // NOTE: Den
+        eventCode: 'single_reminder',
+        about: () => 'Weekly Meeting [Ретроспектива] Пт 12-13',
+        targetMD: () => [
+          '[Weekly Meeting)[https://telemost.yandex.ru/j/4711375343] 12:00\n',
+          'Еженедельная командная встреча, на которой обсуждаем:',
+          '- Положительные/отрицательные моменты за прошедшую неделю',
+          '- Проблемы, с которыми столкнулись и способы их решения',
+          '- Предложения по изменению процессов внутри команды.',
+        ].join('\n')
+      },
+    },
+  },
+  {
+    id: 11,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: '01 45 11 * * friday', // Every friday at 11:45:01
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: 432590698, // NOTE: Den
+        eventCode: 'single_reminder',
+        about: () => '_Weekly Meeting [Сессия оценки] Ср 12-13_',
+        targetMD: () => [
+          '[Weekly Meeting)[https://telemost.yandex.ru/j/4530254394] 12:00\n',
+          'Встреча по оценке задач:',
+          '- Аналитик, ответственный за задачу, рассказывает команде цель, требования к реализации.',
+          '- Команда задаёт вопросы',
+          '- Каждый член команды даёт оценку в часах на выполнение своей части задачи.',
+          '- Аналитик создаёт подзадачи и вносит оценки.',
+        ].join('\n')
       },
     },
   },
