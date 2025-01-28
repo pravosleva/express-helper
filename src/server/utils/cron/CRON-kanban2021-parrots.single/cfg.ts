@@ -137,4 +137,35 @@ export const cfg: TCfg = [
       },
     },
   },
+  {
+    id: 8,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: '01 40 14 * * *', // Every day at 14:40:01
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: 432590698, // NOTE: Den
+        eventCode: 'single_reminder',
+        about: () => '_Reminder_',
+        targetMD: () => '[Daily Meeting](https://telemost.yandex.ru/j/0580104877) 15:00'
+      },
+    },
+  },
+  // NOTE: See also doc https://stackoverflow.com/questions/31260837/how-to-run-a-cron-job-on-every-monday-wednesday-and-friday
+  {
+    id: 9,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: '01 40 15 * * friday', // Every friday at 15:40:01
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: 432590698, // NOTE: Den
+        eventCode: 'single_reminder',
+        about: () => '_Reminder_',
+        targetMD: () => 'Weekly Meeting [Mains Lab - General] 16:00'
+      },
+    },
+  },
 ]
