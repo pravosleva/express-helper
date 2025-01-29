@@ -141,7 +141,7 @@ export const cfg: TCfg = [
     id: 8,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: '01 40 14 * * monday-friday', // Every weekday at 14:40:01
+    cronSetting: '01 45 14 * * monday-friday', // Every weekday at 14:45:01
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
@@ -160,7 +160,7 @@ export const cfg: TCfg = [
     id: 9,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: '01 40 15 * * friday', // Every friday at 15:40:01
+    cronSetting: '01 45 15 * * friday', // Every friday at 15:45:01
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
