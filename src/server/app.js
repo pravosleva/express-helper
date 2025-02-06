@@ -13,7 +13,7 @@ import chatRouter from './routers/chat'
 // import chatLogin from './routers/chat-login'
 import { EAccessCode, redirect } from './routers/auth/cfg'
 import redirectIfUnloggedMw from './routers/auth/mws/redirect-if-unlogged'
-import mainRouter from './routers/index'
+// import mainRouter from './routers/index'
 import usersRouter from './routers/users'
 import urlMetadataRouter from './routers/url-metadata'
 import reCAPTCHAV3Router from './routers/recaptcha-v3'
@@ -62,11 +62,12 @@ app.use(siofu.router)
 
 // NOTE: Пути до "публичной" статики (та что в ./public/*) указываем относительно <PROJECT_ROOT_DIR>/server-dist
 // (transpiling destination dir) ...или ./bin/www, откуда будет запуск?
+app.use('/free', express.static(path.join(__dirname, '../', 'public'))) // NOTE: Free access
 app.get(
   '/',
   redirectIfUnloggedMw(redirect[EAccessCode.Homepage].jwtSecret, EAccessCode.Homepage),
-  express.static(path.join(__dirname, '../', 'public')),
-  mainRouter
+  express.static(path.join(__dirname, '../', 'public'))
+  // mainRouter
 )
 app.use(express.static(path.join(__dirname, '../', 'public')))
 
