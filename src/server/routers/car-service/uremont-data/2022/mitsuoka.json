@@ -1,0 +1,149 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20427,
+      "name": "Classic Type F",
+      "mark_id": 124,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1322,
+      "name": "Galue",
+      "mark_id": 124,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3056,
+          "mark_name": "Mitsuoka",
+          "model_name": "Galue",
+          "generation_name": "III",
+          "start_year": 2005,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3057,
+          "mark_name": "Mitsuoka",
+          "model_name": "Galue",
+          "generation_name": "II",
+          "start_year": 1999,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3058,
+          "mark_name": "Mitsuoka",
+          "model_name": "Galue",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1324,
+      "name": "Le-Seyde",
+      "mark_id": 124,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "717020716",
+      "generations": [
+        {
+          "id": 3059,
+          "mark_name": "Mitsuoka",
+          "model_name": "Le-Seyde",
+          "generation_name": "1990 – 2001",
+          "start_year": 1990,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1331,
+      "name": "Ryoga",
+      "mark_id": 124,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "717020718",
+      "generations": [
+        {
+          "id": 3060,
+          "mark_name": "Mitsuoka",
+          "model_name": "Ryoga",
+          "generation_name": "II (B15)",
+          "start_year": 2001,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3061,
+          "mark_name": "Mitsuoka",
+          "model_name": "Ryoga",
+          "generation_name": "I (P11)",
+          "start_year": 1998,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1332,
+      "name": "Viewt",
+      "mark_id": 124,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "717020719",
+      "generations": [
+        {
+          "id": 3062,
+          "mark_name": "Mitsuoka",
+          "model_name": "Viewt",
+          "generation_name": "III (K13)",
+          "start_year": 2012,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3063,
+          "mark_name": "Mitsuoka",
+          "model_name": "Viewt",
+          "generation_name": "II (K12)",
+          "start_year": 2005,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3064,
+          "mark_name": "Mitsuoka",
+          "model_name": "Viewt",
+          "generation_name": "I (K11)",
+          "start_year": 1993,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

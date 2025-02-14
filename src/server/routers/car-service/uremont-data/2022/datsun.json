@@ -1,0 +1,433 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 19949,
+      "name": "1200",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19950,
+      "name": "200SX",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19952,
+      "name": "510",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "865022294",
+      "generations": []
+    },
+    {
+      "id": 19953,
+      "name": "610",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19955,
+      "name": "810",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "754021074",
+      "generations": []
+    },
+    {
+      "id": 466,
+      "name": "Cherry",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "261010126",
+      "generations": [
+        {
+          "id": 1035,
+          "mark_name": "Datsun",
+          "model_name": "Cherry",
+          "generation_name": "II",
+          "start_year": 1974,
+          "finish_year": 1978,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1036,
+          "mark_name": "Datsun",
+          "model_name": "Cherry",
+          "generation_name": "I",
+          "start_year": 1970,
+          "finish_year": 1974,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19960,
+      "name": "Laurel",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1038,
+          "mark_name": "Datsun",
+          "model_name": "Laurel",
+          "generation_name": "IV (C21)",
+          "start_year": 1980,
+          "finish_year": 1984,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1039,
+          "mark_name": "Datsun",
+          "model_name": "Laurel",
+          "generation_name": "III",
+          "start_year": 1977,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2268,
+      "name": "mi-Do",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 162,
+      "is_seo_active": 0,
+      "rgs_code": "841022033",
+      "generations": [
+        {
+          "id": 1044,
+          "mark_name": "Datsun",
+          "model_name": "mi-Do",
+          "generation_name": "2015 – 2020",
+          "start_year": 2015,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c6/2c/c62c64e77d04d8a8a0d6acf5227b6337.png",
+          "images": [
+            {
+              "id": 442491,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442491/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442491/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c6/2c/c62c64e77d04d8a8a0d6acf5227b6337.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 469,
+      "name": "on-DO",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 823,
+      "is_seo_active": 0,
+      "rgs_code": "841021962",
+      "generations": [
+        {
+          "id": 1045,
+          "mark_name": "Datsun",
+          "model_name": "on-DO",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2019,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/9c/979c50b1f08e4ca9b03a2c6dd735e8ed.png",
+          "images": [
+            {
+              "id": 442492,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442492/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442492/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/9c/979c50b1f08e4ca9b03a2c6dd735e8ed.png"
+            }
+          ]
+        },
+        {
+          "id": 1046,
+          "mark_name": "Datsun",
+          "model_name": "on-DO",
+          "generation_name": "I",
+          "start_year": 2014,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e1/b7/e1b7b2486708260f91f1c91248faaec3.png",
+          "images": [
+            {
+              "id": 442493,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442493/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442493/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e1/b7/e1b7b2486708260f91f1c91248faaec3.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2238,
+      "name": "Urvan",
+      "mark_id": 47,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "261010576",
+      "generations": [
+        {
+          "id": 1043,
+          "mark_name": "Datsun",
+          "model_name": "Urvan",
+          "generation_name": "E23",
+          "start_year": 1982,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19948,
+      "name": "1000",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19951,
+      "name": "240Z / 260Z / 280Z",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5206,
+          "mark_name": "Datsun",
+          "model_name": "240Z / 260Z / 280Z",
+          "generation_name": "1970 – 1973",
+          "start_year": 1970,
+          "finish_year": 1973,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5207,
+          "mark_name": "Datsun",
+          "model_name": "240Z / 260Z / 280Z",
+          "generation_name": "1975 – 1979",
+          "start_year": 1975,
+          "finish_year": 1979,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19954,
+      "name": "710",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19956,
+      "name": "B-210",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 465,
+      "name": "Bluebird",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "261010087",
+      "generations": [
+        {
+          "id": 1034,
+          "mark_name": "Datsun",
+          "model_name": "Bluebird",
+          "generation_name": "1976 – 1981",
+          "start_year": 1976,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19957,
+      "name": "Cablight",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19958,
+      "name": "Cabstar",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19959,
+      "name": "Fairlady",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "261020585",
+      "generations": []
+    },
+    {
+      "id": 467,
+      "name": "GO",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "841022039",
+      "generations": [
+        {
+          "id": 1037,
+          "mark_name": "Datsun",
+          "model_name": "GO",
+          "generation_name": "2014 – н.в.",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d1/90/d190da5c5c2e9c7fb631f94ded102de2.png",
+          "images": [
+            {
+              "id": 442490,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442490/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442490/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d1/90/d190da5c5c2e9c7fb631f94ded102de2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 468,
+      "name": "GO Plus",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19961,
+      "name": "Patrol",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19962,
+      "name": "Pickup",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 470,
+      "name": "Stanza",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "261010471",
+      "generations": [
+        {
+          "id": 1040,
+          "mark_name": "Datsun",
+          "model_name": "Stanza",
+          "generation_name": "II (T11)",
+          "start_year": 1982,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1041,
+          "mark_name": "Datsun",
+          "model_name": "Stanza",
+          "generation_name": "I (A10)",
+          "start_year": 1977,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 471,
+      "name": "Sunny",
+      "mark_id": 47,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "261010478",
+      "generations": [
+        {
+          "id": 1042,
+          "mark_name": "Datsun",
+          "model_name": "Sunny",
+          "generation_name": "B210",
+          "start_year": 1973,
+          "finish_year": 1983,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

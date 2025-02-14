@@ -1,0 +1,99 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 253,
+      "name": "GN8",
+      "mark_id": 19,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 400,
+          "mark_name": "GAC",
+          "model_name": "GN8",
+          "generation_name": "2020-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 254,
+      "name": "GS5",
+      "mark_id": 19,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 401,
+          "mark_name": "GAC",
+          "model_name": "GS5",
+          "generation_name": "2018-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 255,
+      "name": "GS8",
+      "mark_id": 19,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 402,
+          "mark_name": "GAC",
+          "model_name": "GS8",
+          "generation_name": "2016-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 403,
+          "mark_name": "GAC",
+          "model_name": "GS8",
+          "generation_name": "2021-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 256,
+      "name": "M8 Trumpchi",
+      "mark_id": 19,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 404,
+          "mark_name": "GAC",
+          "model_name": "M8 Trumpchi",
+          "generation_name": "2022-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

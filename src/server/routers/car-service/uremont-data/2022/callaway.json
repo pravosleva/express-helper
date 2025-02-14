@@ -1,0 +1,33 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 233,
+      "name": "C12",
+      "mark_id": 29,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 547,
+          "mark_name": "Callaway",
+          "model_name": "C12",
+          "generation_name": "1998 – 2003",
+          "start_year": 1998,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f7/a4/f7a4290c6bc079fc2d330d257763fa32.png",
+          "images": [
+            {
+              "id": 442349,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442349/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442349/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f7/a4/f7a4290c6bc079fc2d330d257763fa32.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

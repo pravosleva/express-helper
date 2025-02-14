@@ -3,11 +3,11 @@ import { getStaticJSONSync } from '~/utils/fs-tools/getStaticJSONSync'
 import path from 'path'
 import slugify from 'slugify'
 
-// const uremontSamplesDir = path.join(__dirname, './')
-const uremontSamplesDir = path.join(__dirname, '../../../storage')
+const uremontSamplesDir = path.join(__dirname, './')
+// const uremontSamplesDir = path.join(__dirname, '../../../storage')
 const storageUremontSamplesFilePath = path.join(uremontSamplesDir, '/uremont-data')
 
-type TVendorInfo = {
+type TVendorInfo2022 = {
   success: 1;
   models: {
     "id": number;
@@ -37,7 +37,7 @@ type TVendorInfo = {
   }[];
 }
 
-const modelsMap = new Map<string, TVendorInfo>()
+const modelsMap = new Map<string, TVendorInfo2022>()
 const getModifiedModelList = (vendorData) => vendorData.models.reduce((acc, cur) => {
   if (!acc.includes(cur.name)) acc.push(cur.name)
   return acc
@@ -73,7 +73,7 @@ export const getModels = async (req: IRequest & { autopark2022StorageFilePath: s
     const modifiedVendorKey = slugify(vendor.toLowerCase())
     if (!modelsMap.has(modifiedVendorKey)) {
       // - NOTE: Try to read
-      const vendorData = getStaticJSONSync<TVendorInfo>(
+      const vendorData = getStaticJSONSync<TVendorInfo2022>(
         path.join(storageUremontSamplesFilePath,`/${modifiedVendorKey}.json`),
         null
       )

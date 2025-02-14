@@ -1,0 +1,108 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 201,
+      "name": "Challenger",
+      "mark_id": 14,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 320,
+          "mark_name": "Dodge",
+          "model_name": "Challenger",
+          "generation_name": "2008-2010 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 321,
+          "mark_name": "Dodge",
+          "model_name": "Challenger",
+          "generation_name": "2010-2014 (III Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 322,
+          "mark_name": "Dodge",
+          "model_name": "Challenger",
+          "generation_name": "2014-н.в. (III Рестайлинг 2)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 202,
+      "name": "Charger",
+      "mark_id": 14,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 323,
+          "mark_name": "Dodge",
+          "model_name": "Charger",
+          "generation_name": "2010-2014 (VI (LD))",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 324,
+          "mark_name": "Dodge",
+          "model_name": "Charger",
+          "generation_name": "2014-н.в. (VI (LD) Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "name": "RAM",
+      "mark_id": 14,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 325,
+          "mark_name": "Dodge",
+          "model_name": "RAM",
+          "generation_name": "2008-2023 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 326,
+          "mark_name": "Dodge",
+          "model_name": "RAM",
+          "generation_name": "2018-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

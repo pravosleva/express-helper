@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1018,
+      "name": "X6",
+      "mark_id": 98,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2324,
+          "mark_name": "Landwind",
+          "model_name": "X6",
+          "generation_name": "2005 – 2016",
+          "start_year": 2005,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2139 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 19772,
+      "name": "1 серия",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 1258,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5089,
+          "mark_name": "BMW",
+          "model_name": "1 серия",
+          "generation_name": "III (F40)",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/73/9c/739ce8fe6d0845dfe0d870ae1d1b3df2.png",
+          "images": [
+            {
+              "id": 444322,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444322/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444322/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/73/9c/739ce8fe6d0845dfe0d870ae1d1b3df2.png"
+            }
+          ]
+        },
+        {
+          "id": 5090,
+          "mark_name": "BMW",
+          "model_name": "1 серия",
+          "generation_name": "II (F20/F21) Рестайлинг 2",
+          "start_year": 2017,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/dd/b9ddbeb8a8673bb99356152f81c85bed.png",
+          "images": [
+            {
+              "id": 444323,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444323/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444323/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/dd/b9ddbeb8a8673bb99356152f81c85bed.png"
+            }
+          ]
+        },
+        {
+          "id": 5091,
+          "mark_name": "BMW",
+          "model_name": "1 серия",
+          "generation_name": "II (F20/F21) Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/49/9a49499dc852b7dcd51b7eb41dc98618.png",
+          "images": [
+            {
+              "id": 444324,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444324/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444324/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/49/9a49499dc852b7dcd51b7eb41dc98618.png"
+            }
+          ]
+        },
+        {
+          "id": 5092,
+          "mark_name": "BMW",
+          "model_name": "1 серия",
+          "generation_name": "I (E82/E88) Рестайлинг 2",
+          "start_year": 2011,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5093,
+          "mark_name": "BMW",
+          "model_name": "1 серия",
+          "generation_name": "II (F20/F21)",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5094,
+          "mark_name": "BMW",
+          "model_name": "1 серия",
+          "generation_name": "I (E81/E82/E87/E88) Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5095,
+          "mark_name": "BMW",
+          "model_name": "1 серия",
+          "generation_name": "I (E81/E82/E87/E88)",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19773,
+      "name": "2 серия",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 171,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5096,
+          "mark_name": "BMW",
+          "model_name": "2 серия",
+          "generation_name": "G42",
+          "start_year": 2021,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5097,
+          "mark_name": "BMW",
+          "model_name": "2 серия",
+          "generation_name": "F44",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/cd/9dcd72eb57c24f1b861e74d6a8e038c2.png",
+          "images": [
+            {
+              "id": 444325,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444325/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444325/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/cd/9dcd72eb57c24f1b861e74d6a8e038c2.png"
+            }
+          ]
+        },
+        {
+          "id": 5098,
+          "mark_name": "BMW",
+          "model_name": "2 серия",
+          "generation_name": "F22 Рестайлинг",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/ec/e5ecefeadcf9c26bf8a05b74e4ace486.png",
+          "images": [
+            {
+              "id": 444326,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444326/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444326/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e5/ec/e5ecefeadcf9c26bf8a05b74e4ace486.png"
+            }
+          ]
+        },
+        {
+          "id": 5099,
+          "mark_name": "BMW",
+          "model_name": "2 серия",
+          "generation_name": "F22",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/d0/d6d074406f7a5db0d5eeccd67df8b930.png",
+          "images": [
+            {
+              "id": 444327,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444327/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444327/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d6/d0/d6d074406f7a5db0d5eeccd67df8b930.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19775,
+      "name": "3 серия",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 4432,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5100,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "VII (G2x)",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8f/e2/8fe2477b974ef39876569fb77d3b233b.png",
+          "images": [
+            {
+              "id": 444328,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444328/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444328/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8f/e2/8fe2477b974ef39876569fb77d3b233b.png"
+            }
+          ]
+        },
+        {
+          "id": 5101,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "VI (F3x) Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/66/c26650fb270f754fe1747e3c3cfe1c2b.png",
+          "images": [
+            {
+              "id": 444329,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444329/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444329/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/66/c26650fb270f754fe1747e3c3cfe1c2b.png"
+            }
+          ]
+        },
+        {
+          "id": 5102,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "VI (F3x)",
+          "start_year": 2011,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/78/ad/78ad21b2521e557cbff4f014f7d61348.png",
+          "images": [
+            {
+              "id": 444330,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444330/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444330/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/78/ad/78ad21b2521e557cbff4f014f7d61348.png"
+            }
+          ]
+        },
+        {
+          "id": 5103,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "V (E90/E91/E92/E93) Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e2/4a/e24a424468cb3b787e70043993ae8f66.png",
+          "images": [
+            {
+              "id": 444331,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444331/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444331/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e2/4a/e24a424468cb3b787e70043993ae8f66.png"
+            }
+          ]
+        },
+        {
+          "id": 5104,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "V (E90/E91/E92/E93)",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5105,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "IV (E46) Рестайлинг",
+          "start_year": 2001,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c3/2c/c32cd9cb56952afb3d6d9a1a31f18693.png",
+          "images": [
+            {
+              "id": 444332,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444332/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444332/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c3/2c/c32cd9cb56952afb3d6d9a1a31f18693.png"
+            }
+          ]
+        },
+        {
+          "id": 5106,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "IV (E46)",
+          "start_year": 1998,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5107,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "III (E36)",
+          "start_year": 1990,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5108,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "II (E30)",
+          "start_year": 1982,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/82/9d/829d053cdf8c4a05f6d8829ebe77a7ef.png",
+          "images": [
+            {
+              "id": 444333,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444333/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444333/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/82/9d/829d053cdf8c4a05f6d8829ebe77a7ef.png"
+            }
+          ]
+        },
+        {
+          "id": 5109,
+          "mark_name": "BMW",
+          "model_name": "3 серия",
+          "generation_name": "I (E21)",
+          "start_year": 1975,
+          "finish_year": 1983,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a5/41/a541500481a9283b71e06000db3c0166.png",
+          "images": [
+            {
+              "id": 444334,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444334/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444334/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a5/41/a541500481a9283b71e06000db3c0166.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19777,
+      "name": "5 серия",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 4809,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5113,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "VII (G30/G31) Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/38/b438f03142b4b795d57e42b00fde4e7c.png",
+          "images": [
+            {
+              "id": 444338,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444338/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444338/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/38/b438f03142b4b795d57e42b00fde4e7c.png"
+            }
+          ]
+        },
+        {
+          "id": 5114,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "VII (G30/G31)",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/af/d9/afd944370d8f20e61e4b38f2c7abb1e7.png",
+          "images": [
+            {
+              "id": 444339,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444339/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444339/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/af/d9/afd944370d8f20e61e4b38f2c7abb1e7.png"
+            }
+          ]
+        },
+        {
+          "id": 5115,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "VI (F10/F11/F07) Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/67/f8/67f84ebc9a6e759c315e71c7248c202c.png",
+          "images": [
+            {
+              "id": 444340,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444340/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444340/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/67/f8/67f84ebc9a6e759c315e71c7248c202c.png"
+            }
+          ]
+        },
+        {
+          "id": 5116,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "VI (F10/F11/F07)",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c9/5c/c95cd5ad9caaf9f40f033f253de08953.png",
+          "images": [
+            {
+              "id": 444341,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444341/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444341/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c9/5c/c95cd5ad9caaf9f40f033f253de08953.png"
+            }
+          ]
+        },
+        {
+          "id": 5117,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "V (E60/E61) Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/94/3c/943c21e604bd78cbb860b778ce4a0d89.png",
+          "images": [
+            {
+              "id": 444342,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444342/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444342/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/94/3c/943c21e604bd78cbb860b778ce4a0d89.png"
+            }
+          ]
+        },
+        {
+          "id": 5118,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "V (E60/E61)",
+          "start_year": 2002,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a4/78/a4785a1a288404753ae37fda62af0642.png",
+          "images": [
+            {
+              "id": 444343,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444343/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444343/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a4/78/a4785a1a288404753ae37fda62af0642.png"
+            }
+          ]
+        },
+        {
+          "id": 5119,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "IV (E39) Рестайлинг",
+          "start_year": 2000,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/1b/d31b17acb87e489788d5acb8dfc1c733.png",
+          "images": [
+            {
+              "id": 444344,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444344/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444344/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/1b/d31b17acb87e489788d5acb8dfc1c733.png"
+            }
+          ]
+        },
+        {
+          "id": 5120,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "IV (E39)",
+          "start_year": 1995,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/72/0b/720b8b84d8058ee6614c8cacae30eaa7.png",
+          "images": [
+            {
+              "id": 444345,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444345/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444345/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/72/0b/720b8b84d8058ee6614c8cacae30eaa7.png"
+            }
+          ]
+        },
+        {
+          "id": 5121,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "III (E34)",
+          "start_year": 1987,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5122,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "II (E28)",
+          "start_year": 1981,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/90/fa/90facbb221799ea81faf933080797b5f.png",
+          "images": [
+            {
+              "id": 444346,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444346/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444346/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/90/fa/90facbb221799ea81faf933080797b5f.png"
+            }
+          ]
+        },
+        {
+          "id": 5123,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "I (E12) Рестайлинг",
+          "start_year": 1976,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/17/cc/17cc06ded34f7b1fd18e0a31a3da63f1.png",
+          "images": [
+            {
+              "id": 444347,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444347/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444347/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/17/cc/17cc06ded34f7b1fd18e0a31a3da63f1.png"
+            }
+          ]
+        },
+        {
+          "id": 5124,
+          "mark_name": "BMW",
+          "model_name": "5 серия",
+          "generation_name": "I (E12)",
+          "start_year": 1972,
+          "finish_year": 1976,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b5/ad/b5ad42b53687d8b6c669a63a6b9c37f5.png",
+          "images": [
+            {
+              "id": 444348,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444348/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444348/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b5/ad/b5ad42b53687d8b6c669a63a6b9c37f5.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19778,
+      "name": "6 серия",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 200,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5125,
+          "mark_name": "BMW",
+          "model_name": "6 серия",
+          "generation_name": "IV (G32) Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5126,
+          "mark_name": "BMW",
+          "model_name": "6 серия",
+          "generation_name": "IV (G32)",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/52/a152e44ed626fcde1d58a9e10ec15aa3.png",
+          "images": [
+            {
+              "id": 444349,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444349/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444349/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/52/a152e44ed626fcde1d58a9e10ec15aa3.png"
+            }
+          ]
+        },
+        {
+          "id": 5127,
+          "mark_name": "BMW",
+          "model_name": "6 серия",
+          "generation_name": "III (F06/F13/F12) Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/86/66/866605222befd50ad058b4bc18e76bdd.png",
+          "images": [
+            {
+              "id": 444350,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444350/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444350/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/86/66/866605222befd50ad058b4bc18e76bdd.png"
+            }
+          ]
+        },
+        {
+          "id": 5128,
+          "mark_name": "BMW",
+          "model_name": "6 серия",
+          "generation_name": "III (F06/F13/F12)",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/6a/446aa4bf27006763883cc01974cacad9.png",
+          "images": [
+            {
+              "id": 444351,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444351/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444351/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/6a/446aa4bf27006763883cc01974cacad9.png"
+            }
+          ]
+        },
+        {
+          "id": 5129,
+          "mark_name": "BMW",
+          "model_name": "6 серия",
+          "generation_name": "II (E63/E64) Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/67/ed67800e0142016fb261e02b463d39ef.png",
+          "images": [
+            {
+              "id": 444352,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444352/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444352/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/67/ed67800e0142016fb261e02b463d39ef.png"
+            }
+          ]
+        },
+        {
+          "id": 5130,
+          "mark_name": "BMW",
+          "model_name": "6 серия",
+          "generation_name": "II (E63/E64)",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/3c/683c18c0de2fc9790ff0d753ba40ffba.png",
+          "images": [
+            {
+              "id": 444353,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444353/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444353/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/68/3c/683c18c0de2fc9790ff0d753ba40ffba.png"
+            }
+          ]
+        },
+        {
+          "id": 5131,
+          "mark_name": "BMW",
+          "model_name": "6 серия",
+          "generation_name": "I (E24)",
+          "start_year": 1976,
+          "finish_year": 1989,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/78/64/78644317f27cd34a1676e0b34e0142ba.png",
+          "images": [
+            {
+              "id": 444354,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444354/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444354/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/78/64/78644317f27cd34a1676e0b34e0142ba.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19779,
+      "name": "7 серия",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 870,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5132,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "VI (G11/G12) Рестайлинг",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/1e/1a1e699761f6d0dc94d2dc2148d2e334.png",
+          "images": [
+            {
+              "id": 444355,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444355/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444355/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/1e/1a1e699761f6d0dc94d2dc2148d2e334.png"
+            }
+          ]
+        },
+        {
+          "id": 5133,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "VI (G11/G12)",
+          "start_year": 2015,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/ed/d3ed1a4e8024288dc7e8a93c2ee592fb.png",
+          "images": [
+            {
+              "id": 444356,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444356/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444356/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/ed/d3ed1a4e8024288dc7e8a93c2ee592fb.png"
+            }
+          ]
+        },
+        {
+          "id": 5134,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "V (F01/F02/F04) Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/53/cd53de5a23b35d84e2f4d27f1a223c44.png",
+          "images": [
+            {
+              "id": 444357,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444357/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444357/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/53/cd53de5a23b35d84e2f4d27f1a223c44.png"
+            }
+          ]
+        },
+        {
+          "id": 5135,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "V (F01/F02/F04)",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5136,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "IV (E65/E66) Рестайлинг",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/69/60/6960b26e08077efdb567561c753692ee.png",
+          "images": [
+            {
+              "id": 444358,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444358/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444358/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/69/60/6960b26e08077efdb567561c753692ee.png"
+            }
+          ]
+        },
+        {
+          "id": 5137,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "IV (E65/E66)",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/c5/0dc515e590a4e59bac521794abbf5dec.png",
+          "images": [
+            {
+              "id": 444359,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444359/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444359/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0d/c5/0dc515e590a4e59bac521794abbf5dec.png"
+            }
+          ]
+        },
+        {
+          "id": 5138,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "III (E38) Рестайлинг",
+          "start_year": 1998,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/46/76/467606537371b1a1e1e671754aced31b.png",
+          "images": [
+            {
+              "id": 444360,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444360/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444360/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/46/76/467606537371b1a1e1e671754aced31b.png"
+            }
+          ]
+        },
+        {
+          "id": 5139,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "III (E38)",
+          "start_year": 1994,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/04/a704908f3661ef1116ca851e5c81d9e4.png",
+          "images": [
+            {
+              "id": 444361,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444361/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444361/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/04/a704908f3661ef1116ca851e5c81d9e4.png"
+            }
+          ]
+        },
+        {
+          "id": 5140,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "II (E32)",
+          "start_year": 1986,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5141,
+          "mark_name": "BMW",
+          "model_name": "7 серия",
+          "generation_name": "I (E23)",
+          "start_year": 1977,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "name": "X1",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 665,
+      "is_seo_active": 0,
+      "rgs_code": "036021553",
+      "generations": [
+        {
+          "id": 387,
+          "mark_name": "BMW",
+          "model_name": "X1",
+          "generation_name": "II (F48) Рестайлинг",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 388,
+          "mark_name": "BMW",
+          "model_name": "X1",
+          "generation_name": "II (F48)",
+          "start_year": 2015,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 389,
+          "mark_name": "BMW",
+          "model_name": "X1",
+          "generation_name": "I (E84) Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 390,
+          "mark_name": "BMW",
+          "model_name": "X1",
+          "generation_name": "I (E84)",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "name": "X3",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 1151,
+      "is_seo_active": 0,
+      "rgs_code": "875022470",
+      "generations": [
+        {
+          "id": 392,
+          "mark_name": "BMW",
+          "model_name": "X3",
+          "generation_name": "III (G01) Рестайлинг",
+          "start_year": 2021,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 393,
+          "mark_name": "BMW",
+          "model_name": "X3",
+          "generation_name": "III (G01)",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 394,
+          "mark_name": "BMW",
+          "model_name": "X3",
+          "generation_name": "II (F25) Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 395,
+          "mark_name": "BMW",
+          "model_name": "X3",
+          "generation_name": "II (F25)",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 396,
+          "mark_name": "BMW",
+          "model_name": "X3",
+          "generation_name": "I (E83) Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 397,
+          "mark_name": "BMW",
+          "model_name": "X3",
+          "generation_name": "I (E83)",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 155,
+      "name": "X5",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 2024,
+      "is_seo_active": 0,
+      "rgs_code": "873022422",
+      "generations": [
+        {
+          "id": 401,
+          "mark_name": "BMW",
+          "model_name": "X5",
+          "generation_name": "IV (G05)",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 402,
+          "mark_name": "BMW",
+          "model_name": "X5",
+          "generation_name": "III (F15)",
+          "start_year": 2013,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 403,
+          "mark_name": "BMW",
+          "model_name": "X5",
+          "generation_name": "II (E70) Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 404,
+          "mark_name": "BMW",
+          "model_name": "X5",
+          "generation_name": "II (E70)",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 405,
+          "mark_name": "BMW",
+          "model_name": "X5",
+          "generation_name": "I (E53) Рестайлинг",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 406,
+          "mark_name": "BMW",
+          "model_name": "X5",
+          "generation_name": "I (E53)",
+          "start_year": 1999,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 156,
+      "name": "X6",
+      "mark_id": 18,
+      "sort_id": 1,
+      "rating": 610,
+      "is_seo_active": 0,
+      "rgs_code": "772021251",
+      "generations": [
+        {
+          "id": 410,
+          "mark_name": "BMW",
+          "model_name": "X6",
+          "generation_name": "III (G06)",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 411,
+          "mark_name": "BMW",
+          "model_name": "X6",
+          "generation_name": "II (F16)",
+          "start_year": 2014,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 412,
+          "mark_name": "BMW",
+          "model_name": "X6",
+          "generation_name": "I (E71) Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 413,
+          "mark_name": "BMW",
+          "model_name": "X6",
+          "generation_name": "I (E71)",
+          "start_year": 2007,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2313,
+      "name": "1M",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 8,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 360,
+          "mark_name": "BMW",
+          "model_name": "1M",
+          "generation_name": "I (E82)",
+          "start_year": 2010,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19774,
+      "name": "2 серия Active Tourer",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 47,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5156,
+          "mark_name": "BMW",
+          "model_name": "2 серия Active Tourer",
+          "generation_name": "F45 Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5157,
+          "mark_name": "BMW",
+          "model_name": "2 серия Active Tourer",
+          "generation_name": "F45",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19776,
+      "name": "4 серия",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 59,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5110,
+          "mark_name": "BMW",
+          "model_name": "4 серия",
+          "generation_name": "G22 G23",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/25/f4/25f46d72812b9c3434b72438da519caa.png",
+          "images": [
+            {
+              "id": 444335,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444335/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444335/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/25/f4/25f46d72812b9c3434b72438da519caa.png"
+            }
+          ]
+        },
+        {
+          "id": 5111,
+          "mark_name": "BMW",
+          "model_name": "4 серия",
+          "generation_name": "F32/F33/F36 Рестайлинг",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/43/634349edc9e555fe56d474569180a4e0.png",
+          "images": [
+            {
+              "id": 444336,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444336/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444336/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/43/634349edc9e555fe56d474569180a4e0.png"
+            }
+          ]
+        },
+        {
+          "id": 5112,
+          "mark_name": "BMW",
+          "model_name": "4 серия",
+          "generation_name": "F32/F33/F36",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/11/b8/11b8c6132d14189a21f0a554c5cf8bc7.png",
+          "images": [
+            {
+              "id": 444337,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444337/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444337/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/11/b8/11b8c6132d14189a21f0a554c5cf8bc7.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22435,
+      "name": "5 серия(Е60)",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 22383,
+      "name": "520D",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19780,
+      "name": "8 серия",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5142,
+          "mark_name": "BMW",
+          "model_name": "8 серия",
+          "generation_name": "II (G14/G15/G16)",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/9c/219c5bcee5516ac98d6d0bda7ac42ec4.png",
+          "images": [
+            {
+              "id": 444362,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444362/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444362/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/21/9c/219c5bcee5516ac98d6d0bda7ac42ec4.png"
+            }
+          ]
+        },
+        {
+          "id": 5143,
+          "mark_name": "BMW",
+          "model_name": "8 серия",
+          "generation_name": "I (E31)",
+          "start_year": 1989,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/be/19be7b248c5de846ea06759a85f11f16.png",
+          "images": [
+            {
+              "id": 444363,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444363/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444363/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/19/be/19be7b248c5de846ea06759a85f11f16.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "name": "i3",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 9,
+      "is_seo_active": 0,
+      "rgs_code": "036022026",
+      "generations": [
+        {
+          "id": 361,
+          "mark_name": "BMW",
+          "model_name": "i3",
+          "generation_name": "I (I01) Рестайлинг",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d2/dc/d2dc6b20b14503f03a5f0122364c4ff7.png",
+          "images": [
+            {
+              "id": 442237,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442237/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442237/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d2/dc/d2dc6b20b14503f03a5f0122364c4ff7.png"
+            }
+          ]
+        },
+        {
+          "id": 362,
+          "mark_name": "BMW",
+          "model_name": "i3",
+          "generation_name": "I (I01)",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/0e/fc0e6d4699d27dd558d579898438b682.png",
+          "images": [
+            {
+              "id": 442238,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442238/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442238/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/0e/fc0e6d4699d27dd558d579898438b682.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "name": "i8",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 13,
+      "is_seo_active": 0,
+      "rgs_code": "036022027",
+      "generations": [
+        {
+          "id": 363,
+          "mark_name": "BMW",
+          "model_name": "i8",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 364,
+          "mark_name": "BMW",
+          "model_name": "i8",
+          "generation_name": "I",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19781,
+      "name": "M1",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19391,
+      "name": "M2",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 13,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 365,
+          "mark_name": "BMW",
+          "model_name": "M2",
+          "generation_name": "F87 Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4e/41/4e41ccc583b6515a7a356f0f02dee75d.png",
+          "images": [
+            {
+              "id": 442239,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442239/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442239/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4e/41/4e41ccc583b6515a7a356f0f02dee75d.png"
+            }
+          ]
+        },
+        {
+          "id": 366,
+          "mark_name": "BMW",
+          "model_name": "M2",
+          "generation_name": "F87",
+          "start_year": 2015,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2314,
+      "name": "M3",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 367,
+          "mark_name": "BMW",
+          "model_name": "M3",
+          "generation_name": "VI (G80)",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/df/e4/dfe45b318f05022513971940d0daec32.png",
+          "images": [
+            {
+              "id": 442240,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442240/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442240/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/df/e4/dfe45b318f05022513971940d0daec32.png"
+            }
+          ]
+        },
+        {
+          "id": 368,
+          "mark_name": "BMW",
+          "model_name": "M3",
+          "generation_name": "V (F80)",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c8/a5/c8a5b573f9ef50aefe8059ebf0c877b8.png",
+          "images": [
+            {
+              "id": 442241,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442241/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442241/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c8/a5/c8a5b573f9ef50aefe8059ebf0c877b8.png"
+            }
+          ]
+        },
+        {
+          "id": 369,
+          "mark_name": "BMW",
+          "model_name": "M3",
+          "generation_name": "IV (E90)",
+          "start_year": 2007,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f6/09/f609a475f2604f3b54958940cca4abaf.png",
+          "images": [
+            {
+              "id": 442242,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442242/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442242/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f6/09/f609a475f2604f3b54958940cca4abaf.png"
+            }
+          ]
+        },
+        {
+          "id": 370,
+          "mark_name": "BMW",
+          "model_name": "M3",
+          "generation_name": "III (E46)",
+          "start_year": 1999,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/84/17/84171f9abd5c216184e6c0eb53bf0de2.png",
+          "images": [
+            {
+              "id": 442243,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442243/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442243/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/84/17/84171f9abd5c216184e6c0eb53bf0de2.png"
+            }
+          ]
+        },
+        {
+          "id": 371,
+          "mark_name": "BMW",
+          "model_name": "M3",
+          "generation_name": "II (E36)",
+          "start_year": 1992,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/62/5d62d0b560b91031eafa98ea3ca1f4c3.png",
+          "images": [
+            {
+              "id": 442244,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442244/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442244/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/62/5d62d0b560b91031eafa98ea3ca1f4c3.png"
+            }
+          ]
+        },
+        {
+          "id": 372,
+          "mark_name": "BMW",
+          "model_name": "M3",
+          "generation_name": "I (E30)",
+          "start_year": 1986,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/eb/1ceb23e38d388fd9aa57212fa6b493b0.png",
+          "images": [
+            {
+              "id": 442245,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442245/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442245/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/eb/1ceb23e38d388fd9aa57212fa6b493b0.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2315,
+      "name": "M4",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 373,
+          "mark_name": "BMW",
+          "model_name": "M4",
+          "generation_name": "G82",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3a/9b/3a9ba0a531c58161135bd2397c50ecac.png",
+          "images": [
+            {
+              "id": 442246,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442246/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442246/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3a/9b/3a9ba0a531c58161135bd2397c50ecac.png"
+            }
+          ]
+        },
+        {
+          "id": 374,
+          "mark_name": "BMW",
+          "model_name": "M4",
+          "generation_name": "F82/F83 Рестайлинг",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 375,
+          "mark_name": "BMW",
+          "model_name": "M4",
+          "generation_name": "F82/F83",
+          "start_year": 2014,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2316,
+      "name": "M5",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 41,
+      "is_seo_active": 0,
+      "rgs_code": "760022417",
+      "generations": [
+        {
+          "id": 376,
+          "mark_name": "BMW",
+          "model_name": "M5",
+          "generation_name": "VI (F90) Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 377,
+          "mark_name": "BMW",
+          "model_name": "M5",
+          "generation_name": "VI (F90)",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/46/4b464807bcec42741bc9b52891d9d069.png",
+          "images": [
+            {
+              "id": 442247,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442247/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442247/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/46/4b464807bcec42741bc9b52891d9d069.png"
+            }
+          ]
+        },
+        {
+          "id": 378,
+          "mark_name": "BMW",
+          "model_name": "M5",
+          "generation_name": "V (F10) Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7f/8c/7f8c77fdbd2e1afe83ce5d9e55688203.png",
+          "images": [
+            {
+              "id": 442248,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442248/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442248/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7f/8c/7f8c77fdbd2e1afe83ce5d9e55688203.png"
+            }
+          ]
+        },
+        {
+          "id": 379,
+          "mark_name": "BMW",
+          "model_name": "M5",
+          "generation_name": "V (F10)",
+          "start_year": 2011,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/30/75307ef56f90e0f34bf9425fad93ac04.png",
+          "images": [
+            {
+              "id": 442249,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442249/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442249/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/30/75307ef56f90e0f34bf9425fad93ac04.png"
+            }
+          ]
+        },
+        {
+          "id": 380,
+          "mark_name": "BMW",
+          "model_name": "M5",
+          "generation_name": "IV (E60/E61)",
+          "start_year": 2004,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/6a/ae6a54fb7c24d3235ff9226539220e34.png",
+          "images": [
+            {
+              "id": 442250,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442250/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442250/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ae/6a/ae6a54fb7c24d3235ff9226539220e34.png"
+            }
+          ]
+        },
+        {
+          "id": 381,
+          "mark_name": "BMW",
+          "model_name": "M5",
+          "generation_name": "III (E39)",
+          "start_year": 1998,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c3/fb/c3fb843080d177c84041ff826715ff47.png",
+          "images": [
+            {
+              "id": 442251,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442251/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442251/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c3/fb/c3fb843080d177c84041ff826715ff47.png"
+            }
+          ]
+        },
+        {
+          "id": 382,
+          "mark_name": "BMW",
+          "model_name": "M5",
+          "generation_name": "II (E34)",
+          "start_year": 1988,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/be/69/be69cde085194e6a98d634b3200072fe.png",
+          "images": [
+            {
+              "id": 442252,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442252/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442252/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/be/69/be69cde085194e6a98d634b3200072fe.png"
+            }
+          ]
+        },
+        {
+          "id": 383,
+          "mark_name": "BMW",
+          "model_name": "M5",
+          "generation_name": "I (E28)",
+          "start_year": 1985,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/8a/1a8aa8c7f2418c8bf040f54283c2c6bb.png",
+          "images": [
+            {
+              "id": 442253,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442253/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442253/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/8a/1a8aa8c7f2418c8bf040f54283c2c6bb.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2317,
+      "name": "M6",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 16,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 384,
+          "mark_name": "BMW",
+          "model_name": "M6",
+          "generation_name": "III (F06/F13/F12)",
+          "start_year": 2012,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/87/43878cb8432ea8e96ef708be2425a9da.png",
+          "images": [
+            {
+              "id": 442254,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442254/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442254/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/43/87/43878cb8432ea8e96ef708be2425a9da.png"
+            }
+          ]
+        },
+        {
+          "id": 385,
+          "mark_name": "BMW",
+          "model_name": "M6",
+          "generation_name": "II (E63/E64)",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d5/a4/d5a471155acdb4051371543c13f97526.png",
+          "images": [
+            {
+              "id": 442255,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442255/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442255/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d5/a4/d5a471155acdb4051371543c13f97526.png"
+            }
+          ]
+        },
+        {
+          "id": 386,
+          "mark_name": "BMW",
+          "model_name": "M6",
+          "generation_name": "I (E24)",
+          "start_year": 1984,
+          "finish_year": 1989,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/79/72/7972d5680d27b3575c5f08fd37939136.png",
+          "images": [
+            {
+              "id": 442256,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442256/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442256/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/79/72/7972d5680d27b3575c5f08fd37939136.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22353,
+      "name": "X2",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 391,
+          "mark_name": "BMW",
+          "model_name": "X2",
+          "generation_name": "I (F39)",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "name": "X4",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 62,
+      "is_seo_active": 0,
+      "rgs_code": "036021963",
+      "generations": [
+        {
+          "id": 398,
+          "mark_name": "BMW",
+          "model_name": "X4",
+          "generation_name": "II (G02) Рестайлинг",
+          "start_year": 2021,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 399,
+          "mark_name": "BMW",
+          "model_name": "X4",
+          "generation_name": "II (G02)",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 400,
+          "mark_name": "BMW",
+          "model_name": "X4",
+          "generation_name": "I (F26)",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2318,
+      "name": "X5 M",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 38,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 407,
+          "mark_name": "BMW",
+          "model_name": "X5 M",
+          "generation_name": "III (F95)",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 408,
+          "mark_name": "BMW",
+          "model_name": "X5 M",
+          "generation_name": "II (F85)",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 409,
+          "mark_name": "BMW",
+          "model_name": "X5 M",
+          "generation_name": "I (E70)",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2319,
+      "name": "X6 M",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 47,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 414,
+          "mark_name": "BMW",
+          "model_name": "X6 M",
+          "generation_name": "III (F96)",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 415,
+          "mark_name": "BMW",
+          "model_name": "X6 M",
+          "generation_name": "II (F86)",
+          "start_year": 2014,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 416,
+          "mark_name": "BMW",
+          "model_name": "X6 M",
+          "generation_name": "I (E71) Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 417,
+          "mark_name": "BMW",
+          "model_name": "X6 M",
+          "generation_name": "I (E71)",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 22404,
+      "name": "X7",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 157,
+      "name": "Z1",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "036001694",
+      "generations": [
+        {
+          "id": 418,
+          "mark_name": "BMW",
+          "model_name": "Z1",
+          "generation_name": "1988 – 1991",
+          "start_year": 1988,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 158,
+      "name": "Z3",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "036001696",
+      "generations": [
+        {
+          "id": 419,
+          "mark_name": "BMW",
+          "model_name": "Z3",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2000,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/a6/49a65a3fe8920d8a7e1841fc0821101b.png",
+          "images": [
+            {
+              "id": 442257,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442257/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442257/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/a6/49a65a3fe8920d8a7e1841fc0821101b.png"
+            }
+          ]
+        },
+        {
+          "id": 420,
+          "mark_name": "BMW",
+          "model_name": "Z3",
+          "generation_name": "I",
+          "start_year": 1995,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/47/f7/47f784c05dc85b0e796a1b057fc85dd4.png",
+          "images": [
+            {
+              "id": 442258,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442258/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442258/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/47/f7/47f784c05dc85b0e796a1b057fc85dd4.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2320,
+      "name": "Z3 M",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 421,
+          "mark_name": "BMW",
+          "model_name": "Z3 M",
+          "generation_name": "I Рестайлинг (E36)",
+          "start_year": 2001,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 422,
+          "mark_name": "BMW",
+          "model_name": "Z3 M",
+          "generation_name": "I (E36)",
+          "start_year": 1997,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "name": "Z4",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 30,
+      "is_seo_active": 0,
+      "rgs_code": "036001711",
+      "generations": [
+        {
+          "id": 423,
+          "mark_name": "BMW",
+          "model_name": "Z4",
+          "generation_name": "III (G29)",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/88/3f/883f04499112b348c276e1805b85b620.png",
+          "images": [
+            {
+              "id": 442259,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442259/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442259/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/88/3f/883f04499112b348c276e1805b85b620.png"
+            }
+          ]
+        },
+        {
+          "id": 424,
+          "mark_name": "BMW",
+          "model_name": "Z4",
+          "generation_name": "II (E89) Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2c/cd/2ccddbd89e0418230526a021d3e26fc0.png",
+          "images": [
+            {
+              "id": 442260,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442260/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442260/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2c/cd/2ccddbd89e0418230526a021d3e26fc0.png"
+            }
+          ]
+        },
+        {
+          "id": 425,
+          "mark_name": "BMW",
+          "model_name": "Z4",
+          "generation_name": "II (E89)",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/a9/83a90f774b5f719493e2f819612a9f08.png",
+          "images": [
+            {
+              "id": 442261,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442261/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442261/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/a9/83a90f774b5f719493e2f819612a9f08.png"
+            }
+          ]
+        },
+        {
+          "id": 426,
+          "mark_name": "BMW",
+          "model_name": "Z4",
+          "generation_name": "I (E85/E86) Рестайлинг",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/a5/c2a5cfc2b44191fe3bf8a428031a9e3b.png",
+          "images": [
+            {
+              "id": 442262,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442262/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442262/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c2/a5/c2a5cfc2b44191fe3bf8a428031a9e3b.png"
+            }
+          ]
+        },
+        {
+          "id": 427,
+          "mark_name": "BMW",
+          "model_name": "Z4",
+          "generation_name": "I (E85/E86)",
+          "start_year": 2002,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/cd/60cdaa9aef74494465e4a4d44f3623b9.png",
+          "images": [
+            {
+              "id": 442263,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442263/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442263/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/60/cd/60cdaa9aef74494465e4a4d44f3623b9.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2321,
+      "name": "Z4 M",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 428,
+          "mark_name": "BMW",
+          "model_name": "Z4 M",
+          "generation_name": "2006 – 2009",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 160,
+      "name": "Z8",
+      "mark_id": 18,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "036001714",
+      "generations": [
+        {
+          "id": 429,
+          "mark_name": "BMW",
+          "model_name": "Z8",
+          "generation_name": "2000 – 2003",
+          "start_year": 2000,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

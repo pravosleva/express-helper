@@ -1,0 +1,78 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 271,
+      "name": "Hover H3",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 427,
+          "mark_name": "Great Wall",
+          "model_name": "Hover H3",
+          "generation_name": "2010-2014 (I, 2010-2015)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 428,
+          "mark_name": "Great Wall",
+          "model_name": "Hover H3",
+          "generation_name": "2014-н.в. (I Рестайлинг, 2014-2016)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 272,
+      "name": "Hover H5",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 429,
+          "mark_name": "Great Wall",
+          "model_name": "Hover H5",
+          "generation_name": "2010-2017 (I,)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 273,
+      "name": "Hover H6",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 430,
+          "mark_name": "Great Wall",
+          "model_name": "Hover H6",
+          "generation_name": "2011-2017 (I,)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

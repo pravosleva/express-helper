@@ -1,0 +1,212 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 920,
+      "name": "469",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1824,
+          "mark_name": "УАЗ",
+          "model_name": "469",
+          "generation_name": "2010-2011 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 921,
+      "name": "Cargo",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1825,
+          "mark_name": "УАЗ",
+          "model_name": "Cargo",
+          "generation_name": "2008-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1826,
+          "mark_name": "УАЗ",
+          "model_name": "Cargo",
+          "generation_name": "2014-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1827,
+          "mark_name": "УАЗ",
+          "model_name": "Cargo",
+          "generation_name": "2016-2018 (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 922,
+      "name": "Патриот",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1828,
+          "mark_name": "УАЗ",
+          "model_name": "Патриот",
+          "generation_name": "2005-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1829,
+          "mark_name": "УАЗ",
+          "model_name": "Патриот",
+          "generation_name": "2014-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1830,
+          "mark_name": "УАЗ",
+          "model_name": "Патриот",
+          "generation_name": "2016-н.в. (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 923,
+      "name": "Пикап",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1831,
+          "mark_name": "УАЗ",
+          "model_name": "Пикап",
+          "generation_name": "2008-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1832,
+          "mark_name": "УАЗ",
+          "model_name": "Пикап",
+          "generation_name": "2014-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1833,
+          "mark_name": "УАЗ",
+          "model_name": "Пикап",
+          "generation_name": "2016-н.в. (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 924,
+      "name": "Профи",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1834,
+          "mark_name": "УАЗ",
+          "model_name": "Профи",
+          "generation_name": "2017-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 925,
+      "name": "СГР Автобус",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1835,
+          "mark_name": "УАЗ",
+          "model_name": "СГР Автобус",
+          "generation_name": "1965-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 926,
+      "name": "Хантер",
+      "mark_id": 73,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1836,
+          "mark_name": "УАЗ",
+          "model_name": "Хантер",
+          "generation_name": "2003-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

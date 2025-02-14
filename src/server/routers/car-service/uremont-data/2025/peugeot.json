@@ -1,0 +1,645 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 566,
+      "name": "408",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1061,
+          "mark_name": "Peugeot",
+          "model_name": "408",
+          "generation_name": "2012-2017 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1062,
+          "mark_name": "Peugeot",
+          "model_name": "408",
+          "generation_name": "2017-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 567,
+      "name": "5008",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1063,
+          "mark_name": "Peugeot",
+          "model_name": "5008",
+          "generation_name": "2016-2020 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1064,
+          "mark_name": "Peugeot",
+          "model_name": "5008",
+          "generation_name": "2020-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 568,
+      "name": "508",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1065,
+          "mark_name": "Peugeot",
+          "model_name": "508",
+          "generation_name": "2011-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1066,
+          "mark_name": "Peugeot",
+          "model_name": "508",
+          "generation_name": "2014-2018 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1067,
+          "mark_name": "Peugeot",
+          "model_name": "508",
+          "generation_name": "2018-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 569,
+      "name": "Boxer",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1068,
+          "mark_name": "Peugeot",
+          "model_name": "Boxer",
+          "generation_name": "2006-2014 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1069,
+          "mark_name": "Peugeot",
+          "model_name": "Boxer",
+          "generation_name": "2014-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 570,
+      "name": "Expert",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1070,
+          "mark_name": "Peugeot",
+          "model_name": "Expert",
+          "generation_name": "2012-2017 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1071,
+          "mark_name": "Peugeot",
+          "model_name": "Expert",
+          "generation_name": "2016-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 571,
+      "name": "Partner",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1072,
+          "mark_name": "Peugeot",
+          "model_name": "Partner",
+          "generation_name": "1996-2002 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1073,
+          "mark_name": "Peugeot",
+          "model_name": "Partner",
+          "generation_name": "2002-2008 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1074,
+          "mark_name": "Peugeot",
+          "model_name": "Partner",
+          "generation_name": "2015-н.в. (II, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 572,
+      "name": "Partner Origin",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1075,
+          "mark_name": "Peugeot",
+          "model_name": "Partner Origin",
+          "generation_name": "2008-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 573,
+      "name": "Partner Tepee",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1076,
+          "mark_name": "Peugeot",
+          "model_name": "Partner Tepee",
+          "generation_name": "2008-2012 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1077,
+          "mark_name": "Peugeot",
+          "model_name": "Partner Tepee",
+          "generation_name": "2012-2015 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1078,
+          "mark_name": "Peugeot",
+          "model_name": "Partner Tepee",
+          "generation_name": "2015-2018 (II, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 574,
+      "name": "RCZ",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1079,
+          "mark_name": "Peugeot",
+          "model_name": "RCZ",
+          "generation_name": "2010-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1080,
+          "mark_name": "Peugeot",
+          "model_name": "RCZ",
+          "generation_name": "2013-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 575,
+      "name": "Traveller",
+      "mark_id": 62,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1081,
+          "mark_name": "Peugeot",
+          "model_name": "Traveller",
+          "generation_name": "2017-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 556,
+      "name": "107",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1040,
+          "mark_name": "Peugeot",
+          "model_name": "107",
+          "generation_name": "2005-2009 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1041,
+          "mark_name": "Peugeot",
+          "model_name": "107",
+          "generation_name": "2009-2012 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1042,
+          "mark_name": "Peugeot",
+          "model_name": "107",
+          "generation_name": "2012-2015 (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 557,
+      "name": "2008",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1043,
+          "mark_name": "Peugeot",
+          "model_name": "2008",
+          "generation_name": "2014-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1044,
+          "mark_name": "Peugeot",
+          "model_name": "2008",
+          "generation_name": "2016-2019 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1045,
+          "mark_name": "Peugeot",
+          "model_name": "2008",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 558,
+      "name": "206",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1046,
+          "mark_name": "Peugeot",
+          "model_name": "206",
+          "generation_name": "2002-2009 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 559,
+      "name": "207",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1047,
+          "mark_name": "Peugeot",
+          "model_name": "207",
+          "generation_name": "2006-2009 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1048,
+          "mark_name": "Peugeot",
+          "model_name": "207",
+          "generation_name": "2009-2011 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 560,
+      "name": "208",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1049,
+          "mark_name": "Peugeot",
+          "model_name": "208",
+          "generation_name": "2012-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 561,
+      "name": "3008",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1050,
+          "mark_name": "Peugeot",
+          "model_name": "3008",
+          "generation_name": "2010-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1051,
+          "mark_name": "Peugeot",
+          "model_name": "3008",
+          "generation_name": "2014-2017 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1052,
+          "mark_name": "Peugeot",
+          "model_name": "3008",
+          "generation_name": "2016-2020 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1053,
+          "mark_name": "Peugeot",
+          "model_name": "3008",
+          "generation_name": "2020-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 562,
+      "name": "301",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1054,
+          "mark_name": "Peugeot",
+          "model_name": "301",
+          "generation_name": "2013-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 563,
+      "name": "308",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1055,
+          "mark_name": "Peugeot",
+          "model_name": "308",
+          "generation_name": "2007-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1056,
+          "mark_name": "Peugeot",
+          "model_name": "308",
+          "generation_name": "2011-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1057,
+          "mark_name": "Peugeot",
+          "model_name": "308",
+          "generation_name": "2014-2017 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1058,
+          "mark_name": "Peugeot",
+          "model_name": "308",
+          "generation_name": "2017-2018 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 564,
+      "name": "4007",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1059,
+          "mark_name": "Peugeot",
+          "model_name": "4007",
+          "generation_name": "2007-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 565,
+      "name": "4008",
+      "mark_id": 62,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1060,
+          "mark_name": "Peugeot",
+          "model_name": "4008",
+          "generation_name": "2012-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

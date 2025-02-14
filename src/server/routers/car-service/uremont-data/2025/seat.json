@@ -1,0 +1,235 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 910,
+      "name": "Alhambra",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1812,
+          "mark_name": "Seat",
+          "model_name": "Alhambra",
+          "generation_name": "2015-н.в. (II Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 911,
+      "name": "Arona",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1813,
+          "mark_name": "Seat",
+          "model_name": "Arona",
+          "generation_name": "2017-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 912,
+      "name": "Ateca",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1814,
+          "mark_name": "Seat",
+          "model_name": "Ateca",
+          "generation_name": "2016-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 913,
+      "name": "Ibiza",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1815,
+          "mark_name": "Seat",
+          "model_name": "Ibiza",
+          "generation_name": "2015-2017 (IV Рестайлинг 2)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1816,
+          "mark_name": "Seat",
+          "model_name": "Ibiza",
+          "generation_name": "2017-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 914,
+      "name": "Ibiza Cupra",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1817,
+          "mark_name": "Seat",
+          "model_name": "Ibiza Cupra",
+          "generation_name": "2015-2018 (IV Рестайлинг 2)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 915,
+      "name": "Leon",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1818,
+          "mark_name": "Seat",
+          "model_name": "Leon",
+          "generation_name": "2016-н.в. (III Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1819,
+          "mark_name": "Seat",
+          "model_name": "Leon",
+          "generation_name": "2020-н.в. (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 916,
+      "name": "Leon Cupra",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1820,
+          "mark_name": "Seat",
+          "model_name": "Leon Cupra",
+          "generation_name": "2017-н.в. (III Рестайлинг, 2017-нв)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 917,
+      "name": "Mii",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1821,
+          "mark_name": "Seat",
+          "model_name": "Mii",
+          "generation_name": "2011-н.в. (I,)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 918,
+      "name": "Tarraco",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1822,
+          "mark_name": "Seat",
+          "model_name": "Tarraco",
+          "generation_name": "2018-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 919,
+      "name": "Toledo",
+      "mark_id": 54,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1823,
+          "mark_name": "Seat",
+          "model_name": "Toledo",
+          "generation_name": "2012-н.в. (IV, 2012-нв)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

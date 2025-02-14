@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 55,
+      "name": "Atom",
+      "mark_id": 6,
+      "sort_id": 1,
+      "rating": 13,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 148,
+          "mark_name": "Ariel",
+          "model_name": "Atom",
+          "generation_name": "1996 – н.в.",
+          "start_year": 1996,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

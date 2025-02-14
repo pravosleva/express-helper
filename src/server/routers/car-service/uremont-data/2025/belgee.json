@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 121,
+      "name": "X50",
+      "mark_id": 5,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 196,
+          "mark_name": "Belgee",
+          "model_name": "X50",
+          "generation_name": "2023-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

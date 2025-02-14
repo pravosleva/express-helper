@@ -1,0 +1,25 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 22351,
+      "name": "G 90",
+      "mark_id": 4141,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 22352,
+      "name": "TGE",
+      "mark_id": 4141,
+      "sort_id": 1,
+      "rating": 8,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

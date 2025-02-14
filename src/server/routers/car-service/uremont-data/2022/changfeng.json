@@ -1,0 +1,47 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 244,
+      "name": "Flying",
+      "mark_id": 33,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "753021049",
+      "generations": [
+        {
+          "id": 557,
+          "mark_name": "ChangFeng",
+          "model_name": "Flying",
+          "generation_name": "2007 – 2014",
+          "start_year": 2007,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 245,
+      "name": "SUV",
+      "mark_id": 33,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "753021052",
+      "generations": [
+        {
+          "id": 5183,
+          "mark_name": "ChangFeng",
+          "model_name": "SUV",
+          "generation_name": "2007 – 2009",
+          "start_year": 2007,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

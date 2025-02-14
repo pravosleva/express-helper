@@ -65,6 +65,24 @@ const baseFn = async () => {
   })
     .then((r) => r.data)
 
+  if (isDev) {
+    try {
+      fs.writeFile(path.join(storagePath, '/__mark_list__type_id_1.json'), JSON.stringify(markListRes, null, 2), err => {
+        switch (true) {
+          case !!err:
+            console.error(err);
+            break
+          default:
+            // file written successfully
+            // console.log(`OK: ${name} (${i + 1} of ${max})`)
+            break
+        }
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   try {
     for (let i = 0, max = markListRes.marks.length; i < max; i++) {
       const item = markListRes.marks[i]
@@ -178,7 +196,7 @@ const baseFn = async () => {
 }
 
 cron.schedule(
-  isDev ? '01 45 04 * * *' : '01 02 09 * * Mon', // Every Mon at 09:02:01
+  isDev ? '01 37 00 * * *' : '01 02 09 * * Mon', // Every Mon at 09:02:01
   baseFn,
   {
     scheduled: true,

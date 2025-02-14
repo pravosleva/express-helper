@@ -1,0 +1,927 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 372,
+      "name": "Quoris",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 628,
+          "mark_name": "KIA",
+          "model_name": "Quoris",
+          "generation_name": "2012-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 629,
+          "mark_name": "KIA",
+          "model_name": "Quoris",
+          "generation_name": "2014-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 630,
+          "mark_name": "KIA",
+          "model_name": "Quoris",
+          "generation_name": "2015-2019 (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 373,
+      "name": "Rio",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 631,
+          "mark_name": "KIA",
+          "model_name": "Rio",
+          "generation_name": "2009-2011 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 632,
+          "mark_name": "KIA",
+          "model_name": "Rio",
+          "generation_name": "2011-2015 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 633,
+          "mark_name": "KIA",
+          "model_name": "Rio",
+          "generation_name": "2015-2017 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 634,
+          "mark_name": "KIA",
+          "model_name": "Rio",
+          "generation_name": "2016-2020 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 635,
+          "mark_name": "KIA",
+          "model_name": "Rio",
+          "generation_name": "2020-н.в. (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 374,
+      "name": "Rio X-Line",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 636,
+          "mark_name": "KIA",
+          "model_name": "Rio X-Line",
+          "generation_name": "2017-2021 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 637,
+          "mark_name": "KIA",
+          "model_name": "Rio X-Line",
+          "generation_name": "2020-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 375,
+      "name": "Seltos",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 638,
+          "mark_name": "KIA",
+          "model_name": "Seltos",
+          "generation_name": "2019-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 376,
+      "name": "Sorento",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 639,
+          "mark_name": "KIA",
+          "model_name": "Sorento",
+          "generation_name": "2009-2012 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 640,
+          "mark_name": "KIA",
+          "model_name": "Sorento",
+          "generation_name": "2012-2021 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 641,
+          "mark_name": "KIA",
+          "model_name": "Sorento",
+          "generation_name": "2014-2018 (III (Sorento Prime)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 642,
+          "mark_name": "KIA",
+          "model_name": "Sorento",
+          "generation_name": "2017-2020 (III, рестайлинг (Sorento Prime)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 643,
+          "mark_name": "KIA",
+          "model_name": "Sorento",
+          "generation_name": "2020-н.в. (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 377,
+      "name": "Soul",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 644,
+          "mark_name": "KIA",
+          "model_name": "Soul",
+          "generation_name": "2008-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 645,
+          "mark_name": "KIA",
+          "model_name": "Soul",
+          "generation_name": "2011-2014 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 646,
+          "mark_name": "KIA",
+          "model_name": "Soul",
+          "generation_name": "2014-2016 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 647,
+          "mark_name": "KIA",
+          "model_name": "Soul",
+          "generation_name": "2017-2019 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 648,
+          "mark_name": "KIA",
+          "model_name": "Soul",
+          "generation_name": "2018-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 378,
+      "name": "Sportage",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 649,
+          "mark_name": "KIA",
+          "model_name": "Sportage",
+          "generation_name": "2007-2010 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 650,
+          "mark_name": "KIA",
+          "model_name": "Sportage",
+          "generation_name": "2010-2014 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 651,
+          "mark_name": "KIA",
+          "model_name": "Sportage",
+          "generation_name": "2014-2016 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 652,
+          "mark_name": "KIA",
+          "model_name": "Sportage",
+          "generation_name": "2016-2019 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 653,
+          "mark_name": "KIA",
+          "model_name": "Sportage",
+          "generation_name": "2018-н.в. (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 654,
+          "mark_name": "KIA",
+          "model_name": "Sportage",
+          "generation_name": "2021-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 379,
+      "name": "Stinger",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 655,
+          "mark_name": "KIA",
+          "model_name": "Stinger",
+          "generation_name": "2017-2021 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 656,
+          "mark_name": "KIA",
+          "model_name": "Stinger",
+          "generation_name": "2020-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "name": "Venga",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 657,
+          "mark_name": "KIA",
+          "model_name": "Venga",
+          "generation_name": "2010-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 658,
+          "mark_name": "KIA",
+          "model_name": "Venga",
+          "generation_name": "2014-2017 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 381,
+      "name": "Xceed",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 659,
+          "mark_name": "KIA",
+          "model_name": "Xceed",
+          "generation_name": "2019-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 360,
+      "name": "Carnival",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 592,
+          "mark_name": "KIA",
+          "model_name": "Carnival",
+          "generation_name": "2005-2010 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 593,
+          "mark_name": "KIA",
+          "model_name": "Carnival",
+          "generation_name": "2020-н.в. (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 361,
+      "name": "Ceed",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 594,
+          "mark_name": "KIA",
+          "model_name": "Ceed",
+          "generation_name": "2010-2012 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 595,
+          "mark_name": "KIA",
+          "model_name": "Ceed",
+          "generation_name": "2012-2016 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 596,
+          "mark_name": "KIA",
+          "model_name": "Ceed",
+          "generation_name": "2015-2018 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 597,
+          "mark_name": "KIA",
+          "model_name": "Ceed",
+          "generation_name": "2018-2021 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 598,
+          "mark_name": "KIA",
+          "model_name": "Ceed",
+          "generation_name": "2021-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 362,
+      "name": "Cerato",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 599,
+          "mark_name": "KIA",
+          "model_name": "Cerato",
+          "generation_name": "2008-2013 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 600,
+          "mark_name": "KIA",
+          "model_name": "Cerato",
+          "generation_name": "2013-2016 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 601,
+          "mark_name": "KIA",
+          "model_name": "Cerato",
+          "generation_name": "2016-2020 (III, рестайлинг (Classic)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 602,
+          "mark_name": "KIA",
+          "model_name": "Cerato",
+          "generation_name": "2018-2021 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 603,
+          "mark_name": "KIA",
+          "model_name": "Cerato",
+          "generation_name": "2021-н.в. (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 363,
+      "name": "Cerato KOUP",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 604,
+          "mark_name": "KIA",
+          "model_name": "Cerato KOUP",
+          "generation_name": "2008-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 605,
+          "mark_name": "KIA",
+          "model_name": "Cerato KOUP",
+          "generation_name": "2013-2014 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 364,
+      "name": "K5",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 606,
+          "mark_name": "KIA",
+          "model_name": "K5",
+          "generation_name": "2019-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 365,
+      "name": "K8",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 607,
+          "mark_name": "KIA",
+          "model_name": "K8",
+          "generation_name": "2022-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 366,
+      "name": "K9",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 608,
+          "mark_name": "KIA",
+          "model_name": "K9",
+          "generation_name": "2021-н.в. (II (RJ) Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 367,
+      "name": "K900",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 609,
+          "mark_name": "KIA",
+          "model_name": "K900",
+          "generation_name": "2014-2018 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 610,
+          "mark_name": "KIA",
+          "model_name": "K900",
+          "generation_name": "2018-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 368,
+      "name": "Mohave",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 611,
+          "mark_name": "KIA",
+          "model_name": "Mohave",
+          "generation_name": "2008-2017 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 612,
+          "mark_name": "KIA",
+          "model_name": "Mohave",
+          "generation_name": "2017-2020 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 613,
+          "mark_name": "KIA",
+          "model_name": "Mohave",
+          "generation_name": "2019-н.в. (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 369,
+      "name": "Optima",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 614,
+          "mark_name": "KIA",
+          "model_name": "Optima",
+          "generation_name": "2008-2010 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 615,
+          "mark_name": "KIA",
+          "model_name": "Optima",
+          "generation_name": "2010-2013 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 616,
+          "mark_name": "KIA",
+          "model_name": "Optima",
+          "generation_name": "2013-2016 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 617,
+          "mark_name": "KIA",
+          "model_name": "Optima",
+          "generation_name": "2016-2018 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 618,
+          "mark_name": "KIA",
+          "model_name": "Optima",
+          "generation_name": "2018-2020 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "name": "Picanto",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 619,
+          "mark_name": "KIA",
+          "model_name": "Picanto",
+          "generation_name": "2007-2011 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 620,
+          "mark_name": "KIA",
+          "model_name": "Picanto",
+          "generation_name": "2011-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 621,
+          "mark_name": "KIA",
+          "model_name": "Picanto",
+          "generation_name": "2015-2017 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 622,
+          "mark_name": "KIA",
+          "model_name": "Picanto",
+          "generation_name": "2017-2021 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 623,
+          "mark_name": "KIA",
+          "model_name": "Picanto",
+          "generation_name": "2020-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "name": "ProCeed",
+      "mark_id": 41,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 624,
+          "mark_name": "KIA",
+          "model_name": "ProCeed",
+          "generation_name": "2010-2012 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 625,
+          "mark_name": "KIA",
+          "model_name": "ProCeed",
+          "generation_name": "2013-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 626,
+          "mark_name": "KIA",
+          "model_name": "ProCeed",
+          "generation_name": "2015-2018 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 627,
+          "mark_name": "KIA",
+          "model_name": "ProCeed",
+          "generation_name": "2018-2021 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

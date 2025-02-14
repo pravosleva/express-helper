@@ -1,0 +1,47 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 340,
+      "name": "J7",
+      "mark_id": 35,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 553,
+          "mark_name": "Jaecoo",
+          "model_name": "J7",
+          "generation_name": "2023-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 341,
+      "name": "J8",
+      "mark_id": 35,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 554,
+          "mark_name": "Jaecoo",
+          "model_name": "J8",
+          "generation_name": "2024-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

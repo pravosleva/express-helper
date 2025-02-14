@@ -1,0 +1,224 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1504,
+      "name": "Acclaim",
+      "mark_id": 137,
+      "sort_id": 1,
+      "rating": 9,
+      "is_seo_active": 0,
+      "rgs_code": "397015487",
+      "generations": [
+        {
+          "id": 3618,
+          "mark_name": "Plymouth",
+          "model_name": "Acclaim",
+          "generation_name": "1989 – 1995",
+          "start_year": 1989,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19289,
+      "name": "Barracuda",
+      "mark_id": 137,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3619,
+          "mark_name": "Plymouth",
+          "model_name": "Barracuda",
+          "generation_name": "1964 – 1974",
+          "start_year": 1964,
+          "finish_year": 1974,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1505,
+      "name": "Breeze",
+      "mark_id": 137,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "296012157",
+      "generations": [
+        {
+          "id": 3620,
+          "mark_name": "Plymouth",
+          "model_name": "Breeze",
+          "generation_name": "1995 – 2000",
+          "start_year": 1995,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19290,
+      "name": "Fury",
+      "mark_id": 137,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3621,
+          "mark_name": "Plymouth",
+          "model_name": "Fury",
+          "generation_name": "VII",
+          "start_year": 1975,
+          "finish_year": 1978,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3622,
+          "mark_name": "Plymouth",
+          "model_name": "Fury",
+          "generation_name": "V",
+          "start_year": 1969,
+          "finish_year": 1973,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1507,
+      "name": "Laser",
+      "mark_id": 137,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3623,
+          "mark_name": "Plymouth",
+          "model_name": "Laser",
+          "generation_name": "1989 – 1994",
+          "start_year": 1989,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1508,
+      "name": "Neon",
+      "mark_id": 137,
+      "sort_id": 1,
+      "rating": 8,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3624,
+          "mark_name": "Plymouth",
+          "model_name": "Neon",
+          "generation_name": "1993 – 2001",
+          "start_year": 1993,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1509,
+      "name": "Prowler",
+      "mark_id": 137,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3625,
+          "mark_name": "Plymouth",
+          "model_name": "Prowler",
+          "generation_name": "1997 – 2002",
+          "start_year": 1997,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1510,
+      "name": "Sundance",
+      "mark_id": 137,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "296012178",
+      "generations": [
+        {
+          "id": 3626,
+          "mark_name": "Plymouth",
+          "model_name": "Sundance",
+          "generation_name": "1986 – 1994",
+          "start_year": 1986,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1512,
+      "name": "Voyager/Grand Voyager",
+      "mark_id": 137,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5431,
+          "mark_name": "Plymouth",
+          "model_name": "Voyager/Grand Voyager",
+          "generation_name": "III",
+          "start_year": 1995,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5432,
+          "mark_name": "Plymouth",
+          "model_name": "Voyager/Grand Voyager",
+          "generation_name": "II",
+          "start_year": 1991,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5433,
+          "mark_name": "Plymouth",
+          "model_name": "Voyager/Grand Voyager",
+          "generation_name": "I",
+          "start_year": 1984,
+          "finish_year": 1990,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

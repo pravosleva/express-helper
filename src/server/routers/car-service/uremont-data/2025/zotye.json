@@ -1,0 +1,68 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 717,
+      "name": "Coupa",
+      "mark_id": 10,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1408,
+          "mark_name": "Zotye",
+          "model_name": "Coupa",
+          "generation_name": "2018-2021 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 718,
+      "name": "T600",
+      "mark_id": 10,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1409,
+          "mark_name": "Zotye",
+          "model_name": "T600",
+          "generation_name": "2014-2021 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 719,
+      "name": "Z300",
+      "mark_id": 10,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1410,
+          "mark_name": "Zotye",
+          "model_name": "Z300",
+          "generation_name": "2012-2018 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

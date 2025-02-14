@@ -1,0 +1,692 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1006,
+      "name": "Defender",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 13,
+      "is_seo_active": 0,
+      "rgs_code": "204007658",
+      "generations": [
+        {
+          "id": 2292,
+          "mark_name": "Land Rover",
+          "model_name": "Defender",
+          "generation_name": "II",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/7b/407be4ddbe15b517dfcf7bab6e55f7a8.png",
+          "images": [
+            {
+              "id": 443025,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443025/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443025/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/40/7b/407be4ddbe15b517dfcf7bab6e55f7a8.png"
+            }
+          ]
+        },
+        {
+          "id": 2293,
+          "mark_name": "Land Rover",
+          "model_name": "Defender",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5e/4f/5e4f8bce661b08c0e9e19d8d0a4692ab.png",
+          "images": [
+            {
+              "id": 443026,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443026/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443026/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5e/4f/5e4f8bce661b08c0e9e19d8d0a4692ab.png"
+            }
+          ]
+        },
+        {
+          "id": 2294,
+          "mark_name": "Land Rover",
+          "model_name": "Defender",
+          "generation_name": "I",
+          "start_year": 1983,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1007,
+      "name": "Discovery",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 495,
+      "is_seo_active": 0,
+      "rgs_code": "204007681",
+      "generations": [
+        {
+          "id": 2295,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "V Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9c/e6/9ce6f8e7b499580bf32a9e5767d610f5.png",
+          "images": [
+            {
+              "id": 443027,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443027/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443027/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9c/e6/9ce6f8e7b499580bf32a9e5767d610f5.png"
+            }
+          ]
+        },
+        {
+          "id": 2296,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "V",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e1/e3/e1e367cc988280f32585a9cc6742c909.png",
+          "images": [
+            {
+              "id": 443028,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443028/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443028/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e1/e3/e1e367cc988280f32585a9cc6742c909.png"
+            }
+          ]
+        },
+        {
+          "id": 2297,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/1f/441fec5f60753adbf89107102d18c22c.png",
+          "images": [
+            {
+              "id": 443029,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443029/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443029/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/1f/441fec5f60753adbf89107102d18c22c.png"
+            }
+          ]
+        },
+        {
+          "id": 2298,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "IV",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/c6/49c6869d8752d9bcfbe7bd54d65f6964.png",
+          "images": [
+            {
+              "id": 443030,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443030/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443030/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/c6/49c6869d8752d9bcfbe7bd54d65f6964.png"
+            }
+          ]
+        },
+        {
+          "id": 2299,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "III",
+          "start_year": 2004,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/0a/520a4662f87d374969ac4917aa9655cb.png",
+          "images": [
+            {
+              "id": 443031,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443031/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443031/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/0a/520a4662f87d374969ac4917aa9655cb.png"
+            }
+          ]
+        },
+        {
+          "id": 2300,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "II",
+          "start_year": 1998,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/6f/756feb5e7852ff877abff8517143860a.png",
+          "images": [
+            {
+              "id": 443032,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443032/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443032/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/6f/756feb5e7852ff877abff8517143860a.png"
+            }
+          ]
+        },
+        {
+          "id": 2301,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "I",
+          "start_year": 1989,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/f6/acf61e5adee0433ec69382deba61e25f.png",
+          "images": [
+            {
+              "id": 443033,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443033/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443033/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/f6/acf61e5adee0433ec69382deba61e25f.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2287,
+      "name": "Discovery Sport",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 34,
+      "is_seo_active": 0,
+      "rgs_code": "204022019",
+      "generations": [
+        {
+          "id": 2302,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery Sport",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7f/19/7f19c14773d762a57c1b0df94df0396c.png",
+          "images": [
+            {
+              "id": 443034,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443034/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443034/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7f/19/7f19c14773d762a57c1b0df94df0396c.png"
+            }
+          ]
+        },
+        {
+          "id": 2303,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery Sport",
+          "generation_name": "I",
+          "start_year": 2014,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f6/df/f6df7ae95a3bfc1058f26334d6a05847.png",
+          "images": [
+            {
+              "id": 443035,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443035/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443035/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f6/df/f6df7ae95a3bfc1058f26334d6a05847.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "name": "Freelander",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 847,
+      "is_seo_active": 0,
+      "rgs_code": "204007691",
+      "generations": [
+        {
+          "id": 2304,
+          "mark_name": "Land Rover",
+          "model_name": "Freelander",
+          "generation_name": "II Рестайлинг 2",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d4/23/d423c2b738aad4beca614ae2ec76fa76.png",
+          "images": [
+            {
+              "id": 443036,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443036/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443036/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d4/23/d423c2b738aad4beca614ae2ec76fa76.png"
+            }
+          ]
+        },
+        {
+          "id": 2305,
+          "mark_name": "Land Rover",
+          "model_name": "Freelander",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/91/55/9155e55fbb1910a7ece8ce4236425756.png",
+          "images": [
+            {
+              "id": 443037,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443037/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443037/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/91/55/9155e55fbb1910a7ece8ce4236425756.png"
+            }
+          ]
+        },
+        {
+          "id": 2306,
+          "mark_name": "Land Rover",
+          "model_name": "Freelander",
+          "generation_name": "II",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/32/57/3257bbf4e8e4abeb9f3e44cbec463d9f.png",
+          "images": [
+            {
+              "id": 443038,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443038/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443038/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/32/57/3257bbf4e8e4abeb9f3e44cbec463d9f.png"
+            }
+          ]
+        },
+        {
+          "id": 2307,
+          "mark_name": "Land Rover",
+          "model_name": "Freelander",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/24/ea24781ea03b1cdc287a5ca1d68d571a.png",
+          "images": [
+            {
+              "id": 443039,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443039/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443039/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/24/ea24781ea03b1cdc287a5ca1d68d571a.png"
+            }
+          ]
+        },
+        {
+          "id": 2308,
+          "mark_name": "Land Rover",
+          "model_name": "Freelander",
+          "generation_name": "I",
+          "start_year": 1997,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9e/da/9eda570f184f9d8896fd3fe4656fcfa8.png",
+          "images": [
+            {
+              "id": 443040,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443040/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443040/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9e/da/9eda570f184f9d8896fd3fe4656fcfa8.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20290,
+      "name": "LR2",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 21,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5276,
+          "mark_name": "Land Rover",
+          "model_name": "LR2",
+          "generation_name": "1958 – 1971",
+          "start_year": 1958,
+          "finish_year": 1971,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20291,
+      "name": "LR3",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 36,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5277,
+          "mark_name": "Land Rover",
+          "model_name": "LR3",
+          "generation_name": "1971 – 1985",
+          "start_year": 1971,
+          "finish_year": 1985,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20292,
+      "name": "LR4",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 12,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1010,
+      "name": "Range Rover",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 456,
+      "is_seo_active": 0,
+      "rgs_code": "204007714",
+      "generations": [
+        {
+          "id": 2309,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/d9/b9d96a905233343319bf2d062b5a6e04.png",
+          "images": [
+            {
+              "id": 443041,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443041/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443041/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b9/d9/b9d96a905233343319bf2d062b5a6e04.png"
+            }
+          ]
+        },
+        {
+          "id": 2310,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "IV",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/f5/d3f54394d217b48a6b64d81d1a628d7b.png",
+          "images": [
+            {
+              "id": 443042,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443042/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443042/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/f5/d3f54394d217b48a6b64d81d1a628d7b.png"
+            }
+          ]
+        },
+        {
+          "id": 2311,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "III Рестайлинг 2",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/79/1c791da572dc01e27038447066410ebe.png",
+          "images": [
+            {
+              "id": 443043,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443043/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443043/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1c/79/1c791da572dc01e27038447066410ebe.png"
+            }
+          ]
+        },
+        {
+          "id": 2312,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/a7/0ca757d8a36dc079928af438879c834e.png",
+          "images": [
+            {
+              "id": 443044,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443044/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443044/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/0c/a7/0ca757d8a36dc079928af438879c834e.png"
+            }
+          ]
+        },
+        {
+          "id": 2313,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "III",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/8b/938b3aa5e0e6e561b032b28305d5421b.png",
+          "images": [
+            {
+              "id": 443045,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443045/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443045/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/8b/938b3aa5e0e6e561b032b28305d5421b.png"
+            }
+          ]
+        },
+        {
+          "id": 2314,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "II",
+          "start_year": 1994,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8f/93/8f935dfe6a028e8d9f4f1935c163950a.png",
+          "images": [
+            {
+              "id": 443046,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443046/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443046/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8f/93/8f935dfe6a028e8d9f4f1935c163950a.png"
+            }
+          ]
+        },
+        {
+          "id": 2315,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "I",
+          "start_year": 1970,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/1a/4f1a81e294079f055f8e35e25b8feb23.png",
+          "images": [
+            {
+              "id": 443047,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443047/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443047/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4f/1a/4f1a81e294079f055f8e35e25b8feb23.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1009,
+      "name": "Range Rover Evoque",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 290,
+      "is_seo_active": 0,
+      "rgs_code": "204021618",
+      "generations": [
+        {
+          "id": 2316,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Evoque",
+          "generation_name": "II",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/62/d2/62d245c59ebbd63d138a1a6a3b302567.png",
+          "images": [
+            {
+              "id": 443048,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443048/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443048/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/62/d2/62d245c59ebbd63d138a1a6a3b302567.png"
+            }
+          ]
+        },
+        {
+          "id": 2317,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Evoque",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2015,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/98/ed9885781b3e4f5e87a12e9c56f4e9f6.png",
+          "images": [
+            {
+              "id": 443049,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443049/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443049/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ed/98/ed9885781b3e4f5e87a12e9c56f4e9f6.png"
+            }
+          ]
+        },
+        {
+          "id": 2318,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Evoque",
+          "generation_name": "I",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f5/ed/f5ed940619c04a22c92681b17ceea2d6.png",
+          "images": [
+            {
+              "id": 443050,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443050/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443050/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f5/ed/f5ed940619c04a22c92681b17ceea2d6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1011,
+      "name": "Range Rover Sport",
+      "mark_id": 97,
+      "sort_id": 1,
+      "rating": 335,
+      "is_seo_active": 0,
+      "rgs_code": "204020607",
+      "generations": [
+        {
+          "id": 2319,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Sport",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b8/71/b87154805f9791b948405966ae6d61a1.png",
+          "images": [
+            {
+              "id": 443051,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443051/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443051/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b8/71/b87154805f9791b948405966ae6d61a1.png"
+            }
+          ]
+        },
+        {
+          "id": 2320,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Sport",
+          "generation_name": "II",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/03/fc/03fc57fb3b81d84084ce81fc4077c678.png",
+          "images": [
+            {
+              "id": 443052,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443052/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443052/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/03/fc/03fc57fb3b81d84084ce81fc4077c678.png"
+            }
+          ]
+        },
+        {
+          "id": 2321,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Sport",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a9/f5/a9f5a5526daa4784980cc3da6a44fe8c.png",
+          "images": [
+            {
+              "id": 443053,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443053/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443053/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a9/f5/a9f5a5526daa4784980cc3da6a44fe8c.png"
+            }
+          ]
+        },
+        {
+          "id": 2322,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Sport",
+          "generation_name": "I",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/38/5f384fc6ed8ddb983aaaf41d3338a530.png",
+          "images": [
+            {
+              "id": 443054,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443054/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443054/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/38/5f384fc6ed8ddb983aaaf41d3338a530.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20997,
+      "name": "Range Rover Velar",
+      "mark_id": 97,
+      "sort_id": 0,
+      "rating": 8,
+      "is_seo_active": 0,
+      "rgs_code": "204022257",
+      "generations": [
+        {
+          "id": 2323,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Velar",
+          "generation_name": "I",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/16/ac16589d787a675f6351fea5b020a792.png",
+          "images": [
+            {
+              "id": 443055,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443055/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/443055/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ac/16/ac16589d787a675f6351fea5b020a792.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1014,
+      "name": "Series",
+      "mark_id": 97,
+      "sort_id": 0,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

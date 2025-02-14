@@ -1,0 +1,644 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 900,
+      "name": "Koleos",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1786,
+          "mark_name": "Renault",
+          "model_name": "Koleos",
+          "generation_name": "2007-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1787,
+          "mark_name": "Renault",
+          "model_name": "Koleos",
+          "generation_name": "2011-2013 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1788,
+          "mark_name": "Renault",
+          "model_name": "Koleos",
+          "generation_name": "2013-2016 (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1789,
+          "mark_name": "Renault",
+          "model_name": "Koleos",
+          "generation_name": "2016-2020 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 901,
+      "name": "Laguna",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1790,
+          "mark_name": "Renault",
+          "model_name": "Laguna",
+          "generation_name": "2007-2013 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 902,
+      "name": "Latitude",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1791,
+          "mark_name": "Renault",
+          "model_name": "Latitude",
+          "generation_name": "2010-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1792,
+          "mark_name": "Renault",
+          "model_name": "Latitude",
+          "generation_name": "2013-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 903,
+      "name": "Logan",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1793,
+          "mark_name": "Renault",
+          "model_name": "Logan",
+          "generation_name": "2004-2009 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1794,
+          "mark_name": "Renault",
+          "model_name": "Logan",
+          "generation_name": "2009-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1795,
+          "mark_name": "Renault",
+          "model_name": "Logan",
+          "generation_name": "2014-2018 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1796,
+          "mark_name": "Renault",
+          "model_name": "Logan",
+          "generation_name": "2018-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 904,
+      "name": "Megane",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1797,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "2006-2009 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1798,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "2008-2012 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1799,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "2012-2014 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1800,
+          "mark_name": "Renault",
+          "model_name": "Megane",
+          "generation_name": "2014-2016 (III, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 905,
+      "name": "Sandero",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1801,
+          "mark_name": "Renault",
+          "model_name": "Sandero",
+          "generation_name": "2009-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1802,
+          "mark_name": "Renault",
+          "model_name": "Sandero",
+          "generation_name": "2012-2018 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1803,
+          "mark_name": "Renault",
+          "model_name": "Sandero",
+          "generation_name": "2018-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 906,
+      "name": "Sandero Stepway",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1804,
+          "mark_name": "Renault",
+          "model_name": "Sandero Stepway",
+          "generation_name": "2010-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1805,
+          "mark_name": "Renault",
+          "model_name": "Sandero Stepway",
+          "generation_name": "2014-2018 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1806,
+          "mark_name": "Renault",
+          "model_name": "Sandero Stepway",
+          "generation_name": "2018-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 907,
+      "name": "Scenic",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1807,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "2006-2009 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1808,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "2009-2012 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1809,
+          "mark_name": "Renault",
+          "model_name": "Scenic",
+          "generation_name": "2012-2013 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 908,
+      "name": "Symbol",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1810,
+          "mark_name": "Renault",
+          "model_name": "Symbol",
+          "generation_name": "2008-2012 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 909,
+      "name": "Twizy",
+      "mark_id": 56,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1811,
+          "mark_name": "Renault",
+          "model_name": "Twizy",
+          "generation_name": "2012-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 891,
+      "name": "Arkana",
+      "mark_id": 56,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1769,
+          "mark_name": "Renault",
+          "model_name": "Arkana",
+          "generation_name": "2018-н. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 892,
+      "name": "Clio",
+      "mark_id": 56,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1770,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "2005-2009 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1771,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "2009-2011 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1772,
+          "mark_name": "Renault",
+          "model_name": "Clio",
+          "generation_name": "2012-2016 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 893,
+      "name": "Dokker",
+      "mark_id": 56,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1773,
+          "mark_name": "Renault",
+          "model_name": "Dokker",
+          "generation_name": "2012-2020 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 894,
+      "name": "Duster",
+      "mark_id": 56,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1774,
+          "mark_name": "Renault",
+          "model_name": "Duster",
+          "generation_name": "2010-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1775,
+          "mark_name": "Renault",
+          "model_name": "Duster",
+          "generation_name": "2015-2021 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1776,
+          "mark_name": "Renault",
+          "model_name": "Duster",
+          "generation_name": "2020-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 895,
+      "name": "Espace",
+      "mark_id": 56,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1777,
+          "mark_name": "Renault",
+          "model_name": "Espace",
+          "generation_name": "2006-2010 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 896,
+      "name": "Fluence",
+      "mark_id": 56,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1778,
+          "mark_name": "Renault",
+          "model_name": "Fluence",
+          "generation_name": "2009-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1779,
+          "mark_name": "Renault",
+          "model_name": "Fluence",
+          "generation_name": "2012-2017 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 897,
+      "name": "Grand Scenic",
+      "mark_id": 56,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1780,
+          "mark_name": "Renault",
+          "model_name": "Grand Scenic",
+          "generation_name": "2006-2009 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1781,
+          "mark_name": "Renault",
+          "model_name": "Grand Scenic",
+          "generation_name": "2013-2015 (III, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 898,
+      "name": "Kangoo",
+      "mark_id": 56,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1782,
+          "mark_name": "Renault",
+          "model_name": "Kangoo",
+          "generation_name": "2008-2013 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1783,
+          "mark_name": "Renault",
+          "model_name": "Kangoo",
+          "generation_name": "2013-2020 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 899,
+      "name": "Kaptur",
+      "mark_id": 56,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1784,
+          "mark_name": "Renault",
+          "model_name": "Kaptur",
+          "generation_name": "2016-2020 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1785,
+          "mark_name": "Renault",
+          "model_name": "Kaptur",
+          "generation_name": "2020-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -27,7 +27,7 @@ class Singleton {
     try {
       const json: TState = getStaticJSONSync<TState | null>(this.rootStorageFile, null)
 
-      if (!json) throw new Error('Неожиданное содержимое файла')
+      if (!json) throw new Error(`⛔ Неожиданное содержимое файла ${this.rootStorageFile}`)
 
       for (const key in json.data) this.state.set(Number(key), json.data[key])
     } catch (err: any) {

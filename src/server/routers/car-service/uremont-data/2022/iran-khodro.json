@@ -1,0 +1,120 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20216,
+      "name": "Bardo",
+      "mark_id": 83,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20217,
+      "name": "Dena",
+      "mark_id": 83,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5252,
+          "mark_name": "Iran Khodro",
+          "model_name": "Dena",
+          "generation_name": "I",
+          "start_year": 2011,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20218,
+      "name": "Runna",
+      "mark_id": 83,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5253,
+          "mark_name": "Iran Khodro",
+          "model_name": "Runna",
+          "generation_name": "I",
+          "start_year": 2012,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 881,
+      "name": "Samand",
+      "mark_id": 83,
+      "sort_id": 1,
+      "rating": 139,
+      "is_seo_active": 0,
+      "rgs_code": "147020960",
+      "generations": [
+        {
+          "id": 5254,
+          "mark_name": "Iran Khodro",
+          "model_name": "Samand",
+          "generation_name": "2002 – н.в.",
+          "start_year": 2002,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20219,
+      "name": "Sarir",
+      "mark_id": 83,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5255,
+          "mark_name": "Iran Khodro",
+          "model_name": "Sarir",
+          "generation_name": "I",
+          "start_year": 2006,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 882,
+      "name": "Soren",
+      "mark_id": 83,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5256,
+          "mark_name": "Iran Khodro",
+          "model_name": "Soren",
+          "generation_name": "2007 – н.в.",
+          "start_year": 2007,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

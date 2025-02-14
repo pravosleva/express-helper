@@ -1,0 +1,732 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20371,
+      "name": "Bobcat",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1215,
+      "name": "Capri",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2799,
+          "mark_name": "Mercury",
+          "model_name": "Capri",
+          "generation_name": "1990 – 1995",
+          "start_year": 1990,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20372,
+      "name": "Colony Park",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2800,
+          "mark_name": "Mercury",
+          "model_name": "Colony Park",
+          "generation_name": "V",
+          "start_year": 1969,
+          "finish_year": 1978,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20373,
+      "name": "Comet",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20374,
+      "name": "Commuter",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1216,
+      "name": "Cougar",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2801,
+          "mark_name": "Mercury",
+          "model_name": "Cougar",
+          "generation_name": "VIII",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2802,
+          "mark_name": "Mercury",
+          "model_name": "Cougar",
+          "generation_name": "VII",
+          "start_year": 1989,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2803,
+          "mark_name": "Mercury",
+          "model_name": "Cougar",
+          "generation_name": "VI",
+          "start_year": 1983,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2804,
+          "mark_name": "Mercury",
+          "model_name": "Cougar",
+          "generation_name": "V",
+          "start_year": 1980,
+          "finish_year": 1982,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2805,
+          "mark_name": "Mercury",
+          "model_name": "Cougar",
+          "generation_name": "IV",
+          "start_year": 1977,
+          "finish_year": 1979,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20376,
+      "name": "Cyclone",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1226,
+      "name": "Sable",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "231009223",
+      "generations": [
+        {
+          "id": 2826,
+          "mark_name": "Mercury",
+          "model_name": "Sable",
+          "generation_name": "V",
+          "start_year": 2007,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2827,
+          "mark_name": "Mercury",
+          "model_name": "Sable",
+          "generation_name": "IV",
+          "start_year": 1999,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2828,
+          "mark_name": "Mercury",
+          "model_name": "Sable",
+          "generation_name": "III",
+          "start_year": 1995,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2829,
+          "mark_name": "Mercury",
+          "model_name": "Sable",
+          "generation_name": "II",
+          "start_year": 1991,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2830,
+          "mark_name": "Mercury",
+          "model_name": "Sable",
+          "generation_name": "I",
+          "start_year": 1986,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1228,
+      "name": "Tracer",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "231009240",
+      "generations": [
+        {
+          "id": 2833,
+          "mark_name": "Mercury",
+          "model_name": "Tracer",
+          "generation_name": "1991 – 1999",
+          "start_year": 1991,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20388,
+      "name": "Zephyr",
+      "mark_id": 117,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20375,
+      "name": "Custom",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19720,
+      "name": "Eight",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2806,
+          "mark_name": "Mercury",
+          "model_name": "Eight",
+          "generation_name": "III",
+          "start_year": 1949,
+          "finish_year": 1951,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1217,
+      "name": "Grand Marquis",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "231009198",
+      "generations": [
+        {
+          "id": 2807,
+          "mark_name": "Mercury",
+          "model_name": "Grand Marquis",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2005,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2808,
+          "mark_name": "Mercury",
+          "model_name": "Grand Marquis",
+          "generation_name": "IV",
+          "start_year": 2002,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2809,
+          "mark_name": "Mercury",
+          "model_name": "Grand Marquis",
+          "generation_name": "III",
+          "start_year": 1997,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2810,
+          "mark_name": "Mercury",
+          "model_name": "Grand Marquis",
+          "generation_name": "II",
+          "start_year": 1991,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2811,
+          "mark_name": "Mercury",
+          "model_name": "Grand Marquis",
+          "generation_name": "I",
+          "start_year": 1983,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20377,
+      "name": "LN7",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20378,
+      "name": "Lynx",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20379,
+      "name": "M-47",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1218,
+      "name": "Marauder",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "231009204",
+      "generations": [
+        {
+          "id": 2812,
+          "mark_name": "Mercury",
+          "model_name": "Marauder",
+          "generation_name": "2002 – 2004",
+          "start_year": 2002,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1219,
+      "name": "Mariner",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "231022038",
+      "generations": [
+        {
+          "id": 2813,
+          "mark_name": "Mercury",
+          "model_name": "Mariner",
+          "generation_name": "II",
+          "start_year": 2007,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2814,
+          "mark_name": "Mercury",
+          "model_name": "Mariner",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1220,
+      "name": "Marquis",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2815,
+          "mark_name": "Mercury",
+          "model_name": "Marquis",
+          "generation_name": "V",
+          "start_year": 1983,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2816,
+          "mark_name": "Mercury",
+          "model_name": "Marquis",
+          "generation_name": "IV",
+          "start_year": 1979,
+          "finish_year": 1982,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20380,
+      "name": "Medalist",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20381,
+      "name": "Meteor",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1221,
+      "name": "Milan",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2817,
+          "mark_name": "Mercury",
+          "model_name": "Milan",
+          "generation_name": "2005 – 2010",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20382,
+      "name": "Monarch",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20383,
+      "name": "Montclair",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1222,
+      "name": "Montego",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2818,
+          "mark_name": "Mercury",
+          "model_name": "Montego",
+          "generation_name": "2004 – 2007",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1223,
+      "name": "Monterey",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "421015936",
+      "generations": [
+        {
+          "id": 2819,
+          "mark_name": "Mercury",
+          "model_name": "Monterey",
+          "generation_name": "2003 – 2007",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2820,
+          "mark_name": "Mercury",
+          "model_name": "Monterey",
+          "generation_name": "V",
+          "start_year": 1960,
+          "finish_year": 1964,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1224,
+      "name": "Mountaineer",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "231009210",
+      "generations": [
+        {
+          "id": 2821,
+          "mark_name": "Mercury",
+          "model_name": "Mountaineer",
+          "generation_name": "III",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2822,
+          "mark_name": "Mercury",
+          "model_name": "Mountaineer",
+          "generation_name": "II",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2823,
+          "mark_name": "Mercury",
+          "model_name": "Mountaineer",
+          "generation_name": "I Рестайлинг",
+          "start_year": 1997,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2824,
+          "mark_name": "Mercury",
+          "model_name": "Mountaineer",
+          "generation_name": "I",
+          "start_year": 1996,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1225,
+      "name": "Mystique",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "231009220",
+      "generations": [
+        {
+          "id": 2825,
+          "mark_name": "Mercury",
+          "model_name": "Mystique",
+          "generation_name": "1994 – 2000",
+          "start_year": 1994,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20384,
+      "name": "Park Lane",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20385,
+      "name": "S-55",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1227,
+      "name": "Topaz",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "231009237",
+      "generations": [
+        {
+          "id": 2831,
+          "mark_name": "Mercury",
+          "model_name": "Topaz",
+          "generation_name": "II",
+          "start_year": 1987,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2832,
+          "mark_name": "Mercury",
+          "model_name": "Topaz",
+          "generation_name": "I",
+          "start_year": 1983,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20386,
+      "name": "Turnpike Cruiser",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1229,
+      "name": "Villager",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "231009246",
+      "generations": [
+        {
+          "id": 2834,
+          "mark_name": "Mercury",
+          "model_name": "Villager",
+          "generation_name": "II",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2835,
+          "mark_name": "Mercury",
+          "model_name": "Villager",
+          "generation_name": "I",
+          "start_year": 1992,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20387,
+      "name": "Voyager",
+      "mark_id": 117,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

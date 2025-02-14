@@ -1,0 +1,324 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 576,
+      "name": "911",
+      "mark_id": 63,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1082,
+          "mark_name": "Porsche",
+          "model_name": "911",
+          "generation_name": "2008-2014 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1083,
+          "mark_name": "Porsche",
+          "model_name": "911",
+          "generation_name": "2011-2017 (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1084,
+          "mark_name": "Porsche",
+          "model_name": "911",
+          "generation_name": "2016-2020 (VII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1085,
+          "mark_name": "Porsche",
+          "model_name": "911",
+          "generation_name": "2018-н.в. (VIII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 577,
+      "name": "918 Spyder",
+      "mark_id": 63,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1086,
+          "mark_name": "Porsche",
+          "model_name": "918 Spyder",
+          "generation_name": "2010-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 578,
+      "name": "Boxster",
+      "mark_id": 63,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1087,
+          "mark_name": "Porsche",
+          "model_name": "Boxster",
+          "generation_name": "2012-2016 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1088,
+          "mark_name": "Porsche",
+          "model_name": "Boxster",
+          "generation_name": "2016-н.в. (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 579,
+      "name": "Cayenne",
+      "mark_id": 63,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1089,
+          "mark_name": "Porsche",
+          "model_name": "Cayenne",
+          "generation_name": "2007-2010 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1090,
+          "mark_name": "Porsche",
+          "model_name": "Cayenne",
+          "generation_name": "2010-2014 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1091,
+          "mark_name": "Porsche",
+          "model_name": "Cayenne",
+          "generation_name": "2014-2018 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1092,
+          "mark_name": "Porsche",
+          "model_name": "Cayenne",
+          "generation_name": "2017-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 580,
+      "name": "Cayenne Coupe",
+      "mark_id": 63,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1093,
+          "mark_name": "Porsche",
+          "model_name": "Cayenne Coupe",
+          "generation_name": "2019-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 581,
+      "name": "Cayman",
+      "mark_id": 63,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1094,
+          "mark_name": "Porsche",
+          "model_name": "Cayman",
+          "generation_name": "2009-2013 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1095,
+          "mark_name": "Porsche",
+          "model_name": "Cayman",
+          "generation_name": "2013-2016 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1096,
+          "mark_name": "Porsche",
+          "model_name": "Cayman",
+          "generation_name": "2016-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 582,
+      "name": "Macan",
+      "mark_id": 63,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1097,
+          "mark_name": "Porsche",
+          "model_name": "Macan",
+          "generation_name": "2013-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1098,
+          "mark_name": "Porsche",
+          "model_name": "Macan",
+          "generation_name": "2018-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 583,
+      "name": "Panamera",
+      "mark_id": 63,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1099,
+          "mark_name": "Porsche",
+          "model_name": "Panamera",
+          "generation_name": "2009-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1100,
+          "mark_name": "Porsche",
+          "model_name": "Panamera",
+          "generation_name": "2013-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1101,
+          "mark_name": "Porsche",
+          "model_name": "Panamera",
+          "generation_name": "2016-2020 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1102,
+          "mark_name": "Porsche",
+          "model_name": "Panamera",
+          "generation_name": "2020-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 584,
+      "name": "Taycan",
+      "mark_id": 63,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1103,
+          "mark_name": "Porsche",
+          "model_name": "Taycan",
+          "generation_name": "2019-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,628 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 987,
+      "name": "A112",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20284,
+      "name": "Appia",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2261,
+          "mark_name": "Lancia",
+          "model_name": "Appia",
+          "generation_name": "1953 – 1963",
+          "start_year": 1953,
+          "finish_year": 1963,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 988,
+      "name": "Beta",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007451",
+      "generations": [
+        {
+          "id": 2263,
+          "mark_name": "Lancia",
+          "model_name": "Beta",
+          "generation_name": "1972 – 1984",
+          "start_year": 1972,
+          "finish_year": 1984,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 990,
+      "name": "Delta",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2265,
+          "mark_name": "Lancia",
+          "model_name": "Delta",
+          "generation_name": "III (844) Рестайлинг",
+          "start_year": 2011,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2266,
+          "mark_name": "Lancia",
+          "model_name": "Delta",
+          "generation_name": "III (844)",
+          "start_year": 2008,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2267,
+          "mark_name": "Lancia",
+          "model_name": "Delta",
+          "generation_name": "II (836)",
+          "start_year": 1993,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2268,
+          "mark_name": "Lancia",
+          "model_name": "Delta",
+          "generation_name": "I (831)",
+          "start_year": 1979,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20286,
+      "name": "Flaminia",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2269,
+          "mark_name": "Lancia",
+          "model_name": "Flaminia",
+          "generation_name": "1952 – 1970",
+          "start_year": 1952,
+          "finish_year": 1970,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 994,
+      "name": "Kappa",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "203007527",
+      "generations": [
+        {
+          "id": 2274,
+          "mark_name": "Lancia",
+          "model_name": "Kappa",
+          "generation_name": "1994 – 2000",
+          "start_year": 1994,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 995,
+      "name": "Lybra",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "203007553",
+      "generations": [
+        {
+          "id": 2275,
+          "mark_name": "Lancia",
+          "model_name": "Lybra",
+          "generation_name": "1999 – 2006",
+          "start_year": 1999,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 997,
+      "name": "Musa",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "203020601",
+      "generations": [
+        {
+          "id": 2276,
+          "mark_name": "Lancia",
+          "model_name": "Musa",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2277,
+          "mark_name": "Lancia",
+          "model_name": "Musa",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1001,
+      "name": "Thesis",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "203007624",
+      "generations": [
+        {
+          "id": 2282,
+          "mark_name": "Lancia",
+          "model_name": "Thesis",
+          "generation_name": "2002 – 2009",
+          "start_year": 2002,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1004,
+      "name": "Ypsilon",
+      "mark_id": 96,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2286,
+          "mark_name": "Lancia",
+          "model_name": "Ypsilon",
+          "generation_name": "III (Type 846) Рестайлинг",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2287,
+          "mark_name": "Lancia",
+          "model_name": "Ypsilon",
+          "generation_name": "III (Type 846)",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2288,
+          "mark_name": "Lancia",
+          "model_name": "Ypsilon",
+          "generation_name": "II (Type 843) Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2289,
+          "mark_name": "Lancia",
+          "model_name": "Ypsilon",
+          "generation_name": "II (Type 843)",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2290,
+          "mark_name": "Lancia",
+          "model_name": "Ypsilon",
+          "generation_name": "I (Type 840)",
+          "start_year": 1995,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20283,
+      "name": "2000",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20285,
+      "name": "Aurelia",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2262,
+          "mark_name": "Lancia",
+          "model_name": "Aurelia",
+          "generation_name": "1950 – 1953",
+          "start_year": 1950,
+          "finish_year": 1953,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 989,
+      "name": "Dedra",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007471",
+      "generations": [
+        {
+          "id": 2264,
+          "mark_name": "Lancia",
+          "model_name": "Dedra",
+          "generation_name": "1989 – 2000",
+          "start_year": 1989,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19711,
+      "name": "Flavia",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2270,
+          "mark_name": "Lancia",
+          "model_name": "Flavia",
+          "generation_name": "I",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 991,
+      "name": "Fulvia",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007521",
+      "generations": [
+        {
+          "id": 2271,
+          "mark_name": "Lancia",
+          "model_name": "Fulvia",
+          "generation_name": "1968 – 1975",
+          "start_year": 1968,
+          "finish_year": 1975,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 992,
+      "name": "Gamma",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007523",
+      "generations": [
+        {
+          "id": 2272,
+          "mark_name": "Lancia",
+          "model_name": "Gamma",
+          "generation_name": "1976 – 1984",
+          "start_year": 1976,
+          "finish_year": 1984,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 993,
+      "name": "Hyena",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203020600",
+      "generations": [
+        {
+          "id": 2273,
+          "mark_name": "Lancia",
+          "model_name": "Hyena",
+          "generation_name": "1992 – 1996",
+          "start_year": 1992,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 996,
+      "name": "Montecarlo",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5275,
+          "mark_name": "Lancia",
+          "model_name": "Montecarlo",
+          "generation_name": "1975 – 1981",
+          "start_year": 1975,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 998,
+      "name": "Phedra",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007579",
+      "generations": [
+        {
+          "id": 2278,
+          "mark_name": "Lancia",
+          "model_name": "Phedra",
+          "generation_name": "2002 – 2010",
+          "start_year": 2002,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 999,
+      "name": "Prisma",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007584",
+      "generations": [
+        {
+          "id": 2279,
+          "mark_name": "Lancia",
+          "model_name": "Prisma",
+          "generation_name": "1982 – 1989",
+          "start_year": 1982,
+          "finish_year": 1989,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20287,
+      "name": "Scorpion",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20288,
+      "name": "Stratos HF",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1000,
+      "name": "Thema",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007595",
+      "generations": [
+        {
+          "id": 2280,
+          "mark_name": "Lancia",
+          "model_name": "Thema",
+          "generation_name": "II",
+          "start_year": 2011,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2281,
+          "mark_name": "Lancia",
+          "model_name": "Thema",
+          "generation_name": "I",
+          "start_year": 1984,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "name": "Trevi",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2283,
+          "mark_name": "Lancia",
+          "model_name": "Trevi",
+          "generation_name": "1980 – 1984",
+          "start_year": 1980,
+          "finish_year": 1984,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19712,
+      "name": "Voyager",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2284,
+          "mark_name": "Lancia",
+          "model_name": "Voyager",
+          "generation_name": "2011 – 2015",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20289,
+      "name": "Y",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007629",
+      "generations": []
+    },
+    {
+      "id": 1003,
+      "name": "Y10",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007637",
+      "generations": [
+        {
+          "id": 2285,
+          "mark_name": "Lancia",
+          "model_name": "Y10",
+          "generation_name": "1985 – 1995",
+          "start_year": 1985,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "name": "Zeta",
+      "mark_id": 96,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "203007648",
+      "generations": [
+        {
+          "id": 2291,
+          "mark_name": "Lancia",
+          "model_name": "Zeta",
+          "generation_name": "1995 – 2002",
+          "start_year": 1995,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

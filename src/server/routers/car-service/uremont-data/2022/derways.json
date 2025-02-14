@@ -1,0 +1,152 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 479,
+      "name": "Antelope",
+      "mark_id": 50,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "763021191",
+      "generations": [
+        {
+          "id": 1051,
+          "mark_name": "Derways",
+          "model_name": "Antelope",
+          "generation_name": "2007 – 2007",
+          "start_year": 2007,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 480,
+      "name": "Aurora",
+      "mark_id": 50,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "763021192",
+      "generations": [
+        {
+          "id": 1052,
+          "mark_name": "Derways",
+          "model_name": "Aurora",
+          "generation_name": "2006 – 2008",
+          "start_year": 2006,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 481,
+      "name": "Cowboy",
+      "mark_id": 50,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "709020699",
+      "generations": [
+        {
+          "id": 1053,
+          "mark_name": "Derways",
+          "model_name": "Cowboy",
+          "generation_name": "2004 – 2006",
+          "start_year": 2004,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 482,
+      "name": "Land Crown",
+      "mark_id": 50,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "709021095",
+      "generations": [
+        {
+          "id": 1054,
+          "mark_name": "Derways",
+          "model_name": "Land Crown",
+          "generation_name": "2006 – 2007",
+          "start_year": 2006,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 483,
+      "name": "Plutus",
+      "mark_id": 50,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "763021195",
+      "generations": [
+        {
+          "id": 1055,
+          "mark_name": "Derways",
+          "model_name": "Plutus",
+          "generation_name": "2007 – 2008",
+          "start_year": 2007,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 484,
+      "name": "Saladin",
+      "mark_id": 50,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "709021097",
+      "generations": [
+        {
+          "id": 1056,
+          "mark_name": "Derways",
+          "model_name": "Saladin",
+          "generation_name": "2007 – 2008",
+          "start_year": 2007,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 485,
+      "name": "Shuttle",
+      "mark_id": 50,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1057,
+          "mark_name": "Derways",
+          "model_name": "Shuttle",
+          "generation_name": "2005 – 2008",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1697,
+      "name": "C8",
+      "mark_id": 163,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4051,
+          "mark_name": "Spyker",
+          "model_name": "C8",
+          "generation_name": "2001 – н.в.",
+          "start_year": 2001,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

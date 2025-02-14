@@ -1,0 +1,455 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 629,
+      "name": "BRZ",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1188,
+          "mark_name": "Subaru",
+          "model_name": "BRZ",
+          "generation_name": "2012-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 630,
+      "name": "Forester",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1189,
+          "mark_name": "Subaru",
+          "model_name": "Forester",
+          "generation_name": "2007-2010 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1190,
+          "mark_name": "Subaru",
+          "model_name": "Forester",
+          "generation_name": "2010-2013 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1191,
+          "mark_name": "Subaru",
+          "model_name": "Forester",
+          "generation_name": "2012-2016 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1192,
+          "mark_name": "Subaru",
+          "model_name": "Forester",
+          "generation_name": "2016-2019 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1193,
+          "mark_name": "Subaru",
+          "model_name": "Forester",
+          "generation_name": "2018-2021 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1194,
+          "mark_name": "Subaru",
+          "model_name": "Forester",
+          "generation_name": "2018-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1195,
+          "mark_name": "Subaru",
+          "model_name": "Forester",
+          "generation_name": "2021-н.в. (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 631,
+      "name": "Impreza",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1196,
+          "mark_name": "Subaru",
+          "model_name": "Impreza",
+          "generation_name": "2007-2012 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1197,
+          "mark_name": "Subaru",
+          "model_name": "Impreza",
+          "generation_name": "2011-2014 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1198,
+          "mark_name": "Subaru",
+          "model_name": "Impreza",
+          "generation_name": "2015-2016 (IV Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1199,
+          "mark_name": "Subaru",
+          "model_name": "Impreza",
+          "generation_name": "2016-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 632,
+      "name": "Impreza WRX",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1200,
+          "mark_name": "Subaru",
+          "model_name": "Impreza WRX",
+          "generation_name": "2007-2011 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1201,
+          "mark_name": "Subaru",
+          "model_name": "Impreza WRX",
+          "generation_name": "2011-2014 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1202,
+          "mark_name": "Subaru",
+          "model_name": "Impreza WRX",
+          "generation_name": "2014-2016 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1203,
+          "mark_name": "Subaru",
+          "model_name": "Impreza WRX",
+          "generation_name": "2016-н.в. (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 633,
+      "name": "Impreza WRX STI",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1204,
+          "mark_name": "Subaru",
+          "model_name": "Impreza WRX STI",
+          "generation_name": "2007-2011 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1205,
+          "mark_name": "Subaru",
+          "model_name": "Impreza WRX STI",
+          "generation_name": "2011-2014 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1206,
+          "mark_name": "Subaru",
+          "model_name": "Impreza WRX STI",
+          "generation_name": "2014-2017 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1207,
+          "mark_name": "Subaru",
+          "model_name": "Impreza WRX STI",
+          "generation_name": "2016-н.в. (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 634,
+      "name": "Impreza XV",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1208,
+          "mark_name": "Subaru",
+          "model_name": "Impreza XV",
+          "generation_name": "2010-2011 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 635,
+      "name": "Legacy",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1209,
+          "mark_name": "Subaru",
+          "model_name": "Legacy",
+          "generation_name": "2009-2013 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1210,
+          "mark_name": "Subaru",
+          "model_name": "Legacy",
+          "generation_name": "2012-2015 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1211,
+          "mark_name": "Subaru",
+          "model_name": "Legacy",
+          "generation_name": "2017-2021 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 636,
+      "name": "Outback",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1212,
+          "mark_name": "Subaru",
+          "model_name": "Outback",
+          "generation_name": "2009-2013 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1213,
+          "mark_name": "Subaru",
+          "model_name": "Outback",
+          "generation_name": "2012-2015 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1214,
+          "mark_name": "Subaru",
+          "model_name": "Outback",
+          "generation_name": "2014-2018 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1215,
+          "mark_name": "Subaru",
+          "model_name": "Outback",
+          "generation_name": "2017-2021 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1216,
+          "mark_name": "Subaru",
+          "model_name": "Outback",
+          "generation_name": "2019-н.в. (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 637,
+      "name": "Tribeca",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1217,
+          "mark_name": "Subaru",
+          "model_name": "Tribeca",
+          "generation_name": "2007-2014 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 638,
+      "name": "XV",
+      "mark_id": 42,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1218,
+          "mark_name": "Subaru",
+          "model_name": "XV",
+          "generation_name": "2011-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1219,
+          "mark_name": "Subaru",
+          "model_name": "XV",
+          "generation_name": "2016-2017 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1220,
+          "mark_name": "Subaru",
+          "model_name": "XV",
+          "generation_name": "2017-2021 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1221,
+          "mark_name": "Subaru",
+          "model_name": "XV",
+          "generation_name": "2021-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

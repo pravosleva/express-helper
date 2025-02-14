@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 274,
+      "name": "H3",
+      "mark_id": 27,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 431,
+          "mark_name": "Haval Pro",
+          "model_name": "H3",
+          "generation_name": "2024-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

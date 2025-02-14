@@ -1,0 +1,88 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1965,
+      "name": "Corda",
+      "mark_id": 186,
+      "sort_id": 1,
+      "rating": 14,
+      "is_seo_active": 0,
+      "rgs_code": "812021601",
+      "generations": [
+        {
+          "id": 5025,
+          "mark_name": "Vortex",
+          "model_name": "Corda",
+          "generation_name": "2010 – 2012",
+          "start_year": 2010,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1966,
+      "name": "Estina",
+      "mark_id": 186,
+      "sort_id": 1,
+      "rating": 174,
+      "is_seo_active": 0,
+      "rgs_code": "812021496",
+      "generations": [
+        {
+          "id": 5026,
+          "mark_name": "Vortex",
+          "model_name": "Estina",
+          "generation_name": "II (FL-C)",
+          "start_year": 2012,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5027,
+          "mark_name": "Vortex",
+          "model_name": "Estina",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1967,
+      "name": "Tingo",
+      "mark_id": 186,
+      "sort_id": 1,
+      "rating": 128,
+      "is_seo_active": 0,
+      "rgs_code": "812021593",
+      "generations": [
+        {
+          "id": 5028,
+          "mark_name": "Vortex",
+          "model_name": "Tingo",
+          "generation_name": "I (FL)",
+          "start_year": 2012,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5029,
+          "mark_name": "Vortex",
+          "model_name": "Tingo",
+          "generation_name": "I",
+          "start_year": 2010,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -23,7 +23,7 @@ const projectRootDir = path.join(__dirname, '../../../../') // NOTE: root ./src 
 for (const name of requiredAuxStateFiles) {
   const storageFilePath = path.join(projectRootDir, '/storage', name)
   const ts = new Date().getTime()
-  createFileIfNecessary(storageFilePath, `{ data: {}, ts: ${ts} }`)
+  createFileIfNecessary(storageFilePath, `{ "data": {}, "ts": ${ts} }`)
 }
 // NOTE: Check
 const testedFileNames = getFiles(path.join(projectRootDir, '/storage'))

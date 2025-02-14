@@ -1,0 +1,78 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 968,
+      "name": "CC8S",
+      "mark_id": 93,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2208,
+          "mark_name": "Koenigsegg",
+          "model_name": "CC8S",
+          "generation_name": "1998 – 2004",
+          "start_year": 1998,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 969,
+      "name": "CCR",
+      "mark_id": 93,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2209,
+          "mark_name": "Koenigsegg",
+          "model_name": "CCR",
+          "generation_name": "2004 – 2006",
+          "start_year": 2004,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 970,
+      "name": "CCX",
+      "mark_id": 93,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2210,
+          "mark_name": "Koenigsegg",
+          "model_name": "CCX",
+          "generation_name": "2006 – 2010",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20277,
+      "name": "CCXR",
+      "mark_id": 93,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

@@ -1,0 +1,542 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1098,
+      "name": "228",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224007965",
+      "generations": [
+        {
+          "id": 2480,
+          "mark_name": "Maserati",
+          "model_name": "228",
+          "generation_name": "1986 – 1992",
+          "start_year": 1986,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1099,
+      "name": "3200 GT",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224007968",
+      "generations": [
+        {
+          "id": 2481,
+          "mark_name": "Maserati",
+          "model_name": "3200 GT",
+          "generation_name": "1998 – 2002",
+          "start_year": 1998,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20311,
+      "name": "3500 GT",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1103,
+      "name": "Biturbo",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224007979",
+      "generations": [
+        {
+          "id": 2483,
+          "mark_name": "Maserati",
+          "model_name": "Biturbo",
+          "generation_name": "1981 – 1994",
+          "start_year": 1981,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1104,
+      "name": "Bora",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "425016155",
+      "generations": [
+        {
+          "id": 2484,
+          "mark_name": "Maserati",
+          "model_name": "Bora",
+          "generation_name": "1971 – 1980",
+          "start_year": 1971,
+          "finish_year": 1980,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1106,
+      "name": "Ghibli",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "224008003",
+      "generations": [
+        {
+          "id": 2485,
+          "mark_name": "Maserati",
+          "model_name": "Ghibli",
+          "generation_name": "III Рестайлинг 2",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2486,
+          "mark_name": "Maserati",
+          "model_name": "Ghibli",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2487,
+          "mark_name": "Maserati",
+          "model_name": "Ghibli",
+          "generation_name": "III",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2488,
+          "mark_name": "Maserati",
+          "model_name": "Ghibli",
+          "generation_name": "II",
+          "start_year": 1992,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1107,
+      "name": "GranTurismo",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "224021263",
+      "generations": [
+        {
+          "id": 2489,
+          "mark_name": "Maserati",
+          "model_name": "GranTurismo",
+          "generation_name": "2007 – 2019",
+          "start_year": 2007,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19715,
+      "name": "Levante",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "226020082",
+      "generations": [
+        {
+          "id": 2494,
+          "mark_name": "Maserati",
+          "model_name": "Levante",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2495,
+          "mark_name": "Maserati",
+          "model_name": "Levante",
+          "generation_name": "I",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1115,
+      "name": "Quattroporte",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "224008024",
+      "generations": [
+        {
+          "id": 2498,
+          "mark_name": "Maserati",
+          "model_name": "Quattroporte",
+          "generation_name": "VI Рестайлинг 2",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2499,
+          "mark_name": "Maserati",
+          "model_name": "Quattroporte",
+          "generation_name": "VI Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2500,
+          "mark_name": "Maserati",
+          "model_name": "Quattroporte",
+          "generation_name": "VI",
+          "start_year": 2012,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2501,
+          "mark_name": "Maserati",
+          "model_name": "Quattroporte",
+          "generation_name": "V Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2502,
+          "mark_name": "Maserati",
+          "model_name": "Quattroporte",
+          "generation_name": "V",
+          "start_year": 2003,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2503,
+          "mark_name": "Maserati",
+          "model_name": "Quattroporte",
+          "generation_name": "IV",
+          "start_year": 1994,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2504,
+          "mark_name": "Maserati",
+          "model_name": "Quattroporte",
+          "generation_name": "III",
+          "start_year": 1979,
+          "finish_year": 1990,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20318,
+      "name": "Spyder",
+      "mark_id": 111,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1100,
+      "name": "420",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224007970",
+      "generations": [
+        {
+          "id": 2482,
+          "mark_name": "Maserati",
+          "model_name": "420",
+          "generation_name": "1985 – 1994",
+          "start_year": 1985,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20312,
+      "name": "Coupe",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20313,
+      "name": "GranCabrio",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20314,
+      "name": "GranSport",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224020664",
+      "generations": []
+    },
+    {
+      "id": 1108,
+      "name": "Indy",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224008006",
+      "generations": [
+        {
+          "id": 2490,
+          "mark_name": "Maserati",
+          "model_name": "Indy",
+          "generation_name": "1969 – 1974",
+          "start_year": 1969,
+          "finish_year": 1974,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1109,
+      "name": "Karif",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224008010",
+      "generations": [
+        {
+          "id": 2491,
+          "mark_name": "Maserati",
+          "model_name": "Karif",
+          "generation_name": "1988 – 2000",
+          "start_year": 1988,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1110,
+      "name": "Khamsin",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224008013",
+      "generations": [
+        {
+          "id": 2492,
+          "mark_name": "Maserati",
+          "model_name": "Khamsin",
+          "generation_name": "1974 – 1982",
+          "start_year": 1974,
+          "finish_year": 1982,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1111,
+      "name": "Kyalami",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224008015",
+      "generations": [
+        {
+          "id": 2493,
+          "mark_name": "Maserati",
+          "model_name": "Kyalami",
+          "generation_name": "1976 – 1985",
+          "start_year": 1976,
+          "finish_year": 1985,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1113,
+      "name": "Merak",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224008018",
+      "generations": [
+        {
+          "id": 2496,
+          "mark_name": "Maserati",
+          "model_name": "Merak",
+          "generation_name": "1975 – 1983",
+          "start_year": 1975,
+          "finish_year": 1983,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1114,
+      "name": "Mexico",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224008021",
+      "generations": [
+        {
+          "id": 2497,
+          "mark_name": "Maserati",
+          "model_name": "Mexico",
+          "generation_name": "1967 – 1972",
+          "start_year": 1967,
+          "finish_year": 1972,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20315,
+      "name": "Mistral",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20316,
+      "name": "Racing",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1116,
+      "name": "Royale",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "421016001",
+      "generations": [
+        {
+          "id": 2505,
+          "mark_name": "Maserati",
+          "model_name": "Royale",
+          "generation_name": "1985 – 1993",
+          "start_year": 1985,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20317,
+      "name": "Sebring",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1117,
+      "name": "Shamal",
+      "mark_id": 111,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "224008034",
+      "generations": [
+        {
+          "id": 2506,
+          "mark_name": "Maserati",
+          "model_name": "Shamal",
+          "generation_name": "1989 – 1995",
+          "start_year": 1989,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

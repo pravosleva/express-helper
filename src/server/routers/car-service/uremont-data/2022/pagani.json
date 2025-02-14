@@ -1,0 +1,47 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1455,
+      "name": "Huayra",
+      "mark_id": 132,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3532,
+          "mark_name": "Pagani",
+          "model_name": "Huayra",
+          "generation_name": "2012 – н.в.",
+          "start_year": 2012,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1456,
+      "name": "Zonda C12",
+      "mark_id": 132,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "291011578",
+      "generations": [
+        {
+          "id": 5430,
+          "mark_name": "Pagani",
+          "model_name": "Zonda C12",
+          "generation_name": "1999 – 2013",
+          "start_year": 1999,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 224,
+      "name": "Fullback",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 353,
+          "mark_name": "Fiat",
+          "model_name": "Fullback",
+          "generation_name": "2015-2020 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 225,
+      "name": "Grande Punto",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 354,
+          "mark_name": "Fiat",
+          "model_name": "Grande Punto",
+          "generation_name": "2005-2012 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 355,
+          "mark_name": "Fiat",
+          "model_name": "Grande Punto",
+          "generation_name": "2006-2011 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 356,
+          "mark_name": "Fiat",
+          "model_name": "Grande Punto",
+          "generation_name": "2012-2016 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 226,
+      "name": "Linea",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 357,
+          "mark_name": "Fiat",
+          "model_name": "Linea",
+          "generation_name": "2007-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 227,
+      "name": "Panda",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 358,
+          "mark_name": "Fiat",
+          "model_name": "Panda",
+          "generation_name": "2008-2012 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 228,
+      "name": "Punto",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 359,
+          "mark_name": "Fiat",
+          "model_name": "Punto",
+          "generation_name": "2009-2012 (III Punto Evo)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 229,
+      "name": "Scudo минивэн",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 360,
+          "mark_name": "Fiat",
+          "model_name": "Scudo минивэн",
+          "generation_name": "2007-2016 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 230,
+      "name": "Scudo фургон",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 361,
+          "mark_name": "Fiat",
+          "model_name": "Scudo фургон",
+          "generation_name": "2007-2016 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 231,
+      "name": "Sedici",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 362,
+          "mark_name": "Fiat",
+          "model_name": "Sedici",
+          "generation_name": "2009-2011 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 232,
+      "name": "фургон",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 363,
+          "mark_name": "Fiat",
+          "model_name": "фургон",
+          "generation_name": "2006-2014 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 233,
+      "name": "шасси",
+      "mark_id": 17,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 364,
+          "mark_name": "Fiat",
+          "model_name": "шасси",
+          "generation_name": "2006-2014 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 213,
+      "name": "500",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 337,
+          "mark_name": "Fiat",
+          "model_name": "500",
+          "generation_name": "2007-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 338,
+          "mark_name": "Fiat",
+          "model_name": "500",
+          "generation_name": "2016-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 214,
+      "name": "Albea",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 339,
+          "mark_name": "Fiat",
+          "model_name": "Albea",
+          "generation_name": "2005-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 215,
+      "name": "Bravo",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 340,
+          "mark_name": "Fiat",
+          "model_name": "Bravo",
+          "generation_name": "2007-2011 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 216,
+      "name": "Croma",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 341,
+          "mark_name": "Fiat",
+          "model_name": "Croma",
+          "generation_name": "2008-2010 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 217,
+      "name": "Doblo",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 342,
+          "mark_name": "Fiat",
+          "model_name": "Doblo",
+          "generation_name": "2005-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 343,
+          "mark_name": "Fiat",
+          "model_name": "Doblo",
+          "generation_name": "2015-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 218,
+      "name": "Doblo Cargo",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 344,
+          "mark_name": "Fiat",
+          "model_name": "Doblo Cargo",
+          "generation_name": "2005-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 345,
+          "mark_name": "Fiat",
+          "model_name": "Doblo Cargo",
+          "generation_name": "2014-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 219,
+      "name": "Doblo Combi",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 346,
+          "mark_name": "Fiat",
+          "model_name": "Doblo Combi",
+          "generation_name": "2005-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 347,
+          "mark_name": "Fiat",
+          "model_name": "Doblo Combi",
+          "generation_name": "2014-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 220,
+      "name": "Ducato",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 348,
+          "mark_name": "Fiat",
+          "model_name": "Ducato",
+          "generation_name": "2006-2014 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 349,
+          "mark_name": "Fiat",
+          "model_name": "Ducato",
+          "generation_name": "2014-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 221,
+      "name": "Ducato фургон",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 350,
+          "mark_name": "Fiat",
+          "model_name": "Ducato фургон",
+          "generation_name": "2014-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 222,
+      "name": "Ducato шасси",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 351,
+          "mark_name": "Fiat",
+          "model_name": "Ducato шасси",
+          "generation_name": "2014-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 223,
+      "name": "Freemont",
+      "mark_id": 17,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 352,
+          "mark_name": "Fiat",
+          "model_name": "Freemont",
+          "generation_name": "2013-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

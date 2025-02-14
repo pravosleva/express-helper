@@ -1,0 +1,77 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1118,
+      "name": "57",
+      "mark_id": 112,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "225008039",
+      "generations": [
+        {
+          "id": 2507,
+          "mark_name": "Maybach",
+          "model_name": "57",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2508,
+          "mark_name": "Maybach",
+          "model_name": "57",
+          "generation_name": "I",
+          "start_year": 2002,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1119,
+      "name": "62",
+      "mark_id": 112,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "225008041",
+      "generations": [
+        {
+          "id": 2509,
+          "mark_name": "Maybach",
+          "model_name": "62",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2510,
+          "mark_name": "Maybach",
+          "model_name": "62",
+          "generation_name": "I",
+          "start_year": 2002,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20319,
+      "name": "Zeppelin",
+      "mark_id": 112,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

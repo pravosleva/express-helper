@@ -1,0 +1,47 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 646,
+      "name": "300",
+      "mark_id": 36,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1239,
+          "mark_name": "TANK",
+          "model_name": "300",
+          "generation_name": "2021-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 647,
+      "name": "500",
+      "mark_id": 36,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1240,
+          "mark_name": "TANK",
+          "model_name": "500",
+          "generation_name": "2021-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,540 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 418,
+      "name": "IS",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 730,
+          "mark_name": "Lexus",
+          "model_name": "IS",
+          "generation_name": "2008-2013 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 731,
+          "mark_name": "Lexus",
+          "model_name": "IS",
+          "generation_name": "2010-2013 (II, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 732,
+          "mark_name": "Lexus",
+          "model_name": "IS",
+          "generation_name": "2013-2015 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 733,
+          "mark_name": "Lexus",
+          "model_name": "IS",
+          "generation_name": "2015-2016 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 419,
+      "name": "IS F",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 734,
+          "mark_name": "Lexus",
+          "model_name": "IS F",
+          "generation_name": "2008-2013 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 420,
+      "name": "LC",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 735,
+          "mark_name": "Lexus",
+          "model_name": "LC",
+          "generation_name": "2017-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 421,
+      "name": "LS",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 736,
+          "mark_name": "Lexus",
+          "model_name": "LS",
+          "generation_name": "2009-2012 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 737,
+          "mark_name": "Lexus",
+          "model_name": "LS",
+          "generation_name": "2012-2017 (IV, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 738,
+          "mark_name": "Lexus",
+          "model_name": "LS",
+          "generation_name": "2017-2021 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 739,
+          "mark_name": "Lexus",
+          "model_name": "LS",
+          "generation_name": "2020-н.в. (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 422,
+      "name": "LX",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 740,
+          "mark_name": "Lexus",
+          "model_name": "LX",
+          "generation_name": "2007-2012 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 741,
+          "mark_name": "Lexus",
+          "model_name": "LX",
+          "generation_name": "2012-2015 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 742,
+          "mark_name": "Lexus",
+          "model_name": "LX",
+          "generation_name": "2015-н.в. (III, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 423,
+      "name": "NX",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 743,
+          "mark_name": "Lexus",
+          "model_name": "NX",
+          "generation_name": "2014-2017 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 744,
+          "mark_name": "Lexus",
+          "model_name": "NX",
+          "generation_name": "2017-2021 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 745,
+          "mark_name": "Lexus",
+          "model_name": "NX",
+          "generation_name": "2022-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 424,
+      "name": "RC",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 746,
+          "mark_name": "Lexus",
+          "model_name": "RC",
+          "generation_name": "2014-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 747,
+          "mark_name": "Lexus",
+          "model_name": "RC",
+          "generation_name": "2018-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 425,
+      "name": "RC F",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 748,
+          "mark_name": "Lexus",
+          "model_name": "RC F",
+          "generation_name": "2015-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 426,
+      "name": "RX",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 749,
+          "mark_name": "Lexus",
+          "model_name": "RX",
+          "generation_name": "2008-2012 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 750,
+          "mark_name": "Lexus",
+          "model_name": "RX",
+          "generation_name": "2012-2015 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 751,
+          "mark_name": "Lexus",
+          "model_name": "RX",
+          "generation_name": "2015-2019 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 752,
+          "mark_name": "Lexus",
+          "model_name": "RX",
+          "generation_name": "2019-н.в. (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 427,
+      "name": "UX",
+      "mark_id": 46,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 753,
+          "mark_name": "Lexus",
+          "model_name": "UX",
+          "generation_name": "2018-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "name": "CT",
+      "mark_id": 46,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 717,
+          "mark_name": "Lexus",
+          "model_name": "CT",
+          "generation_name": "2011-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 718,
+          "mark_name": "Lexus",
+          "model_name": "CT",
+          "generation_name": "2013-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 414,
+      "name": "ES",
+      "mark_id": 46,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 719,
+          "mark_name": "Lexus",
+          "model_name": "ES",
+          "generation_name": "2009-2012 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 720,
+          "mark_name": "Lexus",
+          "model_name": "ES",
+          "generation_name": "2012-2015 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 721,
+          "mark_name": "Lexus",
+          "model_name": "ES",
+          "generation_name": "2015-2018 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 722,
+          "mark_name": "Lexus",
+          "model_name": "ES",
+          "generation_name": "2018-2021 (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 723,
+          "mark_name": "Lexus",
+          "model_name": "ES",
+          "generation_name": "2021-н.в. (VII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 415,
+      "name": "GS",
+      "mark_id": 46,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 724,
+          "mark_name": "Lexus",
+          "model_name": "GS",
+          "generation_name": "2007-2012 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 725,
+          "mark_name": "Lexus",
+          "model_name": "GS",
+          "generation_name": "2011-2016 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 416,
+      "name": "GS F",
+      "mark_id": 46,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 726,
+          "mark_name": "Lexus",
+          "model_name": "GS F",
+          "generation_name": "2016-2018 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 417,
+      "name": "GX",
+      "mark_id": 46,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 727,
+          "mark_name": "Lexus",
+          "model_name": "GX",
+          "generation_name": "2009-2013 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 728,
+          "mark_name": "Lexus",
+          "model_name": "GX",
+          "generation_name": "2013-2019 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 729,
+          "mark_name": "Lexus",
+          "model_name": "GX",
+          "generation_name": "2019-н.в. (II, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

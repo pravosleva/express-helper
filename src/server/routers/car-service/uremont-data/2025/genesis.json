@@ -1,0 +1,140 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 266,
+      "name": "G70",
+      "mark_id": 22,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 419,
+          "mark_name": "Genesis",
+          "model_name": "G70",
+          "generation_name": "2017-2021 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 420,
+          "mark_name": "Genesis",
+          "model_name": "G70",
+          "generation_name": "2020-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 267,
+      "name": "G80",
+      "mark_id": 22,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 421,
+          "mark_name": "Genesis",
+          "model_name": "G80",
+          "generation_name": "2017-2020 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 422,
+          "mark_name": "Genesis",
+          "model_name": "G80",
+          "generation_name": "2020-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 268,
+      "name": "G90",
+      "mark_id": 22,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 423,
+          "mark_name": "Genesis",
+          "model_name": "G90",
+          "generation_name": "2016-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 424,
+          "mark_name": "Genesis",
+          "model_name": "G90",
+          "generation_name": "2018-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 269,
+      "name": "GV70",
+      "mark_id": 22,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 425,
+          "mark_name": "Genesis",
+          "model_name": "GV70",
+          "generation_name": "2020-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 270,
+      "name": "GV80",
+      "mark_id": 22,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 426,
+          "mark_name": "Genesis",
+          "model_name": "GV80",
+          "generation_name": "2020-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 622,
+      "name": "HC",
+      "mark_id": 51,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1180,
+          "mark_name": "Solaris",
+          "model_name": "HC",
+          "generation_name": "2024-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 623,
+      "name": "HS",
+      "mark_id": 51,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1181,
+          "mark_name": "Solaris",
+          "model_name": "HS",
+          "generation_name": "2024-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 624,
+      "name": "KRS",
+      "mark_id": 51,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1182,
+          "mark_name": "Solaris",
+          "model_name": "KRS",
+          "generation_name": "2024-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 625,
+      "name": "KRX",
+      "mark_id": 51,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1183,
+          "mark_name": "Solaris",
+          "model_name": "KRX",
+          "generation_name": "2024-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

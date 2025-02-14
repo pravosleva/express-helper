@@ -1,0 +1,252 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 349,
+      "name": "Cherokee",
+      "mark_id": 38,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 571,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "2007-2014 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 572,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "2014-2017 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 573,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "2017-2020 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 350,
+      "name": "Commander",
+      "mark_id": 38,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 574,
+          "mark_name": "Jeep",
+          "model_name": "Commander",
+          "generation_name": "2005-2010 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 351,
+      "name": "Compass",
+      "mark_id": 38,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 575,
+          "mark_name": "Jeep",
+          "model_name": "Compass",
+          "generation_name": "2006-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 576,
+          "mark_name": "Jeep",
+          "model_name": "Compass",
+          "generation_name": "2011-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 577,
+          "mark_name": "Jeep",
+          "model_name": "Compass",
+          "generation_name": "2016-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 352,
+      "name": "Grand Cherokee",
+      "mark_id": 38,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 578,
+          "mark_name": "Jeep",
+          "model_name": "Grand Cherokee",
+          "generation_name": "2010-2013 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 579,
+          "mark_name": "Jeep",
+          "model_name": "Grand Cherokee",
+          "generation_name": "2013-2018 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 580,
+          "mark_name": "Jeep",
+          "model_name": "Grand Cherokee",
+          "generation_name": "2018-н.в. (IV, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 353,
+      "name": "Liberty",
+      "mark_id": 38,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 581,
+          "mark_name": "Jeep",
+          "model_name": "Liberty",
+          "generation_name": "2006-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 354,
+      "name": "Renegade",
+      "mark_id": 38,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 582,
+          "mark_name": "Jeep",
+          "model_name": "Renegade",
+          "generation_name": "2014-2020 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 583,
+          "mark_name": "Jeep",
+          "model_name": "Renegade",
+          "generation_name": "2018-2021 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 584,
+          "mark_name": "Jeep",
+          "model_name": "Renegade",
+          "generation_name": "2018-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 355,
+      "name": "Wrangler",
+      "mark_id": 38,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 585,
+          "mark_name": "Jeep",
+          "model_name": "Wrangler",
+          "generation_name": "2006-2010 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 586,
+          "mark_name": "Jeep",
+          "model_name": "Wrangler",
+          "generation_name": "2010-2018 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 587,
+          "mark_name": "Jeep",
+          "model_name": "Wrangler",
+          "generation_name": "2017-н.в. (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

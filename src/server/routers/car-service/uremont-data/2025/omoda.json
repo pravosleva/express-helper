@@ -1,0 +1,68 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 535,
+      "name": "C5",
+      "mark_id": 60,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1007,
+          "mark_name": "Omoda",
+          "model_name": "C5",
+          "generation_name": "2022-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 536,
+      "name": "S5",
+      "mark_id": 60,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1008,
+          "mark_name": "Omoda",
+          "model_name": "S5",
+          "generation_name": "2022-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 537,
+      "name": "S5 GT",
+      "mark_id": 60,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1009,
+          "mark_name": "Omoda",
+          "model_name": "S5 GT",
+          "generation_name": "2023-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

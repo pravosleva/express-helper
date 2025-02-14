@@ -1,0 +1,148 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20084,
+      "name": "Aumark BJ 1039",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 13,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20085,
+      "name": "Aumark BJ 1049",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 22344,
+      "name": "Aumark BJ 1069",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 10,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 670,
+      "name": "Midi",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1474,
+          "mark_name": "Foton",
+          "model_name": "Midi",
+          "generation_name": "2007 – 2014",
+          "start_year": 2007,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20086,
+      "name": "Ollin BJ 1039",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20087,
+      "name": "Ollin BJ 1041",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20088,
+      "name": "Sapu",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20962,
+      "name": "Sauvana",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "107022265",
+      "generations": [
+        {
+          "id": 1475,
+          "mark_name": "Foton",
+          "model_name": "Sauvana",
+          "generation_name": "I",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20091,
+      "name": "Tunland",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "107021953",
+      "generations": [
+        {
+          "id": 1476,
+          "mark_name": "Foton",
+          "model_name": "Tunland",
+          "generation_name": "2011 – н.в.",
+          "start_year": 2011,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20096,
+      "name": "View",
+      "mark_id": 64,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20093,
+      "name": "View C",
+      "mark_id": 64,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 390,
+      "name": "City Leading",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "755021078",
+      "generations": [
+        {
+          "id": 906,
+          "mark_name": "Dadi",
+          "model_name": "City Leading",
+          "generation_name": "2004 – 2007",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/15/5f1511ae3dda26d2c9103d733d3114b7.png",
+          "images": [
+            {
+              "id": 442486,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442486/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442486/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/15/5f1511ae3dda26d2c9103d733d3114b7.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 391,
+      "name": "Shuttle",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "755021080",
+      "generations": [
+        {
+          "id": 907,
+          "mark_name": "Dadi",
+          "model_name": "Shuttle",
+          "generation_name": "2005 – 2007",
+          "start_year": 2005,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 392,
+      "name": "Smoothing",
+      "mark_id": 41,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "755021082",
+      "generations": [
+        {
+          "id": 908,
+          "mark_name": "Dadi",
+          "model_name": "Smoothing",
+          "generation_name": "2006 – 2007",
+          "start_year": 2006,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

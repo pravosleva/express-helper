@@ -1,0 +1,841 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20548,
+      "name": "124",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20551,
+      "name": "131",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20552,
+      "name": "132",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1667,
+      "name": "Alhambra",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 14,
+      "is_seo_active": 0,
+      "rgs_code": "365013576",
+      "generations": [
+        {
+          "id": 3964,
+          "mark_name": "SEAT",
+          "model_name": "Alhambra",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3965,
+          "mark_name": "SEAT",
+          "model_name": "Alhambra",
+          "generation_name": "II",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3966,
+          "mark_name": "SEAT",
+          "model_name": "Alhambra",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2000,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3967,
+          "mark_name": "SEAT",
+          "model_name": "Alhambra",
+          "generation_name": "I",
+          "start_year": 1996,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1668,
+      "name": "Altea",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 44,
+      "is_seo_active": 0,
+      "rgs_code": "365020140",
+      "generations": [
+        {
+          "id": 3968,
+          "mark_name": "SEAT",
+          "model_name": "Altea",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3969,
+          "mark_name": "SEAT",
+          "model_name": "Altea",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1669,
+      "name": "Arosa",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "365013593",
+      "generations": [
+        {
+          "id": 3970,
+          "mark_name": "SEAT",
+          "model_name": "Arosa",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2000,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3971,
+          "mark_name": "SEAT",
+          "model_name": "Arosa",
+          "generation_name": "I",
+          "start_year": 1997,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1670,
+      "name": "Cordoba",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 45,
+      "is_seo_active": 0,
+      "rgs_code": "365013602",
+      "generations": [
+        {
+          "id": 3974,
+          "mark_name": "SEAT",
+          "model_name": "Cordoba",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3975,
+          "mark_name": "SEAT",
+          "model_name": "Cordoba",
+          "generation_name": "II",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3976,
+          "mark_name": "SEAT",
+          "model_name": "Cordoba",
+          "generation_name": "I Рестайлинг",
+          "start_year": 1999,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3977,
+          "mark_name": "SEAT",
+          "model_name": "Cordoba",
+          "generation_name": "I",
+          "start_year": 1993,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1673,
+      "name": "Ibiza",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 79,
+      "is_seo_active": 0,
+      "rgs_code": "365013658",
+      "generations": [
+        {
+          "id": 3980,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "V Рестайлинг",
+          "start_year": 2021,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3981,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "V",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3982,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "IV Рестайлинг 2",
+          "start_year": 2015,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3983,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3984,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "IV",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3985,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2006,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3986,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "III",
+          "start_year": 2001,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3987,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "II Рестайлинг",
+          "start_year": 1999,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3988,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "II",
+          "start_year": 1993,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3989,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "I",
+          "start_year": 1984,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5475,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "IV Рестайлинг 2",
+          "start_year": 2015,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5476,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "IV Рестайлинг",
+          "start_year": 2012,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5477,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "IV",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5478,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "III",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5479,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2000,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5480,
+          "mark_name": "SEAT",
+          "model_name": "Ibiza",
+          "generation_name": "II",
+          "start_year": 1996,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1674,
+      "name": "Leon",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 203,
+      "is_seo_active": 0,
+      "rgs_code": "365013712",
+      "generations": [
+        {
+          "id": 3991,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "IV",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3992,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3993,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "III",
+          "start_year": 2012,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3994,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3995,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "II",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3996,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "I",
+          "start_year": 1999,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5481,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "III Рестайлинг",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5482,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "III",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5483,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2009,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5484,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "II",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5485,
+          "mark_name": "SEAT",
+          "model_name": "Leon",
+          "generation_name": "I",
+          "start_year": 1999,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1678,
+      "name": "Toledo",
+      "mark_id": 157,
+      "sort_id": 1,
+      "rating": 55,
+      "is_seo_active": 0,
+      "rgs_code": "397015504",
+      "generations": [
+        {
+          "id": 4001,
+          "mark_name": "SEAT",
+          "model_name": "Toledo",
+          "generation_name": "IV",
+          "start_year": 2012,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4002,
+          "mark_name": "SEAT",
+          "model_name": "Toledo",
+          "generation_name": "III",
+          "start_year": 2004,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4003,
+          "mark_name": "SEAT",
+          "model_name": "Toledo",
+          "generation_name": "II",
+          "start_year": 1998,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4004,
+          "mark_name": "SEAT",
+          "model_name": "Toledo",
+          "generation_name": "I",
+          "start_year": 1991,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20547,
+      "name": "1200/1430 Sport",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20549,
+      "name": "127",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20550,
+      "name": "128",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1666,
+      "name": "133",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "365013574",
+      "generations": [
+        {
+          "id": 3963,
+          "mark_name": "SEAT",
+          "model_name": "133",
+          "generation_name": "1974 – 1979",
+          "start_year": 1974,
+          "finish_year": 1979,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20553,
+      "name": "1400",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20554,
+      "name": "1430",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20555,
+      "name": "1500",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20556,
+      "name": "600/800",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20557,
+      "name": "850",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19743,
+      "name": "Ateca",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3972,
+          "mark_name": "SEAT",
+          "model_name": "Ateca",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3973,
+          "mark_name": "SEAT",
+          "model_name": "Ateca",
+          "generation_name": "I",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1671,
+      "name": "Exeo",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "365021562",
+      "generations": [
+        {
+          "id": 3978,
+          "mark_name": "SEAT",
+          "model_name": "Exeo",
+          "generation_name": "2008 – 2013",
+          "start_year": 2008,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1672,
+      "name": "Fura",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "365013654",
+      "generations": [
+        {
+          "id": 3979,
+          "mark_name": "SEAT",
+          "model_name": "Fura",
+          "generation_name": "1982 – 1986",
+          "start_year": 1982,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20558,
+      "name": "Inca",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3990,
+          "mark_name": "SEAT",
+          "model_name": "Inca",
+          "generation_name": "I",
+          "start_year": 1995,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1675,
+      "name": "Malaga",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "365013726",
+      "generations": [
+        {
+          "id": 3997,
+          "mark_name": "SEAT",
+          "model_name": "Malaga",
+          "generation_name": "1985 – 1993",
+          "start_year": 1985,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1676,
+      "name": "Marbella",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "365013734",
+      "generations": [
+        {
+          "id": 3998,
+          "mark_name": "SEAT",
+          "model_name": "Marbella",
+          "generation_name": "1986 – 1998",
+          "start_year": 1986,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2389,
+      "name": "Mii",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3999,
+          "mark_name": "SEAT",
+          "model_name": "Mii",
+          "generation_name": "2011 – н.в.",
+          "start_year": 2011,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20559,
+      "name": "Panda",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20560,
+      "name": "Ritmo",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1677,
+      "name": "Ronda",
+      "mark_id": 157,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "365013743",
+      "generations": [
+        {
+          "id": 4000,
+          "mark_name": "SEAT",
+          "model_name": "Ronda",
+          "generation_name": "1982 – 1988",
+          "start_year": 1982,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

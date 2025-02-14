@@ -1,0 +1,115 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 177,
+      "name": "Blenheim",
+      "mark_id": 22,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "705001717",
+      "generations": [
+        {
+          "id": 435,
+          "mark_name": "Bristol",
+          "model_name": "Blenheim",
+          "generation_name": "Series 3",
+          "start_year": 2000,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/e1/2ee108d42ab793def7d3a1f2c4cf7ac4.png",
+          "images": [
+            {
+              "id": 442269,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442269/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442269/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/e1/2ee108d42ab793def7d3a1f2c4cf7ac4.png"
+            }
+          ]
+        },
+        {
+          "id": 436,
+          "mark_name": "Bristol",
+          "model_name": "Blenheim",
+          "generation_name": "Series 2",
+          "start_year": 1997,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/ed/59ed302a1c88e1978a8fa1db61c9992e.png",
+          "images": [
+            {
+              "id": 442270,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442270/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442270/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/59/ed/59ed302a1c88e1978a8fa1db61c9992e.png"
+            }
+          ]
+        },
+        {
+          "id": 437,
+          "mark_name": "Bristol",
+          "model_name": "Blenheim",
+          "generation_name": "Series 1",
+          "start_year": 1993,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/16/a116a0d9cf74c19e585bac5a85f776f8.png",
+          "images": [
+            {
+              "id": 442271,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442271/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442271/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a1/16/a116a0d9cf74c19e585bac5a85f776f8.png"
+            }
+          ]
+        },
+        {
+          "id": 5163,
+          "mark_name": "Bristol",
+          "model_name": "Blenheim",
+          "generation_name": "2003 – 2011",
+          "start_year": 2003,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "name": "Fighter",
+      "mark_id": 22,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "705020685",
+      "generations": [
+        {
+          "id": 438,
+          "mark_name": "Bristol",
+          "model_name": "Fighter",
+          "generation_name": "2004 – 2011",
+          "start_year": 2004,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d4/ff/d4ff0b39d86c4a6e316f11574869df7f.png",
+          "images": [
+            {
+              "id": 442272,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442272/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442272/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d4/ff/d4ff0b39d86c4a6e316f11574869df7f.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 178,
+      "name": "Speedster",
+      "mark_id": 22,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "705020686",
+      "generations": []
+    }
+  ]
+}

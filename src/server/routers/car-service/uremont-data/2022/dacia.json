@@ -1,0 +1,517 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 19906,
+      "name": "1100",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 380,
+      "name": "1300",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "226008057",
+      "generations": [
+        {
+          "id": 886,
+          "mark_name": "Dacia",
+          "model_name": "1300",
+          "generation_name": "1969 – 1978",
+          "start_year": 1969,
+          "finish_year": 1978,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 381,
+      "name": "1310",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "071002936",
+      "generations": [
+        {
+          "id": 887,
+          "mark_name": "Dacia",
+          "model_name": "1310",
+          "generation_name": "1979 – 2004",
+          "start_year": 1979,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19907,
+      "name": "1320",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19908,
+      "name": "1325 Liberta",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19909,
+      "name": "2000",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 383,
+      "name": "Dokker",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "341022281",
+      "generations": [
+        {
+          "id": 888,
+          "mark_name": "Dacia",
+          "model_name": "Dokker",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fa/3c/fa3ca153c5832de0add2021bc1d89ee9.png",
+          "images": [
+            {
+              "id": 442470,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442470/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442470/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fa/3c/fa3ca153c5832de0add2021bc1d89ee9.png"
+            }
+          ]
+        },
+        {
+          "id": 889,
+          "mark_name": "Dacia",
+          "model_name": "Dokker",
+          "generation_name": "I",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a8/8b/a88bef754656197f4cd636216bf37756.png",
+          "images": [
+            {
+              "id": 442471,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442471/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442471/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a8/8b/a88bef754656197f4cd636216bf37756.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 384,
+      "name": "Duster",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "341021658",
+      "generations": [
+        {
+          "id": 890,
+          "mark_name": "Dacia",
+          "model_name": "Duster",
+          "generation_name": "II",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4c/11/4c113570655c6e5a142ecaf9819647d8.png",
+          "images": [
+            {
+              "id": 442472,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442472/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442472/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4c/11/4c113570655c6e5a142ecaf9819647d8.png"
+            }
+          ]
+        },
+        {
+          "id": 891,
+          "mark_name": "Dacia",
+          "model_name": "Duster",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4d/b4/4db4dd488bc6f94657077290ef1f11ed.png",
+          "images": [
+            {
+              "id": 442473,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442473/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442473/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4d/b4/4db4dd488bc6f94657077290ef1f11ed.png"
+            }
+          ]
+        },
+        {
+          "id": 892,
+          "mark_name": "Dacia",
+          "model_name": "Duster",
+          "generation_name": "I",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/7f/637f86b87fc3f6f73ccba214d619b5e1.png",
+          "images": [
+            {
+              "id": 442474,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442474/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442474/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/7f/637f86b87fc3f6f73ccba214d619b5e1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 386,
+      "name": "Logan",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 25,
+      "is_seo_active": 0,
+      "rgs_code": "071021076",
+      "generations": [
+        {
+          "id": 895,
+          "mark_name": "Dacia",
+          "model_name": "Logan",
+          "generation_name": "III",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/90/72/90721535bc29ccc26eecf9ace75c7bac.png",
+          "images": [
+            {
+              "id": 442475,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442475/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442475/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/90/72/90721535bc29ccc26eecf9ace75c7bac.png"
+            }
+          ]
+        },
+        {
+          "id": 896,
+          "mark_name": "Dacia",
+          "model_name": "Logan",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ce/8f/ce8f4900b86a334969601cef9bf17ff7.png",
+          "images": [
+            {
+              "id": 442476,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442476/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442476/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ce/8f/ce8f4900b86a334969601cef9bf17ff7.png"
+            }
+          ]
+        },
+        {
+          "id": 897,
+          "mark_name": "Dacia",
+          "model_name": "Logan",
+          "generation_name": "II",
+          "start_year": 2012,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/65/52659e2be3dd4811fa95d6b154587c40.png",
+          "images": [
+            {
+              "id": 442477,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442477/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442477/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/65/52659e2be3dd4811fa95d6b154587c40.png"
+            }
+          ]
+        },
+        {
+          "id": 898,
+          "mark_name": "Dacia",
+          "model_name": "Logan",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e4/3e/e43e5de4e15a63b3c76b3daa3bcffa8a.png",
+          "images": [
+            {
+              "id": 442478,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442478/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442478/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/e4/3e/e43e5de4e15a63b3c76b3daa3bcffa8a.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 388,
+      "name": "Sandero",
+      "mark_id": 40,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "071021077",
+      "generations": [
+        {
+          "id": 901,
+          "mark_name": "Dacia",
+          "model_name": "Sandero",
+          "generation_name": "III",
+          "start_year": 2020,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/af/84/af84ca9cd706e5894f03835cf722d153.png",
+          "images": [
+            {
+              "id": 442481,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442481/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442481/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/af/84/af84ca9cd706e5894f03835cf722d153.png"
+            }
+          ]
+        },
+        {
+          "id": 902,
+          "mark_name": "Dacia",
+          "model_name": "Sandero",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2016,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/f8/5ff85c7ebca929ad7f06996b22c6429c.png",
+          "images": [
+            {
+              "id": 442482,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442482/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442482/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5f/f8/5ff85c7ebca929ad7f06996b22c6429c.png"
+            }
+          ]
+        },
+        {
+          "id": 903,
+          "mark_name": "Dacia",
+          "model_name": "Sandero",
+          "generation_name": "II",
+          "start_year": 2012,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3f/d5/3fd53425a621e6e64c1ff82d96953ebe.png",
+          "images": [
+            {
+              "id": 442483,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442483/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442483/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/3f/d5/3fd53425a621e6e64c1ff82d96953ebe.png"
+            }
+          ]
+        },
+        {
+          "id": 904,
+          "mark_name": "Dacia",
+          "model_name": "Sandero",
+          "generation_name": "I",
+          "start_year": 2008,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/61/cf/61cfad60aea0726fd289655aae68f68e.png",
+          "images": [
+            {
+              "id": 442484,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442484/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442484/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/61/cf/61cfad60aea0726fd289655aae68f68e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19910,
+      "name": "500",
+      "mark_id": 40,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19911,
+      "name": "D6",
+      "mark_id": 40,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19912,
+      "name": "Denem",
+      "mark_id": 40,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19913,
+      "name": "Gamma",
+      "mark_id": 40,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 385,
+      "name": "Lodgy",
+      "mark_id": 40,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 893,
+          "mark_name": "Dacia",
+          "model_name": "Lodgy",
+          "generation_name": "2017 – н.в.",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 894,
+          "mark_name": "Dacia",
+          "model_name": "Lodgy",
+          "generation_name": "2012 – 2017",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 387,
+      "name": "Nova",
+      "mark_id": 40,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "421015953",
+      "generations": [
+        {
+          "id": 899,
+          "mark_name": "Dacia",
+          "model_name": "Nova",
+          "generation_name": "1995 – 2000",
+          "start_year": 1995,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/1f/f91f3264e7100b490c9bae71602a65c6.png",
+          "images": [
+            {
+              "id": 442479,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442479/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442479/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f9/1f/f91f3264e7100b490c9bae71602a65c6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19914,
+      "name": "Pick-Up",
+      "mark_id": 40,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 900,
+          "mark_name": "Dacia",
+          "model_name": "Pick-Up",
+          "generation_name": "I",
+          "start_year": 1975,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/9f/de9f11253ba526e944ede43014614387.png",
+          "images": [
+            {
+              "id": 442480,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442480/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442480/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/de/9f/de9f11253ba526e944ede43014614387.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19915,
+      "name": "Shifter",
+      "mark_id": 40,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 389,
+      "name": "Solenza",
+      "mark_id": 40,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "071020343",
+      "generations": [
+        {
+          "id": 905,
+          "mark_name": "Dacia",
+          "model_name": "Solenza",
+          "generation_name": "2003 – 2005",
+          "start_year": 2003,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/f1/97f13362964d0ea4e057117ea817d09c.png",
+          "images": [
+            {
+              "id": 442485,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442485/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442485/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/f1/97f13362964d0ea4e057117ea817d09c.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

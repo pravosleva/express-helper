@@ -1,0 +1,432 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20389,
+      "name": "1100/1300",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1232,
+      "name": "3",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2836,
+          "mark_name": "MG",
+          "model_name": "3",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2013,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2837,
+          "mark_name": "MG",
+          "model_name": "3",
+          "generation_name": "II",
+          "start_year": 2011,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1233,
+      "name": "350",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": "233022047",
+      "generations": [
+        {
+          "id": 2838,
+          "mark_name": "MG",
+          "model_name": "350",
+          "generation_name": "2010 – 2015",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1234,
+      "name": "5",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2839,
+          "mark_name": "MG",
+          "model_name": "5",
+          "generation_name": "2013 – н.в.",
+          "start_year": 2013,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1235,
+      "name": "550",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2840,
+          "mark_name": "MG",
+          "model_name": "550",
+          "generation_name": "I",
+          "start_year": 2009,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1236,
+      "name": "6",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2841,
+          "mark_name": "MG",
+          "model_name": "6",
+          "generation_name": "2010 – 2017",
+          "start_year": 2010,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20390,
+      "name": "750",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2842,
+          "mark_name": "MG",
+          "model_name": "750",
+          "generation_name": "I",
+          "start_year": 2006,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20391,
+      "name": "A",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1237,
+      "name": "F",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "104020646",
+      "generations": [
+        {
+          "id": 2843,
+          "mark_name": "MG",
+          "model_name": "F",
+          "generation_name": "1995 – 2002",
+          "start_year": 1995,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1248,
+      "name": "ZT",
+      "mark_id": 119,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "233009308",
+      "generations": [
+        {
+          "id": 2854,
+          "mark_name": "MG",
+          "model_name": "ZT",
+          "generation_name": "2001 – 2005",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1240,
+      "name": "B",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "770021238",
+      "generations": []
+    },
+    {
+      "id": 20392,
+      "name": "C",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1238,
+      "name": "Maestro",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "344013350",
+      "generations": [
+        {
+          "id": 2844,
+          "mark_name": "MG",
+          "model_name": "Maestro",
+          "generation_name": "1983 – 1990",
+          "start_year": 1983,
+          "finish_year": 1990,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20393,
+      "name": "Magnette",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1239,
+      "name": "Metro",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2845,
+          "mark_name": "MG",
+          "model_name": "Metro",
+          "generation_name": "1982 – 1990",
+          "start_year": 1982,
+          "finish_year": 1990,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1241,
+      "name": "Midget",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "233009279",
+      "generations": [
+        {
+          "id": 2846,
+          "mark_name": "MG",
+          "model_name": "Midget",
+          "generation_name": "1964 – 1979",
+          "start_year": 1964,
+          "finish_year": 1979,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1242,
+      "name": "Montego",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2847,
+          "mark_name": "MG",
+          "model_name": "Montego",
+          "generation_name": "1984 – 1990",
+          "start_year": 1984,
+          "finish_year": 1990,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1243,
+      "name": "RV8",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2848,
+          "mark_name": "MG",
+          "model_name": "RV8",
+          "generation_name": "1992 – 1995",
+          "start_year": 1992,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1244,
+      "name": "TF",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "233009286",
+      "generations": [
+        {
+          "id": 2849,
+          "mark_name": "MG",
+          "model_name": "TF",
+          "generation_name": "2002 – 2005",
+          "start_year": 2002,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1245,
+      "name": "Xpower SV",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "233020336",
+      "generations": [
+        {
+          "id": 2850,
+          "mark_name": "MG",
+          "model_name": "Xpower SV",
+          "generation_name": "2003 – 2005",
+          "start_year": 2003,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1246,
+      "name": "ZR",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "233009293",
+      "generations": [
+        {
+          "id": 2851,
+          "mark_name": "MG",
+          "model_name": "ZR",
+          "generation_name": "2001 – 2005",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1247,
+      "name": "ZS",
+      "mark_id": 119,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "233009302",
+      "generations": [
+        {
+          "id": 2852,
+          "mark_name": "MG",
+          "model_name": "ZS",
+          "generation_name": "II",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 2853,
+          "mark_name": "MG",
+          "model_name": "ZS",
+          "generation_name": "I",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 734,
+      "name": "Ambassador",
+      "mark_id": 74,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "121005756",
+      "generations": [
+        {
+          "id": 1563,
+          "mark_name": "Hindustan",
+          "model_name": "Ambassador",
+          "generation_name": "1979 – 2014",
+          "start_year": 1979,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 735,
+      "name": "Contessa",
+      "mark_id": 74,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "121005764",
+      "generations": [
+        {
+          "id": 1564,
+          "mark_name": "Hindustan",
+          "model_name": "Contessa",
+          "generation_name": "1984 – 2002",
+          "start_year": 1984,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20129,
+      "name": "Lancer",
+      "mark_id": 74,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20130,
+      "name": "Pajero",
+      "mark_id": 74,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 927,
+      "name": "Газель Next (бортовая)",
+      "mark_id": 74,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1837,
+          "mark_name": "ГАЗ",
+          "model_name": "Газель Next (бортовая)",
+          "generation_name": "2016-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 928,
+      "name": "Газель NN",
+      "mark_id": 74,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1838,
+          "mark_name": "ГАЗ",
+          "model_name": "Газель NN",
+          "generation_name": "2019-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 929,
+      "name": "Газель Бизнес (бортовая)",
+      "mark_id": 74,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1839,
+          "mark_name": "ГАЗ",
+          "model_name": "Газель Бизнес (бортовая)",
+          "generation_name": "2010-н.в. (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 930,
+      "name": "Соболь Бизнес (фургон)",
+      "mark_id": 74,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1840,
+          "mark_name": "ГАЗ",
+          "model_name": "Соболь Бизнес (фургон)",
+          "generation_name": "2010-н.в. (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

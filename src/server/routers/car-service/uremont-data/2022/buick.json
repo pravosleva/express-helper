@@ -1,0 +1,949 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 185,
+      "name": "Century",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "725020727",
+      "generations": [
+        {
+          "id": 442,
+          "mark_name": "Buick",
+          "model_name": "Century",
+          "generation_name": "VI",
+          "start_year": 1997,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/a7/63a7b7f69dd771c0faafec03f3c1c59e.png",
+          "images": [
+            {
+              "id": 442275,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442275/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442275/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/63/a7/63a7b7f69dd771c0faafec03f3c1c59e.png"
+            }
+          ]
+        },
+        {
+          "id": 443,
+          "mark_name": "Buick",
+          "model_name": "Century",
+          "generation_name": "V",
+          "start_year": 1982,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b2/58/b258bb15d05cac4b91ce58819e46756d.png",
+          "images": [
+            {
+              "id": 442276,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442276/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442276/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b2/58/b258bb15d05cac4b91ce58819e46756d.png"
+            }
+          ]
+        },
+        {
+          "id": 444,
+          "mark_name": "Buick",
+          "model_name": "Century",
+          "generation_name": "IV",
+          "start_year": 1978,
+          "finish_year": 1982,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/fb/52fbafd5c613312a72059d350b62aa0d.png",
+          "images": [
+            {
+              "id": 442277,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442277/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442277/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/52/fb/52fbafd5c613312a72059d350b62aa0d.png"
+            }
+          ]
+        },
+        {
+          "id": 445,
+          "mark_name": "Buick",
+          "model_name": "Century",
+          "generation_name": "III",
+          "start_year": 1973,
+          "finish_year": 1977,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/b3/9ab3c99d2009b173089cfce2dff66ddf.png",
+          "images": [
+            {
+              "id": 442278,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442278/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442278/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9a/b3/9ab3c99d2009b173089cfce2dff66ddf.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 187,
+      "name": "Enclave",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": "039021031",
+      "generations": [
+        {
+          "id": 446,
+          "mark_name": "Buick",
+          "model_name": "Enclave",
+          "generation_name": "II",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/50/f7/50f7e78ab17bea9f0b4cbeb192742478.png",
+          "images": [
+            {
+              "id": 442279,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442279/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442279/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/50/f7/50f7e78ab17bea9f0b4cbeb192742478.png"
+            }
+          ]
+        },
+        {
+          "id": 447,
+          "mark_name": "Buick",
+          "model_name": "Enclave",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8c/d7/8cd7c1be08461681fe45398884f28852.png",
+          "images": [
+            {
+              "id": 442280,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442280/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442280/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8c/d7/8cd7c1be08461681fe45398884f28852.png"
+            }
+          ]
+        },
+        {
+          "id": 448,
+          "mark_name": "Buick",
+          "model_name": "Enclave",
+          "generation_name": "I",
+          "start_year": 2007,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c9/ed/c9ed4a9568390a01ad723a6419d75d45.png",
+          "images": [
+            {
+              "id": 442281,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442281/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442281/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c9/ed/c9ed4a9568390a01ad723a6419d75d45.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 188,
+      "name": "Excelle",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 449,
+          "mark_name": "Buick",
+          "model_name": "Excelle",
+          "generation_name": "III",
+          "start_year": 2015,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/a0/2ba06fbb8aef829c1e60bc90bc45c813.png",
+          "images": [
+            {
+              "id": 442282,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442282/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442282/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2b/a0/2ba06fbb8aef829c1e60bc90bc45c813.png"
+            }
+          ]
+        },
+        {
+          "id": 450,
+          "mark_name": "Buick",
+          "model_name": "Excelle",
+          "generation_name": "II",
+          "start_year": 2009,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/31/4b3121dac10774afaf1201f61f2ea74e.png",
+          "images": [
+            {
+              "id": 442283,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442283/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442283/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4b/31/4b3121dac10774afaf1201f61f2ea74e.png"
+            }
+          ]
+        },
+        {
+          "id": 451,
+          "mark_name": "Buick",
+          "model_name": "Excelle",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/dd/d3dd46079a99966efa8785203c516b2e.png",
+          "images": [
+            {
+              "id": 442284,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442284/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442284/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d3/dd/d3dd46079a99966efa8785203c516b2e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 190,
+      "name": "LaCrosse",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 455,
+          "mark_name": "Buick",
+          "model_name": "LaCrosse",
+          "generation_name": "III",
+          "start_year": 2016,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 456,
+          "mark_name": "Buick",
+          "model_name": "LaCrosse",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 457,
+          "mark_name": "Buick",
+          "model_name": "LaCrosse",
+          "generation_name": "II",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 458,
+          "mark_name": "Buick",
+          "model_name": "LaCrosse",
+          "generation_name": "I (China)",
+          "start_year": 2007,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 459,
+          "mark_name": "Buick",
+          "model_name": "LaCrosse",
+          "generation_name": "I (North America)",
+          "start_year": 2004,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 191,
+      "name": "LE Sabre",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "039001740",
+      "generations": [
+        {
+          "id": 5165,
+          "mark_name": "Buick",
+          "model_name": "LE Sabre",
+          "generation_name": "VIII",
+          "start_year": 2000,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5166,
+          "mark_name": "Buick",
+          "model_name": "LE Sabre",
+          "generation_name": "VII",
+          "start_year": 1992,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5167,
+          "mark_name": "Buick",
+          "model_name": "LE Sabre",
+          "generation_name": "VI",
+          "start_year": 1986,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5168,
+          "mark_name": "Buick",
+          "model_name": "LE Sabre",
+          "generation_name": "V",
+          "start_year": 1977,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5169,
+          "mark_name": "Buick",
+          "model_name": "LE Sabre",
+          "generation_name": "III",
+          "start_year": 1965,
+          "finish_year": 1970,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5170,
+          "mark_name": "Buick",
+          "model_name": "LE Sabre",
+          "generation_name": "II",
+          "start_year": 1961,
+          "finish_year": 1964,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5171,
+          "mark_name": "Buick",
+          "model_name": "LE Sabre",
+          "generation_name": "I",
+          "start_year": 1959,
+          "finish_year": 1960,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19460,
+      "name": "Limited",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 460,
+          "mark_name": "Buick",
+          "model_name": "Limited",
+          "generation_name": "1958 – 1959",
+          "start_year": 1958,
+          "finish_year": 1959,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 193,
+      "name": "Park Avenue",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "039001744",
+      "generations": [
+        {
+          "id": 463,
+          "mark_name": "Buick",
+          "model_name": "Park Avenue",
+          "generation_name": "III",
+          "start_year": 2007,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/76/f4/76f47585b399f3cfc35161af832103cc.png",
+          "images": [
+            {
+              "id": 442290,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442290/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442290/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/76/f4/76f47585b399f3cfc35161af832103cc.png"
+            }
+          ]
+        },
+        {
+          "id": 464,
+          "mark_name": "Buick",
+          "model_name": "Park Avenue",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2002,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/54/1a547a0be0d2dadb660c1190630e5f44.png",
+          "images": [
+            {
+              "id": 442291,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442291/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442291/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/1a/54/1a547a0be0d2dadb660c1190630e5f44.png"
+            }
+          ]
+        },
+        {
+          "id": 465,
+          "mark_name": "Buick",
+          "model_name": "Park Avenue",
+          "generation_name": "II",
+          "start_year": 1996,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/17/a2/17a222edf61e302de950d273d74ddf59.png",
+          "images": [
+            {
+              "id": 442292,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442292/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442292/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/17/a2/17a222edf61e302de950d273d74ddf59.png"
+            }
+          ]
+        },
+        {
+          "id": 466,
+          "mark_name": "Buick",
+          "model_name": "Park Avenue",
+          "generation_name": "I",
+          "start_year": 1991,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/3c/833ceb27e59b1d30a19997cdd8688bb1.png",
+          "images": [
+            {
+              "id": 442293,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442293/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442293/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/83/3c/833ceb27e59b1d30a19997cdd8688bb1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "name": "Regal",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": "039001750",
+      "generations": [
+        {
+          "id": 468,
+          "mark_name": "Buick",
+          "model_name": "Regal",
+          "generation_name": "VI",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/a3/d8a34b499867896465e786c3c4b6e077.png",
+          "images": [
+            {
+              "id": 442294,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442294/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442294/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d8/a3/d8a34b499867896465e786c3c4b6e077.png"
+            }
+          ]
+        },
+        {
+          "id": 469,
+          "mark_name": "Buick",
+          "model_name": "Regal",
+          "generation_name": "V Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/42/9342b5c4843536a8a809e93ce329122e.png",
+          "images": [
+            {
+              "id": 442295,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442295/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442295/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/93/42/9342b5c4843536a8a809e93ce329122e.png"
+            }
+          ]
+        },
+        {
+          "id": 470,
+          "mark_name": "Buick",
+          "model_name": "Regal",
+          "generation_name": "V",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/17/b717812bad3e08c796df14a684c7d1e1.png",
+          "images": [
+            {
+              "id": 442296,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442296/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442296/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/17/b717812bad3e08c796df14a684c7d1e1.png"
+            }
+          ]
+        },
+        {
+          "id": 471,
+          "mark_name": "Buick",
+          "model_name": "Regal",
+          "generation_name": "IV",
+          "start_year": 1997,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/2a/972a7c18afbb87c771b4943576b85bb9.png",
+          "images": [
+            {
+              "id": 442297,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442297/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442297/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/97/2a/972a7c18afbb87c771b4943576b85bb9.png"
+            }
+          ]
+        },
+        {
+          "id": 472,
+          "mark_name": "Buick",
+          "model_name": "Regal",
+          "generation_name": "III",
+          "start_year": 1988,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6c/a8/6ca8567cb161273bba15aef1717af77e.png",
+          "images": [
+            {
+              "id": 442298,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442298/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442298/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6c/a8/6ca8567cb161273bba15aef1717af77e.png"
+            }
+          ]
+        },
+        {
+          "id": 473,
+          "mark_name": "Buick",
+          "model_name": "Regal",
+          "generation_name": "II",
+          "start_year": 1978,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/72/8d725b66634cd43f598867ef868c6c17.png",
+          "images": [
+            {
+              "id": 442299,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442299/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442299/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/72/8d725b66634cd43f598867ef868c6c17.png"
+            }
+          ]
+        },
+        {
+          "id": 474,
+          "mark_name": "Buick",
+          "model_name": "Regal",
+          "generation_name": "I",
+          "start_year": 1973,
+          "finish_year": 1977,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/58/60/5860b5338d0c903ae7a5b14820046223.png",
+          "images": [
+            {
+              "id": 442300,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442300/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442300/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/58/60/5860b5338d0c903ae7a5b14820046223.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 197,
+      "name": "Rendezvous",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 19,
+      "is_seo_active": 0,
+      "rgs_code": "039001760",
+      "generations": [
+        {
+          "id": 475,
+          "mark_name": "Buick",
+          "model_name": "Rendezvous",
+          "generation_name": "2001 – 2007",
+          "start_year": 2001,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ec/0b/ec0bbcbfcc23270e4e6f8d8a772648ff.png",
+          "images": [
+            {
+              "id": 442301,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442301/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442301/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ec/0b/ec0bbcbfcc23270e4e6f8d8a772648ff.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 200,
+      "name": "Skylark",
+      "mark_id": 25,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "039001773",
+      "generations": [
+        {
+          "id": 484,
+          "mark_name": "Buick",
+          "model_name": "Skylark",
+          "generation_name": "IX",
+          "start_year": 1992,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 485,
+          "mark_name": "Buick",
+          "model_name": "Skylark",
+          "generation_name": "VI",
+          "start_year": 1980,
+          "finish_year": 1985,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 189,
+      "name": "GL8",
+      "mark_id": 25,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "039001738",
+      "generations": [
+        {
+          "id": 452,
+          "mark_name": "Buick",
+          "model_name": "GL8",
+          "generation_name": "III",
+          "start_year": 2017,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7e/7a/7e7a2272e722e75013a7e7e5e2e90a03.png",
+          "images": [
+            {
+              "id": 442285,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442285/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442285/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/7e/7a/7e7a2272e722e75013a7e7e5e2e90a03.png"
+            }
+          ]
+        },
+        {
+          "id": 453,
+          "mark_name": "Buick",
+          "model_name": "GL8",
+          "generation_name": "II",
+          "start_year": 2010,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bb/62/bb6222d210608b013b982d3a13832143.png",
+          "images": [
+            {
+              "id": 442286,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442286/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442286/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bb/62/bb6222d210608b013b982d3a13832143.png"
+            }
+          ]
+        },
+        {
+          "id": 454,
+          "mark_name": "Buick",
+          "model_name": "GL8",
+          "generation_name": "I",
+          "start_year": 2000,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/d6/10d625bcd68a4efde58cc23498647195.png",
+          "images": [
+            {
+              "id": 442287,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442287/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442287/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/d6/10d625bcd68a4efde58cc23498647195.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 192,
+      "name": "Lucerne",
+      "mark_id": 25,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 461,
+          "mark_name": "Buick",
+          "model_name": "Lucerne",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2008,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4c/2b/4c2b5d28c31840f78de3eccd2a16c5c7.png",
+          "images": [
+            {
+              "id": 442288,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442288/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442288/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/4c/2b/4c2b5d28c31840f78de3eccd2a16c5c7.png"
+            }
+          ]
+        },
+        {
+          "id": 462,
+          "mark_name": "Buick",
+          "model_name": "Lucerne",
+          "generation_name": "I",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/a7/fea7b0979fd5f459c41e712669df4c84.png",
+          "images": [
+            {
+              "id": 442289,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442289/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442289/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fe/a7/fea7b0979fd5f459c41e712669df4c84.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19785,
+      "name": "Rainier",
+      "mark_id": 25,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5172,
+          "mark_name": "Buick",
+          "model_name": "Rainier",
+          "generation_name": "2003 – 2007",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 195,
+      "name": "Reatta",
+      "mark_id": 25,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 467,
+          "mark_name": "Buick",
+          "model_name": "Reatta",
+          "generation_name": "1988 – 1991",
+          "start_year": 1988,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 198,
+      "name": "Riviera",
+      "mark_id": 25,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 476,
+          "mark_name": "Buick",
+          "model_name": "Riviera",
+          "generation_name": "VIII",
+          "start_year": 1994,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 477,
+          "mark_name": "Buick",
+          "model_name": "Riviera",
+          "generation_name": "VII",
+          "start_year": 1985,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 478,
+          "mark_name": "Buick",
+          "model_name": "Riviera",
+          "generation_name": "VI",
+          "start_year": 1979,
+          "finish_year": 1985,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 479,
+          "mark_name": "Buick",
+          "model_name": "Riviera",
+          "generation_name": "III",
+          "start_year": 1971,
+          "finish_year": 1973,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 480,
+          "mark_name": "Buick",
+          "model_name": "Riviera",
+          "generation_name": "II",
+          "start_year": 1966,
+          "finish_year": 1970,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 199,
+      "name": "Roadmaster",
+      "mark_id": 25,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "039001769",
+      "generations": [
+        {
+          "id": 481,
+          "mark_name": "Buick",
+          "model_name": "Roadmaster",
+          "generation_name": "VIII",
+          "start_year": 1991,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 482,
+          "mark_name": "Buick",
+          "model_name": "Roadmaster",
+          "generation_name": "V",
+          "start_year": 1949,
+          "finish_year": 1953,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 483,
+          "mark_name": "Buick",
+          "model_name": "Roadmaster",
+          "generation_name": "IV",
+          "start_year": 1942,
+          "finish_year": 1948,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19266,
+      "name": "Special",
+      "mark_id": 25,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 486,
+          "mark_name": "Buick",
+          "model_name": "Special",
+          "generation_name": "II",
+          "start_year": 1949,
+          "finish_year": 1958,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 487,
+          "mark_name": "Buick",
+          "model_name": "Special",
+          "generation_name": "I",
+          "start_year": 1936,
+          "finish_year": 1949,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 201,
+      "name": "Terraza",
+      "mark_id": 25,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 488,
+          "mark_name": "Buick",
+          "model_name": "Terraza",
+          "generation_name": "2005 – 2007",
+          "start_year": 2005,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/21/d92182edf05035400de45f1e8a94f68d.png",
+          "images": [
+            {
+              "id": 442302,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442302/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442302/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/d9/21/d92182edf05035400de45f1e8a94f68d.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1002 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 665,
+      "name": "Land Cruiser 300",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1287,
+          "mark_name": "Toyota",
+          "model_name": "Land Cruiser 300",
+          "generation_name": "2021-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 666,
+      "name": "Land Cruiser Prado",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1288,
+          "mark_name": "Toyota",
+          "model_name": "Land Cruiser Prado",
+          "generation_name": "2002-2009 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1289,
+          "mark_name": "Toyota",
+          "model_name": "Land Cruiser Prado",
+          "generation_name": "2009-2013 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1290,
+          "mark_name": "Toyota",
+          "model_name": "Land Cruiser Prado",
+          "generation_name": "2013-2017 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1291,
+          "mark_name": "Toyota",
+          "model_name": "Land Cruiser Prado",
+          "generation_name": "2017-2020 (IV, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1292,
+          "mark_name": "Toyota",
+          "model_name": "Land Cruiser Prado",
+          "generation_name": "2020-н.в. (IV, 3-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 667,
+      "name": "Prius",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1293,
+          "mark_name": "Toyota",
+          "model_name": "Prius",
+          "generation_name": "2009-2011 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1294,
+          "mark_name": "Toyota",
+          "model_name": "Prius",
+          "generation_name": "2012-2016 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1295,
+          "mark_name": "Toyota",
+          "model_name": "Prius",
+          "generation_name": "2015-2019 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 668,
+      "name": "RAV4",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1296,
+          "mark_name": "Toyota",
+          "model_name": "RAV4",
+          "generation_name": "2008-2010 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1297,
+          "mark_name": "Toyota",
+          "model_name": "RAV4",
+          "generation_name": "2010-2013 (III, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1298,
+          "mark_name": "Toyota",
+          "model_name": "RAV4",
+          "generation_name": "2012-2015 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1299,
+          "mark_name": "Toyota",
+          "model_name": "RAV4",
+          "generation_name": "2015-2019 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1300,
+          "mark_name": "Toyota",
+          "model_name": "RAV4",
+          "generation_name": "2018-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 669,
+      "name": "Sequoia",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1301,
+          "mark_name": "Toyota",
+          "model_name": "Sequoia",
+          "generation_name": "2008-2017 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1302,
+          "mark_name": "Toyota",
+          "model_name": "Sequoia",
+          "generation_name": "2017-н.в. (II Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 670,
+      "name": "Supra",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1303,
+          "mark_name": "Toyota",
+          "model_name": "Supra",
+          "generation_name": "2018-2021 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 671,
+      "name": "Tundra",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1304,
+          "mark_name": "Toyota",
+          "model_name": "Tundra",
+          "generation_name": "2013-2021 (II Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1305,
+          "mark_name": "Toyota",
+          "model_name": "Tundra",
+          "generation_name": "2021-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 672,
+      "name": "Venza",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1306,
+          "mark_name": "Toyota",
+          "model_name": "Venza",
+          "generation_name": "2012-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 673,
+      "name": "Verso",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1307,
+          "mark_name": "Toyota",
+          "model_name": "Verso",
+          "generation_name": "2009-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1308,
+          "mark_name": "Toyota",
+          "model_name": "Verso",
+          "generation_name": "2012-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 674,
+      "name": "Yaris",
+      "mark_id": 2,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1309,
+          "mark_name": "Toyota",
+          "model_name": "Yaris",
+          "generation_name": "2005-2009 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1310,
+          "mark_name": "Toyota",
+          "model_name": "Yaris",
+          "generation_name": "2009-2010 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 648,
+      "name": "Alphard",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1241,
+          "mark_name": "Toyota",
+          "model_name": "Alphard",
+          "generation_name": "2011-2015 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1242,
+          "mark_name": "Toyota",
+          "model_name": "Alphard",
+          "generation_name": "2015-2018 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1243,
+          "mark_name": "Toyota",
+          "model_name": "Alphard",
+          "generation_name": "2017-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 649,
+      "name": "Aqua",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1244,
+          "mark_name": "Toyota",
+          "model_name": "Aqua",
+          "generation_name": "2014-2020 (I Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1245,
+          "mark_name": "Toyota",
+          "model_name": "Aqua",
+          "generation_name": "2021-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 650,
+      "name": "Auris",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1246,
+          "mark_name": "Toyota",
+          "model_name": "Auris",
+          "generation_name": "2006-2010 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1247,
+          "mark_name": "Toyota",
+          "model_name": "Auris",
+          "generation_name": "2010-2012 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1248,
+          "mark_name": "Toyota",
+          "model_name": "Auris",
+          "generation_name": "2012-2016 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 651,
+      "name": "Avalon",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1249,
+          "mark_name": "Toyota",
+          "model_name": "Avalon",
+          "generation_name": "2015-2018 (IV Рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1250,
+          "mark_name": "Toyota",
+          "model_name": "Avalon",
+          "generation_name": "2018-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 652,
+      "name": "Avensis",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1251,
+          "mark_name": "Toyota",
+          "model_name": "Avensis",
+          "generation_name": "2008-2011 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1252,
+          "mark_name": "Toyota",
+          "model_name": "Avensis",
+          "generation_name": "2011-2012 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 653,
+      "name": "C-HR",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1253,
+          "mark_name": "Toyota",
+          "model_name": "C-HR",
+          "generation_name": "2016-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1254,
+          "mark_name": "Toyota",
+          "model_name": "C-HR",
+          "generation_name": "2019-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 654,
+      "name": "Camry",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1255,
+          "mark_name": "Toyota",
+          "model_name": "Camry",
+          "generation_name": "2006-2009 (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1256,
+          "mark_name": "Toyota",
+          "model_name": "Camry",
+          "generation_name": "2009-2011 (VII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1257,
+          "mark_name": "Toyota",
+          "model_name": "Camry",
+          "generation_name": "2011-2014 (VIII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1258,
+          "mark_name": "Toyota",
+          "model_name": "Camry",
+          "generation_name": "2014-2017 (VIII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1259,
+          "mark_name": "Toyota",
+          "model_name": "Camry",
+          "generation_name": "2017-2018 (VIII, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1260,
+          "mark_name": "Toyota",
+          "model_name": "Camry",
+          "generation_name": "2017-2021 (IX)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1261,
+          "mark_name": "Toyota",
+          "model_name": "Camry",
+          "generation_name": "2020-н.в. (IX, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 655,
+      "name": "Corolla",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1262,
+          "mark_name": "Toyota",
+          "model_name": "Corolla",
+          "generation_name": "2006-2010 (X)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1263,
+          "mark_name": "Toyota",
+          "model_name": "Corolla",
+          "generation_name": "2010-2013 (X, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1264,
+          "mark_name": "Toyota",
+          "model_name": "Corolla",
+          "generation_name": "2012-2016 (XI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1265,
+          "mark_name": "Toyota",
+          "model_name": "Corolla",
+          "generation_name": "2016-2019 (XI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1266,
+          "mark_name": "Toyota",
+          "model_name": "Corolla",
+          "generation_name": "2018-н.в. (XII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 656,
+      "name": "Corolla Verso",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1267,
+          "mark_name": "Toyota",
+          "model_name": "Corolla Verso",
+          "generation_name": "2007-2009 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 657,
+      "name": "FJ Cruiser",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1268,
+          "mark_name": "Toyota",
+          "model_name": "FJ Cruiser",
+          "generation_name": "2006-2022 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 658,
+      "name": "Fortuner",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1269,
+          "mark_name": "Toyota",
+          "model_name": "Fortuner",
+          "generation_name": "2015-2020 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1270,
+          "mark_name": "Toyota",
+          "model_name": "Fortuner",
+          "generation_name": "2020-н.в (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 659,
+      "name": "GT86",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1271,
+          "mark_name": "Toyota",
+          "model_name": "GT86",
+          "generation_name": "2012-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 660,
+      "name": "Hiace",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1272,
+          "mark_name": "Toyota",
+          "model_name": "Hiace",
+          "generation_name": "2004-2010 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1273,
+          "mark_name": "Toyota",
+          "model_name": "Hiace",
+          "generation_name": "2010-2017 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1274,
+          "mark_name": "Toyota",
+          "model_name": "Hiace",
+          "generation_name": "2019-н.в. (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 661,
+      "name": "Highlander",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1275,
+          "mark_name": "Toyota",
+          "model_name": "Highlander",
+          "generation_name": "2010-2013 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1276,
+          "mark_name": "Toyota",
+          "model_name": "Highlander",
+          "generation_name": "2013-2017 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1277,
+          "mark_name": "Toyota",
+          "model_name": "Highlander",
+          "generation_name": "2016-2020 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1278,
+          "mark_name": "Toyota",
+          "model_name": "Highlander",
+          "generation_name": "2019-н.в. (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 662,
+      "name": "Hilux Pick Up",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1279,
+          "mark_name": "Toyota",
+          "model_name": "Hilux Pick Up",
+          "generation_name": "2011-2015 (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1280,
+          "mark_name": "Toyota",
+          "model_name": "Hilux Pick Up",
+          "generation_name": "2015-2020 (VIII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1281,
+          "mark_name": "Toyota",
+          "model_name": "Hilux Pick Up",
+          "generation_name": "2017-2020 (VIII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1282,
+          "mark_name": "Toyota",
+          "model_name": "Hilux Pick Up",
+          "generation_name": "2020-н.в. (VIII, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 663,
+      "name": "iQ",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1283,
+          "mark_name": "Toyota",
+          "model_name": "iQ",
+          "generation_name": "2009-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 664,
+      "name": "Land Cruiser 200",
+      "mark_id": 2,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1284,
+          "mark_name": "Toyota",
+          "model_name": "Land Cruiser 200",
+          "generation_name": "2007-2012 (XI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1285,
+          "mark_name": "Toyota",
+          "model_name": "Land Cruiser 200",
+          "generation_name": "2012-2015 (XI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1286,
+          "mark_name": "Toyota",
+          "model_name": "Land Cruiser 200",
+          "generation_name": "2015-2021 (XI, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

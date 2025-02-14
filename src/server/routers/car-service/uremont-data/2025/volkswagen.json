@@ -1,0 +1,755 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 692,
+      "name": "Passat",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1350,
+          "mark_name": "Volkswagen",
+          "model_name": "Passat",
+          "generation_name": "2005-2010 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1351,
+          "mark_name": "Volkswagen",
+          "model_name": "Passat",
+          "generation_name": "2010-2015 (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1352,
+          "mark_name": "Volkswagen",
+          "model_name": "Passat",
+          "generation_name": "2014-2020 (VIII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1353,
+          "mark_name": "Volkswagen",
+          "model_name": "Passat",
+          "generation_name": "2019-2020 (VIII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1354,
+          "mark_name": "Volkswagen",
+          "model_name": "Passat",
+          "generation_name": "2021-н.в. (VIII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 693,
+      "name": "Passat CC",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1355,
+          "mark_name": "Volkswagen",
+          "model_name": "Passat CC",
+          "generation_name": "2008-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1356,
+          "mark_name": "Volkswagen",
+          "model_name": "Passat CC",
+          "generation_name": "2012-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 694,
+      "name": "Polo",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1357,
+          "mark_name": "Volkswagen",
+          "model_name": "Polo",
+          "generation_name": "2008-2015 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1358,
+          "mark_name": "Volkswagen",
+          "model_name": "Polo",
+          "generation_name": "2015-2020 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1359,
+          "mark_name": "Volkswagen",
+          "model_name": "Polo",
+          "generation_name": "2020-н.в. (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 695,
+      "name": "Scirocco",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1360,
+          "mark_name": "Volkswagen",
+          "model_name": "Scirocco",
+          "generation_name": "2009-2015 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 696,
+      "name": "Taos",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1361,
+          "mark_name": "Volkswagen",
+          "model_name": "Taos",
+          "generation_name": "2020-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 697,
+      "name": "Teramont",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1362,
+          "mark_name": "Volkswagen",
+          "model_name": "Teramont",
+          "generation_name": "2016-2020 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1363,
+          "mark_name": "Volkswagen",
+          "model_name": "Teramont",
+          "generation_name": "2020-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 698,
+      "name": "Tiguan",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1364,
+          "mark_name": "Volkswagen",
+          "model_name": "Tiguan",
+          "generation_name": "2006-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1365,
+          "mark_name": "Volkswagen",
+          "model_name": "Tiguan",
+          "generation_name": "2011-2017 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1366,
+          "mark_name": "Volkswagen",
+          "model_name": "Tiguan",
+          "generation_name": "2016-2021 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1367,
+          "mark_name": "Volkswagen",
+          "model_name": "Tiguan",
+          "generation_name": "2020-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 699,
+      "name": "Touareg",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1368,
+          "mark_name": "Volkswagen",
+          "model_name": "Touareg",
+          "generation_name": "2010-2014 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1369,
+          "mark_name": "Volkswagen",
+          "model_name": "Touareg",
+          "generation_name": "2014-2018 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1370,
+          "mark_name": "Volkswagen",
+          "model_name": "Touareg",
+          "generation_name": "2018-2020 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1371,
+          "mark_name": "Volkswagen",
+          "model_name": "Touareg",
+          "generation_name": "2021-н.в (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 700,
+      "name": "Touran",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1372,
+          "mark_name": "Volkswagen",
+          "model_name": "Touran",
+          "generation_name": "2006-2010 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1373,
+          "mark_name": "Volkswagen",
+          "model_name": "Touran",
+          "generation_name": "2010-2015 (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 701,
+      "name": "Transporter",
+      "mark_id": 21,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1374,
+          "mark_name": "Volkswagen",
+          "model_name": "Transporter",
+          "generation_name": "2009-2015 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1375,
+          "mark_name": "Volkswagen",
+          "model_name": "Transporter",
+          "generation_name": "2015-2019 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1376,
+          "mark_name": "Volkswagen",
+          "model_name": "Transporter",
+          "generation_name": "2019-н.в. (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 682,
+      "name": "Amarok",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1324,
+          "mark_name": "Volkswagen",
+          "model_name": "Amarok",
+          "generation_name": "2010-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1325,
+          "mark_name": "Volkswagen",
+          "model_name": "Amarok",
+          "generation_name": "2016-2020 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 683,
+      "name": "Arteon",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1326,
+          "mark_name": "Volkswagen",
+          "model_name": "Arteon",
+          "generation_name": "2017-2020 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 684,
+      "name": "Beetle",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1327,
+          "mark_name": "Volkswagen",
+          "model_name": "Beetle",
+          "generation_name": "2011-2016 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 685,
+      "name": "Caddy",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1328,
+          "mark_name": "Volkswagen",
+          "model_name": "Caddy",
+          "generation_name": "2003-2010 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1329,
+          "mark_name": "Volkswagen",
+          "model_name": "Caddy",
+          "generation_name": "2010-2015 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1330,
+          "mark_name": "Volkswagen",
+          "model_name": "Caddy",
+          "generation_name": "2015-2020 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1331,
+          "mark_name": "Volkswagen",
+          "model_name": "Caddy",
+          "generation_name": "2020-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 686,
+      "name": "California",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1332,
+          "mark_name": "Volkswagen",
+          "model_name": "California",
+          "generation_name": "2009-2015 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1333,
+          "mark_name": "Volkswagen",
+          "model_name": "California",
+          "generation_name": "2015-2019 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1334,
+          "mark_name": "Volkswagen",
+          "model_name": "California",
+          "generation_name": "2020-н.в. (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 687,
+      "name": "Caravelle",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1335,
+          "mark_name": "Volkswagen",
+          "model_name": "Caravelle",
+          "generation_name": "2009-2015 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1336,
+          "mark_name": "Volkswagen",
+          "model_name": "Caravelle",
+          "generation_name": "2015-2019 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1337,
+          "mark_name": "Volkswagen",
+          "model_name": "Caravelle",
+          "generation_name": "2019-н.в. (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 688,
+      "name": "Golf",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1338,
+          "mark_name": "Volkswagen",
+          "model_name": "Golf",
+          "generation_name": "2008-2013 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1339,
+          "mark_name": "Volkswagen",
+          "model_name": "Golf",
+          "generation_name": "2012-2017 (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1340,
+          "mark_name": "Volkswagen",
+          "model_name": "Golf",
+          "generation_name": "2016-2019 (VII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1341,
+          "mark_name": "Volkswagen",
+          "model_name": "Golf",
+          "generation_name": "2019-н.в. (VIII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 689,
+      "name": "Golf Plus",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1342,
+          "mark_name": "Volkswagen",
+          "model_name": "Golf Plus",
+          "generation_name": "2008-2014 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 690,
+      "name": "Jetta",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1343,
+          "mark_name": "Volkswagen",
+          "model_name": "Jetta",
+          "generation_name": "2010-2014 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1344,
+          "mark_name": "Volkswagen",
+          "model_name": "Jetta",
+          "generation_name": "2014-2019 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1345,
+          "mark_name": "Volkswagen",
+          "model_name": "Jetta",
+          "generation_name": "2018-2020 (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1346,
+          "mark_name": "Volkswagen",
+          "model_name": "Jetta",
+          "generation_name": "2021-н.в. (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 691,
+      "name": "Multivan",
+      "mark_id": 21,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1347,
+          "mark_name": "Volkswagen",
+          "model_name": "Multivan",
+          "generation_name": "2009-2015 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1348,
+          "mark_name": "Volkswagen",
+          "model_name": "Multivan",
+          "generation_name": "2015-2019 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1349,
+          "mark_name": "Volkswagen",
+          "model_name": "Multivan",
+          "generation_name": "2019-н.в. (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

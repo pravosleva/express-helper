@@ -1,0 +1,26 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1622,
+      "name": "Lightning",
+      "mark_id": 150,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "343013177",
+      "generations": [
+        {
+          "id": 3911,
+          "mark_name": "Ronart",
+          "model_name": "Lightning",
+          "generation_name": "2000 – 2013",
+          "start_year": 2000,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

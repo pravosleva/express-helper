@@ -1,0 +1,294 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 202,
+      "name": "e6",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 489,
+          "mark_name": "BYD",
+          "model_name": "e6",
+          "generation_name": "2011 – н.в.",
+          "start_year": 2011,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "name": "F0",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "706021032",
+      "generations": [
+        {
+          "id": 490,
+          "mark_name": "BYD",
+          "model_name": "F0",
+          "generation_name": "2008 – 2015",
+          "start_year": 2008,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 204,
+      "name": "F3",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 221,
+      "is_seo_active": 0,
+      "rgs_code": "706020691",
+      "generations": [
+        {
+          "id": 491,
+          "mark_name": "BYD",
+          "model_name": "F3",
+          "generation_name": "II",
+          "start_year": 2012,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 492,
+          "mark_name": "BYD",
+          "model_name": "F3",
+          "generation_name": "I",
+          "start_year": 2005,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 2237,
+      "name": "F5",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 493,
+          "mark_name": "BYD",
+          "model_name": "F5",
+          "generation_name": "2014 – 2018",
+          "start_year": 2014,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 205,
+      "name": "F6",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "706021034",
+      "generations": [
+        {
+          "id": 494,
+          "mark_name": "BYD",
+          "model_name": "F6",
+          "generation_name": "2007 – 2012",
+          "start_year": 2007,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19786,
+      "name": "F7",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 206,
+      "name": "F8",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "706021035",
+      "generations": [
+        {
+          "id": 5173,
+          "mark_name": "BYD",
+          "model_name": "F8",
+          "generation_name": "2009 – 2010",
+          "start_year": 2009,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 207,
+      "name": "Flyer",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 9,
+      "is_seo_active": 0,
+      "rgs_code": "706020690",
+      "generations": [
+        {
+          "id": 495,
+          "mark_name": "BYD",
+          "model_name": "Flyer",
+          "generation_name": "2005 – 2008",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/5e/105e362e51499ef65c6ec6ce8a10dce3.png",
+          "images": [
+            {
+              "id": 442303,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442303/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442303/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/10/5e/105e362e51499ef65c6ec6ce8a10dce3.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 208,
+      "name": "G3",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 496,
+          "mark_name": "BYD",
+          "model_name": "G3",
+          "generation_name": "2009 – 2014",
+          "start_year": 2009,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 209,
+      "name": "G6",
+      "mark_id": 26,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "706022317",
+      "generations": [
+        {
+          "id": 497,
+          "mark_name": "BYD",
+          "model_name": "G6",
+          "generation_name": "2011 – 2013",
+          "start_year": 2011,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19787,
+      "name": "i6",
+      "mark_id": 26,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 210,
+      "name": "L3",
+      "mark_id": 26,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 498,
+          "mark_name": "BYD",
+          "model_name": "L3",
+          "generation_name": "2010 – 2015",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "name": "M6",
+      "mark_id": 26,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "851022429",
+      "generations": [
+        {
+          "id": 499,
+          "mark_name": "BYD",
+          "model_name": "M6",
+          "generation_name": "2010 – 2015",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 212,
+      "name": "S6",
+      "mark_id": 26,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 500,
+          "mark_name": "BYD",
+          "model_name": "S6",
+          "generation_name": "2011 – 2015",
+          "start_year": 2011,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

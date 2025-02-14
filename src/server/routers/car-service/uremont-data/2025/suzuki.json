@@ -1,0 +1,252 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 639,
+      "name": "Grand Vitara",
+      "mark_id": 39,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1222,
+          "mark_name": "Suzuki",
+          "model_name": "Grand Vitara",
+          "generation_name": "2008-2012 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1223,
+          "mark_name": "Suzuki",
+          "model_name": "Grand Vitara",
+          "generation_name": "2012-2016 (II, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 640,
+      "name": "Jimny",
+      "mark_id": 39,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1224,
+          "mark_name": "Suzuki",
+          "model_name": "Jimny",
+          "generation_name": "2005-2012 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1225,
+          "mark_name": "Suzuki",
+          "model_name": "Jimny",
+          "generation_name": "2012-2019 (III, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1226,
+          "mark_name": "Suzuki",
+          "model_name": "Jimny",
+          "generation_name": "2018-н.в. (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 641,
+      "name": "Kizashi",
+      "mark_id": 39,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1227,
+          "mark_name": "Suzuki",
+          "model_name": "Kizashi",
+          "generation_name": "2010-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 642,
+      "name": "Splash",
+      "mark_id": 39,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1228,
+          "mark_name": "Suzuki",
+          "model_name": "Splash",
+          "generation_name": "2008-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1229,
+          "mark_name": "Suzuki",
+          "model_name": "Splash",
+          "generation_name": "2012-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 643,
+      "name": "Swift",
+      "mark_id": 39,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1230,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "2008-2010 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1231,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "2010-2013 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1232,
+          "mark_name": "Suzuki",
+          "model_name": "Swift",
+          "generation_name": "2013-2015 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 644,
+      "name": "SX4",
+      "mark_id": 39,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1233,
+          "mark_name": "Suzuki",
+          "model_name": "SX4",
+          "generation_name": "2006-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1234,
+          "mark_name": "Suzuki",
+          "model_name": "SX4",
+          "generation_name": "2010-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1235,
+          "mark_name": "Suzuki",
+          "model_name": "SX4",
+          "generation_name": "2013-2016 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1236,
+          "mark_name": "Suzuki",
+          "model_name": "SX4",
+          "generation_name": "2016-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 645,
+      "name": "Vitara",
+      "mark_id": 39,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1237,
+          "mark_name": "Suzuki",
+          "model_name": "Vitara",
+          "generation_name": "2014-2019 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1238,
+          "mark_name": "Suzuki",
+          "model_name": "Vitara",
+          "generation_name": "2018-н.в. (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 22458,
+      "name": "C5",
+      "mark_id": 4157,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 726,
+      "name": "Brio",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 21,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1540,
+          "mark_name": "Hafei",
+          "model_name": "Brio",
+          "generation_name": "2002 – 2010",
+          "start_year": 2002,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20111,
+      "name": "Junyi",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20112,
+      "name": "Lobo",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20113,
+      "name": "Luzun",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20114,
+      "name": "Minyi",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 727,
+      "name": "Princip",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "809021454",
+      "generations": [
+        {
+          "id": 1541,
+          "mark_name": "Hafei",
+          "model_name": "Princip",
+          "generation_name": "2004 – 2010",
+          "start_year": 2004,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20115,
+      "name": "Ruiyi",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 728,
+      "name": "Saibao",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "809021456",
+      "generations": [
+        {
+          "id": 1542,
+          "mark_name": "Hafei",
+          "model_name": "Saibao",
+          "generation_name": "2004 – 2008",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20116,
+      "name": "Saima",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 730,
+      "name": "Simbo",
+      "mark_id": 72,
+      "sort_id": 1,
+      "rating": 5,
+      "is_seo_active": 0,
+      "rgs_code": "809021455",
+      "generations": [
+        {
+          "id": 1544,
+          "mark_name": "Hafei",
+          "model_name": "Simbo",
+          "generation_name": "2006 – 2008",
+          "start_year": 2006,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 729,
+      "name": "Sigma",
+      "mark_id": 72,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "809021457",
+      "generations": [
+        {
+          "id": 1543,
+          "mark_name": "Hafei",
+          "model_name": "Sigma",
+          "generation_name": "2005 – 2008",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20117,
+      "name": "Zhongyi",
+      "mark_id": 72,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

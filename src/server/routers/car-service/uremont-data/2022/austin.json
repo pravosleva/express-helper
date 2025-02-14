@@ -1,0 +1,71 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 116,
+      "name": "Allegro",
+      "mark_id": 11,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "010001150",
+      "generations": [
+        {
+          "id": 330,
+          "mark_name": "Austin",
+          "model_name": "Allegro",
+          "generation_name": "1973 – 1983",
+          "start_year": 1973,
+          "finish_year": 1983,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/62/fc623607d3a4b88d88a266d6f3e3fa0d.png",
+          "images": [
+            {
+              "id": 442229,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442229/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442229/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/62/fc623607d3a4b88d88a266d6f3e3fa0d.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "name": "Mini Metro",
+      "mark_id": 11,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 122,
+      "name": "Montego",
+      "mark_id": 11,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "344013364",
+      "generations": [
+        {
+          "id": 331,
+          "mark_name": "Austin",
+          "model_name": "Montego",
+          "generation_name": "1984 – 1994",
+          "start_year": 1984,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/c6/8dc6a418ff07985f0fc32e26df1158e9.png",
+          "images": [
+            {
+              "id": 442230,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442230/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442230/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/c6/8dc6a418ff07985f0fc32e26df1158e9.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

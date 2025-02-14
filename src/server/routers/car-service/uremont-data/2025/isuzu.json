@@ -1,0 +1,57 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 328,
+      "name": "D-Max",
+      "mark_id": 33,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 540,
+          "mark_name": "Isuzu",
+          "model_name": "D-Max",
+          "generation_name": "2019-2023 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 329,
+      "name": "MU-X",
+      "mark_id": 33,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 541,
+          "mark_name": "Isuzu",
+          "model_name": "MU-X",
+          "generation_name": "2013-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 542,
+          "mark_name": "Isuzu",
+          "model_name": "MU-X",
+          "generation_name": "2020-н.в. (2020 - н.в.)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

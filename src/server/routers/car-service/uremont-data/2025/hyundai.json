@@ -1,0 +1,652 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 303,
+      "name": "i40",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 489,
+          "mark_name": "Hyundai",
+          "model_name": "i40",
+          "generation_name": "2011-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 490,
+          "mark_name": "Hyundai",
+          "model_name": "i40",
+          "generation_name": "2015-2017 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 304,
+      "name": "ix35",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 491,
+          "mark_name": "Hyundai",
+          "model_name": "ix35",
+          "generation_name": "2009-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 492,
+          "mark_name": "Hyundai",
+          "model_name": "ix35",
+          "generation_name": "2013-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 305,
+      "name": "ix55",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 493,
+          "mark_name": "Hyundai",
+          "model_name": "ix55",
+          "generation_name": "2006-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 306,
+      "name": "Palisade",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 494,
+          "mark_name": "Hyundai",
+          "model_name": "Palisade",
+          "generation_name": "2018-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 307,
+      "name": "Santa Fe",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 495,
+          "mark_name": "Hyundai",
+          "model_name": "Santa Fe",
+          "generation_name": "2010-2012 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 496,
+          "mark_name": "Hyundai",
+          "model_name": "Santa Fe",
+          "generation_name": "2012-2016 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 497,
+          "mark_name": "Hyundai",
+          "model_name": "Santa Fe",
+          "generation_name": "2015-2019 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 498,
+          "mark_name": "Hyundai",
+          "model_name": "Santa Fe",
+          "generation_name": "2018-2021 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 499,
+          "mark_name": "Hyundai",
+          "model_name": "Santa Fe",
+          "generation_name": "2020-н.в. (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 308,
+      "name": "Solaris",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 500,
+          "mark_name": "Hyundai",
+          "model_name": "Solaris",
+          "generation_name": "2010-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 501,
+          "mark_name": "Hyundai",
+          "model_name": "Solaris",
+          "generation_name": "2014-2017 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 502,
+          "mark_name": "Hyundai",
+          "model_name": "Solaris",
+          "generation_name": "2017-2020 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 503,
+          "mark_name": "Hyundai",
+          "model_name": "Solaris",
+          "generation_name": "2020-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 309,
+      "name": "Sonata",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 504,
+          "mark_name": "Hyundai",
+          "model_name": "Sonata",
+          "generation_name": "2008-2010 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 505,
+          "mark_name": "Hyundai",
+          "model_name": "Sonata",
+          "generation_name": "2010-2013 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 506,
+          "mark_name": "Hyundai",
+          "model_name": "Sonata",
+          "generation_name": "2017-2019 (VII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 507,
+          "mark_name": "Hyundai",
+          "model_name": "Sonata",
+          "generation_name": "2019-н.в. (VIII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 310,
+      "name": "Staria",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 508,
+          "mark_name": "Hyundai",
+          "model_name": "Staria",
+          "generation_name": "2021-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 311,
+      "name": "Tucson",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 509,
+          "mark_name": "Hyundai",
+          "model_name": "Tucson",
+          "generation_name": "2004-2009 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 510,
+          "mark_name": "Hyundai",
+          "model_name": "Tucson",
+          "generation_name": "2015-2019 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 511,
+          "mark_name": "Hyundai",
+          "model_name": "Tucson",
+          "generation_name": "2018-2021 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 512,
+          "mark_name": "Hyundai",
+          "model_name": "Tucson",
+          "generation_name": "2020-н.в. (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 312,
+      "name": "Veloster",
+      "mark_id": 30,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 513,
+          "mark_name": "Hyundai",
+          "model_name": "Veloster",
+          "generation_name": "2012-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 296,
+      "name": "Creta",
+      "mark_id": 30,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 468,
+          "mark_name": "Hyundai",
+          "model_name": "Creta",
+          "generation_name": "2015-2020 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 469,
+          "mark_name": "Hyundai",
+          "model_name": "Creta",
+          "generation_name": "2020-2021 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 470,
+          "mark_name": "Hyundai",
+          "model_name": "Creta",
+          "generation_name": "2021-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 297,
+      "name": "Elantra",
+      "mark_id": 30,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 471,
+          "mark_name": "Hyundai",
+          "model_name": "Elantra",
+          "generation_name": "2006-2011 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 472,
+          "mark_name": "Hyundai",
+          "model_name": "Elantra",
+          "generation_name": "2010-2013 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 473,
+          "mark_name": "Hyundai",
+          "model_name": "Elantra",
+          "generation_name": "2013-2016 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 474,
+          "mark_name": "Hyundai",
+          "model_name": "Elantra",
+          "generation_name": "2015-2019 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 475,
+          "mark_name": "Hyundai",
+          "model_name": "Elantra",
+          "generation_name": "2018-2020 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 476,
+          "mark_name": "Hyundai",
+          "model_name": "Elantra",
+          "generation_name": "2020-н.в. (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 298,
+      "name": "Grand Santa Fe",
+      "mark_id": 30,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 477,
+          "mark_name": "Hyundai",
+          "model_name": "Grand Santa Fe",
+          "generation_name": "2013-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 478,
+          "mark_name": "Hyundai",
+          "model_name": "Grand Santa Fe",
+          "generation_name": "2016-2018 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 299,
+      "name": "Grandeur",
+      "mark_id": 30,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 479,
+          "mark_name": "Hyundai",
+          "model_name": "Grandeur",
+          "generation_name": "2012-2015 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 300,
+      "name": "H-1",
+      "mark_id": 30,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 480,
+          "mark_name": "Hyundai",
+          "model_name": "H-1",
+          "generation_name": "2007-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 481,
+          "mark_name": "Hyundai",
+          "model_name": "H-1",
+          "generation_name": "2013-2018 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 482,
+          "mark_name": "Hyundai",
+          "model_name": "H-1",
+          "generation_name": "2017-н.в. (II, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 301,
+      "name": "i20",
+      "mark_id": 30,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 483,
+          "mark_name": "Hyundai",
+          "model_name": "i20",
+          "generation_name": "2008-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 302,
+      "name": "i30",
+      "mark_id": 30,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 484,
+          "mark_name": "Hyundai",
+          "model_name": "i30",
+          "generation_name": "2007-2010 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 485,
+          "mark_name": "Hyundai",
+          "model_name": "i30",
+          "generation_name": "2010-2011 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 486,
+          "mark_name": "Hyundai",
+          "model_name": "i30",
+          "generation_name": "2011-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 487,
+          "mark_name": "Hyundai",
+          "model_name": "i30",
+          "generation_name": "2015-2017 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 488,
+          "mark_name": "Hyundai",
+          "model_name": "i30",
+          "generation_name": "2017-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

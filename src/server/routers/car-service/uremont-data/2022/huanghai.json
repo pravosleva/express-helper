@@ -1,0 +1,78 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 812,
+      "name": "Antelope",
+      "mark_id": 77,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1789,
+          "mark_name": "HuangHai",
+          "model_name": "Antelope",
+          "generation_name": "2006 – 2009",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 813,
+      "name": "Landscape",
+      "mark_id": 77,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "763021193",
+      "generations": [
+        {
+          "id": 1790,
+          "mark_name": "HuangHai",
+          "model_name": "Landscape",
+          "generation_name": "2007 – 2011",
+          "start_year": 2007,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 814,
+      "name": "Plutus",
+      "mark_id": 77,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1791,
+          "mark_name": "HuangHai",
+          "model_name": "Plutus",
+          "generation_name": "2007 – 2011",
+          "start_year": 2007,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20173,
+      "name": "Santa Fe",
+      "mark_id": 77,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

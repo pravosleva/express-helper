@@ -1,0 +1,15 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20786,
+      "name": "Maxus",
+      "mark_id": 3763,
+      "sort_id": 1,
+      "rating": 44,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 507,
+      "name": "ASX",
+      "mark_id": 55,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 940,
+          "mark_name": "Mitsubishi",
+          "model_name": "ASX",
+          "generation_name": "2010-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 941,
+          "mark_name": "Mitsubishi",
+          "model_name": "ASX",
+          "generation_name": "2012-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 942,
+          "mark_name": "Mitsubishi",
+          "model_name": "ASX",
+          "generation_name": "2017-2020 (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 943,
+          "mark_name": "Mitsubishi",
+          "model_name": "ASX",
+          "generation_name": "2019-н. (I, 3-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 508,
+      "name": "Eclipse Cross",
+      "mark_id": 55,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 944,
+          "mark_name": "Mitsubishi",
+          "model_name": "Eclipse Cross",
+          "generation_name": "2017-2021 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 945,
+          "mark_name": "Mitsubishi",
+          "model_name": "Eclipse Cross",
+          "generation_name": "2020-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 509,
+      "name": "L200",
+      "mark_id": 55,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 946,
+          "mark_name": "Mitsubishi",
+          "model_name": "L200",
+          "generation_name": "2007-2014 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 947,
+          "mark_name": "Mitsubishi",
+          "model_name": "L200",
+          "generation_name": "2013-2016 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 948,
+          "mark_name": "Mitsubishi",
+          "model_name": "L200",
+          "generation_name": "2015-2019 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 949,
+          "mark_name": "Mitsubishi",
+          "model_name": "L200",
+          "generation_name": "2018-н.в. (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 510,
+      "name": "Lancer",
+      "mark_id": 55,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 950,
+          "mark_name": "Mitsubishi",
+          "model_name": "Lancer",
+          "generation_name": "2007-2011 (X)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 951,
+          "mark_name": "Mitsubishi",
+          "model_name": "Lancer",
+          "generation_name": "2011-2016 (X, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 511,
+      "name": "Lancer Evolution",
+      "mark_id": 55,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 952,
+          "mark_name": "Mitsubishi",
+          "model_name": "Lancer Evolution",
+          "generation_name": "2008-2017 (X)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 512,
+      "name": "Outlander",
+      "mark_id": 55,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 953,
+          "mark_name": "Mitsubishi",
+          "model_name": "Outlander",
+          "generation_name": "2009-2012 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 954,
+          "mark_name": "Mitsubishi",
+          "model_name": "Outlander",
+          "generation_name": "2012-2014 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 955,
+          "mark_name": "Mitsubishi",
+          "model_name": "Outlander",
+          "generation_name": "2014-2016 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 956,
+          "mark_name": "Mitsubishi",
+          "model_name": "Outlander",
+          "generation_name": "2015-2018 (III, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 957,
+          "mark_name": "Mitsubishi",
+          "model_name": "Outlander",
+          "generation_name": "2018-н.в. (III, 3-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 513,
+      "name": "Pajero",
+      "mark_id": 55,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 958,
+          "mark_name": "Mitsubishi",
+          "model_name": "Pajero",
+          "generation_name": "2006-2011 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 959,
+          "mark_name": "Mitsubishi",
+          "model_name": "Pajero",
+          "generation_name": "2011-2015 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 960,
+          "mark_name": "Mitsubishi",
+          "model_name": "Pajero",
+          "generation_name": "2014-2020 (IV, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 514,
+      "name": "Pajero Sport",
+      "mark_id": 55,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 961,
+          "mark_name": "Mitsubishi",
+          "model_name": "Pajero Sport",
+          "generation_name": "2008-2013 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 962,
+          "mark_name": "Mitsubishi",
+          "model_name": "Pajero Sport",
+          "generation_name": "2013-2017 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 963,
+          "mark_name": "Mitsubishi",
+          "model_name": "Pajero Sport",
+          "generation_name": "2016-2021 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 964,
+          "mark_name": "Mitsubishi",
+          "model_name": "Pajero Sport",
+          "generation_name": "2019-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

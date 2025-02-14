@@ -1,0 +1,313 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 405,
+      "name": "Defender",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 695,
+          "mark_name": "Land Rover",
+          "model_name": "Defender",
+          "generation_name": "2007-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 696,
+          "mark_name": "Land Rover",
+          "model_name": "Defender",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 406,
+      "name": "Discovery",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 697,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "2004-2009 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 698,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "2009-2013 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 699,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "2013-2017 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 700,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "2016-2020 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 701,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery",
+          "generation_name": "2020-н.в. (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "name": "Discovery Sport",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 702,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery Sport",
+          "generation_name": "2014-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 703,
+          "mark_name": "Land Rover",
+          "model_name": "Discovery Sport",
+          "generation_name": "2019-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 408,
+      "name": "Freelander",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 704,
+          "mark_name": "Land Rover",
+          "model_name": "Freelander",
+          "generation_name": "2006-2010 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 705,
+          "mark_name": "Land Rover",
+          "model_name": "Freelander",
+          "generation_name": "2010-2012 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 706,
+          "mark_name": "Land Rover",
+          "model_name": "Freelander",
+          "generation_name": "2012-2014 (II, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 409,
+      "name": "Range Rover",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 707,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "2009-2012 (III, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 708,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "2012-2017 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 709,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover",
+          "generation_name": "2017-н.в. (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 410,
+      "name": "Range Rover Evoque",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 710,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Evoque",
+          "generation_name": "2011-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 711,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Evoque",
+          "generation_name": "2015-2018 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 712,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Evoque",
+          "generation_name": "2018-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 411,
+      "name": "Range Rover Sport",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 713,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Sport",
+          "generation_name": "2009-2013 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 714,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Sport",
+          "generation_name": "2013-2017 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 715,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Sport",
+          "generation_name": "2017-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 412,
+      "name": "Range Rover Velar",
+      "mark_id": 44,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 716,
+          "mark_name": "Land Rover",
+          "model_name": "Range Rover Velar",
+          "generation_name": "2017-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

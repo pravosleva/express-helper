@@ -1,0 +1,232 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 500,
+      "name": "Cabrio",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 925,
+          "mark_name": "Mini",
+          "model_name": "Cabrio",
+          "generation_name": "2009-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 926,
+          "mark_name": "Mini",
+          "model_name": "Cabrio",
+          "generation_name": "2015-2020 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 501,
+      "name": "Clubman",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 927,
+          "mark_name": "Mini",
+          "model_name": "Clubman",
+          "generation_name": "2008-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 928,
+          "mark_name": "Mini",
+          "model_name": "Clubman",
+          "generation_name": "2015-2019 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 929,
+          "mark_name": "Mini",
+          "model_name": "Clubman",
+          "generation_name": "2019-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 502,
+      "name": "Countryman",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 930,
+          "mark_name": "Mini",
+          "model_name": "Countryman",
+          "generation_name": "2010-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 931,
+          "mark_name": "Mini",
+          "model_name": "Countryman",
+          "generation_name": "2016-2020 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 932,
+          "mark_name": "Mini",
+          "model_name": "Countryman",
+          "generation_name": "2020-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 503,
+      "name": "Coupe",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 933,
+          "mark_name": "Mini",
+          "model_name": "Coupe",
+          "generation_name": "2011-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 504,
+      "name": "Hatch",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 934,
+          "mark_name": "Mini",
+          "model_name": "Hatch",
+          "generation_name": "2010-2014 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 935,
+          "mark_name": "Mini",
+          "model_name": "Hatch",
+          "generation_name": "2013-2018 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 936,
+          "mark_name": "Mini",
+          "model_name": "Hatch",
+          "generation_name": "2018-2021 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 937,
+          "mark_name": "Mini",
+          "model_name": "Hatch",
+          "generation_name": "2021-н.в. (III, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 505,
+      "name": "Paceman",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 938,
+          "mark_name": "Mini",
+          "model_name": "Paceman",
+          "generation_name": "2012-2017 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 506,
+      "name": "Roadster",
+      "mark_id": 53,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 939,
+          "mark_name": "Mini",
+          "model_name": "Roadster",
+          "generation_name": "2011-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

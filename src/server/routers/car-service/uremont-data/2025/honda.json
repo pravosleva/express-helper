@@ -1,0 +1,272 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 289,
+      "name": "Accord",
+      "mark_id": 29,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 449,
+          "mark_name": "Honda",
+          "model_name": "Accord",
+          "generation_name": "2008-2011 (VIII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 450,
+          "mark_name": "Honda",
+          "model_name": "Accord",
+          "generation_name": "2011-2013 (VIII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 451,
+          "mark_name": "Honda",
+          "model_name": "Accord",
+          "generation_name": "2012-2015 (IX)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 290,
+      "name": "Civic",
+      "mark_id": 29,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 452,
+          "mark_name": "Honda",
+          "model_name": "Civic",
+          "generation_name": "2009-2012 (VIII, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 453,
+          "mark_name": "Honda",
+          "model_name": "Civic",
+          "generation_name": "2012-2015 (IX)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 291,
+      "name": "CR-V",
+      "mark_id": 29,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 454,
+          "mark_name": "Honda",
+          "model_name": "CR-V",
+          "generation_name": "2009-2012 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 455,
+          "mark_name": "Honda",
+          "model_name": "CR-V",
+          "generation_name": "2012-2015 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 456,
+          "mark_name": "Honda",
+          "model_name": "CR-V",
+          "generation_name": "2014-2018 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 457,
+          "mark_name": "Honda",
+          "model_name": "CR-V",
+          "generation_name": "2016-2020 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 458,
+          "mark_name": "Honda",
+          "model_name": "CR-V",
+          "generation_name": "2019-н.в. (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 292,
+      "name": "Crosstour",
+      "mark_id": 29,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 459,
+          "mark_name": "Honda",
+          "model_name": "Crosstour",
+          "generation_name": "2009-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 460,
+          "mark_name": "Honda",
+          "model_name": "Crosstour",
+          "generation_name": "2013-2016 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 293,
+      "name": "Jazz",
+      "mark_id": 29,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 461,
+          "mark_name": "Honda",
+          "model_name": "Jazz",
+          "generation_name": "2009-2011 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 462,
+          "mark_name": "Honda",
+          "model_name": "Jazz",
+          "generation_name": "2011-2013 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 294,
+      "name": "Legend",
+      "mark_id": 29,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 463,
+          "mark_name": "Honda",
+          "model_name": "Legend",
+          "generation_name": "2008-2011 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 295,
+      "name": "Pilot",
+      "mark_id": 29,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 464,
+          "mark_name": "Honda",
+          "model_name": "Pilot",
+          "generation_name": "2008-2011 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 465,
+          "mark_name": "Honda",
+          "model_name": "Pilot",
+          "generation_name": "2011-2015 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 466,
+          "mark_name": "Honda",
+          "model_name": "Pilot",
+          "generation_name": "2016-2019 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 467,
+          "mark_name": "Honda",
+          "model_name": "Pilot",
+          "generation_name": "2018-2021 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

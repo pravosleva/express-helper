@@ -1,0 +1,108 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1691,
+      "name": "Forfour",
+      "mark_id": 160,
+      "sort_id": 1,
+      "rating": 21,
+      "is_seo_active": 0,
+      "rgs_code": "367021323",
+      "generations": [
+        {
+          "id": 4043,
+          "mark_name": "Smart",
+          "model_name": "Forfour",
+          "generation_name": "II",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4044,
+          "mark_name": "Smart",
+          "model_name": "Forfour",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1692,
+      "name": "Fortwo",
+      "mark_id": 160,
+      "sort_id": 1,
+      "rating": 66,
+      "is_seo_active": 0,
+      "rgs_code": "367021324",
+      "generations": [
+        {
+          "id": 4045,
+          "mark_name": "Smart",
+          "model_name": "Fortwo",
+          "generation_name": "III",
+          "start_year": 2014,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4046,
+          "mark_name": "Smart",
+          "model_name": "Fortwo",
+          "generation_name": "II",
+          "start_year": 2007,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4047,
+          "mark_name": "Smart",
+          "model_name": "Fortwo",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 4048,
+          "mark_name": "Smart",
+          "model_name": "Fortwo",
+          "generation_name": "I",
+          "start_year": 1998,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1693,
+      "name": "Roadster",
+      "mark_id": 160,
+      "sort_id": 1,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4049,
+          "mark_name": "Smart",
+          "model_name": "Roadster",
+          "generation_name": "2002 – 2006",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

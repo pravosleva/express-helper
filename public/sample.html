@@ -4,6 +4,9 @@
   <title>Express</title>
   <link rel="stylesheet" href="./assets/base/style.css">
   <style>
+    p {
+      margin: 0px;
+    }
     button {
       cursor: pointer;
     }
@@ -11,21 +14,54 @@
       cursor: not-allowed;
       opacity: 0.5;
     }
+    pre {
+      padding: 10px;
+      font-size: small;
+      background-color: #a5afba;
+      color: #fff;
+      margin: 0px;
+      border-radius: 16px;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      letter-spacing: .05em;
+    }
+    
+    .grid-gap1-cols3 {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+      grid-auto-flow: dense;
+    }
+    .stack1 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
   </style>
 </head>
 
 <body>
   <h1>Express exp</h1>
   <p>Ничего секретного.</p>
-  <p>
-    <button id="sendPostmessageToParentWindow1">
-      event1
-    </button>
-    <br />
-    <button id="sendPostmessageToParentWindow2">
-      event2 (json)
-    </button>
-  </p>
+  <br />
+  <div class='stack1'>
+    <div class='grid-gap1-cols3'>
+      <button id="sendPostmessageToParentWindow1">
+        event1
+      </button>
+      <button id="sendPostmessageToParentWindow2">
+        event2 (json) [code 2]
+      </button>
+      <button id="sendPostmessageToParentWindow3">
+        event3 (json str) [code 3]
+      </button>
+    </div>
+
+    <div class='stack1'>
+      <pre id="outputMessageFromParentWindow">{}</pre>
+      <pre id="error">No errs</pre>
+    </div>
+  </div>
 
   <script type="text/javascript">
     function inIFrame() {
@@ -40,6 +76,8 @@
       return window.location !== window.parent.location
     }
     const parentWindow = window.parent;
+    const outputPreElm = document.getElementById('outputMessageFromParentWindow');
+    const errorPreElm = document.getElementById('error');
 
     // TODO: Receive message from parent
     // NOTE: See also https://dev-bay.com/iframe-and-parent-window-postmessage-communication/
@@ -52,35 +90,88 @@
         .querySelector('#sendPostmessageToParentWindow1'),
       document
         .querySelector('#sendPostmessageToParentWindow2'),
+      document
+        .querySelector('#sendPostmessageToParentWindow3'),
     ]
     if (inIFrame()) {
       console.log('This window has a parent')
       window.addEventListener('load', () => {
-        parentWindow.postMessage('handshake', '*')
+        // parentWindow.postMessage('handshake', '*')
+        parentWindow.postMessage({
+          text: 'hello from iframe',
+          eventType: 'handshake',
+          channel: 'FRAME_A',
+          code: 0,
+        }, '*')
       })
 
       buttons[0]
         .onclick = function () {
           // parent.postMessage("message to be sent", "http://the-website-that-will-receive-the-msg.com")
-          parent.postMessage("event1", "*")
+          parent.postMessage("code:1", "*")
         };
 
-      const msg = JSON.stringify({
-        channel: 'FROM_FRAME_A',
-        testData: {
-          x: 1,
-          y: 2,
-        },
-      });
       buttons[1]
         .onclick = function () {
-          parent.postMessage(msg, "*")
+          parent.postMessage({
+            text: 'hello from iframe',
+            eventType: 'default',
+            channel: 'FRAME_A',
+            code: 2,
+            nestedProps: {
+              a: {
+                b: {
+                  c: 1,
+                },
+              },
+            },
+          }, "*")
+        };
+
+      buttons[2]
+        .onclick = function () {
+          parent.postMessage(JSON.stringify({
+            text: 'hello from iframe',
+            eventType: 'default',
+            channel: 'FRAME_A',
+            code: 3,
+          }), "*")
         };
       
+      // -- NOTE: Subscribe to events from parent
+      window.addEventListener('message', function (e) {
+        // NOTE: Get the sent data
+        const data = e.data;
+
+        switch (typeof data) {
+          case 'object':
+            outputPreElm.innerHTML = JSON.stringify(data, null, 2);
+            errorPreElm.innerHTML = 'No errs'
+            break
+          case 'string':
+          default:
+            try {
+              // NOTE: If you encode the message in JSON before sending them,
+              // then decode here
+              const decoded = JSON.parse(data);
+              outputPreElm.innerHTML = JSON.stringify(decoded, null, 2);
+              errorPreElm.innerHTML = 'No errs'
+            } catch (err) {
+              // NOTE: Not valid json
+              outputPreElm.innerHTML = data;
+              errorPreElm.innerHTML = `Expected object! ${!!err && typeof err.message === 'string'
+                ? err.message
+                : 'No err.message'}`
+            }
+            break
+        }
+      });
+      // --
     } else {
       console.log('This window has no parent')
       buttons[0].disabled = true;
       buttons[1].disabled = true;
+      buttons[2].disabled = true;
     }
   </script>
 </body>

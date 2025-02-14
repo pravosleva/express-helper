@@ -1,0 +1,33 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 379,
+      "name": "T-Rex",
+      "mark_id": 39,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5205,
+          "mark_name": "Coggiola",
+          "model_name": "T-Rex",
+          "generation_name": "2000 – 2016",
+          "start_year": 2000,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/bc/9dbc9bda9336ddd158f274f322b30e5a.png",
+          "images": [
+            {
+              "id": 444387,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444387/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444387/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9d/bc/9dbc9bda9336ddd158f274f322b30e5a.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1895,
+      "name": "210",
+      "mark_id": 183,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "423016115",
+      "generations": [
+        {
+          "id": 4832,
+          "mark_name": "Venturi",
+          "model_name": "210",
+          "generation_name": "1984 – 1995",
+          "start_year": 1984,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1896,
+      "name": "260 LM",
+      "mark_id": 183,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4833,
+          "mark_name": "Venturi",
+          "model_name": "260 LM",
+          "generation_name": "1989 – 1995",
+          "start_year": 1989,
+          "finish_year": 1995,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1897,
+      "name": "300",
+      "mark_id": 183,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "423016123",
+      "generations": []
+    },
+    {
+      "id": 1898,
+      "name": "400",
+      "mark_id": 183,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20239,
+      "name": "Daily",
+      "mark_id": 86,
+      "sort_id": 1,
+      "rating": 90,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 904,
+      "name": "Massif",
+      "mark_id": 86,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2013,
+          "mark_name": "IVECO",
+          "model_name": "Massif",
+          "generation_name": "2007 – 2011",
+          "start_year": 2007,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

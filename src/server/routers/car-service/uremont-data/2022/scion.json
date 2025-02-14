@@ -1,0 +1,181 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1660,
+      "name": "FR-S",
+      "mark_id": 156,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3952,
+          "mark_name": "Scion",
+          "model_name": "FR-S",
+          "generation_name": "2012 – 2016",
+          "start_year": 2012,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1661,
+      "name": "iQ",
+      "mark_id": 156,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "395021559",
+      "generations": [
+        {
+          "id": 3953,
+          "mark_name": "Scion",
+          "model_name": "iQ",
+          "generation_name": "2011 – 2016",
+          "start_year": 2011,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1662,
+      "name": "tC",
+      "mark_id": 156,
+      "sort_id": 1,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3954,
+          "mark_name": "Scion",
+          "model_name": "tC",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3955,
+          "mark_name": "Scion",
+          "model_name": "tC",
+          "generation_name": "II",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3956,
+          "mark_name": "Scion",
+          "model_name": "tC",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2007,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3957,
+          "mark_name": "Scion",
+          "model_name": "tC",
+          "generation_name": "I",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1663,
+      "name": "xA",
+      "mark_id": 156,
+      "sort_id": 1,
+      "rating": 34,
+      "is_seo_active": 0,
+      "rgs_code": "723021312",
+      "generations": [
+        {
+          "id": 3958,
+          "mark_name": "Scion",
+          "model_name": "xA",
+          "generation_name": "2003 – 2006",
+          "start_year": 2003,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1664,
+      "name": "xB",
+      "mark_id": 156,
+      "sort_id": 1,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": "723021313",
+      "generations": [
+        {
+          "id": 3959,
+          "mark_name": "Scion",
+          "model_name": "xB",
+          "generation_name": "II Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3960,
+          "mark_name": "Scion",
+          "model_name": "xB",
+          "generation_name": "II",
+          "start_year": 2007,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3961,
+          "mark_name": "Scion",
+          "model_name": "xB",
+          "generation_name": "I",
+          "start_year": 2003,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1665,
+      "name": "xD",
+      "mark_id": 156,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "723021314",
+      "generations": [
+        {
+          "id": 3962,
+          "mark_name": "Scion",
+          "model_name": "xD",
+          "generation_name": "2008 – 2014",
+          "start_year": 2008,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

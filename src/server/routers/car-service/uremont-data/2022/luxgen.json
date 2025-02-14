@@ -1,0 +1,46 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1062,
+      "name": "5",
+      "mark_id": 105,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341012530",
+      "generations": [
+        {
+          "id": 5281,
+          "mark_name": "Luxgen",
+          "model_name": "5",
+          "generation_name": "2012 – н.в.",
+          "start_year": 2012,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1064,
+      "name": "7",
+      "mark_id": 105,
+      "sort_id": 1,
+      "rating": 6,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1065,
+      "name": "U6",
+      "mark_id": 105,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "837022455",
+      "generations": []
+    }
+  ]
+}

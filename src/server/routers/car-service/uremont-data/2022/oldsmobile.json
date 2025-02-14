@@ -1,0 +1,354 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20467,
+      "name": "88",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5405,
+          "mark_name": "Oldsmobile",
+          "model_name": "88",
+          "generation_name": "X",
+          "start_year": 1992,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5406,
+          "mark_name": "Oldsmobile",
+          "model_name": "88",
+          "generation_name": "IX",
+          "start_year": 1986,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5407,
+          "mark_name": "Oldsmobile",
+          "model_name": "88",
+          "generation_name": "VIII",
+          "start_year": 1977,
+          "finish_year": 1985,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5408,
+          "mark_name": "Oldsmobile",
+          "model_name": "88",
+          "generation_name": "VII",
+          "start_year": 1971,
+          "finish_year": 1976,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5409,
+          "mark_name": "Oldsmobile",
+          "model_name": "88",
+          "generation_name": "III",
+          "start_year": 1957,
+          "finish_year": 1958,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20810,
+      "name": "98",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5410,
+          "mark_name": "Oldsmobile",
+          "model_name": "98",
+          "generation_name": "XI",
+          "start_year": 1991,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5411,
+          "mark_name": "Oldsmobile",
+          "model_name": "98",
+          "generation_name": "X",
+          "start_year": 1985,
+          "finish_year": 1990,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 5412,
+          "mark_name": "Oldsmobile",
+          "model_name": "98",
+          "generation_name": "IX",
+          "start_year": 1977,
+          "finish_year": 1984,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1408,
+      "name": "Achieva",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "271010697",
+      "generations": [
+        {
+          "id": 3404,
+          "mark_name": "Oldsmobile",
+          "model_name": "Achieva",
+          "generation_name": "1991 – 1997",
+          "start_year": 1991,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1409,
+      "name": "Alero",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3405,
+          "mark_name": "Oldsmobile",
+          "model_name": "Alero",
+          "generation_name": "1999 – 2004",
+          "start_year": 1999,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1410,
+      "name": "Aurora",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3406,
+          "mark_name": "Oldsmobile",
+          "model_name": "Aurora",
+          "generation_name": "II",
+          "start_year": 1999,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3407,
+          "mark_name": "Oldsmobile",
+          "model_name": "Aurora",
+          "generation_name": "I",
+          "start_year": 1994,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1411,
+      "name": "Bravada",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "271010716",
+      "generations": [
+        {
+          "id": 3408,
+          "mark_name": "Oldsmobile",
+          "model_name": "Bravada",
+          "generation_name": "III",
+          "start_year": 2001,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3409,
+          "mark_name": "Oldsmobile",
+          "model_name": "Bravada",
+          "generation_name": "II",
+          "start_year": 1995,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3410,
+          "mark_name": "Oldsmobile",
+          "model_name": "Bravada",
+          "generation_name": "I",
+          "start_year": 1990,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1412,
+      "name": "Cutlass",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3411,
+          "mark_name": "Oldsmobile",
+          "model_name": "Cutlass",
+          "generation_name": "VI",
+          "start_year": 1997,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3412,
+          "mark_name": "Oldsmobile",
+          "model_name": "Cutlass",
+          "generation_name": "V",
+          "start_year": 1978,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3413,
+          "mark_name": "Oldsmobile",
+          "model_name": "Cutlass",
+          "generation_name": "III",
+          "start_year": 1968,
+          "finish_year": 1972,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20468,
+      "name": "Delta 88",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20469,
+      "name": "Deluxe 88",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20470,
+      "name": "Dynamic 88",
+      "mark_id": 129,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1417,
+      "name": "Intrigue",
+      "mark_id": 129,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "271010755",
+      "generations": [
+        {
+          "id": 3414,
+          "mark_name": "Oldsmobile",
+          "model_name": "Intrigue",
+          "generation_name": "1997 – 2002",
+          "start_year": 1997,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1420,
+      "name": "Silhouette",
+      "mark_id": 129,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "271010760",
+      "generations": [
+        {
+          "id": 3415,
+          "mark_name": "Oldsmobile",
+          "model_name": "Silhouette",
+          "generation_name": "II",
+          "start_year": 1996,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3416,
+          "mark_name": "Oldsmobile",
+          "model_name": "Silhouette",
+          "generation_name": "I",
+          "start_year": 1989,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20471,
+      "name": "Super 88",
+      "mark_id": 129,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

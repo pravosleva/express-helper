@@ -1,0 +1,78 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1459,
+      "name": "Alza",
+      "mark_id": 134,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3535,
+          "mark_name": "Perodua",
+          "model_name": "Alza",
+          "generation_name": "2009 – н.в.",
+          "start_year": 2009,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1461,
+      "name": "Kelisa",
+      "mark_id": 134,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "294011590",
+      "generations": [
+        {
+          "id": 3536,
+          "mark_name": "Perodua",
+          "model_name": "Kelisa",
+          "generation_name": "2001 – 2007",
+          "start_year": 2001,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1463,
+      "name": "Kenari",
+      "mark_id": 134,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "294011592",
+      "generations": [
+        {
+          "id": 3537,
+          "mark_name": "Perodua",
+          "model_name": "Kenari",
+          "generation_name": "2000 – 2008",
+          "start_year": 2000,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20479,
+      "name": "Nippa",
+      "mark_id": 134,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "294011594",
+      "generations": []
+    }
+  ]
+}

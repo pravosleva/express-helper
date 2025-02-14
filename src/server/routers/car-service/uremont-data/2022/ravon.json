@@ -1,0 +1,99 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 19401,
+      "name": "Gentra",
+      "mark_id": 3689,
+      "sort_id": 1,
+      "rating": 42,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3745,
+          "mark_name": "Ravon",
+          "model_name": "Gentra",
+          "generation_name": "2015 – 2018",
+          "start_year": 2015,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19402,
+      "name": "Matiz",
+      "mark_id": 3689,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3746,
+          "mark_name": "Ravon",
+          "model_name": "Matiz",
+          "generation_name": "2015 – 2016",
+          "start_year": 2015,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19406,
+      "name": "Nexia",
+      "mark_id": 3689,
+      "sort_id": 1,
+      "rating": 69,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19620,
+      "name": "R2",
+      "mark_id": 3689,
+      "sort_id": 1,
+      "rating": 65,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3747,
+          "mark_name": "Ravon",
+          "model_name": "R2",
+          "generation_name": "2016 – н.в.",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20959,
+      "name": "R4",
+      "mark_id": 3689,
+      "sort_id": 1,
+      "rating": 87,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3748,
+          "mark_name": "Ravon",
+          "model_name": "R4",
+          "generation_name": "2016 – н.в.",
+          "start_year": 2016,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

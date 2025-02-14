@@ -1,0 +1,491 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 168,
+      "name": "Epica",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 262,
+          "mark_name": "Chevrolet",
+          "model_name": "Epica",
+          "generation_name": "2009-2013 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "name": "Lacetti",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 263,
+          "mark_name": "Chevrolet",
+          "model_name": "Lacetti",
+          "generation_name": "2004-2013 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 170,
+      "name": "Malibu",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 264,
+          "mark_name": "Chevrolet",
+          "model_name": "Malibu",
+          "generation_name": "2012-2015 (VIII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 171,
+      "name": "Nexia",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 265,
+          "mark_name": "Chevrolet",
+          "model_name": "Nexia",
+          "generation_name": "2020-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 172,
+      "name": "Orlando",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 266,
+          "mark_name": "Chevrolet",
+          "model_name": "Orlando",
+          "generation_name": "2009-2015 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "name": "Spark",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 267,
+          "mark_name": "Chevrolet",
+          "model_name": "Spark",
+          "generation_name": "2010-2015 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 268,
+          "mark_name": "Chevrolet",
+          "model_name": "Spark",
+          "generation_name": "2016-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 174,
+      "name": "Tahoe",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 269,
+          "mark_name": "Chevrolet",
+          "model_name": "Tahoe",
+          "generation_name": "1999-2007 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 270,
+          "mark_name": "Chevrolet",
+          "model_name": "Tahoe",
+          "generation_name": "2006-2014 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 271,
+          "mark_name": "Chevrolet",
+          "model_name": "Tahoe",
+          "generation_name": "2013-2021 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 272,
+          "mark_name": "Chevrolet",
+          "model_name": "Tahoe",
+          "generation_name": "2020-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 175,
+      "name": "Tracker",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 273,
+          "mark_name": "Chevrolet",
+          "model_name": "Tracker",
+          "generation_name": "2013-2015 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 176,
+      "name": "Trailblazer",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 274,
+          "mark_name": "Chevrolet",
+          "model_name": "Trailblazer",
+          "generation_name": "2005-2010 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 275,
+          "mark_name": "Chevrolet",
+          "model_name": "Trailblazer",
+          "generation_name": "2012-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 276,
+          "mark_name": "Chevrolet",
+          "model_name": "Trailblazer",
+          "generation_name": "2016-н.в. (2016 - н.в.)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 277,
+          "mark_name": "Chevrolet",
+          "model_name": "Trailblazer",
+          "generation_name": "2020-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 177,
+      "name": "Traverse",
+      "mark_id": 9,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 278,
+          "mark_name": "Chevrolet",
+          "model_name": "Traverse",
+          "generation_name": "2017-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 279,
+          "mark_name": "Chevrolet",
+          "model_name": "Traverse",
+          "generation_name": "2020-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "name": "Aveo",
+      "mark_id": 9,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 249,
+          "mark_name": "Chevrolet",
+          "model_name": "Aveo",
+          "generation_name": "2005-2011 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 250,
+          "mark_name": "Chevrolet",
+          "model_name": "Aveo",
+          "generation_name": "2011-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 163,
+      "name": "Camaro",
+      "mark_id": 9,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 251,
+          "mark_name": "Chevrolet",
+          "model_name": "Camaro",
+          "generation_name": "2008-2014 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 252,
+          "mark_name": "Chevrolet",
+          "model_name": "Camaro",
+          "generation_name": "2013-2016 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 253,
+          "mark_name": "Chevrolet",
+          "model_name": "Camaro",
+          "generation_name": "2015-2018 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 254,
+          "mark_name": "Chevrolet",
+          "model_name": "Camaro",
+          "generation_name": "2018-2020 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 164,
+      "name": "Captiva",
+      "mark_id": 9,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 255,
+          "mark_name": "Chevrolet",
+          "model_name": "Captiva",
+          "generation_name": "2006-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 256,
+          "mark_name": "Chevrolet",
+          "model_name": "Captiva",
+          "generation_name": "2011-2013 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 257,
+          "mark_name": "Chevrolet",
+          "model_name": "Captiva",
+          "generation_name": "2013-2015 (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 165,
+      "name": "Cobalt",
+      "mark_id": 9,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 258,
+          "mark_name": "Chevrolet",
+          "model_name": "Cobalt",
+          "generation_name": "2013-н.в. (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 166,
+      "name": "Corvette",
+      "mark_id": 9,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 259,
+          "mark_name": "Chevrolet",
+          "model_name": "Corvette",
+          "generation_name": "2020-н.в. (C8)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 167,
+      "name": "Cruze",
+      "mark_id": 9,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 260,
+          "mark_name": "Chevrolet",
+          "model_name": "Cruze",
+          "generation_name": "2008-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 261,
+          "mark_name": "Chevrolet",
+          "model_name": "Cruze",
+          "generation_name": "2012-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 1086,
+      "name": "B1",
+      "mark_id": 109,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2468,
+          "mark_name": "Marussia",
+          "model_name": "B1",
+          "generation_name": "2010 – 2014",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1087,
+      "name": "B2",
+      "mark_id": 109,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2469,
+          "mark_name": "Marussia",
+          "model_name": "B2",
+          "generation_name": "2010 – 2014",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

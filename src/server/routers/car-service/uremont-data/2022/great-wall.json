@@ -1,0 +1,589 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 712,
+      "name": "Deer",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 15,
+      "is_seo_active": 0,
+      "rgs_code": "711020701",
+      "generations": [
+        {
+          "id": 1530,
+          "mark_name": "Great Wall",
+          "model_name": "Deer",
+          "generation_name": "1996 – 2013",
+          "start_year": 1996,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/26/33/26332a33c569f620ad60e24473cda61b.png",
+          "images": [
+            {
+              "id": 442677,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442677/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442677/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/26/33/26332a33c569f620ad60e24473cda61b.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2276,
+      "name": "H3",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 314,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5224,
+          "mark_name": "Great Wall",
+          "model_name": "H3",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2014,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/82/3082f1025dbc01195a40a02be9572d7f.png",
+          "images": [
+            {
+              "id": 444391,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444391/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444391/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/30/82/3082f1025dbc01195a40a02be9572d7f.png"
+            }
+          ]
+        },
+        {
+          "id": 5225,
+          "mark_name": "Great Wall",
+          "model_name": "H3",
+          "generation_name": "I",
+          "start_year": 2010,
+          "finish_year": 2015,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bf/2d/bf2d695ed07e830f9ec011427656e39b.png",
+          "images": [
+            {
+              "id": 444392,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444392/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444392/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bf/2d/bf2d695ed07e830f9ec011427656e39b.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2277,
+      "name": "H5",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 422,
+      "is_seo_active": 0,
+      "rgs_code": "851022427",
+      "generations": [
+        {
+          "id": 5226,
+          "mark_name": "Great Wall",
+          "model_name": "H5",
+          "generation_name": "2010 – 2017",
+          "start_year": 2010,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/5c/235cfd5a94b33b4539855ab4fd1bbab2.png",
+          "images": [
+            {
+              "id": 444393,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444393/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444393/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/23/5c/235cfd5a94b33b4539855ab4fd1bbab2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2278,
+      "name": "H6",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 16,
+      "is_seo_active": 0,
+      "rgs_code": "851022120",
+      "generations": [
+        {
+          "id": 5227,
+          "mark_name": "Great Wall",
+          "model_name": "H6",
+          "generation_name": "2011 – 2017",
+          "start_year": 2011,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/8b/bc8b8d6ba84e867aac0828a295aed89f.png",
+          "images": [
+            {
+              "id": 444394,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444394/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444394/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/bc/8b/bc8b8d6ba84e867aac0828a295aed89f.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 714,
+      "name": "Hover",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 252,
+      "is_seo_active": 0,
+      "rgs_code": "711020704",
+      "generations": [
+        {
+          "id": 1532,
+          "mark_name": "Great Wall",
+          "model_name": "Hover",
+          "generation_name": "2005 – 2010",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9f/4b/9f4bce227c69504e423ccfc9aa536a3e.png",
+          "images": [
+            {
+              "id": 442679,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442679/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442679/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9f/4b/9f4bce227c69504e423ccfc9aa536a3e.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 717,
+      "name": "M4",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": "036021945",
+      "generations": [
+        {
+          "id": 5229,
+          "mark_name": "Great Wall",
+          "model_name": "M4",
+          "generation_name": "2012 – 2017",
+          "start_year": 2012,
+          "finish_year": 2017,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f3/28/f32884c1da213fff7742bc0b1c25d733.png",
+          "images": [
+            {
+              "id": 444396,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444396/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444396/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f3/28/f32884c1da213fff7742bc0b1c25d733.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 720,
+      "name": "Safe",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 99,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1535,
+          "mark_name": "Great Wall",
+          "model_name": "Safe",
+          "generation_name": "2001 – 2010",
+          "start_year": 2001,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/be/d3/bed383bdaa81c06c2e36c692dc303801.png",
+          "images": [
+            {
+              "id": 442682,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442682/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442682/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/be/d3/bed383bdaa81c06c2e36c692dc303801.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 721,
+      "name": "Sailor",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 25,
+      "is_seo_active": 0,
+      "rgs_code": "711020702",
+      "generations": [
+        {
+          "id": 1536,
+          "mark_name": "Great Wall",
+          "model_name": "Sailor",
+          "generation_name": "2003 – 2010",
+          "start_year": 2003,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/18/67/1867cd7c8d2c374ace862789ac9a7931.png",
+          "images": [
+            {
+              "id": 442683,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442683/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442683/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/18/67/1867cd7c8d2c374ace862789ac9a7931.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 725,
+      "name": "Wingle 3",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 10,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20109,
+      "name": "Wingle 5",
+      "mark_id": 71,
+      "sort_id": 1,
+      "rating": 34,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 710,
+      "name": "CoolBear",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 3,
+      "is_seo_active": 0,
+      "rgs_code": "711021610",
+      "generations": [
+        {
+          "id": 1529,
+          "mark_name": "Great Wall",
+          "model_name": "CoolBear",
+          "generation_name": "2009 – 2013",
+          "start_year": 2009,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8e/15/8e15eb56a9a71d3d8b6b538efbd70ad4.png",
+          "images": [
+            {
+              "id": 442676,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442676/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442676/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8e/15/8e15eb56a9a71d3d8b6b538efbd70ad4.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 711,
+      "name": "Cowry",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "711021611",
+      "generations": [
+        {
+          "id": 5223,
+          "mark_name": "Great Wall",
+          "model_name": "Cowry",
+          "generation_name": "2007 – 2014",
+          "start_year": 2007,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 713,
+      "name": "Florid",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "711021175",
+      "generations": [
+        {
+          "id": 1531,
+          "mark_name": "Great Wall",
+          "model_name": "Florid",
+          "generation_name": "2008 – 2013",
+          "start_year": 2008,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/45/cd459ed0eaf21b70bd47b7999a12aed2.png",
+          "images": [
+            {
+              "id": 442678,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442678/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442678/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/cd/45/cd459ed0eaf21b70bd47b7999a12aed2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 716,
+      "name": "M2",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": "045020241",
+      "generations": [
+        {
+          "id": 5228,
+          "mark_name": "Great Wall",
+          "model_name": "M2",
+          "generation_name": "2010 – 2014",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/47/b7470acd670bc7f47faae6a75db78e4c.png",
+          "images": [
+            {
+              "id": 444395,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444395/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444395/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b7/47/b7470acd670bc7f47faae6a75db78e4c.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 718,
+      "name": "Pegasus",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "711021176",
+      "generations": [
+        {
+          "id": 1533,
+          "mark_name": "Great Wall",
+          "model_name": "Pegasus",
+          "generation_name": "2006 – 2008",
+          "start_year": 2006,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/62/db628357742ea407a3940c65e7da8e3c.png",
+          "images": [
+            {
+              "id": 442680,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442680/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442680/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/db/62/db628357742ea407a3940c65e7da8e3c.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 719,
+      "name": "Peri",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 7,
+      "is_seo_active": 0,
+      "rgs_code": "711021177",
+      "generations": [
+        {
+          "id": 1534,
+          "mark_name": "Great Wall",
+          "model_name": "Peri",
+          "generation_name": "2008 – 2010",
+          "start_year": 2008,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/db/44db840e4b3f789952c795f4067827a7.png",
+          "images": [
+            {
+              "id": 442681,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442681/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442681/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/db/44db840e4b3f789952c795f4067827a7.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 722,
+      "name": "Sing RUV",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1537,
+          "mark_name": "Great Wall",
+          "model_name": "Sing RUV",
+          "generation_name": "2005 – 2010",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/92/ea92c0dae705cc1ff5561ba42e74e4e6.png",
+          "images": [
+            {
+              "id": 442684,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442684/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442684/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ea/92/ea92c0dae705cc1ff5561ba42e74e4e6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 723,
+      "name": "Socool",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "711021179",
+      "generations": [
+        {
+          "id": 1538,
+          "mark_name": "Great Wall",
+          "model_name": "Socool",
+          "generation_name": "2005 – 2008",
+          "start_year": 2005,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dc/4d/dc4d373916656670b18b2bed194454fb.png",
+          "images": [
+            {
+              "id": 442685,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442685/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442685/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/dc/4d/dc4d373916656670b18b2bed194454fb.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20105,
+      "name": "Steed",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 724,
+      "name": "Voleex C10",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 5230,
+          "mark_name": "Great Wall",
+          "model_name": "Voleex C10",
+          "generation_name": "2010 – 2013",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/54/7554cc705cccecf54d675992e386efe1.png",
+          "images": [
+            {
+              "id": 444397,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444397/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/444397/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/75/54/7554cc705cccecf54d675992e386efe1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20106,
+      "name": "Voleex C20R",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 5811,
+      "name": "Voleex C30",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "711022168",
+      "generations": [
+        {
+          "id": 1539,
+          "mark_name": "Great Wall",
+          "model_name": "Voleex C30",
+          "generation_name": "2010 – 2014",
+          "start_year": 2010,
+          "finish_year": 2014,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/ed/49edfda5b005aceaefd853ba2fef03e2.png",
+          "images": [
+            {
+              "id": 442686,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442686/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442686/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/49/ed/49edfda5b005aceaefd853ba2fef03e2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20107,
+      "name": "Voleex C50",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20108,
+      "name": "Voleex V80",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20110,
+      "name": "X240",
+      "mark_id": 71,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

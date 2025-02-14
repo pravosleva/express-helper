@@ -1,0 +1,57 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20561,
+      "name": "CEO",
+      "mark_id": 158,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "778021318",
+      "generations": []
+    },
+    {
+      "id": 1679,
+      "name": "Noble",
+      "mark_id": 158,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4005,
+          "mark_name": "ShuangHuan",
+          "model_name": "Noble",
+          "generation_name": "2006 – 2016",
+          "start_year": 2006,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1680,
+      "name": "Sceo",
+      "mark_id": 158,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 4006,
+          "mark_name": "ShuangHuan",
+          "model_name": "Sceo",
+          "generation_name": "2006 – 2011",
+          "start_year": 2006,
+          "finish_year": 2011,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

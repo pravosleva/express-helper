@@ -1,0 +1,581 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 923,
+      "name": "Cherokee",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 144,
+      "is_seo_active": 0,
+      "rgs_code": "162007032",
+      "generations": [
+        {
+          "id": 2045,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "V (KL) Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/35/32/35320d4604dfbced0249a4646a8f25b4.png",
+          "images": [
+            {
+              "id": 442924,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442924/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442924/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/35/32/35320d4604dfbced0249a4646a8f25b4.png"
+            }
+          ]
+        },
+        {
+          "id": 2046,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "V (KL)",
+          "start_year": 2013,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/eb/8deb14d2e1bb1aa794b767fa28622244.png",
+          "images": [
+            {
+              "id": 442925,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442925/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442925/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/8d/eb/8deb14d2e1bb1aa794b767fa28622244.png"
+            }
+          ]
+        },
+        {
+          "id": 2047,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "IV (KK)",
+          "start_year": 2007,
+          "finish_year": 2012,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/7f/027f815f11d577a3799298d93c38e9b9.png",
+          "images": [
+            {
+              "id": 442926,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442926/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442926/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/02/7f/027f815f11d577a3799298d93c38e9b9.png"
+            }
+          ]
+        },
+        {
+          "id": 2048,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "III (KJ) Рестайлинг",
+          "start_year": 2004,
+          "finish_year": 2007,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ba/8d/ba8d4c3b52099d480ec002973dd3d0fd.png",
+          "images": [
+            {
+              "id": 442927,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442927/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442927/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ba/8d/ba8d4c3b52099d480ec002973dd3d0fd.png"
+            }
+          ]
+        },
+        {
+          "id": 2049,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "III (KJ)",
+          "start_year": 2001,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b5/23/b5230eb2d861a474c8944d225a0d5ee5.png",
+          "images": [
+            {
+              "id": 442928,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442928/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442928/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b5/23/b5230eb2d861a474c8944d225a0d5ee5.png"
+            }
+          ]
+        },
+        {
+          "id": 2050,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "II (XJ) Рестайлинг",
+          "start_year": 1997,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ca/d3/cad3516508b69326807f30b36367417e.png",
+          "images": [
+            {
+              "id": 442929,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442929/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442929/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/ca/d3/cad3516508b69326807f30b36367417e.png"
+            }
+          ]
+        },
+        {
+          "id": 2051,
+          "mark_name": "Jeep",
+          "model_name": "Cherokee",
+          "generation_name": "II (XJ)",
+          "start_year": 1984,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/04/1304173658286b7cbb6a45b2f6b500ab.png",
+          "images": [
+            {
+              "id": 442930,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442930/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442930/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/13/04/1304173658286b7cbb6a45b2f6b500ab.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 925,
+      "name": "Commander",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 24,
+      "is_seo_active": 0,
+      "rgs_code": "221007890",
+      "generations": [
+        {
+          "id": 2052,
+          "mark_name": "Jeep",
+          "model_name": "Commander",
+          "generation_name": "2005 – 2010",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5a/a0/5aa04c1cbcb75bf31e71fac35dfe99c7.png",
+          "images": [
+            {
+              "id": 442931,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442931/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442931/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5a/a0/5aa04c1cbcb75bf31e71fac35dfe99c7.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20247,
+      "name": "Commando",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 926,
+      "name": "Compass",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 76,
+      "is_seo_active": 0,
+      "rgs_code": "162021462",
+      "generations": [
+        {
+          "id": 2053,
+          "mark_name": "Jeep",
+          "model_name": "Compass",
+          "generation_name": "II",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/99/55991bac85e0540b8bbba9c6edf4f34c.png",
+          "images": [
+            {
+              "id": 442932,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442932/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442932/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/55/99/55991bac85e0540b8bbba9c6edf4f34c.png"
+            }
+          ]
+        },
+        {
+          "id": 2054,
+          "mark_name": "Jeep",
+          "model_name": "Compass",
+          "generation_name": "I Рестайлинг 2",
+          "start_year": 2013,
+          "finish_year": 2016,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/86/b486423a60984c0dc2f9be6f66a9a238.png",
+          "images": [
+            {
+              "id": 442933,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442933/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442933/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b4/86/b486423a60984c0dc2f9be6f66a9a238.png"
+            }
+          ]
+        },
+        {
+          "id": 2055,
+          "mark_name": "Jeep",
+          "model_name": "Compass",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/96/89/9689b0a25a8ce1eafd9b47d5a98ea34a.png",
+          "images": [
+            {
+              "id": 442934,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442934/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442934/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/96/89/9689b0a25a8ce1eafd9b47d5a98ea34a.png"
+            }
+          ]
+        },
+        {
+          "id": 2056,
+          "mark_name": "Jeep",
+          "model_name": "Compass",
+          "generation_name": "I",
+          "start_year": 2006,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9c/98/9c98b10e792fdbb98190036bf52d7edf.png",
+          "images": [
+            {
+              "id": 442935,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442935/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442935/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/9c/98/9c98b10e792fdbb98190036bf52d7edf.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20248,
+      "name": "Gladiator",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2057,
+          "mark_name": "Jeep",
+          "model_name": "Gladiator",
+          "generation_name": "II (JT)",
+          "start_year": 2019,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 927,
+      "name": "Grand Cherokee",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 627,
+      "is_seo_active": 0,
+      "rgs_code": "162007065",
+      "generations": [
+        {
+          "id": 2058,
+          "mark_name": "Jeep",
+          "model_name": "Grand Cherokee",
+          "generation_name": "IV (WK2) Рестайлинг",
+          "start_year": 2013,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/94/65942db56d2b644aaa07d3f50263177e.png",
+          "images": [
+            {
+              "id": 442936,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442936/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442936/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/65/94/65942db56d2b644aaa07d3f50263177e.png"
+            }
+          ]
+        },
+        {
+          "id": 2059,
+          "mark_name": "Jeep",
+          "model_name": "Grand Cherokee",
+          "generation_name": "IV (WK2)",
+          "start_year": 2010,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/74/66/74663ef1b5f3425cfeddaaaa8dcf281d.png",
+          "images": [
+            {
+              "id": 442937,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442937/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442937/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/74/66/74663ef1b5f3425cfeddaaaa8dcf281d.png"
+            }
+          ]
+        },
+        {
+          "id": 2060,
+          "mark_name": "Jeep",
+          "model_name": "Grand Cherokee",
+          "generation_name": "III (WK)",
+          "start_year": 2004,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/7e/447e040db89a91ab5b0ebe67e30af9fa.png",
+          "images": [
+            {
+              "id": 442938,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442938/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442938/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/44/7e/447e040db89a91ab5b0ebe67e30af9fa.png"
+            }
+          ]
+        },
+        {
+          "id": 2061,
+          "mark_name": "Jeep",
+          "model_name": "Grand Cherokee",
+          "generation_name": "II (WJ)",
+          "start_year": 1998,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/96/fc964714b1b80bec0e8eae774d264299.png",
+          "images": [
+            {
+              "id": 442939,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442939/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442939/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/96/fc964714b1b80bec0e8eae774d264299.png"
+            }
+          ]
+        },
+        {
+          "id": 2062,
+          "mark_name": "Jeep",
+          "model_name": "Grand Cherokee",
+          "generation_name": "I (ZJ) Рестайлинг",
+          "start_year": 1996,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b0/25/b025cc131278e2928fc571934ca10e17.png",
+          "images": [
+            {
+              "id": 442940,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442940/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442940/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/b0/25/b025cc131278e2928fc571934ca10e17.png"
+            }
+          ]
+        },
+        {
+          "id": 2063,
+          "mark_name": "Jeep",
+          "model_name": "Grand Cherokee",
+          "generation_name": "I (ZJ)",
+          "start_year": 1992,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/42/20/4220955ef4aa6c332e1e960a147d5e85.png",
+          "images": [
+            {
+              "id": 442941,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442941/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442941/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/42/20/4220955ef4aa6c332e1e960a147d5e85.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 929,
+      "name": "Liberty",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 44,
+      "is_seo_active": 0,
+      "rgs_code": "261010208",
+      "generations": []
+    },
+    {
+      "id": 930,
+      "name": "Patriot",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 17,
+      "is_seo_active": 0,
+      "rgs_code": "162020485",
+      "generations": []
+    },
+    {
+      "id": 2269,
+      "name": "Renegade",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "162022135",
+      "generations": [
+        {
+          "id": 2064,
+          "mark_name": "Jeep",
+          "model_name": "Renegade",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/0c/fc0c69d596e2992de664e80b20bb8dc0.png",
+          "images": [
+            {
+              "id": 442942,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442942/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442942/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/fc/0c/fc0c69d596e2992de664e80b20bb8dc0.png"
+            }
+          ]
+        },
+        {
+          "id": 2065,
+          "mark_name": "Jeep",
+          "model_name": "Renegade",
+          "generation_name": "I",
+          "start_year": 2014,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c7/63/c763af5ad63ca5418919898fa15d9292.png",
+          "images": [
+            {
+              "id": 442943,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442943/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442943/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/c7/63/c763af5ad63ca5418919898fa15d9292.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 931,
+      "name": "Wrangler",
+      "mark_id": 89,
+      "sort_id": 1,
+      "rating": 44,
+      "is_seo_active": 0,
+      "rgs_code": "162007094",
+      "generations": [
+        {
+          "id": 2066,
+          "mark_name": "Jeep",
+          "model_name": "Wrangler",
+          "generation_name": "IV (JL)",
+          "start_year": 2017,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/86/91/869134cce59e1cdf2e70ffd5d9ff188f.png",
+          "images": [
+            {
+              "id": 442944,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442944/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442944/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/86/91/869134cce59e1cdf2e70ffd5d9ff188f.png"
+            }
+          ]
+        },
+        {
+          "id": 2067,
+          "mark_name": "Jeep",
+          "model_name": "Wrangler",
+          "generation_name": "III (JK)",
+          "start_year": 2007,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/49/f8497db582fd5cd22c97416320803833.png",
+          "images": [
+            {
+              "id": 442945,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442945/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442945/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/f8/49/f8497db582fd5cd22c97416320803833.png"
+            }
+          ]
+        },
+        {
+          "id": 2068,
+          "mark_name": "Jeep",
+          "model_name": "Wrangler",
+          "generation_name": "II (TJ)",
+          "start_year": 1996,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/33/9b/339bc8db8cf45fa84febfa3072befed7.png",
+          "images": [
+            {
+              "id": 442946,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442946/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442946/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/33/9b/339bc8db8cf45fa84febfa3072befed7.png"
+            }
+          ]
+        },
+        {
+          "id": 2069,
+          "mark_name": "Jeep",
+          "model_name": "Wrangler",
+          "generation_name": "I (YJ)",
+          "start_year": 1986,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/a5/5da5a92dea02e9ea11fef1ebd5d625f0.png",
+          "images": [
+            {
+              "id": 442947,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442947/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442947/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/5d/a5/5da5a92dea02e9ea11fef1ebd5d625f0.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20245,
+      "name": "2500",
+      "mark_id": 89,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "398015521",
+      "generations": []
+    },
+    {
+      "id": 924,
+      "name": "CJ",
+      "mark_id": 89,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 2044,
+          "mark_name": "Jeep",
+          "model_name": "CJ",
+          "generation_name": "1966 – 1987",
+          "start_year": 1966,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20246,
+      "name": "Comanche",
+      "mark_id": 89,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 928,
+      "name": "Wagoneer",
+      "mark_id": 89,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

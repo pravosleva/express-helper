@@ -1,0 +1,620 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20131,
+      "name": "Adventra",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 736,
+      "name": "Apollo",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "122005776",
+      "generations": [
+        {
+          "id": 1565,
+          "mark_name": "Holden",
+          "model_name": "Apollo",
+          "generation_name": "1991 – 1996",
+          "start_year": 1991,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 737,
+      "name": "Astra",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1566,
+          "mark_name": "Holden",
+          "model_name": "Astra",
+          "generation_name": "IV (TS)",
+          "start_year": 1999,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 738,
+      "name": "Barina",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "122005793",
+      "generations": [
+        {
+          "id": 1567,
+          "mark_name": "Holden",
+          "model_name": "Barina",
+          "generation_name": "IV (XC)",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1568,
+          "mark_name": "Holden",
+          "model_name": "Barina",
+          "generation_name": "III (SB)",
+          "start_year": 1997,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20132,
+      "name": "Barina Spark",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20133,
+      "name": "Belmont",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20134,
+      "name": "Berlina",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "122005797",
+      "generations": []
+    },
+    {
+      "id": 20135,
+      "name": "Brougham",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 739,
+      "name": "Calais",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "122005799",
+      "generations": [
+        {
+          "id": 1569,
+          "mark_name": "Holden",
+          "model_name": "Calais",
+          "generation_name": "III",
+          "start_year": 1997,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1570,
+          "mark_name": "Holden",
+          "model_name": "Calais",
+          "generation_name": "II",
+          "start_year": 1988,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 744,
+      "name": "Frontera",
+      "mark_id": 75,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "421015912",
+      "generations": [
+        {
+          "id": 1576,
+          "mark_name": "Holden",
+          "model_name": "Frontera",
+          "generation_name": "1998 – 2003",
+          "start_year": 1998,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20136,
+      "name": "Camira",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 740,
+      "name": "Caprice",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1571,
+          "mark_name": "Holden",
+          "model_name": "Caprice",
+          "generation_name": "II",
+          "start_year": 1998,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1572,
+          "mark_name": "Holden",
+          "model_name": "Caprice",
+          "generation_name": "I",
+          "start_year": 1990,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20137,
+      "name": "Captiva",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20138,
+      "name": "Colorado",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 741,
+      "name": "Combo",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "421015884",
+      "generations": []
+    },
+    {
+      "id": 742,
+      "name": "Commodore",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "272011006",
+      "generations": [
+        {
+          "id": 1573,
+          "mark_name": "Holden",
+          "model_name": "Commodore",
+          "generation_name": "III",
+          "start_year": 1997,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1574,
+          "mark_name": "Holden",
+          "model_name": "Commodore",
+          "generation_name": "II",
+          "start_year": 1990,
+          "finish_year": 1997,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20139,
+      "name": "Crewman",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 743,
+      "name": "Cruze",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1575,
+          "mark_name": "Holden",
+          "model_name": "Cruze",
+          "generation_name": "2002 – 2006",
+          "start_year": 2002,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20140,
+      "name": "Drover",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20141,
+      "name": "Epica",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20142,
+      "name": "Gemini",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 745,
+      "name": "Jackaroo",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "122005849",
+      "generations": [
+        {
+          "id": 1577,
+          "mark_name": "Holden",
+          "model_name": "Jackaroo",
+          "generation_name": "1998 – 2003",
+          "start_year": 1998,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20143,
+      "name": "Kingswood",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20144,
+      "name": "Malibu",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 746,
+      "name": "Monaro",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "122005852",
+      "generations": [
+        {
+          "id": 1578,
+          "mark_name": "Holden",
+          "model_name": "Monaro",
+          "generation_name": "2001 – 2005",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20145,
+      "name": "Monterey",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20146,
+      "name": "One Tonner",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20147,
+      "name": "Piazza",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 747,
+      "name": "Rodeo",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "341013028",
+      "generations": [
+        {
+          "id": 1579,
+          "mark_name": "Holden",
+          "model_name": "Rodeo",
+          "generation_name": "1998 – 2003",
+          "start_year": 1998,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20148,
+      "name": "Sandman",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 18961,
+      "name": "Statesman",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1580,
+          "mark_name": "Holden",
+          "model_name": "Statesman",
+          "generation_name": "II",
+          "start_year": 1999,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1581,
+          "mark_name": "Holden",
+          "model_name": "Statesman",
+          "generation_name": "I",
+          "start_year": 1990,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 749,
+      "name": "Suburban",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20149,
+      "name": "Tigra",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20150,
+      "name": "Torana",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 750,
+      "name": "UTE",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "122005883",
+      "generations": [
+        {
+          "id": 1582,
+          "mark_name": "Holden",
+          "model_name": "UTE",
+          "generation_name": "IV",
+          "start_year": 2006,
+          "finish_year": 2013,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1583,
+          "mark_name": "Holden",
+          "model_name": "UTE",
+          "generation_name": "III",
+          "start_year": 2000,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 751,
+      "name": "Vectra",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "421016034",
+      "generations": [
+        {
+          "id": 1584,
+          "mark_name": "Holden",
+          "model_name": "Vectra",
+          "generation_name": "1998 – 2001",
+          "start_year": 1998,
+          "finish_year": 2001,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20151,
+      "name": "Viva",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20152,
+      "name": "Volt",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 752,
+      "name": "Zafira",
+      "mark_id": 75,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "421016105",
+      "generations": [
+        {
+          "id": 1585,
+          "mark_name": "Holden",
+          "model_name": "Zafira",
+          "generation_name": "2001 – 2005",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

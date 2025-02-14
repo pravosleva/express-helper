@@ -1,0 +1,78 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 626,
+      "name": "Argo",
+      "mark_id": 45,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1184,
+          "mark_name": "Sollers",
+          "model_name": "Argo",
+          "generation_name": "2022-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 627,
+      "name": "Atlant",
+      "mark_id": 45,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1185,
+          "mark_name": "Sollers",
+          "model_name": "Atlant",
+          "generation_name": "2022-н.в. (I Фургон)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1186,
+          "mark_name": "Sollers",
+          "model_name": "Atlant",
+          "generation_name": "2022-н.в. (I Микроавтобус)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 628,
+      "name": "ST6",
+      "mark_id": 45,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1187,
+          "mark_name": "Sollers",
+          "model_name": "ST6",
+          "generation_name": "2023-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

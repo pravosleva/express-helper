@@ -1,0 +1,185 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 239,
+      "name": "CS35",
+      "mark_id": 32,
+      "sort_id": 1,
+      "rating": 96,
+      "is_seo_active": 0,
+      "rgs_code": "752021982",
+      "generations": [
+        {
+          "id": 551,
+          "mark_name": "Changan",
+          "model_name": "CS35",
+          "generation_name": "2013 – н.в.",
+          "start_year": 2013,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6e/3d/6e3d84a87b5d4738f7eaab60444c7f99.png",
+          "images": [
+            {
+              "id": 442350,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442350/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442350/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/6e/3d/6e3d84a87b5d4738f7eaab60444c7f99.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22403,
+      "name": "CS35PLUS",
+      "mark_id": 32,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 552,
+          "mark_name": "Changan",
+          "model_name": "CS35PLUS",
+          "generation_name": "2018 – н.в.",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/22/a9/22a962d258d0e6bb8237d45eaba58c8c.png",
+          "images": [
+            {
+              "id": 442351,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442351/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442351/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/22/a9/22a962d258d0e6bb8237d45eaba58c8c.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19693,
+      "name": "CS75",
+      "mark_id": 32,
+      "sort_id": 1,
+      "rating": 8,
+      "is_seo_active": 0,
+      "rgs_code": "752022285",
+      "generations": [
+        {
+          "id": 553,
+          "mark_name": "Changan",
+          "model_name": "CS75",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2018,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/72/17/72170d42a4b3aee8f4e40eacc0fb4265.png",
+          "images": [
+            {
+              "id": 442352,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442352/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442352/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/72/17/72170d42a4b3aee8f4e40eacc0fb4265.png"
+            }
+          ]
+        },
+        {
+          "id": 554,
+          "mark_name": "Changan",
+          "model_name": "CS75",
+          "generation_name": "I",
+          "start_year": 2014,
+          "finish_year": 2020,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/a0/a7a03fdb7b0723f0e0973d7ddd3d1721.png",
+          "images": [
+            {
+              "id": 442353,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442353/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442353/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/a7/a0/a7a03fdb7b0723f0e0973d7ddd3d1721.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 240,
+      "name": "Eado",
+      "mark_id": 32,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "752021997",
+      "generations": [
+        {
+          "id": 555,
+          "mark_name": "Changan",
+          "model_name": "Eado",
+          "generation_name": "2013 – 2018",
+          "start_year": 2013,
+          "finish_year": 2018,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 19792,
+      "name": "Eado XT",
+      "mark_id": 32,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 241,
+      "name": "Raeton",
+      "mark_id": 32,
+      "sort_id": 1,
+      "rating": 16,
+      "is_seo_active": 0,
+      "rgs_code": "752021998",
+      "generations": [
+        {
+          "id": 556,
+          "mark_name": "Changan",
+          "model_name": "Raeton",
+          "generation_name": "2013 – 2019",
+          "start_year": 2013,
+          "finish_year": 2019,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/10/2e102e116ca374a277e0ddc2d2a109d7.png",
+          "images": [
+            {
+              "id": 442354,
+              "thumb_140_140": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442354/a7976a725ec80733f6d42509f6b2445d.png",
+              "thumb_34_34": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/thumbs/442354/a797bbf704b091c9c5dad2334e9cb84f.png",
+              "file_url": "https://uremont-main.s3.eu-central-1.amazonaws.com/upload/2e/10/2e102e116ca374a277e0ddc2d2a109d7.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20940,
+      "name": "SC1030FW9",
+      "mark_id": 32,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19793,
+      "name": "Star Truck",
+      "mark_id": 32,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

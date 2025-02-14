@@ -1,0 +1,1112 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 20489,
+      "name": "Acadian",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1514,
+      "name": "Aztek",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3628,
+          "mark_name": "Pontiac",
+          "model_name": "Aztek",
+          "generation_name": "2001 – 2005",
+          "start_year": 2001,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1515,
+      "name": "Bonneville",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": "297012196",
+      "generations": [
+        {
+          "id": 3629,
+          "mark_name": "Pontiac",
+          "model_name": "Bonneville",
+          "generation_name": "X",
+          "start_year": 2000,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3630,
+          "mark_name": "Pontiac",
+          "model_name": "Bonneville",
+          "generation_name": "IX",
+          "start_year": 1991,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3631,
+          "mark_name": "Pontiac",
+          "model_name": "Bonneville",
+          "generation_name": "VIII",
+          "start_year": 1987,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3632,
+          "mark_name": "Pontiac",
+          "model_name": "Bonneville",
+          "generation_name": "IV",
+          "start_year": 1965,
+          "finish_year": 1970,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1522,
+      "name": "Grand AM",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 12,
+      "is_seo_active": 0,
+      "rgs_code": "297012233",
+      "generations": [
+        {
+          "id": 3651,
+          "mark_name": "Pontiac",
+          "model_name": "Grand AM",
+          "generation_name": "V",
+          "start_year": 1998,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3652,
+          "mark_name": "Pontiac",
+          "model_name": "Grand AM",
+          "generation_name": "IV",
+          "start_year": 1992,
+          "finish_year": 1998,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3653,
+          "mark_name": "Pontiac",
+          "model_name": "Grand AM",
+          "generation_name": "III",
+          "start_year": 1984,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1523,
+      "name": "Grand Prix",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 2,
+      "is_seo_active": 0,
+      "rgs_code": "297012245",
+      "generations": [
+        {
+          "id": 3654,
+          "mark_name": "Pontiac",
+          "model_name": "Grand Prix",
+          "generation_name": "VII",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3655,
+          "mark_name": "Pontiac",
+          "model_name": "Grand Prix",
+          "generation_name": "VI",
+          "start_year": 1996,
+          "finish_year": 2003,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3656,
+          "mark_name": "Pontiac",
+          "model_name": "Grand Prix",
+          "generation_name": "V",
+          "start_year": 1988,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3657,
+          "mark_name": "Pontiac",
+          "model_name": "Grand Prix",
+          "generation_name": "IV",
+          "start_year": 1978,
+          "finish_year": 1987,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3658,
+          "mark_name": "Pontiac",
+          "model_name": "Grand Prix",
+          "generation_name": "III",
+          "start_year": 1972,
+          "finish_year": 1977,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3659,
+          "mark_name": "Pontiac",
+          "model_name": "Grand Prix",
+          "generation_name": "II",
+          "start_year": 1968,
+          "finish_year": 1972,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3660,
+          "mark_name": "Pontiac",
+          "model_name": "Grand Prix",
+          "generation_name": "I",
+          "start_year": 1962,
+          "finish_year": 1968,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1531,
+      "name": "Sunfire",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 4,
+      "is_seo_active": 0,
+      "rgs_code": "297012275",
+      "generations": [
+        {
+          "id": 3677,
+          "mark_name": "Pontiac",
+          "model_name": "Sunfire",
+          "generation_name": "1995 – 2005",
+          "start_year": 1995,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1533,
+      "name": "Torrent",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3682,
+          "mark_name": "Pontiac",
+          "model_name": "Torrent",
+          "generation_name": "2005 – 2009",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1534,
+      "name": "Trans Sport",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 11,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3683,
+          "mark_name": "Pontiac",
+          "model_name": "Trans Sport",
+          "generation_name": "II",
+          "start_year": 1996,
+          "finish_year": 1999,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3684,
+          "mark_name": "Pontiac",
+          "model_name": "Trans Sport",
+          "generation_name": "I",
+          "start_year": 1989,
+          "finish_year": 1996,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1535,
+      "name": "Vibe",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 82,
+      "is_seo_active": 0,
+      "rgs_code": "297012287",
+      "generations": [
+        {
+          "id": 3685,
+          "mark_name": "Pontiac",
+          "model_name": "Vibe",
+          "generation_name": "II",
+          "start_year": 2008,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3686,
+          "mark_name": "Pontiac",
+          "model_name": "Vibe",
+          "generation_name": "I Рестайлинг",
+          "start_year": 2004,
+          "finish_year": 2008,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3687,
+          "mark_name": "Pontiac",
+          "model_name": "Vibe",
+          "generation_name": "I",
+          "start_year": 2002,
+          "finish_year": 2004,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20509,
+      "name": "Wave",
+      "mark_id": 138,
+      "sort_id": 1,
+      "rating": 1,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3688,
+          "mark_name": "Pontiac",
+          "model_name": "Wave",
+          "generation_name": "T250",
+          "start_year": 2006,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3689,
+          "mark_name": "Pontiac",
+          "model_name": "Wave",
+          "generation_name": "T200",
+          "start_year": 2004,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1513,
+      "name": "6000",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "297020102",
+      "generations": [
+        {
+          "id": 3627,
+          "mark_name": "Pontiac",
+          "model_name": "6000",
+          "generation_name": "1982 – 1991",
+          "start_year": 1982,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20490,
+      "name": "Astre",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 19729,
+      "name": "Catalina",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3633,
+          "mark_name": "Pontiac",
+          "model_name": "Catalina",
+          "generation_name": "V",
+          "start_year": 1977,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3634,
+          "mark_name": "Pontiac",
+          "model_name": "Catalina",
+          "generation_name": "IV",
+          "start_year": 1971,
+          "finish_year": 1976,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3635,
+          "mark_name": "Pontiac",
+          "model_name": "Catalina",
+          "generation_name": "III",
+          "start_year": 1965,
+          "finish_year": 1970,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3636,
+          "mark_name": "Pontiac",
+          "model_name": "Catalina",
+          "generation_name": "II",
+          "start_year": 1961,
+          "finish_year": 1964,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3637,
+          "mark_name": "Pontiac",
+          "model_name": "Catalina",
+          "generation_name": "I",
+          "start_year": 1959,
+          "finish_year": 1960,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20491,
+      "name": "Chieftain",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20492,
+      "name": "Executive",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1516,
+      "name": "Fiero",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3638,
+          "mark_name": "Pontiac",
+          "model_name": "Fiero",
+          "generation_name": "1984 – 1988",
+          "start_year": 1984,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1517,
+      "name": "Firebird",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "297012206",
+      "generations": [
+        {
+          "id": 3639,
+          "mark_name": "Pontiac",
+          "model_name": "Firebird",
+          "generation_name": "IV",
+          "start_year": 1993,
+          "finish_year": 2002,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3640,
+          "mark_name": "Pontiac",
+          "model_name": "Firebird",
+          "generation_name": "III",
+          "start_year": 1982,
+          "finish_year": 1992,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3641,
+          "mark_name": "Pontiac",
+          "model_name": "Firebird",
+          "generation_name": "II",
+          "start_year": 1970,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3642,
+          "mark_name": "Pontiac",
+          "model_name": "Firebird",
+          "generation_name": "I",
+          "start_year": 1967,
+          "finish_year": 1969,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20493,
+      "name": "Firefly",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20494,
+      "name": "G3",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1518,
+      "name": "G4",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3643,
+          "mark_name": "Pontiac",
+          "model_name": "G4",
+          "generation_name": "2005 – 2010",
+          "start_year": 2005,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1519,
+      "name": "G5",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "711021178",
+      "generations": [
+        {
+          "id": 3644,
+          "mark_name": "Pontiac",
+          "model_name": "G5",
+          "generation_name": "2004 – 2010",
+          "start_year": 2004,
+          "finish_year": 2010,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1520,
+      "name": "G6",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3645,
+          "mark_name": "Pontiac",
+          "model_name": "G6",
+          "generation_name": "2004 – 2009",
+          "start_year": 2004,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1521,
+      "name": "G8",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3646,
+          "mark_name": "Pontiac",
+          "model_name": "G8",
+          "generation_name": "2007 – 2009",
+          "start_year": 2007,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20495,
+      "name": "Grand Safari",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20496,
+      "name": "Grand Ville",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1524,
+      "name": "GTO",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3647,
+          "mark_name": "Pontiac",
+          "model_name": "GTO",
+          "generation_name": "IV",
+          "start_year": 2004,
+          "finish_year": 2006,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3648,
+          "mark_name": "Pontiac",
+          "model_name": "GTO",
+          "generation_name": "III",
+          "start_year": 1974,
+          "finish_year": 1974,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3649,
+          "mark_name": "Pontiac",
+          "model_name": "GTO",
+          "generation_name": "II",
+          "start_year": 1968,
+          "finish_year": 1973,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3650,
+          "mark_name": "Pontiac",
+          "model_name": "GTO",
+          "generation_name": "I",
+          "start_year": 1964,
+          "finish_year": 1967,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20497,
+      "name": "Laurentian",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3661,
+          "mark_name": "Pontiac",
+          "model_name": "Laurentian",
+          "generation_name": "II",
+          "start_year": 1955,
+          "finish_year": 1957,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1525,
+      "name": "LeMans",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3662,
+          "mark_name": "Pontiac",
+          "model_name": "LeMans",
+          "generation_name": "VI Рестайлинг",
+          "start_year": 1991,
+          "finish_year": 1993,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3663,
+          "mark_name": "Pontiac",
+          "model_name": "LeMans",
+          "generation_name": "VI",
+          "start_year": 1988,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3664,
+          "mark_name": "Pontiac",
+          "model_name": "LeMans",
+          "generation_name": "V",
+          "start_year": 1978,
+          "finish_year": 1981,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3665,
+          "mark_name": "Pontiac",
+          "model_name": "LeMans",
+          "generation_name": "IV",
+          "start_year": 1973,
+          "finish_year": 1977,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3666,
+          "mark_name": "Pontiac",
+          "model_name": "LeMans",
+          "generation_name": "III",
+          "start_year": 1968,
+          "finish_year": 1972,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3667,
+          "mark_name": "Pontiac",
+          "model_name": "LeMans",
+          "generation_name": "II",
+          "start_year": 1964,
+          "finish_year": 1967,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20498,
+      "name": "Matiz",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1526,
+      "name": "Montana",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "297012256",
+      "generations": [
+        {
+          "id": 3668,
+          "mark_name": "Pontiac",
+          "model_name": "Montana",
+          "generation_name": "II SV6",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3669,
+          "mark_name": "Pontiac",
+          "model_name": "Montana",
+          "generation_name": "I",
+          "start_year": 1997,
+          "finish_year": 2005,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 1527,
+      "name": "Parisienne",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3670,
+          "mark_name": "Pontiac",
+          "model_name": "Parisienne",
+          "generation_name": "1971 – 1986",
+          "start_year": 1971,
+          "finish_year": 1986,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20499,
+      "name": "Pathfinder",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1528,
+      "name": "Phoenix",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "297012260",
+      "generations": [
+        {
+          "id": 3671,
+          "mark_name": "Pontiac",
+          "model_name": "Phoenix",
+          "generation_name": "II",
+          "start_year": 1979,
+          "finish_year": 1984,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3672,
+          "mark_name": "Pontiac",
+          "model_name": "Phoenix",
+          "generation_name": "I",
+          "start_year": 1977,
+          "finish_year": 1979,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20500,
+      "name": "Pursuit",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1529,
+      "name": "Solstice",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3673,
+          "mark_name": "Pontiac",
+          "model_name": "Solstice",
+          "generation_name": "2005 – 2009",
+          "start_year": 2005,
+          "finish_year": 2009,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20501,
+      "name": "Star Chief",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20502,
+      "name": "Strato Chief",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20503,
+      "name": "Streamliner",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1530,
+      "name": "Sunbird",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "297012264",
+      "generations": [
+        {
+          "id": 3674,
+          "mark_name": "Pontiac",
+          "model_name": "Sunbird",
+          "generation_name": "III",
+          "start_year": 1988,
+          "finish_year": 1994,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3675,
+          "mark_name": "Pontiac",
+          "model_name": "Sunbird",
+          "generation_name": "II",
+          "start_year": 1981,
+          "finish_year": 1988,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3676,
+          "mark_name": "Pontiac",
+          "model_name": "Sunbird",
+          "generation_name": "I",
+          "start_year": 1975,
+          "finish_year": 1980,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20504,
+      "name": "Sunburst",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20505,
+      "name": "Sunrunner",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 20506,
+      "name": "Super Chief",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    },
+    {
+      "id": 1532,
+      "name": "Tempest",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3678,
+          "mark_name": "Pontiac",
+          "model_name": "Tempest",
+          "generation_name": "III",
+          "start_year": 1987,
+          "finish_year": 1991,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3679,
+          "mark_name": "Pontiac",
+          "model_name": "Tempest",
+          "generation_name": "II",
+          "start_year": 1964,
+          "finish_year": 1970,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 3680,
+          "mark_name": "Pontiac",
+          "model_name": "Tempest",
+          "generation_name": "I",
+          "start_year": 1961,
+          "finish_year": 1963,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20507,
+      "name": "Torpedo",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 3681,
+          "mark_name": "Pontiac",
+          "model_name": "Torpedo",
+          "generation_name": "I",
+          "start_year": 1939,
+          "finish_year": 1948,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 20508,
+      "name": "Ventura",
+      "mark_id": 138,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": []
+    }
+  ]
+}

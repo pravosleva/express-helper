@@ -1,0 +1,68 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 235,
+      "name": "21",
+      "mark_id": 31,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": "521017608",
+      "generations": [
+        {
+          "id": 548,
+          "mark_name": "Caterham",
+          "model_name": "21",
+          "generation_name": "1994 – 2000",
+          "start_year": 1994,
+          "finish_year": 2000,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 236,
+      "name": "CSR",
+      "mark_id": 31,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 549,
+          "mark_name": "Caterham",
+          "model_name": "CSR",
+          "generation_name": "2005 – н.в.",
+          "start_year": 2005,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 237,
+      "name": "Seven",
+      "mark_id": 31,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 550,
+          "mark_name": "Caterham",
+          "model_name": "Seven",
+          "generation_name": "1992 – н.в.",
+          "start_year": 1992,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

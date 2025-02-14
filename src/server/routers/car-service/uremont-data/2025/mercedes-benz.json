@@ -1,0 +1,1930 @@
+{
+  "success": 1,
+  "models": [
+    {
+      "id": 878,
+      "name": "SLC AMG",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1747,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SLC AMG",
+          "generation_name": "2016-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 879,
+      "name": "SLK-Класс",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1748,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SLK-Класс",
+          "generation_name": "2007-2011 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1749,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SLK-Класс",
+          "generation_name": "2011-2016 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 880,
+      "name": "SLK-Класс AMG",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1750,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SLK-Класс AMG",
+          "generation_name": "2007-2011 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1751,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SLK-Класс AMG",
+          "generation_name": "2011-2016 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 881,
+      "name": "SLS AMG",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1752,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SLS AMG",
+          "generation_name": "2009-2014 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 882,
+      "name": "Sprinter",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1753,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Sprinter",
+          "generation_name": "2006-2013 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1754,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Sprinter",
+          "generation_name": "2013-2018 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1755,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Sprinter",
+          "generation_name": "2018-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 883,
+      "name": "Sprinter Classic фургон",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1756,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Sprinter Classic фургон",
+          "generation_name": "2013-2018 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1757,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Sprinter Classic фургон",
+          "generation_name": "2018-2020 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 884,
+      "name": "V-Класс",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1758,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "V-Класс",
+          "generation_name": "2014-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1759,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "V-Класс",
+          "generation_name": "2019-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 885,
+      "name": "Viano",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1760,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Viano",
+          "generation_name": "2010-2014 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 886,
+      "name": "Vito",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1761,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Vito",
+          "generation_name": "2003-2010 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1762,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Vito",
+          "generation_name": "2010-2014 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1763,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Vito",
+          "generation_name": "2014-2020 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1764,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Vito",
+          "generation_name": "2018-н.в. (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 887,
+      "name": "X-Класс",
+      "mark_id": 52,
+      "sort_id": 1,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1765,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "X-Класс",
+          "generation_name": "2017-2020 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 833,
+      "name": "A-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1634,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "A-Класс",
+          "generation_name": "2008-2012 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1635,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "A-Класс",
+          "generation_name": "2012-2015 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1636,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "A-Класс",
+          "generation_name": "2015-2018 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1637,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "A-Класс",
+          "generation_name": "2018-н.в. (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 834,
+      "name": "A-Класс AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1638,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "A-Класс AMG",
+          "generation_name": "2012-2015 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1639,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "A-Класс AMG",
+          "generation_name": "2015-2018 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1640,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "A-Класс AMG",
+          "generation_name": "2018-н.в. (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 835,
+      "name": "AMG GT",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1641,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "AMG GT",
+          "generation_name": "2014-2018 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1642,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "AMG GT",
+          "generation_name": "2017-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 836,
+      "name": "B-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1643,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "B-Класс",
+          "generation_name": "2011-2014 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1644,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "B-Класс",
+          "generation_name": "2014-2018 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1645,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "B-Класс",
+          "generation_name": "2018-2020 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 837,
+      "name": "C-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1646,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "C-Класс",
+          "generation_name": "2007-2011 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1647,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "C-Класс",
+          "generation_name": "2011-2015 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1648,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "C-Класс",
+          "generation_name": "2013-2018 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1649,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "C-Класс",
+          "generation_name": "2018-2021 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1650,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "C-Класс",
+          "generation_name": "2021-н.в. (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 838,
+      "name": "C-Класс AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1651,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "C-Класс AMG",
+          "generation_name": "2007-2011 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1652,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "C-Класс AMG",
+          "generation_name": "2011-2015 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1653,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "C-Класс AMG",
+          "generation_name": "2013-2018 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1654,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "C-Класс AMG",
+          "generation_name": "2018-2021 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 839,
+      "name": "Citan",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1655,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Citan",
+          "generation_name": "2012-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 840,
+      "name": "CL-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1656,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CL-Класс",
+          "generation_name": "2006-2010 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1657,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CL-Класс",
+          "generation_name": "2010-2014 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 841,
+      "name": "CL-Класс AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1658,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CL-Класс AMG",
+          "generation_name": "2006-2010 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1659,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CL-Класс AMG",
+          "generation_name": "2010-2014 (III, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 842,
+      "name": "CLA",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1660,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLA",
+          "generation_name": "2013-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1661,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLA",
+          "generation_name": "2016-2019 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1662,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLA",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 843,
+      "name": "CLA AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1663,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLA AMG",
+          "generation_name": "2013-2016 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1664,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLA AMG",
+          "generation_name": "2016-2019 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1665,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLA AMG",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 844,
+      "name": "CLC-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1666,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLC-Класс",
+          "generation_name": "2008-2011 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 845,
+      "name": "CLS",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1667,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLS",
+          "generation_name": "2010-2014 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1668,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLS",
+          "generation_name": "2014-2017 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1669,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLS",
+          "generation_name": "2017-2021 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 846,
+      "name": "CLS AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1670,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLS AMG",
+          "generation_name": "2008-2010 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1671,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLS AMG",
+          "generation_name": "2010-2014 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1672,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLS AMG",
+          "generation_name": "2014-2017 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1673,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "CLS AMG",
+          "generation_name": "2017-2021 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 847,
+      "name": "E-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1674,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "E-Класс",
+          "generation_name": "2009-2013 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1675,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "E-Класс",
+          "generation_name": "2013-2017 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1676,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "E-Класс",
+          "generation_name": "2016-2020 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1677,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "E-Класс",
+          "generation_name": "2020-н.в. (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 848,
+      "name": "E-Класс AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1678,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "E-Класс AMG",
+          "generation_name": "2009-2013 (IV)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1679,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "E-Класс AMG",
+          "generation_name": "2013-2017 (IV, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1680,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "E-Класс AMG",
+          "generation_name": "2016-2020 (V)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1681,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "E-Класс AMG",
+          "generation_name": "2020-н.в. (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 849,
+      "name": "EQC",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1682,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "EQC",
+          "generation_name": "2018-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 850,
+      "name": "G-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1683,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "G-Класс",
+          "generation_name": "2008-2012 (II, 5-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1684,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "G-Класс",
+          "generation_name": "2012-2015 (II, 6-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1685,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "G-Класс",
+          "generation_name": "2015-2018 (II, 7-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1686,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "G-Класс",
+          "generation_name": "2018-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 851,
+      "name": "G-Класс AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1687,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "G-Класс AMG",
+          "generation_name": "2008-2012 (II, 5-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1688,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "G-Класс AMG",
+          "generation_name": "2012-2015 (II, 6-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1689,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "G-Класс AMG",
+          "generation_name": "2015-2018 (II, 7-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1690,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "G-Класс AMG",
+          "generation_name": "2018-н.в. (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 852,
+      "name": "GL",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1691,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GL",
+          "generation_name": "2009-2012 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1692,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GL",
+          "generation_name": "2012-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 853,
+      "name": "GL AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1693,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GL AMG",
+          "generation_name": "2012-2015 (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 854,
+      "name": "GLA",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1694,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLA",
+          "generation_name": "2013-2017 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1695,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLA",
+          "generation_name": "2017-2020 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1696,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLA",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 855,
+      "name": "GLA AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1697,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLA AMG",
+          "generation_name": "2013-2017 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1698,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLA AMG",
+          "generation_name": "2017-2020 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1699,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLA AMG",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 856,
+      "name": "GLB",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1700,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLB",
+          "generation_name": "2019-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 857,
+      "name": "GLC",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1701,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLC",
+          "generation_name": "2015-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1702,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLC",
+          "generation_name": "2019-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 858,
+      "name": "GLC AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1703,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLC AMG",
+          "generation_name": "2015-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1704,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLC AMG",
+          "generation_name": "2019-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 859,
+      "name": "GLC Coupe",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1705,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLC Coupe",
+          "generation_name": "2016-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1706,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLC Coupe",
+          "generation_name": "2019-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 860,
+      "name": "GLC Coupe AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1707,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLC Coupe AMG",
+          "generation_name": "2016-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1708,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLC Coupe AMG",
+          "generation_name": "2019-н.в. (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 861,
+      "name": "GLE",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1709,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLE",
+          "generation_name": "2015-2018 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1710,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLE",
+          "generation_name": "2018-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 862,
+      "name": "GLE AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1711,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLE AMG",
+          "generation_name": "2015-2018 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1712,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLE AMG",
+          "generation_name": "2018-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 863,
+      "name": "GLE Coupe",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1713,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLE Coupe",
+          "generation_name": "2014-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1714,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLE Coupe",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 864,
+      "name": "GLE Coupe AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1715,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLE Coupe AMG",
+          "generation_name": "2014-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1716,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLE Coupe AMG",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 865,
+      "name": "GLK-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1717,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLK-Класс",
+          "generation_name": "2008-2012 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1718,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLK-Класс",
+          "generation_name": "2012-2015 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 866,
+      "name": "GLS",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1719,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLS",
+          "generation_name": "2015-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1720,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLS",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 867,
+      "name": "GLS AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1721,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLS AMG",
+          "generation_name": "2015-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1722,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "GLS AMG",
+          "generation_name": "2019-н.в. (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 868,
+      "name": "M-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1723,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "M-Класс",
+          "generation_name": "2008-2011 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1724,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "M-Класс",
+          "generation_name": "2011-2015 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 869,
+      "name": "M-Класс AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1725,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "M-Класс AMG",
+          "generation_name": "2008-2011 (II, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1726,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "M-Класс AMG",
+          "generation_name": "2011-2015 (III)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 870,
+      "name": "Maybach GLS",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1727,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Maybach GLS",
+          "generation_name": "2019-н.в. (II)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 871,
+      "name": "Maybach S-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1728,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Maybach S-Класс",
+          "generation_name": "2013-2017 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1729,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Maybach S-Класс",
+          "generation_name": "2018-2020 (VI, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1730,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "Maybach S-Класс",
+          "generation_name": "2020-н.в. (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 872,
+      "name": "R-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1731,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "R-Класс",
+          "generation_name": "2007-2011 (I, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1732,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "R-Класс",
+          "generation_name": "2010-2013 (I, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 873,
+      "name": "S-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1733,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "S-Класс",
+          "generation_name": "2009-2013 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1734,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "S-Класс",
+          "generation_name": "2013-2017 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1735,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "S-Класс",
+          "generation_name": "2017-2020 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1736,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "S-Класс",
+          "generation_name": "2020-н.в. (VII)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 874,
+      "name": "S-Класс AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1737,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "S-Класс AMG",
+          "generation_name": "2009-2013 (V, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1738,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "S-Класс AMG",
+          "generation_name": "2013-2017 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1739,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "S-Класс AMG",
+          "generation_name": "2017-2020 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 875,
+      "name": "SL-Класс",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1740,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SL-Класс",
+          "generation_name": "2008-2011 (V, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1741,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SL-Класс",
+          "generation_name": "2012-2016 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1742,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SL-Класс",
+          "generation_name": "2016-2019 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 876,
+      "name": "SL-Класс AMG",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1743,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SL-Класс AMG",
+          "generation_name": "2008-2011 (V, 2-й рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1744,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SL-Класс AMG",
+          "generation_name": "2012-2016 (VI)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        },
+        {
+          "id": 1745,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SL-Класс AMG",
+          "generation_name": "2016-2019 (VI, рестайлинг)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 877,
+      "name": "SLC",
+      "mark_id": 52,
+      "sort_id": 0,
+      "rating": 0,
+      "is_seo_active": 0,
+      "rgs_code": null,
+      "generations": [
+        {
+          "id": 1746,
+          "mark_name": "Mercedes-Benz",
+          "model_name": "SLC",
+          "generation_name": "2016-2019 (I)",
+          "start_year": null,
+          "finish_year": null,
+          "image": "https://uremont-main.s3.eu-central-1.amazonaws.com/img/brands/blank_image.png",
+          "images": []
+        }
+      ]
+    }
+  ]
+}
