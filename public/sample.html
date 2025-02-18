@@ -55,6 +55,9 @@
       <button id="sendPostmessageToParentWindow3">
         event3 (json str) [code 3]
       </button>
+      <button id="sendPostmessageToParentWindow4">
+        event4 { topic: 'oldlkdms_frame_authentication_completed' }
+      </button>
     </div>
 
     <div class='stack1'>
@@ -92,6 +95,8 @@
         .querySelector('#sendPostmessageToParentWindow2'),
       document
         .querySelector('#sendPostmessageToParentWindow3'),
+      document
+        .querySelector('#sendPostmessageToParentWindow4'),
     ]
     if (inIFrame()) {
       console.log('This window has a parent')
@@ -136,6 +141,17 @@
             channel: 'FRAME_A',
             code: 3,
           }), "*")
+        };
+
+      buttons[3]
+        .onclick = function () {
+          parent.postMessage({
+            topic: 'oldlkdms_frame_authentication_completed',
+            payload: {
+              isSuccess: true,
+              error: 'NotFound',
+            },
+          }, "*")
         };
       
       // -- NOTE: Subscribe to events from parent
