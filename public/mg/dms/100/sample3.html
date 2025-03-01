@@ -1,0 +1,231 @@
+<html>
+
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="../../../assets/base/style.css">
+  <style>
+    p {
+      margin: 0px;
+    }
+    button {
+      cursor: pointer;
+    }
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+    pre {
+      padding: 10px;
+      font-size: small;
+      background-color: #a5afba;
+      color: #fff;
+      margin: 0px;
+      border-radius: 16px;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      letter-spacing: .05em;
+    }
+    
+    .grid-gap1-cols3 {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+      grid-auto-flow: dense;
+    }
+    .stack1 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Express exp [sample3]</h1>
+  <p>Ничего секретного.</p>
+  <br />
+  <div class='stack1'>
+  
+    <div class='grid-gap1-cols3'>
+      <button id="sendPostmessageToParentWindow1">
+        event1 { topic: 'oldlkdms_frame_authentication_completed' }
+      </button>
+    </div>
+    <div class='grid-gap1-cols3'>
+      <button id="sendPostmessageToParentWindow9">
+        event9 [OK] ...location_update url: /express-helper/free/mg/sample.html#/hello-from-iframe
+      </button>
+    </div>
+    <div class='grid-gap1-cols3'>
+      <button id="sendPostmessageToParentWindow10">
+        event10 [OK] ...location_update url: /express-helper/free/mg/sample.html
+      </button>
+    </div>
+
+    <div class='stack1'>
+      <pre id="outputMessageFromParentWindow">{}</pre>
+      <pre id="initialQueryParams">{}</pre>
+      <pre id="error">No errs</pre>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const EBtn = {
+      One: 'sendPostmessageToParentWindow1',
+      Nine: 'sendPostmessageToParentWindow9',
+      Ten: 'sendPostmessageToParentWindow10',
+    }
+    const buttons = Object.values(EBtn)
+      .map((id) => document.querySelector(`#${id}`));
+    function inIFrame() {
+      // if (window.location !== window.parent.location) {
+      //   // The page is in an iFrames
+      //   document.write("The page is in an iFrame");
+      // }
+      // else {
+      //   // The page is not in an iFrame
+      //   document.write("The page is not in an iFrame");
+      // }
+      return window.location !== window.parent.location
+    }
+    const parentWindow = window.parent;
+    const outputPreElm = document.getElementById('outputMessageFromParentWindow');
+    const errorPreElm = document.getElementById('error');
+    const initialQueryParamsElm = document.getElementById('initialQueryParams');
+
+    // -- NOTE: Initial params
+    // 
+    // const params = new Proxy(new URLSearchParams(window.location.search), {
+    //   get: (searchParams, prop) => searchParams.get(prop),
+    // });
+    // // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    // let value = params.some_key; // "some_value"
+
+    const initialUrlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(initialUrlSearchParams.entries());
+    if (Object.keys(params).length > 0) {
+      initialQueryParamsElm.innerHTML= JSON.stringify(params || {}, null, 2)
+    }
+    // --
+
+    // TODO: Receive message from parent
+    // NOTE: See also https://dev-bay.com/iframe-and-parent-window-postmessage-communication/
+
+    // NOTE: Hand-shake with parent
+    // When CHILD [this] is fully loaded, then send handshake message
+
+    const config = {
+      [EBtn.One]: {
+        cb: function () {
+          parent.postMessage({
+            topic: 'oldlkdms_frame_authentication_completed',
+            payload: {
+              isSuccess: true,
+              error: 'NotFound',
+            },
+          }, "*")
+        },
+      },
+      [EBtn.Nine]: {
+        cb: function () {
+          parent.postMessage({
+            topic: 'oldlkdms_frame_location_update',
+            payload: {
+              url: '/express-helper/free/mg/sample.html#/hello-from-iframe',
+            },
+          }, "*")
+        },
+      },
+      [EBtn.Ten]: {
+        cb: function () {
+          parent.postMessage({
+            topic: 'oldlkdms_frame_location_update',
+            payload: {
+              url: '/express-helper/free/mg/sample.html',
+            },
+          }, "*")
+        },
+      },
+    }
+
+    if (inIFrame()) {
+      console.log('This window has a parent')
+      window.addEventListener('load', () => {
+        // parentWindow.postMessage('handshake', '*')
+        parentWindow.postMessage({
+          text: 'hello from iframe',
+          eventType: 'handshake',
+          channel: 'FRAME_A',
+          code: 0,
+        }, '*')
+      })
+
+      for (const buttonId in config) {
+        const elm = document.querySelector(`#${buttonId}`);
+        if (!!elm) {
+          elm.onclick = config[buttonId].cb;
+        }
+      }
+
+      // -- NOTE: Send evt on start
+      const urlParams = new URLSearchParams(window.location.search);
+      const startupParam = 'rgs-tst-onload-delay'
+      const myParam = urlParams.get(startupParam);
+      if (!!myParam) {
+        try {
+          if (Number.isNaN(Number(myParam)))
+            throw new Error(`startupParam "${startupParam}" should be number; received: ${String(startupParam)} (${typeof startupParam})`)
+          else {
+            const delay = Number(myParam)
+            setTimeout(() => {
+              buttons[0].click()
+            }, Number(myParam))
+          }
+        } catch (err) {
+          console.log(err)
+        }
+      } else {
+        console.log(`startupParam "${startupParam}" not found`)
+      }
+      // --
+      
+      // -- NOTE: Subscribe to events from parent
+      window.addEventListener('message', function (e) {
+        // NOTE: Get the sent data
+        const data = e.data;
+
+        switch (typeof data) {
+          case 'object':
+            outputPreElm.innerHTML = JSON.stringify(data, null, 2);
+            errorPreElm.innerHTML = 'No errs'
+            break
+          case 'string':
+          default:
+            try {
+              // NOTE: If you encode the message in JSON before sending them,
+              // then decode here
+              const decoded = JSON.parse(data);
+              outputPreElm.innerHTML = JSON.stringify(decoded, null, 2);
+              errorPreElm.innerHTML = 'No errs'
+            } catch (err) {
+              // NOTE: Not valid json
+              outputPreElm.innerHTML = data;
+              errorPreElm.innerHTML = `Expected object! ${!!err && typeof err.message === 'string'
+                ? err.message
+                : 'No err.message'}`
+            }
+            break
+        }
+      });
+      // --
+    } else {
+      console.log('This window has no parent')
+
+      for (const button of buttons) {
+        if (!!button) button.disabled = true;
+      }
+    }
+  </script>
+</body>
+
+</html>

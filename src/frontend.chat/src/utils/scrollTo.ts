@@ -1,6 +1,6 @@
 // const isDev = process.env.NODE_ENV === 'development'
 
-const scrollToRef = (ref: any, headerPx: number = 0, additionalPx: number = 0, noAnimation?: boolean) => {
+export const scrollToRef = (ref: any, headerPx: number = 0, additionalPx: number = 0, noAnimation?: boolean) => {
   if (!!ref?.current && !!window) {
     // ref.current.scrollIntoView()
     window.scrollTo({ left: 0, behavior: noAnimation ? 'auto' : 'smooth', top: ref.current.offsetTop - headerPx - additionalPx })

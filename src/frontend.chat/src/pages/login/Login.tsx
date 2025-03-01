@@ -515,8 +515,19 @@ export const Login = () => {
           <ModalFooter style={{ display: 'flex', justifyContent: 'space-between' }}>
             {/* <Grid templateColumns='2fr 2fr 1fr' gap={2}></Grid> */}
 
-            <Button mr={2} size='sm' variant='link' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Регистрация</Button>
-            <Button size='sm' variant='link' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Забыли пароль?</Button>
+            <Button
+              mr={2}
+              size='sm'
+              variant='link'
+              // onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}
+              onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=chat`)}
+            >Регистрация</Button>
+            <Button
+              size='sm'
+              variant='link'
+              // onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}
+              onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=chat`)}
+            >Забыли пароль?</Button>
             {/*
             <Button size='xs' colorScheme="blue" onClick={() => handleTryLoginWidthPassword()} isLoading={isLoading2} isDisabled={isSubmitDisabled}>
               <FiArrowRight size={18} />

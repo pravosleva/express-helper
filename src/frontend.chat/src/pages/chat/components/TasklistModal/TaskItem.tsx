@@ -149,17 +149,26 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
   }
   const timeEnd: any = !!checkTs && !!uncheckTs && isCompleted && isLooped ? checkTs + (checkTs - uncheckTs) : null
   const timeSection = (
-    <>
-      {!!timeEnd ? (
-        <Text mt={2}>
+    (!!timeEnd || !!price) && (
+      <div
+        // mt={2} display="flex" alignItems="flex-start"
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: '8px',
+        }}
+      >
+        {!!timeEnd ? (
           <Countdown
             date={timeEnd}
             renderer={CountdownRenderer}
           />
-        </Text>
-      ) : null}
-      {!!price && <Text fontSize="sm" /* fontWeight='bold' */>={getPrettyPrice(price)}</Text>}
-    </>
+        ) : null}
+        {!!price && <span style={{ fontSize: "small" }}>={getPrettyPrice(price)}</span>}
+      </div>
+    )
   ) // !!diff ? <TimeTag diff={diff} isCompleted={isCompleted} /> : null
 
   // const handleOpenDatepicker = () => {
@@ -308,44 +317,79 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
   return (
     <div
       className={styles[`themed-task-item_${mode.colorMode}`]}
-      style={{
-        display: "flex",
-        alignItems: "flex-start",
-      }}
     >
-      <Box p={5} pl={6} as='div'>
-        {MemoizedMenu}
-      </Box>
-      <Box p={5} pl={0} pr={0} fontSize='15px' as='div'>
-        <div>
-          <Editable
-            border='2px dashed rgba(211,211,211,0.3)'
-            style={{ width: 'auto' }}
-            pl={2}
-            pr={2}
-            fontWeight='bold' 
-            defaultValue={title}
-            onChange={(nextVal: string) => {
-              titleEditedRef.current = nextVal
-            }}
-            onSubmit={() => {
-              onEdit({ ...data, title: titleEditedRef.current })
+      
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'flex-start',
+        }}
+      >
+        <Box p={5} pl={6} as='div'>
+          {MemoizedMenu}
+        </Box>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0px',
+            width: '100%',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between',
+              gap: '0px',
+              width: '100%',
             }}
           >
-            <EditablePreview />
-            <EditableInput />
-          </Editable>
-
-          {timeSection}
+            <Box p={5} pl={0} pr={0} pb={5} fontSize='15px' as='div'>
+              <div>
+                <Editable
+                  border='2px dashed rgba(211,211,211,0.3)'
+                  style={{ width: 'auto' }}
+                  pl={2}
+                  pr={2}
+                  fontWeight='bold' 
+                  defaultValue={title}
+                  onChange={(nextVal: string) => {
+                    titleEditedRef.current = nextVal
+                  }}
+                  onSubmit={() => {
+                    onEdit({ ...data, title: titleEditedRef.current })
+                  }}
+                >
+                  <EditablePreview />
+                  <EditableInput />
+                </Editable>
+              </div>
+            </Box>
+            <Box p={5} style={{ marginLeft: 'auto' }} as='div'>
+              <Flex display="flex" alignItems="center">
+                <Text pt={2} color='green.500' fontSize="md" onClick={onCompleteToggle}>
+                  {isCompleted ? <ImCheckboxChecked size={20} /> : <ImCheckboxUnchecked size={20} />}
+                </Text>
+              </Flex>
+            </Box>
+          </div>
+          {
+            !!timeSection && (
+              <Box
+                p={5}
+                pl={0}
+                pt={0}
+                pb={5}
+                fontSize='15px' as='div'
+              >
+                {timeSection}
+              </Box>
+            )
+          }
         </div>
-      </Box>
-      <Box p={5} style={{ marginLeft: 'auto' }} as='div'>
-        <Flex display="flex" alignItems="center">
-          <Text pt={2} color='green.500' fontSize="md" onClick={onCompleteToggle}>
-            {isCompleted ? <ImCheckboxChecked size={20} /> : <ImCheckboxUnchecked size={20} />}
-          </Text>
-        </Flex>
-      </Box>
+      </div>
     </div>
   )
 })

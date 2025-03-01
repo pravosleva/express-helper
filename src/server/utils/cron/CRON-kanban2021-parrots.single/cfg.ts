@@ -137,19 +137,20 @@ export const cfg: TCfg = [
       },
     },
   },
+  // -- NOTE: MainsGroup
   {
     id: 8,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: '01 45 14 * * monday-friday', // Every weekday at 14:45:01
+    cronSetting: '01 50 14 * * monday-friday', // Every weekday at 14:50:01
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         chat_id: 432590698, // NOTE: Den
         eventCode: 'single_reminder',
-        about: () => '_Daily Meeting 15-15:30_',
+        about: () => 'Daily Meeting 15:00-15:30',
         targetMD: () => [
-          '[Daily Meeting](https://telemost.yandex.ru/j/0580104877) 15:00\n',
+          'https://telemost.yandex.ru/j/0580104877\n',
           'На встрече обсуждаем что сделали, что планируем сделать, с какими трудностями столкнулись в процессе выполнения работы.',
         ].join('\n')
       },
@@ -160,14 +161,14 @@ export const cfg: TCfg = [
     id: 9,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: '01 45 15 * * friday', // Every friday at 15:45:01
+    cronSetting: '01 50 15 * * friday', // Every friday at 15:50:01
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         chat_id: 432590698, // NOTE: Den
         eventCode: 'single_reminder',
-        about: () => '_Reminder_',
-        targetMD: () => 'Weekly Meeting [Mains Lab - General] 16:00'
+        about: () => 'Weekly Meeting [TG: Mains Lab - General] 16:00',
+        targetMD: () => 'Необязательная встреча'
       },
     },
   },
@@ -175,15 +176,15 @@ export const cfg: TCfg = [
     id: 10,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: '01 45 11 * * friday', // Every friday at 11:45:01
+    cronSetting: '01 50 11 * * friday', // Every friday at 11:50:01
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         chat_id: 432590698, // NOTE: Den
         eventCode: 'single_reminder',
-        about: () => 'Weekly Meeting [Ретроспектива] Пт 12-13',
+        about: () => 'Weekly Meeting [Ретроспектива] Пт 12:00-13:00',
         targetMD: () => [
-          '[Weekly Meeting)[https://telemost.yandex.ru/j/4711375343] 12:00\n',
+          'https://telemost.yandex.ru/j/4711375343\n',
           'Еженедельная командная встреча, на которой обсуждаем:',
           '- Положительные/отрицательные моменты за прошедшую неделю',
           '- Проблемы, с которыми столкнулись и способы их решения',
@@ -196,15 +197,15 @@ export const cfg: TCfg = [
     id: 11,
     _descr: 'Single notif',
     isEnabled: true,
-    cronSetting: '01 45 11 * * wednesday', // Every wednesday at 11:45:01
+    cronSetting: '01 50 11 * * wednesday', // Every wednesday at 11:50:01
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         chat_id: 432590698, // NOTE: Den
         eventCode: 'single_reminder',
-        about: () => '_Weekly Meeting [Сессия оценки] Ср 12-13_',
+        about: () => 'Weekly Meeting [Сессия оценки] Ср 12:00-13:00',
         targetMD: () => [
-          '[Weekly Meeting)[https://telemost.yandex.ru/j/4530254394] 12:00\n',
+          'https://telemost.yandex.ru/j/4530254394\n',
           'Встреча по оценке задач:',
           '- Аналитик, ответственный за задачу, рассказывает команде цель, требования к реализации.',
           '- Команда задаёт вопросы',
@@ -214,4 +215,24 @@ export const cfg: TCfg = [
       },
     },
   },
+  {
+    id: 12,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: '01 50 11 * * thursday', // Every thursday at 11:50:05
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: 432590698, // NOTE: Den
+        eventCode: 'single_reminder',
+        about: () => 'Weekly Meeting [Встреча с заказчиком RGS] Чт 12:00',
+        targetMD: () => [
+          'https://dion.vc/event/qot-igm-hki\n',
+          'Нет информации, что именно планируется обсуждать',
+          '(Войти как гость без пароля)',
+        ].join('\n')
+      },
+    },
+  },
+  // --
 ]

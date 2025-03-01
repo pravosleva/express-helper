@@ -15,116 +15,214 @@ const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 // NOTE: Link example
 // https://pravosleva.pro/express-helper/chat/#/chat?room=audit.lidiya005
 
+const EXPRESS_HELPER_BASE_URL = 'http://gosuslugi.pravosleva.pro/express-helper'
+
 export const cfg: TCfg = [
+  // {
+  //   id: 10,
+  //   _descr: 'Еженедельная напоминалка по выполненным задачам SmartPrice (на тестировании)',
+  //   isEnabled: false,
+  //   // cronSetting: '0 11 * * Mon', // Every Mon at 11:00
+  //   cronSetting: '5 10 * * *', // Every day at 10:05
+  //   // cronSetting: '44 13 * * Thu',
+  //   // cronSetting: isDev ? '*/10 * * * * Thu', // NOTE: Every 10 secs for isDev
+  //   validateBeforeRequest: ({ msgs }) => msgs.length > 0,
+  //   targetRooms: ['sp.pravosleva'],
+  //   targetHashtags: ['#marketing', '#ringeo', '#mtsmain2024', '#ssr'],
+  //   targetStatuses: [EMessageStatus.Success],
+  //   req: {
+  //     url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+  //     body: {
+  //       chat_id: 432590698, // NOTE: Den Pol
+  //       eventCode: 'sp_reminder_weekly',
+  //       about: ({
+  //         msgs,
+  //         targetHashtags,
+  //         targetStatuses,
+  //         targetRooms,
+  //         _descr,
+  //       }) => {
+  //         const finalMsgs: string[] = []
+          
+  //         finalMsgs.push(_descr)
+  //         if (targetHashtags.length > 0) finalMsgs.push(`*${targetHashtags.join(' ')}*`)
+
+  //         return finalMsgs.join('\n')
+  //       },
+  //       targetMD: ({
+  //         msgs,
+  //         targetHashtags,
+  //         targetStatuses,
+  //       }) => {
+  //         const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
+  //           arr: sortArrayByKeys({
+  //             arr: msgs,
+  //             keys: ['position'],
+  //             order: 1,
+  //           }),
+  //           targetFieldName: 'status',
+  //           topTemplate: [
+  //             EMessageStatus.Success,
+  //             EMessageStatus.Danger,
+  //             EMessageStatus.Warn,
+  //           ],
+  //         })
+          
+  //         return sortedMsgs.map((msg, i) => {
+  //           /* NOTE: _targetMsgs For example
+  //           {
+  //             text: 'test',
+  //             ts: 1681386545058,
+  //             rl: 2,
+  //             user: 'pravosleva',
+  //             status: 'success',
+  //             position: 0
+  //           }
+  //           */
+  //           const {
+  //             status,
+  //             position,
+  //             // editTs,
+  //             // ts, // NOTE: Create timestamp
+  //             links,
+  //             // user, // NOTE: TG username
+  //             text,
+  //             assignedTo,
+  //           } = msg
+
+  //           const msgList = [
+  //             `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}`,
+  //           ]
+
+  //           // -- NOTE: Custom msg
+  //           const specialMsgs = []
+  //           if (position >= 0)
+  //             specialMsgs.push(`Приоритет ${position + 1}`)
+  //           if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+  //             specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+
+  //           if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+  //           // --
+
+  //           if (!!links && Array.isArray(links))
+  //             msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+
+  //           return msgList.join('\n')
+  //         }).join('\n\n')
+  //       },
+  //     },
+  //   },
+  // },
+  // {
+  //   id: 20,
+  //   _descr: 'Ежедневная напоминалка по задачам SmartPrice (daily deploy after 21:00)',
+  //   isEnabled: false,
+  //   cronSetting: '5 0 21 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 21:00:05
+  //   validateBeforeRequest: ({ msgs }) => msgs.length > 0,
+  //   targetRooms: ['sp.pravosleva'],
+  //   targetHashtags: ['#ssr', '#eveningDailyReminder', '#ringeo', '#mtsmain2024'],
+  //   targetStatuses: [EMessageStatus.Danger],
+  //   req: {
+  //     url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+  //     body: {
+  //       chat_id: 432590698, // NOTE: Den Pol
+  //       eventCode: 'sp_reminder_daily',
+  //       about: ({
+  //         msgs,
+  //         targetHashtags,
+  //         targetStatuses,
+  //         targetRooms,
+  //         _descr,
+  //       }) => {
+  //         const finalMsgs: string[] = []
+
+  //         finalMsgs.push(_descr)
+
+  //         if (msgs.length > 0) {
+  //           finalMsgs.push(`В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join(' ')}`)
+  //           finalMsgs.push(`есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:`)
+  //           finalMsgs.push(`*${[...targetStatuses.map(getStatusTranslated)].join(' ')}*`)
+  //         } else {
+  //           finalMsgs.push(`Impossible case? ${[...targetStatuses].join(' / ')}`)
+  //         }
+
+  //         if (targetHashtags.length > 0) {
+  //           finalMsgs.push(`*${targetHashtags.join(' ')}*`)
+  //         }
+
+  //         return finalMsgs.join('\n')
+  //       },
+  //       targetMD: ({
+  //         msgs,
+  //         targetHashtags,
+  //         targetStatuses,
+  //       }) => {
+  //         const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
+  //           arr: sortArrayByKeys({
+  //             arr: msgs,
+  //             keys: ['position'],
+  //             order: 1,
+  //           }),
+  //           targetFieldName: 'status',
+  //           topTemplate: [
+  //             EMessageStatus.Success,
+  //             EMessageStatus.Danger,
+  //             EMessageStatus.Warn,
+  //           ],
+  //         })
+          
+  //         return sortedMsgs.map((msg, i) => {
+  //           const {
+  //             status,
+  //             position,
+  //             // editTs,
+  //             // ts, // NOTE: Create timestamp
+  //             links,
+  //             // user, // NOTE: TG username
+  //             text,
+  //             assignedTo,
+  //             statusChangeTs,
+  //           } = msg
+
+  //           const msgList = [
+  //             `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}`,
+  //           ]
+
+  //           // -- NOTE: Custom msg
+  //           const specialMsgs = []
+  //           if (position >= 0)
+  //             specialMsgs.push(`Приоритет ${position + 1}`)
+  //           if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+  //             specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+  //           if (!!statusChangeTs && typeof statusChangeTs === 'number')
+  //             specialMsgs.push(`Status upd ${getTimeAgo(statusChangeTs)}`)
+
+  //           if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+  //           // --
+
+  //           if (!!links && Array.isArray(links))
+  //             msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+
+  //           return msgList.join('\n')
+  //         }).join('\n\n')
+  //       },
+  //     },
+  //   },
+  // },
   {
     id: 1,
-    _descr: 'Еженедельная напоминалка по выполненным задачам SmartPrice (на тестировании)',
-    isEnabled: false,
-    // cronSetting: '0 11 * * Mon', // Every Mon at 11:00
-    cronSetting: '5 10 * * *', // Every day at 10:05
-    // cronSetting: '44 13 * * Thu',
-    // cronSetting: isDev ? '*/10 * * * * Thu', // NOTE: Every 10 secs for isDev
+    _descr: 'Ежедневная напоминалка по задачам MainsGroup (вечер)',
+    isEnabled: true,
+    cronSetting: '5 0 21 * * Mon,Tue,Wed,Thu', // Every weekdays at 21:00:05
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
-    targetRooms: ['sp.pravosleva'],
-    targetHashtags: ['#marketing', '#ringeo', '#mtsmain2024', '#ssr'],
-    targetStatuses: [EMessageStatus.Success],
+    targetRooms: ['mg.pravosleva'],
+    targetHashtags: ['#daily'],
+    targetStatuses: [EMessageStatus.Success, EMessageStatus.Danger, EMessageStatus.Warn],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         chat_id: 432590698, // NOTE: Den Pol
-        eventCode: 'sp_reminder_weekly',
-        about: ({
-          msgs,
-          targetHashtags,
-          targetStatuses,
-          targetRooms,
-          _descr,
-        }) => {
-          const finalMsgs: string[] = []
-          
-          finalMsgs.push(_descr)
-          if (targetHashtags.length > 0) finalMsgs.push(`*${targetHashtags.join(' ')}*`)
-
-          return finalMsgs.join('\n')
-        },
-        targetMD: ({
-          msgs,
-          targetHashtags,
-          targetStatuses,
-        }) => {
-          const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
-            arr: sortArrayByKeys({
-              arr: msgs,
-              keys: ['position'],
-              order: 1,
-            }),
-            targetFieldName: 'status',
-            topTemplate: [
-              EMessageStatus.Success,
-              EMessageStatus.Danger,
-              EMessageStatus.Warn,
-            ],
-          })
-          
-          return sortedMsgs.map((msg, i) => {
-            /* NOTE: _targetMsgs For example
-            {
-              text: 'test',
-              ts: 1681386545058,
-              rl: 2,
-              user: 'pravosleva',
-              status: 'success',
-              position: 0
-            }
-            */
-            const {
-              status,
-              position,
-              // editTs,
-              // ts, // NOTE: Create timestamp
-              links,
-              // user, // NOTE: TG username
-              text,
-              assignedTo,
-            } = msg
-
-            const msgList = [
-              `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}`,
-            ]
-
-            // -- NOTE: Custom msg
-            const specialMsgs = []
-            if (position >= 0)
-              specialMsgs.push(`Приоритет ${position + 1}`)
-            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
-              specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
-
-            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
-            // --
-
-            if (!!links && Array.isArray(links))
-              msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
-
-            return msgList.join('\n')
-          }).join('\n\n')
-        },
-      },
-    },
-  },
-  {
-    id: 2,
-    _descr: 'Ежедневная напоминалка по задачам SmartPrice (daily deploy after 21:00)',
-    isEnabled: false,
-    cronSetting: '5 0 21 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 21:00:05
-    validateBeforeRequest: ({ msgs }) => msgs.length > 0,
-    targetRooms: ['sp.pravosleva'],
-    targetHashtags: ['#ssr', '#eveningDailyReminder', '#ringeo', '#mtsmain2024'],
-    targetStatuses: [EMessageStatus.Danger],
-    req: {
-      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
-      body: {
-        chat_id: 432590698, // NOTE: Den Pol
-        eventCode: 'sp_reminder_daily',
+        eventCode: 'mg_reminder_daily',
         about: ({
           msgs,
           targetHashtags,
@@ -135,17 +233,16 @@ export const cfg: TCfg = [
           const finalMsgs: string[] = []
 
           finalMsgs.push(_descr)
-
-          if (msgs.length > 0) {
-            finalMsgs.push(`В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}`)
-            finalMsgs.push(`есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:`)
-            finalMsgs.push(`*${[...targetStatuses.map(getStatusTranslated)].join(' ')}*`)
-          } else {
-            finalMsgs.push(`Impossible case? ${[...targetStatuses].join(' / ')}`)
-          }
-
           if (targetHashtags.length > 0) {
             finalMsgs.push(`*${targetHashtags.join(' ')}*`)
+          }
+          // finalMsgs.push('\n')
+
+          if (msgs.length > 0) {
+            finalMsgs.push(`В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join(' ')}`)
+            finalMsgs.push(`есть ${plural(msgs.length, '%d актуальная задача', '%d актуальные задачи', '%d актуальных задач')}`)
+          } else {
+            finalMsgs.push(`Impossible case? ${[...targetStatuses].join(' / ')}`)
           }
 
           return finalMsgs.join('\n')
@@ -182,19 +279,134 @@ export const cfg: TCfg = [
               statusChangeTs,
             } = msg
 
+            const firstLineMsgs = [`${i + 1}.`]
+            // if (!!statusCfg[status]?.symbol)
+            //   firstLineMsgs.push(statusCfg[status].symbol)
+            if (!!status)
+              firstLineMsgs.push(getStatusTranslated(status))
+
+            if (position >= 0)
+              firstLineMsgs.push(`Приоритет ${position + 1}`)
+            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+              firstLineMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+
             const msgList = [
-              `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}`,
+              firstLineMsgs.join(' '),
             ]
+            msgList.push(`\`\`\`\n${text}\`\`\``)
 
             // -- NOTE: Custom msg
             const specialMsgs = []
-            if (position >= 0)
-              specialMsgs.push(`Приоритет ${position + 1}`)
-            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
-              specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
             if (!!statusChangeTs && typeof statusChangeTs === 'number')
               specialMsgs.push(`Status upd ${getTimeAgo(statusChangeTs)}`)
+            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+            // --
 
+            if (!!links && Array.isArray(links))
+              msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+
+            return msgList.join('\n')
+          }).join('\n\n')
+        },
+      },
+    },
+  },
+  {
+    id: 2,
+    _descr: 'Ежедневная напоминалка по задачам MainsGroup (день)',
+    isEnabled: true,
+    cronSetting: '5 45 14 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 14:45:05
+    validateBeforeRequest: ({ msgs }) => msgs.length > 0,
+    targetRooms: ['mg.pravosleva'],
+    targetHashtags: ['#daily'],
+    targetStatuses: [
+      EMessageStatus.Success,
+      EMessageStatus.Danger,
+      // EMessageStatus.Warn,
+      // EMessageStatus.Done,
+    ],
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: 432590698, // NOTE: Den Pol
+        eventCode: 'mg_reminder_daily',
+        about: ({
+          msgs,
+          targetHashtags,
+          targetStatuses,
+          targetRooms,
+          _descr,
+        }) => {
+          const finalMsgs: string[] = []
+
+          finalMsgs.push(_descr)
+          if (targetHashtags.length > 0) {
+            finalMsgs.push(`*${targetHashtags.join(' ')}*`)
+          }
+          // finalMsgs.push('\n')
+
+          if (msgs.length > 0) {
+            finalMsgs.push(`В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join(' ')}`)
+            finalMsgs.push(`есть ${plural(msgs.length, '%d актуальная задача', '%d актуальные задачи', '%d актуальных задач')}`)
+          } else {
+            finalMsgs.push(`Impossible case? ${[...targetStatuses].join(' / ')}`)
+          }
+
+          return finalMsgs.join('\n')
+        },
+        targetMD: ({
+          msgs,
+          targetHashtags,
+          targetStatuses,
+        }) => {
+          const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
+            arr: sortArrayByKeys({
+              arr: msgs,
+              keys: ['position'],
+              order: 1,
+            }),
+            targetFieldName: 'status',
+            topTemplate: [
+              EMessageStatus.Success,
+              EMessageStatus.Danger,
+              // EMessageStatus.Warn,
+              // EMessageStatus.Done,
+            ],
+          })
+          
+          return sortedMsgs.map((msg, i) => {
+            const {
+              status,
+              position,
+              // editTs,
+              // ts, // NOTE: Create timestamp
+              links,
+              // user, // NOTE: TG username
+              text,
+              assignedTo,
+              statusChangeTs,
+            } = msg
+
+            const firstLineMsgs = [`${i + 1}.`]
+            // if (!!statusCfg[status]?.symbol)
+            //   firstLineMsgs.push(statusCfg[status].symbol)
+            if (!!status)
+              firstLineMsgs.push(getStatusTranslated(status))
+
+            if (position >= 0)
+              firstLineMsgs.push(`Приоритет ${position + 1}`)
+            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+              firstLineMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+
+            const msgList = [
+              firstLineMsgs.join(' '),
+            ]
+            msgList.push(`\`\`\`\n${text}\`\`\``)
+
+            // -- NOTE: Custom msg
+            const specialMsgs = []
+            if (!!statusChangeTs && typeof statusChangeTs === 'number')
+              specialMsgs.push(`Status upd ${getTimeAgo(statusChangeTs)}`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
@@ -209,9 +421,115 @@ export const cfg: TCfg = [
   },
   {
     id: 3,
-    _descr: 'Reminder for me (wsp)',
+    _descr: 'Еженедельная напоминалка по задачам MainsGroup (глобальные)',
     isEnabled: true,
-    cronSetting: '1 5 18 * * *', // Every day at 18:05:01
+    cronSetting: '5 50 9 * * Mon,Thu', // Every пн,чт at 09:50:05
+    validateBeforeRequest: ({ msgs }) => msgs.length > 0,
+    targetRooms: ['mg.pravosleva'],
+    targetHashtags: ['#global'],
+    targetStatuses: [
+      EMessageStatus.Info,
+      EMessageStatus.Success,
+      EMessageStatus.Danger,
+      EMessageStatus.Warn,
+    ],
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: 432590698, // NOTE: Den Pol
+        eventCode: 'mg_reminder_daily',
+        about: ({
+          msgs,
+          targetHashtags,
+          targetStatuses,
+          targetRooms,
+          _descr,
+        }) => {
+          const finalMsgs: string[] = []
+
+          finalMsgs.push(_descr)
+          if (targetHashtags.length > 0) {
+            finalMsgs.push(`*${targetHashtags.join(' ')}*`)
+          }
+          // finalMsgs.push('\n')
+
+          if (msgs.length > 0) {
+            finalMsgs.push(`В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join(' ')}`)
+            // finalMsgs.push(`есть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:`)
+            // finalMsgs.push(`*${[...targetStatuses.map(getStatusTranslated)].join(' ')}*`)
+            finalMsgs.push(`есть ${plural(msgs.length, '%d актуальная задача', '%d актуальные задачи', '%d актуальных задач')}`)
+          } else {
+            finalMsgs.push(`Impossible case? ${[...targetStatuses].join(' / ')}`)
+          }
+
+          return finalMsgs.join('\n')
+        },
+        targetMD: ({ msgs, targetHashtags, targetStatuses }) => {
+          const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
+            arr: sortArrayByKeys({
+              arr: msgs,
+              keys: ['position'],
+              order: 1,
+            }),
+            targetFieldName: 'status',
+            topTemplate: [
+              EMessageStatus.Info,
+              EMessageStatus.Success,
+              EMessageStatus.Danger,
+              EMessageStatus.Warn,
+            ],
+          })
+          
+          return sortedMsgs.map((msg, i) => {
+            const {
+              status,
+              position,
+              // editTs,
+              // ts, // NOTE: Create timestamp
+              links,
+              // user, // NOTE: TG username
+              text,
+              assignedTo,
+              statusChangeTs,
+            } = msg
+
+            const firstLineMsgs = [`${i + 1}.`]
+            // if (!!statusCfg[status]?.symbol)
+            //   firstLineMsgs.push(statusCfg[status].symbol)
+            if (!!status)
+              firstLineMsgs.push(getStatusTranslated(status))
+
+            if (position >= 0)
+              firstLineMsgs.push(`Приоритет ${position + 1}`)
+            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
+              firstLineMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
+
+            const msgList = [
+              firstLineMsgs.join(' '),
+            ]
+            msgList.push(`\`\`\`\n${text}\`\`\``)
+
+            // -- NOTE: Custom msg
+            const specialMsgs = []
+            if (!!statusChangeTs && typeof statusChangeTs === 'number')
+              specialMsgs.push(`Status upd ${getTimeAgo(statusChangeTs)}`)
+            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
+            // --
+
+            if (!!links && Array.isArray(links))
+              msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
+
+            return msgList.join('\n')
+          }).join('\n\n')
+        },
+      },
+    },
+  },
+  {
+    id: 4,
+    _descr: 'Вечерняя напоминалка про состояние дел',
+    isEnabled: true,
+    cronSetting: '1 5 20 * * *', // Every day at 20:05:01
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['magaz'],
     targetHashtags: [],
@@ -230,12 +548,20 @@ export const cfg: TCfg = [
           targetHashtags,
           // targetStatuses,
           targetRooms,
+          _descr,
         }) => {
-          // return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}: *${[...targetStatuses.map(getStatusTranslated)].join('; ')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
-          return `${
-            msgs.length > 0
-            ? `Current state of affairs in ${targetRooms.map((room) => `[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
-            : ''}`
+          const finalMsgs: string[] = []
+
+          finalMsgs.push(_descr)
+          if (targetHashtags.length > 0) {
+            finalMsgs.push(`*${targetHashtags.join(' ')}*`)
+          }
+          // finalMsgs.push('\n')
+
+          finalMsgs.push(`Current affairs state in ${targetRooms.map((room) => `[${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join(' ')}`)
+
+          // return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `[${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join(' ')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}: *${[...targetStatuses.map(getStatusTranslated)].join('; ')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return finalMsgs.join('\n')
         },
         targetMD: ({
           msgs,
@@ -250,9 +576,9 @@ export const cfg: TCfg = [
             }),
             targetFieldName: 'status',
             topTemplate: [
-              EMessageStatus.Success,
               EMessageStatus.Danger,
               EMessageStatus.Warn,
+              EMessageStatus.Success,
             ],
           })
           
@@ -268,19 +594,16 @@ export const cfg: TCfg = [
               assignedTo,
             } = msg
 
+            const firstLineMsgs = [`${i + 1}.`]
+            // if (!!statusCfg[status]?.symbol)
+            //   firstLineMsgs.push(statusCfg[status].symbol)
+            if (!!status)
+              firstLineMsgs.push(getStatusTranslated(status))
+
             const msgList = [
-              `${i + 1}. ${!!statusCfg[status]?.symbol ? `${statusCfg[status]?.symbol} ` : ''}${text}`,
+              firstLineMsgs.join(' '),
             ]
-
-            // -- NOTE: Custom msg
-            const specialMsgs = []
-            if (position >= 0)
-              specialMsgs.push(`Приоритет ${position + 1}`)
-            if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
-              specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
-
-            if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
-            // --
+            msgList.push(`\`\`\`\n${text}\`\`\``)
 
             if (!!links && Array.isArray(links))
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
@@ -292,7 +615,7 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 4,
+    id: 5,
     _descr: 'Статус вопросов быта',
     isEnabled: true,
     cronSetting: '1 1 18 * * Mon,Thu', // Every Mon,Thu at 18:01:01
@@ -329,10 +652,10 @@ export const cfg: TCfg = [
 
           if (msgs.length > 0) {
             finalMsgs.push(_descr)
-            finalMsgs.push(`Current state of affairs in ${targetRooms.map((room) => `[${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join(' ')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`)
+            finalMsgs.push(`Current state of affairs in ${targetRooms.map((room) => `[${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join(' ')}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`)
           }
 
-          // return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          // return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
           return finalMsgs.join('\n')
         },
         targetMD: ({
@@ -393,7 +716,7 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 5,
+    id: 6,
     _descr: 'Спринт (magaz) Weekly reminder',
     isEnabled: true,
     cronSetting: '5 7 18 * * Mon', // Every Mon at 18:07:05
@@ -438,7 +761,7 @@ export const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `*Спринты* (каждый понедельник): ${msgs.length > 0 ? `в ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return `*Спринты* (каждый понедельник): ${msgs.length > 0 ? `в ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           msgs,
@@ -505,7 +828,7 @@ export const cfg: TCfg = [
             if (!!links && Array.isArray(links))
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
             
-            msgList.push(`${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}`)
+            msgList.push(`${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}`)
 
             return msgList.join('\n')
           }).join('\n\n')
@@ -514,7 +837,7 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 6,
+    id: 7,
     _descr: 'Monthly reminder',
     isEnabled: true,
     cronSetting: '5 2 18 20 * *', // Every month 20 at 18:02:05
@@ -537,7 +860,7 @@ export const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](https://pravosleva.pro/express-helper/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return `${msgs.length > 0 ? `В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(' / ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           msgs,

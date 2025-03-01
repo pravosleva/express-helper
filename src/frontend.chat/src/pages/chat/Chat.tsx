@@ -3034,9 +3034,9 @@ export const Chat = () => {
                   <div id={`card-${card.ts}`} className={clsx('react-kanban-card', { 'react-kanban-card--dragging': dragging, 'bg--light': mode.colorMode === 'light', 'bg--dark': mode.colorMode === 'dark' } )}>
                     <div
                       className='card-controls-box'
-                      style={{
-                        marginBottom: 'var(--chakra-space-2)',
-                      }}
+                      // style={{
+                      //   marginBottom: 'var(--chakra-space-2)',
+                      // }}
                     >
                       {/* <div
                         className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}

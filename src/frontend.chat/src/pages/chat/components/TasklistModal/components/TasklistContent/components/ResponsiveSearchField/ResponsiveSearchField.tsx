@@ -188,7 +188,7 @@ export const ResponsiveSearchField = ({
             style={{
               display: 'flex',
               flexDirection: 'row',
-              justifyContent: 'center',
+              justifyContent: 'flex-start',
               flexWrap: 'wrap',
               gap: 'var(--chakra-space-2)',
               padding: 'var(--chakra-space-2)',
@@ -197,6 +197,42 @@ export const ResponsiveSearchField = ({
               overflowY: 'auto',
             }}
           >
+            {
+              tagList.length > defaultTagsLimit ? (
+                <>
+                  {!isShowMoreEnabled ? (
+                    <Button
+                      size='sm'
+                      colorScheme='blue'
+                      variant='outline'
+                      // leftIcon={<FcGallery color='#FFF' size={18} />}
+                      onClick={() => setIsShowMoreEnabled(true)}
+                      // mr={2}
+                      rounded='3xl'
+                      // isFullWidth
+                    >
+                      Show {tagList.length} tags
+                    </Button>
+                  ) : (
+                    <Button
+                      size='sm'
+                      colorScheme='blue'
+                      // variant='unstyled'
+                      variant='outline'
+                      // leftIcon={<FcGallery color='#FFF' size={18} />}
+                      onClick={() => setIsShowMoreEnabled(false)}
+                      // mr={2}
+                      rounded='3xl'
+                      style={{
+                        padding: '0 var(--chakra-space-3)'
+                      }}
+                    >
+                      Collapse
+                    </Button>
+                  )}
+                </>
+              ) : null
+            }
             {tagList.map((tag, i) => {
               const isEnabled = checkIsTagEnabled(tag)
               const isHidden = isShowMoreEnabled ? false : i > defaultTagsLimit - 1
@@ -224,42 +260,6 @@ export const ResponsiveSearchField = ({
                 </Button>
               )
             })}
-            {
-              tagList.length > defaultTagsLimit ? (
-                <>
-                  {!isShowMoreEnabled ? (
-                    <Button
-                      size='sm'
-                      colorScheme='blue'
-                      variant='unstyled'
-                      // leftIcon={<FcGallery color='#FFF' size={18} />}
-                      onClick={() => setIsShowMoreEnabled(true)}
-                      // mr={2}
-                      rounded='3xl'
-                      isFullWidth
-                    >
-                      Show {tagList.length} tags
-                    </Button>
-                  ) : (
-                    <Button
-                      size='sm'
-                      colorScheme='blue'
-                      // variant='unstyled'
-                      variant='outline'
-                      // leftIcon={<FcGallery color='#FFF' size={18} />}
-                      onClick={() => setIsShowMoreEnabled(false)}
-                      // mr={2}
-                      rounded='3xl'
-                      style={{
-                        padding: '0 var(--chakra-space-3)'
-                      }}
-                    >
-                      Collapse
-                    </Button>
-                  )}
-                </>
-              ) : null
-            }
           </div>
         )
       }

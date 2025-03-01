@@ -2,7 +2,7 @@
 
 <head>
   <title>Express</title>
-  <link rel="stylesheet" href="./assets/base/style.css">
+  <link rel="stylesheet" href="../assets/base/style.css">
   <style>
     p {
       margin: 0px;
@@ -41,32 +41,42 @@
 </head>
 
 <body>
-  <h1>Express exp</h1>
+  <h1>Express exp [sample2]</h1>
   <p>Ничего секретного.</p>
   <br />
   <div class='stack1'>
+  
     <div class='grid-gap1-cols3'>
       <button id="sendPostmessageToParentWindow1">
-        event1
+        event1 { topic: 'oldlkdms_frame_authentication_completed' }
       </button>
-      <button id="sendPostmessageToParentWindow2">
-        event2 (json) [code 2]
+    </div>
+    <div class='grid-gap1-cols3'>
+      <button id="sendPostmessageToParentWindow9">
+        event9 [OK] ...location_update url: /express-helper/free/mg/sample.html#/hello-from-iframe
       </button>
-      <button id="sendPostmessageToParentWindow3">
-        event3 (json str) [code 3]
-      </button>
-      <button id="sendPostmessageToParentWindow4">
-        event4 { topic: 'oldlkdms_frame_authentication_completed' }
+    </div>
+    <div class='grid-gap1-cols3'>
+      <button id="sendPostmessageToParentWindow10">
+        event10 [OK] ...location_update url: /express-helper/free/mg/sample.html
       </button>
     </div>
 
     <div class='stack1'>
       <pre id="outputMessageFromParentWindow">{}</pre>
+      <pre id="initialQueryParams">{}</pre>
       <pre id="error">No errs</pre>
     </div>
   </div>
 
   <script type="text/javascript">
+    const EBtn = {
+      One: 'sendPostmessageToParentWindow1',
+      Nine: 'sendPostmessageToParentWindow9',
+      Ten: 'sendPostmessageToParentWindow10',
+    }
+    const buttons = Object.values(EBtn)
+      .map((id) => document.querySelector(`#${id}`));
     function inIFrame() {
       // if (window.location !== window.parent.location) {
       //   // The page is in an iFrames
@@ -81,23 +91,63 @@
     const parentWindow = window.parent;
     const outputPreElm = document.getElementById('outputMessageFromParentWindow');
     const errorPreElm = document.getElementById('error');
+    const initialQueryParamsElm = document.getElementById('initialQueryParams');
+
+    // -- NOTE: Initial params
+    // 
+    // const params = new Proxy(new URLSearchParams(window.location.search), {
+    //   get: (searchParams, prop) => searchParams.get(prop),
+    // });
+    // // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    // let value = params.some_key; // "some_value"
+
+    const initialUrlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(initialUrlSearchParams.entries());
+    if (Object.keys(params).length > 0) {
+      initialQueryParamsElm.innerHTML= JSON.stringify(params || {}, null, 2)
+    }
+    // --
 
     // TODO: Receive message from parent
     // NOTE: See also https://dev-bay.com/iframe-and-parent-window-postmessage-communication/
 
     // NOTE: Hand-shake with parent
     // When CHILD [this] is fully loaded, then send handshake message
-    
-    const buttons = [
-      document
-        .querySelector('#sendPostmessageToParentWindow1'),
-      document
-        .querySelector('#sendPostmessageToParentWindow2'),
-      document
-        .querySelector('#sendPostmessageToParentWindow3'),
-      document
-        .querySelector('#sendPostmessageToParentWindow4'),
-    ]
+
+    const config = {
+      [EBtn.One]: {
+        cb: function () {
+          parent.postMessage({
+            topic: 'oldlkdms_frame_authentication_completed',
+            payload: {
+              isSuccess: true,
+              error: 'NotFound',
+            },
+          }, "*")
+        },
+      },
+      [EBtn.Nine]: {
+        cb: function () {
+          parent.postMessage({
+            topic: 'oldlkdms_frame_location_update',
+            payload: {
+              url: '/express-helper/free/mg/sample.html#/hello-from-iframe',
+            },
+          }, "*")
+        },
+      },
+      [EBtn.Ten]: {
+        cb: function () {
+          parent.postMessage({
+            topic: 'oldlkdms_frame_location_update',
+            payload: {
+              url: '/express-helper/free/mg/sample.html',
+            },
+          }, "*")
+        },
+      },
+    }
+
     if (inIFrame()) {
       console.log('This window has a parent')
       window.addEventListener('load', () => {
@@ -110,49 +160,34 @@
         }, '*')
       })
 
-      buttons[0]
-        .onclick = function () {
-          // parent.postMessage("message to be sent", "http://the-website-that-will-receive-the-msg.com")
-          parent.postMessage("code:1", "*")
-        };
+      for (const buttonId in config) {
+        const elm = document.querySelector(`#${buttonId}`);
+        if (!!elm) {
+          elm.onclick = config[buttonId].cb;
+        }
+      }
 
-      buttons[1]
-        .onclick = function () {
-          parent.postMessage({
-            text: 'hello from iframe',
-            eventType: 'default',
-            channel: 'FRAME_A',
-            code: 2,
-            nestedProps: {
-              a: {
-                b: {
-                  c: 1,
-                },
-              },
-            },
-          }, "*")
-        };
-
-      buttons[2]
-        .onclick = function () {
-          parent.postMessage(JSON.stringify({
-            text: 'hello from iframe',
-            eventType: 'default',
-            channel: 'FRAME_A',
-            code: 3,
-          }), "*")
-        };
-
-      buttons[3]
-        .onclick = function () {
-          parent.postMessage({
-            topic: 'oldlkdms_frame_authentication_completed',
-            payload: {
-              isSuccess: true,
-              error: 'NotFound',
-            },
-          }, "*")
-        };
+      // -- NOTE: Send evt on start
+      const urlParams = new URLSearchParams(window.location.search);
+      const startupParam = 'rgs-tst-onload-delay'
+      const myParam = urlParams.get(startupParam);
+      if (!!myParam) {
+        try {
+          if (Number.isNaN(Number(myParam)))
+            throw new Error(`startupParam "${startupParam}" should be number; received: ${String(startupParam)} (${typeof startupParam})`)
+          else {
+            const delay = Number(myParam)
+            setTimeout(() => {
+              buttons[0].click()
+            }, Number(myParam))
+          }
+        } catch (err) {
+          console.log(err)
+        }
+      } else {
+        console.log(`startupParam "${startupParam}" not found`)
+      }
+      // --
       
       // -- NOTE: Subscribe to events from parent
       window.addEventListener('message', function (e) {
@@ -185,9 +220,10 @@
       // --
     } else {
       console.log('This window has no parent')
-      buttons[0].disabled = true;
-      buttons[1].disabled = true;
-      buttons[2].disabled = true;
+
+      for (const button of buttons) {
+        if (!!button) button.disabled = true;
+      }
     }
   </script>
 </body>

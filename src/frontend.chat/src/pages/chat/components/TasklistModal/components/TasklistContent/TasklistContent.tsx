@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, memo, useLayoutEffect } from 'react'
+import { useState, useCallback, useMemo, memo, useLayoutEffect, useRef } from 'react'
 import { useSocketContext } from '~/context/socketContext'
 import { useMainContext } from '~/context/mainContext'
 import {
@@ -37,6 +37,8 @@ import { useCompare } from '~/common/hooks/useDeepEffect'
 import { getABSortedObjByObjects } from './getABSortedObjByObjects'
 import { ResponsiveSearchField } from './components'
 import { getPrettyPrice } from '~/utils/getPrettyPrice'
+// import { scrollToRef } from '~/utils/scrollTo'
+// import { useScrollPosition } from '~/common/hooks/useScrollPosition'
 
 type TTask = {
   ts: number;
@@ -49,9 +51,10 @@ type TTask = {
   uncheckTs?: number;
 }
 type TProps = {
-  data: TTask[]
-  asModal?: boolean
-  modalHeader?: string
+  data: TTask[];
+  asModal?: boolean;
+  modalHeader?: string;
+  onClose?: () => void;
 }
 
 type TMemoizedGroupProps = {
@@ -180,7 +183,7 @@ const MemoizedGroup = memo(({
   )
 })
 
-export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
+export const _TasklistContent = ({ data, asModal, modalHeader, onClose }: TProps) => {
   const { socket } = useSocketContext()
   const { room } = useMainContext()
   const toast = useToast()
@@ -442,9 +445,69 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
     )
   }, [isCreateTaskFormOpened, formData.title, handleInputChange, handkeKeyUp])
 
+  // const { isMoreThan2Screens } = useScrollPosition()
+  const topRef = useRef<HTMLDivElement>(null)
+  const scrollTop = useCallback(() => {
+    const targetElement = topRef.current
+    console.log(targetElement)
+    if (!!targetElement) {
+      targetElement.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'smooth' })
+    } else {
+      throw new Error('Element not found')
+    }
+  }, [])
+
   const Body = useMemo(() => {
     return (
       <>
+        {
+          !!onClose && (
+            <div
+              onClick={onClose}
+              style={{
+                zIndex: 2,
+                position: 'fixed',
+                top: '0px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                border: '2px solid #fff',
+                borderRadius: '0px 0px 28px 28px',
+                // width: '35px',
+                // height: '35px',
+                padding: '8px 16px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              className='backdrop-blur--transparent'
+            >
+              Close
+            </div>
+          )
+        }
+
+        <div
+          onClick={scrollTop}
+          style={{
+            zIndex: 2,
+            position: 'fixed',
+            bottom: '0px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            border: '2px solid #fff',
+            borderRadius: '28px 28px 0px 0px',
+            // width: '35px',
+            // height: '35px',
+            padding: '8px 16px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          className='backdrop-blur--transparent'
+        >
+          Scroll top
+        </div>
+         
         {
           !asModal && (
             <Box
@@ -593,6 +656,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
       </>
     )
   }, [
+    // isMoreThan2Screens,
     mode.colorMode,
     asModal,
     percentage,
@@ -623,7 +687,7 @@ export const _TasklistContent = ({ data, asModal, modalHeader }: TProps) => {
       <>
         {
           asModal && !!data && (
-            <ModalHeader>
+            <ModalHeader ref={topRef}>
               {modalHeader || null}
               <Box>
                 <Stack>

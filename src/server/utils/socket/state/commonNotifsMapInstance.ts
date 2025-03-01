@@ -106,11 +106,17 @@ const syncRegistryMap = () => {
           throw new Error('#ERR2021122508:35 Incorrect static data')
         }
       } catch (err) {
-        // TODO: Сделать нормальные логи
+        // -- TODO: 1. Сделать нормальные логи
         console.log('ERR#CHAT.COMMON.NOTIFS')
         console.log(err)
         // oldStatic = { data: {}, ts: 0 }
         process.exit(1)
+        // --
+
+        // -- TODO: 2. Try this:
+        // yarn take-backup:20
+        // ...
+        // --
       }
       const staticData: { [key: string]: TRoomNotifs } = oldStatic.data
       const ts = new Date().getTime()

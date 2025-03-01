@@ -27,11 +27,13 @@ export const EditInModal = memo(({
 
   return (
     <Modal
-      size={upToMd ? 'md' : 'full'}
+      // size={upToMd ? 'md' : 'full'}
+      size={upToMd ? 'md' : 'lg'}
       initialFocusRef={initialFocusRef}
       finalFocusRef={finalFocusRef}
       isOpen={isEditModalOpen}
       onClose={handleEditModalClose}
+      scrollBehavior='outside'
     >
       <ModalOverlay />
       <ModalContent

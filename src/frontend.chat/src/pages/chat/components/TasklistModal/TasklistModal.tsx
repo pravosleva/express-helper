@@ -32,7 +32,7 @@ export const TasklistModal = memo(({ isOpened, onClose, data }: TProps) => {
         size={downToSm ? 'lg' : 'sm'}
         isOpen={isOpened}
         onClose={onClose}
-        scrollBehavior='inside'
+        scrollBehavior='outside'
       >
         <ModalOverlay className='backdrop-blur--transparent' />
         <ModalContent
@@ -43,6 +43,7 @@ export const TasklistModal = memo(({ isOpened, onClose, data }: TProps) => {
             data={data}
             asModal
             modalHeader='Tasklist'
+            onClose={onClose}
           />
           {/* <ModalFooter
             className='modal-footer-btns-wrapper'

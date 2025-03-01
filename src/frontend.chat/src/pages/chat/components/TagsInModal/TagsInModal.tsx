@@ -47,7 +47,7 @@ export const TagsInModal = memo(({ tags, isOpened, onClose, onToggeTag, enabledT
       // initialFocusRef={searchFieldRef}
     >
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent rounded='2xl'>
         <ModalHeader>
           <Box pl={0} pr={0} pb={0}>
             <FormControl>

@@ -73,8 +73,8 @@ export const Admin = () => {
     // @ts-ignore
     body.style.overflowY = 'auto'
     return () => {
-    // @ts-ignore
-    body.style.overflowY = 'hidden'
+      // @ts-ignore
+      body.style.overflowY = 'hidden'
     }
   }, [])
 
