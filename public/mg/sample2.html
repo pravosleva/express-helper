@@ -7,36 +7,6 @@
     p {
       margin: 0px;
     }
-    button {
-      cursor: pointer;
-    }
-    button:disabled {
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
-    pre {
-      padding: 10px;
-      font-size: small;
-      background-color: #a5afba;
-      color: #fff;
-      margin: 0px;
-      border-radius: 16px;
-      white-space: pre-wrap;
-      overflow-wrap: break-word;
-      letter-spacing: .05em;
-    }
-    
-    .grid-gap1-cols3 {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
-      grid-auto-flow: dense;
-    }
-    .stack1 {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
   </style>
 </head>
 
@@ -44,32 +14,51 @@
   <h1>Express exp [sample2]</h1>
   <p>Ничего секретного.</p>
   <br />
-  <div class='stack1'>
-  
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow1">
-        event1 { topic: 'oldlkdms_frame_authentication_completed' }
-      </button>
-    </div>
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow9">
-        event9 [OK] ...location_update url: /express-helper/free/mg/sample.html#/hello-from-iframe
-      </button>
-    </div>
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow10">
-        event10 [OK] ...location_update url: /express-helper/free/mg/sample.html
-      </button>
+  <div class='stack2'>
+    <div class='stack1'>
+      <b>Controls</b>
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow1">
+          event1 { topic: 'oldlkdms_frame_authentication_completed' }
+        </button>
+      </div>
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow9">
+          event9 [OK] ...location_update url: /express-helper/free/mg/sample.html#/hello-from-iframe
+        </button>
+      </div>
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow10">
+          event10 [OK] ...location_update url: /express-helper/free/mg/sample.html
+        </button>
+      </div>
     </div>
 
+    <div class='grid-gap1-cols3'>
+      <div class='stack1'>
+        <b>Incoming event counters</b>
+        <pre id="allEvents">{}</pre>
+      </div>
+      <div class='stack1'>
+        <b>Last Event</b>
+        <pre id="outputMessageFromParentWindow">{}</pre>
+      </div>
+    </div>
+    
     <div class='stack1'>
-      <pre id="outputMessageFromParentWindow">{}</pre>
+      <b>Initial query params</b>
       <pre id="initialQueryParams">{}</pre>
+    </div>
+    <div class='stack1'>
+      <b>Errs</b>
       <pre id="error">No errs</pre>
     </div>
+
+  </div>
   </div>
 
   <script type="text/javascript">
+    const logPrefix = '[page2-sample]';
     const EBtn = {
       One: 'sendPostmessageToParentWindow1',
       Nine: 'sendPostmessageToParentWindow9',
@@ -91,6 +80,7 @@
     const parentWindow = window.parent;
     const outputPreElm = document.getElementById('outputMessageFromParentWindow');
     const errorPreElm = document.getElementById('error');
+    const allEventsOutputPreElm = document.getElementById('allEvents');
     const initialQueryParamsElm = document.getElementById('initialQueryParams');
 
     // -- NOTE: Initial params
@@ -149,7 +139,8 @@
     }
 
     if (inIFrame()) {
-      console.log('This window has a parent')
+      console.log(`${logPrefix} This window has a parent`)
+      const eventsCounters = {}
       window.addEventListener('load', () => {
         // parentWindow.postMessage('handshake', '*')
         parentWindow.postMessage({
@@ -182,10 +173,10 @@
             }, Number(myParam))
           }
         } catch (err) {
-          console.log(err)
+          console.info(`⛔ ${logPrefix} ERR: ${err?.message || 'No err.message'}`)
         }
       } else {
-        console.log(`startupParam "${startupParam}" not found`)
+        console.info(`${logPrefix} startupParam "${startupParam}" not found`)
       }
       // --
       
@@ -198,8 +189,17 @@
           case 'object':
             outputPreElm.innerHTML = JSON.stringify(data, null, 2);
             errorPreElm.innerHTML = 'No errs'
+
+            if (!!data?.topic) {
+              eventsCounters[data.topic] = (eventsCounters[data.topic] || 0) + 1;
+              allEventsOutputPreElm.innerHTML = JSON.stringify(eventsCounters, null, 2);
+            }
             break
           case 'string':
+            if (!!data) {
+              eventsCounters[data] = (eventsCounters[data] || 0) + 1;
+              allEventsOutputPreElm.innerHTML = JSON.stringify(eventsCounters, null, 2);
+            }
           default:
             try {
               // NOTE: If you encode the message in JSON before sending them,
@@ -218,8 +218,26 @@
         }
       });
       // --
+
+      // NOTE: External height sync (exp 1)
+      try {
+        ;(function() {
+          const wrapper = document.getElementsByTagName('body')[0];
+          window.postWindowSize = function() {
+            parent.postMessage({
+              topic: 'frame_resizer',
+              payload: {
+                contentHeight: wrapper.offsetHeight,
+              },
+            }, '*')
+          };
+          setInterval(window.postWindowSize, 100);
+        })();
+      } catch (err) {
+        console.info(`⛔ ${logPrefix} ERR: ${err}`);
+      }
     } else {
-      console.log('This window has no parent')
+      console.log(`${logPrefix} This window has no parent`)
 
       for (const button of buttons) {
         if (!!button) button.disabled = true;

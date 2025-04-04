@@ -4,6 +4,9 @@ import { roomsMapInstance, TMessage, commonNotifsMapInstance } from '~/utils/soc
 import { testTextByAnyWord } from '~/utils/string-ops'
 import { cfg } from './cfg'
 import { TRoomNotifs, NNotifs } from '~/routers/chat/mws/api/common-notifs'
+// import { Counter } from '~/utils/Counter'
+
+const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 
 const _checkingSet = new Set()
 const _parrotIds = []
@@ -13,6 +16,8 @@ for (const parrot of cfg) {
 }
 if (_checkingSet.size !== _parrotIds.length)
   throw new Error(`⛔ Проверьте cfg виртуальных попугаев (их ${_parrotIds.length}) на предмет уникальности их id (уникальных ${_checkingSet.size}). Не можем запустить в таком виде`)
+
+// const processEventCounter = Counter(0)
 
 const parrots = new Map()
 for(const parrot of cfg) {
@@ -139,25 +144,44 @@ for(const parrot of cfg) {
         }
 
         if (validateBeforeRequest({ msgs: _targetMsgs })) {
+          // const eventCounterValue = processEventCounter.next().value || 0
+          const eventCounterValue = new Date().getTime()
+          const about = typeof req.body.about === 'function'
+            ? req.body.about({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms, _descr, _eventCounter: eventCounterValue })
+            : typeof req.body.about === 'string'
+              ? req.body.about || 'about: empty'
+              : `about: incorrect format (expected: function; received: ${typeof req.body.about})`
+          const targetMD = typeof req.body.targetMD === 'function'
+            ? req.body.targetMD({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms, _eventCounter: eventCounterValue })
+            : [`targetMD: incorrect format (expected: function; received: ${typeof req.body.targetMD})`]
           const opts: any = {
-            resultId: id,
             chat_id: req.body.chat_id,
-            ts: new Date().getTime(),
-            eventCode: req.body.eventCode,
-            about: typeof req.body.about === 'function'
-              ? req.body.about({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms, _descr })
-              : typeof req.body.about === 'string'
-                ? req.body.about || '[about: empty]'
-                : '[about: incorrect format]',
-            targetMD: typeof req.body.targetMD === 'function'
-              ? req.body.targetMD({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms })
-              : typeof req.body.targetMD === 'string'
-                ? req.body.targetMD || '[targetMD: empty]'
-                : '[targetMD: incorrect format]',
+            // resultId: id,
+            // ts: new Date().getTime(),
+            // eventCode: req.body.eventCode,
+            // about: typeof req.body.about === 'function'
+            //   ? req.body.about({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms, _descr })
+            //   : typeof req.body.about === 'string'
+            //     ? req.body.about || '[about: empty]'
+            //     : '[about: incorrect format]',
+            // targetMD: typeof req.body.targetMD === 'function'
+            //   ? req.body.targetMD({ msgs: _targetMsgs, targetHashtags, targetStatuses, targetRooms })
+            //   : typeof req.body.targetMD === 'string'
+            //     ? req.body.targetMD || '[targetMD: empty]'
+            //     : '[targetMD: incorrect format]',
+            namespace: 'main',
+            messages: [
+              about,
+              ...targetMD,
+            ]
           }
+
           if (!!req.body.message_thread_id) opts.message_thread_id = req.body.message_thread_id
           return await axios
-            .post(req.url, opts)
+            .post(
+              `${tgBotApiUrl}/single/stack`, // req.url,
+              opts,
+            )
             .then((res) => res.data)
             .catch((err) => err)
         } else return undefined

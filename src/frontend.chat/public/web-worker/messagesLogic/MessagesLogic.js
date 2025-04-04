@@ -484,10 +484,12 @@ class Logic {
       const aUsers = assignedTo
       if (!!aUsers && Array.isArray(aUsers) && aUsers.length > 0) {
         aUsers.forEach((name) => {
-          if (
-            resultMap.has(name)
-            && statuses.includes(status)
-          ) resultMap.set(name, resultMap.get(name) + 1)
+          if (statuses.includes(status)) {
+            if (resultMap.has(name))
+              resultMap.set(name, resultMap.get(name) + 1)
+            // else
+            //   resultMap.set(name, 1)
+          }
         })
       }
     })

@@ -7,6 +7,7 @@ import plural from 'plural-ru'
 import { getTimeAgo } from '~/utils/getTimeAgo'
 import { NNotifs } from '~/routers/chat/mws/api/common-notifs'
 import { getTimeDiff } from '~/utils/getTimeDiff'
+import { getDayOfWeek } from '~/utils/time-ops'
 
 const designer = new Designer()
 // const isDev = process.env.NODE_ENV === 'development'
@@ -229,14 +230,17 @@ export const cfg: TCfg = [
           targetStatuses,
           targetRooms,
           _descr,
+          _eventCounter,
         }) => {
           const finalMsgs: string[] = []
 
           finalMsgs.push(_descr)
+
+          const headerMsgs = [`#event${_eventCounter}`]
           if (targetHashtags.length > 0) {
-            finalMsgs.push(`*${targetHashtags.join(' ')}*`)
+            headerMsgs.push(targetHashtags.join(' '))
           }
-          // finalMsgs.push('\n')
+          finalMsgs.push(`*${headerMsgs.join(' ')}*`)
 
           if (msgs.length > 0) {
             finalMsgs.push(`В ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')} ${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join(' ')}`)
@@ -251,6 +255,7 @@ export const cfg: TCfg = [
           msgs,
           targetHashtags,
           targetStatuses,
+          _eventCounter,
         }) => {
           const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({
             arr: sortArrayByKeys({
@@ -279,7 +284,7 @@ export const cfg: TCfg = [
               statusChangeTs,
             } = msg
 
-            const firstLineMsgs = [`${i + 1}.`]
+            const firstLineMsgs = [`${i + 1}.`, `#event${_eventCounter}`]
             // if (!!statusCfg[status]?.symbol)
             //   firstLineMsgs.push(statusCfg[status].symbol)
             if (!!status)
@@ -306,7 +311,7 @@ export const cfg: TCfg = [
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
 
             return msgList.join('\n')
-          }).join('\n\n')
+          })
         },
       },
     },
@@ -322,7 +327,7 @@ export const cfg: TCfg = [
     targetStatuses: [
       EMessageStatus.Success,
       EMessageStatus.Danger,
-      // EMessageStatus.Warn,
+      EMessageStatus.Warn,
       // EMessageStatus.Done,
     ],
     req: {
@@ -337,9 +342,10 @@ export const cfg: TCfg = [
           targetRooms,
           _descr,
         }) => {
+          const todayCode = getDayOfWeek({ date: new Date() })
           const finalMsgs: string[] = []
 
-          finalMsgs.push(_descr)
+          finalMsgs.push(`${todayCode}! ${_descr}`)
           if (targetHashtags.length > 0) {
             finalMsgs.push(`*${targetHashtags.join(' ')}*`)
           }
@@ -367,9 +373,9 @@ export const cfg: TCfg = [
             }),
             targetFieldName: 'status',
             topTemplate: [
-              EMessageStatus.Success,
               EMessageStatus.Danger,
-              // EMessageStatus.Warn,
+              EMessageStatus.Success,
+              EMessageStatus.Warn,
               // EMessageStatus.Done,
             ],
           })
@@ -414,7 +420,7 @@ export const cfg: TCfg = [
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
 
             return msgList.join('\n')
-          }).join('\n\n')
+          })
         },
       },
     },
@@ -520,7 +526,7 @@ export const cfg: TCfg = [
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
 
             return msgList.join('\n')
-          }).join('\n\n')
+          })
         },
       },
     },
@@ -609,7 +615,7 @@ export const cfg: TCfg = [
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
 
             return msgList.join('\n')
-          }).join('\n\n')
+          })
         },
       },
     },
@@ -710,7 +716,7 @@ export const cfg: TCfg = [
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
 
             return msgList.join('\n')
-          }).join('\n\n')
+          })
         },
       },
     },
@@ -831,7 +837,7 @@ export const cfg: TCfg = [
             msgList.push(`${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}`)
 
             return msgList.join('\n')
-          }).join('\n\n')
+          })
         },
       },
     },
@@ -843,7 +849,7 @@ export const cfg: TCfg = [
     cronSetting: '5 2 18 20 * *', // Every month 20 at 18:02:05
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['magaz'],
-    targetHashtags: ['#monthlyReminder'],
+    targetHashtags: ['#monthly'],
     targetStatuses: [
       EMessageStatus.Info,
       EMessageStatus.Warn,
@@ -912,7 +918,7 @@ export const cfg: TCfg = [
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
 
             return msgList.join('\n')
-          }).join('\n\n')
+          })
         },
       },
     },

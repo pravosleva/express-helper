@@ -140,7 +140,7 @@ export const cfg: TCfg = [
   // -- NOTE: MainsGroup
   {
     id: 8,
-    _descr: 'Single notif',
+    _descr: 'Every weekday',
     isEnabled: true,
     cronSetting: '01 50 14 * * monday-friday', // Every weekday at 14:50:01
     req: {
@@ -159,7 +159,7 @@ export const cfg: TCfg = [
   // NOTE: See also doc https://stackoverflow.com/questions/31260837/how-to-run-a-cron-job-on-every-monday-wednesday-and-friday
   {
     id: 9,
-    _descr: 'Single notif',
+    _descr: 'Every friday',
     isEnabled: true,
     cronSetting: '01 50 15 * * friday', // Every friday at 15:50:01
     req: {
@@ -174,28 +174,7 @@ export const cfg: TCfg = [
   },
   {
     id: 10,
-    _descr: 'Single notif',
-    isEnabled: true,
-    cronSetting: '01 50 11 * * friday', // Every friday at 11:50:01
-    req: {
-      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
-      body: {
-        chat_id: 432590698, // NOTE: Den
-        eventCode: 'single_reminder',
-        about: () => 'Weekly Meeting [Ретроспектива] Пт 12:00-13:00',
-        targetMD: () => [
-          'https://telemost.yandex.ru/j/4711375343\n',
-          'Еженедельная командная встреча, на которой обсуждаем:',
-          '- Положительные/отрицательные моменты за прошедшую неделю',
-          '- Проблемы, с которыми столкнулись и способы их решения',
-          '- Предложения по изменению процессов внутри команды.',
-        ].join('\n')
-      },
-    },
-  },
-  {
-    id: 11,
-    _descr: 'Single notif',
+    _descr: 'Every wednesday',
     isEnabled: true,
     cronSetting: '01 50 11 * * wednesday', // Every wednesday at 11:50:01
     req: {
@@ -216,8 +195,8 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 12,
-    _descr: 'Single notif',
+    id: 11,
+    _descr: 'Every thursday',
     isEnabled: true,
     cronSetting: '01 50 11 * * thursday', // Every thursday at 11:50:05
     req: {
@@ -230,6 +209,27 @@ export const cfg: TCfg = [
           'https://dion.vc/event/qot-igm-hki\n',
           'Нет информации, что именно планируется обсуждать',
           '(Войти как гость без пароля)',
+        ].join('\n')
+      },
+    },
+  },
+  {
+    id: 12,
+    _descr: 'Every friday',
+    isEnabled: true,
+    cronSetting: '01 20 12 * * friday', // Every friday at 12:20:01
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: 432590698, // NOTE: Den
+        eventCode: 'single_reminder',
+        about: () => 'Weekly Meeting [Ретроспектива] Пт 12:30-13:30',
+        targetMD: () => [
+          'https://telemost.yandex.ru/j/4711375343\n',
+          'Еженедельная командная встреча, на которой обсуждаем:',
+          '- Положительные/отрицательные моменты за прошедшую неделю',
+          '- Проблемы, с которыми столкнулись и способы их решения',
+          '- Предложения по изменению процессов внутри команды.',
         ].join('\n')
       },
     },

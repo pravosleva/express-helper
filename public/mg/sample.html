@@ -7,36 +7,6 @@
     p {
       margin: 0px;
     }
-    button {
-      cursor: pointer;
-    }
-    button:disabled {
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
-    pre {
-      padding: 10px;
-      font-size: small;
-      background-color: #a5afba;
-      color: #fff;
-      margin: 0px;
-      border-radius: 16px;
-      white-space: pre-wrap;
-      overflow-wrap: break-word;
-      letter-spacing: .05em;
-    }
-    
-    .grid-gap1-cols3 {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
-      grid-auto-flow: dense;
-    }
-    .stack1 {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
   </style>
 </head>
 
@@ -44,94 +14,132 @@
   <h1>Express exp</h1>
   <p>Ничего секретного.</p>
   <br />
-  <div class='stack1'>
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow1">
-        event1
-      </button>
-      <button id="sendPostmessageToParentWindow2">
-        event2 (json) [code 2]
-      </button>
-    </div>
-
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow3">
-        event3 (json str) [code 3]
-      </button>
-      <button id="sendPostmessageToParentWindow4">
-        event4 { topic: 'oldlkdms_frame_authentication_completed' }
-      </button>
-    </div>
-
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow5">
-        event5 [OK] { topic: 'oldlkdms_frame_location_update' }
-      </button>
-      <button id="sendPostmessageToParentWindow5">
-        event5 [OK] { topic: 'oldlkdms_frame_location_update' }
-      </button>
-      <button id="sendPostmessageToParentWindow6">
-        event6 [ERR] { topic: 'oldlkdms_frame_location_update' }
-      </button>
-    </div>
-  
-    <!-- <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow9">
-        event9 [OK] ...location_update url: [this]#/hello-from-iframe
-      </button>
-    </div> -->
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow10">
-        event10 [OK] ...location_update url: [this]
-      </button>
-    </div>
-
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow11">
-        event11 [OK] ...location_update url: /express-helper/free/mg/sample2.html
-      </button>
-    </div>
-
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow12">
-        event12 [OK] ...location_update url: /express-helper/free/mg/dms/100/sample3.html
-      </button>
-    </div>
-
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow7">
-        event7 [OK] { topic: 'oldlkdms_frame_authentication_request' }
-      </button>
-    </div>
-
-    <div class='grid-gap1-cols3'>
-      <button id="sendPostmessageToParentWindow8">
-        event9 [OK] { topic: 'oldlkdms_frame_authentication_alarm' }
-      </button>
-    </div>
-
+  <div class='stack2'>
     <div class='stack1'>
-      <pre id="outputMessageFromParentWindow">{}</pre>
+      <b>Controls</b>
+
+      <!-- <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow1">
+          event1
+        </button>
+        <button id="sendPostmessageToParentWindow2">
+          event2 (json) [code 2]
+        </button>
+      </div> -->
+
+      <div class='grid-gap1-cols3'>
+        <!-- <button id="sendPostmessageToParentWindow3">
+          event3 (json str) [code 3]
+        </button> -->
+        <button id="sendPostmessageToParentWindow4">
+          event4 { topic: <b>'oldlkdms_frame_authentication_completed'</b> }
+        </button>
+      </div>
+
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow5">
+          event5 [OK] ...location_update url: [this]<b>/dms/101</b>/iframe-resizer-child
+        </button>
+        <!-- <button id="sendPostmessageToParentWindow6">
+          event6 [ERR] { topic: 'oldlkdms_frame_location_update' }
+        </button> -->
+      </div>
+    
+      <!-- <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow9">
+          event9 [OK] ...location_update url: [this]#/hello-from-iframe
+        </button>
+      </div> -->
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow10">
+          event10 [OK] ...location_update url: [this]
+        </button>
+      </div>
+
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow11">
+          event11 [OK] ...location_update url: /express-helper/free/mg/sample2.html
+        </button>
+      </div>
+
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow12">
+          event12 [OK] ...location_update url: /express-helper/free/mg<b>/dms/100</b>/sample3
+        </button>
+      </div>
+
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow7">
+          event7 [OK] { topic: 'oldlkdms_frame_authentication_request' }
+        </button>
+      </div>
+
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow8">
+          event9 [OK] { topic: 'oldlkdms_frame_authentication_alarm' }
+        </button>
+      </div>
+
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow13">
+          log body.offsetHeight
+        </button>
+        <button id="sendPostmessageToParentWindow14">
+          log body.margins
+        </button>
+        <button id="sendPostmessageToParentWindow15">
+          log body.paddings
+        </button>
+        <button id="sendPostmessageToParentWindow16">
+          log body.borders
+        </button>
+      </div>
+    </div>
+
+    <div class='grid-gap1-cols3'>
+      <div class='stack1'>
+        <b>Incoming event counters</b>
+        <pre id="allEvents">{}</pre>
+      </div>
+      <div class='stack1'>
+        <b>Last Event</b>
+        <pre id="outputMessageFromParentWindow">{}</pre>
+      </div>
+    </div>
+    
+    <div class='stack1'>
+      <b>Initial query params</b>
       <pre id="initialQueryParams">{}</pre>
+    </div>
+    <div class='stack1'>
+      <b>Errs</b>
       <pre id="error">No errs</pre>
     </div>
+
   </div>
 
   <script type="text/javascript">
+    const logPrefix = '[page1-sample]';
     const EBtn = {
-      One: 'sendPostmessageToParentWindow1',
-      Two: 'sendPostmessageToParentWindow2',
-      Three: 'sendPostmessageToParentWindow3',
-      Four: 'sendPostmessageToParentWindow4',
+      // One: 'sendPostmessageToParentWindow1',
+      // Two: 'sendPostmessageToParentWindow2',
+      // Three: 'sendPostmessageToParentWindow3',
+      AUTH_COMPLETED: 'sendPostmessageToParentWindow4',
       Five: 'sendPostmessageToParentWindow5',
-      Six: 'sendPostmessageToParentWindow6',
+      // Six: 'sendPostmessageToParentWindow6',
       Seven: 'sendPostmessageToParentWindow7',
       Eight: 'sendPostmessageToParentWindow8',
       // Nine: 'sendPostmessageToParentWindow9',
       Ten: 'sendPostmessageToParentWindow10',
       Eleven: 'sendPostmessageToParentWindow11',
       Twelve: 'sendPostmessageToParentWindow12',
+
+      LOG_BODY_OFFSET_HEIGHT: 'sendPostmessageToParentWindow13',
+      LOG_BODY_MARGINS: 'sendPostmessageToParentWindow14',
+      LOG_BODY_PADDINGS: 'sendPostmessageToParentWindow15',
+      LOG_BODY_BORDERS: 'sendPostmessageToParentWindow16',
     }
+    const getBtnElm = (id) => document.querySelector(`#${id}`)
     const buttons = Object.values(EBtn)
       .map((id) => document.querySelector(`#${id}`));
     function inIFrame() {
@@ -147,6 +155,7 @@
     }
     const parentWindow = window.parent;
     const outputPreElm = document.getElementById('outputMessageFromParentWindow');
+    const allEventsOutputPreElm = document.getElementById('allEvents');
     const errorPreElm = document.getElementById('error');
     const initialQueryParamsElm = document.getElementById('initialQueryParams');
 
@@ -171,43 +180,44 @@
     // NOTE: Hand-shake with parent
     // When CHILD [this] is fully loaded, then send handshake message
 
+    const wrapper = document.getElementsByTagName('body')[0];
     const config = {
-      [EBtn.One]: {
+      // [EBtn.One]: {
+      //   cb: function () {
+      //     // parent.postMessage("message to be sent", "http://the-website-that-will-receive-the-msg.com")
+      //     parent.postMessage("code:1", "*")
+      //   },
+      // },
+      // [EBtn.Two]: {
+      //   cb: function () {
+      //     parent.postMessage({
+      //       text: 'hello from iframe',
+      //       eventType: 'default',
+      //       channel: 'FRAME_A',
+      //       code: 2,
+      //       nestedProps: {
+      //         a: {
+      //           b: {
+      //             c: 1,
+      //           },
+      //         },
+      //       },
+      //     }, "*")
+      //   },
+      // },
+      // [EBtn.Three]: {
+      //   cb: function () {
+      //     parent.postMessage(JSON.stringify({
+      //       text: 'hello from iframe',
+      //       eventType: 'default',
+      //       channel: 'FRAME_A',
+      //       code: 3,
+      //     }), "*")
+      //   },
+      // },
+      [EBtn.AUTH_COMPLETED]: {
         cb: function () {
-          // parent.postMessage("message to be sent", "http://the-website-that-will-receive-the-msg.com")
-          parent.postMessage("code:1", "*")
-        },
-      },
-      [EBtn.Two]: {
-        cb: function () {
-          parent.postMessage({
-            text: 'hello from iframe',
-            eventType: 'default',
-            channel: 'FRAME_A',
-            code: 2,
-            nestedProps: {
-              a: {
-                b: {
-                  c: 1,
-                },
-              },
-            },
-          }, "*")
-        },
-      },
-      [EBtn.Three]: {
-        cb: function () {
-          parent.postMessage(JSON.stringify({
-            text: 'hello from iframe',
-            eventType: 'default',
-            channel: 'FRAME_A',
-            code: 3,
-          }), "*")
-        },
-      },
-      [EBtn.Four]: {
-        cb: function () {
-          parent.postMessage({
+          parentWindow.postMessage({
             topic: 'oldlkdms_frame_authentication_completed',
             payload: {
               isSuccess: true,
@@ -218,27 +228,27 @@
       },
       [EBtn.Five]: {
         cb: function () {
-          parent.postMessage({
+          parentWindow.postMessage({
             topic: 'oldlkdms_frame_location_update',
             payload: {
-              url: '/sample.html?tstParam=0',
+              url: '/express-helper/free/mg/dms/101/iframe-resizer-child.html',
             },
           }, "*")
         },
       },
-      [EBtn.Six]: {
-        cb: function () {
-          parent.postMessage({
-            topic: 'oldlkdms_frame_location_update',
-            payload: {
-              url: '',
-            },
-          }, "*")
-        },
-      },
+      // [EBtn.Six]: {
+      //   cb: function () {
+      //     parent.postMessage({
+      //       topic: 'oldlkdms_frame_location_update',
+      //       payload: {
+      //         url: '',
+      //       },
+      //     }, "*")
+      //   },
+      // },
       [EBtn.Seven]: {
         cb: function () {
-          parent.postMessage({
+          parentWindow.postMessage({
             topic: 'oldlkdms_frame_authentication_request',
             payload: null,
           }, "*")
@@ -246,7 +256,7 @@
       },
       [EBtn.Eight]: {
         cb: function () {
-          parent.postMessage({
+          parentWindow.postMessage({
             topic: 'oldlkdms_frame_authentication_alarm',
             payload: null,
           }, "*")
@@ -264,7 +274,7 @@
       // },
       [EBtn.Ten]: {
         cb: function () {
-          parent.postMessage({
+          parentWindow.postMessage({
             topic: 'oldlkdms_frame_location_update',
             payload: {
               url: '/express-helper/free/mg/sample.html',
@@ -274,7 +284,7 @@
       },
       [EBtn.Eleven]: {
         cb: function () {
-          parent.postMessage({
+          parentWindow.postMessage({
             topic: 'oldlkdms_frame_location_update',
             payload: {
               url: '/express-helper/free/mg/sample2.html',
@@ -284,7 +294,7 @@
       },
       [EBtn.Twelve]: {
         cb: function () {
-          parent.postMessage({
+          parentWindow.postMessage({
             topic: 'oldlkdms_frame_location_update',
             payload: {
               url: '/express-helper/free/mg/dms/100/sample3.html',
@@ -292,10 +302,59 @@
           }, "*")
         },
       },
+      [EBtn.LOG_BODY_MARGINS]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: `${logPrefix} iframe-info:LOG_BODY_MARGINS`,
+            payload: {
+              top: wrapper.style.marginTop,
+              right: wrapper.style.marginRight,
+              bottom: wrapper.style.marginBottom,
+              left: wrapper.style.marginLeft,
+            }
+          }, "*")
+        },
+      },
+      [EBtn.LOG_BODY_PADDINGS]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: `${logPrefix} iframe-info:LOG_BODY_PADDINGS`,
+            payload: {
+              top: wrapper.style.paddingTop,
+              right: wrapper.style.paddingRight,
+              bottom: wrapper.style.paddingBottom,
+              left: wrapper.style.paddingLeft,
+            }
+          }, "*")
+        },
+      },
+      [EBtn.LOG_BODY_OFFSET_HEIGHT]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: `${logPrefix} iframe-info:LOG_BODY_OFFSET_HEIGHT`,
+            payload: {
+              offsetHeight: wrapper.offsetHeight,
+            }
+          }, "*")
+        },
+      },
+      [EBtn.LOG_BODY_BORDERS]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: `${logPrefix} iframe-info:LOG_BODY_BORDERS`,
+            payload: {
+              top: wrapper.style.borderTop,
+              right: wrapper.style.borderRight,
+              bottom: wrapper.style.borderBottom,
+              left: wrapper.style.borderLeft,
+            }
+          }, "*")
+        },
+      },
     }
 
     if (inIFrame()) {
-      console.log('This window has a parent')
+      console.info(`${logPrefix} This window has a parent`)
       window.addEventListener('load', () => {
         // parentWindow.postMessage('handshake', '*')
         parentWindow.postMessage({
@@ -324,18 +383,28 @@
           else {
             const delay = Number(myParam)
             setTimeout(() => {
-              buttons[3].click()
+              // buttons[3].click()
+              try {
+                const authCompletedBtn = getBtnElm(EBtn.AUTH_COMPLETED)
+                if (!authCompletedBtn)
+                  throw new Error(`EBtn.AUTH_COMPLETED elm with id=${EBtn.AUTH_COMPLETED} Not found!`)
+
+                authCompletedBtn.click()
+              } catch (err) {
+                console.info(`⛔ ${logPrefix} ERR1: ${err?.message || 'No err.message'}`)
+              }
             }, Number(myParam))
           }
         } catch (err) {
-          console.log(err)
+          console.info(`⛔ ${logPrefix} ERR2: ${err?.message || 'No err.message'}`)
         }
       } else {
-        console.log(`startupParam "${startupParam}" not found`)
+        console.info(`${logPrefix} startupParam "${startupParam}" not found`)
       }
       // --
       
       // -- NOTE: Subscribe to events from parent
+      const eventsCounters = {}
       window.addEventListener('message', function (e) {
         // NOTE: Get the sent data
         const data = e.data;
@@ -344,8 +413,17 @@
           case 'object':
             outputPreElm.innerHTML = JSON.stringify(data, null, 2);
             errorPreElm.innerHTML = 'No errs'
+
+            if (!!data?.topic) {
+              eventsCounters[data.topic] = (eventsCounters[data.topic] || 0) + 1;
+              allEventsOutputPreElm.innerHTML = JSON.stringify(eventsCounters, null, 2);
+            }
             break
           case 'string':
+            if (!!data) {
+              eventsCounters[data] = (eventsCounters[data] || 0) + 1;
+              allEventsOutputPreElm.innerHTML = JSON.stringify(eventsCounters, null, 2);
+            }
           default:
             try {
               // NOTE: If you encode the message in JSON before sending them,
@@ -364,8 +442,28 @@
         }
       });
       // --
+
+      // NOTE: External height sync (exp 1)
+      try {
+        ;(function() {
+          const wrapper = document.getElementsByTagName('body')[0];
+          window.postWindowSize = function() {
+            // if (wrapper.scrollHeight > wrapper.clientHeight) {
+              parent.postMessage({
+                topic: 'frame_resizer',
+                payload: {
+                  contentHeight: wrapper.offsetHeight,
+                },
+              }, '*')
+            // }
+          };
+          setInterval(window.postWindowSize, 100);
+        })();
+      } catch (err) {
+        console.info(`⛔ ${logPrefix} ERR: ${err}`);
+      }
     } else {
-      console.log('This window has no parent')
+      console.info(`${logPrefix} This window has no parent`)
 
       for (const button of buttons) {
         if (!!button) button.disabled = true;

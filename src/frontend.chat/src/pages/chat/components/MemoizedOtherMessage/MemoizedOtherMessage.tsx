@@ -91,7 +91,7 @@ type TOtherMessageProps = {
   message: TMessage & { _next?: { ts: number, isHidden: boolean } };
   isCtxMenuOpened: boolean;
   editedMessageTs: number | null;
-  handleClickCtxMenu: () => void;
+  handleSetEditorBuffer: () => void;
   assignmentSnapIsFeatureEnabled: boolean;
   handleUnassignFromUser: (message: TMessage, userName: string) => void;
   goToExternalLink: (link: string) => void;
@@ -112,7 +112,7 @@ export const MemoizedOtherMessage = React.memo(({
   message,
   isCtxMenuOpened,
   editedMessageTs,
-  handleClickCtxMenu,
+  handleSetEditorBuffer,
   assignmentSnapIsFeatureEnabled,
   handleUnassignFromUser,
   goToExternalLink,
@@ -187,14 +187,20 @@ export const MemoizedOtherMessage = React.memo(({
                   display="inline-block"
                   // bg="white"
                   // color="white"
-                  // onContextMenu={handleClickCtxMenu}
-                  onContextMenu={(_e: any) => {
-                    // e.preventDefault()
-                    handleClickCtxMenu()
-                  }}
-                  onClick={(e: any) => {
-                    handleClickCtxMenu()
+                  // onContextMenu={handleSetEditorBuffer}
+                  onContextMenu={(e: any) => {
+                    e.preventDefault()
+                    handleSetEditorBuffer()
                     toggleMenu(e)
+                  }}
+                  // onDoubleClickCapture={(e: any) => {
+                  //   e.preventDefault()
+                  //   handleSetEditorBuffer()
+                  //   toggleMenu(e)
+                  // }}
+                  onClick={(e: any) => {
+                    handleSetEditorBuffer()
+                    // toggleMenu(e)
                   }}
                   // order={isMyMessage ? 1 : 2}
                   // className='truncate-overflow'

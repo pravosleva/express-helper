@@ -213,7 +213,7 @@
           font-weight: bold;
           background: #FFF; // var(--chakra-colors-gray-100);
           color: rgba(0,0,0,.7);
-          border-radius: 8px;
+          border-radius: 10px;
           // font-size: 1em;
           transition: all 0.5s linear;
           border: 2px solid transparent;
@@ -222,9 +222,10 @@
 
         // -- STATUSES:
         .info {
-          background: #408EEA;
-          // background-image: linear-gradient(to right top, #00b1d9, #00a3d5, #0094d0, #1485c8, #2e75be);;
+          // background: #408EEA;
+          background-image: linear-gradient(to right top, #408eea, #0071c9);
           color: #FFF;
+          border: 2px solid #0071c9;
           // border: 2px solid #00b1d9;
         }
         .warning {
@@ -240,11 +241,12 @@
           // border-color: #31eab7;
         }
         .danger {
-          background: #FF9177;
+          // background: #FF9177;
           // background: linear-gradient(180deg, #d63435 15%, #fd5951 90%);
           // background-image: linear-gradient(to right top, #ff9177, #f4876e, #e97e65, #de745d, #d36b54);
           // color: #FFF;
           // border-color: #FF9177;
+          background-image: linear-gradient(to right top, #ff9177, #f4876e, #e97e65, #de745d, #d36b54);
         }
         .dead {
           background: var(--chakra-colors-gray-800);

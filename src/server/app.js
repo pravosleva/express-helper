@@ -28,6 +28,7 @@ import { systemRouter } from './routers/system'
 import { caseServiceApi } from './routers/car-service'
 import { subprojectsRouter } from './routers/subprojects'
 import { pravoslevaBlog2023Api } from './routers/pravosleva-blog-2023'
+import { mgApi } from './routers/mg/index'
 
 const app = express()
 
@@ -90,5 +91,6 @@ app.use('/chat', chatRouter)
 app.use('/car-service', caseServiceApi)
 app.use('/subprojects', subprojectsRouter)
 app.use('/pravosleva-blog-2023', pravoslevaBlog2023Api)
+app.use('/mg', mgApi)
 
 module.exports = app

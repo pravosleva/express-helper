@@ -144,7 +144,7 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
     )
   
     return (
-      <Tag rounded='2xl' colorScheme={getColorByDays(days)} style={{ fontFamily: 'system-ui' }}>{!!days ? `${days} d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
+      <Tag rounded='2xl' colorScheme={getColorByDays(days)} style={{ fontFamily: 'system-ui' }}>{!!days ? `${days}d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
     )
   }
   const timeEnd: any = !!checkTs && !!uncheckTs && isCompleted && isLooped ? checkTs + (checkTs - uncheckTs) : null

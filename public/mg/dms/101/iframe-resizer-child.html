@@ -3,6 +3,10 @@
 <head>
   <title>Express</title>
   <link rel="stylesheet" href="../../../assets/base/style.css">
+  <script
+    type="text/javascript"
+    src="../../../assets/iframe-resizer/child@5.3.3.min.js"
+  ></script>
   <style>
     p {
       margin: 0px;
@@ -11,30 +15,20 @@
 </head>
 
 <body>
-  <h1>Express exp [sample3]</h1>
+  <h1>Express exp [iframe-resizer/child]</h1>
   <p>Ничего секретного.</p>
   <br />
   <div class='stack2'>
-  
+
     <div class='stack1'>
       <b>Controls</b>
       <div class='grid-gap1-cols3'>
         <button id="sendPostmessageToParentWindow1">
-          event1 { topic: 'oldlkdms_frame_authentication_completed' }
-        </button>
-      </div>
-      <div class='grid-gap1-cols3'>
-        <button id="sendPostmessageToParentWindow9">
-          event9 [OK] ...location_update url: /express-helper/free/mg/sample.html#/hello-from-iframe
-        </button>
-      </div>
-      <div class='grid-gap1-cols3'>
-        <button id="sendPostmessageToParentWindow10">
           event10 [OK] ...location_update url: /express-helper/free/mg/sample.html
         </button>
       </div>
     </div>
-
+    
     <div class='grid-gap1-cols3'>
       <div class='stack1'>
         <b>Incoming event counters</b>
@@ -56,55 +50,27 @@
     </div>
 
   </div>
-  </div>
 
   <script type="text/javascript">
-    const logPrefix = '[page3-sample]';
+    const logPrefix = '[iframe-resizer-child-sample]';
     const EBtn = {
       One: 'sendPostmessageToParentWindow1',
-      Nine: 'sendPostmessageToParentWindow9',
-      Ten: 'sendPostmessageToParentWindow10',
     }
     const buttons = Object.values(EBtn)
       .map((id) => document.querySelector(`#${id}`));
-    function inIFrame() {
-      // if (window.location !== window.parent.location) {
-      //   // The page is in an iFrames
-      //   document.write("The page is in an iFrame");
-      // }
-      // else {
-      //   // The page is not in an iFrame
-      //   document.write("The page is not in an iFrame");
-      // }
-      return window.location !== window.parent.location
-    }
+
     const parentWindow = window.parent;
     const outputPreElm = document.getElementById('outputMessageFromParentWindow');
     const errorPreElm = document.getElementById('error');
     const allEventsOutputPreElm = document.getElementById('allEvents');
     const initialQueryParamsElm = document.getElementById('initialQueryParams');
-
-    // -- NOTE: Initial params
-    // 
-    // const params = new Proxy(new URLSearchParams(window.location.search), {
-    //   get: (searchParams, prop) => searchParams.get(prop),
-    // });
-    // // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-    // let value = params.some_key; // "some_value"
-
     const initialUrlSearchParams = new URLSearchParams(window.location.search);
     const params = Object.fromEntries(initialUrlSearchParams.entries());
     if (Object.keys(params).length > 0) {
       initialQueryParamsElm.innerHTML= JSON.stringify(params || {}, null, 2)
     }
-    // --
 
-    // TODO: Receive message from parent
-    // NOTE: See also https://dev-bay.com/iframe-and-parent-window-postmessage-communication/
-
-    // NOTE: Hand-shake with parent
-    // When CHILD [this] is fully loaded, then send handshake message
-
+    const inIFrame = () => window.location !== window.parent.location
     const config = {
       [EBtn.One]: {
         cb: function () {
@@ -117,47 +83,13 @@
           }, "*")
         },
       },
-      [EBtn.Nine]: {
-        cb: function () {
-          parent.postMessage({
-            topic: 'oldlkdms_frame_location_update',
-            payload: {
-              url: '/express-helper/free/mg/sample.html#/hello-from-iframe',
-            },
-          }, "*")
-        },
-      },
-      [EBtn.Ten]: {
-        cb: function () {
-          parent.postMessage({
-            topic: 'oldlkdms_frame_location_update',
-            payload: {
-              url: '/express-helper/free/mg/sample.html',
-            },
-          }, "*")
-        },
-      },
+    }
+    for (const buttonId in config) {
+      const elm = document.querySelector(`#${buttonId}`);
+      if (!!elm) elm.onclick = config[buttonId].cb;
     }
 
     if (inIFrame()) {
-      console.log(`${logPrefix} This window has a parent`)
-      window.addEventListener('load', () => {
-        // parentWindow.postMessage('handshake', '*')
-        parentWindow.postMessage({
-          text: 'hello from iframe',
-          eventType: 'handshake',
-          channel: 'FRAME_A',
-          code: 0,
-        }, '*')
-      })
-
-      for (const buttonId in config) {
-        const elm = document.querySelector(`#${buttonId}`);
-        if (!!elm) {
-          elm.onclick = config[buttonId].cb;
-        }
-      }
-
       // -- NOTE: Send evt on start
       const urlParams = new URLSearchParams(window.location.search);
       const startupParam = 'rgs-tst-onload-delay'
@@ -179,7 +111,7 @@
         console.info(`${logPrefix} startupParam "${startupParam}" not found`)
       }
       // --
-      
+
       // -- NOTE: Subscribe to events from parent
       const eventsCounters = {}
       window.addEventListener('message', function (e) {
@@ -220,29 +152,13 @@
       });
       // --
 
-      // NOTE: External height sync (exp 1)
-      try {
-        ;(function() {
-          const wrapper = document.getElementsByTagName('body')[0];
-          window.postWindowSize = function() {
-            parent.postMessage({
-              topic: 'frame_resizer',
-              payload: {
-                contentHeight: wrapper.offsetHeight,
-              },
-            }, '*')
-          };
-          setInterval(window.postWindowSize, 100);
-        })();
-      } catch (err) {
-        console.info(`⛔ ${logPrefix} ERR: ${err}`);
-      }
-    } else {
-      console.info(`${logPrefix} This window has no parent`)
-      for (const button of buttons) {
-        if (!!button) button.disabled = true;
+      window.iframeResizer = {
+        onMessage(message) {
+          console.log(message, parentIFrame.getId())
+        },
       }
     }
+    
   </script>
 </body>
 

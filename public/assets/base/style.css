@@ -6,3 +6,39 @@ body {
 a {
   color: #00B7FF;
 }
+
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+pre {
+  padding: 10px;
+  font-size: small;
+  background-color: #a5afba;
+  color: #fff;
+  margin: 0px;
+  border-radius: 16px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  letter-spacing: .05em;
+}
+
+.grid-gap1-cols3 {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  grid-auto-flow: dense;
+}
+.stack1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.stack2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

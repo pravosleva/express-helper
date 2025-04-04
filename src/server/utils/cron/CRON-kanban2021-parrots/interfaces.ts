@@ -27,13 +27,15 @@ export type TCfg = {
         targetStatuses: EMessageStatus[];
         targetRooms: string[];
         _descr: string;
+        _eventCounter: number;
       }) => string;
       targetMD: ({}: {
         msgs: TMessage[];
         targetHashtags: string[];
         targetStatuses: EMessageStatus[];
         targetRooms: string[];
-      }) => string;
+        _eventCounter: number;
+      }) => string[];
     };
   };
 }[]

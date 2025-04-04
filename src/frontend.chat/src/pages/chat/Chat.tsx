@@ -2199,6 +2199,9 @@ export const Chat = () => {
         <CtxMenuItem data={{ foo: 'bar' }} onClick={handleAddLink}>
           Add link
         </CtxMenuItem>
+        <CtxMenuItem className='close-context-menu' data={{ foo: 'close' }} onClick={() => setIsCtxMenuOpened(false)}>
+          Close
+        </CtxMenuItem>
       </ContextMenu>
 
       <EditInModal
@@ -2264,6 +2267,7 @@ export const Chat = () => {
                 placement="left"
                 // initialFocusRef={firstField}
                 onClose={handleCloseDrawerMenu}
+                size={upToMd ? 'xs' : 'full'}
               >
                 <DrawerOverlay />
                 <DrawerContent>
@@ -2349,7 +2353,7 @@ export const Chat = () => {
                                 onClick={(e) => {
                                   e.preventDefault()
                                   try {
-                                    window.open('https://gosuslugi.pravosleva.pro/express-helper/chat/admin-ui/', '_blank')
+                                    window.open('http://gosuslugi.pravosleva.pro/express-helper/chat/admin-ui/', '_blank')
                                   } catch (err) {
                                     console.warn(err)
                                   }
@@ -2396,12 +2400,12 @@ export const Chat = () => {
                           )
                         }
                         <CopyToClipboard
-                          text={`https://pravosleva.pro/express-helper/chat/#/?room=${room}`}
+                          text={`http://gosuslugi.pravosleva.pro/express-helper/chat/#/?room=${room}`}
                           onCopy={() => {
                             toast({
                               position: 'top',
                               title: 'Link copied',
-                              description: `https://pravosleva.pro/express-helper/chat/#/?room=${room}`,
+                              description: `http://gosuslugi.pravosleva.pro/express-helper/chat/#/?room=${room}`,
                               status: 'success',
                               duration: 5000,
                               isClosable: true,
@@ -2419,6 +2423,11 @@ export const Chat = () => {
                       </Grid>
 
                       <>
+                        {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
+                          <div className='responsive-block-0404'>
+                            Try context menu for change message status.
+                          </div>
+                        )}
                         {userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser && (
                           <div className='responsive-block-0404'>
                             <SwitchSection
@@ -2627,7 +2636,7 @@ export const Chat = () => {
             )}
             {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, _i, _arr) => {
               const { user, text, ts, editTs, status, file, _next, assignedTo, assignedBy, links = [] } = message
-              const handleClickCtxMenu = () => setEditedMessage(message)
+              const handleSetEditorBuffer = () => setEditedMessage(message)
               
               if (!!file) {
                 return (
@@ -2650,7 +2659,7 @@ export const Chat = () => {
                     message={message}
                     isCtxMenuOpened={isCtxMenuOpened}
                     editedMessageTs={editedMessage?.ts || null}
-                    handleClickCtxMenu={handleClickCtxMenu}
+                    handleSetEditorBuffer={handleSetEditorBuffer}
                     assignmentSnapIsFeatureEnabled={sprintFeatureSnap.isFeatureEnabled}
                     handleUnassignFromUser={handleUnassignFromUser}
                     goToExternalLink={goToExternalLink}
@@ -3176,7 +3185,16 @@ export const Chat = () => {
                             // (assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy)
                             // || (sprintFeatureSnap.isFeatureEnabled && !!sprintFeatureSnap.commonNotifs[String(card.ts)])
                             // ? 'flex' : 'none',
-                            'flex',
+                            // 'flex',
+                            (
+                              sprintFeatureSnap.isFeatureEnabled
+                              ? !!sprintFeatureSnap.commonNotifs[String(card.ts)]
+                                ? 'flex'
+                                : (card.status !== EMessageStatus.Done && card.status !== EMessageStatus.Dead)
+                                  ? 'flex'
+                                  : 'none'
+                              : 'none'
+                            ),
                           flexDirection: 'row',
                           justifyContent: 'flex-start',
                           alignItems: 'center',
@@ -3190,7 +3208,7 @@ export const Chat = () => {
                                   marginLeft: 'auto',
                                   display: 'flex',
                                   alignItems: 'center',
-                                  marginTop: 'var(--chakra-space-2)',
+                                  // marginTop: 'var(--chakra-space-2)',
                                 }}>
                                 <Countdown
                                   date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
@@ -3217,7 +3235,12 @@ export const Chat = () => {
                             ) : (
                               card.status !== EMessageStatus.Done && card.status !== EMessageStatus.Dead
                               ? (
-                                <span style={{ marginLeft: 'auto', marginTop: 'var(--chakra-space-2)' }}>
+                                <span
+                                  style={{
+                                    marginLeft: 'auto',
+                                    // marginTop: 'var(--chakra-space-2)',
+                                  }}
+                                >
                                   <AddToSprintIconButton
                                     handleAddToSprintKanbanCard={handleAddToSprintKanbanCard}
                                     card={card}

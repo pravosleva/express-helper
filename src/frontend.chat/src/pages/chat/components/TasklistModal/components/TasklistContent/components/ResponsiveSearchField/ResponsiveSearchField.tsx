@@ -192,9 +192,8 @@ export const ResponsiveSearchField = ({
               flexWrap: 'wrap',
               gap: 'var(--chakra-space-2)',
               padding: 'var(--chakra-space-2)',
-              // maxHeight: '105px',
-              maxHeight: '300px',
-              overflowY: 'auto',
+              // maxHeight: '300px',
+              // overflowY: 'auto',
             }}
           >
             {

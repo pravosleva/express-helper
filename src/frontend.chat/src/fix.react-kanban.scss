@@ -22,6 +22,10 @@
   min-width: 240px;
   margin-bottom: 0px;
 
+  display: flex;
+  flex-direction: column;
+  gap: var(--chakra-space-2);
+
   .card-controls-box {
     display: flex;
     justify-content: space-between;

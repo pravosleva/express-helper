@@ -1,4 +1,5 @@
 .react-contextmenu--visible{
+  min-width: 150px;
   z-index: 1004;
   border-radius: 8px; // var(--chakra-radii-md);
   border: 2px solid #FFF;
@@ -64,6 +65,13 @@
   }
   > .done:hover {
     background: var(--chakra-colors-gray-500);
+  }
+  > .close-context-menu {
+    background: gray;
+    color: #FFF;
+  }
+  > .close-context-menu:hover {
+    background: #000;
   }
 
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
