@@ -690,7 +690,7 @@ createPollingByConditions({
   cb: () => {
     // console.log('cb called')
   },
-  interval: 30 * 1000,
+  interval: 30 * 60 * 1000, // 30 min
   callbackAsResolve: () => {
     syncRoomsMap()
   },

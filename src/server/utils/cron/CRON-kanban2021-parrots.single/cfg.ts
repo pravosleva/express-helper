@@ -5,8 +5,9 @@ const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 const isDev = process.env.NODE_ENV === 'development'
 
 export const cfg: TCfg = [
+  // NOTE: 1. Счетчики
   {
-    id: 1,
+    id: 100,
     _descr: 'Single notif',
     isEnabled: true,
     cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 10 20 * *', // NOTE: Every month 20th at 10:01:15
@@ -26,7 +27,23 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 2,
+    id: 102,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '20 1 10 20 * *', // NOTE: Every month 20ty at 10:01:20
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        chat_id: -1001917842024, // NOTE: My home -> Rjev, Kosarova, 64 (topic)
+        message_thread_id: 1021, // https://t.me/c/1917842024/1021
+        eventCode: 'single_reminder',
+        about: () => '_Не забудьте_',
+        targetMD: () => 'Счетчики в г. Ржев, Косарова, 64 (c 20 по 25 числа).\nПриложения:\n1) АтомЭнергоСбыт (электричество);2) БРИС ЖКХ (туда приходит квитанция)',
+      },
+    },
+  },
+  {
+    id: 103,
     _descr: 'Single notif',
     isEnabled: true,
     cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 10 15 * *', // NOTE: Every month 15th at 10:01:15
@@ -45,8 +62,10 @@ export const cfg: TCfg = [
       },
     },
   },
+
+  // NOTE: 2. Упражнения
   {
-    id: 3,
+    id: 201,
     _descr: 'Single notif',
     isEnabled: true,
     cronSetting: '02 30 21 * * *', // Every day at 21:30:02
@@ -64,7 +83,7 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 4,
+    id: 202,
     _descr: 'Single notif',
     isEnabled: true,
     cronSetting: '10 15 21 * * *', // Every day at 21:15:10
@@ -81,24 +100,10 @@ export const cfg: TCfg = [
       },
     },
   },
+
+  // NOTE: 3. Квартплата
   {
-    id: 5,
-    _descr: 'Single notif',
-    isEnabled: true,
-    cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 11 20 * *', // NOTE: Every month 20ty at 11:01:15
-    req: {
-      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
-      body: {
-        chat_id: -1001917842024, // NOTE: My home -> Rjev, Kosarova, 64 (topic)
-        message_thread_id: 1021, // https://t.me/c/1917842024/1021
-        eventCode: 'single_reminder',
-        about: () => '_Не забудьте_',
-        targetMD: () => 'Счетчики в г. Ржев, Косарова, 64 (c 20 по 25 числа).\nПриложения:\n1) АтомЭнергоСбыт (электричество);2) БРИС ЖКХ (туда приходит квитанция)',
-      },
-    },
-  },
-  {
-    id: 6,
+    id: 301,
     _descr: 'Single notif',
     isEnabled: true,
     cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 1 11 1 * *', // NOTE: Every month 1 at 11:01:15
@@ -118,7 +123,7 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 7,
+    id: 302,
     _descr: 'Single notif',
     isEnabled: true,
     cronSetting: isDev ? '15 45 18 10,11,12 * *' : '15 2 11 1 * *', // NOTE: Every month 1 at 11:02:15
@@ -137,9 +142,10 @@ export const cfg: TCfg = [
       },
     },
   },
-  // -- NOTE: MainsGroup
+
+  // -- NOTE: 4. Работа: MainsGroup
   {
-    id: 8,
+    id: 401,
     _descr: 'Every weekday',
     isEnabled: true,
     cronSetting: '01 50 14 * * monday-friday', // Every weekday at 14:50:01
@@ -158,7 +164,7 @@ export const cfg: TCfg = [
   },
   // NOTE: See also doc https://stackoverflow.com/questions/31260837/how-to-run-a-cron-job-on-every-monday-wednesday-and-friday
   {
-    id: 9,
+    id: 402,
     _descr: 'Every friday',
     isEnabled: true,
     cronSetting: '01 50 15 * * friday', // Every friday at 15:50:01
@@ -173,7 +179,7 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 10,
+    id: 403,
     _descr: 'Every wednesday',
     isEnabled: true,
     cronSetting: '01 50 11 * * wednesday', // Every wednesday at 11:50:01
@@ -195,7 +201,7 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 11,
+    id: 404,
     _descr: 'Every thursday',
     isEnabled: true,
     cronSetting: '01 50 11 * * thursday', // Every thursday at 11:50:05
@@ -214,16 +220,16 @@ export const cfg: TCfg = [
     },
   },
   {
-    id: 12,
-    _descr: 'Every friday',
+    id: 405,
+    _descr: 'Every friday (retro)',
     isEnabled: true,
-    cronSetting: '01 20 12 * * friday', // Every friday at 12:20:01
+    cronSetting: '01 50 13 * * monday', // Every monday at 13:50:01
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
         chat_id: 432590698, // NOTE: Den
         eventCode: 'single_reminder',
-        about: () => 'Weekly Meeting [Ретроспектива] Пт 12:30-13:30',
+        about: () => 'Weekly Meeting [Ретроспектива] Пн 14:00-14:30',
         targetMD: () => [
           'https://telemost.yandex.ru/j/4711375343\n',
           'Еженедельная командная встреча, на которой обсуждаем:',
@@ -231,6 +237,24 @@ export const cfg: TCfg = [
           '- Проблемы, с которыми столкнулись и способы их решения',
           '- Предложения по изменению процессов внутри команды.',
         ].join('\n')
+      },
+    },
+  },
+  {
+    id: 406,
+    _descr: 'Single notif',
+    isEnabled: true,
+    cronSetting: '05 30 13 * * *', // Every day at 13:30:05
+    req: {
+      url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
+      body: {
+        // chat_id: 432590698, // NOTE: Den
+        chat_id: -1001917842024, // NOTE: My home -> Healthy habits (topic)
+        message_thread_id: 1547, // https://t.me/c/1917842024/1547
+
+        eventCode: 'single_reminder',
+        about: () => '_Не забыл?_',
+        targetMD: () => 'Выпить таблетки 💊💊'
       },
     },
   },

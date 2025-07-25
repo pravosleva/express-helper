@@ -1,5 +1,4 @@
-import { GoogleSheetCache } from './GoogleSheetCache'
-import { TGoogleSheetCacheProps } from './types'
+import { GoogleSheetCache, TGoogleSheetCacheProps } from './utils'
 
 type TMainGalleryItem = {
   url: string;

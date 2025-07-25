@@ -80,7 +80,7 @@ const persons = {
     id: 'lidya-alex-pol.[17-10-1990]',
     baseInfo: {
       firstName: 'Lidia',
-      middleName: 'Aleksandrovna',
+      middleName: 'Alexandrovna',
       lastName: 'Poltoratskaya',
     },
   },
@@ -751,7 +751,11 @@ export const getSinglePersonInfo = async (req: TWithBlogRequest, res, _next) => 
   }
   // --
 
-  const gPersonData = await req.familyTreeGoogleSheetCache.getPersonData({ personId, pageName: '/family-tree-2023', columns: ['A', 'E'] })
+  const gPersonData = await req.familyTreeGoogleSheetCache.getPersonData({
+    personId,
+    pageName: '/family-tree-2023',
+    columns: ['A', 'E'],
+  })
 
   result.data.googleSheets = {
     ok: true,

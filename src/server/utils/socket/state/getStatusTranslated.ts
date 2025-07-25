@@ -5,7 +5,7 @@ import { EMessageStatus } from './types'
 
 const messageTranslator = {
   [EMessageStatus.Info]: 'Информация',
-  [EMessageStatus.Warn]: 'Выясняем / Руки не дошли',
+  [EMessageStatus.Warn]: 'В очереди (либо на стадии прояснения)',
   [EMessageStatus.Danger]: 'В работе',
   [EMessageStatus.Success]: 'На тестировании',
   [EMessageStatus.Done]: 'Готово',
@@ -20,7 +20,7 @@ export const statusCfg: { [key in EMessageStatus]: { symbol: string; descr?: str
     descr: '(пора протестировать и закрыть)',
   },
   [EMessageStatus.Warn]: {
-    symbol: '⚠️',
+    symbol: '⏸️',
     descr: '(задача стоит на месте, либо ожидает пояснений)',
   },
   [EMessageStatus.Dead]: {

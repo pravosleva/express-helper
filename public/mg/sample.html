@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <h1>Express exp</h1>
-  <p>Ничего секретного.</p>
+  <h1>Page 1</h1>
+  <p>Ничего личного.</p>
   <br />
   <div class='stack2'>
     <div class='stack1'>
@@ -133,6 +133,7 @@
       Ten: 'sendPostmessageToParentWindow10',
       Eleven: 'sendPostmessageToParentWindow11',
       Twelve: 'sendPostmessageToParentWindow12',
+      INTERNAL_LOCATION_UPDATE: 'sendPostmessageToParentWindow13',
 
       LOG_BODY_OFFSET_HEIGHT: 'sendPostmessageToParentWindow13',
       LOG_BODY_MARGINS: 'sendPostmessageToParentWindow14',
@@ -375,6 +376,7 @@
       // -- NOTE: Send evt on start
       const urlParams = new URLSearchParams(window.location.search);
       const startupParam = 'rgs-tst-onload-delay'
+      const eventOnloadParamName = 'eventOnload'
       const myParam = urlParams.get(startupParam);
       if (!!myParam) {
         try {
@@ -401,6 +403,15 @@
       } else {
         console.info(`${logPrefix} startupParam "${startupParam}" not found`)
       }
+      const isEventOnloadRequired = urlParams.get(eventOnloadParamName) === '1';
+      if (isEventOnloadRequired) {
+        parent.postMessage({
+          topic: 'oldlkdms_frame_location_update',
+          payload: {
+            url: window.location.pathname,
+          },
+        }, '*')
+      }
       // --
       
       // -- NOTE: Subscribe to events from parent
@@ -417,7 +428,29 @@
             if (!!data?.topic) {
               eventsCounters[data.topic] = (eventsCounters[data.topic] || 0) + 1;
               allEventsOutputPreElm.innerHTML = JSON.stringify(eventsCounters, null, 2);
+
+              // -- NOTE: Url update exp?
+              if (
+                data.topic === 'oldlkdms_frame_location_update_request'
+                && typeof data?.payload?.url === 'string'
+                && !!data.payload.url
+              ) {
+                // NOTE: Url update imitation
+                parent.postMessage({
+                  topic: 'oldlkdms_frame_location_update',
+                  payload: {
+                    url: data.payload.url,
+                  },
+                }, '*')
+
+                // console.log(`-- Client redirect to: ${data.payload.url}`)
+                // window.location.href = data.payload.url
+                // window.history.replaceState(null, '', data.payload.url)
+                // window.location.replace(data.payload.url)
+              }
+              // --
             }
+
             break
           case 'string':
             if (!!data) {
@@ -447,15 +480,20 @@
       try {
         ;(function() {
           const wrapper = document.getElementsByTagName('body')[0];
+          let _heightState = 0;
+          
           window.postWindowSize = function() {
-            // if (wrapper.scrollHeight > wrapper.clientHeight) {
+            // const isUpdated = wrapper.scrollHeight !== wrapper.clientHeight;
+            const isUpdated = _heightState !== wrapper.offsetHeight;
+            if (isUpdated) {
               parent.postMessage({
                 topic: 'frame_resizer',
                 payload: {
                   contentHeight: wrapper.offsetHeight,
                 },
               }, '*')
-            // }
+              _heightState = wrapper.offsetHeight;
+            }
           };
           setInterval(window.postWindowSize, 100);
         })();

@@ -320,7 +320,7 @@ export const cfg: TCfg = [
     id: 2,
     _descr: 'Ежедневная напоминалка по задачам MainsGroup (день)',
     isEnabled: true,
-    cronSetting: '5 45 14 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 14:45:05
+    cronSetting: '5 39 14 * * Mon,Tue,Wed,Thu,Fri', // Every weekdays at 14:39:05
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['mg.pravosleva'],
     targetHashtags: ['#daily'],

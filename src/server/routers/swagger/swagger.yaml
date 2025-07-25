@@ -13,7 +13,7 @@ paths:
       parameters:
         - name: 'url'
           in: query
-          description: Your page url
+          description: Your page url (use encodeURI for this query param)
           required: true
           type: string
       summary: Returns metadata for your page url.

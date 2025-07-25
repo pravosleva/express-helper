@@ -6,12 +6,12 @@ module.exports = async (req, res) => {
     res.status(400).send({
       success: 0,
       error: {
-        query: 'query.url is required',
+        query: 'query.url is required (use encodeURI for this)',
       },
     })
   }
   const { url } = req.query
-  let normalizedURL = url
+  let normalizedURL = decodeURI(url)
   if (hasWWW(normalizedURL)) {
     normalizedURL = normalizedURL.replace('www.', '')
   }
@@ -19,19 +19,26 @@ module.exports = async (req, res) => {
     normalizedURL = `http://${url}`
   }
 
-  await urlMetadata(normalizedURL).then(
-    function (metadata) {
-      res.set('Content-Type', 'application/json')
-      res.status(200).send({
-        success: 1,
-        meta: metadata,
-      })
-    },
-    function (error) {
+  await urlMetadata(normalizedURL)
+    .then(
+      function (metadata) {
+        res.set('Content-Type', 'application/json')
+        res.status(200).send({
+          success: 1,
+          meta: metadata,
+        })
+      },
+      function (error) {
+        res.status(500).send({
+          success: 0,
+          error,
+        })
+      }
+    )
+    .catch((error) => {
       res.status(500).send({
         success: 0,
         error,
       })
-    }
-  )
+    })
 }

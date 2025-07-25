@@ -109,7 +109,7 @@ const syncRegistryMap = () => {
         // -- TODO: 1. Сделать нормальные логи
         console.log('ERR#CHAT.COMMON.NOTIFS')
         console.log(err)
-        // oldStatic = { data: {}, ts: 0 }
+        // oldStatic = { data: {}, ts: new Date().getTime() }
         process.exit(1)
         // --
 
@@ -167,7 +167,7 @@ createPollingByConditions({
   cb: () => {
     console.log('cb called')
   },
-  interval: 15000,
+  interval: 60 * 1000,
   callbackAsResolve: () => {
     syncRegistryMap()
   },
