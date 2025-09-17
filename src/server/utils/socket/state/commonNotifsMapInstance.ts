@@ -32,7 +32,7 @@ type TRoomNotifs = {
 
 class Singleton {
   private static instance: Singleton;
-   state: Map<string, TRoomNotifs>;
+  state: Map<string, TRoomNotifs>;
 
   private constructor() {
     this.state = new Map()
@@ -65,7 +65,7 @@ class Singleton {
 
   public getState() {
     const state = {}
-    
+
     this.state.forEach((value, key) => {
       state[String(key)] = value
     })
@@ -100,6 +100,7 @@ const syncRegistryMap = () => {
       let oldStatic: TState
       try {
         oldStatic = getStaticJSONSync<TState>(storageCommonNotifsMapFilePath, {})
+
         // console.log(oldStatic.data)
         if (!oldStatic?.data || !oldStatic.ts) {
           console.log(oldStatic)
@@ -109,8 +110,9 @@ const syncRegistryMap = () => {
         // -- TODO: 1. Сделать нормальные логи
         console.log('ERR#CHAT.COMMON.NOTIFS')
         console.log(err)
-        // oldStatic = { data: {}, ts: new Date().getTime() }
-        process.exit(1)
+        console.log('- data will be reset')
+        oldStatic = { data: {}, ts: new Date().getTime() }
+        // process.exit(1)
         // --
 
         // -- TODO: 2. Try this:
@@ -129,16 +131,16 @@ const syncRegistryMap = () => {
           // -- NOTE: Ограничения по количеству хранимых токенов
           // ...
           // --
-          
+
           commonNotifsMapInstance.set(name, modifiedState)
         })
       }
 
       const currentRegistryMapState: { [key: string]: TRoomNotifs } = [...commonNotifsMapInstance.keys()].reduce((acc, roomName: string) => { acc[roomName] = commonNotifsMapInstance.get(roomName); return acc }, {})
-      
+
       // console.log('- 1')
       // console.log(currentRegistryMapState)
-      
+
       // const newStaticData = merge(staticData, currentRegistryMapState)
       const newStaticData = merge2(staticData, currentRegistryMapState, {
         arrayMerge: overwriteMerge,
@@ -152,7 +154,7 @@ const syncRegistryMap = () => {
       // console.log('- 2: merged')
       // console.log(newStaticData)
 
-      writeStaticJSONAsync(storageCommonNotifsMapFilePath, { data: newStaticData , ts })
+      writeStaticJSONAsync(storageCommonNotifsMapFilePath, { data: newStaticData, ts })
     } else {
       throw new Error(`#ERR2021122508:41 File not found: ${storageCommonNotifsMapFilePath}`)
     }

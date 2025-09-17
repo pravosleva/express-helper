@@ -221,7 +221,7 @@ export const cfg: TCfg = [
   },
   {
     id: 405,
-    _descr: 'Every friday (retro)',
+    _descr: 'Every monday (retro)',
     isEnabled: true,
     cronSetting: '01 50 13 * * monday', // Every monday at 13:50:01
     req: {

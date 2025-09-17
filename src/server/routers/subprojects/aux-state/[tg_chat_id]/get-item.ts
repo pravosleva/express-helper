@@ -16,7 +16,7 @@ export const rules: THelp = {
             ok: boolean;
             reason?: string;
           } = { ok: true }
-          
+
           switch (true) {
             case !val || typeof val !== 'string':
               result.ok = false
@@ -38,7 +38,7 @@ export const rules: THelp = {
             ok: boolean;
             reason?: string;
           } = { ok: true }
-          
+
           switch (true) {
             case typeof val !== 'number' || Number.isNaN(val):
               result.ok = false
@@ -77,7 +77,7 @@ export const getItem = (req: TModifiedRequest & {
           ? sortArrayByKeys({
             arr: req.subprojects.auxState.auditList.get(tg_chat_id),
             keys: ['tsCreate'],
-            order: 1,
+            order: -1,
           }) : null,
         // _service: {
         //   state: req.subprojects.auxState.auditList.getState(),

@@ -19,7 +19,7 @@ export const menuRules: THelp = {
             ok: boolean;
             reason?: string;
           } = { ok: true }
-          
+
           switch (true) {
             case !val || typeof val !== 'string':
               result.ok = false
@@ -39,7 +39,7 @@ export const menuRules: THelp = {
                   default:
                     // NOTE: Nothing...
                     break
-                } 
+                }
               } catch (err) {
                 result.ok = false
                 result.reason = `ERR: ${err.message || 'No err.message'}; req.query._addData shoud not be correctly encoded json; Use decodeURIComponent for this`
@@ -64,7 +64,7 @@ export const menuRules: THelp = {
             result.ok = false
             result.reason = `Incorrect value: Received ${String(val)}; Expected values: ${possibleValues.join(', ')}`
           }
-  
+
           return result
         }
       },
@@ -82,7 +82,7 @@ export const menuRules: THelp = {
             result.ok = false
             result.reason = `Incorrect value: Received ${String(val)}; Expected: number`
           }
-  
+
           return result
         }
       },
@@ -98,9 +98,9 @@ export const getMenu = (req, res) => {
       data: {
         Items: [
           {
-            menuItemId: 'DmsPolicies',
+            menuItemId: 'DmsPolicies_exp',
             title: 'Полисы',
-            url: '/dms/123',
+            url: '/from-bff-by-default/123',
           }
         ],
       }

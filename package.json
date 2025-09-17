@@ -2,6 +2,11 @@
   "name": "express-helper",
   "version": "1.0.2",
   "private": true,
+  "engines": {
+    "npm": ">=6.14.4",
+    "node": ">=12.17.0",
+    "yarn": ">=1.22.22"
+  },
   "scripts": {
     "_test-env:s": "bash test-env.sh smartprice",
     "_test-env:p": "bash test-env.sh pravosleva",
