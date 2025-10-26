@@ -44,7 +44,7 @@ export const cfg: TCfg = [
   //         _descr,
   //       }) => {
   //         const finalMsgs: string[] = []
-          
+
   //         finalMsgs.push(_descr)
   //         if (targetHashtags.length > 0) finalMsgs.push(`*${targetHashtags.join(' ')}*`)
 
@@ -68,7 +68,7 @@ export const cfg: TCfg = [
   //             EMessageStatus.Warn,
   //           ],
   //         })
-          
+
   //         return sortedMsgs.map((msg, i) => {
   //           /* NOTE: _targetMsgs For example
   //           {
@@ -171,7 +171,7 @@ export const cfg: TCfg = [
   //             EMessageStatus.Warn,
   //           ],
   //         })
-          
+
   //         return sortedMsgs.map((msg, i) => {
   //           const {
   //             status,
@@ -270,7 +270,7 @@ export const cfg: TCfg = [
               EMessageStatus.Warn,
             ],
           })
-          
+
           return sortedMsgs.map((msg, i) => {
             const {
               status,
@@ -379,7 +379,7 @@ export const cfg: TCfg = [
               // EMessageStatus.Done,
             ],
           })
-          
+
           return sortedMsgs.map((msg, i) => {
             const {
               status,
@@ -485,7 +485,7 @@ export const cfg: TCfg = [
               EMessageStatus.Warn,
             ],
           })
-          
+
           return sortedMsgs.map((msg, i) => {
             const {
               status,
@@ -587,7 +587,7 @@ export const cfg: TCfg = [
               EMessageStatus.Success,
             ],
           })
-          
+
           return sortedMsgs.map((msg, i) => {
             const {
               status,
@@ -683,7 +683,7 @@ export const cfg: TCfg = [
               EMessageStatus.Info,
             ],
           })
-          
+
           return sortedMsgs.map((msg: TMessage, i) => {
             const {
               status,
@@ -725,26 +725,54 @@ export const cfg: TCfg = [
     id: 6,
     _descr: 'Спринт (magaz) Weekly reminder',
     isEnabled: true,
-    cronSetting: '5 7 18 * * Mon', // Every Mon at 18:07:05
+    cronSetting: '5 15 9 * * Mon,Fri', // 5 7 18 * * Fri -> Every Fri at 18:07:05
     _useSprintOnly: true,
-    _specialMsgValidator: (msg: TMessage & Partial<NNotifs.TNotifItem>) => {
+    _specialMsgValidator: (msg: TMessage & Pick<NNotifs.TNotifItem, 'tsTarget'>) => {
       let result = false
       const deadlineLimitInDays = 14
       // NOTE: Фильтровать только те задачи, дедлайн которых не более {deadlineLimitInDays} дней
       const { tsTarget } = msg
 
-      if (!tsTarget) result = false
-      else {
-        const timeDiff = getTimeDiff({ startDate: new Date(), finishDate: new Date(tsTarget) })
+      // console.log(`- log2`)
+      // console.log(msg)
+      /*
+      2|helper-5000-prod  | {
+      2|helper-5000-prod  |   text: '#access Учетка ргс до 28.10',
+      2|helper-5000-prod  |   ts: 1761201714329,
+      2|helper-5000-prod  |   rl: 2,
+      2|helper-5000-prod  |   user: 'pravosleva',
+      2|helper-5000-prod  |   editTs: 1761214571845,
+      2|helper-5000-prod  |   status: 'danger',
+      2|helper-5000-prod  |   statusChangeTs: 1761202762378,
+      2|helper-5000-prod  |   position: 0
+      2|helper-5000-prod  | }
+      */
 
-        if (timeDiff.d <= deadlineLimitInDays) result = true
+      switch (true) {
+        case typeof tsTarget === 'number': {
+          // console.log(`- case1: has tsTarget for ${msg.text}`)
+
+          const timeDiff = getTimeDiff({ startDate: new Date(), finishDate: new Date(tsTarget) })
+
+          if (timeDiff.d <= deadlineLimitInDays)
+            result = true
+          break
+        }
+        default:
+          // console.log(`- case2: no tsTarget for ${msg.text}`)
+          result = false
+          break
       }
+
+      // console.log('- /log2')
 
       return result
     },
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
-    targetRooms: ['magaz', 'sp.pravosleva'],
-    targetHashtags: [], // ['#sprintWeeklyReminder', '#краснаяАкула'],
+    targetRooms: ['magaz', 'mg.pravosleva'],
+    // NOTE: For example: ['#sprintWeeklyReminder', '#краснаяАкула'],
+    targetHashtags: ['#access', '#domain', '#hosting', '#ssl', '#кот', '#release'],
+    // ignoredHashTags: [],
     targetStatuses: [EMessageStatus.Info, EMessageStatus.Warn, EMessageStatus.Danger],
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
@@ -767,7 +795,7 @@ export const cfg: TCfg = [
           targetStatuses,
           targetRooms,
         }) => {
-          return `*Спринты* (каждый понедельник): ${msgs.length > 0 ? `в ${plural(targetRooms.length, 'чат-комнате', 'чат-комнатах')}\n${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return `Пятничная напоминалка ${msgs.length > 0 ? `из ${plural(targetRooms.length, 'чат-комнаты', 'чат-комнат')}\n${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
         },
         targetMD: ({
           msgs,
@@ -791,7 +819,7 @@ export const cfg: TCfg = [
               EMessageStatus.Info,
             ],
           })
-          
+
           return sortedMsgs.map((msg: TMessage & Partial<NNotifs.TNotifItem>, i) => {
             const {
               status,
@@ -819,7 +847,7 @@ export const cfg: TCfg = [
               specialMsgs.push(`Приоритет ${position + 1}`)
             if (!!assignedTo && Array.isArray(assignedTo) && assignedTo.length > 0)
               specialMsgs.push(`👉 Отв. ${assignedTo.map((at) => `@${at}`).join(' ')}`)
-            
+
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
@@ -830,10 +858,10 @@ export const cfg: TCfg = [
               if (timeDiff.isNegative) msgList.push(`🚨 Deadline failed ${getTimeAgo(tsTarget)}`)
               else msgList.push(`Until deadline ${timeDiff.message}`)
             }
-            
+
             if (!!links && Array.isArray(links))
               msgList.push(`${links.map(({ link, descr }) => `🔗 [${descr}](${link})`).join('\n')}`)
-            
+
             msgList.push(`${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}`)
 
             return msgList.join('\n')
@@ -887,7 +915,7 @@ export const cfg: TCfg = [
               EMessageStatus.Warn,
             ],
           })
-          
+
           return sortedMsgs.map((msg: TMessage, i) => {
             const {
               status,

@@ -97,11 +97,11 @@ export const getMenu = (req, res) => {
       status: 'Success',
       data: {
         Items: [
-          {
-            menuItemId: 'DmsPolicies_exp',
-            title: 'Полисы',
-            url: '/from-bff-by-default/123',
-          }
+          // {
+          //   menuItemId: 'DmsPolicies_exp',
+          //   title: 'Полисы',
+          //   url: '/from-bff-by-default/123',
+          // }
         ],
       }
     }

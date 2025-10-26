@@ -49,7 +49,7 @@ Object.keys(cfg).forEach((dirName, i) => {
 
   const cronInterval = cfg[dirName]
 
-  cron.schedule(cronInterval, function() {
+  cron.schedule(cronInterval, function () {
     // NOTE: v2 (средствами bash)
     // See also: https://www.npmjs.com/package/bash-exec
     const runDir = path.join(__dirname, '../../../') // SAMPLE: /home/den/projects/smartprice_projects/express-helper/
@@ -68,74 +68,74 @@ Object.keys(cfg).forEach((dirName, i) => {
         cronStateInstance.lock(lockedBackupName)
         console.log('-')
       })
-      /*
-      fs.readdir(sourcePath, function(err, files) {
-        if (err) {
-          return console.error(err);
-        }
-        if (files.length === 0) {
-          console.log('🚫 BACKUP: empty folder!')
-        } else {
-          // -- TEST:
-          // cronStateInstance.lock('backup-1min')
-          // --
-          const locked = cronStateInstance.getLocked()
+    /*
+    fs.readdir(sourcePath, function(err, files) {
+      if (err) {
+        return console.error(err);
+      }
+      if (files.length === 0) {
+        console.log('🚫 BACKUP: empty folder!')
+      } else {
+        // -- TEST:
+        // cronStateInstance.lock('backup-1min')
+        // --
+        const locked = cronStateInstance.getLocked()
 
-          switch (true) {
-            case !!locked && locked === dirName:
-              // Не перезаписываем директорию
-              break;
-            case !!locked && locked !== dirName:
-              // NOTE: На самом деле, нет смысла сохранять другие бэкапы,
-              // т.к. восстанавливать придется из залоченного бэкапа
+        switch (true) {
+          case !!locked && locked === dirName:
+            // Не перезаписываем директорию
+            break;
+          case !!locked && locked !== dirName:
+            // NOTE: На самом деле, нет смысла сохранять другие бэкапы,
+            // т.к. восстанавливать придется из залоченного бэкапа
 
-              // = SKIP or CLEAR =
-              console.log(`🚫 BACKUP2: SKIP ${dirName}`)
-              // clearDirIfExists(path.join(projectRootDir, `backup/${dirName}`))
-              // =
+            // = SKIP or CLEAR =
+            console.log(`🚫 BACKUP2: SKIP ${dirName}`)
+            // clearDirIfExists(path.join(projectRootDir, `backup/${dirName}`))
+            // =
 
-              // NOTE: v2 (For each file with validation) выборочно для содержимого директории
-              // for (const filePath of files) {
-              //     ncp(filePath, destDir, {
-              //         filter: (file) => {
-              //             // SAMPLES file:
-              //             // /home/pravosleva/projects/smartprice_projects/express-helper/gcs-users.json
-              //             // /home/pravosleva/projects/smartprice_projects/express-helper/uploads
-              //             const exclude = ['uploads']
-              //             return !exclude.includes(file.split('/').reverse()[0])
-              //         }
-              //     }, function(err) {
-              //         if (!!err) {
-              //             console.log(`🚫 BACKUP2: ERR ${dirName}`)
-              //             console.log(err)
-  
-              //             createDirIfNecessary(path.join(projectRootDir, `backup/${dirName}`))
-              //             return
-              //         }
+            // NOTE: v2 (For each file with validation) выборочно для содержимого директории
+            // for (const filePath of files) {
+            //     ncp(filePath, destDir, {
+            //         filter: (file) => {
+            //             // SAMPLES file:
+            //             // /home/pravosleva/projects/smartprice_projects/express-helper/gcs-users.json
+            //             // /home/pravosleva/projects/smartprice_projects/express-helper/uploads
+            //             const exclude = ['uploads']
+            //             return !exclude.includes(file.split('/').reverse()[0])
+            //         }
+            //     }, function(err) {
+            //         if (!!err) {
+            //             console.log(`🚫 BACKUP2: ERR ${dirName}`)
+            //             console.log(err)
+ 
+            //             createDirIfNecessary(path.join(projectRootDir, `backup/${dirName}`))
+            //             return
+            //         }
 
-              //         cronStateInstance.setData({ backupName: dirName })
-              //         console.log(`✅ BACKUP2: ${dirName}`)
-              //     });   
-              // }
-              break;
-            default:
-              // NOTE: v1 для директории (средствами js)
-              // ncp(sourcePath, destDir, function(err) {
-              //     if (!!err) {
-              //         console.log(`🚫 BACKUP: ERR ${dirName}`)
-              //         console.log(err)
+            //         cronStateInstance.setData({ backupName: dirName })
+            //         console.log(`✅ BACKUP2: ${dirName}`)
+            //     });   
+            // }
+            break;
+          default:
+            // NOTE: v1 для директории (средствами js)
+            // ncp(sourcePath, destDir, function(err) {
+            //     if (!!err) {
+            //         console.log(`🚫 BACKUP: ERR ${dirName}`)
+            //         console.log(err)
 
-              //         createDirIfNecessary(path.join(projectRootDir, `backup/${dirName}`))
-              //         return
-              //     }
+            //         createDirIfNecessary(path.join(projectRootDir, `backup/${dirName}`))
+            //         return
+            //     }
 
-              //     cronStateInstance.setData({ backupName: dirName })
-              //     console.log(`✅ BACKUP: ${dirName}`)
-              // });
-              break;
-          }         
-        }
-    }) */
+            //     cronStateInstance.setData({ backupName: dirName })
+            //     console.log(`✅ BACKUP: ${dirName}`)
+            // });
+            break;
+        }         
+      }
+  }) */
   })
 })
 
@@ -176,7 +176,7 @@ const syncBackupState = () => {
     // NOTE: Sync with old state:
     Object.keys(staticData).forEach((name: string) => {
       const modifiedState: { ts: number, descr: string } = staticData[name]
-      
+
       cronStateInstance.set(name, modifiedState)
     })
   }
@@ -191,7 +191,11 @@ createPollingByConditions({
   cb: () => {
     console.log('cb called')
   },
-  interval: 60000,
+
+  // -- NOTE: Each 2 hrs
+  interval: 2 * 60 * 60 * 1000,
+  // --
+
   callbackAsResolve: () => {
     syncBackupState()
   },

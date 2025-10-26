@@ -17,7 +17,7 @@ const delay = (ms = 200) => new Promise((res) => {
   setTimeout(res, ms)
 })
 
-const isModelsDataValid = (models: any[]) => Array.isArray(models) &&  models.every((model) => !!model.id && !!model.name)
+const isModelsDataValid = (models: any[]) => Array.isArray(models) && models.every((model) => !!model.id && !!model.name)
 
 type TState = {
   success: {
@@ -59,7 +59,7 @@ const baseFn = async () => {
   cleanupState()
 
   state.ts.start = new Date().getTime()
-  const markListRes = await axios.post('https://api-frontend.uservice.io/car/mark/get-list/',  {
+  const markListRes = await axios.post('https://api-frontend.uservice.io/car/mark/get-list/', {
     type_id: 1,
     lang: 'ru',
   })
@@ -107,7 +107,7 @@ const baseFn = async () => {
             details: err?.response?.status || err?.message || `Не удалось обработать данные (err?.data is ${typeof err?.data})`,
           }
         })
-  
+
       if (modelsRes.success === 1 && isModelsDataValid(modelsRes?.models)) {
         state.success.counter += 1
         fs.writeFile(path.join(storagePath, `/${slugify(name.toLowerCase())}.json`), JSON.stringify(modelsRes, null, 2), err => {
@@ -156,7 +156,7 @@ const baseFn = async () => {
           })
           .then((res) => res.data)
           .catch((err) => err)
-        }
+      }
     }
   } catch (err) {
     console.log('ERR 5')

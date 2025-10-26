@@ -35,7 +35,6 @@
       }
     ]
   },
-
   {
     "id": "leonty-egorovich-dereventsov[elena-f-f-f-f].[__-__-1820]",
     "gender": "male",
@@ -117,7 +116,6 @@
       }
     ]
   },
-
   {
     "id": "ivan-leonty-dereventsov[elena-f-f-f].[__-__-1875]",
     "gender": "male",
@@ -207,7 +205,7 @@
     ],
     "children": [
       {
-        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][08-10-20__]",
         "type": "blood"
       },
       {
@@ -296,7 +294,7 @@
     ],
     "children": [
       {
-        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][08-10-20__]",
         "type": "blood"
       },
       {
@@ -305,7 +303,6 @@
       }
     ]
   },
-
   {
     "id": "samil-_-razumny[elena-m-m-f-f-f].[__-__-1___][__-__-1___]",
     "gender": "male",
@@ -456,7 +453,6 @@
       }
     ]
   },
-
   {
     "id": "nikita-fandeevich-razumny[elena-m-m-f].[12-09-1894][13-10-19__]",
     "gender": "male",
@@ -617,7 +613,6 @@
     "spouses": [],
     "children": []
   },
-
   {
     "id": "egor-fandeevich-razumny[elena-m-m-fb2].[__-__-1___]",
     "gender": "male",
@@ -751,7 +746,6 @@
     "spouses": [],
     "children": []
   },
-
   {
     "id": "lyuba-egorovna-razumnaya[elena-m-m-fb2daughter].[__-__-1___][__-__-1___]",
     "gender": "female",
@@ -899,7 +893,6 @@
     "spouses": [],
     "children": []
   },
-
   {
     "id": "praskeva-fandeevna-razumnaya[elena-m-m-fs].[__-__-1___]",
     "gender": "female",
@@ -930,7 +923,6 @@
     "spouses": [],
     "children": []
   },
-
   {
     "id": "yakov-_-hotnyansky[elena-m-m-m-f-f].[__-__-1___][__-__-1___]",
     "gender": "male",
@@ -1065,7 +1057,6 @@
       }
     ]
   },
-
   {
     "id": "darya-semenovna-razumnaya[elena-m-m-m].[03-02-1894][03-02-1980]",
     "gender": "female",
@@ -1165,7 +1156,6 @@
     "spouses": [],
     "children": []
   },
-
   {
     "id": "varya-nikita-chernokalova[elena-m-m].[__-__-1___][__-__-1___]",
     "gender": "female",
@@ -1193,7 +1183,6 @@
       }
     ]
   },
-
   {
     "id": "_-_-_[elena-m-f-f-f].[__-__-1___][__-__-1___]",
     "gender": "male",
@@ -1230,7 +1219,6 @@
       }
     ]
   },
-
   {
     "id": "panteley-_-_[elena-m-f-f].[__-__-1___][__-__-1___]",
     "gender": "male",
@@ -1258,7 +1246,6 @@
       }
     ]
   },
-
   {
     "id": "_-_-_[elena-m-f-m-f].[__-__-1___][__-__-1___]",
     "gender": "male",
@@ -1295,7 +1282,6 @@
       }
     ]
   },
-
   {
     "id": "_-karimovna-_[elena-m-f-m].[__-__-1___][__-__-1___]",
     "gender": "female",
@@ -1365,7 +1351,7 @@
     ],
     "siblings": [
       {
-        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][08-10-20__]",
         "type": "blood"
       }
     ],
@@ -1522,7 +1508,6 @@
     "spouses": [],
     "children": []
   },
-
   {
     "id": "nikolay-ury-dereventsov.[11-06-1979]",
     "gender": "male",
@@ -1629,7 +1614,6 @@
     "spouses": [],
     "children": []
   },
-
   {
     "id": "michail-ury-dereventsov.[__-__-19__][__-__-19__]",
     "gender": "male",
@@ -1657,7 +1641,7 @@
     "children": []
   },
   {
-    "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
+    "id": "vladimir-nik-dereventsov.[01-09-1940][08-10-20__]",
     "gender": "male",
     "parents": [
       {
@@ -1712,7 +1696,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][08-10-20__]",
         "type": "divorced"
       },
       {
@@ -1749,7 +1733,6 @@
     ],
     "siblings": []
   },
-
   {
     "id": "maria-efim-malysheva.[__-__-1___]",
     "gender": "female",
@@ -1794,7 +1777,6 @@
       }
     ]
   },
-
   {
     "id": "nikolay-ivan-malyshev.[02-10-1920]",
     "gender": "male",
@@ -1972,7 +1954,6 @@
     "siblings": [],
     "spouses": []
   },
-
   {
     "id": "vasily-ivan-kyzmin.[__-__-1___]",
     "gender": "male",
@@ -2155,7 +2136,6 @@
       }
     ]
   },
-
   {
     "id": "anatoly-_-soloviev.[__-__-19__]",
     "gender": "male",
@@ -2200,7 +2180,6 @@
       }
     ]
   },
-
   {
     "id": "alexander-anatoly-soloviev.[__-__-19__]",
     "gender": "male",
@@ -2268,7 +2247,6 @@
     "siblings": [],
     "spouses": []
   },
-
   {
     "id": "nikolay-anatoly-soloviev.[22-05-1956]",
     "gender": "male",
@@ -2423,7 +2401,6 @@
     "siblings": [],
     "spouses": []
   },
-
   {
     "id": "nikolay-nik-malyshev.[19-11-1948]",
     "gender": "male",
@@ -2468,7 +2445,6 @@
       }
     ]
   },
-
   {
     "id": "vas-archip-krupin.[__-__-18__]",
     "gender": "male",
@@ -2505,7 +2481,6 @@
       }
     ]
   },
-
   {
     "id": "alevtina-vas-krupina.[16-07-1918]",
     "gender": "female",
@@ -2736,7 +2711,6 @@
       }
     ]
   },
-
   {
     "id": "michail-_-_[vladimir-m-f-f].[__-__-____][__-__-____]",
     "gender": "male",
@@ -2871,7 +2845,6 @@
       }
     ]
   },
-
   {
     "id": "valentina-fedor-solovieva.[31-07-19__]",
     "gender": "female",
@@ -2944,7 +2917,6 @@
       }
     ]
   },
-  
   {
     "id": "vladimir-vladimir-poltoratsky.[10-11-1961][27-12-2014]",
     "gender": "male",
@@ -2979,7 +2951,7 @@
     "siblings": [],
     "spouses": [
       {
-        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][08-10-20__]",
         "type": "married"
       },
       {
@@ -3081,7 +3053,7 @@
     "gender": "female",
     "parents": [
       {
-        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][08-10-20__]",
         "type": "blood"
       },
       {
@@ -3117,7 +3089,7 @@
     "gender": "female",
     "parents": [
       {
-        "id": "vladimir-nik-dereventsov.[01-09-1940][__-__-____]",
+        "id": "vladimir-nik-dereventsov.[01-09-1940][08-10-20__]",
         "type": "blood"
       },
       {

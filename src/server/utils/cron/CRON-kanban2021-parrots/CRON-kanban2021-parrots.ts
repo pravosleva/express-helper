@@ -5,6 +5,7 @@ import { testTextByAnyWord } from '~/utils/string-ops'
 import { cfg } from './cfg'
 import { TRoomNotifs, NNotifs } from '~/routers/chat/mws/api/common-notifs'
 // import { Counter } from '~/utils/Counter'
+// import packageJson from '../../../../../package.json'
 
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 
@@ -20,7 +21,7 @@ if (_checkingSet.size !== _parrotIds.length)
 // const processEventCounter = Counter(0)
 
 const parrots = new Map()
-for(const parrot of cfg) {
+for (const parrot of cfg) {
   if (parrot.isEnabled) {
     parrots.set(parrot.id, {
       promise: async () => {
@@ -44,12 +45,12 @@ for(const parrot of cfg) {
           case _useSprintOnly:
             // 1. NOTE: Для поиска используем только инстанс в котором хранятся "спринты"
             for (const room of targetRooms) {
-              const roomNotifs: TRoomNotifs = commonNotifsMapInstance.get(room)
-          
+              const roomNotifs = commonNotifsMapInstance.get(room)
+
               if (!!roomNotifs) _roomsData[room] = roomNotifs
             }
 
-            for(const room in _roomsData) {
+            for (const room in _roomsData) {
               const roomNotifs: TRoomNotifs = _roomsData[room]
 
               for (const key in roomNotifs.data) {
@@ -67,7 +68,7 @@ for(const parrot of cfg) {
                           !!original.text &&
                           testTextByAnyWord({ text: original.text, words: targetHashtags }) &&
                           !testTextByAnyWord({ text: original.text, words: ignoredHashTags }) &&
-                          (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
+                          (!!_specialMsgValidator ? _specialMsgValidator({ ...original, ...rest }) : true)
                         ) _targetMsgs.push({ ...original, ...rest })
                         break
                       default:
@@ -76,8 +77,43 @@ for(const parrot of cfg) {
                           targetStatuses.includes(original.status) &&
                           !!original.text &&
                           testTextByAnyWord({ text: original.text, words: targetHashtags }) &&
-                          (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
+                          (!!_specialMsgValidator ? _specialMsgValidator({ ...original, ...rest }) : true)
                         ) _targetMsgs.push({ ...original, ...rest })
+                        else {
+                          // console.log(`- skiped: ${original.text}`)
+                          // console.log({
+                          //   original,
+                          //   rest,
+                          // })
+                          /*
+                          2|helper-5000-prod  | - skiped: #access Учетка ргс до 28.10
+                          2|helper-5000-prod  | {
+                          2|helper-5000-prod  |   original: {
+                          2|helper-5000-prod  |     text: '#access Учетка ргс до 28.10',
+                          2|helper-5000-prod  |     ts: 1761201714329,
+                          2|helper-5000-prod  |     rl: 2,
+                          2|helper-5000-prod  |     user: 'pravosleva',
+                          2|helper-5000-prod  |     editTs: 1761214571845,
+                          2|helper-5000-prod  |     status: 'danger',
+                          2|helper-5000-prod  |     statusChangeTs: 1761202762378,
+                          2|helper-5000-prod  |     position: 0
+                          2|helper-5000-prod  |   },
+                          2|helper-5000-prod  |   rest: {
+                          2|helper-5000-prod  |     ts: 1761201714329,
+                          2|helper-5000-prod  |     tsTarget: 1761609600000,
+                          2|helper-5000-prod  |     username: 'pravosleva',
+                          2|helper-5000-prod  |     text: '#access Учетка ргс до 28.10'
+                          2|helper-5000-prod  |   }
+                          2|helper-5000-prod  | }
+                          */
+                          // console.log(`_specialMsgValidator(original) -> ${_specialMsgValidator(original)}`)
+                          // console.log('-')
+                          /*
+                          2|helper-5000-prod  | - case2: no tsTarget for #access Учетка ргс до 28.10
+                          2|helper-5000-prod  | - /log2
+                          2|helper-5000-prod  | _specialMsgValidator(original) -> false
+                          */
+                        }
                         break
                     }
                     break
@@ -89,7 +125,7 @@ for(const parrot of cfg) {
                           targetStatuses.includes(original.status) &&
                           !!original.text &&
                           !testTextByAnyWord({ text: original.text, words: ignoredHashTags }) &&
-                          (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
+                          (!!_specialMsgValidator ? _specialMsgValidator({ ...original, ...rest }) : true)
                         ) _targetMsgs.push({ ...original, ...rest })
                         break
                       default:
@@ -97,7 +133,7 @@ for(const parrot of cfg) {
                           !!original.status &&
                           targetStatuses.includes(original.status) &&
                           !!original.text &&
-                          (!!_specialMsgValidator ? _specialMsgValidator(original) : true)
+                          (!!_specialMsgValidator ? _specialMsgValidator({ ...original, ...rest }) : true)
                         ) _targetMsgs.push({ ...original, ...rest })
                         break
                     }
@@ -111,13 +147,13 @@ for(const parrot of cfg) {
             // 2. NOTE: Для поиска используем основное хранилище чатов (самый большой кусок кэша)
             for (const room of targetRooms) {
               const roomData = roomsMapInstance.getRoomData(room)
-          
+
               if (!!roomData) _roomsData[room] = roomData
             }
-          
-            for(const room in _roomsData) {
+
+            for (const room in _roomsData) {
               const roomData = _roomsData[room]
-        
+
               for (const msg of roomData) {
                 switch (true) {
                   case targetHashtags.length > 0 && targetStatuses.length > 0:
@@ -182,8 +218,34 @@ for(const parrot of cfg) {
               `${tgBotApiUrl}/single/stack`, // req.url,
               opts,
             )
-            .then((res) => res.data)
-            .catch((err) => err)
+            .then((res) => {
+              // NOTE: Report (res.data)
+              axios
+                .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, {
+                  resultId: new Date().getTime(),
+                  chat_id: 432590698, // NOTE: Den Pol
+                  ts: new Date().getTime(),
+                  eventCode: 'aux_service',
+                  about: `\`/express-helper\`\n✅ Success: \`${tgBotApiUrl}/single/stack\``,
+                  targetMD: `Report (parrots) sent successfully\n\n\`\`\`json\n${JSON.stringify(res.data, null, 2)}\`\`\``,
+                })
+                .then((res) => res.data)
+                .catch((err) => err)
+            })
+            .catch((err) => {
+              // NOTE: Report
+              axios
+                .post(`${tgBotApiUrl}/kanban-2021/reminder/send`, {
+                  resultId: new Date().getTime(),
+                  chat_id: 432590698, // NOTE: Den Pol
+                  ts: new Date().getTime(),
+                  eventCode: 'aux_service',
+                  about: `\`/express-helper\`\n⛔ Error: \`${tgBotApiUrl}/single/stack\``,
+                  targetMD: `Report (parrots) errored: ${err?.code || err?.message || 'No err[code|message]'}\n\n\`\`\`json\n${JSON.stringify(err, null, 2)}\`\`\``,
+                })
+                .then((res) => res.data)
+                .catch((err) => err)
+            })
         } else return undefined
       },
       cronSetting: parrot.cronSetting,
@@ -197,7 +259,7 @@ const baseFn = () => {
   });
 
   for (const sett of arr) {
-    const { value : { promise, cronSetting } } = sett
+    const { value: { promise, cronSetting } } = sett
 
     cron.schedule(cronSetting, promise, {
       scheduled: true,

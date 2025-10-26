@@ -59,9 +59,9 @@ export const cfg: TCfg = [
       //   checkTs: 1683791624193, } */
       return isCorrect
     },
-    targetRooms: ['magaz'],
-    targetHashtags: [],
-    ignoredHashTags: ['#кот'],
+    targetRooms: ['magaz', 'mg.pravosleva'],
+    targetHashtags: ['#access', '#domain', '#hosting', '#ssl'],
+    ignoredHashTags: ['#кот'], // NOTE: Separate parrot below (special for cat)
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
       body: {
@@ -79,7 +79,7 @@ export const cfg: TCfg = [
             keys: ['uncheckTs'],
             order: 1,
           })
-          
+
           return sortedMsgs.map((task, i) => {
             const {
               title,
@@ -106,8 +106,8 @@ export const cfg: TCfg = [
               default:
                 specialMsgs.push(
                   diff.isNegative
-                  ? `⚠️ Ready ${getTimeAgo(timeEnd)}`
-                  : `⏱️ ${diff.message} left`
+                    ? `⚠️ Ready ${getTimeAgo(timeEnd)}`
+                    : `⏱️ ${diff.message} left`
                 )
                 break
             }
@@ -291,7 +291,7 @@ export const cfg: TCfg = [
             keys: ['uncheckTs'],
             order: 1,
           })
-          
+
           return sortedMsgs.map((task, i) => {
             const {
               title,
@@ -318,8 +318,8 @@ export const cfg: TCfg = [
               default:
                 specialMsgs.push(
                   diff.isNegative
-                  ? `⚠️ Ready ${getTimeAgo(timeEnd)}`
-                  : `⏱️ ${diff.message} left`
+                    ? `⚠️ Ready ${getTimeAgo(timeEnd)}`
+                    : `⏱️ ${diff.message} left`
                 )
                 break
             }
