@@ -100,7 +100,7 @@
     "@socket.io/admin-ui": "^0.5.x",
     "@types/multer": "^2.0.0",
     "animate.css": "^4.1.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.2",
     "bash-exec": "^1.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
