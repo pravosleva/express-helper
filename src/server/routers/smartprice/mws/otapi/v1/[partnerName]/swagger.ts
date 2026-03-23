@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 // import { EAccessCode, redirect } from '../../../../../auth/cfg'
-// import redirectIfUnloggedMw from '../../../../../auth/mws/redirect-if-unlogged'
+// import { redirectIfUnloggedMw } from '../../../../../auth/mws/redirect-if-unlogged'
 
 const swagger = express.Router({ mergeParams: true })
 // https://www.npmjs.com/package/swagger-ui-express

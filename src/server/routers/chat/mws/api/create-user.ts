@@ -3,9 +3,9 @@ import {
   ERegistryLevel,
   TRegistryData,
   registeredTGChatIdsMapInstance,
-} from '~/utils/socket/state' 
+} from '~/utils/socket/state'
 import bcrypt from 'bcryptjs'
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 import { EAPIUserCode } from './types'
 
 export const createUser = (req, res) => {
@@ -24,10 +24,10 @@ export const createUser = (req, res) => {
 
   switch (true) {
     case !!oldTGChatIdData:
-      // 1.1 NOTE: Пользователь поменял ник?
-      // --
-      // TODO: Проверить, нет ли его в blacklist -> Если есть отклонить: return res.status(200).send({ ok: false, message: 'Вы забанены' })
-      // --
+    // 1.1 NOTE: Пользователь поменял ник?
+    // --
+    // TODO: Проверить, нет ли его в blacklist -> Если есть отклонить: return res.status(200).send({ ok: false, message: 'Вы забанены' })
+    // --
     default:
       // 2. NOTE: Пользователя еще не было
       const simplePasswd = getRandomInteger(1000, 9999)
@@ -47,7 +47,7 @@ export const createUser = (req, res) => {
 
       let messages = ['- Храним только хэш пароля']
       let code = EAPIUserCode.Created
-      if(!!oldTGChatIdData) {
+      if (!!oldTGChatIdData) {
         messages.push(`- Вы ранее были под ником ${oldTGChatIdData}; Имя перезаписано на ${username}`)
         code = EAPIUserCode.Updated
       }

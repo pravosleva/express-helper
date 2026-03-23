@@ -2,7 +2,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable import/extensions */
 // @ts-ignore
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 // import multer from 'multer'
 
 // const upload = multer();

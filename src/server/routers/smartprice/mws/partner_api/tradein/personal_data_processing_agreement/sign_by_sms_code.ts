@@ -1,4 +1,4 @@
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 import { Counter } from '~/utils/Counter'
 import { THelp } from '~/utils/interfaces'
 

@@ -215,7 +215,7 @@ const statusMap: {
   // [EMessageStatus.Danger]: <FaFire size={14} />,
   [EMessageStatus.Danger]: <ImFire size={14} />,
   [EMessageStatus.Success]: <FaCheck size={10} />,
-  'assign': <CgAssign size={18}/>,
+  'assign': <CgAssign size={18} />,
 }
 const getIconByStatus = (status: EMessageStatus | 'assign', isColored: boolean) => {
   switch (true) {
@@ -285,7 +285,7 @@ const removeBlink = (ts: number) => {
   try {
     const card = document.getElementById(`card-${ts}`)
     card?.classList.remove('blink_me')
-  } catch (_err) {}
+  } catch (_err) { }
 }
 const addBlink = (ts: number) => {
   try {
@@ -293,7 +293,7 @@ const addBlink = (ts: number) => {
     card?.classList.add('blink_me')
 
     scrollInKanban(card)
-  } catch (_err) {}
+  } catch (_err) { }
 }
 
 type TTimer = { card?: ReturnType<typeof setTimeout> | null, msg: ReturnType<typeof setTimeout> | null }
@@ -534,7 +534,7 @@ export const Chat = () => {
 
         history.push('/')
       }
-      const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy, links, position, statusChangeTs }: { statusChangeTs?: number,  position?: number, text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string, links?: { link: string, descr: string }[] }) => {
+      const updMsgListener = ({ text, ts, editTs, status, assignedTo, assignedBy, links, position, statusChangeTs }: { statusChangeTs?: number, position?: number, text: string, editTs?: number, status?: EMessageStatus, ts: number, assignedTo?: string[], assignedBy?: string, links?: { link: string, descr: string }[] }) => {
         setMessages((ms: TMessage[]) => {
           const newArr = [...ms]
           const targetIndex = binarySearchTsIndex({ messages: ms, targetTs: ts })
@@ -668,7 +668,7 @@ export const Chat = () => {
       // -- TODO: refactoring?
       const key = 'ts'
       const arrayUniqueByKey = [...new Map([...result, ...msgs].map((item: TMessage) =>
-      [item[key], item])).values()]
+        [item[key], item])).values()]
 
       return arrayUniqueByKey.sort(tsSortDEC)
       // --
@@ -929,7 +929,7 @@ export const Chat = () => {
     // })
 
     const nameFromLS = window.localStorage.getItem('chat.my-name')
-    
+
     let normalizedName
     if (!!nameFromLS) normalizedName = nameFromLS.replace(/"/g, '')
 
@@ -974,7 +974,7 @@ export const Chat = () => {
       // }
 
       tryLogin()
-      
+
       // --
       // history.push('/')
     } // else history.push('/')
@@ -1230,7 +1230,7 @@ export const Chat = () => {
       let openTaskListFromUrlParams2
 
       if (!!openTaskListEntry && openTaskListEntry[1] === '1') handleTasklistModalOpen()
-    } catch (err) {}
+    } catch (err) { }
   }, [])
   const handleTasklistModalClose = useCallback(() => {
     setTasklistModalOpened(false)
@@ -1388,7 +1388,7 @@ export const Chat = () => {
         }
 
         setRoomlistLS(newRooms)
-      } catch (err) {}
+      } catch (err) { }
     }
   }, [])
 
@@ -1519,7 +1519,7 @@ export const Chat = () => {
   // --
 
   const [isGalleryOpened, setIsGalleryOpened] = useState<boolean>(false)
-  const [clickedImageSrc, setClickedImageSrc]= useState<string | null>(null)
+  const [clickedImageSrc, setClickedImageSrc] = useState<string | null>(null)
   const handleOpenGallery = useCallback((src: string) => {
     setIsGalleryOpened(true)
     setClickedImageSrc(src)
@@ -1620,10 +1620,10 @@ export const Chat = () => {
 ┃ ┃ ┃ ┗ a1.2
 ┃ ┃ ┗ a2
 ┃ ┣ b`
-  const input = document.getElementById('msg')
-  // @ts-ignore
-  if (!!input) input.value = messageRef.current
-  setShowClearBtn(true)
+    const input = document.getElementById('msg')
+    // @ts-ignore
+    if (!!input) input.value = messageRef.current
+    setShowClearBtn(true)
   }, [setShowClearBtn])
   const isLogged = useMemo(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
 
@@ -1902,7 +1902,7 @@ export const Chat = () => {
                 case isMoveUpInSameColumn:
                 case getIsReplacePositionInOtherColumn(i):
                 case getIsUpPositionInOtherColumn(i):
-                  if (i < newPosition) {}
+                  if (i < newPosition) { }
                   else if (i === newPosition) position += 1
                   else position += 1
                   break
@@ -2001,8 +2001,8 @@ export const Chat = () => {
       }, 100)
     }
   }, [setEditedMessage, handleRemoveFromSprint])
-  const [getRef, setRef] =  useDynamicRefs()
-  const listenersMap = useRef<{[key: string]: { mouseenter: (_arg: any) => void, mouseleave: (_arg: any) => void }}>({})
+  const [getRef, setRef] = useDynamicRefs()
+  const listenersMap = useRef<{ [key: string]: { mouseenter: (_arg: any) => void, mouseleave: (_arg: any) => void } }>({})
   const timersMap = useRef<any>({})
   useLayoutEffect(() => {
     // console.log('-- EFF: ev listener')
@@ -2013,12 +2013,12 @@ export const Chat = () => {
         // @ts-ignore
         if (!!chatMsgContainerRef.current) {
           listenersMap.current[String(ts)] = {
-            mouseenter: function() {
+            mouseenter: function () {
               // console.log(this)
               setTimeout(() => addBlink(ts), 0)
               timersMap.current[String(ts)] = setTimeout(() => removeBlink(ts), 3000)
             },
-            mouseleave: function() {
+            mouseleave: function () {
               if (!!timersMap.current[String(ts)]) {
                 clearTimeout(timersMap.current[String(ts)])
                 setTimeout(() => removeBlink(ts), 0)
@@ -2260,7 +2260,7 @@ export const Chat = () => {
                 isRound
                 onClick={handleOpenDrawerMenu}
                 mr={2}
-                colorScheme={assignmentExecutorsFilters.length > 0 ? 'blue' : hasNews ? 'green': 'gray'}
+                colorScheme={assignmentExecutorsFilters.length > 0 ? 'blue' : hasNews ? 'green' : 'gray'}
               />
               <Drawer
                 isOpen={isDrawerMenuOpened}
@@ -2293,7 +2293,7 @@ export const Chat = () => {
                             // mr={4}
                             colorScheme="blue"
                             variant="outline"
-                            leftIcon={<HiOutlineMenuAlt2 size={18}/>}
+                            leftIcon={<HiOutlineMenuAlt2 size={18} />}
                             size='sm'
                             rounded='2xl'
                           >
@@ -2318,68 +2318,68 @@ export const Chat = () => {
                             </MenuItem>
                             <MenuDivider />
                             <MenuOptionGroup defaultValue="asc" title={`Users online: ${users.length}`}>
-                            <div
-                              style={{
-                                maxHeight: '120px',
-                                overflowY: 'auto',
-                              }}
-                            >
-                              {users &&
-                                users.map((user: TUser) => {
-                                  return (
-                                    <MenuItem minH="40px" key={user.name} onClick={() => { handleUserClick(user) }} isDisabled={name === user.name}>
-                                      <Text fontSize="md">{getTruncated(user.name)}</Text>
-                                    </MenuItem>
-                                  )
-                                })
-                              }
-                            </div>
+                              <div
+                                style={{
+                                  maxHeight: '120px',
+                                  overflowY: 'auto',
+                                }}
+                              >
+                                {users &&
+                                  users.map((user: TUser) => {
+                                    return (
+                                      <MenuItem minH="40px" key={user.name} onClick={() => { handleUserClick(user) }} isDisabled={name === user.name}>
+                                        <Text fontSize="md">{getTruncated(user.name)}</Text>
+                                      </MenuItem>
+                                    )
+                                  })
+                                }
+                              </div>
                             </MenuOptionGroup>
                             <MenuDivider />
-                              {isAdmin && (
-                                <MenuItem
-                                  minH="40px"
-                                  key="adm-btn"
-                                  onClick={() => {
-                                    history.push('/admin')
-                                  }}
-                                >
-                                  <Text fontSize="md" fontWeight='bold'>Chat admin panel</Text>
-                                </MenuItem>
-                              )}
+                            {isAdmin && (
                               <MenuItem
                                 minH="40px"
                                 key="adm-btn"
-                                onClick={(e) => {
-                                  e.preventDefault()
-                                  try {
-                                    window.open('http://gosuslugi.pravosleva.pro/express-helper/chat/admin-ui/', '_blank')
-                                  } catch (err) {
-                                    console.warn(err)
-                                  }
+                                onClick={() => {
+                                  history.push('/admin')
                                 }}
                               >
-                                <Text fontSize="md" fontWeight='bold'>Socket.io admin panel</Text>
+                                <Text fontSize="md" fontWeight='bold'>Chat admin panel</Text>
                               </MenuItem>
-                              {
-                                userInfoSnap.regData?.registryLevel !== ERegistryLevel.TGUser && (
-                                  <MenuItem
-                                    minH="40px"
-                                    key="set-passwd-btn"
-                                    onClick={handleSetPasswordModalOpen}
-                                  >
-                                    <Text fontSize="md" fontWeight='bold'>Set my password</Text>
-                                  </MenuItem>
-                                )
-                              }
+                            )}
+                            <MenuItem
+                              minH="40px"
+                              key="adm-btn"
+                              onClick={(e) => {
+                                e.preventDefault()
+                                try {
+                                  window.open('https://gosuslugi.pravosleva.pro/express-helper/chat/admin-ui/', '_blank')
+                                } catch (err) {
+                                  console.warn(err)
+                                }
+                              }}
+                            >
+                              <Text fontSize="md" fontWeight='bold'>Socket.io admin panel</Text>
+                            </MenuItem>
+                            {
+                              userInfoSnap.regData?.registryLevel !== ERegistryLevel.TGUser && (
+                                <MenuItem
+                                  minH="40px"
+                                  key="set-passwd-btn"
+                                  onClick={handleSetPasswordModalOpen}
+                                >
+                                  <Text fontSize="md" fontWeight='bold'>Set my password</Text>
+                                </MenuItem>
+                              )
+                            }
 
-                              <MenuItem
-                                minH="40px"
-                                key="my-info-btn"
-                                onClick={handleMyInfoModalOpen}
-                              >
-                                <Text fontSize="md" fontWeight='bold'>My info</Text>
-                              </MenuItem>
+                            <MenuItem
+                              minH="40px"
+                              key="my-info-btn"
+                              onClick={handleMyInfoModalOpen}
+                            >
+                              <Text fontSize="md" fontWeight='bold'>My info</Text>
+                            </MenuItem>
                           </MenuList>
                         </Menu>
                         {/*
@@ -2400,18 +2400,18 @@ export const Chat = () => {
                           )
                         }
                         <CopyToClipboard
-                          text={`http://gosuslugi.pravosleva.pro/express-helper/chat/#/?room=${room}`}
+                          text={`https://gosuslugi.pravosleva.pro/express-helper/chat/#/?room=${room}`}
                           onCopy={() => {
                             toast({
                               position: 'top',
                               title: 'Link copied',
-                              description: `http://gosuslugi.pravosleva.pro/express-helper/chat/#/?room=${room}`,
+                              description: `https://gosuslugi.pravosleva.pro/express-helper/chat/#/?room=${room}`,
                               status: 'success',
                               duration: 5000,
                               isClosable: true,
                             })
                           }}
-                          >
+                        >
                           <Button
                             size='sm'
                             // mr={2}
@@ -2489,7 +2489,7 @@ export const Chat = () => {
                   as={IconButton}
                   icon={<FiFilter size={18} />}
                   // isRound
-                  colorScheme={filters.length > 0 ? "blue": "gray"}
+                  colorScheme={filters.length > 0 ? "blue" : "gray"}
                 />
                 <MenuList
                   zIndex={1001}
@@ -2502,7 +2502,7 @@ export const Chat = () => {
                         closeOnSelect
                         minH="40px"
                       >
-                        <Text color={mode.colorMode === 'light' ? "red" : 'red.200' } fontSize="md" fontWeight='bold' display='flex'>Close Menu</Text>
+                        <Text color={mode.colorMode === 'light' ? "red" : 'red.200'} fontSize="md" fontWeight='bold' display='flex'>Close Menu</Text>
                       </MenuItem>
                     )}
                     {
@@ -2543,13 +2543,13 @@ export const Chat = () => {
                         // icon={<IoMdClose size={17} />}
                         closeOnSelect
                       >
-                        <Text color={mode.colorMode === 'light' ? "red" : 'red.200' } fontSize="md" fontWeight='bold' display='flex'><span>Reset filters</span></Text>
+                        <Text color={mode.colorMode === 'light' ? "red" : 'red.200'} fontSize="md" fontWeight='bold' display='flex'><span>Reset filters</span></Text>
                       </MenuItem>
                     )
                   }
                 </MenuList>
               </Menu>
-              
+
               <Flex alignItems="flex-start" flexDirection="column" flex={{ base: '1', sm: 'auto' }} mr={2}>
                 {/* <Heading fontSize="lg">{room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading> */}
                 <Heading fontSize='lg' fontFamily='system-ui' className={appStyles['truncate-overflow-single-line']}>
@@ -2580,7 +2580,7 @@ export const Chat = () => {
               </Flex>
 
               <IconButton
-                colorScheme={!!formData.searchText ? "blue": "gray"}
+                colorScheme={!!formData.searchText ? "blue" : "gray"}
                 aria-label="Search"
                 icon={<CgSearch size={18} />}
                 justifySelf="flex-end"
@@ -2594,8 +2594,8 @@ export const Chat = () => {
                 isRound
                 icon={<IoMdLogOut size={18} />}
                 onClick={handleLogout}
-                // disabled={!message}
-                // isLoading={isSending}
+              // disabled={!message}
+              // isLoading={isSending}
               >
                 Logout
               </IconButton>
@@ -2624,20 +2624,24 @@ export const Chat = () => {
                 <Button size='sm' isDisabled={isChatLoading} leftIcon={isChatLoading ? <Spinner size='xs' /> : undefined} rightIcon={<BiUpArrowAlt size={15} />} rounded='2xl' onClick={handleLoadMore}>Load more</Button>
               </Flex>
             ) : (
-              <Flex p={4} ref={inViewRef2} skip={inView || showLoadMoreBtn} alignItems="center" justifyContent='center' width='100%' opacity=".35">
-                {/* !!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" /> */}
-                <Text fontWeight="400">
-                  {!!tsPoint
-                    ? `Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`
-                    : 'Больше ничего нет'
-                  }
-                </Text>
-              </Flex>
-            )}
+                <Flex
+                  p={4} ref={inViewRef2}
+                  // skip={inView || showLoadMoreBtn}
+                  alignItems="center" justifyContent='center' width='100%' opacity=".35"
+                >
+                  {/* !!tsPoint ? <Spinner fontSize="1rem" /> : <BiMessageDetail fontSize="1.1rem" /> */}
+                  <Text fontWeight="400">
+                    {!!tsPoint
+                      ? `Загрузка от ${getNormalizedDateTime2(tsPoint)} и старше`
+                      : 'Больше ничего нет'
+                    }
+                  </Text>
+                </Flex>
+              )}
             {filteredMessages.map((message: TMessage & { _next?: { ts: number, isHidden: boolean } }, _i, _arr) => {
               const { user, text, ts, editTs, status, file, _next, assignedTo, assignedBy, links = [] } = message
               const handleSetEditorBuffer = () => setEditedMessage(message)
-              
+
               if (!!file) {
                 return (
                   <MemoizedFileMessage
@@ -2746,7 +2750,7 @@ export const Chat = () => {
                     isRound
                     icon={<AiFillTags size={20} />}
                     onClick={handleOpenTagsModal}
-                    // isDisabled={isChatLoading}
+                  // isDisabled={isChatLoading}
                   >
                     TAGS
                   </IconButton>
@@ -2858,17 +2862,17 @@ export const Chat = () => {
                 </IconButton>
               </div>
             ) : (
-              <Flex
-                style={{ height: '130px' }}
-                justifyContent='center'
-                alignItems='center'
-                // bgColor='gray.600'
-                className={styles['sticky-bottom-mobile']}
+                <Flex
+                  style={{ height: '130px' }}
+                  justifyContent='center'
+                  alignItems='center'
+                  // bgColor='gray.600'
+                  className={styles['sticky-bottom-mobile']}
                 // bgColor={mode.colorMode === 'dark' ? 'gray.600' : 'gray.300'}
-              >
-                <Button rightIcon={<FaTelegramPlane size={18} />} size='lg' style={{ borderRadius: 'var(--chakra-radii-full)' }} colorScheme='blue' variant='solid' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Зайти через бота</Button>
-              </Flex>
-            )
+                >
+                  <Button rightIcon={<FaTelegramPlane size={18} />} size='lg' style={{ borderRadius: 'var(--chakra-radii-full)' }} colorScheme='blue' variant='solid' onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}>Зайти через бота</Button>
+                </Flex>
+              )
           }
         </Flex>
       </div>
@@ -2876,54 +2880,54 @@ export const Chat = () => {
         sprintFeatureSnap.isFeatureEnabled && (
           <>{
             devtoolsFeatureSnap.isSprintPollUsedInMainThreadOnly ? (
-              <PollingComponent interval={5000} promise={handleCheckPOST} resValidator={(_data: any) => false} onSuccess={() => {}} onFail={console.log} />
+              <PollingComponent interval={5000} promise={handleCheckPOST} resValidator={(_data: any) => false} onSuccess={() => { }} onFail={console.log} />
             ) : (
-              <CheckRoomSprintPolling
-                interval={5000}
-                payload={{
-                  url: `${REACT_APP_API_URL}/chat/api/common-notifs/check-room-state`,
-                  method: 'POST',
-                  body: { room_id: room, tsUpdate: sprintFeatureSnap.tsUpdate },
-                }}
-                validateBeforeRequest={(payload) => !!payload.body?.room_id && !document.hidden}
-                cbOnUpdateState={({ state }: any) => {
-                  // if (isDev) console.log('- state effect: new state!')
-                  const result = state
-                  if (!!result) {
-                    switch (true) {
-                      case (result instanceof Error):
-                        sprintFeatureProxy.isPollingWorks = false
-                        break;
-                      case result.code === 'not_found': // EAPIRoomNotifsCode.NotFound:
-                        sprintFeatureProxy.isPollingWorks = true
-                        sprintFeatureProxy.isEmptyStateConfirmed = true
-                        break;
-                      default:
-                        sprintFeatureProxy.isPollingWorks = true
-                        if (!!result.state && Object.keys(result.state).length === 0) {
+                <CheckRoomSprintPolling
+                  interval={5000}
+                  payload={{
+                    url: `${REACT_APP_API_URL}/chat/api/common-notifs/check-room-state`,
+                    method: 'POST',
+                    body: { room_id: room, tsUpdate: sprintFeatureSnap.tsUpdate },
+                  }}
+                  validateBeforeRequest={(payload) => !!payload.body?.room_id && !document.hidden}
+                  cbOnUpdateState={({ state }: any) => {
+                    // if (isDev) console.log('- state effect: new state!')
+                    const result = state
+                    if (!!result) {
+                      switch (true) {
+                        case (result instanceof Error):
+                          sprintFeatureProxy.isPollingWorks = false
+                          break;
+                        case result.code === 'not_found': // EAPIRoomNotifsCode.NotFound:
+                          sprintFeatureProxy.isPollingWorks = true
                           sprintFeatureProxy.isEmptyStateConfirmed = true
-                        }
-                        break;
-                    }
-
-                    if (result.ok && result.tsUpdate !== sprintFeatureSnap.tsUpdate) {
-                      try {
-                        sprintFeatureProxy.commonNotifs = result.state
-                        if (Object.keys(result.state).length > 0) {
-                          sprintFeatureProxy.isEmptyStateConfirmed = false
-                        } else {
-                          sprintFeatureProxy.isEmptyStateConfirmed = true
-                        }
-                      } catch (err) {
-                        console.log(err)
+                          break;
+                        default:
+                          sprintFeatureProxy.isPollingWorks = true
+                          if (!!result.state && Object.keys(result.state).length === 0) {
+                            sprintFeatureProxy.isEmptyStateConfirmed = true
+                          }
+                          break;
                       }
 
-                      sprintFeatureProxy.tsUpdate = result.tsUpdate
+                      if (result.ok && result.tsUpdate !== sprintFeatureSnap.tsUpdate) {
+                        try {
+                          sprintFeatureProxy.commonNotifs = result.state
+                          if (Object.keys(result.state).length > 0) {
+                            sprintFeatureProxy.isEmptyStateConfirmed = false
+                          } else {
+                            sprintFeatureProxy.isEmptyStateConfirmed = true
+                          }
+                        } catch (err) {
+                          console.log(err)
+                        }
+
+                        sprintFeatureProxy.tsUpdate = result.tsUpdate
+                      }
                     }
-                  }
-                }}
-              />
-            )
+                  }}
+                />
+              )
           }</>
         )
       }
@@ -3040,12 +3044,12 @@ export const Chat = () => {
               renderCard={(card: TMessage & TKanbanCard, { removeCard, dragging }: any) => {
                 const descrStrings = card.description.split('\n')
                 return (
-                  <div id={`card-${card.ts}`} className={clsx('react-kanban-card', { 'react-kanban-card--dragging': dragging, 'bg--light': mode.colorMode === 'light', 'bg--dark': mode.colorMode === 'dark' } )}>
+                  <div id={`card-${card.ts}`} className={clsx('react-kanban-card', { 'react-kanban-card--dragging': dragging, 'bg--light': mode.colorMode === 'light', 'bg--dark': mode.colorMode === 'dark' })}>
                     <div
                       className='card-controls-box'
-                      // style={{
-                      //   marginBottom: 'var(--chakra-space-2)',
-                      // }}
+                    // style={{
+                    //   marginBottom: 'var(--chakra-space-2)',
+                    // }}
                     >
                       {/* <div
                         className={clsx('card-title', { ['light']: mode.colorMode === 'light', ['dark']: mode.colorMode === 'dark' })}
@@ -3054,56 +3058,56 @@ export const Chat = () => {
                       </div> */}
                       {
                         assignmentSnap.isFeatureEnabled
-                        ? (
-                          !!card?.assignedTo && !!card?.assignedBy ? (
-                            <div style={{ display: 'flex' }}>
-                              <UserAva size={21} name={card.assignedBy} fontSize={13} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} tooltipText={`Assigned by ${card.assignedBy}`} />
-                              <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
-                              <UserAva size={21} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={13} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} tooltipText={`Assigned to ${card.assignedTo[0]}`} />
-                              {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
-                                <Tooltip label={`Открепить от ${card.assignedTo[0]}`} aria-label='UNASSIGN'>
-                                  <IconButton
-                                    size='xs'
-                                    aria-label="-UNASSIGN"
-                                    colorScheme='gray'
+                          ? (
+                            !!card?.assignedTo && !!card?.assignedBy ? (
+                              <div style={{ display: 'flex' }}>
+                                <UserAva size={21} name={card.assignedBy} fontSize={13} onClick={() => { !!card.assignedBy && window.alert(`Assigned by ${card.assignedBy}`) }} tooltipText={`Assigned by ${card.assignedBy}`} />
+                                <div style={{ marginRight: '.5rem', marginLeft: '.5rem' }}>👉</div>
+                                <UserAva size={21} name={card.assignedTo[0]} mr='var(--chakra-space-2)' fontSize={13} onClick={() => { !!card.assignedTo && window.alert(`Assigned to ${card.assignedTo[0]}`) }} tooltipText={`Assigned to ${card.assignedTo[0]}`} />
+                                {!!card.assignedTo && Array.isArray(card.assignedTo) && card.assignedTo.length > 0 && card.user === name && (
+                                  <Tooltip label={`Открепить от ${card.assignedTo[0]}`} aria-label='UNASSIGN'>
+                                    <IconButton
+                                      size='xs'
+                                      aria-label="-UNASSIGN"
+                                      colorScheme='gray'
+                                      variant='outline'
+                                      isRound
+                                      icon={<IoMdClose size={15} />}
+                                      onClick={() => {
+                                        const { id, title, description, ...rest } = card
+                                        // @ts-ignore
+                                        const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`)
+                                        // @ts-ignore
+                                        if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
+                                      }}
+                                    >
+                                      UNASSIGN
+                                    </IconButton>
+                                  </Tooltip>
+                                )}
+                              </div>
+                            ) : (
+                                <Tooltip label='Назначить на пользователя' offset={[0, 10]} placement='right' hasArrow aria-label='ASSIGN'>
+                                  <Button
                                     variant='outline'
-                                    isRound
-                                    icon={<IoMdClose size={15} />}
+                                    borderRadius='full'
+                                    colorScheme='gray'
+                                    size='xs'
                                     onClick={() => {
-                                      const { id, title, description, ...rest } = card
-                                      // @ts-ignore
-                                      const isConFirmed = window.confirm(`Вы точно хотите отвязать задачу от пользователя ${card.assignedTo[0]}?`)
-                                      // @ts-ignore
-                                      if (isConFirmed) handleUnassignFromUser(rest, card.assignedTo[0])
+                                      resetEditedMessage()
+                                      setTimeout(() => {
+                                        const { id, title, description, ...rest } = card
+                                        setEditedMessage(rest)
+                                        handleSearchUserModalOpen()
+                                      }, 200)
                                     }}
-                                  >
-                                    UNASSIGN
-                                  </IconButton>
+                                    isDisabled={card.user !== name}
+                                  >Assign</Button>
                                 </Tooltip>
-                              )}
-                            </div>
+                              )
                           ) : (
-                            <Tooltip label='Назначить на пользователя' offset={[0, 10]} placement='right' hasArrow aria-label='ASSIGN'>
-                              <Button
-                                variant='outline'
-                                borderRadius='full'
-                                colorScheme='gray'
-                                size='xs'
-                                onClick={() => {
-                                  resetEditedMessage()
-                                  setTimeout(() => {
-                                    const { id, title, description, ...rest } = card
-                                    setEditedMessage(rest)
-                                    handleSearchUserModalOpen()
-                                  }, 200)
-                                }}
-                                isDisabled={card.user !== name}
-                              >Assign</Button>
-                            </Tooltip>
+                            null
                           )
-                        ) : (
-                          null
-                        )
                       }
                       <div className='card-controls-box--right'>
                         <Tooltip label="Проскроллить в чате" aria-label='SCROLL_INTO_VIEW'>
@@ -3179,7 +3183,7 @@ export const Chat = () => {
                     <Text className='card-descr'>{descrStrings.length > 1 ? `${descrStrings[0]}...` : card.description}</Text>
                     {
                       (assignmentSnap.isFeatureEnabled
-                      || sprintFeatureSnap.isFeatureEnabled) && (
+                        || sprintFeatureSnap.isFeatureEnabled) && (
                         <div style={{
                           display:
                             // (assignmentSnap.isFeatureEnabled && !!card?.assignedTo && !!card?.assignedBy)
@@ -3188,12 +3192,12 @@ export const Chat = () => {
                             // 'flex',
                             (
                               sprintFeatureSnap.isFeatureEnabled
-                              ? !!sprintFeatureSnap.commonNotifs[String(card.ts)]
-                                ? 'flex'
-                                : (card.status !== EMessageStatus.Done && card.status !== EMessageStatus.Dead)
+                                ? !!sprintFeatureSnap.commonNotifs[String(card.ts)]
                                   ? 'flex'
-                                  : 'none'
-                              : 'none'
+                                  : (card.status !== EMessageStatus.Done && card.status !== EMessageStatus.Dead)
+                                    ? 'flex'
+                                    : 'none'
+                                : 'none'
                             ),
                           flexDirection: 'row',
                           justifyContent: 'flex-start',
@@ -3202,52 +3206,52 @@ export const Chat = () => {
                         }}>
                           {
                             sprintFeatureSnap.isFeatureEnabled
-                            ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] ? (
-                              <div
-                                style={{
-                                  marginLeft: 'auto',
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  // marginTop: 'var(--chakra-space-2)',
-                                }}>
-                                <Countdown
-                                  date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
-                                  renderer={CountdownRenderer}
-                                />
-                                {card.user === name && (
-                                  <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
-                                    <IconButton
-                                      ml={2}
-                                      size='xs'
-                                      aria-label="-REMOVE_FROM_SPRINT"
-                                      colorScheme='red'
-                                      variant='outline'
-                                      isRound
-                                      icon={<IoMdClose size={15} />}
-                                      onClick={handleRemoveFromSprintKanbanCard(card)}
-                                      // isDisabled={card.user !== name}
-                                    >
-                                      REMOVE_FROM_SPRINT
-                                    </IconButton>
-                                  </Tooltip>
-                                )}
-                              </div>
-                            ) : (
-                              card.status !== EMessageStatus.Done && card.status !== EMessageStatus.Dead
-                              ? (
-                                <span
+                              ? !!sprintFeatureSnap.commonNotifs[String(card.ts)] ? (
+                                <div
                                   style={{
                                     marginLeft: 'auto',
+                                    display: 'flex',
+                                    alignItems: 'center',
                                     // marginTop: 'var(--chakra-space-2)',
-                                  }}
-                                >
-                                  <AddToSprintIconButton
-                                    handleAddToSprintKanbanCard={handleAddToSprintKanbanCard}
-                                    card={card}
+                                  }}>
+                                  <Countdown
+                                    date={sprintFeatureSnap.commonNotifs[String(card.ts)].tsTarget}
+                                    renderer={CountdownRenderer}
                                   />
-                                </span>
-                              ) : null
-                            ) : null
+                                  {card.user === name && (
+                                    <Tooltip label='Удалить из спринта' aria-label='REMOVE_FROM_SPRINT'>
+                                      <IconButton
+                                        ml={2}
+                                        size='xs'
+                                        aria-label="-REMOVE_FROM_SPRINT"
+                                        colorScheme='red'
+                                        variant='outline'
+                                        isRound
+                                        icon={<IoMdClose size={15} />}
+                                        onClick={handleRemoveFromSprintKanbanCard(card)}
+                                      // isDisabled={card.user !== name}
+                                      >
+                                        REMOVE_FROM_SPRINT
+                                      </IconButton>
+                                    </Tooltip>
+                                  )}
+                                </div>
+                              ) : (
+                                  card.status !== EMessageStatus.Done && card.status !== EMessageStatus.Dead
+                                    ? (
+                                      <span
+                                        style={{
+                                          marginLeft: 'auto',
+                                          // marginTop: 'var(--chakra-space-2)',
+                                        }}
+                                      >
+                                        <AddToSprintIconButton
+                                          handleAddToSprintKanbanCard={handleAddToSprintKanbanCard}
+                                          card={card}
+                                        />
+                                      </span>
+                                    ) : null
+                                ) : null
                           }
                         </div>
                       )

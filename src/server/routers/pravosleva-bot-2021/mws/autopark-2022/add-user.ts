@@ -1,7 +1,7 @@
 import { Request as IRequest, Response as IResponse, NextFunction as INextFunction } from 'express'
 import { EAPIUserCode } from '~/routers/chat/mws/api/types';
 import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
-import { getRandomInteger } from '~/utils/getRandomInteger';
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger';
 
 type TUserData = {
   tg: {
@@ -29,7 +29,7 @@ export const addAutoparkUser = async (req: IRequest & { autopark2022StorageFileP
   if (!!req.autopark2022StorageFilePath) {
     try {
       const { chat_id } = tg
-  
+
       const staticData: TStaticData = getStaticJSONSync<TStaticData>(req.autopark2022StorageFilePath, {})
       const ts = new Date().getTime()
       const password = getRandomInteger(1000, 9999)

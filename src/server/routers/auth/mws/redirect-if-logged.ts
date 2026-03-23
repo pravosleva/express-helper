@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 const jwt = require('jsonwebtoken')
+const { getConfigurableUrl } = require('../../../utils/string-ops/getConfigurableUrl')
 
 const { redirect } = require('../cfg')
 
-module.exports = (jwtSecret, cookieName) => (req, res, next) => {
+export const redirectIfLoggedMw = (jwtSecret, cookieName) => (req, res, next) => {
   // --- NOTE: REDIRECT LOGGED CLIENT who has permission to work with the current agent
   // 1) Проерим, есть ли кука
   if (!!req.cookies && !!req.cookies[cookieName]) {
@@ -19,7 +20,16 @@ module.exports = (jwtSecret, cookieName) => (req, res, next) => {
         try {
           req.user = jwt.verify(req.cookies[cookieName], jwtSecret)
           if (req.user.id) {
-            return res.redirect(redirect[cookieName].logged)
+            // return res.redirect(redirect[cookieName].logged)
+            return res.redirect(
+              getConfigurableUrl({
+                baseUrl: '',
+                relativePath: redirect[cookieName].logged,
+                query: {
+                  from: typeof req.query.from !== 'undefined' ? req.query.from : undefined,
+                },
+              })
+            )
           }
         } catch (err) {
           // NOTE: For example, JsonWebTokenError: invalid signature

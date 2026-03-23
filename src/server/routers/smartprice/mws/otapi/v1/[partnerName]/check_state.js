@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 
 const { SUCCESS_ANYWAY } = process.env
 

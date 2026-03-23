@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 // @ts-ignore
-import { getRandomInteger } from '../../../../../utils/getRandomInteger'
+import { getRandomInteger } from '../../../../../utils/number-ops/getRandomInteger'
 
 const { SUCCESS_ANYWAY } = process.env
 

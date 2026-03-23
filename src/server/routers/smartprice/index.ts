@@ -52,7 +52,7 @@ import courierApi from './mws/otapi/v1/[partnerName]/handover'
 import { getSubsidiesRoute } from './mws/otapi/v1/[partnerName]/get_subsidies'
 // import checkAuth from '../auth/mws/check-jwt'
 import { EAccessCode, redirect } from '../auth/cfg'
-import redirectIfUnloggedMw from '../auth/mws/redirect-if-unlogged'
+import { redirectIfUnloggedMw } from '../auth/mws/redirect-if-unlogged'
 
 import partnerApiTradeInIMEI from './mws/partner_api/tradein/imei'
 import { partnerApiTradeInPhoneCheck, rules as checkPhoneRules } from './mws/partner_api/tradein/phone/check'

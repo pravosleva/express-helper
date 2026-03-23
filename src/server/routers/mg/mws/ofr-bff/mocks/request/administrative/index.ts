@@ -1,12 +1,12 @@
 /* eslint-disable import/extensions */
 // @ts-ignore
-import { getRandomInteger } from '~/utils/getRandomInteger'
-import { getRandomString } from '~/utils/getRandomString'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
+import { getRandomString } from '~/utils/string-ops/getRandomString'
 // @ts-ignore
 // import { Counter } from '~/utils/Counter'
 // import { THelp } from '~/utils/interfaces'
 import { THelp } from '~/utils/express-validation/interfaces'
-import { mutateObject } from '~/utils/mutateObject'
+import { mutateObject } from '~/utils/object-ops/mutateObject'
 
 // const { SUCCESS_ANYWAY } = process.env
 // const counter = Counter()
@@ -258,7 +258,9 @@ export const administrativeTicket = async (req, res) => {
     }
   } catch (err) {
     return res.status(500).send({
-      ok: false,
+      // ok: false,
+      status: 'Fail',
+      requestId: '00000000-0000-0000-abcd-000000000022',
       message: err.message || 'No err.message',
     })
   }

@@ -1,12 +1,12 @@
 /* eslint-disable import/extensions */
 // @ts-ignore
-import { getRandomInteger } from '~/utils/getRandomInteger'
-import { getRandomString } from '~/utils/getRandomString'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
+import { getRandomString } from '~/utils/string-ops/getRandomString'
 // @ts-ignore
 // import { Counter } from '~/utils/Counter'
 // import { THelp } from '~/utils/interfaces'
 import { THelp } from '~/utils/express-validation/interfaces'
-import { mutateObject } from '~/utils/mutateObject'
+import { mutateObject } from '~/utils/object-ops/mutateObject'
 
 // const { SUCCESS_ANYWAY } = process.env
 // const counter = Counter()
@@ -46,7 +46,7 @@ export const generateRules: THelp = {
                   if (typeof obj[keyData.name] !== keyData.type)
                     errs.push(`Param errored: ${keyData.name}, received: "${obj[keyData.name]}" (${typeof obj[keyData.name]}); Expected: ${keyData.type}`)
                 }
-        
+
                 if (errs.length > 0) return { ok: false, message: `Problem of _oddScenario: ${errs.join('; ')}` }
                 else return { ok: true }
               }
@@ -133,7 +133,7 @@ export const generateRules: THelp = {
       //       result.ok = false
       //       result.reason = 'Incorrect value'
       //     }
-  
+
       //     return result
       //   }
       // },
@@ -152,7 +152,7 @@ export const generateRules: THelp = {
             result.ok = false
             result.reason = `Incorrect value: Received ${String(val)}; Expected values: ${possibleValues.join(', ')}`
           }
-  
+
           return result
         }
       },
@@ -170,7 +170,7 @@ export const generateRules: THelp = {
             result.ok = false
             result.reason = `Incorrect value: Received ${String(val)}; Expected: number`
           }
-  
+
           return result
         }
       },
@@ -189,7 +189,7 @@ export const generateRules: THelp = {
             result.ok = false
             result.reason = `Incorrect value: Received ${String(val)}; Expected values: ${possibleValues.join(', ')}`
           }
-  
+
           return result
         }
       },
@@ -312,7 +312,7 @@ export const generate = async (req, res) => {
           })
         }
       }
-      
+
       // NOTE: Step 1.3 Set result object by counters
       for (const key in userScenarioState) {
         switch (key) {
@@ -339,7 +339,7 @@ export const generate = async (req, res) => {
       if (!!_addData && typeof _addData === 'object' && Object.keys(_addData).length > 0) {
         mutateObject({ target: result, source: _addData })
       }
-        
+
       // NOTE: Random if necessary
       if (_randomToken) {
         mutateObject({
@@ -393,7 +393,9 @@ export const generate = async (req, res) => {
     }
   } catch (err) {
     return res.status(500).send({
-      ok: false,
+      // ok: false,
+      status: 'Fail',
+      requestId: '00000000-0000-0000-abcd-000000000000',
       message: err.message || 'No err.message',
     })
   }

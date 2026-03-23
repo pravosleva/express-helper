@@ -19,6 +19,8 @@ import { updateAutoparkProjectItem } from './mws/autopark-2022/project/update-it
 import { getDynamicManifest, rules as dynamicManifestRules } from './mws/autopark-2022/get-dynamic-manifest'
 import { checkJWT } from './mws/autopark-2022/check-jwt'
 import { withReqParamsValidationMW } from '~/utils/express-validation/withReqParamsValidationMW'
+import { redirectIfUnloggedMw } from '~/routers/auth/mws/redirect-if-unlogged'
+import { EAccessCode, redirect } from '~/routers/auth/cfg'
 
 const botApi = express()
 const bodyParser = require('body-parser')
@@ -51,7 +53,11 @@ botApi.post('/add-entry', addEntryRoute)
 botApi.get('/get-entries-map', getEntriesMapRoute)
 
 botApi.post('/autopark-2022/add-user', addAutoparkUser)
-botApi.get('/autopark-2022/get-users-map', getAutoparkUsersMap)
+botApi.get(
+  '/autopark-2022/get-users-map',
+  redirectIfUnloggedMw(redirect[EAccessCode.Homepage].jwtSecret, EAccessCode.Homepage),
+  getAutoparkUsersMap,
+)
 botApi.post('/autopark-2022/check-user', checkAutoparkUser)
 botApi.post('/autopark-2022/check-password', checkAutoparkUserPassword)
 botApi.post(

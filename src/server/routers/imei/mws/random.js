@@ -2,7 +2,7 @@
 import Imei from 'node-imei'
 // import { getRandomInteger } from '../../../utils/getRandomInteger'
 // import { getRandomInteger } from '@getRandomInteger'
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 
 const IMEI = new Imei()
 

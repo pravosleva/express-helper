@@ -11,6 +11,7 @@ import { getTimeDiff } from '~/utils/getTimeDiff'
 // const isDev = process.env.NODE_ENV === 'development'
 const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 
+const CHAT_BASE_URL = 'https://gosuslugi.pravosleva.pro'
 // NOTE: Chat link example: http://gosuslugi.pravosleva.pro/express-helper/chat/#/chat?room=audit.lidiya005
 
 const daysRangeHalf = 7
@@ -60,7 +61,7 @@ export const cfg: TCfg = [
       return isCorrect
     },
     targetRooms: ['magaz', 'mg.pravosleva'],
-    targetHashtags: ['#access', '#domain', '#hosting', '#ssl'],
+    targetHashtags: ['#access', '#domain', '#hosting', '#ssl', '#краснаяАкула', '#release'],
     ignoredHashTags: ['#кот'], // NOTE: Separate parrot below (special for cat)
     req: {
       url: `${tgBotApiUrl}/kanban-2021/reminder/send`,
@@ -111,7 +112,7 @@ export const cfg: TCfg = [
                 )
                 break
             }
-            specialMsgs.push(`[🏷️ ${room}](http://gosuslugi.pravosleva.pro/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
+            specialMsgs.push(`[🏷️ ${room}](${CHAT_BASE_URL}/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
@@ -167,7 +168,7 @@ export const cfg: TCfg = [
 
             // -- NOTE: Custom msg
             const specialMsgs: string[] = []
-            specialMsgs.push(`[🔖 ${room}](http://gosuslugi.pravosleva.pro/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
+            specialMsgs.push(`[🔖 ${room}](${CHAT_BASE_URL}/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
@@ -222,7 +223,7 @@ export const cfg: TCfg = [
 
             // -- NOTE: Custom msg
             const specialMsgs: string[] = []
-            specialMsgs.push(`[🧾 ${room}](http://gosuslugi.pravosleva.pro/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
+            specialMsgs.push(`[🧾 ${room}](${CHAT_BASE_URL}/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 
@@ -323,7 +324,7 @@ export const cfg: TCfg = [
                 )
                 break
             }
-            specialMsgs.push(`[📑 ${room}](http://gosuslugi.pravosleva.pro/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
+            specialMsgs.push(`[📑 ${room}](${CHAT_BASE_URL}/express-helper/chat/#/chat?room=${room}&open-tasklist=1)`)
             if (specialMsgs.length > 0) msgList.push(specialMsgs.join(' / '))
             // --
 

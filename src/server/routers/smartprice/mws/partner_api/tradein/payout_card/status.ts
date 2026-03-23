@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable camelcase */
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 import { Counter } from '~/utils/Counter'
 import { THelp } from '~/utils/interfaces'
 
@@ -67,7 +67,7 @@ const _help: THelp = {
     },
     status: {
       type: 'string',
-      descr: ['pending - продолжать ждать и опрашивать','added - закрыть iframe и запомнить, что карта привязана', 'canceled - закрыть iframe и запомнить, что карта не привязана'].join('\n'),
+      descr: ['pending - продолжать ждать и опрашивать', 'added - закрыть iframe и запомнить, что карта привязана', 'canceled - закрыть iframe и запомнить, что карта не привязана'].join('\n'),
       required: false,
     }
   },

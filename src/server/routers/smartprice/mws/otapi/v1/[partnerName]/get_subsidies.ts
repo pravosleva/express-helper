@@ -1,4 +1,4 @@
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 
 const toClient = [
   {

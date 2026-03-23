@@ -8,7 +8,7 @@ import { swagger } from './mws/swagger'
 import { getQRByLoggedReqId } from './mws/get-qr-by-logged-req-id'
 
 import { EAccessCode, redirect } from '../auth/cfg'
-import redirectIfUnloggedMw from '../auth/mws/redirect-if-unlogged'
+import { redirectIfUnloggedMw } from '../auth/mws/redirect-if-unlogged'
 
 const qrApi: IExpress = express()
 

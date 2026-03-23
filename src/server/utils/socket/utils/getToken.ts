@@ -1,4 +1,4 @@
-import { getRandomString } from '~/utils/getRandomString'
+import { getRandomString } from '~/utils/string-ops/getRandomString'
 import slugify from 'slugify'
 import { usersMapInstance as usersMap } from '../state'
 

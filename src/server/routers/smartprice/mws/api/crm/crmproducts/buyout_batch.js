@@ -1,5 +1,5 @@
 /* eslint-disable prefer-destructuring */
-const { getRandomInteger } = require('../../../../../../utils/getRandomInteger')
+const { getRandomInteger } = require('../../../../../../utils/number-ops/getRandomInteger')
 const delay = require('../../../../../../utils/delay')
 
 // const { SUCCESS_ANYWAY } = process.env

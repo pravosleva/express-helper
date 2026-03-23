@@ -1,6 +1,7 @@
 // import { THelp } from '~/utils/interfaces'
 import { THelp } from '~/utils/express-validation/interfaces'
-import { mutateObject } from '~/utils/mutateObject'
+import { mutateObject } from '~/utils/object-ops/mutateObject'
+import { getIsExistsAndNumber } from '~/utils/string-ops/getIsExistsAndNumber'
 
 // -- NOTE: Required fields
 const requiredFields: (
@@ -41,7 +42,7 @@ export const profileChildAddingRules: THelp = {
       middleName: {
         type: 'string',
         descr: 'middleName',
-        required: true,
+        required: false,
         validate: (val) => {
           const result: {
             ok: boolean;
@@ -123,8 +124,8 @@ export const profileChildAddingRules: THelp = {
       //   required: false,
       // },
       _addData: {
-        type: 'object',
-        descr: 'Data for response mutation (for success case only)',
+        type: 'string',
+        descr: 'Data for response mutation (anyway)',
         required: false,
         validate: (val) => {
           const result: {
@@ -149,30 +150,31 @@ export const profileChildAddingRules: THelp = {
                   case Object.keys(json).length === 0:
                     throw new Error('Incorrect format (Empty object)')
                   default: {
+                    // NOTE: Nothing
 
-                    for (let i = 0, max = requiredFields.length; i < max; i++) {
-                      const reqiuredFieldKey = requiredFields[i]
-                      switch (true) {
-                        case typeof json[reqiuredFieldKey] === 'undefined':
-                          throw new Error(`Missed required prop: "${reqiuredFieldKey}"`)
-                        case reqiuredFieldKey === 'birthday': {
-                          if (!json[reqiuredFieldKey]) {
-                            throw new Error(`Incorrent empty prop: "${reqiuredFieldKey}" (${typeof json[reqiuredFieldKey]})`)
-                          }
-                          const chunks = json[reqiuredFieldKey].split('-')
-                          if (
-                            chunks.length !== 3
-                            || chunks[0].length !== 4
-                          ) {
-                            throw new Error(`Incorrent prop value: "${reqiuredFieldKey}" (received: ${json[reqiuredFieldKey]}, expected example: 2020-11-18)`)
-                          }
-                          // NOTE: Or nothing...
-                          break
-                        }
-                        default:
-                          break
-                      }
-                    }
+                    // for (let i = 0, max = requiredFields.length; i < max; i++) {
+                    //   const reqiuredFieldKey = requiredFields[i]
+                    //   switch (true) {
+                    //     case typeof json[reqiuredFieldKey] === 'undefined':
+                    //       throw new Error(`Missed required prop: "${reqiuredFieldKey}"`)
+                    //     case reqiuredFieldKey === 'birthday': {
+                    //       if (!json[reqiuredFieldKey]) {
+                    //         throw new Error(`Incorrent empty prop: "${reqiuredFieldKey}" (${typeof json[reqiuredFieldKey]})`)
+                    //       }
+                    //       const chunks = json[reqiuredFieldKey].split('-')
+                    //       if (
+                    //         chunks.length !== 3
+                    //         || chunks[0].length !== 4
+                    //       ) {
+                    //         throw new Error(`Incorrent prop value: "${reqiuredFieldKey}" (received: ${json[reqiuredFieldKey]}, expected example: 2020-11-18)`)
+                    //       }
+                    //       // NOTE: Or nothing...
+                    //       break
+                    //     }
+                    //     default:
+                    //       break
+                    //   }
+                    // }
                     // NOTE: Thats all, thanx.
                     break
                   }
@@ -247,26 +249,34 @@ export const profileChildAdding = (req, res) => {
       if (!!json && typeof json === 'object' && Object.keys(json).length > 0)
         mutateObject({ target: targetResponse, source: json })
       // --
-
-      switch (true) {
-        case !!_responseDelay: {
-          const delay = Number(_responseDelay)
-          return setTimeout(() => {
-            res.status(200).send(targetResponse)
-          }, delay)
-        }
-        default:
-          // v1
-          return res.status(200).send(targetResponse)
-      }
     }
 
-    res.status(200).send(targetResponse)
+    switch (true) {
+      case getIsExistsAndNumber(_responseDelay): {
+        const delay = Number(_responseDelay)
+        return setTimeout(() => {
+          res.status(200).send(targetResponse)
+        }, delay)
+      }
+      default:
+        // v1
+        return res.status(200).send(targetResponse)
+    }
   } catch (err) {
-    res.status(200).send({
+    let addData = undefined
+    if (!!req.query._addData) {
+      try {
+        const json = JSON.parse(decodeURIComponent(req.query._addData))
+        if (typeof json === 'object' && !Array.isArray(json) && Object.keys(json).length > 0) addData = json
+      } catch (err) {
+        console.log('- err')
+      }
+    }
+    res.status(500).send({
       status: 'Fail',
-      requestId: '00000000-0000-0000-flee-000000000002',
+      requestId: '00000000-0000-0000-flee-000000000020',
       message: err.message || 'No err message',
+      ...(addData || {}),
     })
   }
 }

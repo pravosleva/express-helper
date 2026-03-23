@@ -16,7 +16,7 @@ const tgBotApiUrl = process.env.PRAVOSLEVA_BOT_2021_NOTIFY_BASE_URL || ''
 // NOTE: Link example
 // https://pravosleva.pro/express-helper/chat/#/chat?room=audit.lidiya005
 
-const EXPRESS_HELPER_BASE_URL = 'http://gosuslugi.pravosleva.pro/express-helper'
+const EXPRESS_HELPER_BASE_URL = 'https://gosuslugi.pravosleva.pro/express-helper'
 
 export const cfg: TCfg = [
   // {
@@ -771,7 +771,7 @@ export const cfg: TCfg = [
     validateBeforeRequest: ({ msgs }) => msgs.length > 0,
     targetRooms: ['magaz', 'mg.pravosleva'],
     // NOTE: For example: ['#sprintWeeklyReminder', '#краснаяАкула'],
-    targetHashtags: ['#access', '#domain', '#hosting', '#ssl', '#кот', '#release'],
+    targetHashtags: ['#access', '#domain', '#hosting', '#ssl', '#кот', '#release', '#planner'],
     // ignoredHashTags: [],
     targetStatuses: [EMessageStatus.Info, EMessageStatus.Warn, EMessageStatus.Danger],
     req: {
@@ -790,17 +790,21 @@ export const cfg: TCfg = [
 
         eventCode: 'magaz_sprint_reminder_weekly',
         about: ({
-          msgs,
+          // msgs, targetStatuses,
           targetHashtags,
-          targetStatuses,
           targetRooms,
         }) => {
-          return `Пятничная напоминалка ${msgs.length > 0 ? `из ${plural(targetRooms.length, 'чат-комнаты', 'чат-комнат')}\n${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          // return `Пятничная напоминалка ${msgs.length > 0 ? `из ${plural(targetRooms.length, 'чат-комнаты', 'чат-комнат')}\n${targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`).join('\n')}\nесть ${plural(msgs.length, '%d задача', '%d задачи', '%d задач')} со ${plural(targetStatuses.length, 'статусом', 'статусами')}:\n*${[...targetStatuses.map(getStatusTranslated)].join('\n')}*` : `Impossible case? ${[...targetStatuses].join(', ')}`}${targetHashtags.length > 0 ? `\n*${targetHashtags.join(' ')}*` : ''}`
+          return [
+            `Напоминалка из ${plural(targetRooms.length, 'чат-комнаты', 'чат-комнат')}:`,
+            ...targetRooms.map((room) => `💬 [${room}](${EXPRESS_HELPER_BASE_URL}/chat/#/chat?room=${room})`),
+            '',
+            `*${targetHashtags.join(' ')}*`,
+          ].join('\n')
         },
         targetMD: ({
           msgs,
-          targetHashtags,
-          targetStatuses,
+          // targetHashtags, targetStatuses,
           targetRooms,
         }) => {
           const sortedMsgs = designer.sortObjectsByTopAndBottomTemplates({

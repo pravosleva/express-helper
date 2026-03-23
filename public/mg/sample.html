@@ -12,7 +12,7 @@
 
 <body>
   <h1>Page 1</h1>
-  <p>Ничего личного.</p>
+  <p>Ничего лишнего</p>
   <br />
   <div class='stack2'>
     <div class='stack1'>
@@ -44,7 +44,7 @@
           event6 [ERR] { topic: 'oldlkdms_frame_location_update' }
         </button> -->
       </div>
-    
+
       <!-- <div class='grid-gap1-cols3'>
         <button id="sendPostmessageToParentWindow9">
           event9 [OK] ...location_update url: [this]#/hello-from-iframe
@@ -91,10 +91,32 @@
           log body.paddings
         </button>
         <button id="sendPostmessageToParentWindow16">
-          log body.borders
+          <b>Send LPU event</b>
+        </button>
+      </div>
+
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow17">
+          EXTERNAL_REDIRECT_TO_MAIN_PAGE
+        </button>
+        <button id="sendPostmessageToParentWindow18">
+          EXTERNAL_REDIRECT_TO_CONSULTATIONS_PAGE
+        </button>
+        <button id="sendPostmessageToParentWindow19">
+          SCROLL_PAGE_UP_ACTION
+        </button>
+      </div>
+      <div class='grid-gap1-cols3'>
+        <button id="sendPostmessageToParentWindow20">
+          EXTERNAL_OPEN_CHAT_ACTION
+        </button>
+        <button id="sendPostmessageToParentWindow21">
+          INTERNAL_SCROLL_TO_VIEW_ACTION (small content, no height in data)
         </button>
       </div>
     </div>
+
+
 
     <div class='grid-gap1-cols3'>
       <div class='stack1'>
@@ -106,7 +128,7 @@
         <pre id="outputMessageFromParentWindow">{}</pre>
       </div>
     </div>
-    
+
     <div class='stack1'>
       <b>Initial query params</b>
       <pre id="initialQueryParams">{}</pre>
@@ -114,6 +136,15 @@
     <div class='stack1'>
       <b>Errs</b>
       <pre id="error">No errs</pre>
+    </div>
+
+    <div class='stack1'>
+      <button id="sendPostmessageToParentWindow22" style="height:500px;">
+        INTERNAL_SCROLL_TO_VIEW_ACTION v2 (content 500px)
+      </button>
+      <button id="sendPostmessageToParentWindow23" style="height:calc(1000px);">
+        INTERNAL_SCROLL_TO_VIEW_ACTION v3 (content 1000px)
+      </button>
     </div>
 
   </div>
@@ -138,7 +169,15 @@
       LOG_BODY_OFFSET_HEIGHT: 'sendPostmessageToParentWindow13',
       LOG_BODY_MARGINS: 'sendPostmessageToParentWindow14',
       LOG_BODY_PADDINGS: 'sendPostmessageToParentWindow15',
-      LOG_BODY_BORDERS: 'sendPostmessageToParentWindow16',
+      LPU_TEST: 'sendPostmessageToParentWindow16',
+
+      EXTERNAL_REDIRECT_TO_MAIN_PAGE: 'sendPostmessageToParentWindow17',
+      EXTERNAL_REDIRECT_TO_CONSULTATIONS_PAGE: 'sendPostmessageToParentWindow18',
+      SCROLL_PAGE_UP_ACTION: 'sendPostmessageToParentWindow19',
+      EXTERNAL_OPEN_CHAT_ACTION: 'sendPostmessageToParentWindow20',
+      INTERNAL_SCROLL_TO_VIEW_ACTION: 'sendPostmessageToParentWindow21',
+      INTERNAL_SCROLL_TO_VIEW_ACTION_V2: 'sendPostmessageToParentWindow22',
+      INTERNAL_SCROLL_TO_VIEW_ACTION_V3: 'sendPostmessageToParentWindow23',
     }
     const getBtnElm = (id) => document.querySelector(`#${id}`)
     const buttons = Object.values(EBtn)
@@ -171,7 +210,7 @@
     const initialUrlSearchParams = new URLSearchParams(window.location.search);
     const params = Object.fromEntries(initialUrlSearchParams.entries());
     if (Object.keys(params).length > 0) {
-      initialQueryParamsElm.innerHTML= JSON.stringify(params || {}, null, 2)
+      initialQueryParamsElm.innerHTML = JSON.stringify(params || {}, null, 2)
     }
     // --
 
@@ -339,16 +378,85 @@
           }, "*")
         },
       },
-      [EBtn.LOG_BODY_BORDERS]: {
+      [EBtn.LPU_TEST]: {
         cb: function () {
           parentWindow.postMessage({
-            topic: `${logPrefix} iframe-info:LOG_BODY_BORDERS`,
+            topic: 'oldlkdms_frame_lpu_open_online_appointment',
+            _topic: 'iframe-info:LPU_TEST',
             payload: {
-              top: wrapper.style.borderTop,
-              right: wrapper.style.borderRight,
-              bottom: wrapper.style.borderBottom,
-              left: wrapper.style.borderLeft,
+              // top: wrapper.style.borderTop,
+              // right: wrapper.style.borderRight,
+              // bottom: wrapper.style.borderBottom,
+              // left: wrapper.style.borderLeft,
+              dmsLpuID: 'x',
             }
+          }, "*")
+        },
+      },
+      [EBtn.EXTERNAL_REDIRECT_TO_MAIN_PAGE]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: 'redirect_to_main_page',
+            _topic: 'iframe-info:EXTERNAL_REDIRECT_TO_MAIN_PAGE',
+          }, "*")
+        },
+      },
+      [EBtn.EXTERNAL_REDIRECT_TO_CONSULTATIONS_PAGE]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: 'redirect_to_online_consultations_page',
+            _topic: 'iframe-info:EXTERNAL_REDIRECT_TO_CONSULTATIONS_PAGE',
+          }, "*")
+        },
+      },
+      [EBtn.SCROLL_PAGE_UP_ACTION]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: 'scroll_page_up_action',
+            _topic: 'iframe-info:SCROLL_PAGE_UP_ACTION',
+          }, "*")
+        },
+      },
+      [EBtn.EXTERNAL_OPEN_CHAT_ACTION]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: 'open_chat_action',
+            _topic: 'iframe-info:EXTERNAL_OPEN_CHAT_ACTION',
+          }, "*")
+        },
+      },
+      [EBtn.INTERNAL_SCROLL_TO_VIEW_ACTION]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: 'scroll_page_to_view_action',
+            payload: {
+              boundingClientRectTop: this.getBoundingClientRect().top,
+            },
+            _topic: 'iframe-info:INTERNAL_SCROLL_TO_VIEW_ACTION',
+          }, "*")
+        },
+      },
+      [EBtn.INTERNAL_SCROLL_TO_VIEW_ACTION_V2]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: 'scroll_page_to_view_action',
+            payload: {
+              boundingClientRectTop: this.getBoundingClientRect().top,
+              height: this.getBoundingClientRect().height,
+            },
+            _topic: 'iframe-info:INTERNAL_SCROLL_TO_VIEW_ACTION',
+          }, "*")
+        },
+      },
+      [EBtn.INTERNAL_SCROLL_TO_VIEW_ACTION_V3]: {
+        cb: function () {
+          parentWindow.postMessage({
+            topic: 'scroll_page_to_view_action',
+            payload: {
+              boundingClientRectTop: this.getBoundingClientRect().top,
+              height: this.getBoundingClientRect().height,
+            },
+            _topic: 'iframe-info:INTERNAL_SCROLL_TO_VIEW_ACTION',
           }, "*")
         },
       },
@@ -413,7 +521,7 @@
         }, '*')
       }
       // --
-      
+
       // -- NOTE: Subscribe to events from parent
       const eventsCounters = {}
       window.addEventListener('message', function (e) {
@@ -478,11 +586,11 @@
 
       // NOTE: External height sync (exp 1)
       try {
-        ;(function() {
+        ; (function () {
           const wrapper = document.getElementsByTagName('body')[0];
           let _heightState = 0;
-          
-          window.postWindowSize = function() {
+
+          window.postWindowSize = function () {
             // const isUpdated = wrapper.scrollHeight !== wrapper.clientHeight;
             const isUpdated = _heightState !== wrapper.offsetHeight;
             if (isUpdated) {

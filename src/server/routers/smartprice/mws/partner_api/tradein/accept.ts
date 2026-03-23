@@ -1,5 +1,5 @@
 // import { getRandomInteger } from '~/utils/getRandomInteger'
-import { mutateObject } from '~/utils/mutateObject'
+import { mutateObject } from '~/utils/object-ops/mutateObject'
 
 // const { SUCCESS_ANYWAY } = process.env
 

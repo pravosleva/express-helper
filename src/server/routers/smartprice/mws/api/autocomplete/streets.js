@@ -1,4 +1,4 @@
-const { getRandomInteger } = require('../../../../../utils/getRandomInteger')
+const { getRandomInteger } = require('../../../../../utils/number-ops/getRandomInteger')
 // const delay = require('utils/delay')
 
 module.exports = async (req, res) => {

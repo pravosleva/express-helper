@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useLayoutEffect, useContext, useState, useEffect, useCallback, useRef, useMemo } from 'react'
+import React, { useLayoutEffect, useContext, useState, useCallback, useRef, useMemo } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { MainContext } from '~/context/mainContext'
 import { SocketContext } from '~/context/socketContext'
-import { Breakpoint, Flex, FormControl, FormLabel, Heading, HStack, IconButton, Input, PinInput, PinInputField } from '@chakra-ui/react'
+import { Flex, FormControl, FormLabel, Heading, HStack, IconButton, Input, PinInput, PinInputField } from '@chakra-ui/react'
 import { RiArrowRightLine } from 'react-icons/ri'
 import {
   Modal,
@@ -163,7 +163,7 @@ export const Login = () => {
 
         switch (jwtResponse.code) {
           case EAPIUserCode.NeedLogout:
-          // case EAPIUserCode.Unlogged:
+            // case EAPIUserCode.Unlogged:
             // TODO: handleOpenLogoutConfirmation()
             const isLogoutConfirmed = window.confirm('Need Logout! Wanna be logout?')
 
@@ -311,7 +311,7 @@ export const Login = () => {
     // if (!!pas) {
     setIsLoading2(true)
     const data: any = await jwtHttpClient.login({ username: name, password: pas || '', room }).then((res) => res).catch((err) => err).finally(() => { setIsLoading2(false) })
-    
+
     // console.log(data)
     const isLogged = !!data?.ok && data.code === EAPIUserCode.Logged
 
@@ -346,7 +346,7 @@ export const Login = () => {
             // --
             const rooms: any = {}
             const nowTs = Date.now()
-  
+
             if (!!roomlistLS) {
               roomlistLS.forEach(({ name, ts }) => {
                 if (!!name) {
@@ -456,18 +456,18 @@ export const Login = () => {
         <ModalContent rounded='2xl'>
           <ModalHeader>
             <Flex justifyContent='center'>
-            <FormControl mt={4} maxWidth={200}>
-              <FormLabel>Login</FormLabel>
-              <Input
-                type='login'
-                placeholder="Login"
-                variant='filled'
-                // isDisabled
-                readOnly
-                value={name}
-                rounded='3xl'
-              />
-            </FormControl>
+              <FormControl mt={4} maxWidth={200}>
+                <FormLabel>Login</FormLabel>
+                <Input
+                  type='login'
+                  placeholder="Login"
+                  variant='filled'
+                  // isDisabled
+                  readOnly
+                  value={name}
+                  rounded='3xl'
+                />
+              </FormControl>
             </Flex>
             <Box mt={5} style={{ display: 'flex', justifyContent: 'center' }}>
               <HStack m='0 auto'>
@@ -588,7 +588,7 @@ export const Login = () => {
               <Input
                 autoFocus
                 variant="filled"
-                
+
                 type="text"
                 placeholder="User Name"
                 value={name}

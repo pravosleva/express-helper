@@ -1,8 +1,8 @@
 // import { THelp } from '~/utils/interfaces'
 import { THelp } from '~/utils/express-validation/interfaces'
-import { getRandomInteger } from '~/utils/getRandomInteger'
-import { getRandomString } from '~/utils/getRandomString'
-import { mutateObject } from '~/utils/mutateObject'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
+import { getRandomString } from '~/utils/string-ops/getRandomString'
+import { mutateObject } from '~/utils/object-ops/mutateObject'
 import { Counter } from '~/utils/Counter'
 import { IUploadedFile } from '../../../utils/types'
 
@@ -151,8 +151,8 @@ export const uploadTemporaryFile = (req, res) => {
 
     res.status(200).send(targetResponse)
   } catch (err) {
-    res.status(500).send({
-      status: 'Success',
+    res.status(200).send({
+      status: 'Fail',
       requestId: `[${c}]84434-${getRandomString(4)}-${getRandomString(4)}-${getRandomString(4)}-91dd5abcec8e`,
 
       _message: err.message || 'No err message',

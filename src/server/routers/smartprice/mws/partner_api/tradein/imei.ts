@@ -2,7 +2,7 @@
 // import { getRandomInteger } from '~/utils/getRandomInteger'
 import { THelp } from '~/utils/interfaces'
 import kzSuccess2022 from './fake-data/kz-2023.0-dev-exp.imei.json'
-import { mutateObject } from '~/utils/mutateObject'
+import { mutateObject } from '~/utils/object-ops/mutateObject'
 
 // const { SUCCESS_ANYWAY } = process.env
 

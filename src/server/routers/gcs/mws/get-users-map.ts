@@ -17,8 +17,8 @@ export const getUsersMap = async (req: IRequest & { gcsUsersMapInstance: UsersMa
   }
 
   if (!id || typeof id !== 'string' || id !== 'loool') {
-    const _staticData =  {}
-    for (let i = 0, max = 1000; i < max; i++) {
+    const _staticData = {}
+    for (let i = 0, max = 10; i < max; i++) {
       _staticData[`${Math.random()}`] = fakeItem
     }
     return res.status(200).json({ success: true, _staticData })

@@ -4,10 +4,10 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalBody,
+  // ModalHeader,
+  // ModalBody,
   ModalCloseButton,
-  ModalFooter,
+  // ModalFooter,
   useMediaQuery,
 } from '@chakra-ui/react'
 import { md } from '~/common/chakra/theme'

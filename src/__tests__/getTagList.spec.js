@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 /* eslint-disable jest/no-disabled-tests */
 import { getTagList } from '../server/utils/string-ops/getTagList'
-import { getRandomString } from '../server/utils/getRandomString'
+import { getRandomString } from '../server/utils/string-ops/getRandomString'
 
 // const { performance } = require('perf_hooks')
 

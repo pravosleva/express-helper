@@ -5,6 +5,11 @@ import { getStaticJSONSync } from '~/utils/fs-tools'
 type TItem = {
   name: string;
   description: string;
+  mileage: {
+    last?: number;
+    delta?: number;
+  },
+  id: number;
 }
 type TProject = {
   name: string;
@@ -22,6 +27,18 @@ type TUserData = {
 type TStaticData = {
   [key: string]: TUserData
 }
+
+// const getIsProjectValid = (v: TProject): boolean => {
+//   let res = true
+//   switch (true) {
+//     case !v.name:
+//       res = false
+//       break
+//     default:
+//       break
+//   }
+//   return res
+// }
 
 export const getAutoparkProject = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
   const { chat_id, project_id } = req.body
@@ -47,7 +64,15 @@ export const getAutoparkProject = async (req: IRequest & { autopark2022StorageFi
         return res.status(200).json({ ok: false, code: EAPIUserCode.NotFound })
       }
 
-      return res.status(200).json({ ok: true, projectData: staticData[chat_id]?.projects[project_id] || null, code: EAPIUserCode.UserExists })
+      // -- NOTE: Sort by ts update
+      const __staticData = staticData[chat_id]?.projects[project_id] || null;
+      if (!!__staticData) {
+        const sortedProjectDataItems = __staticData.items.sort((e1, e2) => e2.mileage.last - e1.mileage.last)
+        __staticData.items = sortedProjectDataItems
+      }
+      // --
+
+      return res.status(200).json({ ok: true, projectData: __staticData, code: EAPIUserCode.UserExists })
     } catch (err) {
       console.log(err)
       return res.status(500).send({

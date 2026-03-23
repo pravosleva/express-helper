@@ -111,10 +111,10 @@ const constants: {
 }
 
 const getColorByDays = (days: number) => days <= 14
-    ? days <= 3
+  ? days <= 3
     ? 'red'
     : 'yellow'
-    : 'gray'
+  : 'gray'
 
 export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoopSwitch, onOpenDatePicker, onPriceModalOpen, onResetExpenses, char }: TProps) => {
   const {
@@ -142,7 +142,7 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
     if (showFire) return (
       <Tag colorScheme='green' rounded='2xl' style={{ fontFamily: 'system-ui' }}>Ready</Tag>
     )
-  
+
     return (
       <Tag rounded='2xl' colorScheme={getColorByDays(days)} style={{ fontFamily: 'system-ui' }}>{!!days ? `${days}d ` : ''}{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</Tag>
     )
@@ -180,12 +180,12 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
   const MemoizedMenu = useMemo(() => {
     // NOTE: !(all fields is ok)
     const isFirstLoopRunning = !(!!data.checkTs && !!data.uncheckTs)
-    
+
     return (
       <>
         <Menu
-          // strategy='fixed'
-          placement='right-end'
+          strategy='fixed'
+          placement='right'
         >
           <MenuButton
             as={IconButton}
@@ -198,11 +198,12 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
             Main
           </MenuButton>
           <MenuList
-            zIndex={1001}
+            style={{ zIndex: 1003 }}
+            zIndex={1003}
             _dark={{ bg: "gray.600" }}
-            // _hover={{ bg: "gray.500", color: 'white' }}
-            // _expanded={{ bg: "gray.800" }}
-            // _focus={{ boxShadow: "outline" }}
+          // _hover={{ bg: "gray.500", color: 'white' }}
+          // _expanded={{ bg: "gray.800" }}
+          // _focus={{ boxShadow: "outline" }}
           >
             <MenuOptionGroup defaultValue="asc" title='Looper'>
               <div
@@ -228,10 +229,10 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
                   <>
                     <MenuItem
                       minH="40px"
-                      onClick={() => onEdit({ ...data, resetLooper: true})}
-                      // isDisabled={}
-                      // bgColor='green.300'
-                      // color='#fff'
+                      onClick={() => onEdit({ ...data, resetLooper: true })}
+                    // isDisabled={}
+                    // bgColor='green.300'
+                    // color='#fff'
                     >
                       <Flex display="flex" alignItems="center">
                         <Text fontSize="md" fontWeight='bold' mr={4}><TiArrowLoop size={18} /></Text>
@@ -313,19 +314,19 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
       </>
     )
   }, [isLooped, onDelete, JSON.stringify(data), onResetExpenses, onPriceModalOpen, onEdit, onLoopSwitch, isLooped, fixedDiff])
-  
+
   return (
     <div
       className={styles[`themed-task-item_${mode.colorMode}`]}
     >
-      
+
       <div
         style={{
           display: 'flex',
           alignItems: 'flex-start',
         }}
       >
-        <Box p={5} pl={6} as='div'>
+        <Box p={5} pl={6} as='div' style={{ zIndex: 1003 }}>
           {MemoizedMenu}
         </Box>
         <div
@@ -346,14 +347,14 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
               width: '100%',
             }}
           >
-            <Box p={5} pl={0} pr={0} pb={5} fontSize='15px' as='div'>
+            <Box p={5} pl={0} pr={0} pb={5} fontSize='16px' as='div'>
               <div>
                 <Editable
                   border='2px dashed rgba(211,211,211,0.3)'
-                  style={{ width: 'auto' }}
+                  style={{ width: 'auto', zIndex: 0 }}
                   pl={2}
                   pr={2}
-                  fontWeight='bold' 
+                  fontWeight='bold'
                   defaultValue={title}
                   onChange={(nextVal: string) => {
                     titleEditedRef.current = nextVal
@@ -362,8 +363,8 @@ export const TaskItem = memo(({ data, onCompleteToggle, onDelete, onEdit, onLoop
                     onEdit({ ...data, title: titleEditedRef.current })
                   }}
                 >
-                  <EditablePreview />
-                  <EditableInput />
+                  <EditablePreview style={{ zIndex: 0 }} />
+                  <EditableInput style={{ zIndex: 0 }} />
                 </Editable>
               </div>
             </Box>

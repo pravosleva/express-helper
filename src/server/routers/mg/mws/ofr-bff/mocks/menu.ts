@@ -1,6 +1,6 @@
 // import { THelp } from '~/utils/interfaces'
 import { THelp } from '~/utils/express-validation/interfaces'
-import { mutateObject } from '~/utils/mutateObject'
+import { mutateObject } from '~/utils/object-ops/mutateObject'
 
 export const menuRules: THelp = {
   params: {
@@ -134,6 +134,8 @@ export const getMenu = (req, res) => {
     res.status(200).send(targetResponse)
   } catch (err) {
     res.status(500).send({
+      status: 'Fail',
+      requestId: '00000000-0000-0000-abcd-000000000002',
       message: err.message || 'No err message',
     })
   }

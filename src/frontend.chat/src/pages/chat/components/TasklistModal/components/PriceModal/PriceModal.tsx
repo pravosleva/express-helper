@@ -26,7 +26,7 @@ export const PriceModal = ({ isOpened, onClose, onSubmit, initialPrice }: TProps
   const handleInputChange = useCallback((e: any) => {
     try {
       setPrice(Number(e.target.value))
-    } catch (_err) {} 
+    } catch (_err) { }
   }, [setPrice])
   // const handleCancel = () => {
   //   setPrice(0)
@@ -46,20 +46,20 @@ export const PriceModal = ({ isOpened, onClose, onSubmit, initialPrice }: TProps
         <ModalHeader>Price</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
-          <NumberInput defaultValue={price || 0}>
-            <NumberInputField value={price || 0} ref={inputRef} onChange={handleInputChange} />
+          <NumberInput defaultValue={price || ''}>
+            <NumberInputField value={price || ''} ref={inputRef} onChange={handleInputChange} />
           </NumberInput>
           {/* <Input ref={inputRef} placeholder="Search" size='md' value={text} name='searchText' onChange={onChange} /> */}
         </ModalBody>
         <ModalFooter
-        className='modal-footer-btns-wrapper'
-      >
-        {/* !!price && <Button onClick={handleCancel} leftIcon={<IoMdClose />} variant='ghost' color='red.500'>Cancel</Button> */}
-        {!!price && <Button onClick={() => {
-          onSubmit(price)
-        }} colorScheme="blue">Submit</Button>}
-        <Button onClick={onClose} variant='ghost'>Close</Button>
-      </ModalFooter>
+          className='modal-footer-btns-wrapper'
+        >
+          {/* !!price && <Button onClick={handleCancel} leftIcon={<IoMdClose />} variant='ghost' color='red.500'>Cancel</Button> */}
+          {!!price && <Button onClick={() => {
+            onSubmit(price)
+          }} colorScheme="blue">Submit</Button>}
+          <Button onClick={onClose} variant='ghost'>Close</Button>
+        </ModalFooter>
       </ModalContent>
     </Modal>
   )

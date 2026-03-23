@@ -1,4 +1,4 @@
-const { getRandomInteger } = require('../../../../../../utils/getRandomInteger')
+const { getRandomInteger } = require('../../../../../../utils/number-ops/getRandomInteger')
 
 const { SUCCESS_ANYWAY } = process.env
 
@@ -16,7 +16,7 @@ const toClient = [
 
 /* Body sample:
 {
-	"code": "1233"
+  "code": "1233"
 }
 */
 

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Formik, Form as FormikForm, Field } from 'formik';
 import {
   Button,
@@ -72,15 +72,15 @@ export const MainPage = () => {
       },
       data: { ...data, hash: query?.hash },
     })
-    .then((axiosRes) => {
-      if (!apiResponseValidator(axiosRes)) {
-        throw new Error('Data is incorrect');
-      }
-      return { isOk: true, data: axiosRes.data }
-    })
-    .catch((err) => {
-      return { isOk: false, message: err.message || 'No err.message' }
-    });
+      .then((axiosRes) => {
+        if (!apiResponseValidator(axiosRes)) {
+          throw new Error('Data is incorrect');
+        }
+        return { isOk: true, data: axiosRes.data }
+      })
+      .catch((err) => {
+        return { isOk: false, message: err.message || 'No err.message' }
+      });
 
     if (res.isOk) return Promise.resolve(res.data)
 
@@ -95,6 +95,14 @@ export const MainPage = () => {
   const [QR, setQR] = useState<string | null>(null)
   useUrgentMsgFromCookies({ cookieName: 'urgent_auth_service_msg' })
 
+  // const [fromQuery, setFromQuery] = useState('')
+  // useEffect(() => {
+  //   const from = new URLSearchParams(window.location.search).get('from')
+  //   if (!!from) {
+  //     setFromQuery(from)
+  //   }
+  // }, [])
+
   return (
     <Container
       style={{
@@ -107,9 +115,9 @@ export const MainPage = () => {
         alignItems: 'flex-start',
       }}
       maxWidth="sm"
-      // className={clsx(classes.minimalHeightSetting, {
-      //   [baseClasses.noPaddingMobile]: isTheNotePage,
-      // })}
+    // className={clsx(classes.minimalHeightSetting, {
+    //   [baseClasses.noPaddingMobile]: isTheNotePage,
+    // })}
     >
       <Formik
         initialValues={{
@@ -126,24 +134,23 @@ export const MainPage = () => {
           resetErrorMsg();
           resetTargetUiName();
           setSubmitting(true);
-          
+
           // TODO: GET /get-access-code-by-hash
           // RES: { accessCode: string } -> code -> handleSubmit(values, code)
 
           handleSubmit(values)
             .then((data: IResSuccess) => {
+              const from = new URLSearchParams(window.location.search).get('from')
+
               // addSuccessNotif({ message: 'Ваша заявка отправлена' });
               setSubmitting(false);
-              setSuccessMsg(data.message)
-              // @ts-ignore
-              setTargetUiName(data.uiName)
+              setSuccessMsg(!!from ? 'Your target' : data.message)
+
+              setTargetUiName(!!from ? decodeURIComponent(from) : data.uiName)
               setQR(data.qr)
 
-              // @ts-ignore
-              if (!!data.redirect) {
-                // @ts-ignore
-                setRedirectTo(data.redirect)
-                // @ts-ignore
+              if (!!from || !!data.redirect) {
+                setRedirectTo(!!from ? decodeURIComponent(from) : data.redirect)
                 // window.location.replace(data.redirect)
               }
               resetForm()
@@ -245,25 +252,25 @@ export const MainPage = () => {
               {!!errorMsg &&
                 (
                   <Grid item xs={12}>
-                      <Alert
-                        severity="error"
-                        variant="outlined"
-                        // action={
-                        //   <IconButton
-                        //     aria-label="close"
-                        //     color="inherit"
-                        //     size="small"
-                        //     onClick={() => {
-                        //       setIsIMEIAlertOpen(false);
-                        //     }}
-                        //   >
-                        //     <CloseIcon fontSize="inherit" />
-                        //   </IconButton>
-                        // }
-                      >
-                        {errorMsg}
-                      </Alert>
-                    </Grid>
+                    <Alert
+                      severity="error"
+                      variant="outlined"
+                    // action={
+                    //   <IconButton
+                    //     aria-label="close"
+                    //     color="inherit"
+                    //     size="small"
+                    //     onClick={() => {
+                    //       setIsIMEIAlertOpen(false);
+                    //     }}
+                    //   >
+                    //     <CloseIcon fontSize="inherit" />
+                    //   </IconButton>
+                    // }
+                    >
+                      {errorMsg}
+                    </Alert>
+                  </Grid>
                 )
               }
               {!!successMsg &&
@@ -272,18 +279,18 @@ export const MainPage = () => {
                     <Alert
                       severity="success"
                       variant="outlined"
-                      // action={
-                      //   <IconButton
-                      //     aria-label="close"
-                      //     color="inherit"
-                      //     size="small"
-                      //     onClick={() => {
-                      //       setIsIMEIAlertOpen(false);
-                      //     }}
-                      //   >
-                      //     <CloseIcon fontSize="inherit" />
-                      //   </IconButton>
-                      // }
+                    // action={
+                    //   <IconButton
+                    //     aria-label="close"
+                    //     color="inherit"
+                    //     size="small"
+                    //     onClick={() => {
+                    //       setIsIMEIAlertOpen(false);
+                    //     }}
+                    //   >
+                    //     <CloseIcon fontSize="inherit" />
+                    //   </IconButton>
+                    // }
                     >
                       {successMsg}. {!!redirectTo && <a href={redirectTo}>{targetUiName}</a>}
                     </Alert>

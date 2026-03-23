@@ -72,7 +72,7 @@ export const InfoBox = memo(({
                       direction='column'
                       // justifyContent='space-between'
                       key={e.ts}
-                      spacing={0}
+                      // spacing={0}
                       style={{ width: '100%', cursor: 'crosshair' }}
                       onMouseEnter={onClickToCheckItOut(e.ts)}
                       onMouseLeave={onMouseLeave(e.ts)}
@@ -80,7 +80,7 @@ export const InfoBox = memo(({
                       <Flex
                         direction='row'
                         justifyContent='space-between'
-                        spacing={2}
+                      // spacing={2}
                       >
                         <UserAva tooltipText={`Created by ${e.user}`} size={19} name={e.user} mr='.5rem' fontSize={11} tooltipPlacement='auto-end' />
                         <div

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import cron from 'node-cron'
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 
 const p1 = () => axios
   .post('http://selection4test.ru:1338/graphql', {
@@ -76,6 +76,6 @@ const randomMinutes = getRandomInteger(30, 59)
 
 console.log(`CRON: Requester interval ${randomMinutes} 15 * * *`)
 
-cron.schedule(`${randomMinutes} 15 * * *` /* Every day at 15:(30-59) */, function() {
+cron.schedule(`${randomMinutes} 15 * * *` /* Every day at 15:(30-59) */, function () {
   baseFn()
 })

@@ -1,4 +1,4 @@
-const { getRandomInteger } = require('../../../../utils/getRandomInteger')
+const { getRandomInteger } = require('../../../../utils/number-ops/getRandomInteger')
 
 module.exports = async (_req, res) => {
   res.status(200).send(String(getRandomInteger(1000, 10000)))

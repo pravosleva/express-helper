@@ -3,7 +3,7 @@ import {
   Response as IResponse,
   NextFunction as INextFunction,
 } from 'express'
-import { mutateObject } from '~/utils/mutateObject'
+import { mutateObject } from '~/utils/object-ops/mutateObject'
 
 export const withAddDataToResponseMW = (req: IRequest & { _modifiedResult: any }, _res: IResponse, next: INextFunction) => {
   const { _add_data } = req.body
@@ -15,6 +15,6 @@ export const withAddDataToResponseMW = (req: IRequest & { _modifiedResult: any }
     && Object.keys(_add_data).length > 0
   )
     mutateObject({ target: req._modifiedResult, source: _add_data })
-  
+
   next()
 }

@@ -1,7 +1,10 @@
 import { Request as IRequest, Response as IResponse, NextFunction as INextFunction } from 'express'
 import { EAPIUserCode } from '~/routers/chat/mws/api/types'
-import { writeStaticJSONAsync, getStaticJSONSync } from '~/utils/fs-tools'
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import {
+  // writeStaticJSONAsync,
+  getStaticJSONSync,
+} from '~/utils/fs-tools'
+// import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 import jwt from 'jsonwebtoken'
 import { getMsByDays } from '~/utils/auth/getMsByDays'
 
@@ -54,13 +57,11 @@ export const checkAutoparkUserPassword = async (req: IRequest & { autopark2022St
       }
 
       // -- NOTE: Update password
-      const ts = new Date().getTime()
-      const newPassword = getRandomInteger(1000, 9999)
-
-      const modifiedData = { ...staticData[String(chat_id)], password: newPassword, ts }
-
-      staticData[String(chat_id)] = modifiedData
-      writeStaticJSONAsync(req.autopark2022StorageFilePath, staticData)
+      // const ts = new Date().getTime()
+      // const newPassword = getRandomInteger(1000, 9999)
+      // const modifiedData = { ...staticData[String(chat_id)], password: newPassword, ts }
+      // staticData[String(chat_id)] = modifiedData
+      // writeStaticJSONAsync(req.autopark2022StorageFilePath, staticData)
       // --
 
       return res.status(200).json(response)

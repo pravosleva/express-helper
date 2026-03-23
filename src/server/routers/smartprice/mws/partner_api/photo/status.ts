@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 // @ts-ignore
-import { getRandomInteger } from '~/utils/getRandomInteger'
+import { getRandomInteger } from '~/utils/number-ops/getRandomInteger'
 // @ts-ignore
 // import { Counter } from '~/utils/Counter'
 import { THelp } from '~/utils/interfaces'
@@ -195,7 +195,7 @@ export default async (req, res) => {
           })
         }
       }
-      
+
       // NOTE: Step 1.3 Set result object by counters
       for (const key in userScenarioState) {
         switch (key) {
@@ -227,7 +227,7 @@ export default async (req, res) => {
             if (userScenarioState[key] % _odd_scenario[key] === 0) result.started = true
             else result.started = false
             break
-          case 'success': 
+          case 'success':
             if (userScenarioState[key] % _odd_scenario[key] === 0) result.ok = true
             else result.ok = false
             break

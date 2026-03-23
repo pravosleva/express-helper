@@ -5,7 +5,7 @@ import express from 'express'
 import path from 'path'
 import { goTarget } from './mws/go-target'
 import loginRoute from './mws/login'
-import redirectIfLoggedMw from './mws/redirect-if-logged'
+import { redirectIfLoggedMw } from './mws/redirect-if-logged'
 import { accessCode, redirect } from './cfg'
 import getAccessCodeByHash from './mws/get-access-code-by-hash'
 

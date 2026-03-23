@@ -1,5 +1,5 @@
 /* eslint-disable jest/no-disabled-tests */
-import { mutateObject } from '../../../server/utils/mutateObject.ts'
+import { mutateObject } from '../../../server/utils/object-ops/mutateObject.ts'
 
 describe('mutateObject', () => {
   test('lvl 1', () => {

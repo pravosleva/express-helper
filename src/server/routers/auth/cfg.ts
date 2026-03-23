@@ -60,7 +60,7 @@ const redirect = {
   [EAccessCode.Homepage]: {
     jwtSecret: 'HOMEPAGE_SECRET_JWT_SAMPLE_ACCESS',
     uiName: 'Homepage',
-    accessPassword: 'home',
+    accessPassword: 'temporal',
     hash: md5Hash(EAccessCode.Homepage),
     logged: `${EXTERNAL_ROUTING}/`,
     unlogged: `${EXTERNAL_ROUTING}/auth/signin/`,

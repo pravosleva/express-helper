@@ -5,18 +5,20 @@ import {
 import { ICustomRequest } from '../../../utils/interfaces'
 import jwt from 'jsonwebtoken'
 import { hashedRedirectMap } from '../cfg'
-import buildUrl from 'build-url'
+// import buildUrl from 'build-url'
+import { getConfigurableUrl } from '~/utils'
 
 // const getMsByDays = (days: number): number => 1000 * 60 * 60 * 24 * days
 // const getMsByHours = (hours: number): number => 1000 * 60 * 60 * hours
 const getMsByMinutes = (minutes: number): number => 1000 * 60 * minutes
+const EXTERNAL_ROUTING = process.env.EXTERNAL_ROUTING || ''
 
 export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICustomRequest, res: IResponse, next: any) => {
   if (!req.query.logged_req_id || typeof req.query.logged_req_id !== 'string')
     return res
       .status(401)
       .json({ message: 'Нехрен сюда лезть без правильных параметров', code: `typeof req.query.logged_req_id is ${typeof req.query.logged_req_id}` })
-  
+
   const { hash } = req.query
   if (!hash) return res
     .status(401)
@@ -28,7 +30,7 @@ export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICusto
 
   try {
     const loggedObj = req.loggedMap.state.get(loggedReqId)
-    
+
     if (!hashedRedirectMap.has(hash))
       throw new Error('Многое поменялось пока Вы спали: !hashedRedirectMap.has(hash); Скорее всего, поменялся jwt secret')
 
@@ -47,9 +49,19 @@ export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICusto
     if (!loggedObj) {
       res.clearCookie(targetCode)
       res.cookie('urgent_auth_service_msg', 'Нет такой сессии для аутентификации на доп устройствах: !loggedObj; Возможно, Вы исчерпали количество дополнительных устройств для аутентификации', { maxAge, httpOnly: false })
-      res.redirect(buildUrl(targetCfgItem.unlogged, {
-        queryParams: { hash },
-      }))
+      // res.redirect(buildUrl(targetCfgItem.unlogged, {
+      //   queryParams: { hash },
+      // }))
+      res.redirect(
+        getConfigurableUrl({
+          baseUrl: '',
+          relativePath: targetCfgItem.unlogged,
+          query: {
+            hash,
+            from: encodeURIComponent(`${EXTERNAL_ROUTING}${req.originalUrl}`),
+          },
+        })
+      )
     }
 
     const { success_url } = loggedObj
@@ -62,11 +74,21 @@ export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICusto
       // return res.status(500).json({ ok: false, mesage: 'TODO' })
       // V2:
       res.cookie('urgent_auth_service_msg', 'Нет такой сессии для аутентификации на доп устройствах: !hasLoggedReqIdInState; Возможно, Вы исчерпали количество дополнительных устройств для аутентификации', { maxAge, httpOnly: false })
-      res.redirect(buildUrl(targetCfgItem.unlogged, {
-        queryParams: {
-          hash: targetCfgItem.hash
-        },
-      }))
+      // res.redirect(buildUrl(targetCfgItem.unlogged, {
+      //   queryParams: {
+      //     hash: targetCfgItem.hash
+      //   },
+      // }))
+      res.redirect(
+        getConfigurableUrl({
+          baseUrl: '',
+          relativePath: targetCfgItem.unlogged,
+          query: {
+            hash: targetCfgItem.hash,
+            from: encodeURIComponent(`${EXTERNAL_ROUTING}${req.originalUrl}`),
+          },
+        })
+      )
     }
 
     // --- NOTE: Set cookie before redirect
@@ -94,11 +116,21 @@ export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICusto
 
         // V3:
         res.clearCookie(targetCode)
-        res.redirect(buildUrl(targetCfgItem.unlogged, {
-          queryParams: {
-            hash: targetCfgItem.hash
-          },
-        }))
+        // res.redirect(buildUrl(targetCfgItem.unlogged, {
+        //   queryParams: {
+        //     hash: targetCfgItem.hash
+        //   },
+        // }))
+        res.redirect(
+          getConfigurableUrl({
+            baseUrl: '',
+            relativePath: targetCfgItem.unlogged,
+            query: {
+              hash: targetCfgItem.hash,
+              from: encodeURIComponent(`${EXTERNAL_ROUTING}${req.originalUrl}`),
+            },
+          })
+        )
 
         // V4:
         // NOTE: Если страница требует авторизации, пользователь все равно будет переброшен на страницу авторизации
