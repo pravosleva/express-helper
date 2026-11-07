@@ -33,7 +33,7 @@ export const checkJWT = async (req: IRequest, res: IResponse, next: INextFunctio
   } catch (err) {
     return res.status(500).send({
       ok: false,
-      message: err.message || 'No err.message',
+      message: (err as Error)?.message || 'No err.message',
       _originalBody: { params: req.body },
     })
   }

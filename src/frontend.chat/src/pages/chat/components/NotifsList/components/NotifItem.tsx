@@ -43,7 +43,10 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
   const { userInfoProxy, name, isAdmin } = useMainContext()
   const userInfoSnap = useSnapshot(userInfoProxy)
   // const sprintFeatureSnap = useSnapshot(sprintFeatureProxy)
-  const isLogged = useMemo<boolean>(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
+  const isLogged = useMemo<boolean>(
+    () => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser || userInfoSnap.regData?.registryLevel === ERegistryLevel.Logged,
+    [userInfoSnap.regData?.registryLevel]
+  )
   // const isFirstRender = useRef<boolean>(true)
   // useEffect(() => {
   //   if (isFirstRender.current) console.log(`GET ${ts}`)
@@ -59,7 +62,7 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
   const toast = useToast()
   const isMyMessage = useMemo(() => original?.user === name, [name, original?.user])
   const targetLabel = useMemo(() => getNormalizedDateShortYear(tsTarget), [tsTarget])
-  
+
   // <Grid templateColumns='auto 50px' gap={2}>
   return (
     <Box>
@@ -172,13 +175,13 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
         style={{
           // border: '1px solid red',
           // borderImage: `linear-gradient(to bottom, var(--chakra-colors-gray-200), rgba(0, 0, 0, 0)) 1 100%`,
-          
+
           borderLeft: '4px solid var(--chakra-colors-gray-200)',
           // borderTop: '1px solid var(--chakra-colors-gray-200)', // `1px ${isClosable ? isOpened ? 'solid' : 'dashed' : 'solid'} var(--chakra-colors-gray-200)`,
           borderBottom: '1px solid var(--chakra-colors-gray-200)',
           // border: '1px solid var(--chakra-colors-gray-200)',
           // borderLeft: '5px solid var(--chakra-colors-gray-200)',
-          
+
           // paddingTop: 'var(--chakra-space-1)',
           paddingBottom: 'var(--chakra-space-2)',
           paddingLeft: 'var(--chakra-space-3)',
@@ -215,41 +218,41 @@ export const NotifItem = ({ onRemove, ts, text, tsTarget, inProgress, onComplete
           )
         }}
         className='notif-box'
-        // mb={3}
+      // mb={3}
       >
         {
           !isClosable
-          ? (
-          <>
-            <b>{text}</b>
-            {/* <pre style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap' }}>{JSON.stringify(original, null, 2)}</pre> */}
-          </>
-        ) : (
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div>{isOpened ? <b>{text}</b> : <b>{firstString}</b>}</div>
-              {/* <pre style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap' }}>{JSON.stringify(original, null, 2)}</pre> */}
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button
-                  mt={1}
-                  mb={0}
-                  size='xs'
-                  // isFullWidth
-                  isLoading={inProgress}
-                  onClick={toggle}
-                  colorScheme='gray'
-                  // variant='link'
-                  variant='ghost'
-                  rounded='2xl'
-                  rightIcon={isOpened ? <FiChevronUp /> : <FiChevronDown />}
-                >{isOpened ? 'Close' : 'Open'}</Button>
+            ? (
+              <>
+                <b>{text}</b>
+                {/* <pre style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap' }}>{JSON.stringify(original, null, 2)}</pre> */}
+              </>
+            ) : (
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                <div>{isOpened ? <b>{text}</b> : <b>{firstString}</b>}</div>
+                {/* <pre style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap' }}>{JSON.stringify(original, null, 2)}</pre> */}
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <Button
+                    mt={1}
+                    mb={0}
+                    size='xs'
+                    // isFullWidth
+                    isLoading={inProgress}
+                    onClick={toggle}
+                    colorScheme='gray'
+                    // variant='link'
+                    variant='ghost'
+                    rounded='2xl'
+                    rightIcon={isOpened ? <FiChevronUp /> : <FiChevronDown />}
+                  >{isOpened ? 'Close' : 'Open'}</Button>
+                </div>
               </div>
-            </div>
-          )
+            )
         }
       </Box>
       {/*

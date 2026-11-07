@@ -80,19 +80,19 @@ export const AccordionSettings = memo(({
   const devtoolsFeatureSnap = useSnapshot(devtoolsFeatureProxy)
   const cpuFeatureSnap = useSnapshot(cpuFeatureProxy)
   // --
-  const [navbarMenuSettingsLS, setNavbarMenuSettingsLS] = useLocalStorage<{ [key: string]: number}>('chat.navbar-menu.default-index-tabs', {})
+  const [navbarMenuSettingsLS, setNavbarMenuSettingsLS] = useLocalStorage<{ [key: string]: number }>('chat.navbar-menu.default-index-tabs', {})
   const updateDefaultTabForTheRoom = useCallback((tabIndex: number) => {
     switch (true) {
       case tabIndex !== -1:
       default:
-        const newState: {[key: string]: number} = {}
+        const newState: { [key: string]: number } = {}
         for (const _room in navbarMenuSettingsLS) {
           if (room !== _room) {
             newState[_room] = navbarMenuSettingsLS[_room]
           } else {
             newState[_room] = tabIndex
           }
-          
+
         }
         if (!newState[room]) newState[room] = tabIndex
         setNavbarMenuSettingsLS(newState)
@@ -113,12 +113,12 @@ export const AccordionSettings = memo(({
     const newItem = { name: userName }
     let newState = !!assignmentSettingsLS ? { ...assignmentSettingsLS } : {}
     const ts = Date.now()
-    
+
     // -- NOTE: #migration
     // @ts-ignore
-    if(!newState[room]) newState = { ...newState, [room]: {} }
+    if (!newState[room]) newState = { ...newState, [room]: {} }
     // --
-  
+
     newState[room][newItem.name] = { name: userName, ts }
 
     setAssignmentSettingsLS(newState)
@@ -131,13 +131,13 @@ export const AccordionSettings = memo(({
 
     if (assignmentExecutorsFilters.includes(name)) onRemoveAssignedToFilters(name)
 
-    let newState: {[key: string]: {[key: string]: { name: string, ts: number }}} = {}
+    let newState: { [key: string]: { [key: string]: { name: string, ts: number } } } = {}
 
     for (const _room in assignmentSettingsLS) {
       if (_room === room) {
         for (const key in assignmentSettingsLS[room]) {
           if (key !== name) {
-            if (!newState?.[room]) newState = { ...newState, [room]: {}}
+            if (!newState?.[room]) newState = { ...newState, [room]: {} }
             newState[room][key] = assignmentSettingsLS[room][key]
           }
         }
@@ -157,7 +157,7 @@ export const AccordionSettings = memo(({
     }
   }, [assignmentExecutorsFilters])
   const countersMap = useMemo(() => {
-    const res: {[key: string]: { total: number }} = {}
+    const res: { [key: string]: { total: number } } = {}
 
     for (const _room in assignmentSettingsLS) {
       if (_room === room) {
@@ -224,7 +224,7 @@ export const AccordionSettings = memo(({
     const result = await axios.get(`${REACT_APP_API_URL}/chat/api/get-cpu-state`)
       .then((res) => res.data)
       .catch((err) => err)
-    
+
     updateCPUState(result)
   }
 
@@ -255,7 +255,9 @@ export const AccordionSettings = memo(({
         className={clsx('no-last-border-bottom', 'no-first-border-top')}
       >
         {
-          registryLevel === ERegistryLevel.TGUser && isAssignmentFeatureEnabled && (
+          isAssignmentFeatureEnabled
+          // && registryLevel === ERegistryLevel.TGUser
+          && (
             <AccordionItem>
               <>
                 <StickyAccordionButton>
@@ -273,8 +275,8 @@ export const AccordionSettings = memo(({
               <AccordionPanel pb={4} pt={4} pl={0} pr={0}>
                 <Stack className='responsive-block-0404'>
                   <Flex alignItems="center">
-                    <Button size='sm' rounded='2xl' variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={15}/>}>Find user</Button>
-                    {hasEnabledFilters && <Button colorScheme='blue'size='sm' rounded='2xl' variant='ghost' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
+                    <Button size='sm' rounded='2xl' variant='outline' onClick={toggleSearchModal} leftIcon={<CgSearch size={15} />}>Find user</Button>
+                    {hasEnabledFilters && <Button colorScheme='blue' size='sm' rounded='2xl' variant='ghost' ml={2} onClick={onResetFilters} leftIcon={<IoMdClose size={17} />}>Clear ({assignmentExecutorsFilters.length})</Button>}
                   </Flex>
                   {/*
                   <Grid templateColumns='1fr 1fr 1fr 50px' gap={2}>
@@ -338,7 +340,9 @@ export const AccordionSettings = memo(({
           )
         }
         {
-          sprintFeatureSnap.isFeatureEnabled && registryLevel === ERegistryLevel.TGUser && (
+          sprintFeatureSnap.isFeatureEnabled
+          // && registryLevel === ERegistryLevel.TGUser
+          && (
             <AccordionItem>
               <>
                 <StickyAccordionButton>
@@ -351,8 +355,8 @@ export const AccordionSettings = memo(({
                         (sprintFeatureSnap.hasCompleted || hasDetectedCompletedOnUpdate) ? (
                           <Box ml={2} h={2} w={2} borderRadius="100px" bg='red.300'></Box>
                         ) : (
-                          hasAnythingInSprint && <Box ml={2} h={2} w={2} borderRadius="100px" bg='gray.300'></Box>
-                        )}
+                            hasAnythingInSprint && <Box ml={2} h={2} w={2} borderRadius="100px" bg='gray.300'></Box>
+                          )}
                     </Flex>
                   </Box>
                   {!sprintFeatureSnap.isPollingWorks ? <Spinner mr={1} size='xs' /> : <AccordionIcon />}
@@ -366,7 +370,7 @@ export const AccordionSettings = memo(({
                     onRestore={onRestore}
                   />
                 </Box>
-                
+
               </AccordionPanel>
             </AccordionItem>
           )
@@ -418,8 +422,8 @@ export const AccordionSettings = memo(({
                                 {devtoolsFeatureSnap.isSprintPollUsedInMainThreadOnly ? (
                                   <Box mt={4}>Поллинг работает в основном потоке</Box>
                                 ) : (
-                                  <Box mt={4}>Поллинг работает в отдельном потоке (Web Worker)</Box>
-                                )}
+                                    <Box mt={4}>Поллинг работает в отдельном потоке (Web Worker)</Box>
+                                  )}
                               </>
                             )
                           }}
@@ -441,10 +445,10 @@ export const AccordionSettings = memo(({
                       <ClientInfo />
                     </Box>
                   ) : (
-                    <Box className='responsive-block-0202'>
-                      <Text style={{ textAlign: 'center' }}><em>Client: Deprecated feature not supported</em></Text>
-                    </Box>
-                  )}
+                      <Box className='responsive-block-0202'>
+                        <Text style={{ textAlign: 'center' }}><em>Client: Deprecated feature not supported</em></Text>
+                      </Box>
+                    )}
                   {
                     devtoolsFeatureSnap.isSprintPollUsedInMainThreadOnly ? (
                       <CheckRoomSprintPolling
@@ -459,8 +463,8 @@ export const AccordionSettings = memo(({
                         }}
                       />
                     ) : (
-                      <PollingComponent interval={5000} promise={handleCheckCPU} resValidator={(_data: any) => false} onSuccess={() => {}} onFail={console.log} />
-                    )
+                        <PollingComponent interval={5000} promise={handleCheckCPU} resValidator={(_data: any) => false} onSuccess={() => { }} onFail={console.log} />
+                      )
                   }
                 </AccordionPanel>
               </AccordionItem>

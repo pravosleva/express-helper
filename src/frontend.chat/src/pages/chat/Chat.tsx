@@ -2361,7 +2361,7 @@ export const Chat = () => {
                             >
                               <Text fontSize="md" fontWeight='bold'>Socket.io admin panel</Text>
                             </MenuItem>
-                            {
+                            {/*
                               userInfoSnap.regData?.registryLevel !== ERegistryLevel.TGUser && (
                                 <MenuItem
                                   minH="40px"
@@ -2371,7 +2371,14 @@ export const Chat = () => {
                                   <Text fontSize="md" fontWeight='bold'>Set my password</Text>
                                 </MenuItem>
                               )
-                            }
+                            */}
+                            <MenuItem
+                              minH="40px"
+                              key="set-passwd-btn"
+                              onClick={handleSetPasswordModalOpen}
+                            >
+                              <Text fontSize="md" fontWeight='bold'>Set my password</Text>
+                            </MenuItem>
 
                             <MenuItem
                               minH="40px"

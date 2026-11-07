@@ -10,8 +10,12 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@getRandomInteger": ["./utils/getRandomInteger"]
+      "~/*": [
+        "./*"
+      ],
+      "@getRandomInteger": [
+        "./utils/getRandomInteger"
+      ]
     },
     "sourceMap": false,
     "esModuleInterop": true,

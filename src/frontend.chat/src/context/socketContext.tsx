@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, createContext, useState, useContext, useRef, useMemo, useCallback } from 'react'
 import io, { Socket } from 'socket.io-client'
-import { useToast } from "@chakra-ui/react"
+// import { useToast } from "@chakra-ui/react"
 import { debounce } from 'lodash'
 
 const REACT_APP_WS_API_URL = process.env.REACT_APP_WS_API_URL || '/'
@@ -28,10 +28,10 @@ export const SocketContext = createContext<ISocketContext>({
   socket: null,
   roomData: [],
   isLogged: false,
-  setIsLogged: () => {},
+  setIsLogged: () => { },
   isConnected: false,
-  setIsConnected: () => {},
-  resetRoomData: () => {}
+  setIsConnected: () => { },
+  resetRoomData: () => { }
 })
 
 export const SocketProvider =
@@ -51,27 +51,27 @@ export const SocketProvider =
     const isConnectedRef = useRef<boolean>(false)
     const socketIdRef = useRef<string | null>(null)
 
-    const toast = useToast()
-    useLayoutEffect(() => {
-      // console.log(`EFF: isConnected= ${isConnected}`)
-      if (isConnected) toast({
-        position: 'top',
-        title: 'Connected...',
-        // description: notif?.description,
-        status: 'success',
-        duration: 3000,
-        variant: 'solid',
-      })
-      else toast({
-        position: 'top',
-        title: 'Connection lost...',
-        // description: notif?.description,
-        status: 'error',
-        duration: 3000,
-        isClosable: true,
-        variant: 'solid',
-      })
-    }, [isConnected])
+    // const toast = useToast()
+    // useLayoutEffect(() => {
+    //   // console.log(`EFF: isConnected= ${isConnected}`)
+    //   if (isConnected) toast({
+    //     position: 'top',
+    //     title: 'Connected...',
+    //     // description: notif?.description,
+    //     status: 'success',
+    //     duration: 3000,
+    //     variant: 'solid',
+    //   })
+    //   else toast({
+    //     position: 'top',
+    //     title: 'Connection lost...',
+    //     // description: notif?.description,
+    //     status: 'error',
+    //     duration: 3000,
+    //     isClosable: true,
+    //     variant: 'solid',
+    //   })
+    // }, [isConnected])
 
     const disconnListener = useCallback(() => {
       setIsConnected(false)
@@ -98,7 +98,7 @@ export const SocketProvider =
     }, 0), [])
 
     useLayoutEffect(() => {
-      console.log('EFF: mount')
+      // console.log('EFF: mount')
       onSubscribe()
 
       return () => {

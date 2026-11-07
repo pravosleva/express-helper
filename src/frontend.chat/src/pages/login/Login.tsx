@@ -28,7 +28,7 @@ import slugify from 'slugify'
 import pkg from '../../../package.json'
 // import { useCookies } from 'react-cookie'
 // import axios from 'axios'
-// import { FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight } from 'react-icons/fi'
 import { openExternalLink } from '~/utils/openExternalLink'
 // const handleOpenExternalLink = useCallback(openExternalLink, [])
 import debounce from 'lodash.debounce'
@@ -327,7 +327,13 @@ export const Login = () => {
       setIsLoading2(true)
       socket.emit(
         'login.password',
-        { /* password: pas || myPassword.password, */ isLogged, token: String(tokenLS), name, room: slugifiedRoom },
+        {
+          // password: pas || myPassword.password,
+          isLogged,
+          token: String(tokenLS),
+          name,
+          room: slugifiedRoom,
+        },
         (err?: string, isAdmin?: boolean, token?: string) => {
           if (!!err) {
             // console.log('- this case')
@@ -414,7 +420,7 @@ export const Login = () => {
   // ---
 
   // const isSubmitDisabled = useMemo(() => !(!!name && myPassword.password.length === 4), [name, myPassword.password])
-  const handleOpenExternalLink = useCallback(openExternalLink, [])
+  // const handleOpenExternalLink = useCallback(openExternalLink, [])
 
   // useEffect(() => {
   //   console.log('- EFFECT', lastRoomLS, renderCount)
@@ -466,6 +472,8 @@ export const Login = () => {
                   readOnly
                   value={name}
                   rounded='3xl'
+                  letterSpacing='0.12em'
+                  fontWeight='bold'
                 />
               </FormControl>
             </Flex>
@@ -481,6 +489,8 @@ export const Login = () => {
                       handleTryLoginWidthPassword(value)
                     }
                   }}
+                  // @ts-ignore
+                  autoComplete='off'
                 >
                   <PinInputField rounded='3xl' autoComplete='off' />
                   <PinInputField rounded='3xl' autoComplete='off' />
@@ -515,7 +525,7 @@ export const Login = () => {
           <ModalFooter style={{ display: 'flex', justifyContent: 'space-between' }}>
             {/* <Grid templateColumns='2fr 2fr 1fr' gap={2}></Grid> */}
 
-            <Button
+            {/* <Button
               mr={2}
               size='sm'
               variant='link'
@@ -527,12 +537,11 @@ export const Login = () => {
               variant='link'
               // onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=invite-chat_${room}`)}
               onClick={handleOpenExternalLink(`${REACT_APP_PRAVOSLEVA_BOT_BASE_URL}?start=chat`)}
-            >Забыли пароль?</Button>
-            {/*
-            <Button size='xs' colorScheme="blue" onClick={() => handleTryLoginWidthPassword()} isLoading={isLoading2} isDisabled={isSubmitDisabled}>
+            >Забыли пароль?</Button> */}
+
+            {/* <Button size='xs' colorScheme="blue" onClick={() => handleTryLoginWidthPassword()} isLoading={isLoading2} isDisabled={isSubmitDisabled}>
               <FiArrowRight size={18} />
-            </Button>
-            */}
+            </Button> */}
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -575,20 +584,25 @@ export const Login = () => {
           >
             {REACT_APP_CHAT_NAME}
           </Heading>
-          <Flex className="form" gap="1rem" flexDirection={{ base: 'column', md: 'column' }} mb={4}>
+          <Flex
+            className="form"
+            gap={4}
+            flexDirection={{ base: 'column', md: 'column' }}
+            mb={4}
+          // style={{ border: '1px solid red' }}
+          >
             <Box
               // mr={{ base: '4', md: '4' }}
-              mb={{ base: '4', md: '4' }}
+              // mb={{ base: '4', md: '4' }}
               style={{
                 // border: '1px solid red',
                 width: '100%'
               }}
             >
-              <Text mb={1}>Username</Text>
+              <Text mb={1} style={{ opacity: 0.7 }}>Username</Text>
               <Input
                 autoFocus
                 variant="filled"
-
                 type="text"
                 placeholder="User Name"
                 value={name}
@@ -596,6 +610,8 @@ export const Login = () => {
                   setName(e.target.value)
                 }}
                 rounded='3xl'
+                fontWeight='bold'
+                letterSpacing='0.12em'
               />
             </Box>
             {/*
@@ -650,7 +666,7 @@ export const Login = () => {
           }
           {/* <Flex mt={1} justifyContent='center'>Все еще доступен режим Гостя под свободным ником</Flex> */}
           {!!REACT_APP_BUILD_DATE && (
-            <Flex mt={1} justifyContent='center'>v{pkg.version} Last build {REACT_APP_BUILD_DATE.split(' ')[0]}</Flex>
+            <Flex mt={2} justifyContent='center'>v{pkg.version} Last build {REACT_APP_BUILD_DATE.split(' ')[0]}</Flex>
           )}
         </Flex>
       </div>

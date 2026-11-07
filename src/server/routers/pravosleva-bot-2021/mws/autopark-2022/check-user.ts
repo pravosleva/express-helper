@@ -82,7 +82,7 @@ export const checkAutoparkUser = async (req: IRequest & { autopark2022StorageFil
       console.log(err)
       return res.status(500).send({
         ok: false,
-        message: err.message || 'No err.message',
+        message: (err as Error)?.message || 'No err.message',
         _originalParams: { params: req.params },
         code: EAPIUserCode.ServerError,
       })

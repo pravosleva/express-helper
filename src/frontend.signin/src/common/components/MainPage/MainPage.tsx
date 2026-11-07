@@ -70,7 +70,7 @@ export const MainPage = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      data: { ...data, hash: query?.hash },
+      data: { ...data, hash: query?.hash, decodedFrom: !!query?.from ? decodeURIComponent(query.from) : undefined },
     })
       .then((axiosRes) => {
         if (!apiResponseValidator(axiosRes)) {
@@ -85,7 +85,7 @@ export const MainPage = () => {
     if (res.isOk) return Promise.resolve(res.data)
 
     return Promise.reject(res.message)
-  }, [query?.hash, resetErrorMsg])
+  }, [query?.hash, resetErrorMsg, query?.from])
   const isCorrect = useCallback(
     (values: TValues): boolean => {
       return Object.keys(getErrors(values)).length === 0 && isAccepted
@@ -144,13 +144,13 @@ export const MainPage = () => {
 
               // addSuccessNotif({ message: 'Ваша заявка отправлена' });
               setSubmitting(false);
-              setSuccessMsg(!!from ? 'Your target' : data.message)
+              setSuccessMsg(data.message)
 
-              setTargetUiName(!!from ? decodeURIComponent(from) : data.uiName)
+              setTargetUiName(data.uiName)
               setQR(data.qr)
 
-              if (!!from || !!data.redirect) {
-                setRedirectTo(!!from ? decodeURIComponent(from) : data.redirect)
+              if (!!data.redirect) {
+                setRedirectTo(data.redirect)
                 // window.location.replace(data.redirect)
               }
               resetForm()
@@ -292,7 +292,7 @@ export const MainPage = () => {
                     //   </IconButton>
                     // }
                     >
-                      {successMsg}. {!!redirectTo && <a href={redirectTo}>{targetUiName}</a>}
+                      {successMsg}. {!!redirectTo && <a href={redirectTo} target='_self'>{targetUiName}</a>}
                     </Alert>
                   </Grid>
                 )

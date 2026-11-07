@@ -11,7 +11,7 @@ const authOnOtherDevicesLimit = 1
 
 export class Singleton {
   private static instance: Singleton;
-   state: Map<string, { qr: string, hash: string, additionalLoggedCounter: number, infoUrl: string, success_url: string, fail_url: string }>;
+  state: Map<string, { qr: string, hash: string, additionalLoggedCounter: number, infoUrl: string, success_url: string, fail_url: string }>;
 
   private constructor() {
     this.state = new Map()
@@ -20,46 +20,43 @@ export class Singleton {
   public static getInstance(): Singleton {
     if (!Singleton.instance) Singleton.instance = new Singleton();
 
-    return Singleton.instance;
+    return Singleton.instance
   }
 
   public async createQR(payload: string) {
     const dataUrl = await genDataUrl(payload)
-
     return dataUrl
   }
   public async addExistsSession({
     reqId,
     infoUrl: payload,
-    infoUrl,
     hash,
     success_url,
     fail_url,
   }: TSessionData): Promise<string> {
     const qr = await this.createQR(payload)
-
     this.state.set(reqId, {
       hash,
       qr,
-      additionalLoggedCounter: 0, // Login on first device.
+      additionalLoggedCounter: 0, // Will be updated on each direct to /go-target
       success_url,
       fail_url,
-      infoUrl,
+      infoUrl: payload,
     })
-
     return qr
   }
   public addLoggedSessionOrDelete(reqId: string): Promise<string> {
     if (this.state.has(reqId)) {
       const sesData = this.state.get(reqId)
       const currentCounter = sesData.additionalLoggedCounter
-      
-      if (currentCounter + 1 >= authOnOtherDevicesLimit) {
+
+      // console.log(`-- before: logged ${currentCounter} of ${authOnOtherDevicesLimit}`)
+
+      if (currentCounter >= authOnOtherDevicesLimit - 1) {
         this.state.delete(reqId)
         return Promise.resolve('Вы аутентифицированы последний раз на доп устройстве в рамках конкретной сессии')
       } else {
         const newLoggedCounter = currentCounter + 1
-
         this.state.set(reqId, {
           ...sesData,
           additionalLoggedCounter: newLoggedCounter,

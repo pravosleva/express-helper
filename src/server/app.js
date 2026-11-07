@@ -29,6 +29,7 @@ import { caseServiceApi } from './routers/car-service'
 import { subprojectsRouter } from './routers/subprojects'
 import { pravoslevaBlog2023Api } from './routers/pravosleva-blog-2023'
 import { mgApi } from './routers/mg/index'
+import { webPushApi } from './routers/web-push'
 
 const app = express()
 
@@ -92,5 +93,6 @@ app.use('/car-service', caseServiceApi)
 app.use('/subprojects', subprojectsRouter)
 app.use('/pravosleva-blog-2023', pravoslevaBlog2023Api)
 app.use('/mg', mgApi)
+app.use('/web-push', webPushApi)
 
 module.exports = app

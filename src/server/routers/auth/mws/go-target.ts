@@ -19,7 +19,7 @@ export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICusto
       .status(401)
       .json({ message: 'Нехрен сюда лезть без правильных параметров', code: `typeof req.query.logged_req_id is ${typeof req.query.logged_req_id}` })
 
-  const { hash } = req.query
+  const { hash, from } = req.query
   if (!hash) return res
     .status(401)
     .json({ message: 'Что-то пошло не так', code: `req.query.hash is ${typeof hash}` })
@@ -52,13 +52,13 @@ export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICusto
       // res.redirect(buildUrl(targetCfgItem.unlogged, {
       //   queryParams: { hash },
       // }))
-      res.redirect(
+      return res.redirect(
         getConfigurableUrl({
           baseUrl: '',
           relativePath: targetCfgItem.unlogged,
           query: {
             hash,
-            from: encodeURIComponent(`${EXTERNAL_ROUTING}${req.originalUrl}`),
+            // from: encodeURIComponent(`${EXTERNAL_ROUTING}${req.originalUrl}`),
           },
         })
       )
@@ -79,13 +79,13 @@ export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICusto
       //     hash: targetCfgItem.hash
       //   },
       // }))
-      res.redirect(
+      return res.redirect(
         getConfigurableUrl({
           baseUrl: '',
           relativePath: targetCfgItem.unlogged,
           query: {
             hash: targetCfgItem.hash,
-            from: encodeURIComponent(`${EXTERNAL_ROUTING}${req.originalUrl}`),
+            // from: encodeURIComponent(`${EXTERNAL_ROUTING}${req.originalUrl}`),
           },
         })
       )
@@ -100,10 +100,14 @@ export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICusto
 
     await req.loggedMap.addLoggedSessionOrDelete(loggedReqId)
       .then((msg) => {
+        console.log(`-- ${msg}`)
         // res.cookie('auth_service_msg', msg, { maxAge, httpOnly: false })
-        res.status(200).redirect(success_url)
+
+        if (!!from) return res.status(200).redirect(decodeURIComponent(from))
+        else return res.status(200).redirect(success_url)
       })
       .catch((msg) => {
+        console.log(`-- ${msg}`)
         // res.cookie('auth_service_msg', msg, { maxAge, httpOnly: false })
 
         // TODO?: redirect to error page
@@ -121,13 +125,13 @@ export const goTarget = (expiresCookiesTimeInDays: number) => async (req: ICusto
         //     hash: targetCfgItem.hash
         //   },
         // }))
-        res.redirect(
+        return res.redirect(
           getConfigurableUrl({
             baseUrl: '',
             relativePath: targetCfgItem.unlogged,
             query: {
               hash: targetCfgItem.hash,
-              from: encodeURIComponent(`${EXTERNAL_ROUTING}${req.originalUrl}`),
+              // from: encodeURIComponent(`${EXTERNAL_ROUTING}${req.originalUrl}`),
             },
           })
         )

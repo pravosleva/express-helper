@@ -67,7 +67,7 @@ export const getAutoparkProject = async (req: IRequest & { autopark2022StorageFi
       // -- NOTE: Sort by ts update
       const __staticData = staticData[chat_id]?.projects[project_id] || null;
       if (!!__staticData) {
-        const sortedProjectDataItems = __staticData.items.sort((e1, e2) => e2.mileage.last - e1.mileage.last)
+        const sortedProjectDataItems = __staticData.items.sort((e1, e2) => (e2.mileage.last || 0) - (e1.mileage.last || 0))
         __staticData.items = sortedProjectDataItems
       }
       // --
@@ -77,7 +77,7 @@ export const getAutoparkProject = async (req: IRequest & { autopark2022StorageFi
       console.log(err)
       return res.status(500).send({
         ok: false,
-        message: err.message || 'No err.message',
+        message: (err as Error)?.message || 'No err.message',
         _originalParams: { params: req.params },
         code: EAPIUserCode.ServerError,
       })

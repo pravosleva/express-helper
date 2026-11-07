@@ -89,7 +89,10 @@ export const SearchUserModal = memo(({
 
   const { userInfoProxy } = useMainContext()
   const userInfoSnap = useSnapshot(userInfoProxy)
-  const isLogged = useMemo<boolean>(() => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser, [userInfoSnap.regData?.registryLevel])
+  const isLogged = useMemo<boolean>(
+    () => userInfoSnap.regData?.registryLevel === ERegistryLevel.TGUser || userInfoSnap.regData?.registryLevel === ERegistryLevel.Logged,
+    [userInfoSnap.regData?.registryLevel]
+  )
 
   return (
     <Modal

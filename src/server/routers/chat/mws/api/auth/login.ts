@@ -25,19 +25,19 @@ export const login = (jwtSecret: string, expiresCookiesTimeInDays: number) => as
   if (!userData) return res
     .status(404)
     .json({ ok: false, message: 'Пользователь не найден', code: EAPILoginCode.NotFound })
-  
+
   const passwordHash = userData.passwordHash
   // console.log('eq.body.password)', req.body.password)
   // console.log(req.body)
   const tgChatId = userData.tg?.chat_id
-  if (!tgChatId) return res
-    .status(404)
-    .json({ ok: false, message: 'Пользователь не найден, попробуйте восстановить пароль через бота', code: EAPILoginCode.ServerError })
+  // if (!tgChatId) return res
+  //   .status(404)
+  //   .json({ ok: false, message: 'Пользователь не найден, попробуйте восстановить пароль через бота', code: EAPILoginCode.ServerError })
 
   if (!passwordHash) return res
     .status(404)
     .json({ ok: false, message: 'Server ERR: Хэш не найден, попробуйте восстановить пароль', code: EAPILoginCode.ServerError })
-  
+
   // 1. Compare hash
   if (!bcrypt.compareSync(req.body.password, passwordHash)) return res
     .status(200)

@@ -96,6 +96,7 @@ export const updateAutoparkProjectItem = async (req: IRequest & { autopark2022St
         // myNewData.projects[project_id].items.push({ ...req.body.item, id: ts })
         myNewData.projects[project_id].items = myNewData.projects[project_id].items.filter(({ id }) => id !== req.body.item.id)
         myNewData.projects[project_id].items.push(req.body.item)
+        myNewData.projects[project_id].items = myNewData.projects[project_id].items.sort((e1, e2) => (e2.mileage.last || 0) - (e1.mileage.last || 0))
       }
       // --
 
@@ -109,6 +110,7 @@ export const updateAutoparkProjectItem = async (req: IRequest & { autopark2022St
         code: EAPIUserCode.Created,
         projects: myNewData.projects,
       }
+      // @ts-ignore
       if (chat_id === '432590698') result.staticData = staticData
 
       return res.status(200).json(result)
@@ -116,7 +118,7 @@ export const updateAutoparkProjectItem = async (req: IRequest & { autopark2022St
       console.log(err)
       return res.status(500).send({
         ok: false,
-        message: err.message || 'No err.message',
+        message: (err as Error)?.message || 'No err.message',
         _originalParams: { params: req.params },
         code: EAPIUserCode.ServerError,
       })

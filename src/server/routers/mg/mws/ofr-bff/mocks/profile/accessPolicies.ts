@@ -195,7 +195,7 @@ export const accessPoliciesRules: THelp = {
                 }
               } catch (err) {
                 result.ok = false
-                result.reason = `Предположительно, ошибка парсинга? ${err?.message || 'No err?.message'}`
+                result.reason = `Предположительно, ошибка парсинга? ${(err as Error)?.message || 'No err?.message'}`
               }
               break
             }
@@ -230,7 +230,7 @@ export const accessPoliciesRules: THelp = {
                 }
               } catch (err) {
                 result.ok = false
-                result.reason = `ERR: ${err.message || 'No err.message'}; req.query._addData shoud not be correctly encoded json; Use decodeURIComponent for this`
+                result.reason = `ERR: ${(err as Error).message || 'No err.message'}; req.query._addData shoud not be correctly encoded json; Use decodeURIComponent for this`
               }
               break
           }
@@ -323,7 +323,7 @@ export const getAccessPolicies = (req, res) => {
         // NOTE: Whatever
       } = JSON.parse(decodeURIComponent(_makeScenario))
       let _c1 = 0
-      for (const scenarioItem of jsonScenario?._dataItemsElementMutation) {
+      for (const scenarioItem of (jsonScenario?._dataItemsElementMutation || [])) {
         switch (true) {
           case (
             !!scenarioItem
@@ -396,7 +396,7 @@ export const getAccessPolicies = (req, res) => {
                 try {
                   (targetResponse.data.Items as any)[targetItemIndex] = { ...mutatedItem }
                 } catch (err) {
-                  logs.unshift(`🔴 ${err?.message || 'No err?.message'}`)
+                  logs.unshift(`🔴 ${(err as Error)?.message || 'No err?.message'}`)
                 }
               } else {
                 logs.unshift('⭕ case 1.2 No element')
@@ -409,7 +409,7 @@ export const getAccessPolicies = (req, res) => {
         _c1 += 1
       }
     } catch (err) {
-      logs.unshift(err?.message || 'Предположительно, ошибка парсинга')
+      logs.unshift((err as Error)?.message || 'Предположительно, ошибка парсинга')
       // - NOTE: Добавим стандартную логику
       switch (true) {
         case !!_responseDelay: {
@@ -431,7 +431,7 @@ export const getAccessPolicies = (req, res) => {
         // NOTE: Whatever
       } = JSON.parse(decodeURIComponent(_makeScenario))
       let _c2 = 0
-      for (const scenarioItem of jsonScenario?._freeDataMutation) {
+      for (const scenarioItem of jsonScenario?._freeDataMutation || []) {
         switch (true) {
           case (
             !!scenarioItem
@@ -500,7 +500,7 @@ export const getAccessPolicies = (req, res) => {
                 try {
                   setNestedValue(targetResponse.data, scenarioItem.targetMutationPath, mutatedItem)
                 } catch (err) {
-                  logs.unshift(`🔴 ${err?.message || 'No err?.message'}`)
+                  logs.unshift(`🔴 ${(err as Error)?.message || 'No err?.message'}`)
                 }
               } else if (['boolean', 'number', 'string', 'object'].includes(typeof oldValue)) {
                 switch (true) {
@@ -534,7 +534,7 @@ export const getAccessPolicies = (req, res) => {
         _c2 += 1
       }
     } catch (err) {
-      logs.unshift(`🔴 ${err?.message || 'Предположительно, ошибка парсинга'}`)
+      logs.unshift(`🔴 ${(err as Error)?.message || 'Предположительно, ошибка парсинга'}`)
       // - NOTE: Добавим стандартную логику
       switch (true) {
         case !!_responseDelay: {

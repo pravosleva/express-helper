@@ -149,6 +149,7 @@
     "universal-cookie": "^4.0.4",
     "url-metadata": "^2.4.0",
     "util": "^0.12.5",
+    "web-push": "3.6.2",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
@@ -165,6 +166,7 @@
     "@types/request": "^2.48.7",
     "@types/shelljs": "^0.8.9",
     "@types/swagger-ui-express": "^4.1.2",
+    "@types/web-push": "3.6.2",
     "@types/yamljs": "^0.2.31",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",

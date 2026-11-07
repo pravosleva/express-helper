@@ -47,7 +47,7 @@ export const rules: THelp = {
             ok: boolean;
             reason?: string;
           } = { ok: true }
-          
+
           switch (true) {
             case !val || typeof val !== 'string':
               result.ok = false
@@ -73,7 +73,7 @@ export const rules: THelp = {
             ok: boolean;
             reason?: string;
           } = { ok: true }
-          
+
           switch (true) {
             case !val || typeof val !== 'string':
               result.ok = false
@@ -95,7 +95,7 @@ export const rules: THelp = {
             ok: boolean;
             reason?: string;
           } = { ok: true }
-          
+
           switch (true) {
             case !val || typeof val !== 'string':
               result.ok = false
@@ -117,7 +117,7 @@ export const rules: THelp = {
             ok: boolean;
             reason?: string;
           } = { ok: true }
-          
+
           switch (true) {
             case !val || typeof val !== 'string':
               result.ok = false
@@ -219,12 +219,12 @@ export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFi
 
   const { project_id, chat_id, project_name, project_type } = req.query
   try {
-    const manifest = {
+    const manifest: unknown = {
       "name": "Pravosleva",
       "short_name": "Pravosleva",
       "theme_color": "#ffffff",
       "background_color": "#2D3748",
-      
+
       "display": "fullscreen",
       "orientation": "portrait",
       "scope": "/",
@@ -286,16 +286,18 @@ export const getDynamicManifest = async (req: IRequest & { autopark2022StorageFi
             manifest[key] = projectTypeMapping[project_type][key]
             break
         }
-        
+
       }
     }
     if (!!project_name && typeof project_name === 'string') {
+      // @ts-ignore
       manifest.name = project_name
+      // @ts-ignore
       manifest.short_name = project_name
     }
 
     return res.status(200).send(JSON.stringify(manifest))
   } catch (err) {
-    return res.status(500).json({ success: false, message: err.message || 'No err message' })
+    return res.status(500).json({ success: false, message: (err as Error)?.message || 'No err message' })
   }
 }
