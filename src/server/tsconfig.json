@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
+    "target": "es2020",
     "downlevelIteration": true,
-    "target": "ES5",
     "removeComments": true,
     "allowJs": true,
     "resolveJsonModule": true,
@@ -19,7 +18,7 @@
       ]
     },
     "sourceMap": false,
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
   "include": [
     "**/*.ts",
