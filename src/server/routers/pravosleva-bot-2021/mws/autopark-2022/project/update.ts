@@ -11,17 +11,17 @@ const projectItemValidator = (val: any): TValidationResult => {
     case !val?.id || typeof val.id !== 'number':
       res.ok = false
       res.reason = 'item.id should be number (is required)'
-      res._reponseDetails._addProps = { code: EAPIUserCode.IncorrecrBody }
+      if (!!res._reponseDetails) res._reponseDetails._addProps = { code: EAPIUserCode.IncorrecrBody }
       break
     case !val?.name || typeof val.name !== 'string':
       res.ok = false
       res.reason = 'item.name should be not empty tring'
-      res._reponseDetails._addProps = { code: EAPIUserCode.IncorrecrBody }
+      if (!!res._reponseDetails) res._reponseDetails._addProps = { code: EAPIUserCode.IncorrecrBody }
       break
     case !val?.mileage || typeof val.mileage.delta !== 'number' || typeof val.mileage.last !== 'number':
       res.ok = false
       res.reason = `Incorrect item.mileage (received: ${!!val?.mileage ? JSON.stringify(val.mileage) : typeof val?.mileage})`
-      res._reponseDetails._addProps = { code: EAPIUserCode.IncorrecrBody }
+      if (!!res._reponseDetails) res._reponseDetails._addProps = { code: EAPIUserCode.IncorrecrBody }
       break
     default:
       break
@@ -36,13 +36,14 @@ const projectItemsValidator = (val: any[]): TValidationResult => {
     case !Array.isArray(val):
       res.ok = false
       res.reason = 'items prop should be an Array'
-      res._reponseDetails._addProps = { code: EAPIUserCode.IncorrecrBody }
+      if (!!res._reponseDetails) res._reponseDetails._addProps = { code: EAPIUserCode.IncorrecrBody }
       break
     default:
       // let finalResult = { ok: true }
       for (const item of val) {
         const validated = projectItemValidator(item)
         if (!validated.ok) {
+          // @ts-ignore
           for (const key in validated) res[key] = validated[key]
           break
         }
@@ -59,12 +60,13 @@ const projectDataValidator = (val: any): TValidationResult => {
     case !val.name:
       res.ok = false
       res.reason = 'name prop is required'
-      res._reponseDetails._addProps = {
+      if (!!res._reponseDetails) res._reponseDetails._addProps = {
         code: EAPIUserCode.IncorrecrBody,
       }
       break
     case !!val.items:
       const validated = projectItemsValidator(val.items)
+      // @ts-ignore
       for (const key in validated) res[key] = validated[key]
       break
     default: break
@@ -150,7 +152,7 @@ type TStaticData = {
   [key: string]: TUserData
 }
 
-export const updateAutoparkProject = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const updateAutoparkProject = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { chat_id, projectData, project_id } = req.body
 
   if (!chat_id || !project_id || !projectData || !projectData?.name) {
@@ -215,7 +217,7 @@ export const updateAutoparkProject = async (req: IRequest & { autopark2022Storag
       console.log(err)
       return res.status(500).send({
         ok: false,
-        message: err.message || 'No err.message',
+        message: (err as Error)?.message || 'No err.message',
         _originalParams: { params: req.params },
         code: EAPIUserCode.ServerError,
       })

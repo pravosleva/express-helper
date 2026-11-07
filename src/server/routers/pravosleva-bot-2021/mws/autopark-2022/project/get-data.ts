@@ -40,7 +40,7 @@ type TStaticData = {
 //   return res
 // }
 
-export const getAutoparkProject = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const getAutoparkProject = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { chat_id, project_id } = req.body
 
   if (!chat_id || !project_id) {

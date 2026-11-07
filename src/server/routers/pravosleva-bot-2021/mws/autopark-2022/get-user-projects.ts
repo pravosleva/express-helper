@@ -22,7 +22,7 @@ type TStaticData = {
   [key: string]: TUserData
 }
 
-export const getUserProjects = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const getUserProjects = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { tg } = req.body
 
   if (!tg) {
@@ -51,7 +51,7 @@ export const getUserProjects = async (req: IRequest & { autopark2022StorageFileP
 
       if (
         !!staticData[String(chat_id)]?.projects
-        && Object.keys(staticData[String(chat_id)].projects).length > 0
+        && Object.keys(staticData[String(chat_id)].projects as { [key: string]: TProjectData }).length > 0
       ) response.projects = staticData[String(chat_id)].projects
       else response.message = 'Пока нет проектов'
 
@@ -60,7 +60,7 @@ export const getUserProjects = async (req: IRequest & { autopark2022StorageFileP
       console.log(err)
       return res.status(500).send({
         ok: false,
-        message: err.message || 'No err.message',
+        message: (err as Error)?.message || 'No err.message',
         _originalParams: { params: req.params },
         code: EAPIUserCode.ServerError,
       })

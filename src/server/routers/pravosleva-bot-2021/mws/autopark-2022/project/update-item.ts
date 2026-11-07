@@ -35,7 +35,7 @@ type TStaticData = {
 const requiredFields = ['chat_id', 'project_id', 'item']
 const requiredItemFields = ['id', 'name', 'description', 'mileage']
 
-export const updateAutoparkProjectItem = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const updateAutoparkProjectItem = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { chat_id, project_id, item: { id, name, description, mileage: { delta, last } } } = req.body
 
   const errs = []

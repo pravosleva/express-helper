@@ -17,7 +17,7 @@ export const rules: THelp = {
             case !val || typeof val !== 'string':
               result.ok = false
               result.reason = 'req.body.chat_id should be number + not zero'
-              result._reponseDetails._addProps = {
+              if (!!result._reponseDetails) result._reponseDetails._addProps = {
                 code: EAPIUserCode.IncorrecrBody,
               }
               break
@@ -39,7 +39,7 @@ export const rules: THelp = {
             case !val || typeof val !== 'string':
               result.ok = false
               result.reason = 'req.body.name should be not empty string'
-              result._reponseDetails._addProps = {
+              if (!!result._reponseDetails) result._reponseDetails._addProps = {
                 code: EAPIUserCode.IncorrecrBody,
               }
               break
@@ -61,7 +61,7 @@ export const rules: THelp = {
             case typeof val !== 'string':
               result.ok = false
               result.reason = 'req.body.description should be string (optional)'
-              result._reponseDetails._addProps = {
+              if (!!result._reponseDetails) result._reponseDetails._addProps = {
                 code: EAPIUserCode.IncorrecrBody,
               }
               break
@@ -99,7 +99,7 @@ type TStaticData = {
   [key: string]: TUserData;
 }
 
-export const createAutoparkProject = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const createAutoparkProject = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { chat_id, name, description } = req.body
 
   if (!!req.autopark2022StorageFilePath) {
@@ -133,7 +133,7 @@ export const createAutoparkProject = async (req: IRequest & { autopark2022Storag
       console.log(err)
       return res.status(500).send({
         ok: false,
-        message: err.message || 'No err.message',
+        message: (err as Error)?.message || 'No err.message',
         _originalParams: { params: req.params },
         code: EAPIUserCode.ServerError,
       })

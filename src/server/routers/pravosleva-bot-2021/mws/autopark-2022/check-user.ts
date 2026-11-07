@@ -28,7 +28,7 @@ type TStaticData = {
   [key: string]: TUserData
 }
 
-export const checkAutoparkUser = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const checkAutoparkUser = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { tg } = req.body
 
   if (!tg) {
@@ -72,7 +72,7 @@ export const checkAutoparkUser = async (req: IRequest & { autopark2022StorageFil
 
       if (
         !!staticData[String(chat_id)]?.projects
-        && Object.keys(staticData[String(chat_id)].projects).length > 0
+        && Object.keys(staticData[String(chat_id)].projects as { [key: string]: TProjectData }).length > 0
       ) response.projects = staticData[String(chat_id)].projects
 
       // if (isDev) response.password = password

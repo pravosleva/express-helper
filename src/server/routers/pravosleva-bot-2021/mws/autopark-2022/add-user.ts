@@ -15,7 +15,7 @@ type TStaticData = {
   [key: string]: TUserData
 }
 
-export const addAutoparkUser = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const addAutoparkUser = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { tg } = req.body
 
   if (!tg) {
@@ -48,7 +48,7 @@ export const addAutoparkUser = async (req: IRequest & { autopark2022StorageFileP
       console.log(err)
       return res.status(500).send({
         ok: false,
-        message: err.message || 'No err.message',
+        message: (err as Error)?.message || 'No err.message',
         _originalParams: { params: req.params },
         code: EAPIUserCode.ServerError,
       })

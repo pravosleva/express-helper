@@ -28,7 +28,7 @@ type TStaticData = {
   [key: string]: TUserData
 }
 
-export const removeAutoparkProjectItem = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const removeAutoparkProjectItem = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { chat_id, project_id, item_id } = req.body
 
   if (!chat_id || !project_id || !item_id) {
@@ -87,7 +87,7 @@ export const removeAutoparkProjectItem = async (req: IRequest & { autopark2022St
       console.log(err)
       return res.status(500).send({
         ok: false,
-        message: err.message || 'No err.message',
+        message: (err as Error)?.message || 'No err.message',
         _originalParams: { params: req.params },
         code: EAPIUserCode.ServerError,
       })

@@ -21,7 +21,7 @@ type TStaticData = {
   [key: string]: TUserData
 }
 
-export const addEntryRoute = async (req: IRequest & { botStorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const addEntryRoute = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { userState } = req.body
 
   if (!userState) {
@@ -54,7 +54,7 @@ export const addEntryRoute = async (req: IRequest & { botStorageFilePath: string
       console.log(err)
       return res.status(500).send({
         ok: false,
-        message: err.message || 'No err.message',
+        message: (err as Error).message || 'No err.message',
         _originalParams: { params: req.params },
       })
     }

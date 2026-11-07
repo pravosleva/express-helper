@@ -25,7 +25,7 @@ type TStaticData = {
 
 const jwtSecret = 'super-secret'
 
-export const checkAutoparkUserPassword = async (req: IRequest & { autopark2022StorageFilePath: string }, res: IResponse, next: INextFunction) => {
+export const checkAutoparkUserPassword = async (req: IRequest, res: IResponse, next: INextFunction) => {
   const { password, chat_id } = req.body
 
   if (!password) {

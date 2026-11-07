@@ -21,6 +21,7 @@ import { checkJWT } from './mws/autopark-2022/check-jwt'
 import { withReqParamsValidationMW } from '~/utils/express-validation/withReqParamsValidationMW'
 import { redirectIfUnloggedMw } from '~/routers/auth/mws/redirect-if-unlogged'
 import { EAccessCode, redirect } from '~/routers/auth/cfg'
+import { logoutAutoparkUser } from './mws/autopark-2022/logout'
 
 const botApi = express()
 const bodyParser = require('body-parser')
@@ -39,9 +40,7 @@ createFileIfNecessary(autopark2022StorageFilePath, '{}')
 // ---
 
 botApi.use((req, _res, next) => {
-  // @ts-ignore
   req.botStorageFilePath = storageFilePath
-  // @ts-ignore
   req.autopark2022StorageFilePath = autopark2022StorageFilePath
   next()
 })
@@ -83,5 +82,6 @@ botApi.get(
   getDynamicManifest,
 )
 botApi.post('/autopark-2022/check-jwt', checkJWT)
+botApi.post('/autopark-2022/logout', logoutAutoparkUser)
 
 export const pravoslevaBot2021Router = botApi
