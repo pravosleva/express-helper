@@ -13,6 +13,14 @@ export const checkJWT = async (req: IRequest, res: IResponse, next: INextFunctio
     _originalBody: { params: req.body },
   })
 
+  // NOTE: Если куки нет, отдаем 401 Unauthorized вместо падения в 500
+  if (!req.cookies || !req.cookies[jwtCookieName]) {
+    return res.status(401).json({
+      ok: false,
+      message: 'Unauthorized: No token provided'
+    })
+  }
+
   const response: any = { ok: false }
 
   try {
@@ -20,7 +28,7 @@ export const checkJWT = async (req: IRequest, res: IResponse, next: INextFunctio
     const jwtParsed: any = jwt.verify(req.cookies[jwtCookieName], jwtSecret)
     res.endTime('jwt_verify')
 
-    if (jwtParsed.chat_id !== tested_chat_id) {
+    if (jwtParsed.chat_id !== String(tested_chat_id)) {
       response.ok = false
       response.message = 'Unauth'
     } else {
